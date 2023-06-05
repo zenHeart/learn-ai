@@ -1,0 +1,16 @@
+{
+  "name": "ppt",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --base /learn-ai/",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "examples:1": "node --experimental-modules examples/01.prepare.js"
+
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.3",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*"
+  }
+}
