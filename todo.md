@@ -20,5 +20,24 @@
 * [ ] ppt 待完善内容
   * [ ] prompt 安全策略
 
+## Agent
 
-## task
+* [ ] [agent for beginners](https://github.com/microsoft/ai-agents-for-beginners) Microsoft
+* [ ] [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) anthropic
+* [ ] [601 real-world gen AI use cases from the world's leading organizations
+](https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders?hl=en) use case agent in google
+* [ ] [build agent](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) open ai
+* [ ] [create agent](https://github.com/NirDiamant/agents-towards-production?tab=readme-ov-file)
+
+## PE
+* [ ] [claude PE](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
+
+## course
+
+* [ ] [harvard](https://www.cs197.seas.harvard.edu/) 
+* [ ] [generative AI for beginer](https://microsoft.github.io/generative-ai-for-beginners/#/) 
+
+
+## resource
+
+* [ai engineering transition path](https://github.com/InterviewReady/ai-engineering-resources)
