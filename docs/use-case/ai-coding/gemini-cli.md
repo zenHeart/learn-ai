@@ -407,11 +407,25 @@ you can use enable this feature
 after settings the `~/.gemini/trustedFolders.json` can see your trust folder,
 be careful only project as trusted folder, you can use project settings.like `.gemini/settings.json` and customize commands can  work!!!!
 
-## [MCP](https://geminicli.com/docs/cli/tutorials/#setting-up-a-model-context-protocol-mcp-server)
+## [MCP](https://geminicli.com/docs/tools/mcp-server/)
 
 ### [setup mcp](https://geminicli.com/docs/cli/tutorials/#setting-up-a-model-context-protocol-mcp-server)
 
-1. config mcp server in 
+read [github mcp](https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-gemini-cli.md)
+
+before setup make has create a github token
+
+1. install github mcp extensions
+
+    ```bash
+    gemini extensions install https://github.com/github/github-mcp-server
+    ```
+2. in gemini use `/mcp`  list install mcp
+
+### useful mcp 
+
+* [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+
 
 
 ## [Tools](https://geminicli.com/docs/core/tools-api/)
