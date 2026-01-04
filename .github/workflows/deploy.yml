@@ -1,0 +1,60 @@
+name: Deploy Site
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install Root Dependencies
+        run: pnpm install
+
+      - name: Build Docs
+        run: pnpm docs:build
+
+      - name: Build Prompt PPT
+        run: |
+          cd ppts/prompt
+          npm install
+          npm run build
+      
+      - name: Build MCP PPT
+        run: |
+          cd ppts/mcp
+          npm install
+          npm run build
+
+      - name: Prepare Dist
+        run: |
+          mkdir -p final_dist
+          cp -r docs/.vitepress/dist/* final_dist/
+          mkdir -p final_dist/ppts/prompt
+          cp -r ppts/prompt/dist/* final_dist/ppts/prompt/
+          mkdir -p final_dist/ppts/mcp
+          cp -r ppts/mcp/dist/* final_dist/ppts/mcp/
+          touch final_dist/.nojekyll
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./final_dist
