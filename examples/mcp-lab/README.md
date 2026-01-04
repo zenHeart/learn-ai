@@ -1,189 +1,91 @@
-# 🧪 MCP Lab: The Ultimate Beginner's Guide to Model Context Protocol
+# MCP (Model Context Protocol) 全场景实战指南
 
-Welcome to **MCP Lab**! This is your interactive playground and comprehensive guide to mastering the **Model Context Protocol (MCP)**.
-
-If you are new to AI development, think of MCP as the **USB standard for AI models**. Just as USB lets you plug any mouse into any computer, MCP lets you plug any data source or tool (server) into any AI application (host/client).
+欢迎来到 **MCP 实验室**！本指南旨在帮助初学者从零开始，全面掌握 **Model Context Protocol (MCP)** 的核心概念、开发逻辑及日常应用场景。
 
 ---
 
-## 📚 Table of Contents
+## 1. 什么是 MCP？它解决了什么问题？
 
-1.  [**Part 1: The Core Concepts**](#part-1-the-core-concepts) - What is MCP and how does it work?
-2.  [**Part 2: The Architecture**](#part-2-the-architecture) - Servers, Hosts, and Clients explained.
-3.  [**Part 3: Build Your First MCP Server**](#part-3-build-your-first-mcp-server) - A step-by-step code tutorial.
-4.  [**Part 4: Connect to Gemini CLI**](#part-4-connect-to-gemini-cli) - Running your server in the terminal.
-5.  [**Part 5: Connect to Claude Desktop**](#part-5-connect-to-claude-desktop) - Using your server with a GUI.
-6.  [**Part 6: Advanced Concepts**](#part-6-advanced-concepts) - Resources, Prompts, and Transports.
+### 核心定义
+**Model Context Protocol (MCP)** 是由 Anthropic 推出的一种开放标准，它像是一个“通用插座”，允许 AI 模型（如 Claude, GPT）安全、标准地访问外部数据源和工具。
 
----
-
-## Part 1: The Core Concepts
-
-**Problem:** AI models (like Gemini, Claude, GPT) are trapped in a box. They can't access your local files, your private database, or your company's internal API.
-**Old Solution:** Write custom integration code for *every* specific AI app you use.
-**MCP Solution:** Build a standard "MCP Server" once. *Any* MCP-compliant AI app (Host) can now use it.
-
-### Key Capabilities
-An MCP Server can provide three things to an AI:
-1.  **Tools 🛠️**: Executable functions. The AI says "Call tool `add` with arguments `a=5, b=10`", and the server runs it and returns `15`. (e.g., Calculator, Database Query, File Delete).
-2.  **Resources 📄**: Data reading. The AI asks "Read resource `file://logs/error.txt`", and the server returns the content. (e.g., File System, API Fetch).
-3.  **Prompts 💬**: Pre-defined templates. The AI requests "Get prompt `debug-error`", and the server returns a structured message template to help the user.
+### 解决的问题：碎片化集成
+在 MCP 出现之前，如果你想让 AI 访问你的 GitHub、数据库或本地文件，你需要为每个 AI 客户端（Cursor, Claude Desktop, IDE 插件）重复编写集成代码。
+- **过去**：N 个 AI 客户端 × M 个数据源 = N*M 个集成工作。
+- **现在 (MCP)**：1 个标准协议。你只需编写一个 MCP Server，所有支持 MCP 的客户端都能立即使用它。
 
 ---
 
-## Part 2: The Architecture
+## 2. MCP 的原理与结构
 
-The MCP ecosystem has three main players:
+MCP 采用 **“客户端-服务器” (Client-Server)** 架构：
 
-1.  **MCP Host (The Client/AI App)**
-    *   **Examples:** Gemini CLI, Claude Desktop, Cursor (future), VScode (via extensions).
-    *   **Role:** The "Boss". It runs the AI model, decides *when* to call a tool, and displays the results to you.
-    *   **Action:** It *connects* to your server.
+### 三大核心支柱
+1.  **Resources (资源)**：Server 暴露的**只读数据**（如日志文件、数据库记录、API 响应）。AI 可以像读取文件一样读取它们。
+2.  **Tools (工具)**：Server 暴露的**可执行函数**（如创建 GitHub Issue、运行一段代码、发送邮件）。AI 可以主动调用它们来改变外部世界。
+3.  **Prompts (提示词)**：Server 预定义的**模板**。帮助 AI 更好地理解如何处理特定任务（如“代码审查模板”）。
 
-2.  **MCP Server (The Tool Provider)**
-    *   **Examples:** This `mcp-lab` project, a `postgres-mcp` server, a `google-drive-mcp` server.
-    *   **Role:** The "Worker". It sits there waiting for commands. It knows how to *do* things (add numbers, query DBs).
-    *   **Action:** It *listens* for requests.
-
-3.  **Transport (The Cable)**
-    *   **Stdio (Standard Input/Output):** The server runs as a subprocess. The Host talks to it via `stdin` and reads from `stdout`. Best for local tools.
-    *   **SSE (Server-Sent Events):** Over HTTP. Good for remote servers.
+### 传输层 (Transport)
+-   **Stdio (标准输入输出)**：最常用的方式。Server 作为子进程运行，Host 通过 `stdin/stdout` 与其通信。**适合本地工具**。
+-   **SSE (Server-Sent Events)**：基于 HTTP。**适合远程或云端服务**。
 
 ---
 
-## Part 3: Build Your First MCP Server
+## 3. 日常使用场景详解
 
-We have built a simple Javascript-based MCP server in this repo. Let's dissect it.
+### 场景 A：接入现有的 MCP Server
+你不需要总是自己写代码。社区已经有很多现成的 Server（如 GitHub, Google Drive, Slack）。
+-   **Claude Desktop 接入**：修改 `claude_desktop_config.json`，添加 server 配置即可。
+-   **Cursor 接入**：在设置中添加 MCP Server 的运行命令。
 
-### 1. Project Setup
-We use modern JavaScript (ESM).
-*   **`package.json`**: Note `"type": "module"`. We depend on `@modelcontextprotocol/sdk` and `zod` (for validation).
+### 场景 B：编写你的第一个 MCP Server
+本项目提供了一个基于 Node.js 的示例。
+1.  **初始化**：使用 `@modelcontextprotocol/sdk`。
+2.  **定义工具**：在 `src/index.js` 中定义 `inputSchema`（使用 JSON Schema 或 Zod）。
+3.  **实现逻辑**：编写 `CallToolRequestSchema` 的处理器。
+4.  **启动传输**：使用 `StdioServerTransport`。
 
-### 2. The Code (`src/index.js`)
+### 场景 C：开发 MCP Server 适配不同 IDE/客户端
+MCP 的魅力在于**一次编写，到处运行**。
+-   **Gemini CLI**：通过 `gemini-extension.json` 配置文件快速安装。
+-   **Claude Desktop**：通过配置文件指定 `node` 运行路径。
+-   **VS Code / Cursor**：通常通过插件或设置项直接配置运行命令。
 
-**A. Initialization**
-We create a server instance and tell it we support `tools`.
-```javascript
-const server = new Server(
-  { name: "mcp-lab-server", version: "1.0.0" },
-  { capabilities: { tools: {} } }
-);
+### 场景 D：调试与定位 (Debugging)
+这是开发者最常遇到的坑：
+1.  **不要使用 `console.log`**：在 Stdio 模式下，`stdout` 被协议占用。使用 `console.log` 会破坏 JSON 协议格式，导致客户端连接失败。
+2.  **使用 `console.error`**：这是安全的调试通道。日志会出现在客户端的日志窗口中。
+3.  **使用 MCP Inspector**：官方提供的 `mcp-inspector` 工具可以让你在不启动 AI 客户端的情况下，直接在终端测试 Server 的工具和资源。
+    -   运行：`npx @modelcontextprotocol/inspector node src/index.js`
+
+---
+
+## 4. 快速上手实验
+
+### 1. 安装依赖
+```bash
+cd examples/mcp-lab
+pnpm install
 ```
 
-**B. Defining Tools**
-We define the *shape* of our tool so the AI knows how to use it.
-```javascript
-const addTool = {
-  name: "add",
-  description: "Adds two numbers",
-  inputSchema: {
-    type: "object",
-    properties: {
-      a: { type: "number" },
-      b: { type: "number" }
-    },
-    required: ["a", "b"]
-  }
-};
+### 2. 运行示例 Server
+你可以使用 Inspector 来测试：
+```bash
+npx @modelcontextprotocol/inspector node src/index.js
 ```
 
-**C. Handling Lists**
-When the AI connects, it asks "ListTools". We reply:
-```javascript
-server.setRequestHandler(ListToolsRequestSchema, async () => {
-  return { tools: [addTool] };
-});
-```
-
-**D. Handling Calls**
-When the AI wants to *run* the tool:
-```javascript
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  if (request.params.name === "add") {
-    const { a, b } = request.params.arguments;
-    return { content: [{ type: "text", text: String(a + b) }] };
-  }
-});
-```
-
-**E. Connecting**
-We connect via `stdio`.
-```javascript
-const transport = new StdioServerTransport();
-await server.connect(transport);
-```
+### 3. 核心代码解析 (`src/index.js`)
+-   **Server 实例**：定义名称和版本。
+-   **ListTools**：告诉 AI 你有哪些能力。
+-   **CallTool**：执行具体的加法或获取时间逻辑。
 
 ---
 
-## Part 4: Connect to Gemini CLI
-
-Gemini CLI has a built-in "Extension" system that makes installing MCP servers easy.
-
-### Prerequisites
-*   Node.js (v18+)
-*   pnpm (or npm)
-
-### Installation Steps
-1.  **Install Dependencies:**
-    ```bash
-    cd examples/mcp-lab
-    pnpm install
-    ```
-
-2.  **Install Extension:**
-    Run this command from inside the `mcp-lab` folder:
-    ```bash
-    gemini extensions install .
-    ```
-    *This tells Gemini to look at `gemini-extension.json` in the current directory and register the server.*
-
-3.  **Test It:**
-    Run `gemini doctor` to see if it's active.
-    Then ask Gemini:
-    > "Calculate 50 + 32 using the mcp-lab tools"
+## 5. 进阶：如何让你的 Server 更强大？
+-   **错误处理**：使用 `McpError` 返回标准错误码。
+-   **输入校验**：使用 `zod` 确保 AI 传入的参数符合预期。
+-   **异步操作**：在 Tool 处理器中可以自由使用 `fetch` 或数据库查询。
 
 ---
 
-## Part 5: Connect to Claude Desktop
-
-Claude Desktop (macOS/Windows) can also use this *exact same server*.
-
-1.  **Locate Config:** Open `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows).
-2.  **Edit Config:** Add your server to the `mcpServers` object. You need the **absolute path** to your project.
-
-```json
-{
-  "mcpServers": {
-    "mcp-lab": {
-      "command": "node",
-      "args": ["/ABSOLUTE/PATH/TO/learn-ai/examples/mcp-lab/src/index.js"]
-    }
-  }
-}
-```
-3.  **Restart Claude:** Fully quit and restart the app.
-4.  **Test:** Look for the 🔌 icon. You should see "mcp-lab" connected. Ask Claude "What tools do you have?" or "Add 100 and 200".
-
----
-
-## Part 6: Advanced Concepts
-
-### Resources vs Tools
-*   **Use Tools when:** You need to perform an action (write file, API POST) or calculate something dynamically.
-*   **Use Resources when:** You want to expose static data or data that can be read like a file (logs, database rows, API GET).
-
-### Prompt Templates
-You can hardcode "Prompts" in your server. This is useful for complex tasks.
-*   *Example:* A "Code Review" prompt that automatically loads specific style guide resources and asks the AI to review the user's code against them.
-
-### Debugging
-*   **Stdio:** Since `stdout` is used for protocol communication, **NEVER** use `console.log()` for debugging. It will break the protocol JSON.
-*   **Use `console.error()`:** This stream is safe. You can watch it in the Gemini CLI logs or Claude logs.
-
----
-
-## 🚀 Ready to Code?
-
-Go open `src/index.js` and try adding a new tool! Maybe a `subtract` tool, or a tool that fetches a joke?
-
-Happy Building!
+> **练习建议**：尝试在 `src/index.js` 中添加一个 `fetch_joke` 工具，调用一个公开的笑话 API，并在 Claude Desktop 中测试它！

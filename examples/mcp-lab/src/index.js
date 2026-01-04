@@ -130,7 +130,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("MCP Lab Server running on stdio"); // Log to stderr so we don't mess up stdout JSON
+    // 重要提示：在 Stdio 模式下，必须使用 console.error 而不是 console.log 进行调试
+  // 因为 stdout 被用于 MCP 协议通信，任何额外的输出都会破坏协议格式。
+  console.error("MCP Lab Server running on stdio");
 }
 
 main().catch((error) => {
