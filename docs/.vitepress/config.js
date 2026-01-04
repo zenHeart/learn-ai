@@ -4,6 +4,10 @@ export default defineConfig({
   title: "Learn AI",
   description: "AI Learning Resources & PPTs",
   base: '/learn-ai/',
+  ignoreDeadLinks: [
+    // Ignore links to PPTs as they are built externally and copied in
+    /^\/learn-ai\/ppts\//,
+  ],
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
