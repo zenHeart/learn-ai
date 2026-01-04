@@ -1,0 +1,1 @@
+import{_ as e,c as i,o as l,ae as s}from"./chunks/framework.P5dEGGfV.js";const _=JSON.parse('{"title":"RAG","description":"","frontmatter":{},"headers":[],"relativePath":"tech/RAG.md","filePath":"tech/RAG.md"}'),t={name:"tech/RAG.md"};function n(o,a,p,c,r,d){return l(),i("div",null,[...a[0]||(a[0]=[s("",4)])])}const m=e(t,[["render",n]]);export{_ as __pageData,m as default};
