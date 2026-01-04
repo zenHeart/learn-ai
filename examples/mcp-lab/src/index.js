@@ -3,9 +3,8 @@
 /**
  * MCP Lab Example Server
  * 
- * 这个示例展示了如何构建一个基础的 MCP Server。
- * 遵循 Google 技术写作指南中的“代码即文档”原则，
- * 我们在关键逻辑处添加了详细注释。
+ * 这是一个教学级的 MCP Server 示例。
+ * 涵盖了从基础计算到文件系统交互的典型场景。
  */
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -17,27 +16,26 @@ import {
   ErrorCode,
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
+import fs from "fs/promises";
+import path from "path";
 
 /**
- * 1. 初始化 Server 实例
- * name: 客户端显示的名称
- * version: 语义化版本号
+ * 1. 初始化 Server
  */
 const server = new Server(
   {
     name: "mcp-lab-server",
-    version: "1.0.0",
+    version: "1.1.0",
   },
   {
     capabilities: {
-      tools: {}, // 声明本服务器具备“工具调用”能力集
+      tools: {},
     },
   }
 );
 
 /**
- * 2. 注册工具列表
- * 当 AI 客户端连接时，它会调用此接口了解服务器有哪些功能。
+ * 2. 定义工具列表
  */
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
@@ -48,18 +46,21 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         inputSchema: {
           type: "object",
           properties: {
-            a: { type: "number", description: "第一个加数" },
-            b: { type: "number", description: "第二个加数" },
+            a: { type: "number" },
+            b: { type: "number" },
           },
           required: ["a", "b"],
         },
       },
       {
-        name: "get_current_time",
-        description: "获取服务器当前的系统时间",
+        name: "read_file_summary",
+        description: "读取指定文件的内容摘要（前100个字符）",
         inputSchema: {
           type: "object",
-          properties: {},
+          properties: {
+            filePath: { type: "string", description: "文件的绝对路径" },
+          },
+          required: ["filePath"],
         },
       },
     ],
@@ -67,8 +68,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 });
 
 /**
- * 3. 处理工具调用逻辑
- * 当 AI 决定使用某个工具时，会发送请求到这里。
+ * 3. 实现工具逻辑
  */
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
@@ -76,63 +76,56 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   try {
     switch (name) {
       case "add": {
-        // 使用 Zod 进行参数校验（推荐实践）
-        const schema = z.object({
-          a: z.number(),
-          b: z.number(),
-        });
+        const schema = z.object({ a: z.number(), b: z.number() });
         const { a, b } = schema.parse(args);
-        
-        const result = a + b;
         return {
-          content: [{ type: "text", text: `计算结果是: ${result}` }],
+          content: [{ type: "text", text: `结果: ${a + b}` }],
         };
       }
 
-      case "get_current_time": {
-        const now = new Date().toLocaleString();
-        return {
-          content: [{ type: "text", text: `当前服务器时间: ${now}` }],
-        };
+      case "read_file_summary": {
+        const schema = z.object({ filePath: z.string() });
+        const { filePath } = schema.parse(args);
+        
+        try {
+          const content = await fs.readFile(path.resolve(filePath), "utf-8");
+          const summary = content.slice(0, 100) + (content.length > 100 ? "..." : "");
+          return {
+            content: [{ type: "text", text: `文件摘要:\n${summary}` }],
+          };
+        } catch (err) {
+          return {
+            isError: true,
+            content: [{ type: "text", text: `读取失败: ${err.message}` }],
+          };
+        }
       }
 
       default:
-        // 如果 AI 请求了不存在的工具，返回标准错误
-        throw new McpError(
-          ErrorCode.MethodNotFound,
-          `未找到工具: ${name}`
-        );
+        throw new McpError(ErrorCode.MethodNotFound, `未知工具: ${name}`);
     }
   } catch (error) {
-    // 统一错误处理与日志记录
-    // 注意：在 Stdio 模式下，必须使用 console.error 而不是 console.log 进行调试
-    console.error("[MCP Error]", error); 
-    
+    console.error("[MCP Error]", error);
     if (error instanceof z.ZodError) {
       return {
         isError: true,
         content: [{ type: "text", text: `参数错误: ${error.errors.map(e => e.message).join(", ")}` }],
       };
     }
-    
-    return {
-      isError: true,
-      content: [{ type: "text", text: `执行失败: ${error.message}` }],
-    };
+    throw error;
   }
 });
 
 /**
- * 4. 启动服务器 (Stdio 传输模式)
- * 注意：在 Stdio 模式下，不要使用 console.log 输出非协议数据。
+ * 4. 启动传输
  */
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("MCP Lab Server 已启动 (Stdio 模式)");
+  console.error("MCP Lab Server 已启动");
 }
 
 main().catch((error) => {
-  console.error("启动失败:", error);
+  console.error("致命错误:", error);
   process.exit(1);
 });
