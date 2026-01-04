@@ -10,39 +10,60 @@ export default defineConfig({
   ],
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'AI Develop', link: '/ai-develop/' },
-      { text: 'Tech Stack', link: '/tech/' },
-      { text: 'Use Cases', link: '/use-case/' },
-      { text: 'Prompts', link: '/prompts/copilot' },
+      { text: 'Docs', link: '/ai-develop/' },
       { text: 'PPTs', link: '/ppts/' }
     ],
     sidebar: {
-      '/ai-develop/': [
+      '/ppts/': [
         {
-          text: 'AI Develop',
+          text: 'Presentations',
           items: [
-            { text: 'Introduction', link: '/ai-develop/' },
+            { text: 'Overview', link: '/ppts/' },
+            { text: 'Prompt Engineering', link: '/ppts/prompt/' },
+            { text: 'MCP Protocol', link: '/ppts/mcp/' }
           ]
         }
       ],
-      '/tech/': [
+      '/': [
         {
-          text: 'Technologies',
+          text: 'AI Develop',
+          collapsed: false,
+          items: [
+            { text: 'Introduction', link: '/ai-develop/' },
+          ]
+        },
+        {
+          text: 'Tech Stack',
+          collapsed: false,
           items: [
             { text: 'Overview', link: '/tech/' },
-            { text: 'Agents', link: '/tech/Agent' },
+            { text: 'Agent', link: '/tech/Agent' },
             { text: 'RAG', link: '/tech/RAG' },
             { text: 'SFT', link: '/tech/SFT' },
             { text: 'Workflow', link: '/tech/Workflow' }
           ]
-        }
-      ],
-      '/use-case/': [
+        },
         {
           text: 'Use Cases',
+          collapsed: false,
           items: [
-            { text: 'AI Coding', link: '/use-case/ai-coding/' }
+            { 
+              text: 'AI Coding', 
+              link: '/use-case/ai-coding/',
+              items: [
+                { text: 'Copilot', link: '/use-case/ai-coding/copilot' },
+                { text: 'Cursor', link: '/use-case/ai-coding/cursor' },
+                { text: 'Gemini CLI', link: '/use-case/ai-coding/gemini-cli' },
+                { text: 'Other Tools', link: '/use-case/ai-coding/othertools' }
+              ]
+            }
+          ]
+        },
+        {
+          text: 'Prompts',
+          collapsed: false,
+          items: [
+            { text: 'Copilot Prompts', link: '/prompts/copilot' }
           ]
         }
       ]
