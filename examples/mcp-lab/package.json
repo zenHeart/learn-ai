@@ -1,0 +1,14 @@
+{
+  "name": "mcp-lab",
+  "version": "1.0.0",
+  "description": "A tutorial MCP server for Gemini CLI",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "zod": "^3.23.8"
+  }
+}

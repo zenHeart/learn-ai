@@ -1,0 +1,11 @@
+{
+  "name": "mcp-lab",
+  "description": "A lab environment for learning MCP with Gemini CLI",
+  "version": "1.0.0",
+  "mcpServers": {
+    "mcp-lab": {
+      "command": "node",
+      "args": ["%EXTENSION_ROOT%/src/index.js"]
+    }
+  }
+}
