@@ -1,12 +1,10 @@
 {
-  "name": "ppt",
+  "name": "mcp-ppt",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /learn-ai/",
+    "build": "slidev build --base /learn-ai/ppts/mcp/",
     "dev": "slidev --open",
-    "export": "slidev export",
-    "examples:1": "node --experimental-modules examples/01.prepare.js"
-
+    "export": "slidev export"
   },
   "dependencies": {
     "@slidev/cli": "^0.40.3",
