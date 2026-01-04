@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,ae as i}from"./chunks/framework.P5dEGGfV.js";const E=JSON.parse('{"title":"技术","description":"","frontmatter":{},"headers":[],"relativePath":"tech/index.md","filePath":"tech/index.md"}'),e={name:"tech/index.md"};function d(r,t,p,l,h,o){return n(),a("div",null,[...t[0]||(t[0]=[i("",5)])])}const g=s(e,[["render",d]]);export{E as __pageData,g as default};
