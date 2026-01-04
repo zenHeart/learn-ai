@@ -1,17 +1,27 @@
 #!/usr/bin/env node
+
+/**
+ * MCP Lab Example Server
+ * 
+ * 这个示例展示了如何构建一个基础的 MCP Server。
+ * 遵循 Google 技术写作指南中的“代码即文档”原则，
+ * 我们在关键逻辑处添加了详细注释。
+ */
+
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
   CallToolRequestSchema,
-  ErrorCode,
   ListToolsRequestSchema,
   McpError,
+  ErrorCode,
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
 
 /**
- * Step 1: Initialize the Server
- * We give it a name and version. This identifies the server to the host (Gemini CLI).
+ * 1. 初始化 Server 实例
+ * name: 客户端显示的名称
+ * version: 语义化版本号
  */
 const server = new Server(
   {
@@ -20,122 +30,109 @@ const server = new Server(
   },
   {
     capabilities: {
-      tools: {}, // We are providing 'Tools' capability
+      tools: {}, // 声明本服务器具备“工具调用”能力集
     },
   }
 );
 
 /**
- * Step 2: Define Tool Handlers
- * Ideally, separate these into different files for larger projects.
- */
-
-// Tool 1: A simple calculator
-const addTool = {
-  name: "add",
-  description: "Adds two numbers together",
-  inputSchema: {
-    type: "object",
-    properties: {
-      a: { type: "number", description: "The first number" },
-      b: { type: "number", description: "The second number" },
-    },
-    required: ["a", "b"],
-  },
-};
-
-// Tool 2: Time utility
-const timeTool = {
-  name: "get_current_time",
-  description: "Returns the current time in ISO format",
-  inputSchema: {
-    type: "object",
-    properties: {}, // No input needed
-  },
-};
-
-/**
- * Step 3: Handle "ListTools" Request
- * The Host (Gemini) asks: "What can you do?"
- * We reply with our list of tools.
+ * 2. 注册工具列表
+ * 当 AI 客户端连接时，它会调用此接口了解服务器有哪些功能。
  */
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
-    tools: [addTool, timeTool],
+    tools: [
+      {
+        name: "add",
+        description: "计算两个数字的和",
+        inputSchema: {
+          type: "object",
+          properties: {
+            a: { type: "number", description: "第一个加数" },
+            b: { type: "number", description: "第二个加数" },
+          },
+          required: ["a", "b"],
+        },
+      },
+      {
+        name: "get_current_time",
+        description: "获取服务器当前的系统时间",
+        inputSchema: {
+          type: "object",
+          properties: {},
+        },
+      },
+    ],
   };
 });
 
 /**
- * Step 4: Handle "CallTool" Request
- * The Host says: "Run tool 'add' with arguments { a: 5, b: 10 }"
+ * 3. 处理工具调用逻辑
+ * 当 AI 决定使用某个工具时，会发送请求到这里。
  */
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
 
   try {
-    if (name === "add") {
-      // Validate inputs using Zod (optional but recommended)
-      const schema = z.object({
-        a: z.number(),
-        b: z.number(),
-      });
-      const { a, b } = schema.parse(args);
-      
-      // Perform the logic
-      const result = a + b;
+    switch (name) {
+      case "add": {
+        // 使用 Zod 进行参数校验（推荐实践）
+        const schema = z.object({
+          a: z.number(),
+          b: z.number(),
+        });
+        const { a, b } = schema.parse(args);
+        
+        const result = a + b;
+        return {
+          content: [{ type: "text", text: `计算结果是: ${result}` }],
+        };
+      }
 
-      // Return the result as text
-      return {
-        content: [
-          {
-            type: "text",
-            text: `The sum of ${a} and ${b} is ${result}`,
-          },
-        ],
-      };
+      case "get_current_time": {
+        const now = new Date().toLocaleString();
+        return {
+          content: [{ type: "text", text: `当前服务器时间: ${now}` }],
+        };
+      }
+
+      default:
+        // 如果 AI 请求了不存在的工具，返回标准错误
+        throw new McpError(
+          ErrorCode.MethodNotFound,
+          `未找到工具: ${name}`
+        );
     }
-
-    if (name === "get_current_time") {
-      return {
-        content: [
-          {
-            type: "text",
-            text: new Date().toISOString(),
-          },
-        ],
-      };
-    }
-
-    // If tool not found
-    throw new McpError(
-      ErrorCode.MethodNotFound,
-      `Unknown tool: ${name}`
-    );
   } catch (error) {
-    // Graceful error handling
+    // 统一错误处理与日志记录
+    // 注意：在 Stdio 模式下，必须使用 console.error 而不是 console.log 进行调试
+    console.error("[MCP Error]", error); 
+    
     if (error instanceof z.ZodError) {
-      throw new McpError(
-        ErrorCode.InvalidParams,
-        `Invalid arguments: ${error.errors.map(e => e.message).join(", ")}`
-      );
+      return {
+        isError: true,
+        content: [{ type: "text", text: `参数错误: ${error.errors.map(e => e.message).join(", ")}` }],
+      };
     }
-    throw error;
+    
+    return {
+      isError: true,
+      content: [{ type: "text", text: `执行失败: ${error.message}` }],
+    };
   }
 });
 
 /**
- * Step 5: Start the Transport
- * We use Stdio (Standard Input/Output) to talk to the CLI.
+ * 4. 启动服务器 (Stdio 传输模式)
+ * 注意：在 Stdio 模式下，不要使用 console.log 输出非协议数据。
  */
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-    // 重要提示：在 Stdio 模式下，必须使用 console.error 而不是 console.log 进行调试
-  // 因为 stdout 被用于 MCP 协议通信，任何额外的输出都会破坏协议格式。
-  console.error("MCP Lab Server running on stdio");
+  console.error("MCP Lab Server 已启动 (Stdio 模式)");
 }
 
 main().catch((error) => {
-  console.error("Server error:", error);
+  console.error("启动失败:", error);
   process.exit(1);
 });
