@@ -11,7 +11,9 @@
     "deploy:ppt": "./scripts/deploy.sh",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "ppt:prompt": "cd ppts/prompt && npm install && npm run dev",
+    "ppt:mcp": "cd ppts/mcp && npm install && npm run dev"
   },
   "keywords": [],
   "author": "",
