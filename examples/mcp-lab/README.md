@@ -1,101 +1,136 @@
-# Model Context Protocol (MCP) 从零到一实战指南
+# Model Context Protocol (MCP) 全流程实战指南：从新手到专家
 
-欢迎来到 **MCP 实验室**！如果你是第一次听说 MCP，或者觉得它听起来很深奥，别担心。本指南将带你像拼乐高一样，一步步理解并掌握这个改变 AI 生态的技术。
-
----
-
-## 1. 初识 MCP：AI 的“万能翻译官”
-
-### 1.1 一个生活中的类比
-想象一下，你有一台最先进的电脑（AI 模型），但它的接口是特殊的。你想连接打印机、摄像头或硬盘，发现每个设备的插头都不一样。你不得不为每个设备买一个昂贵的转换器。
-
-**MCP (Model Context Protocol)** 就像是电子世界的 **Type-C 标准**。它规定了一个统一的插口标准：
-- **设备厂商**（数据源/工具）只需要做一个 Type-C 接口。
-- **电脑厂商**（AI 软件）只需要支持 Type-C 协议。
-- 结果：你的 AI 瞬间就能连接世界上所有的设备。
-
-### 1.2 它解决了什么痛苦？
-在没有 MCP 之前，如果你想让 Claude 访问你的 GitHub，开发者得写一套代码；想让 Cursor 访问 GitHub，又得写一套。
-- **过去**：重复造轮子，累且低效。
-- **现在**：**一次编写，到处运行**。你写一个 MCP Server，所有的 AI 软件都能直接用。
+欢迎来到 **MCP 实验室**！本指南将带你从零开始，通过类比理解、原理拆解、渐进式实战，最终掌握 MCP 的全流程开发与发布能力。
 
 ---
 
-## 2. 核心角色：谁在干什么？
+## 1. 初识 MCP：AI 世界的“万能适配器”
 
-为了让这个“翻译官”工作，我们需要三个角色配合。我们每次只引入一个概念：
+### 1.1 为什么需要 MCP？
+想象一下，如果你想让 AI 访问你的 GitHub、数据库或本地文件，在没有 MCP 之前，你必须为每个 AI 软件（如 Claude, Cursor）重复编写集成代码。
+- **痛点**：N 个 AI 软件 × M 个数据源 = N*M 次重复劳动。
+- **方案**：**MCP (Model Context Protocol)** 就像是电子世界的 **Type-C 标准**。你只需编写一个 **MCP Server**，所有的 AI 软件（**MCP Host**）都能立即连接并使用它。
 
-1.  **Host (宿主/大脑)**：这是你直接使用的 AI 软件（如 Claude Desktop, Cursor）。它负责思考，并决定什么时候需要向外求助。
-2.  **Server (服务/手脚)**：这是具体干活的程序。它知道怎么查数据库、怎么发邮件。它把这些能力“打包”好，等着被调用。
-3.  **Client (连接器)**：这是 Host 内部的一个小零件，专门负责给特定的 Server 打电话。
-
-**简单来说**：你（用户）对 **Host** 下令，Host 通过 **Client** 呼叫 **Server**，Server 完成任务后把结果传回。
+### 1.2 核心角色拆解
+为了让这个适配器工作，我们需要三个角色：
+1.  **Host (宿主/大脑)**：你直接使用的 AI 软件（如 Claude Desktop, Cursor）。它负责思考并决定何时调用工具。
+2.  **Server (服务/手脚)**：具体干活的程序。它把能力（如查天气、写文件）打包好，等待调用。
+3.  **Client (连接器)**：Host 内部的组件，负责与 Server 建立通信。
 
 ---
 
-## 3. 深入一点点：它们怎么交流？
+## 2. 交互原理：它们是如何对话的？
 
-既然要交流，就得有共同语言。MCP 使用的是 **JSON-RPC**（一种简单的问答格式）。
+MCP 基于 JSON-RPC 2.0 协议，所有的交互都遵循严格的生命周期。
 
-### 3.1 握手：初次见面的礼仪
-当 AI 软件启动时，它会先和 Server 握手：
-- **Client**: “嘿，我是 Claude，我支持 2024-11-05 版本的协议，你能做什么？”
-- **Server**: “你好，我是 GitHub 助手，我可以帮你创建 Issue 和列出仓库。”
-- **Client**: “太棒了，连接成功！”
+### 2.1 架构全景图
+```mermaid
+graph TD
+    subgraph "MCP Host (AI Application)"
+        A[AI Model / UI]
+        B1[MCP Client 1]
+        B2[MCP Client 2]
+        A <--> B1
+        A <--> B2
+    end
 
-### 3.2 交互流程图
+    subgraph "本地环境"
+        C1[MCP Server: 本地文件系统]
+        B1 <-- "Stdio (JSON-RPC)" --> C1
+    end
+
+    subgraph "远程/云端"
+        C2[MCP Server: GitHub/Sentry]
+        B2 <-- "SSE (JSON-RPC)" --> C2
+    end
+```
+
+### 2.2 初始化握手 (Handshake)
+连接建立的第一步是“对暗号”，协商彼此的能力：
 ```mermaid
 sequenceDiagram
-    participant U as 用户
-    participant H as AI 软件 (Host)
-    participant S as 助手程序 (Server)
+    participant C as MCP Client
+    participant S as MCP Server
     
-    U->>H: "帮我查一下现在的系统时间"
-    H->>S: 调用工具 'get_current_time'
-    S-->>H: 返回 "2026-01-04 10:00"
-    H-->>U: "现在的系统时间是 2026年1月4日 10点"
+    C->>S: initialize (版本, 能力集, 客户端信息)
+    S-->>C: initialize response (版本, 能力集, 服务器信息)
+    C->>S: notifications/initialized
+    Note over C,S: 连接建立，可以开始工作
 ```
 
 ---
 
-## 4. 动手实践：从观察到创造
+## 3. 渐进式实战：全流程通关
 
-我们准备了三个渐进式任务，带你从“使用者”变成“开发者”。
+我们将通过四个阶段，带你走完从“使用”到“发布”的全流程。
 
-### 任务 1：接入并观察 (5分钟)
-**目标**：亲眼看到 AI 是如何“发现”新能力的。
-1. 按照本目录下的 `src/index.js` 示例，将其配置到你的 **Claude Desktop** 中。
-2. 在 Claude 中问它：“你能帮我做加法吗？”
-3. **观察**：你会看到 Claude 界面上出现一个“调用工具”的提示，这说明它已经识别到了你的 Server。
+### 阶段一：引入与接入 (使用现有能力)
+**目标**：学会配置并让 AI 识别你的 Server。
+1. **环境准备**：`cd examples/mcp-lab && pnpm install`。
+2. **接入 Claude Desktop**：修改配置文件，添加以下内容：
+   ```json
+   "mcpServers": {
+     "mcp-lab": {
+       "command": "node",
+       "args": ["/你的绝对路径/src/index.js"]
+     }
+   }
+   ```
+3. **验证**：在 Claude 中问：“你能帮我做加法吗？”看到工具调用提示即成功。
 
-### 任务 2：独立调试 (5分钟)
-**目标**：学会使用开发者的“显微镜”。
-1. 运行命令：`npx @modelcontextprotocol/inspector node src/index.js`
-2. 在弹出的网页中点击 `List Tools`。
-3. **思考**：你看到的 JSON 数据，就是 AI 软件在后台看到的“能力清单”。
+### 阶段二：调试与定位 (掌握开发者工具)
+**目标**：学会使用“显微镜”观察协议细节。
+1. **使用 Inspector**：
+   ```bash
+   npx @modelcontextprotocol/inspector node src/index.js
+   ```
+2. **避坑指南**：
+   - **禁用 `console.log`**：Stdio 模式下它会破坏协议流。
+   - **使用 `console.error`**：这是安全的调试日志通道。
 
-### 任务 3：添加你的第一个新技能 (10分钟)
-**目标**：亲手编写代码扩展 AI 的能力。
-1. 打开 `src/index.js`，找到 `listTools` 部分。
-2. 模仿 `add` 工具，添加一个 `hello_world` 工具。
-3. 在 `callTool` 部分编写逻辑：当收到 `hello_world` 请求时，返回“你好，这是我的第一个 MCP 工具！”。
-4. 重启测试，看看 AI 是否学会了这项新技能。
+### 阶段三：自定义开发 (创造新技能)
+**目标**：具备自行编写 MCP 能力。
+1. **修改代码**：打开 `src/index.js`。
+2. **任务**：模仿 `add` 工具，添加一个 `get_weather` 工具。
+   - 在 `listTools` 中定义参数。
+   - 在 `callTool` 中实现逻辑。
+3. **原理复习**：
+```mermaid
+sequenceDiagram
+    participant H as Host (AI)
+    participant S as Server (你的代码)
+    H->>S: tools/call (name: 'get_weather', args: {city: '北京'})
+    S-->>H: 返回 "晴转多云，25度"
+```
+
+### 阶段四：发布与多 Host 适配 (走向生产)
+**目标**：让你的 Server 能够被全世界使用。
+1. **多 Host 接入**：
+   - **Cursor**: 在 `Settings -> Models -> MCP` 中添加同样的命令。
+   - **Zed**: 在 `settings.json` 中配置 `context_servers`。
+2. **发布准备**：
+   - **打包**：使用 `esbuild` 或 `tsc` 将代码打包为单文件。
+   - **分发**：发布到 npm，或提交到 [Smithery.ai](https://smithery.ai/) 注册表。
+3. **部署建议**：
+   - 本地工具使用 **Stdio**。
+   - 远程服务使用 **SSE** (基于 HTTP)。
 
 ---
 
-## 5. 开发者必读：避坑指南
+## 4. 进阶核心概念 (深入底层)
 
-- **不要用 `console.log`**：这就像是在打电话时突然大喊大叫，会干扰信号。调试请用 `console.error`。
-- **参数校验**：AI 有时会“胡言乱语”，给你的工具传错参数。始终检查它传进来的数据是否合法。
-
----
-
-## 6. 进阶之路
-
-当你掌握了以上内容，你就已经跨过了 MCP 的门槛。接下来可以探索：
-- [官方文档](https://modelcontextprotocol.io/)：了解更复杂的“资源 (Resources)”和“提示词 (Prompts)”概念。
-- [Server 仓库](https://github.com/modelcontextprotocol/servers)：看看大厂是怎么写生产环境的 Server 的。
-- [Smithery.ai](https://smithery.ai/)：发现更多有趣的社区工具。
+- **Resources (资源)**：Server 暴露的只读数据（如日志、文档）。
+- **Prompts (提示词)**：预定义的交互模板。
+- **Sampling (采样)**：Server 反向请求 Host 调用 LLM（实现 Agent 嵌套）。
+- **Roots (根目录)**：Host 告知 Server 工作范围，增强安全性。
 
 ---
-> **写在最后**：MCP 的核心不在于复杂的协议，而在于**连接**。祝你在 AI 协作的世界里玩得开心！
+
+## 5. 延伸阅读：通往专家之路
+
+- [MCP 官方规范](https://modelcontextprotocol.io/docs/specification/)：深入 JSON-RPC 细节。
+- [官方 Server 仓库](https://github.com/modelcontextprotocol/servers)：学习 GitHub、Slack 等复杂实现。
+- [FastMCP (Python)](https://github.com/jlowin/fastmcp)：Python 开发者的首选框架。
+
+---
+> **实验建议**：完成阶段三后，尝试将你的 Server 接入 Cursor，体验“一次编写，到处运行”的魅力！
