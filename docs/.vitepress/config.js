@@ -22,9 +22,8 @@ export default defineConfig({
          '/': [
             {
                text: 'Tech Stack',
-               collapsed: false,
+               link: '/tech/',
                items: [
-                  { text: 'Overview', link: '/tech/' },
                   { text: 'LLM', link: '/tech/LLM' },
                   { text: 'Prompt Engineering', items: [
                      { text: 'Overview', link: '/tech/prompt/' },
@@ -43,8 +42,12 @@ export default defineConfig({
                text: 'Products',
                collapsed: false,
                items: [
+                  { text: 'tools', items: [
+                     { text: 'ollama', link: '/products/tools/ollama' },
+                  ]},
                   {
                      text: 'AI Coding',
+                     link: '/products/ai-coding',
                      items: [
                         { text: 'Claude CLI', link: '/products/ai-coding/claude-cli' },
                         { text: 'Copilot', link: '/products/ai-coding/copilot' },
