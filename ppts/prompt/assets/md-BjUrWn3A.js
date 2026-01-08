@@ -1,0 +1,6 @@
+import{_ as l}from"./slidev/VClicks-C5KpDb-l.js";import{b as u,o as p,w as o,g as e,i as m,e as c,aa as n,v as d,x as g,C as r}from"./modules/vue-DKcjNFNx.js";import{I as f}from"./slidev/default-ff8VO6-I.js";import{u as _,f as x}from"./slidev/context-WRDNTY0a.js";import"./index-CLfypXId.js";import"./modules/shiki-DbWPgjOz.js";const b={__name:"02.PE.md__slidev_14",setup(v){const{$clicksContext:a,$frontmatter:s}=_();return a.setup(),(h,t)=>{const i=l;return p(),u(f,d(g(r(x)(r(s),13))),{default:o(()=>[t[1]||(t[1]=e("h1",null,"What is Prompt Engineering Used For",-1)),m(` Examples illustrating the following content
+
+1. Improve output quality
+2. Control model capabilities
+
+`),c(i,null,{default:o(()=>[...t[0]||(t[0]=[e("ul",null,[e("li",null,[e("strong",null,"Improve Output Quality"),n(": Optimized prompt engineering helps language models generate more accurate, complete, and relevant answers or results. Through clear instructions and contextual frameworks, prompt engineering reduces ambiguity and incorrect reasoning, thereby improving output quality.")]),e("li",null,[e("strong",null,"Control Model Behavior"),n(": By adjusting prompts, guide the model to follow specific guidelines, execute specific tasks, or adhere to specific constraints")])],-1)])]),_:1})]),_:1},16)}}};export{b as default};
