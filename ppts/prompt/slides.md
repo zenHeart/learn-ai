@@ -2,24 +2,24 @@
 layout: cover
 ---
 
-# PE 工程
+# Prompt Engineering
 
-* 分享人: 古风 
-* 时间: 2023-06-02
+* Presenter: zenheart
+* Date: 2023-06-02
 
 ---
 
-# 目录
-<!-- 
+# Table of Contents
+<!--
 1. 30m
 2. 15m
 3. 5m
 4. 5m
  -->
-1. 预备知识
-2. PE 概述
-3. 技巧总结
-4. 实战案例
+1. Prerequisites
+2. Prompt Engineering Overview
+3. Techniques Summary
+4. Practical Cases
 5. Q&A
 
 <style>
