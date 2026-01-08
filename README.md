@@ -6,118 +6,155 @@ An **AI learning resource platform** specifically designed for **frontend engine
 
 **Core Philosophy**: Combining theory with practice, codifying AI engineering best practices to help frontend engineers rapidly evolve from AI beginners to professional developers capable of efficiently building AI applications.
 
-
 ## Why This Project?
 
-As a frontend engineer, you might face these challenges:
+As a frontend engineer, you're facing a new reality: **AI is becoming a core skill**, not a nice-to-have. But most AI resources are built for data scientists or researchers, not for developers who ship user interfaces.
 
-- Too many AI concepts, don't know where to start
-- Want to use AI to improve work efficiency, but don't know how
-- Online tutorials are too theoretical, lack practical code examples
-- Unsure how to integrate AI into existing frontend projects
+**The Problem**:
 
-This project provides:
+- AI tutorials are too academic - you need practical patterns, not math papers
+- Most examples use Python - you work in JavaScript/TypeScript
+- You want to BUILD features, not just call APIs
+- You need to know WHAT to learn, not learn EVERYTHING
 
-- **Systematic Learning Path** - From basic concepts to practical applications
-- **Codified Best Practices** - Real, runnable code examples
-- **Frontend Perspective** - Focused on AI capabilities frontend engineers need most
-- **Theory + Practice** - Every concept comes with real-world use cases
+**What You'll Gain**:
 
-## Project Structure
+- **High ROI Learning** - Focus on the 20% of AI knowledge that gives 80% of results
+- **Frontend-First Examples** - Node.js, TypeScript, practical integration patterns
+- **Ship-Ready Skills** - Build features like smart search, AI chat, code generation
+- **Career Acceleration** - Stand out as an engineer who can harness AI effectively
 
-```text
-learn-ai/
-├── docs/                    # Documentation site (VitePress)
-│   ├── ai-develop/         # AI application development methodology
-│   ├── tech/               # Technical deep-dives
-│   │   ├── Agent.md        # Agent architecture patterns
-│   │   ├── RAG.md          # Retrieval-Augmented Generation
-│   │   ├── SFT.md          # Supervised Fine-Tuning
-│   │   ├── Workflow.md     # AI Workflow patterns
-│   │   ├── LLM.md          # Large Language Model basics
-│   │   ├── MCP.md          # Model Context Protocol
-│   │   └── prompt/         # Prompt Engineering
-│   └── use-case/           # Real-world AI tool cases
-│       └── (Copilot, Cursor, Gemini CLI, etc.)
-│
-├── ppts/                    # Presentations (Slidev)
-│   ├── prompt/             # Prompt Engineering course
-│   └── mcp/                # MCP Protocol explained
-│
-└── examples/                # Practical code examples
-    ├── mcp-lab/            # MCP Server implementation
-    └── ollama-node/        # Local LLM integration
-```
+**After completing this resource, you will**:
 
-## Quick Start
+1. Understand how to choose between RAG, Fine-tuning, and Prompt Engineering
+2. Build AI-powered features using MCP and Agent patterns
+3. Use AI coding tools (Copilot, Cursor, Claude) like a pro
+4. Integrate LLMs into your React/Vue/Node.js applications
+5. Make informed architecture decisions for AI features
+
+## Content Organization
+
+The project is organized into three main sections:
+
+### 📚 Tech Stack (`/tech`)
+
+Core AI concepts and technologies - your foundation for understanding AI:
+
+- **LLM** - Large Language Model fundamentals
+- **Prompt Engineering** - Craft effective prompts (includes Copilot case studies)
+- **Context** - Understanding context windows and management
+- **MCP** - Model Context Protocol for tool integration
+- **Agent** - Building autonomous AI agents
+- **RAG** - Retrieval-Augmented Generation for knowledge bases
+- **SFT** - Supervised Fine-Tuning techniques
+
+### 🛠️ Products
+
+Real-world AI tools and how to use them:
+
+- **Tools** - Essential AI development tools (Ollama for local models)
+- **AI Coding** - AI-powered coding assistants
+  - Claude CLI - Command-line AI assistant
+  - Copilot - GitHub's AI pair programmer
+  - Cursor - AI-first code editor
+  - Gemini CLI - Google's AI CLI tool
+  - Other Tools - Additional AI coding utilities
+
+### 🎓 Presentations (`/ppts`)
+
+Interactive slide decks for structured learning:
+
+- **Prompt Engineering Course** - Complete PE methodology
+- **MCP Protocol** - Deep dive into Model Context Protocol
+
+### 💻 Examples (`/examples`)
+
+Hands-on code examples you can run locally (Node.js/TypeScript):
+
+- **mcp-lab** - Complete MCP Server implementation with tool calling
+- **ollama-node** - Run AI models locally without API costs
+
+## Quick Start Commands
 
 ### Prerequisites
 
 - Node.js 18+
 - pnpm 9.15.4+
 
-### Run Documentation Locally
+### Local Development
 
 ```bash
-# Install dependencies
+# 1. Install and run documentation site
 pnpm install
-
-# Start docs dev server
 pnpm docs:dev
+# Open http://localhost:5173
 
-# Visit http://localhost:5173
+# 2. Run interactive presentations
+pnpm ppt:prompt  # Prompt Engineering course
+pnpm ppt:mcp     # MCP Protocol deep-dive
+
+# 3. Try code examples
+cd examples/mcp-lab && npm install && npm start
+cd examples/ollama-node && npm install && node index.js
 ```
 
-### View Presentations
+## How to Get Started
 
-```bash
-# Prompt Engineering course
-pnpm ppt:prompt
+### 🚀 Quick Start (5 minutes)
 
-# MCP Protocol explained
-pnpm ppt:mcp
-```
+1. **Clone and run the docs**:
 
-### Run Code Examples
+   ```bash
+   git clone https://github.com/zenheart/learn-ai.git
+   cd learn-ai
+   pnpm install
+   pnpm docs:dev
+   ```
 
-```bash
-# MCP Server example
-cd examples/mcp-lab
-npm install
-npm start
+2. **Browse the Tech Stack section** - Start with LLM basics, then explore Prompt Engineering
+3. **Try a presentation** - Run `pnpm ppt:prompt` for interactive learning
 
-# Ollama local model example
-cd examples/ollama-node
-npm install
-node index.js
-```
+### 📖 High-ROI Learning Path for Frontend Engineers
 
-## Learning Path
+#### Week 1: Quick Wins (Immediate Productivity Boost)
 
-### Step 1: Understand AI Fundamentals
+**Goal**: Start using AI tools to code faster TODAY
 
-1. Read [Tech Overview](docs/tech/index.md) - Learn RAG vs Fine-tuning
-2. Study [LLM Basics](docs/tech/LLM.md) - Large Language Model principles
-3. Watch [Prompt Engineering PPT](ppts/prompt/) - Master prompt engineering
+- **Products → AI Coding → Copilot/Cursor** - Set up AI pair programming (30 min)
+- **Tech Stack → Prompt Engineering** - Learn to write effective prompts (1 hour)
+- **Presentation: Prompt Engineering** - Master the RTF, COT, FSP patterns (45 min)
 
-### Step 2: Master Core Technologies
+**Outcome**: 2-3x faster at writing boilerplate code, better at debugging
 
-1. **RAG** ([docs/tech/RAG.md](docs/tech/RAG.md)) - Mount external knowledge bases to AI
-2. **Agent** ([docs/tech/Agent.md](docs/tech/Agent.md)) - Build autonomous AI agents
-3. **Workflow** ([docs/tech/Workflow.md](docs/tech/Workflow.md)) - Design complex AI flows
-4. **MCP** ([docs/tech/MCP.md](docs/tech/MCP.md)) - Model Context Protocol
+#### Week 2: Core Concepts (Build Mental Models)
 
-### Step 3: Hands-on Practice
+**Goal**: Understand WHEN to use which AI technique
 
-1. Run [MCP Lab](examples/mcp-lab/) - Implement a complete MCP Server
-2. Learn [AI Development Methods](docs/ai-develop/) - RTF, COT, FSP techniques
-3. Explore [Use Cases](docs/use-case/) - Learn to use Copilot, Cursor, etc.
+- **Tech Stack → LLM** - How LLMs actually work (demystify the magic)
+- **Tech Stack → Context** - Why your prompts fail (context window limits)
+- **Tech Stack → RAG vs SFT** - The decision tree for AI architecture
 
-### Step 4: Enhance Workflow Efficiency
+**Outcome**: Make informed decisions about AI features, avoid common pitfalls
 
-1. Apply Prompt Engineering to optimize daily prompts
-2. Use AI Coding tools to accelerate development
-3. Integrate AI capabilities (RAG, Agent, Workflow) into projects
+#### Week 3: Build Real Features (Hands-on Implementation)
+
+**Goal**: Ship your first AI-powered feature
+
+- **Examples → MCP Lab** - Build a tool-calling AI server (2-3 hours)
+- **Examples → Ollama Node** - Run LLMs locally in Node.js (1 hour)
+- **Tech Stack → Agent** - Build autonomous AI workflows
+
+**Outcome**: Working code you can adapt for production projects
+
+#### Week 4: Advanced Patterns (Production-Ready Skills)
+
+**Goal**: Architect robust AI features
+
+- **Tech Stack → RAG** - Add a knowledge base to your AI (vector search)
+- **Tech Stack → MCP Protocol** - Design tool integrations properly
+- **Products → Claude CLI** - Use advanced AI workflows in terminal
+
+**Outcome**: Ability to design and implement production AI features confidently
 
 ## Online Access
 
