@@ -2,6 +2,19 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Language Policy
+
+**IMPORTANT**: All content in this repository must be written in **English only**.
+
+When working with this repository:
+- Write all documentation in English
+- Write all code comments in English
+- Write all commit messages in English
+- Write all file content in English
+- Use English for all communication and explanations
+
+This ensures consistency and makes the project accessible to the global developer community.
+
 ## Project Overview
 
 This is an AI learning resource platform combining VitePress documentation, Slidev presentations, and practical examples focused on AI development, Prompt Engineering, and MCP (Model Context Protocol) education.

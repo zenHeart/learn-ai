@@ -1,3 +1,5 @@
+# prompt
+
 ## notes
 
 1. make prompt clear
