@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **IMPORTANT**: All content in this repository must be written in **English only**.
 
 When working with this repository:
+
 - Write all documentation in English
 - Write all code comments in English
 - Write all commit messages in English
@@ -25,6 +26,7 @@ This is an AI learning resource platform combining VitePress documentation, Slid
 ## Essential Commands
 
 ### Documentation Development
+
 ```bash
 # Start docs dev server (VitePress)
 pnpm docs:dev
@@ -37,6 +39,7 @@ pnpm docs:preview
 ```
 
 ### Presentation Development
+
 ```bash
 # Develop Prompt Engineering PPT
 pnpm ppt:prompt
@@ -50,6 +53,7 @@ cd ppts/mcp && npm run build     # Outputs to ppts/mcp/dist
 ```
 
 ### MCP Server Example
+
 ```bash
 # Run the tutorial MCP server
 cd examples/mcp-lab
@@ -76,6 +80,7 @@ The project uses a **unified deployment architecture** where three independent c
 Workflow location: `.github/workflows/deploy.yml`
 
 **Deployment Steps**:
+
 1. Build VitePress docs → `docs/.vitepress/dist`
 2. Build each PPT independently → `ppts/*/dist`
 3. Merge all into `final_dist/`:
@@ -86,6 +91,7 @@ Workflow location: `.github/workflows/deploy.yml`
 5. Deploy `final_dist/` to gh-pages branch
 
 **Deployed URLs**:
+
 - Docs: `https://blog.zenheart.site/learn-ai/`
 - Prompt PPT: `https://blog.zenheart.site/learn-ai/ppts/prompt/`
 - MCP PPT: `https://blog.zenheart.site/learn-ai/ppts/mcp/`
@@ -95,11 +101,13 @@ Workflow location: `.github/workflows/deploy.yml`
 Config location: `docs/.vitepress/config.js`
 
 **Key Settings**:
+
 - `base: '/learn-ai/'` - Required for GitHub Pages deployment
 - `ignoreDeadLinks: [/^\/learn-ai\/ppts\//]` - PPTs built externally, links verified post-deployment
 - Sidebar auto-generated from config structure
 
 **Navigation Structure**:
+
 - AI Develop - Introduction to building AI applications
 - Tech Stack - Agent, RAG, SFT, Workflow technical deep-dives
 - Use Cases - AI Coding tools (Copilot, Cursor, Gemini CLI)
@@ -147,6 +155,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 ```
 
 **Educational Tools Implemented**:
+
 - `add` - Basic arithmetic (demonstrates parameter validation)
 - `read_file_summary` - File system interaction (demonstrates async operations and error handling)
 
@@ -162,11 +171,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 ### Adding Presentation Slides
 
 **Prompt Engineering PPT**:
+
 - Main entry: `ppts/prompt/slides.md`
 - Modular structure: Includes `01.prepare.md`, `02.PE.md`, etc.
 - Theme: Seriph
 
 **MCP PPT**:
+
 - Main entry: `ppts/mcp/slides.md`
 - Theme: Seriph
 
@@ -198,6 +209,7 @@ npx http-server final_dist -p 8080 -o
 ### Path Resolution
 
 All builds must use correct `--base` flags:
+
 - VitePress: `base: '/learn-ai/'` in config
 - Prompt PPT: `slidev build --base /learn-ai/ppts/prompt/`
 - MCP PPT: `slidev build --base /learn-ai/ppts/mcp/`

@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebFetch(domain:cursor.com)",
+      "WebSearch",
+      "WebFetch(domain:alexop.dev)",
+      "WebFetch(domain:www.eesel.ai)",
+      "WebFetch(domain:kiro.dev)",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }

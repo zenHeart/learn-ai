@@ -25,15 +25,27 @@ export default defineConfig({
                link: '/tech/',
                items: [
                   { text: 'LLM', link: '/tech/LLM' },
-                  { text: 'Prompt Engineering', items: [
-                     { text: 'Overview', link: '/tech/prompt/' },
-                     { text: 'case Studies', items: [
-                        { text: 'copilot', link: '/tech/prompt/cases/copilot' },
-                     ]}
-                  ] },
+                  {
+                     text: 'Prompt Engineering',
+                     link: '/tech/prompt',
+                      items: [
+                        { text: 'AGENTS.md ', link: '/tech/prompt/agents-doc.md' },
+                        {
+                           text: 'case Studies', items: [
+                              { text: 'copilot', link: '/tech/prompt/cases/copilot' },
+                           ]
+                        }
+                     ]
+                  },
                   { text: 'context', link: '/tech/context' },
-                  { text: 'MCP', link: '/tech/MCP'  },
-                  { text: 'Agent', link: '/tech/Agent' },
+                  {
+                     text: 'Agent',
+                     link: '/tech/agent',
+                     items: [
+                        { text: 'MCP', link: '/tech/MCP' },
+                        { text: 'SKILLS', link: '/tech/agent/skills' },
+                     ]
+                  },
                   { text: 'RAG', link: '/tech/RAG' },
                   { text: 'SFT', link: '/tech/SFT' },
                ]
@@ -42,16 +54,18 @@ export default defineConfig({
                text: 'Products',
                collapsed: false,
                items: [
-                  { text: 'tools', items: [
-                     { text: 'ollama', link: '/products/tools/ollama' },
-                  ]},
+                  {
+                     text: 'tools', items: [
+                        { text: 'ollama', link: '/products/tools/ollama' },
+                     ]
+                  },
                   {
                      text: 'AI Coding',
                      link: '/products/ai-coding',
                      items: [
-                        { text: 'Claude CLI', link: '/products/ai-coding/claude-cli' },
-                        { text: 'Copilot', link: '/products/ai-coding/copilot' },
                         { text: 'Cursor', link: '/products/ai-coding/cursor' },
+                        { text: 'Copilot', link: '/products/ai-coding/copilot' },
+                        { text: 'Claude CLI', link: '/products/ai-coding/claude-cli' },
                         { text: 'Gemini CLI', link: '/products/ai-coding/gemini-cli' },
                         { text: 'Other Tools', link: '/products/ai-coding/othertools' }
                      ]
