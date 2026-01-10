@@ -199,8 +199,7 @@ Design, build, and deploy production-ready AI-powered applications from scratch.
 ## Additional Resources
 
 ### Before You Start
-- [Prerequisites Guide](../getting-started/prerequisites.md) 🚧
-- [Development Setup](../getting-started/setup.md) 🚧
+
 - [AI Decision Framework](../../README.md#5-the-ai-decision-framework-for-frontend-engineers)
 
 ### Reference Materials

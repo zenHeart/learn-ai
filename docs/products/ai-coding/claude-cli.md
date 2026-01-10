@@ -45,6 +45,7 @@ claude # then press Ctrl+B during command execution
 | `Option+P` (Mac) / `Alt+P` (Win) | Switch model |
 | `Up/Down` | Navigate command history |
 | `Ctrl+R` | Reverse search history |
+| `Ctrl+Y` | enable yolo mode|
 
 ### Multiline Input
 

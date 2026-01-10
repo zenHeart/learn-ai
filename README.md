@@ -43,8 +43,7 @@ Launch your AI-enhanced development environment in minutes.
 **Available now:** Learn about AI coding assistants
 👉 **[AI Coding Tools Documentation](./docs/products/ai-coding/index.md)** - Cursor, Copilot, Claude CLI, and more
 
-### 🚧 Coming Soon: Build an AI App
-5-minute tutorial to build a streaming AI chatbot (planned)
+
 
 ### 🛠️ Local Development (Docs Site)
 To run this documentation locally:
