@@ -200,7 +200,7 @@ Design, build, and deploy production-ready AI-powered applications from scratch.
 
 ### Before You Start
 
-- [AI Decision Framework](../../README.md#5-the-ai-decision-framework-for-frontend-engineers)
+- [AI Decision Framework](https://github.com/zenheart/learn-ai#5-the-ai-decision-framework-for-frontend-engineers)
 
 ### Reference Materials
 - [Tech Stack Overview](../tech/index.md)
@@ -209,7 +209,7 @@ Design, build, and deploy production-ready AI-powered applications from scratch.
 
 ### Community
 - [GitHub Discussions](https://github.com/zenheart/learn-ai/discussions)
-- [Contribution Guide](../../CONTRIBUTING.md) 🚧
+- [Contribution Guide](https://github.com/zenheart/learn-ai/blob/master/CONTRIBUTING.md) 🚧 (Coming Soon)
 
 ---
 

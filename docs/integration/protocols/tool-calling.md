@@ -104,4 +104,4 @@ const result = await streamText({
 
 ## Next Steps
 
-- Implement this in the **[Generative UI](../tech/frontend/generative-ui.md)** guide.
+- Implement this in the **[Generative UI](../../tech/frontend/generative-ui.md)** guide.

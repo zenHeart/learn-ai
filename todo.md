@@ -921,6 +921,98 @@ File: `docs/.vitepress/config.js`
 
 ---
 
+## 📋 Phase 5: Content Organization & Path Refinement
+
+**Goal**: Organize existing content into clear learning paths and ensure paths serve as effective roadmaps.
+
+### 5.1 Path Structure Refinement
+
+#### Task 82: Refine Path 2 (Integration) as Roadmap
+
+- [ ] Restructure `/docs/paths/integration.md` to be a roadmap (not tutorial)
+- [ ] Add "Choose Your Learning Style" section (Learn by Doing vs Learn by Content)
+- [ ] Replace detailed instructions with links to existing content:
+  - Link to [AI Chatbot project](../projects/beginner/ai-chatbot.md) for learn-by-doing
+  - Link to [API Integration Guide](../integration/apis/index.md) for learn-by-content
+  - Link to [Cookbook recipes](../cookbook/) when relevant
+- [ ] Add "Before You Start" section linking to:
+  - [LLM Fundamentals](../tech/fundamentals/LLM.md) for AI concepts
+  - [API Comparison](../integration/apis/index.md) for API selection
+- [ ] Add context for each linked resource (why it's included)
+- [ ] Add troubleshooting links to [Error Handling cookbook](../cookbook/error-handling.md)
+- [ ] Verify all links work and point to correct resources
+
+#### Task 83: Refine Path 3 (Mastery) as Roadmap
+
+- [ ] Restructure `/docs/paths/mastery.md` to be a roadmap
+- [ ] Add "Path 2 Completion Checklist" with links to verify understanding
+- [ ] Link to advanced projects: [Full-Stack SaaS](../projects/advanced/full-stack-saas.md), [Multi-Agent App](../projects/advanced/multi-agent-app.md)
+- [ ] Link to deployment guides: [Vercel Edge](../deployment/vercel-edge.md), [Cloudflare Workers](../deployment/cloudflare-workers.md)
+- [ ] Link to engineering practices: [Testing](../tech/engineering/testing.md), [Observability](../tech/engineering/observability.md)
+- [ ] Add learning style options (by doing vs by content)
+- [ ] Verify all links work
+
+#### Task 84: Update Path Index Page
+
+- [ ] Update `/docs/paths/index.md` to clarify paths are roadmaps
+- [ ] Remove 🚧 status markers for completed paths
+- [ ] Add explanation of learning styles (by doing vs by content)
+- [ ] Add "New to AI?" section with link to [LLM Fundamentals](../tech/fundamentals/LLM.md)
+- [ ] Clarify that web/net basics are assumed (HTTP, APIs, JSON)
+- [ ] Add visual diagram showing path relationships
+
+### 5.2 Content Link Verification
+
+#### Task 85: Verify All Path Links
+
+- [ ] Check all links in `/docs/paths/productivity.md` work
+- [ ] Check all links in `/docs/paths/integration.md` work
+- [ ] Check all links in `/docs/paths/mastery.md` work
+- [ ] Check all links in `/docs/paths/index.md` work
+- [ ] Fix broken links or add fallback content
+- [ ] Ensure links point to appropriate beginner-friendly content
+
+#### Task 86: Add Missing Prerequisite Links
+
+- [ ] Add links to [LLM Fundamentals](../tech/fundamentals/LLM.md) when AI concepts first mentioned
+- [ ] Add links to [API Integration Guide](../integration/apis/index.md) when APIs first mentioned
+- [ ] Add links to [Streaming Guide](../tech/frontend/streaming.md) when streaming first mentioned
+- [ ] Add "New to this concept?" callouts with links to fundamentals
+- [ ] Add links to troubleshooting resources when errors mentioned
+
+### 5.3 Learning Style Organization
+
+#### Task 87: Add Learning Style Indicators
+
+- [ ] Add "Learn by Doing" vs "Learn by Content" indicators to each path
+- [ ] Create clear sequences for each learning style:
+  - Learn by Doing: Project → Cookbook → Guide
+  - Learn by Content: Guide → Cookbook → Project
+- [ ] Add quick-start options (build first, learn later)
+- [ ] Add concept-first options (understand first, then build)
+
+### 5.4 Content Context Enhancement
+
+#### Task 88: Add Context to Path Resources
+
+- [ ] Add brief "Why this resource?" explanations in paths
+- [ ] Add "When to use this" guidance for each linked resource
+- [ ] Add "Prerequisites" callouts before advanced resources
+- [ ] Add "Next steps" links after each major section
+- [ ] Add progress checkpoints with verification links
+
+---
+
+## ✅ Phase 5 Completion Checklist
+
+- [ ] All paths restructured as roadmaps (not tutorials)
+- [ ] All links verified and working
+- [ ] Learning styles clearly supported
+- [ ] Missing prerequisite links added
+- [ ] Context added to all path resources
+
+---
+
 ## 📊 Overall Progress
 
 ### Task Summary
@@ -929,16 +1021,16 @@ File: `docs/.vitepress/config.js`
 - **Phase 2: Core Integration** - 23 tasks
 - **Phase 3: Production Ready** - 25 tasks
 - **Phase 4: Advanced & Ecosystem** - 13 tasks
+- **Phase 5: Content Organization & Path Refinement** - 7 tasks
 
-**Total**: 81 tasks
+**Total**: 88 tasks
 
 ### Priority Tasks (Complete First)
 
-1. 🏆 **Directory restructuring** (Tasks 1-4) - CRITICAL
-2. 🏆 **Learning path guides** (Tasks 13-16)
-3. 🏆 **Vercel AI SDK guide** (Task 27)
-4. 🏆 **RAG search project** (Task 49)
-5. 🏆 **Full-stack SaaS project** (Task 53)
+1. 🏆 **Path refinement as roadmaps** (Tasks 82-84) - Organize existing content
+2. 🏆 **Link verification** (Task 85) - Ensure all paths work correctly
+3. 🏆 **Learning style support** (Task 87) - Support both learning approaches
+4. 🏆 **Content context** (Task 88) - Add why/when guidance to resources
 
 ---
 
@@ -971,35 +1063,3 @@ File: `docs/.vitepress/config.js`
 - ✅ **Commit History**: Each step as commit
 - ✅ **Troubleshooting**: Common issues
 - ✅ **Extensions**: How to expand
-
----
-
-## 🚀 Quick Start
-
-### To Begin:
-
-1. **Start with directory migration** (Tasks 1-4)
-
-   ```bash
-   # Task 1: Create directories
-   mkdir -p docs/getting-started
-   mkdir -p docs/paths
-   # ... etc
-   ```
-
-2. **Move files** (Task 2)
-
-   ```bash
-   # Preserve git history
-   git mv docs/tech/LLM.md docs/tech/fundamentals/
-   # ... etc
-   ```
-
-3. **Update VitePress config** (Task 4)
-   - Essential for navigation
-
----
-
-**Last Updated**: 2026-01-10
-**Status**: Ready for Implementation
-**Architecture Reference**: `architecture.md`

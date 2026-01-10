@@ -221,12 +221,39 @@ learn-ai/
 - Content: `/tech/patterns/`, `/projects/advanced/`, `/deployment/`
 - Outcome: Ship production-ready AI products
 
-### 2. Cookbook vs. Examples
+### 1.1 Learning Paths: Roadmaps, Not Tutorials
 
-It is critical to distinguish between these two:
+**Critical Understanding**: Paths (`/docs/paths/`) are **roadmaps/organizers**, not comprehensive tutorials.
+
+**What Paths Do**:
+- Organize existing content (cookbook, projects, guides) into structured sequences
+- Provide curated learning journeys for different goals
+- Support multiple learning styles (learn by doing vs learn by content)
+- Link to existing resources with brief context
+
+**What Paths Don't Do**:
+- Duplicate content that exists in cookbook/projects/guides
+- Provide step-by-step tutorials (those are in projects/)
+- Include full code examples (those are in cookbook/)
+- Explain concepts in depth (those are in tech/ and integration/)
+
+**Learning Styles Supported**:
+- **Learn by Doing**: Start with projects → reference guides when needed
+- **Learn by Content**: Read concepts first → then build projects
+
+**Path Structure**:
+- Each path is a sequence of links to existing content
+- Brief context explains why each resource is included
+- Clear navigation between related resources
+- Progress checkpoints link to verification exercises
+
+### 2. Cookbook vs. Projects vs. Paths
+
+It is critical to distinguish between these three:
 
 - **Cookbook (`/docs/cookbook/`)**: Single-file, copy-paste snippets solving specific problems (e.g., "How to handle a stream error"). Focus is on logic and patterns.
-- **Examples (`/examples/`)**: Complete, deployable repositories with `package.json`, environment setup, and build steps. Focus is on architecture and wiring.
+- **Projects (`/docs/projects/`)**: Step-by-step tutorials with complete implementations. Focus is on building features from scratch.
+- **Paths (`/docs/paths/`)**: Roadmaps that organize cookbook, projects, and guides into learning sequences. Focus is on navigation and structure.
 
 ### 3. Frontend-First Approach (USP)
 

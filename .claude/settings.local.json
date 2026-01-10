@@ -10,7 +10,11 @@
       "mcp__ide__getDiagnostics",
       "Bash(tree:*)",
       "Bash(ls:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(pnpm docs:build:*)",
+      "Bash(grep:*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm run docs:build)"
     ]
   }
 }

@@ -9,11 +9,28 @@ export default withMermaid(defineConfig({
    ignoreDeadLinks: [
       // Ignore links to PPTs as they are built externally and copied in
       /^\/learn-ai\/ppts\//,
+      // Ignore links to examples directory (outside docs/)
+      /examples\//,
+      // Ignore root-level files (both absolute and relative paths)
+      /README\.md/,
+      /CONTRIBUTING\.md/,
+      // Ignore localhost development URLs
+      /^http:\/\/localhost/,
+      // Ignore coming soon pages
+      /structured-output/,
+      /projects\/index/,
    ],
    vite: {
       resolve: {
          alias: {
-            dayjs: 'dayjs/esm/',
+            // Dayjs plugin mappings for mermaid compatibility
+            // These MUST come before any general dayjs alias
+            'dayjs/plugin/advancedFormat.js': 'dayjs/esm/plugin/advancedFormat',
+            'dayjs/plugin/customParseFormat.js': 'dayjs/esm/plugin/customParseFormat',
+            'dayjs/plugin/isoWeek.js': 'dayjs/esm/plugin/isoWeek',
+            'dayjs/plugin/duration.js': 'dayjs/esm/plugin/duration',
+
+            // Other aliases
             "@braintree/sanitize-url": path.resolve(
                __dirname,
                "../../node_modules/.pnpm/@braintree+sanitize-url@7.1.1/node_modules/@braintree/sanitize-url/dist/index.js"
@@ -22,12 +39,33 @@ export default withMermaid(defineConfig({
       },
       optimizeDeps: {
          include: [
-            'dayjs', 
-            'cytoscape-cose-bilkent', 
+            'dayjs',
+            'cytoscape-cose-bilkent',
             'cytoscape',
             'debug'
          ],
       },
+      build: {
+         rollupOptions: {
+            output: {
+               manualChunks(id) {
+                  // Split mermaid and its dependencies into separate chunks
+                  if (id.includes('node_modules')) {
+                     if (id.includes('mermaid')) {
+                        return 'mermaid';
+                     }
+                     if (id.includes('cytoscape')) {
+                        return 'cytoscape';
+                     }
+                     if (id.includes('dayjs')) {
+                        return 'dayjs';
+                     }
+                  }
+               }
+            }
+         },
+         chunkSizeWarningLimit: 2000, // Increase limit to 2000 kB for large dependencies like mermaid
+      }
    },
    themeConfig: {
       nav: [

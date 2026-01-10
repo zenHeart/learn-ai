@@ -6,11 +6,12 @@
 
 **Currently under active development!** We're implementing a comprehensive learning platform following our [architecture roadmap](./architecture.md).
 
-- ✅ **Available Now**: AI coding tools documentation (Cursor, Copilot, Claude CLI, Gemini CLI)
-- 🚧 **In Progress**: Learning paths, tutorials, and practical examples
+- ✅ **Available Now**: 
+  - AI coding tools documentation (Cursor, Copilot, Claude CLI, Gemini CLI)
+  - Learning paths (roadmaps organizing all content)
+  - Project tutorials and cookbook recipes
+- 🚧 **In Progress**: Additional projects and advanced patterns
 - 📋 **Roadmap**: See [todo.md](./todo.md) for detailed implementation plan
-
-*Links marked with 🚧 below point to planned content - check back soon!*
 
 ## 1. Project Overview
 
@@ -61,30 +62,34 @@ pnpm docs:dev
 
 ## 4. Learning Paths: Your Journey to AI Mastery
 
-This guide is structured around **scenario-driven learning paths**. Choose the path that best aligns with your immediate goals.
+This guide is structured around **scenario-driven learning paths**. Paths are **roadmaps** that organize our content (cookbook recipes, project tutorials, integration guides) into structured learning sequences.
 
-### 🚧 Path 1: Use AI Tools (1-2 weeks)
+**Choose your learning style**:
+- **Learn by Doing**: Start with [project tutorials](./docs/projects/) → reference [cookbook recipes](./docs/cookbook/) when needed
+- **Learn by Content**: Read [integration guides](./docs/integration/) first → then build [projects](./docs/projects/)
+
+### ✅ Path 1: Use AI Tools (1-2 weeks)
 **Goal**: Master AI coding assistants to code 2-3x faster
 - Master Cursor, Copilot, Claude CLI
 - Write effective prompts for code generation
 - Debug faster with AI assistance
-- **Status**: In development - [track progress](./todo.md#task-14-create-docspathsproductivitymd-path-1)
+- **Status**: ✅ Available - [Start Path 1](./docs/paths/productivity.md)
 
-### 🚧 Path 2: Add AI Features (2-4 weeks)
+### ✅ Path 2: Add AI Features (2-4 weeks)
 **Goal**: Build AI-powered features like chatbots, search, and smart forms
 - Integrate OpenAI/Claude/Gemini APIs into React apps
 - Build streaming chat interfaces with Vercel AI SDK
 - Implement RAG (Retrieval-Augmented Generation)
 - Create AI agents that can use tools
-- **Status**: Planned
+- **Status**: ✅ Available - [Start Path 2](./docs/paths/integration.md)
 
-### 🚧 Path 3: Build AI Products (4+ weeks)
+### ✅ Path 3: Build AI Products (4+ weeks)
 **Goal**: Design, build, and deploy complete AI-powered applications
 - Production deployment (Edge, Workers)
 - Advanced RAG patterns (hybrid search, reranking)
 - AI engineering (testing, monitoring, cost optimization)
 - Browser-side AI (Transformers.js, WebGPU)
-- **Status**: Planned
+- **Status**: ✅ Available - [Start Path 3](./docs/paths/mastery.md)
 
 ## 5. The AI Decision Framework for Frontend Engineers
 

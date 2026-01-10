@@ -226,7 +226,7 @@ If you've decided training is necessary, these providers offer no-code/low-code 
 ### For Most Frontend Engineers
 
 1. Master RAG: [RAG Complete Guide](/tech/patterns/RAG)
-2. Optimize prompts: [Prompt Engineering](/tech/fundamentals/prompt)
+2. Optimize prompts: [Prompt Engineering](/tech/prompt/)
 3. Learn structured output: [Type-Safe AI](/tech/structured-output) 🚧
 
 ### If You're Considering Training

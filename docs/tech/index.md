@@ -10,7 +10,7 @@ This section explores the core AI technologies and patterns you'll use to build 
 
 **When to use**: All AI applications start here.
 
-**Learn more**: [LLM Guide](/tech/LLM)
+**Learn more**: [LLM Guide](/tech/fundamentals/LLM.md)
 
 ### 2. **Prompt Engineering** - The Interface
 
@@ -26,7 +26,7 @@ This section explores the core AI technologies and patterns you'll use to build 
 
 **When to use**: Chat applications, document Q&A, any multi-turn interaction.
 
-**Learn more**: [Context Guide](/tech/context)
+**Learn more**: [Context Guide](/tech/fundamentals/context.md)
 
 ## Core Technologies Comparison
 
@@ -108,7 +108,7 @@ graph TD
 3. Inject chunks into LLM prompt
 4. Get accurate, up-to-date answers
 
-**Learn more**: [RAG Guide](/tech/RAG)
+**Learn more**: [RAG Guide](/tech/patterns/RAG.md)
 
 ### Step 3: Use Interceptors for Quality Control
 
@@ -147,7 +147,7 @@ graph TD
 - Error recovery
 - Self-correction
 
-**Learn more**: [Agent Guide](/tech/Agent), [MCP Protocol](/tech/MCP)
+**Learn more**: [Agent Guide](/tech/patterns/agent/index.md), [MCP Protocol](/integration/protocols/mcp.md)
 
 ## Technology Stack by Use Case
 
@@ -202,17 +202,17 @@ graph TD
 ## Learning Path Recommendation
 
 **Week 1-2**: Foundations
-- Master [LLM basics](/tech/LLM)
+- Master [LLM basics](/tech/fundamentals/LLM.md)
 - Learn [Prompt Engineering](/tech/prompt/)
-- Understand [Context Management](/tech/context)
+- Understand [Context Management](/tech/fundamentals/context.md)
 
 **Week 3-4**: Building Features
-- Implement [RAG](/tech/RAG) for knowledge retrieval
-- Explore [MCP](/tech/MCP) for tool integration
-- Build simple [Agents](/tech/Agent)
+- Implement [RAG](/tech/patterns/RAG.md) for knowledge retrieval
+- Explore [MCP](/integration/protocols/mcp.md) for tool integration
+- Build simple [Agents](/tech/patterns/agent/index.md)
 
 **Week 5+**: Advanced Patterns
-- Fine-tuning ([SFT](/tech/SFT)) for specialized needs
+- Fine-tuning ([SFT](/tech/training/SFT.md)) for specialized needs
 - Production optimization
 - Multi-agent workflows
 
@@ -228,12 +228,12 @@ graph TD
 
 Choose your learning path based on your immediate needs:
 
-- **Need to understand basics?** → Start with [LLM](/tech/LLM)
+- **Need to understand basics?** → Start with [LLM](/tech/fundamentals/LLM.md)
 - **Building a chat feature?** → Check [Prompt Engineering](/tech/prompt/)
-- **Adding external knowledge?** → Learn [RAG](/tech/RAG)
-- **Building autonomous AI?** → Explore [Agent](/tech/Agent) and [MCP](/tech/MCP)
-- **Managing costs/performance?** → Read [Context Management](/tech/context)
-- **Need specialized model?** → See [SFT](/tech/SFT)
+- **Adding external knowledge?** → Learn [RAG](/tech/patterns/RAG.md)
+- **Building autonomous AI?** → Explore [Agent](/tech/patterns/agent/index.md) and [MCP](/integration/protocols/mcp.md)
+- **Managing costs/performance?** → Read [Context Management](/tech/fundamentals/context.md)
+- **Need specialized model?** → See [SFT](/tech/training/SFT.md)
 
 The technologies in this section are your building blocks. Master them to create powerful, production-ready AI applications.
 
