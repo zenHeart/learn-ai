@@ -8,10 +8,13 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /ai-develop/
+      link: /tech/
 
 features:
-  - title: AI Development
-    details: Architecture, RAG, Agents, and Workflow patterns.
-    link: /ai-develop/
+  - title: AI Tech Stack
+    details: LLM, Prompt Engineering, RAG, Agents, MCP, and more.
+    link: /tech/
+  - title: AI Coding Tools
+    details: Master Cursor, Copilot, Claude CLI, and Gemini CLI.
+    link: /products/ai-coding/
 ---

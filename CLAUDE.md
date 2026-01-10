@@ -104,31 +104,67 @@ Config location: `docs/.vitepress/config.js`
 
 - `base: '/learn-ai/'` - Required for GitHub Pages deployment
 - `ignoreDeadLinks: [/^\/learn-ai\/ppts\//]` - PPTs built externally, links verified post-deployment
-- Sidebar auto-generated from config structure
+- Sidebar manually configured with explicit navigation structure
 
 **Navigation Structure**:
 
-- AI Develop - Introduction to building AI applications
-- Tech Stack - Agent, RAG, SFT, Workflow technical deep-dives
-- Use Cases - AI Coding tools (Copilot, Cursor, Gemini CLI)
-- Prompts - Reusable prompt templates
+- **Tech Stack** (`/tech/`) - Core AI concepts and technical deep-dives:
+  - LLM fundamentals
+  - Context Management (LLM context window handling)
+  - Prompt Engineering (with case studies like Copilot)
+  - Agent architecture (MCP protocol, Skills, Hooks)
+  - RAG (Retrieval-Augmented Generation)
+  - Vector Databases & Embeddings (semantic search, vector storage)
+  - SFT (Supervised Fine-Tuning)
+- **Products** (`/products/`) - Real-world AI tools and applications:
+  - AI Coding tools (Cursor, Copilot, Claude CLI, Gemini CLI)
+  - Development tools (Ollama for local LLMs)
 
 ### Content Organization Philosophy
 
 ```
 docs/
-├── ai-develop/    # "How to build" - RAG, interceptors, prompt methods
-├── tech/          # Technical concepts (Agent, RAG, SFT, Workflow)
-├── use-case/      # Real-world tool usage guides
-└── prompts/       # Reusable prompt templates
+├── tech/                    # Core AI technical concepts
+│   ├── index.md            # Tech stack overview
+│   ├── LLM.md              # Large Language Model fundamentals
+│   ├── context.md          # Context window management
+│   ├── prompt/             # Prompt engineering techniques
+│   │   ├── agents-doc.md   # Agent documentation
+│   │   └── cases/          # Real-world prompt cases
+│   ├── agent/              # Agent architecture
+│   │   ├── index.md        # Agent patterns (ReAct, Plan-Execute, Tool-Use)
+│   │   ├── skills.md       # Agent skills/capabilities
+│   │   └── hooks.md        # Agent hooks
+│   ├── MCP.md              # Model Context Protocol
+│   ├── RAG.md              # Retrieval-Augmented Generation
+│   ├── embeddings.md       # Vector databases & embeddings
+│   └── SFT.md              # Supervised Fine-Tuning
+└── products/               # AI tools and applications
+    ├── ai-coding/          # AI-powered coding assistants
+    │   ├── cursor.md
+    │   ├── copilot.md
+    │   ├── claude-cli.md
+    │   ├── gemini-cli.md
+    │   └── othertools.md
+    └── tools/
+        └── ollama.md       # Local LLM setup
 
 ppts/
-├── prompt/        # Modular slides (01.prepare.md, 02.PE.md, etc.)
-└── mcp/           # MCP protocol presentation
+├── prompt/                 # Prompt Engineering course
+│   ├── slides.md          # Main entry point
+│   ├── 01.prepare.md      # Prerequisites
+│   ├── 02.PE.md           # PE overview
+│   ├── 03.skill.md        # Techniques summary
+│   ├── 04.case.md         # Practical cases
+│   └── 05.QA.md           # Q&A
+└── mcp/                    # MCP Protocol deep-dive
+    └── slides.md          # Main entry point
 
 examples/
-├── mcp-lab/       # Tutorial-grade MCP server implementation
-└── ollama-node/   # Local LLM integration example
+├── mcp-lab/               # Tutorial-grade MCP server
+│   └── src/index.js      # Server implementation with add/read_file_summary tools
+└── ollama-node/          # Local LLM integration
+    └── api.js            # Basic Ollama API usage example
 ```
 
 ### MCP Server Implementation Pattern
@@ -163,10 +199,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 ### Adding Documentation
 
-1. Create `.md` file in appropriate `docs/` subdirectory
-2. Update `docs/.vitepress/config.js` sidebar configuration
-3. Test locally with `pnpm docs:dev`
-4. Commit - deployment is automatic via GitHub Actions
+1. Create `.md` file in appropriate `docs/` subdirectory (`tech/` or `products/`)
+2. Update `docs/.vitepress/config.js` sidebar configuration manually:
+   - Sidebar structure is explicitly defined in the config, not auto-generated
+   - Add new entries under the appropriate section (`Tech Stack` or `Products`)
+   - Use nested `items` arrays for hierarchical navigation
+3. Test locally with `pnpm docs:dev` at http://localhost:5173
+4. Commit - deployment is automatic via GitHub Actions to gh-pages branch
 
 ### Adding Presentation Slides
 
@@ -226,4 +265,19 @@ Root `package.json` has `"type": "module"`. All JavaScript files use ES module s
 
 ### Package Manager Enforcement
 
-Use `pnpm` exclusively - enforced by `packageManager` field. Running `npm install` may cause version mismatches.
+Use `pnpm` exclusively for root dependencies - enforced by `packageManager` field. Running `npm install` may cause version mismatches.
+
+**Exception**: The PPT subdirectories (`ppts/prompt/`, `ppts/mcp/`) use `npm` directly as they are independent Slidev projects. This is intentional and required by the build process.
+
+### Examples Architecture
+
+- **`mcp-lab/`**: Educational MCP server demonstrating the Model Context Protocol SDK
+  - Uses `@modelcontextprotocol/sdk` for server/transport
+  - Implements tool registration (ListToolsRequestSchema) and execution (CallToolRequestSchema)
+  - Zod schemas for parameter validation
+  - Can be run as `npm start` or used as binary `mcp-lab-server`
+
+- **`ollama-node/`**: Minimal example showing local LLM usage with Ollama
+  - Demonstrates basic `ollama.chat()` API usage
+  - Requires Ollama installed and running locally
+  - Example uses deepseek-r1:8b model

@@ -584,3 +584,6 @@ console.log(`Monthly cost: $${(cost * 1000).toFixed(2)}`); // $120.00
 
 Context management is foundational to building cost-effective, scalable AI applications. Master it early!
 
+## reference
+
+* [context engineering](https://baoyu.io/translations/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) 

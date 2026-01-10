@@ -10,6 +10,8 @@ export default defineConfig({
    ],
    themeConfig: {
       nav: [
+         { text: 'Home', link: '/' },
+         { text: 'Learning Paths', link: '/paths/' },
          { text: 'Docs', link: '/tech/' },
          {
             text: 'PPTs', items: [
@@ -21,33 +23,76 @@ export default defineConfig({
       sidebar: {
          '/': [
             {
+               text: 'Learning Paths',
+               link: '/paths/',
+               items: [
+                  { text: '📍 Path Overview', link: '/paths/' },
+                  { text: '⚡️ Path 1: Use AI Tools', link: '/paths/productivity' },
+                  { text: '🚧 Path 2: Add AI Features', link: '/paths/integration' },
+                  { text: '🚧 Path 3: Build AI Products', link: '/paths/mastery' }
+               ]
+            },
+            {
                text: 'Tech Stack',
                link: '/tech/',
                items: [
-                  { text: 'LLM', link: '/tech/LLM' },
                   {
-                     text: 'Prompt Engineering',
-                     link: '/tech/prompt',
-                      items: [
-                        { text: 'AGENTS.md ', link: '/tech/prompt/agents-doc.md' },
+                     text: 'Fundamentals',
+                     collapsed: false,
+                     items: [
+                        { text: 'LLM Basics', link: '/tech/fundamentals/LLM' },
+                        { text: 'Context Management', link: '/tech/fundamentals/context' },
+                        { text: 'Vector DB & Embeddings', link: '/tech/fundamentals/embeddings' },
                         {
-                           text: 'case Studies', items: [
-                              { text: 'copilot', link: '/tech/prompt/cases/copilot' },
+                           text: 'Prompt Engineering',
+                           link: '/tech/fundamentals/prompt',
+                           items: [
+                              { text: 'Agents Documentation', link: '/tech/fundamentals/prompt/agents-doc' },
+                              {
+                                 text: 'Case Studies', items: [
+                                    { text: 'GitHub Copilot', link: '/tech/fundamentals/prompt/cases/copilot' },
+                                 ]
+                              }
                            ]
                         }
                      ]
                   },
-                  { text: 'context', link: '/tech/context' },
                   {
-                     text: 'Agent',
-                     link: '/tech/agent',
+                     text: 'Patterns',
+                     collapsed: false,
                      items: [
-                        { text: 'MCP', link: '/tech/MCP' },
-                        { text: 'SKILLS', link: '/tech/agent/skills' },
+                        { text: 'Overview', link: '/tech/patterns/' },
+                        { text: 'RAG', link: '/tech/patterns/RAG' },
+                        {
+                           text: 'Agent Patterns',
+                           link: '/tech/patterns/agent',
+                           items: [
+                              { text: 'Skills', link: '/tech/patterns/agent/skills' },
+                              { text: 'Hooks', link: '/tech/patterns/agent/hooks' },
+                           ]
+                        }
                      ]
                   },
-                  { text: 'RAG', link: '/tech/RAG' },
-                  { text: 'SFT', link: '/tech/SFT' },
+                  {
+                     text: 'Training Concepts',
+                     collapsed: true,
+                     items: [
+                        { text: 'Overview', link: '/tech/training/' },
+                        { text: 'SFT (Supervised Fine-Tuning)', link: '/tech/training/SFT' },
+                     ]
+                  }
+               ]
+            },
+            {
+               text: 'Integration',
+               collapsed: true,
+               items: [
+                  {
+                     text: 'Protocols',
+                     items: [
+                        { text: 'MCP (Model Context Protocol)', link: '/integration/protocols/mcp' },
+                     ]
+                  }
                ]
             },
             {

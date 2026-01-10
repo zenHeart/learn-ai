@@ -1466,9 +1466,9 @@ The Agent Skills format is an **open standard** developed by Anthropic but desig
 
 ### Related Topics
 
-- [AI Agents](/tech/agent/) - Understand agent architecture patterns
-- [MCP Protocol](/tech/MCP) - Standardized tool calling for agents
-- [Prompt Engineering](/tech/prompt/) - Write better skill instructions
+- [AI Agents](/tech/patterns/agent/) - Understand agent architecture patterns
+- [MCP Protocol](/integration/protocols/mcp) - Standardized tool calling for agents
+- [Prompt Engineering](/tech/fundamentals/prompt/) - Write better skill instructions
 
 ---
 

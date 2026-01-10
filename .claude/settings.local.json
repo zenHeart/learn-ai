@@ -7,7 +7,10 @@
       "WebFetch(domain:alexop.dev)",
       "WebFetch(domain:www.eesel.ai)",
       "WebFetch(domain:kiro.dev)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(tree:*)",
+      "Bash(ls:*)",
+      "Bash(git mv:*)"
     ]
   }
 }
