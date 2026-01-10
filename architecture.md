@@ -27,9 +27,9 @@ learn-ai/
 │   │
 │   ├── paths/                        # NEW: Three concrete learning paths
 │   │   ├── index.md                  # Overview of all paths
-│   │   ├── productivity.md           # Path 1: Use AI Tools (1-2 weeks)
-│   │   ├── integration.md            # Path 2: Add AI Features (2-4 weeks)
-│   │   └── mastery.md                # Path 3: Build AI Products (4+ weeks)
+│   │   ├── productivity.md           # Path 1: Use AI Tools , combine ai in your workflow
+│   │   ├── integration.md            # Path 2: Add AI Features in your product
+│   │   └── mastery.md                # Path 3: Build AI Products
 │   │
 │   ├── tech/                         # Technical foundations (frontend-focused)
 │   │   ├── index.md                  # Tech stack overview + decision tree
@@ -226,6 +226,7 @@ learn-ai/
 **Critical Understanding**: Paths (`/docs/paths/`) are **roadmaps/organizers**, not comprehensive tutorials.
 
 **What Paths Do**:
+
 - Organize existing content (cookbook, projects, guides) into structured sequences
 - Provide curated learning journeys for different goals
 - Support multiple learning styles (learn by doing vs learn by content)

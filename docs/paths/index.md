@@ -27,34 +27,23 @@ graph TD
 
 ## Path Comparison
 
-| Path | Time | Difficulty | Prerequisites | You'll Build |
-|------|------|------------|---------------|--------------|
-| **[Path 1: Use AI Tools](./productivity.md)** | 1-2 weeks | Beginner | Basic programming | N/A (productivity tools) |
-| **Path 2: Add AI Features** 🚧 | 2-4 weeks | Intermediate | JavaScript, React basics | Chatbots, AI search, smart forms |
-| **Path 3: Build AI Products** 🚧 | 4+ weeks | Advanced | Full-stack development | Complete AI SaaS applications |
-
-*🚧 = Coming soon*
+| Path | Difficulty | Prerequisites | You'll Build |
+|------|------------|---------------|--------------|
+| **[Path 1: Use AI Tools](./productivity.md)** | Beginner | Basic programming | Productivity tools mastery |
+| **[Path 2: Add AI Features](./integration.md)** | Intermediate | JavaScript, React basics | Chatbots, AI search, smart forms |
+| **[Path 3: Build AI Products](./mastery.md)** | Advanced | Full-stack development | Complete AI SaaS applications |
 
 ---
 
 ## Path 1: Use AI Tools
 
-**Status**: ✅ Available
-
-### What You'll Learn
 Master AI coding assistants to code 2-3x faster with Cursor, Copilot, Claude CLI, and Gemini CLI.
 
-### Learning Outcomes
+**Learning Outcomes**:
 - ⚡️ Code 2-3x faster with AI autocomplete
 - 🐛 Debug in minutes with AI assistance
 - 📚 Learn codebases rapidly
 - ✨ Generate boilerplate instantly
-
-### Who Should Take This Path
-- Developers new to AI coding tools
-- Anyone wanting to boost productivity
-- Engineers learning new frameworks/languages
-- Teams adopting AI-assisted development
 
 **[Start Path 1 →](./productivity.md)**
 
@@ -62,48 +51,30 @@ Master AI coding assistants to code 2-3x faster with Cursor, Copilot, Claude CLI
 
 ## Path 2: Add AI Features
 
-**Status**: 🚧 Coming Soon
-
-### What You'll Learn
 Integrate AI capabilities into existing applications using JavaScript/TypeScript.
 
-### Learning Outcomes
+**Learning Outcomes**:
 - 🤖 Build streaming AI chatbots
 - 🔍 Implement semantic search with RAG
 - 📝 Create AI-powered forms
 - 🛠️ Use OpenAI, Anthropic, and HuggingFace APIs
 
-### Who Should Take This Path
-- Frontend developers adding AI features
-- Full-stack engineers building AI products
-- Product managers prototyping AI ideas
-- Startups integrating AI into existing apps
-
-**Expected Release**: Q1 2026
+**[Start Path 2 →](./integration.md)**
 
 ---
 
 ## Path 3: Build AI Products
 
-**Status**: 🚧 Coming Soon
-
-### What You'll Learn
 Design, build, and deploy production-ready AI-powered applications from scratch.
 
-### Learning Outcomes
+**Learning Outcomes**:
 - 🚀 Deploy AI apps to Edge/Workers
 - 📊 Implement monitoring and observability
 - 💰 Optimize costs and performance
 - 🔒 Handle security and rate limiting
 - 🧪 Test and evaluate AI systems
 
-### Who Should Take This Path
-- Senior engineers architecting AI systems
-- Tech leads planning AI infrastructure
-- Founders building AI-first products
-- Engineers preparing for AI engineering roles
-
-**Expected Release**: Q2 2026
+**[Start Path 3 →](./mastery.md)**
 
 ---
 
@@ -234,6 +205,6 @@ A: Absolutely! We encourage team learning. Pair programming with AI tools is hig
 
 **Ready to start?** Choose your path and begin your AI mastery journey!
 
-- ✅ **[Path 1: Use AI Tools](./productivity.md)** - Start here
-- 🚧 **Path 2: Add AI Features** - Coming soon
-- 🚧 **Path 3: Build AI Products** - Coming soon
+- **[Path 1: Use AI Tools](./productivity.md)** - Start here
+- **[Path 2: Add AI Features](./integration.md)** - Integrate AI into apps
+- **[Path 3: Build AI Products](./mastery.md)** - Production AI systems
