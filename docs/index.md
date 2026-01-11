@@ -37,11 +37,6 @@ graph LR
     A[Start Here] --> B[Path 1: Use Tools]
     B --> C[Path 2: Add Features]
     C --> D[Path 3: Build Products]
-    
-    style A fill:#f9f9f9,stroke:#333
-    style B fill:#e1f5ff,stroke:#007bff
-    style C fill:#d4edda,stroke:#28a745
-    style D fill:#fff3cd,stroke:#ffc107
 ```
 
 ## Recent Additions

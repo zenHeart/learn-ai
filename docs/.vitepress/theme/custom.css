@@ -1,2 +1,235 @@
-/* Custom theme styles if needed */
+/* Custom theme styles */
+
+/* ============================================
+   MERMAID DIAGRAM STYLING
+   Matches VitePress default dark mode theme
+   ============================================ */
+
+/* Base mermaid container - Uses VitePress theme variables */
+.mermaid {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  transition: all 0.3s ease;
+}
+
+.mermaid:hover {
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mermaid svg {
+  background: transparent !important;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Node styling - Uses VitePress colors */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  fill: var(--vp-c-bg-soft) !important;
+  stroke: var(--vp-c-brand) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .nodeLabel {
+  color: var(--vp-c-text-1) !important;
+  font-weight: 500 !important;
+}
+
+/* Edge/Arrow styling - Uses VitePress brand color */
+.mermaid .flowchart-link {
+  stroke: var(--vp-c-brand) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .marker {
+  fill: var(--vp-c-brand) !important;
+}
+
+/* Edge labels - Ensure visibility in both themes */
+.mermaid .edgeLabel {
+  background: transparent !important;
+  color: var(--vp-c-text-1) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+/* Edge label background rect - Transparent background */
+.mermaid .edgeLabel rect {
+  fill: transparent !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+  opacity: 1 !important;
+}
+
+/* Edge label text - Ensure text is visible */
+.mermaid .edgeLabel text {
+  fill: var(--vp-c-text-1) !important;
+  opacity: 1 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+/* Edge label foreignObject and div - Critical for HTML-based labels */
+.mermaid .edgeLabel foreignObject {
+  overflow: visible !important;
+  pointer-events: none !important;
+}
+
+.mermaid .edgeLabel .label {
+  color: var(--vp-c-text-1) !important;
+}
+
+.mermaid .edgeLabel .labelBkq {
+  background-color: transparent !important;
+  color: var(--vp-c-text-1) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.mermaid .edgeLabel .labelBkq span {
+  color: var(--vp-c-text-1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Target all text elements within edgeLabel */
+.mermaid .edgeLabel * {
+  color: var(--vp-c-text-1) !important;
+  fill: var(--vp-c-text-1) !important;
+}
+
+/* Ensure foreignObject content is visible */
+.mermaid .edgeLabel foreignObject div {
+  color: var(--vp-c-text-1) !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* More specific targeting for labelBkq and its children */
+.mermaid .edgeLabel foreignObject .labelBkq,
+.mermaid .edgeLabel foreignObject div.labelBkq {
+  background-color: transparent !important;
+  color: var(--vp-c-text-1) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+.mermaid .edgeLabel foreignObject .labelBkq *,
+.mermaid .edgeLabel foreignObject div.labelBkq * {
+  color: var(--vp-c-text-1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Edge path labels (alternative selector) */
+.mermaid .edgePath .path {
+  stroke: var(--vp-c-brand) !important;
+}
+
+/* Label group for edge labels */
+.mermaid .label {
+  color: var(--vp-c-text-1) !important;
+}
+
+.mermaid .label text {
+  fill: var(--vp-c-text-1) !important;
+  opacity: 1 !important;
+}
+
+/* Cluster/Subgraph styling */
+.mermaid .cluster rect {
+  fill: var(--vp-c-bg) !important;
+  stroke: var(--vp-c-divider) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .cluster-label {
+  color: var(--vp-c-text-2) !important;
+}
+
+/* Sequence diagram */
+.mermaid .actor {
+  fill: var(--vp-c-bg-soft) !important;
+  stroke: var(--vp-c-brand) !important;
+}
+
+.mermaid .messageLine0,
+.mermaid .messageLine1 {
+  stroke: var(--vp-c-brand) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .messageText {
+  fill: var(--vp-c-text-1) !important;
+}
+
+/* State diagram */
+.mermaid .state-note {
+  fill: var(--vp-c-bg) !important;
+  stroke: var(--vp-c-divider) !important;
+}
+
+/* Gantt chart */
+.mermaid .section0,
+.mermaid .section1,
+.mermaid .section2,
+.mermaid .section3 {
+  fill: var(--vp-c-bg) !important;
+}
+
+.mermaid .task0,
+.mermaid .task1,
+.mermaid .task2,
+.mermaid .task3 {
+  fill: var(--vp-c-brand) !important;
+  stroke: var(--vp-c-brand) !important;
+}
+
+/* Pie chart */
+.mermaid .pieOuterCircle {
+  stroke: var(--vp-c-divider) !important;
+  stroke-width: 2px !important;
+}
+
+/* Git graph */
+.mermaid .commit {
+  fill: var(--vp-c-brand) !important;
+  stroke: var(--vp-c-brand) !important;
+}
+
+.mermaid .branchLabel {
+  fill: var(--vp-c-bg-soft) !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mermaid {
+    padding: 1rem;
+    margin: 1.5rem 0;
+  }
+}
 

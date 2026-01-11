@@ -6,6 +6,10 @@ export default withMermaid(defineConfig({
    title: "Learn AI",
    description: "AI Learning Resources & PPTs",
    base: '/learn-ai/',
+   // Mermaid 插件配置
+   mermaidPlugin: {
+      class: "mermaid", // set additional css classes for parent container 
+   },
    ignoreDeadLinks: [
       // Ignore links to PPTs as they are built externally and copied in
       /^\/learn-ai\/ppts\//,

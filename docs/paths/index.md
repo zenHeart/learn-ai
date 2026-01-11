@@ -18,11 +18,6 @@ graph TD
 
     Path1Done -.->|Next| Path2
     Path2Done -.->|Next| Path3
-
-    style Path1 fill:#e1f5ff
-    style Path2 fill:#fff4e1
-    style Path3 fill:#d4edda
-    style Start fill:#f0f0f0
 ```
 
 ## Path Comparison

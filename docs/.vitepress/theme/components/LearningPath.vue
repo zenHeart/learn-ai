@@ -110,6 +110,8 @@ defineProps({
 .zen-header {
   text-align: center;
   margin-bottom: 60px;
+  position: relative;
+  z-index: 1;  /* Ensure header is above spine */
 }
 
 .zen-header h2 {
@@ -129,12 +131,12 @@ defineProps({
   margin: 0;
 }
 
-/* TIMELINE SPINE - Positioned to connect nodes only */
+/* TIMELINE SPINE - Starts at first step node, ends at last step node */
 .path-spine {
   position: absolute;
   left: 50%;
-  top: 100px;  /* Start after header */
-  bottom: 50px;  /* End before bottom */
+  top: 200px;  /* Start after header + first step margin, at first node position */
+  bottom: 80px;  /* End before last step, at last node position */
   width: 2px;
   background: var(--zen-path-line);
   transform: translateX(-50%);
@@ -156,12 +158,12 @@ defineProps({
 }
 
 /* Alternate sides for desktop - matches pathV2.html nth-child pattern */
-/* Index 0, 2, 4... (1st, 3rd, 5th items) = left side (row-reverse) */
+/* Index 0, 2, 4... (1st, 3rd, 5th items) = left side */
 .path-step.step-left {
   flex-direction: row-reverse;
 }
 
-/* Index 1, 3, 5... (2nd, 4th, 6th items) = right side (row) */
+/* Index 1, 3, 5... (2nd, 4th, 6th items) = right side */
 .path-step.step-right {
   flex-direction: row;
 }
@@ -177,6 +179,7 @@ defineProps({
   transition: all 0.3s ease;
   z-index: 2;
   /* Ensure content stays within card bounds */
+  overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -286,9 +289,14 @@ defineProps({
 
 /* RESPONSIVE - Mobile layout: left-aligned with single column */
 @media (max-width: 768px) {
+  .zen-header {
+    position: relative;
+    z-index: 1;
+  }
+
   .path-spine {
     left: 20px;
-    top: 120px;  /* Adjusted for mobile header spacing */
+    top: 180px;  /* Start after header + first step, at first node position */
     bottom: 60px;
   }
 
