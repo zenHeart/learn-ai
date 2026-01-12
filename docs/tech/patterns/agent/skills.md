@@ -1,9 +1,9 @@
-# Agent Skills
-
+# [Agent Skills](https://agentskills.io/home)
 
 ## What You'll Learn
 
 By the end of this guide, you'll understand:
+
 - What Agent Skills are and why they matter for building extensible agents
 - How the progressive disclosure model keeps agents fast and contextual
 - How to create, structure, and integrate skills into agent systems
@@ -11,12 +11,12 @@ By the end of this guide, you'll understand:
 
 **The Big Picture**: Agent Skills is an open format that lets you package specialized knowledge, workflows, and capabilities into portable, reusable modules that any agent can load and use on-demand.
 
-
 ## Why Agent Skills Exist
 
 ### The Agent Extensibility Problem
 
 You've built an AI agent. It works great for its core tasks. But now:
+
 - Your team needs it to understand company-specific workflows
 - Different users need different specialized capabilities
 - You want to add domain expertise without bloating the core system
@@ -34,6 +34,7 @@ You've built an AI agent. It works great for its core tasks. But now:
 ### The Agent Skills Solution
 
 **Agent Skills** provides a standardized way to extend agents with:
+
 - **Specialized knowledge**: Industry regulations, company policies, technical documentation
 - **New capabilities**: Code generation patterns, analysis workflows, integration procedures
 - **Repeatable workflows**: Multi-step processes captured as reusable templates
@@ -93,8 +94,6 @@ Think of it like this: Your agent has a bookshelf of skills, but only opens the 
 
 **Key Insight**: Most skills remain dormant (discovery phase only). Only task-relevant skills load their full instructions. This keeps context windows clean and agents responsive.
 
-
-
 ## Creating Your First Skill
 
 Let's build a practical skill step-by-step to understand the format.
@@ -113,6 +112,7 @@ cd commit-helper
 Every skill is just a folder. That's it. The name of the folder becomes the skill identifier.
 
 **Naming Rules**:
+
 - Lowercase letters and numbers only
 - Use hyphens to separate words (not underscores)
 - No leading/trailing hyphens
@@ -290,7 +290,7 @@ git diff --cached --name-only
 - Reusable across different agent platforms
 - Sandboxed execution (agents can restrict script permissions)
 
-### Step 5: Your Skill is Ready!
+### Step 5: Your Skill is Ready
 
 ```
 commit-helper/
@@ -302,6 +302,7 @@ commit-helper/
 ```
 
 **Distribution**:
+
 - Share via Git repository
 - Publish to npm/package registries
 - Include in agent product's skill marketplace
@@ -325,6 +326,7 @@ description: |               # Max 1024 chars, used for task matching
 ```
 
 **Description Writing Tips**:
+
 - Front-load important keywords
 - Include synonyms (e.g., "review" and "analyze")
 - Mention specific file types if relevant
@@ -416,6 +418,7 @@ Pointers to files in references/ directory.
 ```
 
 **Writing Style**:
+
 - Use imperative voice ("Analyze the code", not "The agent should analyze")
 - Be specific about inputs and outputs
 - Include examples of good and bad patterns
@@ -423,6 +426,7 @@ Pointers to files in references/ directory.
 - Use code blocks for examples
 
 **Length Guidelines**:
+
 - Target: 200-300 lines for SKILL.md
 - Maximum: 500 lines
 - If longer: Move content to `references/` directory
@@ -672,7 +676,9 @@ const { error } = await stripe.confirmPayment({
 ```
 
 ### Webhook Security
+
 **Critical**: Always verify webhook signatures
+
 ```javascript
 const sig = req.headers['stripe-signature'];
 let event;
@@ -699,15 +705,18 @@ switch (event.type) {
 ```
 
 ## Common Mistakes
+
 1. **Not using idempotency keys** → Duplicate charges
 2. **Skipping webhook verification** → Security vulnerability
 3. **Storing card details** → PCI compliance violation
 4. **Not handling async payment methods** → Failed payments
 
 ## References
+
 - references/stripe-api-reference.md
 - references/webhook-events.md
 - templates/checkout-flow.js
+
 ```
 
 ### Example 2: Security Audit Skill
@@ -822,8 +831,10 @@ paths:
 ```
 
 ## References
+
 - references/openapi-spec-3.1.md
 - references/documentation-best-practices.md
+
 ```
 
 ---
@@ -1301,11 +1312,13 @@ generateAPISkill(await stripeSpec.json());
 **Issue**: Skill not activating when expected
 
 **Diagnosis**:
+
 - Check skill description matches task keywords
 - Verify skill is in loaded skills directory
 - Enable verbose logging to see discovery phase
 
 **Solution**:
+
 ```javascript
 // Add debug logging
 console.log('Available skills:', agent.skills.map(s => s.name));
@@ -1318,11 +1331,13 @@ console.log('Matched skills:', agent.findMatchingSkills(userTask));
 **Issue**: Skill instructions not followed correctly
 
 **Diagnosis**:
+
 - Instructions may be ambiguous
 - Skill may conflict with agent's base instructions
 - Instructions may be too long (>5000 tokens)
 
 **Solution**:
+
 - Make instructions more explicit and step-by-step
 - Use numbered lists for sequential processes
 - Move detailed content to references
@@ -1333,11 +1348,13 @@ console.log('Matched skills:', agent.findMatchingSkills(userTask));
 **Issue**: Script execution fails
 
 **Diagnosis**:
+
 - Script path may be incorrect
 - Script may not have execute permissions
 - Script may have dependencies not in sandbox
 
 **Solution**:
+
 ```bash
 # Fix permissions
 chmod +x /skills/my-skill/scripts/run.sh
@@ -1354,10 +1371,12 @@ chmod +x /skills/my-skill/scripts/run.sh
 **Issue**: Agent has too many skills loaded (slow startup)
 
 **Diagnosis**:
+
 - Loading all skill instructions at once
 - Not implementing progressive disclosure
 
 **Solution**:
+
 ```javascript
 // Bad: Load everything at startup
 skills.forEach(s => loadFullSkill(s));
@@ -1383,12 +1402,14 @@ skills.forEach(s => {
 **Challenge**: Engineering team had tribal knowledge scattered across wikis, old PRs, and people's heads. New engineers took weeks to ramp up.
 
 **Solution**: Created organizational skills:
+
 - `onboarding-guide`: Setup procedures, tool access, team norms
 - `architecture-guide`: System design, service boundaries, data flows
 - `deploy-process`: Step-by-step deployment for each environment
 - `incident-response`: On-call procedures, runbooks, escalation paths
 
 **Result**:
+
 - New engineer ramp-up time reduced from 4 weeks to 1.5 weeks
 - Consistent processes across team
 - Knowledge survives team member turnover
@@ -1401,12 +1422,14 @@ skills.forEach(s => {
 **Challenge**: Agent product needed to support different user workflows (coding, writing, data analysis) without bloating core system.
 
 **Solution**: Implemented skill marketplace:
+
 - Core agent shipped with 5 essential skills
 - Users could browse and install additional skills
 - Community contributed specialized skills
 - Progressive disclosure kept agent fast
 
 **Result**:
+
 - Agent startup time stayed under 2 seconds despite 100+ available skills
 - User satisfaction improved (customization)
 - Community built 200+ skills in first 6 months
@@ -1419,11 +1442,13 @@ skills.forEach(s => {
 **Challenge**: Financial services company needed agents to follow strict compliance rules that changed frequently.
 
 **Solution**: Created compliance skills with `allowed-tools` restrictions:
+
 - `pii-handler`: How to work with personally identifiable information
 - `audit-logger`: Logging requirements for all agent actions
 - `data-retention`: Rules for data storage and deletion
 
 **Result**:
+
 - Compliance rules enforced programmatically
 - Audit trail for all agent operations
 - Easy to update when regulations changed
@@ -1440,6 +1465,7 @@ The Agent Skills format is an **open standard** developed by Anthropic but desig
 - **Evolving specification**: Community feedback shapes future versions
 
 **What's Coming**:
+
 - Skill dependency management
 - Skill marketplaces and discovery platforms
 - Automated skill testing frameworks
@@ -1482,6 +1508,7 @@ The Agent Skills format is an **open standard** developed by Anthropic but desig
 - **Organizational Knowledge**: Capture workflows and best practices
 
 **Key Takeaways**:
+
 1. Skills are just folders with a SKILL.md file (+ optional resources)
 2. Load only metadata at startup, full instructions when relevant
 3. Use `allowed-tools` to restrict permissions
@@ -1492,7 +1519,7 @@ The Agent Skills format is an **open standard** developed by Anthropic but desig
 
 The agents that will win are those that can be easily extended with domain-specific knowledge. Agent Skills provides the format to make that happen.
 
-##  references
+## references
 
-* [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) understand the skill history
-* [best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+- [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) understand the skill history
+- [best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)

@@ -57,6 +57,7 @@ claude # then press Ctrl+B during command execution
 | Control sequence | `Ctrl+J` |
 
 Setup multiline for your terminal:
+
 ```bash
 claude
 > /terminal-setup
@@ -124,23 +125,27 @@ Claude supports slash commands. Type `/` to see all available commands.
 Create reusable prompts saved in markdown files.
 
 **Project-specific** (shared with team):
+
 ```bash
 mkdir -p .claude/commands
 echo "Review this code for security vulnerabilities:" > .claude/commands/security-review.md
 ```
 
 Usage:
+
 ```
 > /security-review
 ```
 
 **Personal** (available in all projects):
+
 ```bash
 mkdir -p ~/.claude/commands
 echo "Optimize this code for performance:" > ~/.claude/commands/optimize.md
 ```
 
 **With arguments:**
+
 ```markdown
 <!-- .claude/commands/fix-issue.md -->
 ---
@@ -157,11 +162,13 @@ Fix issue #$1 by:
 ```
 
 Usage:
+
 ```
 > /fix-issue 123
 ```
 
 **With bash execution:**
+
 ```markdown
 <!-- .claude/commands/commit.md -->
 ---
@@ -257,6 +264,7 @@ Store project context and instructions:
 ```
 
 **Example CLAUDE.md:**
+
 ```markdown
 # Project Context
 
@@ -351,6 +359,7 @@ Connect Claude Code to external tools, databases, and APIs.
 ### Installing MCP Servers
 
 **HTTP Server (Recommended):**
+
 ```bash
 claude mcp add --transport http github https://api.githubcopilot.com/mcp/
 
@@ -360,11 +369,13 @@ claude mcp add --transport http secure-api https://api.example.com/mcp \
 ```
 
 **SSE Server:**
+
 ```bash
 claude mcp add --transport sse asana https://mcp.asana.com/sse
 ```
 
 **Stdio Server (Local):**
+
 ```bash
 # Local stdio server
 claude mcp add --transport stdio database -- npx -y @example/database-mcp
@@ -383,6 +394,7 @@ claude mcp remove github     # Remove server
 ```
 
 In interactive mode:
+
 ```
 > /mcp
 ```
@@ -416,6 +428,7 @@ claude mcp add --transport http --scope user database https://...
 ### Practical Examples
 
 **Monitor Sentry errors:**
+
 ```bash
 claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
 > /mcp  # Authenticate
@@ -425,6 +438,7 @@ claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
 ```
 
 **Query PostgreSQL:**
+
 ```bash
 claude mcp add --transport stdio db -- npx -y @bytebase/dbhub \
   --dsn "postgresql://user:pass@host:5432/db"
@@ -433,6 +447,7 @@ claude mcp add --transport stdio db -- npx -y @bytebase/dbhub \
 ```
 
 **Import from Claude Desktop:**
+
 ```bash
 claude mcp add-from-claude-desktop
 ```
@@ -442,16 +457,19 @@ claude mcp add-from-claude-desktop
 ### VS Code Extension
 
 **Installation:**
+
 1. Open Extensions (`Cmd+Shift+X`)
 2. Search "Claude Code"
 3. Install and restart
 
 **Quick Start:**
+
 - Click ✱ in editor toolbar
 - Click "✱ Claude Code" in status bar
 - Command Palette: "Claude Code"
 
 **Features:**
+
 - Inline diffs for review
 - @-mentions with line numbers (`Alt+K`)
 - Plan review before edits
@@ -472,11 +490,13 @@ claude mcp add-from-claude-desktop
 Supports: IntelliJ, PyCharm, WebStorm, GoLand, PhpStorm, Android Studio
 
 **Installation:**
+
 1. Settings → Plugins
 2. Search "Claude Code"
 3. Install and restart
 
 **Features:**
+
 - Quick launch: `Cmd+Esc` / `Ctrl+Esc`
 - IDE diff viewer
 - Selection context sharing
@@ -484,6 +504,7 @@ Supports: IntelliJ, PyCharm, WebStorm, GoLand, PhpStorm, Android Studio
 - Diagnostics integration
 
 **Connect from terminal:**
+
 ```bash
 claude
 > /ide
@@ -512,18 +533,21 @@ claude -p "continue" --resume session-name
 ### Common Patterns
 
 **Create commit messages:**
+
 ```bash
 claude -p "Create commit for staged changes" \
   --allowedTools "Bash(git:*)"
 ```
 
 **Code review:**
+
 ```bash
 gh pr diff "$1" | claude -p "Review for security issues" \
   --output-format json
 ```
 
 **CI/CD integration:**
+
 ```json
 {
   "scripts": {
@@ -533,6 +557,7 @@ gh pr diff "$1" | claude -p "Review for security issues" \
 ```
 
 **Pipe through Claude:**
+
 ```bash
 cat error.log | claude -p "explain this error" > analysis.txt
 cat code.py | claude -p "find bugs" --output-format json | jq .
@@ -541,17 +566,20 @@ cat code.py | claude -p "find bugs" --output-format json | jq .
 ### Output Formats
 
 **Text (default):**
+
 ```bash
 claude -p "query"
 ```
 
 **JSON:**
+
 ```bash
 claude -p "query" --output-format json
 # Returns: {"result": "...", "session_id": "...", "usage": {...}}
 ```
 
 **Streaming JSON:**
+
 ```bash
 claude -p "query" --output-format stream-json
 # Newline-delimited JSON in real-time
@@ -600,7 +628,7 @@ Toggle with `Shift+Tab`:
 | **Auto-Accept** | Auto-approve changes | When you trust Claude |
 | **Plan** | Read-only analysis | Before making changes |
 
-## Skills (Advanced Commands)
+## [Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
 
 Skills are comprehensive capabilities organized across multiple files.
 
@@ -643,6 +671,35 @@ my-skill/
 | Invocation | Manual: `/command` | Automatic |
 | Structure | Single .md file | Directory with resources |
 | Complexity | Simple prompts | Multi-step workflows |
+
+more difference read [compare skills](https://support.claude.com/en/articles/12512176-what-are-skills#h_0f5f83e7da)
+
+## plugin
+
+you can organize your ability into plugins
+
+### daily use
+
+read  [create a plugin](https://code.claude.com/docs/en/plugins) to know more
+
+```bash
+# create a local plugins
+mkdir -p ~/plugins/my-plugin
+
+# install local plugins
+# in claude
+/plugin marketplace add ~/plugins
+/plugin install  my-plugin@plugins
+
+# after install you can use plugin skill or command
+
+
+# update plugin
+# in claude
+/plugin update my-plugin@plugins
+```
+
+### Create a Plugin
 
 ## Best Practices
 
@@ -736,11 +793,13 @@ Delegate specialized tasks:
 ```
 
 **Built-in:**
+
 - **Explore** - Fast codebase exploration
 - **Plan** - Research for planning
 - **General** - Multi-step tasks
 
 **Create custom:**
+
 ```markdown
 # .claude/agents/reviewer.md
 ---
@@ -761,6 +820,7 @@ Automate actions around tool execution:
 ```
 
 **Example: Auto-format after edit:**
+
 ```json
 {
   "hooks": {
@@ -806,22 +866,26 @@ Run bash in isolated environment:
 ### Common Issues
 
 **Claude not responding:**
+
 - Check internet connection
 - Start new conversation
 - Try `-p` mode
 - Run `claude doctor`
 
 **IDE not working:**
+
 - Restart IDE/reload window
 - Ensure in project directory
 - Check `/ide` output
 
 **Permission issues:**
+
 - Review settings
 - Clear cache: `rm -rf ~/.claude.json`
 - Run `claude doctor`
 
 **MCP servers failing:**
+
 - Verify URL/address
 - Check environment variables
 - Authenticate: `/mcp`
@@ -829,22 +893,26 @@ Run bash in isolated environment:
 ### Uninstall
 
 **Native installation:**
+
 ```bash
 rm -f ~/.local/bin/claude
 rm -rf ~/.claude-code
 ```
 
 **Homebrew:**
+
 ```bash
 brew uninstall --cask claude-code
 ```
 
 **NPM:**
+
 ```bash
 npm uninstall -g @anthropic-ai/claude-code
 ```
 
 **Clean all config:**
+
 ```bash
 rm -rf ~/.claude
 rm ~/.claude.json
@@ -854,10 +922,10 @@ rm .mcp.json
 
 ## Resources
 
-- **Official Docs**: https://code.claude.com/docs
-- **GitHub**: https://github.com/anthropics/claude-code
-- **MCP Registry**: https://api.anthropic.com/mcp-registry
-- **Agent SDK**: https://platform.claude.com/docs/agent-sdk
+- **Official Docs**: <https://code.claude.com/docs>
+- **GitHub**: <https://github.com/anthropics/claude-code>
+- **MCP Registry**: <https://api.anthropic.com/mcp-registry>
+- **Agent SDK**: <https://platform.claude.com/docs/agent-sdk>
 
 ## Summary
 
@@ -871,6 +939,7 @@ Claude Code is a powerful AI coding assistant with:
 6. **Context management** - Sessions, memory, CLAUDE.md
 
 **Start with basics:**
+
 - `/config` for configuration
 - `-c` to resume work
 - `@file` to reference code
@@ -878,6 +947,7 @@ Claude Code is a powerful AI coding assistant with:
 - Custom commands for workflows
 
 **Grow into advanced:**
+
 - MCP servers for integrations
 - Custom skills for specialized workflows
 - Hooks for automation
