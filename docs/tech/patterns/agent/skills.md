@@ -175,31 +175,35 @@ When the user asks for help with a commit message:
 
 ## Format
 
-\`\`\`
+
+
+```init
 <type>(<scope>): <description>
 
 [optional body]
 
 [optional footer]
-\`\`\`
+```
 
 ## Examples
 
 Good commit messages:
-\`\`\`
+
+```bash
 feat(auth): add OAuth2 social login support
 fix(api): prevent race condition in user creation
 docs(readme): update installation instructions
 refactor(database): simplify query builder logic
-\`\`\`
+```
 
 Bad commit messages (and why):
-\`\`\`
+
+```bash
 Update files          → Too vague, no type/scope
 Fixed bug             → What bug? Where?
 Added new feature.    → Not imperative, has period, no scope
 feat: adding stuff    → Not imperative mood (-ing form)
-\`\`\`
+```
 
 ## Process
 
@@ -216,6 +220,7 @@ feat: adding stuff    → Not imperative mood (-ing form)
 ## References
 
 For detailed specification, see references/conventional-commits.md
+
 ```
 
 **What Just Happened?**

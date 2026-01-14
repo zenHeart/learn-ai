@@ -3,6 +3,7 @@
 ## 你将学到什么
 
 在本指南结束时，你将理解：
+
 - 什么是 Agent Skills 以及为什么它们对于构建可扩展智能体至关重要
 - 渐进式披露模型如何保持智能体快速和具有上下文
 - 如何创建、构建并将技能集成到智能体系统中
@@ -15,6 +16,7 @@
 ### 智能体扩展性问题
 
 你已经构建了一个 AI 智能体。它在核心任务上表现出色。但现在：
+
 - 你的团队需要它了解公司特定的工作流
 - 不同的用户需要不同的专业能力
 - 你想增加领域专业知识而不使核心系统变得臃肿
@@ -32,6 +34,7 @@
 ### Agent Skills 解决方案
 
 **Agent Skills** 提供了一种标准化方法来扩展智能体：
+
 - **专业知识**：行业法规、公司政策、技术文档
 - **新能力**：代码生成模式、分析工作流、集成程序
 - **可重复的工作流**：作为可重用模板捕获的多步过程
@@ -109,6 +112,7 @@ cd commit-helper
 每个技能只是一个文件夹。就是这样。文件夹的名称成为技能标识符。
 
 **命名规则**：
+
 - 仅小写字母和数字
 - 使用连字符分隔单词（不使用下划线）
 - 无前导/尾随连字符
@@ -171,31 +175,37 @@ When the user asks for help with a commit message:
 
 ## Format
 
-``````
+```bash
 <type>(<scope>): <description>
 
 [optional body]
 
 [optional footer]
-``````
+```
 
 ## Examples
 
 Good commit messages:
-``````
+
+```bash
+
 feat(auth): add OAuth2 social login support
 fix(api): prevent race condition in user creation
 docs(readme): update installation instructions
 refactor(database): simplify query builder logic
-``````
+
+```
 
 Bad commit messages (and why):
-``````
+
+```bash
+
 Update files          → Too vague, no type/scope
 Fixed bug             → What bug? Where?
 Added new feature.    → Not imperative, has period, no scope
 feat: adding stuff    → Not imperative mood (-ing form)
-``````
+
+```
 
 ## Process
 
@@ -212,7 +222,8 @@ feat: adding stuff    → Not imperative mood (-ing form)
 ## References
 
 For detailed specification, see references/conventional-commits.md
-```
+
+```md
 
 **发生了什么？**
 
@@ -227,6 +238,8 @@ For detailed specification, see references/conventional-commits.md
   - 无格式限制 - 自由使用标题、列表、代码块
   - 保持在 500 行以内；将详细内容移动到 `references/`
 
+```
+
 ### 步骤 3: 添加参考资料 (可选)
 
 ```bash
@@ -235,7 +248,7 @@ mkdir references
 
 创建 `references/conventional-commits.md`:
 
-```markdown
+```md
 # Conventional Commits Specification v1.0.0
 
 ## Summary
@@ -286,7 +299,7 @@ git diff --cached --name-only
 - 跨不同智能体平台可重用
 - 沙盒执行（智能体可以限制脚本权限）
 
-### 步骤 5: 你的技能准备好了！
+### 步骤 5: 你的技能准备好了
 
 ```
 commit-helper/
@@ -298,6 +311,7 @@ commit-helper/
 ```
 
 **分发**：
+
 - 通过 Git 仓库共享
 - 发布到 npm/包注册表
 - 包含在智能体产品的技能市场中
@@ -321,6 +335,7 @@ description: |               # 最多 1024 字符, 用于任务匹配
 ```
 
 **描述编写技巧**：
+
 - 将重要关键词放在前面
 - 包含同义词（例如 "review" 和 "analyze"）
 - 如果相关，提及特定文件类型
@@ -412,6 +427,7 @@ allowed-tools:
 ```
 
 **写作风格**：
+
 - 使用祈使语气 ("Analyze the code", 不是 "The agent should analyze")
 - 对输入和输出要具体
 - 包含好模式和坏模式的示例
@@ -419,6 +435,7 @@ allowed-tools:
 - 使用代码块作为示例
 
 **长度指南**：
+
 - 目标: SKILL.md 为 200-300 行
 - 最大: 500 行
 - 如果更长: 将内容移动到 `references/` 目录
@@ -668,7 +685,9 @@ const { error } = await stripe.confirmPayment({
 ```
 
 ### Webhook Security
+
 **Critical**: Always verify webhook signatures
+
 ```javascript
 const sig = req.headers['stripe-signature'];
 let event;
@@ -695,15 +714,18 @@ switch (event.type) {
 ```
 
 ## Common Mistakes
+
 1. **Not using idempotency keys** → Duplicate charges
 2. **Skipping webhook verification** → Security vulnerability
 3. **Storing card details** → PCI compliance violation
 4. **Not handling async payment methods** → Failed payments
 
 ## References
+
 - references/stripe-api-reference.md
 - references/webhook-events.md
 - templates/checkout-flow.js
+
 ```
 
 ### 示例 2: 安全审计技能
@@ -818,8 +840,10 @@ paths:
 ```
 
 ## References
+
 - references/openapi-spec-3.1.md
 - references/documentation-best-practices.md
+
 ```
 
 ---
@@ -1297,11 +1321,13 @@ generateAPISkill(await stripeSpec.json());
 **问题**：技能未在预期时激活
 
 **诊断**：
+
 - 检查技能描述是否匹配任务关键词
 - 验证技能是否在加载的技能目录中
 - 启用详细日志以查看发现阶段
 
 **解决方案**：
+
 ```javascript
 // 添加调试日志
 console.log('Available skills:', agent.skills.map(s => s.name));
@@ -1314,11 +1340,13 @@ console.log('Matched skills:', agent.findMatchingSkills(userTask));
 **问题**：未正确遵循技能指令
 
 **诊断**：
+
 - 指令可能模棱两可
 - 技能可能与智能体的基础指令冲突
 - 指令可能太长 (>5000 tokens)
 
 **解决方案**：
+
 - 使指令更明确且循序渐进
 - 对顺序过程使用编号列表
 - 将详细内容移至参考资料
@@ -1329,11 +1357,13 @@ console.log('Matched skills:', agent.findMatchingSkills(userTask));
 **问题**：脚本执行失败
 
 **诊断**：
+
 - 脚本路径可能不正确
 - 脚本可能没有执行权限
 - 脚本可能具有不在沙盒中的依赖项
 
 **解决方案**：
+
 ```bash
 # 修复权限
 chmod +x /skills/my-skill/scripts/run.sh
@@ -1350,10 +1380,12 @@ chmod +x /skills/my-skill/scripts/run.sh
 **问题**：智能体加载了太多技能（启动慢）
 
 **诊断**：
+
 - 一次性加载所有技能指令
 - 未实施渐进式披露
 
 **解决方案**：
+
 ```javascript
 // Bad: 启动时加载所有内容
 skills.forEach(s => loadFullSkill(s));
@@ -1379,12 +1411,14 @@ skills.forEach(s => {
 **挑战**：工程团队拥有分散在 wiki、旧 PR 和人们头脑中的部落知识。新工程师需要数周时间才能上手。
 
 **解决方案**：创建了组织技能：
+
 - `onboarding-guide`: 设置程序、工具访问、团队规范
 - `architecture-guide`: 系统设计、服务边界、数据流
 - `deploy-process`: 每个环境的逐步部署
 - `incident-response`: 待命程序、运行手册、升级路径
 
 **结果**：
+
 - 新工程师上手时间从 4 周缩短到 1.5 周
 - 团队流程一致
 - 知识在团队成员离职后得以保留
@@ -1397,12 +1431,14 @@ skills.forEach(s => {
 **挑战**：智能体产品需要支持不同的用户工作流（编码、写作、数据分析），而不使核心系统变得臃肿。
 
 **解决方案**：实施了技能市场：
+
 - 核心智能体附带 5 个基本技能
 - 用户可以浏览并安装其他技能
 - 社区贡献了专业技能
 - 渐进式披露保持智能体快速
 
 **结果**：
+
 - 尽管有 100+ 可用技能，智能体启动时间仍保持在 2 秒以下
 - 用户满意度提高（定制化）
 - 社区在 6 个月内构建了 200+ 技能
@@ -1415,11 +1451,13 @@ skills.forEach(s => {
 **挑战**：金融服务公司需要智能体遵循经常变化的严格合规规则。
 
 **解决方案**：创建了带有 `allowed-tools` 限制的合规技能：
+
 - `pii-handler`: 如何处理个人身份信息
 - `audit-logger`: 所有智能体操作的日志记录要求
 - `data-retention`: 数据存储和删除规则
 
 **结果**：
+
 - 以编程方式强制执行合规规则
 - 所有智能体操作的审计跟踪
 - 规章变更时易于更新
@@ -1436,6 +1474,7 @@ Agent Skills 格式是由 Anthropic 开发的**开放标准**，但旨在普遍�
 - **不断发展的规范**：社区反馈塑造未来版本
 
 **即将到来**：
+
 - 技能依赖管理
 - 技能市场和发现平台
 - 自动化技能测试框架
@@ -1478,6 +1517,7 @@ Agent Skills 格式是由 Anthropic 开发的**开放标准**，但旨在普遍�
 - **组织知识**：捕获工作流和最佳实践
 
 **关键要点**：
+
 1. 技能只是带有 SKILL.md 文件 (+ 可选资源) 的文件夹
 2. 启动时仅加载元数据，相关时加载完整指令
 3. 使用 `allowed-tools` 限制权限
@@ -1490,5 +1530,5 @@ Agent Skills 格式是由 Anthropic 开发的**开放标准**，但旨在普遍�
 
 ## 参考资料
 
-* [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) 理解技能历史
-* [最佳实践](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+- [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) 理解技能历史
+- [最佳实践](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
