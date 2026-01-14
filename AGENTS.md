@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI agents (Claude Code, Gemini CLI, etc.) when working with code in this repository.
 
 ## Language Policy
 
@@ -18,17 +18,31 @@ This ensures consistency and makes the project accessible to the global develope
 
 ## Project Overview
 
-This is an AI learning resource platform combining VitePress documentation, Slidev presentations, and practical examples focused on AI development, Prompt Engineering, and MCP (Model Context Protocol) education.
+**Learn AI** is a comprehensive educational platform designed to bridge the gap between frontend development and Artificial Intelligence. It empowers frontend engineers to master AI concepts and integrate them into their workflows.
 
-**Technology Stack**: VitePress 1.6.4, Slidev 0.49.0, Vue 3, Node.js ES Modules
-**Package Manager**: pnpm 9.15.4
+**Core Components:**
+
+- **Documentation Site:** Built with VitePress (`/docs`).
+- **Interactive Presentations:** Built with Slidev (`/ppts`), covering Prompt Engineering and MCP.
+- **Practical Examples:** Node.js/TypeScript implementations of MCP servers and local LLM usage (`/examples`).
+
+## Technology Stack
+
+- **Documentation:** VitePress 1.6.4 + Vue 3
+- **Presentations:** Slidev 0.49.0
+- **Runtime:** Node.js (ES Modules)
+- **Package Manager:**
+  - `pnpm` (Root) - Enforced via `packageManager` field.
+  - `npm` (within `ppts/*` directories) - Independent build processes.
 
 ## Essential Commands
 
-### Documentation Development
+### Documentation Development (VitePress)
+
+Run these commands from the project root:
 
 ```bash
-# Start docs dev server (VitePress)
+# Start docs dev server
 pnpm docs:dev
 
 # Build docs to docs/.vitepress/dist
@@ -38,13 +52,15 @@ pnpm docs:build
 pnpm docs:preview
 ```
 
-### Presentation Development
+### Presentation Development (Slidev)
+
+Presentations are independent packages located in `ppts/`.
 
 ```bash
-# Develop Prompt Engineering PPT
+# Develop Prompt Engineering Course
 pnpm ppt:prompt
 
-# Develop MCP Protocol PPT
+# Develop MCP Protocol Deep Dive
 pnpm ppt:mcp
 
 # Build presentations (from within ppts/prompt or ppts/mcp)
@@ -57,10 +73,18 @@ cd ppts/mcp && npm run build     # Outputs to ppts/mcp/dist
 ```bash
 # Run the tutorial MCP server
 cd examples/mcp-lab
+npm install
 npm start
 
 # Or use as binary (after npm install)
 mcp-lab-server
+```
+
+**Ollama Node Example (`examples/ollama-node`):**
+
+```bash
+cd examples/ollama-node
+node api.js
 ```
 
 ## Architecture
@@ -84,9 +108,9 @@ Workflow location: `.github/workflows/deploy.yml`
 1. Build VitePress docs → `docs/.vitepress/dist`
 2. Build each PPT independently → `ppts/*/dist`
 3. Merge all into `final_dist/`:
-   - Copy docs → `final_dist/`
-   - Copy prompt PPT → `final_dist/ppts/prompt/`
-   - Copy MCP PPT → `final_dist/ppts/mcp/`
+    - Copy docs → `final_dist/`
+    - Copy prompt PPT → `final_dist/ppts/prompt/`
+    - Copy MCP PPT → `final_dist/ppts/mcp/`
 4. Add `.nojekyll` to prevent GitHub Pages Jekyll processing
 5. Deploy `final_dist/` to gh-pages branch
 
@@ -96,33 +120,9 @@ Workflow location: `.github/workflows/deploy.yml`
 - Prompt PPT: `https://blog.zenheart.site/learn-ai/ppts/prompt/`
 - MCP PPT: `https://blog.zenheart.site/learn-ai/ppts/mcp/`
 
-### VitePress Configuration
-
-Config location: `docs/.vitepress/config.js`
-
-**Key Settings**:
-
-- `base: '/learn-ai/'` - Required for GitHub Pages deployment
-- `ignoreDeadLinks: [/^\/learn-ai\/ppts\//]` - PPTs built externally, links verified post-deployment
-- Sidebar manually configured with explicit navigation structure
-
-**Navigation Structure**:
-
-- **Tech Stack** (`/tech/`) - Core AI concepts and technical deep-dives:
-  - LLM fundamentals
-  - Context Management (LLM context window handling)
-  - Prompt Engineering (with case studies like Copilot)
-  - Agent architecture (MCP protocol, Skills, Hooks)
-  - RAG (Retrieval-Augmented Generation)
-  - Vector Databases & Embeddings (semantic search, vector storage)
-  - SFT (Supervised Fine-Tuning)
-- **Products** (`/products/`) - Real-world AI tools and applications:
-  - AI Coding tools (Cursor, Copilot, Claude CLI, Gemini CLI)
-  - Development tools (Ollama for local LLMs)
-
 ### Content Organization Philosophy
 
-```
+```bash
 docs/
 ├── tech/                    # Core AI technical concepts
 │   ├── index.md            # Tech stack overview
@@ -167,44 +167,16 @@ examples/
     └── api.js            # Basic Ollama API usage example
 ```
 
-### MCP Server Implementation Pattern
-
-The `examples/mcp-lab` demonstrates standard MCP architecture:
-
-```javascript
-// Server setup with stdio transport
-const server = new Server({ name: "...", version: "..." }, { capabilities: {...} });
-const transport = new StdioServerTransport();
-await server.connect(transport);
-
-// Tool registration (ListToolsRequestSchema)
-server.setRequestHandler(ListToolsRequestSchema, async () => ({
-  tools: [/* tool definitions with JSON schemas */]
-}));
-
-// Tool execution (CallToolRequestSchema)
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  // Validate params with Zod
-  // Execute tool logic
-  // Return { content: [{ type: "text", text: result }] }
-});
-```
-
-**Educational Tools Implemented**:
-
-- `add` - Basic arithmetic (demonstrates parameter validation)
-- `read_file_summary` - File system interaction (demonstrates async operations and error handling)
-
 ## Development Workflows
 
 ### Adding Documentation
 
 1. Create `.md` file in appropriate `docs/` subdirectory (`tech/` or `products/`)
 2. Update `docs/.vitepress/config.js` sidebar configuration manually:
-   - Sidebar structure is explicitly defined in the config, not auto-generated
-   - Add new entries under the appropriate section (`Tech Stack` or `Products`)
-   - Use nested `items` arrays for hierarchical navigation
-3. Test locally with `pnpm docs:dev` at http://localhost:5173
+    - Sidebar structure is explicitly defined in the config, not auto-generated
+    - Add new entries under the appropriate section (`Tech Stack` or `Products`)
+    - Use nested `items` arrays for hierarchical navigation
+3. Test locally with `pnpm docs:dev` at <http://localhost:5173>
 4. Commit - deployment is automatic via GitHub Actions to gh-pages branch
 
 ### Adding Presentation Slides
@@ -221,27 +193,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 - Theme: Seriph
 
 To add slides, edit the modular `.md` files or update `slides.md` to include new modules.
-
-### Testing Full Build Locally
-
-```bash
-# Build all components
-pnpm docs:build
-cd ppts/prompt && npm install && npm run build && cd ../..
-cd ppts/mcp && npm install && npm run build && cd ../..
-
-# Manually replicate GitHub Actions merge step
-mkdir -p final_dist
-cp -r docs/.vitepress/dist/* final_dist/
-mkdir -p final_dist/ppts/prompt
-cp -r ppts/prompt/dist/* final_dist/ppts/prompt/
-mkdir -p final_dist/ppts/mcp
-cp -r ppts/mcp/dist/* final_dist/ppts/mcp/
-touch final_dist/.nojekyll
-
-# Preview merged result (requires http server)
-npx http-server final_dist -p 8080 -o
-```
 
 ## Important Implementation Notes
 
@@ -265,19 +216,6 @@ Root `package.json` has `"type": "module"`. All JavaScript files use ES module s
 
 ### Package Manager Enforcement
 
-Use `pnpm` exclusively for root dependencies - enforced by `packageManager` field. Running `npm install` may cause version mismatches.
+Use `pnpm` exclusively for root dependencies. Running `npm install` in the root may cause version mismatches.
 
 **Exception**: The PPT subdirectories (`ppts/prompt/`, `ppts/mcp/`) use `npm` directly as they are independent Slidev projects. This is intentional and required by the build process.
-
-### Examples Architecture
-
-- **`mcp-lab/`**: Educational MCP server demonstrating the Model Context Protocol SDK
-  - Uses `@modelcontextprotocol/sdk` for server/transport
-  - Implements tool registration (ListToolsRequestSchema) and execution (CallToolRequestSchema)
-  - Zod schemas for parameter validation
-  - Can be run as `npm start` or used as binary `mcp-lab-server`
-
-- **`ollama-node/`**: Minimal example showing local LLM usage with Ollama
-  - Demonstrates basic `ollama.chat()` API usage
-  - Requires Ollama installed and running locally
-  - Example uses deepseek-r1:8b model
