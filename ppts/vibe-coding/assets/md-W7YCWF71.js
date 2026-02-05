@@ -1,8 +1,0 @@
-import{_ as i}from"./slidev/CodeBlockWrapper.vue_vue_type_script_setup_true_lang-BQ2k_oWb.js";import{b as p,o as u,w as l,g as s,e as m,D as n,m as d,v as f,x as c,E as e}from"./modules/vue-DJFsEZ89.js";import{I as k}from"./slidev/default-DWDqEWW4.js";import{u as g,f as _}from"./slidev/context-CJp6erhD.js";import"./modules/unplugin-icons-CmPPIRXb.js";import"./index-5UAZEd1f.js";import"./modules/shiki-DUOkga-O.js";const N={__name:"03.skill.md__slidev_13",setup(x){const{$clicksContext:t,$frontmatter:o}=g();return t.setup(),(v,a)=>{const r=i;return u(),p(k,f(c(e(_)(e(o),12))),{default:l(()=>[a[1]||(a[1]=s("h1",null,"场景 5: 文档与注释生成",-1)),a[2]||(a[2]=s("p",null,[s("strong",null,"目标"),n("：将复杂实现转为可读文档，提高可维护性")],-1)),a[3]||(a[3]=s("p",null,[s("strong",null,"示例 Prompt"),n("：")],-1)),m(r,d({},{ranges:[]}),{default:l(()=>[...a[0]||(a[0]=[s("pre",{class:"shiki shiki-themes vitesse-dark vitesse-light slidev-code",style:{"--shiki-dark":"#dbd7caee","--shiki-light":"#393a34","--shiki-dark-bg":"#121212","--shiki-light-bg":"#ffffff"}},[s("code",{class:"language-text"},[s("span",{class:"line"},[s("span",null,"请为以下模块生成 README 概要，包含：")]),n(`
-`),s("span",{class:"line"},[s("span",null,"- 功能描述")]),n(`
-`),s("span",{class:"line"},[s("span",null,"- 参数说明")]),n(`
-`),s("span",{class:"line"},[s("span",null,"- 示例用法")]),n(`
-`),s("span",{class:"line"},[s("span",null,"- 注意事项")]),n(`
-`),s("span",{class:"line"},[s("span")]),n(`
-`),s("span",{class:"line"},[s("span",null,"代码：<粘贴模块主文件或导出函数列表>")]),n(`
-`),s("span",{class:"line"},[s("span",null,"输出格式：Markdown，包含示例代码块")])])],-1)])]),_:1},16)]),_:1},16)}}};export{N as default};

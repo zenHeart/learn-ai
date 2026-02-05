@@ -1,9 +1,0 @@
-import{b as a,o as l,w as s,g as n,i as o,v as u,x as p,C as t}from"./modules/vue-BY0GJA4I.js";import{I as g}from"./slidev/default-CYc5Ucsu.js";import{u as d,f}from"./slidev/context-BprjQUhs.js";import"./index-BrCQuh52.js";import"./modules/shiki-Cim4xDAb.js";const b={__name:"01.prepare.md__slidev_7",setup(m){const{$clicksContext:i,$frontmatter:r}=d();return i.setup(),(h,e)=>(l(),a(g,u(p(t(f)(t(r),6))),{default:s(()=>[e[0]||(e[0]=n("h1",null,[n("a",{href:"https://easyai.tech/ai-definition/machine-learning/",target:"_blank"},"Machine Learning (ML)")],-1)),e[1]||(e[1]=n("p",null,"Machine Learning is the process where computers learn from large amounts of samples to accomplish specific goals, creating a mapping from A (input) -> B (output)",-1)),o(`
-Handwritten digit recognition
-
-Training set/Validation set/Test set
-Features -> Identify digit features
-Modeling -> The learning process
-Model -> The patterns formed after training
-
- `),e[2]||(e[2]=n("ul",null,[n("li",null,[n("strong",null,"Training Set")]),n("li",null,[n("strong",null,"Features")]),n("li",null,[n("strong",null,"Modeling")]),n("li",null,[n("strong",null,"Model")])],-1)),e[3]||(e[3]=n("blockquote",null,[n("p",null,'Through training data, continuously identifying features and modeling, finally forming an effective model - this process is called "machine learning"!')],-1)),e[4]||(e[4]=n("p",null,"Three types based on training methods:",-1)),e[5]||(e[5]=n("ul",null,[n("li",null,[n("a",{href:"https://easyai.tech/ai-definition/supervised-learning/",target:"_blank"},"Supervised Learning")]),n("li",null,[n("a",{href:"https://easyai.tech/ai-definition/unsupervised-learning/",target:"_blank"},"Unsupervised Learning")]),n("li",null,[n("a",{href:"https://easyai.tech/ai-definition/reinforcement-learning/",target:"_blank"},"Reinforcement Learning")])],-1))]),_:1},16))}};export{b as default};
