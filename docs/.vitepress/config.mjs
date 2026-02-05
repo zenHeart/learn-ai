@@ -4,7 +4,7 @@ import path from "path";
 
 export default withMermaid(defineConfig({
    base: '/learn-ai/',
-   
+
    // Shared Config
    ignoreDeadLinks: [
       /^\/learn-ai\/ppts\//,
@@ -15,7 +15,7 @@ export default withMermaid(defineConfig({
       /structured-output/,
       /projects\/index/,
    ],
-   
+
    vite: {
       resolve: {
          alias: {
@@ -65,6 +65,7 @@ export default withMermaid(defineConfig({
                { text: 'Paths', link: '/paths/' },
                { text: 'Docs', link: '/tech/' },
                { text: 'Cookbook', link: '/cookbook/' },
+               { text: 'AI Tools', link: '/ai-tools/' },
                {
                   text: 'PPTs', items: [
                      { text: 'Prompt Engineering', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt/' },
@@ -289,6 +290,7 @@ export default withMermaid(defineConfig({
                { text: '路径', link: '/zh/paths/' },
                { text: '文档', link: '/zh/tech/' },
                { text: '秘籍', link: '/zh/cookbook/' },
+               { text: 'AI 工具', link: '/zh/ai-tools/' },
                {
                   text: 'PPTs', items: [
                      { text: '提示工程 (Prompt)', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt/' },
