@@ -1,16 +1,9 @@
 {
-  "name": "ppt",
+  "name": "prompt",
   "private": true,
   "scripts": {
     "build": "slidev build --base /learn-ai/ppts/prompt/",
     "dev": "slidev --open",
-    "export": "slidev export",
-    "examples:1": "node --experimental-modules examples/01.prepare.js"
-
-  },
-  "dependencies": {
-    "@slidev/cli": "^0.49.0",
-    "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
+    "export": "slidev export"
   }
 }

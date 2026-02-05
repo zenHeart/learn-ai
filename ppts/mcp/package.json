@@ -1,14 +1,9 @@
 {
-  "name": "mcp-ppt",
+  "name": "mcp",
   "private": true,
   "scripts": {
     "build": "slidev build --base /learn-ai/ppts/mcp/",
     "dev": "slidev --open",
     "export": "slidev export"
-  },
-  "dependencies": {
-    "@slidev/cli": "^0.49.0",
-    "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
   }
 }

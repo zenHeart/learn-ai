@@ -1,22 +1,27 @@
 {
   "name": "learn-ai",
   "version": "1.0.0",
-  "description": "",
+  "description": "AI Learning Resources & PPTs",
   "type": "module",
-  "main": "index.js",
-  "directories": {
-    "example": "examples"
-  },
+  "private": true,
   "scripts": {
-    "deploy:ppt": "./scripts/deploy.sh",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "ppt:prompt": "cd ppts/prompt && npm install && npm run dev",
-    "ppt:mcp": "cd ppts/mcp && npm install && npm run dev",
-    "ppt:vibe": "cd ppts/vibe-coding && npm install && npm run dev"
+    "ppt:prompt": "pnpm --filter prompt dev",
+    "ppt:mcp": "pnpm --filter mcp dev",
+    "ppt:vibe": "pnpm --filter vibe-coding dev",
+    "ppt:build": "pnpm --filter './ppts/*' build",
+    "ppt:build:prompt": "pnpm --filter prompt build",
+    "ppt:build:mcp": "pnpm --filter mcp build",
+    "ppt:build:vibe": "pnpm --filter vibe-coding build",
+    "deploy:ppt": "./scripts/deploy.sh"
   },
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "learning",
+    "ppt"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -25,8 +30,11 @@
     "ollama": "^0.5.12",
     "openai": "^3.2.1"
   },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
+  "packageManager": "pnpm@9.15.4",
   "devDependencies": {
+    "@slidev/cli": "^0.50.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
     "mermaid": "^11.12.2",
     "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17"

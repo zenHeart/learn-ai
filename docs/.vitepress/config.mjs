@@ -69,7 +69,8 @@ export default withMermaid(defineConfig({
                {
                   text: 'PPTs', items: [
                      { text: 'Prompt Engineering', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt/' },
-                     { text: 'MCP Protocol', link: 'https://blog.zenheart.site/learn-ai/ppts/mcp' }
+                     { text: 'MCP Protocol', link: 'https://blog.zenheart.site/learn-ai/ppts/mcp' },
+                     { text: 'Vibe Coding', link: 'https://blog.zenheart.site/learn-ai/ppts/vibe-coding/' }
                   ]
                }
             ],
@@ -294,7 +295,8 @@ export default withMermaid(defineConfig({
                {
                   text: 'PPTs', items: [
                      { text: '提示工程 (Prompt)', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt/' },
-                     { text: 'MCP 协议', link: 'https://blog.zenheart.site/learn-ai/ppts/mcp' }
+                     { text: 'MCP 协议', link: 'https://blog.zenheart.site/learn-ai/ppts/mcp' },
+                     { text: 'Vibe Coding', link: 'https://blog.zenheart.site/learn-ai/ppts/vibe-coding/' }
                   ]
                }
             ],
