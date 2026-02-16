@@ -2,7 +2,7 @@
   "name": "prompt",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /learn-ai/ppts/prompt/ --router-mode hash",
+    "build": "slidev build --base /learn-ai/ppts/prompt/",
     "dev": "slidev --open",
     "export": "slidev export"
   }

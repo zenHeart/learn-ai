@@ -1,5 +1,6 @@
 ---
 layout: cover
+routerMode: hash
 ---
 
 # Vibe Coding (氛围编程)

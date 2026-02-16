@@ -2,7 +2,7 @@
   "name": "vibe-coding",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /learn-ai/ppts/vibe-coding/ --router-mode hash",
+    "build": "slidev build --base /learn-ai/ppts/vibe-coding/",
     "dev": "slidev --open",
     "export": "slidev export"
   }
