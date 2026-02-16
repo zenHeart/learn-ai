@@ -2,7 +2,7 @@
   "name": "mcp",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /learn-ai/ppts/mcp/",
+    "build": "slidev build --base /learn-ai/ppts/mcp/ --router-mode hash",
     "dev": "slidev --open",
     "export": "slidev export"
   }

@@ -26,6 +26,12 @@ Before diving in, understand the **5 levels of AI coding assistance**:
 
 **This path focuses on L1-L2** - the tools you'll use daily as a frontend engineer.
 
+## Before You Start
+
+**New to AI Coding?** Review these concepts first:
+- [Prompt Engineering Basics](../tech/prompt/index.md) - Learn how to talk to AI effectively
+- [AI Coding Tools Overview](../products/ai-coding/index.md) - Understand the different types of tools available
+
 <script setup>
 const pathSteps = [
   {

@@ -13,6 +13,7 @@ Integrate AI capabilities into your applications using JavaScript/TypeScript.
 **New to AI/LLMs?** Review these concepts first:
 - [LLM Fundamentals](../tech/fundamentals/LLM.md) - Understanding Large Language Models
 - [API Comparison](../integration/apis/index.md) - Choosing the right API provider
+- [Streaming Fundamentals](../tech/frontend/streaming.md) - How AI responses are delivered
 
 **Assumed Knowledge**: HTTP, REST APIs, JSON, basic Node.js/npm, React/Next.js fundamentals
 

@@ -12,6 +12,13 @@ Before starting Path 3, ensure you understand:
 
 **Need to review?** → [Path 2: Integration](./integration.md)
 
+## Before You Start
+
+**Preparing for Production?** Review these engineering pillars:
+- [Testing AI Systems](../tech/engineering/testing.md) - Reliability and quality assurance
+- [Observability](../tech/engineering/observability.md) - Monitoring and debugging in production
+- [Security Best Practices](../tech/engineering/security.md) - Protecting keys and user data
+
 ## Choose Your Learning Style
 
 - **🎯 Learn by Doing**: Start with [Full-Stack SaaS project](../projects/advanced/full-stack-saas.md) → reference guides
