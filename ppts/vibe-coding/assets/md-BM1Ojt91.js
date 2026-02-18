@@ -1,4 +1,0 @@
-import{D as d,b as m,o as t,w as p,g as i,i as v,E as o,f as s,G as n,v as f,x as c,A as a}from"./modules/vue-Bm0MZQK6.js";import{I as x}from"./slidev/default-D4t5_rR7.js";import{u as k,f as _}from"./slidev/context-IV3DoHRN.js";import"./index-ulGtfVqy.js";import"./modules/shiki-PqFtxuJK.js";const N={__name:"slides.md__slidev_2",setup(C){const{$clicksContext:l,$frontmatter:u}=k();return l.setup(),(w,e)=>{const r=d("mark");return t(),m(x,f(c(a(_)(a(u),1))),{default:p(()=>[e[3]||(e[3]=i("h1",null,"课程目标",-1)),v(` 
-1. 正确理解是观念上
-
- `),i("h3",null,[o((t(),s("span",null,[...e[0]||(e[0]=[n("正确理解 Vibe Coding ",-1)])])),[[r,void 0,void 0,{underline:!0,yellow:!0}]]),o((t(),s("span",null,[...e[1]||(e[1]=[n("高效利用相关工具 ",-1)])])),[[r,void 0,void 0,{circle:!0,blue:!0}]]),o((t(),s("span",null,[...e[2]||(e[2]=[n("解决实际问题",-1)])])),[[r,void 0,void 0,{underline:!0,red:!0}]])])]),_:1},16)}}};export{N as default};
