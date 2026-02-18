@@ -5,5 +5,8 @@
     "build": "slidev build --base /learn-ai/ppts/vibe-coding/",
     "dev": "slidev --open",
     "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/types": "^52.12.0"
   }
 }
