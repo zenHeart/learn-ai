@@ -1,5 +1,6 @@
 <script setup>
   import { ref, computed } from "vue";
+  import ContextWindow from "./ContextWindow.vue";
 
   const props = defineProps({
     mini: {
@@ -810,6 +811,11 @@
             >#{{ tag }}</span
           >
         </div>
+      </div>
+
+      <!-- 右侧：上下文窗口色块图 -->
+      <div class="flex-shrink-0">
+        <ContextWindow :stepId="currentStep.id" />
       </div>
     </div>
   </div>
