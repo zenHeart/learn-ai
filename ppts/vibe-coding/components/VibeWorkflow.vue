@@ -1,6 +1,17 @@
 <script setup>
   import { ref, computed } from "vue";
 
+  const props = defineProps({
+    mini: {
+      type: Boolean,
+      default: false,
+    },
+    activeStepId: {
+      type: String,
+      default: null,
+    },
+  });
+
   const currentStepIndex = ref(0);
   const isPlaying = ref(false);
 
@@ -10,7 +21,7 @@
       id: "start",
       title: "1. User Prompt (意图注入)",
       description:
-        "用户通过自然语言描述需求。不仅是文字，Vibe Coding 还会捕获光标位置的代码片段作为隐式输入。",
+        "用户通过自然语言描述需求。不仅是文本(语音输入、图片、文件等)，Vibe Coding 还会捕获光标位置的代码片段等作为隐式输入。",
       tags: ["Input", "Intent"],
       activeNode: "start",
       line: null,
@@ -19,7 +30,7 @@
       id: "gather",
       title: "2. Gather Context (语境收集)",
       description:
-        "Agent 启动！通过 RAG 和文件树读取相关文件（Login.jsx, types.d.ts）。这是与普通 Chatbot 的核心区别。",
+        "Agent 启动！通过 RAG 或文件树读取相关文件（这是与普通 Chatbot 的核心区别)",
       tags: ["Tool: Read", "Context"],
       activeNode: "gather",
       line: "start-gather",
@@ -28,7 +39,7 @@
       id: "llm",
       title: "3. LLM Reasoning (推理规划)",
       description:
-        "大模型接收规整后的上下文，分析需求、规划步骤、生成代码 Diff。这是整个循环的核心引擎。",
+        "大模型接收规整后的上下文，分析需求、规划步骤、生成代码 Diff。",
       tags: ["Reasoning", "Planning", "Code Gen"],
       activeNode: "llm",
       line: "gather-llm",
@@ -46,7 +57,7 @@
       id: "verify",
       title: "5. Verify Results (自动验证)",
       description:
-        "代码写入后，Agent 并没有停下。它主动运行 Linter 或编译器来检查刚才的修改是否破坏了代码。",
+        "代码写入后，Agent 会主动运行 Linter 或编译器来检查刚才的修改是否破坏了代码。",
       tags: ["Tool: Terminal", "Validation"],
       activeNode: "verify",
       result: "fail",
@@ -56,7 +67,7 @@
       id: "loop_back",
       title: "6. Feedback Loop (错误回流)",
       description:
-        "检测到报错！Agent 捕获错误信息（Interface missing），将其作为新的 Context，自动回到收集/思考阶段。",
+        "检测到报错！Agent 捕获错误信息，将其作为新的 Context，自动回到收集/思考阶段。",
       tags: ["Self-Correction", "Loop"],
       activeNode: "gather",
       line: "verify-gather",
@@ -65,7 +76,7 @@
       id: "steer",
       title: "7. User Steering (人类介入)",
       description:
-        "（可选）用户发现 AI 理解偏了，点击 Interrupt 并补充：“注意 User 类型来自 shared 库”。用户修正推理方向。",
+        "（可选）用户发现 AI 理解错误，点击 Interrupt 并补充新的信息",
       tags: ["Human-in-Loop", "Steer"],
       activeNode: "llm",
       line: "steer-llm",
@@ -73,7 +84,7 @@
     {
       id: "action_fix",
       title: "8. Take Action (修正执行)",
-      description: "结合了错误信息 + 用户修正，由 LLM 重新生成并执行代码。",
+      description: "结合错误信息 + 用户修正， LLM 重新生成并执行代码。",
       tags: ["Retry", "Fix"],
       activeNode: "action",
       line: "llm-action",
@@ -81,7 +92,7 @@
     {
       id: "verify_pass",
       title: "9. Verify Results (通过)",
-      description: "再次验证，TypeScript 编译通过。Agent 确认任务完成。",
+      description: "再次验证，Lint 通过, 验证无问题。Agent 确认任务完成。",
       tags: ["Success", "Green"],
       activeNode: "verify",
       result: "pass",
@@ -90,14 +101,19 @@
     {
       id: "done",
       title: "10. Done (任务完成)",
-      description: "任务结束。用户无需复制粘贴，直接得到了可运行的代码。",
+      description: "任务结束。直接得到了可运行的代码。",
       tags: ["Commit", "Finish"],
       activeNode: "done",
       line: "verify-done",
     },
   ];
 
-  const currentStep = computed(() => steps[currentStepIndex.value]);
+  const currentStep = computed(() => {
+    if (props.mini && props.activeStepId) {
+      return steps.find((s) => s.id === props.activeStepId) || steps[0];
+    }
+    return steps[currentStepIndex.value];
+  });
 
   const nextStep = () => {
     if (currentStepIndex.value < steps.length - 1) {
@@ -148,9 +164,13 @@
 <template>
   <div
     class="vibe-workflow-container bg-white dark:bg-[#0b0d11] text-slate-700 dark:text-slate-200 rounded-none overflow-hidden flex flex-col h-full w-full"
+    :class="{
+      'mini-mode border-none bg-transparent dark:bg-transparent': mini,
+    }"
   >
     <!-- 顶部标题区 -->
     <div
+      v-if="!mini"
       class="flex-shrink-0 flex justify-between items-center p-3 md:p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#161b22]/50"
     >
       <div>
@@ -159,11 +179,6 @@
         >
           2. 原理
         </h2>
-        <p
-          class="text-slate-500 dark:text-slate-400 text-[10px] md:text-xs mt-0.5"
-        >
-          Agentic Loop: 从 Prompt 到最终代码的闭环机制
-        </p>
       </div>
 
       <!-- 控制器 -->
@@ -257,10 +272,12 @@
 
     <!-- 可视化区域 -->
     <div
-      class="flex-1 relative bg-white dark:bg-[#0d1117] overflow-hidden flex items-center justify-center"
+      class="flex-1 relative bg-white dark:bg-[#0d1117] overflow-hidden flex items-center justify-center transition-all duration-500"
+      :class="{ 'bg-transparent dark:bg-transparent': mini }"
     >
       <!-- 背景网格 -->
       <div
+        v-if="!mini"
         class="absolute inset-0 opacity-[0.03]"
         style="
           background-image:
@@ -272,10 +289,15 @@
 
       <!-- 画布内容 - 响应式缩放容器 -->
       <div
-        class="diagram-viewport relative w-full h-full max-w-[1000px] max-h-[450px]"
+        class="diagram-viewport relative w-full h-full overflow-hidden"
+        :class="mini ? '' : 'max-w-[1000px] max-h-[450px]'"
       >
         <div
-          class="diagram-scaler absolute inset-0 flex items-center justify-center"
+          :class="
+            mini
+              ? 'mini-scaler'
+              : 'diagram-scaler absolute inset-0 flex items-center justify-center'
+          "
         >
           <div class="relative w-[1000px] h-[400px]">
             <!-- SVG 连接层 -->
@@ -707,6 +729,7 @@
 
     <!-- 底部状态区 -->
     <div
+      v-if="!mini"
       class="flex-shrink-0 bg-slate-50 dark:bg-[#161b22] border-t border-slate-200 dark:border-slate-800 flex gap-2 items-start shadow-inner"
       style="min-height: 60px !important; padding: 8px !important"
     >
@@ -843,5 +866,41 @@
   button:disabled {
     cursor: not-allowed;
     opacity: 0.3;
+  }
+
+  /* Mini Mode Specifics */
+  .vibe-workflow-container.mini-mode {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .mini-scaler {
+    /* 关键：保持原始内容尺寸，从左上角等比缩放 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 400px;
+    transform-origin: top left;
+    transform: scale(var(--mini-scale, 0.22));
+  }
+
+  .mini-mode .node-float {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  .mini-mode .node-float > div {
+    padding: 2px !important; /* 深度减小内边距 */
+    border-radius: 2px !important;
+  }
+
+  .mini-mode .node-active {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    z-index: 100;
+    transform: scale(1.3); /* 进一步显著放大当前激活点 */
+    border-width: 2px !important;
   }
 </style>
