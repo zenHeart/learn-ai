@@ -489,11 +489,10 @@
                   class="text-blue-500 dark:text-blue-400"
                 >
                   <path
-                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14 2z"
+                    d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v4"
                   />
-                  <polyline points="14 2 14 8 20 8" />
-                  <circle cx="10" cy="14" r="2" />
-                  <line x1="21" y1="21" x2="11.5" y2="11.5" />
+                  <circle cx="17" cy="17" r="3" />
+                  <path d="m21 21-1.5-1.5" />
                 </svg>
                 <span class="font-bold text-xs text-slate-800 dark:text-white"
                   >Gather Context</span
@@ -576,10 +575,13 @@
                   stroke-linejoin="round"
                   class="text-indigo-600 dark:text-indigo-400"
                 >
-                  <path d="m12 19 7-7 3 3-7 7-3-3z" />
-                  <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-17z" />
-                  <path d="m2 2 7.586 7.586" />
-                  <circle cx="11" cy="11" r="2" />
+                  <path
+                    d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5"
+                  />
+                  <polyline points="14 2 14 8 20 8" />
+                  <path
+                    d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l.99-3.95 5.43-5.44Z"
+                  />
                 </svg>
                 <span class="font-bold text-xs text-slate-800 dark:text-white"
                   >Take Action</span
@@ -613,8 +615,10 @@
                   stroke-linejoin="round"
                   class="text-yellow-600 dark:text-yellow-400"
                 >
-                  <polyline points="4 17 10 11 4 5" />
-                  <line x1="12" y1="19" x2="20" y2="19" />
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                  />
+                  <path d="m9 12 2 2 4-4" />
                 </svg>
                 <span class="font-bold text-xs text-slate-800 dark:text-white"
                   >Verify Results</span
@@ -711,11 +715,13 @@
                   <div>
                     <p
                       class="text-orange-900 dark:text-orange-100 text-[10px] font-bold"
+                      style="margin: 0 !important"
                     >
                       Interrupt & Steer · 打断与修正
                     </p>
                     <p
                       class="text-orange-700 dark:text-orange-400/70 text-[8px] leading-tight"
+                      style="margin: 0 !important"
                     >
                       用户打断并注入新上下文，修正 AI 方向。
                     </p>
@@ -731,8 +737,8 @@
     <!-- 底部状态区 -->
     <div
       v-if="!mini"
-      class="flex-shrink-0 bg-slate-50 dark:bg-[#161b22] border-t border-slate-200 dark:border-slate-800 flex gap-2 items-start shadow-inner"
-      style="min-height: 60px !important; padding: 8px !important"
+      class="flex-shrink-0 bg-slate-50 dark:bg-[#161b22] border-t border-slate-200 dark:border-slate-800 flex gap-2 items-start shadow-inner overflow-hidden"
+      style="height: 100px !important; padding: 8px !important"
     >
       <div class="flex-shrink-0 mt-0.5">
         <div
