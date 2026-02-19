@@ -158,7 +158,7 @@
             Σ
           </text>
 
-          <!-- 连线：Sigma → h() -->
+          <!-- 连线：Σ → σ() -->
           <line
             x1="242"
             y1="150"
@@ -169,7 +169,7 @@
             marker-end="url(#arr1)"
           />
 
-          <!-- 激活函数 h() -->
+          <!-- 激活函数 σ() (Sigmoid) -->
           <rect
             x="295"
             y="125"
@@ -188,32 +188,73 @@
             fill="#15803d"
             font-weight="500"
           >
-            h()
+            σ()
           </text>
 
-          <!-- Sigmoid 曲线 (h()框下方) -->
-          <g transform="translate(300, 180)">
+          <!-- Sigmoid 曲线 (σ()框下方) -->
+          <g transform="translate(297, 180)">
+            <!-- X 轴 (底部) -->
             <line
-              x1="5"
-              y1="30"
-              x2="55"
-              y2="30"
+              x1="2"
+              y1="48"
+              x2="58"
+              y2="48"
               stroke="#94a3b8"
               stroke-width="0.8"
             />
+            <!-- Y 轴 (居中，表示 x=0) -->
             <line
               x1="30"
-              y1="5"
+              y1="3"
               x2="30"
-              y2="55"
+              y2="48"
               stroke="#94a3b8"
               stroke-width="0.8"
             />
+            <!-- Y 轴标注 -->
+            <text
+              x="28"
+              y="8"
+              style="font-size: 5px"
+              fill="#94a3b8"
+              text-anchor="end"
+            >
+              1
+            </text>
+            <text
+              x="28"
+              y="28"
+              style="font-size: 5px"
+              fill="#94a3b8"
+              text-anchor="end"
+            >
+              0.5
+            </text>
+            <text
+              x="28"
+              y="47"
+              style="font-size: 5px"
+              fill="#94a3b8"
+              text-anchor="end"
+            >
+              0
+            </text>
+            <!-- 0.5 虚线参考线 -->
+            <line
+              x1="2"
+              y1="25"
+              x2="58"
+              y2="25"
+              stroke="#cbd5e1"
+              stroke-width="0.4"
+              stroke-dasharray="2,2"
+            />
+            <!-- Sigmoid 曲线：左下(≈0) → 中心(0, 0.5) → 右上(≈1) -->
             <path
-              d="M 8,48 C 15,48 22,46 26,38 Q 30,30 34,22 C 38,14 45,12 52,12"
+              d="M 2,46 C 8,46 14,45 20,42 Q 26,36 30,25 Q 34,14 40,8 C 46,5 52,4 58,4"
               fill="none"
               stroke="#22c55e"
-              stroke-width="2"
+              stroke-width="1.8"
               stroke-linecap="round"
             />
           </g>
