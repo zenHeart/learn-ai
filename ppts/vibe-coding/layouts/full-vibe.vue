@@ -1,5 +1,8 @@
 <template>
-  <div class="slidev-layout full-vibe h-full w-full p-0">
+  <div
+    class="slidev-layout full-vibe h-full w-full"
+    :class="$attrs.class || 'p-8'"
+  >
     <slot />
   </div>
 </template>
@@ -15,5 +18,6 @@
     display: flex;
     flex-direction: column;
     background: transparent;
+    overflow-y: auto;
   }
 </style>

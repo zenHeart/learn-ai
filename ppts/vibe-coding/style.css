@@ -4,3 +4,65 @@
   margin: 20px;
 }
 
+/* 表格滚动适配 */
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 85%;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.table-scroll table {
+  font-size: 0.65em;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 4px 8px;
+  white-space: normal;
+  word-break: break-word;
+  vertical-align: middle;
+}
+
+/* 特定列宽优化，让最后一列充分利用剩余空间 */
+.table-scroll th:nth-child(1),
+.table-scroll td:nth-child(1) {
+  width: 4%;
+  min-width: 40px;
+  text-align: center;
+}
+
+.table-scroll th:nth-child(2),
+.table-scroll td:nth-child(2) {
+  width: 12%;
+  min-width: 100px;
+  white-space: nowrap; /* 工具名称不换行 */
+}
+
+.table-scroll th:nth-child(3),
+.table-scroll td:nth-child(3) {
+  width: 8%;
+  white-space: nowrap;
+}
+
+.table-scroll th:nth-child(4),
+.table-scroll td:nth-child(4) {
+  width: 25%;
+}
+
+.table-scroll th:nth-child(5),
+.table-scroll td:nth-child(5) {
+  width: 15%;
+  min-width: 100px;
+  white-space: nowrap; /* 星星不换行 */
+}
+
+.table-scroll th:nth-child(6),
+.table-scroll td:nth-child(6) {
+  /* 最后一列不设固定宽度，自适应撑满剩余空间 */
+  width: auto; 
+}
