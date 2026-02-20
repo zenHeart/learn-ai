@@ -19,41 +19,49 @@ export const ToolsCompare = {
       name: "AGENTS.md",
       desc: "项目上下文规范标准，用于对齐全局目标与背景",
       label: ["core"],
+      link: "https://agents.md/",
     },
     rules: {
       name: "Rules",
       desc: "规范 AI 代码生成行为与输出样板的指令集",
       label: ["arch"],
+      link: "https://cursor.com/docs/context/rules#project-rules",
     },
     skill: {
       name: "SKILL",
       desc: "提供给 AI 调用的工具链与函数自动化工作流",
       label: ["core"],
+      link: "https://agentskills.io/home",
     },
     hooks: {
       name: "HOOKS",
       desc: "拦截文件读写与指令执行等，在生命周期注入校验",
       label: ["arch"],
+      link: "https://code.claude.com/docs/en/hooks",
     },
     commands: {
       name: "Commands",
       desc: "封装特定长终端指令为捷径，以供 AI 快捷调用",
       label: ["core"],
+      link: "https://cursor.com/docs/context/commands",
     },
     mcp: {
       name: "MCP",
       desc: "通过 Model Context Protocol 扩展模型的本地认知域",
       label: ["arch"],
+      link: "https://modelcontextprotocol.io/docs/getting-started/intro",
     },
     agents: {
       name: "Agents",
       desc: "分治处理复杂单一任务的特定领域子智能体协作",
       label: ["core"],
+      link: "https://code.claude.com/docs/en/sub-agents",
     },
     config: {
       name: "Config",
       desc: "用于不同 AI 行为组件的规则与配置策略解耦",
       label: ["arch"],
+      link: "https://code.claude.com/docs/en/build-with-claude-code/configure-claude-code",
     },
   },
 
@@ -62,95 +70,250 @@ export const ToolsCompare = {
       _meta: {
         name: "Cursor",
         color: "#3B82F6",
+        link: "https://cursor.com/",
       },
-      "AGENTS.md": { level: SUPPORT_LEVEL.support },
-      rules: { level: SUPPORT_LEVEL.support },
-      skill: { level: SUPPORT_LEVEL.support },
-      hooks: { level: SUPPORT_LEVEL.support },
-      commands: { level: SUPPORT_LEVEL.support },
-      mcp: { level: SUPPORT_LEVEL.support },
-      agents: { level: SUPPORT_LEVEL.support },
-      config: { level: SUPPORT_LEVEL.support },
+      "AGENTS.md": {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/rules#agentsmd",
+      },
+      rules: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/rules#project-rules",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/skills",
+      },
+      hooks: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/agent/hooks",
+      },
+      commands: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/commands",
+      },
+      mcp: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/mcp",
+      },
+      agents: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/subagents",
+      },
+      config: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/configuration",
+      },
     },
     claude: {
       _meta: {
         name: "Claude Code",
         color: "#D97706",
+        link: "https://code.claude.com/docs/en/overview",
       },
-      "AGENTS.md": { level: SUPPORT_LEVEL.support },
-      rules: { level: SUPPORT_LEVEL.support },
-      skill: { level: SUPPORT_LEVEL.support },
-      hooks: { level: SUPPORT_LEVEL.support },
-      commands: { level: SUPPORT_LEVEL.support },
-      mcp: { level: SUPPORT_LEVEL.support },
-      agents: { level: SUPPORT_LEVEL.support },
-      config: { level: SUPPORT_LEVEL.support },
+      "AGENTS.md": {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/best-practices#write-an-effective-claude-md",
+      },
+      rules: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/memory#modular-rules-with-claude%2Frules%2F",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/skills",
+      },
+      hooks: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/hooks",
+      },
+      commands: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/build-with-claude-code/extend-claude-with-skills",
+      },
+      mcp: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/build-with-claude-code/configure-mcp-servers",
+      },
+      agents: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/sub-agents",
+      },
+      config: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.claude.com/docs/en/build-with-claude-code/configure-claude-code",
+      },
     },
     gemini: {
       _meta: {
         name: "Gemini CLI",
         color: "#8B5CF6",
+        link: "https://geminicli.com/",
       },
-      "AGENTS.md": { level: SUPPORT_LEVEL.support },
-      skill: { level: SUPPORT_LEVEL.support },
-      hooks: { level: SUPPORT_LEVEL.support },
-      commands: { level: SUPPORT_LEVEL.support },
-      mcp: { level: SUPPORT_LEVEL.support },
-      agents: { level: SUPPORT_LEVEL.support },
-      config: { level: SUPPORT_LEVEL.support },
+      "AGENTS.md": {
+        level: SUPPORT_LEVEL.support,
+        link: "https://geminicli.com/docs/core/context/",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://geminicli.com/docs/cli/skills/",
+      },
+      hooks: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://geminicli.com/docs/hooks/",
+      },
+      commands: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://geminicli.com/docs/cli/custom-commands/",
+      },
+      mcp: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://geminicli.com/docs/tools/mcp-server/",
+      },
+      agents: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://geminicli.com/docs/core/subagents/#what-are-sub-agents",
+      },
+      config: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://ai.google.dev/gemini-api/docs/cli",
+      },
     },
     copilot: {
       _meta: {
         name: "GitHub Copilot",
         color: "#4B5563",
+        link: "https://docs.github.com/en/copilot",
       },
-      "AGENTS.md": { level: SUPPORT_LEVEL.support },
-      rules: { level: SUPPORT_LEVEL.support },
-      skill: { level: SUPPORT_LEVEL.support },
-      hooks: { level: SUPPORT_LEVEL.support },
-      commands: { level: SUPPORT_LEVEL.support },
-      mcp: { level: SUPPORT_LEVEL.support },
-      agents: { level: SUPPORT_LEVEL.support },
-      config: { level: SUPPORT_LEVEL.support },
+      "AGENTS.md": {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/copilot-cli/add-custom-instructions#agent-instructions",
+      },
+      rules: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills/",
+      },
+      hooks: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/use-hooks",
+      },
+      commands: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://code.visualstudio.com/docs/copilot/customization/prompt-files",
+      },
+      mcp: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.github.com/en/copilot/customizing-copilot/configuring-mcp-servers",
+      },
+      agents: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-custom-agents",
+      },
+      config: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.github.com/en/copilot/customizing-copilot/configuring-github-copilot",
+      },
     },
     trae: {
       _meta: {
         name: "Trae",
         color: "#10B981",
+        link: "https://docs.trae.ai/ide",
       },
-      "AGENTS.md": { level: SUPPORT_LEVEL.support },
-      rules: { level: SUPPORT_LEVEL.support },
-      skill: { level: SUPPORT_LEVEL.support },
-      mcp: { level: SUPPORT_LEVEL.support },
-      agents: { level: SUPPORT_LEVEL.support },
-      config: { level: SUPPORT_LEVEL.support },
+      "AGENTS.md": {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.trae.ai/ide/rules?_lang=en",
+      },
+      rules: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.trae.ai/ide/rules?_lang=en",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.trae.ai/ide/skills",
+      },
+      mcp: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.trae.ai/ide/ide-settings-overview?_lang=en",
+      },
+      agents: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://docs.trae.ai/ide/agent?_lang=en",
+      },
+      config: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://www.trae.ai/docs/guide/configuration",
+      },
     },
     opencode: {
       _meta: {
         name: "OpenCode",
         color: "#EF4444",
-        slogan: "⭐️ 纯开源终端工作流",
+        link: "https://opencode.ai/",
       },
-      "AGENTS.md": { level: SUPPORT_LEVEL.support },
-      rules: { level: SUPPORT_LEVEL.support },
-      skill: { level: SUPPORT_LEVEL.support },
-      hooks: { level: SUPPORT_LEVEL.partialSupport },
-      commands: { level: SUPPORT_LEVEL.support },
-      mcp: { level: SUPPORT_LEVEL.support },
-      agents: { level: SUPPORT_LEVEL.support },
-      config: { level: SUPPORT_LEVEL.support },
+      "AGENTS.md": {
+        level: SUPPORT_LEVEL.support,
+        link: "https://opencode.ai/docs/rules/",
+      },
+      rules: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://opencode.ai/docs/rules/#custom-instructions",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://opencode.ai/docs/skills/",
+      },
+      hooks: {
+        level: SUPPORT_LEVEL.partialSupport,
+        link: "https://opencode.ai/docs/plugins",
+      },
+      commands: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://opencode.ai/docs/commands/",
+      },
+      mcp: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://opencode.ai/docs/mcp/",
+      },
+      agents: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://opencode.ai/docs/agents/",
+      },
+      config: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://opencode.ai/docs/configuration/",
+      },
     },
     codex: {
       _meta: {
         name: "Codex",
         color: "#059669",
-        slogan: "⭐️ OpenAI 官方原生多端支持",
+        link: "https://developers.openai.com/codex/",
       },
-      "AGENTS.md": { level: SUPPORT_LEVEL.support },
-      skill: { level: SUPPORT_LEVEL.support },
-      commands: { level: SUPPORT_LEVEL.support },
-      mcp: { level: SUPPORT_LEVEL.support },
-      config: { level: SUPPORT_LEVEL.support },
+      "AGENTS.md": {
+        level: SUPPORT_LEVEL.support,
+        link: "https://developers.openai.com/codex/guides/agents-md/",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://developers.openai.com/codex/skills/",
+      },
+      commands: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://developers.openai.com/codex/custom-prompts/",
+      },
+      mcp: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://developers.openai.com/codex/mcp/",
+      },
+      config: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://developers.openai.com/codex/configuration/",
+      },
     },
   },
 };

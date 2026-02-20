@@ -26,13 +26,20 @@
               </th>
               <th v-for="tool in tools" :key="tool.id" class="tool-th">
                 <div class="tool-header">
-                  <span class="tool-name" :style="{ color: tool.color }">{{
-                    tool.name
-                  }}</span>
-                  <div
-                    class="glow-line"
-                    :style="{ background: tool.color }"
-                  ></div>
+                  <a
+                    v-if="tool.link"
+                    :href="tool.link"
+                    target="_blank"
+                    class="tool-name"
+                    :style="{ color: tool.color }"
+                    >{{ tool.name }}</a
+                  >
+                  <span
+                    v-else
+                    class="tool-name"
+                    :style="{ color: tool.color }"
+                    >{{ tool.name }}</span
+                  >
                 </div>
               </th>
             </tr>
@@ -60,7 +67,15 @@
               >
                 <td class="feature-name" @mouseleave="activeTooltip = null">
                   <div class="feature-name-content">
-                    <span class="feat-title" :title="feat.name">{{
+                    <a
+                      v-if="feat.link"
+                      :href="feat.link"
+                      target="_blank"
+                      class="feat-title link-title"
+                      :title="feat.name"
+                      >{{ feat.name || feat.desc }}</a
+                    >
+                    <span v-else class="feat-title" :title="feat.name">{{
                       feat.name || feat.desc
                     }}</span>
                     <div
@@ -102,7 +117,17 @@
                       viewBox="0 0 24 24"
                       v-html="getIcon(feat.key, tool.id)"
                     ></svg>
-                    <span class="status-text">{{
+                    <a
+                      v-if="getLink(feat.key, tool.id)"
+                      :href="getLink(feat.key, tool.id)"
+                      target="_blank"
+                      class="status-link"
+                    >
+                      <span class="status-text">{{
+                        getText(feat.key, tool.id)
+                      }}</span>
+                    </a>
+                    <span v-else class="status-text">{{
                       getText(feat.key, tool.id)
                     }}</span>
                   </div>
@@ -188,6 +213,12 @@
     const conf = getConf(featKey, toolId);
     return conf?.text || getLevel(featKey, toolId);
   }
+
+  const getLink = (featKey: string, toolId: string) => {
+    const rawData = ToolsCompare.tools as unknown as Record<string, any>;
+    const cellValue = rawData[toolId][featKey];
+    return cellValue?.link || null;
+  };
 
   function getStatusClass(featKey: string, toolId: string) {
     const level = getLevel(featKey, toolId);
@@ -406,12 +437,12 @@
   }
 
   .tool-header {
-    padding: 12px 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    gap: 6px;
+    gap: 4px;
   }
 
   .tool-name {
@@ -422,15 +453,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 140px;
+    text-decoration: none; /* For links */
+    transition: opacity 0.2s ease;
   }
 
-  /* Colored underline bar for tools */
-  .glow-line {
-    position: absolute;
-    bottom: -2px;
-    width: 40px;
-    height: 3px;
-    border-radius: 3px;
+  .tool-name:hover {
+    opacity: 0.8;
   }
 
   .corner-cell {
@@ -548,6 +576,19 @@
     overflow: hidden;
     text-overflow: ellipsis;
     flex: 1; /* take remaining space */
+  }
+
+  /* Specific styles when the feature title is a link */
+  a.link-title {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    display: inline-block;
+    max-width: max-content;
+    flex: 0 1 auto;
+  }
+
+  a.link-title:hover {
+    opacity: 0.8;
   }
 
   html.dark .feat-title {
