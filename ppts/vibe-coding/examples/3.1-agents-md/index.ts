@@ -1,9 +1,23 @@
-// 🌟 练习：请在这里写一个倒计时组件，计算距离明天还有多少小时。
-// 💻 操作指南：
-// 1. 选中下方的空行
-// 2. 按下 Cmd+K (Mac) 或 Ctrl+K (Windows)
-// 3. 输入 Prompt：实现倒计时功能
+import fs from "fs";
+import { fileURLToPath } from "url";
+import * as path from "path";
 
-export function getHoursUntilTomorrow() {
-  // TODO
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const rulesPath = path.join(__dirname, "AGENTS.md");
+const rules = fs.existsSync(rulesPath) ? fs.readFileSync(rulesPath, "utf-8") : "";
+
+const userPrompt = "Build a countdown utility that returns hours until tomorrow.";
+const baseSystemPrompt = "You are a professional software engineer.";
+const systemPrompt = rules
+  ? `${baseSystemPrompt}\n\n<project_rules>\n${rules}\n</project_rules>`
+  : baseSystemPrompt;
+
+console.log("AGENTS.md Demo");
+console.log("User Prompt:");
+console.log(userPrompt);
+console.log("\nSystem Prompt:");
+console.log(systemPrompt);
+console.log("\nExpected Behavior:");
+console.log("The assistant should follow the project rules before coding.");
