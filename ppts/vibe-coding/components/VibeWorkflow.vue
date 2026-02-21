@@ -1,5 +1,6 @@
 <script setup>
-  import { ref, computed } from "vue";
+  import { ref, computed, watch } from "vue";
+  import { useNav } from "@slidev/client";
   import ContextWindow from "./ContextWindow.vue";
 
   const props = defineProps({
@@ -15,6 +16,14 @@
 
   const currentStepIndex = ref(0);
   const isPlaying = ref(false);
+
+  // Slidev 上下文集成
+  let slidevNav;
+  try {
+    slidevNav = useNav();
+  } catch (e) {
+    // 允许在无 slidev 上下文时降级
+  }
 
   // --- 剧本定义 ---
   const steps = [
@@ -116,20 +125,42 @@
     return steps[currentStepIndex.value];
   });
 
+  // 监听 Slidev 点击状态并同步组件内部步骤
+  watch(
+    () => slidevNav?.clicks?.value,
+    (newVal) => {
+      if (newVal !== undefined && !props.mini) {
+        currentStepIndex.value = Math.min(
+          Math.max(newVal, 0),
+          steps.length - 1,
+        );
+      }
+    },
+    { immediate: true },
+  );
+
   const nextStep = () => {
-    if (currentStepIndex.value < steps.length - 1) {
+    if (!props.mini && slidevNav) {
+      slidevNav.next();
+    } else if (currentStepIndex.value < steps.length - 1) {
       currentStepIndex.value++;
     }
   };
 
   const prevStep = () => {
-    if (currentStepIndex.value > 0) {
+    if (!props.mini && slidevNav) {
+      slidevNav.prev();
+    } else if (currentStepIndex.value > 0) {
       currentStepIndex.value--;
     }
   };
 
   const reset = () => {
-    currentStepIndex.value = 0;
+    if (!props.mini && slidevNav && slidevNav.clicks) {
+      slidevNav.clicks.value = 0;
+    } else {
+      currentStepIndex.value = 0;
+    }
   };
 
   // --- 样式辅助函数 ---
