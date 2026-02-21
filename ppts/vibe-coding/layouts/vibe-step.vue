@@ -10,7 +10,7 @@
 <template>
   <div class="slidev-layout vibe-step h-full w-full relative">
     <!-- 正文内容插槽 -->
-    <div class="h-full">
+    <div class="h-full relative z-10">
       <slot />
     </div>
 
@@ -34,7 +34,7 @@
     width: 220px;
     height: 100px;
     overflow: hidden;
-    z-index: 50;
+    z-index: 0;
     pointer-events: none;
     opacity: 0.85;
     border-radius: 4px;

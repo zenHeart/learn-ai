@@ -189,7 +189,7 @@
 
 <template>
   <span
-    class="vibe-example-container relative inline-flex items-center align-middle mx-1 z-10"
+    class="vibe-example-container relative inline-flex items-center align-middle mx-1 z-50"
     ref="containerRef"
   >
     <span
