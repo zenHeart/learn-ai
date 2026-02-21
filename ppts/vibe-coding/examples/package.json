@@ -15,8 +15,8 @@
     "demo:3.5": "tsx 3.5-hooks/index.ts",
     "demo:3.6": "tsx 3.6-sub-agents/index.ts",
     "demo:4.1": "tsx 4.1-cold-start/index.ts",
-    "demo:4.2": "tsx 4.2-vdd/index.ts",
-    "demo:4.3": "tsx 4.3-bug-fix/index.ts"
+    "demo:4.2": "node --import tsx --test 4.2-vdd/throttle.test.ts",
+    "demo:4.3": "tsx 4.3-bug-fix/server.ts"
   },
   "keywords": [],
   "author": "",

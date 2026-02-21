@@ -1,0 +1,14 @@
+---
+description: React 组件开发规范
+globs: **/src/components/*.tsx
+alwaysApply: false
+---
+
+# React Component Rules
+
+- 必须使用 React Functional Component 和 React Hooks。
+- 必须在文件顶部引入 `import React from 'react'`。
+- 组件的 Props 必须定义详细的 TypeScript interface，并命名为 `[组件名]Props`。
+- 所有的样式必须使用 TailwindCSS 类名实现，禁止使用 inline CSS 或是 styled-components。
+- 组件必须 export default 导出。
+- 如果包含图标，优先使用 `lucide-react`。

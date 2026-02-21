@@ -1,0 +1,12 @@
+---
+description: 工具函数开发规范
+globs: **/src/utils/*.ts
+alwaysApply: false
+---
+
+# Utils Rules
+
+- 所有的 util 函数必须是 Pure Function (纯函数)，不能有副作用。
+- 每个函数必须自带完整的 JSDoc 注释，详细说明参数、返回值类型，并包含至少一个 Example。
+- 代码中禁止包含任何和浏览器 DOM、Window 相关的 API，确保工具函数可以在 Node.js 和边缘计算环境中运行。
+- 不要使用任何第三方时间/日期库（如 moment / dayjs），只允许使用原生的 `Intl.DateTimeFormat` 进行时间戳的格式化操作。
