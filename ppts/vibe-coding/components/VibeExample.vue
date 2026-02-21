@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, watch, onMounted, onUnmounted } from "vue";
+  import { ref, watch, onMounted, onUnmounted, nextTick } from "vue";
   import { marked } from "marked";
 
   const props = defineProps({
@@ -19,34 +19,87 @@
   const tooltipRef = ref(null);
   const tooltipStyle = ref({});
 
-  const updateTooltipPosition = () => {
-    if (!showTooltip.value || !containerRef.value || !tooltipRef.value) return;
+  const updateTooltipPosition = async () => {
+    if (!showTooltip.value || !containerRef.value) return;
 
-    // Reset style
-    tooltipStyle.value = {};
+    await nextTick();
+    if (!tooltipRef.value) return;
 
-    // Need a small delay to let DOM measure
-    setTimeout(() => {
-      if (!tooltipRef.value) return;
-      const rect = tooltipRef.value.getBoundingClientRect();
-      const padding = 20; // 20px padding from screen edge
+    // Reset style for accurate natural measurement
+    tooltipStyle.value = {
+      visibility: "hidden",
+      bottom: "calc(100% + 8px)",
+      top: "auto",
+      transform: "translateX(-50%)",
+      maxHeight: "none",
+    };
 
-      let newX = 0;
-      // If overflowing left
-      if (rect.left < padding) {
-        newX = padding - rect.left;
+    // Give browser a frame to layout new styles before measuring
+    requestAnimationFrame(() => {
+      if (!tooltipRef.value || !containerRef.value || !showTooltip.value)
+        return;
+
+      const tooltipRect = tooltipRef.value.getBoundingClientRect();
+      const badgeRect = containerRef.value.getBoundingClientRect();
+
+      // Calculate the physical scale factor applied by Slidev
+      const scale =
+        tooltipRef.value.offsetWidth > 0
+          ? tooltipRect.width / tooltipRef.value.offsetWidth
+          : 1;
+
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      const padding = 20; // 20px padding from physical screen edge
+
+      let newStyle = {
+        visibility: "visible",
+      };
+
+      // --- Y-axis adjustment and dynamic max-height ---
+      const spaceAbove = badgeRect.top;
+      const spaceBelow = viewportHeight - badgeRect.bottom;
+      const marginPhysical = 8 * scale; // 8px CSS margin in physical pixels
+
+      // Determine whether it should go up or down
+      let isTop = true;
+      const totalNeededHeight = tooltipRect.height + marginPhysical + padding;
+
+      // If it doesn't fit above, and there's more space below, put it below
+      if (totalNeededHeight > spaceAbove && spaceBelow > spaceAbove) {
+        isTop = false;
+      } else if (spaceAbove < padding + marginPhysical) {
+        isTop = false; // Strictly enforce dropping if very close to top
       }
-      // If overflowing right
-      else if (rect.right > window.innerWidth - padding) {
-        newX = window.innerWidth - padding - rect.right;
+
+      const paddingCss = padding / scale;
+      const marginCss = 8;
+
+      if (isTop) {
+        newStyle.bottom = "calc(100% + 8px)";
+        newStyle.top = "auto";
+        newStyle.maxHeight = `${Math.max(100, spaceAbove / scale - marginCss - paddingCss)}px`;
+      } else {
+        newStyle.top = "calc(100% + 8px)";
+        newStyle.bottom = "auto";
+        newStyle.maxHeight = `${Math.max(100, spaceBelow / scale - marginCss - paddingCss)}px`;
       }
 
-      if (newX !== 0) {
-        tooltipStyle.value = {
-          transform: `translateX(calc(-50% + ${newX}px))`,
-        };
+      // --- X-axis adjustment ---
+      const naturalLeft =
+        badgeRect.left + badgeRect.width / 2 - tooltipRect.width / 2;
+      const naturalRight = naturalLeft + tooltipRect.width;
+
+      let offsetX = 0; // physical pixels
+      if (naturalLeft < padding) {
+        offsetX = padding - naturalLeft;
+      } else if (naturalRight > viewportWidth - padding) {
+        offsetX = viewportWidth - padding - naturalRight;
       }
-    }, 0);
+
+      newStyle.transform = `translateX(calc(-50% + ${offsetX / scale}px))`;
+      tooltipStyle.value = newStyle;
+    });
   };
 
   watch(showTooltip, (newVal) => {
@@ -54,6 +107,13 @@
       updateTooltipPosition();
     }
   });
+
+  watch(
+    () => exampleData.value.content,
+    () => {
+      if (showTooltip.value) updateTooltipPosition();
+    },
+  );
 
   // Use Vite's import.meta.glob to dynamically load README.md files
   const readmeModules = import.meta.glob("../examples/*/README.md", {
@@ -143,7 +203,7 @@
       v-show="showTooltip"
       ref="tooltipRef"
       :style="tooltipStyle"
-      class="vibe-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-96 max-h-96 flex flex-col bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 p-4 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 z-50 text-left text-sm whitespace-normal"
+      class="vibe-tooltip absolute left-1/2 w-96 flex flex-col bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 p-4 rounded-lg shadow-2xl border border-slate-200 dark:border-slate-700 z-[100] text-left text-sm whitespace-normal"
       @click.stop
     >
       <div
@@ -162,7 +222,7 @@
       </div>
 
       <div
-        class="markdown-render prose prose-sm dark:prose-invert max-w-none overflow-y-auto flex-1 pr-2 text-slate-700 dark:text-slate-300"
+        class="markdown-render prose prose-sm dark:prose-invert max-w-none overflow-y-auto flex-1 min-h-0 pr-2 text-slate-700 dark:text-slate-300"
         v-html="exampleData.content"
       ></div>
 
