@@ -1,0 +1,34 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "demo:2.1": "tsx 2.1-tokenizer/index.ts",
+    "demo:2.2": "tsx 2.2-embedding/index.ts",
+    "demo:2.3": "tsx 2.3-attention/index.ts",
+    "demo:2.4": "tsx 2.4-tool-use/index.ts",
+    "demo:3.1": "tsx 3.1-agents-md/index.ts",
+    "demo:3.2": "tsx 3.2-rules-matching/index.ts",
+    "demo:3.3": "tsx 3.3-commands-skills/index.ts",
+    "demo:3.4": "tsx 3.4-mcp-protocol/index.ts",
+    "demo:3.5": "tsx 3.5-hooks/index.ts",
+    "demo:3.6": "tsx 3.6-sub-agents/index.ts",
+    "demo:4.1": "tsx 4.1-cold-start/index.ts",
+    "demo:4.2": "tsx 4.2-vdd/index.ts",
+    "demo:4.3": "tsx 4.3-bug-fix/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "minimatch": "^10.2.2",
+    "tiktoken": "^1.0.22"
+  }
+}

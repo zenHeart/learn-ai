@@ -1,0 +1,13 @@
+---
+description: React 组件开发守则
+globs: src/components/**/*.tsx
+alwaysApply: false
+---
+
+# React 组件规约
+
+1. 只能使用函数式组件 (Hooks)，绝对禁止编写 Class 组件。
+2. 组件必须接收带有 `interface Props` 的强类型参数。
+3. 如果组件渲染涉及复杂的长列表，必须使用 `React.memo` 防止不必要的重渲染。
+
+> 此文件仅用于演示 3.2-rules-matching 的按块匹配机制
