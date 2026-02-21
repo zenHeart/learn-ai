@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, watch, onMounted } from "vue";
+  import { ref, watch, onMounted, onUnmounted } from "vue";
   import { marked } from "marked";
 
   const props = defineProps({
@@ -95,8 +95,23 @@
     }
   };
 
+  const closeTooltip = (e) => {
+    if (
+      showTooltip.value &&
+      containerRef.value &&
+      !containerRef.value.contains(e.target)
+    ) {
+      showTooltip.value = false;
+    }
+  };
+
   onMounted(() => {
     loadReadme();
+    document.addEventListener("click", closeTooltip);
+  });
+
+  onUnmounted(() => {
+    document.removeEventListener("click", closeTooltip);
   });
 
   watch(
@@ -113,14 +128,13 @@
 </script>
 
 <template>
-  <div
+  <span
     class="vibe-example-container relative inline-flex items-center align-middle mx-1 z-10"
-    @mouseenter="showTooltip = true"
-    @mouseleave="showTooltip = false"
     ref="containerRef"
   >
     <span
-      class="vibe-badge cursor-pointer text-[13px] font-bold text-white bg-indigo-500/90 hover:bg-indigo-600 px-3 py-0.5 rounded-md shadow-sm border border-indigo-400/30 transition-all backdrop-blur-sm whitespace-nowrap"
+      class="vibe-badge cursor-pointer text-[13px] font-medium text-indigo-600 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-900/30 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 px-2 py-0.5 rounded-md border border-indigo-200 dark:border-indigo-800/60 transition-colors whitespace-nowrap"
+      @click="showTooltip = !showTooltip"
     >
       Demo {{ exampleData.dirName || id }}
     </span>
@@ -130,6 +144,7 @@
       ref="tooltipRef"
       :style="tooltipStyle"
       class="vibe-tooltip absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-96 max-h-96 flex flex-col bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 p-4 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 z-50 text-left text-sm whitespace-normal"
+      @click.stop
     >
       <div
         v-if="exampleData.dirName"
@@ -155,7 +170,7 @@
         class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-3 h-3 bg-white dark:bg-slate-800 border-r border-b border-slate-200 dark:border-slate-700 hidden"
       ></div>
     </div>
-  </div>
+  </span>
 </template>
 
 <style scoped>
