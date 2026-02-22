@@ -113,6 +113,7 @@
                     :class="getStatusClass(feat.key, tool.id)"
                   >
                     <svg
+                      v-if="!getConf(feat.key, tool.id)?.text"
                       class="status-icon"
                       viewBox="0 0 24 24"
                       v-html="getIcon(feat.key, tool.id)"

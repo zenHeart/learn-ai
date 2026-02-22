@@ -18,6 +18,7 @@
   const containerRef = ref(null);
   const tooltipRef = ref(null);
   const tooltipStyle = ref({});
+  const isLocal = ref(false);
 
   const updateTooltipPosition = async () => {
     if (!showTooltip.value || !containerRef.value) return;
@@ -166,6 +167,9 @@
   };
 
   onMounted(() => {
+    isLocal.value =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
     loadReadme();
     document.addEventListener("click", closeTooltip);
   });
@@ -182,8 +186,7 @@
   );
 
   const getCursorLink = () => {
-    if (!exampleData.value.dirName) return "#";
-    return `cursor://file/Users/zenheart/code/github/learn-ai/ppts/vibe-coding/examples/${exampleData.value.dirName}`;
+    return `cursor://file/Users/zenheart/code/github/learn-ai/ppts/vibe-coding/examples`;
   };
 </script>
 
@@ -207,7 +210,7 @@
       @click.stop
     >
       <div
-        v-if="exampleData.dirName"
+        v-if="isLocal"
         class="actions flex gap-2 mb-3 pb-3 border-b border-slate-200 dark:border-slate-700 flex-shrink-0"
       >
         <a
@@ -216,7 +219,7 @@
         >
           <img src="/cursor.svg" class="w-3.5 h-3.5 flex-shrink-0" />
           <span class="truncate font-medium"
-            >在 Cursor 中打开 {{ exampleData.dirName }}</span
+            >在 Cursor 中打开 examples 目录</span
           >
         </a>
       </div>

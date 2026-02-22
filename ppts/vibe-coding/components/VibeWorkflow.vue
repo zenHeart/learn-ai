@@ -31,7 +31,7 @@
       id: "start",
       title: "1. User Prompt (意图注入)",
       description:
-        "用户通过自然语言描述需求。不仅是文本(语音输入、图片、文件等)，Vibe Coding 还会捕获光标位置的代码片段等作为隐式输入。",
+        "用户通过自然语言描述需求。不仅是文本、语音输入、图片、文件(@file、@folder) 等，除了显示输入，工具还会捕获光标位置的代码片段等作为隐式输入。",
       tags: ["Input", "Intent"],
       activeNode: "start",
       line: null,
@@ -40,7 +40,7 @@
       id: "gather",
       title: "2. Gather Context (语境收集)",
       description:
-        "Agent 启动！通过 RAG 或文件树读取相关文件（这是与普通 Chatbot 的核心区别)",
+        "AI Coding 工具的 Agent (后续统称客户端 Agent)，通过 RAG 或文件树读取相关文件，调用读取文件搜索网络等相关工具(工具调用也叫做 Tool Calling), 结合用户输入，规整为统一输入",
       tags: ["Tool: Read", "Context"],
       activeNode: "gather",
       line: "start-gather",
@@ -49,7 +49,7 @@
       id: "llm",
       title: "3. LLM Reasoning (推理规划)",
       description:
-        "大模型接收规整后的上下文，分析需求、规划步骤、生成代码 Diff。",
+        "调用 API 将所有输入通常以 JSON 对象方式，传递给大模型，大模型按照一定的规则进行推理，并返回结果。",
       tags: ["Reasoning", "Planning", "Code Gen"],
       activeNode: "llm",
       line: "gather-llm",
@@ -58,7 +58,7 @@
       id: "action",
       title: "4. Take Action (执行行动)",
       description:
-        'Agent 拿到 LLM 的规划，直接执行文件变更或运行命令。在这个阶段，它会调用 "Write File" 等工具。',
+        '客户端 Agent 拿到 LLM 的结果，执行文件变更或运行命令。在这个阶段，也会调用 "Write File" 等工具。',
       tags: ["Tool: Write", "Execution"],
       activeNode: "action",
       line: "llm-action",
@@ -67,7 +67,7 @@
       id: "verify",
       title: "5. Verify Results (自动验证)",
       description:
-        "代码写入后，Agent 会主动运行 Linter 或编译器来检查刚才的修改是否破坏了代码。",
+        "代码写入后，客户端 Agent 会主动运行 Linter 或编译器来检查刚才的修改是否破坏了代码。",
       tags: ["Tool: Terminal", "Validation"],
       activeNode: "verify",
       result: "fail",
@@ -77,7 +77,7 @@
       id: "loop_back",
       title: "6. Feedback Loop (错误回流)",
       description:
-        "检测到报错！Agent 捕获错误信息，将其作为新的 Context，自动回到收集/思考阶段。",
+        "检测到报错！客户端 Agent 捕获错误信息，将其作为新的 Context，自动回到收集/思考阶段。",
       tags: ["Self-Correction", "Loop"],
       activeNode: "gather",
       line: "verify-gather",
@@ -102,7 +102,8 @@
     {
       id: "verify_pass",
       title: "9. Verify Results (通过)",
-      description: "再次验证，Lint 通过, 验证无问题。Agent 确认任务完成。",
+      description:
+        "客户端 Agent 再次验证，Lint 通过, 验证无问题。Agent 确认任务完成。",
       tags: ["Success", "Green"],
       activeNode: "verify",
       result: "pass",
@@ -111,7 +112,7 @@
     {
       id: "done",
       title: "10. Done (任务完成)",
-      description: "任务结束。直接得到了可运行的代码。",
+      description: "任务结束。客户端 Agent 会生成总结和变更告知用户。",
       tags: ["Commit", "Finish"],
       activeNode: "done",
       line: "verify-done",

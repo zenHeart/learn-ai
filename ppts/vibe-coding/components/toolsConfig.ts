@@ -10,61 +10,59 @@ export const ToolsCompare = {
     "基于 Agentic 架构与日常研发效能的综合测评。点击表格单元格查看详细说明。",
 
   label: {
-    arch: { desc: "架构与协议扩展 (基建层)" },
-    core: { desc: "核心能力" },
+    context: { desc: "上下文扩充"  },
+    tool: { desc: "工具扩展层面" },
   },
 
   features: {
     "AGENTS.md": {
       name: "AGENTS.md",
       desc: "项目上下文规范标准，用于对齐全局目标与背景",
-      label: ["core"],
+      label: ["context"],
       link: "https://agents.md/",
     },
     rules: {
       name: "Rules",
       desc: "规范 AI 代码生成行为与输出样板的指令集",
-      label: ["arch"],
+      label: ["context"],
       link: "https://cursor.com/docs/context/rules#project-rules",
-    },
-    skill: {
-      name: "SKILL",
-      desc: "提供给 AI 调用的工具链与函数自动化工作流",
-      label: ["core"],
-      link: "https://agentskills.io/home",
-    },
-    hooks: {
-      name: "HOOKS",
-      desc: "拦截文件读写与指令执行等，在生命周期注入校验",
-      label: ["arch"],
-      link: "https://code.claude.com/docs/en/hooks",
     },
     commands: {
       name: "Commands",
       desc: "封装特定长终端指令为捷径，以供 AI 快捷调用",
-      label: ["core"],
+      label: ["context"],
       link: "https://cursor.com/docs/context/commands",
+    },
+    skill: {
+      name: "SKILL",
+      desc: "提供给 AI 调用的工具链与函数自动化工作流",
+      label: ["tool", "context"],
+      link: "https://agentskills.io/home",
     },
     mcp: {
       name: "MCP",
       desc: "通过 Model Context Protocol 扩展模型的本地认知域",
-      label: ["arch"],
+      label: ["context","tool"],
       link: "https://modelcontextprotocol.io/docs/getting-started/intro",
+    },
+    hooks: {
+      name: "HOOKS",
+      desc: "拦截文件读写与指令执行等，在生命周期注入校验",
+      label: ["tool"],
+      link: "https://code.claude.com/docs/en/hooks",
     },
     agents: {
       name: "Agents",
       desc: "分治处理复杂单一任务的特定领域子智能体协作",
-      label: ["core"],
+      label: ["tool"],
       link: "https://code.claude.com/docs/en/sub-agents",
     },
-    config: {
-      name: "Config",
-      desc: "用于不同 AI 行为组件的规则与配置策略解耦",
-      label: ["arch"],
-      link: "https://code.claude.com/docs/en/build-with-claude-code/configure-claude-code",
+    unique: {
+      name: "独有特性",
+      desc: "各工具区别于其他竞品的核心独特能力或设计哲学",
+      label: ["tool"],
     },
   },
-
   tools: {
     cursor: {
       _meta: {
@@ -80,29 +78,30 @@ export const ToolsCompare = {
         level: SUPPORT_LEVEL.support,
         link: "https://cursor.com/docs/context/rules#project-rules",
       },
-      skill: {
-        level: SUPPORT_LEVEL.support,
-        link: "https://cursor.com/docs/context/skills",
-      },
-      hooks: {
-        level: SUPPORT_LEVEL.support,
-        link: "https://cursor.com/docs/agent/hooks",
-      },
       commands: {
         level: SUPPORT_LEVEL.support,
         link: "https://cursor.com/docs/context/commands",
+      },
+      skill: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/context/skills",
       },
       mcp: {
         level: SUPPORT_LEVEL.support,
         link: "https://cursor.com/docs/context/mcp",
       },
+      hooks: {
+        level: SUPPORT_LEVEL.support,
+        link: "https://cursor.com/docs/agent/hooks",
+      },
       agents: {
         level: SUPPORT_LEVEL.support,
         link: "https://cursor.com/docs/context/subagents",
       },
-      config: {
+      unique: {
         level: SUPPORT_LEVEL.support,
-        link: "https://cursor.com/docs/context/configuration",
+        text: "BugBot",
+        link: "https://cursor.com/docs/bugbot",
       },
     },
     claude: {
@@ -139,9 +138,10 @@ export const ToolsCompare = {
         level: SUPPORT_LEVEL.support,
         link: "https://code.claude.com/docs/en/sub-agents",
       },
-      config: {
+      unique: {
         level: SUPPORT_LEVEL.support,
-        link: "https://code.claude.com/docs/en/build-with-claude-code/configure-claude-code",
+        text: "Agents Team",
+        link: "https://code.claude.com/docs/en/agent-teams#when-to-use-agent-teams",
       },
     },
     gemini: {
@@ -174,9 +174,10 @@ export const ToolsCompare = {
         level: SUPPORT_LEVEL.support,
         link: "https://geminicli.com/docs/core/subagents/#what-are-sub-agents",
       },
-      config: {
+      unique: {
         level: SUPPORT_LEVEL.support,
-        link: "https://ai.google.dev/gemini-api/docs/cli",
+        text: "YOLO",
+        link: "https://geminicli.com/docs/reference/policy-engine/#approval-modes",
       },
     },
     copilot: {
@@ -213,9 +214,10 @@ export const ToolsCompare = {
         level: SUPPORT_LEVEL.support,
         link: "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-custom-agents",
       },
-      config: {
+      unique: {
         level: SUPPORT_LEVEL.support,
-        link: "https://docs.github.com/en/copilot/customizing-copilot/configuring-github-copilot",
+        text: "Participant",
+        link: "https://vscode.js.cn/api/extension-guides/ai/chat",
       },
     },
     trae: {
@@ -244,9 +246,10 @@ export const ToolsCompare = {
         level: SUPPORT_LEVEL.support,
         link: "https://docs.trae.ai/ide/agent?_lang=en",
       },
-      config: {
+      unique: {
         level: SUPPORT_LEVEL.support,
-        link: "https://www.trae.ai/docs/guide/configuration",
+        text: "SOLO",
+        link: "https://www.trae.ai/solo",
       },
     },
     opencode: {
@@ -283,9 +286,10 @@ export const ToolsCompare = {
         level: SUPPORT_LEVEL.support,
         link: "https://opencode.ai/docs/agents/",
       },
-      config: {
+      unique: {
         level: SUPPORT_LEVEL.support,
-        link: "https://opencode.ai/docs/configuration/",
+        text: "Sessions",
+        link: "https://opencode.ai/docs/tui/#sessions",
       },
     },
     codex: {
@@ -310,9 +314,10 @@ export const ToolsCompare = {
         level: SUPPORT_LEVEL.support,
         link: "https://developers.openai.com/codex/mcp/",
       },
-      config: {
+      unique: {
         level: SUPPORT_LEVEL.support,
-        link: "https://developers.openai.com/codex/configuration/",
+        text: "Worktrees",
+        link: "https://developers.openai.com/codex/app/worktrees",
       },
     },
   },
