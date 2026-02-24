@@ -116,7 +116,7 @@ export const ToolsCompare = {
       },
       rules: {
         level: SUPPORT_LEVEL.support,
-        link: "https://code.claude.com/docs/en/memory#modular-rules-with-claude%2Frules%2F",
+        link: "https://code.claude.com/docs/en/memory#modular-rules-with-claude-rules",
       },
       skill: {
         level: SUPPORT_LEVEL.support,
@@ -152,7 +152,7 @@ export const ToolsCompare = {
       },
       "AGENTS.md": {
         level: SUPPORT_LEVEL.support,
-        link: "https://geminicli.com/docs/core/context/",
+        link: "https://geminicli.com/docs/cli/gemini-md/",
       },
       skill: {
         level: SUPPORT_LEVEL.support,
@@ -172,7 +172,7 @@ export const ToolsCompare = {
       },
       agents: {
         level: SUPPORT_LEVEL.support,
-        link: "https://geminicli.com/docs/core/subagents/#what-are-sub-agents",
+        link: "https://geminicli.com/docs/core/subagents/",
       },
       unique: {
         level: SUPPORT_LEVEL.support,
