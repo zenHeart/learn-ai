@@ -16,6 +16,22 @@
 npm run demo:3.6
 ```
 
+## 配置步骤
+
+### Cursor IDE
+- Cursor 的 Composer 模式自动使用 Sub-Agents
+- 当处理复杂任务时，会自动创建子任务
+- 用户只需观察主界面的汇总结果
+
+### Claude Code
+1. 在 `~/.claude/` 目录下创建子 Agent 配置
+2. 创建 `sub-agents/` 文件夹，定义子 Agent:
+   - `frontend-agent.md` - 前端开发 Agent
+   - `backend-agent.md` - 后端开发 Agent
+   - `test-agent.md` - 测试 Agent
+3. 在主对话中通过 `@frontend-agent` 等方式调用
+4. 或使用 `/sub-agent` 命令进行任务分发
+
 ## 核心要点
 * 分而治之 (Divide and Conquer) 同样适用于人工智能。
 * 拆解任务边界，缩小单次运算的上下文窗口，是降低大模型出错率的最有效手段。

@@ -13,6 +13,17 @@
 npm run demo:2.2
 ```
 
+## 配置步骤
+
+### Cursor IDE
+1. 打开 Cursor Settings
+2. 配置 Embeddings API (Settings > Features > Embeddings)
+3. 启用代码库索引功能
+
+### Claude Code
+1. 运行 `claude`
+2. Claude Code 会自动为项目创建 embeddings 索引
+
 ## 核心要点
 
 * Embedding 把任何内容变成了特定维度的高维坐标。

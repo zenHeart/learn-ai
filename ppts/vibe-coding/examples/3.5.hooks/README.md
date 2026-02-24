@@ -16,6 +16,33 @@
 npm run demo:3.5
 ```
 
+## 配置步骤
+
+### Cursor IDE
+- Cursor 目前不支持原生 Hooks 机制
+- 替代方案：使用 Rules 限制特定文件的修改权限
+- 或通过外部 CI/CD 流程实现验证
+
+### Claude Code
+1. 创建 `.claude/hooks/` 目录
+2. 创建钩子脚本，如 `pre-commit.sh`:
+```bash
+#!/bin/bash
+if ! npm run lint; then
+  echo "Lint failed. Claude Code operation halted."
+  exit 1
+fi
+
+if ! npm test; then
+  echo "Tests failed. Please fix before committing."
+  exit 1
+fi
+```
+3. 在 `CLAUDE.md` 中配置钩子:
+```markdown
+在提交代码前，必须运行 pre-commit.sh 钩子验证
+```
+
 ## 核心要点
 * 用程序的规则建立安全的边界护栏（Guardrails）。
 * 利用大模型从报错中反思并自我修复的能力，实现闭环。

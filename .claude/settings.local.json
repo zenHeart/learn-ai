@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:agents.md)",
+      "WebFetch(domain:trae.ai)",
+      "WebFetch(domain:bbycroft.net)",
+      "WebFetch(domain:prompt.16x.engineer)",
+      "WebFetch(domain:gpt-tokenizer.dev)",
+      "WebSearch",
+      "WebFetch(domain:cursor.com)",
+      "WebFetch(domain:geminicli.com)",
+      "WebFetch(domain:opencode.ai)",
+      "WebFetch(domain:www.pingwest.com)",
+      "WebFetch(domain:docs.trae.ai)",
+      "WebFetch(domain:developers.openai.com)",
+      "WebFetch(domain:google.github.io)",
+      "mcp__MiniMax__web_search"
+    ]
+  }
+}

@@ -12,6 +12,17 @@
 npm run demo:2.1
 ```
 
+## 配置步骤
+
+### Cursor IDE
+1. 打开 Cursor Settings (`Cmd+,` 或 `Ctrl+,`)
+2. 查看 Settings > Features > Chat
+3. 了解 Token 计算方式
+
+### Claude Code
+1. 运行 `claude`
+2. 输入 `/tokens` 查看当前对话 token 使用情况
+
 ## 核心要点
 * 模型计算成本以 Token 颗粒度为准。
 * 不同的模型使用不同版本的 Tokenizer（比如 GPT4 采用了 `cl100k_base`）。

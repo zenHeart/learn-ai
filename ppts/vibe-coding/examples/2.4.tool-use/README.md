@@ -21,7 +21,19 @@
 npm run demo:2.4
 ```
 
+## 配置步骤
+
+### Cursor IDE
+1. 打开 Cursor Agent (Cmd+I 选择 Agent 模式)
+2. 输入任务如 "创建一个 express 服务器"
+3. 观察 AI 如何使用工具调用（创建文件、运行命令等）
+
+### Claude Code
+1. 运行 `claude`
+2. 输入任务如 "帮我创建一个新的 React 组件"
+3. Claude 会自动使用工具调用来完成任务
+
 ## 核心要点
 
-* 模型负责“脑”，宿主环境负责“手”。
+* 模型负责"脑"，宿主环境负责"手"。
 * Vibe Coding 本质是大量的代码编辑能力通过 Function Calling 交给了大模型来调度。

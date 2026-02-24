@@ -18,5 +18,32 @@
 npm run demo:3.4
 ```
 
+## 配置步骤
+
+### Cursor IDE
+1. 打开 Cursor Settings
+2. 进入 Features > MCP
+3. 点击 "Add new MCP server"
+4. 配置服务器信息:
+   - Name: `postgres` (或其他)
+   - Type: `command`
+   - Command: `npx -y @modelcontextprotocol/server-postgres`
+5. 保存后在对话中使用 `@postgres` 调用
+
+### Claude Code
+1. 创建或编辑 `~/.claude/settings.json`:
+```json
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"]
+    }
+  }
+}
+```
+2. 重启 Claude Code
+3. 使用 MCP 工具进行数据库操作
+
 ## 核心要点
 * MCP 提供了一种标准化的跨组件通信接口，彻底解决 AI 时代的数据孤岛问题。

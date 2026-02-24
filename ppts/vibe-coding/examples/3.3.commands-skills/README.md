@@ -15,6 +15,27 @@
 npm run demo:3.3
 ```
 
+## 配置步骤
+
+### Cursor IDE
+1. 打开 Cursor Settings
+2. 进入 Features > Commands
+3. 点击 "Add Command"
+4. 定义命令名称和对应的 Prompt 模板
+
+### Claude Code
+1. 创建 `~/.claude/skills/` 目录
+2. 创建技能文件，如 `security-audit.md`:
+```yaml
+---
+name: security-audit
+description: 代码安全扫描
+allowed-tools: Read, Grep
+---
+请扫描依赖树，全量报告 CVE 漏洞。
+```
+3. 在对话中使用 `/security-audit` 调用
+
 ## 核心要点
 * Command/Skill 是针对复杂和高频场景的一键 SOP（标准作业程序）固化。
 * 权限管控是人机协同的第一防线（Human In The Loop 的核心机制）。
