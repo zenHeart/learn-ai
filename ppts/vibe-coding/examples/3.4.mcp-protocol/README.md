@@ -34,6 +34,7 @@
    - **Command**：`npx -y @modelcontextprotocol/server-postgres`（需本地有 Postgres 或使用官方示例 Server）
 3. 保存后，在 Chat 中可通过 `@postgres` 调用该 Server 提供的工具。
 4. **预期结果**：输入 `@postgres` 后能看到该 Server 暴露的工具列表，并可发起查询（若 Server 与数据源已就绪）。
+5. **项目级配置**：Cursor 也支持在项目根目录创建 **`.cursor/mcp.json`** 配置 MCP Server，便于随仓库版本化管理；具体格式见 [Cursor MCP 文档](https://cursor.com/docs/context/mcp)。
 
 ### 步骤 C：在 Claude Code 中配置 MCP（可选）
 
@@ -66,7 +67,7 @@
 
 - MCP 提供**标准化**的跨组件通信接口，解决 AI 时代的数据孤岛问题。
 - 一次编写 MCP Server，可在 Cursor、Claude Code、Windsurf 等宿主中复用。
-- 配置方式：Cursor 在设置里填命令；Claude 在 `settings.json` 的 `mcpServers` 中配置。
+- 配置方式：Cursor 可在 **Settings > MCP** 中配置，或在项目根创建 **`.cursor/mcp.json`**（见官方文档）；Claude 在 `settings.json` 的 `mcpServers` 或项目 `.claude/mcp.json` 中配置。
 
 ---
 

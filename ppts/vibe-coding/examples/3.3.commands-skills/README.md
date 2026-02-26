@@ -14,6 +14,7 @@
 
 - 已安装 **Cursor** 或 **Claude Code**。
 - 本示例的 Claude Skill 示例文件在 `examples/.claude/skills/security-audit.md`，复制到 `~/.claude/skills/` 后即可在 Claude 中通过 `/security-audit` 调用。
+- **项目级 Cursor 示例**：本仓库已在 `examples/.cursor/commands/` 与 `examples/.cursor/skills/` 下提供 Command 与 Skill 示例，以 **`ppts/vibe-coding/examples`** 为工作区打开 Cursor 即可直接试用。
 
 ---
 
@@ -25,7 +26,15 @@
 2. 执行：`npm run demo:3.3`
 3. **预期结果**：终端输出“技能调用”与“权限检查”的模拟流程（如 audit-deps 只读通过、refactor-all 因需人工确认被拦截），理解权限缩圈的概念。
 
-### 步骤 B：在 Cursor 中配置 Command（可选）
+### 步骤 B：在 Cursor 中体验 Command 与 Skill（项目级示例）
+
+1. 用 Cursor 以 **`ppts/vibe-coding/examples`** 为工作区根目录打开。
+2. **项目级 Command**：本仓库已在 **`examples/.cursor/commands/`** 下提供示例 **`review.md`**。在 Chat 输入 **`/`**，即可在列表中找到并选择该命令（名称以文件名 `review` 为准）。
+3. **预期结果**：选择 `/review` 后，AI 会按该 Command 的 Markdown 内容执行「审查当前文件安全性，仅报告问题不直接改代码」。
+4. **项目级 Skill**：本仓库在 **`examples/.cursor/skills/security-audit/`** 下提供示例 **`SKILL.md`**。在 **Agent** 对话中输入 **`/security-audit`** 即可调用（若未显示，可打开 Cursor Settings → Rules / Skills 确认已加载项目 skills）。
+5. **预期结果**：AI 会按 Security Audit 的说明执行依赖与代码安全扫描并报告，不修改代码。
+
+### 步骤 B2：在 Cursor 中添加全局/用户级 Command（可选）
 
 1. 打开 Cursor，进入 **Settings**（`Cmd+,` 或 `Ctrl+,`）。
 2. 打开 **Features > Commands**，点击 **Add Command**。
@@ -34,7 +43,7 @@
    审查当前文件安全性，检查是否有敏感信息泄露、依赖漏洞或不当 API 使用，仅报告问题不要直接修改代码。
    ```
 4. 保存后，在 Chat 中输入 `/review` 即可触发。
-5. **预期结果**：AI 会按该 Prompt 执行审查，且若 Command 配置了只读权限则不会改文件。
+5. **预期结果**：AI 会按该 Prompt 执行审查；与项目级 `.cursor/commands/review.md` 效果类似，但保存在用户全局配置中。
 
 ### 步骤 C：在 Claude Code 中使用 Skill 示例（可选）
 
@@ -53,6 +62,8 @@
 | 文件/目录 | 说明 |
 |-----------|------|
 | `3.3.commands-skills/index.ts` | 演示脚本：模拟技能注册与权限检查逻辑 |
+| `examples/.cursor/commands/review.md` | Cursor 项目级 Command 示例，打开 examples 后输入 `/` 可见 |
+| `examples/.cursor/skills/security-audit/SKILL.md` | Cursor 项目级 Skill 示例，在 Agent 中 `/security-audit` 调用 |
 | `examples/.claude/skills/security-audit.md` | Claude Skill 示例，可复制到 `~/.claude/skills/` 使用 |
 
 ---

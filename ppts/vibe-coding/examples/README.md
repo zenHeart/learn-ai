@@ -126,8 +126,14 @@ npm run demo:4.3   # Bug 修复（启动服务得到堆栈，再把报错交给 
 - **`.cursor/rules/`**  
   存放 `.mdc` 规则文件（如 `react-components.mdc`、`utils-format.mdc`），供 **3.2 Rules Matching** 使用。Cursor 必须以**本 `examples` 目录**（或包含 `.cursor` 的上级目录）为工作区根，规则才会生效。
 
+- **`.cursor/commands/`**  
+  存放**项目级斜杠命令**示例（如 `review.md`），供 **3.3 Commands & Skills** 使用。以本目录为工作区打开 Cursor 后，在 Chat 输入 **`/`** 即可看到并试用。
+
+- **`.cursor/skills/`**  
+  存放**项目级 Skill** 示例（如 `security-audit/SKILL.md`），供 **3.3** 使用。每个 skill 为一个文件夹、内含 `SKILL.md`，与 Claude 的 `.claude/skills/` 格式可对照；在 Cursor Agent 中可通过 **`/security-audit`** 调用。
+
 - **`.claude/skills/`**  
-  存放 **3.3 Commands & Skills** 的 Skill 示例（如 `security-audit.md`）。用户可将其复制到 `~/.claude/skills/`，在 Claude Code 中通过 `/security-audit` 调用。
+  存放 **3.3 Commands & Skills** 的 Claude Skill 示例（如 `security-audit.md`）。用户可将其复制到 `~/.claude/skills/`，在 Claude Code 中通过 `/security-audit` 调用。
 
 ---
 
