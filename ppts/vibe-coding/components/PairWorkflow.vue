@@ -10,6 +10,7 @@
   });
 
   const currentStepIndex = ref(0);
+  const instanceId = Math.random().toString(36).substring(2, 7);
 
   // Slidev 上下文集成
   let slidevNav;
@@ -190,12 +191,12 @@
     const currentLine = currentStep.value.line;
     const targetLine = `${from}-${to}`;
     if (currentLine === targetLine) {
-      if (type === "warn") return "url(#arrow-purple)";
-      if (type === "fail") return "url(#arrow-red)";
-      if (type === "pass") return "url(#arrow-green)";
-      return "url(#arrow-blue)";
+      if (type === "warn") return `url(#pair-arrow-purple-${instanceId})`;
+      if (type === "fail") return `url(#pair-arrow-red-${instanceId})`;
+      if (type === "pass") return `url(#pair-arrow-green-${instanceId})`;
+      return `url(#pair-arrow-blue-${instanceId})`;
     }
-    return "url(#arrow-gray)";
+    return `url(#pair-arrow-gray-${instanceId})`;
   };
 </script>
 
@@ -237,13 +238,58 @@
         <div class="diagram-scaler absolute inset-0 flex items-center justify-center">
           <div class="relative w-[1000px] h-[400px]">
             <!-- SVG 连接层 -->
-            <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible text-slate-300 dark:text-slate-800">
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible text-slate-300 dark:text-slate-700">
               <defs>
-                <marker id="arrow-gray" markerWidth="6" markerHeight="6" refX="16" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="currentColor"/></marker>
-                <marker id="arrow-blue" markerWidth="6" markerHeight="6" refX="16" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#3b82f6"/></marker>
-                <marker id="arrow-purple" markerWidth="6" markerHeight="6" refX="16" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#a855f7"/></marker>
-                <marker id="arrow-green" markerWidth="6" markerHeight="6" refX="16" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#10b981"/></marker>
-                <marker id="arrow-red" markerWidth="6" markerHeight="6" refX="16" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#ef4444"/></marker>
+                <marker
+                  :id="'pair-arrow-gray-' + instanceId"
+                  markerWidth="6"
+                  markerHeight="6"
+                  refX="16"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L0,6 L6,3 z" fill="currentColor" />
+                </marker>
+                <marker
+                  :id="'pair-arrow-blue-' + instanceId"
+                  markerWidth="6"
+                  markerHeight="6"
+                  refX="16"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L0,6 L6,3 z" fill="#60a5fa" />
+                </marker>
+                <marker
+                  :id="'pair-arrow-purple-' + instanceId"
+                  markerWidth="6"
+                  markerHeight="6"
+                  refX="16"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L0,6 L6,3 z" fill="#a855f7" />
+                </marker>
+                <marker
+                  :id="'pair-arrow-green-' + instanceId"
+                  markerWidth="6"
+                  markerHeight="6"
+                  refX="16"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L0,6 L6,3 z" fill="#10b981" />
+                </marker>
+                <marker
+                  :id="'pair-arrow-red-' + instanceId"
+                  markerWidth="6"
+                  markerHeight="6"
+                  refX="16"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L0,6 L6,3 z" fill="#ef4444" />
+                </marker>
               </defs>
 
               <!-- 主流程线 -->
