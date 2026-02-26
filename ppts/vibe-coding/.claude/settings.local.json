@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep \"name\":*)",
+      "Bash(echo API rate limited:*)"
+    ]
+  }
+}

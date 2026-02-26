@@ -67,6 +67,11 @@
 | [Docs Integration](https://cursor.com/docs/context/mentions) | 自定义文档索引 | ❌ No | Medium |
 | [Privacy Mode](https://cursor.com/docs/enterprise/privacy-and-data-governance) | 本地处理选项 | ❌ No | Low |
 | [Model Selection](https://cursor.com/docs/models) | Claude/GPT等模型选择 | ❌ No | Medium |
+| [Integrations](https://cursor.com/docs/integrations/github) | 第三方集成(GitHub/GitLab/Linear/Slack) | ❌ No | Medium |
+| [Inline Edit](https://cursor.com/docs/inline-edit/overview) | 内联代码编辑 | ❌ No | Medium |
+| [Reuse Existing Code](https://cursor.com/docs/reuse-existing-code) | 代码复用建议 | ❌ No | Low |
+| [Long-running Agents](https://cursor.com/blog/long-running-agents) | 长时运行代理 | ❌ No | Medium |
+| [Self-driving Codebases](https://cursor.com/blog/self-driving-codebases) | 自主驾驶代码库 | ❌ No | Medium |
 
 #### 缺失特性分析 (四原则检验)
 
@@ -76,6 +81,8 @@
 | [Codebase Indexing](https://cursor.com/docs/context/semantic-search) | ✅ 影响L3 - 项目级上下文基础 | ❌ 非默认 | - | - | **必须添加** - L3上下文理解关键 |
 | [Agent Mode](https://cursor.com/docs/agent/modes) | ✅ 影响L3 - 自主编码模式 | ❌ 非默认 | - | - | **必须添加** - 氛围编程体验核心 |
 | [@ Symbols](https://cursor.com/docs/context/mentions) | ✅ 影响L3 - 上下文引用基础 | ❌ 非默认 | - | - | **必须添加** - AI编码工具基础能力 |
+| [Long-running Agents](https://cursor.com/blog/long-running-agents) | ⚠️ 高级特性 | ⚠️ 预览功能 | ⚠️ 延伸阅读 | - | **延伸阅读** - 未来趋势预览 |
+| [Self-driving Codebases](https://cursor.com/blog/self-driving-codebases) | ⚠️ 高级特性 | ⚠️ 预览功能 | ⚠️ 延伸阅读 | - | **延伸阅读** - AI编程未来 |
 | [Tab](https://cursor.com/docs/tab/overview) | ❌ L1/L2能力 | ✅ IDE默认具备 | - | - | **不用讲解** - 代码补全是L1/L2基础 |
 | [Chat](https://cursor.com/docs/context/mentions) | ❌ 基础界面 | ✅ 通用能力 | - | - | **不用讲解** - 已隐含覆盖 |
 | [Notepad](https://cursor.com/docs/context/mentions) | ❌ 非核心 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 辅助功能 |
@@ -106,6 +113,10 @@
 | [Image Analysis](https://code.claude.com/docs/en/common-workflows#images) | 多模态支持 | ❌ No | Medium |
 | [Plugins](https://code.claude.com/docs/en/plugins) | IDE/编辑器扩展 | ❌ No | Medium |
 | [Multi-surface](https://code.claude.com/docs/en/overview) | 终端/IDE/桌面/网页 | ❌ No | Low |
+| [Checkpointing](https://code.claude.com/docs/en/checkpointing) | 状态保存/恢复 | ❌ No | Medium |
+| [Memory](https://code.claude.com/docs/en/memory) | 长期记忆系统 | ❌ No | Medium |
+| [Sandboxing](https://code.claude.com/docs/en/sandboxing) | 安全沙箱执行 | ❌ No | Medium |
+| [IDE Integrations](https://code.claude.com/docs/en/vs-code) | VS Code/JetBrains桌面集成 | ❌ No | Medium |
 
 #### 缺失特性分析 (四原则检验)
 
@@ -183,6 +194,7 @@
 | [Auto Model Selection](https://docs.github.com/en/copilot/concepts/auto-model-selection) | 动态模型切换 | ❌ No | Low |
 | [Repository Indexing](https://docs.github.com/en/copilot/concepts/context/repository-indexing) | 代码库理解 | ❌ No | **Critical** |
 | [Content Exclusion](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot) | 隐私/安全控制 | ❌ No | Low |
+| [Copilot SDK](https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/) | 开发工具包 | ❌ No | Medium |
 
 #### 缺失特性分析 (四原则检验)
 
@@ -219,6 +231,9 @@
 | [Figma to Code](https://www.toutiao.com/article/7489004741838504500) | 设计转代码 | ❌ No | **Critical** |
 | [Multi-modal](https://www.toutiao.com/article/7489004741838504500) | 图像理解 | ❌ No | Medium |
 | [Smart Completion](https://docs.trae.ai/ide) | 上下文感知建议 | ❌ No | Medium |
+| [Cue-Pro](https://www.trae.ai/blog/product_update_1229) | 编辑预测AI | ❌ No | Medium |
+| [Vercel Integration](https://www.trae.ai/blog/vercel_in_trae) | Vercel部署集成 | ❌ No | Medium |
+| [Supabase Integration](https://www.trae.ai/blog/supabase_112) | 后端开发集成 | ❌ No | Medium |
 
 #### 缺失特性分析 (四原则检验)
 
@@ -257,6 +272,8 @@
 | [GitHub Integration](https://opencode.ai/docs/github/) | 原生GitHub支持 | ❌ No | Medium |
 | [Client/Server](https://opencode.ai/docs/server/) | 远程执行 | ❌ No | Medium |
 | [Zen Models](https://opencode.ai/docs/zen/) | 精选模型选择 | ❌ No | Low |
+| [Ecosystem](https://opencode.ai/docs/ecosystem/) | 插件生态系统 | ❌ No | Medium |
+| [MCPServers](https://opencode.ai/docs/mcp-servers/) | MCP服务器配置 | ❌ No | Medium |
 
 #### 缺失特性分析 (四原则检验)
 
@@ -490,20 +507,44 @@ Shift+Tab  # 切换到正常模式
 
 ## 验证结果总结
 
+### MECE 验证方法
+本验证采用**多源文档抓取**方法确保 MECE：
+- **Layer 1**: Sitemap 抓取 (Cursor, Claude Code, OpenCode)
+- **Layer 2**: 官方文档结构分析
+- **Layer 3**: Context7 交叉验证
+
 ### 链接验证
 - ✅ 大部分文档链接有效
 - ✅ Context7 确认了关键特性的官方文档存在
+- ✅ Sitemap 验证确认文档结构完整
+
+### 特性完整性验证 (MECE)
+通过多源交叉验证发现并补充的遗漏特性：
+
+**来源 1: Sitemap 抓取**
+
+| 工具 | 新增特性 | 来源 |
+|:-----|:---------|:-----|
+| Cursor | Integrations, Inline Edit, Reuse Existing Code | Sitemap |
+| Claude Code | Checkpointing, Memory, Sandboxing, IDE Integrations | Sitemap |
+| OpenCode | Ecosystem, MCP Servers | Sitemap |
+
+**来源 2: 官方博客抓取 (杀手特性深度)**
+
+| 工具 | 博客识别特性 | 延伸阅读 |
+|:-----|:-------------|:---------|
+| Cursor | Long-running Agents, Self-driving Codebases | [Blog](https://cursor.com/blog/long-running-agents) |
+| GitHub Copilot | Copilot SDK | [Blog](https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/) |
+| Trae | Cue-Pro, Vercel/Supabase Integration | [Blog](https://www.trae.ai/blog) |
+
+**说明**：
+- 已移除非特性项（Cookbook 为文档分类，非功能特性）
+- 博客延伸阅读链接已添加到对应特性描述
 
 ### 特性准确性验证
 - ✅ 所有工具的特性描述与官方文档基本一致
-- ✅ Context7 查询结果验证了以下核心特性存在：
-  - Cursor: Agent Mode, Composer, Rules, MCP
-  - Claude Code: Worktrees, Plan Mode, Session Management, Headless Mode, Git Integration
-  - Gemini CLI: 1M Token, Multimodal, Web Search, Headless Mode
-  - GitHub Copilot: Coding Agent, Code Review, CLI, Repository Indexing
-  - OpenCode: Plan Mode, Agents, Sessions, MCP, Multi-provider, LSP
-  - Trae: SOLO Mode, Builder Mode
-  - Codex: Sandbox, Worktree, API
+- ✅ Context7 + 博客交叉验证确认核心特性存在
+- ✅ 杀手特性通过博客深度解读确认
 
 ### 四原则检验结果
 所有 "Must Add" 建议均通过四原则检验：
@@ -523,4 +564,4 @@ Shift+Tab  # 切换到正常模式
 - *行业最佳实践*
 - *四原则验证框架*
 
-*最后更新：2026-02-24*
+*最后更新：2026-02-25*
