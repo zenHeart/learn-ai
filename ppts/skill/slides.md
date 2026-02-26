@@ -3,45 +3,35 @@ class: text-center
 drawings:
   persist: false
 transition: slide-left
-title: MCP 深入解析
+title: SKILL 工作流编排
 routerMode: hash
 ---
 
-# Model Context Protocol (MCP) 深入解析
+# SKILL 工作流编排
 
 Presenter: 程乐
-Date: 2026-04-16
+Date: 2026-06-16
 
 ---
 src: ./01.intro.md
 ---
 
 ---
-src: ./02.architecture.md
+src: ./02.builtin.md
 ---
 
 ---
-src: ./03.protocol.md
+src: ./03.custom.md
 ---
 
 ---
-src: ./04.server-ts.md
+src: ./04.ecosystem.md
 ---
 
 ---
-src: ./05.server-python.md
+src: ./05.practice.md
 ---
-
----
-src: ./06.tool.md
----
-
----
-src: ./07.practice.md
----
-
----
-src: ./08.QA.md
+src: ./06.QA.md
 ---
 
 ---

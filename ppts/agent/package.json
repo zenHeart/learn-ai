@@ -1,0 +1,9 @@
+{
+  "name": "agent",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --base /learn-ai/ppts/agent/",
+    "export": "slidev export"
+  }
+}

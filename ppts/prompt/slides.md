@@ -1,55 +1,37 @@
 ---
-layout: cover
+class: text-center
+drawings:
+  persist: false
+transition: slide-left
+title: Prompt + Context Engineering
 routerMode: hash
 ---
 
-# Prompt Engineering
+# Prompt + Context Engineering
 
-* Presenter: zenheart
-* Date: 2023-06-02
-
----
-
-# Table of Contents
-<!--
-1. 30m
-2. 15m
-3. 5m
-4. 5m
- -->
-1. Prerequisites
-2. Prompt Engineering Overview
-3. Techniques Summary
-4. Practical Cases
-5. Q&A
-
-<style>
-li {
-   font-size: 14px
-}
-</style>
-
-
-# slide1
+Presenter: 程乐
+Date: 2026-05-15
 
 ---
-src: ./01.prepare.md
+src: ./01.intro.md
 ---
 
 ---
-
----
-src: ./02.PE.md
+src: ./02.prompt.md
 ---
 
 ---
-src: ./03.skill.md
+src: ./03.context.md
 ---
 
 ---
-src: ./04.case.md
+src: ./04.tool-calling.md
 ---
 
 ---
-src: ./05.QA.md
+src: ./05.case.md
+---
+
+---
+src: ./06.QA.md
 ---

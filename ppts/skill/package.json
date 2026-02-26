@@ -1,0 +1,9 @@
+{
+  "name": "skill",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --base /learn-ai/ppts/skill/",
+    "export": "slidev export"
+  }
+}

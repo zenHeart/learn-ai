@@ -6,7 +6,12 @@ set -e
 # 配置项
 rep_url=$(git remote get-url origin)
 temp_dist="/tmp/learn-ai-dist"
-PPT_PROJECTS="prompt mcp vibe-coding"
+# 动态发现所有有 package.json 的 PPT 项目
+PPT_PROJECTS=$(for dir in ppts/*/; do
+    if [ -f "${dir}package.json" ]; then
+        basename "${dir}"
+    fi
+done | tr '\n' ' ' | sed 's/ $//')
 
 echo "🚀 Starting build process..."
 

@@ -23,11 +23,11 @@
 
 | 特性类别 | Cursor | Claude Code | Gemini CLI | GitHub Copilot | Trae | OpenCode | Codex | 优先级 |
 |:----------------|:------:|:-----------:|:----------:|:--------------:|:----:|:--------:|:-----:|:--------:|
-| **Plan Mode** | ❌ | ✅ 已验证 | ❌ | ❌ | ❌ | ✅ 已验证 | ❌ | **必须添加** |
+| **Modes (Plan/Agent/Ask)** | ⚠️ 部分 | ✅ 已验证 | ❌ | ❌ | ❌ | ✅ 已验证 | ❌ | **必须添加** |
 | **Session Management** | ❌ | ✅ 已验证 | ⚠️ 部分 | ❌ | ❌ | ⚠️ 部分 | ❌ | **必须添加** |
-| **Worktrees** | ❌ | ✅ 已验证 | ❌ | ❌ | ❌ | ❌ | ✅ 已验证 | **必须添加** |
-| **Headless/Automation** | ❌ | ✅ 已验证 | ✅ 已验证 | ⚠️ CLI | ❌ | ❌ | ❌ | **必须添加** |
-| **Multi-file Editing** | ✅ 已验证 | ❌ | ❌ | ❌ | ⚠️ Builder | ❌ | ❌ | **必须添加** |
+| **Worktrees** | ❌ | ✅ 已验证 | ❌ | ❌ | ❌ | ❌ | ✅ 已验证 | 杀手特性 |
+| **Headless/Automation** | ❌ | ✅ 已验证 | ✅ 已验证 | ⚠️ CLI | ❌ | ❌ | ❌ | 杀手特性 |
+| **Multi-file Editing** | ✅ 已验证 | ❌ | ❌ | ❌ | ⚠️ Builder | ❌ | ❌ | 隐含在Agent中 |
 | **Git Integration** | ⚠️ 部分 | ✅ 已验证 | ❌ | ⚠️ 部分 | ❌ | ❌ | ❌ | **必须添加** |
 | **Testing Workflows** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | **High** |
 | **Codebase Indexing** | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | **High** |
@@ -57,12 +57,11 @@
 | [Hooks](https://cursor.com/docs/agent/hooks) | 文件操作生命周期拦截器 | ✅ Yes | Medium |
 | [Sub-agents](https://cursor.com/docs/context/subagents) | 特定任务的专用AI代理 | ✅ Yes | High |
 | [BugBot](https://cursor.com/docs/bugbot) | 带运行时上下文的自动调试器 | ✅ Yes (Unique) | High |
-| [Composer](https://cursor.com/docs/agent/overview) | 多文件AI编码助手（Agent模式） | ❌ No | **Critical** |
+| [Modes](https://cursor.com/docs/agent/modes) | Agent/Ask/Plan/Debug 模式切换 | ❌ No | **Critical** |
 | [Tab](https://cursor.com/docs/tab/overview) | 智能代码补全 | ❌ No | High |
 | [Chat](https://cursor.com/docs/context/mentions) | AI对话界面 | ❌ No | Medium |
 | [Codebase Indexing](https://cursor.com/docs/context/semantic-search) | 项目级向量搜索 | ❌ No | **Critical** |
 | [@ Symbols](https://cursor.com/docs/context/mentions) | 文件/函数引用 | ❌ No | **Critical** |
-| [Agent Mode](https://cursor.com/docs/agent/overview) | 自主编码模式 | ❌ No | **Critical** |
 | [Notepad](https://cursor.com/docs/context/mentions) | 持久化草稿板上下文 | ❌ No | Low |
 | [Docs Integration](https://cursor.com/docs/context/mentions) | 自定义文档索引 | ❌ No | Medium |
 | [Privacy Mode](https://cursor.com/docs/enterprise/privacy-and-data-governance) | 本地处理选项 | ❌ No | Low |
@@ -77,9 +76,8 @@
 
 | Feature | 原则1: 影响L3? | 原则2: 默认能力? | 原则3: 延伸阅读? | 原则4: 不用讲? | PPT建议 |
 |:--------|:---------------|:----------------|:-----------------|:--------------|:--------|
-| [Composer/Agent](https://cursor.com/docs/agent/modes) | ✅ 影响L3 - 多文件编辑核心能力 | ❌ 非默认 | - | - | **必须添加** - Cursor的核心差异化能力 |
+| [Modes (Agent/Plan/etc)](https://cursor.com/docs/agent/modes) | ✅ 影响L3 - Cursor核心工作流矩阵 | ❌ 非默认 | - | - | **必须添加** - 氛围编程体验核心 |
 | [Codebase Indexing](https://cursor.com/docs/context/semantic-search) | ✅ 影响L3 - 项目级上下文基础 | ❌ 非默认 | - | - | **必须添加** - L3上下文理解关键 |
-| [Agent Mode](https://cursor.com/docs/agent/modes) | ✅ 影响L3 - 自主编码模式 | ❌ 非默认 | - | - | **必须添加** - 氛围编程体验核心 |
 | [@ Symbols](https://cursor.com/docs/context/mentions) | ✅ 影响L3 - 上下文引用基础 | ❌ 非默认 | - | - | **必须添加** - AI编码工具基础能力 |
 | [Long-running Agents](https://cursor.com/blog/long-running-agents) | ⚠️ 高级特性 | ⚠️ 预览功能 | ⚠️ 延伸阅读 | - | **延伸阅读** - 未来趋势预览 |
 | [Self-driving Codebases](https://cursor.com/blog/self-driving-codebases) | ⚠️ 高级特性 | ⚠️ 预览功能 | ⚠️ 延伸阅读 | - | **延伸阅读** - AI编程未来 |
@@ -122,11 +120,11 @@
 
 | Feature | 原则1: 影响L3? | 原则2: 默认能力? | 原则3: 延伸阅读? | 原则4: 不用讲? | PPT建议 |
 |:--------|:---------------|:----------------|:-----------------|:--------------|:--------|
-| [Plan Mode](https://code.claude.com/docs/en/common-workflows#plan-mode) | ✅ 影响L3 - 生产环境安全机制 | ❌ 非默认 | - | - | **必须添加** - L3安全开发必备 |
-| [Worktrees](https://code.claude.com/docs/en/common-workflows#worktrees) | ✅ 影响L3 - 并行开发隔离 | ❌ 非默认 | - | - | **必须添加** - L3多任务核心能力 |
+| [Plan Mode](https://code.claude.com/docs/en/common-workflows#plan-mode) | ✅ 影响L3 - 生产环境安全机制 | ❌ 非默认 | - | - | **必须添加** - 涵盖在Modes内 |
+| [Worktrees](https://code.claude.com/docs/en/common-workflows#worktrees) | ✅ 影响L3 - 并行开发隔离 | ❌ 非默认 | - | - | **杀手特性** - L3多任务核心能力 |
 | [Session Management](https://code.claude.com/docs/en/common-workflows#resume) | ✅ 影响L3 - 多任务管理 | ❌ 非默认 | - | - | **必须添加** - L3效率核心 |
-| [Headless Mode](https://code.claude.com/docs/en/cli-reference#headless) | ✅ 影响L3 - CI/CD集成 | ❌ 非默认 | - | - | **必须添加** - 团队/企业采用关键 |
-| [Git Integration](https://code.claude.com/docs/en/common-workflows#pull-requests) | ✅ 影响L3 - 完整工作流 | ❌ 非默认 | - | - | **必须添加** - 开发全流程闭环 |
+| [Headless Mode](https://code.claude.com/docs/en/cli-reference#headless) | ✅ 影响L3 - CI/CD集成 | ❌ 非默认 | - | - | **杀手特性** - 团队/企业采用关键 |
+| [Git Integration](https://code.claude.com/docs/en/common-workflows#pull-requests) | ✅ 影响L3 - 完整工作流 | ❌ 非默认 | - | - | **杀手特性** - 开发全流程闭环 |
 | [Extended Thinking](https://code.claude.com/docs/en/settings#thinking) | ⚠️ 影响L3 - 复杂决策质量 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 架构决策辅助 |
 | [Image Analysis](https://code.claude.com/docs/en/common-workflows#images) | ⚠️ 影响L3 - UI工作流 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 前端开发者关注 |
 | [Plugins](https://code.claude.com/docs/en/plugins) | ❌ 非核心 | ❌ 生态功能 | ❌ 无发展空间 | ✅ | **不用讲解** - 隐含覆盖 |
@@ -161,10 +159,10 @@
 
 | Feature | 原则1: 影响L3? | 原则2: 默认能力? | 原则3: 延伸阅读? | 原则4: 不用讲? | PPT建议 |
 |:--------|:---------------|:----------------|:-----------------|:--------------|:--------|
-| [100万 Token Context](https://github.com/google-gemini/gemini-cli#why-gemini-cli) | ✅ 影响L3 - 大规模代码库理解 | ❌ 非默认 | - | - | **必须添加** - 核心竞争优势 |
-| [Multimodal](https://github.com/google-gemini/gemini-cli) | ✅ 影响L3 - 图像/视频/音频支持 | ❌ 非默认 | - | - | **必须添加** - 差异化能力 |
-| [Built-in Search](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/web-search.md) | ✅ 影响L3 - 实时联网编码 | ❌ 非默认 | - | - | **必须添加** - 现代开发必备 |
-| [Headless Mode](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/headless.md) | ✅ 影响L3 - 自动化集成 | ❌ 非默认 | - | - | **必须添加** - CI/CD关键 |
+| [100万 Token Context](https://github.com/google-gemini/gemini-cli#why-gemini-cli) | ✅ 影响L3 - 大规模代码库理解 | ❌ 非默认 | - | - | **建议添加** - 核心竞争优势 |
+| [Multimodal](https://github.com/google-gemini/gemini-cli) | ✅ 影响L3 - 图像/视频/音频支持 | ❌ 非默认 | - | - | **建议添加** - 差异化能力 |
+| [Built-in Search](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/web-search.md) | ✅ 影响L3 - 实时联网编码 | ❌ 非默认 | - | - | **建议添加** - 现代开发必备 |
+| [Headless Mode](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/headless.md) | ✅ 影响L3 - 自动化集成 | ❌ 非默认 | - | - | **建议添加** - CI/CD关键 |
 | [Extensions](https://blog.google/technology/developers/gemini-cli-extensions) | ⚠️ 扩展性 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 生态展示 |
 | [Checkpointing](https://gemini-cli.xyz/docs/zh/cli/checkpointing) | ❌ 非核心 | ❌ 非默认 | ❌ 无发展空间 | ✅ | **不用讲解** - 状态管理辅助 |
 | [Sandbox](https://gemini-cli.xyz/docs/zh/cli/sandbox) | ❌ 安全功能 | ❌ 非核心 | ❌ 无发展空间 | ✅ | **不用讲解** - 安全隔离特性 |
@@ -200,10 +198,10 @@
 
 | Feature | 原则1: 影响L3? | 原则2: 默认能力? | 原则3: 延伸阅读? | 原则4: 不用讲? | PPT建议 |
 |:--------|:---------------|:----------------|:-----------------|:--------------|:--------|
-| [Coding Agent](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent) | ✅ 影响L3 - 自主开发工作流 | ❌ 非默认 | - | - | **必须添加** - Copilot L3核心能力 |
-| [Code Review](https://docs.github.com/en/copilot/concepts/agents/code-review) | ✅ 影响L3 - 自动化质量保证 | ❌ 非默认 | - | - | **必须添加** - 团队工作流关键 |
-| [Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli) | ✅ 影响L3 - 终端编码 | ❌ 非默认 | - | - | **必须添加** - 自动化/无头模式 |
-| [Repository Indexing](https://docs.github.com/en/copilot/concepts/context/repository-indexing) | ✅ 影响L3 - 上下文理解 | ❌ 非默认 | - | - | **必须添加** - 项目级工作流基础 |
+| [Coding Agent](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent) | ✅ 影响L3 - 自主开发工作流 | ❌ 非默认 | - | - | **建议添加** - Copilot L3核心能力 |
+| [Code Review](https://docs.github.com/en/copilot/concepts/agents/code-review) | ✅ 影响L3 - 自动化质量保证 | ❌ 非默认 | - | - | **建议添加** - 团队工作流关键 |
+| [Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli) | ✅ 影响L3 - 终端编码 | ❌ 非默认 | - | - | **建议添加** - 自动化/无头模式 |
+| [Repository Indexing](https://docs.github.com/en/copilot/concepts/context/repository-indexing) | ✅ 影响L3 - 上下文理解 | ❌ 非默认 | - | - | **建议添加** - 项目级工作流基础 |
 | [Copilot Spaces](https://docs.github.com/en/copilot/concepts/context/spaces) | ⚠️ 影响L3 - 上下文管理 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 大团队组织 |
 | [Copilot Memory](https://docs.github.com/en/copilot/concepts/agents/copilot-memory) | ⚠️ 跨会话学习 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 差异化特性 |
 | [Copilot Chat](https://docs.github.com/en/copilot/how-tos/chat-with-copilot) | ❌ 基础功能 | ✅ 通用能力 | - | - | **不用讲解** - 已隐含覆盖 |
@@ -239,9 +237,9 @@
 
 | Feature | 原则1: 影响L3? | 原则2: 默认能力? | 原则3: 延伸阅读? | 原则4: 不用讲? | PPT建议 |
 |:--------|:---------------|:----------------|:-----------------|:--------------|:--------|
-| [Builder Mode](https://docs.trae.ai/ide/builder) | ✅ 影响L3 - 项目脚手架 | ❌ 非默认 | - | - | **必须添加** - Trae核心价值 |
-| [Multi-model Support](https://docs.trae.ai/ide/models) | ✅ 影响L3 - 多模型选择 | ❌ 非默认 | - | - | **必须添加** - 主要竞争优势 |
-| [Figma to Code](https://docs.trae.ai/docs/multimodal-input) | ✅ 影响L3 - 设计转代码 | ❌ 非默认 | - | - | **必须添加** - 差异化能力 |
+| [Builder Mode](https://docs.trae.ai/ide/builder) | ✅ 影响L3 - 项目脚手架 | ❌ 非默认 | - | - | **建议添加** - Trae核心价值 |
+| [Multi-model Support](https://docs.trae.ai/ide/models) | ✅ 影响L3 - 多模型选择 | ❌ 非默认 | - | - | **建议添加** - 主要竞争优势 |
+| [Figma to Code](https://docs.trae.ai/docs/multimodal-input) | ✅ 影响L3 - 设计转代码 | ❌ 非默认 | - | - | **建议添加** - 差异化能力 |
 | [Remote Development](https://juejin.cn/post/7480953775899099146) | ⚠️ 远程开发 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 企业场景 |
 | [Multi-modal](https://docs.trae.ai/docs/multimodal-input) | ⚠️ 图像理解 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 前端关注 |
 | [Chat Mode](https://docs.trae.ai/ide/chat) | ❌ 基础功能 | ✅ 通用能力 | - | - | **不用讲解** - 已由agent覆盖 |
@@ -279,9 +277,9 @@
 
 | Feature | 原则1: 影响L3? | 原则2: 默认能力? | 原则3: 延伸阅读? | 原则4: 不用讲? | PPT建议 |
 |:--------|:---------------|:----------------|:-----------------|:--------------|:--------|
-| [Multi-provider](https://opencode.ai/docs/providers/) | ✅ 影响L3 - 供应商独立性 | ❌ 非默认 | - | - | **必须添加** - 核心独特卖点 |
-| [LSP Support](https://opencode.ai/docs/lsp/) | ✅ 影响L3 - 代码智能 | ❌ 非默认 | - | - | **必须添加** - 精准重构技术优势 |
-| [Plan Mode](https://github.com/anomalyco/opencode/blob/dev/packages/web/src/content/docs/index.mdx) | ✅ 影响L3 - 安全机制 | ❌ 非默认 | - | - | **必须添加** - 最佳实践 |
+| [Multi-provider](https://opencode.ai/docs/providers/) | ✅ 影响L3 - 供应商独立性 | ❌ 非默认 | - | - | **建议添加** - 核心独特卖点 |
+| [LSP Support](https://opencode.ai/docs/lsp/) | ✅ 影响L3 - 代码智能 | ❌ 非默认 | - | - | **建议添加** - 精准重构技术优势 |
+| [Plan Mode](https://github.com/anomalyco/opencode/blob/dev/packages/web/src/content/docs/index.mdx) | ✅ 影响L3 - 安全机制 | ❌ 非默认 | - | - | **建议添加** - 最佳实践 |
 | [Sessions](https://opencode.ai/docs/tui/#sessions) | ✅ 已覆盖 | - | - | - | **已覆盖** - 独特功能需深入讲解 |
 | [Share Links](https://opencode.ai/docs/share/) | ⚠️ 协作功能 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 团队工作流 |
 | [Undo/Redo](https://opencode.ai/docs) | ❌ 基础功能 | ✅ 通用能力 | ❌ 无发展空间 | ✅ | **不用讲解** - 基础编辑功能 |
@@ -317,11 +315,11 @@
 
 | Feature | 原则1: 影响L3? | 原则2: 默认能力? | 原则3: 延伸阅读? | 原则4: 不用讲? | PPT建议 |
 |:--------|:---------------|:----------------|:-----------------|:--------------|:--------|
-| [Multi-agent Parallel](https://openai.com/index/introducing-codex) | ✅ 影响L3 - 并发任务执行 | ❌ 非默认 | - | - | **必须添加** - Codex核心差异化 |
-| [Cloud Sandbox](https://openai.com/codex/) | ✅ 影响L3 - 安全隔离执行 | ❌ 非默认 | - | - | **必须添加** - 企业采用关键 |
-| [codex-1 Model](https://openai.com/index/introducing-codex) | ✅ 影响L3 - 专业编程模型 | ❌ 非默认 | - | - | **必须添加** - 技术基础 |
-| [Async Tasks](https://openai.com/codex/) | ✅ 影响L3 - 后台执行 | ❌ 非默认 | - | - | **必须添加** - L3关键能力 |
-| [Internet Access](https://openai.com/codex/) | ✅ 影响L3 - 实时信息 | ❌ 非默认 | - | - | **必须添加** - 现代开发必备 |
+| [Multi-agent Parallel](https://openai.com/index/introducing-codex) | ✅ 影响L3 - 并发任务执行 | ❌ 非默认 | - | - | **建议添加** - Codex核心差异化 |
+| [Cloud Sandbox](https://openai.com/codex/) | ✅ 影响L3 - 安全隔离执行 | ❌ 非默认 | - | - | **建议添加** - 企业采用关键 |
+| [codex-1 Model](https://openai.com/index/introducing-codex) | ✅ 影响L3 - 专业编程模型 | ❌ 非默认 | - | - | **建议添加** - 技术基础 |
+| [Async Tasks](https://openai.com/codex/) | ✅ 影响L3 - 后台执行 | ❌ 非默认 | - | - | **建议添加** - L3关键能力 |
+| [Internet Access](https://openai.com/codex/) | ✅ 影响L3 - 实时信息 | ❌ 非默认 | - | - | **建议添加** - 现代开发必备 |
 | [Custom Prompts](https://developers.openai.com/codex/custom-prompts/) | ⚠️ 配置选项 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 标准功能 |
 | [CLI/Web/App](https://openai.com/codex/) | ❌ 部署选项 | ❌ 非功能特性 | ❌ 无发展空间 | ✅ | **不用讲解** - 概述已提及 |
 | [Task Tracking](https://openai.com/codex/) | ⚠️ UI功能 | ❌ 非默认 | ⚠️ 可放入 | - | **延伸阅读** - 用户体验 |
@@ -330,40 +328,24 @@
 
 ## 三、PPT 改进建议
 
-### 优先级 1: L3 必备特性
+### 优先级 1: L3 必备特性 (聚焦 Cursor 和 Claude Code)
 
-以下特性**必须添加**才能达到 L3  proficiency：
+以下特性**必须添加**才能达到 L3 proficiency：
 
-#### 1. Plan Mode / Safe Exploration（所有工具）
-- **原因：** 防止生产代码库中的代价高昂的错误
-- **内容：** 变更前的只读分析
-- **工具支持：** Claude Code、OpenCode 原生支持；其他工具通过变通方法
-- **教学建议：** 风险评估矩阵，plan vs execute 使用时机
+#### 1. Modes
+- **原因：** 适应不同复杂度的开发场景。
+- **内容：**
+  - **Cursor**: Agent(多文件自动化)、Ask(探索)、Plan(方案制定)、Debug(排错)
+  - **Claude Code**: `--permission-mode plan` 等选项控制执行与方案生成
+- **教学建议：** Plan 模式与 Agent 模式使用场景
 
-#### 2. Session Management（Claude Code、OpenCode 重点）
+#### 2. Session Management
 - **原因：** 多任务是 L3 核心；开发者同时处理多个功能
-- **内容：** 命名会话、恢复、分支、worktrees
-- **教学建议：** 会话生命周期、并行开发模式
+- **内容：** Claude Code 的命名会话、恢复、上下文管理
+- **教学建议：** 会话生命周期
 
-#### 3. Worktrees & Isolated Development（Claude Code、Codex 重点）
-- **原因：** 避免上下文污染的并行开发
-- **内容：** Git worktrees、分支隔离、清理策略
-- **教学建议：** 热修复+功能工作流、A/B测试实现
-
-#### 4. Headless Mode & Automation（所有 CLI 工具）
-- **原因：** CI/CD 集成、批量操作、自动化工作流
-- **内容：** 非交互执行、脚本化、管道
-- **教学建议：** GitHub Actions 集成、pre-commit 钩子
-
-#### 5. Multi-file Editing / Composer（Cursor 重点）
-- **原因：** 项目级变更需要协调的多文件编辑
-- **内容：** Cursor Composer、agent 模式、@-mentions
-- **教学建议：** 复杂重构、架构变更
-
-#### 6. Git Integration & PR Workflows（Claude Code、Copilot 重点）
-- **原因：** 端到端开发工作流
-- **内容：** 自动化提交、PR 创建、分支管理
-- **教学建议：** 完整开发生命周期
+#### 3. 杀手特性 (Git / Worktrees / Headless)
+- 在杀手特性栏目专门对比讲解 Claude Code 强大的自动提交、并行 Worktrees 以及 Headless CI/CD 工作流。
 
 ### 优先级 2: 建议添加
 
@@ -401,31 +383,14 @@
 # 3.7 Sub-agents（现有 - 保留）
 # 3.8 杀手特性（现有 - 保留）
 
-# 需要新增的幻灯片：
-# 3.9 Plan Mode 安全探索
+# 3.9 Modes 核心工作流
+#   - Cursor Modes: Agent, Ask, Plan, Debug
 #   - Claude Code: --permission-mode plan
-#   - OpenCode: Tab 切换
-#   - 风险评估矩阵
+#   - 各模式使用场景
 
-# 3.10 Session Management & Worktrees
-#   - 命名会话、恢复
-#   - Git worktrees 隔离
-#   - 并行开发工作流
-
-# 3.11 Multi-file Editing (Composer)
-#   - Cursor Composer 深入
-#   - @-symbols 和上下文
-#   - Agent 模式
-
-# 3.12 Git Integration & PR Workflows
-#   - 自动化提交
-#   - PR 创建和审查
-#   - Claude Code: /commit-push-pr
-
-# 3.13 Headless Mode & Automation
-#   - CI/CD 集成
-#   - 脚本化和管道
-#   - GitHub Actions 示例
+# 3.10 Session Management
+#   - 命名会话、恢复 (Claude Code)
+#   - 并发工作流管理
 
 # 3.14 Testing & Quality Assurance
 #   - 测试生成
@@ -487,21 +452,11 @@ Shift+Tab  # 切换到正常模式
 当前 `03.usage.md` 提供了**坚实的基础**（L2+），但需要**重大增强**才能达到真正的 L3 proficiency。缺失的特性代表了**生产级能力**，区分了业余 AI 编程和专业 AI 辅助开发。
 
 ### 关键差距：
-1. **安全机制**（Plan Mode）- 未覆盖
-2. **多任务**（Sessions、Worktrees）- 未覆盖
-3. **自动化**（Headless、CI/CD）- 未覆盖
-4. **规模化**（多文件编辑、Git 工作流）- 未覆盖
-5. **质量**（测试工作流）- 未覆盖
-
-### 没有这些能力的后果：
-- 尽管使用 L3 能力的工具，开发者仍停留在 L2（任务级）
-- 生产代码库没有安全机制
-- 无法管理多个并发任务
-- 无法将 AI 集成到 CI/CD 管道
-- 缺少端到端开发工作流
+1. **模式管理**（Modes：Agent/Plan 等）- 未深入覆盖
+2. **状态与任务管理**（Sessions）- 仅提及未强调
 
 ### 建议行动：
-**至少添加 5-6 个新幻灯片**，涵盖 Plan Mode、Session Management、Worktrees、Headless Mode、Multi-file Editing 和 Git Integration。这些对于 L3 proficiency 是**不可或缺的**。
+**至少添加 2 个新幻灯片**，涵盖 Modes 工作流与 Session Management，并在杀手特性补充 Git、Worktrees、Headless。这对于聚焦 Cursor/Claude Code 到 L3 proficiency 是**不可或缺的**。
 
 ---
 

@@ -1,0 +1,43 @@
+graph TD
+    %% 样式定义
+    classDef doc fill:#f9f2f4,stroke:#d04a6e,stroke-width:1px,color:#d04a6e,stroke-dasharray: 5 5;
+    classDef core fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px,color:#01579b;
+    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#f57f17;
+
+    %% 外部输入
+    PRD([输入: prd.md])
+    class PRD doc
+    PRD --> Plan
+
+    subgraph PAIR 渐进式交付工作流
+        direction TB
+        
+        Plan["<b>1. Plan (计划)</b><br>核心: 确保 AI 准确理解意图<br>产出/更新: design.md & todo.md"]
+        class Plan core
+        
+        Assess["<b>2. Assess (评估)</b><br>核心: 测试理解是否出现偏差"]
+        class Assess core
+        
+        Implement["<b>3. Implementation (实施)</b><br>核心: 基于 todo.md 拆分粒度<br>逐个步骤执行修改"]
+        class Implement core
+        
+        Review{"<b>4. Review (评审)</b><br>Checkpoint 单步验证"}
+        class Review decision
+
+        %% Plan 与 Assess 的微循环
+        Plan -->|输出初步规划| Assess
+        Assess -->|存在偏差<br>修正并丰富文档| Plan
+        Assess -->|理解完全对齐| Implement
+
+        %% Implementation 与 Review 的微循环
+        Implement -->|完成小步骤修改<br>触发 Checkpoint| Review
+        
+        %% 核心卡点：Review 后的三条路径
+        Review -->|验证失败 / 逻辑缺陷<br>需进一步精细化文档| Plan
+        Review -->|单步通过<br>执行下一个 todo| Implement
+    end
+
+    %% 最终出口
+    Done([输出: 可靠交付的代码])
+    class Done doc
+    Review -->|所有 todo 验证完成| Done

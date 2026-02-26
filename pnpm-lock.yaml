@@ -40,9 +40,13 @@ importers:
         specifier: ^2.0.17
         version: 2.0.17(mermaid@11.12.2)(vitepress@1.6.4(@algolia/client-search@5.46.2)(@types/node@22.19.11)(axios@1.13.4)(drauu@0.4.3)(fuse.js@7.1.0)(postcss@8.5.6)(search-insights@2.17.3)(typescript@5.9.3))
 
+  ppts/agent: {}
+
   ppts/mcp: {}
 
   ppts/prompt: {}
+
+  ppts/skill: {}
 
   ppts/vibe-coding:
     dependencies:
