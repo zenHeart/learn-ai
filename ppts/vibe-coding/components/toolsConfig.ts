@@ -10,7 +10,7 @@ export const ToolsCompare = {
     "基于 Agentic 架构与日常研发效能的综合测评。点击表格单元格查看详细说明。",
 
   label: {
-    context: { desc: "上下文扩充"  },
+    context: { desc: "上下文扩充" },
     tool: { desc: "工具扩展层面" },
   },
 
@@ -23,43 +23,43 @@ export const ToolsCompare = {
     },
     rules: {
       name: "Rules",
-      desc: "规范 AI 代码生成行为与输出样板的指令集",
+      desc: "细粒度的项目细节的约束",
       label: ["context"],
       link: "https://cursor.com/docs/context/rules#project-rules",
     },
     commands: {
       name: "Commands",
-      desc: "封装特定长终端指令为捷径，以供 AI 快捷调用",
+      desc: "常用 Prompt 封装，以供 AI 快捷调用",
       label: ["context"],
       link: "https://cursor.com/docs/context/commands",
     },
     skill: {
       name: "SKILL",
-      desc: "提供给 AI 调用的工具链与函数自动化工作流",
+      desc: "提供给 AI 调用的工具链与工作流",
       label: ["tool", "context"],
       link: "https://agentskills.io/home",
     },
     mcp: {
       name: "MCP",
-      desc: "通过 Model Context Protocol 扩展模型的本地认知域",
-      label: ["context","tool"],
+      desc: "扩展模型的知识域和能力边界",
+      label: ["context", "tool"],
       link: "https://modelcontextprotocol.io/docs/getting-started/intro",
     },
     hooks: {
       name: "HOOKS",
-      desc: "拦截文件读写与指令执行等，在生命周期注入校验",
+      desc: "AI Coding 中各种节点的钩子，用于在特定节点注入自定义逻辑",
       label: ["tool"],
       link: "https://code.claude.com/docs/en/hooks",
     },
     agents: {
       name: "Agents",
-      desc: "分治处理复杂单一任务的特定领域子智能体协作",
+      desc: "通过创建多个子智能体，分治处理复任务",
       label: ["tool"],
       link: "https://code.claude.com/docs/en/sub-agents",
     },
     unique: {
       name: "独有特性",
-      desc: "各工具区别于其他竞品的核心独特能力或设计哲学",
+      desc: "各工具区别于其他竞品的核心独特能力",
       label: ["tool"],
     },
   },

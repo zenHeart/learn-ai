@@ -1,47 +1,80 @@
 # 3.2 Rules Matching (模块化规则匹配)
 
-## 概念解析
-如果 `AGENTS.md` 是宪法，那么 `Rules` 就是地方法规。
-有时候我们在某些目录下写业务代码时，不希望全局的提示词受到干扰。比如：
-- 写前端 Vue 相关页面时，加载前端守则。
-- 写后端 Python 时，只加载相关的数据库规范。
+**一句话核心**：本示例通过「打开对应文件 + 一句 Prompt」演示**按文件路径自动加载不同 AI 规则**，你将学会在 Cursor 中配置 `.cursor/rules/*.mdc` 并按 glob 匹配触发规则，生成符合规范的代码。
 
-现代 AI IDE 比如 Cursor 提出了 `.mdc`（Cursor Rules）的解法。它其实是结合了 `YAML` 中的 `globs` 匹配与 Markdown 文本。
-当 IDE 检测到当前你激活的（或者要求它编辑的）文件路径和某个 `mdc` 配置的 `glob` 表达式匹配时，它就会**悄悄地将这个模块规则提取出来追加发送给大模型**。
-这样就做到了精准投递上下文，而没有给模型增加额外的无用阅读负担。
-
-## 运行示例
-
-进入根目录（`ppts/vibe-coding/examples`），运行：
-```bash
-npm run demo:3.2
-```
-
-## 配置步骤
-
-### Cursor IDE
-1. 在项目根目录创建 `.cursor/rules/` 文件夹
-2. 创建 `.mdc` 规则文件，如 `react.mdc`:
-```yaml
 ---
-description: React组件开发规则
-globs: src/components/**/*.tsx
-alwaysApply: false
+
+## 1. 概念简述
+
+如果 `AGENTS.md` 是宪法，那么 **Rules** 就是地方法规：在特定目录下（如前端组件、工具函数）希望 AI 自动应用不同规范，而不必每次在对话里重复。Cursor 的 `.mdc`（Cursor Rules）通过 YAML 中的 **globs** 与 Markdown 组合：当当前文件路径匹配某条规则的 glob 时，该规则会**自动追加**到发给模型的上下文中，实现精准投递、减少噪音。
+
 ---
-必须使用函数式组件，禁止使用 Class 组件
-```
-3. 创建组件时，AI 会自动应用匹配的规则
 
-### Claude Code
-1. 在项目根目录创建 `.claude/rules/` 文件夹
-2. 创建规则文件，如 `typescript.md`:
-```markdown
-# TypeScript 规则
-- 所有函数必须添加类型注解
-- 禁止使用 any 类型
-```
-3. 使用 `claude rules add typescript.md` 激活规则
+## 2. 前置条件
 
-## 核心要点
-* 模块化管理 Prompt。
-* 通过文件系统和通配符作为触发器（Trigger），按需注入 AI 的上下文中。
+- 已安装 **Cursor**（本示例以 Cursor 为主；Claude Code 对应 `.claude/rules/`，见延伸阅读）。
+- **重要**：请用 Cursor 以 **`ppts/vibe-coding/examples`** 为工作区根目录打开（或仅打开 `examples/3.2.rules-matching`），否则 `.cursor/rules` 无法被正确读取。
+
+---
+
+## 3. 操作步骤
+
+### 步骤 A：运行脚本（可选）
+
+1. 打开终端，进入：`cd /path/to/learn-ai/ppts/vibe-coding/examples`。
+2. 执行：`npm run demo:3.2`
+3. **预期结果**：终端运行本示例脚本（若有）；规则匹配的**主要体验**在步骤 B 完成。
+
+### 步骤 B：在 Cursor 中体验规则匹配
+
+1. 用 Cursor 打开工作区：**`ppts/vibe-coding/examples`** 或 **`examples/3.2.rules-matching`**（须能访问上层目录的 `.cursor/rules`）。
+2. **场景一（前端组件规则）**  
+   - 打开：`3.2.rules-matching/src/components/Header.tsx`。  
+   - 选中文件内空行，按 `Cmd+K`（Windows/Linux：`Ctrl+K`），输入（可直接复制）：
+     ```text
+     帮我写一个带用户头像的顶部导航栏
+     ```  
+   - **预期结果**：生成的代码会自动符合 `.cursor/rules/react-components.mdc`（函数组件、Tailwind、Props 接口、lucide-react 等），即使 Prompt 未提技术栈。
+3. **场景二（工具函数规则）**  
+   - 打开：`3.2.rules-matching/src/utils/format.ts`。  
+   - 选中文件内空行，按 `Cmd+K`，输入（可直接复制）：
+     ```text
+     帮我写一个时间格式化函数
+     ```  
+   - **预期结果**：生成的代码会符合 `.cursor/rules/utils-format.mdc`（纯函数、JSDoc、仅用原生 `Intl`，不会引入 dayjs 或浏览器专有 API）。
+
+### 步骤 C：在 Claude Code 中（可选）
+
+- 本示例规则在 `examples/.cursor/rules/`，为 Cursor 格式。Claude 使用 `.claude/rules/` 与不同语法。  
+- 若要在 Claude 中体验类似能力，可在项目根创建 `.claude/rules/`，并参考 [Claude 模块化规则](https://code.claude.com/docs/en/memory#modular-rules-with-claude/rules/) 的 `paths` 配置。  
+- 本仓库当前未包含 `.claude/rules` 示例，延伸阅读中提供官方文档链接。
+
+---
+
+## 4. 本示例涉及的文件
+
+| 文件/目录 | 说明 |
+|-----------|------|
+| `examples/.cursor/rules/react-components.mdc` | 匹配 `**/src/components/*.tsx` 的 React 组件规范 |
+| `examples/.cursor/rules/utils-format.mdc` | 匹配 `**/src/utils/*.ts` 的工具函数规范 |
+| `3.2.rules-matching/src/components/Header.tsx` | 场景一操作目标文件 |
+| `3.2.rules-matching/src/utils/format.ts` | 场景二操作目标文件 |
+
+---
+
+## 5. 核心要点
+
+- 用**文件路径 + glob** 作为触发器，按需注入不同规则，实现模块化管理 Prompt。
+- 规则像“地方法规”：不同目录对应不同规范，避免全局规则过长。
+- 工作区根目录必须包含 `.cursor/rules`（本仓库中在 `examples/.cursor/rules/`）。
+
+---
+
+## 6. 延伸阅读
+
+- **概念延伸**：Rules 与 AGENTS.md 配合可实现“项目宪法 + 目录级细则”；大型仓库可按技术栈（Vue/Python/测试）拆分规则，减少单次上下文体积。
+- **官方文档**：  
+  - Cursor：[Project Rules (.cursor/rules)](https://cursor.com/docs/context/rules#project-rules)  
+  - Claude Code：[Modular Rules (.claude/rules)](https://code.claude.com/docs/en/memory#modular-rules-with-claude/rules/)
+- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Rules」与各工具 Feature Matrix 做扩展阅读。  
+- **详细演示步骤**：本目录下的 `prompt.md` 提供现场演示用的分步说明。

@@ -1,6 +1,6 @@
 # 3.2 演示指南：模块化规则匹配 (Rules Matching)
 
-> 💡 **重要提示**：在演示本环节前，请确保 Cursor 已经以当前 `learn-ai/ppts/vibe-coding` 为根目录打开，或者以 `3.2-rules-matching` 文件夹为根目录打开，以保证 `.cursor/rules` 能够被正确读取。
+> 💡 **重要提示**：在演示本环节前，请确保 Cursor 已经以 **`ppts/vibe-coding/examples`** 为根目录打开，或者以 **`examples/3.2.rules-matching`** 文件夹为根目录打开，以保证 `.cursor/rules` 能够被正确读取。
 
 ## 场景一：匹配前端业务组件规则
 

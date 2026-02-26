@@ -1,49 +1,80 @@
 # 3.4 Model Context Protocol (MCP)
 
-## 概念解析
-如果大模型是“大脑”，前面的 `Tool Use` 教会了它如何使用“双手”。但如果所有的手都需要 IDE 去硬编码（比如教 Cursor 怎么查数据库、怎么查 Jira、怎么看 Github PR），那工作量是无限的。
+**一句话核心**：本示例通过「运行脚本 + 配置 MCP Server」演示 **MCP（模型上下文协议）** 如何让 AI 通过标准接口连接数据库、API 等外部数据源，实现即插即用扩展。
 
-**[MCP (模型上下文协议)](https://modelcontextprotocol.io/)** 是 Anthropic 提出并开源的终极杀器：
-- 它定义了**标准的 JSON-RPC 发报格式**。
-- 所有企业和开发者都可以编写自己的 `MCP Server`（可能是个 Python 脚本连着内网数据库，也可能是个 Node 服务连着 Jira）。
-- 然后在任何支持 MCP 的宿主（如 Cursor、Claude Code、Windsurf）中，把这个 Server 的地址配进去。
-- 宿主应用会发送 `Initialize` 和 `ListTools` 的标准报文，服务端就把自己的所有工具元数据喂给 AI。
+---
 
-这样，代码助手就实现了无限的本地和网络数据源扩展。
+## 1. 概念简述
 
-## 运行示例
+若所有“双手”都要 IDE 硬编码（如教 Cursor 怎么查库、查 Jira），工作量无限。[MCP（Model Context Protocol）](https://modelcontextprotocol.io/) 定义了**标准 JSON-RPC**：任何人可编写 MCP Server（如连内网数据库、Jira 的脚本），在支持 MCP 的宿主（Cursor、Claude Code）中配置地址即可。宿主发送 `Initialize`、`ListTools`，服务端把工具元数据交给 AI，从而实现无限的数据源扩展。
 
-进入根目录（`ppts/vibe-coding/examples`），运行：
-```bash
-npm run demo:3.4
-```
+---
 
-## 配置步骤
+## 2. 前置条件
 
-### Cursor IDE
-1. 打开 Cursor Settings
-2. 进入 Features > MCP
-3. 点击 "Add new MCP server"
-4. 配置服务器信息:
-   - Name: `postgres` (或其他)
-   - Type: `command`
-   - Command: `npx -y @modelcontextprotocol/server-postgres`
-5. 保存后在对话中使用 `@postgres` 调用
+- 已安装 **Cursor** 或 **Claude Code**，以及 **Node.js 18+**（用于 `npx` 运行 MCP Server）。
+- 本示例运行 `npm run demo:3.4` 可看脚本演示；若要真实调用 MCP，需按下面步骤配置并确保有可用 MCP Server（如 Postgres 需本地有 Postgres 或 mock）。
 
-### Claude Code
-1. 创建或编辑 `~/.claude/settings.json`:
-```json
-{
-  "mcpServers": {
-    "postgres": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-postgres"]
-    }
-  }
-}
-```
-2. 重启 Claude Code
-3. 使用 MCP 工具进行数据库操作
+---
 
-## 核心要点
-* MCP 提供了一种标准化的跨组件通信接口，彻底解决 AI 时代的数据孤岛问题。
+## 3. 操作步骤
+
+### 步骤 A：运行脚本（可选）
+
+1. 打开终端，进入：`cd /path/to/learn-ai/ppts/vibe-coding/examples`。
+2. 执行：`npm run demo:3.4`
+3. **预期结果**：终端输出与 MCP 协议或工具列表相关的演示说明。
+
+### 步骤 B：在 Cursor 中配置 MCP Server（可选）
+
+1. 打开 Cursor，进入 **Settings > Features > MCP**。
+2. 点击 **Add new MCP server**，按需填写，例如：
+   - **Name**：`postgres`
+   - **Type**：`command`
+   - **Command**：`npx -y @modelcontextprotocol/server-postgres`（需本地有 Postgres 或使用官方示例 Server）
+3. 保存后，在 Chat 中可通过 `@postgres` 调用该 Server 提供的工具。
+4. **预期结果**：输入 `@postgres` 后能看到该 Server 暴露的工具列表，并可发起查询（若 Server 与数据源已就绪）。
+
+### 步骤 C：在 Claude Code 中配置 MCP（可选）
+
+1. 创建或编辑 `~/.claude/settings.json`，在 `mcpServers` 中增加配置，例如（可直接复制）：
+   ```json
+   {
+     "mcpServers": {
+       "postgres": {
+         "command": "npx",
+         "args": ["-y", "@modelcontextprotocol/server-postgres"]
+       }
+     }
+   }
+   ```
+2. 重启 Claude Code。
+3. 在对话中使用 MCP 工具进行数据库等操作。
+4. **预期结果**：Claude 能列出并调用已配置的 MCP Server 工具。
+
+---
+
+## 4. 本示例涉及的文件
+
+| 文件/目录 | 说明 |
+|-----------|------|
+| `3.4.mcp-protocol/index.ts` | 演示脚本入口 |
+
+---
+
+## 5. 核心要点
+
+- MCP 提供**标准化**的跨组件通信接口，解决 AI 时代的数据孤岛问题。
+- 一次编写 MCP Server，可在 Cursor、Claude Code、Windsurf 等宿主中复用。
+- 配置方式：Cursor 在设置里填命令；Claude 在 `settings.json` 的 `mcpServers` 中配置。
+
+---
+
+## 6. 延伸阅读
+
+- **概念延伸**：MCP 可与 Skills、Rules 组合使用，例如“分析 /docs 设计稿 + 查 Jira PRD”这类跨数据源任务。
+- **官方文档**：  
+  - [MCP 标准指南](https://modelcontextprotocol.io/docs/getting-started/intro)  
+  - Cursor：[MCP](https://cursor.com/docs/context/mcp)  
+  - Claude Code：[Configure MCP Servers](https://code.claude.com/docs/en/build-with-claude-code/configure-mcp-servers)
+- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「MCP」与各工具 Feature Matrix 做扩展阅读。

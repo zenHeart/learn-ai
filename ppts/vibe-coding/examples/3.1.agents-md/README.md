@@ -1,53 +1,75 @@
 # 3.1 AGENTS.md (项目上下文注入)
 
-## 概念解析
+**一句话核心**：本示例通过「让 AI 重构不符合规范的代码」演示 **AGENTS.md 如何作为项目级规则被自动注入**，你将学会在 Cursor/Claude 中依赖 AGENTS.md 统一技术栈与规范。
 
-在大型项目中，如何保证团队成员（尤其是新人和 AI）遵守核心架构规约？
+---
 
-传统的做法是在文档中心写一堆开发规范，指望新人去背。在 AI 辅助编程时代，各大工具（如 Cursor、Claude Code）原生支持读取项目内的规则配置，如 `AGENTS.md`、`.cursor/rules/*.mdc` 或 `CLAUDE.md`。
+## 1. 概念简述
 
-只要该文件存在，不管你当前要求 AI 帮你写什么功能，AI 的底层代理机制都会**静默地将这些项目级规则作为 System Prompt 的一部分优先发给大模型**。它相当于给 AI 置入了一个深层的潜意识。
+在大型项目中，如何让 AI 与团队成员都遵守同一套架构与规范？**AGENTS.md**（或 Claude 的 CLAUDE.md）放在项目根目录后，会被工具**静默作为 System Prompt 的一部分**发给模型。这样无需每次在对话里重复“用 TypeScript、用 dayjs、要单测”，AI 会优先遵守文件中的约定，相当于给 AI 置入项目级“潜意识”。
 
-## 文件说明
+---
 
-| 文件           | 作用                                      |
-| -------------- | ----------------------------------------- |
-| `AGENTS.md`    | 项目核心规约（TypeScript + dayjs + vitest） |
-| `countdown.ts` | 示例代码：使用了原生 Date（不符合规范）     |
+## 2. 前置条件
 
-## 运行示例
+- 已安装 **Cursor** 或 **Claude Code**。
+- 请以 **`ppts/vibe-coding/examples`** 或 **`examples/3.1.agents-md`** 为工作区根目录打开，确保能读到本目录下的 `AGENTS.md`。
 
-### 场景
+---
 
-`countdown.ts` 中有一个倒计时函数，但存在以下问题：
-1. 使用原生 `Date` 对象（违反 AGENTS.md 第2条）
-2. 没有类型定义（违反 AGENTS.md 第1条）
-3. 没有单元测试（违反 AGENTS.md 第3条）
+## 3. 操作步骤
 
-### Cursor 操作步骤
+### 步骤 A：了解本示例场景
 
-1. 在 Cursor 中打开本目录
-2. 打开 `countdown.ts` 文件
-3. 选中全部代码，按 `Cmd+K`（或 `Ctrl+K`）
-4. 输入 Prompt：
-   > `重构此代码，使其符合项目规范`
-5. **观察结果**：
-   - AI 会自动引入 `dayjs` 替换 `Date`
-   - 自动添加 TypeScript 类型
-   - 自动生成对应的 `.test.ts` 文件
+本目录中的 `countdown.ts`  deliberately 违反 `AGENTS.md` 的约定（使用原生 `Date`、缺少类型、无单测）。下面通过 Cursor 或 Claude 让 AI 按 AGENTS.md 重构。
 
-### Claude Code 操作步骤
+### 步骤 B：在 Cursor 中操作
 
-1. 在终端进入本目录
-2. 启动 Claude Code：`claude`
-3. 输入 Prompt：
-   > `重构 countdown.ts 使其符合项目规范，包括添加单元测试`
-4. **观察结果**：
-   - Claude 读取 `AGENTS.md` 后，会自动使用 dayjs
-   - 生成的代码包含完整类型定义
-   - 会创建 `countdown.test.ts` 测试文件
+1. 用 Cursor 打开工作区：**`ppts/vibe-coding/examples`** 或 **`examples/3.1.agents-md`**。
+2. 打开文件：`3.1.agents-md/countdown.ts`（若以 examples 为根，路径为 `3.1.agents-md/countdown.ts`）。
+3. 选中**全部代码**，按 `Cmd+K`（Windows/Linux：`Ctrl+K`），在输入框中粘贴以下 Prompt（可直接复制）：
+   ```text
+   重构此代码，使其符合项目规范
+   ```
+4. **预期结果**：
+   - AI 会引入 `dayjs` 替换原生 `Date`；
+   - 为函数与参数添加 TypeScript 类型；
+   - 可能生成对应的 `.test.ts` 单测文件。
 
-## 核心要点
+### 步骤 C：在 Claude Code 中操作
 
-* **Context Engineering（上下文工程）大于纯 Prompt 技巧。**
-* 不要指望 AI 每一次都猜对你的架构和库选型，把基调写在文件里，让它成为工作流的第一关。
+1. 终端进入本示例子目录或 `examples`：`cd /path/to/learn-ai/ppts/vibe-coding/examples/3.1.agents-md`（或 `examples`）。
+2. 执行：`claude`。
+3. 在对话中输入（可直接复制）：
+   ```text
+   重构 countdown.ts 使其符合项目规范，包括添加单元测试
+   ```
+4. **预期结果**：
+   - Claude 会读取 `AGENTS.md`，使用 dayjs、补全类型，并创建如 `countdown.test.ts` 的测试文件。
+
+---
+
+## 4. 本示例涉及的文件
+
+| 文件/目录 | 说明 |
+|-----------|------|
+| `AGENTS.md` | 项目核心规约（TypeScript + dayjs + vitest） |
+| `countdown.ts` | 示例代码：故意使用原生 Date、缺类型与单测，供 AI 重构 |
+
+---
+
+## 5. 核心要点
+
+- **Context Engineering 大于纯 Prompt 技巧**：把基调写在 AGENTS.md 里，让每次对话都自带项目规范。
+- 不要指望 AI 每次都猜对架构与库选型；**明确写在文件里**，成为工作流第一关。
+- Claude 用户可用 `/init` 生成 CLAUDE.md，并在其中通过 `@AGENTS.md` 引用本项目的 AGENTS.md。
+
+---
+
+## 6. 延伸阅读
+
+- **概念延伸**：AGENTS.md 与 .cursor/rules、.claude/rules 配合，可实现“宪法 + 地方法规”的分层规则；参见 3.2 Rules Matching。
+- **官方文档**：  
+  - Cursor：[AGENTS.md](https://cursor.com/docs/context/rules#agentsmd)  
+  - Claude Code：[CLAUDE.md](https://code.claude.com/docs/en/best-practices#write-an-effective-claude-md)、[通过 @AGENTS.md 引用](https://github.com/anthropics/claude-code/issues/6235)
+- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「AGENTS.md」与各工具 Feature Matrix 做扩展阅读。
