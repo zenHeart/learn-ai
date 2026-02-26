@@ -1,0 +1,44 @@
+graph TD
+    %% 样式定义
+    classDef io fill:#f9f2f4,stroke:#d04a6e,stroke-width:1px,color:#d04a6e,stroke-dasharray: 5 5;
+    classDef core fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px,color:#01579b;
+    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#f57f17;
+    classDef state fill:#f1f8e9,stroke:#689f38,stroke-width:1px,color:#33691e;
+
+    %% 泛化的外部输入
+    Input([<b>Input: 上下文 / 原始意图 / 上游产物</b><br>e.g., 脑爆想法 / PRD / 设计稿])
+    class Input io
+    Input --> Plan
+
+    subgraph "通用 PAIR 迭代引擎 (The Fractal PAIR Engine)"
+        direction TB
+        
+        Plan["<b>1. Plan (规划与拆解)</b><br>核心: 将模糊意图转化为结构化约束<br>产出: Blueprint (蓝图草案) & Todo (分步计划)"]
+        class Plan core
+        
+        Assess["<b>2. Assess (对齐与评估)</b><br>核心: 人机认知对齐 (HITL)<br>动作: 批注修正 Blueprint"]
+        class Assess core
+        
+        Implement["<b>3. Implement (原子化执行)</b><br>核心: 聚焦单一任务上下文<br>动作: 消耗一个 Todo 节点生成 Draft"]
+        class Implement core
+        
+        Review{"<b>4. Review (检查点评审)</b><br>核心: 单步验证与质量收敛"}
+        class Review decision
+
+        %% 认知对齐微循环 (Cognitive Alignment Loop)
+        Plan -->|输出蓝图与计划| Assess
+        Assess -->|认知存在偏差<br>补充约束/修正蓝图| Plan
+        Assess -->|认知完全对齐<br>锁定执行基线| Implement
+
+        %% 执行与验证微循环 (Execution & Verification Loop)
+        Implement -->|产出中间态 Draft<br>触发 Checkpoint| Review
+        
+        %% 核心卡点：Review 后的路径
+        Review -->|验证失败 / 偏离基线<br>回溯并精细化 Blueprint / Todo| Plan
+        Review -->|单步通过<br>继续消耗下一个 Todo| Implement
+    end
+
+    %% 泛化的最终出口
+    Done([<b>Output: 最终交付物</b><br>e.g., 最终版 PRD / 高质量代码 / 测试用例])
+    class Done io
+    Review -->|Todo 队列清空<br>全局验证通过| Done
