@@ -37,22 +37,22 @@ jobs:
       - name: Prepare Dist
         run: |
           mkdir -p final_dist/ppts
-          
+
           # Copy docs
           cp -r docs/.vitepress/dist/* final_dist/
-          
+
           # Copy all PPT builds
-          for ppt in prompt mcp vibe-coding; do
+          for ppt in prompt mcp vibe-coding skill agent; do
             if [ -d "ppts/${ppt}/dist" ]; then
               mkdir -p final_dist/ppts/${ppt}
               cp -r ppts/${ppt}/dist/* final_dist/ppts/${ppt}/
               echo "✓ Copied ${ppt}"
             fi
           done
-          
+
           # Copy PPT index page
           cp ppts/index.html final_dist/ppts/index.html
-          
+
           touch final_dist/.nojekyll
 
       - name: Deploy
