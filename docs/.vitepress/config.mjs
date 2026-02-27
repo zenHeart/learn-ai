@@ -491,6 +491,7 @@ export default withMermaid(defineConfig({
                               { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
                               { text: 'Claude CLI', link: '/zh/products/ai-coding/claude-cli' },
                               { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini-cli' },
+                              { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
                               { text: '其他工具', link: '/zh/products/ai-coding/othertools' }
                            ]
                         },
