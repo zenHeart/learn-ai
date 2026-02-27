@@ -1,54 +1,53 @@
 # 3.5 Hooks (生命周期钩子)
 
-**一句话核心**：本示例通过「运行脚本 + 在 Claude 中配置 pre-commit 钩子」演示 **Hooks** 如何在 AI 执行关键操作（如 Git 提交）前插入校验，测试不通过则阻断并让 AI 自修，实现护栏闭环。
+**一句话核心**：本示例通过 **Cursor** 与 **Claude Code** 的 Hooks 配置，在 Agent 任务结束时弹出 macOS 系统通知（带项目名、节流防重复），并可选配置 pre-commit 等护栏脚本。
 
 ---
 
 ## 1. 概念简述
 
-当 AI 能在终端自动跑测试、安装依赖甚至 Git 提交时，需要**护栏**防止烂代码被推送。**Hooks（生命周期拦截器）** 可在关键操作前插入脚本：例如在 Claude 的 `.claude/hooks` 下写 `pre-commit`，规定提交前必须跑通 `npm run lint` 和 `npm run test`；若失败则 `exit 1`，Agent 会捕获报错并进入反馈环自行修 Bug，修完再尝试提交。Cursor 目前无通用全生命周期 Hook，可用 Rules 限制修改权限或依赖外部 CI 替代。
+当 AI 能在终端自动跑测试、安装依赖甚至 Git 提交时，需要**护栏**防止烂代码被推送。**Hooks（生命周期拦截器）** 可在关键时机插入脚本：例如在 Cursor 的 `.cursor/hooks.json` 里配置 `stop`，在每次 Agent 任务结束时弹 macOS 通知；在 Claude Code 的 `.claude/settings.json` 里配置 Stop hook，实现同样效果。本仓库已配置两套「任务结束 → macOS 通知」的示例（带项目名与 15 秒节流）；Claude 还可配置 pre-commit 等脚本，在提交前强制跑 lint/test，未通过则阻断并由 AI 自修。
 
 ---
 
 ## 2. 前置条件
 
-- 已安装 **Claude Code**（本示例的 Hooks 以 Claude 为主；Cursor 见步骤 B 说明）。
-- 若在 Claude 中配置 Hooks，需在项目根或 `examples` 下创建 `.claude/hooks/` 并放置可执行脚本。
+- **Cursor** 或 **Claude Code** 任选其一即可体验对应 Hooks。
+- 项目级 Hooks 从**工作区根目录**加载：请以本仓库根（`examples`）或上级 `learn-ai` 为工作区打开。
+- 可选：安装 `jq`，便于脚本解析 payload 并显示项目名、节流防重复。
 
 ---
 
 ## 3. 操作步骤
 
-### 步骤 A：运行脚本（可选）
+### 步骤 A：Cursor Stop Hook（任务结束弹通知）
 
-1. 打开终端，进入：`cd /path/to/learn-ai/ppts/vibe-coding/examples`。
-2. 执行：`npm run demo:3.5`
-3. **预期结果**：终端输出与 Hooks 或 pre-commit 流程相关的演示说明。
+1. **配置位置**：`.cursor/hooks.json`（项目根或工作区根）。
+2. **本仓库已配置**：
+   - `stop` 事件 → 执行 `.cursor/hooks/notify-on-stop.sh`。
+   - 脚本从 Cursor 传入的 JSON 读取 `workspace_roots`、`status`，标题带项目名（如「Cursor Agent — examples」），15 秒内同工作区只弹一条。
+3. **如何验证**：在 Cursor 中用 Agent 执行一个简单任务，等本轮对话结束，应收到一条 macOS 通知。
+4. **手动测试**：`echo '{"status":"completed","workspace_roots":["/path/to/examples"]}' | .cursor/hooks/notify-on-stop.sh`
 
-### 步骤 B：在 Cursor 中（可选）
+### 步骤 B：Claude Code Stop Hook（任务结束弹通知）
 
-- Cursor **目前不支持**原生全生命周期 Hooks。
-- **替代方案**：使用 Rules 限制特定文件的修改权限；或通过外部 CI/CD（如 GitHub Actions）在 push 前执行 lint/test。
-- **预期结果**：通过规则或 CI 实现“提交前校验”的类似效果。
+1. **配置位置**：`.claude/settings.json` 中的 `hooks.Stop`，脚本路径为 `$CLAUDE_PROJECT_DIR/.claude/hooks/notify-on-stop.sh`。
+2. **本仓库已配置**：
+   - Stop hook → `.claude/hooks/notify-on-stop.sh`。
+   - 脚本解析 `task_subject`、`cwd`，标题带项目名（如「Claude Code — examples」），15 秒节流。
+3. **如何验证**：在 Claude Code 中完成一个任务，应收到一条 macOS 通知。
+4. **关闭此功能**：删除或注释 `settings.json` 中的 hooks 配置，或删除 `.claude/hooks/notify-on-stop.sh`。
 
-### 步骤 C：在 Claude Code 中配置 pre-commit 钩子（可选）
+### 步骤 C：Claude Code pre-commit 钩子（可选）
 
-1. 在项目根或 `examples` 下创建目录：`.claude/hooks/`。
-2. 创建文件 `pre-commit.sh`，内容示例（可直接复制）：
+1. 在 `.claude/hooks/` 下新增 `pre-commit.sh`，内容示例：
    ```bash
    #!/bin/bash
-   if ! npm run lint; then
-     echo "Lint failed. Claude Code operation halted."
-     exit 1
-   fi
-   if ! npm test; then
-     echo "Tests failed. Please fix before committing."
-     exit 1
-   fi
+   if ! npm run lint; then echo "Lint failed."; exit 1; fi
+   if ! npm test; then echo "Tests failed."; exit 1; fi
    ```
-3. 赋予执行权限：`chmod +x .claude/hooks/pre-commit.sh`。
-4. 在 `CLAUDE.md` 或项目说明中注明：提交代码前必须通过 pre-commit 钩子验证。
-5. **预期结果**：当 Claude 尝试执行 Git 提交时，会先运行该脚本；若 lint 或 test 失败，提交被阻断，AI 会根据报错尝试修复后再次提交。
+2. 执行 `chmod +x .claude/hooks/pre-commit.sh`。
+3. 在项目说明中注明：提交前须通过 pre-commit；Claude 会在提交前执行该脚本，失败则阻断并可根据报错自修。
 
 ---
 
@@ -56,22 +55,25 @@
 
 | 文件/目录 | 说明 |
 |-----------|------|
-| `3.5.hooks/index.ts` | 演示脚本入口 |
+| `.cursor/hooks.json` | Cursor stop hook 配置（任务结束时执行脚本） |
+| `.cursor/hooks/notify-on-stop.sh` | Cursor stop 脚本：解析 workspace_roots/status，带项目名 + 15s 节流，调用 osascript 弹 macOS 通知 |
+| `.claude/settings.json` | Claude Code hooks 配置（Stop → notify-on-stop.sh） |
+| `.claude/hooks/notify-on-stop.sh` | Claude Code Stop 脚本：解析 task_subject/cwd，带项目名 + 15s 节流，弹 macOS 通知 |
+| `.claude/hooks/pre-commit.sh` | （可选）Claude pre-commit 示例，提交前跑 lint/test |
 
 ---
 
 ## 5. 核心要点
 
-- 用**程序的规则**建立安全边界护栏（Guardrails）。
-- 利用模型从报错中反思并自我修复的能力，实现“校验失败 → AI 修 → 再校验”的闭环。
-- Cursor 用户可通过 Rules 或 CI 达到类似效果。
+- 用 **Hooks** 在关键时机插入脚本：Cursor 的 `stop`、Claude 的 Stop 均可用于「任务结束 → 通知」。
+- 通知中带**项目根目录名**便于区分多项目；**节流**（如 15 秒内同工作区一条）可避免重复弹窗。
+- pre-commit 等护栏可与 AI 自修能力结合，形成「校验失败 → AI 修 → 再校验」的闭环。
 
 ---
 
 ## 6. 延伸阅读
 
-- **概念延伸**：Hooks 可与 Skills 的权限控制结合，在“只读审查”与“可写但须通过钩子”之间分层。
-- **官方文档**：  
-  - Cursor：[Hooks](https://cursor.com/docs/agent/hooks)（当前能力以权限/Rules 为主）  
-  - Claude Code：[Hooks](https://code.claude.com/docs/en/hooks)（前后置脚本、pre-commit 等）
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Hooks」与各工具 Feature Matrix 做扩展阅读。
+- **概念延伸**：Hooks 可与 Skills/Rules 的权限控制结合，在「只读审查」与「可写但须通过钩子」之间分层。
+- **官方文档**：
+  - [Cursor Hooks](https://cursor.com/docs/agent/hooks)（stop、beforeShellExecution、afterFileEdit 等）
+  - [Claude Code Hooks](https://code.claude.com/docs/en/hooks)（Stop、pre-commit 等）

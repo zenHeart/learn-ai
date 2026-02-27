@@ -76,5 +76,4 @@
 - **官方文档**：  
   - Cursor：[Project Rules (.cursor/rules)](https://cursor.com/docs/context/rules#project-rules)  
   - Claude Code：[Modular Rules (.claude/rules)](https://code.claude.com/docs/en/memory#modular-rules-with-claude/rules/)
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Rules」与各工具 Feature Matrix 做扩展阅读。  
 - **详细演示步骤**：本目录下的 `prompt.md` 提供现场演示用的分步说明。

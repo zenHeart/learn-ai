@@ -60,8 +60,6 @@
 
 ## 6. 延伸阅读
 
-- **概念延伸**：Sub-Agents 与 Plan Mode、Session 管理结合，可支撑多任务并行与安全探索；参见 tool-feature 中 L3 必备特性。
 - **官方文档**：  
   - Cursor：[Sub-agents](https://cursor.com/docs/context/subagents)、[Composer / Agent 模式](https://cursor.com/docs/agent/overview)  
   - Claude Code：[Sub-Agents](https://code.claude.com/docs/en/sub-agents)、[Agent Teams](https://code.claude.com/docs/en/agent-teams)
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Sub-agents」「Agent Mode」与各工具 Feature Matrix 做扩展阅读。

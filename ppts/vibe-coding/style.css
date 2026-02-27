@@ -66,3 +66,9 @@
   /* 最后一列不设固定宽度，自适应撑满剩余空间 */
   width: auto; 
 }
+.two-cols-header {
+  column-gap: 10px; /* 根据需要调整间隙大小 */
+}
+.two-cols-header .col-header {
+  margin-bottom: 10px;
+}

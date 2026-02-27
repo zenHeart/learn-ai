@@ -82,4 +82,3 @@
 - **官方文档**：  
   - Cursor：[Commands](https://cursor.com/docs/context/commands)、[Skills](https://cursor.com/docs/context/skills)  
   - Claude Code：[Skills](https://code.claude.com/docs/en/skills)（含 YAML frontmatter、allowed-tools、前后台钩子）
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Commands」「Skills」与各工具 Feature Matrix 做扩展阅读。

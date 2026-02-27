@@ -62,4 +62,3 @@
 - **官方文档**：  
   - Cursor：[Codebase Indexing / Semantic Search](https://cursor.com/docs/context/semantic-search)  
   - Claude Code：项目级索引与上下文 [Memory / 记忆](https://code.claude.com/docs/en/memory)。
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Codebase Indexing」与各工具 Feature Matrix 做扩展阅读。

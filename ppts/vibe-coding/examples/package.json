@@ -12,11 +12,13 @@
     "demo:3.2": "tsx 3.2.rules-matching/index.ts",
     "demo:3.3": "tsx 3.3.commands-skills/index.ts",
     "demo:3.4": "tsx 3.4.mcp-protocol/index.ts",
-    "demo:3.5": "tsx 3.5.hooks/index.ts",
     "demo:3.6": "tsx 3.6.sub-agents/index.ts",
     "demo:4.1": "tsx 4.1.cold-start/index.ts",
-    "demo:4.2": "node --import tsx --test 4.2.vdd/throttle.test.ts",
-    "demo:4.3": "tsx 4.3.bug-fix/server.ts"
+    "demo:4.2": "node --import tsx --test 4.2.feature/throttle.test.ts",
+    "demo:4.3": "tsx 4.3.hotfix/server.ts",
+    "demo:4.1:desc": "cold-start — 冷启动：从口头描述生成项目骨架",
+    "demo:4.2:desc": "feature    — 需求开发：PRD.md+UI 到功能 PR",
+    "demo:4.3:desc": "hotfix     — Bug修复：Crash堆栈到修复 PR"
   },
   "keywords": [],
   "author": "",

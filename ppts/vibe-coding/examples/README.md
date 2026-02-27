@@ -13,7 +13,7 @@
    所有操作必须是**编号步骤**且**可复制粘贴**。每一步需写清：在哪里做、具体动作、可复制的命令/文案、以及**预期结果**，让用户按步骤即可完成，减少挫败感。
 
 3. **延伸与进一步学习**  
-   每个示例都包含 **「延伸阅读」**：概念延伸说明、官方文档链接（Cursor / Claude Code）、以及可选的 `ppts/vibe-coding/tool-feature.md` 引用（L3 关键特性与工具能力矩阵）。
+   每个示例都包含 **「延伸阅读」**：概念延伸说明、官方文档链接（Cursor / Claude Code）
 
 4. **结构一致**  
    所有示例的 README 采用**同一套模板**（见下）。便于维护，并在后续修订或新增示例时提供统一基准。
@@ -28,9 +28,9 @@
 |------|----------|-----------|------|
 | **2.x** | 原理     | 2.1～2.4 | 为何 vibe coding 成立：Tokenizer、Embedding、Attention、Tool Use。 |
 | **3.x** | 特性     | 3.1～3.6 | 工具能力：AGENTS.md、Rules、Commands & Skills、MCP、Hooks、Sub-agents。 |
-| **4.x** | 实战     | 4.1～4.3 | 真实工作流：冷启动、VDD（验证驱动开发）、Bug 定位与修复。 |
+| **4.x** | 实战     | 4.1～4.3 | 真实工作流：cold-start (Intent to Architecture)、feature 需求开发 (PRD to PR)、hotfix Bug 修复 (Crash to PR)。 |
 
-- 每个示例子目录命名为 **`X.Y.slug`**（如 `2.1.tokenizer`、`3.2.rules-matching`、`4.2.vdd`）。  
+- 每个示例子目录命名为 **`X.Y.slug`**（如 `2.1.tokenizer`、`3.2.rules-matching`、`4.2.feature`）。  
 - 幻灯片通过 `<VibeExample id="X.Y" />` 引用示例，并按前缀 `X.Y.` 解析到 `examples/X.Y.xxx/README.md`。  
 - **Demo 脚本**在本目录下通过 `npm run demo:X.Y` 运行（如 `npm run demo:2.1`、`npm run demo:4.2`）。`package.json` 中的脚本路径使用**点号**目录名（`2.1.tokenizer`，而非 `2.1-tokenizer`）。
 
@@ -65,7 +65,6 @@
 7. **6. 延伸阅读**  
    - 概念延伸（1～2 句）。  
    - 官方文档：Cursor、Claude Code 链接（与 `tool-feature.md` 中对应特性一致）。  
-   - 可选：「可结合 `ppts/vibe-coding/tool-feature.md` …」用于 L3 与工具矩阵。  
    - 若该示例另有 `prompt.md` 用于现场演示，在此注明（如「详细演示话术见本目录 `prompt.md`」）。
 
 ---
@@ -112,9 +111,9 @@ npm run demo:3.3   # Commands & Skills（权限演示）
 npm run demo:3.4   # MCP
 npm run demo:3.5   # Hooks
 npm run demo:3.6   # Sub-agents
-npm run demo:4.1   # 冷启动
-npm run demo:4.2   # VDD（先跑测试得到失败输出，再把报错交给 AI）
-npm run demo:4.3   # Bug 修复（启动服务得到堆栈，再把报错交给 AI）
+npm run demo:4.1   # cold-start  — 冷启动 (Intent to Architecture)
+npm run demo:4.2   # feature     — 需求开发 (PRD to PR)
+npm run demo:4.3   # hotfix      — Bug 修复 (Crash to PR)
 ```
 
 部分示例（如 3.1、3.2）以 **IDE/CLI 操作**为主，脚本仅作提示；请按各示例 README 在 Cursor 或 Claude Code 中完成主要步骤。
@@ -140,5 +139,4 @@ npm run demo:4.3   # Bug 修复（启动服务得到堆栈，再把报错交给 
 ## 参考
 
 - 幻灯片入口：`ppts/vibe-coding/slides.md`（及引入的 `01.overview.md` … `05.QA.md`）。  
-- 工具能力矩阵与 L3 标准：`ppts/vibe-coding/tool-feature.md`。  
 - 示例优化计划与模板细节：见 `.cursor/plans` 中的 vibe-coding examples 优化计划文档。

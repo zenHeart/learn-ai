@@ -67,4 +67,3 @@
 - **官方文档**：  
   - Cursor：[Agent 模式 / Composer](https://cursor.com/docs/agent/overview)  
   - Claude Code：[工具调用与自动化](https://code.claude.com/docs/en/overview)。
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Agent Mode」「Tool Use」与各工具 Feature Matrix 做扩展阅读。

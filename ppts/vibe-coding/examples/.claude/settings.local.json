@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(chmod +x:*)",
+      "Bash(echo JSON 格式正确:*)",
+      "WebSearch",
+      "mcp__MiniMax__web_search",
+      "Bash(echo:*)"
+    ]
+  }
+}

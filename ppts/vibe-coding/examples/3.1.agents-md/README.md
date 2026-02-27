@@ -72,4 +72,3 @@
 - **官方文档**：  
   - Cursor：[AGENTS.md](https://cursor.com/docs/context/rules#agentsmd)  
   - Claude Code：[CLAUDE.md](https://code.claude.com/docs/en/best-practices#write-an-effective-claude-md)、[通过 @AGENTS.md 引用](https://github.com/anthropics/claude-code/issues/6235)
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「AGENTS.md」与各工具 Feature Matrix 做扩展阅读。

@@ -61,4 +61,3 @@
 - **官方文档**：  
   - Cursor：[Composer / Agent 模式](https://cursor.com/docs/agent/overview)、[@ 引用](https://cursor.com/docs/context/mentions)  
   - Claude Code：[多文件与上下文](https://code.claude.com/docs/en/overview)。
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「Multi-file Editing」「Codebase Indexing」做扩展阅读。

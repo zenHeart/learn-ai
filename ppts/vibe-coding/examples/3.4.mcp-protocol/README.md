@@ -78,4 +78,3 @@
   - [MCP 标准指南](https://modelcontextprotocol.io/docs/getting-started/intro)  
   - Cursor：[MCP](https://cursor.com/docs/context/mcp)  
   - Claude Code：[Configure MCP Servers](https://code.claude.com/docs/en/build-with-claude-code/configure-mcp-servers)
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中「MCP」与各工具 Feature Matrix 做扩展阅读。

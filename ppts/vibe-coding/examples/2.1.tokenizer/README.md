@@ -61,4 +61,3 @@ AI 不直接“认识”自然语言中的字词，而是先把输入通过 **To
 - **官方文档**：  
   - Cursor：[Chat / 对话界面](https://cursor.com/docs/context/mentions)（可了解 Token 与上下文）  
   - Claude Code：在对话中输入 `/tokens` 查看使用情况；[Claude 文档](https://code.claude.com/docs/en/overview) 中有上下文与用量说明。
-- **本课程材料**：可结合 `ppts/vibe-coding/tool-feature.md` 中 L3 关键特性与各工具说明做扩展阅读。
