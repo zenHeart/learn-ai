@@ -1,11 +1,10 @@
 ---
-class: text-center
-drawings:
-  persist: false
+layout: cover
 transition: slide-left
-title: Prompt + Context Engineering
+title: Vibe Coding
 routerMode: hash
 ---
+
 
 # Prompt + Context Engineering
 

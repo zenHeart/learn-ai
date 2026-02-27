@@ -1,9 +1,7 @@
 ---
-class: text-center
-drawings:
-  persist: false
+layout: cover
 transition: slide-left
-title: MCP 深入解析
+title: Vibe Coding
 routerMode: hash
 ---
 

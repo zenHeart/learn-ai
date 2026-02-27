@@ -1,7 +1,5 @@
 ---
-class: text-center
-drawings:
-  persist: false
+layout: cover
 transition: slide-left
 title: Vibe Coding
 routerMode: hash
@@ -9,7 +7,7 @@ routerMode: hash
 
 # Vibe Coding (氛围编程)
 
-Presenter: chengle  
+Presenter: 程乐  
 Date: 2026-03-16
 
 ---

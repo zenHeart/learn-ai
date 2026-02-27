@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__chrome-devtools__new_page",
+      "mcp__MiniMax__web_search",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__fill",
+      "mcp__chrome-devtools__press_key",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__navigate_page"
+    ]
+  }
+}

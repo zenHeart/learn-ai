@@ -1,9 +1,7 @@
 ---
-class: text-center
-drawings:
-  persist: false
+layout: cover
 transition: slide-left
-title: SKILL 工作流编排
+title: Vibe Coding
 routerMode: hash
 ---
 

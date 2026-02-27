@@ -1,11 +1,10 @@
 ---
-class: text-center
-drawings:
-  persist: false
+layout: cover
 transition: slide-left
-title: AGENT 智能体
+title: Vibe Coding
 routerMode: hash
 ---
+
 
 # AGENT 智能体
 
