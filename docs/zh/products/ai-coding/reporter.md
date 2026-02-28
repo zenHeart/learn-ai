@@ -279,3 +279,5 @@ AI 生成代码的安全性问题已成为行业关注的焦点。多项独立�
 * [有赞实践](https://juejin.cn/post/7592094358658138146)
 * [氛围编程 google](https://cloud.google.com/discover/what-is-vibe-coding)
 * [How AI assistance impacts the formation of coding skills](https://www.anthropic.com/research/AI-assistance-coding-skills)
+* [openai](https://developers.openai.com/codex/guides/build-ai-native-engineering-team/) 构建 AI 原生团队
+* [腾讯研究院报告](https://mp.weixin.qq.com/s?__biz=MzIyNjM2MzQyNg==&mid=2247709879&idx=1&sn=d65b66af3807f5873367429f891f7b8f&scene=21&poc_token=HJqMommjBGNgTllZBjMjQQ5a0v9HKtFH4iD0fRGB)
