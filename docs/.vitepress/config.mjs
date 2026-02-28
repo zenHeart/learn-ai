@@ -486,6 +486,7 @@ export default withMermaid(defineConfig({
                      items: [
                         {
                            text: 'AI 编程',
+                           link: '/zh/products/ai-coding/',
                            items: [
                               { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
                               { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },

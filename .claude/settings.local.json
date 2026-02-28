@@ -32,7 +32,16 @@
       "WebFetch(domain:www.veracode.com)",
       "WebFetch(domain:www.gartner.com)",
       "WebFetch(domain:www.congruencemarketinsights.com)",
-      "WebFetch(domain:www.mckinsey.com)"
+      "WebFetch(domain:www.mckinsey.com)",
+      "WebFetch(domain:research.google)",
+      "WebFetch(domain:www.rootsanalysis.com)",
+      "WebFetch(domain:devops.com)",
+      "Bash(git add:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(xxd:*)",
+      "Bash(python3:*)"
     ]
   }
 }

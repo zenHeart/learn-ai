@@ -91,4 +91,4 @@
    * [ ] [ai engineering transition path](https://github.com/InterviewReady/ai-engineering-resources)
 
 4. practice
-   * [阿里云 CIO AI 落地实践](https://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651254924&idx=2&sn=be96b75d62ac8083f0a45b52bd8e9247&scene=21&poc_token=HM6GommjtWodWvgOf2DsHqpC1vfTqZNneI4Uun3h)
+* [阿里云 CIO AI 落地实践](https://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651254924&idx=2&sn=be96b75d62ac8083f0a45b52bd8e9247&scene=21&poc_token=HM6GommjtWodWvgOf2DsHqpC1vfTqZNneI4Uun3h)
