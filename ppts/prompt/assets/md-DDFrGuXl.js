@@ -1,0 +1,13 @@
+import{_ as p}from"./slidev/CodeBlockWrapper.vue_vue_type_script_setup_true_lang-gGoQjO0a.js";import{b as o,o as k,w as e,g as s,e as h,m as d,D as i,v as m,x as c,A as n}from"./modules/vue-D8V2d16n.js";import{I as g}from"./slidev/default-De7v22Y8.js";import{u as A,f as u}from"./slidev/context-pjVaibPV.js";import"./modules/unplugin-icons-BLZJJaKD.js";import"./index--sUmzWtI.js";import"./modules/shiki-aWWOti_I.js";const v={__name:"02.prompt.md__slidev_7",setup(D){const{$clicksContext:t,$frontmatter:l}=A();return t.setup(),(E,a)=>{const r=p;return k(),o(g,m(c(n(u)(n(l),6))),{default:e(()=>[a[1]||(a[1]=s("h1",null,"核心技巧 2：Few-shot (少样本)",-1)),a[2]||(a[2]=s("p",null,"包含少量精选示例，帮助模型学习“你的规矩”。",-1)),h(r,d({},{title:"",ranges:[]}),{default:e(()=>[...a[0]||(a[0]=[s("pre",{class:"shiki shiki-themes vitesse-dark vitesse-light slidev-code",style:{"--shiki-dark":"#dbd7caee","--shiki-light":"#393a34","--shiki-dark-bg":"#121212","--shiki-light-bg":"#ffffff"}},[s("code",{class:"language-markdown"},[s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},"提取文本中的公司名和融资金额：")]),i(`
+`),s("span",{class:"line"}),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},"示例 1：")]),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},'输入："OpenAI 昨天宣布获得了 66 亿美元的新一轮融资。"')]),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},'输出：{"company": "OpenAI", "amount": "66 亿美元"}')]),i(`
+`),s("span",{class:"line"}),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},"示例 2：")]),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},'输入："Anthropic 成功筹集了 40 亿美金，估值大涨。"')]),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},'输出：{"company": "Anthropic", "amount": "40 亿美金"}')]),i(`
+`),s("span",{class:"line"}),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},"你的任务：")]),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},'输入："昨天 Cursor 母公司获得了 A16Z 领投的 6000 万美元融资。"')]),i(`
+`),s("span",{class:"line"},[s("span",{style:{"--shiki-dark":"#DBD7CAEE","--shiki-light":"#393A34"}},"输出：")])])],-1)])]),_:1},16),a[3]||(a[3]=s("div",{class:"mt-4 p-4 bg-blue-50 text-blue-800 rounded-lg"},[s("strong",null,"关键"),i(": 示例的质量决定输出质量（Garbage In, Garbage Out），用于规范极端特定的格式要求。 ")],-1))]),_:1},16)}}};export{v as default};
