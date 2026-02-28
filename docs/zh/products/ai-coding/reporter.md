@@ -18,6 +18,7 @@ Vibe Coding（氛围编程）作为 AI 辅助编程的新兴范式，正在深�
 ## 核心发现
 
 ::: tip 关键指标
+
 - **AI 代码占比持续攀升**：2025年已达 42% 为 AI 辅助生成，预计 2027 年将达到 65% [[5]]
 - **开发者采用率极高**：约 65% 的开发者每周使用 AI 编程工具 [[4]]
 - **企业级采用加速**：90% 的财富 100 强企业已采用 GitHub Copilot [[16]]
@@ -66,9 +67,8 @@ Vibe Coding（氛围编程）一词由 AI 研究员 Andrej Karpathy 于 2025 年
 
 ### AI 代码生成占比数据
 
-AI 生成代码 in 整体代码库中的占比正在快速增长。根据 Google 和 GitHub 2024-2025 年报告：
+AI 生成代码 in 整体代码库中的占比正在快速增长。根据 GitHub 2024-2025 年报告：
 
-- **2024年**：Google 官方确认其 **25%** 的新代码为 AI 生成 [[18]]
 - **2026年**：AI 辅助生成的提交代码占比已达到 **42-46%** [[5]]
 - **2027年预测**：开发者预计 AI 代码占比将达到 **65%** [[5]] [[13]]
 
@@ -126,9 +126,11 @@ Vibe Coding 市场正在经历爆发式增长。根据多家研究机构的预�
 Vibe Coding 对程序员就业市场产生了深远影响，不同经验层次的开发者受到的影响存在显著差异：
 
 #### 初级开发者面临挑战
+
 斯坦福大学研究显示，2022 年以来 **22-25 岁** 开发者的就业率下降了 **20%**。初级编程岗位需求减少，企业更倾向于招聘能够熟练使用 AI 工具的中高级开发者。 [[11]]
 
 #### 中高级开发者需求增长
+
 与此同时，具备系统架构能力和 AI 工具使用经验的中高级开发者需求持续增长。世界经济论坛《2025 年未来就业报告》预测，到 2030 年将创造 1.7 亿个新岗位，净增 7800 万个就业机会。 [[10]]
 
 ### 技能要求转变
@@ -168,6 +170,7 @@ AI 生成代码的安全性问题已成为行业关注的焦点。多项独立�
 ### 主要安全风险
 
 ::: danger 安全警告
+
 1. **跨站脚本攻击（XSS）**
    AI 模型在生成安全代码方面的表现令人担忧。研究显示，针对 XSS 漏洞（CWE-80），AI 模型的失败率高达 **86%**。 [[6]]
 2. **设计层面缺陷**
@@ -247,9 +250,6 @@ AI 生成代码的安全性问题已成为行业关注的焦点。多项独立�
 15. [Grand View Research: AI Coding Assistant Market Size][15]
 16. [Microsoft: GitHub Copilot Enterprise Adoption][16]
 17. [Wikipedia: Vibe Coding][17]
-18. [Google: AI Code Generation at Google][18]
-19. [IBM: Software Engineering Challenges in the AI Era][19]
-
 
 [1]: https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/
 [2]: https://github.blog/news-insights/research/the-state-of-ai-driven-development/
@@ -268,16 +268,13 @@ AI 生成代码的安全性问题已成为行业关注的焦点。多项独立�
 [15]: https://www.grandviewresearch.com/industry-analysis/ai-coding-assistant-market
 [16]: https://news.microsoft.com/ai-in-action/
 [17]: https://en.wikipedia.org/wiki/Vibe_coding
-[18]: https://research.google/blog/ai-code-generation-at-google/
-[19]: https://devops.com/ibm-survey-surfaces-multiple-software-engineering-challenges-in-the-ai-era/
-
 
 ### 其他资料
 
-* [阿里实践 Vibe Coding ](https://www.infoq.cn/article/QtQVbAc62O1ib1V2WftO)
-* [快手实践 Vibe Coding ](https://www.infoq.cn/article/9rX1Ov951gKtaTmQb8Jq)
-* [有赞实践](https://juejin.cn/post/7592094358658138146)
-* [氛围编程 google](https://cloud.google.com/discover/what-is-vibe-coding)
-* [How AI assistance impacts the formation of coding skills](https://www.anthropic.com/research/AI-assistance-coding-skills)
-* [openai](https://developers.openai.com/codex/guides/build-ai-native-engineering-team/) 构建 AI 原生团队
-* [腾讯研究院报告](https://mp.weixin.qq.com/s?__biz=MzIyNjM2MzQyNg==&mid=2247709879&idx=1&sn=d65b66af3807f5873367429f891f7b8f&scene=21&poc_token=HJqMommjBGNgTllZBjMjQQ5a0v9HKtFH4iD0fRGB)
+- [阿里实践 Vibe Coding](https://www.infoq.cn/article/QtQVbAc62O1ib1V2WftO)
+- [快手实践 Vibe Coding](https://www.infoq.cn/article/9rX1Ov951gKtaTmQb8Jq)
+- [有赞实践](https://juejin.cn/post/7592094358658138146)
+- [氛围编程 google](https://cloud.google.com/discover/what-is-vibe-coding)
+- [How AI assistance impacts the formation of coding skills](https://www.anthropic.com/research/AI-assistance-coding-skills)
+- [openai](https://developers.openai.com/codex/guides/build-ai-native-engineering-team/) 构建 AI 原生团队
+- [腾讯研究院报告](https://mp.weixin.qq.com/s?__biz=MzIyNjM2MzQyNg==&mid=2247709879&idx=1&sn=d65b66af3807f5873367429f891f7b8f&scene=21&poc_token=HJqMommjBGNgTllZBjMjQQ5a0v9HKtFH4iD0fRGB)
