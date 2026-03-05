@@ -18,7 +18,7 @@
 
 - [GitHub Copilot](./copilot.md) - 行业标准的 AI 代码补全
 - [Cursor](./cursor.md) - AI 优先的代码编辑器，具备聊天和生成功能
-- [Claude CLI](./claude-cli.md) - 命令行 AI 编程助手
+- [Claude CLI](./claude/index.md) - 命令行 AI 编程助手
 - [Gemini CLI](./gemini-cli.md) - Google 的 AI 编程助手
 - [其他工具](./othertools.md) - 探索更多 AI 编程工具
 
@@ -41,7 +41,7 @@
 - 行业标准
 
 ### 适合终端爱好者
-**推荐**: [Claude CLI](./claude-cli.md)
+**推荐**: [Claude CLI](./claude/index.md)
 - 命令行优先
 - 出色的推理能力
 - 非常适合重构
