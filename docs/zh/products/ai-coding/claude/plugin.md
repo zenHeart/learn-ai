@@ -361,3 +361,10 @@ AI 的工具箱，最核心的能力扩展方式。
 | **Hooks 不触发** | 脚本无执行权限 | `chmod +x scripts/*.sh` |
 | **MCP 连接失败** | 路径引用错误 | 使用 `${CLAUDE_PLUGIN_ROOT}` 引用内部文件 |
 | **npm 安装 404** | 未配置 Registry | 检查 `.npmrc` 或安装命令是否带 `--registry` |
+
+## 延伸阅读
+
+* [Basic](https://code.claude.com/docs/en/plugins)
+* [Install](https://code.claude.com/docs/en/discover-plugins)
+* [Market place](https://code.claude.com/docs/en/plugin-marketplaces#create-the-marketplace-file)
+* [Reference](https://code.claude.com/docs/en/plugins-reference)
