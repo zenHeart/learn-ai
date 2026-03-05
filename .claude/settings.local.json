@@ -41,7 +41,12 @@
       "Bash(tail:*)",
       "Bash(grep:*)",
       "Bash(xxd:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(chmod +x:*)",
+      "mcp__MiniMax__understand_image",
+      "Bash(curl:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(echo:*)"
     ]
   }
 }

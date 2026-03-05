@@ -490,7 +490,9 @@ export default withMermaid(defineConfig({
                            items: [
                               { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
                               { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
-                              { text: 'Claude CLI', link: '/zh/products/ai-coding/claude-cli' },
+                              { text: 'Claude CLI', link: '/zh/products/ai-coding/claude/index' , items: [
+                                 { text: 'plugin', link: '/zh/products/ai-coding/claude/plugin' },
+                              ]},
                               { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini-cli' },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
                               { text: '其他工具', link: '/zh/products/ai-coding/othertools' }
