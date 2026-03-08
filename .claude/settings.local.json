@@ -46,7 +46,13 @@
       "mcp__MiniMax__understand_image",
       "Bash(curl:*)",
       "WebFetch(domain:docs.anthropic.com)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "mcp__gitlab__list_projects",
+      "mcp__github__get_me",
+      "mcp__gitlab__search_repositories",
+      "mcp__gitlab__list_namespaces",
+      "mcp__gitlab__get_namespace",
+      "Bash(glab project:*)"
     ]
   }
 }

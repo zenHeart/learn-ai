@@ -1,41 +1,130 @@
 # Claude Code Plugin 开发与发布完整手册
 
-> **版本**：Claude Code v2.0+ (2025-03)  
 > **目标**：为开发者、发布者和终端用户提供基于内网 npm 和 Git 的全流程指南。
 
-本手册整合了 Claude Code 插件体系的核心概念、开发规范、企业级分发策略及故障排查指南，旨在打造一个标准化的内部工具生态。
+本手册整合了 Claude Code 插件体系的核心概念、开发规范、企业级分发策略及故障排查指南，旨在打造一个标准化的内部 Claude Code 插件生态。
 
 ---
 
-## 0 · 核心概念速览
+## 核心概念
 
-### 0.1 什么是 Plugin？
-插件是扩展 Claude Code 能力的独立单元，它可以包含以下五种组件。
-**重要概念澄清**：
-*   **内容包**：插件本质上是一个符合特定目录结构的文件夹。
-*   **分发载体**：虽然我们使用 npm 包（或 Git 仓库）来传输它，但 Claude Code 是通过下载并解析这个包的内容来加载功能的，而不是像普通 Node.js 依赖那样运行它。
-*   **缓存机制**：插件安装后会被缓存到 `~/.claude/plugins/cache/`。
+### 综述
 
-### 0.2 五大组件 (The Big 5)
+插件是扩展 Claude Code 能力的独立单元, 可以集成 `skills、agents、hooks` 等功能，实现跨用户复用，核心概念如下
 
-| 组件 | 目录/文件 | 作用 | 触发方式 |
-| :--- | :--- | :--- | :--- |
-| **Commands** | `commands/*.md` | 自定义斜杠命令 | 用户手动输入 `/name:cmd` |
-| **Skills** | `skills/*/SKILL.md` | 给 AI 的新能力 | AI 根据上下文**自动调用** |
-| **Agents** | `agents/*.md` | 专用子代理 | 用户 `/agents` 选择或 AI 委派 |
-| **Hooks** | `hooks/hooks.json` | 生命周期钩子 | 事件触发（如启动时、保存后） |
-| **MCP Servers** | `.mcp.json` | 连接外部工具/数据 | 插件启用时自动启动后台服务 |
+* **plugin** 符合特定目录结构的文件夹, 可以包含 `skills、agents` 等子文件夹承载可复用的功能
+* **marketplace**：如果插件是 App, marketplace 就是 App Store, 插件市场可以是 claude code 插件市场，也可以是企业内部一个记录所有插件的仓库或者一个可访问的 json 文件，记录了所有可用的插件信息，claude code 支持通过 `git、npm` 等方式配置插件来源
+* **插件层级** 插件支持项目和用户层级的安装，用户层级可以跨项目服用，一般在 `~/.claude/plugins/cache/`
 
-### 0.3 什么是 Marketplace？
+### [Plugin](https://code.claude.com/docs/en/plugins-reference)
+
+插件文件夹可以包含如下内容
+
+| 组件 | 默认位置 | 用途 |
+| :--- | :--- | :--- |
+| 清单文件 (Manifest) | `.claude-plugin/plugin.json` | 插件元数据和配置（可选） |
+| 命令 (Commands) | `commands/` | Skill Markdown 文件（旧版；新 Skill 请使用 skills/） |
+| 智能体 (Agents) | `agents/` | 子智能体 Markdown 文件 |
+| 技能 (Skills) | `skills/` | 采用 `<name>/SKILL.md` 结构的技能 |
+| 钩子 (Hooks) | `hooks/hooks.json` | 钩子配置 |
+| MCP 服务端 | `.mcp.json` | MCP 服务端定义 |
+| LSP 服务端 | `.lsp.json` | 语言服务器配置 |
+| 设置 (Settings) | `settings.json` | 启用插件时应用的默认配置。目前仅支持智能体设置 |
+
+### [Marketplace](https://code.claude.com/docs/en/plugin-marketplaces)
+
 Marketplace 是一个 JSON 目录文件（`marketplace.json`），它是连接用户与插件的桥梁。
-*   **对于企业**：这是管理内部工具集的中心枢纽，支持 Git/npm 多种源。
-*   **对于用户**：这是“应用商店”，支持一键安装、自动更新。
 
----
+* **对于企业**：这是管理内部工具集的中心枢纽，支持 Git/npm 多种源。
+* **对于用户**：这是“应用商店”，支持一键安装、自动更新。
 
-## 1 · 开发者指南：构建插件
+marketplace 配置结构如下
 
-### 1.1 目录结构与 plugin.json
+```json
+
+{
+  "name": "company-marketplace", // 插件市场标识，你可以定义多个插件市场
+  "owner": {
+    "name": "administrator", // 维护者名称
+    "email": "xx@company.com" // 维护者邮箱
+  },
+  "plugins": [ // 市场支持的插件
+    {
+      "name": "code-formatter",
+      "source": "./plugins/formatter", // 插件来源本地目录
+      "description": "Automatic code formatting on save",
+      "version": "2.1.0",
+      "author": {
+        "name": "DevTools Team"
+      }
+    },
+    {
+      "name": "deployment-tools",
+      "source": { // 插件来源 github
+        "source": "github",
+        "repo": "company/deploy-plugin"
+      },
+      "description": "Deployment automation tools"
+    },
+    {
+      "name": "git-plugin",
+      "source": { // 插件来源 gitlab
+        "source": "url",
+        "url": "https://gitlab.com/team/plugin.git"
+      }
+    },
+    { // 插件来源私有 npm 源
+      "name": "my-npm-plugin",
+      "source": { 
+        "source": "npm",
+        "package": "@acme/claude-plugin",
+        "version": "^2.0.0",
+        "registry": "https://npm.example.com"
+      }
+    }
+
+  ]
+}
+
+```
+
+
+### [`/plugin`](https://code.claude.com/docs/en/plugins)
+
+用户启动 `claude` 后,  可以利用 `/plugin` 添加新的 `marketplace` 安装 `plugin`
+
+```bash
+# 1. 启动 claude
+claude
+
+# 2. claude 输入 
+/plugin
+
+# 终端会显示如下界面
+Plugins  Discover   Installed   Marketplaces   Errors  (←/→ or tab to cycle)                  
+                                                                                                                                 
+  Discover plugins (1/56)                                                                                                        
+  ╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮  
+  │ ⌕ Search…                                                                                                                 │  
+  ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+  ❯ ◯ frontend-design · claude-plugins-official · 277.5K installs
+      Create distinctive, production-grade frontend interfaces ...
+
+    ◯ context7 · claude-plugins-official [Community Managed] · 150.7K installs
+      Upstash Context7 MCP server for up-to-date documentation ...
+
+    ◯ superpowers · claude-plugins-official · 143.1K installs
+  // ... 其他插件
+
+# 用户可以通过 tab 切换到 marketplaces 挂载开源或者内部的插件市场
+# 然后可以通过搜索来安装插件
+
+```
+
+## 开发者指南：构建插件
+
+### 目录结构与 plugin.json
 
 标准的插件目录结构如下：
 
@@ -53,11 +142,18 @@ my-plugin/
 ├── hooks/                # [可选] 钩子配置
 │   └── hooks.json
 ├── .mcp.json             # [可选] MCP 服务配置
-├── package.json          # [必选] npm 发布配置
-└── README.md             # [必选] 使用说明
+├── .lsp.json             # [可选] LSP 服务配置
+├── settings.json         # [可选] 设置配置
+├── scripts/              # [可选] 脚本
+│   ├── build.sh
+│   └── security-bot.js
+├── package.json          # [可选] 如果用 npm 发布插件，则需要
+└── README.md             # [可选] 使用说明
+└── LICENSE        # [可选] 使用说明
 ```
 
 **plugin.json 完整 Schema**：
+
 ```jsonc
 {
   // ── 必填字段 ──────────────────────────────────────────
@@ -86,9 +182,12 @@ my-plugin/
 ### 1.2 五大核心组件详解 (The Big 5)
 
 #### A. Commands (斜杠命令)
+
 Markdown 文件，文件名即命令名。
-*   **位置**: `commands/hello.md` -> `/namespace:hello`
-*   **Frontmatter**:
+
+* **位置**: `commands/hello.md` -> `/namespace:hello`
+* **Frontmatter**:
+
     ```markdown
     ---
     description: 向用户打招呼
@@ -97,12 +196,16 @@ Markdown 文件，文件名即命令名。
     # Hello World
     打印一句问候语：Hello $ARGUMENTS
     ```
+
     *注：`$ARGUMENTS` 占位符用于接收用户输入。*
 
 #### B. Skills (智能技能)
+
 AI 的工具箱，最核心的能力扩展方式。
-*   **位置**: `skills/git-commit/SKILL.md`
-*   **关键点**: `description` 必须精准，Claude 靠它决定是否调用此技能。
+
+* **位置**: `skills/git-commit/SKILL.md`
+* **关键点**: `description` 必须精准，Claude 靠它决定是否调用此技能。
+
     ```markdown
     ---
     name: git-commit
@@ -114,9 +217,12 @@ AI 的工具箱，最核心的能力扩展方式。
     ```
 
 #### C. Agents (子代理)
+
 拥有独立人格和权限的 AI 助手。
-*   **位置**: `agents/qa-bot.md`
-*   **Frontmatter 字段**:
+
+* **位置**: `agents/qa-bot.md`
+* **Frontmatter 字段**:
+
     | 字段 | 说明 |
     | :--- | :--- |
     | `name` | 唯一标识符 |
@@ -126,9 +232,12 @@ AI 的工具箱，最核心的能力扩展方式。
     | `permissionMode` | `ask` (询问) / `auto` (自动) |
 
 #### D. Hooks (生命周期钩子)
+
 自动化脚本触发器。
-*   **位置**: `hooks/hooks.json`
-*   **支持事件**: `PreToolUse`, `PostToolUse`, `SessionStart`, `SessionEnd`, `UserPromptSubmit` 等。
+
+* **位置**: `hooks/hooks.json`
+* **支持事件**: `PreToolUse`, `PostToolUse`, `SessionStart`, `SessionEnd`, `UserPromptSubmit` 等。
+
     ```json
     {
       "hooks": {
@@ -144,12 +253,16 @@ AI 的工具箱，最核心的能力扩展方式。
       }
     }
     ```
+
     *注意：脚本需有执行权限 `chmod +x`。*
 
 #### E. MCP Servers (连接器)
+
 连接外部世界（数据库、API）。
-*   **位置**: `.mcp.json`
-*   **配置示例**:
+
+* **位置**: `.mcp.json`
+* **配置示例**:
+
     ```json
     {
       "mcpServers": {
@@ -174,20 +287,25 @@ AI 的工具箱，最核心的能力扩展方式。
 
 在发布前，务必在本地进行充分测试。
 
-1.  **验证结构**:
+1. **验证结构**:
+
     ```bash
     claude plugin validate .
     ```
-2.  **本地加载运行 (推荐)**:
+
+2. **本地加载运行 (推荐)**:
+
     ```bash
     # 无需安装，直接加载当前目录，修改代码重启生效
     claude --plugin-dir .
     ```
-3.  **Marketplace 模拟安装 (本地仿真)**:
+
+3. **Marketplace 模拟安装 (本地仿真)**:
     如果你想测试 `/plugin install` 流程，可以将当前目录模拟为本地 Marketplace。
 
-    *   **前提**: 在根目录创建 `marketplace.json` 指向自身。
-    *   **操作**:
+    * **前提**: 在根目录创建 `marketplace.json` 指向自身。
+    * **操作**:
+
         ```bash
         # 1. 添加当前目录为 Marketplace 源
         /plugin marketplace add .
@@ -195,10 +313,11 @@ AI 的工具箱，最核心的能力扩展方式。
         # 2. 从本地 Marketplace 安装插件
         /plugin install company-tools
         ```
-4.  **调试命令**:
-    *   `/plugin list`: 查看已加载插件。
-    *   `/mcp`: 查看 MCP 服务状态。
-    *   `/agents`: 查看已注册的 Agent。
+
+4. **调试命令**:
+    * `/plugin list`: 查看已加载插件。
+    * `/mcp`: 查看 MCP 服务状态。
+    * `/agents`: 查看已注册的 Agent。
 
 ---
 
@@ -206,7 +325,8 @@ AI 的工具箱，最核心的能力扩展方式。
 
 ### 2.1 发布到私有 npm Registry
 
-1.  **配置 package.json**:
+1. **配置 package.json**:
+
     ```json
     {
       "name": "@company/ai-kit",
@@ -219,7 +339,9 @@ AI 的工具箱，最核心的能力扩展方式。
       ]
     }
     ```
-2.  **认证与发布**:
+
+2. **认证与发布**:
+
     ```bash
     # 登录私有仓库
     npm login --registry=http://npm.example.com/
@@ -257,18 +379,19 @@ AI 的工具箱，最核心的能力扩展方式。
   ]
 }
 ```
+
 *将此文件推送到 Git 仓库。*
 
 ### 2.3 版本管理与发布 Checklist
 
-1.  **更新版本号**:
-    *   `.claude-plugin/plugin.json` 中的 `version`
-    *   `package.json` 中的 `version`
-    *   （推荐使用 `npm version patch` 同步）
-2.  **验证**: 运行 `claude plugin validate .`
-3.  **打包检查**: 运行 `npm pack --dry-run` 确保文件完整。
-4.  **发布**: `npm publish`。
-5.  **更新 Marketplace**: 如果是新插件，需更新 `marketplace.json`。
+1. **更新版本号**:
+    * `.claude-plugin/plugin.json` 中的 `version`
+    * `package.json` 中的 `version`
+    * （推荐使用 `npm version patch` 同步）
+2. **验证**: 运行 `claude plugin validate .`
+3. **打包检查**: 运行 `npm pack --dry-run` 确保文件完整。
+4. **发布**: `npm publish`。
+5. **更新 Marketplace**: 如果是新插件，需更新 `marketplace.json`。
 
 ---
 
@@ -277,54 +400,63 @@ AI 的工具箱，最核心的能力扩展方式。
 ### 3.1 安装插件（两种模式）
 
 #### 模式 A：企业级标准安装 (推荐)
+
 通过 Marketplace 安装，支持自动更新。
 
-1.  **添加 Marketplace**:
+1. **添加 Marketplace**:
+
     ```bash
     # 只需执行一次
     /plugin marketplace add https://git.example.com/company/marketplace.git
     ```
-2.  **安装插件**:
+
+2. **安装插件**:
+
     ```bash
     /plugin install ai-kit
     ```
 
 #### 模式 B：开发者/调试安装
+
 直接从 npm 全局安装并加载。
 
-1.  **全局安装包**:
+1. **全局安装包**:
+
     ```bash
     npm install -g @company/ai-kit --registry=http://npm.example.com/
     ```
-2.  **启动加载**:
+
+2. **启动加载**:
+
     ```bash
     claude --plugin-dir $(npm root -g)/@company/ai-kit
     ```
 
 ### 3.2 常用命令与管理
 
-*   **管理**:
-    *   `/plugin`: 打开交互式面板。
-    *   `/plugin update`: 更新所有插件。
-    *   `/plugin remove <name>`: 卸载插件。
-*   **使用**:
-    *   `/help`: 查看所有可用命令。
-    *   `/namespace:command`: 执行特定命令。
+* **管理**:
+  * `/plugin`: 打开交互式面板。
+  * `/plugin update`: 更新所有插件。
+  * `/plugin remove <name>`: 卸载插件。
+* **使用**:
+  * `/help`: 查看所有可用命令。
+  * `/namespace:command`: 执行特定命令。
 
 ### 3.3 进阶配置 (Scope & Auto-Update)
 
-*   **安装范围 (Scope)**:
-    *   `--scope user` (默认): 用户级，所有项目生效。
-    *   `--scope project`: 仅当前项目生效（写入 `.claude/settings.json`）。
-*   **自动更新**:
-    *   官方 Marketplace 默认开启。
-    *   私有 Marketplace 默认关闭，需手动开启或配置环境变量 `FORCE_AUTOUPDATE_PLUGINS=true`。
+* **安装范围 (Scope)**:
+  * `--scope user` (默认): 用户级，所有项目生效。
+  * `--scope project`: 仅当前项目生效（写入 `.claude/settings.json`）。
+* **自动更新**:
+  * 官方 Marketplace 默认开启。
+  * 私有 Marketplace 默认关闭，需手动开启或配置环境变量 `FORCE_AUTOUPDATE_PLUGINS=true`。
 
 ---
 
 ## 4 · 企业级部署与最佳实践
 
 ### 4.1 自动推送 Marketplace
+
 在项目 `.claude/settings.json` 中配置，团队成员 clone 项目后会自动提示添加 Marketplace。
 
 ```json
@@ -341,6 +473,7 @@ AI 的工具箱，最核心的能力扩展方式。
 ```
 
 ### 4.2 安全策略 (Allowlist/Denylist)
+
 管理员可控制允许使用的 MCP Server。
 
 ```json
