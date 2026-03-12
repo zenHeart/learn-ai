@@ -3,7 +3,10 @@ layout: cover
 transition: slide-left
 title: Vibe Coding
 routerMode: hash
+comark: true
+mdc: true
 ---
+
 
 # Vibe Coding (氛围编程)
 

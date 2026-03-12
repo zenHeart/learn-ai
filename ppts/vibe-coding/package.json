@@ -7,6 +7,7 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@comark/markdown-it": "^0.3.2",
     "@slidev/types": "^52.12.0",
     "marked": "^17.0.3"
   }
