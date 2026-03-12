@@ -72,3 +72,77 @@
 .two-cols-header .col-header {
   margin-bottom: 10px;
 }
+
+/* ── PAIR 场景卡片 ── */
+.pair-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pair-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pair-card .card-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.pair-card .card-meta {
+  font-size: 11px;
+  font-family: monospace;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.pair-card .card-body {
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+.pair-card .card-out {
+  font-size: 11px;
+  font-family: monospace;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* 颜色变体 */
+.pair-card.blue  { background: #eff6ff80; border-color: #bfdbfe; }
+.pair-card.purple{ background: #faf5ff80; border-color: #e9d5ff; }
+.pair-card.green { background: #f0fdf480; border-color: #bbf7d0; }
+.pair-card.amber { background: #fffbeb80; border-color: #fde68a; }
+
+.pair-card.blue  .card-title { color: #1d4ed8; }
+.pair-card.purple .card-title{ color: #7e22ce; }
+.pair-card.green .card-title { color: #15803d; }
+.pair-card.amber .card-title { color: #b45309; }
+
+.pair-card.blue  .card-out { color: #2563eb; }
+.pair-card.purple .card-out{ color: #9333ea; }
+.pair-card.green .card-out { color: #16a34a; }
+.pair-card.amber .card-out { color: #d97706; }
+
+/* ── 汇总页 2x2 卡片 ── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.summary-card {
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
