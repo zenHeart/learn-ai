@@ -13,6 +13,8 @@
 - **Implement 阶段**：以模块为单位（路由/状态/组件）原子化执行，控制上下文复杂度
 - **Review 阶段**：每模块完成后跑 `npm run dev` 验证，确保增量可运行
 
+**公司场景延伸**：若项目处于 **Monorepo + 多端（Web/Electron）**、已有统一规范（如 Cursor Rules、设计文档模板），可在 Plan 时显式约定：目录与现有仓库一致、产出 `docs/content/.../design.md`、遵循 `.cursor/rules` 与 env 策略，便于与现有工程无缝对齐。参见 [7. 公司场景定制](#7-公司场景定制)。
+
 ---
 
 ## 2. 前置条件
@@ -137,6 +139,8 @@
 | `blueprint.md` | Plan 阶段产出：架构草图与模块清单 |
 | `todo.md` | Plan 阶段产出：按模块排序的执行清单 |
 | `4.1.cold-start/index.ts` | 演示脚本入口（辅助说明） |
+| （公司场景）`docs/content/.../design.md` | 可选：设计文档，背景 + 技术方案 + 接口/数据流 |
+| （公司场景）`.cursor/rules/*.mdc` | 可选：已有仓库规范，AGENTS.md 中引用即可 |
 
 ---
 
@@ -154,3 +158,54 @@
 - **官方文档**：
   - Cursor：[Composer / Agent](https://cursor.com/docs/agent/overview)
   - Claude Code：[Extended Thinking](https://docs.anthropic.com/en/docs/about-claude/models/extended-thinking)
+
+---
+
+## 7. 公司场景定制
+
+当冷启动发生在 **已有 Monorepo、多端构建、统一规范** 的团队内时，可把以下约束写进 Plan 的 Prompt，使产出与现有工程一致。
+
+### 7.1 与现有工程对齐的要点
+
+| 维度 | 通用示例 | 公司场景（示例） |
+|------|----------|------------------|
+| **仓库结构** | 单应用根目录 | Monorepo：`app/新应用名/`、共享 `packages/`、根目录 `env/` |
+| **技术栈基线** | Vue 3 + Vite + TS | 与主应用一致：Pinia、Vue Router、Tailwind、Element Plus、Vitest 等 |
+| **代码规范** | AGENTS.md 内描述 | 显式引用已有 `.cursor/rules`（如 `coding.mdc`、`api.mdc`、`store.mdc`、`component.mdc`、`types.mdc`），AGENTS.md 只写本项目特有约定 |
+| **目录约定** | 自由划分 | 对齐现有应用：`src/views`、`src/components`、`src/api`、`src/stores`、`src/composables`、`src/lib` 等 |
+| **多端与环境** | 单端 | 多 mode：`web` / `win` / `mac`，环境变量从根目录 `env/` 按 mode 加载（如 `.env.web`、`.env.win`） |
+| **设计文档** | 无或简单说明 | 在 `docs/content/01.packages/新应用/` 或 `docs/content/03.design/功能名/` 下产出 `design.md`（背景、方案、接口/数据流），便于后续迭代与评审 |
+| **质量门禁** | `npm run dev` | 增加 `npm run type-check`、`pnpm run lint`、`precommit`（如 lint-staged + husky），Review 时一并验收 |
+
+### 7.2 公司场景下的 Plan 示例 Prompt
+
+在 **Plan Mode** 下可使用（按需删改）：
+
+```text
+我要在现有 Monorepo 里从 0 搭一个新前端应用（或新业务模块），与现有主应用技术栈一致：
+
+- 框架：Vue 3 + Vite + TypeScript，样式 Tailwind，状态 Pinia，路由 Vue Router
+- 代码规范：遵循仓库根目录下 .cursor/rules 的约定（coding、api、store、component、types），AGENTS.md 只写本应用/本模块特有规则
+- 目录结构：与现有 app/xxx 对齐，如 src/views、src/components、src/api、src/stores、src/composables；若多端则考虑 src/lib 下按平台拆分（如 web / electron）
+- 多端与 env：需要支持 web 与 electron（win/mac）时，环境变量从 Monorepo 根目录 env/ 按 mode 加载，不在应用目录下放 .env
+- 设计文档：在 docs/content 下新建本应用或功能的设计文档，包含 design.md（背景、技术方案、关键接口/数据流）
+
+请帮我：
+1. 生成 AGENTS.md（技术栈 + 本应用特有规范，并注明“遵循根目录 .cursor/rules”）
+2. 生成 blueprint.md（目录结构、核心模块、模块依赖，与现有应用风格一致）
+3. 若需要设计文档，给出 docs 下路径与 design.md 大纲
+4. 将 blueprint 拆成 todo.md（按模块排序的执行清单）
+
+先输出计划，等我确认后再执行。
+```
+
+### 7.3 Assess 时在公司场景下的额外检查
+
+- **目录与仓库**：新应用是否落在 `app/新应用名/`，是否误在根目录建单页或破坏现有 app 列表
+- **规范引用**：AGENTS.md 是否明确引用 `.cursor/rules`，是否有与现有规则冲突的约定
+- **env 与 mode**：若多端，blueprint 是否包含 `env/` 与构建脚本（如 `web:dev` / `dev:win`）的说明
+- **设计文档**：若要求 design.md，路径与大纲是否与团队习惯一致（如 Confluence 链接、接口表可后续补）
+
+### 7.4 本示例与 index.ts 的定位
+
+本节（7）为 **可选扩展**：默认 3–5 节的 PAIR 步骤保持框架通用；公司场景仅在此基础上增加“与现有 Monorepo、多端、规范、文档”的对齐约束。`index.ts` 仍以通用 Vue3 + Tailwind 脚手架演示为主，不依赖具体公司仓库。

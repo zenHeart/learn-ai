@@ -53,6 +53,15 @@
 
 ---
 
+## 4.1 claude code 示例
+
+```bash
+claude --verbose  -p '今天武汉天气' --output-format json
+```
+
+输出参考 [claude-output](/claude-output.json)
+
+
 ## 5. 核心要点
 
 - **模型负责“脑”**（生成意图），**宿主负责“手”**（执行写文件、跑命令等）。
