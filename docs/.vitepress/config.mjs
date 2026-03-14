@@ -485,14 +485,22 @@ export default withMermaid(defineConfig({
                      collapsed: true,
                      items: [
                         {
+                           text: '自动化',
+                           items: [
+                              { text: 'OpenClaw', link: '/zh/products/automation/openclaw' },
+                           ]
+                        },
+                        {
                            text: 'AI 编程',
                            link: '/zh/products/ai-coding/',
                            items: [
                               { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
                               { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
-                              { text: 'Claude CLI', link: '/zh/products/ai-coding/claude/index' , items: [
-                                 { text: 'plugin', link: '/zh/products/ai-coding/claude/plugin' },
-                              ]},
+                              {
+                                 text: 'Claude CLI', link: '/zh/products/ai-coding/claude/index', items: [
+                                    { text: 'plugin', link: '/zh/products/ai-coding/claude/plugin' },
+                                 ]
+                              },
                               { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini-cli' },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
                               { text: '其他工具', link: '/zh/products/ai-coding/othertools' }
