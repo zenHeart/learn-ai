@@ -36,23 +36,23 @@
       id: "plan",
       title: "2. Plan (规划与拆解)",
       description:
-        "核心环节：将模糊意图转化为结构化约束。产出 Blueprint (蓝图草案) 和 Todo (分步计划)。",
-      tags: ["Blueprint", "Todo"],
+        "核心环节：将模糊意图转化为结构化约束。产出 方案和 Todo (分步计划)。",
+      tags: ["方案", "Todo"],
       activeNode: "plan",
       line: "input-plan",
       in: ["标准化上下文"],
-      out: ["Blueprint 草案", "Todo 队列"],
+      out: ["方案", "Todo 队列"],
       principle: "分而治之：将复杂任务拆解为原子化、可验证的 Todo 节点。",
     },
     {
       id: "assess",
       title: "3. Assess (对齐与评估)",
       description:
-        "人机认知对齐 (HITL)。人类或上游系统对产生的 Blueprint 进行审查、批注和修正。",
+        "人机认知对齐 (HITL)。人类或上游系统对产生的 方案 进行审查、批注和修正。",
       tags: ["HITL", "Review"],
       activeNode: "assess",
       line: "plan-assess",
-      in: ["Blueprint 草案"],
+      in: ["方案"],
       out: ["批注反馈"],
       principle: "认知对齐：在执行前确保人类意图与 AI 计划达成 100% 共识。",
     },
@@ -60,7 +60,7 @@
       id: "assess_loop",
       title: "4. Cognitive Loop (认知回流)",
       description:
-        "发现偏差！触发人机协作，基于批注回流至 Plan 阶段补充约束，精细化蓝图。",
+        "发现偏差！触发人机协作，基于批注回流至 Plan 阶段补充约束，精细化方案。",
       tags: ["Refine", "Iterate"],
       activeNode: "plan",
       line: "assess-plan",
@@ -72,14 +72,14 @@
     {
       id: "assess_pass",
       title: "5. Lock Baseline (锁定基线)",
-      description: "认知完全对齐。锁定执行基线，将蓝图转化为可被执行的指令集。",
+      description: "认知完全对齐。锁定执行基线，将方案转化为可被执行的指令集。",
       tags: ["Aligned", "Lock"],
       activeNode: "assess",
       line: "assess-implement",
       result: "pass",
-      in: ["对齐后蓝图", "Todo 队列"],
+      in: ["对齐后方案", "Todo 队列"],
       out: ["执行基线"],
-      principle: "基线锁定：一旦对齐，后续执行将严格遵循此蓝图，减少漂移。",
+      principle: "基线锁定：一旦对齐，后续执行将严格遵循此方案，减少漂移。",
     },
     {
       id: "implement",
@@ -122,7 +122,7 @@
       id: "review_fail",
       title: "9. Backtrack (全局回溯)",
       description:
-        "验证失败或偏离基线。触发全局回溯，将错误信息反馈给 Plan 阶段，修正 Blueprint。",
+        "验证失败或偏离基线。触发全局回溯，将错误信息反馈给 Plan 阶段，修正方案。",
       tags: ["Failed", "Retry"],
       activeNode: "plan",
       line: "review-plan",
@@ -227,7 +227,7 @@
       class="flex-shrink-0 flex justify-between items-center p-3 md:p-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161b22]"
     >
       <h2
-        class="text-lg md:text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"
+        class="flex items-center gap-2 text-lg font-bold md:text-xl text-slate-900 dark:text-white"
       >
         AI 协作流程 (PAIR SOP)
       </h2>
@@ -297,7 +297,7 @@
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </button>
-        <div class="w-px h-4 bg-slate-300 dark:bg-slate-700 mx-1"></div>
+        <div class="w-px h-4 mx-1 bg-slate-300 dark:bg-slate-700"></div>
         <button
           @click="reset"
           class="px-2 py-1 text-[10px] font-medium hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center gap-1 transition-colors"
@@ -339,12 +339,12 @@
         class="diagram-viewport relative w-full h-full overflow-hidden max-w-[1000px] max-h-[450px]"
       >
         <div
-          class="diagram-scaler absolute inset-0 flex items-center justify-center"
+          class="absolute inset-0 flex items-center justify-center diagram-scaler"
         >
           <div class="relative w-[1000px] h-[400px]">
             <!-- SVG 连接层 -->
             <svg
-              class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible text-slate-300 dark:text-slate-700"
+              class="absolute inset-0 z-0 w-full h-full overflow-visible pointer-events-none text-slate-300 dark:text-slate-700"
             >
               <defs>
                 <marker
@@ -530,7 +530,7 @@
                     d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
                   />
                 </svg>
-                <span class="font-bold text-xs tracking-tight"
+                <span class="text-xs font-bold tracking-tight"
                   >Intent Input</span
                 >
                 <span class="text-[9px] text-slate-400 uppercase font-black"
@@ -559,15 +559,17 @@
                   stroke-linejoin="round"
                   class="text-blue-500"
                 >
-                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                  <path
+                    d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+                  />
                   <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
                   <path d="M9 14h6" />
                   <path d="M9 18h6" />
                   <path d="M9 10h6" />
                 </svg>
-                <span class="font-bold text-xs tracking-tight">Planning</span>
+                <span class="text-xs font-bold tracking-tight">Planning</span>
                 <span class="text-[9px] text-slate-400 uppercase font-black"
-                  >蓝图与 Todo</span
+                  >方案与 Todo</span
                 >
               </div>
             </div>
@@ -596,7 +598,7 @@
                   <circle cx="9" cy="7" r="4" />
                   <polyline points="16 11 18 13 22 9" />
                 </svg>
-                <span class="font-bold text-xs tracking-tight"
+                <span class="text-xs font-bold tracking-tight"
                   >Assess / HITL</span
                 >
                 <span class="text-[9px] text-slate-400 uppercase font-black"
@@ -637,11 +639,15 @@
                   stroke-linejoin="round"
                   class="text-green-500"
                 >
-                  <path d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5" />
+                  <path
+                    d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5"
+                  />
                   <polyline points="14 2 14 8 20 8" />
-                  <path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l.99-3.95 5.43-5.44Z" />
+                  <path
+                    d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l.99-3.95 5.43-5.44Z"
+                  />
                 </svg>
-                <span class="font-bold text-xs tracking-tight">Implement</span>
+                <span class="text-xs font-bold tracking-tight">Implement</span>
                 <span class="text-[9px] text-slate-400 uppercase font-black"
                   >执行行动</span
                 >
@@ -672,10 +678,12 @@
                       : 'text-amber-500'
                   "
                 >
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                  />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                <span class="font-bold text-xs tracking-tight">Review</span>
+                <span class="text-xs font-bold tracking-tight">Review</span>
                 <span class="text-[9px] text-slate-400 uppercase font-black"
                   >验证与收敛</span
                 >
@@ -717,7 +725,7 @@
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
-                <span class="font-bold text-xs uppercase tracking-widest"
+                <span class="text-xs font-bold tracking-widest uppercase"
                   >Done</span
                 >
               </div>
@@ -736,7 +744,7 @@
       <div class="flex-1 max-w-[42%] flex gap-2 items-start">
         <div class="flex-shrink-0 mt-0.5">
           <div
-            class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center border border-slate-300 dark:border-slate-700 transition-all duration-300"
+            class="flex items-center justify-center w-6 h-6 transition-all duration-300 border rounded-full bg-slate-200 dark:bg-slate-800 border-slate-300 dark:border-slate-700"
             :class="{
               'bg-blue-100 dark:bg-blue-900/40 border-blue-200 dark:border-blue-800':
                 currentStep.result !== 'fail',
@@ -805,16 +813,16 @@
             {{ currentStep.title }}
           </h3>
           <p
-            class="text-slate-600 dark:text-slate-300 leading-tight"
+            class="leading-tight text-slate-600 dark:text-slate-300"
             style="font-size: 9px !important; margin: 0 !important"
           >
             {{ currentStep.description }}
           </p>
-          <div class="mt-1 flex flex-wrap gap-1 opacity-60">
+          <div class="flex flex-wrap gap-1 mt-1 opacity-60">
             <span
               v-for="tag in currentStep.tags"
               :key="tag"
-              class="px-1 py-0 bg-slate-200 dark:bg-slate-800 rounded-none border border-slate-300 dark:border-slate-700 font-mono text-slate-500 dark:text-slate-400"
+              class="px-1 py-0 font-mono border rounded-none bg-slate-200 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400"
               style="font-size: 8px !important"
               >#{{ tag }}</span
             >
@@ -893,7 +901,7 @@
           Principle · 核心原则
         </div>
         <p
-          class="text-[9px] text-amber-900/80 dark:text-amber-200/80 leading-snug font-medium italic"
+          class="principle-text text-[9px] text-amber-900/80 dark:text-amber-200/80 leading-snug font-medium italic"
         >
           "{{ currentStep.principle }}"
         </p>
@@ -903,6 +911,9 @@
 </template>
 
 <style scoped>
+  .principle-text {
+    margin: 0.25rem 0;
+  }
   .pair-workflow-container {
     container-type: size;
   }
