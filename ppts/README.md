@@ -40,7 +40,7 @@
 
 ### 第二期：Prompt + Context Engineering
 
-**文件位置**: `./prompt/`
+**文件位置**: `./prompt-context/`
 
 **核心目标**：掌握 Prompt 与 Context 设计方法，构建稳定可复用的 AI 工作流。
 

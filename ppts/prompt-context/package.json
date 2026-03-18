@@ -1,8 +1,8 @@
 {
-  "name": "prompt",
+  "name": "prompt-context",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /learn-ai/ppts/prompt/",
+    "build": "slidev build --base /learn-ai/ppts/prompt-context/",
     "dev": "slidev --open",
     "export": "slidev export"
   }

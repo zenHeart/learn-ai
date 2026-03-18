@@ -55,7 +55,7 @@ PPT packages under `ppts/*` are independent Slidev projects, each with its own `
 **Deployed URLs:**
 
 - Docs: `https://blog.zenheart.site/learn-ai/`
-- PPTs: `https://blog.zenheart.site/learn-ai/ppts/vibe-coding/`, `.../prompt/`, `.../mcp/`, `.../skill/`, `.../agent/`
+- PPTs: `https://blog.zenheart.site/learn-ai/ppts/vibe-coding/`, `.../prompt-context/`, `.../mcp/`, `.../skill/`, `.../agent/`
 
 ## Development workflows
 
@@ -67,7 +67,7 @@ PPT packages under `ppts/*` are independent Slidev projects, each with its own `
 
 ### Adding or editing presentation slides
 
-- Entry points: `ppts/vibe-coding/slides.md`, `ppts/prompt/slides.md`, `ppts/mcp/slides.md`, `ppts/skill/slides.md`, `ppts/agent/slides.md`.
+- Entry points: `ppts/vibe-coding/slides.md`, `ppts/prompt-context/slides.md`, `ppts/mcp/slides.md`, `ppts/skill/slides.md`, `ppts/agent/slides.md`.
 - Edit the corresponding slide modules or include new ones in the main `slides.md`.
 
 ## Testing and validation

@@ -1,6 +1,12 @@
 ---
 layout: cover
+transition: slide-left
+title: Vibe Coding
+routerMode: hash
+comark: true
+mdc: true
 ---
+
 
 # PE 工程
 
