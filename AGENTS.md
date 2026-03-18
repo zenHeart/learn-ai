@@ -1,91 +1,53 @@
 # AGENTS.md
 
-This file guides AI coding agents (Claude Code, Cursor, Gemini CLI, etc.) when working in this repository. Think of it as a **README for agents**: a predictable place for build steps, conventions, and instructions that help agents work effectively.
+本文档指导 AI 编码代理（Claude Code、Cursor、Gemini CLI 等）在本仓库中的工作方式。
 
-## Setup commands
+## 环境设置
 
-- **Install dependencies (root):** `pnpm install`  
-  Use **pnpm only** at the project root. Do not run `npm install` in the root—it can cause version mismatches.
+- **安装依赖**: `pnpm install`（仅在根目录使用 pnpm）
+- **不要在根目录运行 `npm install`** - 会导致版本不匹配
 
-- **Docs dev server:** `pnpm docs:dev`  
-- **Docs build:** `pnpm docs:build`  
-- **Docs preview:** `pnpm docs:preview`
+## 命令
 
-- **PPT development (from root):**
-  - Vibe Coding: `pnpm ppt:vibe`
-  - Prompt: `pnpm ppt:prompt`
-  - MCP: `pnpm ppt:mcp`
-  - SKILL: `pnpm ppt:skill`
-  - AGENT: `pnpm ppt:agent`
-  - Build all PPTs: `pnpm ppt:build`
+```bash
+# 文档
+pnpm docs:dev
+pnpm docs:build
 
-- **Examples (Vibe Coding demos):**  
-  `cd ppts/vibe-coding/examples && npm install` then run e.g. `npm run demo:2.1`, `npm run demo:4.1`, etc. See `ppts/vibe-coding/examples/CLAUDE.md` for the full list.
+# PPT
+pnpm ppt:vibe      # Vibe Coding
+pnpm ppt:prompt   # Prompt + Context
+pnpm ppt:skill    # Skill + MCP
+pnpm ppt:agent    # Agent
 
-- **MCP server example:** `cd examples/mcp-lab && npm install && npm start`  
-- **Ollama example:** `cd examples/ollama-node && node api.js`
+pnpm ppt:build    # 构建所有 PPT
+```
 
-## Project overview
+## 项目结构
 
-**Learn AI** is an educational platform for frontend engineers to learn AI concepts and integrate them into their workflows.
+| 组件 | 位置 | 技术 |
+|------|------|------|
+| 文档 | `/docs` | VitePress 1.6.x + Vue 3 |
+| 演示 | `/ppts` | Slidev 0.52.x |
+| 示例 | `/examples` | Node.js, TypeScript |
 
-| Component        | Location   | Tech                          |
-|-----------------|------------|-------------------------------|
-| Documentation   | `/docs`    | VitePress 1.6.x + Vue 3       |
-| Presentations   | `/ppts`    | Slidev 0.52.x (Seriph theme)  |
-| Examples        | `/examples`, `ppts/vibe-coding/examples` | Node.js, TypeScript (ESM) |
+`ppts/*` 下的 PPT 是独立的 Slidev 项目，各自拥有 `package.json`；这些目录内部使用 **npm**。根目录使用 **pnpm**。
 
-PPT packages under `ppts/*` are independent Slidev projects, each with its own `package.json`; they use **npm** inside those directories. The root repo uses **pnpm** and `"type": "module"`.
+## 代码风格
 
-## Code style
+- 仅使用 ES modules（`import`/`export`）。根目录有 `"type": "module"`。
+- 包管理器：根目录用 pnpm；`ppts/*` 内部用 npm
 
-- **Language:** All repository content (docs, code comments, commit messages, file content) must be in **English only**.
-- **Modules:** ES modules only (`import`/`export`). Root has `"type": "module"`; no `require()`.
-- **Package manager:** pnpm at root; npm only inside `ppts/*` and example subprojects where they are standalone.
+## 构建与部署
 
-## Build and deployment
+- **基础路径**（关键）：
+  - VitePress: `base: '/learn-ai/'` 在 `docs/.vitepress/config.mjs`
+  - 各 PPT: `slidev build --base /learn-ai/ppts/<name>/`
 
-- **CI workflow:** `.github/workflows/deploy.yml` (runs on push to `master`).
-- **Steps:** `pnpm install` → `pnpm docs:build` → `pnpm ppt:build` → copy `docs/.vitepress/dist` and each `ppts/*/dist` into `final_dist/` → deploy to gh-pages.
-- **Base paths (critical):**
-  - VitePress: `base: '/learn-ai/'` in `docs/.vitepress/config.mjs`.
-  - Each PPT: `slidev build --base /learn-ai/ppts/<name>/` (e.g. `vibe-coding`, `prompt`, `mcp`, `skill`, `agent`).  
-  Wrong base paths break CSS/JS on GitHub Pages.
+- **部署后 URL**：
+  - 文档: `https://blog.zenheart.site/learn-ai/`
+  - PPT: `https://blog.zenheart.site/learn-ai/ppts/vibe-coding/`、`.../prompt-context/`、`.../skill-mcp/`、`.../agent/`
 
-**Deployed URLs:**
+## 测试
 
-- Docs: `https://blog.zenheart.site/learn-ai/`
-- PPTs: `https://blog.zenheart.site/learn-ai/ppts/vibe-coding/`, `.../prompt-context/`, `.../mcp/`, `.../skill/`, `.../agent/`
-
-## Development workflows
-
-### Adding documentation
-
-1. Add `.md` files under the right `docs/` section (`tech/`, `integration/`, `products/`, etc.).
-2. **Manually** update the sidebar in `docs/.vitepress/config.mjs`—sidebar is explicit, not auto-generated. Use nested `items` for hierarchy.
-3. Verify with `pnpm docs:dev` at http://localhost:5173.
-
-### Adding or editing presentation slides
-
-- Entry points: `ppts/vibe-coding/slides.md`, `ppts/prompt-context/slides.md`, `ppts/mcp/slides.md`, `ppts/skill/slides.md`, `ppts/agent/slides.md`.
-- Edit the corresponding slide modules or include new ones in the main `slides.md`.
-
-## Testing and validation
-
-- Root repo has no `pnpm test` script. For **Vibe Coding examples**, run the demos (e.g. `npm run demo:2.1`, `npm run demo:4.2`) from `ppts/vibe-coding/examples` to validate.
-- After changing docs or cross-links, run `pnpm docs:build` to catch build errors. VitePress ignores `/learn-ai/ppts/` in dead-link checks (PPTs are built separately); verify PPT links manually after deployment if needed.
-
-## Security and environment
-
-- Do not add or commit secrets or API keys. Use environment variables or `.env` (and keep `.env` out of version control).
-- Dependencies: install only with **pnpm** at root to respect lockfile and `packageManager`; use npm only inside `ppts/*` and example dirs where those are standalone projects.
-
-## PR and commit guidelines
-
-- Use **English** for all commit messages and PR titles/descriptions.
-- Before committing, run `pnpm docs:build` and `pnpm ppt:build` from the root to ensure the site and all PPTs build successfully.
-
-## Nested AGENTS.md / CLAUDE.md
-
-- **Root:** This file applies to the whole repo.
-- **Subprojects:** `ppts/vibe-coding/examples/` has its own `CLAUDE.md` with demo commands and structure. For work limited to that directory, agents can use the nearest guidance (nested file takes precedence for that subtree).
+提交前运行 `pnpm docs:build` 和 `pnpm ppt:build` 确保构建成功。

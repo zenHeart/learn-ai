@@ -70,9 +70,8 @@ export default withMermaid(defineConfig({
                   text: 'PPTs', items: [
                      { text: '1. Vibe Coding', link: 'https://blog.zenheart.site/learn-ai/ppts/vibe-coding/' },
                      { text: '2. Prompt + Context', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt-context/' },
-                     { text: '3. MCP Protocol', link: 'https://blog.zenheart.site/learn-ai/ppts/mcp/' },
-                     { text: '4. SKILL', link: 'https://blog.zenheart.site/learn-ai/ppts/skill/' },
-                     { text: '5. AGENT', link: 'https://blog.zenheart.site/learn-ai/ppts/agent/' }
+                     { text: '3. MCP + SKILL', link: 'https://blog.zenheart.site/learn-ai/ppts/skill-mcp/' },
+                     { text: '4. AGENT', link: 'https://blog.zenheart.site/learn-ai/ppts/agent/' }
                   ]
                }
             ],
@@ -298,9 +297,8 @@ export default withMermaid(defineConfig({
                   text: 'PPTs', items: [
                      { text: '1. Vibe Coding', link: 'https://blog.zenheart.site/learn-ai/ppts/vibe-coding/' },
                      { text: '2. Prompt + Context', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt-context/' },
-                     { text: '3. MCP 协议', link: 'https://blog.zenheart.site/learn-ai/ppts/mcp/' },
-                     { text: '4. SKILL', link: 'https://blog.zenheart.site/learn-ai/ppts/skill/' },
-                     { text: '5. AGENT', link: 'https://blog.zenheart.site/learn-ai/ppts/agent/' }
+                     { text: '3. MCP + SKILL', link: 'https://blog.zenheart.site/learn-ai/ppts/skill-mcp/' },
+                     { text: '4. AGENT', link: 'https://blog.zenheart.site/learn-ai/ppts/agent/' }
                   ]
                }
             ],

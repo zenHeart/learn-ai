@@ -55,7 +55,9 @@
       "Bash(glab project:*)",
       "Bash(cd /Users/zenheart/code/github/learn-ai/ppts/vibe-coding && sed -i '' 's/^::$/:::/g' 04.practice.md)",
       "Bash(npm run:*)",
-      "Bash(pnpm install:*)"
+      "Bash(pnpm install:*)",
+      "Bash(ls:*)",
+      "Bash(cd:*)"
     ]
   }
 }

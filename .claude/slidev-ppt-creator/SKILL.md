@@ -1,7 +1,6 @@
 ---
 name: slidev-ppt-creator
 description: 当用户要求创建技术 PPT、可视化讲解技术架构、进行事后复盘演示或分享工程方法论时，请使用此技能。不要只输出纯文本 Markdown；要充分利用 Slidev 的特性（如转场、代码步进、v-mark 动画、布局和组件）。
-version: "1.0"
 compatibility: 支持执行本地命令和编写结构化 Markdown 文件的 AI Agent
 ---
 
@@ -23,6 +22,25 @@ compatibility: 支持执行本地命令和编写结构化 Markdown 文件的 AI 
 2. **明确目标 (Goal)**：期望听众听完后获得什么样的具体收益或核心能力？
 3. **补充上下文 (Context)**：特定业务背景、公司内部环境约束或其他边界条件。
 
+---
+
+### ⚡ 强制模式决策 (CRITICAL - 必须在 Step 1 后立即执行)
+
+**在你开始任何内容生成之前，你必须先回答以下问题并写入工作记忆**：
+
+1. **这个 PPT 的核心目标是什么？**（用一句话描述）
+2. **这个核心目标由几个子主题组成？**
+   - **1 个子主题** → 使用 **Pattern A**（标准 5 层结构）
+   - **≥2 个子主题**（如 "MCP + Skill"、"Prompt + Context"、"Vite + Vitest"） → 使用 **Pattern B**（微结构 + 收敛模型）
+
+3. **Pattern A vs Pattern B 的选择依据**：
+   - 如果主题之间是**线性递进关系**（A → B → C）→ Pattern A
+   - 如果主题之间是**并行组合关系**（A 和 B 需要组合才能发挥作用）→ Pattern B
+
+**🚨 违反规则**：如果你选择了 Pattern B 但没有生成 `02.1.xxx.md` + `02.2.xxx.md` + `03.integration.md` 结构，你将被判定为**违反架构约束**。
+
+---
+
 ### Step 2: 深度智能研究 (Proactive Research)
 
 在确认核心受众和目标后，**必须利用搜索工具自主进行全网或定向知识库调研**。你的搜索资料源必须覆盖：
@@ -43,7 +61,15 @@ compatibility: 支持执行本地命令和编写结构化 Markdown 文件的 AI 
 
 将提炼后的知识块严格映射到预设的 **[核心架构规则 (patterns.md)](assets/patterns.md)**：
 
-- 如果涉及多个子技术点 (如 Prompt + Context)，**严禁横向生硬割裂**。必须将每个技术打包封装为独立的微结构，并强制创建 **`03.integration.md`** 作为中间收敛章节，专门讲解这些技术联合起来后如何运转、如何产生 1+1>2 的化学反应。
+**根据 Step 1 的模式决策，严格执行对应的结构**：
+
+- **Pattern A (单一主题)**：
+  - `01.overview.md` → `02.principle.md` → `03.solution.md` → `04.practice.md` → `05.QA.md`
+
+- **Pattern B (多子主题)**：
+  - `01.overview.md` → `02.1.xxx.md` + `02.2.xxx.md` → `03.integration.md` → `04.practice.md` → `05.QA.md`
+  - **严禁横向生硬割裂**：必须将每个技术打包封装为独立的微结构
+  - **强制收敛**：必须创建 **`03.integration.md`** 作为中间收敛章节，专门讲解这些技术联合起来后如何运转、如何产生 1+1>2 的化学反应
 
 ### Step 5: 实战经验与最佳实践 (Practice)
 
@@ -60,6 +86,31 @@ compatibility: 支持执行本地命令和编写结构化 Markdown 文件的 AI 
 ### Step 8: 自我校验与终检 (Validation Loop)
 
 在交付给用户之前，必须打开并阅读 `assets/patterns.md` 底部的 **✅ 分享大纲质量终检 (Self-Review Checklist)**。逐一排查你刚刚生成的所有文件，确保没有任何遗漏或违规嵌套。修复一切未达标的地方。
+
+---
+
+### 🚨 违反 Pattern B 的即时纠正协议
+
+**如果在终检中发现以下违规，必须立即修复**：
+
+| 违规类型 | 错误表现 | 纠正方法 |
+|---------|---------|---------|
+| **缺失子主题拆分** | 只有 `02.principle.md`，没有 `02.1.xxx` | 拆分为 `02.1.xxx.md` + `02.2.xxx.md` |
+| **缺失收敛章节** | 没有 `03.integration.md` | 必须创建 `03.integration.md` 讲解组合 |
+| **错误的序号命名** | 使用了 `02.concepts/` 目录嵌套 | 改名为 `02.1.xxx.md` + `02.2.xxx.md` 平铺 |
+| **收敛章节命名错误** | 用了 `03.solution.md` 而非 `03.integration.md` | 重命名为 `03.integration.md` |
+
+**纠正示例**：
+```
+# 错误结构
+02.principle.md    ❌ 只有单一文件
+02.mcp.md          ❌ 序号不连续
+
+# 正确结构 (Pattern B)
+02.1.mcp-core.md   ✅
+02.2.skill-core.md ✅
+03.integration.md ✅
+```
 
 ---
 
@@ -100,6 +151,7 @@ compatibility: 支持执行本地命令和编写结构化 Markdown 文件的 AI 
 
 ### 模块化项目结构
 
+**Pattern A (单一主题)**：
 ```
 your-ppt/
 ├── slides.md              # 入口文件
@@ -107,6 +159,20 @@ your-ppt/
 ├── 02.principle.md       # 原理
 ├── 03.solution.md        # 解决方案
 ├── 04.practice.md        # 实战
+├── 05.QA.md             # 问答
+├── components/           # Vue 组件
+└── examples/             # Demo
+```
+
+**Pattern B (多子主题)**：
+```
+your-ppt/
+├── slides.md              # 入口文件
+├── 01.overview.md        # 概述
+├── 02.1.xxx.md           # 微结构 A
+├── 02.2.xxx.md           # 微结构 B
+├── 03.integration.md     # 强制收敛 (必选!)
+├── 04.practice.md        # 综合实战
 ├── 05.QA.md             # 问答
 ├── components/           # Vue 组件
 └── examples/             # Demo

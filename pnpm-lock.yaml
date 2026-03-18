@@ -42,11 +42,9 @@ importers:
 
   ppts/agent: {}
 
-  ppts/mcp: {}
-
   ppts/prompt-context: {}
 
-  ppts/skill: {}
+  ppts/skill-mcp: {}
 
   ppts/vibe-coding:
     dependencies:

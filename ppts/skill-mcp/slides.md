@@ -1,28 +1,32 @@
 ---
 layout: cover
 transition: slide-left
-title: Prompt + Context 工程
+title: MCP + SKILL
 routerMode: hash
 comark: true
 mdc: true
 ---
 
+# Model Context Protocol + Skill 深入解析
 
-# Prompt + Context 工程
 
-* 分享人: 程乐
-* 时间: 2026-03-30
+Presenter: 程乐   
+Date: 2026-04-07
 
 ---
 src: ./01.overview.md
 ---
 
 ---
-src: ./02.principle.md
+src: ./02.1.mcp-core.md
 ---
 
 ---
-src: ./03.features.md
+src: ./02.2.skill-core.md
+---
+
+---
+src: ./03.integration.md
 ---
 
 ---
@@ -32,3 +36,4 @@ src: ./04.practice.md
 ---
 src: ./05.QA.md
 ---
+
