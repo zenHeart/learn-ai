@@ -487,7 +487,13 @@ export default withMermaid(defineConfig({
                         {
                            text: '自动化',
                            items: [
-                              { text: 'OpenClaw', link: '/zh/products/automation/openclaw' },
+                              { 
+                                text: 'OpenClaw', 
+                                link: '/zh/products/automation/openclaw/' ,
+                                items: [
+                                  { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
+                                ]
+                              },
                            ]
                         },
                         {
