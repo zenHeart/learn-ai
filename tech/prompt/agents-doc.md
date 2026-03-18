@@ -1,1 +1,0 @@
-# [AGENTS.md](https://agents.md/)
