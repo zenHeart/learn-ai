@@ -42,7 +42,7 @@ jobs:
           cp -r docs/.vitepress/dist/* final_dist/
 
           # Copy all PPT builds
-          for ppt in prompt mcp vibe-coding skill agent; do
+          for ppt in vibe-coding prompt-context skill-mcp agent; do
             if [ -d "ppts/${ppt}/dist" ]; then
               mkdir -p final_dist/ppts/${ppt}
               cp -r ppts/${ppt}/dist/* final_dist/ppts/${ppt}/
