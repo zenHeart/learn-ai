@@ -10,4 +10,5 @@ final_dist
 tmp
 _check.md
 .DS_Store
-poster.html
+poster/
+.cursorindexingignore
