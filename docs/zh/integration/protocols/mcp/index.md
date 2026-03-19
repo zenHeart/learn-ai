@@ -179,5 +179,5 @@ const result = await client.callTool({
 
 ## 下一步
 
-- **[工具调用指南](./tool-calling.md)**: 深入了解函数调用模式。
+- **[工具调用指南](../tool-calling.md)**: 深入了解函数调用模式。
 - **[MCP Lab 示例](../../../examples/mcp-lab/)**: 在本地运行完整代码。

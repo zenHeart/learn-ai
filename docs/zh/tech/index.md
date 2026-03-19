@@ -117,7 +117,7 @@ graph TD
 
 **第 3-4 周**: 构建功能
 - 实现 [RAG](/zh/tech/patterns/RAG.md) 进行知识检索
-- 探索 [MCP](/zh/integration/protocols/mcp.md) 进行工具集成
+- 探索 [MCP](/zh/integration/protocols/mcp/) 进行工具集成
 - 构建简单的 [Agents](/zh/tech/patterns/agent/index.md)
 
 **第 5 周+**: 高级模式
@@ -140,7 +140,7 @@ graph TD
 - **需要了解基础？** → 从 [LLM](/zh/tech/fundamentals/LLM.md) 开始
 - **构建聊天功能？** → 查看 [提示工程](/zh/tech/prompt/)
 - **添加外部知识？** → 学习 [RAG](/zh/tech/patterns/RAG.md)
-- **构建自主 AI？** → 探索 [Agent](/zh/tech/patterns/agent/index.md) 和 [MCP](/zh/integration/protocols/mcp.md)
+- **构建自主 AI？** → 探索 [Agent](/zh/tech/patterns/agent/index.md) 和 [MCP](/zh/integration/protocols/mcp/)
 - **管理成本/性能？** → 阅读 [上下文管理](/zh/tech/fundamentals/context.md)
 - **需要专用模型？** → 查看 [SFT](/zh/tech/training/SFT.md)
 

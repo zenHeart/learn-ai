@@ -59,4 +59,4 @@
 ## 下一步
 - **学习类型安全 AI:** [结构化输出指南](/tech/structured-output) (即将推出)
 - **构建 RAG 应用:** [RAG 教程](/examples/rag-chatbot)
-- **探索智能体:** [MCP 指南](/zh/integration/protocols/mcp)
+- **探索智能体:** [MCP 指南](/zh/integration/protocols/mcp/)

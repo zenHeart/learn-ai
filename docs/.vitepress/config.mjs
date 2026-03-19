@@ -343,7 +343,12 @@ export default withMermaid(defineConfig({
                         {
                            text: '协议',
                            items: [
-                              { text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp' },
+                              {
+                                 text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp/index',
+                                 items: [
+                                    { text: 'list', link: '/zh/integration/protocols/mcp/list' }
+                                 ]
+                              },
                               { text: '工具调用 (Tool Calling)', link: '/zh/integration/protocols/tool-calling' }
                            ]
                         },
@@ -485,12 +490,12 @@ export default withMermaid(defineConfig({
                         {
                            text: '自动化',
                            items: [
-                              { 
-                                text: 'OpenClaw', 
-                                link: '/zh/products/automation/openclaw/' ,
-                                items: [
-                                  { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
-                                ]
+                              {
+                                 text: 'OpenClaw',
+                                 link: '/zh/products/automation/openclaw/',
+                                 items: [
+                                    { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
+                                 ]
                               },
                            ]
                         },

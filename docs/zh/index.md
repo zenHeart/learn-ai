@@ -41,7 +41,7 @@ graph LR
 
 ## 最近更新
 
-- **[MCP 协议](/zh/integration/protocols/mcp)**: 将 LLM 连接到你自己的工具和数据。
+- **[MCP 协议](/zh/integration/protocols/mcp/)**: 将 LLM 连接到你自己的工具和数据。
 - **[浏览器端 AI](/zh/tech/frontend/browser-ai)**: 使用 WebGPU 在浏览器中运行模型。
 - **[聊天 UI 组件](/zh/cookbook/chat-ui)**: 一个即拷即用的流式聊天组件。
 
