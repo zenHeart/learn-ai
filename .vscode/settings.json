@@ -4,5 +4,6 @@
     "editor.formatOnPaste": false,
     "editor.formatOnType": false,
     "editor.defaultFormatter": "davidanson.vscode-markdownlint"
-  }
+  },
+  "specstory.cloudSync.enabled": "never"
 }
