@@ -495,6 +495,7 @@ export default withMermaid(defineConfig({
                                  link: '/zh/products/automation/openclaw/',
                                  items: [
                                     { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
+                                    { text: '微信接入', link: '/zh/products/automation/openclaw/wechat' },
                                  ]
                               },
                            ]
