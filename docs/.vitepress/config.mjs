@@ -514,7 +514,7 @@ export default withMermaid(defineConfig({
                               { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini-cli' },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
                               { text: '其他工具', link: '/zh/products/ai-coding/othertools' },
-                              {text: '采购与实施方案', link: '/zh/products/ai-coding/procurement-plan'}
+                              { text: '采购与实施方案', link: '/zh/products/ai-coding/procurement-plan' }
                            ]
                         },
                         {
@@ -537,6 +537,7 @@ export default withMermaid(defineConfig({
    themeConfig: {
       socialLinks: [
          { icon: 'github', link: 'https://github.com/zenheart/learn-ai' }
-      ]
+      ],
+      outline: [2, 3],
    }
 }));
