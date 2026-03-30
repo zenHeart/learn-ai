@@ -372,9 +372,10 @@ export default withMermaid(defineConfig({
                            text: '基础',
                            items: [
                               { text: 'LLM 基础', link: '/zh/tech/fundamentals/LLM' },
+                              { text: '提示工程', link: '/zh/tech/fundamentals/prompt/' },
                               { text: '上下文窗口', link: '/zh/tech/fundamentals/context' },
+                              { text: '上下文工程', link: '/zh/tech/fundamentals/context-engineering' },
                               { text: 'Embeddings (嵌入)', link: '/zh/tech/fundamentals/embeddings' },
-                              { text: '提示工程', link: '/zh/tech/fundamentals/prompt/' }
                            ]
                         },
                         {
@@ -504,13 +505,15 @@ export default withMermaid(defineConfig({
                            text: 'AI 编程',
                            link: '/zh/products/ai-coding/',
                            items: [
-                              { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
-                              { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
+
                               {
                                  text: 'Claude CLI', link: '/zh/products/ai-coding/claude/index', items: [
                                     { text: 'plugin', link: '/zh/products/ai-coding/claude/plugin' },
                                  ]
                               },
+                              { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
+                              { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
+                              { text: 'Codex', link: '/zh/products/ai-coding/codex' },
                               { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini-cli' },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
                               { text: '其他工具', link: '/zh/products/ai-coding/othertools' },
