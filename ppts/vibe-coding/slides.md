@@ -11,7 +11,7 @@ mdc: true
 # Vibe Coding (氛围编程)
 
 Presenter: 程乐  
-Date: 2026-03-23
+Date: 2026-04-01
 
 ---
 src: ./01.overview.md
