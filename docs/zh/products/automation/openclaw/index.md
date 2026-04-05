@@ -970,3 +970,17 @@ openclaw doctor --fix   # 尝试自动修复检测到的常见问题
 * **Reddit 社区 (r/OpenClawCentral)**：[https://www.reddit.com/r/OpenClawCentral/](https://www.reddit.com/r/OpenClawCentral/) - 与其他 OpenClaw 用户交流，获取帮助和分享经验。
 * **Awesome OpenClaw Skills**：[https://github.com/VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills) - 社区维护的技能集合，提供丰富的扩展示例。
 * **Awesome OpenClaw Usecases**：[https://github.com/hesamsheikh/awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases) - 实际用例集合，启发你的 AI 自动化思路。
+
+---
+
+## 11. 源码分析（进阶）
+
+想要深入理解 OpenClaw 的内部实现机制？查看源码分析章节：
+
+- **[源码分析总览](./source-code/README.md)** - 目录索引与学习路径
+- **[核心架构](./source-code/architecture.md)** - Gateway/Agent/Session 核心架构 + Mermaid 图解
+- **[通道接入](./source-code/channels.md)** - 飞书/微信/Telegram 接入原理
+- **[智能体引擎](./source-code/agents.md)** - 模型推理/工具调用/上下文压缩
+- **[会话管理](./source-code/sessions.md)** - 会话隔离/上下文/持久化
+
+> 💡 阅读源码分析前，建议先熟悉快速入门和核心概念章节。
