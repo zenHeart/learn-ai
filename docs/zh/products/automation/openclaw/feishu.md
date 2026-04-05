@@ -104,7 +104,7 @@ openclaw --version  # 确认已安装
       },
       // ⚠️ allowFrom 必须是数组格式，否则运行时报 ".map is not a function"
       allowFrom: ["ou_xxxxxxxx"], // 允许访问的用户 open_id
-      dmPolicy: "allow"          // 直接消息策略
+      dmPolicy: "allowlist"          // 直接消息策略: open/pairing/allowlist
     }
   }
 }
@@ -155,7 +155,7 @@ FEISHU_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         }
       },
       allowFrom: ["ou_xxxxxxxx", "ou_yyyyyyyyyyyyyyyy"],
-      dmPolicy: "allow"
+      dmPolicy: "allowlist"
     }
   },
 
