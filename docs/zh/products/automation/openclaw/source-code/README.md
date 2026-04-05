@@ -12,7 +12,11 @@ source-code/
 ├── architecture.md     # 核心架构总览
 ├── channels.md        # 通道接入详解
 ├── agents.md         # 智能体引擎详解
-└── sessions.md       # 会话管理详解
+├── sessions.md       # 会话管理详解
+├── plugins.md        # 插件系统详解
+├── hooks.md          # 钩子系统详解
+├── mcp.md           # MCP 协议详解
+└── acp.md           # ACP 协议详解
 ```
 
 ---
@@ -36,22 +40,35 @@ source-code/
 3. 对照源码 src/ 目录实践
 ```
 
+### 扩展路径
+
+```
+1. plugins.md        → 插件系统
+2. hooks.md          → 钩子机制
+3. mcp.md            → MCP 协议
+4. acp.md            → ACP 协议
+```
+
 ---
 
 ## 核心概念映射
 
 | 文档概念 | 源码目录 | 关键文件 |
 |----------|----------|----------|
-| Gateway | `src/gateway/` | `server.impl.ts` |
-| Agent | `src/agents/` | `pi-embedded-runner/run.ts` |
-| Session | `src/sessions/` | `session-id.ts` |
-| Channel | `src/channels/` | `plugins/index.ts` |
-| Skills | `src/agents/skills/` | `skills-runtime.ts` |
-| Memory | `src/memory/` | `memory-runtime.ts` |
-| Cron | `src/cron/` | `service.ts` |
-| Tools | `src/tools/` | `exec.ts`, `browser.ts` |
-| Config | `src/config/` | `config.ts` |
-| Plugins | `src/plugins/` | `registry.ts` |
+| Gateway | `src/gateway/` | `server.impl.ts`, `boot.ts` |
+| Agent | `src/agents/pi-embedded-runner/` | `run.ts` |
+| Session | `src/sessions/` | `session-id.ts`, `session-key-utils.ts` |
+| Channel | `src/channels/` | `plugins/index.ts`, `bundled.ts` |
+| Skills | `src/agents/skills/` | `skills-runtime.ts`, `loader.ts` |
+| Memory | `src/memory-host-sdk/` | `memory-runtime.ts` |
+| Cron | `src/cron/` | `service.ts`, `store.ts` |
+| Tools | `src/agents/` | `bash-tools.exec.ts`, `bash-tools.ts` |
+| Browser Tools | `src/agents/tools/` | `web-tools.ts`, `web-fetch.ts` |
+| Config | `src/config/` | `config.ts`, `load.ts` |
+| Plugins | `src/plugins/` | `registry.ts`, `runtime.ts` |
+| Hooks | `src/hooks/` | `hooks.ts`, `loader.ts` |
+| MCP | `src/mcp/` | `channel-server.ts` |
+| ACP | `src/acp/` | `client.ts`, `server.ts` |
 
 ---
 

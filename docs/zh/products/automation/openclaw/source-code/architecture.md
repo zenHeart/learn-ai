@@ -22,19 +22,21 @@ graph LR
 
 ```
 openclaw/src/
-├── gateway/           # 网关核心 - 消息入口/路由/会话管理
-├── agents/            # 智能体引擎 - AI 推理/工具调用/上下文管理
-├── sessions/          # 会话管理 - 对话上下文/状态/历史
-├── channels/          # 通道接入 - 飞书/微信/Telegram/Discord 等
-├── plugins/           # 插件系统 - 扩展机制/钩子
-├── skills/            # 技能系统 - 自定义工具/工作流
-├── memory/             # 记忆系统 - 向量搜索/BM25/混合搜索
-├── cron/              # 定时任务 - 调度器/心跳/自动化
-├── config/            # 配置管理 - 热重载/环境变量/Schema
-├── hooks/             # 钩子系统 - 生命周期事件/拦截点
-├── tools/             # 内置工具 - exec/browser/文件操作
-├── mcp/               # MCP 协议 - Model Context Protocol
-└── infra/             # 基础设施 - 日志/监控/安全
+├── gateway/             # 网关核心 - 消息入口/路由/会话管理
+├── agents/             # 智能体引擎 - AI 推理/工具调用/上下文管理
+│   ├── pi-embedded-runner/  # 核心 Runner
+│   ├── skills/         # 技能系统
+│   └── tools/          # 内置工具定义
+├── sessions/           # 会话管理 - 对话上下文/状态/历史
+├── channels/           # 通道接入 - 飞书/微信/Telegram/Discord 等
+├── plugins/            # 插件系统 - 扩展机制/钩子
+├── memory-host-sdk/    # 记忆系统 - 向量搜索/BM25/混合搜索
+├── cron/               # 定时任务 - 调度器/心跳/自动化
+├── config/             # 配置管理 - 热重载/环境变量/Schema
+├── hooks/              # 钩子系统 - 生命周期事件/拦截点
+├── mcp/                # MCP 协议 - Model Context Protocol
+├── acp/                # ACP 协议 - Agent Communication Protocol
+└── infra/              # 基础设施 - 日志/监控/安全
 ```
 
 ---
@@ -48,7 +50,7 @@ Gateway 是整个系统的**中央枢纽**，负责：
 ```mermaid
 graph TD
     subgraph Gateway["Gateway (src/gateway/)"]
-        A["server.ts<br/>入口"] --> B["server-chat.ts<br/>消息处理"]
+        A["server.impl.ts<br/>入口"] --> B["server-chat.ts<br/>消息处理"]
         A --> C["server-cron.ts<br/>定时任务"]
         A --> D["server-methods.ts<br/>API 方法"]
         A --> E["server-ws-runtime.ts<br/>WebSocket"]
@@ -97,6 +99,7 @@ sequenceDiagram
 | `server-methods.ts` | RPC 方法列表 | `coreGatewayHandlers` |
 | `server-ws-runtime.ts` | WebSocket 处理 | `attachGatewayWsHandlers()` |
 | `config-reload.ts` | 配置热重载 | `startGatewayConfigReloader()` |
+| `boot.ts` | 启动引导 | `runGatewayBoot()` |
 
 ### 2.4 配置热重载机制
 
@@ -138,7 +141,7 @@ flowchart TD
 | 模型推理 | `pi-embedded-runner/model.ts` | `resolveModelAsync()` |
 | 工具调用 | `pi-embedded-runner/run/attempt.ts` | `runEmbeddedAttempt()` |
 | 上下文压缩 | `pi-embedded-runner/compact.ts` | `runPostCompactionSideEffects()` |
-| 会话管理 | `pi-embedded-runner/session-manager-*.ts` | 会话缓存 |
+| 工具定义 | `agents/` | `bash-tools.exec.ts`, `bash-tools.ts` |
 
 ### 3.3 模型选择与降级
 
@@ -170,7 +173,7 @@ graph LR
 ### 4.2 会话键格式
 
 ```
-直接消息: agent:<agentId>:<mainKey>
+直接消息: agent:<agentId>:main
 群组消息: agent:<agentId>:<channel>:group:<id>
 定时任务: cron:<jobId>
 ```
@@ -199,7 +202,7 @@ graph TD
     subgraph channels/plugins/
         A["index.ts<br/>插件注册"] --> B["catalog.ts<br/>插件目录"]
         B --> C["registry.ts<br/>运行时注册"]
-        C --> D["绑定消费者"]
+        C --> D["bundled.ts<br/>捆绑通道加载"]
     end
     
     subgraph 通道实现
@@ -210,22 +213,7 @@ graph TD
     end
 ```
 
-### 5.2 通道配置结构
-
-```mermaid
-graph LR
-    A["openclaw.json"] --> B["channels.*"]
-    B --> C["feishu"]
-    B --> D["telegram"]
-    B --> E["whatsapp"]
-    
-    C --> C1["enabled"]
-    C --> C2["connectionMode"]
-    C --> C3["dmPolicy"]
-    C --> C4["allowFrom"]
-```
-
-### 5.3 飞书接入原理
+### 5.2 飞书接入原理
 
 ```mermaid
 sequenceDiagram
@@ -243,9 +231,127 @@ sequenceDiagram
 
 ---
 
-## 6. Skills：技能系统
+## 6. Plugins：插件系统
 
-### 6.1 技能加载优先级
+### 6.1 插件架构
+
+```mermaid
+graph TD
+    subgraph plugins/
+        A["registry.ts<br/>插件注册"] --> B["runtime.ts<br/>运行时"]
+        B --> C["hook-runner.ts<br/>钩子执行"]
+        C --> D["services.ts<br/>服务"]
+    end
+    
+    subgraph 扩展点
+        E["before_model_resolve"] -.-> C
+        F["before_prompt_build"] -.-> C
+        G["agent_end"] -.-> C
+        H["before_tool_call"] -.-> C
+    end
+```
+
+### 6.2 插件类型
+
+| 类型 | 说明 |
+|------|------|
+| Channel Plugin | 通道接入（飞书/微信/Telegram） |
+| Tool Plugin | 工具扩展 |
+| Memory Plugin | 记忆提供者 |
+| Provider Plugin | AI 模型提供商 |
+
+---
+
+## 7. Hooks：钩子系统
+
+### 7.1 生命周期钩子
+
+```mermaid
+sequenceDiagram
+    participant P as 插件
+    participant G as Gateway
+    participant A as Agent
+
+    P->>G: 注册钩子
+    G->>A: 启动运行
+    Note over A: before_model_resolve
+    A->>A: 模型选择
+    Note over A: before_prompt_build
+    A->>A: 构建提示
+    Note over A: before_tool_call
+    A->>A: 执行工具
+    Note over A: agent_end
+    A-->>G: 运行结束
+    G-->>P: 触发钩子
+```
+
+### 7.2 钩子类型
+
+| 钩子 | 触发时机 | 作用 |
+|------|----------|------|
+| `before_model_resolve` | 模型解析前 | 选择和初始化 AI 模型 |
+| `before_prompt_build` | 提示构建前 | 组装上下文到最终提示 |
+| `agent_end` | 运行结束后 | 智能体完成一次运行 |
+| `before_tool_call` | 工具调用前 | 拦截和验证工具参数 |
+| `after_tool_call` | 工具调用后 | 处理工具返回结果 |
+
+---
+
+## 8. MCP：Model Context Protocol
+
+### 8.1 MCP 架构
+
+```mermaid
+graph TD
+    subgraph mcp/
+        A["channel-server.ts<br/>服务端"] --> B["channel-bridge.ts<br/>通道桥接"]
+        B --> C["channel-tools.ts<br/>工具"]
+    end
+    
+    subgraph 客户端
+        D["Claude Desktop"] -.-> A
+        E["其他 MCP Client"] -.-> A
+    end
+```
+
+### 8.2 MCP 用途
+
+- 允许外部 MCP 客户端（如 Claude Desktop）连接到 OpenClaw
+- 提供标准化的工具调用协议
+- 支持动态发现和调用工具
+
+---
+
+## 9. ACP：Agent Communication Protocol
+
+### 9.1 ACP 架构
+
+```mermaid
+graph TD
+    subgraph acp/
+        A["server.ts<br/>服务端"] --> B["client.ts<br/>客户端"]
+        A --> C["translator.ts<br/>消息翻译"]
+        A --> D["session-mapper.ts<br/>会话映射"]
+    end
+    
+    subgraph 功能
+        E["persistent-bindings"] -.-> A
+        F["policy.ts"] -.-> A
+    end
+```
+
+### 9.2 ACP 用途
+
+- 多智能体间的通信协议
+- 持久化绑定管理
+- 会话状态同步
+- 访问策略控制
+
+---
+
+## 10. Skills：技能系统
+
+### 10.1 技能加载优先级
 
 ```mermaid
 graph TD
@@ -256,7 +362,7 @@ graph TD
     D -->|不存在| F["使用捆绑默认"]
 ```
 
-### 6.2 技能结构
+### 10.2 技能结构
 
 ```
 skills/
@@ -266,32 +372,11 @@ skills/
     └── references/        # 参考资料
 ```
 
-### 6.3 技能定义示例 (SKILL.md)
-
-```markdown
-# Skill Name
-
-## Description
-描述技能的功能和用途
-
-## Tools
-```json
-{
-  "name": "tool_name",
-  "description": "工具描述",
-  "parameters": { ... }
-}
-```
-
-## Usage
-使用说明和示例
-```
-
 ---
 
-## 7. Memory：记忆系统
+## 11. Memory：记忆系统
 
-### 7.1 两层记忆架构
+### 11.1 两层记忆架构
 
 ```mermaid
 graph TD
@@ -310,7 +395,7 @@ graph TD
     H --> I
 ```
 
-### 7.2 记忆写入流程
+### 11.2 记忆写入流程
 
 ```mermaid
 sequenceDiagram
@@ -327,9 +412,9 @@ sequenceDiagram
 
 ---
 
-## 8. Cron：定时任务
+## 12. Cron：定时任务
 
-### 8.1 定时任务架构
+### 12.1 定时任务架构
 
 ```mermaid
 graph TD
@@ -346,7 +431,7 @@ graph TD
     end
 ```
 
-### 8.2 任务执行模式
+### 12.2 任务执行模式
 
 ```mermaid
 graph LR
@@ -358,9 +443,9 @@ graph LR
 
 ---
 
-## 9. 配置系统
+## 13. 配置系统
 
-### 9.1 配置加载顺序
+### 13.1 配置加载顺序
 
 ```mermaid
 graph LR
@@ -370,7 +455,7 @@ graph LR
     D --> E["最终配置"]
 ```
 
-### 9.2 关键配置项
+### 13.2 关键配置项
 
 ```mermaid
 graph TD
@@ -395,52 +480,9 @@ graph TD
 
 ---
 
-## 10. 插件系统
+## 14. 安全机制
 
-### 10.1 插件架构
-
-```mermaid
-graph TD
-    subgraph plugins/
-        A["registry.ts<br/>插件注册"] --> B["runtime.ts<br/>运行时"]
-        B --> C["hook-runner.ts<br/>钩子执行"]
-        C --> D["services.ts<br/>服务"]
-    end
-    
-    subgraph 扩展点
-        E["before_model_resolve"] -.-> C
-        F["before_prompt_build"] -.-> C
-        G["agent_end"] -.-> C
-        H["before_tool_call"] -.-> C
-    end
-```
-
-### 10.2 生命周期钩子
-
-```mermaid
-sequenceDiagram
-    participant P as 插件
-    participant G as Gateway
-    participant A as Agent
-
-    P->>G: 注册钩子
-    G->>A: 启动运行
-    Note over A: before_model_resolve
-    A->>A: 模型选择
-    Note over A: before_prompt_build
-    A->>A: 构建提示
-    Note over A: before_tool_call
-    A->>A: 执行工具
-    Note over A: agent_end
-    A-->>G: 运行结束
-    G-->>P: 触发钩子
-```
-
----
-
-## 11. 安全机制
-
-### 11.1 沙盒隔离
+### 14.1 沙盒隔离
 
 ```mermaid
 graph TD
@@ -454,7 +496,7 @@ graph TD
     E --> F
 ```
 
-### 11.2 访问控制
+### 14.2 访问控制
 
 ```mermaid
 graph LR
@@ -471,13 +513,14 @@ graph LR
 
 ---
 
-## 12. 源码学习路径
+## 15. 源码学习路径
 
-### 12.1 推荐阅读顺序
+### 15.1 推荐阅读顺序
 
 ```
 1. 入门：理解整体架构
    └─ src/gateway/server.impl.ts (Gateway 入口)
+   └─ src/gateway/boot.ts (启动引导)
    
 2. 消息流：理解请求处理
    └─ src/gateway/server-chat.ts
@@ -489,18 +532,18 @@ graph LR
    
 4. 会话：理解上下文管理
    └─ src/sessions/session-id.ts
-   └─ src/agents/memory-*.ts
+   └─ src/sessions/session-key-utils.ts
    
 5. 工具：理解执行机制
-   └─ src/tools/exec.ts
-   └─ src/tools/browser.ts
+   └─ src/agents/bash-tools.exec.ts (exec 工具)
+   └─ src/agents/tools/web-tools.ts (browser 工具)
    
 6. 扩展：理解插件系统
    └─ src/plugins/registry.ts
-   └─ src/hooks/*.ts
+   └─ src/hooks/hooks.ts
 ```
 
-### 12.2 调试技巧
+### 15.2 调试技巧
 
 ```bash
 # 查看 Gateway 日志
@@ -518,24 +561,27 @@ openclaw tools test <tool-name>
 
 ---
 
-## 13. 关键类/函数索引
+## 16. 关键类/函数索引
 
 | 类/函数 | 文件 | 作用 |
 |---------|------|------|
-| `startGatewayServer` | `server.impl.ts` | 启动 Gateway |
-| `createAgentEventHandler` | `server-chat.ts` | 创建消息处理器 |
-| `runEmbeddedPiAgent` | `run.ts` | 执行智能体 |
-| `resolveModelAsync` | `model.ts` | 异步获取模型 |
-| `buildEmbeddedRunPayloads` | `run/payloads.ts` | 构建请求载荷 |
-| `runEmbeddedAttempt` | `run/attempt.ts` | 执行单次尝试 |
-| `createCompactionDiagId` | `run/helpers.ts` | 创建压缩诊断 ID |
-| `sessionLikelyHasOversizedToolResults` | `tool-result-truncation.ts` | 检测工具结果大小 |
+| `startGatewayServer` | `gateway/server.impl.ts` | 启动 Gateway |
+| `runGatewayBoot` | `gateway/boot.ts` | 执行启动引导 |
+| `createAgentEventHandler` | `gateway/server-chat.ts` | 创建消息处理器 |
+| `runEmbeddedPiAgent` | `agents/pi-embedded-runner/run.ts` | 执行智能体 |
+| `resolveModelAsync` | `agents/pi-embedded-runner/model.ts` | 异步获取模型 |
+| `buildEmbeddedRunPayloads` | `agents/pi-embedded-runner/run/payloads.ts` | 构建请求载荷 |
+| `runEmbeddedAttempt` | `agents/pi-embedded-runner/run/attempt.ts` | 执行单次尝试 |
+| `sessionLikelyHasOversizedToolResults` | `agents/tool-result-truncation.ts` | 检测工具结果大小 |
 
 ---
 
-## 14. 延伸阅读
+## 17. 延伸阅读
 
 - [OpenClaw 官方文档](https://docs.openclaw.ai/)
 - [OpenClaw GitHub](https://github.com/openclaw/openclaw)
 - [飞书接入指南](../feishu.md)
-- [使用技巧](../index.md)
+- [使用手册](../index.md)
+- [通道详解](./channels.md)
+- [插件系统](./plugins.md)
+- [钩子机制](./hooks.md)

@@ -29,11 +29,11 @@ flowchart TD
 
 | 阶段 | 主要文件 | 关键函数 |
 |------|----------|----------|
-| 入口 | `pi-embedded-runner/run.ts` | `runEmbeddedPiAgent()` |
-| 模型 | `pi-embedded-runner/model.ts` | `resolveModelAsync()` |
-| 上下文 | `pi-embedded-runner/compaction-*.ts` | 上下文压缩 |
-| 工具 | `pi-embedded-runner/run/attempt.ts` | `runEmbeddedAttempt()` |
-| 输出 | `pi-embedded-runner/stream-*.ts` | 流式处理 |
+| 入口 | `agents/pi-embedded-runner/run.ts` | `runEmbeddedPiAgent()` |
+| 模型 | `agents/pi-embedded-runner/model.ts` | `resolveModelAsync()` |
+| 上下文 | `agents/pi-embedded-runner/compact*.ts` | 上下文压缩 |
+| 工具 | `agents/pi-embedded-runner/run/attempt.ts` | `runEmbeddedAttempt()` |
+| 输出 | `agents/pi-embedded-runner/stream*.ts` | 流式处理 |
 
 ---
 
@@ -143,15 +143,18 @@ flowchart TD
     G --> H["返回模型"]
 ```
 
-### 4.2 内置工具
+### 4.2 工具源码位置
 
-| 工具 | 文件 | 功能 |
-|------|------|------|
-| `exec` | `tools/exec.ts` | 执行系统命令 |
-| `browser` | `tools/browser.ts` | 网页浏览 |
-| `file_read` | `tools/file-*.ts` | 文件读取 |
-| `file_write` | `tools/file-*.ts` | 文件写入 |
-| `search` | `web-search-*.ts` | 网页搜索 |
+| 工具 | 源码路径 | 功能 |
+|------|----------|------|
+| `exec` | `agents/bash-tools.exec.ts` | 执行系统命令 |
+| `exec` (核心) | `agents/bash-tools.ts` | 命令执行核心 |
+| `browser` | `agents/tools/web-tools.ts` | 网页浏览 |
+| `web-fetch` | `agents/tools/web-fetch.ts` | 网页抓取 |
+| `web-search` | `agents/tools/web-search.ts` | 网页搜索 |
+| `image` | `agents/tools/image-tool.ts` | 图片处理 |
+| `tts` | `agents/tools/tts-tool.ts` | 语音合成 |
+| `pdf` | `agents/tools/pdf-tool.ts` | PDF 处理 |
 
 ### 4.3 exec 工具安全
 
@@ -380,7 +383,7 @@ openclaw sessions view <session-id>
 
 ## 11. 延伸阅读
 
-- [Gateway 架构](./architecture.md#3-agents智能体引擎)
+- [Gateway 架构](./architecture.md#2-gateway消息中枢)
 - [会话管理](./sessions.md)
 - [工具系统](../index.md#7-工具tools)
 - [安全配置](../index.md#87-安全实践)
