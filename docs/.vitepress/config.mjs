@@ -262,7 +262,25 @@ export default withMermaid(defineConfig({
                               { text: 'Copilot', link: '/products/ai-coding/copilot' },
                               { text: 'Claude CLI', link: '/products/ai-coding/claude-cli' },
                               { text: 'Gemini CLI', link: '/products/ai-coding/gemini-cli' },
-                              { text: 'Other Tools', link: '/products/ai-coding/othertools' }
+                              { text: 'Other Tools', link: '/products/ai-coding/othertools' },
+                              {
+                                 text: 'OpenClaw',
+                                 link: '/zh/products/automation/openclaw/',
+                                 items: [
+                                    { text: 'Overview', link: '/zh/products/automation/openclaw/' },
+                                    { text: 'Feishu Setup', link: '/zh/products/automation/openclaw/feishu' },
+                                    { text: 'WeChat Setup', link: '/zh/products/automation/openclaw/wechat' },
+                                    { text: 'Source Code', link: '/zh/products/automation/openclaw/source-code/' },
+                                    { text: 'Architecture', link: '/zh/products/automation/openclaw/source-code/architecture' },
+                                    { text: 'Channels', link: '/zh/products/automation/openclaw/source-code/channels' },
+                                    { text: 'Agents', link: '/zh/products/automation/openclaw/source-code/agents' },
+                                    { text: 'Sessions', link: '/zh/products/automation/openclaw/source-code/sessions' },
+                                    { text: 'Plugins', link: '/zh/products/automation/openclaw/source-code/plugins' },
+                                    { text: 'Hooks', link: '/zh/products/automation/openclaw/source-code/hooks' },
+                                    { text: 'MCP', link: '/zh/products/automation/openclaw/source-code/mcp' },
+                                    { text: 'ACP', link: '/zh/products/automation/openclaw/source-code/acp' },
+                                 ]
+                              }
                            ]
                         },
                         {
@@ -495,8 +513,18 @@ export default withMermaid(defineConfig({
                                  text: 'OpenClaw',
                                  link: '/zh/products/automation/openclaw/',
                                  items: [
+                                    { text: '概述', link: '/zh/products/automation/openclaw/' },
                                     { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
                                     { text: '微信接入', link: '/zh/products/automation/openclaw/wechat' },
+                                    { text: '源码分析', link: '/zh/products/automation/openclaw/source-code/' },
+                                    { text: '核心架构', link: '/zh/products/automation/openclaw/source-code/architecture' },
+                                    { text: '通道接入', link: '/zh/products/automation/openclaw/source-code/channels' },
+                                    { text: '智能体引擎', link: '/zh/products/automation/openclaw/source-code/agents' },
+                                    { text: '会话管理', link: '/zh/products/automation/openclaw/source-code/sessions' },
+                                    { text: '插件系统', link: '/zh/products/automation/openclaw/source-code/plugins' },
+                                    { text: '钩子机制', link: '/zh/products/automation/openclaw/source-code/hooks' },
+                                    { text: 'MCP 协议', link: '/zh/products/automation/openclaw/source-code/mcp' },
+                                    { text: 'ACP 协议', link: '/zh/products/automation/openclaw/source-code/acp' },
                                  ]
                               },
                            ]
