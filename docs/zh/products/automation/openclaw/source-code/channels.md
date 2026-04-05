@@ -1,6 +1,8 @@
 # Channels 通道接入详解
 
-> 本章详解 OpenClaw 如何接入各种即时通讯平台（飞书/微信/Telegram/Discord 等）。
+> **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解 WebSocket 和 HTTP 通信机制的开发者。
+> **目标读者**：希望理解通道接入原理、进行通道插件开发的开发者。
+> **维护状态**：本文档基于 OpenClaw v2026.4+ 源码分析。
 
 ---
 
