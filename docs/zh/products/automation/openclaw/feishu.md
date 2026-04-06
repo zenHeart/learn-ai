@@ -70,6 +70,8 @@ openclaw --version  # 确认已安装
 
 > 💡 **实战经验**：`im:message.reactions:write_only` 是最容易遗漏的权限。OpenClaw 在生成回复前会先发送一个"思考中"表情，若无此权限则静默失败。
 
+**注意**：权限配置后必须**重新创建版本并发布**，旧版本中的权限不会自动更新。
+
 ### 2.4 发布应用
 
 权限配置完成后，需要**创建版本并发布**，权限才能正式生效：
@@ -78,6 +80,8 @@ openclaw --version  # 确认已安装
 2. 填写版本号（建议 1.0.0）和更新说明
 3. 选择发布范围（通常为「全员」或指定部门）
 4. 提交审核（企业自建应用通常自动通过）
+
+📌 **注意**：每次权限变更后都必须重新发布，否则新权限不会生效。
 
 ---
 
@@ -180,8 +184,9 @@ FEISHU_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # 启动 Gateway（会输出 ws client ready 日志）
 openclaw gateway
 
-# 或者使用配置文件路径启动
-openclaw gateway --config ~/.openclaw/openclaw.json
+# 或指定配置文件路径（通过环境变量）
+export OPENCLAW_CONFIG_PATH="~/.openclaw/openclaw.json"
+openclaw gateway
 ```
 
 ### 4.2 配置飞书长连接
@@ -424,10 +429,10 @@ Start-Process node -ArgumentList 'path/to/openclaw.mjs', 'gateway', '--force', '
 {
   channels: {
     feishu: {
-      appId: "cli_a945afaaf7361bcd",      // Zen 应用
-      appSecret: "Rqjc6GcnbANV6M6Rxk8dIf04FDocFazz",
+      appId: "cli_example_zen",      // Zen 应用（示例值）
+      appSecret: "${FEISHU_APP_SECRET}",
       connectionMode: "websocket",
-      allowFrom: ["ou_a7be71fa38ba3ed6adecc8f4038df287"],
+      allowFrom: ["ou_zen_owner"],
       dmPolicy: "allowlist"
     }
   }
@@ -437,33 +442,46 @@ Start-Process node -ArgumentList 'path/to/openclaw.mjs', 'gateway', '--force', '
 **第二实例配置**（`~/jam/.openclaw/openclaw-minimal.json`）：
 ```json5
 {
+  // 显式允许 openclaw-lark 插件（避免自动加载旧版 feishu 插件）
   plugins: {
-    allow: ["openclaw-lark"]  // 显式允许插件，避免自动加载警告
+    allow: ["openclaw-lark"],
+    entries: {
+      feishu: { enabled: false },  // 禁用旧版插件
+      openclaw-lark: { enabled: true, config: {} }
+    }
   },
 
   agents: {
     defaults: {
-      workspace: "/Users/chengle/jam/.openclaw/workspace"
+      workspace: "~/jam/.openclaw/workspace",
+      repoRoot: "~/jam/.openclaw",
+      userTimezone: "Asia/Shanghai",
+      timeFormat: "24"
     },
-    list: [{ id: "jam-assistant", name: "Jam Assistant", default: true }]
+    list: [{
+      id: "jam-assistant",
+      name: "Jam Assistant",
+      default: true,
+      workspace: "~/jam/.openclaw/workspace"
+    }]
   },
 
   channels: {
     feishu: {
+      // ⚠️ appId 和 appSecret 必须放在 channels.feishu 根级别（不是 accounts 内部）
+      appId: "cli_example_jam",     // Jam 应用（示例值）
+      appSecret: "${FEISHU_APP_SECRET}",
       connectionMode: "websocket",
       dmPolicy: "allowlist",
       requireMention: true,
       streaming: true,
       allowFrom: [
-        "ou_a7be71fa38ba3ed6adecc8f4038df287",
-        "ou_f99b26afd4079022fd7e8be375f584e3"
+        "ou_jam_user_1",
+        "ou_test_user"
       ],
+      // accounts 仅用于多账户场景；单账户可使用空对象
       accounts: {
-        default: {
-          appId: "cli_a9593caf177d1bda",     // Jam 应用（不同 App ID）
-          appSecret: "PPpoA8jQ8LUf2iAYpMA2Ph6Ljv7OtStG",
-          enabled: true
-        }
+        default: {}
       }
     }
   },
@@ -474,9 +492,15 @@ Start-Process node -ArgumentList 'path/to/openclaw.mjs', 'gateway', '--force', '
 
   gateway: {
     port: 18791,                    // 与主实例不同端口
-    token: "jam-secure-token-2026"  // 独立认证 token
+    mode: "local",
+    bind: "loopback",
+    auth: {
+      mode: "token",
+      token: "jam-secure-token-2026"  // 独立认证 token（示例值）
+    }
   }
 }
+```
 ```
 
 **启动命令**：
@@ -574,6 +598,54 @@ pm2 status
 ##### Q4：多实例部署会增加飞书 API 配额消耗吗？
 
 是的。每个独立的应用（不同 `appId`）有各自的 API 配额。确保各应用的服务费/配额充足以免超限。
+
+##### Q5：多实例部署时如何避免插件配置冲突？
+
+**常见陷阱**：
+1. **插件混淆**：OpenClaw 旧版插件名为 `feishu`，新版为 `openclaw-lark`。确保配置中禁用旧版：
+   ```json5
+   plugins: {
+     allow: ["openclaw-lark"],
+     entries: {
+       feishu: { enabled: false },  // ⚠️ 禁用旧版
+       openclaw-lark: { enabled: true, config: {} }
+     }
+   }
+   ```
+2. **状态目录隔离**：多实例必须通过 `OPENCLAW_STATE_DIR` 环境变量隔离 `stateDir`，否则插件和状态文件会混在一起，导致 `channel already registered` 警告。
+3. **日志混合**：默认所有实例日志都写入 `/tmp/openclaw/`，无法区分。可通过 `OPENCLAW_LOG_PATH` 指定不同日志文件路径。
+4. **workspace git 仓库**：每个实例的 `workspace` 目录需要是独立的 git 仓库（已初始化）。新创建的 workspace 需执行一次 `git commit --allow-empty -m "Initial"` 才能正常 `git add`。
+
+##### Q6：在单进程中配置多个账户（`accounts`）时，`appId` 应该放在哪里？
+
+**错误做法**（会导致 `/feishu auth` 失败）：
+```json5
+channels: {
+  feishu: {
+    accounts: {
+      default: {
+        appId: "cli_xxx",  // ❌ 放在 accounts 内部
+        appSecret: "xxx"
+      }
+    }
+  }
+}
+```
+
+**正确做法**：`appId` 和 `appSecret` 必须放在 `channels.feishu` **根级别**，`accounts` 仅用于覆盖或定义额外账户：
+```json5
+channels: {
+  feishu: {
+    appId: "cli_xxx",  // ✅ 根级别
+    appSecret: "${FEISHU_APP_SECRET}",
+    accounts: {
+      default: {},  // 使用根级别的凭据
+      // 其他账户可单独指定 appId/appSecret
+      backup: { appId: "cli_yyy", appSecret: "${BACKUP_SECRET}" }
+    }
+  }
+}
+```
 
 ---
 
