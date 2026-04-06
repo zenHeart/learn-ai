@@ -1,7 +1,7 @@
 # 飞书接入指南
 
-> **前置知识**：本章节面向具备基础 TypeScript/Node.js 经验的开发者。  
-> **目标读者**：希望在 OpenClaw 中接入飞书即时通讯的用户。  
+> **前置知识**：本章节面向具备基础 TypeScript/Node.js 经验的开发者。
+> **目标读者**：希望在 OpenClaw 中接入飞书即时通讯的用户。
 > **维护状态**：本文档由实战经验总结得来，当前维护版本基于 OpenClaw v2026.3+。
 
 ---
@@ -14,7 +14,8 @@
 4. [运行与验证](#4-运行与验证)
 5. [权限清单](#5-权限清单)
 6. [常见问题-faq](#6-常见问题-faq)
-7. [安全注意事项](#7-安全注意事项)
+7. [多实例部署](#7-多实例部署)
+8. [安全注意事项](#8-安全注意事项)
 
 ---
 
@@ -328,9 +329,257 @@ Start-Process node -ArgumentList 'path/to/openclaw.mjs', 'gateway', '--force', '
 
 ---
 
-## 7. 安全注意事项
+## 7. 多实例部署
 
-### 7.1 敏感信息管理
+在实际生产环境中，你可能需要运行**多个 OpenClaw 实例**来服务不同的机器人身份。OpenClaw 支持两种典型的部署模式：
+
+| 模式 | 说明 | 适用场景 |
+|------|------|----------|
+| **单进程多账户** | 一个 Gateway 进程，通过 `accounts` 配置多个飞书应用 | 同一业务线需要多个机器人身份 |
+| **多进程多实例** | 多个独立的 Gateway 进程，各自配置不同的飞书应用 | 完全隔离的机器人（不同团队/业务） |
+
+### 7.1 单 OpenClaw 多账户（推荐）
+
+**优势**：资源占用少，配置集中，易于管理。
+
+**配置方式**：在同一个 `openclaw.json` 中使用 `accounts` 嵌套多个账户。
+
+```json5
+{
+  channels: {
+    feishu: {
+      enabled: true,
+      connectionMode: "websocket",
+      accounts: {
+        // 默认账户（使用全局配置的 appId/appSecret）
+        default: {},
+
+        // 第二个账户（例如：客服机器人）
+        support: {
+          appId: "${FEISHU_SUPPORT_APP_ID}",
+          appSecret: "${FEISHU_SUPPORT_APP_SECRET}",
+          botName: "Support Bot",
+          dmPolicy: "allowlist",
+          allowFrom: ["ou_support_user_1", "ou_support_user_2"]
+        },
+
+        // 第三个账户（例如：HR 机器人）
+        hr: {
+          appId: "${FEISHU_HR_APP_ID}",
+          appSecret: "${FEISHU_HR_APP_SECRET}",
+          botName: "HR Assistant",
+          dmPolicy: "open"
+        }
+      },
+
+      // 全局白名单（配合 dmPolicy: "allowlist" 使用）
+      allowFrom: ["ou_main_user"]
+    }
+  },
+
+  // 绑定 agent 到特定账户
+  bindings: [
+    { agentId: "main-assistant", match: { channel: "feishu", accountId: "default" } },
+    { agentId: "support-assistant", match: { channel: "feishu", accountId: "support" } },
+    { agentId: "hr-assistant", match: { channel: "feishu", accountId: "hr" } }
+  ]
+}
+```
+
+**工作原理**：
+- 飞书消息根据 `appId` 自动匹配到对应的 `accounts.xxx` 配置
+- `bindings` 决定消息由哪个 agent 处理
+- 不同账户可以使用不同的 `allowFrom`、`dmPolicy` 等参数
+
+**注意事项**：
+- 所有账户的飞书应用都需要开通 `im:message:send_as_bot` 权限并发布
+- 不同账户的 `bot_open_id` 是不同的，互不影响
+- 共享同一个 Gateway 进程，若一个账户的模型调用慢，可能影响其他账户
+
+---
+
+### 7.2 多 OpenClaw 多实例（完全隔离）
+
+**优势**：完全隔离，配置独立，一个实例崩溃不影响其他；可使用不同模型、不同版本。
+
+**部署方式**：每个实例使用**独立的配置目录**和**不同的端口**。
+
+#### 示例：部署两个实例（Zen + Jam）
+
+**目录结构**：
+```plaintext
+~/
+├── .openclaw/                    # 主实例（Zen）配置
+│   ├── openclaw.json
+│   ├── workspace/
+│   └── logs/
+└── jam/.openclaw/               # 第二实例（Jam）配置
+    ├── openclaw-minimal.json
+    ├── workspace/
+    └── logs/
+```
+
+**主实例配置**（`~/.openclaw/openclaw.json`）：
+```json5
+{
+  channels: {
+    feishu: {
+      appId: "cli_a945afaaf7361bcd",      // Zen 应用
+      appSecret: "Rqjc6GcnbANV6M6Rxk8dIf04FDocFazz",
+      connectionMode: "websocket",
+      allowFrom: ["ou_a7be71fa38ba3ed6adecc8f4038df287"],
+      dmPolicy: "allowlist"
+    }
+  }
+}
+```
+
+**第二实例配置**（`~/jam/.openclaw/openclaw-minimal.json`）：
+```json5
+{
+  plugins: {
+    allow: ["openclaw-lark"]  // 显式允许插件，避免自动加载警告
+  },
+
+  agents: {
+    defaults: {
+      workspace: "/Users/chengle/jam/.openclaw/workspace"
+    },
+    list: [{ id: "jam-assistant", name: "Jam Assistant", default: true }]
+  },
+
+  channels: {
+    feishu: {
+      connectionMode: "websocket",
+      dmPolicy: "allowlist",
+      requireMention: true,
+      streaming: true,
+      allowFrom: [
+        "ou_a7be71fa38ba3ed6adecc8f4038df287",
+        "ou_f99b26afd4079022fd7e8be375f584e3"
+      ],
+      accounts: {
+        default: {
+          appId: "cli_a9593caf177d1bda",     // Jam 应用（不同 App ID）
+          appSecret: "PPpoA8jQ8LUf2iAYpMA2Ph6Ljv7OtStG",
+          enabled: true
+        }
+      }
+    }
+  },
+
+  bindings: [
+    { agentId: "jam-assistant", match: { channel: "feishu", accountId: "default" } }
+  ],
+
+  gateway: {
+    port: 18791,                    // 与主实例不同端口
+    token: "jam-secure-token-2026"  // 独立认证 token
+  }
+}
+```
+
+**启动命令**：
+```bash
+# 主实例（Zen）- 端口 18789
+openclaw gateway --port 18789
+
+# 第二实例（Jam）- 端口 18791，指定配置文件
+OPENCLAW_CONFIG_PATH="$HOME/jam/.openclaw/openclaw-minimal.json" \
+  openclaw gateway --port 18791 --token "jam-secure-token-2026"
+```
+
+**隔离性保证**：
+- ✅ 不同端口：18789 vs 18791
+- ✅ 不同 PID：独立进程
+- ✅ 不同配置目录：`~/.openclaw/` vs `~/jam/.openclaw/`
+- ✅ 不同 workspace：各自独立
+- ✅ 插件代码共享，但运行时隔离（插件版本一致即可）
+
+**消息路由**：
+- 飞书消息根据 `appId` 自动分发到对应的 OpenClaw 实例
+- 用户需要**主动选择聊天对象**（@Zen 或 @Jam）
+- 每个实例的 `allowFrom` 白名单独立控制谁可以向它发消息
+
+---
+
+#### 架构图：多实例部署
+
+```mermaid
+graph TB
+    subgraph "飞书平台"
+        F[飞书消息]
+        App1[应用 A<br/>cli_a945...]
+        App2[应用 B<br/>cli_a959...]
+    end
+
+    subgraph "本地环境"
+        subgraph "OpenClaw 主实例 (Zen)"
+            GW1[Gateway<br/>端口 18789]
+            CFG1[openclaw.json]
+            Agent1[Agent: main]
+        end
+
+        subgraph "OpenClaw 第二实例 (Jam)"
+            GW2[Gateway<br/>端口 18791]
+            CFG2[openclaw-minimal.json]
+            Agent2[Agent: jam-assistant]
+        end
+
+        隔离[(插件代码共享<br/>运行时隔离)]
+    end
+
+    F -->|根据 App ID| App1
+    F -->|根据 App ID| App2
+
+    App1 -->|WebSocket| GW1
+    App2 -->|WebSocket| GW2
+
+    GW1 --> CFG1
+    GW2 --> CFG2
+
+    GW1 --> Agent1
+    GW2 --> Agent2
+
+    GW1 -.-> 隔离 -.-> GW2
+```
+
+---
+
+#### 常见问题
+
+##### Q1：如何判断消息发给了哪个实例？
+
+查看 OpenClaw 日志中的通道标识：
+- `feishu[zen]` → 主实例（账户名 `zen`）
+- `feishu[default]` → 使用 `default` 账户的实例
+
+##### Q2：多实例可以共享同一个模型缓存吗？
+
+不可以。每个实例有独立的 workspace，模型缓存默认在 `~/.cache/` 共享，但会话内存不共享。
+
+##### Q3：如何同时管理多个实例？
+
+使用进程管理器（如 `pm2`、`systemd` 或 `supervisor`）分别管理：
+```bash
+# 启动所有实例
+pm2 start "openclaw gateway --port 18789" --name zen
+pm2 start "OPENCLAW_CONFIG_PATH=~/jam/.openclaw/openclaw-minimal.json \
+  openclaw gateway --port 18791" --name jam
+
+# 查看状态
+pm2 status
+```
+
+##### Q4：多实例部署会增加飞书 API 配额消耗吗？
+
+是的。每个独立的应用（不同 `appId`）有各自的 API 配额。确保各应用的服务费/配额充足以免超限。
+
+---
+
+## 8. 安全注意事项
+
+### 8.1 敏感信息管理
 
 ⚠️ **强制要求**：
 - **禁止**将 `App Secret`、API Key 等硬编码到配置文件中
@@ -338,7 +587,7 @@ Start-Process node -ArgumentList 'path/to/openclaw.mjs', 'gateway', '--force', '
 - `~/.openclaw/.env` 文件**不要**提交到 Git
 - 生产环境建议使用 Vault 或秘钥管理服务
 
-### 7.2 访问控制
+### 8.2 访问控制
 
 - 生产环境建议将 `dmPolicy` 设置为 `allowlist`
 - 明确配置 `allowFrom` 白名单，不使用通配符 `*`
