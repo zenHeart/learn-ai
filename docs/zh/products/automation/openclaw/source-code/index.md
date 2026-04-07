@@ -117,3 +117,7 @@ openclaw tools test exec -- command "ls"
 - [OpenClaw GitHub](https://github.com/openclaw/openclaw)
 - [飞书接入指南](../feishu.md)
 - [使用手册](../index.md)
+- [CLI 命令参考](./cli.md)
+- [部署指南](./deployment.md)
+- [安全配置指南](./security.md)
+- [技能开发指南](./skills.md)

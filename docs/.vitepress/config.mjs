@@ -281,6 +281,16 @@ export default withMermaid(defineConfig({
                                     { text: 'WeChat Setup', link: '/zh/products/automation/openclaw/wechat' },
                                     { text: 'WeCom Setup', link: '/zh/products/automation/openclaw/wecom' },
                                     {
+                                       text: 'Advanced Guides',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'CLI Reference', link: '/zh/products/automation/openclaw/cli' },
+                                          { text: 'Deployment', link: '/zh/products/automation/openclaw/deployment' },
+                                          { text: 'Security', link: '/zh/products/automation/openclaw/security' },
+                                          { text: 'Skills Development', link: '/zh/products/automation/openclaw/skills' },
+                                       ]
+                                    },
+                                    {
                                        text: 'Source Code',
                                        collapsed: false,
                                        items: [
@@ -553,6 +563,16 @@ export default withMermaid(defineConfig({
                                     { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
                                     { text: '微信接入', link: '/zh/products/automation/openclaw/wechat' },
                                     { text: '企业微信接入', link: '/zh/products/automation/openclaw/wecom' },
+                                    {
+                                       text: '进阶指南',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'CLI 命令参考', link: '/zh/products/automation/openclaw/cli' },
+                                          { text: '部署指南', link: '/zh/products/automation/openclaw/deployment' },
+                                          { text: '安全配置', link: '/zh/products/automation/openclaw/security' },
+                                          { text: '技能开发', link: '/zh/products/automation/openclaw/skills' },
+                                       ]
+                                    },
                                     {
                                        text: '源码分析',
                                        collapsed: false,
