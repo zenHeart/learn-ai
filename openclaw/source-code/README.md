@@ -25,6 +25,7 @@
 | [memory.md](./memory.md) | 记忆系统 |
 | [config.md](./config.md) | 配置系统 |
 | [auth.md](./auth.md) | 认证体系 |
+| [subagent.md](./subagent.md) | Subagent 子任务机制 |
 
 ## 架构概览
 
