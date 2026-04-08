@@ -554,7 +554,196 @@ async function executeWorkflow(steps: WorkflowStep[]) {
 }
 ```
 
-## 10. 相关文档
+## 10. 手把手复刻
+
+### 最小实现
+
+以下是 ACP 协议的核心实现：
+
+```typescript
+// === 1. ACP 消息类型 ===
+type ACPMessageType = 'command' | 'query' | 'response' | 'event'
+
+interface ACPMessage {
+  id: string
+  type: ACPMessageType
+  from: string
+  to: string
+  payload: any
+  correlationId?: string
+  timestamp: number
+}
+
+// === 2. 最小 ACP 运行时 ===
+class MinimalACPRuntime {
+  private receivers: Map<string, (msg: ACPMessage) => Promise<ACPMessage | null>> = new Map()
+  private pendingRequests: Map<string, any> = new Map()
+
+  // 注册接收者
+  registerReceiver(agentId: string, handler: (msg: ACPMessage) => Promise<ACPMessage | null>) {
+    this.receivers.set(agentId, handler)
+  }
+
+  // 发送消息
+  async send(message: ACPMessage): Promise<void> {
+    const receiver = this.receivers.get(message.to)
+    if (!receiver) {
+      console.warn(`No receiver for ${message.to}`)
+      return
+    }
+
+    const response = await receiver(message)
+    
+    // 如果有 correlationId，发送响应
+    if (response && message.correlationId) {
+      response.correlationId = message.correlationId
+      await this.send(response)
+    }
+  }
+
+  // 发送并等待响应
+  async sendAndWait(message: ACPMessage, timeout = 30000): Promise<ACPMessage> {
+    message.correlationId = crypto.randomUUID()
+    
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => {
+        this.pendingRequests.delete(message.correlationId!)
+        reject(new Error('ACP message timeout'))
+      }, timeout)
+
+      this.pendingRequests.set(message.correlationId, { resolve, timer })
+      this.send(message)
+    })
+  }
+
+  // 处理响应
+  private handleResponse(response: ACPMessage) {
+    const pending = this.pendingRequests.get(response.correlationId!)
+    if (pending) {
+      clearTimeout(pending.timer)
+      pending.resolve(response)
+      this.pendingRequests.delete(response.correlationId!)
+    }
+  }
+}
+
+// === 3. 使用示例 ===
+const acp = new MinimalACPRuntime()
+
+// 注册子 Agent
+acp.registerReceiver('agent:sub-1', async (msg) => {
+  switch (msg.type) {
+    case 'command':
+      if (msg.payload.action === 'analyze') {
+        const result = await analyze(msg.payload.args.data)
+        return {
+          id: crypto.randomUUID(),
+          type: 'response',
+          from: 'agent:sub-1',
+          to: msg.from,
+          payload: { result },
+          timestamp: Date.now()
+        }
+      }
+      break
+  }
+  return null
+})
+
+// 主 Agent 发送命令
+const response = await acp.sendAndWait({
+  id: crypto.randomUUID(),
+  type: 'command',
+  from: 'agent:main',
+  to: 'agent:sub-1',
+  payload: { action: 'analyze', args: { data: 'test' } },
+  timestamp: Date.now()
+})
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `send()` | `message: ACPMessage` | `Promise<void>` | 发送消息 |
+| `sendAndWait()` | `message, timeout` | `Promise<ACPMessage>` | 发送并等待响应 |
+| `registerReceiver()` | `agentId, handler` | `void` | 注册接收者 |
+| `broadcast()` | `message` | `Promise<void>` | 广播消息 |
+
+### 常见陷阱
+
+1. **消息 ID 重复**
+   - 错误：使用简单计数器作为消息 ID
+   - 正确：使用 UUID 确保唯一性
+
+2. **超时处理不当**
+   - 错误：不设置超时或超时后不清理
+   - 正确：使用 `setTimeout` 并在超时时删除待处理请求
+
+   ```typescript
+   const timer = setTimeout(() => {
+     this.pendingRequests.delete(correlationId)
+     reject(new Error('Timeout'))
+   }, timeout)
+   ```
+
+3. **会话绑定遗漏**
+   - 错误：子 Agent 结果不关联父会话
+   - 正确：使用 `correlationId` 追踪请求-响应对
+
+### 实战练习
+
+1. **练习一：实现简单命令分发**
+   ```typescript
+   acp.registerReceiver('agent:worker', async (msg) => {
+     if (msg.type === 'command') {
+       switch (msg.payload.action) {
+         case 'process':
+           return { type: 'response', payload: { result: 'processed' } }
+         case 'stop':
+           return { type: 'response', payload: { stopped: true } }
+       }
+     }
+   })
+   ```
+
+2. **练习二：实现事件广播**
+   ```typescript
+   async function broadcast(event: ACPMessage) {
+     event.to = '*' // * 表示广播
+     for (const [agentId, handler] of receivers) {
+       if (agentId !== event.from) {
+         await handler(event)
+       }
+     }
+   }
+   ```
+
+3. **练习三：实现消息队列**
+   ```typescript
+   class ACPMessageQueue {
+     private queue: ACPMessage[] = []
+
+     async enqueue(msg: ACPMessage) {
+       this.queue.push(msg)
+     }
+
+     async process() {
+       while (this.queue.length > 0) {
+         const msg = this.queue.shift()!
+         try {
+           await acp.send(msg)
+         } catch (err) {
+           // 失败重新入队
+           this.queue.unshift(msg)
+           await sleep(1000)
+         }
+       }
+     }
+   }
+   ```
+
+## 11. 相关文档
 
 - [Agent 运行时](./agents.md)
 - [会话管理](./sessions.md)

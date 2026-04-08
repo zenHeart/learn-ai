@@ -623,7 +623,223 @@ memory:
     dimension: 1536
 ```
 
-## 9. 相关文档
+## 9. 手把手复刻
+
+### 最小实现
+
+以下是记忆系统的最小实现：
+
+```typescript
+// === 1. 记忆接口 ===
+interface MemoryValue {
+  content: string
+  metadata: Record<string, any>
+  createdAt: Date
+  updatedAt: Date
+}
+
+// === 2. 最小记忆后端 ===
+class MinimalMemoryBackend {
+  private store: Map<string, MemoryValue> = new Map()
+
+  async get(key: string): Promise<MemoryValue | null> {
+    return this.store.get(key) || null
+  }
+
+  async set(key: string, value: MemoryValue): Promise<void> {
+    this.store.set(key, value)
+  }
+
+  async delete(key: string): Promise<void> {
+    this.store.delete(key)
+  }
+
+  async list(prefix: string): Promise<{ key: string; value: MemoryValue }[]> {
+    const results: { key: string; value: MemoryValue }[] = []
+    for (const [key, value] of this.store) {
+      if (key.startsWith(prefix)) {
+        results.push({ key, value })
+      }
+    }
+    return results
+  }
+}
+
+// === 3. 最小会话记忆 ===
+class MinimalSessionMemory {
+  constructor(
+    private backend: MinimalMemoryBackend,
+    private maxMessages = 50
+  ) {}
+
+  async addMessage(sessionKey: string, message: any): Promise<void> {
+    const messages = await this.getMessages(sessionKey)
+    messages.push({ ...message, timestamp: new Date() })
+
+    if (messages.length > this.maxMessages) {
+      await this.compact(sessionKey, messages)
+    } else {
+      await this.backend.set(`session:${sessionKey}:messages`, {
+        content: JSON.stringify(messages),
+        metadata: { count: messages.length },
+        createdAt: new Date(),
+        updatedAt: new Date()
+      })
+    }
+  }
+
+  async getMessages(sessionKey: string): Promise<any[]> {
+    const value = await this.backend.get(`session:${sessionKey}:messages`)
+    if (!value) return []
+    return JSON.parse(value.content)
+  }
+
+  private async compact(sessionKey: string, messages: any[]): Promise<void> {
+    const keepCount = Math.floor(this.maxMessages * 0.3)
+    const toKeep = messages.slice(-keepCount)
+    const summary = `【摘要】${messages.length - keepCount}条旧消息已压缩`
+
+    const compacted = [
+      { role: 'system', content: summary, id: 'summary' },
+      ...toKeep
+    ]
+
+    await this.backend.set(`session:${sessionKey}:messages`, {
+      content: JSON.stringify(compacted),
+      metadata: { compacted: true, originalCount: messages.length },
+      createdAt: new Date(),
+      updatedAt: new Date()
+    })
+  }
+}
+
+// === 4. 使用示例 ===
+const backend = new MinimalMemoryBackend()
+const sessionMemory = new MinimalSessionMemory(backend)
+
+await sessionMemory.addMessage('user:123', {
+  role: 'user',
+  content: 'Hello!'
+})
+
+const messages = await sessionMemory.getMessages('user:123')
+console.log(messages)
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `get()` | `key: string` | `Promise<MemoryValue \| null>` | 获取记忆 |
+| `set()` | `key, value` | `Promise<void>` | 存储记忆 |
+| `delete()` | `key: string` | `Promise<void>` | 删除记忆 |
+| `list()` | `prefix: string` | `Promise<[]>` | 列出匹配的记忆 |
+
+### 常见陷阱
+
+1. **JSON 序列化遗漏**
+   - 错误：直接存储对象而不序列化
+   - 正确：使用 `JSON.stringify` 序列化后存储
+
+   ```typescript
+   // 错误
+   await store.set(key, { content: messages })
+   
+   // 正确
+   await store.set(key, {
+     content: JSON.stringify(messages),
+     metadata: {},
+     createdAt: new Date(),
+     updatedAt: new Date()
+   })
+   ```
+
+2. **压缩后消息格式不一致**
+   - 错误：摘要消息格式与普通消息不同
+   - 正确：保持统一格式，使用 `role: 'system'` 标识摘要
+
+3. **内存泄漏**
+   - 错误：记忆只增不减
+   - 正确：实现 TTL 或 LRU 淘汰
+
+### 实战练习
+
+1. **练习一：实现文件持久化后端**
+   ```typescript
+   class FileMemoryBackend extends MinimalMemoryBackend {
+     constructor(private dir: string) {
+       super()
+       fs.mkdirSync(dir, { recursive: true })
+     }
+
+     async get(key: string): Promise<MemoryValue | null> {
+       const path = this.getPath(key)
+       if (!fs.existsSync(path)) return null
+       return JSON.parse(fs.readFileSync(path, 'utf-8'))
+     }
+
+     async set(key: string, value: MemoryValue): Promise<void> {
+       const path = this.getPath(key)
+       await fs.promises.mkdir(require('path').dirname(path), { recursive: true })
+       await fs.promises.writeFile(path, JSON.stringify(value))
+     }
+
+     private getPath(key: string): string {
+       return require('path').join(this.dir, key.replace(/:/g, '_') + '.json')
+     }
+   }
+   ```
+
+2. **练习二：实现 LRU 缓存**
+   ```typescript
+   class LRUCache {
+     constructor(private maxSize: number) {}
+
+     private cache = new Map()
+
+     get(key: string): any {
+       const value = this.cache.get(key)
+       if (value) {
+         this.cache.delete(key)
+         this.cache.set(key, value)
+       }
+       return value
+     }
+
+     set(key: string, value: any): void {
+       if (this.cache.has(key)) this.cache.delete(key)
+       else if (this.cache.size >= this.maxSize) {
+         const firstKey = this.cache.keys().next().value
+         this.cache.delete(firstKey)
+       }
+       this.cache.set(key, value)
+     }
+   }
+   ```
+
+3. **练习三：实现上下文压缩策略**
+   ```typescript
+   async compressContext(messages: any[], maxTokens: number): Promise<any[]> {
+     let totalTokens = 0
+     const result: any[] = []
+
+     for (const msg of messages.reverse()) {
+       const tokens = estimateTokens(msg.content)
+       if (totalTokens + tokens > maxTokens) break
+       result.unshift(msg)
+       totalTokens += tokens
+     }
+
+     if (messages.length > result.length) {
+       const summary = `【${messages.length - result.length}条消息已压缩】`
+       result.unshift({ role: 'system', content: summary })
+     }
+
+     return result
+   }
+   ```
+
+## 10. 相关文档
 
 - [会话管理](./sessions.md)
 - [Compaction 机制](https://docs.openclaw.ai/concepts/compaction)

@@ -572,7 +572,191 @@ describe('my-hook', () => {
 })
 ```
 
-## 9. 相关文档
+## 9. 手把手复刻
+
+### 最小实现
+
+以下是 Hooks 引擎的最小实现：
+
+```typescript
+// === 1. Hook 类型定义 ===
+type HookEvent =
+  | 'message:received'
+  | 'message:sent'
+  | 'agent:before_prompt'
+  | 'agent:end'
+  | 'session:start'
+  | 'session:end'
+  | 'tool:before_call'
+  | 'tool:after_call'
+
+interface HookHandler {
+  name: string
+  handler: (event: any) => Promise<any>
+  priority: number
+  blocking?: boolean
+}
+
+// === 2. 最小 Hooks 引擎 ===
+class MinimalHooksEngine {
+  private handlers: Map<string, HookHandler[]> = new Map()
+
+  // 注册 Hook
+  register(hook: { name: string; events: HookEvent[]; handler: Function; priority?: number }) {
+    for (const eventType of hook.events) {
+      const handlers = this.handlers.get(eventType) || []
+      handlers.push({
+        name: hook.name,
+        handler: hook.handler,
+        priority: hook.priority || 0,
+        blocking: hook.blocking
+      })
+      // 按优先级排序
+      handlers.sort((a, b) => b.priority - a.priority)
+      this.handlers.set(eventType, handlers)
+    }
+  }
+
+  // 触发事件
+  async emit(eventType: string, context: any): Promise<{ blocked?: boolean }> {
+    const handlers = this.handlers.get(eventType) || []
+
+    for (const handler of handlers) {
+      try {
+        const result = await handler.handler(context)
+        
+        // 处理阻止行为
+        if (handler.blocking && result?.blocked) {
+          return { blocked: true }
+        }
+      } catch (err) {
+        console.error(`Hook ${handler.name} failed:`, err)
+      }
+    }
+
+    return { blocked: false }
+  }
+}
+
+// === 3. 使用示例 ===
+const hooksEngine = new MinimalHooksEngine()
+
+// 注册日志钩子
+hooksEngine.register({
+  name: 'logger',
+  events: ['message:received', 'message:sent'],
+  priority: 0,
+  handler: async (ctx) => {
+    console.log(`[${ctx.type}] ${ctx.channelId}: ${ctx.content?.substring(0, 50)}...`)
+  }
+})
+
+// 注册安全检查钩子（高优先级）
+hooksEngine.register({
+  name: 'security-check',
+  events: ['message:received'],
+  priority: 100, // 高优先级
+  blocking: true, // 可阻止后续处理
+  handler: async (ctx) => {
+    if (ctx.content.includes('DELETE ALL')) {
+      return { blocked: true, reason: 'Dangerous command blocked' }
+    }
+  }
+})
+
+// 触发钩子
+await hooksEngine.emit('message:received', {
+  type: 'message:received',
+  channelId: 'feishu',
+  content: 'Hello'
+})
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `register()` | `hook` | `void` | 注册 Hook |
+| `emit()` | `eventType, context` | `Promise<{blocked?}>` | 触发事件 |
+| `unregister()` | `name` | `void` | 移除 Hook |
+
+### 常见陷阱
+
+1. **优先级设置错误**
+   - 错误：安全检查和业务逻辑优先级相同
+   - 正确：安全检查使用 `CRITICAL = 100` 或 `HIGH = 50`
+
+2. **阻塞 Hook 未正确返回**
+   - 错误：返回 `null` 认为未阻止
+   - 正确：返回 `{ blocked: true }` 明确阻止
+
+   ```typescript
+   // 错误
+   handler: async (ctx) => {
+     if (blocked) return // 这不会阻止！
+   }
+   
+   // 正确
+   handler: async (ctx) => {
+     if (blocked) return { blocked: true }
+   }
+   ```
+
+3. **异步 Hook 异常未捕获**
+   - 错误：Hook 抛出异常导致整个流程中断
+   - 正确：捕获异常并记录，但继续执行其他 Hook
+
+### 实战练习
+
+1. **练习一：实现关键词回复 Hook**
+   ```typescript
+   hooksEngine.register({
+     name: 'keyword-reply',
+     events: ['message:received'],
+     handler: async (ctx) => {
+       if (ctx.content.includes('hello')) {
+         await gateway.send({
+           channelId: ctx.channelId,
+           to: ctx.senderId,
+           content: 'Hello! How can I help?'
+         })
+       }
+     }
+   })
+   ```
+
+2. **练习二：实现工具结果脱敏**
+   ```typescript
+   hooksEngine.register({
+     name: 'tool-sanitizer',
+     events: ['tool:after_call'],
+     handler: async (ctx) => {
+       if (ctx.toolName === 'exec' && ctx.result?.output) {
+         ctx.result.output = ctx.result.output
+           .replace(/password:\s*\S+/g, 'password: ***')
+           .replace(/api_key:\s*\S+/g, 'api_key: ***')
+       }
+       return ctx
+     }
+   })
+   ```
+
+3. **练习三：实现消息预处理**
+   ```typescript
+   hooksEngine.register({
+     name: 'preprocessor',
+     events: ['message:preprocessed'],
+     handler: async (ctx) => {
+       // 移除敏感词
+       ctx.content = ctx.content.replace(/password|secret/gi, '***')
+       // 添加时间戳
+       ctx.metadata.receivedAt = Date.now()
+       return ctx
+     }
+   })
+   ```
+
+## 10. 相关文档
 
 - [架构总览](./architecture.md)
 - [插件系统](./plugins.md)
