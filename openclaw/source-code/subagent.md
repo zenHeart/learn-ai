@@ -440,24 +440,239 @@ async function deliverCompletion(
 | 配置方式 | agents 配置 | acp 配置 |
 | 适用场景 | OpenClaw 原生任务 | 外部 CLI 工具 |
 
-## 11. 关键设计模式
+## 11. 手把手复刻
 
-### 11.1 推送完成 (Push-based Completion)
+### 最小实现
+
+以下是 Subagent 的核心实现：
+
+```typescript
+// === 1. 核心接口 ===
+interface SubagentSpawnParams {
+  task: string
+  label?: string
+  runtime: 'subagent' | 'acp'
+  mode: 'run' | 'session'
+  cleanup: 'delete' | 'keep'
+}
+
+interface SubagentRunRecord {
+  runId: string
+  childSessionKey: string
+  requesterSessionKey: string
+  task: string
+  cleanup: 'delete' | 'keep'
+  createdAt: number
+  startedAt?: number
+  endedAt?: number
+}
+
+// === 2. 最小 Subagent Registry ===
+class MinimalSubagentRegistry {
+  private runs: Map<string, SubagentRunRecord> = new Map()
+
+  registerSubagentRun(params: {
+    runId: string
+    childSessionKey: string
+    requesterSessionKey: string
+    task: string
+    cleanup: 'delete' | 'keep'
+  }): void {
+    this.runs.set(params.runId, {
+      ...params,
+      createdAt: Date.now()
+    })
+  }
+
+  completeSubagentRun(runId: string, outcome: any): void {
+    const run = this.runs.get(runId)
+    if (run) {
+      run.endedAt = Date.now()
+      this.runs.set(runId, run)
+    }
+  }
+
+  getRun(runId: string): SubagentRunRecord | undefined {
+    return this.runs.get(runId)
+  }
+
+  listRunsForRequester(requesterSessionKey: string): SubagentRunRecord[] {
+    return Array.from(this.runs.values())
+      .filter(r => r.requesterSessionKey === requesterSessionKey)
+  }
+}
+
+// === 3. 最小 spawn 实现 ===
+class MinimalSubagentSpawner {
+  constructor(
+    private registry: MinimalSubagentRegistry,
+    private gateway: any
+  ) {}
+
+  async spawn(
+    params: SubagentSpawnParams,
+    requesterSessionKey: string
+  ): Promise<{ status: string; childSessionKey: string; runId: string }> {
+    const runId = crypto.randomUUID()
+    const childSessionKey = `agent:main:subagent:${runId}`
+
+    // 1. 创建子会话
+    await this.gateway.createSession(childSessionKey)
+
+    // 2. 注册运行记录
+    this.registry.registerSubagentRun({
+      runId,
+      childSessionKey,
+      requesterSessionKey,
+      task: params.task,
+      cleanup: params.cleanup
+    })
+
+    // 3. 投递任务消息
+    await this.gateway.sendMessage(childSessionKey, {
+      content: `[Subagent Context]\n[Subagent Task]: ${params.task}`
+    })
+
+    return {
+      status: 'accepted',
+      childSessionKey,
+      runId
+    }
+  }
+}
+
+// === 4. 最小完成推送 ===
+async function deliverCompletion(
+  requesterSessionKey: string,
+  result: string,
+  metadata: any
+): Promise<void> {
+  // 构建推送消息
+  const announcement = {
+    type: 'task_completion',
+    source: 'subagent',
+    result,
+    metadata
+  }
+
+  // 投递到父会话
+  await gateway.sendMessage(requesterSessionKey, {
+    content: JSON.stringify(announcement),
+    inputProvenance: { kind: 'inter_session', sourceTool: 'subagent_announce' }
+  })
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `spawn()` | `params, requesterSessionKey` | `Promise<SpawnResult>` | Spawn 子 Agent |
+| `registerSubagentRun()` | `params` | `void` | 注册运行记录 |
+| `completeSubagentRun()` | `runId, outcome` | `void` | 标记运行完成 |
+| `deliverCompletion()` | `requesterKey, result, metadata` | `Promise<void>` | 推送结果 |
+
+### 常见陷阱
+
+1. **缺少深度限制**
+   - 错误：允许无限嵌套 spawn
+   - 正确：检查 `spawnDepth` 防止超过最大深度
+
+   ```typescript
+   const MAX_SPAWN_DEPTH = 5
+   
+   if (currentDepth >= MAX_SPAWN_DEPTH) {
+     return { status: 'forbidden', reason: 'Max spawn depth exceeded' }
+   }
+   ```
+
+2. **会话清理遗漏**
+   - 错误：只删除会话不清理 Registry
+   - 正确：根据 `cleanup` 模式决定是否保留
+
+3. **结果推送失败未处理**
+   - 错误：推送失败就直接放弃
+   - 正确：实现重试机制，最终保留会话（`cleanup: 'keep'`）
+
+### 实战练习
+
+1. **练习一：实现简单 spawn**
+   ```typescript
+   async function simpleSpawn(task: string): Promise<string> {
+     const runId = crypto.randomUUID()
+     const childKey = `agent:main:subagent:${runId}`
+     
+     await gateway.createSession(childKey)
+     registry.registerSubagentRun({
+       runId, childSessionKey: childKey,
+       requesterSessionKey: currentSessionKey,
+       task, cleanup: 'delete'
+     })
+     
+     await gateway.sendMessage(childKey, `[Subagent Task]: ${task}`)
+     return childKey
+   }
+   ```
+
+2. **练习二：实现完成事件处理**
+   ```typescript
+   async function handleLifecycleEvent(event: any) {
+     if (event.phase === 'end') {
+       const run = registry.getRun(event.runId)
+       if (!run) return
+       
+       // 读取结果
+       const session = await sessionManager.get(run.childSessionKey)
+       const result = extractResult(session)
+       
+       // 推送完成
+       await deliverCompletion(run.requesterSessionKey, result, {
+         runId: run.runId,
+         label: run.task
+       })
+       
+       // 清理
+       registry.completeSubagentRun(run.runId, { status: 'success' })
+       if (run.cleanup === 'delete') {
+         await sessionManager.delete(run.childSessionKey)
+       }
+     }
+   }
+   ```
+
+3. **练习三：实现并发限制**
+   ```typescript
+   const MAX_CONCURRENT_CHILDREN = 5
+   
+   function checkConcurrencyLimit(requesterSessionKey: string): boolean {
+     const activeRuns = registry.listRunsForRequester(requesterSessionKey)
+       .filter(r => !r.endedAt)
+     return activeRuns.length < MAX_CONCURRENT_CHILDREN
+   }
+   
+   if (!checkConcurrencyLimit(currentSessionKey)) {
+     return { status: 'error', reason: 'Too many concurrent subagents' }
+   }
+   ```
+
+## 12. 关键设计模式
+
+### 12.1 推送完成 (Push-based Completion)
 - 子任务完成后主动推送结果
 - 不依赖父会话轮询
 - 减少延迟，提高效率
 
-### 11.2 注册中心追踪
+### 12.2 注册中心追踪
 - Registry 作为所有运行的中心
 - 持久化支持重启恢复
 - 支持复杂的嵌套场景
 
-### 11.3 双模式设计
+### 12.3 双模式设计
 - Run 模式：简单高效
 - Session 模式：灵活可交互
 - 通过 thread 参数选择
 
-### 11.4 生命周期钩子
+### 12.4 生命周期钩子
 - `subagent_spawning` - 线程绑定准备
 - `subagent_spawned` - Spawn 完成
 - `subagent_ended` - 运行结束

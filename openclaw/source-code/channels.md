@@ -552,7 +552,148 @@ class RateLimiter {
 }
 ```
 
-## 8. 相关文档
+## 8. 手把手复刻
+
+### 最小实现
+
+以下是实现一个简单 Webhook 接收器的最小代码：
+
+```typescript
+// === 1. 最小 Channel Plugin ===
+interface ChannelPlugin {
+  id: string
+  name: string
+  start(): Promise<void>
+  stop(): Promise<void>
+  send(ctx: OutboundContext): Promise<void>
+  resolveSessionKey(ctx: InboundContext): string
+  resolveSenderId(ctx: InboundContext): string
+}
+
+// === 2. 简单 Webhook 通道实现 ===
+class SimpleWebhookChannel implements ChannelPlugin {
+  id = 'simple-webhook'
+  name = 'Simple Webhook'
+  
+  private gateway!: Gateway
+  private express!: any
+  private cfg: ChannelConfig
+
+  constructor(cfg: ChannelConfig, gateway: Gateway) {
+    this.cfg = cfg
+    this.gateway = gateway
+  }
+
+  async start() {
+    const app = express()
+    
+    // Webhook 端点
+    app.post('/webhook', async (req, res) => {
+      // 1. 标准化消息
+      const ctx: InboundContext = {
+        content: req.body.message,
+        channelId: this.id,
+        senderId: req.body.userId,
+        senderName: req.body.userName,
+        sessionKey: this.resolveSessionKey(req.body),
+        messageId: req.body.messageId,
+        timestamp: Date.now(),
+        metadata: {}
+      }
+
+      // 2. 转发到 Gateway
+      await this.gateway.handleInboundMessage(ctx)
+      
+      res.status(200).json({ received: true })
+    })
+
+    app.listen(this.cfg.port || 3000)
+  }
+
+  async stop() {
+    // 清理资源
+  }
+
+  async send(ctx: OutboundContext) {
+    // 发送响应
+    await fetch(ctx.to, {
+      method: 'POST',
+      body: JSON.stringify({ message: ctx.content })
+    })
+  }
+
+  resolveSessionKey(ctx: any): string {
+    return `agent:main:${this.id}:${ctx.userId}`
+  }
+
+  resolveSenderId(ctx: any): string {
+    return ctx.userId
+  }
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `start()` | - | `Promise<void>` | 启动通道监听 |
+| `stop()` | - | `Promise<void>` | 停止通道 |
+| `send()` | `ctx: OutboundContext` | `Promise<void>` | 发送消息 |
+| `resolveSessionKey()` | `ctx: InboundContext` | `string` | 解析会话 Key |
+| `resolveSenderId()` | `ctx: InboundContext` | `string` | 解析发送者 ID |
+
+### 常见陷阱
+
+1. **签名验证遗漏**
+   - 错误：直接处理请求，不验证来源
+   - 正确：验证 Webhook 签名（如飞书的 `x-lark-signature`）
+
+   ```typescript
+   // 正确做法
+   if (!verifySignature(req.headers['x-signature'], req.body)) {
+     return res.status(401).send('Unauthorized')
+   }
+   ```
+
+2. **会话 Key 格式不一致**
+   - 错误：不同通道使用不同的 Key 格式
+   - 正确：遵循 `agent:{agentId}:{channel}:{identifiers}` 规范
+
+3. **消息类型处理不当**
+   - 错误：所有消息都用文本处理
+   - 正确：根据 `msgType` 分发到不同处理器
+
+### 实战练习
+
+1. **练习一：实现回声 Webhook**
+   - 创建 Express 服务监听 `/webhook`
+   - 将请求体转换为 `InboundContext`
+   - 使用 `resolveSessionKey()` 生成会话 Key
+
+2. **练习二：添加消息重试机制**
+   ```typescript
+   async function sendWithRetry(
+     sendFn: () => Promise<void>,
+     maxRetries = 3
+   ) {
+     for (let i = 0; i < maxRetries; i++) {
+       try {
+         await sendFn()
+         return
+       } catch (err) {
+         if (i === maxRetries - 1) throw err
+         await sleep(Math.pow(2, i) * 1000)
+       }
+     }
+   }
+   ```
+
+3. **练习三：实现限流器**
+   - 使用 Token Bucket 算法
+   - 限制每分钟消息数
+   - 超限时返回 429 状态码
+
+## 9. 相关文档
 
 - [飞书通道文档](https://docs.openclaw.ai/channels/feishu)
 - [Discord 通道文档](https://docs.openclaw.ai/channels/discord)

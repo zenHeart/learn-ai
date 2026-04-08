@@ -636,7 +636,226 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 })
 ```
 
-## 10. 相关文档
+## 10. 手把手复刻
+
+### 最小实现
+
+以下是 MCP 协议的核心实现：
+
+```typescript
+// === 1. JSON-RPC 消息格式 ===
+interface JSONRPCRequest {
+  jsonrpc: '2.0'
+  id: string | number
+  method: string
+  params?: object
+}
+
+interface JSONRPCResponse {
+  jsonrpc: '2.0'
+  id: string | number
+  result?: any
+  error?: { code: number; message: string; data?: any }
+}
+
+// === 2. 最小 MCP 客户端 ===
+class MinimalMCPClient {
+  private process: any
+  private pendingRequests: Map<string, any> = new Map()
+
+  async connect(command: string, args: string[]): Promise<void> {
+    this.process = spawn(command, args)
+    
+    this.process.stdout.on('data', (data: Buffer) => {
+      const messages = data.toString().split('\n').filter(Boolean)
+      for (const msg of messages) {
+        this.handleMessage(JSON.parse(msg))
+      }
+    })
+
+    // 初始化
+    await this.sendRequest('initialize', {
+      protocolVersion: '2024-11-05',
+      capabilities: { tools: {} },
+      clientInfo: { name: 'openclaw', version: '1.0.0' }
+    })
+  }
+
+  private sendRequest(method: string, params: object): Promise<any> {
+    const id = crypto.randomUUID()
+    const request = { jsonrpc: '2.0', id, method, params }
+    
+    return new Promise((resolve, reject) => {
+      this.pendingRequests.set(id, { resolve, reject })
+      this.process.stdin.write(JSON.stringify(request) + '\n')
+    })
+  }
+
+  private handleMessage(msg: JSONRPCResponse) {
+    if (msg.id && this.pendingRequests.has(msg.id)) {
+      const { resolve, reject } = this.pendingRequests.get(msg.id)
+      this.pendingRequests.delete(msg.id)
+      if (msg.error) reject(new Error(msg.error.message))
+      else resolve(msg.result)
+    }
+  }
+
+  async listTools(): Promise<any[]> {
+    const response = await this.sendRequest('tools/list', {})
+    return response.tools
+  }
+
+  async callTool(name: string, args: object): Promise<any> {
+    const response = await this.sendRequest('tools/call', { name, arguments: args })
+    return response.content
+  }
+}
+
+// === 3. 最小 MCP 服务器 ===
+class MinimalMCPServer {
+  private tools: Map<string, Tool> = new Map()
+
+  constructor(private name: string, private version: string) {}
+
+  registerTool(tool: { name: string; description: string; inputSchema: object; handler: Function }) {
+    this.tools.set(tool.name, tool)
+  }
+
+  async handleRequest(request: JSONRPCRequest): Promise<JSONRPCResponse> {
+    const { id, method, params } = request
+
+    try {
+      let result: any
+
+      switch (method) {
+        case 'initialize':
+          result = {
+            protocolVersion: '2024-11-05',
+            capabilities: { tools: {} },
+            serverInfo: { name: this.name, version: this.version }
+          }
+          break
+
+        case 'tools/list':
+          result = {
+            tools: Array.from(this.tools.values()).map(t => ({
+              name: t.name,
+              description: t.description,
+              inputSchema: t.inputSchema
+            }))
+          }
+          break
+
+        case 'tools/call':
+          const tool = this.tools.get(params.name)
+          if (!tool) throw new Error(`Tool not found: ${params.name}`)
+          result = await tool.handler(params.arguments)
+          break
+
+        default:
+          throw new Error(`Unknown method: ${method}`)
+      }
+
+      return { jsonrpc: '2.0', id, result }
+    } catch (error) {
+      return {
+        jsonrpc: '2.0',
+        id,
+        error: { code: -32603, message: error.message }
+      }
+    }
+  }
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `connect()` | `command, args` | `Promise<void>` | 连接 MCP 服务器 |
+| `listTools()` | - | `Promise<Tool[]>` | 列出可用工具 |
+| `callTool()` | `name, args` | `Promise<any>` | 调用工具 |
+| `handleRequest()` | `request` | `JSONRPCResponse` | 处理请求 |
+
+### 常见陷阱
+
+1. **JSON-RPC 消息格式错误**
+   - 错误：直接发送对象而不用 `\n` 分隔
+   - 正确：每条消息以换行符结尾
+
+   ```typescript
+   // 错误
+   process.stdin.write(JSON.stringify(request))
+   
+   // 正确
+   process.stdin.write(JSON.stringify(request) + '\n')
+   ```
+
+2. **协议版本不匹配**
+   - 错误：使用硬编码的协议版本
+   - 正确：从服务器响应中获取实际支持的版本
+
+3. **工具参数类型错误**
+   - 错误：直接传递对象而不用 `arguments` 包装
+   - 正确：`{ name: 'xxx', arguments: { ... } }`
+
+### 实战练习
+
+1. **练习一：实现简单计算器 MCP 服务器**
+   ```typescript
+   const server = new MinimalMCPServer('calculator', '1.0.0')
+   
+   server.registerTool({
+     name: 'add',
+     description: 'Add two numbers',
+     inputSchema: {
+       type: 'object',
+       properties: {
+         a: { type: 'number' },
+         b: { type: 'number' }
+       }
+     },
+     handler: async ({ a, b }) => ({ result: a + b })
+   })
+   ```
+
+2. **练习二：实现带进度的长时间操作**
+   ```typescript
+   server.registerTool({
+     name: 'long_operation',
+     description: 'A long running operation',
+     inputSchema: { type: 'object' },
+     handler: async (args, context) => {
+       const totalSteps = 10
+       for (let i = 0; i < totalSteps; i++) {
+         // 发送进度通知
+         await context.sendNotification('notifications/progress', {
+           progress: i / totalSteps,
+           message: `Step ${i + 1}`
+         })
+         await sleep(1000)
+       }
+       return { result: 'Done' }
+     }
+   })
+   ```
+
+3. **练习三：实现错误处理**
+   ```typescript
+   server.setRequestHandler(CallToolRequestSchema, async (request) => {
+     try {
+       const result = await executeTool(request.params)
+       return { content: [{ type: 'text', text: JSON.stringify(result) }] }
+     } catch (error) {
+       return {
+         content: [{ type: 'text', text: error.message }],
+         isError: true
+       }
+     }
+   })
+   ```
+
+## 11. 相关文档
 
 - [工具系统](./tools.md)
 - [Agent 运行时](./agents.md)

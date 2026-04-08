@@ -500,7 +500,150 @@ class TimeoutController {
 }
 ```
 
-## 9. 相关文档
+## 9. 手把手复刻
+
+### 最小实现
+
+以下是 Agent Loop 的最小实现：
+
+```typescript
+// === 1. 核心接口 ===
+interface Message {
+  role: 'user' | 'assistant' | 'tool'
+  content: string
+  name?: string
+  toolCallId?: string
+}
+
+interface Session {
+  id: string
+  key: string
+  messages: Message[]
+  addMessage(msg: Message): void
+}
+
+// === 2. 最小 Agent Runtime ===
+class MinimalAgentRuntime {
+  constructor(
+    private sessionManager: SessionManager,
+    private llm: LLM,
+    private toolRegistry: ToolRegistry
+  ) {}
+
+  async run(ctx: InboundContext): Promise<void> {
+    // 1. 获取或创建会话
+    const session = await this.sessionManager.getOrCreate(ctx.sessionKey)
+
+    // 2. 添加用户消息
+    session.addMessage({ role: 'user', content: ctx.content })
+
+    // 3. 构建 Prompt
+    const prompt = this.buildPrompt(session)
+
+    // 4. 调用 LLM（流式）
+    const stream = await this.llm.complete(prompt, {
+      tools: this.toolRegistry.getDefinitions()
+    })
+
+    // 5. 处理流式响应
+    for await (const event of stream) {
+      if (event.type === 'text_delta') {
+        ctx.sendChunk(event.text)
+      } else if (event.type === 'tool_call') {
+        const result = await this.toolRegistry.execute(
+          event.toolName,
+          event.params
+        )
+        session.addMessage({
+          role: 'tool',
+          name: event.toolName,
+          content: JSON.stringify(result),
+          toolCallId: event.id
+        })
+      }
+    }
+
+    // 6. 保存会话
+    await this.sessionManager.save(session)
+  }
+
+  private buildPrompt(session: Session): any {
+    return {
+      system: 'You are a helpful assistant.',
+      messages: session.messages.map(m => ({
+        role: m.role,
+        content: m.content
+      }))
+    }
+  }
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `AgentRuntime.run()` | `ctx: InboundContext` | `Promise<void>` | 执行 Agent |
+| `Session.addMessage()` | `msg: Message` | `void` | 添加消息到会话 |
+| `LLM.complete()` | `prompt, options` | `AsyncIterable<StreamEvent>` | 流式调用 LLM |
+| `ToolRegistry.execute()` | `name, params` | `Promise<ToolResult>` | 执行工具 |
+| `PromptBuilder.build()` | `session: Session` | `Prompt` | 构建 Prompt |
+
+### 常见陷阱
+
+1. **消息角色错误**
+   - 错误：工具结果使用 `role: 'user'`
+   - 正确：工具结果必须使用 `role: 'tool'` 并包含 `toolCallId`
+
+   ```typescript
+   // 错误
+   session.addMessage({ role: 'user', content: result })
+   
+   // 正确
+   session.addMessage({
+     role: 'tool',
+     name: toolName,
+     content: JSON.stringify(result),
+     toolCallId: event.id
+   })
+   ```
+
+2. **无限循环的工具调用**
+   - 错误：工具调用后直接返回给用户，没有继续 LLM 调用
+   - 正确：工具结果需要追加到消息历史并继续 LLM 调用
+
+3. **会话未保存**
+   - 错误：Agent 执行完成后没有保存会话
+   - 正确：始终调用 `sessionManager.save(session)`
+
+### 实战练习
+
+1. **练习一：实现回声 Agent**
+   - 创建 `MinimalAgentRuntime`
+   - 不调用真实 LLM，直接返回用户输入
+   - 验证消息能正确保存到会话
+
+2. **练习二：添加简单工具**
+   ```typescript
+   // 注册工具
+   toolRegistry.register({
+     name: 'echo',
+     description: 'Echoes the input back',
+     inputSchema: {
+       type: 'object',
+       properties: {
+         text: { type: 'string' }
+       }
+     },
+     execute: async (params) => params.text
+   })
+   ```
+
+3. **练习三：实现流式输出**
+   - 使用 `ctx.sendChunk()` 实时发送文本片段
+   - 验证用户能看到逐字输出的效果
+
+## 10. 相关文档
 
 - [工具系统详解](./tools.md)
 - [Agent Loop 文档](https://docs.openclaw.ai/concepts/agent-loop)

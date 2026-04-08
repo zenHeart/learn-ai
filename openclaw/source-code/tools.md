@@ -672,7 +672,220 @@ async function executeWithRetry(
 }
 ```
 
-## 9. 相关文档
+## 9. 手把手复刻
+
+### 最小实现
+
+以下是工具系统的最小实现：
+
+```typescript
+// === 1. 工具接口 ===
+interface Tool {
+  name: string
+  description: string
+  inputSchema: JsonSchema
+  execute(params: any, context: ToolContext): Promise<ToolResult>
+}
+
+interface ToolContext {
+  session: Session
+  userId: string
+  channelId: string
+  toolCallId: string
+}
+
+interface ToolResult {
+  content: { type: 'text'; text: string }[]
+  isError?: boolean
+}
+
+// === 2. 最小工具注册表 ===
+class MinimalToolRegistry {
+  private tools: Map<string, Tool> = new Map()
+
+  register(tool: Tool): void {
+    if (!tool.name || !tool.execute) {
+      throw new Error('Invalid tool: name and execute required')
+    }
+    this.tools.set(tool.name, tool)
+  }
+
+  get(name: string): Tool | undefined {
+    return this.tools.get(name)
+  }
+
+  getDefinitions() {
+    return Array.from(this.tools.values()).map(tool => ({
+      name: tool.name,
+      description: tool.description,
+      input_schema: tool.inputSchema
+    }))
+  }
+
+  async execute(name: string, params: any, context: ToolContext): Promise<ToolResult> {
+    const tool = this.tools.get(name)
+    if (!tool) {
+      return {
+        content: [{ type: 'text', text: `Tool not found: ${name}` }],
+        isError: true
+      }
+    }
+
+    try {
+      return await tool.execute(params, context)
+    } catch (err) {
+      return {
+        content: [{ type: 'text', text: err.message }],
+        isError: true
+      }
+    }
+  }
+}
+
+// === 3. 最小工具实现 ===
+const echoTool: Tool = {
+  name: 'echo',
+  description: 'Echoes the input back',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      text: { type: 'string', description: 'Text to echo' }
+    },
+    required: ['text']
+  },
+  execute: async (params) => {
+    return { content: [{ type: 'text', text: params.text }] }
+  }
+}
+
+const addTool: Tool = {
+  name: 'add',
+  description: 'Add two numbers',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      a: { type: 'number' },
+      b: { type: 'number' }
+    },
+    required: ['a', 'b']
+  },
+  execute: async (params) => {
+    return { content: [{ type: 'text', text: String(params.a + params.b) }] }
+  }
+}
+
+// === 4. 使用示例 ===
+const registry = new MinimalToolRegistry()
+registry.register(echoTool)
+registry.register(addTool)
+
+const result = await registry.execute('echo', { text: 'Hello!' }, {
+  session: { key: 'test' } as any,
+  userId: 'user1',
+  channelId: 'test',
+  toolCallId: 'call_1'
+})
+console.log(result) // { content: [{ type: 'text', text: 'Hello!' }] }
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `register()` | `tool: Tool` | `void` | 注册工具 |
+| `get()` | `name: string` | `Tool \| undefined` | 获取工具 |
+| `getDefinitions()` | - | `ToolDefinition[]` | 获取工具定义列表 |
+| `execute()` | `name, params, context` | `Promise<ToolResult>` | 执行工具 |
+
+### 常见陷阱
+
+1. **参数验证缺失**
+   - 错误：直接使用 params 不验证
+   - 正确：使用 `inputSchema` 验证参数类型和必需字段
+
+   ```typescript
+   // 添加参数验证
+   function validateParams(params: any, schema: JsonSchema): void {
+     if (schema.required) {
+       for (const field of schema.required) {
+         if (params[field] === undefined) {
+           throw new Error(`Missing required parameter: ${field}`)
+         }
+       }
+     }
+   }
+   ```
+
+2. **异步错误未捕获**
+   - 错误：工具抛出异常导致 Agent 中断
+   - 正确：在 `execute` 中 try-catch 并返回错误结果
+
+3. **工具名称冲突**
+   - 错误：多个工具使用相同名称
+   - 正确：使用命名空间前缀（如 `feishu.send_message`）
+
+### 实战练习
+
+1. **练习一：实现文件读取工具**
+   ```typescript
+   const readTool: Tool = {
+     name: 'read',
+     description: 'Read file contents',
+     inputSchema: {
+       type: 'object',
+       properties: { path: { type: 'string' } },
+       required: ['path']
+     },
+     execute: async (params) => {
+       const content = await fs.promises.readFile(params.path, 'utf-8')
+       return { content: [{ type: 'text', text: content }] }
+     }
+   }
+   ```
+
+2. **练习二：实现带超时的工具**
+   ```typescript
+   async function executeWithTimeout(
+     tool: Tool,
+     params: any,
+     context: ToolContext,
+     timeoutMs: number = 30000
+   ): Promise<ToolResult> {
+     return Promise.race([
+       tool.execute(params, context),
+       new Promise<ToolResult>((_, reject) =>
+         setTimeout(() => reject(new Error('Tool timeout')), timeoutMs)
+       )
+     ])
+   }
+   ```
+
+3. **练习三：实现工具权限控制**
+   ```typescript
+   class SecureToolRegistry extends MinimalToolRegistry {
+     private permissions: Map<string, Set<string>> = new Map()
+
+     allow(userId: string, toolName: string) {
+       if (!this.permissions.has(userId)) {
+         this.permissions.set(userId, new Set())
+       }
+       this.permissions.get(userId)!.add(toolName)
+     }
+
+     async execute(name: string, params: any, context: ToolContext): Promise<ToolResult> {
+       const allowed = this.permissions.get(context.userId)
+       if (allowed && !allowed.has(name)) {
+         return {
+           content: [{ type: 'text', text: `Permission denied: ${name}` }],
+           isError: true
+         }
+       }
+       return super.execute(name, params, context)
+     }
+   }
+   ```
+
+## 10. 相关文档
 
 - [Agent 运行时](./agents.md)
 - [MCP 协议](./mcp.md)

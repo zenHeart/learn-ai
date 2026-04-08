@@ -556,7 +556,173 @@ const sessionCompactHook = async (event: SessionEvent) => {
 }
 ```
 
-## 9. 相关文档
+## 9. 手把手复刻
+
+### 最小实现
+
+以下是会话管理的最小实现：
+
+```typescript
+// === 1. Session 接口 ===
+interface Session {
+  id: string
+  key: string
+  agentId: string
+  messages: Message[]
+  config: SessionConfig
+  createdAt: Date
+  updatedAt: Date
+  metadata: Record<string, any>
+  addMessage(msg: Message): void
+}
+
+// === 2. 最小 Session Manager ===
+class MinimalSessionManager {
+  private sessions: Map<string, Session> = new Map()
+
+  async getOrCreate(key: string): Promise<Session> {
+    // 1. 检查内存缓存
+    let session = this.sessions.get(key)
+    if (session) return session
+
+    // 2. 创建新会话
+    session = {
+      id: crypto.randomUUID(),
+      key,
+      agentId: key.split(':')[1],
+      messages: [],
+      config: {},
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      metadata: {},
+      addMessage(msg: Message) {
+        this.messages.push({
+          ...msg,
+          id: crypto.randomUUID(),
+          timestamp: new Date()
+        })
+      }
+    }
+
+    this.sessions.set(key, session)
+    return session
+  }
+
+  async save(session: Session): Promise<void> {
+    session.updatedAt = new Date()
+    this.sessions.set(session.key, session)
+  }
+
+  async get(key: string): Promise<Session | null> {
+    return this.sessions.get(key) || null
+  }
+
+  async delete(key: string): Promise<void> {
+    this.sessions.delete(key)
+  }
+}
+
+// === 3. 会话 Key 工具函数 ===
+function buildSessionKey(
+  agentId: string,
+  channel: string,
+  ...identifiers: string[]
+): string {
+  return `agent:${agentId}:${channel}:${identifiers.join(':')}`
+}
+
+function parseSessionKey(key: string) {
+  const parts = key.split(':')
+  return {
+    agentId: parts[1],
+    channel: parts[2],
+    identifiers: parts.slice(3)
+  }
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `getOrCreate()` | `key: string` | `Promise<Session>` | 获取或创建会话 |
+| `save()` | `session: Session` | `Promise<void>` | 保存会话 |
+| `get()` | `key: string` | `Promise<Session | null>` | 获取会话 |
+| `delete()` | `key: string` | `Promise<void>` | 删除会话 |
+| `fork()` | `parentKey, newKey` | `Promise<Session>` | Fork 会话 |
+
+### 常见陷阱
+
+1. **会话 Key 不唯一**
+   - 错误：相同用户每次对话生成新的随机 Key
+   - 正确：使用 `agent:{agentId}:{channel}:{userId}` 确保同一用户复用会话
+
+2. **内存泄漏**
+   - 错误：会话只存在内存中，永不清理
+   - 正确：实现定期持久化和过期清理
+
+   ```typescript
+   // 添加 TTL 清理
+   setInterval(async () => {
+     const now = Date.now()
+     for (const [key, session] of this.sessions) {
+       if (now - session.updatedAt.getTime() > 30 * 24 * 60 * 60 * 1000) {
+         await this.delete(key)
+       }
+     }
+   }, 60 * 60 * 1000) // 每小时检查一次
+   ```
+
+3. **消息顺序错乱**
+   - 错误：直接 push 消息不检查时间戳
+   - 正确：按 `timestamp` 排序确保消息顺序正确
+
+### 实战练习
+
+1. **练习一：实现文件持久化**
+   ```typescript
+   async save(session: Session): Promise<void> {
+     const dir = './sessions'
+     await fs.promises.mkdir(dir, { recursive: true })
+     const hash = crypto.createHash('md5').update(session.key).digest('hex')
+     await fs.promises.writeFile(
+       `${dir}/${hash}.json`,
+       JSON.stringify(session)
+     )
+   }
+   ```
+
+2. **练习二：实现简单压缩**
+   ```typescript
+   async compact(session: Session): Promise<void> {
+     if (session.messages.length > 50) {
+       // 保留最近 15 条，压缩旧消息为摘要
+       const keepCount = 15
+       const toCompact = session.messages.slice(0, -keepCount)
+       const summary = `【压缩摘要】${toCompact.length}条旧消息`
+       
+       session.messages = [
+         { role: 'system', content: summary },
+         ...session.messages.slice(-keepCount)
+       ]
+     }
+   }
+   ```
+
+3. **练习三：实现会话 Fork**
+   ```typescript
+   async fork(parentKey: string, newKey: string): Promise<Session> {
+     const parent = await this.get(parentKey)
+     if (!parent) throw new Error('Parent session not found')
+     
+     const child = await this.getOrCreate(newKey)
+     child.messages = [...parent.messages]
+     child.metadata.parentKey = parentKey
+     return child
+   }
+   ```
+
+## 10. 相关文档
 
 - [Agent 运行时](./agents.md)
 - [Compaction 机制](https://docs.openclaw.ai/concepts/compaction)

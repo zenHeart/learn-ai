@@ -417,7 +417,96 @@ interface OpenClawConfig {
 }
 ```
 
-## 7. 复刻指南
+## 7. 手把手复刻
+
+### 最小实现
+
+以下是实现 OpenClaw 核心功能的最小代码示例：
+
+```typescript
+// === 1. 最简 Gateway ===
+class MinimalGateway {
+  private channels: Map<string, ChannelPlugin> = new Map()
+  private sessionManager: SessionManager
+  private hooksEngine: HooksEngine
+  private agentRuntime: AgentRuntime
+
+  async start() {
+    // 1. 初始化会话管理器
+    this.sessionManager = new DefaultSessionManager(new FileSessionStore('./sessions'))
+
+    // 2. 初始化 Hooks 引擎
+    this.hooksEngine = new HooksEngine()
+    await this.hooksEngine.register()
+
+    // 3. 初始化 Agent 运行时
+    this.agentRuntime = new AgentRuntime({
+      sessionManager: this.sessionManager,
+      toolRegistry: new ToolRegistry(),
+      modelRouter: new ModelRouter()
+    })
+
+    // 4. 启动通道
+    for (const channel of this.channels.values()) {
+      await channel.start()
+    }
+  }
+
+  async handleInboundMessage(ctx: InboundContext) {
+    // 触发消息接收钩子
+    await this.hooksEngine.emit('message:received', ctx)
+
+    // 执行 Agent
+    await this.agentRuntime.run(ctx)
+
+    // 触发消息发送钩子
+    await this.hooksEngine.emit('message:sent', ctx)
+  }
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `Gateway.start()` | - | `Promise<void>` | 启动网关 |
+| `Gateway.handleInboundMessage()` | `ctx: InboundContext` | `Promise<void>` | 处理入站消息 |
+| `AgentRuntime.run()` | `ctx: InboundContext` | `Promise<void>` | 执行 Agent |
+| `SessionManager.getOrCreate()` | `key: string` | `Promise<Session>` | 获取或创建会话 |
+| `HooksEngine.emit()` | `event: string, ctx: any` | `Promise<void>` | 触发钩子事件 |
+
+### 常见陷阱
+
+1. **缺少会话 Key 唯一性**
+   - 错误：使用随机 ID 作为会话 Key
+   - 正确：`agent:{agentId}:{channel}:{senderId}` 格式确保唯一且可路由
+
+2. **Hook 执行顺序混乱**
+   - 错误：不设置优先级，所有 Hook 无序执行
+   - 正确：使用 `HookPriority` 枚举确保安全检查优先
+
+3. **流式响应未处理**
+   - 错误：等待完整响应后再发送
+   - 正确：使用 `ctx.sendChunk()` 流式发送
+
+### 实战练习
+
+1. **练习一：实现一个回声 Bot**
+   - 创建最简单的 Gateway
+   - 实现回声通道，返回用户输入
+   - 添加日志钩子记录消息
+
+2. **练习二：添加会话记忆**
+   - 实现 `FileSessionStore`
+   - 在 Gateway 中集成会话管理
+   - 验证消息历史被正确保存
+
+3. **练习三：添加工具调用**
+   - 实现 `ToolRegistry`
+   - 注册一个简单工具（如 `echo`）
+   - 实现工具执行流程
+
+## 8. 复刻指南
 
 要复刻 OpenClaw 的核心功能，建议按以下顺序：
 
@@ -428,7 +517,7 @@ interface OpenClawConfig {
 5. **Memory System** - 实现记忆持久化
 6. **MCP Runtime** - 实现外部工具扩展
 
-## 8. 相关文档
+## 9. 相关文档
 
 - [通道机制详解](./channels.md)
 - [Agent 运行时](./agents.md)
