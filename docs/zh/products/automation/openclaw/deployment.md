@@ -655,5 +655,5 @@ graph TB
 ## 延伸阅读
 
 - [CLI 命令参考](./cli.md)
-- [配置详解](../index.md#6-配置详解)
+- [配置详解](../index)
 - [安全配置](./security.md)
