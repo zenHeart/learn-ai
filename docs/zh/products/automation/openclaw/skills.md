@@ -634,7 +634,6 @@ console.log(result);
 
 ## See Also
 
-- [相关技能](../other-skill/)
 - [官方文档](https://docs.openclaw.ai/)
 ```
 
@@ -643,5 +642,5 @@ console.log(result);
 ## 延伸阅读
 
 - [官方技能示例](https://github.com/VoltAgent/awesome-openclaw-skills)
-- [技能参考](../index.md#38-技能skills)
-- [工具系统](../index.md#7-工具tools)
+- [技能参考](../index)
+- [工具系统](../index)

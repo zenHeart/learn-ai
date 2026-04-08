@@ -1,14 +1,10 @@
-# OpenClaw CLI 命令参考
-
-> 本章节提供 OpenClaw 所有 CLI 命令的完整参考，按功能模块组织。
-> **前置知识**：已完成 OpenClaw 安装并了解基本概念。
-
+# OpenClaw CLI 命令参�?
+> 本章节提�?OpenClaw 所�?CLI 命令的完整参考，按功能模块组织�?> **前置知识**：已完成 OpenClaw 安装并了解基本概念�?
 ---
 
 ## 1. 基础命令
 
-### 1.1 帮助与版本
-
+### 1.1 帮助与版�?
 ```bash
 # 查看全局帮助
 openclaw --help
@@ -20,14 +16,11 @@ openclaw <command> --help
 openclaw --version
 ```
 
-### 1.2 状态检查
-
+### 1.2 状态检�?
 ```bash
-# 查看 Gateway 运行状态
-openclaw status
+# 查看 Gateway 运行状�?openclaw status
 
-# 运行诊断检查
-openclaw doctor
+# 运行诊断检�?openclaw doctor
 
 # 自动修复诊断问题
 openclaw doctor --fix
@@ -37,11 +30,9 @@ openclaw doctor --fix
 
 ## 2. Gateway 管理
 
-### 2.1 启动与停止
-
+### 2.1 启动与停�?
 ```bash
-# 启动 Gateway（默认端口 18789）
-openclaw gateway
+# 启动 Gateway（默认端�?18789�?openclaw gateway
 
 # 指定端口启动
 openclaw gateway --port 18790
@@ -49,24 +40,19 @@ openclaw gateway --port 18790
 # 强制启动（跳过配置检查）
 openclaw gateway --force
 
-# 允许未配置模式启动
-openclaw gateway --allow-unconfigured
+# 允许未配置模式启�?openclaw gateway --allow-unconfigured
 
-# 带详细日志启动
-openclaw gateway --verbose
+# 带详细日志启�?openclaw gateway --verbose
 
 # 停止 Gateway
 openclaw gateway stop
 ```
 
-### 2.2 Daemon 安装与管理
-
+### 2.2 Daemon 安装与管�?
 ```bash
-# 安装为系统服务（自动后台运行）
-openclaw onboard --install-daemon
+# 安装为系统服务（自动后台运行�?openclaw onboard --install-daemon
 
-# 查看 daemon 状态
-openclaw gateway status
+# 查看 daemon 状�?openclaw gateway status
 
 # 重启 daemon
 openclaw gateway restart
@@ -75,16 +61,14 @@ openclaw gateway restart
 openclaw onboard --uninstall-daemon
 ```
 
-### 2.3 配置热重载
-
-Gateway 启动后，修改 `~/.openclaw/openclaw.json` 会自动热重载。热重载模式：
-
+### 2.3 配置热重�?
+Gateway 启动后，修改 `~/.openclaw/openclaw.json` 会自动热重载。热重载模式�?
 | 模式 | 行为 |
 |------|------|
 | `hybrid`（默认） | 安全更改即时生效，关键更改需重启 |
 | `hot` | 仅热应用安全更改 |
-| `restart` | 任何更改都重启 Gateway |
-| `off` | 禁用热重载 |
+| `restart` | 任何更改都重�?Gateway |
+| `off` | 禁用热重�?|
 
 ---
 
@@ -102,15 +86,13 @@ openclaw channels login --channel <channel> --account <account-name>
 # 示例：WhatsApp 登录
 openclaw channels login --channel whatsapp
 
-# 示例：飞书登录
-openclaw channels login --channel feishu --account default
+# 示例：飞书登�?openclaw channels login --channel feishu --account default
 ```
 
 ### 3.2 通道状态与测试
 
 ```bash
-# 查看所有通道状态
-openclaw channels status
+# 查看所有通道状�?openclaw channels status
 
 # 测试特定通道连接
 openclaw channels test <channel-id>
@@ -122,8 +104,7 @@ openclaw gateway --verbose | Select-String "<channel-name>"
 ### 3.3 配对管理
 
 ```bash
-# 列出待处理配对请求
-openclaw pairing list <channel>
+# 列出待处理配对请�?openclaw pairing list <channel>
 
 # 批准配对请求
 openclaw pairing approve <channel> <code>
@@ -136,27 +117,22 @@ openclaw pairing list telegram
 openclaw pairing approve telegram ABCD1234
 ```
 
-> **注意**：配对码 8 位大写字母，1 小时后过期，每个通道最多 3 个待处理请求。
-
+> **注意**：配对码 8 位大写字母，1 小时后过期，每个通道最�?3 个待处理请求�?
 ---
 
 ## 4. 模型管理
 
-### 4.1 模型列表与状态
-
+### 4.1 模型列表与状�?
 ```bash
-# 列出所有可用模型
-openclaw models list
+# 列出所有可用模�?openclaw models list
 
-# 查看当前模型使用状态
-openclaw models status
+# 查看当前模型使用状�?openclaw models status
 ```
 
 ### 4.2 模型配置
 
 ```bash
-# 设置默认主模型
-openclaw models set <model-id>
+# 设置默认主模�?openclaw models set <model-id>
 
 # 示例
 openclaw models set anthropic/claude-opus-4-6
@@ -167,8 +143,7 @@ openclaw models aliases add <alias-name> <model-id>
 # 示例
 openclaw models aliases add Opus anthropic/claude-opus-4-6
 
-# 列出所有别名
-openclaw models aliases list
+# 列出所有别�?openclaw models aliases list
 
 # 添加备用模型
 openclaw models fallbacks add <model-id>
@@ -181,11 +156,9 @@ openclaw models fallbacks list
 
 ## 5. 会话管理
 
-### 5.1 会话列表与查看
-
+### 5.1 会话列表与查�?
 ```bash
-# 列出所有会话
-openclaw sessions list
+# 列出所有会�?openclaw sessions list
 
 # 查看特定会话详情
 openclaw sessions view <session-key>
@@ -193,8 +166,7 @@ openclaw sessions view <session-key>
 # 搜索会话内容
 openclaw sessions search <query>
 
-# 示例会话键格式
-# 私聊: agent:tars:user:ou_xxx
+# 示例会话键格�?# 私聊: agent:tars:user:ou_xxx
 # 群聊: agent:tars:feishu:group:oc_xxx
 # 定时任务: cron:job_xxx
 ```
@@ -202,11 +174,9 @@ openclaw sessions search <query>
 ### 5.2 会话维护
 
 ```bash
-# 清理旧会话（根据 maintenance 配置）
-openclaw sessions prune
+# 清理旧会话（根据 maintenance 配置�?openclaw sessions prune
 
-# 强制清理所有会话
-openclaw sessions prune --all
+# 强制清理所有会�?openclaw sessions prune --all
 
 # 导出会话历史
 openclaw sessions export --session <session-key> --output <file>
@@ -216,35 +186,29 @@ openclaw sessions export --session <session-key> --output <file>
 
 ## 6. 配置管理
 
-### 6.1 配置编辑器
-
+### 6.1 配置编辑�?
 ```bash
-# 交互式配置向导
-openclaw configure
+# 交互式配置向�?openclaw configure
 
-# 引导式首次配置
-openclaw onboard
+# 引导式首次配�?openclaw onboard
 ```
 
 ### 6.2 配置读写
 
 ```bash
-# 读取配置项
-openclaw config get <key>
+# 读取配置�?openclaw config get <key>
 
 # 示例
 openclaw config get agents.defaults.workspace
 openclaw config get channels.feishu.enabled
 
-# 写入配置项
-openclaw config set <key> <value>
+# 写入配置�?openclaw config set <key> <value>
 
 # 示例
 openclaw config set agents.defaults.heartbeat.every "2h"
 openclaw config set session.maintenance.mode "enforce"
 
-# 删除配置项
-openclaw config unset <key>
+# 删除配置�?openclaw config unset <key>
 
 # 示例
 openclaw config unset agents.defaults.subagents
@@ -256,8 +220,7 @@ openclaw config unset agents.defaults.subagents
 # 验证配置文件语法
 openclaw config validate
 
-# 查看当前完整配置（脱敏后）
-openclaw config show
+# 查看当前完整配置（脱敏后�?openclaw config show
 ```
 
 ---
@@ -280,8 +243,7 @@ openclaw tools test web-fetch --url "https://example.com"
 ### 7.2 工具列表
 
 ```bash
-# 列出所有可用工具
-openclaw tools list
+# 列出所有可用工�?openclaw tools list
 
 # 查看工具详细信息
 openclaw tools info <tool-name>
@@ -294,10 +256,9 @@ openclaw tools info <tool-name>
 ### 8.1 MCP 状态与工具
 
 ```bash
-# 查看 MCP 连接状态
-openclaw mcp status
+# 查看 MCP 连接状�?openclaw mcp status
 
-# 列出可用的 MCP 工具
+# 列出可用�?MCP 工具
 openclaw mcp tools list
 
 # 测试 MCP Server 连接
@@ -321,21 +282,17 @@ openclaw mcp restart <server-name>
 
 ## 9. 插件管理
 
-### 9.1 插件列表与状态
-
+### 9.1 插件列表与状�?
 ```bash
-# 列出已安装插件
-openclaw plugins list
+# 列出已安装插�?openclaw plugins list
 
-# 查看插件详细状态
-openclaw plugins status <plugin-id>
+# 查看插件详细状�?openclaw plugins status <plugin-id>
 
 # 查看所有可用插件（包括未安装）
 openclaw plugins search <keyword>
 ```
 
-### 9.2 插件安装与卸载
-
+### 9.2 插件安装与卸�?
 ```bash
 # 安装插件
 openclaw plugins install <plugin-name>
@@ -346,15 +303,13 @@ openclaw plugins install openclaw-channel-telegram
 # 更新插件
 openclaw plugins update <plugin-name>
 
-# 更新所有插件
-openclaw plugins update --all
+# 更新所有插�?openclaw plugins update --all
 
 # 卸载插件
 openclaw plugins uninstall <plugin-name>
 ```
 
-### 9.3 插件启用与禁用
-
+### 9.3 插件启用与禁�?
 ```bash
 # 启用插件
 openclaw plugins enable <plugin-id>
@@ -365,12 +320,11 @@ openclaw plugins disable <plugin-id>
 
 ---
 
-## 10. Cron 与定时任务
-
+## 10. Cron 与定时任�?
 ### 10.1 Cron 任务管理
 
 ```bash
-# 列出所有 Cron 任务
+# 列出所�?Cron 任务
 openclaw cron list
 
 # 查看特定任务详情
@@ -392,8 +346,7 @@ openclaw cron delete <job-id>
 ### 10.2 Cron 任务创建
 
 ```bash
-# 创建一次性任务（延迟执行）
-openclaw cron schedule --delay "1h" --agent <agent-id> --input <task-description>
+# 创建一次性任务（延迟执行�?openclaw cron schedule --delay "1h" --agent <agent-id> --input <task-description>
 
 # 创建定时任务
 openclaw cron schedule --cron "0 9 * * *" --agent <agent-id> --input <task-description>
@@ -401,29 +354,22 @@ openclaw cron schedule --cron "0 9 * * *" --agent <agent-id> --input <task-descr
 
 ---
 
-## 11. 工作区管理
-
-### 11.1 工作区操作
-
+## 11. 工作区管�?
+### 11.1 工作区操�?
 ```bash
 # 初始化工作区（创建必要文件）
 openclaw workspace init
 
-# 验证工作区结构
-openclaw workspace validate
+# 验证工作区结�?openclaw workspace validate
 
-# 备份工作区
-openclaw workspace backup --output <path>
+# 备份工作�?openclaw workspace backup --output <path>
 
-# 恢复工作区
-openclaw workspace restore --input <path>
+# 恢复工作�?openclaw workspace restore --input <path>
 ```
 
-### 11.2 工作区文件
-
+### 11.2 工作区文�?
 ```bash
-# 打开工作区目录
-openclaw workspace open
+# 打开工作区目�?openclaw workspace open
 
 # 编辑 AGENTS.md
 openclaw workspace edit agents
@@ -474,10 +420,8 @@ openclaw logs export --start <timestamp> --end <timestamp> --output <file>
 
 ---
 
-## 13. 仪表板
-
-### 13.1 仪表板访问
-
+## 13. 仪表�?
+### 13.1 仪表板访�?
 ```bash
 # 打开 Web 控制界面
 openclaw dashboard
@@ -489,32 +433,28 @@ openclaw dashboard --port 18789
 openclaw dashboard --readonly
 ```
 
-### 13.2 仪表板功能
-
+### 13.2 仪表板功�?
 | 功能 | 说明 |
 |------|------|
 | 会话监控 | 实时查看活跃会话 |
-| 消息流 | 监控消息处理状态 |
-| 模型状态 | 查看模型调用统计 |
-| 通道状态 | 查看各通道连接状态 |
+| 消息�?| 监控消息处理状�?|
+| 模型状�?| 查看模型调用统计 |
+| 通道状�?| 查看各通道连接状�?|
 | 日志查看 | 图形化日志查看器 |
 | 配置编辑 | 可视化配置编辑器 |
 
 ---
 
-## 14. 升级与维护
-
+## 14. 升级与维�?
 ### 14.1 版本升级
 
 ```bash
-# 检查更新
-openclaw update check
+# 检查更�?openclaw update check
 
 # 执行更新
 openclaw update install
 
-# 更新到指定版本
-openclaw update install --version <version>
+# 更新到指定版�?openclaw update install --version <version>
 
 # 查看更新历史
 openclaw update changelog
@@ -538,11 +478,10 @@ openclaw backup restore --input <path>
 
 ---
 
-## 15. 快速命令索引
-
+## 15. 快速命令索�?
 | 命令 | 功能 |
 |------|------|
-| `openclaw status` | 查看运行状态 |
+| `openclaw status` | 查看运行状�?|
 | `openclaw doctor` | 诊断配置问题 |
 | `openclaw gateway` | 启动 Gateway |
 | `openclaw dashboard` | 打开控制界面 |
@@ -559,7 +498,7 @@ openclaw backup restore --input <path>
 
 ## 延伸阅读
 
-- [快速入门](../index.md#2-快速入门从安装到首次交互)
-- [配置详解](../index.md#6-配置详解)
-- [通道配置](../index.md#4-通道配置)
+- [快速入门](../index)
+- [配置详解](../index)
+- [通道配置](../index)
 - [部署指南](./deployment.md)

@@ -623,6 +623,6 @@ openclaw sessions export <session-key> --output /tmp/session.json
 ## 延伸阅读
 
 - [SlowMist OpenClaw 安全实践指南](https://github.com/slowmist/openclaw-security-practice-guide)
-- [飞书接入安全配置](../feishu.md#8-安全注意事项)
-- [沙盒配置](../index.md#36-沙盒sandboxing)
-- [工具安全配置](../index.md#7-工具tools)
+- [飞书接入安全配置](../feishu)
+- [沙盒配置](../index)
+- [工具安全配置](../index)
