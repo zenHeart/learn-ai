@@ -293,6 +293,7 @@ export default withMermaid(defineConfig({
                                           { text: 'Hooks', link: '/zh/products/automation/openclaw/source-code/hooks' },
                                           { text: 'MCP', link: '/zh/products/automation/openclaw/source-code/mcp' },
                                           { text: 'ACP', link: '/zh/products/automation/openclaw/source-code/acp' },
+                                          { text: 'Subagent', link: '/zh/products/automation/openclaw/source-code/subagent' },
                                        ]
                                     },
                                  ]
@@ -555,6 +556,7 @@ export default withMermaid(defineConfig({
                                           { text: '钩子机制', link: '/zh/products/automation/openclaw/source-code/hooks' },
                                           { text: 'MCP 协议', link: '/zh/products/automation/openclaw/source-code/mcp' },
                                           { text: 'ACP 协议', link: '/zh/products/automation/openclaw/source-code/acp' },
+                                          { text: 'Subagent', link: '/zh/products/automation/openclaw/source-code/subagent' },
                                        ]
                                     },
                                  ]
