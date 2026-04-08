@@ -563,7 +563,231 @@ class RotatingKeyManager {
 2. **安全存储** - 刷新令牌加密存储
 3. **过期处理** - 正确处理 Token 过期
 
-## 10. 相关文档
+## 10. 手把手复刻
+
+### 最小实现
+
+以下是认证系统的最小实现：
+
+```typescript
+// === 1. 凭证接口 ===
+interface Credentials {
+  type: 'api_key' | 'oauth' | 'bot_token' | 'user_token'
+  value: string
+  expiresAt?: Date
+  refreshToken?: string
+}
+
+// === 2. API Key 解析 ===
+type ApiKeyFormat =
+  | { type: 'env'; name: string }
+  | { type: 'file'; path: string }
+  | { type: 'direct'; value: string }
+
+function resolveApiKey(format: ApiKeyFormat): string {
+  switch (format.type) {
+    case 'env':
+      return process.env[format.name] || ''
+    case 'file':
+      const path = format.path.replace('~', os.homedir())
+      return fs.readFileSync(path, 'utf-8').trim()
+    case 'direct':
+      return format.value
+  }
+}
+
+// === 3. 最小认证提供者 ===
+class MinimalAuthProvider {
+  constructor(
+    private providerId: string,
+    private credentials: Credentials
+  ) {}
+
+  isValid(): boolean {
+    if (this.credentials.expiresAt) {
+      return this.credentials.expiresAt > new Date()
+    }
+    return true
+  }
+
+  async getCredentials(): Promise<Credentials> {
+    if (!this.isValid() && this.credentials.refreshToken) {
+      await this.refresh()
+    }
+    return this.credentials
+  }
+
+  private async refresh(): Promise<void> {
+    // 实现刷新逻辑
+    throw new Error('Not implemented')
+  }
+}
+
+// === 4. Webhook 签名验证 ===
+class WebhookVerifier {
+  constructor(private secret: string) {}
+
+  verify(timestamp: string, signature: string, body: string): boolean {
+    const str = timestamp + body
+    const expected = crypto
+      .createHmac('sha256', this.secret)
+      .update(str)
+      .digest('hex')
+    
+    return crypto.timingSafeEqual(
+      Buffer.from(signature),
+      Buffer.from(expected)
+    )
+  }
+}
+
+// === 5. 使用示例 ===
+const verifier = new WebhookVerifier('my-secret')
+
+// 验证飞书 Webhook
+app.post('/webhook', (req, res) => {
+  const valid = verifier.verify(
+    req.headers['x-lark-timestamp'],
+    req.headers['x-lark-signature'],
+    JSON.stringify(req.body)
+  )
+  
+  if (!valid) {
+    return res.status(401).send('Invalid signature')
+  }
+  
+  // 处理消息...
+  res.status(200).json({ received: true })
+})
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `resolveApiKey()` | `format: ApiKeyFormat` | `string` | 解析 API Key |
+| `getCredentials()` | - | `Promise<Credentials>` | 获取凭证 |
+| `isValid()` | - | `boolean` | 检查凭证有效性 |
+| `verify()` | `timestamp, signature, body` | `boolean` | 验证 Webhook 签名 |
+
+### 常见陷阱
+
+1. **签名验证时序攻击**
+   - 错误：使用 `===` 比较签名
+   - 正确：使用 `crypto.timingSafeEqual` 防止时序攻击
+
+   ```typescript
+   // 错误
+   return signature === expected
+   
+   // 正确
+   return crypto.timingSafeEqual(
+     Buffer.from(signature),
+     Buffer.from(expected)
+   )
+   ```
+
+2. **密钥硬编码**
+   - 错误：将密钥直接写在代码中
+   - 正确：从环境变量或密钥文件加载
+
+3. **Token 过期未处理**
+   - 错误：假设 Token 永不过期
+   - 正确：检查 `expiresAt` 并在需要时刷新
+
+### 实战练习
+
+1. **练习一：实现 Bot Token 获取**
+   ```typescript
+   async function getFeishuBotToken(
+     appId: string,
+     appSecret: string
+   ): Promise<string> {
+     const response = await fetch(
+       'https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal',
+       {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ app_id: appId, app_secret: appSecret })
+       }
+     )
+     
+     const data = await response.json()
+     if (data.code !== 0) {
+       throw new Error(`Failed to get token: ${data.msg}`)
+     }
+     
+     return data.app_access_token
+   }
+   ```
+
+2. **练习二：实现 OAuth 流程**
+   ```typescript
+   class OAuthHandler {
+     async startAuthFlow(clientId: string, redirectUri: string): Promise<string> {
+       const state = crypto.randomUUID()
+       const authUrl = new URL('https://api.provider.com/oauth/authorize')
+       authUrl.searchParams.set('client_id', clientId)
+       authUrl.searchParams.set('redirect_uri', redirectUri)
+       authUrl.searchParams.set('response_type', 'code')
+       authUrl.searchParams.set('state', state)
+       return authUrl.toString()
+     }
+
+     async completeAuthFlow(
+       code: string,
+       clientId: string,
+       clientSecret: string,
+       redirectUri: string
+     ): Promise<Credentials> {
+       const response = await fetch('https://api.provider.com/oauth/token', {
+         method: 'POST',
+         body: new URLSearchParams({
+           grant_type: 'authorization_code',
+           code,
+           redirect_uri: redirectUri,
+           client_id: clientId,
+           client_secret: clientSecret
+         })
+       })
+       
+       const data = await response.json()
+       return {
+         type: 'oauth',
+         value: data.access_token,
+         expiresAt: new Date(Date.now() + data.expires_in * 1000),
+         refreshToken: data.refresh_token
+       }
+     }
+   }
+   ```
+
+3. **练习三：实现会话 Token**
+   ```typescript
+   class SessionTokenManager {
+     constructor(private secret: string) {}
+
+     generateToken(sessionId: string, userId: string): string {
+       const payload = {
+         sessionId,
+         userId,
+         iat: Math.floor(Date.now() / 1000),
+         exp: Math.floor(Date.now() / 1000) + 86400
+       }
+       return jwt.sign(payload, this.secret)
+     }
+
+     verifyToken(token: string): { sessionId: string; userId: string } {
+       const payload = jwt.verify(token, this.secret) as any
+       return {
+         sessionId: payload.sessionId,
+         userId: payload.userId
+       }
+     }
+   }
+   ```
+
+## 11. 相关文档
 
 - [配置系统](./config.md)
 - [飞书通道](./channels.md)

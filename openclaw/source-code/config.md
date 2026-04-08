@@ -546,7 +546,225 @@ class ConfigMigrator {
 }
 ```
 
-## 8. 相关文档
+## 8. 手把手复刻
+
+### 最小实现
+
+以下是配置系统的最小实现：
+
+```typescript
+// === 1. 配置加载器 ===
+class MinimalConfigLoader {
+  async load(): Promise<OpenClawConfig> {
+    // 1. 加载默认配置
+    let config = this.loadDefaults()
+
+    // 2. 合并全局配置
+    const globalPath = path.join(os.homedir(), '.openclaw', 'config.yaml')
+    if (fs.existsSync(globalPath)) {
+      const globalConfig = this.parseYaml(await fs.promises.readFile(globalPath, 'utf-8'))
+      config = this.merge(config, globalConfig)
+    }
+
+    // 3. 合并本地配置
+    const localPaths = ['./openclaw.yaml', './openclaw.yml']
+    for (const p of localPaths) {
+      if (fs.existsSync(p)) {
+        const localConfig = this.parseYaml(await fs.promises.readFile(p, 'utf-8'))
+        config = this.merge(config, localConfig)
+        break
+      }
+    }
+
+    // 4. 应用环境变量
+    config = this.applyEnvOverrides(config)
+
+    return config
+  }
+
+  loadDefaults(): OpenClawConfig {
+    return {
+      agents: {
+        main: {
+          model: 'claude-sonnet-4-20250514',
+          provider: 'anthropic'
+        }
+      },
+      channels: {}
+    }
+  }
+
+  merge(base: any, override: any): any {
+    if (!override) return base
+    if (!base) return override
+
+    if (typeof base === 'object' && typeof override === 'object') {
+      const result: any = { ...base }
+      for (const key of Object.keys(override)) {
+        result[key] = this.merge(base[key], override[key])
+      }
+      return result
+    }
+
+    return override
+  }
+
+  applyEnvOverrides(config: OpenClawConfig): OpenClawConfig {
+    if (process.env.FEISHU_APP_ID) {
+      config.channels = config.channels || {}
+      config.channels.feishu = config.channels.feishu || {}
+      config.channels.feishu.appId = process.env.FEISHU_APP_ID
+    }
+    if (process.env.ANTHROPIC_API_KEY) {
+      config.providers = config.providers || {}
+      config.providers.anthropic = config.providers.anthropic || {}
+      config.providers.anthropic.apiKey = process.env.ANTHROPIC_API_KEY
+    }
+    return config
+  }
+
+  parseYaml(content: string): any {
+    // 简化实现，实际使用 yaml 库
+    return JSON.parse(content)
+  }
+}
+
+// === 2. 最小配置验证 ===
+function validateConfig(config: any): { valid: boolean; errors: string[] } {
+  const errors: string[] = []
+
+  if (!config.agents) {
+    errors.push('agents is required')
+  } else {
+    for (const [id, agent] of Object.entries(config.agents)) {
+      if (!agent.model) {
+        errors.push(`agents.${id}.model is required`)
+      }
+    }
+  }
+
+  return { valid: errors.length === 0, errors }
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `load()` | - | `Promise<OpenClawConfig>` | 加载配置 |
+| `merge()` | `base, override` | `any` | 合并配置 |
+| `applyEnvOverrides()` | `config` | `OpenClawConfig` | 应用环境变量 |
+| `validateConfig()` | `config` | `ValidationResult` | 验证配置 |
+
+### 常见陷阱
+
+1. **深度合并缺失**
+   - 错误：`Object.assign` 只做浅拷贝
+   - 正确：递归合并嵌套对象
+
+   ```typescript
+   // 错误
+   config = { ...base, ...override }
+   
+   // 正确
+   merge(base, override) {
+     const result = { ...base }
+     for (const key of Object.keys(override)) {
+       result[key] = this.merge(base[key], override[key])
+     }
+     return result
+   }
+   ```
+
+2. **环境变量覆盖不完整**
+   - 错误：只检查顶层环境变量
+   - 正确：递归处理嵌套结构
+
+3. **配置验证过于宽松**
+   - 错误：不验证或只验证顶层字段
+   - 正确：递归验证所有必需字段
+
+### 实战练习
+
+1. **练习一：实现环境变量映射**
+   ```typescript
+   const envMappings: Record<string, string[]> = {
+     'FEISHU_APP_ID': ['channels', 'feishu', 'appId'],
+     'FEISHU_APP_SECRET': ['channels', 'feishu', 'appSecret'],
+     'ANTHROPIC_API_KEY': ['providers', 'anthropic', 'apiKey']
+   }
+
+   function applyEnvOverrides(config: any): any {
+     for (const [envKey, path] of Object.entries(envMappings)) {
+       const value = process.env[envKey]
+       if (value) {
+         let target = config
+         for (const key of path.slice(0, -1)) {
+           target = target[key] = target[key] || {}
+         }
+         target[path[path.length - 1]] = value
+       }
+     }
+     return config
+   }
+   ```
+
+2. **练习二：实现密钥引用解析**
+   ```typescript
+   function resolveSecrets(obj: any): any {
+     if (typeof obj === 'string') {
+       if (obj.startsWith('${') && obj.endsWith('}')) {
+         const inner = obj.slice(2, -1)
+         if (inner.startsWith('env:')) {
+           return process.env[inner.slice(4)]
+         }
+         if (inner.startsWith('file:')) {
+           return fs.readFileSync(inner.slice(5).replace('~', os.homedir()), 'utf-8').trim()
+         }
+       }
+       return obj
+     }
+     if (Array.isArray(obj)) return obj.map(resolveSecrets)
+     if (typeof obj === 'object') {
+       const result: any = {}
+       for (const key of Object.keys(obj)) {
+         result[key] = resolveSecrets(obj[key])
+       }
+       return result
+     }
+     return obj
+   }
+   ```
+
+3. **练习三：实现配置热重载**
+   ```typescript
+   class HotReloadConfig {
+     private config: any
+     private watchers: ((config: any) => void)[] = []
+
+     async load() {
+       this.config = await new MinimalConfigLoader().load()
+       
+       // 监听文件变化
+       fs.watch('./openclaw.yaml', async () => {
+         this.config = await new MinimalConfigLoader().load()
+         this.notify()
+       })
+     }
+
+     onchange(handler: (config: any) => void) {
+       this.watchers.push(handler)
+     }
+
+     private notify() {
+       for (const handler of this.watchers) {
+         handler(this.config)
+       }
+     }
+   }
+   ```
+
+## 9. 相关文档
 
 - [架构总览](./architecture.md)
 - [认证系统](./auth.md)

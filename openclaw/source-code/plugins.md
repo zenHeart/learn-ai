@@ -556,7 +556,188 @@ async function scanPlugin(pluginDir: string): Promise<ScanResult> {
 }
 ```
 
-## 11. 相关文档
+## 11. 手把手复刻
+
+### 最小实现
+
+以下是插件系统的最小实现：
+
+```typescript
+// === 1. 基础插件接口 ===
+interface Plugin {
+  id: string
+  name: string
+  version: string
+  onLoad(ctx: PluginContext): Promise<void>
+  onUnload(): Promise<void>
+}
+
+interface PluginContext {
+  config: any
+  logger: Logger
+  registries: {
+    tool: ToolRegistry
+    channel: ChannelRegistry
+    model: ModelRegistry
+  }
+}
+
+// === 2. 最小插件注册表 ===
+class MinimalPluginRegistry {
+  private plugins: Map<string, Plugin> = new Map()
+
+  async register(plugin: Plugin): Promise<void> {
+    // 1. 检查依赖
+    for (const depId of plugin.dependencies || []) {
+      if (!this.plugins.has(depId)) {
+        throw new Error(`Plugin ${plugin.id} depends on ${depId}`)
+      }
+    }
+
+    // 2. 加载插件
+    await plugin.onLoad(this.createContext(plugin))
+    this.plugins.set(plugin.id, plugin)
+  }
+
+  async unregister(pluginId: string): Promise<void> {
+    const plugin = this.plugins.get(pluginId)
+    if (!plugin) return
+
+    // 检查是否有其他插件依赖
+    for (const p of this.plugins.values()) {
+      if (p.dependencies?.includes(pluginId)) {
+        throw new Error(`Cannot unload ${pluginId}: required by ${p.id}`)
+      }
+    }
+
+    await plugin.onUnload()
+    this.plugins.delete(pluginId)
+  }
+
+  get(pluginId: string): Plugin | null {
+    return this.plugins.get(pluginId) || null
+  }
+
+  list(): Plugin[] {
+    return Array.from(this.plugins.values())
+  }
+}
+
+// === 3. 最小插件示例 ===
+const minimalPlugin: Plugin = {
+  id: 'hello-world',
+  name: 'Hello World Plugin',
+  version: '1.0.0',
+  
+  async onLoad(ctx) {
+    // 注册一个工具
+    ctx.registries.tool.register({
+      name: 'hello',
+      description: 'Says hello',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          name: { type: 'string' }
+        }
+      },
+      execute: async (params) => `Hello, ${params.name}!`
+    })
+    
+    ctx.logger.info('Hello World plugin loaded')
+  },
+
+  async onUnload() {
+    // 清理资源
+  }
+}
+```
+
+### 关键接口
+
+| 接口 | 参数 | 返回值 | 说明 |
+|------|------|--------|------|
+| `register()` | `plugin: Plugin` | `Promise<void>` | 注册插件 |
+| `unregister()` | `pluginId: string` | `Promise<void>` | 卸载插件 |
+| `get()` | `pluginId: string` | `Plugin \| null` | 获取插件 |
+| `list()` | - | `Plugin[]` | 列出所有插件 |
+| `Plugin.onLoad()` | `ctx: PluginContext` | `Promise<void>` | 加载时回调 |
+| `Plugin.onUnload()` | - | `Promise<void>` | 卸载时回调 |
+
+### 常见陷阱
+
+1. **循环依赖**
+   - 错误：插件 A 依赖 B，B 又依赖 A
+   - 正确：使用拓扑排序确保加载顺序，或合并为单个插件
+
+2. **卸载时资源泄漏**
+   - 错误：`onUnload()` 为空
+   - 正确：清理定时器、关闭连接、移除事件监听器
+
+   ```typescript
+   async onUnload() {
+     clearInterval(this.heartbeatInterval)
+     this.ws.close()
+     this.eventEmitter.removeAllListeners()
+   }
+   ```
+
+3. **配置验证缺失**
+   - 错误：直接使用配置不验证
+   - 正确：在 `onLoad` 时验证必需配置项
+
+### 实战练习
+
+1. **练习一：创建一个工具插件**
+   ```typescript
+   const toolPlugin: Plugin = {
+     id: 'my-tools',
+     name: 'My Tools',
+     version: '1.0.0',
+     async onLoad(ctx) {
+       ctx.registries.tool.register({
+         name: 'greet',
+         description: 'Greet someone',
+         inputSchema: { type: 'object', properties: { name: { type: 'string' } } },
+         execute: async ({ name }) => `Hi ${name}!`
+       })
+     },
+     async onUnload() {}
+   }
+   ```
+
+2. **练习二：创建通道插件**
+   ```typescript
+   const channelPlugin: ChannelPlugin = {
+     id: 'my-channel',
+     channelId: 'my-channel',
+     name: 'My Channel',
+     createRuntime(cfg, accountId) {
+       return {
+         async start() { /* 启动逻辑 */ },
+         async stop() { /* 停止逻辑 */ },
+         async send(ctx) { /* 发送消息 */ },
+         resolveSessionKey(ctx) { return `agent:main:my-channel:${ctx.userId}` },
+         resolveSenderId(ctx) { return ctx.userId }
+       }
+     },
+     async onLoad(ctx) {},
+     async onUnload() {}
+   }
+   ```
+
+3. **练习三：实现插件热加载**
+   ```typescript
+   watch('./plugins', async (event, filename) => {
+     if (event === 'change') {
+       const pluginId = extractPluginId(filename)
+       const plugin = await import(`./plugins/${filename}`)
+       await registry.unregister(pluginId)
+       await registry.register(plugin.default)
+     }
+   })
+   ```
+
+## 12. 相关文档
 
 - [通道机制](./channels.md)
 - [工具系统](./tools.md)
