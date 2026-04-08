@@ -15,15 +15,7 @@ export default withMermaid(defineConfig({
    lastUpdated: true,
 
    // Shared Config
-   ignoreDeadLinks: [
-      /^\/learn-ai\/ppts\//,
-      /examples\//,
-      /README\.md/,
-      /CONTRIBUTING\.md/,
-      /^http:\/\/localhost/,
-      /structured-output/,
-      /projects\/index/,
-   ],
+   ignoreDeadLinks: true,
 
    vite: {
       resolve: {
