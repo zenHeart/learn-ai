@@ -1,17 +1,18 @@
 ---
 layout: cover
 transition: slide-left
-title: Prompt + Context 工程
+title: Prompt · Context · Harness 三层 AI 工程
 routerMode: hash
 comark: true
 mdc: true
 ---
 
 
-# Prompt + Context 工程
+# Prompt · Context · Harness
 
-* 分享人: 程乐
-* 时间: 2026-04-30
+三层 AI 工程  
+分享人: 程乐  
+时间: 2026-04-30
 
 ---
 src: ./01.overview.md
@@ -23,6 +24,10 @@ src: ./02.principle.md
 
 ---
 src: ./03.features.md
+---
+
+---
+src: ./04.harness.md
 ---
 
 ---
