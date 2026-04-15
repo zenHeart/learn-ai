@@ -9,8 +9,10 @@
 ## 核心实现概念
 
 MCP 连接两端：
-1.  **宿主 (Client)**: AI 应用程序（例如 Claude Desktop, Cursor 或你的自定义应用）。
+1.  **宿主 (Host)**: AI 应用程序（例如 Claude Desktop, Cursor 或你的自定义应用）。
 2.  **服务器 (Server)**: 工具和资源的提供者（例如你的 Node.js 脚本）。
+
+> 📚 **[深入理解 MCP 架构](./architecture.md)**: 协议分层、Proxy 模式、完整时序图分析。
 
 ### 通信流程
 
@@ -179,5 +181,5 @@ const result = await client.callTool({
 
 ## 下一步
 
-- **[工具调用指南](../tool-calling.md)**: 深入了解函数调用模式。
+- **[深入理解 MCP 架构](./architecture.md)**: 协议分层、Proxy 模式、完整时序图分析。
 - **[MCP Lab 示例](../../../examples/mcp-lab/)**: 在本地运行完整代码。
