@@ -230,9 +230,26 @@ Computer Use 权限较高，建议：
 
 Cowork 支持不打开 Claude Desktop 也能发起任务：
 
-**方法**：通过 Claude 的快捷方式或全局菜单，从任意应用发送任务到 Cowork 队列，Claude Desktop 会在后台接收并执行。
+**方法一**：通过 Claude 的快捷方式或全局菜单，从任意应用发送任务到 Cowork 队列，Claude Desktop 会在后台接收并执行。
 
-适用场景：在浏览器看到一篇文章想要总结并保存 → 选中文本 → 发送给 Cowork → Claude 自动处理并保存到指定文件夹。
+**方法二（Claude in Chrome）**：安装 Chrome 扩展后，在浏览器任意页面选中文本，一键发送给 Cowork 处理。同时支持从 Chrome 扩展直接控制浏览器自动化任务。
+
+**Claude in Chrome 连接**：在 Claude Desktop 中启用 Chrome 连接器后，可从桌面直接控制浏览器完成任务，无需切换窗口。
+
+适用场景：
+- 浏览器看到一篇文章 → 选中文本 → 发送给 Cowork → Claude 总结保存
+- 在 GitHub 看到 PR → 直接让 Cowork 审查代码
+- 收到邮件通知 → Cowork 自动提取任务创建到 Linear
+
+### Claude in Chrome 扩展（协同 Cowork）
+
+Chrome 扩展为 Cowork 提供浏览器超级能力：
+- **工作流录制**：自己演示一遍操作步骤，Claude 学习后自动重复
+- **计划任务**：设置每天/每周/每月自动执行的浏览器任务
+- **Console 日志读取**：直接在浏览器中识别和调试问题
+- **多标签页管理**：Claude 可同时管理多个标签页，统一处理信息
+
+安装后点击 Chrome 工具栏中的 Claude 图标打开侧边面板，与浏览同步工作。
 
 ### 跨应用工作流示例
 
