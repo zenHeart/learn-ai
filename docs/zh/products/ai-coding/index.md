@@ -18,7 +18,8 @@
 
 - [GitHub Copilot](./copilot.md) - 行业标准的 AI 代码补全
 - [Cursor](./cursor.md) - AI 优先的代码编辑器，具备聊天和生成功能
-- [Claude CLI](./claude/index.md) - 命令行 AI 编程助手
+- [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
+- **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
 - [Gemini CLI](./gemini-cli.md) - Google 的 AI 编程助手
 - [其他工具](./othertools.md) - 探索更多 AI 编程工具
 
@@ -46,11 +47,12 @@
 - 出色的推理能力
 - 非常适合重构
 
-### 适合 Google 生态用户
-**推荐**: [Gemini CLI](./gemini-cli.md)
-- 超大上下文窗口
-- 多模态能力
-- Google 集成
+### 适合 OpenAI 生态用户
+**推荐**: [Codex CLI](./codex/index.md)
+- ChatGPT Plus 会员的**执行层工具**
+- 直接读写文件、运行命令、Git 操作
+- 完全自动化，可集成到 CI/CD
+- 结合 Deep Research 使用效果最佳
 
 ## 工具能力矩阵
 
