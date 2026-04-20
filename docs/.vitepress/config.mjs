@@ -551,6 +551,7 @@ export default withMermaid(defineConfig({
                                     { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/claude/' },
                                     { text: 'Claude.ai 平台', link: '/zh/products/ai-coding/claude/claude-ai' },
                                     { text: 'Claude Code CLI', link: '/zh/products/ai-coding/claude/claude-code' },
+                                    { text: 'Claude Design', link: '/zh/products/ai-coding/claude/claude-design' },
                                     { text: 'Cowork 桌面代理', link: '/zh/products/ai-coding/claude/cowork' },
                                     { text: 'Connectors 连接器', link: '/zh/products/ai-coding/claude/connectors' },
                                     { text: 'Plugin 开发', link: '/zh/products/ai-coding/claude/plugin' },
