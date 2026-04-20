@@ -93,9 +93,12 @@
 | Artifacts | ✅ | 代码、文档、图表独立输出 | [Claude.ai](./claude-ai#artifacts-独立内容输出) |
 | 交互式图表 | ✅ | 可操作的数据可视化（2026年3月） | [Claude.ai](./claude-ai#交互式图表与可视化) |
 | 网络搜索 | ✅ | 实时信息获取 | [Claude.ai](./claude-ai#网络搜索) |
+| 语音模式 | ✅ | 免提双向语音对话 | [Claude.ai](./claude-ai#语音模式) |
+| 文件创建和代码执行 | ✅ | 直接生成 Excel/Word/PPT/PDF | [Claude.ai](./claude-ai#文件创建和代码执行) |
 | Memory（记忆） | ✅ | 跨对话保存偏好 | [Claude.ai](./claude-ai#memory-跨对话记忆) |
 | Skills（技能） | ✅ | 加载专项工作流 | [Claude.ai](./claude-ai#skills-技能系统) |
 | 隐私聊天 | ✅ | 不用于训练的对话 | [Claude.ai](./claude-ai#隐私与安全) |
+| 项目可见性（Team/Ent）| ✅ | 团队项目共享与权限管理 | [Claude.ai](./claude-ai#项目可见性和共享teamenterprise) |
 | 自定义样式 | ✅ | 调整回复风格 | [Claude.ai](./claude-ai#个性化设置) |
 | 模型切换 | ✅ | Opus 4.6 / Sonnet 4.6 / Haiku 4.5 | [Claude.ai](./claude-ai#个性化设置) |
 
@@ -186,7 +189,9 @@ Claude Pro ($20/月) 包含：
 │   └── → claude.ai（网页或手机）
 │       ├── 需要深入推理？→ 启用 Extended Thinking
 │       ├── 需要联网查资料？→ 启用 Research
-│       └── 需要可视化？→ 让 Claude 生成交互式图表
+│       ├── 需要可视化？→ 让 Claude 生成交互式图表
+│       ├── 双手不便（开车/做饭）？→ 启用语音模式
+│       └── 需要生成专业文档？→ 开启文件创建（Excel/Word/PPT）
 ├── 写代码 / 调试 / 重构 / 提 PR
 │   └── → Claude Code
 │       ├── 在终端？→ CLI（claude 命令）
@@ -200,11 +205,12 @@ Claude Pro ($20/月) 包含：
 │       ├── 持续使用？→ 绑定到 Project
 │       └── 定期自动化？→ 结合云端定期任务
 └── 处理本地文件 / 自动化重复工作
-    └── → Claude Desktop
+    └── → Claude Desktop / Chrome 扩展
         ├── 一次性任务（读写文件）→ Cowork 标签页
         ├── 重复任务（需要本地文件）→ 桌面定期任务
         ├── 重复任务（不需要本地文件）→ 云端定期任务（更可靠）
-        └── 操控应用/浏览器？→ 开启 Computer Use
+        ├── 操控应用/浏览器？→ 开启 Computer Use
+        └── 浏览器自动化 / 计划任务？→ Claude in Chrome 扩展
 ```
 
 ---
