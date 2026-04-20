@@ -10,6 +10,7 @@
 |------|---------|---------|
 | **智能对话平台** | claude.ai（网页 / 手机 / 桌面） | Projects、Research、Artifacts、Extended Thinking |
 | **编程代理** | Claude Code（终端 / VS Code / JetBrains） | 自主写代码、跑命令、提交 PR |
+| **AI 设计界面** | Claude Design（claude.ai/design） | 代码库驱动的品牌原型、迭代设计、交接 Claude Code |
 | **桌面工作代理** | Cowork（Claude Desktop 内置） | 读写本地文件、自动化任务、定期调度 |
 | **连接器生态** | Connectors（claude.ai / Claude Desktop） | 接入 Gmail、Notion、GitHub 等 50+ 外部服务 |
 
@@ -49,7 +50,23 @@
 
 ---
 
-### 第三阶段：Connectors 连接外部服务（半天）
+### 第三阶段：Claude Design 设计原型（半天）
+
+把 AI 设计界面接入你的代码库，生成符合品牌规范的原型，直接交接给 Claude Code。
+
+**目标**：能配置 design system、用 web capture 重建现有页面、通过 handoff bundle 无缝衔接 Claude Code。
+
+| 步骤 | 内容 | 链接 |
+|------|------|------|
+| 1 | 了解 Claude Design 定位与核心概念 | [Claude Design 使用手册](./claude-design) |
+| 2 | 配置 design system（链接代码库） | [→ 快速上手](./claude-design#快速上手前-30-分钟) |
+| 3 | 掌握四种建站工作流 | [→ 建站工作流](./claude-design#建站工作流四种端到端模式) |
+| 4 | 学会 handoff bundle 交接 Claude Code | [→ Claude Code 集成](./claude-design#claude-code-集成handoff-bundle) |
+| 5 | 了解导出目标和 Canva 集成 | [→ 导出和 Canva](./claude-design#导出和-canva选对目标) |
+
+---
+
+### 第五阶段：Connectors 连接外部服务（半天）
 
 将 Claude 接入你实际在用的工具，让它能直接读取真实数据、执行实际操作。
 
@@ -65,7 +82,7 @@
 
 ---
 
-### 第四阶段：Cowork 自动化工作流（1-2 天）
+### 第六阶段：Cowork 自动化工作流（1-2 天）
 
 把 Claude 变成你的私人桌面代理，处理文件整理、定期报告等重复工作。
 
@@ -109,6 +126,17 @@
 | Slack | 消息搜索 / 发送 | [connectors](./connectors#slack) |
 | Notion / Linear / Asana | 任务和页面管理 | [connectors](./connectors#linear--asana--jira) |
 | 自定义 Remote MCP | 接入内网或自建工具 | [connectors](./connectors#自定义连接器custom-connectors--remote-mcp) |
+
+### Claude Design 核心功能
+
+| 功能 | 核心用途 | 文档 |
+|------|---------|------|
+| Design System 导入 | 从 GitHub 仓库抽取颜色/字体/组件规范 | [claude-design](./claude-design#快速上手前-30-分钟) |
+| Web Capture | 抓取任意 URL 实时元素用于原型重建 | [claude-design](./claude-design#模式-2重建或扩展现有产品页) |
+| Adjustment Knobs | 动态生成的间距/颜色/圆角滑块微调 | [claude-design](./claude-design#概览claude-design-究竟是什么) |
+| Handoff Bundle | 设计文件 + 对话记录交接 Claude Code | [claude-design](./claude-design#claude-code-集成handoff-bundle) |
+| 导出为独立 HTML | 自包含 HTML 用于静态托管部署 | [claude-design](./claude-design#导出和-canva选对目标) |
+| 发送到 Canva | 完全可编辑的 Canva 设计对象 | [claude-design](./claude-design#导出和-canva选对目标) |
 
 ### Claude Code 核心功能
 
