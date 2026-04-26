@@ -1,0 +1,14 @@
+import{_ as c}from"./slidev/VClick-B0jttq4C.js";import{_ as m}from"./slidev/CodeBlockWrapper.vue_vue_type_script_setup_true_lang-BNCLHDb3.js";import{_}from"./slidev/VClicks-DcTgnpmE.js";import{b as d,o as f,w as a,g as n,e,ad as s,m as g,v as k,x,T as o}from"./modules/vue-9r0x5Mvu.js";import{I as v}from"./slidev/default-DfUDVj_b.js";import{u as C,f as h}from"./slidev/context-DzskvybD.js";import"./index-DcmkdzUk.js";import"./modules/shiki-BFOqmQIV.js";import"./modules/unplugin-icons-CrjNJQm5.js";const I={__name:"02.principle.md__slidev_19",setup(P){const{$clicksContext:i,$frontmatter:p}=C();return i.setup(),(b,l)=>{const t=_,r=m,u=c;return f(),d(v,k(x(o(h)(o(p),18))),{default:a(()=>[l[3]||(l[3]=n("h1",null,"Lost in the Middle Problem",-1)),e(t,null,{default:a(()=>[...l[0]||(l[0]=[n("p",null,[n("strong",null,"研究发现"),s("（Liu et al., Stanford, 2023）：")],-1)])]),_:1}),e(u,null,{default:a(()=>[e(r,g({},{title:"",ranges:[]}),{default:a(()=>[...l[1]||(l[1]=[n("pre",{class:"shiki shiki-themes vitesse-dark vitesse-light slidev-code",style:{"--shiki-dark":"#dbd7caee","--shiki-light":"#393a34","--shiki-dark-bg":"#121212","--shiki-light-bg":"#ffffff"}},[n("code",{class:"language-text"},[n("span",{class:"line"},[n("span",null,"Context 位置 vs 模型注意力分布：")]),s(`
+`),n("span",{class:"line"},[n("span")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  注意力")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  权重")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  ▲")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  │ ██                                              ██")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  │ ███                                            ███")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  │ ████                                          ████")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  │ █████                                        █████")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  │ ██████                                      ██████")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  │ ████████                                  ████████")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  │ █████████████                        █████████████")]),s(`
+`),n("span",{class:"line"},[n("span",null,"  └──────────────────────────────────────────────────► Context 位置")]),s(`
+`),n("span",{class:"line"},[n("span",null,"       开头（高）          中间（低）         结尾（高）")])])],-1)])]),_:1},16)]),_:1}),e(t,null,{default:a(()=>[...l[2]||(l[2]=[n("ul",null,[n("li",null,[s("20 个文档中找答案：放在"),n("strong",null,"第 1 位"),s("准确率 "),n("strong",null,"71%"),s("，放在"),n("strong",null,"第 10 位"),s("下降至 "),n("strong",null,"51%")]),n("li",null,[n("strong",null,"首尾定律"),s("：关键信息放开头（System Prompt）或结尾（最新用户输入）")]),n("li",null,'大量无关 Context 塞在中间 → 关键信息被"淹没"')],-1)])]),_:1})]),_:1},16)}}};export{I as default};
