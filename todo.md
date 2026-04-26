@@ -1,80 +1,52 @@
-# Learn-AI Project Roadmap (Remaining Tasks)
+# Learn-AI Tasks
 
-> **Goal**: Finalize path refinements, verify all links, and ensure a seamless learning experience across the platform.
-
----
-
-## 📊 Current Status
-
-- ✅ Phases 1-4: COMPLETED (See `FINISH.md`)
-- 🏗️ Phase 5: Path Refinement & Link Verification (80% Complete)
-- **Next Step**: Systematic link verification and final polish.
+> Immediate tasks focused on final verification and deployment.
 
 ---
 
-## 🚀 Priority Unfinished Tasks
+## 🔴 P0: AI Automation Verification (IMMEDIATE)
 
-### 1. 🏆 Link Verification & Quality Assurance (HIGH PRIORITY)
+### Task 93: GitHub App Integration
 
-#### Task 85: Verify All Path Links
-- [ ] Check all links in `/docs/paths/productivity.md` work
-- [ ] Check all links in `/docs/paths/integration.md` work
-- [ ] Check all links in `/docs/paths/mastery.md` work
-- [ ] Check all links in `/docs/paths/index.md` work
-- [ ] Fix broken links or add fallback content
-- [ ] Ensure links point to appropriate beginner-friendly content
+- [ ] Install [Gemini Code Assist](https://github.com/marketplace/google-gemini-code-assist)
+- [ ] Install [Jules (CI Fixer)](https://github.com/marketplace/jules)
+- [ ] Authorize Pro account access for both apps
 
-#### Task 86: Add Missing Prerequisite Links
-- [ ] Add links to [LLM Fundamentals](../tech/fundamentals/LLM.md) when AI concepts first mentioned
-- [ ] Add links to [API Integration Guide](../integration/apis/index.md) when APIs first mentioned
-- [ ] Add links to [Streaming Guide](../tech/frontend/streaming.md) when streaming first mentioned
-- [ ] Add "New to this concept?" callouts with links to fundamentals
-- [ ] Add links to troubleshooting resources when errors mentioned
+### Task 94: End-to-End Verification
 
-### 2. ✨ Final Polish & Delivery
+- [ ] Create test PR to verify `.github/workflows/pr-check.yml`
+- [ ] Verify Gemini Code Assist comments based on `.gemini/review-rules.md`
+- [ ] Verify multi-language support (ZH for `docs/zh/`, EN for others)
+- [ ] Verify Jules auto-fix on build failure
 
-#### Task 89: Final Site Build & Review
-- [ ] Run `pnpm docs:build` to check for dead links and build errors
-- [ ] Verify all Mermaid diagrams render correctly
-- [ ] Check mobile responsiveness for key pages
-- [ ] Final review of homepage call-to-actions
+### Task 95: Retroactive Review
+
+- [ ] Run `/gemini review` on existing open PRs
 
 ---
 
-## ✅ Phase 5 Checklist (Remaining)
+## 🟡 P1: Quality Assurance (HIGH PRIORITY)
 
-- [ ] All links verified and working
-- [ ] Prerequisite links consistent across all paths
-- [ ] Zero build errors in VitePress
+### Task 85: Verify All Path Links
 
----
+- [ ] Check links in `/docs/paths/productivity.md`
+- [ ] Check links in `/docs/paths/integration.md`
+- [ ] Check links in `/docs/paths/mastery.md`
+- [ ] Check links in `/docs/paths/index.md`
 
-## 📊 Overall Progress
+### Task 86: Prerequisite Context
 
-### Task Summary
-
-- **Phase 1-4**: 81 tasks (COMPLETED)
-- **Phase 5**: 8 tasks (6 completed, 2 remaining)
-- **Final Polish**: 1 task (remaining)
-
-**Total Progress**: ~96%
+- [ ] Add "New to this concept?" callouts with links to [LLM Fundamentals](../tech/fundamentals/LLM.md)
+- [ ] Link [API Integration Guide](../integration/apis/index.md) when APIs first mentioned
+- [ ] Link [Streaming Guide](../tech/frontend/streaming.md) when streaming first mentioned
 
 ---
 
-## 📝 Content Standards Reference
+## 🟢 P2: Final Polish & Delivery
 
-### Every Technical Document Must Include
-1. **Prerequisites**: What knowledge/tools needed
-2. **Learning Objectives**: What you'll learn
-3. **Theory Section**: Explain the concept
-4. **Code Example**: Working, runnable code
-5. **Real-World Use Case**: When to use this
-6. **Common Pitfalls**: What to avoid
-7. **Next Steps**: Where to go from here
+### Task 89: Final Site Build
 
-### Code Examples Must Be
-- ✅ **Complete**: Copy-paste runnable
-- ✅ **TypeScript**: Prefer TS over JS
-- ✅ **Modern**: async/await, fetch, etc.
-- ✅ **Commented**: Explain non-obvious parts
-- ✅ **Error handling**: Show proper patterns
+- [ ] Run `pnpm docs:build` (zero error goal)
+- [ ] Verify Mermaid diagrams rendering
+- [ ] Mobile responsiveness check
+- [ ] Final homepage CTA review

@@ -23,8 +23,26 @@ pnpm ppt:agent    # Agent
 pnpm ppt:build    # 构建所有 PPT
 ```
 
-## 项目结构
+## 内容标准 (Content Standards)
 
+### 每个技术文档必须包含 (Must Include)
+1. **先决条件 (Prerequisites)**: 所需的知识或工具。
+2. **学习目标 (Learning Objectives)**: 读者将学到什么。
+3. **理论部分 (Theory)**: 解释核心概念。
+4. **代码示例 (Code Example)**: 完整的、可运行的代码。
+5. **实际用例 (Real-World Use Case)**: 什么时候使用。
+6. **常见陷阱 (Common Pitfalls)**: 需要避免的问题。
+7. **下一步 (Next Steps)**: 进阶方向。
+
+### 代码示例要求 (Code Example Requirements)
+- ✅ **完整性**: 复制即用。
+- ✅ **TypeScript**: 优先使用 TS 而非 JS。
+- ✅ **现代化**: 使用 async/await, fetch 等。
+- ✅ **注释清晰**: 解释非直观部分。
+- ✅ **错误处理**: 展示正确的模式。
+
+## 项目结构
+...
 | 组件 | 位置 | 技术 |
 |------|------|------|
 | 文档 | `/docs` | VitePress 1.6.x + Vue 3 |

@@ -91,6 +91,13 @@ This file tracks all completed milestones and tasks for the Learn AI project.
 - ✅ Task 80: Create `/docs/products/tools/figma-ai.md`
 - ✅ Task 81: Create `/docs/products/tools/testing-ai.md`
 
+## 🏁 Phase 6: AI Governance & Automation
+**Status**: 100% Complete
+- ✅ Task 90: Implement Automated PR Quality Check (`.github/workflows/pr-check.yml`)
+- ✅ Task 91: Define AI Review Guidelines (`.gemini/review-rules.md`)
+- ✅ Task 92: Implement Language-Aware Review Logic (ZH/EN Support)
+
+
 ## 🏁 Phase 5: Content Organization & Path Refinement (Partial)
 **Status**: Mostly Complete
 - ✅ Task 82: Refine Path 2 (Integration) as Roadmap
