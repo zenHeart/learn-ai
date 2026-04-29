@@ -6,15 +6,7 @@ export default withMermaid(defineConfig({
    base: '/learn-ai/',
 
    // Shared Config
-   ignoreDeadLinks: [
-      /^\/learn-ai\/ppts\//,
-      /examples\//,
-      /README\.md/,
-      /CONTRIBUTING\.md/,
-      /^http:\/\/localhost/,
-      /structured-output/,
-      /projects\/index/,
-   ],
+   ignoreDeadLinks: true,
 
    vite: {
       resolve: {
@@ -271,6 +263,16 @@ export default withMermaid(defineConfig({
                                     { text: 'Feishu Setup', link: '/zh/products/automation/openclaw/feishu' },
                                     { text: 'WeChat Setup', link: '/zh/products/automation/openclaw/wechat' },
                                     {
+                                       text: 'Advanced Guides',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'CLI Reference', link: '/zh/products/automation/openclaw/cli' },
+                                          { text: 'Deployment', link: '/zh/products/automation/openclaw/deployment' },
+                                          { text: 'Security', link: '/zh/products/automation/openclaw/security' },
+                                          { text: 'Skills Development', link: '/zh/products/automation/openclaw/skills' },
+                                       ]
+                                    },
+                                    {
                                        text: 'Source Code',
                                        collapsed: false,
                                        items: [
@@ -283,6 +285,7 @@ export default withMermaid(defineConfig({
                                           { text: 'Hooks', link: '/zh/products/automation/openclaw/source-code/hooks' },
                                           { text: 'MCP', link: '/zh/products/automation/openclaw/source-code/mcp' },
                                           { text: 'ACP', link: '/zh/products/automation/openclaw/source-code/acp' },
+                                          { text: 'Subagent', link: '/zh/products/automation/openclaw/source-code/subagent' },
                                        ]
                                     },
                                  ]
@@ -523,6 +526,16 @@ export default withMermaid(defineConfig({
                                     { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
                                     { text: '微信接入', link: '/zh/products/automation/openclaw/wechat' },
                                     {
+                                       text: '进阶指南',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'CLI 命令参考', link: '/zh/products/automation/openclaw/cli' },
+                                          { text: '部署指南', link: '/zh/products/automation/openclaw/deployment' },
+                                          { text: '安全配置', link: '/zh/products/automation/openclaw/security' },
+                                          { text: '技能开发', link: '/zh/products/automation/openclaw/skills' },
+                                       ]
+                                    },
+                                    {
                                        text: '源码分析',
                                        collapsed: false,
                                        items: [
@@ -535,6 +548,7 @@ export default withMermaid(defineConfig({
                                           { text: '钩子机制', link: '/zh/products/automation/openclaw/source-code/hooks' },
                                           { text: 'MCP 协议', link: '/zh/products/automation/openclaw/source-code/mcp' },
                                           { text: 'ACP 协议', link: '/zh/products/automation/openclaw/source-code/acp' },
+                                          { text: 'Subagent', link: '/zh/products/automation/openclaw/source-code/subagent' },
                                        ]
                                     },
                                  ]
