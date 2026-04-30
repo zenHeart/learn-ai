@@ -1,0 +1,21 @@
+{
+  "name": "jira-mcp-server",
+  "version": "1.0.0",
+  "description": "Minimal Jira MCP Server in TypeScript",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx server.ts",
+    "inspect": "npx @modelcontextprotocol/inspector tsx server.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}
