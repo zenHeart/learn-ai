@@ -16,9 +16,9 @@
 
 | 序号 | 主题 | 日期 | 星期 | 讲师 | 预计时长 |核心目标 | 状态 |
 |---|---|---|---|---|----|---|---|
-| 1 | Vibe Coding | 2026-03-16 | 周一 | 程乐 | 45min | 掌握 AI 辅助编程基本方法，能够利用 AI 完成常见开发任务。 | 待分享 |
-| 2 | Prompt + Context Engineering | 2026-03-23 | 周一 | 程乐 | 45min | 掌握 Prompt 与 Context 设计方法，构建稳定可复用的 AI 工作流。 | 待完善初稿 |
-| 3 | MCP + SKILL | 2026-03-30 | 周一 | 程乐 | 45min | 具备开发 MCP 与 Skill 的能力，使 AI 能够对接内部系统，将工作流自动化 | 待完善初稿 |
+| 1 | Vibe Coding | 2026-04-01 | 周三 | 程乐 | 45min | 掌握 AI 辅助编程基本方法，能够利用 AI 完成常见开发任务。 | 待分享 |
+| 2 | Prompt + Context + Harness | 2026-05-08 | 周一 | 程乐 | 45min | 掌握三层工程协同方法，构建稳定可复用的 AI 工作流。 | 待完善初稿 |
+| 3 | MCP + SKILL | 2026-05-15 | 周一 | 程乐 | 45min | 具备开发 MCP 与 Skill 的能力，使 AI 能够对接内部系统，将工作流自动化 | 待完善初稿 |
 
 ## 各系列详情
 
@@ -38,25 +38,21 @@
 
 ---
 
-### 第二期：Prompt + Context Engineering
+### 第二期：Prompt + Context + Harness（三层工程）
 
 **文件位置**: `./prompt-context/`
 
-**核心目标**：掌握 Prompt 与 Context 设计方法，构建稳定可复用的 AI 工作流。
+**核心目标**：掌握 Prompt · Context · Harness 三层工程协同方法，构建可持续演化的 AI 工作流。
 
-**章节结构**:
+**章节结构**（Pattern B：三主题强制收敛）:
 
-- `01.overview.md` - **概述**：为什么懂了 Vibe Coding 还不够？(揭示从“单次对话”走向“工程化控制”的痛点：遗忘、幻觉、无序)
-- `02.principle.md` - **核心原理**：
-  - Prompt 进阶：从 Zero-shot 到 Few-shot，再到 Chain-of-Thought (CoT)。
-  - Context 运作机制：LLM 的注意力机制 (Attention)、Token 上限与“大海捞针”困境。
-- `03.features.md` - **最佳实践与设计模式**（基于 Anthropic & PromptingGuide 规范）：
-  - 提示词高阶框架：ICIO 框架 (Instruction, Context, Input, Output)。
-  - 上下文工程 (Context Engineering)：如何精准投喂 (避免垃圾进垃圾出)、利用 `.cursorrules` / `.claudeprompt` 进行全局约束。
-- `04.practice.md` - **实战演练**：
-  - 场景一：利用结构化 Prompt 结合高质量 Context，一次性生成符合团队规范的复杂 Vue3 组件。
-  - 场景二：深水区查 Bug。切取 `nn-client-all` 极其微小的核心链路栈抛给 AI，避免给整个工程导致的推理瘫痪。
-- `05.QA.md` - **问答**：关于模型“变笨”、Token 消耗过快等常见疑问解答。
+- `01.overview.md` - **概述**：为什么懂了 Vibe Coding 还不够？（遗忘、幻觉、无序的根因）
+- `02.1.prompt-engineering.md` - **Prompt 层**：Zero-Shot → Few-Shot (Brown et al. 2020) → CoT (Wei et al. 2022) + ICIO 框架
+- `02.2.context-engineering.md` - **Context 层**：首尾定律（Liu et al. 2023）+ 精准投喂 + RAG vs 长上下文决策树
+- `02.3.harness-engineering.md` - **Harness 层**：Tool + Memory + Loop 三件套 + Ralph Loop + 仓库即记录系统
+- `03.integration.md` - **三层协同**：化学反应公式 + 三层各层检查清单（强制收敛）
+- `04.practice.md` - **实战演练**：Vue3 组件生成 + nn-client-all Bug 调试
+- `05.QA.md` - **问答**：模型变笨 / Prompt 竞争力 / Harness vs Vibe Coding / 代码安全
 
 ---
 

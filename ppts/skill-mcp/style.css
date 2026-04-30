@@ -1,0 +1,111 @@
+/* ── two-cols-header layout 间距优化 ── */
+.two-cols-header {
+  column-gap: 10px;
+}
+.two-cols-header .col-header {
+  margin-bottom: 10px;
+}
+
+/* ── bad / good 对比块（搭配 layout: two-cols-header 使用） ── */
+.col-bad {
+  background: #fff1f0;
+  border-left: 4px solid #ff4d4f;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+}
+
+.col-good {
+  background: #f6ffed;
+  border-left: 4px solid #52c41a;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+}
+
+.col-bad h3,
+.col-good h3 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.col-bad li,
+.col-good li {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ── MCP / Skill 主题色块（用于强调身份） ── */
+.theme-mcp {
+  background: #eef4ff;
+  border-left: 4px solid #3b82f6;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+.theme-skill {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+.theme-combo {
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+/* ── 表格水平滚动 ── */
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 85%;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.table-scroll table {
+  font-size: 11px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 4px 8px;
+  white-space: normal;
+  word-break: break-word;
+  vertical-align: middle;
+}
+
+/* ── 金句屏 ── */
+.punchline {
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.punchline .accent {
+  color: #2563eb;
+}
+
+.punchline .accent-skill {
+  color: #a855f7;
+}
+
+/* ── 章节小卡片（用于路线图） ── */
+.chapter-card {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.chapter-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border-color: rgba(59, 130, 246, 0.5);
+}

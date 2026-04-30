@@ -1,28 +1,36 @@
 ---
 layout: cover
 transition: slide-left
-title: Prompt + Context 工程
+title: Prompt · Context · Harness
 routerMode: hash
 comark: true
 mdc: true
 ---
 
+# Prompt · Context · Harness
 
-# Prompt + Context 工程
 
 * 分享人: 程乐
-* 时间: 2026-04-30
+* 时间: 2026-05-08
 
 ---
 src: ./01.overview.md
 ---
 
 ---
-src: ./02.principle.md
+src: ./02.1.prompt-engineering.md
 ---
 
 ---
-src: ./03.features.md
+src: ./02.2.context-engineering.md
+---
+
+---
+src: ./02.3.harness-engineering.md
+---
+
+---
+src: ./03.integration.md
 ---
 
 ---

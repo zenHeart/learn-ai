@@ -12,3 +12,6 @@ _check.md
 .DS_Store
 poster/
 .cursorindexingignore
+.claude/settings.local.json
+.gemini
+.github/workflows/pr-check.yml

@@ -1,0 +1,140 @@
+---
+name: vue-component-generator
+description: 生成 Vue 3 组件代码
+version: "1.0"
+type: component
+
+instruction: |
+  你是一个 Vue 3 组件生成器。根据用户需求生成高质量的 Vue 3 Composition API 组件代码。
+  遵循以下原则：
+  1. 使用 <script setup> 语法
+  2. 使用 TypeScript 进行类型定义
+  3. 组件必须可复用和可测试
+  4. 添加适当的注释说明
+
+examples:
+  - description: 简单按钮组件
+    input: |
+      生成一个简单的按钮组件，支持 primary 和 secondary 两种类型
+    output: |
+      <script setup lang="ts">
+      interface Props {
+        type?: 'primary' | 'secondary'
+      }
+      withDefaults(defineProps<Props>(), { type: 'primary' })
+      </script>
+
+      <template>
+        <button :class="['app-button', \`app-button--\${type}\`]">
+          <slot />
+        </button>
+      </template>
+
+      <style scoped>
+      .app-button {
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+      }
+      .app-button--primary {
+        background: #3b82f6;
+        color: white;
+      }
+      .app-button--secondary {
+        background: #e5e7eb;
+        color: #374151;
+      }
+      </style>
+
+  - description: 带图标的输入框
+    input: |
+      生成一个带图标的输入框组件，图标在左侧
+    output: |
+      <script setup lang="ts">
+      import { computed } from 'vue'
+
+      interface Props {
+        modelValue?: string
+        icon?: string
+        placeholder?: string
+      }
+
+      const props = withDefaults(defineProps<Props>(), {
+        modelValue: '',
+        icon: '',
+        placeholder: '请输入...'
+      })
+
+      const emit = defineEmits<{
+        'update:modelValue': [value: string]
+      }>()
+
+      const handleInput = (e: Event) => {
+        const target = e.target as HTMLInputElement
+        emit('update:modelValue', target.value)
+      }
+      </script>
+
+      <template>
+        <div class="input-with-icon">
+          <span v-if="icon" class="input-icon">{{ icon }}</span>
+          <input
+            :value="modelValue"
+            :placeholder="placeholder"
+            class="input-field"
+            @input="handleInput"
+          />
+        </div>
+      </template>
+
+      <style scoped>
+      .input-with-icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .input-icon {
+        color: #6b7280;
+      }
+      .input-field {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+      }
+      </style>
+
+constraints:
+  - 必须使用 TypeScript
+  - 必须使用 <script setup> 语法
+  - 使用 withDefaults 定义 props 默认值
+  - 使用 defineEmits 定义事件
+  - 添加适当的 TypeScript 类型定义
+  - 样式使用 scoped 防止污染
+
+output_format:
+  type: code
+  language: vue
+  schema:
+    script: 组件脚本部分，包含 Props、Emits、逻辑
+    template: 组件模板部分
+    style: 组件样式部分（可选）
+---
+
+<!-- 默认模板：用户可在此基础上修改 -->
+<template>
+  <div class="vue-component">
+    <slot>内容</slot>
+  </div>
+</template>
+
+<script setup lang="ts">
+// 在此处定义组件逻辑
+</script>
+
+<style scoped>
+.vue-component {
+  /* 组件样式 */
+}
+</style>

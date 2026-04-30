@@ -1,0 +1,58 @@
+/* ── two-cols-header layout 间距优化 ── */
+.two-cols-header {
+  column-gap: 10px;
+}
+.two-cols-header .col-header {
+  margin-bottom: 10px;
+}
+
+/* ── bad / good 对比块（搭配 layout: two-cols-header 使用） ── */
+.col-bad {
+  background: #fff1f0;
+  border-left: 4px solid #ff4d4f;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+}
+
+.col-good {
+  background: #f6ffed;
+  border-left: 4px solid #52c41a;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+}
+
+.col-bad h3,
+.col-good h3 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.col-bad li,
+.col-good li {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ── 表格水平滚动（宽表格场景） ── */
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 85%;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.table-scroll table {
+  font-size: 11px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 4px 8px;
+  white-space: normal;
+  word-break: break-word;
+  vertical-align: middle;
+}

@@ -4,6 +4,20 @@
   "scripts": {
     "build": "slidev build --base /learn-ai/ppts/prompt-context/",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export",
+    "demo:2.1": "node examples/2.1.zero-vs-few-shot/main.js",
+    "demo:2.2": "node examples/2.2.cot-extended-thinking/main.js",
+    "demo:2.3": "node examples/2.3.context-window/main.js",
+    "demo:2.4": "node examples/2.4.lost-in-the-middle/main.js",
+    "demo:3.1": "node examples/3.1.icio-framework/main.js",
+    "demo:3.2": "node examples/3.2.claudeprompt/main.js",
+    "demo:3.3": "node examples/3.3.tool-calling/main.js",
+    "demo:4.1": "node examples/4.1.vue3-component/main.js",
+    "demo:4.2": "node examples/4.2.bug-hunting-nn-client/main.js"
+  },
+  "dependencies": {
+    "@comark/markdown-it": "^0.3.2",
+    "@slidev/types": "^52.12.0",
+    "marked": "^17.0.3"
   }
 }

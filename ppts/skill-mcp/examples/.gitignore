@@ -1,0 +1,23 @@
+# 环境变量（含 token / secret）
+.env
+.env.local
+*.env
+
+# 依赖
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.Python
+
+# 构建产物
+dist/
+build/
+*.egg-info/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
