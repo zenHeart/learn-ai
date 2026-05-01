@@ -1,7 +1,7 @@
 # 官方提示工程指南深度解读（2026.05）
 
 > 基于 OpenAI GPT-5.5 和 Anthropic Claude 最新官方文档整理
-> 来源：[Claude Prompting Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) | [OpenAI Prompt Guidance](https://developers.openai.com/api/docs/guides/prompt-guidance) | [Using GPT-5.5](https://developers.openai.com/api/docs/guides/latest-model)
+> 来源：[Claude Prompting Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) | [OpenAI Prompt Guidance](https://developers.openai.com/api/docs/guides/prompt-guidance) | [Using GPT-5.5](https://developers.openai.com/api/docs/guides/latest-model)
 
 ---
 
@@ -11,10 +11,10 @@
 
 **关键洞察**：OpenAI 和 Anthropic 同时发布了官方提示工程指南，且两个模型的进化方向**完全相反**：
 
-| 模型 | 进化方向 |
-|------|---------|
-| **Claude Opus 4.7** | 越来越**字面**，严格遵循指令 |
-| **GPT-5.5** | 越来越**高效**，直接追求结果 |
+| 模型 | 进化方向 | 核心特征 |
+|------|---------|---------|
+| **Claude Opus 4.7** | 越来越**字面** | 严格遵循指令，不会自动泛化 |
+| **GPT-5.5** | 越来越**高效** | 直接追求结果，选择最优路径 |
 
 ---
 
@@ -135,40 +135,285 @@ Role: [1-2 句话定义模型功能、上下文和任务]
 | 添加当前日期 | 模型已知道 UTC 日期 |
 | 静态内容放后面 | 静态内容放前面（利于缓存） |
 
----
+### 1.6 输出格式控制
 
-## 二、Anthropic Claude 提示工程概览
+**默认风格**：简洁、直接、任务导向
 
-### 2.1 前置条件
+**调整方法**：
+- `text.verbosity = low`：更简洁
+- `text.verbosity = medium`：默认
+- 显式定义格式要求
 
-在开始提示工程之前，必须建立：
-
-1. **明确的成功标准** - 你的用例什么算成功
-2. **可测试的评估方法** - 如何量化测试
-3. **初版 prompt** - 你要改进的起点
-
-### 2.2 何时需要提示工程
-
-**不是所有问题都能用提示工程解决**：
-
-| 可以用提示工程 | 应该用其他方法 |
-|--------------|--------------|
-| 输出质量 | 延迟 |
-| 准确性 | 成本（可能换模型更有效） |
-| 格式控制 | - |
-
-### 2.3 Claude 特有技术
-
-虽然概览页面没有详细展开，但 Claude 支持：
-
-- **XML 标签** - 用 `<instructions>`、`<example>` 等结构化 prompt
-- **Role Prompting** - 角色扮演
-- **Thinking** - 让模型展示思考过程
-- **Prompt Chaining** - 链式 prompt
+**避免过度格式化**：
+```
+❌ 不要：频繁使用标题、加粗、列表
+✅ 应该：段落为主，必要时才用格式
+```
 
 ---
 
-## 三、两个模型的对比
+## 二、Anthropic Claude 提示工程最佳实践
+
+### 2.1 Claude Opus 4.7 特性
+
+#### 响应长度自动校准
+
+Claude Opus 4.7 根据任务复杂度自动调整响应长度：
+- 简单查询 → 简短回答
+- 开放分析 → 详细回答
+
+**控制方法**：
+```markdown
+Provide concise, focused responses. Skip non-essential context, 
+and keep examples minimal.
+```
+
+#### 努力程度（Effort）校准
+
+| 级别 | 适用场景 | 说明 |
+|------|---------|------|
+| **max** | 极复杂任务 | 可能过度思考 |
+| **xhigh** | 编码和代理任务 | **推荐** |
+| **high** | 智能敏感任务 | 平衡点 |
+| **medium** | 成本敏感任务 | 省 token |
+| **low** | 短任务、延迟敏感 | 可能欠思考 |
+
+**关键变化**：Opus 4.7 严格遵守 effort 级别，低级别不会"超额完成"
+
+**遇到浅推理时**：
+```markdown
+❌ 不要：写更多提示绕过
+✅ 应该：提高 effort 到 high 或 xhigh
+```
+
+#### 工具使用触发
+
+Opus 4.7 倾向于**少用工具多推理**（通常更好）。
+
+**需要更多工具使用时**：
+- 提高 effort 级别（high/xhigh）
+- 显式指示何时使用工具
+
+```markdown
+If you find that the model is not using your web search tools, 
+clearly describe why and how it should.
+```
+
+#### 更字面的指令跟随
+
+> "Claude Opus 4.7 interprets prompts more literally and explicitly than Claude Opus 4.6"
+
+**影响**：
+- ✅ 精确、可预测
+- ❌ 不会自动泛化指令
+
+**需要泛化时**：
+```markdown
+Apply this formatting to every section, not just the first one.
+```
+
+#### 语气和写作风格
+
+Opus 4.7 更**直接、主观**，比 4.6 更少验证性措辞和表情符号。
+
+**需要更温暖时**：
+```markdown
+Use a warm, collaborative tone. Acknowledge the user's framing 
+before answering.
+```
+
+#### 子代理生成控制
+
+默认生成**更少子代理**。
+
+**控制方法**：
+```markdown
+Do not spawn a subagent for work you can complete directly 
+in a single response (e.g. refactoring a function you can already see).
+
+Spawn multiple subagents in the same turn when fanning out 
+across items or reading multiple files.
+```
+
+#### 设计和前端默认值
+
+Opus 4.7 有固定的**house style**：
+- 温暖奶油色背景（~#F4F1EA）
+- 衬线字体（Georgia, Fraunces, Playfair）
+- 赤土/琥珀色强调色
+
+**打破默认**：
+1. **指定具体替代方案**
+2. **让模型先提议选项**
+
+```markdown
+Before building, propose 4 distinct visual directions 
+tailored to this brief (each as: bg hex / accent hex / typeface — 
+one-line rationale). Ask the user to pick one, then implement 
+only that direction.
+```
+
+#### 代码审查工具
+
+Opus 4.7 找 bug 能力**显著提升**（recall +11pp），但可能更严格遵循"只报告高严重性"的指令。
+
+**推荐提示**：
+```markdown
+Report every issue you find, including ones you are uncertain about 
+or consider low-severity. Do not filter for importance or confidence 
+at this stage - a separate verification step will do that. Your goal 
+here is coverage: it is better to surface a finding that later gets 
+filtered out than to silently drop a real bug.
+```
+
+### 2.2 通用提示原则
+
+#### 原则 1：清晰直接
+
+> "Think of Claude as a brilliant but new employee who lacks context on your norms and workflows."
+
+**黄金法则**：把 prompt 给一个没有背景的同事看，如果他们会困惑，Claude 也会。
+
+**示例**：
+```
+❌ Create an analytics dashboard
+✅ Create an analytics dashboard. Include as many relevant features 
+   and interactions as possible. Go beyond the basics to create a 
+   fully-featured implementation.
+```
+
+#### 原则 2：添加上下文
+
+解释**为什么**要这样做，Claude 会更好地理解和泛化。
+
+**示例**：
+```
+❌ NEVER use ellipses
+✅ Your response will be read aloud by a text-to-speech engine, 
+   so never use ellipses since the text-to-speech engine will not 
+   know how to pronounce them.
+```
+
+#### 原则 3：有效使用示例
+
+**示例要求**：
+- **相关**：紧密镜像实际用例
+- **多样**：覆盖边缘情况
+- **结构化**：用 `<example>` 标签包裹
+
+**数量**：3-5 个示例效果最佳
+
+#### 原则 4：XML 标签结构化
+
+XML 标签帮助 Claude 无歧义地解析复杂 prompt。
+
+**最佳实践**：
+```markdown
+<instructions>
+  [指令内容]
+</instructions>
+
+<context>
+  [上下文内容]
+</context>
+
+<example>
+  [示例内容]
+</example>
+```
+
+**嵌套标签**：
+```markdown
+<documents>
+  <document index="1">
+    <source>file1.pdf</source>
+    <content>...</content>
+  </document>
+  <document index="2">
+    <source>file2.pdf</source>
+    <content>...</content>
+  </document>
+</documents>
+```
+
+#### 原则 5：角色设定
+
+在系统提示中设置角色，聚焦行为和语气。
+
+```markdown
+You are a helpful coding assistant specializing in Python.
+```
+
+### 2.3 长上下文处理
+
+当处理 20k+ token 的文档时：
+
+1. **长文档放在顶部**：查询放在最后（提高响应质量 30%）
+2. **用 XML 结构化**：`<document>` 标签包裹每个文档
+3. **引用原文**：让 Claude 先引用相关部分再回答
+
+**示例**：
+```markdown
+<documents>
+  <document index="1">
+    <source>annual_report.pdf</source>
+    <document_content>{{CONTENT}}</document_content>
+  </document>
+</documents>
+
+Find quotes relevant to the topic. Place these in <quotes> tags. 
+Then answer based on these quotes.
+```
+
+### 2.4 输出格式控制
+
+**控制方法**：
+1. **告诉 Claude 要做什么**（而非不要做什么）
+2. **用 XML 格式指示器**
+3. **匹配 prompt 风格与期望输出**
+
+**避免过度列表**：
+```markdown
+<avoid_excessive_markdown>
+Write in clear, flowing prose using complete paragraphs. 
+Reserve markdown primarily for inline code and code blocks.
+DO NOT use lists unless presenting truly discrete items.
+</avoid_excessive_markdown>
+```
+
+### 2.5 工具使用
+
+**显式指示**：
+```
+❌ Can you suggest some changes to improve this function?
+✅ Change this function to improve its performance.
+```
+
+**默认行为控制**：
+```markdown
+<default_to_action>
+By default, implement changes rather than only suggesting them.
+</default_to_action>
+```
+
+### 2.6 思维链控制
+
+**减少思考**：
+```markdown
+Thinking adds latency and should only be used when it will 
+meaningfully improve answer quality — typically for problems 
+that require multi-step reasoning. When in doubt, respond directly.
+```
+
+**增加思考**：
+```markdown
+This task involves multi-step reasoning. Think carefully through 
+the problem before responding.
+```
+
+---
+
+## 三、两模型对比
 
 ### 3.1 进化方向对比
 
@@ -178,9 +423,19 @@ Role: [1-2 句话定义模型功能、上下文和任务]
 | **prompt 长度** | 可以更短、更结果导向 | 可能需要更精确的指令 |
 | **人格** | 需要显式定义 | 需要显式定义 |
 | **工具使用** | 更精确的工具选择 | 需要明确的工具描述 |
-| **推理能力** | 默认 medium，可调节 | 内置思考过程 |
+| **推理能力** | 可调节（low→xhigh）| 可调节（low→max）|
+| **指令跟随** | 结果优先 | 字面遵循 |
+| **设计风格** | 无固定默认 | 有固定 house style |
 
-### 3.2 选择建议
+### 3.2 努力程度对比
+
+| GPT-5.5 | Claude Opus 4.7 |
+|---------|-----------------|
+| `reasoning.effort` | `effort` |
+| low → medium → high → xhigh | low → medium → high → xhigh → max |
+| 默认 medium | 无默认，需显式设置 |
+
+### 3.3 选择建议
 
 | 场景 | 推荐 |
 |------|------|
@@ -188,6 +443,8 @@ Role: [1-2 句话定义模型功能、上下文和任务]
 | 需要严格遵循指令 | Claude |
 | 面向用户的产品 | 两者都需要人格定义 |
 | 长上下文检索 | GPT-5.5 |
+| 代码审查 | Claude Opus 4.7 |
+| 设计密集型 | Claude（但需打破默认）|
 
 ---
 
@@ -205,6 +462,7 @@ Role: [1-2 句话定义模型功能、上下文和任务]
 
 ### 4.2 优化清单
 
+**GPT-5.5**：
 - [ ] 状态期望结果和成功标准
 - [ ] 减少或删除详细的步骤指导
 - [ ] 从 prompt 中移除输出 schema 定义
@@ -212,6 +470,15 @@ Role: [1-2 句话定义模型功能、上下文和任务]
 - [ ] 删除当前日期（模型已知道）
 - [ ] 添加明确的停止条件
 - [ ] 定义缺失证据时的行为
+
+**Claude Opus 4.7**：
+- [ ] 设置合适的 effort 级别
+- [ ] 显式指示工具使用时机
+- [ ] 用 XML 标签结构化 prompt
+- [ ] 提供 3-5 个示例
+- [ ] 长文档放在顶部，查询放在最后
+- [ ] 让模型先引用再回答
+- [ ] 显式定义输出格式
 
 ### 4.3 性能调优
 
@@ -222,7 +489,14 @@ Role: [1-2 句话定义模型功能、上下文和任务]
 | `reasoning.effort` | medium（默认）→ low（延迟敏感）→ high（复杂任务）|
 | `text.verbosity` | medium（默认）→ low（简洁响应）|
 
-**注意**：更高的推理努力不一定更好，可能导致过度思考或不必要的搜索。
+**Claude Opus 4.7 参数**：
+
+| 参数 | 建议 |
+|------|------|
+| `effort` | high（默认）→ xhigh（编码/代理）→ low（短任务）|
+| `max_tokens` | 64k+（复杂任务）|
+
+**注意**：更高的推理努力不一定更好，可能导致过度思考。
 
 ---
 
@@ -238,21 +512,37 @@ Role: [1-2 句话定义模型功能、上下文和任务]
 
 ### Anthropic
 
-> "Not every success criteria or failing eval is best solved by prompt engineering."
+> "Think of Claude as a brilliant but new employee who lacks context on your norms and workflows."
+
+> "Claude Opus 4.7 interprets prompts more literally and explicitly than Claude Opus 4.6"
+
+> "Show your prompt to a colleague with minimal context on the task and ask them to follow it. If they'd be confused, Claude will be too."
 
 ---
 
 ## 六、学习资源
 
-### OpenAI
-- [GPT-5.5 Prompting Guide](https://developers.openai.com/api/docs/guides/prompt-guidance)
-- [Using GPT-5.5](https://developers.openai.com/api/docs/guides/latest-model)
-- [OpenAI Skills Repository](https://github.com/openai/skills)
+### OpenAI 官方文档
+- [GPT-5.5 Prompting Guide](https://developers.openai.com/api/docs/guides/prompt-guidance) - 结果优先原则、停止条件、人格定义
+- [Using GPT-5.5](https://developers.openai.com/api/docs/guides/latest-model) - 模型特性、API 参数、迁移指南
+- [OpenAI Skills Repository](https://github.com/openai/skills) - 自动化迁移工具
 
-### Anthropic
-- [Prompt Engineering Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
-- [Prompting Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
-- [Interactive Tutorial (GitHub)](https://github.com/anthropics/prompt-eng-interactive-tutorial)
+### Anthropic 官方文档
+- [Prompt Engineering Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) - 概览和前置条件
+- [Prompting Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) - **最全面的参考**，覆盖所有技术
+- [Interactive Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - 9 章交互式教程
+- [Google Sheets Tutorial](https://docs.google.com/spreadsheets/d/19jzLgRruG9kjUQNKtCg1ZjdD6l6weA6qRXG5zLIAhC8) - 轻量级电子表格版本
+
+### 教程章节（Anthropic Interactive Tutorial）
+1. 基本提示结构
+2. 清晰直接
+3. 角色分配
+4. 分离数据和指令
+5. 输出格式化 & 代替 Claude 说话
+6. 逐步思考（Thinking Step by Step）
+7. 使用示例
+8. 避免幻觉
+9. 构建复杂提示（行业用例）
 
 ---
 
