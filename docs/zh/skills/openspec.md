@@ -1,56 +1,114 @@
+---
+name: openspec
+description: 规格驱动开发框架。在写代码之前，让人和 AI 在"规格"上达成一致，解决 AI 编程的不可预测性。当需要管理需求变更、定义行为契约、或进行增量式规格管理时使用。触发场景：「定义需求规格」「管理需求变更」「用规格驱动开发」「Delta Spec」。
+---
+
 # OpenSpec：规格驱动开发框架
 
-## 技能描述
+## 目标
 
-OpenSpec 是一个面向 AI 编程助手的规格驱动开发框架，核心理念是在写代码之前，先让人和 AI 在"规格"上达成一致。
-
-**解决的核心问题：** AI 编程的不可预测性——当需求只存在于聊天记录中时，AI 会产生模糊的理解和不可预测的输出。
-
-**核心创新：** 用 Delta Specs（增量规格）管理需求变更，类似 Git 的 diff 思维应用到规格管理。
+用规格（Spec）驱动 AI 编程，在写代码之前先让人和 AI 对"做什么"达成一致，消除聊天记录中的需求漂移。
 
 ## 核心机制
 
-### 1. 意图锚定（Artifact Graph）
+| 机制 | 说明 | 关键点 |
+|------|------|--------|
+| 🎯 意图锚定（Artifact Graph） | 用 proposal.md 固化"为什么做"和"做什么" | 所有后续制品都引用此文件，意图不漂移 |
+| 📜 行为契约（RFC 2119） | 每个需求用 RFC 2119 关键字明确强制程度 | MUST(100%) / SHOULD(~90%) / MAY(~50%) |
+| 🔄 Delta Specs（增量规格） | 用四种操作描述变更：ADDED / MODIFIED / REMOVED / RENAMED | 归档时按固定顺序自动合并到主规格 |
+| ✅ 渐进式验证 | 分级验证：ERROR(阻塞) / WARNING(提醒) / INFO(提示) | 平衡严格和实用 |
 
-用 proposal.md 固化"为什么做"和"做什么"，后续所有制品都引用这个文件，意图不会在聊天记录中漂移。
+### 制品依赖关系
 
-制品依赖关系：
-- proposal（无依赖，最先创建）
-- specs（依赖 proposal）
-- design（依赖 proposal，可与 specs 并行）
-- tasks（依赖 specs 和 design）
+```
+proposal（无依赖，最先创建）
+    ↓
+specs（依赖 proposal）  ←→  design（依赖 proposal，可并行）
+    ↓
+tasks（依赖 specs 和 design）
+```
 
-依赖关系是"使能"不是"门控"，灵活但有序。
+> 依赖是"使能"不是"门控"，灵活但有序。
 
-### 2. 行为契约（RFC 2119 关键字）
+## 工作流程
 
-每个需求必须用 RFC 2119 关键字明确强制程度：
-- MUST/SHALL：绝对要求（100%）
-- SHOULD：推荐，有例外（~90%）
-- MAY：可选（~50%）
+### 快速路径（推荐，core profile）
 
-每个需求必须包含至少一个 Given/When/Then 场景，消除"应该"、"尽量"这类模糊词汇。
+#### Step 1: 创建变更
 
-### 3. Delta Specs（增量规格）
+```bash
+/opsx:propose add-dark-mode
+```
 
-用四种操作描述变更：
-- ADDED：新增需求
-- MODIFIED：修改现有需求
-- REMOVED：删除需求
-- RENAMED：重命名需求（OpenSpec 独创，Git 没有原生支持）
+AI 执行：
+1. 创建 `openspec/changes/add-dark-mode/proposal.md`（为什么做、做什么）
+2. 创建 `openspec/changes/add-dark-mode/specs/ui/spec.md`（Delta 格式增量规格）
+3. 创建 `openspec/changes/add-dark-mode/design.md`（怎么做，技术方案）
+4. 创建 `openspec/changes/add-dark-mode/tasks.md`（实现清单）
 
-归档时按 RENAMED → REMOVED → MODIFIED → ADDED 顺序自动合并到主规格。
+#### Step 2: 实现任务
 
-### 4. 渐进式验证
+```bash
+/opsx:apply
+```
 
-验证分级：
-- ERROR：阻塞（格式错误，必须修复）
-- WARNING：提醒（未完成任务，建议修复）
-- INFO：提示（文本过长，可选修复）
+AI 执行：
+1. 读取 `tasks.md`
+2. 逐个实现任务
+3. 更新 `tasks.md` 中的完成状态
 
-平衡严格和实用，不追求和代码约束一样强。
+#### Step 3: 归档
 
-## 文件结构
+```bash
+/opsx:archive
+```
+
+AI 执行：
+1. 验证 Delta Specs 格式
+2. 按 RENAMED → REMOVED → MODIFIED → ADDED 顺序合并到主规格
+3. 移动到 `openspec/changes/archive/`
+
+### 完整路径（expanded profile）
+
+| 命令 | 用途 |
+|------|------|
+| `/opsx:new change-name` | 创建变更骨架 |
+| `/opsx:continue` | 逐步创建下一个制品 |
+| `/opsx:ff` | 一次性快速创建所有制品 |
+| `/opsx:verify` | 验证实现是否匹配规格 |
+| `/opsx:sync` | 合并 Delta Specs 到主规格 |
+| `/opsx:bulk-archive` | 批量归档多个变更 |
+| `/opsx:onboard` | 引导式教程 |
+
+### 探索路径
+
+| 命令 | 用途 |
+|------|------|
+| `/opsx:explore` | 调查问题、比较方案，澄清需求后转入 propose 或 new |
+
+## 命令速查
+
+### Core Profile（核心）
+
+| 命令 | 用途 | 产出 |
+|------|------|------|
+| `/opsx:propose` | 创建变更并生成所有规划制品 | proposal + specs + design + tasks |
+| `/opsx:explore` | 探索问题、比较方案 | 调研报告 |
+| `/opsx:apply` | 实现任务 | 代码变更 |
+| `/opsx:archive` | 归档完成的变更 | 合并到主规格 + 归档 |
+
+### Expanded Profile（扩展）
+
+| 命令 | 用途 |
+|------|------|
+| `/opsx:new` | 创建变更骨架 |
+| `/opsx:continue` | 逐步创建制品 |
+| `/opsx:ff` | 快速创建所有制品 |
+| `/opsx:verify` | 验证实现 |
+| `/opsx:sync` | 同步规格 |
+| `/opsx:bulk-archive` | 批量归档 |
+
+## 目录规范
 
 ```
 openspec/
@@ -75,61 +133,12 @@ openspec/
 └── config.yaml         # 项目配置（可选）
 ```
 
-## 工作流程
-
-### 快速路径（推荐，core profile）
-
-```
-/opsx:propose add-dark-mode
-→ 创建 proposal.md、specs/、design.md、tasks.md
-
-/opsx:apply
-→ 实现 tasks.md 中的任务
-
-/opsx:archive
-→ 归档变更，Delta Specs 合并到主规格
-```
-
-### 完整路径（expanded profile）
-
-```
-/opsx:new change-name      → 创建骨架
-/opsx:continue             → 逐步创建制品
-/opsx:ff                   → 一次性创建所有制品
-/opsx:verify               → 验证实现
-/opsx:sync                 → 同步规格
-/opsx:bulk-archive         → 批量归档
-```
-
-### 探索路径
-
-```
-/opsx:explore              → 调查问题、比较方案
-→ 澄清需求后转入 propose 或 new
-```
-
-## 命令参考
-
-### 核心命令（core profile）
-
-| 命令 | 用途 |
-|------|------|
-| /opsx:propose | 创建变更并生成所有规划制品 |
-| /opsx:explore | 探索问题、比较方案 |
-| /opsx:apply | 实现任务 |
-| /opsx:archive | 归档完成的变更 |
-
-### 扩展命令（expanded profile）
-
-| 命令 | 用途 |
-|------|------|
-| /opsx:new | 创建变更骨架 |
-| /opsx:continue | 逐步创建下一个制品 |
-| /opsx:ff | 快速创建所有制品 |
-| /opsx:verify | 验证实现是否匹配规格 |
-| /opsx:sync | 合并 Delta Specs 到主规格 |
-| /opsx:bulk-archive | 批量归档多个变更 |
-| /opsx:onboard | 引导式教程 |
+| 目录 | 用途 | 文件命名 |
+|------|------|---------|
+| `specs/` | 系统当前行为的事实来源 | 按功能域分目录，文件名 `spec.md` |
+| `changes/` | 提出的修改 | 目录名用 kebab-case（如 `add-dark-mode`） |
+| `changes/archive/` | 已归档的变更 | 格式：`YYYY-MM-DD-change-name` |
+| `schemas/` | 工作流定义 | 固定文件名 |
 
 ## Delta Spec 格式
 
@@ -158,11 +167,6 @@ The system MUST support TOTP-based two-factor authentication.
 The system MUST expire sessions after 15 minutes of inactivity.
 (Previously: 30 minutes)
 
-#### Scenario: Idle timeout
-- GIVEN an authenticated session
-- WHEN 15 minutes pass without activity
-- THEN the session is invalidated
-
 ## REMOVED Requirements
 
 ### Requirement: Remember Me
@@ -174,78 +178,56 @@ The system MUST expire sessions after 15 minutes of inactivity.
 - TO: `### Requirement: User Authentication`
 ```
 
-## 使用示例
+### 格式规则
 
-### 场景：添加暗黑模式
+| 操作 | 说明 |
+|------|------|
+| `ADDED` | 新增需求 |
+| `MODIFIED` | 修改现有需求（需注明之前的值） |
+| `REMOVED` | 删除需求（需注明原因） |
+| `RENAMED` | 重命名需求（OpenSpec 独创，Git 无原生支持） |
 
-**步骤 1：创建变更**
-
-用户：/opsx:propose add-dark-mode
-
-AI 执行：
-1. 创建 openspec/changes/add-dark-mode/proposal.md
-2. 创建 openspec/changes/add-dark-mode/specs/ui/spec.md（Delta 格式）
-3. 创建 openspec/changes/add-dark-mode/design.md
-4. 创建 openspec/changes/add-dark-mode/tasks.md
-
-**步骤 2：实现任务**
-
-用户：/opsx:apply
-
-AI 执行：
-1. 读取 tasks.md
-2. 逐个实现任务
-3. 更新 tasks.md 中的完成状态
-
-**步骤 3：归档**
-
-用户：/opsx:archive
-
-AI 执行：
-1. 验证 Delta Specs 格式
-2. 合并到 openspec/specs/ui/spec.md
-3. 移动到 openspec/changes/archive/
+归档合并顺序：`RENAMED → REMOVED → MODIFIED → ADDED`
 
 ## 适用场景
 
-- AI 编程（Cursor、Claude Code、Copilot 等）
-- 需求管理
-- 代码重构
-- 团队协作
-- 项目文档化
+| 场景 | 适用度 | 说明 |
+|------|--------|------|
+| AI 编程（Cursor、Claude Code、Copilot） | ⭐⭐⭐ | 核心设计目标 |
+| 需求管理 | ⭐⭐⭐ | Delta Specs 适合迭代 |
+| 代码重构 | ⭐⭐ | 需要明确变更边界 |
+| 团队协作 | ⭐⭐ | 规格作为沟通媒介 |
+| 项目文档化 | ⭐ | 可以但非最佳用途 |
 
-## 安装
+## 安装与集成
+
+### 安装
 
 ```bash
-# 全局安装
 npm install -g @fission-ai/openspec
 
-# 初始化项目
 cd your-project
 openspec init
-
-# 选择 AI 工具（如 Claude Code、Cursor 等）
+# 选择 AI 工具（Claude Code、Cursor 等）
 # OpenSpec 会生成对应的 skills 和 commands
 ```
 
-## 工具集成
-
-OpenSpec 支持 25+ AI 编程工具：
+### 工具集成
 
 | 工具 | 命令格式 |
 |------|---------|
-| Claude Code | /opsx:propose |
-| Cursor | /opsx-propose |
-| Windsurf | /opsx-propose |
-| GitHub Copilot | /opsx-propose |
-| Kimi CLI | /skill:openspec-propose |
+| Claude Code | `/opsx:propose` |
+| Cursor | `/opsx-propose` |
+| Windsurf | `/opsx-propose` |
+| GitHub Copilot | `/opsx-propose` |
+| Kimi CLI | `/skill:openspec-propose` |
 
 ## 最佳实践
 
 1. **保持变更聚焦** — 一个逻辑单元一个变更
-2. **用 /opsx:explore 探索** — 需求不明确时先调查
-3. **归档前验证** — 用 /opsx:verify 检查实现
-4. **命名清晰** — add-dark-mode、fix-login-bug、refactor-auth
+2. **用 `/opsx:explore` 探索** — 需求不明确时先调查
+3. **归档前验证** — 用 `/opsx:verify` 检查实现
+4. **命名清晰** — `add-dark-mode`、`fix-login-bug`、`refactor-auth`
 5. **渐进式使用** — 从小功能开始，逐步扩展
 
 ## 参考链接
