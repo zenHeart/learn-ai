@@ -104,7 +104,8 @@ and alive, but not chatty for its own sake.
 ### 1.4 Prompt 结构模板
 
 ```markdown
-Role: [1-2 句话定义模型功能、上下文和任务]
+# Role
+[1-2 句话定义模型功能、上下文和任务]
 
 # Personality
 [语气、风度、协作风格]
@@ -463,7 +464,7 @@ the problem before responding.
 ### 4.2 优化清单
 
 **GPT-5.5**：
-- [ ] 状态期望结果和成功标准
+- [ ] 说明期望结果和成功标准
 - [ ] 减少或删除详细的步骤指导
 - [ ] 从 prompt 中移除输出 schema 定义
 - [ ] 优化缓存：静态内容在前，动态内容在后
