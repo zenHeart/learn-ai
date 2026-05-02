@@ -1,0 +1,18 @@
+have_fun: false
+memory_config:
+  disabled: false
+code_review:
+  disable: false
+  # 设置为 HIGH，只针对严重违反规范的问题进行评论
+  comment_severity_threshold: HIGH
+  max_review_comments: 5
+  pull_request_opened:
+    help: false
+    summary: true
+    code_review: true
+    include_drafts: true
+ignore_patterns:
+  # 忽略静态构建产物和第三方包
+  - "docs/.vitepress/dist/**"
+  - "docs/.vitepress/cache/**"
+  - "node_modules/**"
