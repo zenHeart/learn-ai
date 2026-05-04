@@ -10,6 +10,7 @@
 .col-bad {
   background: #fff1f0;
   border-left: 4px solid #ff4d4f;
+  color: #1f2937;
   padding: 1rem 1.2rem;
   border-radius: 4px;
 }
@@ -17,6 +18,7 @@
 .col-good {
   background: #f6ffed;
   border-left: 4px solid #52c41a;
+  color: #1f2937;
   padding: 1rem 1.2rem;
   border-radius: 4px;
 }

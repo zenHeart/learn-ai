@@ -51,7 +51,7 @@
 - `02.2.context-engineering.md` - **Context 层**：首尾定律（Liu et al. 2023）+ 精准投喂 + RAG vs 长上下文决策树
 - `02.3.harness-engineering.md` - **Harness 层**：Tool + Memory + Loop 三件套 + Ralph Loop + 仓库即记录系统
 - `03.integration.md` - **三层协同**：化学反应公式 + 三层各层检查清单（强制收敛）
-- `04.practice.md` - **实战演练**：Vue3 组件生成 + nn-client-all Bug 调试
+- `04.practice.md` - **实战演练**：写邮件 · 分析问题（通用场景）
 - `05.QA.md` - **问答**：模型变笨 / Prompt 竞争力 / Harness vs Vibe Coding / 代码安全
 
 ---
