@@ -35,6 +35,77 @@
   line-height: 1.7;
 }
 
+/* ── 方法论页核心句：避免被默认主题当作 h1 副标题降透明度 ── */
+.method-lead {
+  margin: 0.5rem 0 1.25rem;
+  color: #111827;
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+
+.method-lead strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* ── Prompt 框架速览页 ── */
+.prompt-frameworks table {
+  table-layout: fixed;
+  font-size: 0.66rem;
+  line-height: 1.35;
+}
+
+.prompt-frameworks th,
+.prompt-frameworks td {
+  padding: 0.34rem 0.4rem;
+  vertical-align: top;
+}
+
+.prompt-frameworks th:nth-child(1),
+.prompt-frameworks td:nth-child(1) {
+  width: 12%;
+}
+
+.prompt-frameworks th:nth-child(2),
+.prompt-frameworks td:nth-child(2) {
+  width: 28%;
+}
+
+.prompt-frameworks th:nth-child(3),
+.prompt-frameworks td:nth-child(3) {
+  width: 30%;
+}
+
+.prompt-frameworks th:nth-child(4),
+.prompt-frameworks td:nth-child(4) {
+  width: 30%;
+}
+
+.framework-badge {
+  display: inline-flex;
+  min-width: 3.8rem;
+  justify-content: center;
+  border: 1px solid #2563eb;
+  border-radius: 4px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 0.08rem 0.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.prompt-frameworks a.framework-badge {
+  border-bottom: 1px solid #2563eb;
+}
+
+.prompt-framework-note {
+  margin-top: 0.6rem;
+  color: #334155;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
 /* ── 表格水平滚动（宽表格场景） ── */
 .table-scroll {
   overflow-x: auto;
