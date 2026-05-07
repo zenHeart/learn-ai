@@ -1,11 +1,25 @@
 <script setup lang="ts">
-const contextItems = ["System / Rules", "Memory / RAG", "Tool Results", "Current Prompt"];
+// Prompt Engineering
+const promptFocus = "问的对";
 
-const harnessItems = [
-  { label: "Memory", desc: "固化规则" },
-  { label: "Tools", desc: "连接外部世界" },
-  { label: "Loop", desc: "观察 / 验证 / 纠偏" },
+// Context Engineering - 本轮输入窗口
+const contextItems = [
+  "System / Rules",
+  "Memory / RAG",
+  "Tool Results",
+  "Current Prompt",
 ];
+
+const contextFocus = "给的准";
+
+// Harness Engineering - 运行时闭环
+const harnessItems = [
+  { label: "Memory", desc: "跨轮状态保持" },
+  { label: "Tools", desc: "执行外部操作" },
+  { label: "Loop", desc: "多轮一致性保障" },
+];
+
+const harnessFocus = "管的住";
 </script>
 
 <template>
@@ -14,9 +28,9 @@ const harnessItems = [
       <div class="layer-header">
         <div>
           <p class="layer-kicker">Harness Engineering</p>
-          <h3>运行时闭环</h3>
+          <h3>{{ harnessFocus }}</h3>
         </div>
-        <p class="layer-problem">解决：多轮漂移 · 错误累积 · 无法验证</p>
+        <p class="layer-problem">保障：多轮一致 · 状态连续 · 结果可验证</p>
       </div>
 
       <div class="harness-body">
@@ -31,9 +45,9 @@ const harnessItems = [
           <div class="context-header">
             <div>
               <p class="layer-kicker">Context Engineering</p>
-              <h3>本轮实际输入窗口</h3>
+              <h3>{{ contextFocus }}</h3>
             </div>
-            <p class="layer-problem">解决：知识过期 · 信息不足 / 过载</p>
+            <p class="layer-problem">决定：哪些信息进入本轮</p>
           </div>
 
           <div class="context-grid">
@@ -45,27 +59,27 @@ const harnessItems = [
           <div class="prompt-layer">
             <div>
               <p class="layer-kicker">Prompt Engineering</p>
-              <h3>当前任务指令</h3>
+              <h3>{{ promptFocus }}</h3>
             </div>
-            <p class="prompt-problem">解决：目标模糊 · 输出发散 · 格式不稳</p>
+            <p class="prompt-problem">定义做什么 · 约束输出格式</p>
           </div>
         </div>
 
         <div class="runtime-flow">
-          <div class="arrow-label">组装 Context</div>
+          <div class="arrow-label">装配 Context</div>
           <div class="flow-arrow">→</div>
           <div class="llm-node">
             <strong>LLM</strong>
             <span>本轮推理</span>
           </div>
           <div class="flow-arrow return">↺</div>
-          <div class="arrow-label">结果回填 Loop</div>
+          <div class="arrow-label">更新 Harness</div>
         </div>
       </div>
     </section>
 
     <p class="diagram-summary">
-      Prompt 定义任务；Context 承载本轮信息；Harness 决定每轮 Context 如何被装配、执行和纠偏。
+      问的对 → 给的准 → 管的住：三层协同，确保 LLM 输出稳定可靠。
     </p>
   </div>
 </template>
