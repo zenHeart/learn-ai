@@ -92,11 +92,13 @@
   font-weight: 700;
 }
 
-/* ── v-clicks 首段正文：避免被默认主题 h1 + p 当作副标题压灰 ── */
+/* ── 标题后正文说明：避免被默认主题 h1 + p 当作副标题压灰 ── */
+.slidev-layout h1 + p:has(> strong:first-child),
 .slidev-layout h1 + p.slidev-vclick-target {
   margin-top: 0.75rem;
 }
 
+.slidev-layout h1 + p:has(> strong:first-child):not(.slidev-vclick-fade),
 .slidev-layout h1 + p.slidev-vclick-target:not(.slidev-vclick-fade) {
   opacity: 1;
 }
