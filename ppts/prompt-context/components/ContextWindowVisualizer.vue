@@ -30,7 +30,7 @@ const contextLayers: ContextLayer[] = [
     id: "system",
     label: "System Prompt",
     role: "全局规则、角色、安全边界",
-    source: "AGENTS.md / CLAUDE.md / .cursor/rules",
+    source: "AGENTS.md / CLAUDE.md",
     method: "固定注入，放在窗口最前",
     position: "开头高权重",
   },
