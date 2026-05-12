@@ -19,7 +19,7 @@ interface AssemblyTip {
 }
 
 const sourceEntries: SourceEntry[] = [
-  { label: "Rules / Memory", hint: "AGENTS · CLAUDE · .cursor" },
+  { label: "Rules / Memory", hint: "CLAUDE · .claude/rules · .cursor" },
   { label: "@ References", hint: "file · folder · docs · symbols" },
   { label: "Tools / MCP", hint: "terminal · browser · API" },
   { label: "History / Compact", hint: "session · summary · handoff" },
@@ -30,7 +30,7 @@ const contextLayers: ContextLayer[] = [
     id: "system",
     label: "System Prompt",
     role: "全局规则、角色、安全边界",
-    source: "AGENTS.md / CLAUDE.md",
+    source: "CLAUDE.md / System",
     method: "固定注入，放在窗口最前",
     position: "开头高权重",
   },
@@ -38,7 +38,7 @@ const contextLayers: ContextLayer[] = [
     id: "memory",
     label: "Memory / Project Rules",
     role: "项目约定、偏好、长期记忆",
-    source: ".cursor/rules / 项目规范 / 用户偏好",
+    source: ".claude/rules / 项目规范 / 用户偏好",
     method: "按项目和任务选择性注入",
     position: "稳定背景",
   },

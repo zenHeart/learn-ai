@@ -16,7 +16,7 @@ examples/
 ├── 2.3.context-window/          # Token 计算与窗口占用
 ├── 2.4.lost-in-the-middle/     # Lost in the Middle 复现
 ├── 3.1.icio-framework/         # ICIO 框架最佳实践
-├── 3.2.claudeprompt/            # .claudeprompt 完整示例
+├── 3.2.claude-code-assets/      # Claude Code 资产选择示例
 ├── 3.3.tool-calling/           # Tool Calling demo
 ├── 4.1.vue3-component/          # Vue3 组件生成
 └── 4.2.bug-hunting-nn-client/  # nn-client-all Bug 调试

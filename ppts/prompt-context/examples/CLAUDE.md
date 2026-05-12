@@ -18,7 +18,7 @@ npm run demo:2.4
 # Section 3.1: ICIO Framework
 npm run demo:3.1
 
-# Section 3.2: Claude Prompt Patterns
+# Section 3.2: Claude Code Assets
 npm run demo:3.2
 
 # Section 3.3: Tool Calling

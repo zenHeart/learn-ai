@@ -160,5 +160,5 @@ printComparison();
 printChecklist();
 
 console.log("\n" + "=".repeat(60));
-console.log("记住：上下文越丰富 → 诊断越准确 → 修复越快");
+console.log("记住：高信号、可定位、可验证的上下文越精准 → 诊断越准确 → 修复越快");
 console.log("=".repeat(60));
