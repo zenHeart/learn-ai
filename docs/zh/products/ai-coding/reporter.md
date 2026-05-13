@@ -233,6 +233,8 @@ AI 生成代码的安全性问题已成为行业关注的焦点。多项独立�
 
 ## 参考文献
 
+> 📄 完整手册：[2026 企业级AI编程实践手册](https://lcnziv86vkx6.feishu.cn/wiki/XZOSwI51wi5a5okxCF4cAxHSnBh)
+
 1. [GitHub: Quantifying GitHub Copilot's impact on developer productivity][1]
 2. [GitHub: The state of AI-driven development][2]
 3. [GitNux: GitHub Copilot Statistics 2025][3]
