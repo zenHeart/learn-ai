@@ -270,6 +270,7 @@ export default withMermaid(defineConfig({
                                     { text: 'Overview', link: '/zh/products/automation/openclaw/' },
                                     { text: 'Feishu Setup', link: '/zh/products/automation/openclaw/feishu' },
                                     { text: 'WeChat Setup', link: '/zh/products/automation/openclaw/wechat' },
+                                    { text: 'WeCom Setup', link: '/zh/products/automation/openclaw/wecom' },
                                     {
                                        text: 'Source Code',
                                        collapsed: false,
@@ -522,6 +523,7 @@ export default withMermaid(defineConfig({
                                     { text: '概述', link: '/zh/products/automation/openclaw/' },
                                     { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
                                     { text: '微信接入', link: '/zh/products/automation/openclaw/wechat' },
+                                    { text: '企业微信接入', link: '/zh/products/automation/openclaw/wecom' },
                                     {
                                        text: '源码分析',
                                        collapsed: false,
