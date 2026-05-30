@@ -1,8 +1,7 @@
-/* Custom theme styles */
-
 /* ============================================
    MERMAID DIAGRAM STYLING
-   Matches VitePress default dark mode theme
+   Inherits the brand palette via --vp-c-* tokens
+   defined in vars.css (light + dark aware).
    ============================================ */
 
 /* Base mermaid container - Uses VitePress theme variables */

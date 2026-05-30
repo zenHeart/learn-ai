@@ -1,0 +1,14 @@
+/**
+ * Theme stylesheet entry — import order matters.
+ *
+ *   1. vars.css        brand tokens + VitePress variable overrides
+ *   2. components.css   site-wide refinements built on the tokens
+ *   3. home.css         home-layout-only polish
+ *   4. mermaid.css      diagram styling that inherits the tokens
+ *
+ * Add new style modules here rather than importing them ad hoc.
+ */
+@import './vars.css';
+@import './components.css';
+@import './home.css';
+@import './mermaid.css';

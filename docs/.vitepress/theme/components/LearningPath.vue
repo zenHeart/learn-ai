@@ -71,9 +71,10 @@ defineProps({
 
 <style scoped>
 /*
-  ZEN LEARNING PATH THEME
-  Designed to match pathV2.html aesthetic while supporting both light and dark themes
-  Integrates with VitePress theme variables as fallbacks
+  LEARNING PATH TIMELINE
+  Drives its accent from the central brand palette (vars.css) so it
+  stays in sync with the rest of the site, with hard-coded fallbacks
+  for safety. Supports both light and dark themes.
 */
 
 /* CONTAINER with CSS variables defined here (not :root due to Vue scoped styles) */
@@ -83,9 +84,9 @@ defineProps({
   position: relative;
   padding: 20px 0;
 
-  /* Accent color - consistent across themes */
-  --zen-accent: #2ea44f;
-  --zen-accent-glow: rgba(46, 164, 79, 0.2);
+  /* Accent color - inherits the site brand (vars.css), falls back to brand-3 */
+  --zen-accent: var(--vp-c-brand-1, #7c5cff);
+  --zen-accent-glow: var(--vp-c-brand-soft, rgba(124, 92, 255, 0.2));
 
   /* Light theme (default) - Clean, minimal GitHub-style */
   --zen-bg-body: #ffffff;

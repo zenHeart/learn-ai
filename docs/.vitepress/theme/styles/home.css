@@ -1,0 +1,41 @@
+/**
+ * Home layout polish — builds on the tokens in vars.css.
+ * Scoped to `.VP*` default-theme classes so it only affects the home page.
+ */
+
+/* Numbered feature cards (the "1. / 2. / 3." path tiles) lift on hover and
+   pick up the brand accent, tying them to the rest of the site. */
+.VPHome .VPFeature {
+  border: 1px solid var(--vp-c-divider);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.VPHome .VPFeature:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(var(--la-brand-rgb), 0.12);
+}
+
+/* Thin gradient hairline under the hero, echoing the wordmark gradient. */
+.VPHome .VPHero .container {
+  position: relative;
+}
+
+.VPHome .VPHero .main .tagline {
+  max-width: 640px;
+}
+
+/* Make the on-home tip block (the "Why Frontend First?" note) feel custom
+   rather than the stock callout. */
+.VPHome .custom-block.tip {
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-brand-soft);
+  background: linear-gradient(
+    135deg,
+    var(--vp-c-brand-softer),
+    transparent 70%
+  );
+}

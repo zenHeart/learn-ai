@@ -1,0 +1,136 @@
+/**
+ * ============================================================================
+ *  Learn AI — Theme Tokens (single source of truth)
+ * ============================================================================
+ *  This is the ONLY file you need to touch to re-theme the whole site.
+ *
+ *  Layer 1 (`--la-*`)  : the raw brand palette. Edit these to retheme.
+ *  Layer 2 (`--vp-*`)  : VitePress variables wired to Layer 1. Leave as-is.
+ *
+ *  A handful of alternate palettes are provided at the bottom — copy one
+ *  into the Layer 1 block to switch the brand in seconds.
+ * ============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+ * Layer 1 · Brand palette  (EDIT HERE)
+ * --------------------------------------------------------------------------*/
+:root {
+  /* Primary brand ramp — used for links, accents and buttons.
+     Anchored to the project's signature blue (the PPTs use Tailwind
+     blue-500 #3b82f6 as their accent over slate neutrals), so the docs
+     stay visually consistent with the rest of Learn AI.
+     Ramp runs dark → light (1 → 3, per VitePress convention):
+     `-1` is link/text colour and must clear 4.5:1 on a light bg,
+     `-3` is the vivid solid (button) fill. */
+  --la-brand-light-1: #1d4ed8; /* blue-700 · links / text on light bg */
+  --la-brand-light-2: #2563eb; /* blue-600 · hover                    */
+  --la-brand-light-3: #3b82f6; /* blue-500 · solid button / decor     */
+
+  --la-brand-dark-1: #7eb6ff; /* links / text on dark bg              */
+  --la-brand-dark-2: #60a5fa; /* blue-400 · hover                     */
+  --la-brand-dark-3: #3b82f6; /* blue-500 · solid button / decor      */
+
+  /* RGB form of the `-3` fill — drives soft fills and glows via alpha. */
+  --la-brand-rgb: 59, 130, 246;
+
+  /* Accent gradient endpoints — hero title, dividers, focus rings. */
+  --la-accent-from: #3b82f6; /* blue */
+  --la-accent-to: #22d3ee; /* cyan */
+
+  /* Code / monospace font. Matches the PPTs, which set
+     'JetBrains Mono' as their code face. Declared as a stack so it
+     degrades gracefully when the font isn't installed — no network
+     fetch or bundled asset required. The body font stays Inter
+     (the shared VitePress + Slidev default). */
+  --la-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace,
+    'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+}
+
+/* ----------------------------------------------------------------------------
+ * Layer 2 · Map palette → VitePress  (do not edit)
+ * --------------------------------------------------------------------------*/
+:root {
+  /* Typography — keep Inter for body, swap the mono face to match PPTs. */
+  --vp-font-family-mono: var(--la-font-mono);
+
+  /* Brand ramp (light is the default). `--vp-c-brand` is the deprecated
+     alias VitePress keeps pointing at `--vp-c-brand-1`, so it follows. */
+  --vp-c-brand-1: var(--la-brand-light-1);
+  --vp-c-brand-2: var(--la-brand-light-2);
+  --vp-c-brand-3: var(--la-brand-light-3);
+  --vp-c-brand-soft: rgba(var(--la-brand-rgb), 0.14);
+  --vp-c-brand-softer: rgba(var(--la-brand-rgb), 0.07);
+
+  /* Reuse the brand ramp for tip / note callout containers so the docs
+     callouts match the brand instead of staying default-indigo. */
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  /* Solid brand buttons (e.g. the home "Start Learning" CTA). */
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #ffffff;
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+
+  /* Home hero — gradient wordmark + glow behind the optional hero image. */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    var(--la-accent-from) 30%,
+    var(--la-accent-to)
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    45deg,
+    rgba(var(--la-brand-rgb), 0.55) 30%,
+    var(--la-accent-to) 100%
+  );
+  --vp-home-hero-image-filter: blur(48px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+}
+
+.dark {
+  --vp-c-brand-1: var(--la-brand-dark-1);
+  --vp-c-brand-2: var(--la-brand-dark-2);
+  --vp-c-brand-3: var(--la-brand-dark-3);
+  --vp-c-brand-soft: rgba(var(--la-brand-rgb), 0.18);
+  --vp-c-brand-softer: rgba(var(--la-brand-rgb), 0.1);
+}
+
+/* ----------------------------------------------------------------------------
+ * Alternate palettes — copy a block over Layer 1 to switch brands.
+ * --------------------------------------------------------------------------*/
+/*
+  Violet (indigo → cyan):
+  --la-brand-light-1: #5145cd; --la-brand-light-2: #6451e0; --la-brand-light-3: #7c5cff;
+  --la-brand-dark-1:  #b8adff; --la-brand-dark-2:  #9f93ff; --la-brand-dark-3:  #7c5cff;
+  --la-brand-rgb: 124, 92, 255; --la-accent-from: #7c5cff; --la-accent-to: #41d1ff;
+
+  Emerald (the legacy "zen" green):
+  --la-brand-light-1: #1f8f48; --la-brand-light-2: #2ea44f; --la-brand-light-3: #34b85b;
+  --la-brand-dark-1:  #5fd98a; --la-brand-dark-2:  #45c873; --la-brand-dark-3:  #34b85b;
+  --la-brand-rgb: 52, 184, 91; --la-accent-from: #34b85b; --la-accent-to: #41d1ff;
+
+  Sunset (amber → pink):
+  --la-brand-light-1: #c2410c; --la-brand-light-2: #ea580c; --la-brand-light-3: #fb923c;
+  --la-brand-dark-1:  #fdba74; --la-brand-dark-2:  #fb923c; --la-brand-dark-3:  #f97316;
+  --la-brand-rgb: 249, 115, 22; --la-accent-from: #fb7185; --la-accent-to: #fbbf24;
+*/

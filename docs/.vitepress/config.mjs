@@ -5,6 +5,15 @@ import path from "path";
 export default withMermaid(defineConfig({
    base: '/learn-ai/',
 
+   // Extend the brand colour into the browser / OS chrome (mobile address
+   // bar, PWA theme). Matches --la-brand-light-3 in the theme's vars.css.
+   head: [
+      ['meta', { name: 'theme-color', content: '#3b82f6' }]
+   ],
+
+   // Collect git-based "last updated" timestamps for every page.
+   lastUpdated: true,
+
    // Shared Config
    ignoreDeadLinks: [
       /^\/learn-ai\/ppts\//,
@@ -312,6 +321,26 @@ export default withMermaid(defineConfig({
          title: "学习 AI",
          description: "前端工程师的 AI 学习指南",
          themeConfig: {
+            footer: {
+               message: '为前端工程师打造 · 基于 VitePress 构建',
+               copyright: '版权所有 © 2024-present 学习 AI'
+            },
+            editLink: {
+               pattern: 'https://github.com/zenheart/learn-ai/edit/master/docs/:path',
+               text: '在 GitHub 上编辑此页'
+            },
+            lastUpdated: {
+               text: '最后更新于'
+            },
+            docFooter: {
+               prev: '上一页',
+               next: '下一页'
+            },
+            outlineTitle: '本页目录',
+            returnToTopLabel: '返回顶部',
+            sidebarMenuLabel: '菜单',
+            darkModeSwitchLabel: '外观',
+            langMenuLabel: '切换语言',
             nav: [
                { text: '首页', link: '/zh/' },
                { text: '路径', link: '/zh/paths/' },
@@ -589,5 +618,47 @@ export default withMermaid(defineConfig({
          { icon: 'github', link: 'https://github.com/zenheart/learn-ai' }
       ],
       outline: [2, 3],
+
+      // Zero-dependency local (offline) search, with zh UI translations.
+      search: {
+         provider: 'local',
+         options: {
+            locales: {
+               zh: {
+                  translations: {
+                     button: {
+                        buttonText: '搜索文档',
+                        buttonAriaLabel: '搜索文档'
+                     },
+                     modal: {
+                        noResultsText: '无法找到相关结果',
+                        resetButtonTitle: '清除查询条件',
+                        footer: {
+                           selectText: '选择',
+                           navigateText: '切换',
+                           closeText: '关闭'
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+
+      // "Edit this page" link — points at the source on GitHub (master branch).
+      editLink: {
+         pattern: 'https://github.com/zenheart/learn-ai/edit/master/docs/:path',
+         text: 'Edit this page on GitHub'
+      },
+
+      lastUpdated: {
+         text: 'Last updated'
+      },
+
+      // Default (English) footer; the zh locale overrides the text below.
+      footer: {
+         message: 'Built for frontend engineers · Powered by VitePress',
+         copyright: 'Copyright © 2024-present Learn AI'
+      }
    }
 }));

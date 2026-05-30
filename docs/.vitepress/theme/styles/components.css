@@ -1,0 +1,41 @@
+/**
+ * Site-wide refinements applied on top of the default theme.
+ * Everything here derives from the tokens in vars.css.
+ */
+
+/* Brand-tinted text selection. */
+::selection {
+  background: var(--vp-c-brand-soft);
+}
+
+/* Smooth, brand-coloured focus ring for keyboard users (a11y). */
+:root {
+  --vp-focus-ring: 0 0 0 3px var(--vp-c-brand-soft);
+}
+
+.vp-doc a:focus-visible,
+.VPButton:focus-visible {
+  outline: none;
+  box-shadow: var(--vp-focus-ring);
+  border-radius: 4px;
+}
+
+/* In-content links get a subtle underline that thickens on hover. */
+.vp-doc a {
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+/* Inline code keeps the brand colour but reads a touch softer. */
+.vp-doc :not(pre) > code {
+  background-color: var(--vp-c-brand-softer);
+}
+
+/* Tables: brand-tinted header + zebra rows for scannability. */
+.vp-doc tr:nth-child(2n) {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc th {
+  background-color: var(--vp-c-brand-softer);
+}
