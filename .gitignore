@@ -13,5 +13,4 @@ _check.md
 poster/
 .cursorindexingignore
 .claude/settings.local.json
-.gemini
 .github/workflows/pr-check.yml
