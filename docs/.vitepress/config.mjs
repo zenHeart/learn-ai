@@ -79,6 +79,15 @@ export default withMermaid(defineConfig({
             sidebar: {
                '/': [
                   {
+                     text: '📘 Featured Tutorials',
+                     collapsed: false,
+                     items: [
+                        { text: 'Claude Code Tutorial', link: '/claude-code-tutorial' },
+                        { text: 'Claude Prompt Best Practices', link: '/claude-prompt-best-practices' },
+                        { text: 'System Prompts Collection', link: '/system-prompts-collection' }
+                     ]
+                  },
+                  {
                      text: '🗺️ Learning Paths',
                      collapsed: false,
                      items: [
@@ -169,7 +178,47 @@ export default withMermaid(defineConfig({
                            text: 'Patterns',
                            items: [
                               { text: 'RAG', link: '/tech/patterns/RAG' },
-                              { text: 'Agents', link: '/tech/patterns/agent/' }
+                              { text: 'RAG · Semantic Search Case Study', link: '/tech/patterns/RAG-semantic-search-case-study' },
+                              { text: 'Agents', link: '/tech/patterns/agent/' },
+                              { text: 'Agent · Agent Course', link: '/tech/patterns/agent/agent-course' },
+                              { text: 'Agent · Agent Design Patterns', link: '/tech/patterns/agent/agent-design-patterns' },
+                              { text: 'Agent · Hooks', link: '/tech/patterns/agent/hooks' },
+                              { text: 'Agent · Skills', link: '/tech/patterns/agent/skills' },
+                              { text: 'Agent · LangChain Harness (2026-04)', link: '/tech/patterns/agent/2026-04-12-langchain-agent-harness' }
+                           ]
+                        },
+                        {
+                           text: 'Prompt Engineering',
+                           items: [
+                              { text: 'Overview', link: '/tech/prompt/' },
+                              { text: 'Agent Engineering Practices', link: '/tech/prompt/agent-engineering-practices' },
+                              { text: 'Context for Agent Engineering', link: '/tech/prompt/context-agent-engineering' },
+                              { text: 'Agents Doc', link: '/tech/prompt/agents-doc' },
+                              { text: 'Case · Copilot', link: '/tech/prompt/cases/copilot' }
+                           ]
+                        },
+                        {
+                           text: 'Tooling & Practice',
+                           items: [
+                              { text: 'Advanced Tool Use', link: '/tech/advanced-tool-use' },
+                              { text: 'AI-Assisted Programming', link: '/tech/ai-assisted-programming' },
+                              { text: 'AI-Driven Workflow Automation', link: '/tech/ai-driven-workflow-automation' },
+                              { text: 'N8n Workflow Automation', link: '/tech/n8n-workflow-automation' },
+                              { text: 'SLS Log Analysis Assistant', link: '/tech/sls-log-analysis-assistant' },
+                              { text: 'TestHub Platform', link: '/tech/testhub-platform' },
+                              { text: 'Midscene UI Automation', link: '/tech/midscene-ui-automation' },
+                              { text: 'Cross-Project Context Input', link: '/tech/cross-project-context-input' },
+                              { text: 'Context Injection Strategies', link: '/tech/context-injection-strategies' },
+                              { text: 'Cross-Tool Context Sharing', link: '/tech/cross-tool-context-sharing' }
+                           ]
+                        },
+                        {
+                           text: 'Testing & Evaluation',
+                           items: [
+                              { text: 'Alibaba AI Testing', link: '/tech/alibaba-ai-testing' },
+                              { text: 'Meituan AI Testing', link: '/tech/meituan-ai-testing' },
+                              { text: 'Generative Benchmarking', link: '/tech/generative-benchmarking' },
+                              { text: 'Golden Dataset Generation', link: '/tech/golden-dataset-generation' }
                            ]
                         },
                         {
@@ -259,10 +308,12 @@ export default withMermaid(defineConfig({
                         {
                            text: 'AI Coding',
                            items: [
+                              { text: 'Overview', link: '/products/ai-coding/' },
                               { text: 'Cursor', link: '/products/ai-coding/cursor' },
                               { text: 'Copilot', link: '/products/ai-coding/copilot' },
                               { text: 'Claude CLI', link: '/products/ai-coding/claude-cli' },
                               { text: 'Gemini CLI', link: '/products/ai-coding/gemini-cli' },
+                              { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
                               {
                                  text: 'OpenClaw',
@@ -308,6 +359,16 @@ export default withMermaid(defineConfig({
                               { text: 'Ollama', link: '/products/tools/ollama' },
                               { text: 'Figma AI', link: '/products/tools/figma-ai' },
                               { text: 'Testing AI', link: '/products/tools/testing-ai' }
+                           ]
+                        },
+                        {
+                           text: 'AI Tools',
+                           link: '/ai-tools/',
+                           items: [
+                              { text: 'Overview', link: '/ai-tools/' },
+                              { text: 'AI Efficiency Practice', link: '/ai-tools/ai-efficiency-practice' },
+                              { text: 'AI Landing Discussion', link: '/ai-tools/ai-landing-discussion' },
+                              { text: 'AI Native Hiring', link: '/ai-tools/ai-native-hiring' }
                            ]
                         },
                         { text: '📚 Resources', link: '/resources' }
@@ -403,6 +464,9 @@ export default withMermaid(defineConfig({
                               {
                                  text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp/index',
                                  items: [
+                                    { text: '概览', link: '/zh/integration/protocols/mcp/index' },
+                                    { text: '架构', link: '/zh/integration/protocols/mcp/architecture' },
+                                    { text: 'MCP Apps', link: '/zh/integration/protocols/mcp/mcp-apps' },
                                     { text: 'list', link: '/zh/integration/protocols/mcp/list' }
                                  ]
                               },
@@ -458,7 +522,111 @@ export default withMermaid(defineConfig({
                            text: '模式',
                            items: [
                               { text: 'RAG', link: '/zh/tech/patterns/RAG' },
-                              { text: 'Agents (智能体)', link: '/zh/tech/patterns/agent/' }
+                              { text: 'Agents (智能体)', link: '/zh/tech/patterns/agent/' },
+                              { text: 'Agent 模式 · Harness', link: '/zh/tech/patterns/agent/harness' },
+                              { text: 'Agent 模式 · 工作流', link: '/zh/tech/patterns/agent/workflow-patterns' },
+                              { text: 'Agent 模式 · Hello Agents', link: '/zh/tech/patterns/agent/hello-agents' },
+                              { text: 'Agent 模式 · Agentic Engineering', link: '/zh/tech/patterns/agent/agentic-engineering-patterns' },
+                              { text: 'Agent · Hooks', link: '/zh/tech/patterns/agent/hooks' },
+                              { text: 'Agent · Skills', link: '/zh/tech/patterns/agent/skills' }
+                           ]
+                        },
+                        {
+                           text: 'Agent 学习',
+                           items: [
+                              { text: 'Agent 设计模式', link: '/zh/tech/agent/agent-design-patterns' },
+                              { text: 'Agentic Engineering Patterns', link: '/zh/tech/agent/agentic-engineering-patterns' },
+                              { text: 'AI Ops Agent 探索', link: '/zh/tech/agent/aiops-agent-exploration' },
+                              { text: '阿里事故复盘 Agent', link: '/zh/tech/agent/alibaba-incident-review-agent' },
+                              { text: 'AI Agent 常见工作流', link: '/zh/tech/agent/common-workflow-patterns-ai-agents' },
+                              { text: 'Hello Agents (Datawhale)', link: '/zh/tech/agent/hello-agents-datwhale' },
+                              { text: 'How I Use Claude Code', link: '/zh/tech/agent/how-i-use-claude-code' },
+                              { text: 'Human in the Loop', link: '/zh/tech/agent/human-in-the-loop-patterns' },
+                              { text: 'LangChain Agent Harness', link: '/zh/tech/agent/langchain-agent-harness' },
+                              { text: 'Multi-Agent 编排', link: '/zh/tech/agent/multi-agent-orchestration' },
+                              { text: 'OpenAI Agents SDK', link: '/zh/tech/agent/openai-agents-sdk' },
+                              { text: 'Pi Agent 设计哲学', link: '/zh/tech/agent/pi-agent-design-philosophy' }
+                           ]
+                        },
+                        {
+                           text: 'Prompt 工程',
+                           items: [
+                              { text: '概览', link: '/zh/tech/prompt/' },
+                              { text: '官方指南 2026', link: '/zh/tech/prompt/official-guide-2026' },
+                              { text: 'Advanced Tool Use', link: '/zh/tech/prompt/advanced-tool-use' },
+                              { text: 'Agentic Engineering Patterns', link: '/zh/tech/prompt/agentic-engineering-patterns' },
+                              { text: 'Token Counting & Embedding', link: '/zh/tech/prompt/token-counting-embedding-basics' },
+                              { text: 'System Prompts 集锦', link: '/zh/tech/prompt/system-prompts-collection' },
+                              { text: 'JSON Prompt 最佳实践', link: '/zh/tech/prompt/json-prompt-best-practices' },
+                              { text: 'Agents Doc', link: '/zh/tech/prompt/agents-doc' },
+                              { text: '案例 · Copilot', link: '/zh/tech/prompt/cases/copilot' }
+                           ]
+                        },
+                        {
+                           text: 'Skills 学习',
+                           items: [
+                              { text: 'Claude Skills 概览', link: '/zh/tech/skills/claude-skills-overview' },
+                              { text: 'Skills 机制详解', link: '/zh/tech/skills/skills-mechanics-explained' },
+                              { text: 'How to Create Skills', link: '/zh/tech/skills/how-to-create-skills' },
+                              { text: 'Skills 最佳实践', link: '/zh/tech/skills/skills-best-practices' }
+                           ]
+                        },
+                        {
+                           text: 'AI 编程',
+                           items: [
+                              { text: 'AI 编程工程化', link: '/zh/tech/ai-coding/ai-coding-engineering' },
+                              { text: 'Claude Code Auto Mode 安全', link: '/zh/tech/ai-coding/claude-code-auto-mode-security' },
+                              { text: '上下文注入策略', link: '/zh/tech/ai-coding/context-injection-strategies' },
+                              { text: '跨工具上下文共享', link: '/zh/tech/ai-coding/cross-tool-context-sharing' },
+                              { text: 'Cursor IDE 架构', link: '/zh/tech/ai-coding/cursor-ide-architecture' },
+                              { text: 'Cursor Rules', link: '/zh/tech/ai-coding/cursor-rules' }
+                           ]
+                        },
+                        {
+                           text: 'AI 应用',
+                           items: [
+                              { text: '构建语义搜索', link: '/zh/tech/ai-application/building-semantic-search' },
+                              { text: '得物 AI 实施', link: '/zh/tech/ai-application/dewu-ai-implementation' }
+                           ]
+                        },
+                        {
+                           text: '评估 (Evaluation)',
+                           items: [
+                              { text: 'AI 测试', link: '/zh/tech/evaluation/ai-testing' },
+                              { text: '生成式基准', link: '/zh/tech/evaluation/generative-benchmarking' }
+                           ]
+                        },
+                        {
+                           text: 'MCP 学习',
+                           items: [
+                              { text: 'Chrome DevTools MCP', link: '/zh/tech/mcp/chrome-devtools-mcp' },
+                              { text: 'MCP Apps 实践', link: '/zh/tech/mcp/mcp-apps-practice' },
+                              { text: 'MCP 课程笔记', link: '/zh/tech/mcp/mcp-course-notes' }
+                           ]
+                        },
+                        {
+                           text: '方法论',
+                           items: [
+                              { text: 'BMAD 方法论', link: '/zh/tech/method/bmad-methodology' }
+                           ]
+                        },
+                        {
+                           text: '多模态',
+                           items: [
+                              { text: 'Claude 视觉能力', link: '/zh/tech/multimodal/claude-vision-capabilities' }
+                           ]
+                        },
+                        {
+                           text: '哲学',
+                           items: [
+                              { text: 'Vibe Coding 哲学', link: '/zh/tech/philosophy/vibe-coding-philosophy' }
+                           ]
+                        },
+                        {
+                           text: '测试',
+                           items: [
+                              { text: 'AI 自动化测试 · 知乎', link: '/zh/tech/testing/ai-automation-testing-zhihu' },
+                              { text: ' Midscene UI 自动化', link: '/zh/tech/testing/midscene-ui-automation' }
                            ]
                         },
                         {
@@ -604,11 +772,54 @@ export default withMermaid(defineConfig({
                               },
                               { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
                               { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
-                              { text: 'Codex', link: '/zh/products/ai-coding/codex' },
-                              { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini-cli' },
+                              {
+                                 text: 'Codex', link: '/zh/products/ai-coding/codex/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/codex/' },
+                                    { text: 'ChatGPT Plus', link: '/zh/products/ai-coding/codex/chatgpt-plus' },
+                                    { text: 'Codex CLI', link: '/zh/products/ai-coding/codex/codex-cli' },
+                                    { text: 'Codex AI', link: '/zh/products/ai-coding/codex/codex-ai' },
+                                    { text: '项目集成', link: '/zh/products/ai-coding/codex/integration' },
+                                    { text: '速查表', link: '/zh/products/ai-coding/codex/cheatsheet' },
+                                 ]
+                              },
+                              {
+                                 text: 'Gemini', link: '/zh/products/ai-coding/gemini/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/gemini/' },
+                                    { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini/gemini-cli' },
+                                    { text: 'AI Studio', link: '/zh/products/ai-coding/gemini/ai-studio' },
+                                    { text: 'Antigravity', link: '/zh/products/ai-coding/gemini/antigravity' },
+                                    { text: 'Canvas', link: '/zh/products/ai-coding/gemini/canvas' },
+                                    { text: 'Code Assist', link: '/zh/products/ai-coding/gemini/code-assist' },
+                                    { text: 'Jules', link: '/zh/products/ai-coding/gemini/jules' },
+                                 ]
+                              },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
                               { text: '其他工具', link: '/zh/products/ai-coding/othertools' },
-                              { text: '采购与实施方案', link: '/zh/products/ai-coding/procurement-plan' }
+                              { text: '采购与实施方案', link: '/zh/products/ai-coding/procurement-plan' },
+                              { text: 'Pi Coding Agent', link: '/zh/products/ai-coding/pi-coding-agent' }
+                           ]
+                        },
+                        {
+                           text: 'Skills 学习',
+                           link: '/zh/skills/',
+                           items: [
+                              { text: '概览', link: '/zh/skills/' },
+                              { text: 'Engineer Skill', link: '/zh/skills/engineer-skill' },
+                              { text: 'OpenSpec', link: '/zh/skills/openspec' },
+                              { text: 'Superpower', link: '/zh/skills/superpower' }
+                           ]
+                        },
+                        {
+                           text: 'AI 工具',
+                           link: '/zh/ai-tools/',
+                           items: [
+                              { text: '概览', link: '/zh/ai-tools/' },
+                              { text: 'Claude Code Auto Mode', link: '/zh/ai-tools/claude-code-auto-mode' },
+                              { text: 'Claude Skills 深入', link: '/zh/ai-tools/claude-skills-deep-dive' },
+                              { text: 'How to Create Skills', link: '/zh/ai-tools/how-to-create-skills' },
+                              { text: 'Skills Mechanics Explained', link: '/zh/ai-tools/skills-mechanics-explained' },
+                              { text: 'Skills 社区反馈', link: '/zh/ai-tools/skills-community-feedback' },
+                              { text: 'Context Engineering 深入', link: '/zh/ai-tools/context-engineering-deep-dive' }
                            ]
                         },
                         {
