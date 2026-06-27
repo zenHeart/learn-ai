@@ -120,7 +120,7 @@ claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest
 让 AI 帮你执行完整的用户操作流程，失败时自动收集证据：
 
 **Prompt 示例：**
-> "请打开测试环境登录页（https://staging.example.com/login），使用账号 test@example.com 和密码 test123 完成登录。然后导航到'个人资料'页面，尝试上传一张头像。如果过程中任何步骤失败，请收集：1. 失败时刻的屏幕截图；2. 浏览器控制台的所有错误信息；3. 失败的网络请求详细信息（URL、状态码、响应头）。"
+> "请打开测试环境登录页（https://staging.example.com/login），使用测试账号占位符和测试密码占位符完成登录。然后导航到'个人资料'页面，尝试上传一张头像。如果过程中任何步骤失败，请收集：1. 失败时刻的屏幕截图；2. 浏览器控制台的所有错误信息；3. 失败的网络请求详细信息（URL、状态码、响应头）。"
 
 AI 执行流程：
 1. `navigate_page` → 登录页

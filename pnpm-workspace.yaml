@@ -1,2 +1,4 @@
 packages:
   - 'ppts/*'
+allowBuilds:
+  esbuild: true

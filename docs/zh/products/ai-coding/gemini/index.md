@@ -19,6 +19,8 @@
 | **知识管理** | NotebookLM | 1500 页长文档解析，ADR 综合分析 |
 | **办公套件** | Google Workspace | 邮件智能撰写，会议记录，5TB 云存储 |
 
+完整工具细节、配置示例和 ROI 分层说明见 [Google AI Pro 工具详解](./google-pro)。
+
 ---
 
 ## 核心投资回报率框架

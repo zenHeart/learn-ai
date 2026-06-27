@@ -185,7 +185,7 @@ Phase 4: 集成与收尾
 # 登录获取 Token
 curl -X POST http://localhost:3002/api/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"admin@test.com","password":"123456"}'
+  -d "{\"email\":\"$TEST_LOGIN_EMAIL\",\"password\":\"$TEST_LOGIN_PASSWORD\"}"
 
 # 获取用户信息（Token 应返回 200）
 curl -X GET http://localhost:3002/api/auth/profile \

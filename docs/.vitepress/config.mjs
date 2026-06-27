@@ -271,6 +271,7 @@ export default withMermaid(defineConfig({
                         { text: 'Chat UI Component', link: '/cookbook/chat-ui' },
                         { text: 'Secure API Proxy', link: '/cookbook/api-proxy' },
                         { text: 'Local Embeddings', link: '/cookbook/local-embedding' },
+                        { text: 'Token Counting', link: '/cookbook/token-counting' },
                         { text: 'Form Autocomplete', link: '/cookbook/form-autocomplete' },
                         { text: 'Error Handling', link: '/cookbook/error-handling' },
                         { text: 'Content Moderation', link: '/cookbook/content-moderation' }
@@ -462,9 +463,9 @@ export default withMermaid(defineConfig({
                            text: '协议',
                            items: [
                               {
-                                 text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp/index',
+                                 text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp/',
                                  items: [
-                                    { text: '概览', link: '/zh/integration/protocols/mcp/index' },
+                                    { text: '概览', link: '/zh/integration/protocols/mcp/' },
                                     { text: '架构', link: '/zh/integration/protocols/mcp/architecture' },
                                     { text: 'MCP Apps', link: '/zh/integration/protocols/mcp/mcp-apps' },
                                     { text: 'list', link: '/zh/integration/protocols/mcp/list' }
@@ -785,6 +786,7 @@ export default withMermaid(defineConfig({
                               {
                                  text: 'Gemini', link: '/zh/products/ai-coding/gemini/', items: [
                                     { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/gemini/' },
+                                    { text: 'Google AI Pro 详解', link: '/zh/products/ai-coding/gemini/google-pro' },
                                     { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini/gemini-cli' },
                                     { text: 'AI Studio', link: '/zh/products/ai-coding/gemini/ai-studio' },
                                     { text: 'Antigravity', link: '/zh/products/ai-coding/gemini/antigravity' },
