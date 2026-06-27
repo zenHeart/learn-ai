@@ -2,7 +2,7 @@
   "name": "prompt-context",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /learn-ai/ppts/prompt-context/",
+    "build": "slidev build --base /ppts/prompt-context/",
     "dev": "slidev --open",
     "export": "slidev export",
     "demo:2.1": "node examples/2.1.zero-vs-few-shot/main.js",

@@ -3,7 +3,7 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 import path from "path";
 
 export default withMermaid(defineConfig({
-   base: '/learn-ai/',
+   base: '/',
 
    // Extend the brand colour into the browser / OS chrome (mobile address
    // bar, PWA theme). Matches --la-brand-light-3 in the theme's vars.css.
@@ -69,10 +69,10 @@ export default withMermaid(defineConfig({
                { text: 'AI Tools', link: '/ai-tools/' },
                {
                   text: 'PPTs', items: [
-                     { text: '1. Vibe Coding', link: 'https://blog.zenheart.site/learn-ai/ppts/vibe-coding/' },
-                     { text: '2. Prompt + Context', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt-context/' },
-                     { text: '3. MCP + SKILL', link: 'https://blog.zenheart.site/learn-ai/ppts/skill-mcp/' },
-                     { text: '4. AGENT', link: 'https://blog.zenheart.site/learn-ai/ppts/agent/' }
+                     { text: '1. Vibe Coding', link: 'https://ai.zenheart.site/ppts/vibe-coding/' },
+                     { text: '2. Prompt + Context', link: 'https://ai.zenheart.site/ppts/prompt-context/' },
+                     { text: '3. MCP + SKILL', link: 'https://ai.zenheart.site/ppts/skill-mcp/' },
+                     { text: '4. AGENT', link: 'https://ai.zenheart.site/ppts/agent/' }
                   ]
                }
             ],
@@ -414,10 +414,10 @@ export default withMermaid(defineConfig({
                { text: 'AI 工具', link: '/zh/ai-tools/' },
                {
                   text: 'PPTs', items: [
-                     { text: '1. Vibe Coding', link: 'https://blog.zenheart.site/learn-ai/ppts/vibe-coding/' },
-                     { text: '2. Prompt + Context', link: 'https://blog.zenheart.site/learn-ai/ppts/prompt-context/' },
-                     { text: '3. MCP + SKILL', link: 'https://blog.zenheart.site/learn-ai/ppts/skill-mcp/' },
-                     { text: '4. AGENT', link: 'https://blog.zenheart.site/learn-ai/ppts/agent/' }
+                     { text: '1. Vibe Coding', link: 'https://ai.zenheart.site/ppts/vibe-coding/' },
+                     { text: '2. Prompt + Context', link: 'https://ai.zenheart.site/ppts/prompt-context/' },
+                     { text: '3. MCP + SKILL', link: 'https://ai.zenheart.site/ppts/skill-mcp/' },
+                     { text: '4. AGENT', link: 'https://ai.zenheart.site/ppts/agent/' }
                   ]
                }
             ],

@@ -77,12 +77,12 @@ pnpm ppt:build    # 构建所有 PPT
 ## 构建与部署
 
 - **基础路径**（关键）：
-  - VitePress: `base: '/learn-ai/'` 在 `docs/.vitepress/config.mjs`
-  - 各 PPT: `slidev build --base /learn-ai/ppts/<name>/`
+  - VitePress: `base: '/'` 在 `docs/.vitepress/config.mjs`
+  - 各 PPT: `slidev build --base /ppts/<name>/`
 
 - **部署后 URL**：
-  - 文档: `https://blog.zenheart.site/learn-ai/`
-  - PPT: `https://blog.zenheart.site/learn-ai/ppts/vibe-coding/`、`.../prompt-context/`、`.../skill-mcp/`、`.../agent/`
+  - 文档: `https://ai.zenheart.site/`
+  - PPT: `https://ai.zenheart.site/ppts/vibe-coding/`、`.../prompt-context/`、`.../skill-mcp/`、`.../agent/`
 
 ## 测试
 

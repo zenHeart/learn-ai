@@ -45,6 +45,8 @@ cp -r docs/* ${temp_dist}/
 # 复制 PPT 导航页
 echo "🎨 Copying PPT navigation..."
 cp ppts/index.html ${temp_dist}/ppts/index.html
+echo "ai.zenheart.site" > ${temp_dist}/CNAME
+touch ${temp_dist}/.nojekyll
 
 # 发布
 echo "🚢 Deploying to GitHub Pages..."
@@ -57,5 +59,5 @@ git push -f ${rep_url} master:gh-pages
 echo ""
 echo "✅ Done! Deployed URLs:"
 for ppt in ${PPT_PROJECTS}; do
-    echo "   https://blog.zenheart.site/learn-ai/ppts/${ppt}/"
+    echo "   https://ai.zenheart.site/ppts/${ppt}/"
 done

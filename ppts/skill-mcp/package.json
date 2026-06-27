@@ -2,7 +2,7 @@
   "name": "skill-mcp",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /learn-ai/ppts/skill-mcp/",
+    "build": "slidev build --base /ppts/skill-mcp/",
     "dev": "slidev --open",
     "export": "slidev export"
   }

@@ -54,6 +54,7 @@ jobs:
           cp ppts/index.html final_dist/ppts/index.html
 
           touch final_dist/.nojekyll
+          echo "ai.zenheart.site" > final_dist/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

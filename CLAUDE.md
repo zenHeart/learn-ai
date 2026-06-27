@@ -69,8 +69,8 @@ ppts/<name>/
 
 - **CI**: GitHub Actions (`.github/workflows/deploy.yml`)
 - **基础路径**（关键）：
-  - VitePress: `base: '/learn-ai/'`（在 `docs/.vitepress/config.mjs` 中）
-  - 各 PPT: `slidev build --base /learn-ai/ppts/<name>/`
+  - VitePress: `base: '/'`（在 `docs/.vitepress/config.mjs` 中）
+  - 各 PPT: `slidev build --base /ppts/<name>/`
 
 ## 重要约定
 
