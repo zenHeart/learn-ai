@@ -11,7 +11,7 @@ AI Coding **第三期**。承接 Vibe Coding 与 Prompt·Context·Harness。
 | 章节 | 文件 | 内容 |
 |------|------|------|
 | 概述 | `01.overview.md` | 引子：链条→痛→阶（智能化阶梯）→AI解法+沉淀→分工→回到今天 |
-| 理念 | `02.1.paradigm.md` | 成本、证据锚点、零基对照、分工、适应张力 |
+| 理念 | `02.1.paradigm.md` | 成本、证据锚点、贴 AI vs 重新设计、分工、适应张力 |
 | 方法 | `02.2.capability-workflow.md` | 能力层（含定时/组合）、委托启发式、一天剧本、反模式 |
 | 资产 | `03.playbook.md` | 飞轮、度量、Skill 四步、nn-ai 真实时间线 + `/bugfix` 真实案例、场景地图；**附录速查** |
 | 实操 | `04.practice.md` | 双路径**演示节拍** + First Action |
@@ -22,7 +22,7 @@ AI Coding **第三期**。承接 Vibe Coding 与 Prompt·Context·Harness。
 ### 45 分钟必讲轨
 
 1. 引子主链（链条→痛→阶→「有了 AI」固化 Skill→分工→回扣三件事）→ 公式 → 目标  
-2. 理念：成本 + 证据锚点 + D/D/D（零基 20 秒）  
+2. 理念：成本 + 证据锚点 + D/D/D（贴 AI vs 重新设计 20 秒）  
 3. 方法：能力层组件 + 反模式 + 识别四问  
 4. 资产：飞轮组件 + Skill 四步 + **场景地图**（**跳过附录三表**）  
 5. 实操：路径 A **或** B 一条演示节拍 + First Action  
