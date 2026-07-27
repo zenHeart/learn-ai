@@ -18,7 +18,9 @@
 |---|---|---|---|---|----|---|---|
 | 1 | Vibe Coding | 2026-04-01 | 周三 | 程乐 | 45min | 掌握 AI 辅助编程基本方法，能够利用 AI 完成常见开发任务。 | 待分享 |
 | 2 | Prompt + Context + Harness | 2026-05-08 | 周一 | 程乐 | 45min | 掌握三层工程协同方法，构建稳定可复用的 AI 工作流。 | 待完善初稿 |
-| 3 | MCP + SKILL | 2026-05-15 | 周一 | 程乐 | 45min | 具备开发 MCP 与 Skill 的能力，使 AI 能够对接内部系统，将工作流自动化 | 待完善初稿 |
+| 3 | 从提效到复利：AI Agent 工作模式 | — | — | 程乐 | — | 范式迁移 + 工作流沉淀 + nn-ai 放大个人与组织效能 | 迭代中 |
+| — | MCP + Skill（技术附录） | — | — | — | 自学 | 协议/实现细节，供研发自学 | 附录 |
+| — | Agent（技术附录） | — | — | — | 自学 | Agent Loop / 框架，供研发自学 | 附录 |
 
 ## 各系列详情
 
@@ -56,29 +58,29 @@
 
 ---
 
-### 第三期：MCP + SKILL
+### 第三期：从提效到复利：AI Agent 工作模式
 
-**文件位置**: `./skill-mcp/` （原 `mcp` 和 `skill` 目录合并内容）
+**文件位置**: `./ai-native-work/`
 
-**核心目标**：具备开发 MCP 与 Skill 的能力，使 AI 能够对接内部系统，将工作流自动化。
+**核心目标**：理解 Agent 时代工作范式迁移；掌握工作流识别与沉淀；用 nn-ai 放大个人与组织效能。
 
-**章节结构** (模式 B: 多子主题微结构):
+**章节结构**（理念 → 方法 → 实操）:
 
-- `01.overview.md` - **概述**：突破大模型的信息孤岛（只拥有训练数据和本地文件读取权限不够，需要连上”内网”长出”手脚”）。
-- `02.1.mcp-core.md` - **MCP 核心**：架构、协议 (JSON-RPC 2.0)、三大件 (Tools/Resources/Prompts)、传输层、安全模型。
-- `02.2.skill-core.md` - **Skill 核心**：本质演进、构建三要素 (边界/Schema/容错)、生态 (.cursorrules)。
-- `03.integration.md` - **组合集成** (必选!): MCP + Skill 如何组合产生 1+1>2 效应。
-- `04.practice.md` - **实战演练**：端到端综合实战。
-- `05.QA.md` - **问答**：优缺点、折衷、进阶阅读。
+- `01.overview.md` - **概述**：目标（对齐 vibe-coding）、报销引子、与前两期衔接
+- `02.1.paradigm.md` - **理念**：成本变化、分工、适应原则
+- `02.2.capability-workflow.md` - **方法**：能力面、工作流形态、识别四问
+- `03.playbook.md` - **资产**：飞轮、Skill 四步、nn-ai 地图
+- `04.practice.md` - **实操**：报销沉淀 + 研发闭环 + 本周行动
+- `05.QA.md` - **总结与 QA**
+
+**技术自学附录**（原第三期深潜材料，研发自行阅读）:
+
+- `./skill-mcp/` — MCP + Skill 协议与实现
+- `./agent/` — Agent Loop 与框架
 
 **核心资料**
 
 - [Model Context Protocol (MCP) 官方指南](https://modelcontextprotocol.io/docs/getting-started/intro)
-- [Agent Skills 最佳实践](https://agentskills.io/home) / [The Complete Guide to Building Skill for Claude.pdf](../_docs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
-
-**核心资料**
-
-- [Anthropic: Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
-- [MCP 官方文档](https://modelcontextprotocol.io)
-- [Claude Code 官方文档与 Skill 扩展](https://code.claude.com/docs/en/overview)
-- [Anthropic: Building effective agents](https://www.anthropic.com/research/building-effective-agents) (了解工具调用背后的核心底座理念)
+- [Agent Skills 最佳实践](https://agentskills.io/home)
+- [Anthropic: Building effective agents](https://www.anthropic.com/research/building-effective-agents)
+- 公司 nn-ai / `@nn/ai-kit` 文档

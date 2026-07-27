@@ -1,0 +1,203 @@
+/* ── two-cols-header 间距 ── */
+.two-cols-header {
+  column-gap: 10px;
+}
+.two-cols-header .col-header {
+  margin-bottom: 10px;
+}
+
+/* ── 标题后正文 ── */
+.slidev-layout h1 + p:has(> strong:first-child),
+.slidev-layout h1 + p.slidev-vclick-target {
+  margin-top: 0.75rem;
+}
+
+.slidev-layout h1 + p:has(> strong:first-child):not(.slidev-vclick-fade),
+.slidev-layout h1 + p.slidev-vclick-target:not(.slidev-vclick-fade) {
+  opacity: 1;
+}
+
+/* ── bad / good ── */
+.col-bad {
+  background: #fff1f0;
+  border-left: 4px solid #ff4d4f;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+}
+
+.col-good {
+  background: #f6ffed;
+  border-left: 4px solid #52c41a;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+}
+
+.col-bad h3,
+.col-good h3 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.col-bad li,
+.col-good li {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ── 主题色块 ── */
+.theme-human {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+.theme-agent {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+.theme-flywheel {
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+.theme-mcp {
+  background: #eef4ff;
+  border-left: 4px solid #3b82f6;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+.theme-skill {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+.theme-combo {
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+}
+
+/* ── 表格滚动 ── */
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 85%;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.table-scroll table {
+  font-size: 12px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* 密表页：略缩小字号，避免裁切 */
+.slidev-layout table {
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.slidev-layout h1 {
+  margin-bottom: 0.55rem;
+}
+
+.slidev-layout pre {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  margin: 0.4rem 0;
+}
+
+.slidev-layout .tip,
+.slidev-layout blockquote {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 4px 8px;
+  white-space: normal;
+  word-break: break-word;
+  vertical-align: middle;
+}
+
+/* ── 金句 ── */
+.punchline {
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.punchline .accent {
+  color: #f97316;
+}
+
+.punchline .accent-blue {
+  color: #2563eb;
+}
+
+.punchline .accent-purple {
+  color: #a855f7;
+}
+
+/* ── 卡片 ── */
+.chapter-card {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.chapter-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border-color: rgba(249, 115, 22, 0.5);
+}
+
+.demo-card {
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  background: #f8fafc;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.demo-card code {
+  font-size: 0.75rem;
+}
+
+.stack-layer {
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.55rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.stack-collab {
+  background: linear-gradient(90deg, #fff7ed 0%, #ffedd5 100%);
+  border-color: #fdba74;
+}
+
+.stack-agent {
+  background: linear-gradient(90deg, #faf5ff 0%, #f3e8ff 100%);
+  border-color: #d8b4fe;
+}
+
+.stack-tools {
+  background: linear-gradient(90deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: #93c5fd;
+}

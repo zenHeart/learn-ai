@@ -12,11 +12,13 @@
     "ppt:prompt": "pnpm --filter prompt-context dev",
     "ppt:skill": "pnpm --filter skill-mcp dev",
     "ppt:agent": "pnpm --filter agent dev",
+    "ppt:ai-native": "pnpm --filter ai-native-work dev",
     "ppt:build": "pnpm --filter './ppts/*' build",
     "ppt:build:vibe": "pnpm --filter vibe-coding build",
     "ppt:build:prompt": "pnpm --filter prompt-context build",
     "ppt:build:skill": "pnpm --filter skill-mcp build",
     "ppt:build:agent": "pnpm --filter agent build",
+    "ppt:build:ai-native": "pnpm --filter ai-native-work build",
     "deploy:ppt": "./scripts/deploy.sh"
   },
   "keywords": [

@@ -1,0 +1,9 @@
+{
+  "name": "ai-native-work",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --base /ppts/ai-native-work/",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  }
+}

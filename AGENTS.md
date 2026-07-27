@@ -17,8 +17,9 @@ pnpm docs:build
 # PPT
 pnpm ppt:vibe      # Vibe Coding
 pnpm ppt:prompt   # Prompt + Context
-pnpm ppt:skill    # Skill + MCP
-pnpm ppt:agent    # Agent
+pnpm ppt:skill    # Skill + MCP（技术附录）
+pnpm ppt:agent    # Agent（技术附录）
+pnpm ppt:ai-native # 从提效到复利：AI Agent 工作模式（第三期）
 
 pnpm ppt:build    # 构建所有 PPT
 ```
