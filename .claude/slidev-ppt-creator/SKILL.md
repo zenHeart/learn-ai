@@ -140,6 +140,9 @@ compatibility: 支持执行本地命令和编写结构化 Markdown 文件的 AI 
   - 对于强互动的实战片段，加上 `{monaco}` 标签允许 PPT 内现场改代码运行。
   - 对于状态前后的代码对比（例如 Bug 修复前后），必须使用 `<MagicMove>` （或 `!!magic-move`）实现神级过渡。
 - **高亮与标注**：使用 `<span v-mark.underline.yellow="1">文本</span>` 或 `<span v-mark.circle.blue="2">文本</span>` 动态标注非代码关键字。
+- **可见 vs 隐藏内容（高频翻车点）**：`::: tip`、普通段落、任何不在 `<!-- -->` 里的文字，观众翻页都会看到。所有"这页可以跳过""讲者备注""口播时长""台上主线"这类关于演讲本身的调度信息，必须**完整**放进 `<!-- 演讲者备注：... -->`，不能以可见文案出现——具体翻车案例见 [lessons-learned.md](assets/lessons-learned.md#2-讲者调度信息泄漏到观众可见区域)。
+- **组件配置与渲染分离**：自定义 Vue 组件里，文案/命令/可配置项一律收敛到 `<script setup>` 的具名数据结构（数组/对象），`<template>` 只负责布局和 `v-for`/`:class` 渲染，禁止把内容字符串直接写死在模板标签里。
+- **Tailwind 类名禁止插值拼接**：`` :class="`border-blue-${n}`" `` 这类写法不会生效——Tailwind 靠静态扫描识别完整类名字符串，运行时拼出来的类名它看不到。颜色/尺寸变体要给每条数据预置一个完整字面量的 `cls` 字段。
 - **布局 (Layouts)**:
   - `layout: cover` 用于入口标题页。
   - `layout: two-cols` 用于对比说明。
@@ -204,3 +207,4 @@ npx slidev build --base /your-deployment-path/
 | [template-content.md](assets/template-content.md) | 内容页基准模板 (含核心收获样式) |
 | [VibeExample.vue](assets/VibeExample.vue) | 交互式组件示例代码 |
 | `assets/examples/` | （强烈推荐）包含可供参考的实际场景组件代码文件集，参考以生成工作流演示组件。 |
+| [lessons-learned.md](assets/lessons-learned.md) | **踩坑记录**：生造词标题、讲者备注泄漏、术语跨文件不一致、断章引用、Tailwind 动态类名失效、密度调整反复过冲、事实核查失误——每条都是真实案例 + 修复过程，`patterns.md` 检查清单里对应条目的动机在这里能看到完整前因后果。 |
