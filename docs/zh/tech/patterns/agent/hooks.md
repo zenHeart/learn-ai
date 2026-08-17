@@ -921,7 +921,7 @@ FILE_PATH=$(echo "$EVENT_DATA" | jq -r '.tool_input.file_path')
 if [[ "$FILE_PATH" == src/*.py ]]; then
   TEST_FILE="tests/test_$(basename $FILE_PATH)"
   # 使用 Claude 更新测试
-  claude-cli "Update $TEST_FILE to cover changes in $FILE_PATH"
+  claude -p "Update $TEST_FILE to cover changes in $FILE_PATH" --add-dir "${CLAUDE_PROJECT_DIR}"
 fi
 ```
 

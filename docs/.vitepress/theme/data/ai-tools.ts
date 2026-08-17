@@ -39,7 +39,7 @@ export const toolsData: ToolCategory[] = [
       {
         name: "Claude CLI",
         desc: "命令行 AI 编程助手",
-        url: "https://docs.anthropic.com/en/docs/build-with-claude/claude-cli",
+        url: "https://code.claude.com/docs/en/overview",
         icon: "🔧",
         tags: ["cli", "terminal"],
       },

@@ -18,13 +18,13 @@ Claude Design 让你描述一个网站、原型、落地页、演示文稿、或
 
 第三,**细粒度控制结合了四种编辑模式**:对话式的结构性 prompt、针对具体元素的 inline comment、画布上直接文字编辑、**adjustment knobs——Claude 根据每个设计动态生成的滑块**,用于间距、颜色、圆角、栅格、透明度、字体。
 
-模型选择也影响输出质量。Opus 4.7 有明显的"个人风格"——暖色米白背景(约 #F4F1EA)、衬线展示字体、斜体点缀、陶土色调——这让编辑风和作品集类的作品很美,但**在仪表板、开发工具、金融科技、企业级 UI 上会翻车,除非你显式反向 prompt**。预算方面,Opus 4.7 价格为输入 $5/M tokens、输出 $25/M tokens,而 Claude Design 使用自己的每周配额,独立于 Claude 日常对话和 Claude Code——把这个配额视为硬约束。
+模型选择也影响输出质量。Opus 4.7 有明显的"个人风格"——暖色米白背景(约 #F4F1EA)、衬线展示字体、斜体点缀、陶土色调——这让编辑风和作品集类的作品很美,但**在仪表板、开发工具、金融科技、企业级 UI 上会翻车,除非你显式反向 prompt**。预算方面,<!-- TODO: 待核实 -->Opus 4.7 价格为输入 $5/M tokens、输出 $25/M tokens,而 Claude Design 使用自己的每周配额,独立于 Claude 日常对话和 Claude Code——把这个配额视为硬约束。
 
 ### 各套餐可以用到什么
 
 | 套餐 | 访问权限 | 配额画像 | 备注 |
 |---|---|---|---|
-| **Pro** | 默认开启 | 快速探索,一次性使用 | PCWorld 评测者 25 分钟 3 个变体烧掉周配额 80%,请量力而为 |
+| **Pro** | 默认开启 | 快速探索,一次性使用 | <!-- TODO: 待核实 -->PCWorld 评测者 25 分钟 3 个变体烧掉周配额 80%,请量力而为 |
 | **Max 5x** | 默认开启 | 半常规使用——PM 和工程师做常规 mockup | 适合稳定出活的前端工程师 |
 | **Max 20x** | 默认开启 | 重度使用——设计师和创意工作者 | 真正的生产量级 |
 | **Team** | 默认开启 | 按席位每周配额(Standard / Premium) | 支持组织范围的共享 |
@@ -203,17 +203,18 @@ tutorial 说得很明白:*"如果你在设计对话中用具体名字提到过�
 
 ## 导出和 Canva:选对目标
 
-右上角的导出菜单给你 7 条路径。按受众来挑。
+右上角的导出菜单给你 6 条路径(以官方支持文档为准)。按受众来挑。
 
 | 目标 | 实际得到什么 | 适用场景 |
 |---|---|---|
-| **独立 HTML** | 自包含 HTML,CSS 内嵌;交互(语音、视频、shader、3D、AI)以代码保留 | 静态托管部署、demo、和工程快速分享 |
-| **交接给 Claude Code** | 设计文件 + 对话 + README + prompt URL | 针对真实仓库的生产级实现 |
-| **发送到 Canva** | **完全可编辑的** Canva 设计,不是扁平图片——通过 Design Engine 进入 Canva Visual Suite | 营销打磨、品牌团队接手、社交/发布 |
-| **下载为 .zip** | 完整项目文件夹 | 归档、离线交接 |
-| **导出为 PDF** | 静态渲染 | 利益相关者评审、邮件附件 |
-| **导出为 PPTX** | PowerPoint/Google Slides 文件 | 高管汇报、客户演示 |
-| **组织内部 URL** | 仅查看、评论,或编辑权限 | 异步团队评审;编辑权限解锁和 Claude 的群聊 |
+| **独立 HTML(Export as standalone HTML)** | 自包含 HTML,CSS 内嵌;交互(语音、视频、shader、3D、AI)以代码保留 | 静态托管部署、demo、和工程快速分享 |
+| **发送到 Canva(Export to Canva)** | **完全可编辑的** Canva 设计,不是扁平图片——通过 Design Engine 进入 Canva Visual Suite | 营销打磨、品牌团队接手、社交/发布 |
+| **下载为 .zip(Save as folder)** | 完整项目文件夹 | 归档、离线交接 |
+| **导出为 PDF(Export as PDF)** | 静态渲染 | 利益相关者评审、邮件附件 |
+| **导出为 PPTX(Export as PPTX)** | PowerPoint/Google Slides 文件 | 高管汇报、客户演示 |
+| **组织内部 URL(Internal URL share)** | 仅查看、评论,或编辑权限 | 异步团队评审;编辑权限解锁和 Claude 的群聊 |
+
+> **关于"交接给 Claude Code"**:官方支持文档未将此列为独立导出路径,但 Claude Design 与 Claude Code 的代码交接是文档化的工作流模式之一。常见做法是把"导出为独立 HTML + README 设计说明"作为生产代码仓库的交接起点,再让 Claude Code 接手做工程化实现——而不是依赖某个特定导出按钮。
 
 ### Canva 是深度集成,不是简单导出
 
@@ -225,7 +226,7 @@ tutorial 说得很明白:*"如果你在设计对话中用具体名字提到过�
 
 ### Figma 的缺席是刻意的
 
-Anthropic 首席产品官 Mike Krieger 在发布前三天从 Figma 董事会辞任;Figma 股票在发布当天下跌约 5–7%。如果你需要 Figma,评测者推荐走已有的 **Figma MCP server + Claude Code** 路径——这条路独立于 Claude Design。
+Anthropic 首席产品官 Mike Krieger 在发布前三天从 Figma 董事会辞任;<!-- TODO: 待核实 -->Figma 股票在发布当天下跌约 5–7%。如果你需要 Figma,评测者推荐走已有的 **Figma MCP server + Claude Code** 路径——这条路独立于 Claude Design。
 
 ---
 

@@ -105,7 +105,7 @@ export const productivityPathConfig: PathConfig = {
       links: [
         { text: 'Cursor Guide', url: '/products/ai-coding/cursor' },
         { text: 'Copilot Guide', url: '/products/ai-coding/copilot' },
-        { text: 'Claude CLI', url: '/products/ai-coding/claude-cli' }
+        { text: 'Claude CLI', url: '/products/ai-coding/claude/claude-code' }
       ]
     },
     {

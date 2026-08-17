@@ -12,5 +12,7 @@ _check.md
 .DS_Store
 poster/
 .cursorindexingignore
-.claude/settings.local.json
+.claude/*.local.json
 .github/workflows/pr-check.yml
+docs/.vitepress/dist-test/
+

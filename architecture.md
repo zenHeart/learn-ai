@@ -143,7 +143,7 @@ learn-ai/
 │   │   │   ├── index.md             # L1-L5 levels overview
 │   │   │   ├── cursor.md
 │   │   │   ├── copilot.md
-│   │   │   ├── claude-cli.md
+│   │   │   ├── claude-code.md
 │   │   │   ├── gemini-cli.md
 │   │   │   └── othertools.md
 │   │   │
