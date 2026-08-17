@@ -1,6 +1,6 @@
 # Grok 学习地图
 
-> **Grok Build** 是 xAI（官方英文署名 SpaceXAI）的第一方终端编程 Agent。可执行文件名是 `grok`，源码开放在 [xai-org/grok-build](https://github.com/xai-org/grok-build)。
+> **Grok Build** 是 xAI 的第一方终端编程 Agent。可执行文件名是 `grok`，源码开放在 [xai-org/grok-build](https://github.com/xai-org/grok-build)。
 >
 > 官方定义（[docs.x.ai/build/overview](https://docs.x.ai/build/overview)）：
 > "**Grok Build** is a powerful and extensible coding agent. Use it via an interactive TUI, headlessly in scripts or bots, or through the Agent Client Protocol (ACP) in other apps."
