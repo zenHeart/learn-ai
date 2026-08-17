@@ -21,6 +21,7 @@
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
 - [Gemini CLI](./gemini-cli.md) - Google's AI coding assistant
+- [Grok](./grok/) - xAI's first-party terminal coding agent (Grok Build)
 - [Other Tools](./othertools.md) - Explore more AI coding tools
 
 ## Getting Started
