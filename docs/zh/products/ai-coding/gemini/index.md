@@ -1,172 +1,98 @@
-# Google AI Pro 会员学习地图
+# Gemini 全家族
 
-> 你是 Google AI Pro 会员，这意味着你拥有 Google 最强大的 AI 开发者工具生态系统。本页是你的学习导航，帮助你以最短路径掌握所有核心能力，并在前端架构领域产生最大的技术杠杆。
+> Google 的 AI 编码产品线。这一页告诉你**七个产品分别解决什么问题、该按什么顺序学**。
 
-## Google AI Pro 能给你什么
+## 为什么需要这一页
 
-作为 Google AI Pro 会员，你解锁的不仅是一个聊天机器人，而是一套**完整的 AI 工程化平台**：
+Gemini 家族的产品数量多、命名相似、能力有重叠，最常见的困惑不是"某个产品怎么用"，而是"我这个活该用哪个"。
 
-| 维度 | 产品 | 核心价值 |
-|------|------|---------|
-| **自主智能体平台** | [Antigravity](./antigravity) | Agent-first IDE，多窗口并发执行，规则引擎驱动 |
-| **异步 CI/CD 智能体** | [Jules](./jules) | GitHub 原生异步编码代理，自动处理 PR 和技术债务 |
-| **超长上下文 API** | [AI Studio](./ai-studio) | 200 万令牌上下文，Gemini 3.1 Pro，开发者月度 $10 GCP 额度 |
-| **IDE 深度集成** | [Code Assist](./code-assist) | VS Code/IntelliJ 内嵌，多文件重构，自动批准模式 |
-| **命令行工具** | [Gemini CLI](./gemini-cli) | 终端原生集成，每日 1500 次高频配额 |
-| **交互式原型** | [Canvas](./canvas) | 生成式 UI，WebGL 渲染，实时交互修改 |
-| **云端开发环境** | Firebase Studio | 浏览器端 Agentic IDE，Data Connect 自动生成 GraphQL |
-| **浏览器调试集成** | Chrome DevTools MCP | 实时 DOM 读取，网络请求监听，自动化 QA |
-| **知识管理** | NotebookLM | 1500 页长文档解析，ADR 综合分析 |
-| **办公套件** | Google Workspace | 邮件智能撰写，会议记录，5TB 云存储 |
-
-完整工具细节、配置示例和 ROI 分层说明见 [Google AI Pro 工具详解](./google-pro)。
-
----
-
-## 核心投资回报率框架
-
-> ⚠️ **关键洞察**：对于资深前端架构师，80% 的精力应投入 L1-L2 的工具。
-
-### ROI 金字塔
+先记住一条主线：**它们的分界线是"谁在驾驶"。**
 
 ```
-                    ┌─────────────────────┐
-                    │   L1 极高 ROI       │  ← 80% 精力
-                    │ Antigravity + Jules │
-                    ├─────────────────────┤
-                    │   L2 高 ROI         │  ← 15% 精力
-                    │ AI Studio + CLI    │
-                    ├─────────────────────┤
-                    │   L3 中 ROI         │  ← 5% 精力
-                    │ Canvas + Firebase  │
-                    ├─────────────────────┤
-                    │   L4 中低 ROI       │
-                    │ DevTools MCP       │
-                    ├─────────────────────┤
-                    │   L5 低 ROI         │
-                    │ Workspace 办公套件  │
-                    └─────────────────────┘
+你逐字敲，AI 补全            → Code Assist
+你下指令，AI 在你终端里执行    → Gemini CLI
+你定目标，AI 自己规划执行      → Antigravity
+你交任务，AI 在云端做完给你 PR  → Jules
 ```
 
-### ROI 工具矩阵
+剩下三个不在这条主线上：AI Studio 控制模型本身，Canvas 做原型，Google AI 订阅决定你能用多少。
 
-| 级别 | 工具 | ROI |
-|------|------|:----:|
-| **L1 极高** | [Antigravity](./antigravity) | ⭐⭐⭐⭐⭐ |
-| **L1 极高** | [Jules](./jules) | ⭐⭐⭐⭐⭐ |
-| **L2 高** | [AI Studio](./ai-studio) | ⭐⭐⭐⭐ |
-| **L2 高** | [Code Assist](./code-assist) | ⭐⭐⭐⭐ |
-| **L2 高** | [Gemini CLI](./gemini-cli) | ⭐⭐⭐⭐ |
-| **L3 中** | [Canvas](./canvas) | ⭐⭐⭐ |
-| **L3 中** | Firebase Studio | ⭐⭐⭐ |
-| **L4 中低** | Chrome DevTools MCP | ⭐⭐ |
-| **L4 中低** | NotebookLM | ⭐⭐ |
-| **L5 低** | Google Workspace | ⭐ |
+## 七个产品
 
----
+### 核心产品
 
-## 学习路径
+| 产品 | 一句话 | 什么时候用 |
+|---|---|---|
+| [Gemini CLI](./gemini-cli) | 终端里的 AI 智能体 | 想把 AI 接进管道和脚本；家族的入门首选 |
+| [Antigravity](./antigravity) | agent-first 开发平台 | 跨模块大改动，需要边看边验证 |
+| [Jules](./jules) | 云端异步编码智能体 | 边界清晰的耗时任务，丢出去等 PR |
 
-### 第一阶段：掌握 Antigravity 规则引擎（3-5 天）
+### 更多产品与扩展
 
-**目标**：从"程序员"转变为"系统设计与指令编排者"。
+| 产品 | 一句话 | 什么时候用 |
+|---|---|---|
+| [Canvas](./canvas) | 对话旁边的交互式工作区 | 快速做能点的原型 |
+| [Code Assist](./code-assist) | IDE 集成扩展 | 不想换编辑器；团队有合规硬要求 |
+| [AI Studio](./ai-studio) | 模型与参数控制台 | 调温度、固化系统提示词、大规模上下文审计、接 API |
+| [Google AI 订阅](./google-pro) | 付费层级与额度 | 决定要为哪一档付费 |
 
-| 步骤 | 内容 |
-|------|------|
-| 1 | 理解 Antigravity 的 Agent-first 定位 |
-| 2 | 掌握 agents.md 和 .agents/skills/ 规则文件 |
-| 3 | 构建三层智能体架构，实现 Zustand store 规范 |
-| 4 | 启用严格模式与沙盒环境 |
-| 5 | 结合 MCP 服务器（GitHub MCP、Playwright MCP） |
+### 速查与参考
 
-### 第二阶段：上手 Jules CI/CD 自动化（2-3 天）
+| 页面 | 用途 |
+|---|---|
+| [Cookbook](./gemini-cookbook) | 按"我想做什么"查配方 |
+| [速查表](./gemini-cheatsheet) | 决策表、模型现状、订阅层级、配置路径 |
+| [术语表](./gemini-glossary) | Rules / Skill / Subagent / Artifact 等概念到底指什么 |
 
-**目标**：将技术债务清理、依赖升级等高耗时任务交给云端智能体。
+## 建议学习顺序
 
-| 步骤 | 内容 |
-|------|------|
-| 1 | 理解 Jules 的异步工作原理 |
-| 2 | 通过 GitHub Issue @jules 触发任务 |
-| 3 | 利用 jules-tools CLI 构建自动化管线 |
-| 4 | 批量分发技术债务清理任务 |
-| 5 | 避免合并冲突的策略 |
+上面的排列顺序不是按字母，也不是按热度，而是按**概念依赖**加**受众复杂度**：
 
-### 第三阶段：AI Studio 超长上下文工程（1-2 天）
+1. **先学 [Gemini CLI](./gemini-cli)**。它是家族里唯一零前置的完整工具，而且首次引入了 `.gemini/settings.json`、`gemini extensions install`、`GEMINI.md` 这三样后面反复复用的东西。
+2. **再学 [Antigravity](./antigravity)**。它复用上面三个概念，再加上规则、技能、子智能体。跳过 CLI 直接看它，你会在"这个配置文件是什么"上卡住。
+3. **然后 [Jules](./jules)**。它在"自主智能体"之上再叠一层 GitHub 仓库与 PR 工作流。
+4. 之后按需要看 Canvas / Code Assist / AI Studio / 订阅层级——它们互相独立，不构成链条。
 
-**目标**：利用 200 万令牌上下文进行大规模代码库审计。
+**[Code Assist](./code-assist) 排在后面不是因为它难**，而是因为它的官方定位就是面向"有严格数据安全与合规要求的组织"，个人开发者通常不是第一需求。**[订阅层级](./google-pro)** 放最后，因为它回答的是"我该为哪一档付钱"，等你知道自己要用哪个工具之后再看才有意义。
 
-| 步骤 | 内容 |
-|------|------|
-| 1 | 理解 200 万令牌上下文的能力边界 |
-| 2 | 配置 $10/月 GCP 额度并设置支出上限 |
-| 3 | 实施"大海捞针"式深度代码审计 |
-| 4 | 微调温度参数并固化系统提示词 |
-| 5 | 理解上下文衰减并优化令牌分配 |
+## 快速决策
 
-### 第四阶段：Gemini CLI 与 Code Assist（1-2 天）
+| 我的情况 | 用 |
+|---|---|
+| 想在终端里试试 AI 编码 | [Gemini CLI](./gemini-cli) |
+| 要改一个跨了五个模块的东西 | [Antigravity](./antigravity) |
+| 要把 React 从 18 升到 19 | [Jules](./jules) |
+| 不想离开 VS Code | [Code Assist](./code-assist) |
+| 想让 AI 通读整个仓库做审计 | [AI Studio](./ai-studio) |
+| 半小时内要给产品经理看个原型 | [Canvas](./canvas) |
+| 想知道免费额度够不够用 | [订阅层级](./google-pro) |
 
-**目标**：掌握日常同步开发的高效工具组合。
+完整决策表见[速查表](./gemini-cheatsheet#选哪个工具)。
 
-| 步骤 | 内容 |
-|------|------|
-| 1 | Gemini CLI 日常使用与快捷键 |
-| 2 | Code Assist 的 Agent Mode with Auto Approve |
-| 3 | Specs before code 流程 |
-| 4 | 终端排错：Vite/Webpack 构建错误分析 |
-| 5 | Antigravity vs Code Assist 场景选择 |
+## 共享的概念
 
----
+家族内部有几样东西是跨产品复用的，先认识它们能省很多重复学习：
 
-## 快速决策：我该用哪个？
+| 概念 | 跨哪些产品 |
+|---|---|
+| `GEMINI.md` | Gemini CLI、Antigravity（全局规则） |
+| `AGENTS.md` | Jules |
+| MCP | Gemini CLI、Antigravity、Code Assist |
+| 订阅额度 | 一份订阅同时影响多个产品的可用量 |
 
-```
-我要做什么？
-├── 重构整个模块 / 搭建新服务脚手架
-│   └── → Antigravity（Agent-first，多窗口并发）
-│
-├── 框架升级 / 技术债务清理 / 批量 PR
-│   └── → Jules（云端异步，GitHub 原生）
-│
-├── 审计百万行代码库 / 构建内部工具
-│   └── → AI Studio（200 万令牌上下文）
-│
-├── 单文件逻辑补全 / 局部重构
-│   └── → Gemini Code Assist（IDE 内嵌）
-│
-├── 终端排错 / 构建脚本
-│   └── → Gemini CLI（每日 1500 次配额）
-│
-├── 一次性原型 / 内部工具快速孵化
-│   └── → Canvas（生成式 UI + WebGL）
-│
-└── 遗留系统知识梳理 / ADR 综合
-    └── → NotebookLM（1500 页文档解析）
-```
+各自的准确路径与区别见[术语表](./gemini-glossary)和[速查表的配置速查](./gemini-cheatsheet#配置速查)。
 
----
+## 订阅与额度
 
-## 订阅层级对比
+订阅分为 AI Plus / AI Pro / AI Ultra 5x / AI Ultra 20x 四档，**不是两档**。各档的模型倍数、存储、Google Cloud 额度见[速查表的订阅层级](./gemini-cheatsheet#订阅层级)，本页不重复。
 
-| 功能 | AI Pro ($20/月) | AI Ultra |
-|------|:-------------:|:--------:|
-| Gemini 3.1 Pro | ✅ | ✅ |
-| 200 万令牌上下文 | ✅ | ✅ |
-| Jules 异步代理 | ✅ | ✅ |
-| Antigravity | ✅ | ✅ |
-| $10/月 GCP 额度 | ✅ | ✅ |
-| Gemini 3.1 Ultra | ❌ | ✅ |
-| 优先访问新功能 | ❌ | ✅ |
+<!-- TODO: 待核实 —— 各档订阅的具体价格。官方对比页会按地区返回本地化内容并且吞掉货币金额，未找到可稳定引用的官方标价，请以你所在地区的官方页面为准 -->
 
----
+## 官方资源
 
-## 资源链接
-
-- [Antigravity 官方文档](https://antigravity.google/docs/home)
-- [Jules 官方文档](https://jules.google/docs/)
-- [AI Studio](https://aistudio.google.com)
-- [Gemini Code Assist](https://codeassist.google)
-- [Gemini CLI](./gemini-cli)
-- [Canvas](https://gemini.google/overview/canvas/)
-- [Firebase Studio](https://firebase.google.com/docs/studio)
-- [NotebookLM](https://notebooklm.google)
-- [Google AI Pro 订阅管理](https://one.google.com/about/)
+- [Gemini CLI 文档](https://geminicli.com/docs/)
+- [Antigravity 文档](https://antigravity.google/docs/home)
+- [Jules 文档](https://jules.google/docs/)
+- [Code Assist 文档](https://developers.google.com/gemini-code-assist/docs/overview)
+- [Gemini API 模型清单](https://ai.google.dev/gemini-api/docs/models)
+- [Google AI 订阅对比](https://one.google.com/about/google-ai-plans/)
