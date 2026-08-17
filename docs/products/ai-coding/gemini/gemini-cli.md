@@ -91,7 +91,9 @@ clear display ,short cut is `control+c`
 
 #### `/stats`
 
-show stats info the result like:
+Shows session statistics. Sample output:
+
+> This is real captured output. **The model names in it reflect what was available when it was captured** — some are now retired. For the current list see the [cheatsheet](./gemini-cheatsheet#model-status).
 
 ```bash
 Session Stats                                                                                                                        │
@@ -196,10 +198,10 @@ symbol| function | demo|
 ## [session](https://geminicli.com/docs/cli/session-management/#listing-sessions)
 
 
-each your use gemini will create a session.session save your conversation info. like prompt、model response...
-session save in `~/.gemini/tmp/<projext_hash>/chats/<session_hash>`.
+Every Gemini run creates a session. A session stores your conversation — prompts, model responses and so on.
+Sessions are stored under `~/.gemini/tmp/<project_hash>/chats/<session_hash>`.
 
-you can list and enter history session.
+You can list past sessions and re-enter them:
 
 ```bash
 # list current directory related sessions
@@ -207,14 +209,16 @@ gemini --list-sessions
 # enter latest session for current directory
 gemini --resume
 # enter session by index for current directory
-gemini -resume 2
+gemini --resume 2
 # enter session by hash for current directory
-gemini -resume  <hash>
+gemini --resume <hash>
 # delete session for current directory
 gemini --delete-session 2
 ```
 
-in gemini cli you also can use `/session` command to list and enter session.
+<!-- TODO: needs verification — the exact argument form for `--resume` with an index or a hash. The official session-management docs confirm the listing/resuming capability but the scraped content gave no citable parameter syntax. The single-dash `-resume` in earlier revisions was wrong and has been normalised to double dashes here. -->
+
+In Gemini CLI you can also use the `/session` command to list and enter sessions.
 
 
 ### session config
@@ -356,8 +360,7 @@ user common figure path
    - **Scope**
      - system administrators to control gemini cli behavior.overwrite all other config layers
 
-you can use `$VAR_NAME` 或 `${VAR_NAME}` in your config file。some config support directory see
-[sandbox config](https://geminicli.com/docs/get-started/configuration/#sandboxing) read more.
+You can reference environment variables in config files as `$VAR_NAME` or `${VAR_NAME}`. Some settings accept directories — see [sandbox config](https://geminicli.com/docs/get-started/configuration/#sandboxing) for details.
 
 ### set config
 
@@ -474,9 +477,18 @@ after connect ide you can use ide to see gemini modify content
 4. enter `/ide install`
 
 
-## others
+## Other
 
-you can run gemini cli in safe mode ,this called sandbox, when gemini run in yolo mode will default use sandbox mode. read [sandboxing](https://geminicli.com/docs/get-started/configuration/#sandboxing) for more detail. in cli read [sandbox](https://geminicli.com/docs/cli/sandbox/) use `-s` to enable sandbox mode.
+### Sandbox
 
+Gemini CLI can run inside a sandbox to limit what it can touch on your system. Use `-s` in the CLI to enable it; when running in YOLO mode the sandbox is used by default. See [sandbox config](https://geminicli.com/docs/get-started/configuration/#sandboxing) and the [sandbox docs](https://geminicli.com/docs/cli/sandbox/).
 
-for enterprise user, read [enterprise](https://geminicli.com/docs/cli/enterprise/) to learn more. you also can use [telemetry](https://geminicli.com/docs/cli/telemetry/) to know more metrics.
+### Enterprise and observability
+
+For enterprise deployments see the [enterprise docs](https://geminicli.com/docs/cli/enterprise/). If you want finer-grained runtime metrics, enable [telemetry](https://geminicli.com/docs/cli/telemetry/).
+
+## Related pages
+
+- [Cheatsheet](./gemini-cheatsheet#configuration) — configuration precedence and the settings keys that actually exist
+- [Cookbook](./gemini-cookbook) — recipes by task
+- [Glossary](./gemini-glossary) — Session, Checkpoint, Trusted Folder and friends
