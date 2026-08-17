@@ -214,7 +214,7 @@ See [background-tasks](https://docs.x.ai/build/features/background-tasks).
 
 ## 9. Sessions and cross-session memory
 
-Session operations are covered in the [tutorial](./grok-cli.md#8-session-management). Two habits worth forming:
+Session operations are covered in the [tutorial](./grok-cli.md#_8-session-management). Two habits worth forming:
 
 - `/context` before a long task, to see how much budget is left; `/compact [focus]` to reclaim it while keeping what matters.
 - `/rewind` (or `Esc Esc` on an empty input) rolls back **both the conversation and the files on disk**. It is not "undo the last message" — uncommitted changes will be gone. Commit before you rewind.
