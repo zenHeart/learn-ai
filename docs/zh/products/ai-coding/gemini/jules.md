@@ -142,4 +142,4 @@ jules --theme dark                       # dark / light
 
 - [速查表](./gemini-cheatsheet#jules) — CLI 命令速查
 - [术语表](./gemini-glossary#agents-md) — `AGENTS.md` 与其他指令文件的区别
-- [Cookbook](./gemini-cookbook#10-依赖升级这种耗时又机械的活) — 依赖升级配方
+- [Cookbook](./gemini-cookbook#_10-依赖升级这种耗时又机械的活) — 依赖升级配方

@@ -75,5 +75,5 @@ Canvas 不在工程化主线上，它和其他产品不是竞争关系：
 
 ## 相关页面
 
-- [Cookbook](./gemini-cookbook#13-快速做个能点的原型) — 原型配方
+- [Cookbook](./gemini-cookbook#_13-快速做个能点的原型) — 原型配方
 - [速查表](./gemini-cheatsheet#按任务选) — 按任务选工具

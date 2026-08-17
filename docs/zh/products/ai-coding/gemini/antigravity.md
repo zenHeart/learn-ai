@@ -10,8 +10,8 @@ Antigravity 假设 AI 能自主规划、调用工具、执行多步任务。这�
 
 | 你提供什么 | 载体 | 作用 |
 |---|---|---|
-| 长期不变量 | [规则](#规则rules) | "这个项目必须这样做" |
-| 可复用流程 | [技能](#技能skills) 与 [工作流](#工作流workflows) | "遇到这类活儿按这个套路" |
+| 长期不变量 | [规则](#规则-rules) | "这个项目必须这样做" |
+| 可复用流程 | [技能](#技能-skills) 与 [工作流](#工作流-workflows) | "遇到这类活儿按这个套路" |
 | 外部世界 | MCP | 让它能查 GitHub、驱动浏览器 |
 
 ## 多表面（Surfaces）
@@ -160,4 +160,4 @@ Antigravity（本地、你实时对话）vs Code Assist（IDE 内、编辑器触
 
 - [速查表](./gemini-cheatsheet) — 规则/技能路径速查、跨产品决策表
 - [术语表](./gemini-glossary) — Surface、Rules、Skill、Subagent、Artifact 的概念定义
-- [Cookbook](./gemini-cookbook#11-跨模块重构需要边看边验证) — 跨模块重构配方
+- [Cookbook](./gemini-cookbook#_11-跨模块重构-需要边看边验证) — 跨模块重构配方

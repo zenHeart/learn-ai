@@ -145,4 +145,4 @@ AI Pro 档通过 Google Developer Program 提供 US$10/月 Google Cloud 额度�
 ## 相关页面
 
 - [速查表](./gemini-cheatsheet#模型现状) — 模型现状与停用清单
-- [Cookbook](./gemini-cookbook#12-想让-ai-通读整个仓库做审计) — 全库审计配方
+- [Cookbook](./gemini-cookbook#_12-想让-ai-通读整个仓库做审计) — 全库审计配方

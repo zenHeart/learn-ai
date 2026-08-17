@@ -97,4 +97,4 @@ GCP 控制台 → 计费 → 预算和警报 → 创建预算
 ## 相关页面
 
 - [速查表](./gemini-cheatsheet#订阅层级) — 四档完整对照表
-- [Cookbook](./gemini-cookbook#14-想控制-api-花费) — 预算配置配方
+- [Cookbook](./gemini-cookbook#_14-拿到-google-cloud-额度-怕超支) — 预算配置配方

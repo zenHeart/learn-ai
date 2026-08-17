@@ -101,4 +101,4 @@ npx tsc --noEmit 2>&1 | gemini -p "按根因分组这些类型错误"
 ## 相关页面
 
 - [速查表](./gemini-cheatsheet) — 跨产品决策表
-- [Cookbook](./gemini-cookbook#15-团队有数据合规要求) — 合规场景配方
+- [Cookbook](./gemini-cookbook#_15-团队有数据合规要求) — 合规场景配方
