@@ -443,9 +443,9 @@ Gemini 使用工具帮助 LLM 更好地理解你的任务。一些内置工具�
 | Memory tools | MemoryTool | 与记忆交互 |
 
 
-you can call tools with `<tool_name>(<args>)`
+可以用 `<tool_name>(<args>)` 的形式直接调用工具。
 
-detail read [tools](https://geminicli.com/docs/tools/)
+详见[官方工具文档](https://geminicli.com/docs/tools/)。
     
 ### [扩展自定义工具](https://geminicli.com/docs/core/tools-api/#extending-with-custom-tools)
 

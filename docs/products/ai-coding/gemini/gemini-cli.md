@@ -223,28 +223,27 @@ In Gemini CLI you can also use the `/session` command to list and enter sessions
 
 ### session config
 
-you can config session 
+You can configure session retention:
 
 ```json
 {
   "general": {
     "sessionRetention": {
-      "enabled": true, // 会话清理开关默认为 false
-      "maxAge": "30d", // 使能清理后，最多保存 30d
-      "maxCount": 50, // 组多保留最近 50 个会话
-      "minRetention": "1d" // 最短保留期限，小于此日期不会被删除，默认 1d
+      "enabled": true, // session cleanup, false by default
+      "maxAge": "30d", // once enabled, keep sessions for at most 30 days
+      "maxCount": 50, // keep at most the 50 most recent sessions
+      "minRetention": "1d" // minimum retention; anything newer is never deleted, 1d by default
     }
   }
 }
-
 ```
 
-to avoid session to long, you can set
+To stop a session growing indefinitely:
 
 ```json
 {
   "model": {
-    "maxSessionTurns": 100 // 一个 session 最多允许 100 次聊天， 默认 `-1` 表示不限制
+    "maxSessionTurns": 100 // at most 100 turns per session; -1 (the default) means unlimited
   }
 }
 ```
@@ -333,15 +332,15 @@ tail -5 usage.log
 
 use gemini config to control gemini cli behavior.
 detail read [gemini cli configuration ](https://geminicli.com/docs/get-started/configuration-v1/)
-支持的详细列表参考 [json schema](https://github.com/google-gemini/gemini-cli/blob/main/schemas/settings.schema.json)
+For the exhaustive list of supported keys, see the [settings JSON schema](https://github.com/google-gemini/gemini-cli/blob/main/schemas/settings.schema.json).
 
 ### config layers
 
 gemini support multiple config layers detail see [Configuration layers](https://geminicli.com/docs/get-started/configuration/#configuration-layers)
 
-user common figure path
+Common configuration paths:
 
-<!-- TODO: @chengle can't find in mac  -->
+<!-- TODO: needs verification — the system defaults path on macOS could not be reproduced locally; follow the official configuration layers documentation. -->
 
 1. system default config
    - **Location** use `GEMINI_CLI_SYSTEM_DEFAULTS_PATH` to customize path
