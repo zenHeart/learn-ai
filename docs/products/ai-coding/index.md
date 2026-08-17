@@ -18,7 +18,7 @@
 
 - [GitHub Copilot](./copilot.md) - Industry-standard AI code completion
 - [Cursor](./cursor.md) - AI-first code editor with chat and generation
-- [Claude CLI](./claude-cli.md) - Command-line AI coding assistant
+- [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
 - [Gemini CLI](./gemini-cli.md) - Google's AI coding assistant
 - [Other Tools](./othertools.md) - Explore more AI coding tools
@@ -42,7 +42,7 @@
 - Industry standard
 
 ### For Terminal Lovers
-**Recommended**: [Claude CLI](./claude-cli.md)
+**Recommended**: [Claude Code](./claude/claude-code.md)
 - Command-line first
 - Excellent reasoning
 - Great for refactoring

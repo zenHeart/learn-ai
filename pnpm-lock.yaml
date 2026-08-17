@@ -42,6 +42,8 @@ importers:
 
   ppts/agent: {}
 
+  ppts/ai-native-work: {}
+
   ppts/prompt-context:
     dependencies:
       '@comark/markdown-it':

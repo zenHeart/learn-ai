@@ -208,7 +208,7 @@ Claude 会自动调用 Gmail 连接器搜索邮件，再调用 Notion 连接器�
 
 **Q：连接器在 Claude Code CLI 里如何使用？**
 
-Claude Code 通过 MCP 集成（`claude mcp add`）连接工具，与 claude.ai 的 Connectors UI 是两套入口，但底层协议相同。参见 [MCP 集成章节](./claude-code#第六部分mcp-集成)。
+Claude Code 通过 MCP 集成（`claude mcp add`）连接工具，与 claude.ai 的 Connectors UI 是两套入口，但底层协议相同。参见 [MCP 集成章节](./claude-code#mcp-集成)。
 
 ---
 

@@ -312,7 +312,38 @@ export default withMermaid(defineConfig({
                               { text: 'Overview', link: '/products/ai-coding/' },
                               { text: 'Cursor', link: '/products/ai-coding/cursor' },
                               { text: 'Copilot', link: '/products/ai-coding/copilot' },
-                              { text: 'Claude CLI', link: '/products/ai-coding/claude-cli' },
+                              {
+                                 text: 'Claude', link: '/products/ai-coding/claude/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/claude/' },
+                                    {
+                                       text: 'Core Products',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Claude.ai Platform', link: '/products/ai-coding/claude/claude-ai' },
+                                          { text: 'Claude Code CLI', link: '/products/ai-coding/claude/claude-code' },
+                                          { text: 'Claude Code Cookbook', link: '/products/ai-coding/claude/claude-code-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'More Products & Extensions',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Connectors', link: '/products/ai-coding/claude/connectors' },
+                                          { text: 'Claude Design', link: '/products/ai-coding/claude/claude-design' },
+                                          { text: 'Cowork Desktop Agent', link: '/products/ai-coding/claude/cowork' },
+                                          { text: 'Plugin Development', link: '/products/ai-coding/claude/plugin' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference & Cheatsheets',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/ai-coding/claude/claude-code-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/ai-coding/claude/claude-code-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Gemini CLI', link: '/products/ai-coding/gemini-cli' },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
@@ -763,12 +794,33 @@ export default withMermaid(defineConfig({
                               {
                                  text: 'Claude', link: '/zh/products/ai-coding/claude/', items: [
                                     { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/claude/' },
-                                    { text: 'Claude.ai 平台', link: '/zh/products/ai-coding/claude/claude-ai' },
-                                    { text: 'Claude Code CLI', link: '/zh/products/ai-coding/claude/claude-code' },
-                                    { text: 'Claude Design', link: '/zh/products/ai-coding/claude/claude-design' },
-                                    { text: 'Cowork 桌面代理', link: '/zh/products/ai-coding/claude/cowork' },
-                                    { text: 'Connectors 连接器', link: '/zh/products/ai-coding/claude/connectors' },
-                                    { text: 'Plugin 开发', link: '/zh/products/ai-coding/claude/plugin' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Claude.ai 平台', link: '/zh/products/ai-coding/claude/claude-ai' },
+                                          { text: 'Claude Code CLI', link: '/zh/products/ai-coding/claude/claude-code' },
+                                          { text: 'Claude Code 实战 Cookbook', link: '/zh/products/ai-coding/claude/claude-code-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '更多产品与扩展',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Connectors 连接器', link: '/zh/products/ai-coding/claude/connectors' },
+                                          { text: 'Claude Design', link: '/zh/products/ai-coding/claude/claude-design' },
+                                          { text: 'Cowork 桌面代理', link: '/zh/products/ai-coding/claude/cowork' },
+                                          { text: 'Plugin 开发', link: '/zh/products/ai-coding/claude/plugin' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet 速查表', link: '/zh/products/ai-coding/claude/claude-code-cheatsheet' },
+                                          { text: '术语表 Glossary', link: '/zh/products/ai-coding/claude/claude-code-glossary' },
+                                       ]
+                                    },
                                  ]
                               },
                               { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },

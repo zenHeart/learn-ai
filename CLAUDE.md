@@ -78,6 +78,7 @@ ppts/<name>/
 - **ES Modules**: 根目录有 `"type": "module"` - 使用 `import`/`export`，不用 `require()`
 - **语言**: 所有代码、文档、提交信息使用英文
 - **PPT 使用 setext 标题**: Slidev 需要用 `---` 分隔幻灯片，非标准 markdown 标题
+- **`.claude/` 目录下 Skill/Agent 必须放在规定子路径**: Skill 只能放在 `.claude/skills/<name>/SKILL.md`，Agent 只能放在 `.claude/agents/<name>.md`；直接放在 `.claude/` 根目录（如 `.claude/SKILL.md`）不会被发现，属于无效死文件，曾经误提交过，新增时注意路径
 
 ## 关键文件
 
