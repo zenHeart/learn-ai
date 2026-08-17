@@ -345,6 +345,15 @@ export default withMermaid(defineConfig({
                                  ]
                               },
                               { text: 'Gemini CLI', link: '/products/ai-coding/gemini-cli' },
+                              {
+                                 text: 'Grok', link: '/products/ai-coding/grok/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/grok/' },
+                                    { text: 'Grok Build Tutorial', link: '/products/ai-coding/grok/grok-cli' },
+                                    { text: 'Cookbook', link: '/products/ai-coding/grok/grok-cookbook' },
+                                    { text: 'Cheatsheet', link: '/products/ai-coding/grok/grok-cheatsheet' },
+                                    { text: 'Glossary', link: '/products/ai-coding/grok/grok-glossary' },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
                               {
@@ -845,6 +854,15 @@ export default withMermaid(defineConfig({
                                     { text: 'Canvas', link: '/zh/products/ai-coding/gemini/canvas' },
                                     { text: 'Code Assist', link: '/zh/products/ai-coding/gemini/code-assist' },
                                     { text: 'Jules', link: '/zh/products/ai-coding/gemini/jules' },
+                                 ]
+                              },
+                              {
+                                 text: 'Grok', link: '/zh/products/ai-coding/grok/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/grok/' },
+                                    { text: 'Grok Build 教程', link: '/zh/products/ai-coding/grok/grok-cli' },
+                                    { text: '实战 Cookbook', link: '/zh/products/ai-coding/grok/grok-cookbook' },
+                                    { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
+                                    { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
                                  ]
                               },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
