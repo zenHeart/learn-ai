@@ -344,6 +344,36 @@ export default withMermaid(defineConfig({
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Codex', link: '/products/ai-coding/codex/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/codex/' },
+                                    {
+                                       text: 'Core Products',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Codex CLI', link: '/products/ai-coding/codex/codex-cli' },
+                                          { text: 'Codex Cookbook', link: '/products/ai-coding/codex/codex-cookbook' },
+                                          { text: 'Codex Product Line', link: '/products/ai-coding/codex/codex-ai' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'More Products & Extensions',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'ChatGPT Plans & Access', link: '/products/ai-coding/codex/chatgpt-plus' },
+                                          { text: 'Project Integration', link: '/products/ai-coding/codex/integration' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Quick Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/ai-coding/codex/codex-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/ai-coding/codex/codex-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Gemini CLI', link: '/products/ai-coding/gemini-cli' },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
@@ -828,11 +858,31 @@ export default withMermaid(defineConfig({
                               {
                                  text: 'Codex', link: '/zh/products/ai-coding/codex/', items: [
                                     { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/codex/' },
-                                    { text: 'ChatGPT Plus', link: '/zh/products/ai-coding/codex/chatgpt-plus' },
-                                    { text: 'Codex CLI', link: '/zh/products/ai-coding/codex/codex-cli' },
-                                    { text: 'Codex AI', link: '/zh/products/ai-coding/codex/codex-ai' },
-                                    { text: '项目集成', link: '/zh/products/ai-coding/codex/integration' },
-                                    { text: '速查表', link: '/zh/products/ai-coding/codex/cheatsheet' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Codex CLI', link: '/zh/products/ai-coding/codex/codex-cli' },
+                                          { text: 'Codex 实战 Cookbook', link: '/zh/products/ai-coding/codex/codex-cookbook' },
+                                          { text: 'Codex AI', link: '/zh/products/ai-coding/codex/codex-ai' },
+                                       ]
+                                    },
+                                    {
+                                       text: '更多产品与扩展',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'ChatGPT Plus', link: '/zh/products/ai-coding/codex/chatgpt-plus' },
+                                          { text: '项目集成', link: '/zh/products/ai-coding/codex/integration' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet 速查表', link: '/zh/products/ai-coding/codex/codex-cheatsheet' },
+                                          { text: '术语表 Glossary', link: '/zh/products/ai-coding/codex/codex-glossary' },
+                                       ]
+                                    },
                                  ]
                               },
                               {

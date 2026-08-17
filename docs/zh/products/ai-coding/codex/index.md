@@ -283,7 +283,7 @@ codex "基于最新代码更新 README.md 和 API 文档"
 - [Codex CLI 完整手册](./codex-cli.md) - 从安装到精通
 - [Codex as Agent 深度解析](./codex-ai.md) - 理解本质
 - [集成指南](./integration.md) - 工作流自动化
-- [Cheatsheet 速查表](./cheatsheet.md) - 一页纸总结
+- [Cheatsheet 速查表](./codex-cheatsheet.md) - 一页纸总结
 
 ### 外部资源
 

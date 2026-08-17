@@ -2,7 +2,7 @@
 
 > 这是一份**任务导向**的文档——按「我要做什么」组织，每一节给出可直接照抄的提示词和命令。
 >
-> **补充阅读**：概念定义见 [Codex 术语表](./codex-glossary)，命令与配置速查见 [Codex 速查表](./cheatsheet)，从零安装见 [Codex CLI 教程](./codex-cli)。本页假设你已经装好并登录了 Codex CLI。
+> **补充阅读**：概念定义见 [Codex 术语表](./codex-glossary)，命令与配置速查见 [Codex 速查表](./codex-cheatsheet)，从零安装见 [Codex CLI 教程](./codex-cli)。本页假设你已经装好并登录了 Codex CLI。
 
 ## 核心理念
 
@@ -496,7 +496,7 @@ codex -c log_dir=./.codex-log
 ## 相关页面
 
 - [Codex 术语表](./codex-glossary) — 概念定义与设计原理
-- [Codex 速查表](./cheatsheet) — 命令、配置、错误速查
+- [Codex 速查表](./codex-cheatsheet) — 命令、配置、错误速查
 - [Codex CLI 教程](./codex-cli) — 安装与核心功能
 - [项目集成](./integration) — 接入真实项目的完整流程
 - [学习地图](./) — 完整学习路径

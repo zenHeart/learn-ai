@@ -750,4 +750,4 @@ codex --model gpt-4o "任务"
 
 ---
 
-**下一步**：回到 [Codex CLI 手册](./codex-cli.md) 深入学习具体命令，或查看 [Cheatsheet](./cheatsheet.md) 快速查询。
+**下一步**：回到 [Codex CLI 手册](./codex-cli.md) 深入学习具体命令，或查看 [Cheatsheet](./codex-cheatsheet.md) 快速查询。
