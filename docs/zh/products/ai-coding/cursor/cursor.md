@@ -260,7 +260,9 @@ alwaysApply: false
 ## 下一步
 
 1. [Cookbook](./cursor-cookbook) — 修 bug、做功能、Rules、Bugbot、Cloud、CLI、MCP
-2. [速查表](./cursor-cheatsheet) — 矩阵、快捷键、配置模板
-3. [术语表](./cursor-glossary) — 选型为什么那样切
-4. 回 [学习地图](./) 看补全 vs Agent vs Cloud vs Bugbot vs CLI
-5. 官方：[Quickstart](https://cursor.com/docs/get-started/quickstart)、[Agent best practices](https://cursor.com/blog/agent-best-practices)
+2. [Design Mode](./design-mode) · [Cloud Agents](./cloud-agents) · [Cursor CLI](./cursor-cli)
+3. [Origin](./origin) · [Security Agents](./security-agents) · [PR Routing](./pr-routing) · [SDK](./cursor-sdk)
+4. [速查表](./cursor-cheatsheet) — 矩阵、快捷键、配置模板
+5. [术语表](./cursor-glossary) — 选型为什么那样切
+6. 回 [学习地图](./) 看编辑器 vs CLI vs Cloud vs Origin vs SDK
+7. 官方：[Quickstart](https://cursor.com/docs/get-started/quickstart)、[Agent best practices](https://cursor.com/blog/agent-best-practices)

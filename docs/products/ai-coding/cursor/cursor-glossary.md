@@ -233,7 +233,7 @@ A plain `.md` under `.cursor/rules` is **ignored**. Official advice: use `AGENTS
 
 **Versus Bugbot:** Cloud *edits* a repo. Bugbot *reviews* a PR diff. Autofix is the bridge.
 
-**Docs:** [Cloud Agent](https://cursor.com/docs/cloud-agent), [Setup](https://cursor.com/docs/cloud-agent/setup), [agent-best-practices](https://cursor.com/blog/agent-best-practices)
+**Docs:** [Cloud Agent](https://cursor.com/docs/cloud-agent), [Setup](https://cursor.com/docs/cloud-agent/setup), [agent-best-practices](https://cursor.com/blog/agent-best-practices). Tutorial: [Cloud Agents](./cloud-agents).
 
 ---
 
@@ -245,4 +245,64 @@ A plain `.md` under `.cursor/rules` is **ignored**. Official advice: use `AGENTS
 
 **Versus editor / Cloud:** The editor has Tab and Inline Edit; the CLI does not. Cloud runs on an isolated VM; the CLI edits the current working tree unless you pass `--worktree`. Prefix a message with `&` to hand off to Cloud.
 
-**Docs:** [CLI Overview](https://cursor.com/docs/cli/overview), [Installation](https://cursor.com/docs/cli/installation), [Headless](https://cursor.com/docs/cli/headless)
+**Docs:** [CLI Overview](https://cursor.com/docs/cli/overview), [Installation](https://cursor.com/docs/cli/installation), [Headless](https://cursor.com/docs/cli/headless). Tutorial: [Cursor CLI](./cursor-cli).
+
+---
+
+## Design Mode
+
+**What:** Visual prompting in the browser inside the Agents Window. Click an element, multi-select, draw on a frozen viewport frame, or speak. Toggle `Cmd+Shift+D`.
+
+**Why:** UI changes are spatial. The agent gets element identity (xpath, component, computed styles, fiber props) plus a screenshot, not just a sentence.
+
+**Versus Claude Design:** This is an overlay on *your running app*. [Claude Design](../claude/claude-design) is a standalone brand-aware canvas.
+
+**Docs:** [Design Mode](https://cursor.com/docs/agent/design-mode). Tutorial: [Design Mode](./design-mode).
+
+---
+
+## Origin
+
+**What:** Cursor's git forge (early beta). Host repos, mirror GitHub, browse / search at `cursor.com/codebase`, open and merge PRs. The CLI binary is **`origin`**, not `agent`.
+
+**Why:** You want Cursor-hosted storage and PRs, not only review comments on GitHub.
+
+**Not Rules.** Claiming a **codebase name** enables it. Pro / Teams / Enterprise only. Follows the namespace owner's Privacy Mode. Legacy privacy cannot enable it.
+
+**Docs:** [Origin](https://cursor.com/docs/origin). Tutorial: [Origin](./origin).
+
+---
+
+## Security Agents
+
+**What:** Two Cursor-managed agents on Automations: **Security Reviewer** (PR / MR) and **Vulnerability Scanner** (cron). They require Cloud Agents. Local skill: `/review-security` (Cursor 3.7+; CLI coming soon).
+
+**Why:** Dedicated security gate and at-rest scan, billed to the **team usage pool** under a shared service account.
+
+**Versus Bugbot:** Bugbot comments on a general PR diff. Security Agents are a separate managed family. PR Routing can read both.
+
+**Docs:** [Security Agents](https://cursor.com/docs/security-agents). Tutorial: [Security Agents](./security-agents).
+
+---
+
+## PR Routing & Approval
+
+**What:** Automations agent that assigns reviewers from ownership / history and can approve low-risk PRs. Exact policy file: `APPROVAL_POLICY.md`. Optional routing: `.cursor/approval-policies/ROUTING.md`.
+
+**Why:** Route the right humans; auto-approve only where policy allows. It does **not** replace a full code review.
+
+**Gotcha:** Wrong filename is ignored. A PR that edits its own policy cannot use the new text to relax that same PR.
+
+**Docs:** [PR Routing & Approval](https://cursor.com/docs/approval-agents). Tutorial: [PR Routing](./pr-routing).
+
+---
+
+## Cursor SDK
+
+**What:** Call the same agent from your process. TypeScript `@cursor/sdk` (Node 22.13+), Python `cursor-sdk` (3.10+), other languages via the **SDK Bridge**. Runtime is `local` or `cloud`; local is the loop + filesystem, **not** a local model.
+
+**Why:** CI bots, triage workers, in-product agents, orchestrators. Same pricing / Privacy Mode as IDE and Cloud; spend tagged **SDK**.
+
+**Keys:** user or service-account. Team Admin API keys are not supported yet.
+
+**Docs:** [TypeScript](https://cursor.com/docs/sdk/typescript), [Python](https://cursor.com/docs/sdk/python), [Bridge](https://cursor.com/docs/sdk/bridge). Tutorial: [Cursor SDK](./cursor-sdk).

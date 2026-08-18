@@ -233,7 +233,7 @@
 
 **和 Bugbot**：Cloud 是「去改仓库」；Bugbot 是「审 PR diff」。Autofix 才会从审查跳到 Cloud。
 
-**官方文档**：[Cloud Agent](https://cursor.com/docs/cloud-agent)、[Setup](https://cursor.com/docs/cloud-agent/setup)、[agent-best-practices](https://cursor.com/blog/agent-best-practices)
+**官方文档**：[Cloud Agent](https://cursor.com/docs/cloud-agent)、[Setup](https://cursor.com/docs/cloud-agent/setup)、[agent-best-practices](https://cursor.com/blog/agent-best-practices)。教程：[Cloud Agents](./cloud-agents)。
 
 ---
 
@@ -245,4 +245,64 @@
 
 **和编辑器 / Cloud**：编辑器有 Tab 和 Inline Edit；CLI 没有。Cloud 跑在隔离 VM 上；CLI 默认改你当前工作目录（可用 `--worktree` 隔离）。会话里 `&` 把当前任务交给 Cloud。
 
-**官方文档**：[CLI Overview](https://cursor.com/docs/cli/overview)、[Installation](https://cursor.com/docs/cli/installation)、[Headless](https://cursor.com/docs/cli/headless)
+**官方文档**：[CLI Overview](https://cursor.com/docs/cli/overview)、[Installation](https://cursor.com/docs/cli/installation)、[Headless](https://cursor.com/docs/cli/headless)。教程：[Cursor CLI](./cursor-cli)。
+
+---
+
+## Design Mode
+
+**是什么**：Agents Window 浏览器里的视觉提示。点元素、多选、在冻结视口帧上画、或开口说。开关 `Cmd+Shift+D`。
+
+**为什么需要**：UI 改动是空间的。Agent 拿到元素身份（xpath、组件、计算样式、fiber props）再加一张截图，不只是一句话。
+
+**和 Claude Design**：这是叠在*你正在跑的应用*上的一层。[Claude Design](../claude/claude-design) 是独立的、跟品牌走的画布。
+
+**官方文档**：[Design Mode](https://cursor.com/docs/agent/design-mode)。教程：[Design Mode](./design-mode)。
+
+---
+
+## Origin
+
+**是什么**：Cursor 的 git forge（early beta）。托管仓库、镜像 GitHub、在 `cursor.com/codebase` 浏览 / 搜索、开合并 PR。CLI 二进制是 **`origin`**，不是 `agent`。
+
+**为什么需要**：要 Cursor 托管的存储和 PR，而不只是 GitHub 上的审查评论。
+
+**不是 Rules。** 启用要先占用 **codebase 名**。只有 Pro / Teams / Enterprise。跟随 namespace owner 的 Privacy Mode。Legacy privacy 不能启用。
+
+**官方文档**：[Origin](https://cursor.com/docs/origin)。教程：[Origin](./origin)。
+
+---
+
+## Security Agents
+
+**是什么**：Automations 上两个 Cursor 托管 Agent：**Security Reviewer**（PR / MR）和 **Vulnerability Scanner**（cron）。需要 Cloud Agents。本地技能：`/review-security`（Cursor 3.7+；CLI 即将到来）。
+
+**为什么需要**：专门的安全门禁和静止扫描，记在**团队用量池**、共享服务账号下。
+
+**和 Bugbot**：Bugbot 给通用 PR diff 留言。Security Agents 是另一组托管产品。PR Routing 可以读两边。
+
+**官方文档**：[Security Agents](https://cursor.com/docs/security-agents)。教程：[Security Agents](./security-agents)。
+
+---
+
+## PR Routing & Approval
+
+**是什么**：Automations Agent，按所有权 / 提交史派审人，并可批准低风险 PR。政策文件必须精确叫 `APPROVAL_POLICY.md`。可选路由：`.cursor/approval-policies/ROUTING.md`。
+
+**为什么需要**：把对的人拉来审；只在政策允许处自动批。它**不替代**完整 code review。
+
+**坑**：文件名不对会被忽略。同一个 PR 里改政策，不能用新文本给这个 PR 放宽审查。
+
+**官方文档**：[PR Routing & Approval](https://cursor.com/docs/approval-agents)。教程：[PR Routing](./pr-routing)。
+
+---
+
+## Cursor SDK
+
+**是什么**：从你的进程调用同一套 Agent。TypeScript `@cursor/sdk`（Node 22.13+）、Python `cursor-sdk`（3.10+），其他语言走 **SDK Bridge**。运行时是 `local` 或 `cloud`；local 是循环 + 文件系统，**不是**本地模型。
+
+**为什么需要**：CI 机器人、分诊工人、产品内嵌 Agent、编排器。定价 / Privacy Mode 和 IDE、Cloud 一样；花费打在 **SDK** 标签下。
+
+**密钥：** 用户或服务账号。Team Admin API key 暂不支持。
+
+**官方文档**：[TypeScript](https://cursor.com/docs/sdk/typescript)、[Python](https://cursor.com/docs/sdk/python)、[Bridge](https://cursor.com/docs/sdk/bridge)。教程：[Cursor SDK](./cursor-sdk)。

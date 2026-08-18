@@ -293,7 +293,7 @@ Official blog: pick worktree in the agent dropdown. Apply merges back. You can a
 
 ## Run work on Cloud Agents
 
-Use this when you are away, need several agents at once, or the job should clone, test, and open a PR on an isolated VM. Cousins on this site: Claude remote / Dispatch, Gemini Jules. Official: [Cloud Agents](https://cursor.com/docs/cloud-agent). **Former name: Background Agents** (official Naming History).
+Use this when you are away, need several agents at once, or the job should clone, test, and open a PR on an isolated VM. Cousins on this site: Claude remote / Dispatch, Gemini Jules. Official: [Cloud Agents](https://cursor.com/docs/cloud-agent). **Former name: Background Agents** (official Naming History). Form / when / how to start: [Cloud Agents tutorial](./cloud-agents). This section stays a recipe.
 
 Do not send “three lines under the caret” to Cloud — that is Tab. Do not use Cloud as a PR reviewer — that is Bugbot.
 
@@ -345,7 +345,7 @@ Add a **Cursor Cloud specific instructions** section to `AGENTS.md` (official su
 
 ## Use Cursor CLI in the terminal or CI
 
-Use this when you are already in tmux / SSH / CI, or you want the same Rules from a script. Official: [CLI Overview](https://cursor.com/docs/cli/overview), [Installation](https://cursor.com/docs/cli/installation), [Headless](https://cursor.com/docs/cli/headless).
+Use this when you are already in tmux / SSH / CI, or you want the same Rules from a script. Official: [CLI Overview](https://cursor.com/docs/cli/overview), [Installation](https://cursor.com/docs/cli/installation), [Headless](https://cursor.com/docs/cli/headless). Form / modes / `--force`: [Cursor CLI tutorial](./cursor-cli). This section stays a recipe.
 
 The binary is **`agent`**, not `cursor`.
 

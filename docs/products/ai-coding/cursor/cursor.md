@@ -246,7 +246,9 @@ Community signal (not an official guarantee): some users report Plan still writi
 ## Next steps
 
 1. [Cookbook](./cursor-cookbook) — bugs, features, Rules, Bugbot, Cloud, CLI, MCP
-2. [Cheatsheet](./cursor-cheatsheet)
-3. [Glossary](./cursor-glossary)
-4. [Learning map](./) — Tab vs Agent vs Cloud vs Bugbot vs CLI
-5. Official: [Quickstart](https://cursor.com/docs/get-started/quickstart), [Agent best practices](https://cursor.com/blog/agent-best-practices)
+2. [Design Mode](./design-mode) · [Cloud Agents](./cloud-agents) · [Cursor CLI](./cursor-cli)
+3. [Origin](./origin) · [Security Agents](./security-agents) · [PR Routing](./pr-routing) · [SDK](./cursor-sdk)
+4. [Cheatsheet](./cursor-cheatsheet)
+5. [Glossary](./cursor-glossary)
+6. [Learning map](./) — editor vs CLI vs Cloud vs Origin vs SDK
+7. Official: [Quickstart](https://cursor.com/docs/get-started/quickstart), [Agent best practices](https://cursor.com/blog/agent-best-practices)

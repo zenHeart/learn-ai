@@ -30,6 +30,11 @@ Lookup, not a tutorial. How-to: [tutorial](./cursor). Definitions: [glossary](./
 | PR review | **Bugbot** | Diff, not your running app |
 | Away / parallel / isolated VM + PR | **Cloud Agents** | Formerly Background Agents |
 | Terminal or headless CI | **CLI `agent`** | Binary is `agent`, not `cursor` |
+| Point / draw / voice on the running UI | **Design Mode** | Agents Window browser; `Cmd+Shift+D` |
+| Host / mirror / browse the repo | **Origin** | Git forge; binary `origin` |
+| PR security gate or cron scan | **Security Agents** | `/review-security`; team usage pool |
+| Assign reviewers / approve low-risk PRs | **PR Routing** | Exact file `APPROVAL_POLICY.md` |
+| Same agent inside your process | **SDK** | `@cursor/sdk` / `cursor-sdk` / Bridge |
 
 ### Rules vs Skills vs Commands vs Hooks vs MCP vs Subagents
 
@@ -70,6 +75,11 @@ Moved from the Chinese overview (`docs/zh/products/ai-coding/index.md`). URLs up
 | [Bugbot](https://cursor.com/docs/bugbot) | **PR review** (bugs / security / quality); Autofix spawns Cloud | [Bugbot](https://cursor.com/docs/bugbot) |
 | [Cloud Agents](https://cursor.com/docs/cloud-agent) | Isolated VMs, PRs; formerly Background Agents | [Cloud Agent](https://cursor.com/docs/cloud-agent) |
 | [Cursor CLI](https://cursor.com/docs/cli/overview) | Terminal `agent`; headless `agent -p` | [CLI](https://cursor.com/docs/cli/overview) · [Installation](https://cursor.com/docs/cli/installation) |
+| [Design Mode](https://cursor.com/docs/agent/design-mode) | Visual prompts in the Agents Window browser | [Design Mode](https://cursor.com/docs/agent/design-mode) |
+| [Origin](https://cursor.com/docs/origin) | Cursor git forge (early beta); Pro / Teams / Enterprise | [Origin](https://cursor.com/docs/origin) |
+| [Security Agents](https://cursor.com/docs/security-agents) | Security Reviewer (PR) + Vulnerability Scanner (cron) | [Security Agents](https://cursor.com/docs/security-agents) |
+| [PR Routing & Approval](https://cursor.com/docs/approval-agents) | Route reviewers; approve low-risk PRs | [Approval](https://cursor.com/docs/approval-agents) |
+| [TypeScript SDK](https://cursor.com/docs/sdk/typescript) | `@cursor/sdk`; local or cloud runtime | [TS](https://cursor.com/docs/sdk/typescript) · [Python](https://cursor.com/docs/sdk/python) · [Bridge](https://cursor.com/docs/sdk/bridge) |
 | [Modes](https://cursor.com/docs/agent/overview) | Agent / Ask / Plan / Debug. `Cmd+.`; Plan via `Shift+Tab` | [Overview](https://cursor.com/docs/agent/overview) · [Plan](https://cursor.com/docs/agent/plan-mode) · [Debug](https://cursor.com/docs/agent/debug-mode) |
 | [Tab](https://cursor.com/docs/tab/overview) | Multi-line complete, jumps, TS/Python auto-import | [Tab](https://cursor.com/docs/tab/overview) |
 | [Chat](https://cursor.com/docs/agent/prompting) | Agent thread; `@` attaches context | [Prompting](https://cursor.com/docs/agent/prompting) |
@@ -116,6 +126,11 @@ One sentence each. Longer definitions: [glossary](./cursor-glossary).
 | **Privacy Mode** | No training on your code | [Glossary](./cursor-glossary#privacy-mode) |
 | **Cloud Agents** | Agents on remote VMs; formerly Background Agents | [Glossary](./cursor-glossary#cloud-agents) |
 | **CLI `agent`** | Official terminal entry; `-p` for headless | [Glossary](./cursor-glossary#cursor-cli) |
+| **Design Mode** | Click / draw / voice in the Agents Window browser | [Glossary](./cursor-glossary#design-mode) |
+| **Origin** | Cursor git forge; claim a codebase name | [Glossary](./cursor-glossary#origin) |
+| **Security Agents** | PR reviewer + cron scanner; team pool | [Glossary](./cursor-glossary#security-agents) |
+| **PR Routing** | Assign reviewers; maybe auto-approve | [Glossary](./cursor-glossary#pr-routing--approval) |
+| **SDK** | Same agent from `@cursor/sdk` / `cursor-sdk` | [Glossary](./cursor-glossary#cursor-sdk) |
 
 ---
 

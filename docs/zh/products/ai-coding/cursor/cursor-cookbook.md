@@ -345,7 +345,7 @@ if (scratchpad.includes("DONE")) {
 
 ## 派 Cloud Agent 干活
 
-**适用**：人不在电脑旁、要并行多条、或任务该在隔离 VM 上自己跑测试再开 PR。对位本站 [Claude 远程 / Dispatch](../claude/) 和 [Jules](../gemini/jules)。官方页：[Cloud Agents](https://cursor.com/docs/cloud-agent)。**曾用名 Background Agents**（官方 Naming History）。
+**适用**：人不在电脑旁、要并行多条、或任务该在隔离 VM 上自己跑测试再开 PR。对位本站 [Claude 远程 / Dispatch](../claude/) 和 [Jules](../gemini/jules)。官方页：[Cloud Agents](https://cursor.com/docs/cloud-agent)。**曾用名 Background Agents**（官方 Naming History）。形态 / 何时用 / 怎么开见 [Cloud Agents 教程](./cloud-agents)。本节只留配方。
 
 不要用 Cloud 做「光标旁三行」——那是 Tab。不要用 Cloud 当 PR 审查——那是 Bugbot。
 
@@ -397,7 +397,7 @@ if (scratchpad.includes("DONE")) {
 
 ## 终端和 CI 里用 Cursor CLI
 
-**适用**：你已经在 tmux / SSH / CI 里，不想开 GUI；或要把同一套 Rules 接到脚本。官方：[CLI Overview](https://cursor.com/docs/cli/overview)、[Installation](https://cursor.com/docs/cli/installation)、[Headless](https://cursor.com/docs/cli/headless)。
+**适用**：你已经在 tmux / SSH / CI 里，不想开 GUI；或要把同一套 Rules 接到脚本。官方：[CLI Overview](https://cursor.com/docs/cli/overview)、[Installation](https://cursor.com/docs/cli/installation)、[Headless](https://cursor.com/docs/cli/headless)。形态 / 模式 / `--force` 见 [Cursor CLI 教程](./cursor-cli)。本节只留配方。
 
 二进制名是 **`agent`**，不是 `cursor`。
 

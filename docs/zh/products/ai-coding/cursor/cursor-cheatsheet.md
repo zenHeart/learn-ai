@@ -30,6 +30,11 @@
 | PR 审查 | **Bugbot** | 看 diff，不是跑你的 app |
 | 人不在 / 要并行 / 隔离 VM 开 PR | **Cloud Agents** | 曾用名 Background Agents |
 | 终端交互或无头 CI | **CLI `agent`** | 二进制是 `agent`，不是 `cursor` |
+| 对着正在跑的 UI 点 / 画 / 说 | **Design Mode** | Agents Window 浏览器；`Cmd+Shift+D` |
+| 托管 / 镜像 / 浏览仓库 | **Origin** | git forge；二进制 `origin` |
+| PR 安全门禁或定时扫描 | **Security Agents** | `/review-security`；团队用量池 |
+| 派审人 / 批低风险 PR | **PR Routing** | 文件名必须是 `APPROVAL_POLICY.md` |
+| 同一 Agent 进自己的进程 | **SDK** | `@cursor/sdk` / `cursor-sdk` / Bridge |
 
 ### 该用 Rules / AGENTS.md / Skills / Commands / Hooks / MCP / Subagents
 
@@ -70,6 +75,11 @@
 | [Bugbot](https://cursor.com/docs/bugbot) | **PR 审查**（bug / 安全 / 质量），可 Autofix（再拉 Cloud Agent） | [Bugbot](https://cursor.com/docs/bugbot) |
 | [Cloud Agents](https://cursor.com/docs/cloud-agent) | 隔离 VM 克隆仓库、开 PR；曾用名 Background Agents | [Cloud Agent](https://cursor.com/docs/cloud-agent) |
 | [Cursor CLI](https://cursor.com/docs/cli/overview) | 终端 `agent`；无头 `agent -p` | [CLI](https://cursor.com/docs/cli/overview) · [Installation](https://cursor.com/docs/cli/installation) |
+| [Design Mode](https://cursor.com/docs/agent/design-mode) | Agents Window 浏览器里的视觉提示 | [Design Mode](https://cursor.com/docs/agent/design-mode) |
+| [Origin](https://cursor.com/docs/origin) | Cursor 的 git forge（early beta）；Pro / Teams / Enterprise | [Origin](https://cursor.com/docs/origin) |
+| [Security Agents](https://cursor.com/docs/security-agents) | Security Reviewer（PR）+ Vulnerability Scanner（cron） | [Security Agents](https://cursor.com/docs/security-agents) |
+| [PR Routing & Approval](https://cursor.com/docs/approval-agents) | 派审人；批低风险 PR | [Approval](https://cursor.com/docs/approval-agents) |
+| [TypeScript SDK](https://cursor.com/docs/sdk/typescript) | `@cursor/sdk`；local 或 cloud 运行时 | [TS](https://cursor.com/docs/sdk/typescript) · [Python](https://cursor.com/docs/sdk/python) · [Bridge](https://cursor.com/docs/sdk/bridge) |
 | [Modes](https://cursor.com/docs/agent/overview) | Agent / Ask / Plan / Debug。`Cmd+.`；Plan 用 `Shift+Tab` | [Overview](https://cursor.com/docs/agent/overview) · [Plan](https://cursor.com/docs/agent/plan-mode) · [Debug](https://cursor.com/docs/agent/debug-mode) |
 | [Tab](https://cursor.com/docs/tab/overview) | 多行补全、跨文件跳转、TS/Python auto-import | [Tab](https://cursor.com/docs/tab/overview) |
 | [Chat](https://cursor.com/docs/agent/prompting) | Agent 对话；用 `@` 附加上下文 | [Prompting](https://cursor.com/docs/agent/prompting) |
@@ -116,6 +126,11 @@
 | **Privacy Mode** | 代码不用于训练 | [Glossary](./cursor-glossary#privacy-mode) |
 | **Cloud Agents** | 远程 VM 上的 Agent；曾用名 Background Agents | [Glossary](./cursor-glossary#cloud-agents) |
 | **CLI `agent`** | 官方终端入口；无头用 `-p` | [Glossary](./cursor-glossary#cursor-cli) |
+| **Design Mode** | Agents Window 浏览器里点 / 画 / 说 | [Glossary](./cursor-glossary#design-mode) |
+| **Origin** | Cursor 的 git forge；先占用 codebase 名 | [Glossary](./cursor-glossary#origin) |
+| **Security Agents** | PR 审查 + cron 扫描；团队池 | [Glossary](./cursor-glossary#security-agents) |
+| **PR Routing** | 派审人；可能自动批 | [Glossary](./cursor-glossary#pr-routing--approval) |
+| **SDK** | 用 `@cursor/sdk` / `cursor-sdk` 调同一 Agent | [Glossary](./cursor-glossary#cursor-sdk) |
 
 ---
 
