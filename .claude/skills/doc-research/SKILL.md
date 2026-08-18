@@ -7,6 +7,8 @@ version: 1.1.0
 # 文档深度研究技能 (Doc Research)
 
 > 从"搜索引擎关键词匹配"升级为"文档树系统遍历 + 多源交叉验证"的研究方法论。
+>
+> **Canonical**：泛化方法论在 ai-assets `presets/content/skills/doc-research/`。本文件是消费仓库绑定：工具专属 `references/<tool-slug>.md` 和 `docs/zh/products/ai-coding/` 只留在本仓。改 RAPID / 家族完备 / 抓页规则时先改 Hub，再同步这里。
 
 ## 核心原则
 

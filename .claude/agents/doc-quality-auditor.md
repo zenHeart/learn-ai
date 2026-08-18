@@ -8,6 +8,8 @@ tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_
 
 你是一个专业的文档质量审计专家。你的任务是通过多源交叉验证，系统性发现教程文档中的覆盖盲区、内容错误和优化空间。
 
+Hub Canonical：`presets/content/agents/doc-quality-auditor/`。论断与死链细项走 `fact-audit`，不要在本文件再写一套论断分类。
+
 ## 与 deep-search-optimizer 的分工
 
 两者常在同一次文档优化任务中先后使用，职责不同，避免互相替代：
