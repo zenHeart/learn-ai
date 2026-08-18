@@ -1,6 +1,6 @@
 ---
 title: Qingyan / Z.ai chat
-description:" \"Audience: frontend engineers using Zhipu's assistant in a browser or the official app. No repo required.\""
+description: "Audience: frontend engineers using Zhipu's assistant in a browser or the official app. No repo required."
 domain: product
 tags:
   - coding-agent

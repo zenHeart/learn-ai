@@ -1,6 +1,6 @@
 ---
 title: Zhipu Qingyan / Z.ai learning map
-description:" \"Audience: frontend engineers picking a Zhipu chat surface. The path here is Qingyan and Z.ai chat, not GLM Coding Plan.\""
+description: "Audience: frontend engineers picking a Zhipu chat surface. The path here is Qingyan and Z.ai chat, not GLM Coding Plan."
 domain: product
 tags:
   - coding-agent

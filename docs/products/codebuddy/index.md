@@ -1,6 +1,6 @@
 ---
 title: CodeBuddy Learning Map
-description:" \"Tencent Cloud CodeBuddy is a family of AI coding surfaces that share one account quota: a standalone IDE, editor plugins, and a terminal CLI. This page is the family map and decision tree.\""
+description: "Tencent Cloud CodeBuddy is a family of AI coding surfaces that share one account quota: a standalone IDE, editor plugins, and a terminal CLI. This page is the family map and decision tree."
 domain: product
 tags:
   - coding-agent

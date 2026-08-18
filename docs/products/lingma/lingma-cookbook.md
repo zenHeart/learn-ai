@@ -1,6 +1,6 @@
 ---
 title: Lingma cookbook
-description:" \"After Lingma / Qoder CN is installed: pick a chat mode, write a structured task, let Agent run the terminal, and attach MCP.\""
+description: "After Lingma / Qoder CN is installed: pick a chat mode, write a structured task, let Agent run the terminal, and attach MCP."
 domain: product
 tags:
   - coding-agent

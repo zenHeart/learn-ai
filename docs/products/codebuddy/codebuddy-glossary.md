@@ -1,6 +1,6 @@
 ---
 title: CodeBuddy Glossary
-description:" \"No how-to. Name collisions in the CodeBuddy family: three coding surfaces, WorkBuddy, Hunyuan, CN vs intl sites, CODEBUDDY.md.\""
+description: "No how-to. Name collisions in the CodeBuddy family: three coding surfaces, WorkBuddy, Hunyuan, CN vs intl sites, CODEBUDDY.md."
 domain: product
 tags:
   - coding-agent

@@ -41,6 +41,20 @@ function mdExists(urlPath) {
   ].some((p) => existsSync(p))
 }
 
+function parseQuotedDescription(body) {
+  const end = body.indexOf('\n---', 3)
+  const fm = end > 0 ? body.slice(4, end) : ''
+  const m = fm.match(/^description:\s*(.+)$/m)
+  if (!m) return false
+  const raw = m[1].trim()
+  if (raw.startsWith('\\') || raw.startsWith('" \\') || raw.startsWith("' \\")) return false
+  if ((raw.startsWith('"') && raw.endsWith('"') && raw.length > 2) ||
+      (raw.startsWith("'") && raw.endsWith("'") && raw.length > 2)) {
+    return true
+  }
+  return raw.length > 0 && !raw.startsWith('"')
+}
+
 function collectLinks(src) {
   const out = new Set()
   for (const m of src.matchAll(/['"`](\/(?:zh\/)?products\/[^'"`#?\s]+)['"`]/g)) {
@@ -131,8 +145,11 @@ for (const slug of REQUIRED_SLUGS) {
     if (/\]\(\/(?:zh\/)?products\/ark\/?\)/.test(body)) {
       failures.push(`zh/products/${slug}/index.md: dead /products/ark/ link (use /products/volcengine-ark/)`)
     }
-    if (!body.startsWith('---') || !/domain:\s*product/.test(body.slice(0, 400))) {
+    if (!body.startsWith('---') || !/domain:\s*product/.test(body.slice(0, 800))) {
       failures.push(`zh/products/${slug}/index.md: missing YAML frontmatter domain: product`)
+    }
+    if (!parseQuotedDescription(body)) {
+      failures.push(`zh/products/${slug}/index.md: description must be a quoted YAML string`)
     }
   }
   const enMap = join(docsRoot, 'products', slug, 'index.md')
@@ -141,8 +158,11 @@ for (const slug of REQUIRED_SLUGS) {
     if (/\]\(\/(?:zh\/)?products\/ark\/?\)/.test(body)) {
       failures.push(`products/${slug}/index.md: dead /products/ark/ link (use /products/volcengine-ark/)`)
     }
-    if (!body.startsWith('---') || !/domain:\s*product/.test(body.slice(0, 400))) {
+    if (!body.startsWith('---') || !/domain:\s*product/.test(body.slice(0, 800))) {
       failures.push(`products/${slug}/index.md: missing YAML frontmatter domain: product`)
+    }
+    if (!parseQuotedDescription(body)) {
+      failures.push(`products/${slug}/index.md: description must be a quoted YAML string`)
     }
   }
 }

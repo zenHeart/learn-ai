@@ -1,6 +1,6 @@
 ---
 title: "Coze Programming: build a low-code agent"
-description:" \"Official path: sign in to Coze Programming, create a low-code agent, write a persona, debug, then publish. Not Doubao chat. Not Trae.\""
+description: "Official path: sign in to Coze Programming, create a low-code agent, write a persona, debug, then publish. Not Doubao chat. Not Trae."
 domain: product
 tags:
   - agent-builder

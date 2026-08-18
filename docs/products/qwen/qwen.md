@@ -1,6 +1,6 @@
 ---
 title: Qwen tutorial
-description:" \"Audience: frontend engineers opening qianwen.com for the first time. You will send the first prompt and know the official desktop / App doors.\""
+description: "Audience: frontend engineers opening qianwen.com for the first time. You will send the first prompt and know the official desktop / App doors."
 domain: product
 tags:
   - chat

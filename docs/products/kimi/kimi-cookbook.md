@@ -1,6 +1,6 @@
 ---
 title: Kimi chat and Agent cookbook
-description:" \"You can already open kimi.com. One recipe per job: goal, official entry, steps, pitfall.\""
+description: "You can already open kimi.com. One recipe per job: goal, official entry, steps, pitfall."
 domain: product
 tags:
   - chat

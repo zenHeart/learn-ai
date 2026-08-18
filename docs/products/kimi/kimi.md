@@ -1,6 +1,6 @@
 ---
 title: Kimi chat and Agent
-description:" \"Audience: frontend engineers picking a Moonshot surface. You need a browser or the Kimi app, not a repo checkout.\""
+description: "Audience: frontend engineers picking a Moonshot surface. You need a browser or the Kimi app, not a repo checkout."
 domain: product
 tags:
   - chat

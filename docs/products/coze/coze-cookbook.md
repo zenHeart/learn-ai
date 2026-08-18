@@ -1,6 +1,6 @@
 ---
 title: Coze Programming cookbook
-description:" \"Jump to a job: workflows, plugins, knowledge, skills, publish, Coze CLI. Every recipe links to an official page. No Doubao or Trae tutorials.\""
+description: "Jump to a job: workflows, plugins, knowledge, skills, publish, Coze CLI. Every recipe links to an official page. No Doubao or Trae tutorials."
 domain: product
 tags:
   - agent-builder

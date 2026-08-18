@@ -1,6 +1,6 @@
 ---
 title: CodeBuddy Cookbook
-description:" \"For readers who can already sign in. Each recipe copies official steps: goal, commands, then the pitfall. No install walkthrough.\""
+description: "For readers who can already sign in. Each recipe copies official steps: goal, commands, then the pitfall. No install walkthrough."
 domain: product
 tags:
   - coding-agent
