@@ -192,6 +192,26 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Yuanbao', link: '/products/yuanbao/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/yuanbao/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Yuanbao Tutorial', link: '/products/yuanbao/yuanbao' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/yuanbao/yuanbao-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/yuanbao/yuanbao-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
 ]
@@ -378,6 +398,26 @@ export const zhAiCodingItems = [
                                        items: [
                                           { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '元宝', link: '/zh/products/yuanbao/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/yuanbao/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '元宝教程', link: '/zh/products/yuanbao/yuanbao' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/yuanbao/yuanbao-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/yuanbao/yuanbao-glossary' },
                                        ]
                                     },
                                  ]
