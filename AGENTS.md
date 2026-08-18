@@ -7,6 +7,20 @@
 - **安装依赖**: `pnpm install`（仅在根目录使用 pnpm）
 - **不要在根目录运行 `npm install`** - 会导致版本不匹配
 
+## Jue 能力同步
+
+文档研究 / 审计 / PPT 技能的**正文真源**在 `../ai-assets/presets/content/`。本仓 `.claude/skills` 与 `.claude/agents` 里对应文件由 Jue 生成。
+
+```bash
+# 需要能解析 sibling 包（本机可先 ln -sfn ../ai-assets/presets/content node_modules/jue-preset-content）
+jue apply --adapter claude
+```
+
+- 改 RAPID / 家族完备 / 抓页规则：改 ai-assets，再 `jue apply`。
+- 改某个工具的监控页、踩坑、本站路径：只改 `.claude/skills/doc-research/references/<tool-slug>.md`。
+- 不要手改 Jue 生成的 `SKILL.md` / 通用 refs / Agent 正文。
+- 不要把 `personal` / `business` / `coding` preset 加进 `ai.config.cjs`。
+
 ## 命令
 
 ```bash

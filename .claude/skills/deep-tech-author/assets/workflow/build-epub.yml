@@ -1,0 +1,410 @@
+# ============================================================
+# CI 模板：在 book 分支上构建 EPUB + 生成落地页，发布到 gh-pages。
+# 套用步骤：复制到目标仓 .github/workflows/build-epub.yml，替换所有 {{...}} 占位符。
+#   {{TITLE}}         书名，如 XX 源码实战指南
+#   {{DESCRIPTION}}   一句话简介
+#   {{CHAPTER_COUNT}} 章数，如 40
+#   {{PART_COUNT}}    部数，如 8
+#   {{SOURCE_URL}}    GitHub 源码浏览地址，如 https://github.com/OWNER/REPO/tree/book
+#   {{EPUB_NAME}}     epub 文件名，如 my-book.epub
+# 注意：GitHub 表达式是 ${{ ... }}（带 $）；本模板占位符是 {{ ... }}（不带 $），
+# 二者不冲突。构建末尾会校验没有残留的 "{{" 占位符。
+# ============================================================
+name: Build EPUB
+
+on:
+  push:
+    branches: [book]
+    paths:
+      - "book/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/build-epub.yml"
+  pull_request:
+    branches: [book]
+    paths:
+      - "book/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/build-epub.yml"
+  workflow_dispatch:
+  release:
+    types: [created, published]
+
+concurrency:
+  group: build-epub-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  EPUB_NAME: "{{EPUB_NAME}}"
+
+jobs:
+  build:
+    name: Build EPUB
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            fonts-noto-cjk \
+            fonts-noto-cjk-extra \
+            fonts-noto-color-emoji \
+            librsvg2-bin \
+            libatk-bridge2.0-0 \
+            libatk1.0-0 \
+            libasound2t64 \
+            libcups2 \
+            libdrm2 \
+            libgbm1 \
+            libgtk-3-0 \
+            libnss3 \
+            libpango-1.0-0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxkbcommon0 \
+            libxrandr2 \
+            libxshmfence1 \
+            libxss1
+          fc-list | grep -i "noto sans cjk" | head -2
+          rsvg-convert --version
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            book/package-lock.json
+            package-lock.json
+
+      - name: Cache npm package store
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-book-${{ runner.os }}-${{ hashFiles('book/package-lock.json', 'package-lock.json') }}
+          restore-keys: |
+            npm-book-${{ runner.os }}-
+
+      - name: Install book build dependencies
+        working-directory: book
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          node_modules/.bin/mmdc --version
+
+      - name: Render cover preview
+        run: |
+          rsvg-convert -w 1600 -h 2400 book/cover.svg -o book/cover.png
+          test -s book/cover.png
+          file book/cover.png
+
+      - name: Build EPUB
+        run: |
+          export PUPPETEER_EXECUTABLE_PATH="$(command -v google-chrome-stable || command -v chromium || command -v chromium-browser)"
+          test -n "$PUPPETEER_EXECUTABLE_PATH"
+          "$PUPPETEER_EXECUTABLE_PATH" --version
+          node book/postprocess.js
+          node book/validate-render.js
+          node book/validate-render.test.js
+          node book/build-epub.mjs "book/${EPUB_NAME}"
+
+      - name: Validate EPUB
+        run: |
+          test -f "book/${EPUB_NAME}"
+          unzip -l "book/${EPUB_NAME}" | head -20
+          unzip -l "book/${EPUB_NAME}" | grep -E "cover/cover\\.(svg|png)"
+          chapter_count=$(unzip -l "book/${EPUB_NAME}" | grep -c "content/.*\.xhtml$" || true)
+          echo "Chapter count: $chapter_count"
+          test "$chapter_count" -ge 1
+
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-epub
+          path: book/${{ env.EPUB_NAME }}
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Upload cover artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-cover
+          path: |
+            book/cover.svg
+            book/cover.png
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Upload debug artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-debug
+          path: |
+            book/epub-content/**
+            book/cover.png
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Attach to GitHub Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            book/${{ env.EPUB_NAME }}
+            book/cover.svg
+            book/cover.png
+          fail_on_unmatched_files: true
+
+  publish-pages:
+    name: Publish to gh-pages
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/book'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download EPUB artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: book-epub
+          path: ./download
+
+      - name: Download cover artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: book-cover
+          path: ./download
+
+      - name: Prepare Pages content
+        run: |
+          mkdir -p /tmp/gh-pages
+          cp "download/${EPUB_NAME}" /tmp/gh-pages/
+          cp download/cover.svg /tmp/gh-pages/
+          cp download/cover.png /tmp/gh-pages/ 2>/dev/null || true
+          asset_version="${GITHUB_SHA::7}"
+          cat > /tmp/gh-pages/index.html <<HTML
+          <!doctype html>
+          <html lang="zh-CN">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{{TITLE}}</title>
+            <meta name="description" content="{{DESCRIPTION}}">
+            <meta name="theme-color" content="#f7f3ec">
+            <meta property="og:title" content="{{TITLE}}">
+            <meta property="og:description" content="{{DESCRIPTION}}">
+            <meta property="og:type" content="website">
+            <meta property="og:image" content="cover.png?v=${asset_version}">
+            <meta name="twitter:card" content="summary_large_image">
+            <style>
+              :root {
+                color-scheme: light dark;
+                --bg: #f7f3ec;
+                --text: #17191f;
+                --muted: #626a75;
+                --line: rgba(23, 25, 31, .14);
+                --panel: rgba(255, 255, 255, .62);
+                --accent: #9a4f36;
+                --accent-dark: #743725;
+              }
+
+              @media (prefers-color-scheme: dark) {
+                :root {
+                  --bg: #101418;
+                  --text: #f2eee7;
+                  --muted: #a9b0ba;
+                  --line: rgba(242, 238, 231, .16);
+                  --panel: rgba(255, 255, 255, .06);
+                  --accent: #d77856;
+                  --accent-dark: #f09272;
+                }
+              }
+
+              * { box-sizing: border-box; }
+
+              body {
+                min-height: 100vh;
+                margin: 0;
+                background: var(--bg);
+                color: var(--text);
+                font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+                line-height: 1.6;
+              }
+
+              .page {
+                display: grid;
+                width: min(1080px, calc(100% - 36px));
+                min-height: 100vh;
+                margin: 0 auto;
+                grid-template-rows: 1fr auto;
+              }
+
+              .hero {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+                gap: clamp(32px, 7vw, 80px);
+                align-items: center;
+                padding: clamp(36px, 8vh, 72px) 0 28px;
+              }
+
+              .eyebrow {
+                margin: 0 0 14px;
+                color: var(--accent-dark);
+                font-size: 13px;
+                font-weight: 750;
+                letter-spacing: .08em;
+                text-transform: uppercase;
+              }
+
+              h1 {
+                max-width: 720px;
+                margin: 0;
+                color: var(--accent);
+                font-size: clamp(44px, 7vw, 86px);
+                line-height: 1;
+                letter-spacing: 0;
+              }
+
+              .lead {
+                max-width: 680px;
+                margin: 24px 0 0;
+                font-size: clamp(17px, 2vw, 22px);
+              }
+
+              .stats {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin: 28px 0 0;
+                padding: 0;
+                list-style: none;
+              }
+
+              .stats li {
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                padding: 6px 12px;
+                background: var(--panel);
+                color: var(--muted);
+                font-size: 14px;
+                font-weight: 700;
+              }
+
+              .actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px;
+                align-items: center;
+                margin-top: 36px;
+              }
+
+              .button {
+                display: inline-flex;
+                min-height: 50px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+                padding: 0 22px;
+                background: var(--accent);
+                color: #fff;
+                font-weight: 800;
+                text-decoration: none;
+              }
+
+              .link {
+                color: var(--muted);
+                font-weight: 750;
+                text-underline-offset: 5px;
+              }
+
+              .cover {
+                width: 100%;
+                max-height: 68vh;
+                border-radius: 8px;
+                box-shadow: 0 26px 70px rgba(0, 0, 0, .22);
+              }
+
+              footer {
+                border-top: 1px solid var(--line);
+                padding: 16px 0 22px;
+                color: var(--muted);
+                font-size: 14px;
+              }
+
+              @media (max-width: 760px) {
+                .hero { grid-template-columns: 1fr; }
+                .cover { width: min(78vw, 320px); }
+              }
+            </style>
+          </head>
+          <body>
+            <main class="page">
+              <section class="hero" aria-labelledby="title">
+                <div>
+                  <p class="eyebrow">{{TITLE}}</p>
+                  <h1 id="title">{{TITLE}}</h1>
+                  <p class="lead">{{DESCRIPTION}}</p>
+                  <ul class="stats" aria-label="书籍规模">
+                    <li>{{CHAPTER_COUNT}} 章</li>
+                    <li>{{PART_COUNT}} 个部分</li>
+                    <li>源码对照</li>
+                    <li>自动构建 EPUB</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="button" href="${EPUB_NAME}?v=${asset_version}" download="${EPUB_NAME}">下载 EPUB</a>
+                    <a class="link" href="{{SOURCE_URL}}">查看 GitHub 源码</a>
+                  </div>
+                </div>
+                <img class="cover" src="cover.svg?v=${asset_version}" alt="{{TITLE}} EPUB 封面">
+              </section>
+              <footer>由 GitHub Actions 在 book 分支推送时自动构建并发布到 gh-pages。</footer>
+            </main>
+          </body>
+          </html>
+          HTML
+          # 保证占位符都已替换（漏填会导致构建失败，是有意的早期信号）
+          if grep -q "{{" /tmp/gh-pages/index.html; then
+            echo "未替换的占位符残留在 index.html，请填好 workflow 中的 {{...}}"; exit 1
+          fi
+          if grep -q "{{" /tmp/gh-pages/cover.svg; then
+            echo "未替换的占位符残留在 cover.svg，请填好 book/cover.svg 的 {{...}}"; exit 1
+          fi
+          test -s /tmp/gh-pages/index.html
+          grep -q "下载 EPUB" /tmp/gh-pages/index.html
+
+      - name: Publish to gh-pages branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages || true
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git checkout gh-pages
+            git pull origin gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . || true
+          fi
+          cp /tmp/gh-pages/* .
+          touch .nojekyll
+          git add "${EPUB_NAME}" cover.svg cover.png index.html .nojekyll
+          if git diff --staged --quiet; then
+            echo "No changes to publish"
+          else
+            git commit -m "auto: update EPUB from ${GITHUB_SHA::7}"
+            git push origin gh-pages
+          fi

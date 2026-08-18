@@ -1,0 +1,4 @@
+interface:
+  display_name: "深度技术作者"
+  short_description: "基于开源仓库撰写源码级技术书章节。"
+  default_prompt: "使用 deep-tech-author 为目标仓库规划并撰写源码级章节。"

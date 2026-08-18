@@ -10,6 +10,8 @@ final_dist
 tmp
 _check.md
 .DS_Store
+**/__pycache__/
+*.pyc
 poster/
 .cursorindexingignore
 .claude/*.local.json

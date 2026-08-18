@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:epub": "node postprocess.js && node validate-render.js && node validate-render.test.js && node build-epub.mjs book.epub",
+    "test:capabilities": "node scaffold-capabilities.test.js"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "11.15.0",
+    "fast-xml-parser": "5.7.3",
+    "jszip": "3.10.1",
+    "marked": "15.0.12"
+  }
+}

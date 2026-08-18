@@ -1,0 +1,14 @@
+{
+	"theme": "default",
+	"themeVariables": {
+		"fontFamily": "Noto Sans CJK SC, Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif",
+		"fontSize": "15px"
+	},
+	"flowchart": {
+		"htmlLabels": false,
+		"useMaxWidth": true
+	},
+	"sequence": {
+		"useMaxWidth": true
+	}
+}

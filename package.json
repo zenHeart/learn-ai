@@ -19,7 +19,8 @@
     "ppt:build:skill": "pnpm --filter skill-mcp build",
     "ppt:build:agent": "pnpm --filter agent build",
     "ppt:build:ai-native": "pnpm --filter ai-native-work build",
-    "deploy:ppt": "./scripts/deploy.sh"
+    "deploy:ppt": "./scripts/deploy.sh",
+    "jue:apply": "jue apply --adapter claude"
   },
   "keywords": [
     "ai",
