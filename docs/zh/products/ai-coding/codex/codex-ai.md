@@ -61,7 +61,7 @@ codex exec "run the tests and fix failures"    # 一次性、非交互
 
 任务钉在你正在读的代码上时选它——编辑器已经知道你本来要口述的上下文。
 
-参考：[IDE 扩展文档](https://learn.chatgpt.com/docs/codex/ide)
+参考：[IDE 扩展文档](https://learn.chatgpt.com/docs/codex/ide) · 本教程 [IDE](./codex-ide)
 
 ### 桌面应用
 
@@ -71,7 +71,7 @@ codex exec "run the tests and fix failures"    # 一次性、非交互
 
 ### Cloud、网页与托管评审 {#cloud-网页与托管评审}
 
-Agent 跑在 OpenAI 的基础设施上，对着配置好的环境，而不是你的笔记本。产品入口是 [chatgpt.com/codex](https://chatgpt.com/codex)，文档是 [Codex cloud](https://learn.chatgpt.com/docs/cloud)。
+Agent 跑在 OpenAI 的基础设施上，对着配置好的环境，而不是你的笔记本。产品入口是 [chatgpt.com/codex](https://chatgpt.com/codex)，文档是 [Codex cloud](https://learn.chatgpt.com/docs/cloud)。教程：[Codex Cloud](./codex-cloud)。手机遥控**本机**主机是 [Remote](./codex-remote)，不是 Cloud。
 
 ```bash
 codex cloud                                            # 浏览环境（Ctrl+O 露出 ID）

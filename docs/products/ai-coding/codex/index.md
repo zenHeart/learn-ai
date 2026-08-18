@@ -26,10 +26,14 @@ OpenAI coding & agent family
 │   ├── Codex in the desktop app — visual diffs, PR sidebar, multi-repo
 │   ├── Web chatgpt.com/codex
 │   ├── Cloud                — isolated envs; GitHub / Linear / Slack
-│   └── Remote               — phone continues local or cloud work
+│   ├── Remote               — phone continues a connected computer
+│   └── Security             — plugin + CLI/SDK + cloud scans
+├── Chrome extension         — signed-in Chrome tabs for Work / Codex
 └── Retired: Atlas standalone browser
     └── Officially stopped 2026-08-09; browser-agent work moved into ChatGPT / Codex
 ```
+
+Desktop Codex is the ChatGPT desktop app Codex view — mapped on the [product line](./codex-ai) and in [Work vs Codex](./chatgpt-work#work-vs-codex-on-desktop), not a second tutorial. **Pets** are an optional animated companion for following chat status; there is no tutorial.
 
 One agent, one configuration model, several doors. Sandbox, approval policy, and `AGENTS.md` learned in the CLI apply in the IDE, desktop Codex, and Cloud. Work and Codex **share usage limits**.
 
@@ -40,9 +44,10 @@ What do I want to do?
 ├── Write / debug / refactor / open a PR
 │   └── → Codex
 │       ├── Terminal or CI? → CLI (`codex` / `codex exec`)
-│       ├── Anchored to the file I have open? → IDE extension
-│       ├── Visual diff / PR sidebar? → Codex in the desktop app
-│       ├── Away from the laptop / several parallel attempts? → Codex Cloud
+│       ├── Anchored to the file I have open? → [IDE extension](./codex-ide)
+│       ├── Visual diff / PR sidebar? → Codex in the desktop app ([product line](./codex-ai))
+│       ├── Away from the laptop / several parallel attempts? → [Codex Cloud](./codex-cloud)
+│       ├── Phone, laptop still awake? → [Remote](./codex-remote)
 │       └── Dispatch from GitHub / Linear / Slack? → Cloud + official integrations
 ├── Ask, write, compare, settle a design
 │   └── → ChatGPT Chat (web, desktop, or mobile)
@@ -54,7 +59,11 @@ What do I want to do?
 │       ├── Sources in Drive / Slack? → install the plugin, `@mention` it
 │       ├── Needs local files or apps? → desktop Work locally
 │       ├── Must run after the laptop sleeps? → Cloud / web Work
-│       └── Need a hosted internal page? → Sites (save a version, then deploy)
+│       └── Need a hosted internal page? → [Sites](./sites) (save a version, then deploy)
+├── Find, confirm, or fix vulnerabilities in a repo I own
+│   └── → [Codex Security](./codex-security) (plugin / CLI / cloud)
+├── Act on a site I am already signed into in Chrome
+│   └── → [Chrome extension](./codex-chrome) (`@Chrome`); localhost → `@Browser`
 ├── Connect an external service
 │   └── → two layers
 │       ├── Everyday SaaS (Drive / Slack / Notion-class) → Work / Chat plugins
@@ -75,8 +84,12 @@ Full definitions live in the [Glossary](./codex-glossary).
 | **Approval policy** | Whether it asks before acting | Codex |
 | **`AGENTS.md`** | Project briefing loaded on every run | Every Codex surface |
 | **MCP / Plugins** | Tools outside the repo; Work calls them plugins | Codex / Work |
-| **Sites** | ChatGPT-hosted websites and apps (public beta) | Work / web |
-| **Codex Cloud** | Parallel coding jobs in a hosted environment | Codex |
+| **Sites** | ChatGPT-hosted websites and apps (public beta) | [Sites](./sites) |
+| **Codex Cloud** | Parallel coding jobs in a hosted environment | [Cloud](./codex-cloud) |
+| **IDE extension** | Editor context, inline diffs | [IDE](./codex-ide) |
+| **Remote** | Phone steers a connected computer | [Remote](./codex-remote) |
+| **Codex Security** | Find / confirm / fix vulns (plugin + CLI + cloud) | [Security](./codex-security) |
+| **Chrome extension** | Drive your signed-in Chrome tabs | [Chrome](./codex-chrome) |
 | **Atlas** | Retired standalone browser; capabilities moved into ChatGPT / Codex | Historical |
 
 ## Learning path
@@ -91,7 +104,8 @@ Build the “one account, three modes” model before you touch the terminal.
 | --- | --- | --- |
 | 1 | Product line: four Codex surfaces + the desktop merge | [Codex Product Line](./codex-ai) |
 | 2 | Plans, login, pairing Chat with Codex | [ChatGPT Plans and Access](./chatgpt-plus) |
-| 3 | Work: deliverables, local vs cloud, plugins, Sites | [ChatGPT Work](./chatgpt-work) |
+| 3 | Work: deliverables, local vs cloud, plugins | [ChatGPT Work](./chatgpt-work) |
+| 4 | Hosted websites / internal tools (public beta) | [Sites](./sites) |
 
 ### Stage 2 — Get the CLI working
 
@@ -127,9 +141,12 @@ If you only read two pages: [CLI](./codex-cli), then pin the [Cheatsheet](./code
 
 | Step | What | Link |
 | --- | --- | --- |
-| 1 | When to use Cloud; `codex cloud exec` | [Product line · Cloud](./codex-ai#cloud-web-and-hosted-review) |
-| 2 | Dispatch from GitHub / Linear / Slack | [Codex cloud](https://learn.chatgpt.com/docs/cloud) |
-| 3 | Local `/review` vs hosted code review | [Code review](https://learn.chatgpt.com/docs/code-review) |
+| 1 | When to use Cloud; `codex cloud exec` | [Codex Cloud](./codex-cloud) |
+| 2 | Dispatch from GitHub / Linear / Slack | [Cloud](./codex-cloud) · official [cloud docs](https://learn.chatgpt.com/docs/cloud) |
+| 3 | Phone approvals on a connected host | [Remote](./codex-remote) |
+| 4 | Editor context and in-place review | [IDE](./codex-ide) |
+| 5 | Local `/review` vs hosted code review | [Code review](https://learn.chatgpt.com/docs/code-review) |
+| 6 | First security scan (plugin / CLI / cloud) | [Security](./codex-security) |
 
 ### Stage 5 — Work automation (knowledge work)
 
@@ -139,7 +156,7 @@ Axis B: Work sits after the Codex path. Frontend engineers still use it for agen
 | --- | --- | --- |
 | 1 | Positioning and three official starter tasks | [ChatGPT Work](./chatgpt-work) |
 | 2 | Local vs cloud, scheduled tasks | [Work](./chatgpt-work#2-choose-local-or-cloud) |
-| 3 | Plugin and Sites boundaries | [Work](./chatgpt-work#plugins-the-connector-layer) |
+| 3 | Plugin and Sites boundaries | [Work](./chatgpt-work#plugins-the-connector-layer) · [Sites](./sites) |
 
 ## Feature lookup
 
@@ -150,6 +167,7 @@ Axis B: Work sits after the Codex path. Frontend engineers still use it for agen
 | Chat | Questions, drafts, settling a design | [Plans and access](./chatgpt-plus#chatgpt-chat-conversation) |
 | Projects | Chats, files, and instructions under one topic | [Projects](https://learn.chatgpt.com/docs/projects) |
 | Voice | Desktop / iOS, including files and Projects | [Voice](https://learn.chatgpt.com/docs/features/voice) |
+| Computer History | macOS activity timeline → memories (off by default) | [Computer History](https://learn.chatgpt.com/docs/customization/computer-history) |
 | Library | Reuse saved files | [Plans and access](./chatgpt-plus) |
 
 ### ChatGPT Work
@@ -159,20 +177,29 @@ Axis B: Work sits after the Codex path. Frontend engineers still use it for agen
 | Reviewable files | Decks / sheets / docs / PDFs | [ChatGPT Work](./chatgpt-work) |
 | Local / cloud | Local files vs keep-running | [ChatGPT Work](./chatgpt-work#2-choose-local-or-cloud) |
 | Plugins | Drive / Slack / SharePoint… | [ChatGPT Work](./chatgpt-work#plugins-the-connector-layer) |
-| Sites | Hosted websites and apps (public beta) | [ChatGPT Work](./chatgpt-work#sites-when-you-need-a-hosted-page) |
+| Sites | Hosted websites and apps (public beta) | [Sites](./sites) |
 | Scheduled tasks | Recurring research, agendas, watches | [ChatGPT Work](./chatgpt-work#a-recurring-update) |
+| Computer Use | Operate desktop GUIs (macOS / Windows) | [Computer Use](https://learn.chatgpt.com/docs/computer-use) |
+| Browser | Built-in desktop browser or Work cloud browser | [Browser](https://learn.chatgpt.com/docs/browser) |
+| Chrome extension | Signed-in Chrome tabs | [Chrome](./codex-chrome) |
 
 ### Codex
 
 | Feature | For | Read |
 | --- | --- | --- |
 | CLI | Interactive in the repo; `codex exec` in CI | [CLI](./codex-cli) |
-| IDE extension | Current file / selection | [Product line](./codex-ai) |
+| IDE extension | Current file / selection | [IDE](./codex-ide) |
 | Desktop Codex | Diffs, PR sidebar, multi-repo, Computer Use | [Product line](./codex-ai) |
-| Web / Cloud | Hosted envs, parallelism, `--attempts` | [Product line](./codex-ai#cloud-web-and-hosted-review) |
-| Hosted review | Cloud code review / QA; GPT-5.6 Sol for eligible customers | [Product line](./codex-ai#cloud-web-and-hosted-review) |
+| Web / Cloud | Hosted envs, parallelism, `--attempts` | [Cloud](./codex-cloud) |
+| Remote | Phone steers a connected Mac / Windows host | [Remote](./codex-remote) |
+| Hosted review | Cloud code review / QA; GPT-5.6 Sol for eligible customers | [Cloud](./codex-cloud) |
+| Security | Plugin workbench, CLI/SDK, Cloud scans | [Security](./codex-security) |
 | `AGENTS.md` | Project briefing | [Integration](./integration) |
 | MCP / Hooks / Skills / Plugins | Extension points | [Glossary](./codex-glossary) |
+| Codex SDK | Programmatic local threads (TS / Python) | [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) |
+| GitHub Action | `openai/codex-action@v1` runs `codex exec` | [GitHub Action](https://learn.chatgpt.com/docs/github-action) |
+| App Server | JSON-RPC for rich clients / `codex --remote` | [App Server](https://learn.chatgpt.com/docs/app-server) |
+| Codex Micro | Work Louder hardware keys for desktop chats | [Codex Micro](https://learn.chatgpt.com/docs/features/codex-micro) |
 | Recipes | Refactors, tests, debugging | [Cookbook](./codex-cookbook) |
 | Config lookup | Flags, keys, decision tables | [Cheatsheet](./codex-cheatsheet) |
 
@@ -214,7 +241,9 @@ As of August 2026 the recommended 5.6 family is **Sol / Terra / Luna**. The defa
 | [Codex docs root](https://learn.chatgpt.com/docs) | Everything |
 | [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) | Chat / Work / Codex |
 | [Get started with Work](https://learn.chatgpt.com/docs/get-started-with-work) | Work |
-| [Codex cloud](https://learn.chatgpt.com/docs/cloud) | Hosted coding environments |
+| [Codex cloud](https://learn.chatgpt.com/docs/cloud) · [landing](https://learn.chatgpt.com/codex/cloud) | Hosted coding environments |
+| [IDE](https://learn.chatgpt.com/codex/ide) · [Remote](https://learn.chatgpt.com/codex/remote) | Editor surface; phone control |
+| [Security](https://learn.chatgpt.com/codex/security) · [Sites](https://learn.chatgpt.com/codex/sites) · [Chrome](https://learn.chatgpt.com/codex/chrome-extension) | Independent product landings |
 | [What's new](https://learn.chatgpt.com/docs/whats-new) | Weekly capability changes |
 | [Pricing](https://learn.chatgpt.com/docs/pricing) | The only authority on plans and quotas |
 | [Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) | Atlas retirement (official) |

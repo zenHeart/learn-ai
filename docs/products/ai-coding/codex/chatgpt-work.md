@@ -122,7 +122,7 @@ Repo wiring, CI, and custom MCP stay on [Project Integration](./integration). Do
 
 ## Sites, when you need a hosted page
 
-[Sites](https://learn.chatgpt.com/docs/sites) is a public beta: ChatGPT creates, hosts, refines, and shares websites, internal tools, or small apps without a separate deploy stack. Web entry: [chatgpt.com/sites](https://chatgpt.com/sites).
+[Sites](https://learn.chatgpt.com/docs/sites) is a public beta: ChatGPT creates, hosts, refines, and shares websites, internal tools, or small apps without a separate deploy stack. Web entry: [chatgpt.com/sites](https://chatgpt.com/sites). Full tutorial: [Sites](./sites).
 
 It is **not** Claude Design. There is no official “import a design system from the repo, then hand off a bundle” product on the OpenAI side. Sites is a hosting workflow.
 

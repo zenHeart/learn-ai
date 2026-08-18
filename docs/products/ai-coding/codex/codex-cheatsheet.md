@@ -19,6 +19,20 @@
 | Switching between two config setups | `codex --profile work` | Switches config only |
 | Reviewing before a release | `/review` in the TUI | Diff against the base branch |
 | Config seems to have no effect | `/debug-config` | Prints the layers actually in effect |
+| Isolated env, parallel attempts, or dispatch from GitHub / Linear / Slack | [Codex Cloud](./codex-cloud) · `codex cloud exec --env <ID>` | Hosted machines, not the laptop |
+| Task is the file or selection already open | [IDE extension](./codex-ide) | Editor context is already attached |
+| Phone must steer / approve a **local** session | [Remote](./codex-remote) | The connected computer runs the work |
+| Find / confirm / fix vulns in a repo you own | [Codex Security](./codex-security) | Plugin, CLI/SDK, or Cloud |
+| Host a page without a deploy stack | [Sites](./sites) | Save a version before deploy |
+| Act on a **signed-in** Chrome tab | [Chrome extension](./codex-chrome) · `@Chrome` | Not `@Browser`, not the cloud browser |
+| Embed Codex in a product (threads, approvals, events) | [App Server](https://learn.chatgpt.com/docs/app-server) | JSON-RPC; not the same as Remote pairing |
+| Call local Codex from code | [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) | TS `@openai/codex-sdk` / Python `openai-codex` |
+| CI without installing the CLI yourself | [GitHub Action](https://learn.chatgpt.com/docs/github-action) | `openai/codex-action@v1` |
+| Operate a desktop GUI | [Computer Use](https://learn.chatgpt.com/docs/computer-use) | Desktop Work / Codex; Windows takes the foreground |
+| Localhost preview or stay out of Chrome | [Browser](https://learn.chatgpt.com/docs/browser) · `@Browser` | Separate ChatGPT browser profile |
+| Talk instead of type (desktop / iOS Remote) | [Voice](https://learn.chatgpt.com/docs/features/voice) | Separate rolling Voice allowance |
+| macOS activity as memories / timeline | [Computer History](https://learn.chatgpt.com/docs/customization/computer-history) | Off by default; needs Memories |
+| Hardware keys for desktop chats | [Codex Micro](https://learn.chatgpt.com/docs/features/codex-micro) | Work Louder collaboration; not a Codex surface |
 
 ## Glossary index
 
@@ -46,6 +60,18 @@ One line per term. Full definitions are in the [Glossary](./codex-glossary) — 
 | ChatGPT Work | Knowledge-work agent that finishes a reviewable file | [→](./codex-glossary#chatgpt-work) |
 | Sites | ChatGPT-hosted websites and apps (public beta) | [→](./codex-glossary#sites) |
 | Codex Cloud | Parallel coding jobs / hosted review in a hosted env | [→](./codex-glossary#codex-cloud) |
+| IDE extension | Codex beside the open file / selection | [→](./codex-glossary#codex-ide-extension) |
+| Remote | Phone steers a paired Mac / Windows host | [→](./codex-glossary#codex-remote) |
+| Codex Security | AppSec agent: plugin + CLI/SDK + cloud | [→](./codex-glossary#codex-security) |
+| Chrome extension | Drive signed-in Chrome tabs | [→](./codex-glossary#chrome-extension) |
+| Computer Use | See and operate desktop GUIs | [→](./codex-glossary#computer-use) |
+| Browser | Built-in desktop browser or Work cloud browser | [→](./codex-glossary#browser) |
+| Voice | Live talk in Chat / Work / Codex (desktop; iOS Remote) | [→](./codex-glossary#chatgpt-voice) |
+| Computer History | macOS activity → memories and a timeline | [→](./codex-glossary#computer-history) |
+| Codex SDK | Programmatic local threads (TS / Python) | [→](./codex-glossary#codex-sdk) |
+| GitHub Action | Official `openai/codex-action@v1` | [→](./codex-glossary#github-action) |
+| App Server | JSON-RPC used by rich clients and `codex --remote` | [→](./codex-glossary#app-server) |
+| Codex Micro | Work Louder hardware for desktop chats | [→](./codex-glossary#codex-micro) |
 | Atlas | Standalone browser stopped 2026-08-09 | [→](./codex-glossary#atlas) |
 
 ## Command reference

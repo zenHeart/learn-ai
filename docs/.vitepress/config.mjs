@@ -363,6 +363,12 @@ export default withMermaid(defineConfig({
                                           { text: 'ChatGPT Work', link: '/products/ai-coding/codex/chatgpt-work' },
                                           { text: 'ChatGPT Plans & Access', link: '/products/ai-coding/codex/chatgpt-plus' },
                                           { text: 'Project Integration', link: '/products/ai-coding/codex/integration' },
+                                          { text: 'Codex Cloud', link: '/products/ai-coding/codex/codex-cloud' },
+                                          { text: 'Codex IDE', link: '/products/ai-coding/codex/codex-ide' },
+                                          { text: 'Codex Remote', link: '/products/ai-coding/codex/codex-remote' },
+                                          { text: 'Codex Security', link: '/products/ai-coding/codex/codex-security' },
+                                          { text: 'Sites', link: '/products/ai-coding/codex/sites' },
+                                          { text: 'Chrome Extension', link: '/products/ai-coding/codex/codex-chrome' },
                                        ]
                                     },
                                     {
@@ -875,6 +881,12 @@ export default withMermaid(defineConfig({
                                           { text: 'ChatGPT Work', link: '/zh/products/ai-coding/codex/chatgpt-work' },
                                           { text: 'ChatGPT 套餐与访问', link: '/zh/products/ai-coding/codex/chatgpt-plus' },
                                           { text: '项目集成', link: '/zh/products/ai-coding/codex/integration' },
+                                          { text: 'Codex Cloud', link: '/zh/products/ai-coding/codex/codex-cloud' },
+                                          { text: 'Codex IDE', link: '/zh/products/ai-coding/codex/codex-ide' },
+                                          { text: 'Codex Remote', link: '/zh/products/ai-coding/codex/codex-remote' },
+                                          { text: 'Codex Security', link: '/zh/products/ai-coding/codex/codex-security' },
+                                          { text: 'Sites', link: '/zh/products/ai-coding/codex/sites' },
+                                          { text: 'Chrome 扩展', link: '/zh/products/ai-coding/codex/codex-chrome' },
                                        ]
                                     },
                                     {

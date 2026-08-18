@@ -125,7 +125,7 @@ Enterprise / Edu 默认关插件；Business 默认开。管理员放开不等于
 
 ## Sites：需要托管页面时
 
-[Sites](https://learn.chatgpt.com/docs/sites) 是公开测试：让 ChatGPT 创建、托管、改、分享网站、内部工具或小应用，不必另搭部署栈。网页入口 [chatgpt.com/sites](https://chatgpt.com/sites)。
+[Sites](https://learn.chatgpt.com/docs/sites) 是公开测试：让 ChatGPT 创建、托管、改、分享网站、内部工具或小应用，不必另搭部署栈。网页入口 [chatgpt.com/sites](https://chatgpt.com/sites)。完整教程：[Sites](./sites)。
 
 它**不是** Claude Design 那种「从代码库抽品牌规范再交接实现」的设计产品。它是托管工作流。
 

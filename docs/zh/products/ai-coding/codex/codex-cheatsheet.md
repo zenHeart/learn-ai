@@ -19,6 +19,20 @@
 | 在两套配置之间切 | `codex --profile work` | 只切换配置 |
 | 发版前评审 | TUI 里 `/review` | 相对 base 分支做 diff |
 | 配置看起来没生效 | `/debug-config` | 打印实际生效的层 |
+| 隔离环境、并行多试、或从 GitHub / Linear / Slack 派活 | [Codex Cloud](./codex-cloud) · `codex cloud exec --env <ID>` | 托管机器，不是本机 |
+| 任务就是已经打开的文件或选区 | [IDE 扩展](./codex-ide) | 编辑器上下文已经带上 |
+| 手机要带 / 批**本机**会话 | [Remote](./codex-remote) | 干活的是已连接电脑 |
+| 在有权评估的仓库里找 / 确认 / 修漏洞 | [Codex Security](./codex-security) | 插件、CLI/SDK 或 Cloud |
+| 不想自建部署栈，要托管一页 | [Sites](./sites) | 先 save version 再 deploy |
+| 要动**已登录**的 Chrome 标签 | [Chrome 扩展](./codex-chrome) · `@Chrome` | 不是 `@Browser`，也不是云端浏览器 |
+| 把 Codex 嵌进自己的产品（线程、审批、事件） | [App Server](https://learn.chatgpt.com/docs/app-server) | JSON-RPC；不是 Remote 配对 |
+| 从代码调用本机 Codex | [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) | TS `@openai/codex-sdk` / Python `openai-codex` |
+| CI 里不想自己装 CLI | [GitHub Action](https://learn.chatgpt.com/docs/github-action) | `openai/codex-action@v1` |
+| 要操作桌面 GUI | [Computer Use](https://learn.chatgpt.com/docs/computer-use) | 桌面 Work / Codex；Windows 会占前台 |
+| localhost 预览，或别碰你的 Chrome | [Browser](https://learn.chatgpt.com/docs/browser) · `@Browser` | 单独的 ChatGPT 浏览器配置 |
+| 想说话不想打字（桌面 / iOS Remote） | [Voice](https://learn.chatgpt.com/docs/features/voice) | 单独滚动的 Voice 额度 |
+| 把 macOS 活动变成记忆 / 时间线 | [Computer History](https://learn.chatgpt.com/docs/customization/computer-history) | 默认关；依赖 Memories |
+| 桌面会话的硬件键 | [Codex Micro](https://learn.chatgpt.com/docs/features/codex-micro) | 与 Work Louder 合作；不是 Codex 入口 |
 
 ## 术语索引
 
@@ -46,6 +60,18 @@
 | ChatGPT Work | 做到可审成品的知识工作代理 | [→](./codex-glossary#chatgpt-work) |
 | Sites | ChatGPT 托管网页和应用（公开测试） | [→](./codex-glossary#sites) |
 | Codex Cloud | 托管环境里的并行编程任务 / 托管评审 | [→](./codex-glossary#codex-cloud) |
+| IDE 扩展 | 对着打开的文件 / 选区的 Codex | [→](./codex-glossary#codex-ide-extension) |
+| Remote | 手机带一台已配对的 Mac / Windows | [→](./codex-glossary#codex-remote) |
+| Codex Security | 应用安全 Agent：插件 + CLI/SDK + Cloud | [→](./codex-glossary#codex-security) |
+| Chrome 扩展 | 驱动已登录的 Chrome 标签 | [→](./codex-glossary#chrome-extension) |
+| Computer Use | 看见并操作桌面 GUI | [→](./codex-glossary#computer-use) |
+| Browser | 桌面内置浏览器或 Work 云端浏览器 | [→](./codex-glossary#browser) |
+| Voice | Chat / Work / Codex 里实时说话（桌面；iOS Remote） | [→](./codex-glossary#chatgpt-voice) |
+| Computer History | macOS 活动 → 记忆和时间线 | [→](./codex-glossary#computer-history) |
+| Codex SDK | 程序化本机线程（TS / Python） | [→](./codex-glossary#codex-sdk) |
+| GitHub Action | 官方 `openai/codex-action@v1` | [→](./codex-glossary#github-action) |
+| App Server | 富客户端和 `codex --remote` 用的 JSON-RPC | [→](./codex-glossary#app-server) |
+| Codex Micro | Work Louder 硬件，跟桌面会话 | [→](./codex-glossary#codex-micro) |
 | Atlas | 已于 2026-08-09 停止的独立浏览器 | [→](./codex-glossary#atlas) |
 
 ## 命令参考

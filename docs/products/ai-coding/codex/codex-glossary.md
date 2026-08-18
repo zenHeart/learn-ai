@@ -574,7 +574,7 @@ A ChatGPT workflow that creates, hosts, and shares websites and apps. Public bet
 
 Not Claude Design. There is no official “import a design system from the repo, then hand off a bundle” product. Every deploy URL is production.
 
-**Official docs:** [Sites](https://learn.chatgpt.com/docs/sites)
+**Official docs:** [Sites](https://learn.chatgpt.com/docs/sites) · this guide’s [Sites](./sites)
 
 ---
 
@@ -588,7 +588,127 @@ Coding tasks in isolated OpenAI-hosted environments, in parallel, dispatchable f
 
 Cloud code review / QA is powered by **GPT-5.6 Sol** for eligible customers; Cloud selects the model. Codex Security Review is a separate research preview (Enterprise / Business / Edu / Pro, not Plus). Local `/review` is a session command — do not reuse the hosted-review name for it.
 
-**Official docs:** [Codex cloud](https://learn.chatgpt.com/docs/cloud) · [What's new](https://learn.chatgpt.com/docs/whats-new)
+**Official docs:** [Codex cloud](https://learn.chatgpt.com/docs/cloud) · [What's new](https://learn.chatgpt.com/docs/whats-new) · this guide’s [Cloud](./codex-cloud)
+
+---
+
+## Codex IDE extension {#codex-ide-extension}
+
+**What it is**
+
+The editor surface: open files and selections go into the prompt; you review a focused diff beside the source. Same config model as the CLI.
+
+**Official docs:** [IDE](https://learn.chatgpt.com/codex/ide) · this guide’s [IDE](./codex-ide)
+
+---
+
+## Codex Remote {#codex-remote}
+
+**What it is**
+
+The phone (or another desktop) steers a **paired** Mac or Windows host. The host runs the work. Not Cloud.
+
+**Official docs:** [Remote](https://learn.chatgpt.com/codex/remote) · this guide’s [Remote](./codex-remote)
+
+---
+
+## Codex Security {#codex-security}
+
+**What it is**
+
+An application-security agent with three doors: desktop plugin, CLI/SDK (`@openai/codex-security`), and Cloud (research preview). Scan only code you are authorized to assess.
+
+**Official docs:** [Security](https://learn.chatgpt.com/codex/security) · this guide’s [Security](./codex-security)
+
+---
+
+## Chrome extension {#chrome-extension}
+
+**What it is**
+
+Lets ChatGPT control **your** Chrome profile, including signed-in tabs. Distinct from `@Browser` (built-in profile) and Work’s signed-out cloud browser.
+
+**Official docs:** [Chrome extension](https://learn.chatgpt.com/codex/chrome-extension) · this guide’s [Chrome](./codex-chrome)
+
+---
+
+## Computer Use {#computer-use}
+
+**What it is**
+
+Desktop-app capability: ChatGPT sees and operates GUIs on macOS or Windows. Windows takes the foreground. File/shell still follow sandbox and approval.
+
+**Official docs:** [Computer Use](https://learn.chatgpt.com/docs/computer-use)
+
+---
+
+## Browser {#browser}
+
+**What it is**
+
+Either the desktop **built-in** browser (`@Browser`, separate profile) or Work’s **cloud** browser (signed-out public sites). Not available in CLI or the IDE extension.
+
+**Official docs:** [Browser](https://learn.chatgpt.com/docs/browser)
+
+---
+
+## ChatGPT Voice {#chatgpt-voice}
+
+**What it is**
+
+GPT-Live voice in Chat, Work, and Codex on the desktop app (and iOS Remote after pairing). A chat must **start** in voice mode. Separate rolling Voice allowance; tasks still spend Codex quota.
+
+**Official docs:** [Voice](https://learn.chatgpt.com/docs/features/voice)
+
+---
+
+## Computer History {#computer-history}
+
+**What it is**
+
+macOS desktop feature (off by default) that turns allowed app/website activity into memories and a timeline. Needs Memories. Not in EEA / CH / UK. Replaces the Chronicle preview.
+
+**Official docs:** [Computer History](https://learn.chatgpt.com/docs/customization/computer-history)
+
+---
+
+## Codex SDK {#codex-sdk}
+
+**What it is**
+
+Libraries that start and resume **local** Codex threads: TypeScript `@openai/codex-sdk`, Python `openai-codex`. For structured security findings use `@openai/codex-security` instead.
+
+**Official docs:** [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk)
+
+---
+
+## GitHub Action {#github-action}
+
+**What it is**
+
+`openai/codex-action@v1` installs the CLI and runs `codex exec` in GitHub Actions. Prefer it when you do not want to manage the CLI yourself.
+
+**Official docs:** [GitHub Action](https://learn.chatgpt.com/docs/github-action)
+
+---
+
+## App Server {#app-server}
+
+**What it is**
+
+JSON-RPC interface that powers rich clients (including the VS Code extension). Also the process behind `codex --remote`. For CI jobs use the SDK or `codex exec`, not a homemade listener on the public internet.
+
+**Official docs:** [App Server](https://learn.chatgpt.com/docs/app-server)
+
+---
+
+## Codex Micro {#codex-micro}
+
+**What it is**
+
+A limited-run Work Louder keyboard that lights Agent Keys and triggers desktop ChatGPT actions. Hardware accessory, not a Codex surface.
+
+**Official docs:** [Codex Micro](https://learn.chatgpt.com/docs/features/codex-micro)
 
 ---
 
@@ -612,5 +732,8 @@ Not a current product, and not a “desktop superapp” that needs its own page.
 - [Codex Cookbook](./codex-cookbook) — task-oriented recipes
 - [Codex CLI](./codex-cli) — installation through core features
 - [ChatGPT Work](./chatgpt-work) — knowledge-work agent
+- [Sites](./sites) — hosted websites and apps
+- [Codex Cloud](./codex-cloud) · [IDE](./codex-ide) · [Remote](./codex-remote)
+- [Security](./codex-security) · [Chrome](./codex-chrome)
 - [Project Integration](./integration) — wiring Codex into a real project
 - [Learning Map](./) — the full path

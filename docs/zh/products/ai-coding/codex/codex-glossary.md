@@ -573,7 +573,7 @@ ChatGPT 创建、托管、分享网站和应用的工作流，公开测试。入
 
 不是 Claude Design。没有「从代码库抽品牌规范再交接实现」的官方产品。每个部署 URL 都是生产环境。
 
-**官方文档**：[Sites](https://learn.chatgpt.com/docs/sites)
+**官方文档**：[Sites](https://learn.chatgpt.com/docs/sites) · 本教程 [Sites](./sites)
 
 ---
 
@@ -587,7 +587,127 @@ ChatGPT 创建、托管、分享网站和应用的工作流，公开测试。入
 
 Cloud 上的 code review / QA 对合格客户由 **GPT-5.6 Sol** 驱动，模型由 Cloud 自动选。Codex Security Review 是另一条研究预览（Enterprise / Business / Edu / Pro，不含 Plus）。本机 `/review` 仍是本地会话里的评审，不要和托管评审混名。
 
-**官方文档**：[Codex cloud](https://learn.chatgpt.com/docs/cloud) · [What's new](https://learn.chatgpt.com/docs/whats-new)
+**官方文档**：[Codex cloud](https://learn.chatgpt.com/docs/cloud) · [What's new](https://learn.chatgpt.com/docs/whats-new) · 本教程 [Cloud](./codex-cloud)
+
+---
+
+## Codex IDE 扩展 {#codex-ide-extension}
+
+**是什么**
+
+编辑器入口：打开的文件和选区进提示词；在源码旁边审 focused diff。配置模型和 CLI 相同。
+
+**官方文档**：[IDE](https://learn.chatgpt.com/codex/ide) · 本教程 [IDE](./codex-ide)
+
+---
+
+## Codex Remote {#codex-remote}
+
+**是什么**
+
+手机（或另一台桌面）带一台**已配对**的 Mac / Windows 主机。干活的是主机。不是 Cloud。
+
+**官方文档**：[Remote](https://learn.chatgpt.com/codex/remote) · 本教程 [Remote](./codex-remote)
+
+---
+
+## Codex Security {#codex-security}
+
+**是什么**
+
+应用安全 Agent，三扇门：桌面插件、CLI/SDK（`@openai/codex-security`）、Cloud（研究预览）。只扫你有权评估的代码。
+
+**官方文档**：[Security](https://learn.chatgpt.com/codex/security) · 本教程 [Security](./codex-security)
+
+---
+
+## Chrome 扩展 {#chrome-extension}
+
+**是什么**
+
+让 ChatGPT 控制**你的** Chrome 配置，含已登录标签。不同于 `@Browser`（内置配置）和 Work 未登录的云端浏览器。
+
+**官方文档**：[Chrome extension](https://learn.chatgpt.com/codex/chrome-extension) · 本教程 [Chrome](./codex-chrome)
+
+---
+
+## Computer Use {#computer-use}
+
+**是什么**
+
+桌面应用能力：ChatGPT 看见并操作 macOS / Windows 上的 GUI。Windows 会占前台。文件 / shell 仍走沙箱和审批。
+
+**官方文档**：[Computer Use](https://learn.chatgpt.com/docs/computer-use)
+
+---
+
+## Browser {#browser}
+
+**是什么**
+
+要么是桌面**内置**浏览器（`@Browser`，单独配置），要么是 Work 的**云端**浏览器（未登录的公开站点）。CLI 和 IDE 扩展里没有。
+
+**官方文档**：[Browser](https://learn.chatgpt.com/docs/browser)
+
+---
+
+## ChatGPT Voice {#chatgpt-voice}
+
+**是什么**
+
+桌面应用里 Chat / Work / Codex 的 GPT-Live 语音（配对后也可走 iOS Remote）。会话必须**以语音模式开始**。Voice 额度单独滚动；任务仍消耗 Codex 配额。
+
+**官方文档**：[Voice](https://learn.chatgpt.com/docs/features/voice)
+
+---
+
+## Computer History {#computer-history}
+
+**是什么**
+
+macOS 桌面功能（默认关），把允许的应用 / 网站活动变成记忆和时间线。依赖 Memories。EEA / 瑞士 / 英国不可用。替代 Chronicle 预览。
+
+**官方文档**：[Computer History](https://learn.chatgpt.com/docs/customization/computer-history)
+
+---
+
+## Codex SDK {#codex-sdk}
+
+**是什么**
+
+启动和恢复**本机** Codex 线程的库：TypeScript `@openai/codex-sdk`，Python `openai-codex`。结构化安全 findings 改用 `@openai/codex-security`。
+
+**官方文档**：[Codex SDK](https://learn.chatgpt.com/docs/codex-sdk)
+
+---
+
+## GitHub Action {#github-action}
+
+**是什么**
+
+`openai/codex-action@v1` 在 GitHub Actions 里安装 CLI 并跑 `codex exec`。不想自己管 CLI 时用它。
+
+**官方文档**：[GitHub Action](https://learn.chatgpt.com/docs/github-action)
+
+---
+
+## App Server {#app-server}
+
+**是什么**
+
+给富客户端（含 VS Code 扩展）用的 JSON-RPC 接口，也是 `codex --remote` 背后的进程。CI 用 SDK 或 `codex exec`，不要在公网自建监听。
+
+**官方文档**：[App Server](https://learn.chatgpt.com/docs/app-server)
+
+---
+
+## Codex Micro {#codex-micro}
+
+**是什么**
+
+限量的 Work Louder 键盘：Agent Key 亮灯，触发桌面 ChatGPT 动作。硬件配件，不是 Codex 入口。
+
+**官方文档**：[Codex Micro](https://learn.chatgpt.com/docs/features/codex-micro)
 
 ---
 
@@ -611,5 +731,8 @@ Cloud 上的 code review / QA 对合格客户由 **GPT-5.6 Sol** 驱动，模型
 - [Codex Cookbook](./codex-cookbook) — 按任务组织的实操配方
 - [Codex CLI 教程](./codex-cli) — 从安装到核心功能
 - [ChatGPT Work](./chatgpt-work) — 知识工作代理
+- [Sites](./sites) — 托管网页和应用
+- [Codex Cloud](./codex-cloud) · [IDE](./codex-ide) · [Remote](./codex-remote)
+- [Security](./codex-security) · [Chrome](./codex-chrome)
 - [项目集成](./integration) — 把 Codex 接入真实项目
 - [学习地图](./) — 完整学习路径

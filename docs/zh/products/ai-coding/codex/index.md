@@ -26,10 +26,14 @@ OpenAI 编程与智能代理生态
 │   ├── 桌面应用里的 Codex   — 可视化 diff、PR 侧栏、多仓库
 │   ├── 网页 chatgpt.com/codex
 │   ├── Cloud               — 隔离环境，可并行、可从 GitHub / Linear / Slack 派活
-│   └── Remote              — 手机接着本机或云端任务
+│   ├── Remote              — 手机接着一台已连接电脑
+│   └── Security            — 插件 + CLI/SDK + 云端扫描
+├── Chrome 扩展             — Work / Codex 驱动已登录的 Chrome 标签
 └── 已下线：Atlas 独立浏览器
     └── 官方于 2026-08-09 停止；浏览代理能力并入 ChatGPT / Codex
 ```
+
+桌面 Codex 就是 ChatGPT 桌面应用里的 Codex 视图——入口写在 [产品线](./codex-ai) 和 [Work 与 Codex 对照](./chatgpt-work#桌面上-work-和-codex-怎么选)，不再单独成页。**Pets** 是可选的动画伴侣，用来跟会话状态；没有教程。
 
 这是**一套配置、一个 Agent 内核**，入口不同。CLI 里学会的沙箱、审批和 `AGENTS.md`，在 IDE / 桌面 Codex / Cloud 同样生效。Work 和 Codex **共用用量额度**。
 
@@ -40,9 +44,10 @@ OpenAI 编程与智能代理生态
 ├── 写代码 / 调试 / 重构 / 提 PR
 │   └── → Codex
 │       ├── 在终端 / CI？→ CLI（codex / codex exec）
-│       ├── 在编辑器里对着当前文件？→ IDE 扩展
-│       ├── 要可视化 diff / PR 侧栏？→ 桌面应用里的 Codex
-│       ├── 没带电脑 / 要并行多试几次？→ Codex Cloud（chatgpt.com/codex）
+│       ├── 在编辑器里对着当前文件？→ [IDE 扩展](./codex-ide)
+│       ├── 要可视化 diff / PR 侧栏？→ 桌面应用里的 Codex（[产品线](./codex-ai)）
+│       ├── 没带电脑 / 要并行多试几次？→ [Codex Cloud](./codex-cloud)
+│       ├── 手机遥控、电脑还醒着？→ [Remote](./codex-remote)
 │       └── 在 GitHub / Linear / Slack 里派活？→ Cloud + 官方集成
 ├── 问答 / 写作 / 比方案 / 把设计谈清楚
 │   └── → ChatGPT Chat（网页、桌面或手机）
@@ -54,7 +59,11 @@ OpenAI 编程与智能代理生态
 │       ├── 源材料在网盘 / Slack？→ 装插件，提示词里 @它
 │       ├── 要动本机文件或应用？→ 桌面 Work locally
 │       ├── 关电脑也要跑？→ Cloud / 网页 Work
-│       └── 要托管一个内部页？→ Sites（先 save version，再 deploy）
+│       └── 要托管一个内部页？→ [Sites](./sites)（先 save version，再 deploy）
+├── 在我有权评估的仓库里找 / 确认 / 修漏洞
+│   └── → [Codex Security](./codex-security)（插件 / CLI / Cloud）
+├── 要动我已经登录的 Chrome 页面
+│   └── → [Chrome 扩展](./codex-chrome)（`@Chrome`）；localhost → `@Browser`
 ├── 接入外部服务
 │   └── → 分清两层
 │       ├── 日常 SaaS（Drive / Slack / Notion 类）→ Work / Chat 的 Plugins
@@ -74,8 +83,12 @@ OpenAI 编程与智能代理生态
 | **审批策略** | 行动前要不要问你 | Codex |
 | **`AGENTS.md`** | 每次运行自动加载的项目简报 | Codex 全入口 |
 | **MCP / Plugins** | 接到仓库外的工具；Work 侧叫插件 | Codex / Work |
-| **Sites** | ChatGPT 托管网页和应用（公开测试） | Work / 网页 |
-| **Codex Cloud** | 在托管环境里并行跑编程任务 | Codex |
+| **Sites** | ChatGPT 托管网页和应用（公开测试） | [Sites](./sites) |
+| **Codex Cloud** | 在托管环境里并行跑编程任务 | [Cloud](./codex-cloud) |
+| **IDE 扩展** | 编辑器上下文、行内 diff | [IDE](./codex-ide) |
+| **Remote** | 手机带一台已连接电脑 | [Remote](./codex-remote) |
+| **Codex Security** | 找 / 确认 / 修漏洞（插件 + CLI + Cloud） | [Security](./codex-security) |
+| **Chrome 扩展** | 驱动已登录的 Chrome 标签 | [Chrome](./codex-chrome) |
 | **Atlas** | 已下线的独立浏览器，能力并入 ChatGPT / Codex | 历史 |
 
 ## 学习路径
@@ -90,7 +103,8 @@ OpenAI 编程与智能代理生态
 | --- | --- | --- |
 | 1 | 产品线：四个 Codex 入口 + 桌面合并 | [Codex 产品线](./codex-ai) |
 | 2 | 套餐、登录、Chat 和 Codex 怎么配对 | [ChatGPT 套餐与访问](./chatgpt-plus) |
-| 3 | Work：可审成品、本地 vs 云端、插件、Sites | [ChatGPT Work](./chatgpt-work) |
+| 3 | Work：可审成品、本地 vs 云端、插件 | [ChatGPT Work](./chatgpt-work) |
+| 4 | 托管网页 / 内部工具（公开测试） | [Sites](./sites) |
 
 ### 第二阶段：上手 Codex CLI
 
@@ -126,9 +140,12 @@ OpenAI 编程与智能代理生态
 
 | 步骤 | 内容 | 链接 |
 | --- | --- | --- |
-| 1 | 何时用 Cloud、`codex cloud exec` | [产品线 · Cloud](./codex-ai#cloud-网页与托管评审) |
-| 2 | 从 GitHub / Linear / Slack 派任务 | [Codex cloud](https://learn.chatgpt.com/docs/cloud) |
-| 3 | 本机 `/review` vs 托管 code review | [Code review](https://learn.chatgpt.com/docs/code-review) |
+| 1 | 何时用 Cloud、`codex cloud exec` | [Codex Cloud](./codex-cloud) |
+| 2 | 从 GitHub / Linear / Slack 派任务 | [Cloud](./codex-cloud) · 官方 [cloud 文档](https://learn.chatgpt.com/docs/cloud) |
+| 3 | 手机批已连接主机上的任务 | [Remote](./codex-remote) |
+| 4 | 编辑器上下文和原地评审 | [IDE](./codex-ide) |
+| 5 | 本机 `/review` vs 托管 code review | [Code review](https://learn.chatgpt.com/docs/code-review) |
+| 6 | 第一次安全扫描（插件 / CLI / Cloud） | [Security](./codex-security) |
 
 ### 第五阶段：Work 自动化（知识工作）
 
@@ -138,7 +155,7 @@ OpenAI 编程与智能代理生态
 | --- | --- | --- |
 | 1 | Work 定位与三个官方起步任务 | [ChatGPT Work](./chatgpt-work) |
 | 2 | 本地 vs 云端、定期任务 | [→ Work](./chatgpt-work#2-选本地还是云端) |
-| 3 | 插件与 Sites 边界 | [→ Work](./chatgpt-work#插件接到你真正在用的工具) |
+| 3 | 插件与 Sites 边界 | [→ Work](./chatgpt-work#插件接到你真正在用的工具) · [Sites](./sites) |
 
 ## 功能速查表
 
@@ -149,6 +166,7 @@ OpenAI 编程与智能代理生态
 | Chat | 问答、草稿、把设计谈清楚 | [套餐与访问](./chatgpt-plus#chatgpt-chat-对话智能) |
 | Projects | 同一主题下的会话、文件、指令 | [Projects](https://learn.chatgpt.com/docs/projects) |
 | Voice | 桌面 / iOS 语音，可对着文件和 Project | [Voice](https://learn.chatgpt.com/docs/features/voice) |
+| Computer History | macOS 活动时间线 → 记忆（默认关） | [Computer History](https://learn.chatgpt.com/docs/customization/computer-history) |
 | Library | 已保存文件再次引用 | [套餐与访问](./chatgpt-plus) |
 
 ### ChatGPT Work
@@ -158,20 +176,29 @@ OpenAI 编程与智能代理生态
 | 可审成品 | PPT / 表 / 文档 / PDF | [ChatGPT Work](./chatgpt-work) |
 | 本地 / 云端 | 本机文件 vs 关电脑续跑 | [ChatGPT Work](./chatgpt-work#2-选本地还是云端) |
 | 插件 | Drive / Slack / SharePoint… | [ChatGPT Work](./chatgpt-work#插件接到你真正在用的工具) |
-| Sites | 托管网页和应用（公开测试） | [ChatGPT Work](./chatgpt-work#sites需要托管页面时) |
+| Sites | 托管网页和应用（公开测试） | [Sites](./sites) |
 | 定期任务 | 重复调研、议程、监控 | [ChatGPT Work](./chatgpt-work#做定期更新) |
+| Computer Use | 操作桌面 GUI（macOS / Windows） | [Computer Use](https://learn.chatgpt.com/docs/computer-use) |
+| Browser | 桌面内置浏览器或 Work 云端浏览器 | [Browser](https://learn.chatgpt.com/docs/browser) |
+| Chrome 扩展 | 已登录的 Chrome 标签 | [Chrome](./codex-chrome) |
 
 ### Codex 核心功能
 
 | 功能 | 用途 | 文档 |
 | --- | --- | --- |
 | 终端 CLI | 项目目录里交互；CI 用 `codex exec` | [CLI](./codex-cli) |
-| IDE 扩展 | 当前文件 / 选区 | [产品线](./codex-ai) |
+| IDE 扩展 | 当前文件 / 选区 | [IDE](./codex-ide) |
 | 桌面 Codex | diff、PR 侧栏、多仓库、Computer Use | [产品线](./codex-ai) |
-| Web / Cloud | 托管环境、并行、`--attempts` | [产品线](./codex-ai#cloud-网页与托管评审) |
-| 托管评审 | Cloud 上的 code review / QA；合格客户用 GPT-5.6 Sol | [产品线](./codex-ai#cloud-网页与托管评审) |
+| Web / Cloud | 托管环境、并行、`--attempts` | [Cloud](./codex-cloud) |
+| Remote | 手机带一台已连接的 Mac / Windows | [Remote](./codex-remote) |
+| 托管评审 | Cloud 上的 code review / QA；合格客户用 GPT-5.6 Sol | [Cloud](./codex-cloud) |
+| Security | 插件工作台、CLI/SDK、Cloud 扫描 | [Security](./codex-security) |
 | `AGENTS.md` | 项目简报 | [集成](./integration) |
 | MCP / Hooks / Skills / Plugins | 扩展面 | [术语表](./codex-glossary) |
+| Codex SDK | 程序化本机线程（TS / Python） | [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk) |
+| GitHub Action | `openai/codex-action@v1` 跑 `codex exec` | [GitHub Action](https://learn.chatgpt.com/docs/github-action) |
+| App Server | 富客户端 JSON-RPC / `codex --remote` | [App Server](https://learn.chatgpt.com/docs/app-server) |
+| Codex Micro | Work Louder 硬件键，跟桌面会话 | [Codex Micro](https://learn.chatgpt.com/docs/features/codex-micro) |
 | 实战配方 | 重构、测试、排错 | [Cookbook](./codex-cookbook) |
 | 配置速查 | flag、键、决策表 | [Cheatsheet](./codex-cheatsheet) |
 
@@ -213,7 +240,9 @@ OpenAI 编程与智能代理生态
 | [Codex 文档根](https://learn.chatgpt.com/docs) | 一切 |
 | [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) | Chat / Work / Codex 怎么选 |
 | [Get started with Work](https://learn.chatgpt.com/docs/get-started-with-work) | Work |
-| [Codex cloud](https://learn.chatgpt.com/docs/cloud) | 托管编程环境 |
+| [Codex cloud](https://learn.chatgpt.com/docs/cloud) · [落地页](https://learn.chatgpt.com/codex/cloud) | 托管编程环境 |
+| [IDE](https://learn.chatgpt.com/codex/ide) · [Remote](https://learn.chatgpt.com/codex/remote) | 编辑器入口；手机控制 |
+| [Security](https://learn.chatgpt.com/codex/security) · [Sites](https://learn.chatgpt.com/codex/sites) · [Chrome](https://learn.chatgpt.com/codex/chrome-extension) | 独立产品落地页 |
 | [What's new](https://learn.chatgpt.com/docs/whats-new) | 周报级能力变化 |
 | [Pricing](https://learn.chatgpt.com/docs/pricing) | 套餐和配额的唯一权威 |
 | [Atlas 演进说明](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) | Atlas 下线（官方） |

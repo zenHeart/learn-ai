@@ -62,7 +62,7 @@ Runs inside your editor, with the editor's notion of what file and selection you
 
 Choose the IDE extension when the task is anchored to code you are currently reading — the editor already knows the context you would otherwise have to describe.
 
-Reference: [IDE Extension documentation](https://learn.chatgpt.com/docs/codex/ide)
+Reference: [IDE Extension documentation](https://learn.chatgpt.com/docs/codex/ide) · this guide’s [IDE tutorial](./codex-ide)
 
 ### Desktop app
 
@@ -72,7 +72,7 @@ The graphical surface has what the terminal does not: an in-app browser, worktre
 
 ### Cloud, web, and hosted review {#cloud-web-and-hosted-review}
 
-Runs the agent on OpenAI's infrastructure against a configured environment rather than your laptop. Product entry: [chatgpt.com/codex](https://chatgpt.com/codex). Docs: [Codex cloud](https://learn.chatgpt.com/docs/cloud).
+Runs the agent on OpenAI's infrastructure against a configured environment rather than your laptop. Product entry: [chatgpt.com/codex](https://chatgpt.com/codex). Docs: [Codex cloud](https://learn.chatgpt.com/docs/cloud). Tutorial: [Codex Cloud](./codex-cloud). Phone control of a **local** host is [Remote](./codex-remote), not Cloud.
 
 ```bash
 codex cloud                                            # browse environments (Ctrl+O reveals IDs)
