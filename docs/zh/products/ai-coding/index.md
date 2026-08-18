@@ -17,7 +17,7 @@
 ## 精选工具
 
 - [GitHub Copilot](./copilot/) — Diataxis 四件套：[上手教程](./copilot/copilot)、[Cookbook](./copilot/copilot-cookbook)、[Cheatsheet](./copilot/copilot-cheatsheet)、[术语表](./copilot/copilot-glossary)
-- [Cursor](./cursor.md) - AI 优先的代码编辑器，具备聊天和生成功能
+- [Cursor](./cursor/) - 编辑器 + CLI + Cloud Agents + Bugbot
 - [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
 - **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
 - [Gemini 全家族](./gemini/index.md) - Gemini CLI、Antigravity、Jules、Code Assist、AI Studio、Canvas、Google Flow
@@ -31,7 +31,7 @@
 ## 选择你的 AI 编程工具
 
 ### 适合初学者
-**推荐**: [Cursor](./cursor.md)
+**推荐**: [Cursor](./cursor/)
 - 最容易上手
 - 一站式解决方案 (自动补全 + 聊天)
 - 优秀的多文件上下文支持
@@ -65,30 +65,11 @@
 
 ### Cursor
 
-| Feature | 描述 |
-|:--------|:------------|
-| [AGENTS.md](https://cursor.com/docs/context/rules) | AI对齐的项目上下文标准 |
-| [Rules (.cursor/rules)](https://cursor.com/docs/context/rules) | 基于glob模式的精细化控制 |
-| [Commands](https://cursor.com/docs/context/commands) | 工作流自定义斜杠命令 |
-| [Skills](https://cursor.com/docs/context/skills) | 可复用能力和工具函数 |
-| [MCP](https://cursor.com/docs/context/mcp) | Model Context Protocol 集成 |
-| [Hooks](https://cursor.com/docs/agent/hooks) | 文件操作生命周期拦截器 |
-| [Sub-agents](https://cursor.com/docs/context/subagents) | 特定任务的专用AI代理 |
-| [BugBot](https://cursor.com/docs/bugbot) | 带运行时上下文的自动调试器 |
-| [Modes](https://cursor.com/docs/agent/modes) | Agent/Ask/Plan/Debug 模式切换 |
-| [Tab](https://cursor.com/docs/tab/overview) | 智能代码补全 |
-| [Chat](https://cursor.com/docs/context/mentions) | AI对话界面 |
-| [Codebase Indexing](https://cursor.com/docs/context/semantic-search) | 项目级向量搜索 |
-| [@ Symbols](https://cursor.com/docs/context/mentions) | 文件/函数引用 |
-| [Notepad](https://cursor.com/docs/context/mentions) | 持久化草稿板上下文 |
-| [Docs Integration](https://cursor.com/docs/context/mentions) | 自定义文档索引 |
-| [Privacy Mode](https://cursor.com/docs/enterprise/privacy-and-data-governance) | 本地处理选项 |
-| [Model Selection](https://cursor.com/docs/models) | Claude/GPT等模型选择 |
-| [Integrations](https://cursor.com/docs/integrations/github) | 第三方集成(GitHub/GitLab/Linear/Slack) |
-| [Inline Edit](https://cursor.com/docs/inline-edit/overview) | 内联代码编辑 |
-| [Reuse Existing Code](https://cursor.com/docs/reuse-existing-code) | 代码复用建议 |
-| [Long-running Agents](https://cursor.com/blog/long-running-agents) | 长时运行代理 |
-| [Self-driving Codebases](https://cursor.com/blog/self-driving-codebases) | 自主驾驶代码库 |
+AI 优先 IDE 家族：编辑器（Tab / Agent / Ask / Plan）、CLI `agent`、Cloud Agents、Bugbot。适合初学者和需要「补全 + 规则 + 云端干活 + PR 审查」一体的团队。
+
+- 学习地图 / 决策：[Cursor](./cursor/)
+- 22 项功能矩阵、快捷键、配置：[速查表](./cursor/cursor-cheatsheet)
+- 场景配方：[Cookbook](./cursor/cursor-cookbook)
 
 ### Claude Code
 

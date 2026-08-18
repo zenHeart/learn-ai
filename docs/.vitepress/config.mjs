@@ -310,7 +310,40 @@ export default withMermaid(defineConfig({
                            text: 'AI Coding',
                            items: [
                               { text: 'Overview', link: '/products/ai-coding/' },
-                              { text: 'Cursor', link: '/products/ai-coding/cursor' },
+                              {
+                                 text: 'Cursor', link: '/products/ai-coding/cursor/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/cursor/' },
+                                    {
+                                       text: 'Core Products',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cursor Tutorial', link: '/products/ai-coding/cursor/cursor' },
+                                          { text: 'Cursor Cookbook', link: '/products/ai-coding/cursor/cursor-cookbook' },
+                                          { text: 'Design Mode', link: '/products/ai-coding/cursor/design-mode' },
+                                          { text: 'Cloud Agents', link: '/products/ai-coding/cursor/cloud-agents' },
+                                          { text: 'Cursor CLI', link: '/products/ai-coding/cursor/cursor-cli' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'More Products & Extensions',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Origin', link: '/products/ai-coding/cursor/origin' },
+                                          { text: 'Security Agents', link: '/products/ai-coding/cursor/security-agents' },
+                                          { text: 'PR Routing & Approval', link: '/products/ai-coding/cursor/pr-routing' },
+                                          { text: 'Cursor SDK', link: '/products/ai-coding/cursor/cursor-sdk' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference & Cheatsheets',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/ai-coding/cursor/cursor-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/ai-coding/cursor/cursor-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               {
                                  text: 'Copilot', link: '/products/ai-coding/copilot/', items: [
                                     { text: '🗺️ Learning Map', link: '/products/ai-coding/copilot/' },
@@ -909,7 +942,40 @@ export default withMermaid(defineConfig({
                                     },
                                  ]
                               },
-                              { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
+                              {
+                                 text: 'Cursor', link: '/zh/products/ai-coding/cursor/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/cursor/' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cursor 教程', link: '/zh/products/ai-coding/cursor/cursor' },
+                                          { text: 'Cursor 实战 Cookbook', link: '/zh/products/ai-coding/cursor/cursor-cookbook' },
+                                          { text: 'Design Mode', link: '/zh/products/ai-coding/cursor/design-mode' },
+                                          { text: 'Cloud Agents', link: '/zh/products/ai-coding/cursor/cloud-agents' },
+                                          { text: 'Cursor CLI', link: '/zh/products/ai-coding/cursor/cursor-cli' },
+                                       ]
+                                    },
+                                    {
+                                       text: '更多产品与扩展',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Origin', link: '/zh/products/ai-coding/cursor/origin' },
+                                          { text: 'Security Agents', link: '/zh/products/ai-coding/cursor/security-agents' },
+                                          { text: 'PR Routing & Approval', link: '/zh/products/ai-coding/cursor/pr-routing' },
+                                          { text: 'Cursor SDK', link: '/zh/products/ai-coding/cursor/cursor-sdk' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet 速查表', link: '/zh/products/ai-coding/cursor/cursor-cheatsheet' },
+                                          { text: '术语表 Glossary', link: '/zh/products/ai-coding/cursor/cursor-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               {
                                  text: 'Copilot', link: '/zh/products/ai-coding/copilot/', items: [
                                     { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/copilot/' },

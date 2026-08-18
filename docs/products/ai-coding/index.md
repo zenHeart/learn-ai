@@ -17,7 +17,7 @@
 ## Featured Tools
 
 - [GitHub Copilot](./copilot/) — Diataxis set: [tutorial](./copilot/copilot), [cookbook](./copilot/copilot-cookbook), [cheatsheet](./copilot/copilot-cheatsheet), [glossary](./copilot/copilot-glossary)
-- [Cursor](./cursor.md) - AI-first code editor with chat and generation
+- [Cursor](./cursor/) - Editor + CLI + Cloud Agents + Bugbot
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
 - [Gemini](./gemini/) - Gemini family: Gemini CLI, Antigravity, Jules, Code Assist, AI Studio, Canvas, Google Flow
@@ -31,7 +31,7 @@
 ## Choosing Your AI Coding Tool
 
 ### For Beginners
-**Recommended**: [Cursor](./cursor.md)
+**Recommended**: [Cursor](./cursor/)
 - Easiest to learn
 - All-in-one solution (autocomplete + chat)
 - Great multi-file context
