@@ -192,6 +192,27 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Coze', link: '/products/coze/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/coze/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Build a low-code agent', link: '/products/coze/coze' },
+                                          { text: 'Cookbook', link: '/products/coze/coze-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/coze/coze-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/coze/coze-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
 ]
@@ -383,6 +404,27 @@ export const zhAiCodingItems = [
                                  ]
                               },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
+                              {
+                                 text: '扣子 / Coze', link: '/zh/products/coze/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/coze/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '搭一个低代码智能体', link: '/zh/products/coze/coze' },
+                                          { text: '实战 Cookbook', link: '/zh/products/coze/coze-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/coze/coze-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/coze/coze-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: '其他工具', link: '/zh/products/ai-coding/othertools' },
                               { text: '采购与实施方案', link: '/zh/products/ai-coding/procurement-plan' },
                               { text: 'Pi Coding Agent', link: '/zh/products/ai-coding/pi-coding-agent' }
