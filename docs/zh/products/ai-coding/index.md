@@ -21,6 +21,7 @@
 - [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
 - **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
 - [Gemini 全家族](./gemini/index.md) - Gemini CLI、Antigravity、Jules、Code Assist、AI Studio、Canvas、Google Flow
+- [Grok](./grok/index.md) - xAI 第一方终端编程 Agent（Grok Build）
 - [其他工具](./othertools.md) - 探索更多 AI 编程工具
 
 ## 快速开始
@@ -217,6 +218,23 @@
 | [Async Tasks](https://openai.com/index/introducing-codex) | 后台任务执行 |
 | [Task Tracking](https://openai.com/index/introducing-codex) | 进度监控 |
 | [Internet Access](https://openai.com/index/introducing-codex) | 实时网络搜索 |
+
+### Grok Build
+
+| Feature | 描述 |
+|:--------|:------------|
+| [AGENTS.md](https://docs.x.ai/build/features/project-rules) | 项目规则，同时兼容 `CLAUDE.md` / `.cursor/rules` |
+| [Plan Mode](https://docs.x.ai/build/features/plan-mode) | 先出计划、审批后动手 |
+| [Permissions](https://docs.x.ai/build/features/permissions) | `allow` / `ask` / `deny` 规则，deny 优先 |
+| [Sandbox](https://docs.x.ai/build/features/sandbox) | Landlock / Seatbelt 系统级隔离，5 档 profile |
+| [Skills & Plugins](https://docs.x.ai/build/features/skills-plugins-marketplaces) | 技能、插件、官方 marketplace |
+| [Hooks](https://docs.x.ai/build/features/hooks) | 生命周期事件，`PreToolUse` 可拦截 |
+| [MCP](https://docs.x.ai/build/features/mcp-servers) | 工具名空间 `<server>__<tool>` |
+| [Subagents](https://docs.x.ai/build/features/subagents) | 内置 `general-purpose` / `explore` / `plan` |
+| [Worktrees](https://docs.x.ai/build/features/worktrees) | Git worktree 隔离并行开发 |
+| [Background Tasks](https://docs.x.ai/build/features/background-tasks) | 后台任务与 `/loop` 定时循环 |
+| [Dashboard](https://docs.x.ai/build/features/dashboard) | 多会话状态总览 |
+| [Headless / ACP](https://docs.x.ai/build/cli/headless-scripting) | 脚本与编辑器嵌入两种非交互面 |
 
 ## 下一步
 

@@ -398,6 +398,39 @@ export default withMermaid(defineConfig({
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Grok', link: '/products/ai-coding/grok/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/grok/' },
+                                    {
+                                       text: 'Core Products',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Grok Build Tutorial', link: '/products/ai-coding/grok/grok-cli' },
+                                          { text: 'Cookbook', link: '/products/ai-coding/grok/grok-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'More Products',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Grok Chat', link: '/products/ai-coding/grok/grok-chat' },
+                                          { text: 'Imagine', link: '/products/ai-coding/grok/grok-imagine' },
+                                          { text: 'Voice', link: '/products/ai-coding/grok/grok-voice' },
+                                          { text: 'Connectors', link: '/products/ai-coding/grok/grok-connectors' },
+                                          { text: 'Grok Bot', link: '/products/ai-coding/grok/grok-bot' },
+                                          { text: 'Business & Enterprise', link: '/products/ai-coding/grok/grok-business' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/ai-coding/grok/grok-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/ai-coding/grok/grok-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
                               {
@@ -932,6 +965,39 @@ export default withMermaid(defineConfig({
                                        text: '速查与参考', collapsed: false, items: [
                                           { text: '速查表', link: '/zh/products/ai-coding/gemini/gemini-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/gemini/gemini-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Grok', link: '/zh/products/ai-coding/grok/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/grok/' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Grok Build 教程', link: '/zh/products/ai-coding/grok/grok-cli' },
+                                          { text: '实战 Cookbook', link: '/zh/products/ai-coding/grok/grok-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '更多产品',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Grok 聊天', link: '/zh/products/ai-coding/grok/grok-chat' },
+                                          { text: 'Imagine', link: '/zh/products/ai-coding/grok/grok-imagine' },
+                                          { text: 'Voice', link: '/zh/products/ai-coding/grok/grok-voice' },
+                                          { text: 'Connectors', link: '/zh/products/ai-coding/grok/grok-connectors' },
+                                          { text: 'Grok Bot', link: '/zh/products/ai-coding/grok/grok-bot' },
+                                          { text: 'Business & Enterprise', link: '/zh/products/ai-coding/grok/grok-business' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
                                        ]
                                     },
                                  ]
