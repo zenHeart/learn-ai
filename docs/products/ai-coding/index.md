@@ -19,6 +19,7 @@
 - [GitHub Copilot](./copilot/) — Diataxis set: [tutorial](./copilot/copilot), [cookbook](./copilot/copilot-cookbook), [cheatsheet](./copilot/copilot-cheatsheet), [glossary](./copilot/copilot-glossary)
 - [Cursor](./cursor/) - Editor + CLI + Cloud Agents + Bugbot
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
+- [Codex](./codex/) - OpenAI's coding agent: CLI, IDE, app, and cloud, included with ChatGPT plans
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
 - [Gemini](./gemini/) - Gemini family: Gemini CLI, Antigravity, Jules, Code Assist, AI Studio, Canvas, Google Flow
 - [Grok](./grok/) - xAI's first-party terminal coding agent (Grok Build)
@@ -55,6 +56,12 @@
 - Google integration
 - Since 2026-06-18, individual / Google AI Pro / Ultra no longer reach Gemini CLI or Code Assist IDE extensions via Login with Google
 - The rest of the family is mapped in [the Gemini index](./gemini/)
+
+### For the OpenAI Ecosystem
+**Recommended**: [Codex](./codex/)
+- Included with ChatGPT Plus, Pro, Business, Edu, and Enterprise plans — no separate purchase
+- One configuration across CLI, IDE, app, and cloud
+- Explicit sandbox and approval model, so automated runs stay bounded
 
 ## Next Steps
 
