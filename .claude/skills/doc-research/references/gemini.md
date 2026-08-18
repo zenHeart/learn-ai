@@ -4,8 +4,8 @@
 
 ## 基本信息
 
-- 工具名：Gemini 全家族（Gemini CLI / Antigravity / Jules / Canvas / Code Assist / AI Studio / Google AI 订阅）
-- 这是一个**产品族**而非单一工具，7 个子产品分属不同团队、不同文档站、不同发版节奏
+- 工具名：Gemini 全家族（Gemini CLI / Antigravity / Jules / Canvas / Google Flow / Code Assist / AI Studio / Google AI 订阅）
+- 这是一个**产品族**而非单一工具，编码 3 个核心产品 + 影像 / 原型 / IDE / 控制台 / 订阅分属不同团队、不同文档站、不同发版节奏
 - 官方文档根地址（按子产品分散，没有统一入口）：
   - Gemini CLI：<https://geminicli.com/docs/>
   - Antigravity：<https://antigravity.google/docs/home>
@@ -26,9 +26,10 @@ docs/zh/products/ai-coding/gemini/       # 英文版同构于 docs/products/ai-c
 ├── antigravity.md           # 📘 智能体开发平台
 ├── jules.md                 # 📘 云端异步智能体
 ├── canvas.md                # 📘 对话内原型
+├── flow.md                  # 📘 AI 创意工作室（对位 Claude Design）
 ├── code-assist.md           # 📘 IDE 扩展（Standard / Enterprise）
 ├── ai-studio.md             # 📘 模型与 API 控制台
-├── google-pro.md            # 📘 订阅层级与配额
+├── google-pro.md            # 📘 订阅层级与配额 + Pro 权益家族图
 ├── gemini-cookbook.md       # 🔧 How-to — 跨子产品场景化配方
 ├── gemini-cheatsheet.md     # 📐 Reference — 决策表/配置/信息源（全站唯一权威版本）
 └── gemini-glossary.md       # 📖 Explanation — 核心概念
@@ -37,11 +38,12 @@ docs/zh/products/ai-coding/gemini/       # 英文版同构于 docs/products/ai-c
 ## 子产品跨页排列顺序（轴 A / 轴 B 结论）
 
 **核心产品**：`gemini-cli` → `antigravity` → `jules`
-**更多产品与扩展**：`canvas` → `code-assist` → `ai-studio` → `google-pro`
+**更多产品与扩展**：`canvas` → `flow` → `code-assist` → `ai-studio` → `google-pro`
 
 - 轴 A（概念依赖）：`gemini-cli` 是族内唯一零前置依赖的完整工具，`.gemini/settings.json`、`gemini extensions install`、GEMINI.md 三个概念都在这里首次出现并被后续页面复用，所以必须最先；`antigravity` 复用这三个概念再叠加 rules/skills/subagents；`jules` 在自主智能体之上再叠加 GitHub 仓库与 PR 工作流。
 - 轴 B（受众复杂度）：`code-assist` 官方开场即 "organizations with strict data security and compliance requirements"、VPC-SC、IP indemnification，是**企业级强信号**；2026-06-18 后又叠加"个人 free 档停服、只剩 Standard / Enterprise"，因此即使它的概念依赖很浅（IDE 插件），也要往后压；`google-pro` 同理——订阅层级本身概念独立（轴 A 允许很前），但它回答的是"我该为团队掏哪一档钱"，属于付费决策受众，压到最后。
 - `canvas` 轴 A 零依赖、轴 B 最轻（Gemini App 内即可用），但它不在工程化主线上，所以放在"更多产品"组首位而非核心组。
+- `flow` 轴 A 零依赖；轴 B 对前端工程师相关度中高（落地页 / 宣传片 / 产品演示视频），对位 Claude Design，紧挨 Canvas。Flow Sessions 是艺术家计划，不单独成页。Dreambeans / Health / Home / TV / Earth / Photos Remix 轴 B 失败，不进本站。
 - 2026-06-18 消费者停服**不推翻**轴 A：Gemini CLI 仍是概念入口（settings / extensions / GEMINI.md），企业与 API key 用户仍在用；它只强化轴 B——个人日常入口变成 Antigravity，Code Assist 更该留在"更多产品"。
 
 ## 监控页面（What's New 驱动更新的最小子集）
@@ -54,6 +56,9 @@ docs/zh/products/ai-coding/gemini/       # 英文版同构于 docs/products/ai-c
 - Antigravity 规则与工作流：<https://antigravity.google/docs/rules-workflows>
 - Antigravity 技能：<https://antigravity.google/docs/skills>
 - 订阅层级对比表：<https://one.google.com/about/google-ai-plans/>
+- Google AI Pro 权益清单：<https://support.google.com/googleone/answer/14534406>
+- Google Flow 落地页：<https://labs.google/fx/tools/flow>
+- Flow 额度：<https://support.google.com/flow/answer/16526234>
 
 ## Git 提交 scope
 
@@ -66,7 +71,7 @@ docs(gemini): ...
 - **这一族是全站杜撰风险最高的文档**。2026-08 的一轮核实发现历史版本里存在整段虚构的 CLI（`@google/jules-tools`、`jules status`、`jules task list`、`jules pr apply`）、虚构的配置键（`codeAssist.agentMode`、`security.allowedCommands`、`security.sandboxMode`、`requireBranch`）、虚构的命令（`gemini connect chrome`、`gemini run audit`、`gemini mcp add`）。**新增任何命令或配置键前必须回官方页面逐条对照。**
 - **Jules CLI 的 npm 包名是 `@google/jules`，不是 `@google/jules-tools`**；命令是 `jules remote new --repo <owner/repo> --session "<desc>"`，不是 `jules remote new "<desc>"`。
 - **Antigravity 的规则文件不是项目根目录的 `agents.md`**：全局规则在 `~/.gemini/GEMINI.md`，工作区规则在 `.agents/rules` 目录；技能是**目录**，内含 `SKILL.md`，位于 `.agents/skills/<folder>/` 或 `~/.gemini/config/skills/<folder>/`。
-- **Google AI 订阅是 4 档不是 2 档**：Plus / Pro / Ultra 5x / Ultra 20x。官方对比表里 Antigravity 与 Jules 的额度只有定性描述（"Terbatas / Diperluas / 更高 / 最高"），**没有任何数字配额**，不要写"每日 1500 次"这类具体数字。
+- **Google AI 订阅是 4 档不是 2 档**：Plus / Pro / Ultra 5x / Ultra 20x。官方对比表里 Antigravity 与 Jules 的额度只有定性描述（"Terbatas / Diperluas / 更高 / 最高"），**没有任何数字配额**，不要写"每日 1500 次"这类具体数字。**Flow 积分有数字**：免费 50/日、Plus 200/月、Pro 1,000/月、Ultra 10,000 或 25,000/月，出处是 support.google.com/flow/answer/16526234，不要引用第三方博客。Flow Music 积分与 Flow 视频积分分开。
 - **上下文窗口只有一个可引用数字**：官方订阅对比表写 Pro 及以上是 100 万令牌。模型清单页**不列每个模型的上下文窗口**，所以"某模型 200 万令牌"这类说法当前无出处。
 - 模型名极易过期：`gemini-3-pro-preview`、`gemini-2.0-flash`、`gemini-2.0-flash-lite`、`gemini-3.1-flash-lite-preview` 已标记 Shut down。示例输出（如 `/stats` 截图）里的模型名也要跟着换。
 - `one.google.com/about/google-ai-plans/` 抓取时经常返回本地化版本（如印尼语）并**吞掉货币金额**，价格类信息拿不到就留 TODO，别照抄旧文档里的 `$20/月`。

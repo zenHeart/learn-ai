@@ -272,7 +272,7 @@ Layer 3: move into a real project for types
          and tests                           → this step leaves Canvas
 ```
 
-**Key point**: Canvas output is a prototype. Treat it as the fastest path to validating an idea, not as a source of production code.
+**Key point**: Canvas output is a prototype. Treat it as the fastest path to validating an idea, not as a source of production code. If you need a video rather than a clickable page, use [Google Flow](./flow).
 
 **Do not**: ask it for a full-size application with complete business logic in one shot. Once the feedback loop gets long, you lose the information about which step went wrong.
 

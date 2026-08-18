@@ -66,8 +66,9 @@ Canvas 不在工程化主线上，它和其他产品不是竞争关系：
 
 - 想要**能提交进仓库**的代码 → [Gemini CLI](./gemini-cli) 或 [Antigravity](./antigravity)
 - 想要**先看到效果再决定要不要做** → Canvas
+- 想要**落地页 / 宣传片 / 产品演示视频** → [Google Flow](./flow)
 
-很实用的组合是：用 Canvas 试三个方向、挑一个，再让 Antigravity 在真实工程里实现它。
+很实用的组合是：用 Canvas 试三个方向、挑一个，再让 Antigravity 在真实工程里实现它。对外讲这个功能时，再用 Flow 出成片。
 
 ## 官方资源
 

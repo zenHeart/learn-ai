@@ -20,7 +20,7 @@
 - [Cursor](./cursor.md) - AI 优先的代码编辑器，具备聊天和生成功能
 - [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
 - **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
-- [Gemini 全家族](./gemini/index.md) - Gemini CLI、Antigravity、Jules、Code Assist、AI Studio、Canvas
+- [Gemini 全家族](./gemini/index.md) - Gemini CLI、Antigravity、Jules、Code Assist、AI Studio、Canvas、Google Flow
 - [其他工具](./othertools.md) - 探索更多 AI 编程工具
 
 ## 快速开始

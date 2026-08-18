@@ -20,7 +20,7 @@
 - [Cursor](./cursor.md) - AI-first code editor with chat and generation
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
-- [Gemini](./gemini/) - Gemini family: Gemini CLI, Antigravity, Jules, Code Assist, AI Studio, Canvas
+- [Gemini](./gemini/) - Gemini family: Gemini CLI, Antigravity, Jules, Code Assist, AI Studio, Canvas, Google Flow
 - [Other Tools](./othertools.md) - Explore more AI coding tools
 
 ## Getting Started

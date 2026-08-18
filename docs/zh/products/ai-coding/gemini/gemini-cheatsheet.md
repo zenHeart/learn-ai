@@ -27,6 +27,7 @@
 | 把任务丢到云端，回来收 PR | [Jules](./jules) | 在云端 VM 里克隆仓库执行，先出计划待人工批准，再产出 PR |
 | 在 IDE 里补全、改单文件、局部重构 | [Code Assist](./code-assist) | VS Code / JetBrains / Android Studio 插件，含本地代码库感知 |
 | 在对话里直接看到能点的原型 | [Canvas](./canvas) | 对话内工作区，无需搭建本地工程 |
+| 落地页 / 宣传片 / 产品演示要出视频 | [Google Flow](./flow) | Veo 3.1 / Nano Banana / Gemini Omni；对位 Claude Design，不做 DOM |
 | 调模型参数、测系统提示词、走 API | [AI Studio](./ai-studio) | 直接控制模型与参数，是 API 集成的起点 |
 | 决定订哪一档、怎么控预算 | [订阅与配额](./google-pro) | 4 档订阅的额度差异与 Google Cloud 额度 |
 
@@ -96,13 +97,14 @@
 | Google Cloud 月度额度（来自 Google Developer Program） | 未列出 | US$10 | US$40 | US$100 |
 | Antigravity 智能体请求额度 | 有限 | 扩展 | 更高 | 最高 |
 | Jules 任务数 / 并发任务数 | 逐档提升（官方仅定性描述） | | | |
-| Flow 额度 / 月 | 200 | 1,000 | 10,000 | 25,000 |
+| Flow 额度 | 200 / 月 | 1,000 / 月 | 10,000 / 月 | 25,000 / 月 |
 | Deep Think、Project Genie | ❌ | ❌ | ✅ | ✅ |
 
 要点：
 
 - **Antigravity 与 Jules 的额度在官方表里只有定性描述，没有任何具体数字**。不要引用"每日 N 次"这类数字。
-- Pro 档官方明确列出的编码相关权益：AI Studio / Antigravity / Jules 更高额度、Android Studio 智能体辅助、来自 Google Developer Program 的 US$10 月度 Google Cloud 额度。
+- **Flow 积分有数字**：无订阅每天 50（试用，当日不结转）；付费档按上表按月发放，未用完不结转。日 / 月规则与单次消耗见 [Flow](./flow#额度)，本表不另抄。
+- Pro 档编码相关权益（[14534406](https://support.google.com/googleone/answer/14534406)）：更高的 AI Studio / Antigravity / Jules 额度、Android Studio、Developer Program 的 US$10 Cloud 额度，以及 Flow / Spark / Notebook / Gemini app / Chrome auto browse。清单在 [订阅页](./google-pro)，不要在这里再抄一份。
 - 拿到 Google Cloud 额度后**先设预算上限**：GCP 控制台 → 计费 → 预算和警报 → 按额度金额建预算并开启告警。
 
 <!-- TODO: 待核实 —— 四档订阅各自的订阅价格（美元/月）。官方对比页在抓取时返回本地化版本并且吞掉了货币金额，未找到官方说明，历史文档里的"AI Pro $20/月"没有出处，已移除 -->
@@ -127,6 +129,7 @@
 | MCP | 让智能体接外部工具的开放协议 | [详情](./gemini-glossary#mcp) |
 | Extension（扩展） | Gemini CLI 的安装单元，常用来装 MCP 服务器 | [详情](./gemini-glossary#extension-扩展) |
 | AGENTS.md | Jules 在仓库根目录自动读取的指令文件 | [详情](./gemini-glossary#agents-md) |
+| Google Flow | AI 创意工作室，出视频不出代码 | [详情](./gemini-glossary#google-flow) |
 
 ## 配置速查
 
@@ -226,6 +229,8 @@ jules --theme dark                      # 全局选项：dark / light
 | [消费者账号弃用](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals) | 2026-06-18 个人 / Pro / Ultra Login with Google 停服范围 |
 | [Gemini CLI → Antigravity CLI 过渡](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli) | 消费者迁移时间线与企业不受影响的说明 |
 | [Google AI plans](https://one.google.com/about/google-ai-plans/) | 四档订阅的额度对比 |
+| [Google AI Pro 权益](https://support.google.com/googleone/answer/14534406) | Pro 档编码相关权益清单（Flow / Spark / Notebook / Jules / Antigravity） |
+| [Flow 额度](https://support.google.com/flow/answer/16526234) | Flow 日 / 月积分与单次消耗 |
 
 ### A 级：官方但更新较慢或偏营销
 
@@ -235,6 +240,8 @@ jules --theme dark                      # 全局选项：dark / light
 | [Gemini CLI 发布通道](https://geminicli.com/docs/changelogs/) | nightly / preview / stable 差异 |
 | [Gemini CLI 扩展市场](https://geminicli.com/extensions/) | 可用扩展清单 |
 | [Canvas 概览](https://gemini.google/overview/canvas/) | Canvas 唯一官方页面，偏产品介绍 |
+| [Google Flow 落地页](https://labs.google/fx/tools/flow) | 模型、模式、Tools、Sessions、档位积分 |
+| [Flow 帮助中心](https://support.google.com/flow) | 创建视频、Scenebuilder、地区可用性 |
 | [Gemini API 计费](https://ai.google.dev/gemini-api/docs/billing) | API 计费口径 |
 | [长上下文文档](https://ai.google.dev/gemini-api/docs/long-context) | 长上下文使用建议 |
 

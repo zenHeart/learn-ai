@@ -224,6 +224,22 @@ One-line reading: **the paradigm (agent-first) decides the product shapes (CLI /
 
 **Official docs**: [Jules docs](https://jules.google/docs/)
 
+## Google Flow
+
+**What it is**: Google's AI creative studio. It generates and refines video and images from text / frames / ingredients using Veo 3.1, Nano Banana and Gemini Omni. Entry point: [labs.google/fx/tools/flow](https://labs.google/fx/tools/flow).
+
+**Why it matters**: the coding line (CLI / Antigravity / Jules) delivers code in a repository. Presenting a feature still needs a finished clip — a landing-page film, a product demo, a storyboard. Flow fills that gap; it is not another coding entry point.
+
+**Ecosystem role**: the counterpart of Claude Design. Design hands off an interface prototype; Flow hands off a piece of film. The same subscription tier sets Flow credits and Antigravity / Jules quota, but the ledgers are separate.
+
+**Versus [Canvas](./canvas)**: Canvas gives you a clickable workspace beside a Gemini conversation; the output is an interactive prototype. Flow outputs video / images. Use Canvas for DOM, Flow for a finished clip.
+
+**Versus Flow Music**: Flow Music lives at [flowmusic.app](https://www.flowmusic.app/) and makes songs and music videos. Pro maps to its own Plus plan (10,000 music credits / month). **The two credit ledgers do not mix.**
+
+**Flow Sessions**: an artist collaboration programme on the landing page, not a daily product.
+
+**Official docs**: [product entry](https://labs.google/fx/tools/flow), [credits](https://support.google.com/flow/answer/16526234). Product page: [Flow](./flow).
+
 ## Related pages
 
 - [Cheatsheet](./gemini-cheatsheet) — commands, config keys, subscription tiers

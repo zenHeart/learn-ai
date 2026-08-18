@@ -354,6 +354,7 @@ export default withMermaid(defineConfig({
                                           { text: 'Gemini CLI', link: '/products/ai-coding/gemini/gemini-cli' },
                                           { text: 'Antigravity', link: '/products/ai-coding/gemini/antigravity' },
                                           { text: 'Jules', link: '/products/ai-coding/gemini/jules' },
+                                          { text: 'Cookbook', link: '/products/ai-coding/gemini/gemini-cookbook' },
                                        ]
                                     },
                                     {
@@ -361,6 +362,7 @@ export default withMermaid(defineConfig({
                                        collapsed: true,
                                        items: [
                                           { text: 'Canvas', link: '/products/ai-coding/gemini/canvas' },
+                                          { text: 'Google Flow', link: '/products/ai-coding/gemini/flow' },
                                           { text: 'Code Assist', link: '/products/ai-coding/gemini/code-assist' },
                                           { text: 'AI Studio', link: '/products/ai-coding/gemini/ai-studio' },
                                           { text: 'Subscriptions & Quota', link: '/products/ai-coding/gemini/google-pro' },
@@ -370,7 +372,6 @@ export default withMermaid(defineConfig({
                                        text: 'Reference & Cheatsheets',
                                        collapsed: false,
                                        items: [
-                                          { text: 'Cookbook', link: '/products/ai-coding/gemini/gemini-cookbook' },
                                           { text: 'Cheatsheet', link: '/products/ai-coding/gemini/gemini-cheatsheet' },
                                           { text: 'Glossary', link: '/products/ai-coding/gemini/gemini-glossary' },
                                        ]
@@ -875,11 +876,13 @@ export default withMermaid(defineConfig({
                                           { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini/gemini-cli' },
                                           { text: 'Antigravity', link: '/zh/products/ai-coding/gemini/antigravity' },
                                           { text: 'Jules', link: '/zh/products/ai-coding/gemini/jules' },
+                                          { text: 'Cookbook', link: '/zh/products/ai-coding/gemini/gemini-cookbook' },
                                        ]
                                     },
                                     {
                                        text: '更多产品与扩展', collapsed: true, items: [
                                           { text: 'Canvas', link: '/zh/products/ai-coding/gemini/canvas' },
+                                          { text: 'Google Flow', link: '/zh/products/ai-coding/gemini/flow' },
                                           { text: 'Code Assist', link: '/zh/products/ai-coding/gemini/code-assist' },
                                           { text: 'AI Studio', link: '/zh/products/ai-coding/gemini/ai-studio' },
                                           { text: 'Google AI 订阅与额度', link: '/zh/products/ai-coding/gemini/google-pro' },
@@ -887,7 +890,6 @@ export default withMermaid(defineConfig({
                                     },
                                     {
                                        text: '速查与参考', collapsed: false, items: [
-                                          { text: 'Cookbook', link: '/zh/products/ai-coding/gemini/gemini-cookbook' },
                                           { text: '速查表', link: '/zh/products/ai-coding/gemini/gemini-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/gemini/gemini-glossary' },
                                        ]

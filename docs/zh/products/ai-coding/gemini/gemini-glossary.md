@@ -222,6 +222,22 @@
 
 **官方文档**：[Jules 文档](https://jules.google/docs/)
 
+## Google Flow
+
+**是什么**：Google 的 AI 创意工作室。用 Veo 3.1、Nano Banana、Gemini Omni 从文本 / 帧 / 素材生成并精修视频与图像。入口是 [labs.google/fx/tools/flow](https://labs.google/fx/tools/flow)。
+
+**为什么需要**：编码主线（CLI / Antigravity / Jules）交出的是仓库里的代码。对外讲一个功能时，前端工程师还需要成片——落地页宣传、产品演示、分镜。Flow 填的是这一段，不是另一条编码入口。
+
+**生态角色**：对位 Claude 家族的 Claude Design。Design 出可交接的界面原型，Flow 出可发布的影像。订阅档位同时决定 Flow 积分和 Antigravity / Jules 额度，但账本分开。
+
+**与 [Canvas](./canvas) 的区别**：Canvas 在 Gemini 对话旁边给你一个能点的工作区，产出是交互原型。Flow 产出是视频 / 图像。要 DOM 用 Canvas，要成片用 Flow。
+
+**与 Flow Music 的区别**：Flow Music 在 [flowmusic.app](https://www.flowmusic.app/)，做歌和 MV。Pro 对应它自己的 Plus 档（每月 10,000 音乐积分）。**两本积分不能混用**。
+
+**Flow Sessions**：落地页上的艺术家合作计划，不是日常产品。
+
+**官方文档**：[产品入口](https://labs.google/fx/tools/flow)、[额度](https://support.google.com/flow/answer/16526234)。产品页见 [Flow](./flow)。
+
 ## 相关页面
 
 - [速查表](./gemini-cheatsheet) — 命令、配置键、订阅层级

@@ -27,6 +27,7 @@
 | Hand a task to the cloud and come back to a PR | [Jules](./jules) | Clones the repo into a cloud VM, produces a plan for your approval, then opens a PR |
 | Complete code, edit one file, do a local refactor in the IDE | [Code Assist](./code-assist) | VS Code / JetBrains / Android Studio extension with local codebase awareness |
 | See a clickable prototype right inside the conversation | [Canvas](./canvas) | In-conversation workspace, no local project setup |
+| A video for a landing page, launch film or product demo | [Google Flow](./flow) | Veo 3.1 / Nano Banana / Gemini Omni; Claude Design counterpart, no DOM |
 | Tune model parameters, test a system prompt, call the API | [AI Studio](./ai-studio) | Direct control over model and parameters; the entry point for API integration |
 | Decide which tier to buy and how to cap spend | [Plans and quota](./google-pro) | Quota differences across the 4 tiers plus the Google Cloud credit |
 
@@ -96,13 +97,14 @@ From the [official Google AI plans comparison](https://one.google.com/about/goog
 | Monthly Google Cloud credit (via Google Developer Program) | not listed | US$10 | US$40 | US$100 |
 | Antigravity agent request quota | limited | extended | higher | highest |
 | Jules tasks / concurrent tasks | increases per tier (official wording is qualitative only) | | | |
-| Flow credits per month | 200 | 1,000 | 10,000 | 25,000 |
+| Flow credits | 200 / month | 1,000 / month | 10,000 / month | 25,000 / month |
 | Deep Think, Project Genie | ❌ | ❌ | ✅ | ✅ |
 
 Key points:
 
 - **The official table describes Antigravity and Jules quota qualitatively, with no numbers at all.** Do not cite figures like "N tasks per day".
-- Coding-related Pro entitlements the official page does list: higher AI Studio / Antigravity / Jules quota, agentic assistance in Android Studio, and the US$10 monthly Google Cloud credit from the Google Developer Program.
+- **Flow credits are numeric**: 50/day with no subscription (trial, no daily rollover); paid tiers follow the row above and do not roll over unused monthly credits. Daily / monthly rules and per-generation cost live on [Flow](./flow#credits) and are not copied here.
+- Coding-related Pro entitlements from [14534406](https://support.google.com/googleone/answer/14534406): higher AI Studio / Antigravity / Jules quota, Android Studio, the US$10 Cloud credit from the Developer Program, plus Flow / Spark / Notebook / Gemini app / Chrome auto browse. The list is on the [subscription page](./google-pro); do not copy it here.
 - Once you have the Cloud credit, **set a budget first**: GCP console → Billing → Budgets & alerts → create a budget matching the credit and turn on alerts.
 
 <!-- TODO: needs verification — the subscription price of each tier. The official comparison page returns a localised version when scraped and swallows the currency amounts; no official figure was found. The "AI Pro $20/month" in earlier revisions had no source and has been removed. -->
@@ -127,6 +129,7 @@ One line per concept. **The full definition exists only once, in the [glossary](
 | MCP | An open protocol that lets agents reach external tools | [detail](./gemini-glossary#mcp) |
 | Extension | Gemini CLI's installation unit, commonly used to install MCP servers | [detail](./gemini-glossary#extension) |
 | AGENTS.md | The instruction file Jules reads automatically from the repo root | [detail](./gemini-glossary#agents-md) |
+| Google Flow | AI creative studio; film, not code | [detail](./gemini-glossary#google-flow) |
 
 ## Configuration
 
@@ -226,6 +229,8 @@ jules --theme dark                      # global option: dark / light
 | [Consumer-account deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals) | What stopped on 2026-06-18 for individual / Pro / Ultra Login with Google |
 | [Gemini CLI → Antigravity CLI transition](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli) | Consumer migration timeline; enterprise access unchanged |
 | [Google AI plans](https://one.google.com/about/google-ai-plans/) | Quota comparison across the four tiers |
+| [Google AI Pro benefits](https://support.google.com/googleone/answer/14534406) | Coding-relevant Pro entitlements (Flow / Spark / Notebook / Jules / Antigravity) |
+| [Flow credits](https://support.google.com/flow/answer/16526234) | Flow daily / monthly credits and per-generation cost |
 
 ### Tier A: official but slower-moving or marketing-oriented
 
@@ -235,6 +240,8 @@ jules --theme dark                      # global option: dark / light
 | [Gemini CLI release channels](https://geminicli.com/docs/changelogs/) | nightly / preview / stable differences |
 | [Gemini CLI extensions](https://geminicli.com/extensions/) | Available extensions |
 | [Canvas overview](https://gemini.google/overview/canvas/) | The only official Canvas page; product-level |
+| [Google Flow landing page](https://labs.google/fx/tools/flow) | Models, modes, Tools, Sessions, tier credits |
+| [Flow help centre](https://support.google.com/flow) | Create videos, Scenebuilder, regional availability |
 | [Gemini API billing](https://ai.google.dev/gemini-api/docs/billing) | Billing model for the API |
 | [Long context docs](https://ai.google.dev/gemini-api/docs/long-context) | Guidance for long-context use |
 

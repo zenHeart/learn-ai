@@ -1,6 +1,6 @@
 # Google AI subscriptions and quota
 
-> Your subscription tier decides which models you can use, how much, and whether you get Google Cloud credit. This page covers **payment and quota only**; for how each product works, see its own page.
+> Your subscription tier decides which models you can use, how much, and whether you get Google Cloud credit. This page covers **payment, quota, and how Pro entitlements map onto the family**. For how each product works, see its own page. The full four-tier table lives only in the [cheatsheet](./gemini-cheatsheet#subscription-tiers).
 
 ## One thing to get straight first
 
@@ -8,7 +8,7 @@ The family is **not unlocked by a single subscription**. There are two separate 
 
 | Entry point | Covers | Aimed at |
 |---|---|---|
-| Google AI subscription (Plus / Pro / Ultra) | usage for the Gemini app, Jules, Antigravity and so on | individual developers |
+| Google AI subscription (Plus / Pro / Ultra) | usage for the Gemini app, Jules, Antigravity, Flow and so on | individual developers |
 | [Gemini Code Assist](./code-assist) Standard / Enterprise | IDE extension capability and compliance features | teams and organisations |
 
 **Buying personal AI Pro does not turn Code Assist into the enterprise product** — they are separate. Team compliance requirements are met by the Code Assist edition, not by a personal subscription.
@@ -17,7 +17,7 @@ The family is **not unlocked by a single subscription**. There are two separate 
 
 ## The four tiers
 
-Subscriptions come in four tiers: **AI Plus / AI Pro / AI Ultra 5x / AI Ultra 20x**. The full comparison of model multipliers, storage, Google Cloud credit, Flow quota and the rest is in [subscription tiers in the cheatsheet](./gemini-cheatsheet#subscription-tiers) and is not duplicated here.
+Subscriptions come in four tiers: **AI Plus / AI Pro / AI Ultra 5x / AI Ultra 20x**. Storage, model multipliers, Cloud credit and monthly Flow credits are compared in the [cheatsheet](./gemini-cheatsheet#subscription-tiers) and are not duplicated here.
 
 A few facts that actually change which tier you should pick:
 
@@ -27,9 +27,35 @@ A few facts that actually change which tier you should pick:
 
 **3. Quota for the agent products is described only qualitatively.** The official comparison for Jules and Antigravity says only that "task count and concurrent task count increase with the tier" and **gives no specific numbers**.
 
+**4. Flow credits are numeric.** 50/day on the free trial, 200/month on Plus, 1,000/month on Pro, 10,000 or 25,000/month on Ultra. Details live only on [Flow](./flow#credits).
+
 <!-- TODO: needs verification — the specific task count and concurrency cap per tier for Jules / Antigravity. The official subscription comparison is qualitative only and no official statement gives numbers. -->
 
 <!-- TODO: needs verification — the actual prices of the four tiers. The official comparison page returns localised content per region and swallows the currency amounts, so no stably citable price was found; check the official page for your region. -->
+
+## Coding-relevant Pro entitlements
+
+Source: [Use Google AI Pro benefits](https://support.google.com/googleone/answer/14534406). Only the items a frontend engineer will actually hit; the rest of the subscription list is not copied here.
+
+| Entitlement | For a frontend engineer | Where to read it |
+|---|---|---|
+| **Google Flow** | landing-page / launch / product-demo video | [Flow](./flow) (credits live on that page) |
+| **Google Antigravity** higher limits and prioritized traffic | the individual daily entry point after 2026-06-18 | [Antigravity](./antigravity) |
+| **Jules** higher task / concurrency / model access | asynchronous cloud PRs | [Jules](./jules) |
+| **Google AI Studio** | tune the model, call the API; Pro raises the Gemini 3.1 Pro and Nano Banana Pro caps | [AI Studio](./ai-studio) |
+| **Gemini in Android Studio** | higher completion and reasoning quota on Android projects; code is not used for training | no standalone page; IDE entry is [Code Assist](./code-assist) |
+| **Google Developer Program premium** | US$10 Cloud credit, higher Code Assist quota, 30 Firebase Studio workspaces. **Cannot** be shared with family-group members | [Developer Program](https://developers.google.com/profile/help/benefits#premium-benefits) |
+| **Gemini app + Deep Research** | in-depth research outside the editor | [Deep Research](https://gemini.google/overview/deep-research/) |
+| **Gemini Spark** (US only) | a personal agent inside Gemini apps that runs workflows against a goal | no standalone page; [official note](https://support.google.com/gemini/answer/17094507) |
+| **Gemini Notebook** | research / writing assistant; Pro raises Audio Overviews and similar caps, up to **300** sources per notebook | no standalone page; [official note](https://support.google.com/gemininotebook/answer/16213268) |
+| **Gemini in Chrome auto browse** (US only) | Gemini in Chrome runs multi-step web tasks (compare prices, book a hotel). Chrome 144+ | no standalone page; [official note](https://support.google.com/gemini/answer/16821166) |
+| **Google Flow Music** | songs / music videos; Pro maps to Flow Music's Plus plan: **10,000 music credits / month** (~2,000 songs), 12 concurrent generations. **Separate from Flow video credits** | [flowmusic.app](https://www.flowmusic.app/) |
+
+When the allocation runs out, Pro / Ultra can buy extra AI credits for Gemini, [Flow](./flow) and [Antigravity](./antigravity). How to manage them: [Manage AI credits](https://support.google.com/googleone/answer/16287445).
+
+## What else the plan includes
+
+The same Pro plan also includes Dreambeans (US only), Health Premium, Home Premium, TV Create Hub (US only), Gemini in Earth, and Photos Remix / Photo to video. **None of that is about coding.** This site does not document them.
 
 ## Which tier to pay for
 
@@ -42,6 +68,7 @@ Decide by **which tool you mainly use**, not by which tier has the longest featu
 | Gemini CLI daily (Standard / Enterprise or API key) | Pro | extended context and Cloud credit both start here |
 | Integrating through the Gemini API | Pro or above | mostly for the US$10 Cloud credit |
 | Heavy Jules / Antigravity task volume | Ultra | concurrency and task count rise with the tier |
+| Regular landing-page / product-demo video | Pro or above + [Flow](./flow) | monthly credits jump from 200 to 1,000; the free 50/day is only a trial |
 | A hard team compliance requirement | use a [Code Assist](./code-assist) edition | personal subscriptions do not offer VPC-SC or IP indemnification |
 
 **The order matters: exhaust the free quota until it genuinely is not enough, then upgrade.** Doing it the other way round means paying for capacity you never use, and never learning your real order of consumption.
@@ -87,13 +114,15 @@ This page does not repeat the product introductions; go straight to the page you
 - terminal → [Gemini CLI](./gemini-cli)
 - autonomous development platform → [Antigravity](./antigravity)
 - asynchronous cloud tasks → [Jules](./jules)
-- prototyping → [Canvas](./canvas)
+- interactive prototypes → [Canvas](./canvas)
+- landing-page / launch / product-demo video → [Google Flow](./flow)
 - IDE extension → [Code Assist](./code-assist)
 - models and API → [AI Studio](./ai-studio)
 
 ## Official resources
 
 - [Google AI plan comparison](https://one.google.com/about/google-ai-plans/)
+- [Google AI Pro benefits](https://support.google.com/googleone/answer/14534406)
 - [Google Developer Program](https://developers.google.com/program)
 - [GCP budgets and alerts](https://cloud.google.com/billing/docs/how-to/budgets)
 

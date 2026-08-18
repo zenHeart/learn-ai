@@ -66,8 +66,9 @@ Canvas is off the engineering mainline, so it does not compete with the rest:
 
 - want code you can **commit to a repository** → [Gemini CLI](./gemini-cli) or [Antigravity](./antigravity)
 - want to **see the result before deciding whether to build it** → Canvas
+- want a **landing-page / launch / product-demo video** → [Google Flow](./flow)
 
-A genuinely useful combination: try three directions in Canvas, pick one, then have Antigravity implement it in the real project.
+A genuinely useful combination: try three directions in Canvas, pick one, then have Antigravity implement it in the real project. When you present the feature, make the clip in Flow.
 
 ## Official resources
 
