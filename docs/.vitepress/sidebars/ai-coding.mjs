@@ -192,6 +192,27 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Bailian', link: '/products/bailian/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/bailian/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Getting Started', link: '/products/bailian/bailian' },
+                                          { text: 'Cookbook', link: '/products/bailian/bailian-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/bailian/bailian-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/bailian/bailian-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
 ]
@@ -378,6 +399,27 @@ export const zhAiCodingItems = [
                                        items: [
                                           { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '百炼', link: '/zh/products/bailian/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/bailian/' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/bailian/bailian' },
+                                          { text: '实战 Cookbook', link: '/zh/products/bailian/bailian-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/bailian/bailian-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/bailian/bailian-glossary' },
                                        ]
                                     },
                                  ]

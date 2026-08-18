@@ -12,5 +12,6 @@
 | Gemini | [`gemini.md`](./gemini.md) | `docs/zh/products/ai-coding/gemini/` |
 | Grok | [`grok.md`](./grok.md) | `docs/zh/products/ai-coding/grok/` |
 | Copilot | [`copilot.md`](./copilot.md) | `docs/zh/products/ai-coding/copilot/` |
+| Bailian | [`bailian.md`](./bailian.md) | `docs/zh/products/bailian/` |
 
 数据源清单写在对应 `<tool>-cheatsheet.md` 的「高质量信息源」，不要在维护参考里再抄一份。
