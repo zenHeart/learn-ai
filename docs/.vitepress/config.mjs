@@ -65,6 +65,7 @@ export default withMermaid(defineConfig({
             nav: [
                { text: 'Home', link: '/' },
                { text: 'Paths', link: '/paths/' },
+               { text: 'Products', link: '/products/', activeMatch: '/products/' },
                { text: 'Docs', link: '/tech/' },
                { text: 'Cookbook', link: '/cookbook/' },
                { text: 'AI Tools', link: '/ai-tools/' },
@@ -405,6 +406,7 @@ export default withMermaid(defineConfig({
             nav: [
                { text: '首页', link: '/zh/' },
                { text: '路径', link: '/zh/paths/' },
+               { text: '产品', link: '/zh/products/', activeMatch: '/zh/products/' },
                { text: '文档', link: '/zh/tech/' },
                { text: '秘籍', link: '/zh/cookbook/' },
                { text: 'AI 工具', link: '/zh/ai-tools/' },

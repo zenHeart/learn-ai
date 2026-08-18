@@ -50,11 +50,66 @@ function collectLinks(src) {
 }
 
 {
+  const landings = [
+    'docs/products/index.md',
+    'docs/zh/products/index.md'
+  ]
+  for (const rel of landings) {
+    if (!existsSync(join(root, rel))) {
+      failures.push(`missing products landing: ${rel}`)
+      continue
+    }
+    const body = read(rel)
+    if (!/gallery:\s*products/.test(body) || !/layout:\s*ai-tools/.test(body)) {
+      failures.push(`${rel}: need frontmatter layout: ai-tools and gallery: products`)
+    }
+  }
+
+  const layout = 'docs/.vitepress/theme/layouts/ai-tools.vue'
+  const layoutSrc = existsSync(join(root, layout)) ? read(layout) : ''
+  if (!layoutSrc) {
+    failures.push(`missing ${layout}`)
+  } else {
+    if (!/productGalleryEn/.test(layoutSrc) || !/productGalleryZh/.test(layoutSrc)) {
+      failures.push(`${layout}: must import productGalleryEn/Zh`)
+    }
+    if (!/products-gallery\.js/.test(layoutSrc)) {
+      failures.push(`${layout}: must import ../data/products-gallery.js`)
+    }
+    if (!/gallery === ['"]products['"]/.test(layoutSrc) && !/gallery === "products"/.test(layoutSrc)) {
+      failures.push(`${layout}: must switch on frontmatter.gallery === 'products'`)
+    }
+  }
+
+  const galleryComp = 'docs/.vitepress/theme/components/AIToolsGallery.vue'
+  const gallerySrc = existsSync(join(root, galleryComp)) ? read(galleryComp) : ''
+  if (!gallerySrc) {
+    failures.push(`missing ${galleryComp}`)
+  } else if (!/categories:/.test(gallerySrc) || !/props\.categories/.test(gallerySrc)) {
+    failures.push(`${galleryComp}: must accept and use a categories prop`)
+  }
+
+  const galleryJs = 'docs/.vitepress/theme/data/products-gallery.js'
+  if (!existsSync(join(root, galleryJs))) {
+    failures.push(`missing ${galleryJs}`)
+  } else {
+    const gsrc = read(galleryJs)
+    for (const slug of REQUIRED_SLUGS) {
+      if (!gsrc.includes(`/products/${slug}/`) || !gsrc.includes(`/zh/products/${slug}/`)) {
+        failures.push(`${galleryJs}: missing rendered shelf link for ${slug}`)
+      }
+    }
+  }
+
   const srcs = [
     'docs/.vitepress/theme/data/products-gallery.js',
     'docs/.vitepress/sidebars/ai-coding.mjs'
   ]
   for (const rel of srcs) {
+    if (!existsSync(join(root, rel))) {
+      failures.push(`missing ${rel}`)
+      continue
+    }
     const links = collectLinks(read(rel))
     for (const link of links) {
       if (!mdExists(link)) failures.push(`${rel} dead product link: ${link}`)
@@ -72,6 +127,22 @@ for (const slug of REQUIRED_SLUGS) {
     const body = readFileSync(zhMap, 'utf8')
     if (!/https?:\/\//.test(body) || !/官方/.test(body)) {
       failures.push(`zh/products/${slug}/index.md: missing official family table (需要官方 URL + 本站去向)`)
+    }
+    if (/\]\(\/(?:zh\/)?products\/ark\/?\)/.test(body)) {
+      failures.push(`zh/products/${slug}/index.md: dead /products/ark/ link (use /products/volcengine-ark/)`)
+    }
+    if (!body.startsWith('---') || !/domain:\s*product/.test(body.slice(0, 400))) {
+      failures.push(`zh/products/${slug}/index.md: missing YAML frontmatter domain: product`)
+    }
+  }
+  const enMap = join(docsRoot, 'products', slug, 'index.md')
+  if (existsSync(enMap)) {
+    const body = readFileSync(enMap, 'utf8')
+    if (/\]\(\/(?:zh\/)?products\/ark\/?\)/.test(body)) {
+      failures.push(`products/${slug}/index.md: dead /products/ark/ link (use /products/volcengine-ark/)`)
+    }
+    if (!body.startsWith('---') || !/domain:\s*product/.test(body.slice(0, 400))) {
+      failures.push(`products/${slug}/index.md: missing YAML frontmatter domain: product`)
     }
   }
 }

@@ -1,3 +1,12 @@
+---
+title: Yuanbao learning map
+description: Yuanbao is Tencent's consumer AI assistant. This directory covers Yuanbao only.
+domain: product
+tags:
+  - chat
+role: map
+---
+
 # Yuanbao learning map
 
 > **Yuanbao** is Tencent's consumer all-in-one AI assistant. Official page title ([yuanbao.tencent.com](https://yuanbao.tencent.com/)):

@@ -1,3 +1,12 @@
+---
+title: 元宝术语表
+description: 元宝、混元、CodeBuddy 不是同一个产品。
+domain: product
+tags:
+  - chat
+role: explanation
+---
+
 # 元宝术语表
 
 不教操作。只保证「元宝」两个字在本站口径一致。

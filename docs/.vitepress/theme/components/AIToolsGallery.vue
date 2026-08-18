@@ -77,27 +77,39 @@
       type: String,
       default: "搜索工具名称、描述或标签...",
     },
+    categories: {
+      type: Array,
+      default: null,
+    },
+    allLabel: {
+      type: String,
+      default: "全部",
+    },
   });
+
+  const source = computed(() =>
+    props.categories && props.categories.length ? props.categories : toolsData
+  );
 
   const searchQuery = ref("");
   const activeCategory = ref("all");
 
   // 构建分类标签列表
   const allCategories = computed(() => {
-    const categories = toolsData.map((cat) => ({
+    const categories = source.value.map((cat) => ({
       id: cat.name,
       name: cat.name,
       icon: cat.icon,
       count: cat.tools.length,
     }));
 
-    const totalCount = toolsData.reduce(
+    const totalCount = source.value.reduce(
       (sum, cat) => sum + cat.tools.length,
       0,
     );
 
     return [
-      { id: "all", name: "全部", icon: "🌐", count: totalCount },
+      { id: "all", name: props.allLabel, icon: "🌐", count: totalCount },
       ...categories,
     ];
   });
@@ -107,7 +119,7 @@
     const query = searchQuery.value.toLowerCase().trim();
 
     // 过滤类目
-    let result = toolsData;
+    let result = source.value;
     if (activeCategory.value !== "all") {
       result = result.filter((cat) => cat.name === activeCategory.value);
     }

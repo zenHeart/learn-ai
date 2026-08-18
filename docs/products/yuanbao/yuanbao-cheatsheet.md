@@ -1,3 +1,12 @@
+---
+title: Yuanbao cheatsheet
+description: Official Yuanbao doors, sibling products, and quoted capabilities.
+domain: product
+tags:
+  - chat
+role: reference
+---
+
 # Yuanbao cheatsheet
 
 Lookup only. There is no official CLI, so there is no command table. Recheck the linked official page before quoting a number.

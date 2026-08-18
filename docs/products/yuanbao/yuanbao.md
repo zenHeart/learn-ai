@@ -1,3 +1,12 @@
+---
+title: Yuanbao tutorial
+description: Open Yuanbao on the web or desktop and send the first message.
+domain: product
+tags:
+  - chat
+role: tutorial
+---
+
 # Yuanbao tutorial
 
 > Start at [yuanbao.tencent.com](https://yuanbao.tencent.com/) or the [download center](https://yuanbao.tencent.com/download). This page only repeats entries and capabilities you can check on official pages.

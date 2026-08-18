@@ -1,3 +1,12 @@
+---
+title: Yuanbao glossary
+description: Yuanbao, Hunyuan, and CodeBuddy are not the same product.
+domain: product
+tags:
+  - chat
+role: explanation
+---
+
 # Yuanbao glossary
 
 No how-to. This page only keeps the word “Yuanbao” consistent on this site.

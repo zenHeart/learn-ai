@@ -1,3 +1,12 @@
+---
+title: 元宝学习地图
+description: 腾讯元宝是消费级全能 AI 助手。本目录只写元宝。混元和 CodeBuddy 各占一行。
+domain: product
+tags:
+  - chat
+role: map
+---
+
 # 元宝学习地图
 
 > **元宝**是腾讯的消费级全能 AI 助手。官方英文 title（[yuanbao.tencent.com](https://yuanbao.tencent.com/)）：

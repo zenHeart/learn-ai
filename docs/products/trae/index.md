@@ -36,7 +36,7 @@ Official first-level entries first. This directory **only expands TraeCode**. Ev
 | **Volcengine TRAE** | [volcengine.com/product/trae](https://www.volcengine.com/product/trae) | One row: CN cloud catalog slot |
 | **Doubao** | Issue #79 | One row → forthcoming [Doubao family](/products/doubao/) |
 | **Coze** | Issue #81 | One row → forthcoming [Coze family](/products/coze/) |
-| **Ark (Volcengine)** | Issue #82 | One row → forthcoming [Ark family](/products/ark/) |
+| **Ark (Volcengine)** | Issue #82 | One row → [Volcengine Ark](/products/volcengine-ark/) |
 
 Sources: [www.trae.ai](https://www.trae.ai/), [docs.trae.ai header](https://docs.trae.ai/ide/what-is-trae), [Enterprise](https://www.trae.ai/enterprise), [www.trae.cn](https://www.trae.cn/), [docs.trae.cn/llms.txt](https://docs.trae.cn/llms.txt).
 

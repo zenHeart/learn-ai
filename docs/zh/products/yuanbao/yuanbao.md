@@ -1,3 +1,12 @@
+---
+title: 元宝教程
+description: 打开元宝网页或客户端，发出第一句。只复述能在官方页核对的入口。
+domain: product
+tags:
+  - chat
+role: tutorial
+---
+
 # 元宝教程
 
 > 先打开 [yuanbao.tencent.com](https://yuanbao.tencent.com/) 或 [下载中心](https://yuanbao.tencent.com/download)。本页只复述能在官方页核对的入口和能力。

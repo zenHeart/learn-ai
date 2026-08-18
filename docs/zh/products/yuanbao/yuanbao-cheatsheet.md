@@ -1,3 +1,12 @@
+---
+title: 元宝速查表
+description: 元宝官方入口、同厂去向和已核对的能力原文。没有 CLI。
+domain: product
+tags:
+  - chat
+role: reference
+---
+
 # 元宝速查表
 
 只查不学。没有官方 CLI，本页没有命令表。数字和名称以链出去的官方页为准。

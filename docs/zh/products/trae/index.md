@@ -36,7 +36,7 @@ role: map
 | **火山引擎 TRAE** | [volcengine.com/product/trae](https://www.volcengine.com/product/trae) | 地图一行：CN 云产品位 |
 | **豆包** | 另 issue #79 | 一行 → 将有的 [豆包家族](/zh/products/doubao/) |
 | **扣子 Coze** | 另 issue #81 | 一行 → 将有的 [扣子家族](/zh/products/coze/) |
-| **火山方舟 Ark** | 另 issue #82 | 一行 → 将有的 [方舟家族](/zh/products/ark/) |
+| **火山方舟 Ark** | 另 issue #82 | 一行 → [火山方舟](/zh/products/volcengine-ark/) |
 
 来源：[www.trae.ai](https://www.trae.ai/)、[docs.trae.ai 顶栏](https://docs.trae.ai/ide/what-is-trae)、[企业页](https://www.trae.ai/enterprise)、[www.trae.cn](https://www.trae.cn/)、[docs.trae.cn/llms.txt](https://docs.trae.cn/llms.txt)。
 
