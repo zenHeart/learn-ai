@@ -319,3 +319,4 @@ paths = ["/path/to/extra/plugins"]
 - [Grok Build tutorial](./grok-cli.md) — install, auth, TUI, permissions, sandbox
 - [Cheatsheet](./grok-cheatsheet.md) — full commands / flags / config keys / env vars
 - [Glossary](./grok-glossary.md) — why the design looks like this
+- [Grok Bot](./grok-bot.md) — cloud-computer teammates, not this CLI

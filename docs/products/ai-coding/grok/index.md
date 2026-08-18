@@ -5,19 +5,70 @@
 > Official definition ([docs.x.ai/build/overview](https://docs.x.ai/build/overview)):
 > "**Grok Build** is a powerful and extensible coding agent. Use it via an interactive TUI, headlessly in scripts or bots, or through the Agent Client Protocol (ACP) in other apps."
 
-## Tell the products apart in one minute
+## Product landscape
 
-Several xAI products share the "Grok" name. Sort them out first:
+Several xAI products share the word "Grok" or "Build". They are **not** one product with four skins. The set of pages under this directory is about **Grok Build** (the terminal coding agent). The other official surfaces belong in the decision tree so you do not pick the wrong door.
 
-| Product | What it is | Entry point |
-|---------|-----------|-------------|
-| **Grok Build** | Terminal coding agent (the subject of these docs) | the `grok` command |
-| Grok (chat) | General-purpose conversational product | [grok.com](https://grok.com), built into X |
-| xAI API | Model API (`grok-4.6` and others) | [api.x.ai](https://docs.x.ai/developers/quickstart) |
+```
+xAI / Grok family
+├── Grok (chat) — grok.com, iOS, Android, and X
+│   ├── Chat / search / voice / file upload
+│   ├── Imagine — images and video (also grok.com/imagine)
+│   └── Build Mode — chat-native sites / apps / games, publish to grok.me
+├── Grok Build — terminal coding agent (the `grok` command)
+│   ├── Interactive TUI
+│   ├── Headless (`grok -p`)
+│   └── ACP (`grok agent stdio`)
+├── Grok Bot — named teammates on a persistent cloud computer
+└── xAI API — model HTTP API, including the Imagine API
+```
 
-All three share the same account and models, but **only Grok Build is a coding tool**. There is no official IDE plugin — to use it inside an editor you go through the ACP protocol (see below).
+| Product | What it is | Entry point | Analog in the Claude family |
+|---------|-----------|-------------|-----------------------------|
+| **Grok Build** | Terminal coding agent for a real repo | the `grok` command | Claude Code CLI |
+| Grok (chat) | General-purpose assistant | [grok.com](https://grok.com), Grok apps, X | Claude.ai |
+| Imagine | Image and video generation / editing | [grok.com/imagine](https://grok.com/imagine), or the [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine) | Claude Design (creative surface, not a coding agent) |
+| Build Mode | Chat-native builder; publish a live link | Mode switcher **Build** on grok.com / Grok apps | Claude.ai Artifacts-style creation, **not** Claude Code |
+| Grok Bot | Always-on teammates on a shared cloud VM | [x.ai/bot](https://x.ai/bot) desktop + iOS apps | Cowork (task agent, not a repo CLI) |
+| xAI API | Model / Imagine / Voice HTTP API | [docs.x.ai/developers/quickstart](https://docs.x.ai/developers/quickstart) | Anthropic API |
 
-## Three surfaces
+**Names that collide:**
+
+- **Grok Build** ≠ **Build Mode**. Grok Build is the terminal agent (`docs.x.ai/build/*`). Build Mode is a grok.com chat mode that writes a working preview in the conversation and publishes it ([x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode)).
+- **grok.me** is the **publish host** for Build Mode ("Publish to a grok.me link or a custom domain you own"). It is not a separate product and not the Grok Build CLI.
+- **Grok Bot** ≠ Grok Build headless "bots". Grok Bot is a desktop / iOS product with its own docs tree at [docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview).
+- There is **no official IDE plugin**. Editor use of Grok Build is ACP (`grok agent stdio`). [terminal-support](https://docs.x.ai/build/cli/terminal-support) only documents key-binding differences inside VS Code / Cursor / Windsurf / Zed terminals.
+
+Accounts are **not** one pool. Grok Build accepts a SuperGrok / X Premium Plus login or `XAI_API_KEY`. Grok Bot authenticates with a **Cursor** account and is gated to SuperGrok Heavy, Cursor Ultra, and Cursor Teams Premium ([get-started](https://docs.x.ai/grok-bot/get-started)). Build Mode's Early Beta is SuperGrok Heavy only.
+
+### Quick decision: which surface?
+
+```
+What do I want to do?
+├── Write / debug / refactor / open a PR in a real repository
+│   └── → Grok Build (`grok`)
+│       ├── In the terminal? → TUI (`grok`)
+│       ├── In CI / scripts? → headless (`grok -p`)
+│       └── Inside an editor? → ACP (`grok agent stdio`) — no official VS Code plugin
+├── Chat / write / research / voice / upload files
+│   └── → grok.com or the Grok iOS / Android apps
+├── Generate or edit images / video
+│   └── → Imagine
+│       ├── In the product? → grok.com/imagine (also inside grok.com chat)
+│       └── From my own app? → Imagine API
+├── Build a website / app / game in chat and share a link
+│   └── → Build Mode (grok.com mode switcher → Build)
+│       └── SuperGrok Heavy Early Beta; publish to grok.me or a custom domain
+├── Hand real work to a teammate that keeps going when the laptop is closed
+│   └── → Grok Bot (desktop + iOS)
+│       └── SuperGrok Heavy / Cursor Ultra / Cursor Teams Premium
+└── Call models from my own software
+    └── → xAI API
+```
+
+Sources: [docs.x.ai/grok/overview](https://docs.x.ai/grok/overview), [docs.x.ai/build/overview](https://docs.x.ai/build/overview), [docs.x.ai/grok-bot/overview](https://docs.x.ai/grok-bot/overview), [x.ai/grok](https://x.ai/grok), [x.ai/grok/build-mode](https://x.ai/grok/build-mode), [x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode), [docs.x.ai/developers/model-capabilities/imagine](https://docs.x.ai/developers/model-capabilities/imagine), [x.ai/bot](https://x.ai/bot).
+
+## Three Grok Build surfaces
 
 | Surface | Entry point | Where it fits |
 |---------|-------------|---------------|
@@ -27,18 +78,20 @@ All three share the same account and models, but **only Grok Build is a coding t
 
 Sources: [docs.x.ai/build/overview](https://docs.x.ai/build/overview), [docs.x.ai/build/cli/reference](https://docs.x.ai/build/cli/reference)
 
-## Quick decision
+## When Grok Build is worth trying
 
-**When it is worth trying**
+**Try it when**
 
 - You already use Claude Code and want a cheap side-by-side comparison. xAI explicitly claims zero-configuration compatibility (it reads `CLAUDE.md` and `.claude/settings.json`, accepts Claude Code flag aliases, and `grok import` pulls in Claude Code sessions), so migration cost is close to zero.
 - You need long-running orchestration in the terminal: background tasks, scheduled loops, parallel subagents, and worktree isolation are all built in.
 - You already subscribe to SuperGrok or X Premium Plus (the [launch announcement](https://x.ai/news/grok-build-cli) says: Available now to all SuperGrok and X Premium Plus subscribers), or you have an `XAI_API_KEY`.
 
-**When to hold off**
+**Hold off when**
 
 - You want inline IDE completion — Grok Build is a terminal agent with no completion feature and no official IDE plugin.
-- You need a stable long-term surface — it is still beta. npm `@xai-official/grok` moved `latest` from 1.0.3 (2026-08-12) to 1.0.5 (2026-08-16); commands and config keys are still moving. Check `grok version` and the [changelog](https://x.ai/build/changelog) before pinning anything.
+- You need a teammate that keeps working after you close the laptop — that is [Grok Bot](./grok-bot.md), not Grok Build.
+- You want a no-install chat builder that publishes a `*.grok.me` link — that is Build Mode on grok.com, SuperGrok Heavy Early Beta.
+- You need a stable long-term surface — Grok Build is still beta. npm `@xai-official/grok` moved `latest` from 1.0.3 (2026-08-12) to 1.0.5 (2026-08-16); commands and config keys are still moving. Check `grok version` and the [changelog](https://x.ai/build/changelog) before pinning anything.
 
 ## Learning path
 
@@ -100,4 +153,5 @@ Sources: [developers/models](https://docs.x.ai/developers/models), [developers/r
 - [Cookbook](./grok-cookbook.md) — task-oriented recipes
 - [Cheatsheet](./grok-cheatsheet.md) — commands / config / env vars / pricing / sources
 - [Glossary](./grok-glossary.md) — what the concepts are and why
+- [Grok Bot](./grok-bot.md) — cloud-computer teammates (not the CLI)
 - [AI coding tools overview](../index.md)

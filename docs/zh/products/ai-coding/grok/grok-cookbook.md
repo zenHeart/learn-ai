@@ -337,3 +337,4 @@ Grok 也会读 `AGENTS.md` 家族（`AGENTS.md`、`Agents.md`、`AGENT.md`，从
 - [Grok Build 教程](./grok-cli.md) — 安装、认证、TUI、权限、headless
 - [Grok Build 速查表](./grok-cheatsheet.md) — 命令、flag、配置键、环境变量
 - [Grok Build 术语表](./grok-glossary.md) — 为什么这么设计
+- [Grok Bot](./grok-bot.md) — 云电脑同事，不是这个 CLI

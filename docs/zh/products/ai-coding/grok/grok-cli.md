@@ -314,3 +314,4 @@ grok update --stable       # 切回 stable
 - [实战 Cookbook](./grok-cookbook.md) — hooks、MCP、skills、subagent、CI 配方
 - [速查表](./grok-cheatsheet.md) — 完整命令 / flag / 配置键 / 环境变量
 - [术语表](./grok-glossary.md) — 权限 vs 沙箱、skill vs plugin 等概念辨析
+- [Grok Bot](./grok-bot.md) — 云电脑同事，不是这个 CLI

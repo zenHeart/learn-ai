@@ -314,3 +314,4 @@ Feedback goes through `/feedback` in the TUI. **Do not open PRs against [xai-org
 - [Cookbook](./grok-cookbook.md) — hooks, MCP, skills, subagents, CI recipes
 - [Cheatsheet](./grok-cheatsheet.md) — full commands / flags / config keys / env vars
 - [Glossary](./grok-glossary.md) — permissions vs. sandbox, skill vs. plugin, and other distinctions
+- [Grok Bot](./grok-bot.md) — cloud-computer teammates, not this CLI

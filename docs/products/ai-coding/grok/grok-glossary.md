@@ -2,19 +2,30 @@
 
 Concepts, not commands. Read this when something in Grok Build seems arbitrary — usually there is a reason, and it is usually about safety boundaries or context economy.
 
-## Five things called Grok
+## Things called Grok
 
 The name collides constantly. Sorting it out first saves a lot of confusion:
 
 | Name | What it actually is |
 | --- | --- |
-| **Grok Build** | The terminal coding agent — the subject of these docs. Executable `grok`. |
-| Grok (the chat product) | The general-purpose assistant on [grok.com](https://grok.com) and inside X. Not a coding tool. |
+| **Grok Build** | The terminal coding agent — the subject of these docs. Executable `grok`. Docs live under `docs.x.ai/build/*`. |
+| Grok (the chat product) | The general-purpose assistant on [grok.com](https://grok.com), the Grok apps, and inside X. Chat, search, voice, files. |
+| Imagine | Image and video generation / editing. Consumer entry: [grok.com/imagine](https://grok.com/imagine). Programmatic entry: the [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine). |
+| Build Mode | A grok.com / Grok-app **chat mode** (mode switcher → **Build**). Early Beta for SuperGrok Heavy. Builds a working preview in the conversation and publishes it. **Not** Grok Build. |
+| grok.me | The **publish host** for Build Mode ("Publish to a grok.me link or a custom domain you own"). Not a product, not the CLI. |
+| Grok Bot | Named AI teammates on one persistent cloud computer. Desktop + iOS. Docs: [docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview). **Not** Grok Build headless. |
 | `grok-4.6` | A model. The one currently driving Grok Build. |
 | `grok-build-0.1` | A different model, trained specifically for agentic coding. Cheaper, smaller context. |
 | xAI API | The model API at `api.x.ai`. Grok Build is a *client* of it, not the same thing. |
 
-"Grok Code" and "Grok CLI" are **not** official names. The official name is Grok Build, and the source repository is [xai-org/grok-build](https://github.com/xai-org/grok-build).
+**Not official names or products (do not write them as facts):**
+
+- "Grok Code" and "Grok CLI" — the official product name is Grok Build; the binary is `grok`; the repo is [xai-org/grok-build](https://github.com/xai-org/grok-build).
+- An official VS Code / JetBrains plugin — editor integration is ACP (`grok agent stdio`).
+- grok.me as a separate "Build product" — it is only the publish URL for Build Mode.
+- Third-party posts about "Grok 4.3", "2 million token context", "Arena Mode", or "8 parallel agents" as product specs — this set only records slugs and limits that appear on [docs.x.ai](https://docs.x.ai/developers/models) or [x.ai](https://x.ai).
+
+The decision tree for picking a surface is on the [learning map](./index.md). Grok Bot has its own page: [Grok Bot](./grok-bot.md).
 
 ## One agent, three faces
 
@@ -149,3 +160,4 @@ So treat every table here as a snapshot, and prefer these habits over memorizing
 - [Grok Build tutorial](./grok-cli.md)
 - [Grok Build cookbook](./grok-cookbook.md)
 - [Grok Build cheatsheet](./grok-cheatsheet.md)
+- [Grok Bot](./grok-bot.md)

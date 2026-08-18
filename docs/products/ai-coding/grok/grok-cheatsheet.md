@@ -426,6 +426,12 @@ Last verified 2026-08-18. Ordered by reliability and freshness. **The changelog 
 | [docs.x.ai/build/features/background-tasks](https://docs.x.ai/build/features/background-tasks) | Background tasks, `/loop`, monitors |
 | [docs.x.ai/build/features/dashboard](https://docs.x.ai/build/features/dashboard) | Agent Dashboard |
 | [docs.x.ai/developers/models](https://docs.x.ai/developers/models) | Model list and pricing |
+| [docs.x.ai/grok/overview](https://docs.x.ai/grok/overview) | grok.com / apps consumer overview |
+| [docs.x.ai/developers/model-capabilities/imagine](https://docs.x.ai/developers/model-capabilities/imagine) | Imagine API (images and video) |
+| [docs.x.ai/grok-bot/overview](https://docs.x.ai/grok-bot/overview) | Grok Bot product entry |
+| [docs.x.ai/grok-bot/get-started](https://docs.x.ai/grok-bot/get-started) | Grok Bot install and first task |
+| [docs.x.ai/grok-bot/computer-and-apps](https://docs.x.ai/grok-bot/computer-and-apps) | Shared cloud computer |
+| [docs.x.ai/grok-bot/faq](https://docs.x.ai/grok-bot/faq) | Grok Bot platforms, cost, memory |
 
 ### Efficiency tricks
 
@@ -442,6 +448,12 @@ Last verified 2026-08-18. Ordered by reliability and freshness. **The changelog 
 | [x.ai/build/changelog](https://x.ai/build/changelog) | Changelog; updated faster than the docs site |
 | [x.ai/news/grok-build-cli](https://x.ai/news/grok-build-cli) | Launch announcement (2026-05-25, early beta) |
 | [x.ai/news/grok-4-6](https://x.ai/news/grok-4-6) | Grok 4.6 announcement (mentions time-boxed 2x included usage in Grok Build; no standing quota number) |
+| [x.ai/grok](https://x.ai/grok) | Consumer Grok (chat / Imagine / voice) |
+| [grok.com/imagine](https://grok.com/imagine) | Consumer Imagine |
+| [x.ai/grok/build-mode](https://x.ai/grok/build-mode) | Build Mode marketing (not Grok Build CLI) |
+| [x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode) | Build Mode launch; SuperGrok Heavy Early Beta; grok.me publish host |
+| [x.ai/bot](https://x.ai/bot) | Grok Bot marketing + downloads |
+| [x.ai/news/introducing-grok-bot](https://x.ai/news/introducing-grok-bot) | Grok Bot launch (2026-08-11, beta) |
 | [github.com/xai-org/grok-build](https://github.com/xai-org/grok-build) | Source (Rust, Apache-2.0); **external PRs are not accepted**, feedback goes through `/feedback` |
 | [github.com/xai-org/plugin-marketplace](https://github.com/xai-org/plugin-marketplace) | Official plugin marketplace catalog |
 | [npmjs.com/package/@xai-official/grok](https://www.npmjs.com/package/@xai-official/grok) | Release cadence and version history |
@@ -454,3 +466,4 @@ Last verified 2026-08-18. Ordered by reliability and freshness. **The changelog 
 - [Grok Build tutorial](./grok-cli.md)
 - [Grok Build cookbook](./grok-cookbook.md)
 - [Grok Build glossary](./grok-glossary.md)
+- [Grok Bot](./grok-bot.md)

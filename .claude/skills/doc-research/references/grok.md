@@ -48,6 +48,14 @@
 - `grok-4.6`：`/developers/models` 原文「For everything else, including code, use Grok 4.6.」当前驱动 Grok Build。
 - `grok-build-0.1`：`/developers/release-notes` 原文「xAI's coding model, trained specifically for agentic coding workflows.」
 
+**结论七：消费端还有独立形态，index 必须画决策树，只有 Grok Bot 够独立密度才立页。**（复核 2026-08-18，仅官方）
+
+- **Grok 聊天**：`docs.x.ai/grok/overview`、`x.ai/grok`、`grok.com`。对话 / 搜索 / 语音 / 上传文件。对位 Claude.ai。
+- **Imagine**：消费端 `grok.com/imagine` + `x.ai/news/grok-imagine-image-2`；API `docs.x.ai/developers/model-capabilities/imagine`。生图生视频。对位 Claude Design（创作面）。**不立页**——本站读者要的是编程工具，密度不够单独成章。
+- **Build Mode ≠ Grok Build**：`x.ai/news/grok-build-mode`、`x.ai/grok/build-mode`。grok.com 模式切换选 Build；Early Beta 仅 SuperGrok Heavy；发布到 **grok.me** 或自定义域名。grok.me 是发布域名，不是产品。**不立页**——官方只有营销页 + 一篇 news。
+- **Grok Bot**：`docs.x.ai/grok-bot/*`（overview / get-started / computer-and-apps / approvals / faq / teams）、`x.ai/bot`、`x.ai/news/introducing-grok-bot`（2026-08-11 beta）。持久云电脑同事；资格 SuperGrok Heavy / Cursor Ultra / Cursor Teams Premium；认证走 **Cursor**。对位 Cowork。**立页** `grok-bot.md`。
+- **禁止当事实写**：官方 VS Code 插件、「Grok Code / Grok CLI」产品名、三方博客的 Grok 4.3 / 200 万 token / Arena Mode / 8 路并行。账号不是一口池子（Grok Build 用 SuperGrok 或 API key，Grok Bot 用 Cursor 账号）。
+
 ## 基本信息
 
 - 工具名：Grok Build（CLI 可执行文件 `grok`）
@@ -58,32 +66,38 @@
 
 ## 文档文件结构（Diataxis 四象限）
 
-最终采用 5 文件结构。判断依据不是「和 Claude 同构」，而是实际表面积：CLI 有约 20 个子命令 + 约 25 个全局 flag + 约 55 个 slash command + 约 40 个 `[ui]` 配置键 + 约 35 个环境变量，Reference 内容独立成章是必须的；同时 hooks/MCP/skills/sandbox 等场景化配方也足够多，How-to 单独成章。
+最终采用 6 文件结构。Grok Build 仍是 5 文件 Diataxis；2026-08-18 官方确认 Grok Bot 有独立文档树（`docs.x.ai/grok-bot/*`），才加一张产品地图。Imagine / Build Mode / grok.me 只进 index 决策树和 glossary，不立页。
 
 ```
 docs/zh/products/ai-coding/grok/
-├── index.md              # 🗺️ 学习地图（导航 + 功能速查 + 模型参考）
+├── index.md              # 🗺️ 学习地图（家族决策树 + Grok Build 功能速查 + 模型参考）
 ├── grok-cli.md           # 📘 Tutorial+How-to — 安装、认证、TUI、headless、ACP、核心功能怎么用
 ├── grok-cookbook.md      # 🔧 How-to — 场景化配方（Claude Code 迁移、CI、hooks、MCP、skills、subagents、worktrees、sandbox）
 ├── grok-cheatsheet.md    # 📐 Reference — 子命令/flag/slash/配置键/环境变量/模型价格 + 高质量信息源
-└── grok-glossary.md      # 📖 Explanation — 概念是什么/为什么（Grok Build vs Grok vs xAI API、TUI/headless/ACP、权限模式 vs sandbox 等）
+├── grok-glossary.md      # 📖 Explanation — 概念是什么/为什么（家族撞名、TUI/headless/ACP、权限模式 vs sandbox 等）
+└── grok-bot.md           # 🗺️ 周边产品地图 — 云电脑同事（只写官方页，对位 Cowork）
 ```
 
 每个文件的职责边界：
 
 | 文件 | 象限 | 写什么 | 不写什么 |
 |------|------|--------|----------|
-| `index.md` | Tutorial 导航 + Reference 速查 | 跨页面学习地图、功能速查表、模型选择 | 具体操作步骤 |
+| `index.md` | Tutorial 导航 + Reference 速查 | 家族决策树、Grok Build 功能速查表、模型选择 | 具体操作步骤 |
 | `grok-cli.md` | Tutorial + How-to | 安装、认证、TUI 交互、headless、ACP、各功能怎么用 | 完整参数清单（→ cheatsheet）、概念定义（→ glossary） |
 | `grok-cookbook.md` | How-to | 场景化配方与避坑 | 基础安装（→ cli）、概念定义（→ glossary） |
 | `grok-cheatsheet.md` | Reference | 命令/flag/配置键/环境变量/价格表/信息源 | 概念解释、学习路径 |
 | `grok-glossary.md` | Explanation | 是什么、为什么、概念之间的关系 | 参数清单（→ cheatsheet）、操作步骤 |
+| `grok-bot.md` | 周边产品地图 | Grok Bot 是什么、资格、共享电脑、官方链接 | 臆造配额；Grok Build 操作步骤 |
 
 跨页顺序（两轴法）：`index` → `grok-cli` → `grok-cookbook` → `grok-cheatsheet` → `grok-glossary`。Axis A（概念依赖）允许 glossary 更早，但 Axis B（读者复杂度）把它压到最后——前端工程师读者的第一诉求是「装上能跑」，概念辨析是回查内容。
 
 ## 监控页面（What's New 驱动更新的信息源，日常追踪用的最小子集）
 
 - What's New / Changelog（CLI）：<https://x.ai/build/changelog>
+- Grok Bot 文档树：<https://docs.x.ai/grok-bot/overview>
+- Grok 消费端总览：<https://docs.x.ai/grok/overview>
+- Build Mode（不要和 CLI 混）：<https://x.ai/grok/build-mode>
+- Imagine API：<https://docs.x.ai/developers/model-capabilities/imagine>
 - Release Notes（API/模型）：<https://docs.x.ai/developers/release-notes>
 - 配置 / Settings 参考：<https://docs.x.ai/build/settings/reference>
 - CLI Reference：<https://docs.x.ai/build/cli/reference>

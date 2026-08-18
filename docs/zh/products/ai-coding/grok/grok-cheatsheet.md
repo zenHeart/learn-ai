@@ -426,6 +426,12 @@ UI 类变量还有 `GROK_SHOW_THINKING_BLOCKS`、`GROK_GROUP_TOOL_VERBS`、`GROK
 | [docs.x.ai/build/features/background-tasks](https://docs.x.ai/build/features/background-tasks) | 后台任务、`/loop`、monitor |
 | [docs.x.ai/build/features/dashboard](https://docs.x.ai/build/features/dashboard) | Agent Dashboard |
 | [docs.x.ai/developers/models](https://docs.x.ai/developers/models) | 模型列表与价格 |
+| [docs.x.ai/grok/overview](https://docs.x.ai/grok/overview) | grok.com / App 消费端总览 |
+| [docs.x.ai/developers/model-capabilities/imagine](https://docs.x.ai/developers/model-capabilities/imagine) | Imagine API（图像与视频） |
+| [docs.x.ai/grok-bot/overview](https://docs.x.ai/grok-bot/overview) | Grok Bot 产品入口 |
+| [docs.x.ai/grok-bot/get-started](https://docs.x.ai/grok-bot/get-started) | Grok Bot 安装与第一次派活 |
+| [docs.x.ai/grok-bot/computer-and-apps](https://docs.x.ai/grok-bot/computer-and-apps) | 共享云电脑 |
+| [docs.x.ai/grok-bot/faq](https://docs.x.ai/grok-bot/faq) | Grok Bot 平台、费用、记忆 |
 
 ### 效率技巧
 
@@ -442,6 +448,12 @@ UI 类变量还有 `GROK_SHOW_THINKING_BLOCKS`、`GROK_GROUP_TOOL_VERBS`、`GROK
 | [x.ai/build/changelog](https://x.ai/build/changelog) | 变更日志，比文档站更新快 |
 | [x.ai/news/grok-build-cli](https://x.ai/news/grok-build-cli) | 发布公告（2026-05-25 early beta） |
 | [x.ai/news/grok-4-6](https://x.ai/news/grok-4-6) | Grok 4.6 公告（提到 Grok Build 限时 2x included usage；没有长期配额数字） |
+| [x.ai/grok](https://x.ai/grok) | 消费端 Grok（聊天 / Imagine / 语音） |
+| [grok.com/imagine](https://grok.com/imagine) | 消费端 Imagine |
+| [x.ai/grok/build-mode](https://x.ai/grok/build-mode) | Build Mode 营销页（不是 Grok Build CLI） |
+| [x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode) | Build Mode 发布；SuperGrok Heavy Early Beta；grok.me 发布域名 |
+| [x.ai/bot](https://x.ai/bot) | Grok Bot 营销页与下载 |
+| [x.ai/news/introducing-grok-bot](https://x.ai/news/introducing-grok-bot) | Grok Bot 发布（2026-08-11，beta） |
 | [github.com/xai-org/grok-build](https://github.com/xai-org/grok-build) | 源码（Rust，Apache-2.0）；**不接受外部 PR**，反馈走 `/feedback` |
 | [github.com/xai-org/plugin-marketplace](https://github.com/xai-org/plugin-marketplace) | 官方 plugin marketplace 目录 |
 | [npmjs.com/package/@xai-official/grok](https://www.npmjs.com/package/@xai-official/grok) | npm 发布节奏与历史版本 |
@@ -454,3 +466,4 @@ UI 类变量还有 `GROK_SHOW_THINKING_BLOCKS`、`GROK_GROUP_TOOL_VERBS`、`GROK
 - [Grok Build 教程](./grok-cli.md)
 - [Grok Build 实战手册](./grok-cookbook.md)
 - [Grok Build 术语表](./grok-glossary.md)
+- [Grok Bot](./grok-bot.md)
