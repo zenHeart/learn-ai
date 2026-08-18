@@ -9,11 +9,14 @@ The name collides constantly. Sorting it out first saves a lot of confusion:
 | Name | What it actually is |
 | --- | --- |
 | **Grok Build** | The terminal coding agent — the subject of these docs. Executable `grok`. Docs live under `docs.x.ai/build/*`. |
-| Grok (the chat product) | The general-purpose assistant on [grok.com](https://grok.com), the Grok apps, and inside X. Chat, search, voice, files. |
-| Imagine | Image and video generation / editing. Consumer entry: [grok.com/imagine](https://grok.com/imagine). Programmatic entry: the [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine). |
-| Build Mode | A grok.com / Grok-app **chat mode** (mode switcher → **Build**). Early Beta for SuperGrok Heavy. Builds a working preview in the conversation and publishes it. **Not** Grok Build. |
+| [Grok (the chat product)](./grok-chat.md) | The general-purpose assistant on [grok.com](https://grok.com), the Grok apps, and inside X. Chat, search, voice, files. |
+| [Imagine](./grok-imagine.md) | Image and video generation / editing. Consumer entry: [grok.com/imagine](https://grok.com/imagine). Programmatic entry: the [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine). |
+| [Voice](./grok-voice.md) | Two boxes: **product** Voice ("Talk to Grok hands-free") on grok.com / apps, and the **Voice API** (TTS / STT / Speech to Speech). |
+| [Connectors](./grok-connectors.md) | Chat-side links to email, files, calendar, catalog OAuth, or a public MCP server. Not Grok Build `grok mcp add`. |
+| Build Mode | A grok.com / Grok-app **chat mode** (mode switcher → **Build**). Early Beta for SuperGrok Heavy on web, iOS, and Android ([x.ai/grok/build-mode](https://x.ai/grok/build-mode), [news](https://x.ai/news/grok-build-mode)). "Tell Grok an idea, and it builds a working version live in your chat." Publish to grok.me or a custom domain. Websites, apps, games, dashboards (dashboards can use Connectors). Nothing to install. **Not** Grok Build. Official density is a marketing page + one news post, so no standalone tutorial. |
 | grok.me | The **publish host** for Build Mode ("Publish to a grok.me link or a custom domain you own"). Not a product, not the CLI. |
-| Grok Bot | Named AI teammates on one persistent cloud computer. Desktop + iOS. Docs: [docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview). **Not** Grok Build headless. |
+| [Grok Bot](./grok-bot.md) | Named AI teammates on one persistent cloud computer. Desktop + iOS. Docs: [docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview). **Not** Grok Build headless. |
+| [Grok Business](./grok-business.md) | Team workspaces, SuperGrok / SuperGrok Heavy licenses, org sharing. Docs: [docs.x.ai/grok/user-guide](https://docs.x.ai/grok/user-guide). |
 | `grok-4.6` | A model. The one currently driving Grok Build. |
 | `grok-build-0.1` | A different model, trained specifically for agentic coding. Cheaper, smaller context. |
 | xAI API | The model API at `api.x.ai`. Grok Build is a *client* of it, not the same thing. |
@@ -25,7 +28,7 @@ The name collides constantly. Sorting it out first saves a lot of confusion:
 - grok.me as a separate "Build product" — it is only the publish URL for Build Mode.
 - Third-party posts about "Grok 4.3", "2 million token context", "Arena Mode", or "8 parallel agents" as product specs — this set only records slugs and limits that appear on [docs.x.ai](https://docs.x.ai/developers/models) or [x.ai](https://x.ai).
 
-The decision tree for picking a surface is on the [learning map](./index.md). Grok Bot has its own page: [Grok Bot](./grok-bot.md).
+The decision tree for picking a surface is on the [learning map](./index.md). Product maps: [Chat](./grok-chat.md), [Imagine](./grok-imagine.md), [Voice](./grok-voice.md), [Connectors](./grok-connectors.md), [Grok Bot](./grok-bot.md), [Business](./grok-business.md).
 
 ## One agent, three faces
 
@@ -160,4 +163,9 @@ So treat every table here as a snapshot, and prefer these habits over memorizing
 - [Grok Build tutorial](./grok-cli.md)
 - [Grok Build cookbook](./grok-cookbook.md)
 - [Grok Build cheatsheet](./grok-cheatsheet.md)
+- [Grok Chat](./grok-chat.md)
+- [Imagine](./grok-imagine.md)
+- [Voice](./grok-voice.md)
+- [Connectors](./grok-connectors.md)
 - [Grok Bot](./grok-bot.md)
+- [Grok Business](./grok-business.md)

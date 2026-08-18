@@ -7,7 +7,7 @@
 
 ## Product landscape
 
-Several xAI products share the word "Grok" or "Build". They are **not** one product with four skins. The set of pages under this directory is about **Grok Build** (the terminal coding agent). The other official surfaces belong in the decision tree so you do not pick the wrong door.
+Several xAI products share the word "Grok" or "Build". They are **not** one product with four skins. The **core learning path** in this directory is **Grok Build** (the terminal coding agent). The other official surfaces now have their own pages so you do not pick the wrong door.
 
 ```
 xAI / Grok family
@@ -26,16 +26,19 @@ xAI / Grok family
 | Product | What it is | Entry point | Analog in the Claude family |
 |---------|-----------|-------------|-----------------------------|
 | **Grok Build** | Terminal coding agent for a real repo | the `grok` command | Claude Code CLI |
-| Grok (chat) | General-purpose assistant | [grok.com](https://grok.com), Grok apps, X | Claude.ai |
-| Imagine | Image and video generation / editing | [grok.com/imagine](https://grok.com/imagine), or the [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine) | Claude Design (creative surface, not a coding agent) |
+| [Grok (chat)](./grok-chat.md) | General-purpose assistant | [grok.com](https://grok.com), Grok apps, X | Claude.ai |
+| [Imagine](./grok-imagine.md) | Image and video generation / editing | [grok.com/imagine](https://grok.com/imagine), or the [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine) | Claude Design (creative surface, not a coding agent) |
+| [Voice](./grok-voice.md) | Hands-free talk in the app + Voice API | grok.com / apps; [Voice API](https://docs.x.ai/developers/model-capabilities/audio/voice) | Claude voice / realtime API |
+| [Connectors](./grok-connectors.md) | Email / files / calendar / custom MCP inside chat | [grok.com/connectors](https://grok.com/connectors) | Claude Connectors |
 | Build Mode | Chat-native builder; publish a live link | Mode switcher **Build** on grok.com / Grok apps | Claude.ai Artifacts-style creation, **not** Claude Code |
-| Grok Bot | Always-on teammates on a shared cloud VM | [x.ai/bot](https://x.ai/bot) desktop + iOS apps | Cowork (task agent, not a repo CLI) |
+| [Grok Bot](./grok-bot.md) | Always-on teammates on a shared cloud VM | [x.ai/bot](https://x.ai/bot) desktop + iOS apps | Cowork (task agent, not a repo CLI) |
+| [Grok Business](./grok-business.md) | Team workspaces, licenses, org controls | [docs.x.ai/grok/user-guide](https://docs.x.ai/grok/user-guide) | Claude Team / Enterprise |
 | xAI API | Model / Imagine / Voice HTTP API | [docs.x.ai/developers/quickstart](https://docs.x.ai/developers/quickstart) | Anthropic API |
 
 **Names that collide:**
 
-- **Grok Build** ≠ **Build Mode**. Grok Build is the terminal agent (`docs.x.ai/build/*`). Build Mode is a grok.com chat mode that writes a working preview in the conversation and publishes it ([x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode)).
-- **grok.me** is the **publish host** for Build Mode ("Publish to a grok.me link or a custom domain you own"). It is not a separate product and not the Grok Build CLI.
+- **Grok Build** ≠ **Build Mode**. Grok Build is the terminal agent (`docs.x.ai/build/*`). Build Mode is a grok.com chat mode: "Tell Grok an idea, and it builds a working version live in your chat" and you "Publish to a grok.me link or a custom domain you own" ([x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode), [x.ai/grok/build-mode](https://x.ai/grok/build-mode)). Early Beta for **SuperGrok Heavy** on web, iOS, and Android. Official density is still a marketing page + one news post, so it stays on this map instead of a standalone tutorial.
+- **grok.me** is the **publish host** for Build Mode. It is not a separate product and not the Grok Build CLI.
 - **Grok Bot** ≠ Grok Build headless "bots". Grok Bot is a desktop / iOS product with its own docs tree at [docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview).
 - There is **no official IDE plugin**. Editor use of Grok Build is ACP (`grok agent stdio`). [terminal-support](https://docs.x.ai/build/cli/terminal-support) only documents key-binding differences inside VS Code / Cursor / Windsurf / Zed terminals.
 
@@ -51,17 +54,21 @@ What do I want to do?
 │       ├── In CI / scripts? → headless (`grok -p`)
 │       └── Inside an editor? → ACP (`grok agent stdio`) — no official VS Code plugin
 ├── Chat / write / research / voice / upload files
-│   └── → grok.com or the Grok iOS / Android apps
+│   └── → [Grok Chat](./grok-chat.md) on grok.com or the Grok iOS / Android apps
+│       ├── Hands-free talk → [Voice](./grok-voice.md) (product; Voice API is separate)
+│       └── Email / Drive / calendar in-thread → [Connectors](./grok-connectors.md)
 ├── Generate or edit images / video
-│   └── → Imagine
+│   └── → [Imagine](./grok-imagine.md)
 │       ├── In the product? → grok.com/imagine (also inside grok.com chat)
 │       └── From my own app? → Imagine API
 ├── Build a website / app / game in chat and share a link
 │   └── → Build Mode (grok.com mode switcher → Build)
 │       └── SuperGrok Heavy Early Beta; publish to grok.me or a custom domain
 ├── Hand real work to a teammate that keeps going when the laptop is closed
-│   └── → Grok Bot (desktop + iOS)
+│   └── → [Grok Bot](./grok-bot.md) (desktop + iOS)
 │       └── SuperGrok Heavy / Cursor Ultra / Cursor Teams Premium
+├── Team workspaces / licenses / org sharing
+│   └── → [Grok Business](./grok-business.md)
 └── Call models from my own software
     └── → xAI API
 ```
@@ -153,5 +160,10 @@ Sources: [developers/models](https://docs.x.ai/developers/models), [developers/r
 - [Cookbook](./grok-cookbook.md) — task-oriented recipes
 - [Cheatsheet](./grok-cheatsheet.md) — commands / config / env vars / pricing / sources
 - [Glossary](./grok-glossary.md) — what the concepts are and why
+- [Grok Chat](./grok-chat.md) — grok.com / iOS / Android
+- [Imagine](./grok-imagine.md) — images and video
+- [Voice](./grok-voice.md) — product Voice + Voice API
+- [Connectors](./grok-connectors.md) — email / files / calendar in chat
 - [Grok Bot](./grok-bot.md) — cloud-computer teammates (not the CLI)
+- [Grok Business](./grok-business.md) — team workspaces
 - [AI coding tools overview](../index.md)

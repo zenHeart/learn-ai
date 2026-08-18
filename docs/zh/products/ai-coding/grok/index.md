@@ -7,7 +7,7 @@
 
 ## 产品全景
 
-好几个 xAI 产品都带 "Grok" 或 "Build" 这两个词。它们**不是**同一个产品的四张皮。本目录这套页面讲的是 **Grok Build**（终端编程 Agent）。其余官方形态必须先画进决策树，否则会进错门。
+好几个 xAI 产品都带 "Grok" 或 "Build" 这两个词。它们**不是**同一个产品的四张皮。本目录的**主学习路径**仍是 **Grok Build**（终端编程 Agent）。其余官方形态现在各自有页，避免进错门。
 
 ```
 xAI / Grok 家族
@@ -26,16 +26,19 @@ xAI / Grok 家族
 | 产品 | 是什么 | 入口 | 对位 Claude 家族 |
 |------|--------|------|------------------|
 | **Grok Build** | 对着真实仓库干活的终端编程 Agent | 命令 `grok` | Claude Code CLI |
-| Grok（聊天） | 通用助手 | [grok.com](https://grok.com)、Grok App、X | Claude.ai |
-| Imagine | 生图 / 生视频 / 编辑 | [grok.com/imagine](https://grok.com/imagine)，或 [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine) | Claude Design（创作面，不是编程 Agent） |
+| [Grok（聊天）](./grok-chat.md) | 通用助手 | [grok.com](https://grok.com)、Grok App、X | Claude.ai |
+| [Imagine](./grok-imagine.md) | 生图 / 生视频 / 编辑 | [grok.com/imagine](https://grok.com/imagine)，或 [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine) | Claude Design（创作面，不是编程 Agent） |
+| [Voice](./grok-voice.md) | App 里免提说话 + Voice API | grok.com / App；[Voice API](https://docs.x.ai/developers/model-capabilities/audio/voice) | Claude 语音 / realtime API |
+| [Connectors](./grok-connectors.md) | 对话里连邮箱 / 文件 / 日历 / 自定义 MCP | [grok.com/connectors](https://grok.com/connectors) | Claude Connectors |
 | Build Mode | 聊天里出可运行预览并发布链接 | grok.com / Grok App 的模式切换选 **Build** | 更接近 Claude.ai Artifacts，**不是** Claude Code |
-| Grok Bot | 共享云 VM 上的常驻同事 | [x.ai/bot](https://x.ai/bot) 桌面 + iOS | Cowork（任务 Agent，不是仓库 CLI） |
+| [Grok Bot](./grok-bot.md) | 共享云 VM 上的常驻同事 | [x.ai/bot](https://x.ai/bot) 桌面 + iOS | Cowork（任务 Agent，不是仓库 CLI） |
+| [Grok Business](./grok-business.md) | 团队工作区、许可证、组织控制 | [docs.x.ai/grok/user-guide](https://docs.x.ai/grok/user-guide) | Claude Team / Enterprise |
 | xAI API | 模型 / Imagine / Voice 的 HTTP API | [docs.x.ai/developers/quickstart](https://docs.x.ai/developers/quickstart) | Anthropic API |
 
 **容易撞名的几条：**
 
-- **Grok Build ≠ Build Mode**。Grok Build 是终端 Agent（`docs.x.ai/build/*`）。Build Mode 是 grok.com 的聊天模式：在对话里写出可运行预览并发布（[x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode)）。
-- **grok.me** 是 Build Mode 的**发布域名**（官方原文："Publish to a grok.me link or a custom domain you own"）。它不是独立产品，也不是 Grok Build CLI。
+- **Grok Build ≠ Build Mode**。Grok Build 是终端 Agent（`docs.x.ai/build/*`）。Build Mode 是 grok.com 的聊天模式：官方原文 "Tell Grok an idea, and it builds a working version live in your chat"，发布则是 "Publish to a grok.me link or a custom domain you own"（[x.ai/news/grok-build-mode](https://x.ai/news/grok-build-mode)、[x.ai/grok/build-mode](https://x.ai/grok/build-mode)）。Early Beta 仅 **SuperGrok Heavy**，Web / iOS / Android。官方密度仍是营销页 + 一篇 news，所以留在这张地图上，不单独开教程页。
+- **grok.me** 是 Build Mode 的**发布域名**。它不是独立产品，也不是 Grok Build CLI。
 - **Grok Bot ≠ Grok Build 的 headless "bots"**。Grok Bot 是桌面 / iOS 产品，自己的文档树在 [docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview)。
 - **没有官方 IDE 插件**。要在编辑器里用 Grok Build，走 ACP（`grok agent stdio`）。[terminal-support](https://docs.x.ai/build/cli/terminal-support) 只记录 VS Code / Cursor / Windsurf / Zed 内置终端的按键差异。
 
@@ -51,17 +54,21 @@ xAI / Grok 家族
 │       ├── 在 CI / 脚本？→ headless（`grok -p`）
 │       └── 在编辑器里？→ ACP（`grok agent stdio`）——没有官方 VS Code 插件
 ├── 聊天 / 写作 / 调研 / 语音 / 上传文件
-│   └── → grok.com 或 Grok iOS / Android App
+│   └── → [Grok 聊天](./grok-chat.md)：grok.com 或 Grok iOS / Android App
+│       ├── 免提说话 → [Voice](./grok-voice.md)（产品；Voice API 是另一套）
+│       └── 对话里连邮箱 / Drive / 日历 → [Connectors](./grok-connectors.md)
 ├── 生图 / 生视频 / 改图改视频
-│   └── → Imagine
+│   └── → [Imagine](./grok-imagine.md)
 │       ├── 在产品里？→ grok.com/imagine（grok.com 对话里也能用）
 │       └── 在自己的程序里？→ Imagine API
 ├── 在聊天里做网站 / 应用 / 游戏并分享链接
 │   └── → Build Mode（grok.com 模式切换 → Build）
 │       └── SuperGrok Heavy Early Beta；发布到 grok.me 或自定义域名
 ├── 把活交给同事，合上笔记本也继续跑
-│   └── → Grok Bot（桌面 + iOS）
+│   └── → [Grok Bot](./grok-bot.md)（桌面 + iOS）
 │       └── SuperGrok Heavy / Cursor Ultra / Cursor Teams Premium
+├── 团队工作区 / 许可证 / 组织分享
+│   └── → [Grok Business](./grok-business.md)
 └── 在自己的软件里调模型
     └── → xAI API
 ```
@@ -153,5 +160,10 @@ xAI / Grok 家族
 - [实战 Cookbook](./grok-cookbook.md) — 场景化配方
 - [速查表](./grok-cheatsheet.md) — 命令 / 配置 / 环境变量 / 价格 / 信息源
 - [术语表](./grok-glossary.md) — 概念是什么、为什么
+- [Grok 聊天](./grok-chat.md) — grok.com / iOS / Android
+- [Imagine](./grok-imagine.md) — 生图与视频
+- [Voice](./grok-voice.md) — 产品 Voice + Voice API
+- [Connectors](./grok-connectors.md) — 对话里连邮箱 / 文件 / 日历
 - [Grok Bot](./grok-bot.md) — 云电脑同事（不是 CLI）
+- [Grok Business](./grok-business.md) — 团队工作区
 - [AI 编程工具总览](../index.md)

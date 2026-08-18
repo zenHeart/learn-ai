@@ -8,12 +8,15 @@
 
 | 名字 | 是什么 | 在哪用 |
 | --- | --- | --- |
-| Grok（聊天） | 面向消费者的通用助手 | grok.com、Grok App、X |
-| Imagine | 生图 / 生视频 / 编辑 | [grok.com/imagine](https://grok.com/imagine)；程序入口是 [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine) |
-| Build Mode | grok.com / Grok App 的**聊天模式**（模式切换选 **Build**）。SuperGrok Heavy Early Beta。在对话里出可运行预览并发布。**不是** Grok Build | grok.com |
+| [Grok（聊天）](./grok-chat.md) | 面向消费者的通用助手 | grok.com、Grok App、X |
+| [Imagine](./grok-imagine.md) | 生图 / 生视频 / 编辑 | [grok.com/imagine](https://grok.com/imagine)；程序入口是 [Imagine API](https://docs.x.ai/developers/model-capabilities/imagine) |
+| [Voice](./grok-voice.md) | 两箱：**产品** Voice（grok.com / App 免提说话）和 **Voice API**（TTS / STT / Speech to Speech） | grok.com；`api.x.ai` |
+| [Connectors](./grok-connectors.md) | 聊天里连邮箱、文件、日历、目录 OAuth 或公网 MCP。不是 Grok Build 的 `grok mcp add` | [grok.com/connectors](https://grok.com/connectors) |
+| Build Mode | grok.com / Grok App 的**聊天模式**（模式切换选 **Build**）。Early Beta 仅 SuperGrok Heavy，Web / iOS / Android（[x.ai/grok/build-mode](https://x.ai/grok/build-mode)、[news](https://x.ai/news/grok-build-mode)）。官方原文："Tell Grok an idea, and it builds a working version live in your chat." 发布到 grok.me 或自定义域名。网站 / 应用 / 游戏 / 看板（看板可用 Connectors）。不用安装。**不是** Grok Build。官方密度仍是营销页 + 一篇 news，不单独开教程 | grok.com |
 | grok.me | Build Mode 的**发布域名**（官方原文："Publish to a grok.me link or a custom domain you own"）。不是独立产品，也不是 CLI | `*.grok.me` |
 | **Grok Build** | 编码 agent，命令行工具，二进制名 `grok`。文档在 `docs.x.ai/build/*` | 你的终端 |
-| Grok Bot | 跑在一台持久云电脑上的具名同事。桌面 + iOS。文档：[docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview)。**不是** Grok Build 的 headless | [x.ai/bot](https://x.ai/bot) |
+| [Grok Bot](./grok-bot.md) | 跑在一台持久云电脑上的具名同事。桌面 + iOS。文档：[docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview)。**不是** Grok Build 的 headless | [x.ai/bot](https://x.ai/bot) |
+| [Grok Business](./grok-business.md) | 团队工作区、SuperGrok / SuperGrok Heavy 许可证、组织分享。文档：[docs.x.ai/grok/user-guide](https://docs.x.ai/grok/user-guide) | console.x.ai + grok.com |
 | `grok-4.6` | 通用旗舰模型，也是 Grok Build 的默认驱动 | Grok Build 和 xAI API 都能用 |
 | `grok-build-0.1` | 专为编码 agent 场景训练的模型 | 同上 |
 | xAI API | `https://api.x.ai/v1`，模型的 HTTP 接口 | 你自己的程序 |
@@ -27,7 +30,7 @@
 - 把 grok.me 当成独立 "Build 产品" —— 它只是 Build Mode 的发布 URL。
 - 三方博客里的「Grok 4.3」「200 万 token 上下文」「Arena Mode」「8 路并行」当作产品规格 —— 本套文档只记录 [docs.x.ai](https://docs.x.ai/developers/models) 或 [x.ai](https://x.ai) 原文里出现的 slug 和限额。
 
-选哪个产品面，看 [学习地图](./index.md) 的决策树。Grok Bot 有独立页：[Grok Bot](./grok-bot.md)。
+选哪个产品面，看 [学习地图](./index.md) 的决策树。产品地图：[聊天](./grok-chat.md)、[Imagine](./grok-imagine.md)、[Voice](./grok-voice.md)、[Connectors](./grok-connectors.md)、[Grok Bot](./grok-bot.md)、[Business](./grok-business.md)。
 
 ## 一个 agent，三张脸
 
@@ -184,4 +187,9 @@ Grok Build 目前是 early beta，2026 年 5 月 25 日发布。npm `@xai-offici
 - [Grok Build 教程](./grok-cli.md) — 从零跑起来
 - [Grok Build 实战手册](./grok-cookbook.md) — 具体任务怎么做
 - [Grok Build 速查表](./grok-cheatsheet.md) — 命令、配置键、环境变量
+- [Grok 聊天](./grok-chat.md)
+- [Imagine](./grok-imagine.md)
+- [Voice](./grok-voice.md)
+- [Connectors](./grok-connectors.md)
 - [Grok Bot](./grok-bot.md) — 云电脑同事
+- [Grok Business](./grok-business.md)

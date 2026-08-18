@@ -360,7 +360,12 @@ export default withMermaid(defineConfig({
                                        text: 'More Products',
                                        collapsed: true,
                                        items: [
+                                          { text: 'Grok Chat', link: '/products/ai-coding/grok/grok-chat' },
+                                          { text: 'Imagine', link: '/products/ai-coding/grok/grok-imagine' },
+                                          { text: 'Voice', link: '/products/ai-coding/grok/grok-voice' },
+                                          { text: 'Connectors', link: '/products/ai-coding/grok/grok-connectors' },
                                           { text: 'Grok Bot', link: '/products/ai-coding/grok/grok-bot' },
+                                          { text: 'Business & Enterprise', link: '/products/ai-coding/grok/grok-business' },
                                        ]
                                     },
                                     {
@@ -890,7 +895,12 @@ export default withMermaid(defineConfig({
                                        text: '更多产品',
                                        collapsed: true,
                                        items: [
+                                          { text: 'Grok 聊天', link: '/zh/products/ai-coding/grok/grok-chat' },
+                                          { text: 'Imagine', link: '/zh/products/ai-coding/grok/grok-imagine' },
+                                          { text: 'Voice', link: '/zh/products/ai-coding/grok/grok-voice' },
+                                          { text: 'Connectors', link: '/zh/products/ai-coding/grok/grok-connectors' },
                                           { text: 'Grok Bot', link: '/zh/products/ai-coding/grok/grok-bot' },
+                                          { text: 'Business & Enterprise', link: '/zh/products/ai-coding/grok/grok-business' },
                                        ]
                                     },
                                     {
