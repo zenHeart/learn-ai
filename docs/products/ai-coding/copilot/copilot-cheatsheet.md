@@ -22,8 +22,10 @@ One line each; details in the [Glossary](./copilot-glossary):
 | [Plugins](./copilot-glossary#plugins) | Installable pack of agents / skills / hooks — **not** the sunset Extensions |
 | [MCP](./copilot-glossary#mcp-model-context-protocol) | Open protocol between AI hosts and external tools |
 | [Cloud agent](./copilot-glossary#cloud-agent) | Runs in GitHub's cloud; output is usually a PR |
+| [Copilot app](./copilot-glossary#copilot-app) | Desktop shell for parallel agent sessions |
 | [Copilot Spaces](./copilot-glossary#copilot-spaces) | Named context pack (repos + files + notes) |
 | [Copilot CLI](./copilot-glossary#copilot-cli) | Terminal Copilot agent |
+| [GitHub Spark](./copilot-glossary#retired-or-renamed-concepts) | Micro-app builder; closed to new users 2026-08-04 |
 | [AI credits](./copilot-glossary#ai-credits-and-quotas) | Usage billing unit |
 
 ---
@@ -39,6 +41,8 @@ One line each; details in the [Glossary](./copilot-glossary):
 | "How do I write this shell command?" | **Inline Chat** (`⌘I` in the terminal) or **CLI** | The context is the terminal |
 | "A 20-minute mechanical migration" | **Cloud agent** | Does not occupy your machine; output is a PR |
 | "Ask about this repo on github.com" | **Copilot Chat on GitHub** | Repo context is already there |
+| "Run several agents in parallel, stay out of the IDE" | **Copilot app** | Desktop shell on top of Copilot CLI |
+| "Build a micro-app from a prompt" | **Do not start GitHub Spark** | Closed to new users / new apps on 2026-08-04 |
 
 ---
 
@@ -226,7 +230,7 @@ Source: [VS Code Copilot feature reference](https://code.visualstudio.com/docs/c
 
 ## Copilot CLI
 
-The standalone `copilot` agent (**not** `gh copilot`; difference in the [Glossary](./copilot-glossary)). Sources: [Install](https://docs.github.com/en/copilot/how-tos/copilot-cli/install-copilot-cli) and [CLI command reference](https://docs.github.com/en/copilot/reference/cli-command-reference). Public preview.
+The standalone `copilot` agent (**not** `gh copilot`; difference in the [Glossary](./copilot-glossary)). Sources: [Install](https://docs.github.com/en/copilot/how-tos/copilot-cli/install-copilot-cli) and [CLI command reference](https://docs.github.com/en/copilot/reference/cli-command-reference). Generally available since [2026-02-25](https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/).
 
 ### Install
 
@@ -235,7 +239,7 @@ The standalone `copilot` agent (**not** `gh copilot`; difference in the [Glossar
 npm install -g @github/copilot
 
 # Homebrew
-brew install copilot-cli
+brew install --cask copilot-cli
 
 # Windows
 winget install GitHub.Copilot
@@ -365,6 +369,10 @@ Ranked by trust. **Use this order when you write or fact-check:**
 | Source | Use | Cadence |
 |--------|-----|---------|
 | [GitHub Copilot docs](https://docs.github.com/en/copilot) | Product facts, concepts, how-tos | Continuous |
+| [Copilot features](https://docs.github.com/en/copilot/get-started/features) | Official assistive vs agentic surface list | Irregular |
+| [About cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) | Cloud agent vs IDE Agent mode | Irregular |
+| [About Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli) | Terminal agent capabilities | With CLI releases |
+| [About the Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app) | Desktop parallel-agent app | Irregular |
 | [VS Code Copilot feature reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features) | Keys, slash commands, tool sets, settings | Monthly Stable |
 | [Copilot plans](https://docs.github.com/en/copilot/get-started/plans) | Prices, AI credits, availability | Irregular |
 | [Copilot CLI command reference](https://docs.github.com/en/copilot/reference/cli-command-reference) | CLI subcommands, flags, session keys | With CLI releases |

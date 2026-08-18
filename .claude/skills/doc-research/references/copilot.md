@@ -40,6 +40,23 @@ docs/zh/products/ai-coding/copilot/
 - 快捷键表 / 斜杠命令表 / 工具集表是典型 Reference——需要频繁按官方 changelog 校准，独立成 cheatsheet 后更新面收敛到一个文件
 - Copilot 迭代快、退役概念多（见下方踩坑），把"这个东西还存不存在"集中收敛到 glossary 的「已退役 / 已改名的概念」章节，避免同一个过时说法散落在多处
 
+## 官方属性地图（2026-08 核实）
+
+从 `docs.github.com/en/copilot` 首页 / 功能页出发，姊妹站点已收敛到：
+
+| 域名 / 入口 | 角色 |
+|-------------|------|
+| https://docs.github.com/en/copilot | 产品事实、概念、how-to |
+| https://docs.github.com/en/copilot/get-started/features | 官方形态清单（assistive vs agentic） |
+| https://code.visualstudio.com/docs/copilot/overview | VS Code 侧键位 / 斜杠命令 / 工具集 |
+| https://github.blog/changelog/label/copilot/ | 上线 / 退役 |
+| https://github.blog/ai-and-ml/github-copilot/ | 机制长文 |
+| https://github.com/features/copilot | 营销 / 计划入口 |
+| https://github.com/github/copilot-cli | CLI 发行包 |
+| https://github.com/spark | Spark workbench（已关停新建） |
+
+官方现行形态（不要写成「只有四种界面」就停）：IDE（补全 + Chat + Agent mode）、github.com（Chat / Cloud agent / 审查 / PR 摘要）、Copilot CLI、Copilot app（桌面）、Mobile、Desktop 提交信息。Spark 只作日落节点。
+
 ## 监控页面（What's New 驱动更新的信息源）
 
 - [GitHub Changelog — Copilot 分类](https://github.blog/changelog/label/copilot/) — 最主要的追踪入口，功能上线/退役都发这里
@@ -62,5 +79,9 @@ docs(copilot): ...
 - **`/copilot/reference/copilot-cli/...` 这种嵌套路径会 404**：CLI 参考的真实路径是扁平的 `/copilot/reference/cli-command-reference`
 - **VS Code 侧的 participant / 变量清单变动极频繁**：`@workspace`、`@regex`、`#editor`、`#git`、`#vscodeAPI`、`/new-from`、`/runCommand` 都曾写进文档但现已不在官方清单里。写这类表格前逐条对照 [VS Code Copilot 功能参考](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)，不要凭印象保留
 - **"Copilot Extensions" 已于 2025-11-10 日落**：官方转向 MCP，见 [Sunset notice](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/)。注意区分"GitHub App 形态的 Copilot Extensions"（已退役）和"VS Code 客户端侧 Chat 扩展"（仍支持）
+- **GitHub Spark 自 2026-08-04 起不再接受新用户、不能新建应用**：已有应用须在 2026-08-31 前导出。不要写成「仍可用的微应用产品」，也不要单独成页。公告：[Upcoming deprecation of GitHub Spark](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/)
+- **Copilot CLI 已 GA（2026-02-25）**：不要再写 public preview。Homebrew 官方命令是 `brew install --cask copilot-cli`，不是 `brew install copilot-cli`
+- **Copilot app 是独立桌面应用**：架在 Copilot CLI 上，对位 Claude Desktop。Business / Enterprise 有单独的 app 策略，和 CLI 策略不是同一条。文档：[About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
+- **Cloud agent ≠ IDE Agent mode**：跑在 GitHub Actions 临时环境，付费计划；Business / Enterprise 需管理员开启。文档：[About cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)
 - **不写精确版本号到正文标题**：Copilot 周更，"（v1.2.3 新增）"这类写法会让每次迭代都要全篇排查
 - **跨文档共享的表格只在一处写**：快捷键、计划对照、工具集清单统一写在 cheatsheet，其他文件只放链接

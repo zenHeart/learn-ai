@@ -233,6 +233,20 @@ Business / Enterprise 需要管理员先打开 Cloud agent。概念与和本地 
 
 ---
 
+## GitHub Spark（不要新建）
+
+Spark 是 github.com 上用自然语言搭微应用的产品。**不要再新开。**
+
+[2026-08-04 公告](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/)：
+
+- 不再接受新用户，不能新建应用。
+- 已有用户打开 Spark workbench，点 `…` → **Create repository**，在 **2026-08-31** 前导出。
+- 已经部署的应用会继续跑。如果代码里调了 `llm()`，这个 API 已随 GitHub Models 在 2026-07-30 退役——换成你自己的推理服务。
+
+今天要做小 Web 应用，用 IDE、Copilot CLI 或 Copilot app。Spark 只在学习地图里占一个节点，不单独成页。
+
+---
+
 ## 接入外部工具（MCP）
 
 需要 Copilot 访问你的数据库、内部 API、第三方服务时，接 MCP 服务器。接好之后它提供的工具会出现在 `#` 列表里，和内置工具用法一致。

@@ -88,6 +88,13 @@
 | **CLI** | Terminal | Interactive agent session | Shell work, scripts, cross-repo tasks |
 | **Cloud agent** | github.com / an Issue | Delegate; it runs in the background | A well-defined standalone job |
 
+Two more official doors, used less often on day one (see the [learning map](./)):
+
+| Surface | Where | Typical job |
+|---------|-------|-------------|
+| **Copilot Chat on github.com** | Browser | Ask about a repo / Issue / PR without opening an IDE |
+| **Copilot app** | Desktop | Parallel agent sessions, Issues / PRs, automations |
+
 **Why four instead of "one Copilot"**: three axes differ — **who starts** (you type / you ask / you delegate), **where it runs** (local / GitHub cloud), **what the artifact is** (ghost text / editor diff / Pull Request). Mismatch hurts: completion for a refactor (cannot touch many files), Chat for a 20-minute migration (you have to watch).
 
 **How to choose**: [Cheatsheet · Surface selection](./copilot-cheatsheet).
@@ -282,7 +289,25 @@ Paths and per-IDE support: [Cheatsheet · Custom instructions](./copilot-cheatsh
 
 **It used to be called "coding agent."** Old "Copilot coding agent" pages mean this product.
 
-**Official**: [Copilot docs · Agents](https://docs.github.com/en/copilot)
+**Official**: [About GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)
+
+---
+
+## Copilot app
+
+**What it is**: a desktop application for agent-driven development. It sits on top of Copilot CLI and gives you parallel agent sessions, GitHub Issues / pull requests, and scheduled automations in one window.
+
+**Versus IDE Chat / the CLI**:
+
+| Axis | IDE Chat | Copilot CLI | Copilot app |
+|------|----------|-------------|-------------|
+| Where | Inside the editor | Terminal | Its own desktop window |
+| Parallel work | One conversation at a time is the default | One session per terminal | First-class parallel workspaces |
+| Fit | You are already editing files | You live in the shell | You want to direct several agents and stay out of the IDE |
+
+**Availability**: all Copilot plans. Business / Enterprise need the Copilot app policy left on (it is on by default, and it is separate from the Copilot CLI policy).
+
+**Official**: [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
 
 ---
 
@@ -340,6 +365,7 @@ Copilot moves fast. You will meet these names in old tutorials (including this s
 | Old name | Status | Replacement |
 |----------|--------|-------------|
 | **Copilot Workspace** (GitHub Next technical preview) | Sunset **2025-05-30**, official note on [GitHub Next](https://githubnext.com/projects/copilot-workspace/) and the [sunset notice](https://gh.io/copilot-workspace-sunset) | Cloud agent carries "describe an Issue, get a PR" |
+| **GitHub Spark** | No new users / no new apps from **2026-08-04**; existing users can export until **2026-08-31**. [Changelog](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/) | Build in the IDE, Copilot CLI, or Copilot app. Deployed Spark apps keep running |
 | **Copilot Extensions** (GitHub App form) | Fully sunset **2025-11-10**, [announcement](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/) | MCP servers. **VS Code client-side Chat extensions remain supported** — the announcement excludes them |
 | **`@workspace`** | Off the VS Code participant list | Codebase search is a tool; Agent mode calls it. To force it, `#search` (includes `/codebase`) |
 | **`@regex`** | Not on the official list; likely an early community participant | Just ask in Ask mode |

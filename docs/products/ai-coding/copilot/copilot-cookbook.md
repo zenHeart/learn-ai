@@ -234,6 +234,20 @@ On Copilot Business / Enterprise an admin must enable Cloud agent. Concepts and 
 
 ---
 
+## GitHub Spark (do not start new apps)
+
+Spark was a natural-language micro-app builder on github.com. **Do not start a new one.**
+
+From [2026-08-04](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/):
+
+- No new users, no new apps.
+- Existing users can open the Spark workbench, choose `…` → **Create repository**, and export before **2026-08-31**.
+- Apps you already deployed keep running. If the app calls `llm()`, that API died with GitHub Models on 2026-07-30 — replace it with your own provider.
+
+If you want a small web app today, use the IDE, Copilot CLI, or the Copilot app. Spark is an index node only; it does not get its own page.
+
+---
+
 ## Connecting external tools (MCP)
 
 When Copilot needs your database, an internal API, or a third-party service, attach an MCP server. Its tools then show up in the `#` list and behave like built-in tools.

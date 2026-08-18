@@ -117,6 +117,8 @@ copilot            # 启动交互式会话
 
 > 注意它曾叫 "coding agent"，官方已改称 cloud agent；另外 Chat 里的 **Agent 模式**跑在你本地，和 Cloud agent 不是一回事。
 
+另外两个官方入口，第一天不用练：**github.com 上的 Copilot Chat**（`https://github.com/copilot`）和 **Copilot app**（桌面，并行会话）。什么时候用见[学习地图](./)。**GitHub Spark** 正在关停，不要新建应用，见 [Cookbook · Spark](./copilot-cookbook)。
+
 ## 第 4 步：把重复的要求沉淀下来
 
 到这一步你已经会用四种界面了。**真正拉开差距的是这一步**——不再每次重复描述项目约定，而是写进文件让 Copilot 自动带上。

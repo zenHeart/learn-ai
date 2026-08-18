@@ -22,8 +22,10 @@
 | [Plugins](./copilot-glossary#plugins) | 可安装的 agent / skill / hook 包——**不是**已日落的 Extensions |
 | [MCP](./copilot-glossary#mcpmodel-context-protocol) | 开放协议，AI 与外部工具通信的标准 |
 | [Cloud agent](./copilot-glossary#cloud-agent) | GitHub 云端后台跑任务，产出 PR |
+| [Copilot app](./copilot-glossary#copilot-app) | 并行 agent 会话的桌面壳 |
 | [Copilot Spaces](./copilot-glossary#copilot-spaces) | 命名的上下文包（仓库+文件+说明） |
 | [Copilot CLI](./copilot-glossary#copilot-cli) | 终端里的 Copilot agent |
+| [GitHub Spark](./copilot-glossary#已退役或已改名的概念) | 微应用构建器；2026-08-04 起不再接受新用户 |
 | [AI credits](./copilot-glossary#ai-credits-与配额) | 用量计费单位 |
 
 ---
@@ -39,6 +41,8 @@
 | 「这个 shell 命令怎么写」 | **Chat 内联（终端里 `⌘I`）** 或 **CLI** | 上下文就在终端 |
 | 「跑 20 分钟的机械迁移」 | **Cloud agent** | 不占本地、产出 PR |
 | 「在 GitHub 上问某个仓库的事」 | **GitHub 网页端 Chat** | 仓库上下文现成 |
+| 「并行指挥多个 agent，不想待在 IDE」 | **Copilot app** | 架在 Copilot CLI 上的桌面壳 |
+| 「用一句话搭一个微应用」 | **不要新开 GitHub Spark** | 2026-08-04 起不再接受新用户 / 新建应用 |
 
 ---
 
@@ -226,7 +230,7 @@ frontmatter 字段与完整示例见 [Cookbook · 复用提示文件](./copilot-
 
 ## Copilot CLI
 
-指独立的 `copilot` 命令行 agent（**不是** `gh copilot`，区别见[术语表](./copilot-glossary#copilot-cli)）。数据源：[安装文档](https://docs.github.com/en/copilot/how-tos/copilot-cli/install-copilot-cli) 与 [CLI 命令参考](https://docs.github.com/en/copilot/reference/cli-command-reference)。当前为 public preview。
+指独立的 `copilot` 命令行 agent（**不是** `gh copilot`，区别见[术语表](./copilot-glossary#copilot-cli)）。数据源：[安装文档](https://docs.github.com/en/copilot/how-tos/copilot-cli/install-copilot-cli) 与 [CLI 命令参考](https://docs.github.com/en/copilot/reference/cli-command-reference)。自 [2026-02-25](https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/) 起为 GA。
 
 ### 安装
 
@@ -235,7 +239,7 @@ frontmatter 字段与完整示例见 [Cookbook · 复用提示文件](./copilot-
 npm install -g @github/copilot
 
 # Homebrew
-brew install copilot-cli
+brew install --cask copilot-cli
 
 # Windows
 winget install GitHub.Copilot
@@ -365,6 +369,10 @@ ghcs "Undo the last commit"
 | 来源 | 用途 | 更新频率 |
 |------|------|---------|
 | [GitHub Copilot 官方文档](https://docs.github.com/en/copilot) | 产品能力、概念、how-to 的唯一权威 | 持续 |
+| [Copilot 功能清单](https://docs.github.com/en/copilot/get-started/features) | 官方 assistive / agentic 形态列表 | 不定期 |
+| [About cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) | Cloud agent 与 IDE Agent 模式对照 | 不定期 |
+| [About Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli) | 终端 agent 能力 | 跟随 CLI 发版 |
+| [About the Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app) | 桌面并行 agent 应用 | 不定期 |
 | [VS Code Copilot 功能参考](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features) | 快捷键、斜杠命令、工具集、settings 键的权威清单 | 跟随月度 Stable |
 | [Copilot 计划与配额](https://docs.github.com/en/copilot/get-started/plans) | 价格、AI credits、可用性 | 不定期 |
 | [Copilot CLI 命令参考](https://docs.github.com/en/copilot/reference/cli-command-reference) | CLI 子命令、flag、交互快捷键 | 跟随 CLI 发版 |

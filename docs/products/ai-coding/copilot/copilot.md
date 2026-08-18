@@ -117,6 +117,8 @@ Delegate a task from a GitHub Issue or the web UI; it opens a branch, changes co
 
 > Note it used to be called "coding agent"; GitHub has renamed it to cloud agent. Also, **Agent mode** in Chat runs on your local machine — that is not the same thing as the Cloud agent.
 
+Two extra official doors, not part of the day-one drill: **Copilot Chat on github.com** (`https://github.com/copilot`) and the **Copilot app** (desktop, parallel sessions). When to pick them is on the [learning map](./). **GitHub Spark** is closing — do not start a new app; see [Cookbook · Spark](./copilot-cookbook).
+
 ## Step 4: Make repeated requirements permanent
 
 At this point you can use all four surfaces. **The step that actually separates people is this one** — stop re-describing your project conventions every time, and write them into files that Copilot picks up automatically.

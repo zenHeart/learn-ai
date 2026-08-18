@@ -87,6 +87,13 @@
 | **CLI** | 终端 | 交互式 agent 会话 | 命令行任务、脚本、跨仓库操作 |
 | **Cloud agent** | GitHub 网页端 / Issue | 派任务，后台跑，产出 PR | 明确定义的独立任务 |
 
+另外两个官方入口，第一天用得少（见[学习地图](./)）：
+
+| 界面 | 在哪 | 典型任务 |
+|------|------|---------|
+| **github.com 上的 Copilot Chat** | 浏览器 | 不问 IDE，直接问仓库 / Issue / PR |
+| **Copilot app** | 桌面 | 并行 agent 会话、Issues / PR、自动化 |
+
 **为什么分成四类而不是"一个 Copilot"**：三个维度不同——**谁发起**（你打字 / 你提问 / 你派任务）、**跑在哪**（本地 / GitHub 云端）、**结果形态**（灰字建议 / 编辑器改动 / Pull Request）。任务和界面错配就会难受：用补全干重构（改不动多文件）、用 Chat 干"跑 20 分钟的迁移"（要一直盯着）都属于这类。
 
 **怎么选**：见 [Cheatsheet · 界面选型](./copilot-cheatsheet#界面选型)。
@@ -281,7 +288,25 @@
 
 **2026-04-01 能力扩展**（[changelog](https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/)）：不再限于「一定开 PR」。它可以先调研仓库、先出计划等你批准、只在分支上改到你点 Create pull request。付费计划可用；Business / Enterprise 需管理员启用。
 
-**官方文档**：[Copilot 文档 · Agents](https://docs.github.com/en/copilot)
+**官方文档**：[About GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)
+
+---
+
+## Copilot app
+
+**是什么**：面向 agent 开发的桌面应用。它架在 Copilot CLI 上，在一个窗口里提供并行 agent 会话、GitHub Issues / pull request，以及定时自动化。
+
+**和 IDE Chat / CLI 的区别**：
+
+| 维度 | IDE Chat | Copilot CLI | Copilot app |
+|------|----------|-------------|-------------|
+| 在哪 | 编辑器里 | 终端 | 独立桌面窗口 |
+| 并行 | 默认一次一个对话 | 一个终端一个会话 | 一等公民的并行工作区 |
+| 适合 | 你已经在改文件 | 你住在 shell 里 | 你要指挥多个 agent，不想待在 IDE |
+
+**可用性**：所有 Copilot 计划。Business / Enterprise 需要保持 Copilot app 策略开启（默认开，且和 Copilot CLI 策略是两条）。
+
+**官方文档**：[About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
 
 ---
 
@@ -339,6 +364,7 @@ Copilot 迭代快，下面这些说法你很可能在旧教程（包括本站的
 | 旧说法 | 现状 | 替代 |
 |--------|------|------|
 | **Copilot Workspace**（GitHub Next 技术预览） | 已于 **2025-05-30** 日落，原文在 [GitHub Next](https://githubnext.com/projects/copilot-workspace/) 与 [sunset 说明](https://gh.io/copilot-workspace-sunset) | 「从 Issue 描述产出 PR」现由 Cloud agent 承载 |
+| **GitHub Spark** | **2026-08-04** 起不再接受新用户、不能新建应用；已有应用须在 **2026-08-31** 前导出。[Changelog](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/) | 改到 IDE、Copilot CLI 或 Copilot app 里做。已部署的 Spark 应用会继续跑 |
 | **Copilot Extensions**（GitHub App 形态） | 已于 2025-11-10 完全日落，[官方公告](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/) | MCP 服务器。注意 **VS Code 客户端侧的 Chat 扩展仍然支持**，公告明确排除了这一类 |
 | **`@workspace`** | 已不在 VS Code 参与者清单中 | 代码库检索下沉为工具，Agent 模式自动调用；需显式指定时用 `#search`（含 `/codebase`） |
 | **`@regex`** | 未在官方清单中找到，疑为早期社区扩展贡献 | 直接在 Ask 模式提问即可 |
