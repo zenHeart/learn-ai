@@ -1,6 +1,8 @@
 # Google Antigravity
 
 > Google 的 agent-first 开发平台。它不是"装了 AI 的编辑器"——交互单位是**一个任务**，而不是一次按键。
+>
+> **2026-06-18 起**，个人 / Google AI Pro / Ultra 的日常入口是这里（含 CLI 表面），不再是 Gemini CLI 的「Login with Google」。[过渡公告](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli)。
 
 ## 核心定位
 

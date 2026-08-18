@@ -1,5 +1,7 @@
 # gemini cli
 
+> **Since 2026-06-18**: individual accounts and Google AI Pro / Ultra can no longer reach Gemini CLI via **Login with Google**. Do daily work on the [Antigravity](./antigravity) CLI surface. Standard / Enterprise licences and paid API keys are unchanged. [Official deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals).
+
 ## basic usage
 
 1. install and login gemini cli follow [gemini cli](https://geminicli.com/docs/get-started/), more detail see [installed](https://geminicli.com/docs/get-started/installation/) with different platform.
@@ -216,9 +218,9 @@ gemini --resume <hash>
 gemini --delete-session 2
 ```
 
-<!-- TODO: needs verification — the exact argument form for `--resume` with an index or a hash. The official session-management docs confirm the listing/resuming capability but the scraped content gave no citable parameter syntax. The single-dash `-resume` in earlier revisions was wrong and has been normalised to double dashes here. -->
+Official session docs confirm `--resume` (alias `-r`) accepts `latest`, an index such as `--resume 2`, or a session ID / hash; `--delete-session` accepts an index or a full UUID. See [Session management](https://geminicli.com/docs/cli/session-management/).
 
-In Gemini CLI you can also use the `/session` command to list and enter sessions.
+In Gemini CLI you can also use the `/session` or `/resume` command to list and enter sessions.
 
 
 ### session config
@@ -336,28 +338,7 @@ For the exhaustive list of supported keys, see the [settings JSON schema](https:
 
 ### config layers
 
-gemini support multiple config layers detail see [Configuration layers](https://geminicli.com/docs/get-started/configuration/#configuration-layers)
-
-Common configuration paths:
-
-<!-- TODO: needs verification — the system defaults path on macOS could not be reproduced locally; follow the official configuration layers documentation. -->
-
-1. system default config
-   - **Location** use `GEMINI_CLI_SYSTEM_DEFAULTS_PATH` to customize path
-     - **Linux** `/etc/gemini-cli/system-defaults.json`
-     - **Windows** `C:\ProgramData\gemini-cli\system-defaults.json`
-     - **macOS** `/Library/Application Support/GeminiCli/system-defaults.json`
-   - **Scope**
-     - Provides a base layer of system-wide default settings. These settings have the lowest precedence and are intended to be overridden by user, project, or system override settings.
-2. user config: `~/.gemini/settings.json` will overwrite system config
-3. project config: `.gemini/settings.json` will overwrite user config
-4. system settings
-   - **Location** use `GEMINI_CLI_SYSTEM_SETTINGS_PATH` to customize path
-     - **Linux** `/etc/gemini-cli/settings.json`
-     - **Windows** `C:\ProgramData\gemini-cli\settings.json`
-     - **macOS** `/Library/Application Support/GeminiCli/settings.json`
-   - **Scope**
-     - system administrators to control gemini cli behavior.overwrite all other config layers
+Gemini CLI has several configuration layers. **The full path list and precedence live only in the [cheatsheet configuration layers](./gemini-cheatsheet#gemini-cli-settings-layers)** and are not copied here. Official description: [Configuration layers](https://geminicli.com/docs/get-started/configuration/#configuration-layers).
 
 You can reference environment variables in config files as `$VAR_NAME` or `${VAR_NAME}`. Some settings accept directories — see [sandbox config](https://geminicli.com/docs/get-started/configuration/#sandboxing) for details.
 

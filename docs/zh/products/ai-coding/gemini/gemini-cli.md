@@ -1,4 +1,6 @@
-﻿# Gemini CLI
+# Gemini CLI
+
+> **2026-06-18 起**：个人账号与 Google AI Pro / Ultra 通过「Login with Google」访问 Gemini CLI 已停服，日常请改用 [Antigravity](./antigravity) 的 CLI 表面。Standard / Enterprise 许可证与付费 API key 不受影响。[官方弃用说明](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals)。
 
 ## 基础用法
 
@@ -213,9 +215,9 @@ gemini --resume <hash>
 gemini --delete-session 2
 ```
 
-<!-- TODO: 待核实 —— `--resume` 接索引与接哈希的确切参数形式。官方会话管理文档确认了"列出并恢复会话"这项能力，但抓取到的内容没有给出可引用的参数写法；历史文档里的单横线 `-resume` 是错的，此处已统一为双横线 -->
+官方会话文档确认：`--resume`（别名 `-r`）可接 `latest`、索引（如 `--resume 2`）或会话 ID / 哈希；`--delete-session` 接索引或完整 UUID。见 [Session management](https://geminicli.com/docs/cli/session-management/)。
 
-在 Gemini CLI 中，你也可以使用 `/session` 命令列出并进入会话。
+在 Gemini CLI 中，你也可以使用 `/session` 或 `/resume` 命令列出并进入会话。
 
 
 ### 会话配置
@@ -331,26 +333,7 @@ tail -5 usage.log
 
 ### 配置层级
 
-Gemini 支持多个配置层级，详情参见 [配置层级](https://geminicli.com/docs/get-started/configuration/#configuration-layers)。
-
-常用路径：
-
-1. 系统默认配置
-   - **位置** 使用 `GEMINI_CLI_SYSTEM_DEFAULTS_PATH` 自定义路径
-     - **Linux** `/etc/gemini-cli/system-defaults.json`
-     - **Windows** `C:\ProgramData\gemini-cli\system-defaults.json`
-     - **macOS** `/Library/Application Support/GeminiCli/system-defaults.json`
-   - **范围**
-     - 提供系统范围的默认设置基础层。这些设置优先级最低，旨在被用户、项目或系统覆盖设置所覆盖。
-2. 用户配置: `~/.gemini/settings.json` 将覆盖系统配置
-3. 项目配置: `.gemini/settings.json` 将覆盖用户配置
-4. 系统设置
-   - **位置** 使用 `GEMINI_CLI_SYSTEM_SETTINGS_PATH` 自定义路径
-     - **Linux** `/etc/gemini-cli/settings.json`
-     - **Windows** `C:\ProgramData\gemini-cli\settings.json`
-     - **macOS** `/Library/Application Support/GeminiCli/settings.json`
-   - **范围**
-     - 系统管理员控制 Gemini CLI 行为。覆盖所有其他配置层
+Gemini 支持多个配置层级。**完整路径与优先级只在[速查表的配置层级](./gemini-cheatsheet#gemini-cli-配置层级)维护一份**，这里不重复抄表。官方说明见 [配置层级](https://geminicli.com/docs/get-started/configuration/#configuration-layers)。
 
 配置文件里可以使用 `$VAR_NAME` 或 `${VAR_NAME}` 引用环境变量。某些配置支持目录，详见 [沙盒配置](https://geminicli.com/docs/get-started/configuration/#sandboxing)。
 

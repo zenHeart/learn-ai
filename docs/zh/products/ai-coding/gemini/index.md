@@ -1,6 +1,8 @@
 # Gemini 全家族
 
 > Google 的 AI 编码产品线。这一页告诉你**七个产品分别解决什么问题、该按什么顺序学**。
+>
+> **2026-06-18 起**：个人账号、Google AI Pro / Ultra 通过「Login with Google」访问 [Gemini CLI](./gemini-cli) 与 [Code Assist](./code-assist) IDE 扩展已停服，请改用 [Antigravity](./antigravity) 家族。Standard / Enterprise 许可证与付费 API key 不受影响。官方说明见 [消费者账号弃用](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals) 与 [过渡公告](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli)。
 
 ## 为什么需要这一页
 
@@ -48,8 +50,8 @@ Gemini 家族的产品数量多、命名相似、能力有重叠，最常见的�
 
 上面的排列顺序不是按字母，也不是按热度，而是按**概念依赖**加**受众复杂度**：
 
-1. **先学 [Gemini CLI](./gemini-cli)**。它是家族里唯一零前置的完整工具，而且首次引入了 `.gemini/settings.json`、`gemini extensions install`、`GEMINI.md` 这三样后面反复复用的东西。
-2. **再学 [Antigravity](./antigravity)**。它复用上面三个概念，再加上规则、技能、子智能体。跳过 CLI 直接看它，你会在"这个配置文件是什么"上卡住。
+1. **先学 [Gemini CLI](./gemini-cli)**。它是家族里唯一零前置的完整工具，而且首次引入了 `.gemini/settings.json`、`gemini extensions install`、`GEMINI.md` 这三样后面反复复用的东西。个人 / Pro / Ultra 账号日常请走 [Antigravity CLI](./antigravity)，本页仍从 CLI 开讲，是因为它是概念入口，不是因为消费者还能用「Login with Google」。
+2. **再学 [Antigravity](./antigravity)**。它复用上面三个概念，再加上规则、技能、子智能体。2026-06-18 之后，这是个人开发者的日常入口。跳过 CLI 直接看它，你会在"这个配置文件是什么"上卡住。
 3. **然后 [Jules](./jules)**。它在"自主智能体"之上再叠一层 GitHub 仓库与 PR 工作流。
 4. 之后按需要看 Canvas / Code Assist / AI Studio / 订阅层级——它们互相独立，不构成链条。
 

@@ -16,11 +16,13 @@
 
 ## 选哪个工具
 
+> **2026-06-18 起**：个人 / Google AI Pro / Ultra 通过 Login with Google 访问 Gemini CLI 与 Code Assist IDE 扩展已停服，这两行按 **Standard / Enterprise 或付费 API key** 理解；个人开发者的对应入口是 [Antigravity](./antigravity)。[官方弃用说明](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals)。
+
 ### 按任务选
 
 | 我要做的事 | 用这个 | 为什么 |
 |---|---|---|
-| 在终端里问代码、跑脚本、串管道 | [Gemini CLI](./gemini-cli) | 零前置依赖，支持 `-p` 无头模式和 `--output-format json`，能进 shell 管道 |
+| 在终端里问代码、跑脚本、串管道 | [Gemini CLI](./gemini-cli)（企业 / API key）或 [Antigravity](./antigravity) CLI（个人） | CLI 零前置，支持 `-p` 无头模式和 `--output-format json`；个人账号日常走 Antigravity |
 | 让智能体自主规划并改一批文件 | [Antigravity](./antigravity) | 桌面端 + CLI + SDK 共享同一 harness，支持异步子智能体与可视化构件 |
 | 把任务丢到云端，回来收 PR | [Jules](./jules) | 在云端 VM 里克隆仓库执行，先出计划待人工批准，再产出 PR |
 | 在 IDE 里补全、改单文件、局部重构 | [Code Assist](./code-assist) | VS Code / JetBrains / Android Studio 插件，含本地代码库感知 |
@@ -38,7 +40,7 @@
 | 谁发起 | 你实时对话 | 你在编辑器里触发 | 你在 Web 或 CLI 建任务，之后离开 |
 | 交付物 | 工作区里的改动 + 构件 | 编辑器里的补全与改动 | 一个 Pull Request |
 | 并发 | 支持异步子智能体 | 单会话 | 多任务并行（并发上限随订阅档位变化） |
-| 版本形态 | 单一产品 | free / Standard / Enterprise 三个版本 | 单一产品，额度随订阅档位变化 |
+| 版本形态 | 单一产品 | Standard / Enterprise（个人 free 档已于 2026-06-18 停服） | 单一产品，额度随订阅档位变化 |
 | 典型场景 | 跨模块重构、需要边看边验证 | 单文件补全、局部多文件重构 | 依赖升级、技术债清理、边界清晰的独立任务 |
 
 <!-- TODO: 待核实 —— Antigravity 是否有官方文档明确的"并发子智能体上限"，目前官方只描述了 Asynchronous Subagents 能力，未找到官方说明给出数量上限 -->
@@ -221,6 +223,8 @@ jules --theme dark                      # 全局选项：dark / light
 | [Jules CLI 命令参考](https://jules.google/docs/cli/reference/) | Jules 全部 CLI 命令与选项 |
 | [Jules 文档](https://jules.google/docs/) | 云端工作流、`AGENTS.md`、环境配置脚本 |
 | [Code Assist 概览](https://developers.google.com/gemini-code-assist/docs/overview) | 版本差异、支持的 IDE、智能体模式、企业能力 |
+| [消费者账号弃用](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals) | 2026-06-18 个人 / Pro / Ultra Login with Google 停服范围 |
+| [Gemini CLI → Antigravity CLI 过渡](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli) | 消费者迁移时间线与企业不受影响的说明 |
 | [Google AI plans](https://one.google.com/about/google-ai-plans/) | 四档订阅的额度对比 |
 
 ### A 级：官方但更新较慢或偏营销

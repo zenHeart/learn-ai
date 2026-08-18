@@ -20,7 +20,7 @@
 - [Cursor](./cursor.md) - AI 优先的代码编辑器，具备聊天和生成功能
 - [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
 - **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
-- [Gemini CLI](./gemini-cli.md) - Google 的 AI 编程助手
+- [Gemini 全家族](./gemini/index.md) - Gemini CLI、Antigravity、Jules、Code Assist、AI Studio、Canvas
 - [其他工具](./othertools.md) - 探索更多 AI 编程工具
 
 ## 快速开始
@@ -53,6 +53,12 @@
 - 直接读写文件、运行命令、Git 操作
 - 完全自动化，可集成到 CI/CD
 - 结合 Deep Research 使用效果最佳
+
+### 适合 Google 生态用户
+**推荐**: [Antigravity](./gemini/antigravity.md)（个人日常）/ [Gemini CLI](./gemini/gemini-cli.md)（企业或 API key）
+- 2026-06-18 起，个人 / Google AI Pro / Ultra 不再通过 Login with Google 使用 Gemini CLI 或 Code Assist IDE 扩展
+- 大上下文、多模态、Google 服务集成
+- 全家族地图见 [Gemini 学习地图](./gemini/index.md)
 
 ## 工具能力矩阵
 

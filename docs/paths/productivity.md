@@ -43,7 +43,7 @@ const pathSteps = [
       { text: 'Cursor Guide', url: '/products/ai-coding/cursor' },
       { text: 'Copilot Guide', url: '/products/ai-coding/copilot' },
       { text: 'Claude Code', url: '/products/ai-coding/claude/claude-code' },
-      { text: 'Gemini CLI', url: '/products/ai-coding/gemini-cli' }
+      { text: 'Gemini CLI', url: '/products/ai-coding/gemini/gemini-cli' }
     ]
   },
   {

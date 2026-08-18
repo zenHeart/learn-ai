@@ -31,7 +31,7 @@
 
 ### 1. 构建/类型报错，想直接让 AI 读日志
 
-**用**：Gemini CLI 无头模式。
+**用**：Gemini CLI 无头模式（Standard / Enterprise 或 API key）。个人账号请改用 [Antigravity](./antigravity) 的 CLI 表面，管道写法以官方 Antigravity CLI 文档为准。
 
 不要复制粘贴报错到聊天窗口——直接把 stderr 接过去：
 
@@ -107,7 +107,7 @@ gemini -p "这个 diff 有没有引入明显的安全问题？" --output-format 
 
 `minRetention` 默认 `"1d"`，是防止误删太新会话的兜底。
 
-<!-- TODO: 待核实 —— 列出与恢复会话的确切命令行参数写法。官方 Sessions 文档说明了会话可列出与恢复，但抓取到的内容未给出可直接引用的参数形式；请以 `gemini --help` 的当前输出为准。历史文档里的 `gemini -resume 2`（单横线）不是有效写法 -->
+恢复会话用 `gemini --resume`（最新）、`gemini --resume 2`（索引）或 `gemini --resume <id>`。官方见 [Session management](https://geminicli.com/docs/cli/session-management/)。
 
 **关键点**：恢复会话恢复的是**对话**，不是**文件**。代码状态要靠 Git 或[检查点](#_3-智能体改坏了一批文件-想回到动手前)。
 
@@ -293,7 +293,7 @@ Google AI Pro 档通过 Google Developer Program 提供 US$10/月 Google Cloud �
 
 **用**：[Code Assist](./code-assist) 的企业版本。它是家族里唯一以合规为主要卖点的产品——官方开场就写给"有严格数据安全与合规要求的组织"，明确提供 VPC Service Controls 与知识产权赔偿（IP indemnification）。
 
-**版本形态**：free / Standard / Enterprise 三档，支持 VS Code / JetBrains / Android Studio。
+**版本形态**：Standard / Enterprise（个人 free 档已于 2026-06-18 停服），支持 VS Code / JetBrains / Android Studio。
 
 **关键点**：合规能力绑在**版本**上，不是绑在你的个人订阅上。个人 AI Pro 订阅不会让 Code Assist 变成企业版。
 

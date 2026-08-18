@@ -1,6 +1,8 @@
 # The Gemini family
 
 > Google's AI coding product line. This page tells you **what each of the seven products solves, and in what order to learn them**.
+>
+> **Since 2026-06-18**: individual accounts and Google AI Pro / Ultra can no longer use [Gemini CLI](./gemini-cli) or the [Code Assist](./code-assist) IDE extensions via **Login with Google**. Move to the [Antigravity](./antigravity) family. Standard / Enterprise licences and paid API keys are unchanged. Official sources: [consumer-account deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals) and the [transition announcement](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli).
 
 ## Why this page exists
 
@@ -48,8 +50,8 @@ The other three are off that main line: AI Studio controls the model itself, Can
 
 The order above is not alphabetical and not by popularity. It follows **concept dependency** plus **audience complexity**:
 
-1. **Start with [Gemini CLI](./gemini-cli).** It is the only complete tool in the family with no prerequisites, and it is where `.gemini/settings.json`, `gemini extensions install` and `GEMINI.md` are first introduced — all three are reused repeatedly later.
-2. **Then [Antigravity](./antigravity).** It reuses those three concepts and adds rules, skills and subagents. Skip the CLI and you will get stuck on "what is this configuration file".
+1. **Start with [Gemini CLI](./gemini-cli).** It is the only complete tool in the family with no prerequisites, and it is where `.gemini/settings.json`, `gemini extensions install` and `GEMINI.md` are first introduced — all three are reused repeatedly later. Individual / Pro / Ultra accounts should do daily work in [Antigravity CLI](./antigravity); this page still starts at the CLI because it is the conceptual entry point, not because consumer **Login with Google** still works.
+2. **Then [Antigravity](./antigravity).** It reuses those three concepts and adds rules, skills and subagents. After 2026-06-18 this is the daily entry point for individual developers. Skip the CLI and you will get stuck on "what is this configuration file".
 3. **Then [Jules](./jules).** It layers a GitHub repository and PR workflow on top of autonomous agents.
 4. After that, read Canvas / Code Assist / AI Studio / subscription tiers as you need them. They are independent of each other and do not form a chain.
 

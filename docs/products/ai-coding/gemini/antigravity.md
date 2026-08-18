@@ -1,6 +1,8 @@
 # Google Antigravity
 
 > Google's agent-first development platform. It is not "an editor with AI bolted on" — the unit of interaction is **one task**, not one keystroke.
+>
+> **Since 2026-06-18** this (including the CLI surface) is the daily entry point for individual / Google AI Pro / Ultra accounts, replacing Gemini CLI **Login with Google**. [Transition announcement](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli).
 
 ## What it is for
 

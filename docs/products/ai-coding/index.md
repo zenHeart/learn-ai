@@ -20,7 +20,7 @@
 - [Cursor](./cursor.md) - AI-first code editor with chat and generation
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
-- [Gemini CLI](./gemini-cli.md) - Google's AI coding assistant
+- [Gemini](./gemini/) - Gemini family: Gemini CLI, Antigravity, Jules, Code Assist, AI Studio, Canvas
 - [Other Tools](./othertools.md) - Explore more AI coding tools
 
 ## Getting Started
@@ -48,10 +48,12 @@
 - Great for refactoring
 
 ### For Google Ecosystem
-**Recommended**: [Gemini CLI](./gemini-cli.md)
+**Recommended**: [Antigravity](./gemini/antigravity.md) for individual daily work, [Gemini CLI](./gemini/gemini-cli.md) for Standard / Enterprise or a paid API key
 - Large context window
 - Multimodal capabilities
 - Google integration
+- Since 2026-06-18, individual / Google AI Pro / Ultra no longer reach Gemini CLI or Code Assist IDE extensions via Login with Google
+- The rest of the family is mapped in [the Gemini index](./gemini/)
 
 ## Next Steps
 

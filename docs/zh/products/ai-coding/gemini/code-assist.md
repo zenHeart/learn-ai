@@ -12,6 +12,8 @@
 
 官方提供 free / Standard / Enterprise 三个版本。**能力绑在版本上，不绑在你的个人 Google AI 订阅上**——买了个人 AI Pro 不会让 Code Assist 变成企业版。
 
+**2026-06-18 起，面向个人的 free 档以及 Google AI Pro / Ultra 通过「Login with Google」访问 IDE 扩展已停服。** 个人开发者请改用 [Antigravity](./antigravity) 的 IDE / CLI 表面。Standard / Enterprise 许可证不受影响。[官方弃用说明](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals)。
+
 企业版本的卖点是合规而不是更聪明。官方文档开场就写给"有严格数据安全与合规要求的组织"，明确提供：
 
 - VPC Service Controls

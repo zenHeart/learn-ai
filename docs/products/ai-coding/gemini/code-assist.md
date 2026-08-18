@@ -12,6 +12,8 @@ Supported IDEs: VS Code, the JetBrains family, Android Studio.
 
 The official editions are free / Standard / Enterprise. **Capability is attached to the edition, not to your personal Google AI subscription** — buying personal AI Pro does not turn Code Assist into the enterprise product.
 
+**Since 2026-06-18 the individual free tier, and Google AI Pro / Ultra via Login with Google, no longer serve the IDE extensions.** Individual developers should move to the [Antigravity](./antigravity) IDE / CLI surfaces. Standard / Enterprise licences are unchanged. [Official deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals).
+
 The enterprise editions sell compliance, not extra intelligence. The official documentation opens by addressing "organizations with strict data security and compliance requirements" and explicitly offers:
 
 - VPC Service Controls

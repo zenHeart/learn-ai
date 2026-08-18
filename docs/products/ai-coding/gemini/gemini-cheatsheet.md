@@ -16,11 +16,13 @@
 
 ## Which tool
 
+> **Since 2026-06-18**: individual / Google AI Pro / Ultra accounts can no longer reach Gemini CLI or the Code Assist IDE extensions via Login with Google. Read those two rows as **Standard / Enterprise or a paid API key**; the individual entry point is [Antigravity](./antigravity). [Official deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals).
+
 ### Pick by task
 
 | What I want to do | Use | Why |
 |---|---|---|
-| Ask about code in the terminal, run scripts, pipe output | [Gemini CLI](./gemini-cli) | Zero prerequisites, supports `-p` headless mode and `--output-format json`, works in shell pipelines |
+| Ask about code in the terminal, run scripts, pipe output | [Gemini CLI](./gemini-cli) (enterprise / API key) or [Antigravity](./antigravity) CLI (individual) | CLI has zero prerequisites, `-p` headless mode and `--output-format json`; individual accounts use Antigravity daily |
 | Let an agent plan and change a batch of files on its own | [Antigravity](./antigravity) | Desktop + CLI + SDK share one harness, with asynchronous subagents and reviewable artifacts |
 | Hand a task to the cloud and come back to a PR | [Jules](./jules) | Clones the repo into a cloud VM, produces a plan for your approval, then opens a PR |
 | Complete code, edit one file, do a local refactor in the IDE | [Code Assist](./code-assist) | VS Code / JetBrains / Android Studio extension with local codebase awareness |
@@ -38,7 +40,7 @@ These three are the easiest to confuse. Separate them by **where it runs, who st
 | Who starts it | You, in a live conversation | You, from the editor | You create a task in web or CLI, then leave |
 | Deliverable | Changes in your workspace plus artifacts | Completions and edits in the editor | A pull request |
 | Concurrency | Asynchronous subagents | Single session | Multiple parallel tasks (cap varies by subscription tier) |
-| Editions | One product | free / Standard / Enterprise | One product; quota varies by subscription tier |
+| Editions | One product | Standard / Enterprise (individual free tier stopped 2026-06-18) | One product; quota varies by subscription tier |
 | Typical use | Cross-module refactor you want to watch | Single-file completion, local multi-file refactor | Dependency upgrades, tech-debt cleanup, well-bounded standalone tasks |
 
 <!-- TODO: needs verification — whether the official docs state a cap on concurrent subagents in Antigravity. The docs describe the Asynchronous Subagents capability but no official statement gives a number. -->
@@ -221,6 +223,8 @@ jules --theme dark                      # global option: dark / light
 | [Jules CLI reference](https://jules.google/docs/cli/reference/) | Every Jules CLI command and option |
 | [Jules docs](https://jules.google/docs/) | Cloud workflow, `AGENTS.md`, environment setup scripts |
 | [Code Assist overview](https://developers.google.com/gemini-code-assist/docs/overview) | Edition differences, supported IDEs, agent mode, enterprise features |
+| [Consumer-account deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals) | What stopped on 2026-06-18 for individual / Pro / Ultra Login with Google |
+| [Gemini CLI → Antigravity CLI transition](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli) | Consumer migration timeline; enterprise access unchanged |
 | [Google AI plans](https://one.google.com/about/google-ai-plans/) | Quota comparison across the four tiers |
 
 ### Tier A: official but slower-moving or marketing-oriented

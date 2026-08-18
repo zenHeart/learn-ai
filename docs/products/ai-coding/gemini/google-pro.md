@@ -8,10 +8,12 @@ The family is **not unlocked by a single subscription**. There are two separate 
 
 | Entry point | Covers | Aimed at |
 |---|---|---|
-| Google AI subscription (Plus / Pro / Ultra) | usage for the Gemini app, Gemini CLI, Jules, Antigravity and so on | individual developers |
-| [Gemini Code Assist](./code-assist) free / Standard / Enterprise | IDE extension capability and compliance features | teams and organisations |
+| Google AI subscription (Plus / Pro / Ultra) | usage for the Gemini app, Jules, Antigravity and so on | individual developers |
+| [Gemini Code Assist](./code-assist) Standard / Enterprise | IDE extension capability and compliance features | teams and organisations |
 
 **Buying personal AI Pro does not turn Code Assist into the enterprise product** — they are separate. Team compliance requirements are met by the Code Assist edition, not by a personal subscription.
+
+**Since 2026-06-18**, individual / Pro / Ultra accounts can no longer reach Gemini CLI or the Code Assist IDE extensions via Login with Google. The individual terminal and IDE entry point is [Antigravity](./antigravity). Standard / Enterprise and paid API keys are unchanged. [Official deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals).
 
 ## The four tiers
 
@@ -36,7 +38,8 @@ Decide by **which tool you mainly use**, not by which tier has the longest featu
 | Your main usage | Suggestion | Reasoning |
 |---|---|---|
 | Occasional questions in the terminal | start on the free quota | upgrade when you run out, do not pre-buy |
-| Gemini CLI daily, for real work | Pro | extended context and Cloud credit both start here |
+| Daily terminal work on a personal account | Pro + [Antigravity](./antigravity) | after 2026-06-18, individual / Pro / Ultra no longer use Gemini CLI via Login with Google |
+| Gemini CLI daily (Standard / Enterprise or API key) | Pro | extended context and Cloud credit both start here |
 | Integrating through the Gemini API | Pro or above | mostly for the US$10 Cloud credit |
 | Heavy Jules / Antigravity task volume | Ultra | concurrency and task count rise with the tier |
 | A hard team compliance requirement | use a [Code Assist](./code-assist) edition | personal subscriptions do not offer VPC-SC or IP indemnification |

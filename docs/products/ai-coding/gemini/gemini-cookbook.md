@@ -31,7 +31,7 @@
 
 ### 1. Build or type errors, and you want AI to read the log
 
-**Use**: Gemini CLI headless mode.
+**Use**: Gemini CLI headless mode (Standard / Enterprise or an API key). Individual accounts should use the [Antigravity](./antigravity) CLI surface; follow the official Antigravity CLI docs for the pipe syntax.
 
 Do not copy-paste the error into a chat window. Hand over stderr directly:
 
@@ -107,7 +107,7 @@ They pile up over time, so let configuration clean them:
 
 `minRetention` defaults to `"1d"` and is the floor that stops very recent sessions from being deleted.
 
-<!-- TODO: needs verification — the exact command-line syntax for listing and resuming a session. The official Sessions docs state that sessions can be listed and resumed, but the scraped content gives no quotable argument form; treat the current output of `gemini --help` as authoritative. The `gemini -resume 2` form (single dash) seen in older docs is not valid. -->
+Resume with `gemini --resume` (latest), `gemini --resume 2` (index) or `gemini --resume <id>`. Official: [Session management](https://geminicli.com/docs/cli/session-management/).
 
 **Key point**: resuming a session restores the **conversation**, not the **files**. Code state comes from Git or [checkpoints](#_3-the-agent-broke-a-batch-of-files-and-you-want-to-go-back).
 
@@ -294,7 +294,7 @@ The Google AI Pro tier provides US$10/month of Google Cloud credit through the G
 
 **Use**: the enterprise editions of [Code Assist](./code-assist). It is the one product in the family whose primary selling point is compliance — the official opening addresses "organizations with strict data security and compliance requirements", and it explicitly offers VPC Service Controls and IP indemnification.
 
-**Editions**: free / Standard / Enterprise, supporting VS Code / JetBrains / Android Studio.
+**Editions**: Standard / Enterprise (the individual free tier stopped on 2026-06-18), supporting VS Code / JetBrains / Android Studio.
 
 **Key point**: the compliance capabilities are attached to the **edition**, not to your personal subscription. A personal AI Pro subscription does not turn Code Assist into the enterprise product.
 

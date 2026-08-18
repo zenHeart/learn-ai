@@ -8,10 +8,12 @@
 
 | 入口 | 覆盖 | 面向 |
 |---|---|---|
-| Google AI 订阅（Plus / Pro / Ultra） | Gemini 应用、Gemini CLI、Jules、Antigravity 等的使用量 | 个人开发者 |
-| [Gemini Code Assist](./code-assist) 的 free / Standard / Enterprise | IDE 扩展的能力与合规特性 | 团队与组织 |
+| Google AI 订阅（Plus / Pro / Ultra） | Gemini 应用、Jules、Antigravity 等的使用量 | 个人开发者 |
+| [Gemini Code Assist](./code-assist) 的 Standard / Enterprise | IDE 扩展的能力与合规特性 | 团队与组织 |
 
 **买了个人 AI Pro 不会让 Code Assist 变成企业版**，两者是分开的。团队合规需求走的是 Code Assist 的版本，不是个人订阅。
+
+**2026-06-18 起**，个人 / Pro / Ultra 通过「Login with Google」访问 Gemini CLI 与 Code Assist IDE 扩展已停服；个人开发者的终端与 IDE 入口是 [Antigravity](./antigravity)。Standard / Enterprise 与付费 API key 不受影响。[官方弃用说明](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals)。
 
 ## 四个档位
 
@@ -36,7 +38,8 @@
 | 你的主要用法 | 建议 | 理由 |
 |---|---|---|
 | 只在终端里偶尔问问题 | 先用免费额度 | 用满了再升，不用提前买 |
-| 每天用 Gemini CLI 干活 | Pro | 扩展上下文 + Cloud 额度都从这档起 |
+| 每天在终端干活（个人账号） | Pro + [Antigravity](./antigravity) | 2026-06-18 后个人 / Pro / Ultra 不再走 Gemini CLI 的 Login with Google |
+| 每天用 Gemini CLI（Standard / Enterprise 或 API key） | Pro | 扩展上下文 + Cloud 额度都从这档起 |
 | 要走 Gemini API 做集成 | Pro 起 | 主要为了 US$10 Cloud 额度 |
 | 大量跑 Jules / Antigravity 任务 | Ultra | 并发与任务数随档位提高 |
 | 团队有合规硬要求 | 走 [Code Assist](./code-assist) 版本 | 个人订阅不提供 VPC-SC / IP 赔偿 |
