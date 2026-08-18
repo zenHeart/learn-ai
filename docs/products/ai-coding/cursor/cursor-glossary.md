@@ -28,6 +28,7 @@ Explanation: what a concept is, why it exists, and what it is easy to confuse wi
          │                     │
    ┌─────┴─────┐        ┌──────┴──────┐
    │ Subagents │        │ Cloud/Bugbot│
+   │  / CLI    │        │             │
    └───────────┘        └─────────────┘
 ```
 
@@ -180,6 +181,8 @@ A plain `.md` under `.cursor/rules` is **ignored**. Official advice: use `AGENTS
 
 **Not Debug Mode.** Debug instruments your workspace. Bugbot reads a diff; it does not boot your app. The old overview matrix called Bugbot a “runtime debugger.” That was wrong.
 
+**Autofix:** Official feature name. It spawns a Cloud Agent to patch findings. There is no separate 2026 product page titled Fixer.
+
 **Docs:** [Bugbot](https://cursor.com/docs/bugbot)
 
 ---
@@ -220,10 +223,26 @@ A plain `.md` under `.cursor/rules` is **ignored**. Official advice: use `AGENTS
 
 ## Cloud Agents
 
-**What:** Agents on isolated VMs. They clone, branch, work, and open PRs. Start from the editor, [cursor.com/agents](https://cursor.com/agents), mobile, or Slack `@Cursor`.
+**What:** Agents on isolated VMs. They clone, branch, work, and open PRs. Start from the editor Cloud dropdown, [cursor.com/agents](https://cursor.com/agents), [mobile](https://cursor.com/docs/cloud-agent/mobile), Slack / GitHub / Linear `@cursor`, or a CLI message prefixed with `&`.
 
-**Why:** Work that should not occupy the local window: drive-by bugs, tests, docs.
+**Former name:** Background Agents (official Naming History). Do not document them as two products.
 
-**Versus local subagents:** Local children use your machine and local MCP. Cloud children (`/in-cloud`, `/babysit`) use team MCP and the cloud environment.
+**Why:** Work that should not occupy the local window: drive-by bugs, tests, docs, many parallel runs. Cousins: Claude remote / Dispatch, Gemini Jules.
 
-**Docs:** [Cloud Agent](https://cursor.com/docs/cloud-agent), [agent-best-practices](https://cursor.com/blog/agent-best-practices)
+**Versus local subagents:** Local children use your machine and local MCP. Cloud uses team MCP and the cloud environment.
+
+**Versus Bugbot:** Cloud *edits* a repo. Bugbot *reviews* a PR diff. Autofix is the bridge.
+
+**Docs:** [Cloud Agent](https://cursor.com/docs/cloud-agent), [Setup](https://cursor.com/docs/cloud-agent/setup), [agent-best-practices](https://cursor.com/blog/agent-best-practices)
+
+---
+
+## Cursor CLI
+
+**What:** Official terminal entry. The binary is **`agent`**. Interactive session or `agent -p` for headless / CI. Same Agent / Ask / Plan modes. Loads `.cursor/rules`, `AGENTS.md`, and `CLAUDE.md`.
+
+**Why:** You are already in SSH / tmux / CI and should not open a GUI just to reuse the same rules. This is another surface of the same agent, not a third model.
+
+**Versus editor / Cloud:** The editor has Tab and Inline Edit; the CLI does not. Cloud runs on an isolated VM; the CLI edits the current working tree unless you pass `--worktree`. Prefix a message with `&` to hand off to Cloud.
+
+**Docs:** [CLI Overview](https://cursor.com/docs/cli/overview), [Installation](https://cursor.com/docs/cli/installation), [Headless](https://cursor.com/docs/cli/headless)

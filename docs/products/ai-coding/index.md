@@ -17,7 +17,7 @@
 ## Featured Tools
 
 - [GitHub Copilot](./copilot.md) - Industry-standard AI code completion
-- [Cursor](./cursor/) - AI-first code editor with chat and generation
+- [Cursor](./cursor/) - Editor + CLI + Cloud Agents + Bugbot
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
 - [Gemini CLI](./gemini-cli.md) - Google's AI coding assistant

@@ -1,57 +1,80 @@
-# Cursor learning map
+# Cursor ecosystem learning map
 
-> **Cursor is an AI editor and coding agent.** Tab, inline edit, and a repo-aware Agent live in one VS Code-based window. This page is a map. It does not walk you through clicks.
+> **Cursor is Anysphere's coding-agent family**: a local editor, a terminal CLI, cloud sandbox agents, and PR review. The fastest first hour is still Tab + Agent in the editor. This page is a map. It does not walk you through clicks.
 
 ## Who this is for
 
 - Front-end / full-stack engineers moving from autocomplete to “let the agent edit the repo”
 - People who already know VS Code and are installing Cursor for the first time
-- Tech leads picking Rules / Skills / Bugbot for a team
+- Tech leads choosing among **editor / CLI / Cloud / Bugbot**
 
-**Not this page:** enterprise contracts, per-token price grids, or Anysphere internals.
+**Not this page:** enterprise contracts, per-token price grids, Anysphere internals, or standalone tutorials for Origin / SDK / Security Agents.
 
 ## Product landscape
 
+Official docs treat these as **product surfaces**, not another Rules recap. This site covers the four you will actually pick between:
+
 ```
-Cursor
-├── Editor (VS Code fork)
+Cursor family
+├── Cursor editor (VS Code fork) — the local default
 │   ├── Tab          — multi-line complete, cross-file jumps, auto-import
 │   ├── Inline Edit  — Cmd+K / Ctrl+K on the current selection
-│   └── Chat / Agent — Cmd+I / Ctrl+I: search, edit, run commands
-├── Project context
-│   ├── AGENTS.md / .cursor/rules
-│   ├── Skills / Commands
-│   ├── MCP / Hooks / Subagents
-│   └── Codebase index (semantic search)
-└── Cloud and review
-    ├── Cloud Agents — isolated VMs, PRs
-    └── Bugbot       — PR review (not a runtime debugger)
+│   └── Chat / Agent — Cmd+I / Ctrl+I; one agent, four constraints
+│       ├── Agent    — edit files, run commands
+│       ├── Ask      — read-only Q&A
+│       ├── Plan     — editable plan, then implement
+│       └── Debug    — hypotheses → logs → you reproduce → evidence
+├── Cursor CLI (`agent`) — interactive terminal, or `agent -p` headless / CI
+├── Cloud Agents (formerly Background Agents)
+│   └── Isolated VMs: clone, branch, test, open PRs
+│       Start from: editor Cloud dropdown, cursor.com/agents, mobile,
+│       Slack / GitHub `@cursor`, or prefix a CLI message with `&`
+└── Bugbot — automated PR review (bugs / security / quality)
+    └── Autofix spawns a Cloud Agent. Official name is Autofix, not a product called “Fixer”
 ```
 
-### Quick decision
+**Not split into pages here** (official docs exist; not enough everyday density for a sixth Tutorial): Origin, SDK, Security Agents, PR Routing & Approval, Design Mode, iOS / PWA.
+
+Closest cousins on this site: Cloud Agents ≈ Claude remote / Dispatch and Gemini Jules; Bugbot ≈ “machine reviews the PR first”; CLI ≈ Claude Code / Codex in a terminal.
+
+### Quick decision: which should I use?
 
 ```
 What do you want?
-├── Finish the current line / next edit
-│   └── Tab
-├── Change this selection or function
-│   └── Inline Edit (Cmd+K / Ctrl+K)
-├── Explain first, do not touch files
-│   └── Ask (Cmd+. mode menu)
-├── Multi-file work, tests, cleanup
-│   └── Agent (Cmd+I)
-├── Large or fuzzy change
-│   └── Plan Mode (Shift+Tab in the agent box)
-├── Reproducible bug, unknown cause
-│   └── Debug Mode
-└── PR already pushed
-    └── Bugbot (Dashboard Automations)
+├── Finish the line / next edit / this selection
+│   ├── Next edit → Tab (do not start an Agent turn)
+│   └── This selection / function → Inline Edit (Cmd+K / Ctrl+K)
+├── Ask, edit, plan, or debug in the local repo
+│   └── Editor Agent (Cmd+I; Cmd+. for the mode menu)
+│       ├── Understand first, do not touch files → Ask
+│       ├── Clear multi-file work / tests → Agent
+│       ├── Large or fuzzy change → Plan (Shift+Tab in the input)
+│       └── Reproducible bug, unknown cause → Debug
+├── You are in a terminal, or a script / CI needs headless
+│   └── Cursor CLI
+│       ├── Interactive → `agent`
+│       ├── Read-only → `agent --mode=ask`
+│       ├── Plan first → `agent --mode=plan` / `--plan`
+│       └── Script / CI → `agent -p`; add `--force` to apply edits
+├── You are away, need parallelism, or want an isolated VM + PR
+│   └── Cloud Agents
+│       ├── Editor / web / mobile
+│       ├── Slack, GitHub, Linear: `@cursor`
+│       └── In a CLI session, prefix the message with `&`
+└── The PR is already pushed (or you want a diff review first)
+    └── Bugbot
+        ├── Hosted auto-review / comment `cursor review`
+        ├── Local `/review-bugbot` before you push
+        └── Machine should also patch → Autofix (Cloud Agent), not Debug Mode
 ```
 
 | You care about | Pick | Next |
 |----------------|------|------|
-| IDE with Tab + Agent + rules | **Cursor** | [Tutorial](./cursor) |
-| Terminal, fine-grained permissions, headless CI | [Claude Code](../claude/claude-code) | Claude map |
+| IDE with Tab + Agent + rules | **Cursor editor** | [Tutorial](./cursor) |
+| Terminal or headless CI, same Cursor rules / MCP | **Cursor CLI** | [Cookbook · CLI](./cursor-cookbook#use-cursor-cli-in-the-terminal-or-ci) |
+| Away / parallel / isolated VM + PR | **Cloud Agents** | [Cookbook · Cloud](./cursor-cookbook#run-work-on-cloud-agents) |
+| Machine reviews the PR first | **Bugbot** | [Cookbook · Bugbot](./cursor-cookbook#review-prs-with-bugbot) |
+| Terminal, fine-grained permissions, Anthropic stack | [Claude Code](../claude/claude-code) | Claude map |
 | Stay inside stock VS Code + GitHub | [GitHub Copilot](../copilot) | Copilot page |
 
 The full capability matrix, shortcuts, and config templates live on the [cheatsheet](./cursor-cheatsheet). This overview does not repeat that table.
@@ -60,18 +83,37 @@ The full capability matrix, shortcuts, and config templates live on the [cheatsh
 
 Full “what / why” lives in the [glossary](./cursor-glossary).
 
-| Concept | One line |
-|---------|----------|
-| **Rules** | Persistent instructions prepended to model context |
-| **AGENTS.md** | Plain-markdown project brief, portable across tools |
-| **Skills** | On-demand `SKILL.md` workflows; also `/name` |
-| **Commands** | `/` prompts from `.cursor/commands/*.md` |
-| **MCP** | Protocol for external tools and data |
-| **Hooks** | Scripts on the Agent / Tab lifecycle |
-| **Subagents** | Child agents with their own context windows |
-| **Bugbot** | PR reviewer, not Debug Mode |
-| **Modes** | Agent / Ask / Plan / Debug |
-| **Tab** | Completion model; accept / reject trains the next suggestion |
+| Concept | One line | Where |
+|---------|----------|-------|
+| **Tab** | Completion model; accept / reject trains the next suggestion | Editor |
+| **Modes** | Agent / Ask / Plan / Debug — constraints, not four products | Editor / CLI |
+| **Rules / AGENTS.md** | Persistent instructions in model context | Editor / CLI / Cloud |
+| **Skills / Commands** | On-demand workflows; `/` to run | Editor / Cloud |
+| **MCP / Hooks / Subagents** | External tools, lifecycle scripts, isolated children | Editor / CLI / Cloud (different limits) |
+| **Cloud Agents** | Agents on isolated VMs; formerly Background Agents | Cloud |
+| **Bugbot** | PR reviewer; Autofix then spawns a Cloud Agent | PR / `/review-bugbot` |
+| **CLI `agent`** | Official terminal entry; `-p` for headless | Terminal / CI |
+
+## Feature quick reference
+
+### Editor
+
+| Feature | Purpose | Doc |
+|---------|---------|-----|
+| Tab | Cheap completions, no agent turn | [Tutorial · Tab](./cursor#tab-and-inline-edit) |
+| Inline Edit | `Cmd+K` on a selection | same |
+| Agent / Ask / Plan / Debug | Four constraints on one local agent | [Tutorial · Modes](./cursor#four-modes) |
+| Rules / `AGENTS.md` | Persist package manager and folder conventions | [Tutorial · Project context](./cursor#project-context) |
+
+### CLI / Cloud / Bugbot
+
+| Feature | Purpose | Doc |
+|---------|---------|-----|
+| `agent` | Same agent in a terminal | [Cookbook · CLI](./cursor-cookbook#use-cursor-cli-in-the-terminal-or-ci) |
+| `agent -p` / `--force` | Scripts and CI; `--force` to write files | same |
+| Cloud Agents | Remote VM work and PRs | [Cookbook · Cloud](./cursor-cookbook#run-work-on-cloud-agents) |
+| Bugbot | Reviews a PR diff; default check is `neutral` | [Cookbook · Bugbot](./cursor-cookbook#review-prs-with-bugbot) |
+| Autofix | Bugbot starts a Cloud Agent on findings | same |
 
 ## Learning path
 
@@ -82,7 +124,7 @@ Full “what / why” lives in the [glossary](./cursor-glossary).
 | 1 | Install, sign in, open a folder | [Tutorial · Install](./cursor#install-and-sign-in) |
 | 2 | `Cmd+I`: explain this repo | [Tutorial · First example](./cursor#five-minute-first-example) |
 | 3 | One low-risk edit, review the diff, run existing checks | same |
-| 4 | Switch to Plan for bigger work | [Tutorial · Modes](./cursor#four-modes) |
+| 4 | Tell Tab / Inline Edit / Ask / Agent / Plan / Debug apart | [Tutorial · Modes](./cursor#four-modes) |
 
 ### Stage 2 — Teach the project
 
@@ -102,6 +144,14 @@ Full “what / why” lives in the [glossary](./cursor-glossary).
 | 4 | MCP / Hooks / parallel agents | [Cookbook](./cursor-cookbook) |
 | 5 | Lookup | [Cheatsheet](./cursor-cheatsheet) |
 | 6 | Definitions | [Glossary](./cursor-glossary) |
+
+### Stage 4 — Leave the local window
+
+| Step | What | Link |
+|------|------|------|
+| 1 | Install `agent`, run one interactive turn | [Cookbook · CLI](./cursor-cookbook#use-cursor-cli-in-the-terminal-or-ci) |
+| 2 | Dispatch one Cloud task | [Cookbook · Cloud](./cursor-cookbook#run-work-on-cloud-agents) |
+| 3 | Cloud ≠ Bugbot ≠ Debug | [Glossary · Cloud](./cursor-glossary#cloud-agents) · [Bugbot](./cursor-glossary#bugbot) |
 
 ## Related pages
 

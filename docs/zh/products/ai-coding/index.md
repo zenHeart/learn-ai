@@ -17,7 +17,7 @@
 ## 精选工具
 
 - [GitHub Copilot](./copilot.md) - 行业标准的 AI 代码补全
-- [Cursor](./cursor/) - AI 优先的代码编辑器，具备聊天和生成功能
+- [Cursor](./cursor/) - 编辑器 + CLI + Cloud Agents + Bugbot
 - [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
 - **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
 - [Gemini CLI](./gemini-cli.md) - Google 的 AI 编程助手
@@ -58,7 +58,7 @@
 
 ### Cursor
 
-AI 优先 IDE：Tab 补全、Inline Edit、Agent 改多文件在同一个 VS Code 系界面里。适合初学者和需要「补全 + 规则 + PR 审查」一体的团队。
+AI 优先 IDE 家族：编辑器（Tab / Agent / Ask / Plan）、CLI `agent`、Cloud Agents、Bugbot。适合初学者和需要「补全 + 规则 + 云端干活 + PR 审查」一体的团队。
 
 - 学习地图 / 决策：[Cursor](./cursor/)
 - 22 项功能矩阵、快捷键、配置：[速查表](./cursor/cursor-cheatsheet)

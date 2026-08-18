@@ -28,6 +28,8 @@
 | 需求糊、跨很多文件 | **Plan** | 先对齐再写 |
 | 能复现、找不到根因 | **Debug** | 用运行时证据 |
 | PR 审查 | **Bugbot** | 看 diff，不是跑你的 app |
+| 人不在 / 要并行 / 隔离 VM 开 PR | **Cloud Agents** | 曾用名 Background Agents |
+| 终端交互或无头 CI | **CLI `agent`** | 二进制是 `agent`，不是 `cursor` |
 
 ### 该用 Rules / AGENTS.md / Skills / Commands / Hooks / MCP / Subagents
 
@@ -65,7 +67,9 @@
 | [MCP](https://cursor.com/docs/mcp) | 外部工具 / 数据源 | [MCP](https://cursor.com/docs/mcp) |
 | [Hooks](https://cursor.com/docs/hooks) | Agent / Tab / 工作区生命周期脚本 | [Hooks](https://cursor.com/docs/hooks) |
 | [Sub-agents](https://cursor.com/docs/subagents) | 独立上下文的委派；内置 Explore / Bash / Browser | [Subagents](https://cursor.com/docs/subagents) |
-| [Bugbot](https://cursor.com/docs/bugbot) | **PR 审查**（bug / 安全 / 质量），可 Autofix | [Bugbot](https://cursor.com/docs/bugbot) |
+| [Bugbot](https://cursor.com/docs/bugbot) | **PR 审查**（bug / 安全 / 质量），可 Autofix（再拉 Cloud Agent） | [Bugbot](https://cursor.com/docs/bugbot) |
+| [Cloud Agents](https://cursor.com/docs/cloud-agent) | 隔离 VM 克隆仓库、开 PR；曾用名 Background Agents | [Cloud Agent](https://cursor.com/docs/cloud-agent) |
+| [Cursor CLI](https://cursor.com/docs/cli/overview) | 终端 `agent`；无头 `agent -p` | [CLI](https://cursor.com/docs/cli/overview) · [Installation](https://cursor.com/docs/cli/installation) |
 | [Modes](https://cursor.com/docs/agent/overview) | Agent / Ask / Plan / Debug。`Cmd+.`；Plan 用 `Shift+Tab` | [Overview](https://cursor.com/docs/agent/overview) · [Plan](https://cursor.com/docs/agent/plan-mode) · [Debug](https://cursor.com/docs/agent/debug-mode) |
 | [Tab](https://cursor.com/docs/tab/overview) | 多行补全、跨文件跳转、TS/Python auto-import | [Tab](https://cursor.com/docs/tab/overview) |
 | [Chat](https://cursor.com/docs/agent/prompting) | Agent 对话；用 `@` 附加上下文 | [Prompting](https://cursor.com/docs/agent/prompting) |
@@ -110,7 +114,8 @@
 | **Checkpoints** | Agent 大改前的快照 | [Glossary](./cursor-glossary#checkpoints) |
 | **Codebase Index** | 语义搜索用的向量索引 | [Glossary](./cursor-glossary#codebase-indexing) |
 | **Privacy Mode** | 代码不用于训练 | [Glossary](./cursor-glossary#privacy-mode) |
-| **Cloud Agents** | 远程 VM 上的 Agent | [Glossary](./cursor-glossary#cloud-agents) |
+| **Cloud Agents** | 远程 VM 上的 Agent；曾用名 Background Agents | [Glossary](./cursor-glossary#cloud-agents) |
+| **CLI `agent`** | 官方终端入口；无头用 `-p` | [Glossary](./cursor-glossary#cursor-cli) |
 
 ---
 
@@ -176,6 +181,8 @@
 | Bugbot 项目说明 | `.cursor/BUGBOT.md` | Dashboard Team rules |
 | 忽略 | `.cursorignore`、`.cursorindexingignore` | 用户设置里的全局 ignore |
 | 计划（保存到工作区后） | `.cursor/plans/` | 默认在用户主目录 |
+| Cloud 环境 | `.cursor/environment.json` | Dashboard Environments / Secrets |
+| CLI 配置 | `.cursor/cli.json` | `~/.cursor/cli-config.json` |
 
 兼容：Skills / Subagents 也会扫 `.claude/`、`.codex/` 对应目录。同名时 `.cursor/` 优先。
 
@@ -248,6 +255,27 @@ Cloud Agent：只跑仓库里的 command-based hooks；不跑用户级 hooks、�
 
 发现路径见上表。也兼容 `.claude/skills/`、`.codex/skills/`。
 
+### CLI `agent`
+
+来源：[Installation](https://cursor.com/docs/cli/installation)、[Overview](https://cursor.com/docs/cli/overview)、[Headless](https://cursor.com/docs/cli/headless)、[Using](https://cursor.com/docs/cli/using)。
+
+| 命令 | 作用 |
+|------|------|
+| `curl https://cursor.com/install -fsS \| bash` | macOS / Linux / WSL 安装 |
+| `irm 'https://cursor.com/install?win32=true' \| iex` | Windows PowerShell 安装 |
+| `agent --version` | 验证 |
+| `agent` / `agent "…"` | 交互 |
+| `agent --mode=ask` | 只读 |
+| `agent --mode=plan` / `--plan` | Plan |
+| `agent -p "…"` | 无头；默认不落盘 |
+| `agent -p --force "…"` | 无头并写文件（`--yolo` 同义） |
+| 会话里 `& …` | 交给 Cloud Agent |
+| `agent ls` / `agent resume` / `agent --continue` | 恢复会话 |
+| `agent update` | 手动更新 |
+| `agent --worktree "…"` | 在独立 git worktree 里改 |
+
+脚本鉴权：`CURSOR_API_KEY`。配置路径：全局 `~/.cursor/cli-config.json`，项目 `.cursor/cli.json`（官方 [Configuration](https://cursor.com/docs/cli/reference/configuration)）。
+
 ### 模型与套餐（摘要）
 
 细节和单元格价格以 [Models & Pricing](https://cursor.com/docs/models-and-pricing) 为准（页面是动态表）。
@@ -273,6 +301,9 @@ Cloud Agent：只跑仓库里的 command-based hooks；不跑用户级 hooks、�
 | Bugbot check 绿了但还有评论 | 默认 `neutral` | 看评论；要挡合并需 fail-on-unresolved |
 | Autofix 不可用 | 无 on-demand 或 Legacy Privacy Mode | 官方 Requirements |
 | Cloud 上 hook 不跑 | 写在 `~/.cursor/hooks.json` 或 `type: prompt` | 改成仓库 `.cursor/hooks.json` 的 command hook |
+| `agent: command not found` | `~/.local/bin` 不在 PATH | 官方 Installation 的 PATH 步骤 |
+| `agent -p` 没改文件 | 无头默认只提出改动 | 加 `--force` / `--yolo` |
+| Cloud 任务起不来 | 没接仓库或不是付费计划 | 管理员接 SCM；官方 Troubleshooting |
 | MCP 连不上 | command 不在 PATH / 缺 env | Customize 里看服务器日志；用插值不要写死密钥 |
 | Tab 乱补 markdown | 该扩展名未禁用 | 状态栏按扩展名 Disable |
 
@@ -328,6 +359,8 @@ Cloud Agent：只跑仓库里的 command-based hooks；不跑用户级 hooks、�
 
 - **[Cursor Docs](https://cursor.com/docs)** — 主文档。关键子页见维护参考 [`.claude/skills/doc-research/references/cursor.md`](https://github.com/zenHeart/learn-ai/blob/master/.claude/skills/doc-research/references/cursor.md)
   - 建议访问方式：web-reader 逐页
+  - 最后核实：2026-08-18
+- **[Cloud Agents](https://cursor.com/docs/cloud-agent)**、**[CLI](https://cursor.com/docs/cli/overview)**、**[Bugbot](https://cursor.com/docs/bugbot)** — 三个独立产品形态
   - 最后核实：2026-08-18
 - **[Changelog](https://cursor.com/changelog)** — 编辑器发版
   - 建议访问方式：web-reader / 浏览器

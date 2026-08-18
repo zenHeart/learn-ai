@@ -229,6 +229,7 @@ alwaysApply: false
   → 大改：Plan → 编辑计划 → 批准 → Agent 实现 → 跑已有检查
   → 走偏：Restore Checkpoint，或回计划重跑
   → 推 PR：Bugbot 或 /review-bugbot
+  → 人不在 / 要并行：Cloud Agents；人在终端 / CI：`agent`
 ```
 
 提示要具体。官方对比：
@@ -258,7 +259,8 @@ alwaysApply: false
 
 ## 下一步
 
-1. [Cookbook](./cursor-cookbook) — 修 bug、做功能、Rules、Bugbot、MCP
+1. [Cookbook](./cursor-cookbook) — 修 bug、做功能、Rules、Bugbot、Cloud、CLI、MCP
 2. [速查表](./cursor-cheatsheet) — 矩阵、快捷键、配置模板
 3. [术语表](./cursor-glossary) — 选型为什么那样切
-4. 官方：[Quickstart](https://cursor.com/docs/get-started/quickstart)、[Agent best practices](https://cursor.com/blog/agent-best-practices)
+4. 回 [学习地图](./) 看补全 vs Agent vs Cloud vs Bugbot vs CLI
+5. 官方：[Quickstart](https://cursor.com/docs/get-started/quickstart)、[Agent best practices](https://cursor.com/blog/agent-best-practices)

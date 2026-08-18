@@ -28,6 +28,8 @@ Lookup, not a tutorial. How-to: [tutorial](./cursor). Definitions: [glossary](./
 | Fuzzy, many files | **Plan** | Align first |
 | Reproducible, cause unknown | **Debug** | Runtime evidence |
 | PR review | **Bugbot** | Diff, not your running app |
+| Away / parallel / isolated VM + PR | **Cloud Agents** | Formerly Background Agents |
+| Terminal or headless CI | **CLI `agent`** | Binary is `agent`, not `cursor` |
 
 ### Rules vs Skills vs Commands vs Hooks vs MCP vs Subagents
 
@@ -65,7 +67,9 @@ Moved from the Chinese overview (`docs/zh/products/ai-coding/index.md`). URLs up
 | [MCP](https://cursor.com/docs/mcp) | External tools and data | [MCP](https://cursor.com/docs/mcp) |
 | [Hooks](https://cursor.com/docs/hooks) | Agent / Tab / workspace lifecycle scripts | [Hooks](https://cursor.com/docs/hooks) |
 | [Sub-agents](https://cursor.com/docs/subagents) | Isolated delegates; built-in Explore / Bash / Browser | [Subagents](https://cursor.com/docs/subagents) |
-| [Bugbot](https://cursor.com/docs/bugbot) | **PR review** (bugs / security / quality), optional Autofix | [Bugbot](https://cursor.com/docs/bugbot) |
+| [Bugbot](https://cursor.com/docs/bugbot) | **PR review** (bugs / security / quality); Autofix spawns Cloud | [Bugbot](https://cursor.com/docs/bugbot) |
+| [Cloud Agents](https://cursor.com/docs/cloud-agent) | Isolated VMs, PRs; formerly Background Agents | [Cloud Agent](https://cursor.com/docs/cloud-agent) |
+| [Cursor CLI](https://cursor.com/docs/cli/overview) | Terminal `agent`; headless `agent -p` | [CLI](https://cursor.com/docs/cli/overview) · [Installation](https://cursor.com/docs/cli/installation) |
 | [Modes](https://cursor.com/docs/agent/overview) | Agent / Ask / Plan / Debug. `Cmd+.`; Plan via `Shift+Tab` | [Overview](https://cursor.com/docs/agent/overview) · [Plan](https://cursor.com/docs/agent/plan-mode) · [Debug](https://cursor.com/docs/agent/debug-mode) |
 | [Tab](https://cursor.com/docs/tab/overview) | Multi-line complete, jumps, TS/Python auto-import | [Tab](https://cursor.com/docs/tab/overview) |
 | [Chat](https://cursor.com/docs/agent/prompting) | Agent thread; `@` attaches context | [Prompting](https://cursor.com/docs/agent/prompting) |
@@ -110,7 +114,8 @@ One sentence each. Longer definitions: [glossary](./cursor-glossary).
 | **Checkpoints** | Snapshots before big edits | [Glossary](./cursor-glossary#checkpoints) |
 | **Codebase Index** | Vectors for semantic search | [Glossary](./cursor-glossary#codebase-indexing) |
 | **Privacy Mode** | No training on your code | [Glossary](./cursor-glossary#privacy-mode) |
-| **Cloud Agents** | Agents on remote VMs | [Glossary](./cursor-glossary#cloud-agents) |
+| **Cloud Agents** | Agents on remote VMs; formerly Background Agents | [Glossary](./cursor-glossary#cloud-agents) |
+| **CLI `agent`** | Official terminal entry; `-p` for headless | [Glossary](./cursor-glossary#cursor-cli) |
 
 ---
 
@@ -176,6 +181,8 @@ The old stub called `Cmd+Shift+K` “inline chat” and treated `Cmd+L` only as 
 | Bugbot notes | `.cursor/BUGBOT.md` | Dashboard team rules |
 | Ignore | `.cursorignore`, `.cursorindexingignore` | Global ignore in settings |
 | Plans (saved to workspace) | `.cursor/plans/` | Home directory by default |
+| Cloud environment | `.cursor/environment.json` | Dashboard Environments / Secrets |
+| CLI config | `.cursor/cli.json` | `~/.cursor/cli-config.json` |
 
 Skills / subagents also load `.claude/` and `.codex/` trees. `.cursor/` wins on name clash.
 
@@ -242,6 +249,27 @@ Cloud agents: command-based **project** hooks only.
 | `disable-model-invocation` | no | `true` → `/name` only |
 | `metadata` | no | Arbitrary map |
 
+### CLI `agent`
+
+Sources: [Installation](https://cursor.com/docs/cli/installation), [Overview](https://cursor.com/docs/cli/overview), [Headless](https://cursor.com/docs/cli/headless), [Using](https://cursor.com/docs/cli/using).
+
+| Command | Meaning |
+|---------|---------|
+| `curl https://cursor.com/install -fsS \| bash` | macOS / Linux / WSL install |
+| `irm 'https://cursor.com/install?win32=true' \| iex` | Windows PowerShell install |
+| `agent --version` | Verify |
+| `agent` / `agent "…"` | Interactive |
+| `agent --mode=ask` | Read-only |
+| `agent --mode=plan` / `--plan` | Plan |
+| `agent -p "…"` | Headless; does not write files by default |
+| `agent -p --force "…"` | Headless and apply edits (`--yolo` alias) |
+| `& …` in a session | Hand off to a Cloud Agent |
+| `agent ls` / `agent resume` / `agent --continue` | Resume |
+| `agent update` | Manual update |
+| `agent --worktree "…"` | Edit in a separate git worktree |
+
+Script auth: `CURSOR_API_KEY`. Config: global `~/.cursor/cli-config.json`, project `.cursor/cli.json` ([Configuration](https://cursor.com/docs/cli/reference/configuration)).
+
 ### Models and plans (summary)
 
 Authoritative numbers: [Models & Pricing](https://cursor.com/docs/models-and-pricing) (dynamic table).
@@ -267,6 +295,9 @@ Per-million token cells were not recoverable from the rendered docs page.
 | Bugbot check is green, comments remain | Default `neutral` | Read comments; enable fail-on-unresolved to block |
 | Autofix missing | No on-demand usage or Legacy Privacy Mode | Official requirements |
 | Hook missing in Cloud | User-level or `type: prompt` | Project `.cursor/hooks.json`, command hook |
+| `agent: command not found` | `~/.local/bin` not on PATH | Official Installation PATH step |
+| `agent -p` did not edit files | Headless proposes only | Add `--force` / `--yolo` |
+| Cloud run never starts | SCM not connected or free plan | Admin connects SCM; official Troubleshooting |
 | MCP will not start | `command` not on PATH / missing env | Customize logs; interpolate secrets |
 | Tab pollutes markdown | Extension not disabled | Status bar → disable for that extension |
 
@@ -318,6 +349,8 @@ Last systematic check: 2026-08-18. Discovery method: repo `sources/_template.md`
 
 - **[Cursor Docs](https://cursor.com/docs)** — main tree. Child pages listed in [references/cursor.md](https://github.com/zenHeart/learn-ai/blob/master/.claude/skills/doc-research/references/cursor.md)
   - How to read: web-reader, one URL at a time
+  - Last verified: 2026-08-18
+- **[Cloud Agents](https://cursor.com/docs/cloud-agent)**, **[CLI](https://cursor.com/docs/cli/overview)**, **[Bugbot](https://cursor.com/docs/bugbot)** — three first-class surfaces
   - Last verified: 2026-08-18
 - **[Changelog](https://cursor.com/changelog)** — editor releases
   - Last verified: 2026-08-18

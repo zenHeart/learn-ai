@@ -190,9 +190,15 @@ Root `.cursor/BUGBOT.md` (no secrets):
 
 The same patch ID is skipped on the remote PR with a comment that it was already reviewed.
 
-### Autofix
+### Autofix (official name, not a product called Fixer)
 
-Spawns a Cloud Agent. Prefer **Create New Branch**. Committing onto the PR branch is capped at 3 attempts. Needs on-demand usage and Storage enabled (not Legacy Privacy Mode).
+Official [Bugbot · Autofix](https://cursor.com/docs/bugbot) spawns a [Cloud Agent](https://cursor.com/docs/cloud-agent) to patch findings. The 2026 docs name is **Autofix**. There is no separate product page titled Fixer.
+
+- Prefer **Create New Branch**
+- **Commit to Existing Branch** is capped at 3 attempts per PR
+- Needs on-demand usage and Storage enabled (not Legacy Privacy Mode)
+- Billed as Cloud Agent usage
+- Personal settings override the team default. If Autofix is off, use **Fix in Cursor** / **Fix in Web** on the comment
 
 ### CI trap
 
@@ -283,9 +289,103 @@ Do not assume `afterFileEdit` puts the path in `argv[1]`; read the current Hooks
 
 Official blog: pick worktree in the agent dropdown. Apply merges back. You can also run the same prompt on several models and pick one — expensive, save it for hard problems.
 
-### Cloud Agents
+---
 
-Good for todo-list work: drive-by bugs, tests on old code, docs. Start from [cursor.com/agents](https://cursor.com/agents), the editor, mobile, or Slack `@Cursor` (admin must connect Slack first). Cloud MCP comes from the team config, not your laptop `mcp.json`.
+## Run work on Cloud Agents
+
+Use this when you are away, need several agents at once, or the job should clone, test, and open a PR on an isolated VM. Cousins on this site: Claude remote / Dispatch, Gemini Jules. Official: [Cloud Agents](https://cursor.com/docs/cloud-agent). **Former name: Background Agents** (official Naming History).
+
+Do not send “three lines under the caret” to Cloud — that is Tab. Do not use Cloud as a PR reviewer — that is Bugbot.
+
+### When to dispatch
+
+| Cloud | Stay local |
+|-------|------------|
+| Drive-by bugs, tests, docs, overnight work | You need to watch the diff, edit a plan, or use Debug Mode |
+| Many parallel runs; the laptop can sleep | Secrets or services that never left your machine |
+| Coordinated edits across repos, one PR each | One repo you already have checked out |
+
+Official prerequisites: a paid plan; an account admin must connect GitHub / GitLab / Bitbucket / Azure DevOps. Privacy Mode can stay on, but Cloud is officially the only feature that requires Cursor to store code. If policy forbids storage, leave it off.
+
+### Where to start one
+
+1. Editor agent input → **Cloud**
+2. [cursor.com/agents](https://cursor.com/agents) on any device
+3. [Cursor for iOS](https://cursor.com/docs/cloud-agent/mobile); Android: install the PWA
+4. Slack / Linear `@cursor` (admin installs the app first)
+5. `@cursor` on a GitHub / Bitbucket issue or PR
+6. Prefix a CLI message with `&` (next section)
+
+### Give it a machine first
+
+Official wording: skipping environment setup is like not giving engineers a computer. Prefer agent-led setup in the dashboard so it installs dependencies and produces the first Build. To commit config, use `.cursor/environment.json` (fields from [Setup](https://cursor.com/docs/cloud-agent/setup)):
+
+```json
+{
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "install": "pnpm install"
+}
+```
+
+`install` must be idempotent and only do work that lands on disk. Put Docker / databases / dev servers in `start` or `terminals`. Put secrets in the dashboard **Secrets** tab, not in git.
+
+Add a **Cursor Cloud specific instructions** section to `AGENTS.md` (official suggested heading) for how to run tests in the VM.
+
+### How Cloud differs from local (official limits)
+
+- MCP comes from the team config on [cursor.com/agents](https://cursor.com/agents), not your laptop `mcp.json`
+- Hooks: command-based **project** hooks only — not `~/.cursor/hooks.json`, not prompt-based hooks
+- Artifacts (screenshots, videos, logs) and remote-desktop takeover
+- Multi-repo environments can open a PR per repo; official: long-running is not available for multi-repo yet
+
+---
+
+## Use Cursor CLI in the terminal or CI
+
+Use this when you are already in tmux / SSH / CI, or you want the same Rules from a script. Official: [CLI Overview](https://cursor.com/docs/cli/overview), [Installation](https://cursor.com/docs/cli/installation), [Headless](https://cursor.com/docs/cli/headless).
+
+The binary is **`agent`**, not `cursor`.
+
+```bash
+# macOS / Linux / WSL
+curl https://cursor.com/install -fsS | bash
+
+# Windows PowerShell
+irm 'https://cursor.com/install?win32=true' | iex
+
+agent --version
+# If the shell cannot find it, add ~/.local/bin to PATH
+```
+
+### Interactive
+
+```bash
+agent
+agent "refactor the auth module to use JWT tokens"
+agent --mode=ask
+agent --mode=plan    # or --plan
+```
+
+In a session: `Shift+Tab` rotates Agent / Plan / Ask; prefix a message with `&` to hand off to a Cloud Agent; `agent ls` / `agent resume` / `agent --continue` restore history.
+
+### Headless / CI
+
+Official Headless page: `-p` / `--print` proposes edits; add `--force` (alias `--yolo`) to write files. Scripts authenticate with `CURSOR_API_KEY`.
+
+```bash
+export CURSOR_API_KEY=your_api_key_here
+
+# Ask only
+agent -p "What does this codebase do?"
+
+# Write files
+agent -p --force "Add JSDoc to src/lib/money.ts. Do not touch other files."
+```
+
+The CLI loads the same `.cursor/rules`, plus root `AGENTS.md` and `CLAUDE.md`. MCP comes from the project's `mcp.json` (not the Cloud team MCP list). Isolated checkout: `agent --worktree "upgrade the test runner"`.
 
 ---
 
@@ -299,11 +399,15 @@ Good for todo-list work: drive-by bugs, tests on old code, docs. Start from [cur
 | Large PR | Assuming the default check blocks merge | Enable fail-on-unresolved, or read comments |
 | Secrets | Tokens in Always rules | `.cursorignore` + `${env:NAME}` |
 | Parallel edits | Two agents, one worktree | Worktree or Cloud |
+| Three-line edit in Cloud | Spin a VM for caret work | Tab or `Cmd+K` |
+| Cloud as PR review | Wait for the VM to comment | Bugbot / `/review-bugbot` |
+| `agent -p` in CI, no file changes | Missing `--force` | `agent -p --force` (Headless page) |
 
 ---
 
 ## Next steps
 
 - [Tutorial](./cursor) for the basics
-- [Cheatsheet](./cursor-cheatsheet) for copy-paste config
-- [Glossary](./cursor-glossary) for why the pieces are split
+- [Cheatsheet](./cursor-cheatsheet) for copy-paste config (includes CLI / Cloud)
+- [Glossary](./cursor-glossary) for why Cloud, CLI, and modes are split
+- [Learning map](./) for Tab vs Agent vs Cloud vs Bugbot vs CLI

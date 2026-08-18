@@ -219,6 +219,7 @@ Open the repo
   → Large: Plan → edit the plan → approve → implement → existing checks
   → Wrong turn: Restore Checkpoint, or refine the plan and rerun
   → PR: Bugbot or /review-bugbot
+  → Away / parallel: Cloud Agents. Terminal / CI: `agent`
 ```
 
 Be specific. Official contrast: “add tests for auth.ts” vs “write the logout edge case for `auth.ts` using patterns in `__tests__/`, no mocks.”
@@ -244,7 +245,8 @@ Community signal (not an official guarantee): some users report Plan still writi
 
 ## Next steps
 
-1. [Cookbook](./cursor-cookbook)
+1. [Cookbook](./cursor-cookbook) — bugs, features, Rules, Bugbot, Cloud, CLI, MCP
 2. [Cheatsheet](./cursor-cheatsheet)
 3. [Glossary](./cursor-glossary)
-4. Official: [Quickstart](https://cursor.com/docs/get-started/quickstart), [Agent best practices](https://cursor.com/blog/agent-best-practices)
+4. [Learning map](./) — Tab vs Agent vs Cloud vs Bugbot vs CLI
+5. Official: [Quickstart](https://cursor.com/docs/get-started/quickstart), [Agent best practices](https://cursor.com/blog/agent-best-practices)

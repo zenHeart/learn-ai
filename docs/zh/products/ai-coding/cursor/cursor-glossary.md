@@ -28,7 +28,7 @@
          │                     │
    ┌─────┴─────┐        ┌──────┴──────┐
    │ Subagents │        │ Cloud /     │
-   │           │        │ Bugbot      │
+   │  / CLI    │        │ Bugbot      │
    └───────────┘        └─────────────┘
 ```
 
@@ -181,6 +181,8 @@
 
 **不是 Debug Mode**：Debug 在你的工作区里打日志、看运行时。Bugbot 看 diff，不启动你的 app。旧总览矩阵把 Bugbot 写成「带运行时上下文的自动调试器」，那是错的。
 
+**Autofix**：官方功能名。它再拉起一个 Cloud Agent 去改 finding。2026 文档没有名为 Fixer 的独立产品页。
+
 **官方文档**：[Bugbot](https://cursor.com/docs/bugbot)
 
 ---
@@ -221,10 +223,26 @@
 
 ## Cloud Agents
 
-**是什么**：在隔离 VM 上跑的 Agent。克隆仓库、建分支、干活、开 PR。可从编辑器、[cursor.com/agents](https://cursor.com/agents)、手机、Slack `@Cursor` 发起。
+**是什么**：在隔离 VM 上跑的 Agent。克隆仓库、建分支、干活、开 PR。可从编辑器 Cloud 下拉、[cursor.com/agents](https://cursor.com/agents)、[手机](https://cursor.com/docs/cloud-agent/mobile)、Slack / GitHub / Linear `@cursor`、CLI 消息前加 `&` 发起。
 
-**为什么需要**：不适合占着本地窗口的 todo 项：顺手修的 bug、补测试、文档。
+**曾用名**：Background Agents（官方 Naming History）。新文档请用 Cloud Agents，不要再当两个产品写。
 
-**和本地 Subagents**：本地子代理用你的机器和本机 MCP。Cloud 子代理（`/in-cloud`、`/babysit`）用团队在 cursor.com 配的 MCP 和环境。
+**为什么需要**：不适合占着本地窗口的 todo 项：顺手修的 bug、补测试、文档、并行多条。对位 Claude 远程 / Dispatch、Gemini Jules。
 
-**官方文档**：[Cloud Agent](https://cursor.com/docs/cloud-agent)、[agent-best-practices](https://cursor.com/blog/agent-best-practices)
+**和本地 Subagents**：本地子代理用你的机器和本机 MCP。Cloud 用团队在 cursor.com 配的 MCP 和环境。
+
+**和 Bugbot**：Cloud 是「去改仓库」；Bugbot 是「审 PR diff」。Autofix 才会从审查跳到 Cloud。
+
+**官方文档**：[Cloud Agent](https://cursor.com/docs/cloud-agent)、[Setup](https://cursor.com/docs/cloud-agent/setup)、[agent-best-practices](https://cursor.com/blog/agent-best-practices)
+
+---
+
+## Cursor CLI
+
+**是什么**：官方终端入口，二进制名 **`agent`**。交互会话或 `agent -p` 无头 / CI。同一套 Agent 模式（Agent / Ask / Plan），读 `.cursor/rules`、`AGENTS.md`、`CLAUDE.md`。
+
+**为什么需要**：人已经在 SSH / tmux / CI 里时，不必为了同一套规则再开 GUI。CLI 不是第三个模型，是同一 Agent 的另一个表面。
+
+**和编辑器 / Cloud**：编辑器有 Tab 和 Inline Edit；CLI 没有。Cloud 跑在隔离 VM 上；CLI 默认改你当前工作目录（可用 `--worktree` 隔离）。会话里 `&` 把当前任务交给 Cloud。
+
+**官方文档**：[CLI Overview](https://cursor.com/docs/cli/overview)、[Installation](https://cursor.com/docs/cli/installation)、[Headless](https://cursor.com/docs/cli/headless)

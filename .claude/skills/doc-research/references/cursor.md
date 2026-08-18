@@ -7,7 +7,7 @@
 - 工具名：Cursor
 - 官方文档根地址：<https://cursor.com/docs>
 - 发版节奏：编辑器按 changelog 连续发小版本（2026 年可见 2.x / 3.x 系列）；文档站 URL 也会整体改版
-- 当前覆盖版本：2026-08 文档树（Quickstart / Agent / Rules / Skills / Hooks / MCP / Bugbot / Tab / Inline Edit）
+- 当前覆盖版本：2026-08 文档树（Quickstart / Agent / Rules / Skills / Hooks / MCP / Bugbot / Tab / Inline Edit / Cloud Agents / CLI）
 
 ## 文档文件结构（Diataxis 四象限）
 
@@ -24,7 +24,7 @@ docs/zh/products/ai-coding/cursor/
 
 | 文件 | 象限 | 写什么 | 不写什么 |
 |------|------|--------|----------|
-| `index.md` | Tutorial 导航 + Reference 速查 | 跨页面学习地图 + 决策 | 具体操作步骤、整张功能矩阵 |
+| `index.md` | Tutorial 导航 + Reference 速查 | 家族全景 + 补全/Agent/Cloud/Bugbot/CLI 决策 | 具体操作步骤、整张功能矩阵 |
 | `cursor.md` | Tutorial | 安装、第一次改动、核心功能怎么用 | 配置参数细节、概念长文 |
 | `cursor-cookbook.md` | How-to | 场景化提示模式、避坑 | 基础操作、概念定义 |
 | `cursor-cheatsheet.md` | Reference | 功能矩阵、快捷键、配置、数据源 | 概念解释、学习路径 |
@@ -45,6 +45,12 @@ docs/zh/products/ai-coding/cursor/
 - Hooks：<https://cursor.com/docs/hooks>
 - Subagents：<https://cursor.com/docs/subagents>
 - Bugbot：<https://cursor.com/docs/bugbot>
+- Cloud Agent：<https://cursor.com/docs/cloud-agent>
+- Cloud setup：<https://cursor.com/docs/cloud-agent/setup>
+- Cloud best practices：<https://cursor.com/docs/cloud-agent/best-practices>
+- CLI Overview：<https://cursor.com/docs/cli/overview>
+- CLI Installation：<https://cursor.com/docs/cli/installation>
+- CLI Headless：<https://cursor.com/docs/cli/headless>
 - Tab：<https://cursor.com/docs/tab/overview>
 - Inline Edit：<https://cursor.com/docs/inline-edit/overview>
 - Semantic search：<https://cursor.com/docs/context/semantic-search>
@@ -73,3 +79,7 @@ docs(cursor): ...
 - **快捷键口径**：官方当前文档里 `Cmd+I` / `Cmd+L` 都是 Toggle Sidepanel；`Cmd+K` 是 Inline Edit；Agent 入口在 Quickstart 里也写成 `Cmd+I`。旧 stub 把 `Cmd+L` 当「打开 AI Chat」、`Cmd+Shift+K` 当 Inline Chat，不要原样抄回教程。
 - **正文标题不写精确编辑器版本号**：changelog 迭代很快，版本点收敛到「本文涉及的版本变更点」或直接链 changelog。
 - **旧单文件 `docs/**/ai-coding/cursor.md`**：与 `cursor/index.md` 会抢同一 VitePress 路由，必须删除，不能并存。
+- **Cloud Agents = 原 Background Agents**：官方 Naming History。不要拆成两个产品，也不要为 Cloud / Bugbot / CLI 新建空 stub——密度够就加 cookbook 专节 + index 决策节点。
+- **Bugbot Autofix ≠ 独立产品 Fixer**：2026 官方页功能名是 Autofix，会拉起 Cloud Agent。没有单独的 Fixer 产品页就不要写「Fixer」。
+- **CLI 二进制是 `agent`**：安装脚本 `curl https://cursor.com/install -fsS | bash`；无头 `-p`，落盘加 `--force`。不要写成 `cursor` CLI。
+- **不拆 Origin / SDK / Security Agents stub**：官方有页，但对前端日常 80/20 不够独立成 Tutorial；只在 index 标明「本教程不拆页」。
