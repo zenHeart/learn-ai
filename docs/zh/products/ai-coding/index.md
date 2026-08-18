@@ -16,7 +16,7 @@
 
 ## 精选工具
 
-- [GitHub Copilot](./copilot.md) - 行业标准的 AI 代码补全
+- [GitHub Copilot](./copilot/) — Diataxis 四件套：[上手教程](./copilot/copilot)、[Cookbook](./copilot/copilot-cookbook)、[Cheatsheet](./copilot/copilot-cheatsheet)、[术语表](./copilot/copilot-glossary)
 - [Cursor](./cursor.md) - AI 优先的代码编辑器，具备聊天和生成功能
 - [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
 - **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
@@ -36,7 +36,7 @@
 - 优秀的多文件上下文支持
 
 ### 适合 VS Code 高级用户
-**推荐**: [GitHub Copilot](./copilot.md)
+**推荐**: [GitHub Copilot](./copilot/)
 - 无缝集成 VS Code
 - 快速自动补全
 - 行业标准

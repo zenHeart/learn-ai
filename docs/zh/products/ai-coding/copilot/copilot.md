@@ -153,7 +153,7 @@ copilot            # 启动交互式会话
 
 - **永远审查生成的代码**，尤其是权限判断、SQL 拼接、加密、支付相关。
 - **用自动化测试当护栏**——先确认测试正确，再让它改实现。
-- 需要确认某段建议是否与公开代码高度相似时，用[官方匹配日志](https://docs.github.com/en/copilot/how-tos/troubleshoot/find-matching-public-code)。
+- 需要确认某段建议是否与公开代码高度相似时，用[官方匹配日志](https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code)。
 - Agent 模式和 CLI 会执行命令，**不确定的命令别按同意**。
 
 ## 接下来

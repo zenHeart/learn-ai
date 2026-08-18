@@ -58,7 +58,7 @@ docs(copilot): ...
 ## 已知踩坑 / 特殊约定
 
 - **URL 不要用 `docs.github.com/zh/enterprise-cloud@latest/...`**：拆分前全篇用的是这套企业云 + 中文的路径，大量已 404 或重定向。统一用 `docs.github.com/en/copilot/...`；`docs.github.com` 的中文版覆盖不全且滞后，链接一律指英文原文
-- **Copilot CLI 有两套，别混**：老的 `gh copilot`（`gh` 扩展，只有 `explain`/`suggest`）和新的独立 `copilot`（`npm i -g @github/copilot`，完整 agent）。写命令前先确认在讲哪一套
+- **Copilot CLI 有两套，别混**：老的 `gh copilot`（`gh` 扩展，只有 `explain`/`suggest`）已被官方标为 **retired**（见 [Using the GitHub CLI Copilot extension](https://docs.github.com/en/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli)）；新的独立 `copilot`（`npm i -g @github/copilot`）才是现行 CLI。写命令前先确认在讲哪一套，不要把已退役扩展写成「仍可用」
 - **`/copilot/reference/copilot-cli/...` 这种嵌套路径会 404**：CLI 参考的真实路径是扁平的 `/copilot/reference/cli-command-reference`
 - **VS Code 侧的 participant / 变量清单变动极频繁**：`@workspace`、`@regex`、`#editor`、`#git`、`#vscodeAPI`、`/new-from`、`/runCommand` 都曾写进文档但现已不在官方清单里。写这类表格前逐条对照 [VS Code Copilot 功能参考](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)，不要凭印象保留
 - **"Copilot Extensions" 已于 2025-11-10 日落**：官方转向 MCP，见 [Sunset notice](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/)。注意区分"GitHub App 形态的 Copilot Extensions"（已退役）和"VS Code 客户端侧 Chat 扩展"（仍支持）

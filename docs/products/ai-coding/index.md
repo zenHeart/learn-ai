@@ -16,7 +16,7 @@
 
 ## Featured Tools
 
-- [GitHub Copilot](./copilot.md) - Industry-standard AI code completion
+- [GitHub Copilot](./copilot/) — Diataxis set: [tutorial](./copilot/copilot), [cookbook](./copilot/copilot-cookbook), [cheatsheet](./copilot/copilot-cheatsheet), [glossary](./copilot/copilot-glossary)
 - [Cursor](./cursor.md) - AI-first code editor with chat and generation
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
@@ -36,7 +36,7 @@
 - Great multi-file context
 
 ### For VS Code Power Users
-**Recommended**: [GitHub Copilot](./copilot.md)
+**Recommended**: [GitHub Copilot](./copilot/)
 - Seamless VS Code integration
 - Fast autocomplete
 - Industry standard

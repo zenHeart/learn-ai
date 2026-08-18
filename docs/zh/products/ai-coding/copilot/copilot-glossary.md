@@ -27,7 +27,7 @@
               │        上下文与定制层            │  ← 你写什么、Copilot 看得到什么
               ├────────────────────────────────┤
               │ 自定义指令  提示文件  自定义 Agent │
-              │ Agent Skills   MCP   Spaces    │
+              │ Agent Skills  Plugins  MCP  Spaces │
               └────────────────────────────────┘
 ```
 
@@ -113,7 +113,7 @@
 
 **注意模式名和界面名不是一回事**：Agent **模式**是 Chat 里的一个档位（跑在本地编辑器），Cloud **agent** 是 GitHub 云端后台跑任务的独立产品，两者容易混。
 
-**官方文档**：[为任务选择合适的 AI 工具](https://docs.github.com/en/copilot/get-started/choose-your-copilot-experience)
+**官方文档**：[Copilot 最佳实践](https://docs.github.com/en/copilot/get-started/best-practices) · [About Copilot Chat](https://docs.github.com/en/copilot/concepts/chat)
 
 <!-- TODO: 待核实 —— 旧文档里的三条 ask/edit/agent 模式深链（/using-github-copilot/guides-on-using-github-copilot/choosing-the-right-ai-tool-for-your-task#using-copilot-chat-in-*-mode）在当前 docs.github.com 上已重定向，未找到官方仍在维护的等价锚点，此处只保留上级页面链接 -->
 
@@ -240,6 +240,16 @@
 
 ---
 
+## Plugins
+
+**是什么**：可安装的扩展包，把可复用的 agent、skill、hook 和集成打成一份，用 Copilot CLI（`copilot plugin` / `copilot plugins …`）或 Chat 里的 `/plugins` 管理。
+
+**它不是什么**：不是 2025-11-10 日落的 **GitHub App Copilot Extensions**。后者是 Chat 里 `@扩展名` 的那套；Plugins 是后来的包装格式。2024 年博客里「自己做一个 Copilot Extension」说的是已死产品。
+
+**官方文档**：[About GitHub Copilot plugins](https://docs.github.com/en/copilot/concepts/agents/about-plugins)
+
+---
+
 ## MCP（Model Context Protocol）
 
 **是什么**：一个开放标准协议，定义 AI 应用如何与外部工具、数据源通信。实现一次 MCP 服务器，所有支持 MCP 的 AI 宿主都能用。
@@ -269,6 +279,8 @@
 
 **注意它曾叫 "coding agent"**：官方文档已改称 cloud agent，旧资料里的 "Copilot coding agent" 指的是同一个东西。
 
+**2026-04-01 能力扩展**（[changelog](https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/)）：不再限于「一定开 PR」。它可以先调研仓库、先出计划等你批准、只在分支上改到你点 Create pull request。付费计划可用；Business / Enterprise 需管理员启用。
+
 **官方文档**：[Copilot 文档 · Agents](https://docs.github.com/en/copilot)
 
 ---
@@ -294,7 +306,7 @@
 | 能力 | 只有 `explain` / `suggest` 两个动作 | 完整交互式 agent：读写文件、跑命令、调 MCP、装插件 |
 | 交互 | 一问一答 | 持续会话，有权限模式、斜杠命令、会话恢复 |
 
-**为什么会有两套**：`gh copilot` 是早期的轻量试水，定位是"帮我想命令"；独立 `copilot` 是把完整 agent 能力搬进终端。今天讲"Copilot CLI"默认指后者。
+**为什么会有两套**：`gh copilot` 是早期的轻量试水，定位是"帮我想命令"；独立 `copilot` 是把完整 agent 能力搬进终端。官方已将前者标为 retired。今天讲"Copilot CLI"只指后者。
 
 **关键概念——权限模式**：CLI 的 agent 会真的跑命令、真的改文件，所以有分级授权（默认询问 / 辅助 / 全部允许），并支持按命令和路径配置允许与拒绝规则。这是它和"聊天工具"最本质的区别：它有副作用。
 
@@ -314,7 +326,7 @@
 
 **注意计费模型正在迁移**：官方计划页把基于请求数的 premium request 计费标注为 legacy，当前口径是 AI credits。旧教程里的"每月 X 次 premium requests"是过时说法。
 
-**各计划的具体额度和价格**：见 [Cheatsheet · 计划对照](./copilot-cheatsheet#计划对照)。
+**Business 与 Enterprise 的额度池**（官方企业计划页）：Business 每用户 **1,900** credits，Enterprise **3,900**，在组织内池化。见 [Cheatsheet · 计划对照](./copilot-cheatsheet#计划对照)。
 
 **官方文档**：[Copilot 计划](https://docs.github.com/en/copilot/get-started/plans)
 
@@ -326,6 +338,7 @@ Copilot 迭代快，下面这些说法你很可能在旧教程（包括本站的
 
 | 旧说法 | 现状 | 替代 |
 |--------|------|------|
+| **Copilot Workspace**（GitHub Next 技术预览） | 已于 **2025-05-30** 日落，原文在 [GitHub Next](https://githubnext.com/projects/copilot-workspace/) 与 [sunset 说明](https://gh.io/copilot-workspace-sunset) | 「从 Issue 描述产出 PR」现由 Cloud agent 承载 |
 | **Copilot Extensions**（GitHub App 形态） | 已于 2025-11-10 完全日落，[官方公告](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/) | MCP 服务器。注意 **VS Code 客户端侧的 Chat 扩展仍然支持**，公告明确排除了这一类 |
 | **`@workspace`** | 已不在 VS Code 参与者清单中 | 代码库检索下沉为工具，Agent 模式自动调用；需显式指定时用 `#search`（含 `/codebase`） |
 | **`@regex`** | 未在官方清单中找到，疑为早期社区扩展贡献 | 直接在 Ask 模式提问即可 |
@@ -334,13 +347,9 @@ Copilot 迭代快，下面这些说法你很可能在旧教程（包括本站的
 | **`/runCommand`** | 不再是斜杠命令 | 归入 `#vscode` 工具集下的 `/runCommand` 工具 |
 | **Custom chat modes** | 概念已更名 | 自定义 Agent（Custom agents） |
 | **Copilot coding agent** | 已更名 | Cloud agent |
-| **`gh copilot` 是 Copilot 的命令行形态** | 仍可用但能力有限 | 独立 `copilot` CLI |
+| **`gh copilot` 是 Copilot 的命令行形态** | [官方已标 retired](https://docs.github.com/en/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli) | 独立 `copilot` CLI |
 | **Premium requests 按次配额** | 官方计划页标为 legacy | AI credits |
 | **`docs.github.com/zh/enterprise-cloud@latest/...` 链接** | 大量已失效或重定向 | 统一用 `docs.github.com/en/copilot/...` |
-
-**Copilot Workspace**：GitHub Next 在 2024 年推出的技术预览产品（自然语言从构想到 PR 的一体化环境）。当前 `docs.github.com` 的 Copilot 文档导航中**已无该条目**，其"从 Issue 描述直接产出 PR"的核心能力现由 Cloud agent 承载。
-
-<!-- TODO: 待核实 —— 未找到 GitHub 官方关于 Copilot Workspace 正式退役/下线的公告，仅能确认当前官方文档导航中不再列出该产品，故此处不写明确的下线日期 -->
 
 <!-- TODO: 待核实 —— 旧文档快捷键表中的「Shift Tab 按行补全」「⌘→ 按词补全」「⌃Enter 显示所有建议」「⌥] / ⌥[ 切换建议」四项，在当前 VS Code Copilot 功能参考的键位清单中未找到官方说明，已从 cheatsheet 的快捷键表中移除而非保留 -->
 

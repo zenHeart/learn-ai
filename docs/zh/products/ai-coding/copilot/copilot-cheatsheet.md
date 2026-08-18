@@ -19,6 +19,7 @@
 | [自定义指令](./copilot-glossary#自定义指令custom-instructions) | 自动注入的项目级约束 |
 | [提示文件](./copilot-glossary#提示文件prompt-files) | `.prompt.md`，手动调用的可复用任务 |
 | [Agent Skills](./copilot-glossary#agent-skills) | 带资源的目录，专项任务知识包 |
+| [Plugins](./copilot-glossary#plugins) | 可安装的 agent / skill / hook 包——**不是**已日落的 Extensions |
 | [MCP](./copilot-glossary#mcpmodel-context-protocol) | 开放协议，AI 与外部工具通信的标准 |
 | [Cloud agent](./copilot-glossary#cloud-agent) | GitHub 云端后台跑任务，产出 PR |
 | [Copilot Spaces](./copilot-glossary#copilot-spaces) | 命名的上下文包（仓库+文件+说明） |
@@ -64,15 +65,17 @@
 | **Copilot Pro** | $10 / 月 | 面向个人开发者 |
 | **Copilot Pro+** | $39 / 月 | 更高 AI credits 额度、更全的模型选择 |
 | **Copilot Max** | $100 / 月 | 个人计划里额度最高的一档 |
-| **Copilot Business** | $19 / 席位 / 月 | 组织级策略管理 |
-| **Copilot Enterprise** | $39 / 席位 / 月 | 企业级能力与管控 |
+| **Copilot Business** | $19 / 席位 / 月 | 每用户 **1,900 AI credits**（组织池化）；组织级策略；Cloud agent |
+| **Copilot Enterprise** | $39 / 席位 / 月 | 每用户 **3,900 AI credits**（组织池化）；含 Business 全部能力 + 新模型/功能优先 + 额外企业管控 |
 | **Copilot for Students / Teachers / OSS maintainers** | 免费 | 需通过资格验证 |
 
 **必须知道的三条**：
 
 1. 每个付费计划包含一定额度的 **GitHub AI credits**；基于请求数的 premium request 计费已被官方标注为 **legacy**。
-2. Copilot **在 GitHub Enterprise Server 上不可用**。
-3. 官方计划页记录了两次**临时暂停新注册**：2026-04-20（Pro / Pro+ / Max / Student）与 2026-04-22（GitHub Free、Team 组织的自助 Business）。查看当前是否仍在暂停请直接看计划页。
+2. Copilot **在 GitHub Enterprise Server 上不可用**。Enterprise 需要 **GitHub Enterprise Cloud**；企业主可以按组织分别分配 Enterprise 或 Business。
+3. 官方计划页记录了两次**临时暂停新注册**：2026-04-20（Pro / Pro+ / Max / Student）与 2026-04-22（GitHub Free、Team 组织的自助 Business）。是否仍在暂停以计划页现文为准，不要把暂停日期写成永久事实。
+
+组织计划超额默认按 **$0.01 / AI credit** 计费，可用 budget 封顶。数据源另见 [选择企业计划](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan)。
 
 ---
 
@@ -323,21 +326,20 @@ Windows 上需要 PowerShell v6 或更高版本。若 npm 因忽略安装脚本�
 | `Ctrl+Z` | 挂起 |
 | `Ctrl+F`、`Ctrl+O`、`Ctrl+E`、`Ctrl+T`、`PageUp` / `PageDown` | 时间线导航 |
 
-### 旧版 `gh copilot`（仍可用，能力有限）
+### 已退役 `gh copilot`
+
+[官方声明](https://docs.github.com/en/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli)：GitHub CLI 的 Copilot 扩展 **已退役**，由独立 `copilot` CLI 取代。下面命令来自本站旧单文件，只作对照，不要当现行安装路径：
 
 ```bash
-# 解释命令含义
+# 解释命令含义（已退役）
 gh copilot explain "sudo apt-get"
 
-# 让它建议命令
+# 建议命令（已退役）
 gh copilot suggest "Undo the last commit"
-```
 
-配置别名后（见[官方别名文档](https://docs.github.com/en/copilot/how-tos/set-up/configure-in-cli)）可简写：
-
-```bash
-ghce "sudo apt-get"              # 等价于 gh copilot explain "sudo apt-get"
-ghcs "Undo the last commit"      # 等价于 gh copilot suggest "Undo the last commit"
+# 旧别名（已退役）
+ghce "sudo apt-get"
+ghcs "Undo the last commit"
 ```
 
 ---
@@ -347,7 +349,7 @@ ghcs "Undo the last commit"      # 等价于 gh copilot suggest "Undo the last c
 | 症状 | 先查这里 |
 |------|---------|
 | 建议质量差、答非所问 | 相关文件有没有打开？有没有用 `#file:` 显式引用？有没有写自定义指令？ |
-| 想知道建议是否匹配了公开代码 | [查找与 Copilot 建议匹配的公开代码](https://docs.github.com/en/copilot/how-tos/troubleshoot/find-matching-public-code) |
+| 想知道建议是否匹配了公开代码 | [查找与 Copilot 建议匹配的公开代码](https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code) |
 | 通用故障 | [排查 Copilot 常见问题](https://docs.github.com/en/copilot/how-tos/troubleshoot/troubleshoot-common-issues) |
 | Agent 行为异常，想看它到底调了什么 | 开启 `github.copilot.chat.agentDebugLog.enabled` |
 | 想调试提示文件效果 | 在提示文件编辑器右上角点播放按钮直接运行 |

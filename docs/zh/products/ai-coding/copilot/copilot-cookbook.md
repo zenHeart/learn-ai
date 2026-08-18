@@ -54,7 +54,7 @@
 
 - **永远审查生成的代码**，尤其是涉及权限判断、SQL 拼接、加密、支付的部分。
 - **用自动化测试当护栏**：先让 Copilot 写测试并确认测试本身正确，再让它改实现。反过来（先改实现再补测试）等于让它自己给自己出考题。
-- **注意公开代码匹配**：需要确认某段建议是否与公开仓库高度相似时，用[官方的匹配日志功能](https://docs.github.com/en/copilot/how-tos/troubleshoot/find-matching-public-code)。
+- **注意公开代码匹配**：需要确认某段建议是否与公开仓库高度相似时，用[官方的匹配日志功能](https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code)。
 
 ---
 
@@ -103,12 +103,7 @@ copilot            # 启动交互式会话
 
 会话里可以 `@ 文件名` 引用文件、`! 命令` 直接跑 shell、`Shift+Tab` 在 standard / plan / autopilot 之间切换。
 
-**只想搞懂一条命令**（不需要 agent），旧的 `gh copilot` 更轻：
-
-```bash
-gh copilot explain "sudo apt-get"
-gh copilot suggest "Undo the last commit"
-```
+**只想搞懂一条命令**（不需要 agent）：不要再装 `gh copilot`——[官方已标 retired](https://docs.github.com/en/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli)，由独立 `copilot` CLI 取代。旧文档里的 `gh copilot explain` / `suggest` 命令块保留在 [Cheatsheet · 已退役 `gh copilot`](./copilot-cheatsheet#已退役-gh-copilot) 备查。
 
 ---
 
@@ -228,7 +223,13 @@ frontmatter 三个字段：
 不要改 tests/ 目录。改完确保 `pnpm test` 通过。
 ```
 
-概念与和本地 Agent 模式的区别见[术语表 · Cloud agent](./copilot-glossary#cloud-agent)。
+[2026-04-01 changelog](https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/) 之后，Cloud agent 不再等于「一定开 PR」：
+
+- 可以先让它 **research** 仓库再写代码。
+- 可以先出 **implementation plan**，你批准后再动手。
+- 可以只在分支上改、你审完 diff 再点 Create pull request；也可以在 prompt 里直接要求结束时开 PR。
+
+Business / Enterprise 需要管理员先打开 Cloud agent。概念与和本地 Agent 模式的区别见[术语表 · Cloud agent](./copilot-glossary#cloud-agent)。
 
 ---
 
@@ -239,6 +240,8 @@ frontmatter 三个字段：
 **注意**：GitHub App 形态的 **Copilot Extensions 已在 2025-11-10 日落**，官方替代方案就是 MCP。旧教程里"用 `@扩展名` 调用扩展"的写法已失效，见[已退役概念](./copilot-glossary#已退役或已改名的概念)。
 
 VS Code 客户端侧的 Chat 扩展（用 VS Code 扩展 API 贡献参与者/工具）**不受影响，仍然支持**，开发文档见 [Chat 扩展指南](https://code.visualstudio.com/api/extension-guides/chat)。
+
+不要把 MCP / 新的 **Plugins** 包装（agent + skill + hook）和已日落的 GitHub App Extensions 当成同一个东西。见[术语表 · Plugins](./copilot-glossary#plugins)。
 
 ---
 

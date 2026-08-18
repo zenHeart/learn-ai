@@ -311,7 +311,27 @@ export default withMermaid(defineConfig({
                            items: [
                               { text: 'Overview', link: '/products/ai-coding/' },
                               { text: 'Cursor', link: '/products/ai-coding/cursor' },
-                              { text: 'Copilot', link: '/products/ai-coding/copilot' },
+                              {
+                                 text: 'Copilot', link: '/products/ai-coding/copilot/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/copilot/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Getting Started', link: '/products/ai-coding/copilot/copilot' },
+                                          { text: 'Cookbook', link: '/products/ai-coding/copilot/copilot-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference & Cheatsheets',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/ai-coding/copilot/copilot-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/ai-coding/copilot/copilot-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               {
                                  text: 'Claude', link: '/products/ai-coding/claude/', items: [
                                     { text: '🗺️ Learning Map', link: '/products/ai-coding/claude/' },
@@ -824,7 +844,27 @@ export default withMermaid(defineConfig({
                                  ]
                               },
                               { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
-                              { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
+                              {
+                                 text: 'Copilot', link: '/zh/products/ai-coding/copilot/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/copilot/' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/ai-coding/copilot/copilot' },
+                                          { text: '实战 Cookbook', link: '/zh/products/ai-coding/copilot/copilot-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet 速查表', link: '/zh/products/ai-coding/copilot/copilot-cheatsheet' },
+                                          { text: '术语表 Glossary', link: '/zh/products/ai-coding/copilot/copilot-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               {
                                  text: 'Codex', link: '/zh/products/ai-coding/codex/', items: [
                                     { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/codex/' },
