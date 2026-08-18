@@ -192,6 +192,27 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Hunyuan', link: '/products/hunyuan/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/hunyuan/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Hunyuan Tutorial', link: '/products/hunyuan/hunyuan' },
+                                          { text: 'Cookbook', link: '/products/hunyuan/hunyuan-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/hunyuan/hunyuan-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/hunyuan/hunyuan-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
 ]
@@ -378,6 +399,27 @@ export const zhAiCodingItems = [
                                        items: [
                                           { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '混元', link: '/zh/products/hunyuan/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/hunyuan/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '混元教程', link: '/zh/products/hunyuan/hunyuan' },
+                                          { text: 'Cookbook', link: '/zh/products/hunyuan/hunyuan-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/hunyuan/hunyuan-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/hunyuan/hunyuan-glossary' },
                                        ]
                                     },
                                  ]
