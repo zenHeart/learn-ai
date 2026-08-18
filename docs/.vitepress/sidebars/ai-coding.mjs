@@ -192,6 +192,26 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Zhipu Chat', link: '/products/zhipu-chat/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/zhipu-chat/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Qingyan / Z.ai Chat', link: '/products/zhipu-chat/zhipu-chat' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/zhipu-chat/zhipu-chat-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/zhipu-chat/zhipu-chat-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
 ]
@@ -378,6 +398,26 @@ export const zhAiCodingItems = [
                                        items: [
                                           { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '智谱清言 / Z.ai', link: '/zh/products/zhipu-chat/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/zhipu-chat/' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '清言 / Z.ai 对话', link: '/zh/products/zhipu-chat/zhipu-chat' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/zhipu-chat/zhipu-chat-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/zhipu-chat/zhipu-chat-glossary' },
                                        ]
                                     },
                                  ]
