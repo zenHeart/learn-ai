@@ -310,7 +310,27 @@ export default withMermaid(defineConfig({
                            text: 'AI Coding',
                            items: [
                               { text: 'Overview', link: '/products/ai-coding/' },
-                              { text: 'Cursor', link: '/products/ai-coding/cursor' },
+                              {
+                                 text: 'Cursor', link: '/products/ai-coding/cursor/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/cursor/' },
+                                    {
+                                       text: 'Core Products',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cursor Tutorial', link: '/products/ai-coding/cursor/cursor' },
+                                          { text: 'Cursor Cookbook', link: '/products/ai-coding/cursor/cursor-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference & Cheatsheets',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/ai-coding/cursor/cursor-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/ai-coding/cursor/cursor-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Copilot', link: '/products/ai-coding/copilot' },
                               {
                                  text: 'Claude', link: '/products/ai-coding/claude/', items: [
@@ -823,7 +843,27 @@ export default withMermaid(defineConfig({
                                     },
                                  ]
                               },
-                              { text: 'Cursor', link: '/zh/products/ai-coding/cursor' },
+                              {
+                                 text: 'Cursor', link: '/zh/products/ai-coding/cursor/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/cursor/' },
+                                    {
+                                       text: '核心产品',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cursor 教程', link: '/zh/products/ai-coding/cursor/cursor' },
+                                          { text: 'Cursor 实战 Cookbook', link: '/zh/products/ai-coding/cursor/cursor-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet 速查表', link: '/zh/products/ai-coding/cursor/cursor-cheatsheet' },
+                                          { text: '术语表 Glossary', link: '/zh/products/ai-coding/cursor/cursor-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Copilot', link: '/zh/products/ai-coding/copilot' },
                               {
                                  text: 'Codex', link: '/zh/products/ai-coding/codex/', items: [
