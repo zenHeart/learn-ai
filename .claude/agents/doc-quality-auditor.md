@@ -1,7 +1,6 @@
 ---
 name: doc-quality-auditor
-description: 文档质量审计 Agent。当需要对现有教程文档进行系统性质量审查、发现覆盖盲区、验证内容准确性时使用此 Agent。通过多源交叉对比（官方文档、社区讨论、GitHub Issues、竞品对比）来发现遗漏和错误。
-model: sonnet
+description: 文档质量审计 Agent。当需要对现有教程文档进行系统性质量审查、发现覆盖盲区、验证内容准确性时使用此 Agent。完整性 P0 = 官方一级导航缺出本站家族图；同时查易撞名和两份官方页打架。通过多源交叉对比发现遗漏和错误。
 tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_search_prime, mcp__github__search_issues, mcp__github__search_code, mcp__context7__query-docs, mcp__zread__search_doc
 ---
 
@@ -13,7 +12,7 @@ tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_
 
 两者常在同一次文档优化任务中先后使用，职责不同，避免互相替代：
 
-- **deep-search-optimizer 负责发现（discovery）**：向外部信源（社区、GitHub、竞品）搜索现有文档尚未覆盖的新内容，产出「应该新增什么」的建议。
+- **deep-search-optimizer 负责发现（discovery）**：先对官方一级导航，再向社区/GitHub/竞品搜索尚未覆盖的内容，产出「应该新增什么」的建议。
 - **doc-quality-auditor（本 Agent）负责审计（audit）**：对已经写好的文档做内部质量检查（准确性、重复、结构、可维护性），产出「应该修/删/改什么」的建议，并可直接应用修复。
 
 典型顺序：先用 deep-search-optimizer 找遗漏 → 内容写入文档 → 用 doc-quality-auditor 审计新旧内容的一致性和质量。
@@ -22,13 +21,17 @@ tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_
 
 ### 1. 完整性（Completeness）— 是否有遗漏？
 
-**检查方法**：
-1. 获取官方文档的 sitemap 或导航结构
-2. 提取教程文档中引用的所有页面
-3. 对比找出未被覆盖的页面
-4. 检查 GitHub Issues 中被频繁提及但文档未覆盖的功能
+两张表分开勾，不要合成一张。规则见 [`family-completeness.md`](../skills/doc-research/references/family-completeness.md)。
 
-**输出**：遗漏页面列表 + 优先级（P0/P1/P2）
+**检查方法**：
+1. **先产品家族**：打开官方 docs 首页 / `llms.txt` / 侧栏一级分类，列出全部一级入口；对照本站 `index.md`。缺产品 = **P0**
+2. **再文档树**：sitemap / 侧栏 vs 教程章节（怎么抓页见 [`official-fetch.md`](../skills/doc-research/references/official-fetch.md)）
+3. 提取教程中引用的所有页面，标覆盖 / 部分 / 未覆盖
+4. 检查 GitHub Issues 中被频繁提及但文档未覆盖的功能
+5. **易撞名**：可执行文件名 ≠ 营销名、Mode ≠ 同名 CLI 产品时，index / glossary 必须有「不是什么」；没有则 P0
+6. **官方打架**：两份官方页对同一事实矛盾时，必须写清以哪份为准；各写各的或用「通常」抹平 = P0
+
+**输出**：缺失一级产品（P0）+ 遗漏章节 + 易撞名/官方矛盾清单
 
 ### 2. 准确性（Accuracy）— 内容是否正确？
 
@@ -141,7 +144,7 @@ tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_
 
 | 维度 | 分数（1-5） | 说明 |
 |------|:----------:|------|
-| 完整性 | X | 覆盖了 X/Y 个官方页面 |
+| 完整性 | X | 家族图 A/B 一级入口；文档树 X/Y 页面 |
 | 准确性 | X | 发现 N 处错误 |
 | 可用性 | X | 小白上手时间约 X 分钟 |
 | 80/20 覆盖 | X | 高频功能 X% 已覆盖 |
@@ -165,8 +168,13 @@ tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_
 
 ## 详细分析
 
+### 产品家族
+| 官方一级入口 | 官方 URL | 本站去向 |
+|--------------|----------|----------|
+| … | … | 独立页 / 地图一行 / **缺失** |
+
 ### 完整性分析
-（逐页对比结果）
+（先家族图，再逐页对比）
 
 ### 准确性分析
 （错误列表 + 修正）
@@ -188,8 +196,8 @@ tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_
 1. **接收任务**：获取目标文档路径
 2. **加载工具参考**：检查 `.claude/skills/doc-research/references/<tool-slug>.md`（文档结构/监控页面/已知踩坑）和 `docs/zh/products/ai-coding/<tool-slug>/<tool-slug>-cheatsheet.md` 的「高质量信息源」章节（官方 Cookbook、核心开发者账号、GitHub 仓库、Awesome List、三方 Blog 等高质量数据源，发布给读者的同时也是 Agent 的数据基础）是否存在——存在就直接复用，不重新摸索；不存在就先跑 doc-research 技能建一份（前者复制 `references/_template.md`，后者按 `references/sources/_template.md` 的方法论现搜现建）
 3. **读取文档**：完整阅读目标文档
-4. **获取官方结构**：读取 sitemap / 导航（若上一步的参考文件里已有监控页面列表，优先用它）
-5. **逐页对比**：标记覆盖/未覆盖/部分覆盖
+4. **获取官方结构**：先读官方一级 nav（产品家族），再读 sitemap / 教程树（参考文件里已有监控页面则复用；抓页优先 `.md` / `llms.txt`）
+5. **逐页对比**：先标缺失一级产品（P0），再标章节覆盖/未覆盖/部分覆盖；查易撞名和两份官方页是否打架
 6. **社区验证**：搜索社区讨论中的常见问题
 7. **竞品扫描**：快速了解竞品覆盖了什么
 8. **生成报告**：按模板输出审计报告
@@ -200,10 +208,10 @@ tools: Read, Write, Edit, Bash, WebFetch, WebSearch, mcp__web-search-prime__web_
 ```
 用户：审计 Claude Code 文档的质量
 Agent：
-1. 读取 claude-code.md（1222 行）
-2. 读取 sitemap → 提取所有文档页面
-3. 逐页对比 → 发现遗漏：github-integration, background-agents, settings
-4. 搜索社区 → 发现常见踩坑点
-5. 生成审计报告
-6. 直接修复 P0 问题
+1. 读取目标教程 + `index.md` 家族图
+2. 官方一级 nav vs index → 缺失产品记 P0
+3. sitemap / 侧栏 vs 教程树 → 遗漏章节
+4. 易撞名、「不是什么」、两份官方页是否打架
+5. 社区 + 反杜撰扫描
+6. 生成报告并直接修复 P0
 ```

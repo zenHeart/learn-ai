@@ -9,6 +9,16 @@
 - 发版节奏：几乎每周一个版本
 - 当前覆盖版本：v2.1.x（对应 What's New 2026 年 3 月起的日期范围）
 
+## 官方一级导航（产品家族）
+
+> 规则见 [`family-completeness.md`](./family-completeness.md)。对照 [code.claude.com/docs](https://code.claude.com/docs/) 一级分类维护；不要凭印象填空。
+
+| 官方一级入口 | 官方 URL | 本站去向 | 不拆页理由 |
+|--------------|----------|----------|------------|
+| <!-- TODO: 待核实，打开官方一级 nav 后逐项填写 --> | | | |
+
+易撞名：Claude.ai 聊天 ≠ Claude Code CLI；Plan 模式 ≠ 独立产品。
+
 ## 文档文件结构（Diataxis 四象限）
 
 文档按 [Diataxis 文档架构](https://diataxis.fr/) 四象限组织，每个文件有且只有一个明确的目的，避免不同象限的混搭导致"读者不知道该看哪一份"。

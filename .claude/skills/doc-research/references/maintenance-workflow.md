@@ -16,13 +16,14 @@
 
 ```
 1. 检查 references/<tool-slug>.md 里记录的 What's New / Changelog 页面
-2. 对比上次维护记录，提取新功能和变更
-3. 运行 doc-research 技能（SKILL.md）研究新功能
-4. 更新教程对应章节
+2. 对照官方一级导航 vs 本站 index 家族图（见 family-completeness.md）；缺产品先补
+3. 对比上次维护记录，提取新功能和变更
+4. 运行 doc-research 技能（SKILL.md）研究新功能
+5. 更新教程对应章节
    —— 不要在小标题里写具体版本号（如"（v2.1.91 新增）"），
       每次迭代都要逐节排查更新成本太高；
       确需标注版本的内容集中记录到该工具主教程末尾的"版本变更记录"表
-5. 更新该工具 index.md 的功能速查表（如有新功能）
+6. 更新该工具 index.md 的功能速查表（如有新功能）
 ```
 
 ### 深度维护（建议每月一次）
@@ -49,7 +50,7 @@
 
 | 任务 | 工具 | 步骤 |
 |------|------|------|
-| 新功能补充 | doc-research | RAPID 流程 → 更新对应章节 → 更新 index.md |
+| 新功能补充 | doc-research | 先对官方一级 nav → RAPID → 更新章节 → 更新 index.md |
 | 版本升级 | doc-research + auditor | What's New → Deepen → 完整审计 → 修复 |
 | 社区反馈处理 | doc-research | 搜索反馈 → 验证 → 补充到对应章节 |
 | 完整质量审查 | doc-quality-auditor | 加载 Agent → 生成报告 → 修复 P0/P1 |
