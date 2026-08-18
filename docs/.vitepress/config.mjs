@@ -364,7 +364,40 @@ export default withMermaid(defineConfig({
                                     },
                                  ]
                               },
-                              { text: 'Gemini CLI', link: '/products/ai-coding/gemini-cli' },
+                              {
+                                 text: 'Gemini', link: '/products/ai-coding/gemini/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/ai-coding/gemini/' },
+                                    {
+                                       text: 'Core Products',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Gemini CLI', link: '/products/ai-coding/gemini/gemini-cli' },
+                                          { text: 'Antigravity', link: '/products/ai-coding/gemini/antigravity' },
+                                          { text: 'Jules', link: '/products/ai-coding/gemini/jules' },
+                                          { text: 'Cookbook', link: '/products/ai-coding/gemini/gemini-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'More Products & Extensions',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Canvas', link: '/products/ai-coding/gemini/canvas' },
+                                          { text: 'Google Flow', link: '/products/ai-coding/gemini/flow' },
+                                          { text: 'Code Assist', link: '/products/ai-coding/gemini/code-assist' },
+                                          { text: 'AI Studio', link: '/products/ai-coding/gemini/ai-studio' },
+                                          { text: 'Subscriptions & Quota', link: '/products/ai-coding/gemini/google-pro' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference & Cheatsheets',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/ai-coding/gemini/gemini-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/ai-coding/gemini/gemini-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
                               {
@@ -878,13 +911,29 @@ export default withMermaid(defineConfig({
                               {
                                  text: 'Gemini', link: '/zh/products/ai-coding/gemini/', items: [
                                     { text: '🗺️ 学习地图', link: '/zh/products/ai-coding/gemini/' },
-                                    { text: 'Google AI Pro 详解', link: '/zh/products/ai-coding/gemini/google-pro' },
-                                    { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini/gemini-cli' },
-                                    { text: 'AI Studio', link: '/zh/products/ai-coding/gemini/ai-studio' },
-                                    { text: 'Antigravity', link: '/zh/products/ai-coding/gemini/antigravity' },
-                                    { text: 'Canvas', link: '/zh/products/ai-coding/gemini/canvas' },
-                                    { text: 'Code Assist', link: '/zh/products/ai-coding/gemini/code-assist' },
-                                    { text: 'Jules', link: '/zh/products/ai-coding/gemini/jules' },
+                                    {
+                                       text: '核心产品', collapsed: false, items: [
+                                          { text: 'Gemini CLI', link: '/zh/products/ai-coding/gemini/gemini-cli' },
+                                          { text: 'Antigravity', link: '/zh/products/ai-coding/gemini/antigravity' },
+                                          { text: 'Jules', link: '/zh/products/ai-coding/gemini/jules' },
+                                          { text: 'Cookbook', link: '/zh/products/ai-coding/gemini/gemini-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '更多产品与扩展', collapsed: true, items: [
+                                          { text: 'Canvas', link: '/zh/products/ai-coding/gemini/canvas' },
+                                          { text: 'Google Flow', link: '/zh/products/ai-coding/gemini/flow' },
+                                          { text: 'Code Assist', link: '/zh/products/ai-coding/gemini/code-assist' },
+                                          { text: 'AI Studio', link: '/zh/products/ai-coding/gemini/ai-studio' },
+                                          { text: 'Google AI 订阅与额度', link: '/zh/products/ai-coding/gemini/google-pro' },
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考', collapsed: false, items: [
+                                          { text: '速查表', link: '/zh/products/ai-coding/gemini/gemini-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/ai-coding/gemini/gemini-glossary' },
+                                       ]
+                                    },
                                  ]
                               },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },

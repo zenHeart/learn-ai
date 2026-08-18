@@ -1,4 +1,6 @@
-﻿# Gemini CLI
+# Gemini CLI
+
+> **2026-06-18 起**：个人账号与 Google AI Pro / Ultra 通过「Login with Google」访问 Gemini CLI 已停服，日常请改用 [Antigravity](./antigravity) 的 CLI 表面。Standard / Enterprise 许可证与付费 API key 不受影响。[官方弃用说明](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals)。
 
 ## 基础用法
 
@@ -93,6 +95,8 @@ Gemini 支持多种命令，你可以使用 `/` 或 `@` 进入子命令。
 #### `/stats`
 
 显示统计信息，结果如下：
+
+> 下面是一次真实运行的输出样例。**样例里的模型名反映的是采集当时的可用模型**，其中部分已经停用；当前可用清单见[速查表的模型现状](./gemini-cheatsheet#模型现状)。
 
 ```bash
 Session Stats                                                                                                                        │
@@ -194,9 +198,9 @@ The command follows this format: `/changelog <version> <type> <message>`
 
 
 每次使用 Gemini 都会创建一个会话。会话保存你的对话信息，如提示词、模型响应等。
-会话保存在 `~/.gemini/tmp/<projext_hash>/chats/<session_hash>`。
+会话保存在 `~/.gemini/tmp/<project_hash>/chats/<session_hash>`。
 
-you can list and enter history session.
+你可以列出历史会话并重新进入：
 
 ```bash
 # 列出当前目录相关会话
@@ -204,14 +208,16 @@ gemini --list-sessions
 # 进入当前目录的最新会话
 gemini --resume
 # 按索引进入当前目录的会话
-gemini -resume 2
+gemini --resume 2
 # 按哈希进入当前目录的会话
-gemini -resume  <hash>
+gemini --resume <hash>
 # 删除当前目录的会话
 gemini --delete-session 2
 ```
 
-在 Gemini CLI 中，你也可以使用 `/session` 命令列出并进入会话。
+官方会话文档确认：`--resume`（别名 `-r`）可接 `latest`、索引（如 `--resume 2`）或会话 ID / 哈希；`--delete-session` 接索引或完整 UUID。见 [Session management](https://geminicli.com/docs/cli/session-management/)。
+
+在 Gemini CLI 中，你也可以使用 `/session` 或 `/resume` 命令列出并进入会话。
 
 
 ### 会话配置
@@ -327,28 +333,9 @@ tail -5 usage.log
 
 ### 配置层级
 
-Gemini 支持多个配置层级，详情参见 [配置层级](https://geminicli.com/docs/get-started/configuration/#configuration-layers)。
+Gemini 支持多个配置层级。**完整路径与优先级只在[速查表的配置层级](./gemini-cheatsheet#gemini-cli-配置层级)维护一份**，这里不重复抄表。官方说明见 [配置层级](https://geminicli.com/docs/get-started/configuration/#configuration-layers)。
 
-常用路径：
-
-1. 系统默认配置
-   - **位置** 使用 `GEMINI_CLI_SYSTEM_DEFAULTS_PATH` 自定义路径
-     - **Linux** `/etc/gemini-cli/system-defaults.json`
-     - **Windows** `C:\ProgramData\gemini-cli\system-defaults.json`
-     - **macOS** `/Library/Application Support/GeminiCli/system-defaults.json`
-   - **范围**
-     - 提供系统范围的默认设置基础层。这些设置优先级最低，旨在被用户、项目或系统覆盖设置所覆盖。
-2. 用户配置: `~/.gemini/settings.json` 将覆盖系统配置
-3. 项目配置: `.gemini/settings.json` 将覆盖用户配置
-4. 系统设置
-   - **位置** 使用 `GEMINI_CLI_SYSTEM_SETTINGS_PATH` 自定义路径
-     - **Linux** `/etc/gemini-cli/settings.json`
-     - **Windows** `C:\ProgramData\gemini-cli\settings.json`
-     - **macOS** `/Library/Application Support/GeminiCli/settings.json`
-   - **范围**
-     - 系统管理员控制 Gemini CLI 行为。覆盖所有其他配置层
-
-you can use `$VAR_NAME` 或 `${VAR_NAME}` 在你的配置文件中。某些配置支持目录请参阅 [沙盒配置](https://geminicli.com/docs/get-started/configuration/#sandboxing) 了解更多。
+配置文件里可以使用 `$VAR_NAME` 或 `${VAR_NAME}` 引用环境变量。某些配置支持目录，详见 [沙盒配置](https://geminicli.com/docs/get-started/configuration/#sandboxing)。
 
 ### 设置配置
 
@@ -360,7 +347,7 @@ you can use `$VAR_NAME` 或 `${VAR_NAME}` 在你的配置文件中。某些配�
 
 你可以设置 `.gemini/.env` 文件来设置 [持久化环境变量](https://geminicli.com/docs/get-started/authentication/#persisting-environment-variables)。
 
-you can use `GEMINI_SYSTEM_MD=true` 或 `GEMINI_SYSTEM_MD=1` to set system prompt.
+设置 `GEMINI_SYSTEM_MD=true` 或 `GEMINI_SYSTEM_MD=1` 即可启用自定义系统提示词。
 CLI 将读取 `.gemini/system.md` 文件来设置系统提示词。
 
 或者设置 `GEMINI_SYSTEM_MD=/absolute/path/to/my-system.md` 来设置系统提示词。
@@ -383,7 +370,7 @@ CLI 将读取 `.gemini/system.md` 文件来设置系统提示词。
 
 信任文件夹使 Gemini 可以读取你的文件。详情参见 [为什么信任很重要](https://geminicli.com/docs/cli/trusted-folders/#why-trust-matters-the-impact-of-an-untrusted-workspace)。
 
-you can use enable this feature
+用下面的配置启用这个特性：
 
 ```json
 {
@@ -439,9 +426,9 @@ Gemini 使用工具帮助 LLM 更好地理解你的任务。一些内置工具�
 | Memory tools | MemoryTool | 与记忆交互 |
 
 
-you can call tools with `<tool_name>(<args>)`
+可以用 `<tool_name>(<args>)` 的形式直接调用工具。
 
-detail read [tools](https://geminicli.com/docs/tools/)
+详见[官方工具文档](https://geminicli.com/docs/tools/)。
     
 ### [扩展自定义工具](https://geminicli.com/docs/core/tools-api/#extending-with-custom-tools)
 
@@ -467,7 +454,16 @@ detail read [tools](https://geminicli.com/docs/tools/)
 
 ## 其他
 
-you can run gemini cli in safe mode ,this called sandbox, when gemini run in yolo mode will default use sandbox mode. read [sandboxing](https://geminicli.com/docs/get-started/configuration/#sandboxing) for more detail. in cli read [sandbox](https://geminicli.com/docs/cli/sandbox/) use `-s` to enable sandbox mode. 
+### 沙盒
 
+Gemini CLI 可以在沙盒里运行以限制它对系统的影响。在 CLI 里用 `-s` 启用沙盒模式；以 YOLO 模式运行时默认会使用沙盒。详见[沙盒配置](https://geminicli.com/docs/get-started/configuration/#sandboxing)与[沙盒文档](https://geminicli.com/docs/cli/sandbox/)。
 
-for enterprise user, read [enterprise](https://geminicli.com/docs/cli/enterprise/) to learn more. you also can use [telemetry](https://geminicli.com/docs/cli/telemetry/) to know more metrics.
+### 企业与可观测性
+
+企业部署相关内容见[企业文档](https://geminicli.com/docs/cli/enterprise/)；想看更细的运行指标可以开启[遥测](https://geminicli.com/docs/cli/telemetry/)。
+
+## 相关页面
+
+- [速查表](./gemini-cheatsheet#配置速查) — 配置优先级与真实存在的配置键
+- [Cookbook](./gemini-cookbook) — 按任务查配方
+- [术语表](./gemini-glossary) — Session、Checkpoint、Trusted Folder 等概念

@@ -1,5 +1,7 @@
 # gemini cli
 
+> **Since 2026-06-18**: individual accounts and Google AI Pro / Ultra can no longer reach Gemini CLI via **Login with Google**. Do daily work on the [Antigravity](./antigravity) CLI surface. Standard / Enterprise licences and paid API keys are unchanged. [Official deprecation](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals).
+
 ## basic usage
 
 1. install and login gemini cli follow [gemini cli](https://geminicli.com/docs/get-started/), more detail see [installed](https://geminicli.com/docs/get-started/installation/) with different platform.
@@ -91,7 +93,9 @@ clear display ,short cut is `control+c`
 
 #### `/stats`
 
-show stats info the result like:
+Shows session statistics. Sample output:
+
+> This is real captured output. **The model names in it reflect what was available when it was captured** — some are now retired. For the current list see the [cheatsheet](./gemini-cheatsheet#model-status).
 
 ```bash
 Session Stats                                                                                                                        │
@@ -196,10 +200,10 @@ symbol| function | demo|
 ## [session](https://geminicli.com/docs/cli/session-management/#listing-sessions)
 
 
-each your use gemini will create a session.session save your conversation info. like prompt、model response...
-session save in `~/.gemini/tmp/<projext_hash>/chats/<session_hash>`.
+Every Gemini run creates a session. A session stores your conversation — prompts, model responses and so on.
+Sessions are stored under `~/.gemini/tmp/<project_hash>/chats/<session_hash>`.
 
-you can list and enter history session.
+You can list past sessions and re-enter them:
 
 ```bash
 # list current directory related sessions
@@ -207,40 +211,41 @@ gemini --list-sessions
 # enter latest session for current directory
 gemini --resume
 # enter session by index for current directory
-gemini -resume 2
+gemini --resume 2
 # enter session by hash for current directory
-gemini -resume  <hash>
+gemini --resume <hash>
 # delete session for current directory
 gemini --delete-session 2
 ```
 
-in gemini cli you also can use `/session` command to list and enter session.
+Official session docs confirm `--resume` (alias `-r`) accepts `latest`, an index such as `--resume 2`, or a session ID / hash; `--delete-session` accepts an index or a full UUID. See [Session management](https://geminicli.com/docs/cli/session-management/).
+
+In Gemini CLI you can also use the `/session` or `/resume` command to list and enter sessions.
 
 
 ### session config
 
-you can config session 
+You can configure session retention:
 
 ```json
 {
   "general": {
     "sessionRetention": {
-      "enabled": true, // 会话清理开关默认为 false
-      "maxAge": "30d", // 使能清理后，最多保存 30d
-      "maxCount": 50, // 组多保留最近 50 个会话
-      "minRetention": "1d" // 最短保留期限，小于此日期不会被删除，默认 1d
+      "enabled": true, // session cleanup, false by default
+      "maxAge": "30d", // once enabled, keep sessions for at most 30 days
+      "maxCount": 50, // keep at most the 50 most recent sessions
+      "minRetention": "1d" // minimum retention; anything newer is never deleted, 1d by default
     }
   }
 }
-
 ```
 
-to avoid session to long, you can set
+To stop a session growing indefinitely:
 
 ```json
 {
   "model": {
-    "maxSessionTurns": 100 // 一个 session 最多允许 100 次聊天， 默认 `-1` 表示不限制
+    "maxSessionTurns": 100 // at most 100 turns per session; -1 (the default) means unlimited
   }
 }
 ```
@@ -329,35 +334,13 @@ tail -5 usage.log
 
 use gemini config to control gemini cli behavior.
 detail read [gemini cli configuration ](https://geminicli.com/docs/get-started/configuration-v1/)
-支持的详细列表参考 [json schema](https://github.com/google-gemini/gemini-cli/blob/main/schemas/settings.schema.json)
+For the exhaustive list of supported keys, see the [settings JSON schema](https://github.com/google-gemini/gemini-cli/blob/main/schemas/settings.schema.json).
 
 ### config layers
 
-gemini support multiple config layers detail see [Configuration layers](https://geminicli.com/docs/get-started/configuration/#configuration-layers)
+Gemini CLI has several configuration layers. **The full path list and precedence live only in the [cheatsheet configuration layers](./gemini-cheatsheet#gemini-cli-settings-layers)** and are not copied here. Official description: [Configuration layers](https://geminicli.com/docs/get-started/configuration/#configuration-layers).
 
-user common figure path
-
-<!-- TODO: @chengle can't find in mac  -->
-
-1. system default config
-   - **Location** use `GEMINI_CLI_SYSTEM_DEFAULTS_PATH` to customize path
-     - **Linux** `/etc/gemini-cli/system-defaults.json`
-     - **Windows** `C:\ProgramData\gemini-cli\system-defaults.json`
-     - **macOS** `/Library/Application Support/GeminiCli/system-defaults.json`
-   - **Scope**
-     - Provides a base layer of system-wide default settings. These settings have the lowest precedence and are intended to be overridden by user, project, or system override settings.
-2. user config: `~/.gemini/settings.json` will overwrite system config
-3. project config: `.gemini/settings.json` will overwrite user config
-4. system settings
-   - **Location** use `GEMINI_CLI_SYSTEM_SETTINGS_PATH` to customize path
-     - **Linux** `/etc/gemini-cli/settings.json`
-     - **Windows** `C:\ProgramData\gemini-cli\settings.json`
-     - **macOS** `/Library/Application Support/GeminiCli/settings.json`
-   - **Scope**
-     - system administrators to control gemini cli behavior.overwrite all other config layers
-
-you can use `$VAR_NAME` 或 `${VAR_NAME}` in your config file。some config support directory see
-[sandbox config](https://geminicli.com/docs/get-started/configuration/#sandboxing) read more.
+You can reference environment variables in config files as `$VAR_NAME` or `${VAR_NAME}`. Some settings accept directories — see [sandbox config](https://geminicli.com/docs/get-started/configuration/#sandboxing) for details.
 
 ### set config
 
@@ -474,9 +457,18 @@ after connect ide you can use ide to see gemini modify content
 4. enter `/ide install`
 
 
-## others
+## Other
 
-you can run gemini cli in safe mode ,this called sandbox, when gemini run in yolo mode will default use sandbox mode. read [sandboxing](https://geminicli.com/docs/get-started/configuration/#sandboxing) for more detail. in cli read [sandbox](https://geminicli.com/docs/cli/sandbox/) use `-s` to enable sandbox mode.
+### Sandbox
 
+Gemini CLI can run inside a sandbox to limit what it can touch on your system. Use `-s` in the CLI to enable it; when running in YOLO mode the sandbox is used by default. See [sandbox config](https://geminicli.com/docs/get-started/configuration/#sandboxing) and the [sandbox docs](https://geminicli.com/docs/cli/sandbox/).
 
-for enterprise user, read [enterprise](https://geminicli.com/docs/cli/enterprise/) to learn more. you also can use [telemetry](https://geminicli.com/docs/cli/telemetry/) to know more metrics.
+### Enterprise and observability
+
+For enterprise deployments see the [enterprise docs](https://geminicli.com/docs/cli/enterprise/). If you want finer-grained runtime metrics, enable [telemetry](https://geminicli.com/docs/cli/telemetry/).
+
+## Related pages
+
+- [Cheatsheet](./gemini-cheatsheet#configuration) — configuration precedence and the settings keys that actually exist
+- [Cookbook](./gemini-cookbook) — recipes by task
+- [Glossary](./gemini-glossary) — Session, Checkpoint, Trusted Folder and friends

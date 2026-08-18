@@ -37,7 +37,7 @@ const pathSteps = [
       { text: 'Cursor 指南', url: '/zh/products/ai-coding/cursor' },
       { text: 'Copilot 指南', url: '/zh/products/ai-coding/copilot' },
       { text: 'Claude Code', url: '/zh/products/ai-coding/claude/claude-code' },
-      { text: 'Gemini CLI', url: '/zh/products/ai-coding/gemini-cli' }
+      { text: 'Gemini CLI', url: '/zh/products/ai-coding/gemini/gemini-cli' }
     ]
   },
   {
