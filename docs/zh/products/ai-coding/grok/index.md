@@ -38,7 +38,7 @@
 **什么情况下先别急？**
 
 - 你要的是 IDE 内联补全 —— Grok Build 是终端 Agent，没有补全能力，也没有官方 IDE 插件。
-- 你需要长期稳定的 API 面 —— 它仍处于 beta，npm 上从 2025-10-22 至今已发布 552 个版本（近期基本 1-3 天一版），命令与配置键仍在变动。
+- 你需要长期稳定的产品面 —— 它仍处于 beta。npm `@xai-official/grok` 的 `latest` 在 2026-08-12 还是 1.0.3，2026-08-16 已是 1.0.5；命令与配置键仍在变动。绑定任何东西之前先跑 `grok version` 并对 [changelog](https://x.ai/build/changelog)。
 
 ## 学习路径
 

@@ -2,7 +2,7 @@
 
 > 本页覆盖 Grok Build（可执行文件 `grok`）从安装到日常使用的完整链路。参数清单见 [速查表](./grok-cheatsheet.md)，概念辨析见 [术语表](./grok-glossary.md)，场景化配方见 [Cookbook](./grok-cookbook.md)。
 >
-> Grok Build 处于 beta 阶段且发版极快（npm 上近期约 1-3 天一个版本），本页刻意不写具体版本号；命令与配置若与你机器上的实际行为不符，先看 [x.ai/build/changelog](https://x.ai/build/changelog)。
+> Grok Build 处于 beta 阶段且发版极快（`latest` 在 2026-08-12 到 2026-08-16 之间从 1.0.3 到 1.0.5），本页刻意不写死版本号；命令与配置若与你机器上的实际行为不符，先看 [x.ai/build/changelog](https://x.ai/build/changelog)。
 
 ## 1. 安装
 
@@ -30,8 +30,10 @@ npm install -g @xai-official/grok
 验证安装：
 
 ```bash
-grok --version
+grok version
 ```
+
+[仓库 README](https://github.com/xai-org/grok-build) 的安装片段写的是 `grok --version`。[CLI Reference](https://docs.x.ai/build/cli/reference) 列出的命令是 `grok version`。
 
 > **命名提示**：从源码自行编译得到的二进制叫 `xai-grok-pager`，官方安装包把它作为 `grok` 分发（[README](https://github.com/xai-org/grok-build) 原文："The binary artifact is named `xai-grok-pager`; official installs ship it as `grok`."）。
 
@@ -48,9 +50,9 @@ grok --version
 
 凭证解析优先级（高 → 低）：`model.api_key` > `model.env_key` > 当前会话 token > `XAI_API_KEY`。
 
-订阅要求：[发布公告](https://x.ai/news/grok-build-cli)（2026-05-25）写的是 "Available now to all SuperGrok and X Premium Plus subscribers."，而营销页 [x.ai/build](https://x.ai/build) 当前挂着 "Available to try for Free"。两处口径不同，以你账号登录后实际看到的额度为准；官方没有给出免费额度的具体数值。
+订阅要求：[发布公告](https://x.ai/news/grok-build-cli)（2026-05-25）写的是 "Available now to all SuperGrok and X Premium Plus subscribers."，营销页 [x.ai/build](https://x.ai/build) 当前挂着 "Available to try for Free"，[Grok 4.6 公告](https://x.ai/news/grok-4-6) 又写过限时 "2x included usage inside Grok Build … for the first week"。三处口径不同，且都没有给出可引用的免费额度数字。以你账号登录后实际看到的额度为准，不要猜数字。
 
-<!-- TODO: 待核实 —— 免费额度的具体数值、SuperGrok/X Premium Plus 与 Grok Build 用量的换算关系，官方文档与营销页均未给出说明 -->
+<!-- TODO: 待核实 —— 免费额度的具体数值、SuperGrok/X Premium Plus 与 Grok Build 用量的换算关系；发布公告、营销页、Grok 4.6 公告三处口径不同，且都没有给出可引用的配额数字。console.x.ai 对非浏览器客户端 403，无法代查。 -->
 
 退出登录：`grok logout`。
 
@@ -85,16 +87,16 @@ grok inspect --json
 |------|------|
 | `Enter` | 发送 |
 | `Shift+Enter` | 换行（VS Code / Cursor / Windsurf / Zed 的内置终端识别不了，改用 `Alt+Enter`） |
-| `Shift+Tab` | 循环切换 Normal → Plan → Auto → Always-approve |
+| `Shift+Tab` | 循环切换 Normal → Plan → Auto（可用时）→ Always-approve |
 | `Esc` | 中断当前动作 |
-| `Esc Esc` | 触发 `/rewind`（回退会话） |
+| `Esc Esc` | 清空输入框；输入框为空时打开 rewind（[keyboard-shortcuts](https://docs.x.ai/build/keyboard-shortcuts)） |
 | `Ctrl+Enter` / `Ctrl+I` | 插话（interject，在 VS Code 系终端里是 `Ctrl+L`） |
 | `Ctrl+P` 或 `?` | 命令面板 |
 | `Ctrl+T` | 待办面板 |
 | `Ctrl+B` | 后台任务面板 |
 | `Ctrl+G` | 任务面板 |
 | `Ctrl+S` | 会话面板 |
-| `Ctrl+M` | 模型选择器 |
+| `Ctrl+M` | 输入框聚焦时切换多行；未聚焦时打开模型选择器 |
 | `Ctrl+\` | Dashboard |
 | `Ctrl+O` | 切到 always-approve |
 | `F2` / `Ctrl+,` | 设置 |
@@ -110,7 +112,9 @@ grok inspect --json
 
 **权限决定「这次工具调用能不能跑」，沙箱决定「跑起来能碰到什么」**，两者正交，可以同时开。
 
-三档权限模式：
+TUI 模式和 headless 的 `--permission-mode` 是**两套词**。TUI 循环的是 Ask / Auto / Always-approve；CI 用的是 Claude Code 风格的 `dontAsk` / `acceptEdits`（见 [enterprise](https://docs.x.ai/build/enterprise) 与 [速查表](./grok-cheatsheet.md#权限与模式)）。不要混着写。
+
+三档 TUI 权限模式：
 
 | 模式 | 行为 | 怎么进 |
 |------|------|--------|
@@ -191,7 +195,7 @@ Linux 上要用「可读但拒绝某些路径」的能力需要系统装 `bubble
 | 恢复指定会话 | `grok --resume <id>` |
 | TUI 内恢复 | `/resume` |
 | 从当前会话分叉 | `/fork [指令]`，可加 `--worktree` / `--no-worktree` |
-| 回退历史 | `/rewind` 或 `Esc Esc` |
+| 回退历史 | `/rewind`，或输入框为空时 `Esc Esc` |
 | 压缩上下文 | `/compact [重点]`；也会自动压缩 |
 | 看上下文占用 | `/context`、`/session-info` |
 | 列出 / 搜索 / 删除 | `grok sessions list` / `search` / `delete` |

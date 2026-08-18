@@ -135,13 +135,13 @@ There is one deliberate gap in the compatibility, and it is instructive. Claude'
 
 ## Why this document will go out of date
 
-Grok Build entered early beta on 2026-05-25. The npm package has shipped 552 versions since 2025-10-22, recently at roughly one every one to three days. External pull requests are not accepted; feedback goes through `/feedback`.
+Grok Build entered early beta on 2026-05-25. npm `@xai-official/grok` `latest` moved 1.0.3 → 1.0.5 between 2026-08-12 and 2026-08-16. External pull requests are not accepted; feedback goes through `/feedback`.
 
 So treat every table here as a snapshot, and prefer these habits over memorizing values:
 
 - `grok --help` and `grok <subcommand> --help` are the authoritative command surface.
 - `grok inspect --json` answers "what is actually loaded on this machine" better than any document can.
-- [x.ai/build/changelog](https://x.ai/build/changelog) is usually ahead of the docs site. When behavior does not match documentation, check it first.
+- [x.ai/build/changelog](https://x.ai/build/changelog) can list commands before [CLI Reference](https://docs.x.ai/build/cli/reference) does. When behavior does not match documentation, check the changelog first.
 
 ## Related pages
 

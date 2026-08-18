@@ -44,13 +44,25 @@ The same shape exists for `[compat.cursor]` (Cursor's `.cursor/rules`, `.cursor/
 
 ## 2. Adding external tools with MCP
 
+Three transports, from [mcp-servers](https://docs.x.ai/build/features/mcp-servers):
+
 ```bash
-grok mcp add
+# Local stdio server; everything after -- is the server command
+grok mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem /path/to/dir
+
+# Remote HTTP server (OAuth handled automatically)
+grok mcp add --transport http linear https://mcp.linear.app/mcp
+
+# Remote + static auth header (--header is repeatable)
+grok mcp add --transport http api https://mcp.example.com/mcp --header "Authorization: Bearer ${API_TOKEN}"
+
 grok mcp list
 grok mcp doctor            # diagnose all servers
 grok mcp doctor <name>     # diagnose one
 grok mcp remove <name>
 ```
+
+`list` and `doctor` take `--json`. Pass `--scope project` to write the server into the repo `.grok/config.toml`.
 
 Or configure it in TOML — this is one of the three sections a **project-level** `.grok/config.toml` supports, so it can be committed for the team ([mcp-servers](https://docs.x.ai/build/features/mcp-servers)):
 
@@ -74,6 +86,21 @@ OAuth-based MCP servers store their tokens in `~/.grok/mcp_credentials.json`.
 ## 3. Blocking dangerous commands with hooks
 
 Hooks are **JSON** files (not TOML). Personal hooks live in `~/.grok/hooks/*.json`, project hooks in `<project>/.grok/hooks/*.json` ([hooks](https://docs.x.ai/build/features/hooks)).
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [{ "type": "command", "command": "bin/safety-check.sh", "timeout": 10 }]
+      }
+    ]
+  }
+}
+```
+
+`matcher` is a regular expression on the tool name (Claude names such as `Bash` / `Read` / `Edit` are mapped automatically); omit it to match everything. `type` is `"command"` or `"http"` (the latter needs `url`; the event is POSTed). `timeout` is seconds, default 5.
 
 `PreToolUse` is the **only blocking event**. The contract:
 
@@ -149,19 +176,22 @@ grok -r "$SESSION" -p "Now write the findings to REPORT.md"
 ## 6. Parallel development: worktrees plus the Dashboard
 
 ```bash
-grok -w feature-a                 # new session in a fresh git worktree
-grok -w feature-b --ref main      # base the worktree on a specific ref
+grok -w
+grok --worktree=feat "refactor module X"   # = keeps the prompt out of the name
+grok -w --ref main "fix the flaky test"    # clean checkout of the ref
+grok -w -r <session-id>                    # resume in a fresh worktree
 ```
 
-Worktrees live under `~/.grok/worktrees/<repo>/<name>` ([worktrees](https://docs.x.ai/build/features/worktrees)). Inside a session, `/fork --worktree` branches the conversation *and* isolates the files.
+Worktrees live under `~/.grok/worktrees/<repo>/<name>`, start from current HEAD **including uncommitted changes**, and require a git repository ([worktrees](https://docs.x.ai/build/features/worktrees)). Inside a session, `/fork --worktree` branches the conversation *and* isolates the files.
 
 Management:
 
 ```bash
 grok worktree list
-grok worktree show <name>
-grok worktree rm <name>
-grok worktree gc            # cleanup is manual, by design
+grok worktree show <id>
+grok worktree rm <ids...>          # --dry-run to preview
+grok worktree gc                   # cleanup is manual, by design
+grok worktree gc --max-age 7d      # also expire idle worktrees
 ```
 
 `gc` never runs automatically — deleting work an agent produced before you have looked at it would be worse than leaving stale directories around. So remember to run it.
@@ -172,7 +202,9 @@ Watch several sessions at once with the Agent Dashboard: `grok dashboard`, `/das
 
 Three different things that are easy to confuse ([subagents](https://docs.x.ai/build/features/subagents)):
 
-- **Subagent** — a unit of execution with its own context window that hands a summary back to the parent. Built-in types: `general-purpose`, `explore`, `plan`. `explore` is read-only with no shell and cannot edit files; `plan` also does not touch files. Custom types go in `~/.grok/agents/` or `.grok/agents/`, managed with `/config-agents` (alias `/agents`).
+- **Subagent** — a unit of execution with its own context window that hands a summary back to the parent. Built-in types: `general-purpose`, `explore`, `plan`. `explore` is read-only with no shell and cannot edit files; `plan` also does not touch files. Custom types go in `~/.grok/agents/` or `.grok/agents/`, managed with `/config-agents` (alias `/agents`). [subagents](https://docs.x.ai/build/features/subagents) says they are "Enabled by default when the setting is unset." [settings/reference](https://docs.x.ai/build/settings/reference) lists `GROK_SUBAGENTS` default `0`. Those two official sentences disagree — do not guess which wins; check `grok inspect`.
+
+<!-- TODO: 待核实 —— `[subagents] enabled` / `GROK_SUBAGENTS` when unset: feature page vs env-var table contradict each other -->
 - **Persona** — a behavioral overlay (tone, focus, contract). It changes **how** the agent talks, not **what tools** it can call. Defined in `~/.grok/personas/*.toml` or `.grok/personas/*.toml`, managed with `/personas`.
 - **Workflow** — orchestration written in `.rhai`, living in `~/.grok/workflows/*.rhai` or `.grok/workflows/*.rhai`. It fans out to subagents, validates, and aggregates; it runs in the background.
 
@@ -200,13 +232,15 @@ Subagents inherit the parent's permission mode but are **not** bound by the pare
 ## 8. Background tasks and scheduled checks
 
 ```text
-/loop [interval] <prompt>     # repeat a prompt on an interval
+/loop 5m Check if the test suite passes and report any failures
 /tasks                        # background tasks, subagents, scheduled jobs
 /btw <question>               # ask a side question without derailing the main thread
 /queue                        # prompts queued behind the current turn
 ```
 
-`Ctrl+B` pushes a running command into the background; `Ctrl+G` toggles the task panel.
+The interval accepts `Ns` (minimum 60), `Nm`, `Nh`, and `Nd`. The prompt **fires immediately**, then repeats; each firing is a new agent turn. Hard limits from [background-tasks](https://docs.x.ai/build/features/background-tasks): loops expire after 7 days, and at most 50 scheduled tasks can be active at once.
+
+`Ctrl+B` pushes a running command into the background; `Ctrl+G` toggles the task panel. For a real-time event stream rather than a periodic check, let the agent attach a monitor to a script — **every output line becomes a notification and interrupts the conversation**.
 
 Long-running bash is handled for you: `[toolset.bash] timeout_secs` defaults to 120, and `auto_background_on_timeout` defaults to `true`, so a command that exceeds the timeout moves to the background instead of dying. Raise the ceiling with `max_timeout_secs` (default 36000) and the output cap with `output_byte_limit` (default 20000 bytes).
 

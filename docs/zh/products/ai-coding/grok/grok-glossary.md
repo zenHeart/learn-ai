@@ -159,10 +159,10 @@ Grok Build 明确承诺零配置兼容 Claude Code：自动读 Claude 的 market
 
 ## 为什么这份文档一定会过期
 
-Grok Build 目前是 early beta，2026 年 5 月 25 日发布，npm 上的发布节奏是一到三天一个版本。这意味着：
+Grok Build 目前是 early beta，2026 年 5 月 25 日发布。npm `@xai-official/grok` 的 `latest` 在 2026-08-12 到 2026-08-16 之间从 1.0.3 到 1.0.5。这意味着：
 
-- 看到本站和你机器上的行为不一致，**先信你的机器**，然后按 `grok --version` 去对 [changelog](https://x.ai/build/changelog)。
-- changelog 通常比文档站更新更快。文档里查不到的新行为，去 changelog 找。
+- 看到本站和你机器上的行为不一致，**先信你的机器**，然后按 `grok version` 去对 [changelog](https://x.ai/build/changelog)。
+- changelog 可以比 [CLI Reference](https://docs.x.ai/build/cli/reference) 更早上新命令。文档里查不到的新行为，去 changelog 找。
 - 上游仓库 [xai-org/grok-build](https://github.com/xai-org/grok-build) 是 Apache-2.0 开源的，但**不接受外部 PR**，反馈渠道是 TUI 里的 `/feedback`。所以不要指望社区 fork 能反哺主线，社区信息的权重要比官方低一档。
 
 判断一条信息还有效的最快手段是 `grok inspect`——它直接告诉你这台机器上实际加载了什么配置、规则、skill、plugin、hook 和 MCP server。文档讲的是应该怎样，`grok inspect` 讲的是实际怎样。

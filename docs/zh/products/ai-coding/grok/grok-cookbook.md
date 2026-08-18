@@ -230,7 +230,11 @@ grok worktree gc --max-age 7d      # 清目录已消失的条目；--max-age 额
 
 ## 7. Subagents、Personas 和 Workflows
 
-**Subagents** 是独立上下文的子会话，结束时把摘要交回父会话，设置未显式配置时默认开启。三个内置类型：
+**Subagents** 是独立上下文的子会话，结束时把摘要交回父会话。[subagents](https://docs.x.ai/build/features/subagents) 原文：“Enabled by default when the setting is unset.” 同时 [settings/reference](https://docs.x.ai/build/settings/reference) 里 `GROK_SUBAGENTS` 的默认值是 `0`。两处官方说法不一致——不要猜哪个赢，以本机 `grok inspect` 为准。
+
+<!-- TODO: 待核实 —— `[subagents] enabled` / `GROK_SUBAGENTS` 未设置时到底开还是关；功能页与环境变量表互相矛盾 -->
+
+三个内置类型：
 
 | 类型 | 角色 |
 | --- | --- |

@@ -2,7 +2,7 @@
 
 > This page covers Grok Build (executable `grok`) from installation through daily use. Parameter lists are in the [cheatsheet](./grok-cheatsheet.md), concept distinctions in the [glossary](./grok-glossary.md), and task recipes in the [cookbook](./grok-cookbook.md).
 >
-> Grok Build is in beta and ships very fast (recently roughly one npm release every one to three days), so this page deliberately avoids pinning version numbers. If a command or config key does not match your machine's actual behavior, check [x.ai/build/changelog](https://x.ai/build/changelog) first.
+> Grok Build is in beta and ships very fast (`latest` moved 1.0.3 → 1.0.5 between 2026-08-12 and 2026-08-16), so this page deliberately avoids pinning version numbers. If a command or config key does not match your machine's actual behavior, check [x.ai/build/changelog](https://x.ai/build/changelog) first.
 
 ## 1. Install
 
@@ -30,8 +30,10 @@ npm install -g @xai-official/grok
 Verify the install:
 
 ```bash
-grok --version
+grok version
 ```
+
+The [repository README](https://github.com/xai-org/grok-build) also shows `grok --version` in the install snippet. The command listed in [CLI Reference](https://docs.x.ai/build/cli/reference) is `grok version`.
 
 > **Naming note**: a binary you build from source is called `xai-grok-pager`; official installs ship it as `grok` (the [README](https://github.com/xai-org/grok-build) says: "The binary artifact is named `xai-grok-pager`; official installs ship it as `grok`.").
 
@@ -48,9 +50,9 @@ Four methods, from [docs.x.ai/build/enterprise](https://docs.x.ai/build/enterpri
 
 Credential resolution order (highest to lowest): `model.api_key` > `model.env_key` > active session token > `XAI_API_KEY`.
 
-Subscription requirements: the [launch announcement](https://x.ai/news/grok-build-cli) (2026-05-25) says "Available now to all SuperGrok and X Premium Plus subscribers.", while the marketing page [x.ai/build](https://x.ai/build) currently says "Available to try for Free". The two disagree — trust the quota you actually see after logging in. xAI publishes no concrete figure for the free tier.
+Subscription requirements: the [launch announcement](https://x.ai/news/grok-build-cli) (2026-05-25) says "Available now to all SuperGrok and X Premium Plus subscribers.", while the marketing page [x.ai/build](https://x.ai/build) currently says "Available to try for Free". The [Grok 4.6 announcement](https://x.ai/news/grok-4-6) adds a time-boxed "2x included usage inside Grok Build … for the first week" — still no standing free-tier number. Trust the quota you actually see after logging in. Do not invent a number.
 
-<!-- TODO: 待核实 —— 免费额度的具体数值、SuperGrok/X Premium Plus 与 Grok Build 用量的换算关系，官方文档与营销页均未给出说明 -->
+<!-- TODO: 待核实 —— 免费额度的具体数值、SuperGrok/X Premium Plus 与 Grok Build 用量的换算关系；发布公告、营销页、Grok 4.6 公告三处口径不同，且都没有给出可引用的配额数字。console.x.ai 对非浏览器客户端 403，无法代查。 -->
 
 Log out with `grok logout`.
 
@@ -85,16 +87,16 @@ The full key table is available inside the TUI with `Ctrl+.` (`Ctrl+X` on Window
 |-----|--------|
 | `Enter` | Send |
 | `Shift+Enter` | Newline (not recognized by the built-in terminals in VS Code / Cursor / Windsurf / Zed — use `Alt+Enter` there) |
-| `Shift+Tab` | Cycle Normal → Plan → Auto → Always-approve |
+| `Shift+Tab` | Cycle Normal → Plan → Auto (when available) → Always-approve |
 | `Esc` | Interrupt the current action |
-| `Esc Esc` | Trigger `/rewind` (roll the session back) |
+| `Esc Esc` | Clear the input box; open rewind when the input is empty ([keyboard-shortcuts](https://docs.x.ai/build/keyboard-shortcuts)) |
 | `Ctrl+Enter` / `Ctrl+I` | Interject (`Ctrl+L` in VS Code-family terminals) |
 | `Ctrl+P` or `?` | Command palette |
 | `Ctrl+T` | Todo panel |
 | `Ctrl+B` | Background task panel |
 | `Ctrl+G` | Task panel |
 | `Ctrl+S` | Session panel |
-| `Ctrl+M` | Model picker |
+| `Ctrl+M` | Toggle multiline when the input is focused; pick a model when it is not |
 | `Ctrl+\` | Dashboard |
 | `Ctrl+O` | Switch to always-approve |
 | `F2` / `Ctrl+,` | Settings |
@@ -110,7 +112,9 @@ This is the easiest part of Grok Build to get wrong. From the official [permissi
 
 **Permissions decide whether a tool call may run at all; the sandbox decides what it can touch once it does.** The two are orthogonal and can be used together.
 
-Three permission modes:
+TUI modes and headless `--permission-mode` values are **two vocabularies**. The TUI cycles Ask / Auto / Always-approve. CI uses Claude Code-style `dontAsk` / `acceptEdits` (see [enterprise](https://docs.x.ai/build/enterprise) and the [cheatsheet](./grok-cheatsheet.md#permissions-and-modes)). Do not mix the two lists.
+
+Three TUI permission modes:
 
 | Mode | Behavior | How to enter |
 |------|----------|--------------|
@@ -191,7 +195,7 @@ Sessions are stored under `~/.grok/sessions/`, indexed by working directory ([se
 | Resume a specific session | `grok --resume <id>` |
 | Resume from inside the TUI | `/resume` |
 | Fork the current session | `/fork [directive]`, optionally `--worktree` / `--no-worktree` |
-| Roll back history | `/rewind` or `Esc Esc` |
+| Roll back history | `/rewind`, or `Esc Esc` on an empty input |
 | Compact the context | `/compact [focus]`; also happens automatically |
 | Check context usage | `/context`, `/session-info` |
 | List / search / delete | `grok sessions list` / `search` / `delete` |

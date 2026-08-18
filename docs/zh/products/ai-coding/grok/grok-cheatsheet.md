@@ -2,7 +2,7 @@
 
 只查不学。所有条目来自 xAI 官方文档，页面链接在每节标题旁。命令的完整集合永远以 `grok --help` / `grok <subcommand> --help` 为准。
 
-覆盖版本 v1.0.4（2026-08-13 的 npm latest）。Grok Build 处于 beta，迭代非常快，看到差异先跑 `grok --version` 再对 [changelog](https://x.ai/build/changelog)。
+覆盖 npm `@xai-official/grok` `1.0.5`（2026-08-16 的 `dist-tags.latest` 与 `alpha`）。2026-08-18 复核时 [changelog](https://x.ai/build/changelog) 头部仍显示 v1.0.3 / Aug 12, 2026。看到差异先跑 `grok version` 再对 changelog。
 
 ## 安装与更新
 
@@ -342,7 +342,7 @@ deny = ["/secrets", "**/.env", "**/*.pem"]
 | `GROK_WEB_FETCH` | `0` | 开启 `web_fetch` 工具，**默认关（安全考虑）** |
 | `GROK_WEB_FETCH_PROXY` | — | `web_fetch` 的出口代理 |
 | `GROK_MEMORY` | `0` | 跨会话记忆 |
-| `GROK_SUBAGENTS` | `0` | subagent / task 工具 |
+| `GROK_SUBAGENTS` | `0` | 开启 subagent / task 工具（`1`/`0`）。[subagents](https://docs.x.ai/build/features/subagents) 页同时写 “Enabled by default when the setting is unset.” 两处官方说法不一致——不要猜哪个赢，以本机 `grok inspect` 为准。 |
 | `GROK_WRITE_FILE` | `1` | 设 `0` 关掉 `write` 工具（只读会话） |
 | `GROK_TOOL_SEARCH` | `1` | 大工具集的按需 MCP 工具发现 |
 | `GROK_LSP_TOOLS` | `0` | LSP 代码智能工具 |
@@ -400,7 +400,7 @@ UI 类变量还有 `GROK_SHOW_THINKING_BLOCKS`、`GROK_GROUP_TOOL_VERBS`、`GROK
 
 ## 高质量信息源
 
-按可信度和时效排序。**changelog 通常比文档站更新更快**，遇到文档没写的行为先查它。
+最后核实：2026-08-18。按可信度和时效排序。**changelog 可以比 [CLI Reference](https://docs.x.ai/build/cli/reference) 更早上新命令**（调研记录里 `grok du`、`grok trace` 就是先出现在 changelog），遇到文档没写的行为先查它。
 
 ### 一手官方
 
@@ -431,8 +431,8 @@ UI 类变量还有 `GROK_SHOW_THINKING_BLOCKS`、`GROK_GROUP_TOOL_VERBS`、`GROK
 
 | 技巧 | 说明 |
 | --- | --- |
-| [docs.x.ai/llms.txt](https://docs.x.ai/llms.txt) | 整个文档站的单文件全文镜像，适合本地 grep 或喂给模型（文件很大，别放进仓库） |
-| `https://docs.x.ai/api/mcp` | 官方文档 MCP 端点（Streamable HTTP、无状态），工具 `list_doc_pages` / `get_doc_page` |
+| [docs.x.ai/llms.txt](https://docs.x.ai/llms.txt) | 整个文档站的单文件全文镜像，适合本地 grep 或喂给模型（文件很大，别放进仓库）。最后核实 2026-08-18，HTTP 200。 |
+| `https://docs.x.ai/api/mcp` | 官方文档 MCP 端点（Streamable HTTP、无状态），工具 `list_doc_pages` / `get_doc_page`。浏览器 GET/HEAD 不是文档页——2026-08-18：HEAD 405、GET/POST 406、OPTIONS 204。要用 MCP 客户端，不要当网页打开。 |
 | `grok inspect --json` | 查"我这台机器上到底加载了什么"最快的手段 |
 
 ### 版本与源码
@@ -441,11 +441,12 @@ UI 类变量还有 `GROK_SHOW_THINKING_BLOCKS`、`GROK_GROUP_TOOL_VERBS`、`GROK
 | --- | --- |
 | [x.ai/build/changelog](https://x.ai/build/changelog) | 变更日志，比文档站更新快 |
 | [x.ai/news/grok-build-cli](https://x.ai/news/grok-build-cli) | 发布公告（2026-05-25 early beta） |
+| [x.ai/news/grok-4-6](https://x.ai/news/grok-4-6) | Grok 4.6 公告（提到 Grok Build 限时 2x included usage；没有长期配额数字） |
 | [github.com/xai-org/grok-build](https://github.com/xai-org/grok-build) | 源码（Rust，Apache-2.0）；**不接受外部 PR**，反馈走 `/feedback` |
 | [github.com/xai-org/plugin-marketplace](https://github.com/xai-org/plugin-marketplace) | 官方 plugin marketplace 目录 |
 | [npmjs.com/package/@xai-official/grok](https://www.npmjs.com/package/@xai-official/grok) | npm 发布节奏与历史版本 |
 
-**访问提示**：`x.ai` 及其子域（含 `status.x.ai`、`console.x.ai`）有 Cloudflare 防护，命令行 `curl` 会拿到 403；`docs.x.ai` 可以直接 `curl`。
+**访问提示**（2026-08-18 复核）：`x.ai/build` 与 `x.ai/build/changelog` 对命令行 `curl` 返回 403（Cloudflare）。`x.ai/news/grok-build-cli` 与 `x.ai/cli/install.sh` 返回 200。上表 `docs.x.ai` 页面返回 200。npmjs.com HTML 返回 403；registry JSON `https://registry.npmjs.org/@xai-official/grok` 可读。
 
 ## 相关页面
 

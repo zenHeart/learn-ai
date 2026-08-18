@@ -2,7 +2,7 @@
 
 Lookup only, no teaching. Every entry comes from xAI's official documentation, with the source page linked next to each section heading. The authoritative full command set is always `grok --help` / `grok <subcommand> --help`.
 
-Covers v1.0.4 (npm latest as of 2026-08-13). Grok Build is in beta and moves fast — if something does not match, run `grok --version` and check the [changelog](https://x.ai/build/changelog).
+Covers npm `@xai-official/grok` `1.0.5` (`dist-tags.latest` and `alpha` as of 2026-08-16). The [changelog](https://x.ai/build/changelog) header still showed v1.0.3 / Aug 12, 2026 when re-checked on 2026-08-18. If something does not match, run `grok version` and check the changelog.
 
 ## Install and update
 
@@ -342,7 +342,7 @@ Source: [Settings Reference](https://docs.x.ai/build/settings/reference)
 | `GROK_WEB_FETCH` | `0` | Enable the `web_fetch` tool, **off by default (security)** |
 | `GROK_WEB_FETCH_PROXY` | — | Egress proxy for `web_fetch` |
 | `GROK_MEMORY` | `0` | Cross-session memory |
-| `GROK_SUBAGENTS` | `0` | Subagent / task tools |
+| `GROK_SUBAGENTS` | `0` | Enable subagents / the task tool (`1`/`0`). The [subagents](https://docs.x.ai/build/features/subagents) page also says they are "Enabled by default when the setting is unset." Those two official sentences disagree — do not guess which wins; check `grok inspect` on your machine. |
 | `GROK_WRITE_FILE` | `1` | Set `0` to disable the `write` tool (read-only sessions) |
 | `GROK_TOOL_SEARCH` | `1` | On-demand MCP tool discovery for large tool sets |
 | `GROK_LSP_TOOLS` | `0` | LSP code-intelligence tools |
@@ -400,7 +400,7 @@ Prices for other models (`grok-4.5`, `grok-4.3`, the `grok-4.20-*` series, Imagi
 
 ## High-quality sources
 
-Ordered by reliability and freshness. **The changelog is usually ahead of the docs site** — check it first for behavior the docs do not mention.
+Last verified 2026-08-18. Ordered by reliability and freshness. **The changelog can list commands before [CLI Reference](https://docs.x.ai/build/cli/reference) does** (the research note recorded `grok du` and `grok trace` appearing on the changelog first) — check it first for behavior the docs do not mention.
 
 ### First-party official
 
@@ -431,8 +431,8 @@ Ordered by reliability and freshness. **The changelog is usually ahead of the do
 
 | Trick | Notes |
 | --- | --- |
-| [docs.x.ai/llms.txt](https://docs.x.ai/llms.txt) | Single-file full-text mirror of the whole docs site; good for local grep or feeding a model (it is large — do not commit it to a repo) |
-| `https://docs.x.ai/api/mcp` | Official docs MCP endpoint (Streamable HTTP, stateless); tools `list_doc_pages` / `get_doc_page` |
+| [docs.x.ai/llms.txt](https://docs.x.ai/llms.txt) | Single-file full-text mirror of the whole docs site; good for local grep or feeding a model (it is large — do not commit it to a repo). Last verified 2026-08-18, HTTP 200. |
+| `https://docs.x.ai/api/mcp` | Official docs MCP endpoint (Streamable HTTP, stateless); tools `list_doc_pages` / `get_doc_page`. Browser GET/HEAD is not a docs page — 2026-08-18: HEAD 405, GET/POST 406, OPTIONS 204. Use an MCP client, not a browser. |
 | `grok inspect --json` | Fastest way to answer "what is actually loaded on this machine" |
 
 ### Versions and source
@@ -441,11 +441,12 @@ Ordered by reliability and freshness. **The changelog is usually ahead of the do
 | --- | --- |
 | [x.ai/build/changelog](https://x.ai/build/changelog) | Changelog; updated faster than the docs site |
 | [x.ai/news/grok-build-cli](https://x.ai/news/grok-build-cli) | Launch announcement (2026-05-25, early beta) |
+| [x.ai/news/grok-4-6](https://x.ai/news/grok-4-6) | Grok 4.6 announcement (mentions time-boxed 2x included usage in Grok Build; no standing quota number) |
 | [github.com/xai-org/grok-build](https://github.com/xai-org/grok-build) | Source (Rust, Apache-2.0); **external PRs are not accepted**, feedback goes through `/feedback` |
 | [github.com/xai-org/plugin-marketplace](https://github.com/xai-org/plugin-marketplace) | Official plugin marketplace catalog |
 | [npmjs.com/package/@xai-official/grok](https://www.npmjs.com/package/@xai-official/grok) | Release cadence and version history |
 
-**Access note**: `x.ai` and its subdomains (including `status.x.ai` and `console.x.ai`) sit behind Cloudflare and return 403 to command-line `curl`; `docs.x.ai` can be curled directly.
+**Access note** (re-checked 2026-08-18): `x.ai/build` and `x.ai/build/changelog` return 403 to command-line `curl` (Cloudflare). `x.ai/news/grok-build-cli` and `x.ai/cli/install.sh` returned 200. `docs.x.ai` pages above returned 200. npmjs.com HTML returned 403; the registry JSON at `https://registry.npmjs.org/@xai-official/grok` is readable.
 
 ## Related pages
 

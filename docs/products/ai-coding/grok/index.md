@@ -38,7 +38,7 @@ Sources: [docs.x.ai/build/overview](https://docs.x.ai/build/overview), [docs.x.a
 **When to hold off**
 
 - You want inline IDE completion — Grok Build is a terminal agent with no completion feature and no official IDE plugin.
-- You need a stable long-term surface — it is still beta. npm has shipped 552 versions since 2025-10-22 (recently roughly one every one to three days), and commands and config keys are still moving.
+- You need a stable long-term surface — it is still beta. npm `@xai-official/grok` moved `latest` from 1.0.3 (2026-08-12) to 1.0.5 (2026-08-16); commands and config keys are still moving. Check `grok version` and the [changelog](https://x.ai/build/changelog) before pinning anything.
 
 ## Learning path
 

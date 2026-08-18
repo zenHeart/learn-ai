@@ -35,7 +35,7 @@
 
 - 发布公告 `https://x.ai/news/grok-build-cli`（2026-05-25）原文：「Today we're launching an early beta of Grok Build」「Available now to all SuperGrok and X Premium Plus subscribers.」
 - `https://x.ai/build` 当前文案：「Available to try for Free」，且横幅为「Meet Grok 4.6 • Now powering Grok Build」。
-- npm `@xai-official/grok` 至 2026-08-16 已发布 552 个版本（首个版本 2025-10-22），近期 1.0.0(08-07) → 1.0.1/1.0.2(08-11) → 1.0.3(08-12) → 1.0.4(08-13) → 1.0.5 alpha(08-16)。
+- npm `@xai-official/grok` 的 `time` 字段从 2025-10-22 起累计 552 个历史版本号（含已从 `versions` 下架的）；2026-08-18 抽查时 `versions` 里仍列出 191 个可安装版本。`dist-tags.latest` 与 `alpha` 均为 `1.0.5`（发布时间 2026-08-16T00:25:35Z）。近期 `latest` 轨迹：1.0.0 → 1.0.1 / 1.0.2 → 1.0.3（08-12）→ 1.0.4（08-13）→ 1.0.5（08-16）。不要把 552 写成「当前可安装版本数」。
 
 **结论五：文档分两套站点，写作时不要混引。**
 
@@ -52,8 +52,9 @@
 
 - 工具名：Grok Build（CLI 可执行文件 `grok`）
 - 官方文档根地址：<https://docs.x.ai/build/overview>
-- 发版节奏：约 1-3 天一个版本（npm 552 个版本 / 2025-10-22 起），属于本站收录工具里最快的一档
-- 当前覆盖版本：v1.0.4（2026-08-13，npm `latest`；`https://x.ai/build/changelog` 头部显示 v1.0.3 / Aug 12, 2026）
+- 发版节奏：npm `latest` 在 2026-08-12 / 08-13 / 08-16 连续换了 1.0.3 → 1.0.4 → 1.0.5。不要写死「每 1–3 天一版」——那是对近期轨迹的概括，不是官方 SLA。
+- 当前覆盖版本：v1.0.5（2026-08-16，npm `latest` 与 `alpha`；`https://x.ai/build/changelog` 头部在 2026-08-18 仍显示 v1.0.3 / Aug 12, 2026）
+- 官方两处对 subagent 默认开关说法不一致，文档里必须并列引用、禁止猜哪个赢：`/build/features/subagents` 原文 “Enabled by default when the setting is unset.”；`/build/settings/reference` 里 `GROK_SUBAGENTS` 默认值是 `0`。
 
 ## 文档文件结构（Diataxis 四象限）
 
