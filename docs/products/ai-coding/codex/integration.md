@@ -168,7 +168,7 @@ Codex **ignores** these keys when they appear in a project's `.codex/config.toml
 
 The reasoning is sound: a cloned repository should not be able to redirect your API traffic, select your profile, or reconfigure your telemetry. If one of these needs setting, it goes in `~/.codex/config.toml`.
 
-> Some older guides state that project-level config has *higher* priority than user-level config. That is not what the current reference describes: project config is a trust-gated layer that cannot override machine-local provider, auth, notification, profile-selection, or telemetry keys.
+> Official [config basics](https://learn.chatgpt.com/docs/config-file/config-basic) put trusted project config **above** user config (CLI flags still win). The list above is the separate rule: those machine-local keys are ignored at project scope even when the project is trusted. Untrusted projects skip the entire project `.codex/` layer.
 
 ### A reasonable project config.toml
 

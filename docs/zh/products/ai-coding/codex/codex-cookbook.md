@@ -295,6 +295,37 @@ codex exec resume --last "now add tests for the function you just wrote"
 
 `--json` 输出结构化事件，便于脚本解析。`codex exec` 的日志默认级别是 `RUST_LOG=error`。
 
+需要给下游脚本一份有类型的最终输出时，官方非交互文档支持 `--output-schema`。把 schema 和调用方放在一起：
+
+```ts
+// schema.ts — 传给 --output-schema 的 JSON Schema 的源
+export interface ProjectMetadata {
+  project_name: string
+  programming_languages: string[]
+}
+
+export const projectMetadataSchema = {
+  type: 'object',
+  properties: {
+    project_name: { type: 'string' },
+    programming_languages: {
+      type: 'array',
+      items: { type: 'string' },
+    },
+  },
+  required: ['project_name', 'programming_languages'],
+  additionalProperties: false,
+} as const
+```
+
+```bash
+codex exec "Extract project metadata" \
+  --output-schema ./schema.json \
+  -o ./project-metadata.json
+```
+
+`schema.json` 由上面的对象写出，不要额外编字段。见 [Non-interactive mode](https://learn.chatgpt.com/docs/non-interactive-mode)。
+
 在 CI 里通常还要显式指定审批策略，避免它停下来等人：
 
 ```bash

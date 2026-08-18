@@ -39,22 +39,29 @@ npm install -g @openai/codex
 codex --version
 ```
 
-<!-- TODO: 待核实 -->
-A Homebrew formula exists, but the two names circulating in older guides (`openai-codex` and a tap-qualified `openai-codex/tap/codex`) disagree with each other and I could not confirm either against current official documentation. Check the install command in [docs/install.md](https://github.com/openai/codex/blob/main/docs/install.md) before using it. No official statement was found that settles the formula name.
+On macOS, the Homebrew cask is `codex` (not `openai-codex`, and not a custom tap):
+
+```bash
+brew install --cask codex
+codex --version
+```
+
+Verified against the current Homebrew cask (`homebrew/homebrew-cask` `Casks/c/codex.rb`), which ships CLI 0.147.0. Official install documentation still leads with npm; use whichever channel you already trust.
 
 ## Step 2 — Sign in
 
 Codex is included with ChatGPT Plus, Pro, Business, Edu, and Enterprise plans. You do not buy it separately, and you do not need to provision an API key for normal CLI use.
 
 ```bash
-codex login     # opens a browser, signs in with your ChatGPT account
-codex status    # which account and plan is this session running under?
+codex login           # opens a browser, signs in with your ChatGPT account
+codex login status    # exits 0 when saved credentials are present
+codex doctor          # local diagnostic report (install, auth, config, runtime)
 codex logout
 ```
 
-Run `codex status` before you start doubting your limits — if you have a personal and a work account, this is where you find out which one Codex picked.
+`codex login status` is the documented auth check. For the account, model, and configuration of the *current session*, use the `/status` slash command inside the TUI.
 
-> `codex status` (the CLI subcommand) and `/status` (the slash command inside a session) are different things. The subcommand answers "who am I signed in as"; the slash command reports the current session's model and configuration.
+> There is no `codex status` subcommand in the official CLI reference. Older guides that print `codex status` or `codex auth status` are naming commands that are not in [developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
 
 Details on plans and quotas live in [ChatGPT Plans and Codex Access](./chatgpt-plus). This tutorial quotes no numbers, because they change.
 
@@ -72,7 +79,7 @@ codex --sandbox read-only "explain how this project is structured, and where the
 ```bash
 codex                                        # interactive session, default sandbox
 codex "add a test for the date parser"       # interactive, with a starting prompt
-codex --model gpt-5.5 "..."                  # pick the model for this run
+codex --model gpt-5.6 "..."                  # pick the model for this run
 codex --cd services/payments "..."           # scope to a subdirectory of a monorepo
 codex --add-dir ../shared-lib "..."          # grant one more directory (repeatable)
 ```
@@ -120,14 +127,14 @@ Three of them do disproportionate work:
 - **`/review`** diffs against the base branch and reviews it. This is the pre-push habit worth forming.
 - **`/debug-config`** prints the configuration layers actually in effect. Every "why is my config being ignored" question ends here.
 
-`/usage` accepts `daily`, `weekly`, and `cumulative`. `/import` migrates a Claude Code setup and works in the local TUI only. Personalities are `friendly`, `pragmatic`, and `none`.
+`/usage` accepts `daily`, `weekly`, and `cumulative`. `/import` migrates a Claude Code or Cursor setup and works in the local TUI only (the desktop app also imports Claude Cowork). Personalities are `friendly`, `pragmatic`, and `none`.
 
 ## Step 6 — Configure it
 
 Configuration lives at `~/.codex/config.toml`. A reasonable everyday starting point:
 
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
@@ -146,7 +153,7 @@ Read that block as four decisions:
 
 **`approval_policy`** — `untrusted`, `on-request`, `never`, or a granular table. `on-request` is the interactive default. `never` is for automation where nobody is present to answer. (`on-failure` is deprecated.)
 
-**`web_search`** — `disabled`, `cached`, or `live`, defaulting to `cached`. If Codex tells you something stale about a fast-moving library, this is why. Pass the bare `--search` flag or set `live`.
+**`web_search`** — `disabled`, `cached` (default), `indexed`, or `live`. Cached results come from an OpenAI-maintained index, not a live fetch. If Codex tells you something stale about a fast-moving library, pass the bare `--search` flag or set `live`.
 
 **`trust_level`** — this is the one that silently breaks things. A project's own `.codex/config.toml` is not loaded at all until the project is trusted. If project config appears to do nothing, check this first.
 
@@ -237,6 +244,8 @@ codex --ask-for-approval never exec "update the changelog"
 ```
 
 In CI, `--ask-for-approval never` is mandatory: there is no human to answer a prompt, so anything else eventually hangs. `exec` logging defaults to `RUST_LOG=error`.
+
+Do not use `--full-auto`. The 0.147.0 changelog removed the deprecated `codex exec --full-auto` flag; new scripts should set `--sandbox workspace-write` (and an approval flag) explicitly. Official non-interactive docs still mention `--full-auto` only as a compatibility leftover that prints a warning.
 
 ```bash
 codex --ask-for-approval never exec --json \

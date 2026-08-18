@@ -1,753 +1,413 @@
-# Codex 集成指南
+# 项目集成
 
-> 将 Codex 深度集成到你的开发工作流中：项目配置、MCP 扩展、GitHub Actions 自动化、与 ChatGPT Plus 协同工作。
+> 把 Codex 接到真实项目：指令文件、配置层、MCP、CI、团队落地。假设 CLI 已经能跑——还没装的话先看 [Codex CLI](./codex-cli)。
+>
+> 一次性任务配方去 [Cookbook](./codex-cookbook)。本页讲能留下来的配置。
 
----
+## 先看：一个配好的项目长什么样
 
-## 📁 项目配置：让 Codex 理解你的代码库
-
-### AGENTS.md：项目的"说明书"
-
-在项目根目录创建 `AGENTS.md`，告诉 Codex 项目的所有关键信息。
-
-#### 完整示例
-
-```markdown
-# AGENTS.md - 项目自定义指令
-
-## 项目概览
-名称: MyAwesomeApp
-描述: 基于 Next.js 的电商平台
-状态: 生产环境
-
-## 技术栈
-- 前端: Next.js 14, React 18, TypeScript 5
-- 样式: Tailwind CSS 3.4
-- 状态: Zustand
-- 测试: Vitest + Playwright
-- 部署: Vercel
-
-## 代码规范（必须遵守）
-
-### 命名约定
-- 组件: PascalCase (ProductCard)
-- 函数: camelCase (getUserCart)
-- 文件: kebab-case (product-card.tsx)
-
-### TypeScript 规则
-- strict: true
-- 禁止 any（除非 @any-ok）
-- 所有导出必须有 JSDoc
-
-### Git 提交
-feat(module): short description
-- feat: 新功能
-- fix:  bug 修复
-- docs: 文档更新
-- style: 代码格式
-- refactor: 重构
-- test: 测试相关
-- chore: 构建/工具变动
-
-## 目录结构
-src/
-├── app/          # Next.js App Router
-├── components/   # React 组件
-│   ├── ui/      # 基础 UI 组件
-│   └── features/ # 业务组件
-├── lib/          # 工具函数
-├── stores/       # Zustand stores
-├── types/        # TS 类型
-└── tests/        # 测试文件
-
-## Codex 特殊指令
-
-@model gpt-5-codex
-@reasoning high
-
-@allow-write-only src/ tests/  # 只允许修改这两个目录
-@deny-command rm -rf           # 禁止递归删除
-@deny-command git push -f      # 禁止强制推送
-
-@auto-approve test             # 测试命令自动批准
-@auto-approve lint
-
-## 环境变量
-必须在 .env.local 中配置：
-- DATABASE_URL
-- STRIPE_SECRET_KEY
-- NEXTAUTH_SECRET
-
-## 脚本别名
-@command test = "npm test -- --coverage"
-@command build = "npm run build && npm run export"
-@command lint = "eslint . --ext .ts,.tsx"
+```
+your-project/
+├── AGENTS.md              # 约定和边界，提交进仓库
+├── .codex/
+│   └── config.toml        # 项目级设置，提交（仅信任后加载）
+└── .github/workflows/
+    └── codex.yml          # 如果你要自动化
 ```
 
-### AGENTS.md 的特殊语法
-
-**模型选择**：
-```markdown
-@model gpt-5-codex          # 使用最强模型
-@model gpt-4o              # 平衡速度与质量
-```
-
-**推理模式**：
-```markdown
-@reasoning high    # 复杂任务深度思考
-@reasoning medium  # 平衡模式
-@reasoning low     # 快速响应
-```
-
-**权限控制**：
-```markdown
-@allow-write-only src/              # 只允许写入 src/
-@allow-read-only src/ config/       # 只允许读取
-@deny-command rm                    # 禁止删除
-@deny-command git push             # 禁止 Git 推送
-```
-
-**自动批准**：
-```markdown
-@auto-approve test                 # 测试命令自动执行
-@auto-approve lint format          # 多个命令
-```
-
-**命令别名**：
-```markdown
-@command test = "npm test -- --coverage --watch"
-@command deploy = "vercel --prod"
-```
-
----
-
-## 🔌 MCP 服务器配置
-
-### 什么是 MCP
-
-MCP (Model Context Protocol) 允许 Codex 连接外部服务，扩展能力边界。
-
-### 常用 MCP 服务器
-
-#### 1. Filesystem（文件系统）
-
-```bash
-codex mcp add filesystem -y @modelcontextprotocol/server-filesystem ./
-```
-
-**能力**：
-- 读取任意文件
-- 列出目录结构
-- 搜索文件内容
-
-**使用示例**：
-```
-用户: "列出 src/components 下的所有组件"
-Codex: (通过 filesystem MCP) 读取目录 → 返回列表
-```
-
-#### 2. GitHub（GitHub API）
-
-```bash
-codex mcp add github -y @modelcontextprotocol/server-github
-```
-
-**能力**：
-- 读取 issues/PRs
-- 创建/评论 PR
-- 查看 CI 状态
-
-**使用示例**：
-```
-用户: "查看 PR #123 的评论"
-Codex: (调用 GitHub API) 返回评论列表
-```
-
-#### 3. Sequential Thinking（推理增强）
-
-```bash
-codex mcp add sequential-thinking -y @modelcontextprotocol/server-sequential-thinking
-```
-
-**能力**：
-- 将复杂问题分解为多步
-- 动态调整推理路径
-- 自我纠错
-
-#### 4. Slack（团队通讯）
-
-```bash
-codex mcp add slack -y @modelcontextprotocol/server-slack
-```
-
-**能力**：
-- 发送消息到频道
-- 读取通知
-- 自动化团队沟通
-
-### 配置文件方式（持久化）
+再加一件**不要提交**的本机事项：在你自己的 `~/.codex/config.toml` 里给项目标信任。
 
 ```toml
 # ~/.codex/config.toml
-
-[[mcp_servers]]
-name = "filesystem"
-type = "stdio"
-command = "npx"
-args = ["-y", "@modelcontextprotocol/server-filesystem", "./"]
-
-[[mcp_servers]]
-name = "github"
-type = "stdio"
-command = "npx"
-args = ["-y", "@modelcontextprotocol/server-github"]
-# 环境变量
-env = { GITHUB_TOKEN = "${GITHUB_TOKEN}" }
-
-[[mcp_servers]]
-name = "my-custom-tool"
-type = "http"
-url = "http://localhost:8080"
-auth_token = "secret-token"
+[projects."/absolute/path/to/your-project"]
+trust_level = "trusted"     # trusted | untrusted
 ```
 
-### 自定义 MCP 服务器
+**这一步最容易漏。** 项目级 `.codex/`——配置、hooks、rules——只对已信任项目加载。`.codex/config.toml` 提交得再完整，每个开发者没在自己机器上标信任，它就等于不存在。用 `/debug-config` 看实际生效的层。
 
-```javascript
-// custom-mcp-server.js
-const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
-const { SSEMCPClient } = require('@modelcontextprotocol/sdk/client/index.js');
+## AGENTS.md
 
-const server = new Server(
-  {
-    name: "my-tool",
-    version: "0.1.0"
-  },
-  {
-    capabilities: {
-      tools: {}
-    }
-  }
-);
+### 它是什么
 
-server.setRequestHandler("tools/call", async (request) => {
-  const { name, arguments: args } = request.params;
+Codex 动手前会读的自然语言简报。每次运行重建指令链——没有缓存要清，改完下次调用就生效。
 
-  if (name === "deploy") {
-    // 你的部署逻辑
-    return {
-      content: [{ type: "text", text: "部署成功！" }]
-    };
-  }
-});
+不想从零写，用 `/init` 生成起始文件。
 
-await server.connect();
-```
+### 发现与合并顺序
 
----
+值得精确理解，因为它决定哪份文件赢。
 
-## 🤖 GitHub Actions 集成
+**全局。** 在 Codex home（默认 `~/.codex`，或 `CODEX_HOME`）读 `AGENTS.override.md`（若存在），否则读 `AGENTS.md`。这一层只用第一份非空文件。
 
-### 基础配置：代码审查
+**项目。** 从项目根（通常是 Git 根）往下走到当前目录。每个目录依次检查 `AGENTS.override.md`、`AGENTS.md`、以及 `project_doc_fallback_filenames` 里的名字。每个目录最多一份。找不到项目根时，只检查当前目录。
 
-```yaml
-# .github/workflows/codex-review.yml
-name: Codex Review
+**合并。** 文件从根到当前目录拼接，中间空行分隔。**离当前目录越近的越靠后，因此覆盖前面的指导。**
 
-on:
-  pull_request:
-    branches: [main]
+空文件跳过。合并体积到达 `project_doc_max_bytes`（**默认 32 KiB**）就停止追加。超出部分静默丢弃，这是「某条 AGENTS.md 规则像被无视」最常见的原因。
 
-jobs:
-  codex-review:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # 获取完整历史
-
-      - name: Setup Codex
-        run: |
-          curl -fsSL https://codex.openai.com/install.sh | sh
-
-      - name: Run Codex Review
-        run: |
-          codex --full-auto "审查 PR #${{ github.event.pull_request.number }}
-            重点检查：安全性、性能、代码规范"
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
-      - name: Post Review Comment
-        if: always()
-        run: |
-          codex --output-json "生成审查摘要" > review.json
-          # 使用 GitHub CLI 发布评论
-          gh pr comment ${{ github.event.pull_request.number }} \
-            --body "$(cat review.json)"
-```
-
-### 自动修复工作流
-
-```yaml
-name: Codex Auto-Fix
-
-on:
-  issue:
-    types: [labeled]
-
-jobs:
-  auto-fix:
-    if: contains(github.event.issue.labels.*.name, 'codex-fix')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run Codex Fix
-        run: |
-          # 让 Codex 读取 issue 并生成修复
-          codex --full-auto "修复 issue #${{ github.event.issue.number }}" \
-            | tee fix.patch
-
-          # 应用补丁
-          git apply --allow-empty fix.patch
-
-      - name: Create Fix Branch
-        run: |
-          git config --global user.name "Codex Bot"
-          git config --global user.email "codex@github.com"
-          git checkout -b fix-${{ github.event.issue.number }}
-          git add .
-          git commit -m "fix: 自动修复 #${{ github.event.issue.number }}"
-          git push origin fix-${{ github.event.issue.number }}
-
-      - name: Open PR
-        run: |
-          gh pr create \
-            --title "Fix: issue #${{ github.event.issue.number }}" \
-            --body "由 Codex 自动生成" \
-            --base main \
-            --head fix-${{ github.event.issue.number }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-### 每日自动化检查
-
-```yaml
-name: Daily Codex Health Check
-
-on:
-  schedule:
-    - cron: '0 9 * * 1-5'  # 工作日早上 9 点
-
-jobs:
-  health-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run Diagnostics
-        run: |
-          codex --full-auto "运行项目健康检查：
-            - 检查依赖过期
-            - 运行所有测试
-            - 检查代码规范
-            - 生成健康报告" > health-report.md
-
-      - name: Upload Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: health-report
-          path: health-report.md
-```
-
----
-
-## 🔄 与 ChatGPT Plus 的协同工作流
-
-### 黄金组合：规划 + 执行
-
-```
-┌─────────────────────┐
-│   ChatGPT Plus      │  ← 规划层
-│  (聊天界面 + 研究)  │     1. 技术选型
-│  - Deep Research    │     2. 架构设计
-│  - 多模态分析       │     3. 方案对比
-│  - 文档生成         │     4. 详细 spec
-└──────────▲──────────┘     5. 质量审查
-           │ 导出 spec 文件
-           │ (Markdown/JSON)
-┌──────────┴──────────┐
-│   Codex CLI         │  ← 执行层
-│  (终端 + 自动化)    │     1. 创建项目结构
-│  - 读写文件         │     2. 生成代码
-│  - 运行命令         │     3. 运行测试
-│  - Git 操作         │     4. 提交 PR
-└─────────────────────┘
-```
-
-### 实际工作流示例
-
-**项目**：构建一个 AI 聊天应用
-
-**第 1 步：ChatGPT Plus 规划**
-
-```bash
-# 在 chatgpt.com 中
-用户: "帮我设计一个 AI 聊天应用的技术方案
-  要求：
-  - 前端: Next.js + TypeScript
-  - 后端: Node.js + Express
-  - AI 模型: 支持 GPT-4 和 Claude
-  - 功能: 多轮对话、流式输出、历史记录
-
-  输出：架构图、技术选型理由、文件结构、API 设计"
-```
-
-ChatGPT Plus 输出：
-```
-1. 架构图 (Mermaid)
-2. 技术选型对比表
-3. 目录结构树
-4. API 接口规范
-5. 部署方案
-```
-
-**第 2 步：Codex CLI 实现**
-
-```bash
-$ codex "根据刚才的设计文档创建项目：
-  1. 初始化 Next.js 项目
-  2. 创建后端 Express 服务
-  3. 集成 OpenAI 和 Anthropic API
-  4. 实现流式响应
-  5. 添加历史记录存储（PostgreSQL）
-  6. 编写基础测试"
-```
-
-Codex 自动：
-- 创建项目结构
-- 安装依赖
-- 生成所有代码文件
-- 配置环境变量
-- 运行初始化测试
-
-**第 3 步：ChatGPT Plus 审查**
-
-```bash
-# 上传 PR diff 到 ChatGPT Plus
-用户: "审查这个 PR：添加了 AI 聊天功能
-  检查：
-  1. 安全性（API key 管理）
-  2. 性能（流式处理）
-  3. 可扩展性
-  4. 错误处理"
-```
-
-**第 4 步：Codex CLI 优化**
-
-```bash
-$ codex "根据审查意见优化：
-  1. 添加请求限流
-  2. 实现连接池
-  3. 添加监控指标
-  4. 更新文档"
-```
-
-### 一键工作流脚本
-
-```bash
-#!/bin/bash
-# ai-project.sh - 使用 ChatGPT Plus + Codex CLI 快速启动项目
-
-set -e
-
-PROJECT_NAME=$1
-
-echo "🚀 Step 1: ChatGPT Plus 规划"
-echo "请在 chatgpt.com 中输入以下提示："
-echo "---
-创建一个 $PROJECT_NAME 项目的详细技术方案，
-包括：架构图、技术选型、目录结构、API 设计。
-输出为 Markdown 格式，保存为 docs/plan.md。
----"
-read -p "完成后按 Enter 继续..."
-
-echo "🧠 Step 2: Codex CLI 实现"
-codex --full-auto "根据 docs/plan.md 创建完整项目，包括：
-  - 项目初始化
-  - 核心功能实现
-  - 基础测试
-  - README 文档"
-
-echo "🔍 Step 3: ChatGPT Plus 审查"
-echo "请在 chatgpt.com 中上传 PR，进行代码审查"
-
-echo "✨ 项目创建完成！"
-```
-
----
-
-## 🔐 与 Claude Code/Cursor 的对比
-
-### 定位差异
-
-| 特性 | Codex CLI | Claude Code | Cursor |
-|------|-----------|-------------|--------|
-| **平台** | 命令行（跨平台） | VS Code 插件 / CLI | 独立编辑器 |
-| **工作方式** | 自主代理 | IDE 内嵌代理 | IDE 内嵌代理 |
-| **文件访问** | 直接读写（沙箱） | IDE API 读写 | IDE API 读写 |
-| **权限模型** | 沙箱 + 审批 | IDE 权限 | IDE 权限 |
-| **自动化程度** | 高（可 --full-auto） | 中（需手动确认） | 中（需手动确认） |
-| **扩展性** | MCP 协议 | 有限插件 | 有限插件 |
-
-### 功能对比矩阵
-
-| 功能 | Codex CLI | Claude Code | Cursor |
-|------|-----------|-------------|--------|
-| 理解整个项目 | ✅ 自动扫描 | ✅ 但依赖 IDE 索引 | ✅ 但依赖索引 |
-| 修改任意文件 | ✅ | ✅ | ✅ |
-| 运行命令 | ✅ 直接执行 | ✅ 通过终端 | ✅ 通过终端 |
-| Git 操作 | ✅ 自动提交 | ✅ 建议但手动 | ✅ 建议但手动 |
-| 完全自动化 | ✅ `--full-auto` | ❌ 需要确认 | ❌ 需要确认 |
-| 脱离 IDE | ✅ 纯终端 | ✅ (有 CLI) | ❌ 依赖编辑器 |
-| MCP 扩展 | ✅ 开放协议 | ❌ 封闭 | ❌ 封闭 |
-| 成本 | API 用量 | Claude 订阅 | Cursor 订阅 |
-
-### 如何选择
-
-**使用 Codex CLI 当**：
-- 你习惯终端工作流
-- 需要 CI/CD 集成
-- 大型项目（1000+ 文件）
-- 想要完全自动化
-
-**使用 Claude Code 当**：
-- 你主要用 VS Code
-- 希望与 IDE 深度集成
-- 需要实时 inline 建议
-- 已订阅 Claude Pro
-
-**使用 Cursor 当**：
-- 你愿意换编辑器
-- 想要"AI 优先"的体验
-- 需要聊天式交互 + 代码编辑一体化
-
-### 混合使用策略
-
-```bash
-# 日常开发：Codex CLI + 编辑器
-codex "重构用户模块"   # 自动完成
-vim src/              # 手动微调
-
-# 快速查询：ChatGPT Plus
-chatgpt "这个正则表达式什么意思？"
-
-# 复杂架构：Claude Code（长上下文）
-claude "分析整个 monorepo 的依赖关系图"
-```
-
----
-
-## 📦 实际项目集成案例
-
-### 案例 1：Next.js 项目完整配置
-
-```
-my-nextjs-app/
-├── AGENTS.md              # Codex 项目配置
-├── .codex/
-│   └── config.toml        # 项目级配置
-├── package.json
-├── next.config.js
-├── src/
-│   ├── app/
-│   ├── components/
-│   └── lib/
-└── tests/
-```
-
-**AGENTS.md**：
-```markdown
-@model gpt-5-codex
-@reasoning high
-
-@allow-write-only src/ tests/
-@deny-command rm -rf node_modules/
-
-@auto-approve npm test
-@auto-approve npm run build
-
-## 项目: Next.js E-commerce
-## 技术: Next.js 14, TypeScript, Tailwind
-```
-
-**.codex/config.toml**：
 ```toml
-model = "gpt-5-codex"
-approval_policy = "untrusted"
-sandbox_mode = "workspace-write"
-
-[[mcp_servers]]
-name = "vercel"
-command = "npx"
-args = ["-y", "@vercel/mcp-server"]
+project_doc_max_bytes = 65536
+project_doc_fallback_filenames = ["TEAM_GUIDE.md", ".agents.md"]
 ```
 
-### 案例 2：Monorepo 配置
+home 里的 `AGENTS.override.md` 适合临时个人覆盖，不用改真正的那份文件。
+
+### 能用的 monorepo 布局
+
+```
+monorepo/
+├── AGENTS.md                    # 处处成立的事实
+├── packages/
+│   ├── api/AGENTS.md            # API 专属，覆盖根
+│   └── web/AGENTS.md            # web 专属，覆盖根
+```
+
+根文件只写共享事实：
 
 ```markdown
-# AGENTS.md (Monorepo 根目录)
+# Monorepo conventions
 
-## 项目: Monorepo (Turborepo)
-packages:
-  - apps/web (Next.js)
-  - apps/api (Express)
-  - packages/ui (React components)
-  - packages/utils (shared utils)
+## Tooling
+- pnpm workspaces. Never npm or yarn.
+- Turborepo drives builds: `pnpm build` at the root.
+- TypeScript strict mode everywhere.
 
-## 跨包修改规则
-@allow-write-only apps/ packages/
-@deny-command "cd .."  # 禁止离开 monorepo
+## Cross-package rules
+- A change to `packages/shared` requires running the full test suite, not just
+  the package's own tests.
+- Never import from another package's `src/` — use its public entry point.
 
-## 命令别名
-@command build = "turbo run build"
-@command test = "turbo run test"
+## Verification
+- Run `pnpm test && pnpm typecheck` after any change and report the output.
 ```
 
-### 案例 3：CI/CD 集成
+包文件只写不同的部分：
 
-```yaml
-# .github/workflows/codex-automation.yml
-name: Codex Automation
+```markdown
+# packages/api
 
-on:
-  push:
-    branches: [main]
+## Stack
+- Fastify, Prisma, PostgreSQL.
 
-jobs:
-  auto-fix:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+## Rules
+- Every route needs a Zod schema. No untyped request bodies.
+- Schema changes require a migration in `prisma/migrations/` — never edit an
+  existing migration.
 
-      - name: Run Codex Auto-Fix
-        run: |
-          # 自动修复 lint 错误
-          codex --full-auto "修复所有 ESLint 错误" | git apply
-
-          # 自动更新依赖
-          codex --full-auto "更新依赖到最新安全版本"
-
-          # 自动生成 CHANGELOG
-          codex --output CHANGELOG.md "生成更新日志"
-
-      - name: Commit Changes
-        run: |
-          git config --global user.name "Codex Bot"
-          git config --global user.email "codex@github.com"
-          git add .
-          git commit -m "chore: auto-fix lint and update dependencies"
-          git push
+## Verification
+- `pnpm --filter api test` must pass.
 ```
 
----
+包文件在根文件之后加载，冲突时包文件赢。这就是表达「一般来说 X，但这个包是 Y」的方式。
 
-## 🎯 最佳实践清单
+### 写什么，不写什么
 
-### 项目初始化
+写：
 
-- [ ] 在项目根目录创建 `AGENTS.md`
-- [ ] 创建 `.codex/config.toml`（如需自定义配置）
-- [ ] 添加项目级 MCP 服务器配置
-- [ ] 定义清晰的权限策略（`@allow-write-only`、`@deny-command`）
-- [ ] 设置命令别名（`@command test = "..."`）
+- 工具事实：包管理器、测试命令、类型检查
+- 边界：别碰的目录、生成文件
+- 读一个文件看不出来的约定
+- 你总希望它跑的验收步骤
+- 放在 `## Code Review Rules` 下的评审规则
 
-### 日常使用
+不写：
 
-- [ ] 使用 `codex` 而非 `codex --full-auto`（除非 CI）
-- [ ] 每次 Codex 建议操作前审查 `/diff`
-- [ ] 定期查看 `codex sessions list` 了解活动
-- [ ] 使用 `@filename` 引用文件（而非模糊描述）
-- [ ] 对于复杂任务，先用 ChatGPT Plus 规划
+- 每个任务都变的要求——那属于提示词
+- 长篇架构散文——吃预算，很少改变行为
+- linter 已经在强制的规则
+- 密钥、token、内部主机名
 
-### 团队协作
+### 代码评审规则
 
-- [ ] 将 `AGENTS.md` 提交到版本控制
-- [ ] 在 README 中注明项目使用 Codex
-- [ ] 定期更新 `AGENTS.md`（随项目演进）
-- [ ] 建立 Codex 操作审查机制（PR 审核）
-- [ ] 记录 Codex 的决策（便于追溯）
+Codex 从离被评审代码最近的 `AGENTS.md` 读取 `## Code Review Rules`。官方文档的形状是：
 
-### 安全
+```markdown
+## Code Review Rules
 
-- [ ] 永远不在生产服务器上运行 `--full-auto`
-- [ ] 敏感信息（API keys）使用环境变量，不硬编码
-- [ ] 定期审查 `@deny-command` 列表
-- [ ] 限制 `sandbox_mode` 权限（最小权限原则）
-- [ ] 备份重要文件（Codex 修改前自动备份）
+### Experiment cohorts
 
----
+- Do not filter treatment comparisons on post-exposure behavior, including conversion or retention.
+  Safe path: build cohorts from assignment or exposure; report conversion as an outcome.
+```
 
-## 🐛 调试与故障排除
+有效的是这个形状：具体错误，然后安全替代。空泛的「做实验要小心」什么都改变不了。
 
-### 查看 Codex 在做什么
+### 核对到底加载了什么
 
 ```bash
-# 详细日志
-codex --verbose "任务" 2>&1 | tee debug.log
-
-# 查看配置文件
-codex config list
-
-# 查看 MCP 服务器状态
-codex mcp list
-codex mcp get github
-
-# 查看会话历史
-codex sessions list
-codex sessions get <session-id>
+codex --ask-for-approval never "Summarize the current instructions."
+codex --cd packages/api --ask-for-approval never "List the instruction sources you loaded."
 ```
 
-### 常见问题
+或者看日志：
 
-**Q: Codex 修改了不该改的文件**
 ```bash
-# 立即撤销
-git checkout -- <file>
-
-# 更新 AGENTS.md 限制权限
-@deny-command <pattern>
+codex -c log_dir=./.codex-log
+tail -F ./.codex-log/codex-tui.log
 ```
 
-**Q: MCP 服务器无法连接**
+也可以检查 sessions 目录里最新的 `session-*.jsonl`。
+
+## 配置层
+
+官方 [Config basics](https://learn.chatgpt.com/docs/config-file/config-basic) 的解析顺序（高优先在前）：
+
+```
+-c key=value / CLI flag              ← 只对这一次运行
+        ↑
+<project>/.codex/config.toml         ← 项目层，仅信任时加载
+        ↑
+$CODEX_HOME/<name>.config.toml       ← --profile 选中的 profile
+        ↑
+~/.codex/config.toml                 ← 用户层，始终加载
+        ↑
+/etc/codex/config.toml               ← 系统层（若存在）
+        ↑
+内置默认值
+```
+
+被信任的项目配置**会**覆盖用户配置里的同名键。
+
+### 项目层做不到的事
+
+这些键出现在项目的 `.codex/config.toml` 时会被 **忽略**：
+
+`openai_base_url`、`chatgpt_base_url`、`apps_mcp_product_sku`、`model_provider`、`model_providers`、`notify`、`profile`、`profiles`、`experimental_realtime_ws_base_url`、`otel`
+
+仓库不能改道你的 API 流量、不能替你选 profile、不能改遥测。这些只能写在 `~/.codex/config.toml`。
+
+> 整体优先级和「忽略键列表」是两件事。官方顺序是信任项目高于用户；忽略键是即使项目被信任也不会从项目层生效的那一小撮。未信任项目会跳过整个项目 `.codex/` 层。
+
+### 一份合理的项目 config.toml
+
+```toml
+# <project>/.codex/config.toml
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[sandbox_workspace_write]
+network_access = false
+writable_roots = ["/tmp/build-cache"]
+```
+
+`network_access = false` 值得作为默认。多数开发任务不需要它，关掉能消掉一类意外。
+
+### Profile
+
+Profile 和 `config.toml` 同级，名为 `$CODEX_HOME/<name>.config.toml`：
+
+```toml
+# ~/.codex/review.config.toml
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+approval_policy = "never"
+```
+
 ```bash
-codex mcp remove <name>
-codex mcp add <name> --reinstall
-codex doctor  # 运行诊断
+codex --profile review "review the uncommitted changes and list only real defects"
 ```
 
-**Q: 模型访问被拒绝**
+这就是 Writer/Reviewer 模式的机制：评审 profile 从机制上不能改文件。
+
+## MCP 服务器
+
+MCP 把 Codex 接到仓库外面的系统。服务器配成**以 id 为键的 table**。
+
+### STDIO
+
+```toml
+[mcp_servers.filesystem]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-filesystem", "."]
+startup_timeout_sec = 10
+tool_timeout_sec = 60
+```
+
+### Streaming HTTP
+
+```toml
+[mcp_servers.internal-api]
+url = "https://mcp.example.com/sse"
+bearer_token_env_var = "INTERNAL_API_TOKEN"
+enabled = true
+default_tools_approval_mode = "prompt"    # auto | prompt | approve
+enabled_tools = ["search", "read"]
+```
+
+> **语法重要。** 是 `[mcp_servers.<id>]`，以 id 为键的 table——不是 `[[mcp_servers]]`。没有 `name` 键，也没有 `type` 键；头里的 id 就是名字，有 `command` 还是 `url` 决定传输方式。
+
+永远不要把凭证写进文件。`bearer_token_env_var` 指向环境变量；`env_http_headers` 把头名映射到环境变量。两者都让密钥离开可能被提交的文件。
+
+### 控制服务器能做什么
+
+| 键 | 作用 |
+| --- | --- |
+| `enabled` | 关掉服务器但不删配置 |
+| `required` | 服务器不可用则启动失败 |
+| `enabled_tools` | 白名单——只暴露这些工具 |
+| `disabled_tools` | 黑名单 |
+| `default_tools_approval_mode` | 整个服务器的 `auto` / `prompt` / `approve` |
+| `tools.<tool>.approval_mode` | 覆盖单个工具 |
+| `startup_timeout_sec` | 默认 10 |
+| `tool_timeout_sec` | 默认 60 |
+
+对能写的服务器：服务器默认 `prompt`，再给信任的只读工具单独 `auto`。
+
+Codex 也能**作为** MCP 服务器跑——见 [MCP Server](https://learn.chatgpt.com/docs/mcp-server)。
+
+用 `codex mcp` 管理；会话里用 `/mcp` 或 `/mcp verbose` 检查。
+
+## Hooks
+
+Hooks 回答的是「这件事必须发生，不能只是被请求」。
+
+```toml
+[[hooks.PostToolUse]]
+[[hooks.PostToolUse.hooks]]
+type = "command"
+command = ["pnpm", "lint", "--fix"]
+command_windows = ["pnpm.cmd", "lint", "--fix"]
+```
+
+事件：`PreToolUse`、`PermissionRequest`、`PostToolUse`、`PreCompact`、`PostCompact`、`SessionStart`、`SubagentStart`、`SubagentStop`、`UserPromptSubmit`、`Stop`。
+
+目前只有 command hook 会执行。prompt / agent hook 会被解析但跳过。
+
+注意 `command_windows`——团队有 Windows 的话，没有它 hook 会在 Windows 上失败。
+
+项目 `.codex/` 里的 hooks 同样只对已信任项目加载。
+
+## Subagents
+
+```toml
+[agents]
+max_depth = 1
+max_threads = 6
+job_max_runtime_seconds = 1800
+
+[agents.reviewer]
+description = "Read-only adversarial reviewer"
+config_file = "reviewer.config.toml"
+```
+
+Subagent 只有你明确要求时才生成，不会自动开火。`config_file` 让它们有用：评审 subagent 可以在只读沙箱里跑，主会话继续写。
+
+会话里用 `/agent` 管理。
+
+## CI 集成
+
+### 非交互执行
+
+任何 CI 用法的基础都是 `codex exec`，它不会等人：
+
 ```bash
-# 检查订阅状态
-codex auth status
-
-# 确认 API 额度
-open https://platform.openai.com/usage
-
-# 切换模型
-codex --model gpt-4o "任务"
+codex --ask-for-approval never exec "run the test suite; if anything fails, fix it and re-run until green"
+codex exec --json "summarize the changes since main"
 ```
 
----
+`--json` 输出结构化事件，下游要解析时用这个。`codex exec` 默认 `RUST_LOG=error`。
 
-## 📚 延伸阅读
+不要用 `--full-auto`。0.147.0 已从 `codex exec` 删除该 flag。新脚本写 `--sandbox workspace-write` 加审批 flag。
 
-- [AGENTS.md 完整语法参考](https://github.com/openai/codex/blob/main/docs/agents.md)
-- [MCP 协议官方文档](https://modelcontextprotocol.io)
-- [Codex 安全白皮书](https://openai.com/codex-security)
-- [Codex 在 GitHub Actions 中的最佳实践](https://github.com/openai/codex/discussions)
+### 隔离 CI 状态
 
----
+```bash
+CODEX_HOME=$(pwd)/.codex-ci codex exec "..."
+```
 
-**下一步**：回到 [Codex CLI 手册](./codex-cli.md) 深入学习具体命令，或查看 [Cheatsheet](./codex-cheatsheet.md) 快速查询。
+这次运行会有自己的配置、会话和日志，而不是继承 runner 上已有的东西。
+
+### GitHub Actions
+
+有官方 action——当前 inputs 和认证方式看 [GitHub Action](https://learn.chatgpt.com/docs/github-action)，不要从教程里抄一份工作流，接口会变，认证细节也重要。
+
+无论怎么接线，三件事必须做对：
+
+**认证是密钥。** 走仓库的 secret store。工作流文件里不要出现字面 token。
+
+**收紧沙箱。** CI 正好是 `danger-full-access` 最诱人、也最错的地方。`workspace-write` 加 `network_access = false` 覆盖大多数任务。
+
+**先决定失败怎么办。** Agent 靠删测试让 CI 变绿，技术上确实绿了。如果任务能提交，提交必须可审——开 PR，不要直接推默认分支。
+
+### Codex SDK
+
+除了在 shell 里调 CLI，还有 SDK——见 [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk)。
+
+## 团队落地
+
+### 什么该提交
+
+| 文件 | 提交？ | 为什么 |
+| --- | --- | --- |
+| `AGENTS.md` | 是 | 共享约定 |
+| `.codex/config.toml` | 是 | 共享默认值 |
+| `.codex/` 里的 hooks 和 rules | 是 | 共享强制 |
+| `~/.codex/config.toml` | 否 | 本机的，含信任条目，可能还有 provider |
+| 任何带 token 的东西 | 否 | 用 `bearer_token_env_var` |
+
+入职文档里加一句：新同事要把项目标成 trusted。没有这一步，提交进去的 `.codex/` 配置对他们全部无效。
+
+### 强制，而不是建议
+
+提交进去的配置只是默认值，开发者可以覆盖。必须在全队成立的事，才是 `requirements.toml` 的工作：
+
+| 键 | 作用 |
+| --- | --- |
+| `allowed_approval_policies` | 限制可选审批策略 |
+| `allowed_sandbox_modes` | 限制可选沙箱模式 |
+| `allowed_web_search_modes` | 限制网页搜索（`disabled` 始终允许；空列表等于只允许 `disabled`） |
+| `allowed_permission_profiles` | 限制 permission profile |
+| `mcp_servers` | 按 id **和** `identity` 白名单（精确 command、matcher 或 URL） |
+| `hooks.managed_dir` | 组织控制的 hooks |
+| `marketplaces.restrict_to_allowed_sources` | 插件允许从哪来 |
+| `enforce_residency` | 数据驻留（目前只有 `us`） |
+| `[features]` | 钉死 feature flag |
+
+**版本门槛：** 托管 permission-profile 白名单需要 **Codex 0.138.0 或更高**。0.137.0 及更早会完全忽略 `allowed_permission_profiles` 和托管 `default_permissions`。没核对客户端版本的「强制」等于没强制。
+
+`mcp_servers` 白名单必须同时有 id 和 `identity` 块，避免批准的 id 被指到另一个二进制或端点。完整语法见 [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference)。
+
+## 故障排除
+
+| 现象 | 原因 | 修法 |
+| --- | --- | --- |
+| `.codex/config.toml` 没作用 | 项目未被信任 | 加 `projects.<path>.trust_level = "trusted"`；跑 `/debug-config` |
+| 项目配置里某个键被忽略 | 它在机器本地忽略列表上 | 挪到 `~/.codex/config.toml` |
+| `AGENTS.md` 规则被无视 | 合并体积撞上上限，或被 `AGENTS.override.md` 盖住 | 删短、提高上限、或检查 override |
+| 包级规则输给根规则 | 搞反了覆盖方向 | 离 cwd 越近越后加载、因此会赢——确认文件在你以为的位置 |
+| MCP 起不来 | 用了 `[[mcp_servers]]`，或启动超过 `startup_timeout_sec` | 改 TOML 形状；加大超时 |
+| hook 只在 Windows 失败 | 没有 `command_windows` | 补上 |
+| CI 挂死 | 在等一个没人会给的审批 | `--ask-for-approval never` |
+| 托管策略没生效 | 客户端低于 0.138.0 | 升级 |
+| 说不清现在生效的是什么 | — | `/debug-config` 打印层顺序以及 `allowed_approval_policies`、`allowed_sandbox_modes`、`mcp_servers`、`rules`、`enforce_residency`、`experimental_network` |
+
+## 清单
+
+新项目：
+
+- [ ] 根目录 `AGENTS.md`：工具、边界、验收命令
+- [ ] 约定真的不同的包再写包级 `AGENTS.md`
+- [ ] 提交 `.codex/config.toml`，带沙箱和审批默认值
+- [ ] 自己的 `~/.codex/config.toml` 里有信任条目
+- [ ] 入职文档提到信任这一步
+- [ ] MCP 用 `bearer_token_env_var`，从不内联密钥
+- [ ] 有人用 Windows 的话 hook 带 `command_windows`
+- [ ] CI 用 `codex exec` + `--ask-for-approval never` + 收紧的沙箱
+- [ ] `codex --ask-for-approval never "Summarize the current instructions."` 看到的是你预期的内容
+
+## 相关页面
+
+- [Codex CLI](./codex-cli) — 安装与核心功能
+- [Codex Cookbook](./codex-cookbook) — 任务配方
+- [Codex 术语表](./codex-glossary) — 概念定义
+- [Codex 速查表](./codex-cheatsheet) — 配置键和命令
+- [学习地图](./) — 完整路径
+
+## 官方来源
+
+- [AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md) · [Rules](https://learn.chatgpt.com/docs/agent-configuration/rules) · [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents)
+- [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) · [Environment Variables](https://learn.chatgpt.com/docs/config-file/environment-variables)
+- [MCP](https://learn.chatgpt.com/docs/extend/mcp?surface=cli) · [MCP Server](https://learn.chatgpt.com/docs/mcp-server) · [Hooks](https://learn.chatgpt.com/docs/hooks) · [Plugins](https://learn.chatgpt.com/docs/plugins)
+- [Non-interactive Mode](https://learn.chatgpt.com/docs/non-interactive-mode) · [GitHub Action](https://learn.chatgpt.com/docs/github-action) · [Codex SDK](https://learn.chatgpt.com/docs/codex-sdk)
+- [Permissions](https://learn.chatgpt.com/docs/permissions) · [Sandboxing](https://learn.chatgpt.com/docs/sandboxing)

@@ -39,7 +39,7 @@ One line per term. Full definitions are in the [Glossary](./codex-glossary) — 
 | Subagents | Delegated agents, spawned only on request | [→](./codex-glossary#subagents) |
 | Memories | Cross-session recall of preferences | [→](./codex-glossary#memories) |
 | Compaction | Lossy compression of older context | [→](./codex-glossary#sessions-and-compaction) |
-| Web search mode | `disabled` / `cached` / `live` enum | [→](./codex-glossary#web-search-modes) |
+| Web search mode | `disabled` / `cached` / `indexed` / `live` enum | [→](./codex-glossary#web-search-modes) |
 | `codex exec` | One-shot non-interactive run | [→](./codex-glossary#non-interactive-mode-codex-exec) |
 | requirements.toml | Admin policy that narrows what's selectable | [→](./codex-glossary#requirementstoml-managed-policy) |
 
@@ -50,11 +50,12 @@ One line per term. Full definitions are in the [Glossary](./codex-glossary) — 
 ```bash
 codex                                   # start an interactive session
 codex "explain this codebase to me"     # start with an initial prompt
-codex --model gpt-5.5 "..."             # pick the model for this run
+codex --model gpt-5.6 "..."             # pick the model for this run
 codex --cd services/payments "..."      # set the working directory
 codex --add-dir ../shared-lib "..."     # add another directory (repeatable)
 codex --sandbox read-only "..."         # analysis only, no writes
 codex --ask-for-approval never "..."    # never ask for approval
+codex --approve-for-me "..."            # auto-reviewed approvals (0.147.0+)
 codex --search "..."                    # live web search (bare flag, no argument)
 codex --yolo "..."                      # full access; also flips search to live
 codex --profile work "..."              # use a named profile
@@ -90,9 +91,12 @@ Session records: `~/.codex/sessions/`. Session IDs come from the picker, `/statu
 
 ```bash
 codex login
+codex login status            # exits 0 when saved credentials are present
+codex doctor                  # local diagnostic report
 codex logout
-codex status                  # CLI status subcommand (distinct from the /status slash command)
 ```
+
+There is no `codex status` subcommand in the official CLI reference. Use `/status` inside the TUI for the current session.
 
 ### Images
 
@@ -168,7 +172,7 @@ Grouped by purpose. The full list is in the [official reference](https://learn.c
 | Appearance | `/theme`, `/statusline`, `/title`, `/keymap`, `/vim`, `/ide` |
 | Misc | `/feedback`, `/logout`, `/experimental` |
 
-`/usage` accepts `daily`, `weekly`, and `cumulative`. `/debug-config` prints the config layer order plus `allowed_approval_policies`, `allowed_sandbox_modes`, `mcp_servers`, `rules`, `enforce_residency`, and `experimental_network`. `/import` migrates a Claude Code setup and works in the local TUI only. Personalities are `friendly`, `pragmatic`, and `none`.
+`/usage` accepts `daily`, `weekly`, and `cumulative`. `/debug-config` prints the config layer order plus `allowed_approval_policies`, `allowed_sandbox_modes`, `mcp_servers`, `rules`, `enforce_residency`, and `experimental_network`. `/import` migrates a Claude Code or Cursor setup and works in the local TUI only. Personalities are `friendly`, `pragmatic`, and `none`.
 
 ## Keyboard reference (TUI)
 
@@ -211,24 +215,24 @@ trust_level = "trusted"            # trusted | untrusted
 ### Model
 
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"   # minimal | low | medium | high | xhigh (Responses API only)
 model_reasoning_summary = "auto"    # auto | concise | detailed | none
 model_verbosity = "medium"          # low | medium | high
 model_context_window = 200000
 model_auto_compact_token_limit = 150000
-review_model = "gpt-5.5"
+review_model = "gpt-5.6"
 ```
 
 ### Web search
 
 ```toml
-web_search = "cached"     # disabled | cached | live  (default "cached")
-
-[tools]
-web_search = true         # or a table: { context_size, allowed_domains, location }
-view_image = true
+web_search = "cached"     # disabled | cached | indexed | live  (default "cached")
 ```
+
+`indexed` permits external web access only when the search index gates the request. `--search` (bare flag) is the same as `live`. `--yolo` / full-access defaults search to live.
+
+The legacy feature flags `features.web_search`, `features.web_search_cached`, and `features.web_search_request` are deprecated — use the top-level `web_search` enum.
 
 ### MCP servers
 
@@ -323,7 +327,7 @@ theme = "dark"
 
 ```toml
 # ~/.codex/work.config.toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "high"
 sandbox_mode = "workspace-write"
 ```
@@ -395,7 +399,7 @@ Source: [`openai/codex` docs/install.md](https://github.com/openai/codex/blob/ma
 ### Everyday config.toml
 
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
@@ -461,6 +465,8 @@ The links below are what this tutorial is maintained against. When something her
 | [Prompting](https://learn.chatgpt.com/docs/prompting) | Prompting guidance |
 | [Memories](https://learn.chatgpt.com/docs/customization/memories?surface=app) | Cross-session memory |
 | [Pricing](https://learn.chatgpt.com/docs/pricing) | **The only source for plans and quotas** — figures change, so read it there |
+| [Best practices](https://learn.chatgpt.com/guides/best-practices) | Official prompting and workflow guidance |
+| [Import](https://learn.chatgpt.com/docs/import) | Migrate from Claude Code or Cursor |
 | [Sites](https://learn.chatgpt.com/docs/sites) | Publishing sites |
 | [Glossary](https://learn.chatgpt.com/docs/glossary) | Official term list |
 

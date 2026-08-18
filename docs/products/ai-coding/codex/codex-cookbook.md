@@ -306,6 +306,37 @@ codex exec resume --last "now add tests for the function you just changed"
 
 `--json` gives you structured events, which is what you want when something downstream parses the output. Web search results appear as `web_search` items in that stream.
 
+Need a typed final payload for a script? Official non-interactive docs support `--output-schema`. Keep the schema in the repo next to the caller:
+
+```ts
+// schema.ts — source of truth for the JSON Schema you pass to --output-schema
+export interface ProjectMetadata {
+  project_name: string
+  programming_languages: string[]
+}
+
+export const projectMetadataSchema = {
+  type: 'object',
+  properties: {
+    project_name: { type: 'string' },
+    programming_languages: {
+      type: 'array',
+      items: { type: 'string' },
+    },
+  },
+  required: ['project_name', 'programming_languages'],
+  additionalProperties: false,
+} as const
+```
+
+```bash
+codex exec "Extract project metadata" \
+  --output-schema ./schema.json \
+  -o ./project-metadata.json
+```
+
+Write `schema.json` from the object above; do not invent extra fields. See [Non-interactive mode](https://learn.chatgpt.com/docs/non-interactive-mode).
+
 ### Isolate with a separate Codex home
 
 ```bash

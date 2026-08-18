@@ -19,7 +19,7 @@
 - [GitHub Copilot](./copilot.md) - 行业标准的 AI 代码补全
 - [Cursor](./cursor.md) - AI 优先的代码编辑器，具备聊天和生成功能
 - [Claude CLI](./claude/index.md) - 命令行 AI 编程助手（Claude 系列）
-- **Codex CLI** ([./codex/index.md](./codex/index.md)) - OpenAI 官方命令行代理，**ChatGPT Plus 会员专属执行工具**
+- [Codex](./codex/) - OpenAI 编程 Agent：CLI、IDE、应用与云端，包含在 ChatGPT 套餐中
 - [Gemini CLI](./gemini-cli.md) - Google 的 AI 编程助手
 - [其他工具](./othertools.md) - 探索更多 AI 编程工具
 
@@ -48,11 +48,10 @@
 - 非常适合重构
 
 ### 适合 OpenAI 生态用户
-**推荐**: [Codex CLI](./codex/index.md)
-- ChatGPT Plus 会员的**执行层工具**
-- 直接读写文件、运行命令、Git 操作
-- 完全自动化，可集成到 CI/CD
-- 结合 Deep Research 使用效果最佳
+**推荐**: [Codex](./codex/)
+- 包含在 ChatGPT Plus、Pro、Business、Edu、Enterprise 套餐中，不用另买
+- CLI、IDE、应用、云端共用一套配置
+- 显式的沙箱与审批模型，自动化运行也有边界
 
 ## 工具能力矩阵
 
@@ -199,18 +198,16 @@
 
 | Feature | 描述 |
 |:--------|:------------|
-| [AGENTS.md](https://developers.openai.com/codex/guides/agents-md/) | 项目上下文配置 |
-| [Skills](https://developers.openai.com/codex/skills/) | 可复用能力 |
-| [MCP](https://developers.openai.com/codex/mcp/) | Model Context Protocol |
-| [Worktrees](https://developers.openai.com/codex/app/worktrees) | Git worktree隔离 |
-| [Multi-agent Parallel](https://openai.com/index/introducing-codex) | 并发Agent执行 |
-| [Cloud Sandbox](https://openai.com/index/introducing-codex) | 隔离执行环境 |
-| [CLI/Web/App](https://openai.com/index/introducing-codex) | 多平台访问 |
-| [Custom Prompts](https://developers.openai.com/codex/custom-prompts/) | 用户自定义指令 |
-| [codex-1 Model](https://openai.com/index/introducing-codex) | 专业编程模型 |
-| [Async Tasks](https://openai.com/index/introducing-codex) | 后台任务执行 |
-| [Task Tracking](https://openai.com/index/introducing-codex) | 进度监控 |
-| [Internet Access](https://openai.com/index/introducing-codex) | 实时网络搜索 |
+| [AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md) | 项目上下文配置 |
+| [Skills](https://learn.chatgpt.com/docs/build-skills) | 可复用能力 |
+| [MCP](https://learn.chatgpt.com/docs/extend/mcp) | Model Context Protocol |
+| [Worktrees](https://learn.chatgpt.com/docs/environments/git-worktrees) | Git worktree 隔离 |
+| [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) | 委派独立 Agent |
+| [Cloud](https://learn.chatgpt.com/docs/cloud) | 托管隔离环境 |
+| [CLI / IDE / App](https://learn.chatgpt.com/docs) | 多入口，共用配置 |
+| [Non-interactive](https://learn.chatgpt.com/docs/non-interactive-mode) | `codex exec` 自动化 |
+| [Models](https://learn.chatgpt.com/docs/models) | 当前模型列表（以官方为准） |
+| [Internet access](https://learn.chatgpt.com/docs/cloud/internet-access) | 云端网络访问控制 |
 
 ## 下一步
 

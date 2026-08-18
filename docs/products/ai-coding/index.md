@@ -19,6 +19,7 @@
 - [GitHub Copilot](./copilot.md) - Industry-standard AI code completion
 - [Cursor](./cursor.md) - AI-first code editor with chat and generation
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
+- [Codex](./codex/) - OpenAI's coding agent: CLI, IDE, app, and cloud, included with ChatGPT plans
 - [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
 - [Gemini CLI](./gemini-cli.md) - Google's AI coding assistant
 - [Other Tools](./othertools.md) - Explore more AI coding tools
@@ -52,6 +53,12 @@
 - Large context window
 - Multimodal capabilities
 - Google integration
+
+### For the OpenAI Ecosystem
+**Recommended**: [Codex](./codex/)
+- Included with ChatGPT Plus, Pro, Business, Edu, and Enterprise plans — no separate purchase
+- One configuration across CLI, IDE, app, and cloud
+- Explicit sandbox and approval model, so automated runs stay bounded
 
 ## Next Steps
 

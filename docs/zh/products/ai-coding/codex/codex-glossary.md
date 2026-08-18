@@ -62,7 +62,7 @@
 
 ---
 
-## AGENTS.md
+## AGENTS.md {#agents-md}
 
 **是什么**
 
@@ -105,7 +105,7 @@ Codex 会跳过空文件，并在合并后体积达到 `project_doc_max_bytes`�
 
 ---
 
-## Rules
+## Rules {#rules}
 
 **是什么**
 
@@ -119,7 +119,7 @@ AGENTS.md 是自然语言，模型可能「理解偏了」。Rules 提供更明�
 
 ---
 
-## 沙箱（Sandbox）
+## 沙箱（Sandbox） {#sandbox}
 
 **是什么**
 
@@ -150,7 +150,7 @@ AGENTS.md 是自然语言，模型可能「理解偏了」。Rules 提供更明�
 
 ---
 
-## 审批策略（Approval policy）与权限
+## 审批策略（Approval policy）与权限 {#approval-policy-and-permissions}
 
 **是什么**
 
@@ -179,7 +179,7 @@ AGENTS.md 是自然语言，模型可能「理解偏了」。Rules 提供更明�
 
 ---
 
-## 项目信任（Trust level）与配置层级
+## 项目信任（Trust level）与配置层级 {#project-trust-and-config-layering}
 
 **是什么**
 
@@ -189,16 +189,18 @@ Codex 是否信任某个项目目录的开关，配置在 `projects.<path>.trust
 
 因为项目里的 `.codex/` 目录是**别人可以往仓库里提交的内容**。如果 clone 一个陌生仓库就自动加载它的配置、hooks 和 rules，等于把执行权交给了仓库作者。信任门控就是这道防线：**未信任的项目会跳过所有项目级 `.codex/` 层**（配置、hooks、rules 都不加载）。
 
-**配置优先级（重要纠错点）**
+**配置优先级**
 
-很多人误以为「项目配置覆盖用户配置」。实际相反：
+官方 [Config basics](https://learn.chatgpt.com/docs/config-file/config-basic) 的解析顺序（高优先在前）：
 
-```
-~/.codex/config.toml        用户级——优先级更高
-.codex/config.toml          项目级——优先级更低，且仅在项目被信任时才加载
-```
+1. CLI flag 与 `-c` / `--config` 覆盖
+2. 项目 `.codex/config.toml`（从仓库根走到当前目录，近的覆盖远的）——**仅信任项目会加载**
+3. `--profile` 选中的 profile 文件（`$CODEX_HOME/<name>.config.toml`）
+4. 用户配置：`~/.codex/config.toml`
+5. 系统配置（若存在）：Unix 上的 `/etc/codex/config.toml`
+6. 内置默认值
 
-而且项目级配置**不能**覆盖机器本地的关键项。以下键出现在项目级配置里会被 **忽略**：
+被信任的项目配置**会**覆盖用户配置里的同名键。这是官方顺序。项目配置做不到的是另一条规则：下面这组机器本地键在项目层会被 **忽略**：
 
 `openai_base_url`、`chatgpt_base_url`、`apps_mcp_product_sku`、`model_provider`、`model_providers`、`notify`、`profile`、`profiles`、`experimental_realtime_ws_base_url`、`otel`
 
@@ -208,7 +210,7 @@ Codex 是否信任某个项目目录的开关，配置在 `projects.<path>.trust
 
 ---
 
-## Profile（配置档）
+## Profile（配置档） {#profiles}
 
 **是什么**
 
@@ -230,7 +232,7 @@ Profile 文件与 `config.toml` 同级存放，命名为 `$CODEX_HOME/<profile-n
 
 ---
 
-## MCP（Model Context Protocol）
+## MCP（Model Context Protocol） {#mcp-model-context-protocol}
 
 **是什么**
 
@@ -270,7 +272,7 @@ Codex 既可以作为 MCP **客户端**消费别人的服务，也可以作为 M
 
 ---
 
-## Skills
+## Skills {#skills}
 
 **是什么**
 
@@ -290,7 +292,7 @@ Codex 既可以作为 MCP **客户端**消费别人的服务，也可以作为 M
 
 ---
 
-## Hooks
+## Hooks {#hooks}
 
 **是什么**
 
@@ -310,7 +312,7 @@ AGENTS.md 是**建议**——模型可能不照做；Hooks 是**强制**——�
 
 ---
 
-## Plugins
+## Plugins {#plugins}
 
 **是什么**
 
@@ -326,7 +328,7 @@ AGENTS.md 是**建议**——模型可能不照做；Hooks 是**强制**——�
 
 ---
 
-## Subagents（子代理）
+## Subagents（子代理） {#subagents}
 
 **是什么**
 
@@ -354,7 +356,7 @@ AGENTS.md 是**建议**——模型可能不照做；Hooks 是**强制**——�
 
 ---
 
-## Memories（记忆）
+## Memories（记忆） {#memories}
 
 **是什么**
 
@@ -376,7 +378,7 @@ AGENTS.md 是**建议**——模型可能不照做；Hooks 是**强制**——�
 
 ---
 
-## 会话（Session）与上下文压缩（Compaction）
+## 会话（Session）与上下文压缩（Compaction） {#sessions-and-compaction}
 
 **是什么**
 
@@ -407,16 +409,17 @@ AGENTS.md 是**建议**——模型可能不照做；Hooks 是**强制**——�
 
 ---
 
-## Web 搜索模式
+## Web 搜索模式 {#web-search-modes}
 
 **是什么**
 
-Codex 获取外部网页信息的能力，有三档（重要纠错点：这是**枚举字符串**，不是布尔开关）。
+Codex 获取外部网页信息的能力，有四档（重要纠错点：这是**枚举字符串**，不是布尔开关）。
 
 | `web_search` | 含义 |
 | --- | --- |
 | `disabled` | 关闭 |
 | `cached` | **默认值**，查询 OpenAI 维护的索引，不实时抓取 |
+| `indexed` | 仅当搜索索引放行时才允许外部网页访问 |
 | `live` | 实时抓取；在 `--yolo` / 全权限模式下默认变为此值 |
 
 命令行上用**裸 `--search`**（不带参数）开启实时搜索。搜索结果会以 `web_search` 条目出现在对话记录和 `codex exec --json` 输出里。
@@ -431,7 +434,7 @@ Codex 获取外部网页信息的能力，有三档（重要纠错点：这是**
 
 ---
 
-## 非交互模式（`codex exec`）
+## 非交互模式（`codex exec`） {#non-interactive-mode-codex-exec}
 
 **是什么**
 
@@ -478,7 +481,7 @@ codex cloud exec --env <ENV_ID> --attempts 3 "..."   # 同一任务尝试多次�
 
 ---
 
-## requirements.toml（托管策略）
+## requirements.toml（托管策略） {#requirementstoml-managed-policy}
 
 **是什么**
 
@@ -513,7 +516,7 @@ Codex 使用的模型，以及模型「想多久」的档位。
 
 | 配置键 | 取值 | 说明 |
 | --- | --- | --- |
-| `model` | 字符串 | 官方文档示例为 `gpt-5.5` |
+| `model` | 字符串 | 官方 Config basics 示例为 `gpt-5.6`；名称会变，以 [Models](https://learn.chatgpt.com/docs/models) 为准 |
 | `model_reasoning_effort` | `minimal` / `low` / `medium` / `high` / `xhigh` | 仅 Responses API 支持 |
 | `model_reasoning_summary` | `auto` / `concise` / `detailed` / `none` | 推理摘要详细程度 |
 | `model_verbosity` | `low` / `medium` / `high` | 输出详细程度 |

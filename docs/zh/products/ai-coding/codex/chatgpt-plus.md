@@ -1,397 +1,122 @@
-# ChatGPT Plus 会员功能详解
+# ChatGPT 套餐与 Codex 访问
 
-> 作为 OpenAI 的付费订阅用户，ChatGPT Plus 为你解锁了一系列增强功能，让你在 AI 辅助开发中拥有更强的能力。本页详细解析所有 Plus 会员专属功能，帮助你最大化订阅价值。
+> Codex 访问权如何挂在 ChatGPT 套餐上、套餐之间真正差在哪、数字该去哪查。
+>
+> **本页故意不写价格和配额数字。** 那些数字会变，教程里留一个过期数字比没有更糟。唯一权威来源是[官方定价页](https://learn.chatgpt.com/docs/pricing)。
 
-## 💰 订阅信息
+## Codex 包含在 ChatGPT 套餐里
 
-| 项目 | 详情 |
-|------|------|
-| **价格** | $20/月（按月计费） |
-| **平台** | [chat.openai.com](https://chat.openai.com) |
-| **API 使用** | 单独计费，不包含在 Plus 订阅中 |
-| **年度计划** | 暂不支持 |
+官方产品落地页原文：
 
----
+> ChatGPT Plus, Pro, Business, Edu, and Enterprise plans include Codex.
 
-## 🚀 Plus 会员核心功能总览
+对 CLI 来说，关键事实是：**不用单独买 Codex，日常使用也不用先配 API Key。** 用 ChatGPT 账号登录即可。
 
-### 1. 模型访问权限
-
-| 功能 | Free 用户 | Plus 会员 |
-|------|-----------|-----------|
-| GPT-5 (Instant) | ❌ | ✅ |
-| GPT-5 (Thinking) | ❌ | ✅ |
-| GPT-4o (已退休) | ❌ | ✅ (历史) |
-| 高级推理模型 | ❌ | ✅ |
-| 图像理解 (Vision) | 限制 | ✅ 无限制 |
-
-**关键点**：
-- Plus 会员可以使用 OpenAI 最先进的模型（如 GPT-5）
-- 拥有更高的使用额度限制
-- 在高峰时段优先访问
-
-### 2. 响应速度与可用性
-
-- **优先级访问**：高峰时段减少排队等待
-- **更快的响应**：同等条件下，Plus 用户获得更快的响应速度
-- **更高的可用性**：服务容量紧张时，Plus 用户优先保障
-
-### 3. 高级功能解锁
-
-#### 🎨 图像生成 (DALL·E)
+[定价页](https://learn.chatgpt.com/docs/pricing)另外列出 **Free** 和 **Go** 也包含部分 Codex 能力。明确写出「网页 / CLI / IDE 扩展 / iOS」的是 Plus 卡片。入口和额度按套餐不同——去定价页看，不要信教程里的表。
 
 ```bash
-# 在 ChatGPT 界面中直接生成图像
-# 免费用户：有限次数
-# Plus 用户：更宽松的限制
+codex login
+codex login status    # 已保存凭证时退出码为 0
+codex doctor          # 本地诊断报告
 ```
 
-**能力**：
-- 根据文本描述生成高质量图像
-- 支持图像编辑和变体
-- 直接集成在对话中
+官方 CLI 参考里**没有** `codex status` 子命令。当前会话的账号、模型、配置，用 TUI 里的 `/status`。
 
-#### 📎 文件上传与分析
+## 套餐差在哪
 
-**支持格式**：
-- 文档：PDF、DOCX、TXT、PPTX
-- 数据：CSV、JSON、Excel
-- 代码：所有编程语言文件
-- 图像：PNG、JPG、GIF（用于视觉分析）
+与其复制一张下个月就会过期的表，不如知道读定价页时该盯哪些维度：
 
-**能力**：
-- 读取并理解文档内容
-- 分析代码文件
-- 提取数据并生成摘要
-- 转换格式（如 PDF → 文本）
+| 会变的东西 | 为什么在乎 |
+| --- | --- |
+| 触顶之前的包含用量 | 重度 Agent 工作一天能撑多久 |
+| 模型访问 | 最新或最快的模型你能不能用 |
+| Cloud 执行容量 | 能往 `codex cloud` 丢多少 |
+| 管理与治理 | 能不能用 `requirements.toml` 在团队里强制策略 |
+| 席位管理 | 按人还是按组织 |
 
-#### 🗣️ 语音对话
+两件有出处、值得记住的事：
 
-- **语音输入**：直接说话与 ChatGPT 对话
-- **语音输出**：听取 AI 的回答（多种语音可选）
-- **适合场景**：开车、运动、不方便打字时
+- **ChatGPT Pro** 包含研究预览模型 `GPT-5.3-Codex-Spark`。
+- **Business / Edu / Enterprise** 才是托管配置真正有意义的套餐——管理员能钉住什么，见 [requirements.toml](./codex-glossary#requirementstoml-managed-policy)。
 
-#### 🔍 深度研究 (Deep Research)
+任何数字都去 [learn.chatgpt.com/docs/pricing](https://learn.chatgpt.com/docs/pricing) 查。
 
-**功能**：
-- 自动进行多轮联网搜索
-- 综合多个信息源
-- 生成结构化的研究报告
-- 附上参考来源链接
+## 看自己的消耗
 
-**适用场景**：
-- 市场调研
-- 技术方案对比
-- 学术研究
-- 竞品分析
-
-#### 🛠️ 自定义 GPT (Custom GPTs)
-
-**能力**：
-- 创建专属的 ChatGPT 版本
-- 上传专属知识库
-- 配置特定指令和行为
-- 分享给他人使用或保持私有
-
-**示例**：
-- 代码审查 GPT（针对你的项目规范）
-- 文档编写助手（按你的模板生成）
-- 数据分析专家（连接你的数据源）
-
----
-
-## 💡 ChatGPT Plus 对开发者的核心价值
-
-### 场景 1：代码开发
-
-```bash
-# 上传代码文件 → 让 ChatGPT 分析
-# Plus 解锁：
-- 大型文件上传（多文件同时分析）
-- 高优先级处理（减少等待）
-- 使用 GPT-5 进行深度代码审查
-```
-
-**实际用例**：
-```
-1. 上传整个项目结构
-   → ChatGPT Plus 可以分析多文件依赖关系
-
-2. 请求重构建议
-   → GPT-5 模型提供更准确的架构建议
-
-3. 生成单元测试
-   → 结合代码上下文，生成覆盖全面的测试
-```
-
-### 场景 2：技术调研
-
-```bash
-# 使用 Deep Research 功能
-# Plus 解锁：
-- 自动多轮搜索
-- 深度分析多个来源
-- 生成结构化报告（含引用）
-```
-
-**对比**：
-- **免费用户**：单次回答，信息有限
-- **Plus 用户**：深度研究报告，10+ 来源，5000+ 字分析
-
-### 场景 3：文档编写
-
-```bash
-# 上传设计稿 + 需求文档
-# Plus 解锁：
-- 多模态输入（图像 + 文本）
-- 更长的上下文窗口
-- 生成高质量技术文档
-```
-
-### 场景 4：学习与教学
-
-```bash
-# 语音对话模式
-# Plus 解锁：
-- 口语化问答
-- 听力练习（语言学习）
-- 随时打断、追问
-```
-
----
-
-## 📊 ChatGPT Plus vs Codex CLI
-
-### 定位不同
-
-| 特性 | ChatGPT Plus | Codex CLI |
-|------|--------------|-----------|
-| **使用方式** | 网页/App 对话 | 终端命令行 |
-| **核心场景** | 通用对话、调研 | 代码编辑、自动化 |
-| **文件操作** | 上传分析 | 直接读写本地文件 |
-| **自动化** | 手动交互 | 可脚本化、集成到 CI |
-| **成本** | $20/月固定 | API 按量计费 |
-
-### 如何选择
-
-**使用 ChatGPT Plus 当**：
-- 需要深度研究和多轮对话
-- 上传文件进行分析
-- 使用语音或图像输入
-- 创建自定义 GPT
-- 非技术任务（写作、策划、调研）
-
-**使用 Codex CLI 当**：
-- 需要直接操作本地文件
-- 集成到开发工作流（Git、测试、部署）
-- 批量处理多个任务
-- CI/CD 自动化
-- 需要精细控制执行过程
-
-**组合使用**：
-```
-ChatGPT Plus (规划 + 设计) → Codex CLI (实现 + 执行)
-```
-
----
-
-## 🔧 与 Codex CLI 的协同工作流
-
-### 工作流示例：开发一个新功能
+会话内查询比事后翻仪表盘有用：
 
 ```
-Step 1: 在 ChatGPT Plus 中规划
-  - 上传需求文档
-  - 使用 Deep Research 调研技术方案
-  - 生成架构设计图
-  - 输出详细的技术规范
-
-Step 2: 在 Codex CLI 中实现
-  - codex "根据规范创建用户认证模块"
-  - 自动创建文件、编写代码
-  - 运行测试
-  - 提交 PR
-
-Step 3: 回 ChatGPT Plus 审查
-  - 上传 PR diff
-  - 请求 Code Review
-  - 获得改进建议
+/usage              # 当前会话
+/usage daily
+/usage weekly
+/usage cumulative
 ```
 
-### 实际案例：构建一个 Next.js 项目
+`/status` 显示当前会话的账号、模型、配置。
 
-```bash
-# 阶段 1: ChatGPT Plus - 规划
-用户: "帮我设计一个电商网站的架构"
-ChatGPT: 生成完整的系统设计文档（包含技术选型、数据库设计、API 规范）
+两个习惯能让消耗可预期：
 
-# 阶段 2: Codex CLI - 实现
-$ codex "创建 Next.js 项目，使用 Tailwind CSS 和 Prisma"
-→ 自动创建项目、安装依赖、生成代码
+**推理强度匹配任务。** `model_reasoning_effort` 从 `minimal` 到 `xhigh`。一行重命名开 high 是浪费；隐蔽的并发 bug 开 low 是假节约。
 
-# 阶段 3: Codex CLI - 迭代
-$ codex "添加用户登录功能，支持 GitHub OAuth"
-→ 自动添加认证逻辑
-
-# 阶段 4: ChatGPT Plus - 优化
-用户: "这个性能可以怎么优化？"
-ChatGPT: 分析代码，提供优化建议（Bundle 分析、缓存策略）
+```toml
+model_reasoning_effort = "medium"
 ```
 
----
+**别扛着死上下文。** 跑偏的长会话会把预算花在重读已经无关的历史。不相关任务之间 `/clear`，是最便宜的优化。
 
-## 📈 最大化 Plus 订阅价值的技巧
+## API 计费是另一条线
 
-### 1. 充分利用文件上传
+下面两件事走 OpenAI API 账单，而不是 ChatGPT 套餐，而且都是**选择加入**：
 
-**技巧**：
-- 批量上传相关文件（而不是单个）
-- 上传你的代码规范文档，让 ChatGPT 学习
-- 上传项目架构图，让 ChatGPT 理解结构
+- **自定义 model provider。** `model_providers` 指到你自己的端点时，按那个端点计费。
+- **大批量图像生成。** 图像生成默认吃包含额度，文档写消耗大约是文本的 3 到 5 倍。设置 `OPENAI_API_KEY` 会把大批量切到 API 定价。
 
-**示例**：
-```
-你: "这是我的 AGENTS.md 和项目结构，请根据这些规范帮我写代码"
-→ ChatGPT 会严格按照你的规则生成
-```
+用 `codex login` 的日常 CLI 使用，这两条都不适用。从没设过 `OPENAI_API_KEY`、没碰过 `model_providers`，用量就在 ChatGPT 套餐上。
 
-### 2. 使用自定义 GPT 提高效率
+> 当前配置参考里没有 `api_key` 这个键。认证是 `codex login`，或在 provider 条目里用 `env_key` 指向环境变量。<!-- TODO: 待核实 --> 更老的教程有时会在 `config.toml` 里写 `api_key`；现行官方参考里没有这一项。
 
-**创建专有 GPT**：
-- **Code Review GPT**：训练它了解你的代码规范
-- **Documentation GPT**：按你的模板生成文档
-- **PRD GPT**：根据历史项目生成产品需求
+## 企业与团队部署
 
-### 3. 结合 Deep Research 做技术选型
+团队落地时，真正相关的不是套餐页，而是托管策略层：
 
-```bash
-# 不要问："哪个框架好？"
-# 而要问：
-"对比 Next.js、Remix、Gatsby 在 2026 年的生态状态，
-重点关注：SSR 性能、插件生态、学习曲线、公司采用率。
-给我一个决策矩阵，并附上参考链接。"
-```
+| 关注点 | 机制 |
+| --- | --- |
+| 限制可选审批策略 | `requirements.toml` 的 `allowed_approval_policies` |
+| 限制沙箱模式 | `allowed_sandbox_modes` |
+| 限制网页搜索 | `allowed_web_search_modes`（`disabled` 始终允许） |
+| MCP 服务器白名单 | 带 `identity` 块的 `mcp_servers` 条目 |
+| 钉死 feature flag | `requirements.toml` 的 `[features]` |
+| 数据驻留 | `enforce_residency` |
 
-### 4. 利用长上下文处理大型项目
+托管 permission-profile 白名单需要 **Codex 0.138.0 或更高**。0.137.0 及更早的客户端会静默忽略 `allowed_permission_profiles` 和托管 `default_permissions`——没核对客户端版本的「强制策略」等于没强制。
 
-**GPT-5 的长上下文优势**：
-- 可以一次性上传整个代码库
-- 跨文件理解依赖关系
-- 生成全局重构方案
+完整 `requirements.toml` 表面见 [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference)。
 
-### 5. 语音模式加速思考
+## ChatGPT 和 Codex 怎么配合
 
-**场景**：
-- 散步时讨论架构设计
-- 开车时口述代码思路
-- 用语音快速记录灵感
+它们强项不同，配对是真的有用：
 
----
+| 任务 | 更合适的地方 |
+| --- | --- |
+| 代码还不存在时把思路谈清楚 | ChatGPT |
+| 比库、比架构 | ChatGPT |
+| 在真实仓库里读改文件 | Codex |
+| 跑测试并迭代到绿 | Codex |
+| 给同事解释一份 diff | ChatGPT |
+| CI 里自动化一项任务 | Codex（`codex exec`） |
 
-## 🎯 适合 Plus 会员的开发场景
+可用工作流：在 ChatGPT 里把设计谈定，写成 `AGENTS.md` 条目或任务说明，再把实现交给 Codex 并写上验收命令。设计对话和实现会话的上下文需求完全不同，拆开两边都更好。
 
-| 场景 | 推荐工具 | 理由 |
-|------|----------|------|
-| **架构设计** | ChatGPT Plus | 需要多轮讨论、画图、生成文档 |
-| **代码生成** | Codex CLI | 需要直接操作文件、执行命令 |
-| **技术调研** | ChatGPT Plus + Deep Research | 自动搜索、综合多源信息 |
-| **代码审查** | 两者皆可 | Plus 提供建议，CLI 直接修复 |
-| **文档编写** | ChatGPT Plus | 理解上下文，生成高质量文档 |
-| **自动化任务** | Codex CLI | 可集成到脚本、定期执行 |
-| **学习新技术** | ChatGPT Plus | 语音对话、图像示例、交互式教学 |
+## 相关页面
 
----
+- [Codex CLI](./codex-cli) — 安装与核心功能
+- [Codex 产品线](./codex-ai) — CLI、IDE、应用、云端
+- [Codex Cookbook](./codex-cookbook) — 任务配方
+- [Codex 速查表](./codex-cheatsheet) — 命令和配置键
+- [学习地图](./) — 完整路径
 
-## ⚠️ 注意事项
+## 官方来源
 
-### 1. 消息限制
-
-- **高峰时段**：Plus 用户也可能遇到使用限制（防止滥用）
-- **解决方法**：
-  - 等待一段时间后重试
-  - 切换到 Codex CLI（无消息限制，按 API 计费）
-  - 升级到 ChatGPT Pro（企业级使用）
-
-### 2. API 独立计费
-
-```bash
-# 重要：ChatGPT Plus 订阅 ≠ API 额度
-# 使用 Codex CLI 会消耗 API 配额，单独计费
-```
-
-**费用示例**：
-- ChatGPT Plus：$20/月（固定）
-- Codex API：按输入/输出 token 计费（GPT-5 较贵，GPT-4o 便宜）
-
-### 3. 模型退休政策
-
-根据 OpenAI 官方通知：
-- GPT-4o 已于 2026 年 4 月 3 日退休
-- 模型会持续更新，Plus 用户会自动获得新模型访问权
-
-### 4. 数据隐私
-
-- **训练数据选择退出**：可以在设置中关闭对话用于训练
-- **企业版**：需要更高隐私标准时考虑 ChatGPT Business
-
----
-
-## 🎓 新手快速上手指南
-
-### 第一天：掌握基础
-
-1. **升级到 Plus**
-   - 登录 ChatGPT → 点击头像 → Upgrade Plan → Get Plus
-
-2. **体验所有核心功能**
-   - 上传一个 PDF 文件（如技术文档）
-   - 使用语音输入说一段话
-   - 尝试生成一张图片
-   - 创建一个自定义 GPT
-
-3. **配置工作空间**
-   - 设置自定义指令（Custom Instructions）
-   - 开启/关闭数据训练选项
-
-### 第三天：深度应用
-
-1. **创建你的第一个自定义 GPT**
-   - 用途：代码审查助手
-   - 上传你的代码规范文档
-   - 测试并分享给团队成员
-
-2. **使用 Deep Research**
-   - 任务：调研 2026 年最佳前端状态管理方案
-   - 对比：Zustand、Jotai、Redux Toolkit、Valtio
-   - 输出：决策报告 + 参考链接
-
-3. **批量文件分析**
-   - 上传整个项目的关键文件
-   - 请求："分析这个项目的架构，指出潜在的技术债"
-   - 导出分析结果
-
-### 第一周：形成工作流
-
-```bash
-每日开发流程：
-  早上: ChatGPT Plus → 规划当天任务 + 技术调研
-  编码时: Codex CLI → 自动生成代码
-  晚上: ChatGPT Plus → 代码审查 + 文档整理
-
-每周复盘:
-  用 Deep Research 调研新技术趋势
-  更新自定义 GPT 的知识库
-```
-
----
-
-## 📚 延伸阅读
-
-- [OpenAI 官方定价页](https://openai.com/pricing) - 了解 API 成本
-- [ChatGPT Pro 对比](https://help.openai.com/en/articles/9793128-what-is-chatgpt-pro) - 企业级功能
-- [Codex 官方文档](https://developers.openai.com/codex) - CLI 工具详解
-- [MCP 协议](https://modelcontextprotocol.io) - 扩展 Codex 能力
-
----
-
-**总结**：ChatGPT Plus 不只是"更快更爽"，它是**解锁 OpenAI 最先进模型和功能的钥匙**。结合 Codex CLI，你可以构建从"规划"到"执行"的完整 AI 开发流水线。
+- [Pricing](https://learn.chatgpt.com/docs/pricing) — 套餐和配额的唯一权威
+- [Models](https://learn.chatgpt.com/docs/models) — 模型列表和推理强度
+- [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) — `requirements.toml` 和每个配置键

@@ -6,18 +6,21 @@
 
 ## Codex is included with a ChatGPT plan
 
-From the official documentation:
+From the official Codex landing page:
 
 > ChatGPT Plus, Pro, Business, Edu, and Enterprise plans include Codex.
 
-That is the important fact and it removes a common source of confusion: you do not buy Codex separately, and you do not need to provision an API key to use the CLI. You sign in with your ChatGPT account.
+That is the important fact for the CLI: you do not buy Codex separately, and you do not need to provision an API key for normal use. You sign in with your ChatGPT account.
+
+The [pricing page](https://learn.chatgpt.com/docs/pricing) also lists **Free** and **Go** as including some Codex capability. The Plus card is the one that explicitly names "Codex on the web, in the CLI, in the IDE extension, and on iOS." Surfaces and limits vary by plan — read that page rather than trusting a tutorial table.
 
 ```bash
 codex login
-codex status
+codex login status    # exits 0 when saved credentials are present
+codex doctor          # local diagnostic report
 ```
 
-`codex status` shows the account and plan Codex is currently operating under. If you have both a personal and a work account, that is the command to run before wondering why your limits look wrong.
+There is no `codex status` subcommand in the official CLI reference. For the account, model, and configuration of the *current session*, use `/status` inside the TUI.
 
 ## Which plan, and why it matters
 

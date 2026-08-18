@@ -190,16 +190,18 @@ Whether Codex trusts a given project directory, configured as `projects.<path>.t
 
 The `.codex/` directory is **content anyone can commit to a repository**. If cloning an unfamiliar repo automatically loaded its config, hooks, and rules, you would be handing execution to whoever wrote it. Trust gating is the defense: **untrusted projects skip every project-level `.codex/` layer** — config, hooks, and rules are all ignored.
 
-**Precedence (a common misconception)**
+**Precedence**
 
-Many people assume project config overrides user config. The opposite is true:
+Official [config basics](https://learn.chatgpt.com/docs/config-file/config-basic) resolve values in this order (highest first):
 
-```
-~/.codex/config.toml        user level — higher precedence
-.codex/config.toml          project level — lower precedence, and only loaded for trusted projects
-```
+1. CLI flags and `-c` / `--config` overrides
+2. Project `.codex/config.toml` files, root → cwd, closest wins — **trusted projects only**
+3. Profile file selected with `--profile` (`$CODEX_HOME/<name>.config.toml`)
+4. User config: `~/.codex/config.toml`
+5. System config, if present: `/etc/codex/config.toml` on Unix
+6. Built-in defaults
 
-Project-scoped config also **cannot** override machine-local essentials. These keys are **ignored** when they appear in project-level config:
+A trusted project's config **does** override the matching keys in your user config. That is the official order. What project config *cannot* do is a separate rule: a short list of machine-local keys is **ignored** at project scope.
 
 `openai_base_url`, `chatgpt_base_url`, `apps_mcp_product_sku`, `model_provider`, `model_providers`, `notify`, `profile`, `profiles`, `experimental_realtime_ws_base_url`, `otel`
 
@@ -412,12 +414,13 @@ Compaction is lossy — summaries drop detail. Rather than waiting for it, `/cle
 
 **What it is**
 
-How Codex reaches external web information. There are three levels — and importantly, this is an **enum string**, not a boolean toggle.
+How Codex reaches external web information. There are four documented values — and importantly, this is an **enum string**, not a boolean toggle.
 
 | `web_search` | Meaning |
 | --- | --- |
 | `disabled` | Off |
 | `cached` | **Default.** Queries an OpenAI-maintained index rather than fetching live |
+| `indexed` | External web access only when the search index gates the request |
 | `live` | Fetches live; becomes the default under `--yolo` / full-access mode |
 
 On the command line, a **bare `--search`** (no argument) enables live search. Results appear as `web_search` items in the transcript and in `codex exec --json` output.
@@ -514,7 +517,7 @@ The model Codex uses, and how long it is allowed to think.
 
 | Key | Values | Notes |
 | --- | --- | --- |
-| `model` | string | The official reference uses `gpt-5.5` as its example |
+| `model` | string | The official config-basics example is `gpt-5.6`; names change — check [Models](https://learn.chatgpt.com/docs/models) |
 | `model_reasoning_effort` | `minimal` / `low` / `medium` / `high` / `xhigh` | Responses API only |
 | `model_reasoning_summary` | `auto` / `concise` / `detailed` / `none` | Verbosity of reasoning summaries |
 | `model_verbosity` | `low` / `medium` / `high` | Verbosity of output |

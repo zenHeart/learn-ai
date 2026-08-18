@@ -94,7 +94,7 @@ Understanding the sequence explains most surprising behavior.
    Rebuilt every run. No cache.
         │
 2. Load configuration layers
-   ~/.codex/config.toml → profile → project .codex/ (only if trusted)
+   ~/.codex/config.toml → profile → trusted project .codex/ → CLI flags
         │
 3. Read the prompt, plan
         │
@@ -165,14 +165,14 @@ Three layers, checked in order, and the first one is mechanical rather than advi
 ## Models
 
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"    # minimal | low | medium | high | xhigh
 model_reasoning_summary = "auto"     # auto | concise | detailed | none
 model_verbosity = "medium"           # low | medium | high
-review_model = "gpt-5.5"
+review_model = "gpt-5.6"
 ```
 
-`gpt-5.5` is the model named in the current documentation. ChatGPT Pro additionally has `GPT-5.3-Codex-Spark` as a research preview. `model_reasoning_effort` applies to the Responses API.
+`gpt-5.6` is the model named in the current [config basics](https://learn.chatgpt.com/docs/config-file/config-basic) example. The 5.6 family on the pricing page is Sol / Terra / Luna. ChatGPT Pro additionally has `GPT-5.3-Codex-Spark` as a research preview. `model_reasoning_effort` applies to the Responses API. Model names change; check [Models](https://learn.chatgpt.com/docs/models) rather than trusting any tutorial including this one.
 
 `review_model` lets a review run use a different model from the writing run — useful if you want a stronger model doing the critique.
 
