@@ -399,6 +399,7 @@ CODEX_HOME=$(pwd)/.codex-ci codex exec "..."
 ## 相关页面
 
 - [Codex CLI](./codex-cli) — 安装与核心功能
+- [ChatGPT Work](./chatgpt-work) — 知识工作代理（插件 ≠ 仓库 MCP）
 - [Codex Cookbook](./codex-cookbook) — 任务配方
 - [Codex 术语表](./codex-glossary) — 概念定义
 - [Codex 速查表](./codex-cheatsheet) — 配置键和命令

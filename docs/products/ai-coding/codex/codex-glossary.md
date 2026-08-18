@@ -532,10 +532,85 @@ Changing a config line or adding a log statement — `low` is plenty. Designing 
 
 ---
 
+## Chat / Work / Codex {#chat-work-codex}
+
+**What it is**
+
+Three ways of working in one ChatGPT app, not three installers. Official comparison: [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt).
+
+| Name | What it is | What it is not |
+| --- | --- | --- |
+| **Chat** | Questions, short drafts, settling a design | Not a coding UI |
+| **ChatGPT Work** | Take a task to a reviewable file (deck / sheet / site / recurring update) | Not Codex; no PR sidebar |
+| **Codex** | Coding agent: repo, diff, tests, PR | Not a chat box |
+
+On 2026-07-09 the standalone Codex desktop app merged into the ChatGPT desktop app. Work and Codex share usage limits.
+
+**Official docs:** [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) · [ChatGPT Work](./chatgpt-work)
+
+---
+
+## ChatGPT Work {#chatgpt-work}
+
+**What it is**
+
+Official wording: *ChatGPT Work is a way to delegate real work to ChatGPT.* Web Work runs in the cloud. The desktop app can **Work locally** against files and apps on the machine.
+
+**Versus Codex**
+
+Capabilities can overlap (official docs say you may keep using Codex for non-coding work). The interface does not: Work hides Git / shell and is built for everyday knowledge work. Frontend engineers use it for agendas, Sites, and Slack. Repo edits stay in Codex.
+
+**Official docs:** [Get started with Work](https://learn.chatgpt.com/docs/get-started-with-work) · this guide’s [ChatGPT Work](./chatgpt-work)
+
+---
+
+## Sites {#sites}
+
+**What it is**
+
+A ChatGPT workflow that creates, hosts, and shares websites and apps. Public beta. Entry: [chatgpt.com/sites](https://chatgpt.com/sites).
+
+**What it is not**
+
+Not Claude Design. There is no official “import a design system from the repo, then hand off a bundle” product. Every deploy URL is production.
+
+**Official docs:** [Sites](https://learn.chatgpt.com/docs/sites)
+
+---
+
+## Codex Cloud and hosted review {#codex-cloud}
+
+**What it is**
+
+Coding tasks in isolated OpenAI-hosted environments, in parallel, dispatchable from GitHub / Linear / Slack. Entry: [chatgpt.com/codex](https://chatgpt.com/codex).
+
+**Hosted review**
+
+Cloud code review / QA is powered by **GPT-5.6 Sol** for eligible customers; Cloud selects the model. Codex Security Review is a separate research preview (Enterprise / Business / Edu / Pro, not Plus). Local `/review` is a session command — do not reuse the hosted-review name for it.
+
+**Official docs:** [Codex cloud](https://learn.chatgpt.com/docs/cloud) · [What's new](https://learn.chatgpt.com/docs/whats-new)
+
+---
+
+## Atlas (retired) {#atlas}
+
+**What it is**
+
+The former standalone ChatGPT browser. Official pages moved browser-agent work into ChatGPT and Codex and set a stop date of **2026-08-09**.
+
+**What it is not**
+
+Not a current product, and not a “desktop superapp” that needs its own page. Current substitutes: the in-app browser, the Chrome extension, Work’s cloud browser.
+
+**Official docs:** [Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) · [2026-07-09 announcement](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)
+
+---
+
 ## Related pages
 
 - [Codex Cheatsheet](./codex-cheatsheet) — commands, config keys, common errors
 - [Codex Cookbook](./codex-cookbook) — task-oriented recipes
 - [Codex CLI](./codex-cli) — installation through core features
+- [ChatGPT Work](./chatgpt-work) — knowledge-work agent
 - [Project Integration](./integration) — wiring Codex into a real project
 - [Learning Map](./) — the full path

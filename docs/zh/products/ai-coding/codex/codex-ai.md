@@ -65,13 +65,13 @@ codex exec "run the tests and fix failures"    # 一次性、非交互
 
 ### 桌面应用
 
-图形入口，有终端没有的能力：应用内浏览器、worktree 管理、本地环境、自动化。适合不完全是文本的工作。
+2026-07-09 起，独立 Codex 应用并入 [ChatGPT 桌面应用](https://learn.chatgpt.com/docs/app)。更新旧 Codex 应用后，同一窗口里是 Chat、Work、Codex。可以继续把 Codex 设为默认视图、继续用 Codex 图标。
 
-需要浏览器参与，或想同时看见多个任务时，选应用。
+图形入口有终端没有的能力：应用内浏览器、worktree、本地环境、PR 侧栏、多仓库项目、Computer Use。需要浏览器参与，或想同时看见多个任务时，选桌面 Codex——不要和 [ChatGPT Work](./chatgpt-work) 搞混：Work 默认藏起 Git / shell，也没有 PR 面板。
 
-### Cloud 与 Web
+### Cloud、网页与托管评审 {#cloud-网页与托管评审}
 
-Agent 跑在 OpenAI 的基础设施上，对着配置好的环境，而不是你的笔记本。
+Agent 跑在 OpenAI 的基础设施上，对着配置好的环境，而不是你的笔记本。产品入口是 [chatgpt.com/codex](https://chatgpt.com/codex)，文档是 [Codex cloud](https://learn.chatgpt.com/docs/cloud)。
 
 ```bash
 codex cloud                                            # 浏览环境（Ctrl+O 露出 ID）
@@ -79,7 +79,24 @@ codex cloud exec --env <ENV_ID> "run the migration dry run"
 codex cloud exec --env <ENV_ID> --attempts 3 "..."     # 1–4 次尝试
 ```
 
-任务很长、不该占满本机、或结果本身不确定需要 `--attempts` 对比多次运行时，选 cloud。
+官方建议在这些时候用 Cloud：
+
+- 长任务要在后台跑，不占本机
+- 要并行多试几次再挑
+- 活是从 **GitHub / Linear / Slack** 派出来的
+- 人不在开发机旁，只带着网页或 CLI
+
+起步：登录 → 连接 GitHub → 在 [environment settings](https://chatgpt.com/codex/settings/environments) 配依赖和密钥 → 丢任务 → 审 summary / diff → 需要时开 PR。环境细节见 [Cloud environments](https://learn.chatgpt.com/docs/environments/cloud-environment)。
+
+**托管评审不是第四个产品。** 它是 Cloud / 网页上的评审面：
+
+| 面 | 做什么 | 出处 |
+| --- | --- | --- |
+| 本机 `/review` | 相对 base 分支或未提交改动，不改工作树 | CLI / IDE / 桌面 |
+| Codex cloud code review / QA | 托管环境里的评审和质检 | [What's new](https://learn.chatgpt.com/docs/whats-new)（2026-07-27 周）：合格客户由 **GPT-5.6 Sol** 驱动；Cloud **自动选模型**，Terra / Luna 仍在本地和网页 |
+| Codex Security Review | 结合仓库上下文和威胁模型看 PR；可在 PR 打开时自动跑，或 `@codex security review` | 研究预览；Enterprise / Business / Edu / Pro；**没有 Plus** |
+
+不要为「hosted review」单独立页：它是 Cloud 的一种用法，配置和配额仍走套餐与 Cloud 环境。
 
 > 文档页带 `?surface=cli|app|ide` 选择器。页面描述的功能你没有时，先看当前选的是哪个 surface。
 
@@ -189,18 +206,21 @@ review_model = "gpt-5.6"
 
 ## 相关页面
 
+- [学习地图](./) — 全家桶与决策树
 - [Codex CLI](./codex-cli) — 安装与核心功能
+- [ChatGPT Work](./chatgpt-work) — 知识工作代理（不是 Codex）
 - [ChatGPT 套餐与 Codex 访问](./chatgpt-plus) — 访问权怎么来
 - [项目集成](./integration) — 接到真实项目
 - [Codex Cookbook](./codex-cookbook) — 任务配方
 - [Codex 术语表](./codex-glossary) — 概念定义
 - [Codex 速查表](./codex-cheatsheet) — 查询
-- [学习地图](./) — 完整路径
 
 ## 官方来源
 
 - [Codex 文档](https://learn.chatgpt.com/docs)
-- [CLI](https://learn.chatgpt.com/docs/codex/cli) · [IDE](https://learn.chatgpt.com/docs/codex/ide)
+- [CLI](https://learn.chatgpt.com/docs/codex/cli) · [IDE](https://learn.chatgpt.com/docs/codex/ide) · [App](https://learn.chatgpt.com/docs/app)
+- [Codex cloud](https://learn.chatgpt.com/docs/cloud) · [Code review](https://learn.chatgpt.com/docs/code-review)
 - [Sandboxing](https://learn.chatgpt.com/docs/sandboxing) · [Permissions](https://learn.chatgpt.com/docs/permissions)
 - [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference)
 - [Models](https://learn.chatgpt.com/docs/models) · [Feature Maturity](https://learn.chatgpt.com/docs/feature-maturity)
+- [What's new](https://learn.chatgpt.com/docs/whats-new)

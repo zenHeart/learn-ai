@@ -42,6 +42,11 @@ One line per term. Full definitions are in the [Glossary](./codex-glossary) — 
 | Web search mode | `disabled` / `cached` / `indexed` / `live` enum | [→](./codex-glossary#web-search-modes) |
 | `codex exec` | One-shot non-interactive run | [→](./codex-glossary#non-interactive-mode-codex-exec) |
 | requirements.toml | Admin policy that narrows what's selectable | [→](./codex-glossary#requirementstoml-managed-policy) |
+| Chat / Work / Codex | Three ways of working in one app | [→](./codex-glossary#chat-work-codex) |
+| ChatGPT Work | Knowledge-work agent that finishes a reviewable file | [→](./codex-glossary#chatgpt-work) |
+| Sites | ChatGPT-hosted websites and apps (public beta) | [→](./codex-glossary#sites) |
+| Codex Cloud | Parallel coding jobs / hosted review in a hosted env | [→](./codex-glossary#codex-cloud) |
+| Atlas | Standalone browser stopped 2026-08-09 | [→](./codex-glossary#atlas) |
 
 ## Command reference
 
@@ -465,6 +470,11 @@ The links below are what this tutorial is maintained against. When something her
 | [Prompting](https://learn.chatgpt.com/docs/prompting) | Prompting guidance |
 | [Memories](https://learn.chatgpt.com/docs/customization/memories?surface=app) | Cross-session memory |
 | [Pricing](https://learn.chatgpt.com/docs/pricing) | **The only source for plans and quotas** — figures change, so read it there |
+| [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) | Chat / Work / Codex |
+| [Get started with Work](https://learn.chatgpt.com/docs/get-started-with-work) | ChatGPT Work |
+| [Codex cloud](https://learn.chatgpt.com/docs/cloud) | Hosted coding environments |
+| [What's new](https://learn.chatgpt.com/docs/whats-new) | Weekly capability changes, including Sol hosted review |
+| [Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) | Official Atlas retirement |
 | [Best practices](https://learn.chatgpt.com/guides/best-practices) | Official prompting and workflow guidance |
 | [Import](https://learn.chatgpt.com/docs/import) | Migrate from Claude Code or Cursor |
 | [Sites](https://learn.chatgpt.com/docs/sites) | Publishing sites |

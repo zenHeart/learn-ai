@@ -66,13 +66,13 @@ Reference: [IDE Extension documentation](https://learn.chatgpt.com/docs/codex/id
 
 ### Desktop app
 
-A graphical surface with capabilities the terminal does not have: an in-app browser, worktree management, local environments, and automations. It is the surface for work that is not purely textual.
+On 2026-07-09 the standalone Codex app merged into the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app). Updating the old Codex app leaves Chat, Work, and Codex in one window. You can still default to the Codex view and keep the Codex icon.
 
-Choose the app when you need a browser in the loop, or when you want several tasks visible at once.
+The graphical surface has what the terminal does not: an in-app browser, worktrees, local environments, a PR sidebar, multi-repo projects, Computer Use. Choose desktop Codex when a browser belongs in the loop or you want several tasks visible — and do not confuse it with [ChatGPT Work](./chatgpt-work). Work hides Git / shell detail and has no PR pane.
 
-### Cloud and Web
+### Cloud, web, and hosted review {#cloud-web-and-hosted-review}
 
-Runs the agent on OpenAI's infrastructure against a configured environment rather than your laptop.
+Runs the agent on OpenAI's infrastructure against a configured environment rather than your laptop. Product entry: [chatgpt.com/codex](https://chatgpt.com/codex). Docs: [Codex cloud](https://learn.chatgpt.com/docs/cloud).
 
 ```bash
 codex cloud                                            # browse environments (Ctrl+O reveals IDs)
@@ -80,7 +80,24 @@ codex cloud exec --env <ENV_ID> "run the migration dry run"
 codex cloud exec --env <ENV_ID> --attempts 3 "..."     # 1-4 attempts
 ```
 
-Choose cloud when the task is long-running, when it should not tie up your machine, or when `--attempts` is genuinely useful because the result is nondeterministic and you want to compare runs.
+Official “use Cloud when…” list:
+
+- The job should run in the background without tying up the laptop
+- You want several attempts in parallel
+- The work starts in **GitHub, Linear, or Slack**
+- You are away from the development machine and only have the web UI or CLI
+
+Setup: sign in → connect GitHub → create an environment in [environment settings](https://chatgpt.com/codex/settings/environments) → start a task → review the summary and diff → open a PR if it is ready. Environment details: [Cloud environments](https://learn.chatgpt.com/docs/environments/cloud-environment).
+
+**Hosted review is not a fourth product.** It is Cloud / web review:
+
+| Surface | What it does | Source |
+| --- | --- | --- |
+| Local `/review` | Base-branch or uncommitted diff; does not change the tree | CLI / IDE / desktop |
+| Codex cloud code review / QA | Review and QA in the hosted environment | [What's new](https://learn.chatgpt.com/docs/whats-new) (week of 2026-07-27): **GPT-5.6 Sol** for eligible customers; Cloud **selects the model automatically**; Terra / Luna remain on local and web surfaces |
+| Codex Security Review | PR changes plus repo context and threat model; auto on open/push or `@codex security review` | Research preview; Enterprise / Business / Edu / Pro; **not Plus** |
+
+Do not give hosted review its own page: it is a Cloud workflow. Config and quota still come from the plan and the cloud environment.
 
 > Documentation pages use a `?surface=cli|app|ide` selector. If a page seems to describe features you don't have, check which surface is selected.
 
@@ -190,18 +207,21 @@ The last point is the practical one. Almost every disappointing Codex session tr
 
 ## Related pages
 
+- [Learning Map](./) — family tree and decision tree
 - [Codex CLI](./codex-cli) — installation and core features
+- [ChatGPT Work](./chatgpt-work) — knowledge-work agent (not Codex)
 - [ChatGPT Plans and Codex Access](./chatgpt-plus) — how access works
 - [Project Integration](./integration) — wiring Codex into a real project
 - [Codex Cookbook](./codex-cookbook) — task recipes
 - [Codex Glossary](./codex-glossary) — concept definitions
 - [Codex Cheatsheet](./codex-cheatsheet) — quick lookup
-- [Learning Map](./) — the full path
 
 ## Official sources
 
 - [Codex documentation](https://learn.chatgpt.com/docs)
-- [CLI](https://learn.chatgpt.com/docs/codex/cli) · [IDE](https://learn.chatgpt.com/docs/codex/ide)
+- [CLI](https://learn.chatgpt.com/docs/codex/cli) · [IDE](https://learn.chatgpt.com/docs/codex/ide) · [App](https://learn.chatgpt.com/docs/app)
+- [Codex cloud](https://learn.chatgpt.com/docs/cloud) · [Code review](https://learn.chatgpt.com/docs/code-review)
 - [Sandboxing](https://learn.chatgpt.com/docs/sandboxing) · [Permissions](https://learn.chatgpt.com/docs/permissions)
 - [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference)
 - [Models](https://learn.chatgpt.com/docs/models) · [Feature Maturity](https://learn.chatgpt.com/docs/feature-maturity)
+- [What's new](https://learn.chatgpt.com/docs/whats-new)

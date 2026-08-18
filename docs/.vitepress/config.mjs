@@ -360,6 +360,7 @@ export default withMermaid(defineConfig({
                                        text: 'More Products & Extensions',
                                        collapsed: true,
                                        items: [
+                                          { text: 'ChatGPT Work', link: '/products/ai-coding/codex/chatgpt-work' },
                                           { text: 'ChatGPT Plans & Access', link: '/products/ai-coding/codex/chatgpt-plus' },
                                           { text: 'Project Integration', link: '/products/ai-coding/codex/integration' },
                                        ]
@@ -871,7 +872,8 @@ export default withMermaid(defineConfig({
                                        text: '更多产品与扩展',
                                        collapsed: true,
                                        items: [
-                                          { text: 'ChatGPT Plus', link: '/zh/products/ai-coding/codex/chatgpt-plus' },
+                                          { text: 'ChatGPT Work', link: '/zh/products/ai-coding/codex/chatgpt-work' },
+                                          { text: 'ChatGPT 套餐与访问', link: '/zh/products/ai-coding/codex/chatgpt-plus' },
                                           { text: '项目集成', link: '/zh/products/ai-coding/codex/integration' },
                                        ]
                                     },

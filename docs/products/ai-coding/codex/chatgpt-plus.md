@@ -92,31 +92,66 @@ Managed permission-profile allowlists require **Codex 0.138.0 or later**. Client
 
 See the [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) for the full `requirements.toml` surface.
 
+## ChatGPT Chat (conversation) {#chatgpt-chat-conversation}
+
+The Claude.ai counterpart is **Chat**, not a separate install. Official docs split the same app into Chat / Work / Codex ([Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt)).
+
+| Choose | When | This guide |
+| --- | --- | --- |
+| **Chat** | Questions, brainstorms, short drafts, settling a design | This page |
+| **Work** | A file someone can open and review | [ChatGPT Work](./chatgpt-work) |
+| **Codex** | Repo, diff, tests, PR | [Product line](./codex-ai) · [CLI](./codex-cli) |
+
+Chat surfaces frontend engineers actually hit:
+
+- **Projects** — chats, files, and instructions under one topic.
+- **Voice** — desktop and iOS; can talk through uploaded files and Projects.
+- **Library** — reuse saved files without uploading again.
+- **Web / desktop / mobile** — one account. On 2026-07-09 the standalone Codex app merged into the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app). Every plan, including Free, can open Chat, Work, and Codex; limits still come from the pricing page.
+
+The GPT-5.6 Sol slider in Chat does **not** change model behavior in Work or Codex.
+
 ## Using ChatGPT and Codex together
 
 They are different tools with different strengths, and the pairing is genuinely useful:
 
 | Task | Better in |
 | --- | --- |
-| Thinking through an approach before any code exists | ChatGPT |
-| Comparing libraries or architectures | ChatGPT |
+| Thinking through an approach before any code exists | Chat |
+| Comparing libraries or architectures | Chat |
+| An eight-slide deck / comparison sheet / recurring agenda | [Work](./chatgpt-work) |
 | Reading and changing files in a real repository | Codex |
 | Running tests and iterating until green | Codex |
-| Explaining a diff to a colleague | ChatGPT |
+| Explaining a diff to a colleague | Chat |
 | Automating a task in CI | Codex (`codex exec`) |
 
-A workflow that works: settle the design in ChatGPT, write it down as an `AGENTS.md` entry or a task description, then hand the implementation to Codex with a verification command. The design conversation and the implementation session have very different context needs, and keeping them separate produces better output from both.
+A workflow that works: settle the design in Chat, write it down as an `AGENTS.md` entry or a task description, then hand the implementation to Codex with a verification command. The design conversation and the implementation session have very different context needs, and keeping them separate produces better output from both.
+
+## Atlas: officially retired — do not document it as current
+
+The standalone **ChatGPT Atlas** browser is not a rumor to hedge. Official pages already closed it:
+
+- [Evolving Atlas into ChatGPT](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work): browser-based agentic work moves into ChatGPT and Codex; **Atlas is scheduled to stop working on 2026-08-09**.
+- [ChatGPT is now a partner for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) (2026-07-09): the Codex app merges into the new ChatGPT desktop app; “We'll begin sunsetting the standalone Atlas browser.”
+- [ChatGPT Release Notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes), **Retiring Atlas**, repeats the same stop date.
+
+Today (2026-08-18) is after that date. For browser-agent work use the desktop **built-in browser**, the [Chrome extension](https://learn.chatgpt.com/docs/chrome-extension), or Work’s **cloud browser**. Do not cite WSJ / Reddit merger rumors; those three pages are the record.
+
+<!-- TODO: 待核实 --> Whether Atlas bookmarks / passwords can still be exported from a leftover local install after 2026-08-09 is whatever the help article currently says. This guide does not invent steps.
 
 ## Related pages
 
+- [Learning Map](./) — family tree and decision tree
+- [ChatGPT Work](./chatgpt-work) — reviewable deliverables, plugins, Sites
 - [Codex CLI](./codex-cli) — installation and core features
-- [Codex Product Line](./codex-ai) — the CLI, IDE, app, and cloud surfaces
+- [Codex Product Line](./codex-ai) — CLI, IDE, app, and cloud
 - [Codex Cookbook](./codex-cookbook) — task recipes
 - [Codex Cheatsheet](./codex-cheatsheet) — commands and config keys
-- [Learning Map](./) — the full path
 
 ## Official sources
 
 - [Pricing](https://learn.chatgpt.com/docs/pricing) — the only authority on plans and quotas
+- [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) — Chat / Work / Codex
 - [Models](https://learn.chatgpt.com/docs/models) — model list and reasoning effort
 - [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) — `requirements.toml` and every config key
+- [Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work)

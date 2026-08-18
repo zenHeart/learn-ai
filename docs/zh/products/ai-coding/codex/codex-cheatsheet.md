@@ -42,6 +42,11 @@
 | Web 搜索模式 | `disabled` / `cached` / `indexed` / `live` 枚举 | [→](./codex-glossary#web-search-modes) |
 | `codex exec` | 一次性非交互运行 | [→](./codex-glossary#non-interactive-mode-codex-exec) |
 | requirements.toml | 收窄可选范围的管理员策略 | [→](./codex-glossary#requirementstoml-managed-policy) |
+| Chat / Work / Codex | 同一应用里的三种工作方式 | [→](./codex-glossary#chat-work-codex) |
+| ChatGPT Work | 做到可审成品的知识工作代理 | [→](./codex-glossary#chatgpt-work) |
+| Sites | ChatGPT 托管网页和应用（公开测试） | [→](./codex-glossary#sites) |
+| Codex Cloud | 托管环境里的并行编程任务 / 托管评审 | [→](./codex-glossary#codex-cloud) |
+| Atlas | 已于 2026-08-09 停止的独立浏览器 | [→](./codex-glossary#atlas) |
 
 ## 命令参考
 
@@ -463,6 +468,11 @@ codex --ask-for-approval never exec --json \
 | [Prompting](https://learn.chatgpt.com/docs/prompting) | 提示词指导 |
 | [Memories](https://learn.chatgpt.com/docs/customization/memories?surface=app) | 跨会话记忆 |
 | [Pricing](https://learn.chatgpt.com/docs/pricing) | **套餐和配额的唯一来源**——数字会变，去那里看 |
+| [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) | Chat / Work / Codex 怎么选 |
+| [Get started with Work](https://learn.chatgpt.com/docs/get-started-with-work) | ChatGPT Work |
+| [Codex cloud](https://learn.chatgpt.com/docs/cloud) | 托管编程环境 |
+| [What's new](https://learn.chatgpt.com/docs/whats-new) | 周报级能力变化（含 Sol 托管评审） |
+| [Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) | Atlas 官方下线说明 |
 | [Sites](https://learn.chatgpt.com/docs/sites) | 发布站点 |
 | [Glossary](https://learn.chatgpt.com/docs/glossary) | 官方术语 |
 | [Best practices](https://learn.chatgpt.com/guides/best-practices) | 官方最佳实践 |

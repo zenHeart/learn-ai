@@ -92,31 +92,66 @@ model_reasoning_effort = "medium"
 
 完整 `requirements.toml` 表面见 [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference)。
 
+## ChatGPT Chat（对话智能） {#chatgpt-chat-对话智能}
+
+对位 Claude.ai 的是 **Chat**，不是另装一个产品。官方把同一应用切成 Chat / Work / Codex（[Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt)）。
+
+| 选 | 何时用 | 本教程落点 |
+| --- | --- | --- |
+| **Chat** | 问答、头脑风暴、短草稿、把设计谈清楚 | 本页 |
+| **Work** | 要一份能打开检查的成品 | [ChatGPT Work](./chatgpt-work) |
+| **Codex** | 仓库、diff、测试、PR | [产品线](./codex-ai) · [CLI](./codex-cli) |
+
+Chat 侧前端工程师会反复碰到的能力：
+
+- **Projects**：同一主题下的会话、文件、指令。
+- **Voice**：桌面和 iOS；可对着上传文件和 Project 说话。
+- **Library**：已保存文件再次引用，不必重传。
+- **网页 / 桌面 / 手机**：同一账号。2026-07-09 起独立 Codex 应用并入 [ChatGPT 桌面应用](https://learn.chatgpt.com/docs/app)；每个套餐（含 Free）都能进 Chat、Work、Codex，额度仍按定价页。
+
+Chat 里的 GPT-5.6 Sol 滑块只影响 Chat，**不**改变 Work 或 Codex 的模型行为。
+
 ## ChatGPT 和 Codex 怎么配合
 
 它们强项不同，配对是真的有用：
 
 | 任务 | 更合适的地方 |
 | --- | --- |
-| 代码还不存在时把思路谈清楚 | ChatGPT |
-| 比库、比架构 | ChatGPT |
+| 代码还不存在时把思路谈清楚 | Chat |
+| 比库、比架构 | Chat |
+| 要八页 PPT / 对比表 / 定期议程 | [Work](./chatgpt-work) |
 | 在真实仓库里读改文件 | Codex |
 | 跑测试并迭代到绿 | Codex |
-| 给同事解释一份 diff | ChatGPT |
+| 给同事解释一份 diff | Chat |
 | CI 里自动化一项任务 | Codex（`codex exec`） |
 
-可用工作流：在 ChatGPT 里把设计谈定，写成 `AGENTS.md` 条目或任务说明，再把实现交给 Codex 并写上验收命令。设计对话和实现会话的上下文需求完全不同，拆开两边都更好。
+可用工作流：在 Chat 里把设计谈定，写成 `AGENTS.md` 条目或任务说明，再把实现交给 Codex 并写上验收命令。设计对话和实现会话的上下文需求完全不同，拆开两边都更好。
+
+## Atlas：官方已下线，不要当现行产品写
+
+独立浏览器 **ChatGPT Atlas** 不是「桌面 superapp 传闻」，官方已经收口：
+
+- [Evolving Atlas into ChatGPT](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work)：把基于浏览器的代理能力迁进 ChatGPT 和 Codex；**Atlas 计划于 2026-08-09 停止工作**。
+- [ChatGPT is now a partner for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)（2026-07-09）：Codex 应用并入新的 ChatGPT 桌面应用；「We'll begin sunsetting the standalone Atlas browser」。
+- [ChatGPT Release Notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) 的 **Retiring Atlas** 一节重复了同一停止日期。
+
+今天（2026-08-18）已过官方停止日。浏览代理请用：桌面**内置浏览器**、[Chrome 扩展](https://learn.chatgpt.com/docs/chrome-extension)、Work 的 **Cloud Browser**。不要引用 WSJ / Reddit 的合并传闻；上列三篇是唯一口径。
+
+<!-- TODO: 待核实 --> 2026-08-09 之后 Atlas 书签 / 密码是否仍能从本机导出，以帮助中心该页的最新修订为准，本教程不写操作步骤。
 
 ## 相关页面
 
+- [学习地图](./) — 全家桶与决策树
+- [ChatGPT Work](./chatgpt-work) — 可审成品、插件、Sites
 - [Codex CLI](./codex-cli) — 安装与核心功能
 - [Codex 产品线](./codex-ai) — CLI、IDE、应用、云端
 - [Codex Cookbook](./codex-cookbook) — 任务配方
 - [Codex 速查表](./codex-cheatsheet) — 命令和配置键
-- [学习地图](./) — 完整路径
 
 ## 官方来源
 
 - [Pricing](https://learn.chatgpt.com/docs/pricing) — 套餐和配额的唯一权威
+- [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) — Chat / Work / Codex
 - [Models](https://learn.chatgpt.com/docs/models) — 模型列表和推理强度
 - [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) — `requirements.toml` 和每个配置键
+- [Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work)

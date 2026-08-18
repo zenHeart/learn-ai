@@ -531,10 +531,85 @@ Codex 使用的模型，以及模型「想多久」的档位。
 
 ---
 
+## Chat / Work / Codex {#chat-work-codex}
+
+**是什么**
+
+同一 ChatGPT 应用里的三种工作方式，不是三个独立安装包。官方对照在 [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt)。
+
+| 名字 | 是什么 | 不是什么 |
+| --- | --- | --- |
+| **Chat** | 问答、短草稿、把设计谈清楚 | 不是编程界面 |
+| **ChatGPT Work** | 把任务做到可审成品（PPT / 表 / 站点 / 定期更新） | 不是 Codex；没有 PR 侧栏 |
+| **Codex** | 编程 Agent：仓库、diff、测试、PR | 不是闲聊入口 |
+
+2026-07-09 起独立 Codex 桌面应用并入 ChatGPT 桌面应用。Work 与 Codex 共用用量额度。
+
+**官方文档**：[Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) · [ChatGPT Work](./chatgpt-work)
+
+---
+
+## ChatGPT Work {#chatgpt-work}
+
+**是什么**
+
+官方原文：*ChatGPT Work is a way to delegate real work to ChatGPT.* 网页默认跑在云端；桌面可选 **Work locally** 摸本机文件和应用。
+
+**和 Codex 的区别**
+
+能力可以重叠（官方允许继续用 Codex 做非编程工作），界面不同：Work 藏起 Git / shell，面向日常知识工作。前端工程师用它写周报、出 Sites、盯 Slack，改仓库仍走 Codex。
+
+**官方文档**：[Get started with Work](https://learn.chatgpt.com/docs/get-started-with-work) · 本教程 [ChatGPT Work](./chatgpt-work)
+
+---
+
+## Sites {#sites}
+
+**是什么**
+
+ChatGPT 创建、托管、分享网站和应用的工作流，公开测试。入口 [chatgpt.com/sites](https://chatgpt.com/sites)。
+
+**不是什么**
+
+不是 Claude Design。没有「从代码库抽品牌规范再交接实现」的官方产品。每个部署 URL 都是生产环境。
+
+**官方文档**：[Sites](https://learn.chatgpt.com/docs/sites)
+
+---
+
+## Codex Cloud 与托管评审 {#codex-cloud}
+
+**是什么**
+
+在 OpenAI 托管的隔离环境里跑编程任务，可并行，可从 GitHub / Linear / Slack 派活。入口 [chatgpt.com/codex](https://chatgpt.com/codex)。
+
+**托管评审**
+
+Cloud 上的 code review / QA 对合格客户由 **GPT-5.6 Sol** 驱动，模型由 Cloud 自动选。Codex Security Review 是另一条研究预览（Enterprise / Business / Edu / Pro，不含 Plus）。本机 `/review` 仍是本地会话里的评审，不要和托管评审混名。
+
+**官方文档**：[Codex cloud](https://learn.chatgpt.com/docs/cloud) · [What's new](https://learn.chatgpt.com/docs/whats-new)
+
+---
+
+## Atlas（已下线） {#atlas}
+
+**是什么**
+
+曾经的独立 ChatGPT 浏览器。官方已把基于浏览器的代理能力迁进 ChatGPT 和 Codex，并给出停止日 **2026-08-09**。
+
+**不是什么**
+
+不是现行产品，也不是需要单独成页的「桌面 superapp」。现行替代：桌面内置浏览器、Chrome 扩展、Work 的 Cloud Browser。
+
+**官方文档**：[Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) · [2026-07-09 公告](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)
+
+---
+
 ## 相关页面
 
 - [Codex 速查表](./codex-cheatsheet) — 命令、配置、错误速查
 - [Codex Cookbook](./codex-cookbook) — 按任务组织的实操配方
 - [Codex CLI 教程](./codex-cli) — 从安装到核心功能
+- [ChatGPT Work](./chatgpt-work) — 知识工作代理
 - [项目集成](./integration) — 把 Codex 接入真实项目
 - [学习地图](./) — 完整学习路径

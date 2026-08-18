@@ -389,6 +389,7 @@ Setting up a new project:
 ## Related pages
 
 - [Codex CLI](./codex-cli) — installation and core features
+- [ChatGPT Work](./chatgpt-work) — knowledge-work agent (plugins ≠ repo MCP)
 - [Codex Cookbook](./codex-cookbook) — task recipes
 - [Codex Glossary](./codex-glossary) — concept definitions
 - [Codex Cheatsheet](./codex-cheatsheet) — config keys and commands

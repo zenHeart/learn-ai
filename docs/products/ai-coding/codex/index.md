@@ -1,132 +1,223 @@
-# Codex Learning Guide
+# Codex Family Learning Map
 
-> Codex is OpenAI's coding agent. It runs in your terminal, in your editor, in the ChatGPT app, and in the cloud — all four surfaces reading the same configuration. This page is the map: what each page here is for, and the order that gets you productive fastest.
+> Codex is OpenAI’s coding agent. It lives alongside ChatGPT Chat and ChatGPT Work in the same web and desktop app, plus CLI, IDE, and cloud. This page is the family map: the product tree first, then “what do I want to do?”
 >
-> Documentation lives at `learn.chatgpt.com/docs`. The older `developers.openai.com/codex/*` URLs now 308-redirect there, so bookmarks from earlier guides will still land in the right place.
+> Docs live at `learn.chatgpt.com/docs`. Older `developers.openai.com/codex/*` URLs 308 there.
 
-## The four surfaces
+## Product map
+
+This is not “a CLI”. It is one account and several products. On 2026-07-09 the standalone Codex app merged into the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app): Chat, Work, and Codex in one window.
 
 ```
-Codex
-├── CLI            — terminal, most flexible, the surface this guide centers on
-├── IDE extension  — editor-embedded, inline diffs
-├── ChatGPT app    — conversational, delegate a task and come back
-└── Cloud          — runs in a hosted environment, several attempts in parallel
+OpenAI coding & agent family
+├── ChatGPT Chat (conversation) — questions, writing, comparing options
+│   ├── Web chatgpt.com
+│   ├── Desktop app (macOS / Windows; Linux preview)
+│   └── Mobile (Remote continues a host session)
+├── ChatGPT Work (knowledge-work agent) — finish a reviewable deliverable
+│   ├── Cloud (default on the web; keeps running if you close the laptop)
+│   ├── Local (desktop Work locally: files / apps on this machine)
+│   ├── Scheduled tasks
+│   ├── Plugins (Slack / Drive / SharePoint…)
+│   └── Sites (hosted websites / internal tools, public beta)
+├── Codex (coding agent) — write, debug, open a PR
+│   ├── Terminal CLI         — most flexible, the CI entry
+│   ├── IDE extension        — editor context, inline diffs
+│   ├── Codex in the desktop app — visual diffs, PR sidebar, multi-repo
+│   ├── Web chatgpt.com/codex
+│   ├── Cloud                — isolated envs; GitHub / Linear / Slack
+│   └── Remote               — phone continues local or cloud work
+└── Retired: Atlas standalone browser
+    └── Officially stopped 2026-08-09; browser-agent work moved into ChatGPT / Codex
 ```
 
-They are one product with one configuration model, not four tools that happen to share a name. What you learn about sandboxing, approval policy, and `AGENTS.md` in the CLI carries over.
+One agent, one configuration model, several doors. Sandbox, approval policy, and `AGENTS.md` learned in the CLI apply in the IDE, desktop Codex, and Cloud. Work and Codex **share usage limits**.
 
-## Which page do I want?
+### Decision tree: what do I want to do?
 
-This guide is organized by what you are trying to do, not by feature area:
-
-| You want to | Read | Type |
-| --- | --- | --- |
-| Install it and get a first task done | [Codex CLI](./codex-cli) | Tutorial |
-| Understand the whole product line first | [Codex Product Line](./codex-ai) | Explanation |
-| Know what your plan includes | [ChatGPT Plans and Codex Access](./chatgpt-plus) | Reference |
-| Solve one specific task now | [Codex Cookbook](./codex-cookbook) | How-to |
-| Wire Codex into a real project or CI | [Project Integration](./integration) | How-to |
-| Understand *why* a concept exists | [Codex Glossary](./codex-glossary) | Explanation |
-| Look up a flag or config key | [Codex Cheatsheet](./codex-cheatsheet) | Reference |
-
-If you only read two, read [Codex CLI](./codex-cli) then bookmark the [Cheatsheet](./codex-cheatsheet).
-
-## Learning path
-
-### Stage 1 — Install and run something read-only
-
-Install, sign in, and point Codex at a repository you already know with writes disabled. You get a feel for how it reasons before it can change anything.
-
-```bash
-npm install -g @openai/codex
-codex login
-codex --sandbox read-only "explain how this project is structured"
 ```
-
-→ [Codex CLI](./codex-cli), steps 1-3
-
-### Stage 2 — Get the permission model right
-
-This is the stage people skip, and it is the reason Codex either gets abandoned as too intrusive or turned loose as too dangerous. Two settings decide everything:
-
-- **`sandbox_mode`** — `read-only`, `workspace-write`, or `danger-full-access`. A hard boundary on what can be written.
-- **`approval_policy`** — `untrusted`, `on-request`, `never`, or a granular table. When Codex stops to ask.
-
-They are independent. "Never asks" and "cannot write outside the workspace" is a perfectly sensible combination, and it is the one that makes automated review work.
-
-→ [Codex Glossary](./codex-glossary) for the model, [Codex CLI](./codex-cli) step 6 for the config
-
-### Stage 3 — Write an AGENTS.md
-
-`AGENTS.md` is a natural-language project briefing loaded on every run. Start with `/init` to generate a draft, then cut it down to the things only your team would know: the package manager, the verification command, the directory nobody should touch.
-
-The failure mode to know about: combined instruction files are capped by `project_doc_max_bytes` (32 KiB default), and content past the cap is dropped silently.
-
-→ [Codex CLI](./codex-cli) step 7, [Project Integration](./integration)
-
-### Stage 4 — Work task-by-task
-
-At this point stop reading linearly and use the [Cookbook](./codex-cookbook) as a lookup — refactors, test writing, code review, debugging, each as a recipe with the flags that make it behave.
-
-### Stage 5 — Automate
-
-`codex exec` is the same agent without a TUI: one shot, then exit. In CI, pair it with `--ask-for-approval never`, because there is nobody present to answer a prompt.
-
-```bash
-codex --ask-for-approval never exec --json \
-  "run the test suite; if anything fails, fix it and re-run until green"
+What do I want to do?
+├── Write / debug / refactor / open a PR
+│   └── → Codex
+│       ├── Terminal or CI? → CLI (`codex` / `codex exec`)
+│       ├── Anchored to the file I have open? → IDE extension
+│       ├── Visual diff / PR sidebar? → Codex in the desktop app
+│       ├── Away from the laptop / several parallel attempts? → Codex Cloud
+│       └── Dispatch from GitHub / Linear / Slack? → Cloud + official integrations
+├── Ask, write, compare, settle a design
+│   └── → ChatGPT Chat (web, desktop, or mobile)
+│       ├── Persistent topic context? → Project
+│       ├── Hands-free? → desktop / iOS Voice
+│       └── Ready to change the repo? → write the brief, hand it to Codex
+├── A deck / sheet / brief / recurring update someone can open
+│   └── → ChatGPT Work
+│       ├── Sources in Drive / Slack? → install the plugin, `@mention` it
+│       ├── Needs local files or apps? → desktop Work locally
+│       ├── Must run after the laptop sleeps? → Cloud / web Work
+│       └── Need a hosted internal page? → Sites (save a version, then deploy)
+├── Connect an external service
+│   └── → two layers
+│       ├── Everyday SaaS (Drive / Slack / Notion-class) → Work / Chat plugins
+│       └── Repo, CI, custom tools → Codex MCP (see Project Integration)
+└── Still looking for the Atlas browser?
+    └── → Standalone Atlas has stopped. Use the in-app browser, the Chrome
+        extension, or Work’s cloud browser.
 ```
-
-→ [Project Integration](./integration)
-
-### Stage 6 — Extend it
-
-MCP servers, hooks, skills, plugins, and subagents. Reach for these when you have a repeated workflow worth packaging — not before. Premature extension is a common way to end up with a configuration nobody understands.
-
-→ [Codex Glossary](./codex-glossary), [Codex Cheatsheet](./codex-cheatsheet)
 
 ## Concepts you need early
 
-| Concept | One line | Why it matters |
+Full definitions live in the [Glossary](./codex-glossary).
+
+| Concept | One line | Where it shows up |
 | --- | --- | --- |
-| Sandbox | Hard boundary on file and network access | The difference between trusting the agent and supervising it |
-| Approval policy | Whether Codex asks before acting | Wrong setting makes it unusable in either direction |
-| Trust level | Whether project-level `.codex/` loads at all | Untrusted projects silently ignore their own config |
-| `AGENTS.md` | Auto-loaded project briefing | Stops you re-explaining your conventions every session |
-| Profile | Named config bundle, `--profile <name>` | One command to switch between review mode and build mode |
-| `codex exec` | One-shot non-interactive run | The CI entry point |
-| Compaction | Lossy compression of older context | Explains why long sessions degrade |
+| **Chat / Work / Codex** | Three ways to work in one app: talk, finish, code | Everywhere |
+| **Sandbox** | Hard boundary on files and network | Codex |
+| **Approval policy** | Whether it asks before acting | Codex |
+| **`AGENTS.md`** | Project briefing loaded on every run | Every Codex surface |
+| **MCP / Plugins** | Tools outside the repo; Work calls them plugins | Codex / Work |
+| **Sites** | ChatGPT-hosted websites and apps (public beta) | Work / web |
+| **Codex Cloud** | Parallel coding jobs in a hosted environment | Codex |
+| **Atlas** | Retired standalone browser; capabilities moved into ChatGPT / Codex | Historical |
 
-Full definitions are in the [Glossary](./codex-glossary).
+## Learning path
 
-## Codex among the alternatives
+### Stage 1 — Tell Chat, Work, and Codex apart
 
-| If you want | Consider |
-| --- | --- |
-| A terminal agent inside the OpenAI ecosystem, on a ChatGPT plan | **Codex** |
-| A terminal agent on an Anthropic plan | [Claude Code](../claude/) |
-| An editor built around AI, with tab completion | [Cursor](../cursor) |
-| Inline completion in an existing editor | [GitHub Copilot](../copilot) |
+Build the “one account, three modes” model before you touch the terminal.
 
-Codex is the natural pick if you already pay for ChatGPT Plus or above — access is included with the plan rather than purchased separately.
+**Goal**: switch Chat / Work / Codex, know what the plan includes, know where numbers live.
+
+| Step | What | Link |
+| --- | --- | --- |
+| 1 | Product line: four Codex surfaces + the desktop merge | [Codex Product Line](./codex-ai) |
+| 2 | Plans, login, pairing Chat with Codex | [ChatGPT Plans and Access](./chatgpt-plus) |
+| 3 | Work: deliverables, local vs cloud, plugins, Sites | [ChatGPT Work](./chatgpt-work) |
+
+### Stage 2 — Get the CLI working
+
+The frontend-engineer path.
+
+**Goal**: a read-only run on a repo you already know, with sandbox and `AGENTS.md` set.
+
+| Step | What | Link |
+| --- | --- | --- |
+| 1 | Install, sign in, first read-only session | [Codex CLI](./codex-cli), steps 1–3 |
+| 2 | TUI keys and slash commands | [CLI](./codex-cli) |
+| 3 | `sandbox_mode` and `approval_policy` | [CLI](./codex-cli) step 6 |
+| 4 | `/init` → `AGENTS.md` | [CLI](./codex-cli) step 7 |
+| 5 | Task recipes | [Cookbook](./codex-cookbook) |
+| 6 | Flags and config keys | [Cheatsheet](./codex-cheatsheet) |
+| 7 | Definitions when words blur | [Glossary](./codex-glossary) |
+
+If you only read two pages: [CLI](./codex-cli), then pin the [Cheatsheet](./codex-cheatsheet).
+
+### Stage 3 — Real project and CI
+
+**Goal**: a committed `AGENTS.md` and `.codex/config.toml`; `codex exec` in CI.
+
+| Step | What | Link |
+| --- | --- | --- |
+| 1 | Instruction chain, trust, project config | [Project Integration](./integration) |
+| 2 | MCP, hooks, subagents | [Integration](./integration) |
+| 3 | `codex exec` + GitHub Action | [Integration](./integration) |
+
+### Stage 4 — Cloud, hosted review, remote
+
+**Goal**: stand up a Cloud environment; know which model hosted review uses.
+
+| Step | What | Link |
+| --- | --- | --- |
+| 1 | When to use Cloud; `codex cloud exec` | [Product line · Cloud](./codex-ai#cloud-web-and-hosted-review) |
+| 2 | Dispatch from GitHub / Linear / Slack | [Codex cloud](https://learn.chatgpt.com/docs/cloud) |
+| 3 | Local `/review` vs hosted code review | [Code review](https://learn.chatgpt.com/docs/code-review) |
+
+### Stage 5 — Work automation (knowledge work)
+
+Axis B: Work sits after the Codex path. Frontend engineers still use it for agendas, Sites, and Slack.
+
+| Step | What | Link |
+| --- | --- | --- |
+| 1 | Positioning and three official starter tasks | [ChatGPT Work](./chatgpt-work) |
+| 2 | Local vs cloud, scheduled tasks | [Work](./chatgpt-work#2-choose-local-or-cloud) |
+| 3 | Plugin and Sites boundaries | [Work](./chatgpt-work#plugins-the-connector-layer) |
+
+## Feature lookup
+
+### ChatGPT Chat
+
+| Feature | For | Read |
+| --- | --- | --- |
+| Chat | Questions, drafts, settling a design | [Plans and access](./chatgpt-plus#chatgpt-chat-conversation) |
+| Projects | Chats, files, and instructions under one topic | [Projects](https://learn.chatgpt.com/docs/projects) |
+| Voice | Desktop / iOS, including files and Projects | [Voice](https://learn.chatgpt.com/docs/features/voice) |
+| Library | Reuse saved files | [Plans and access](./chatgpt-plus) |
+
+### ChatGPT Work
+
+| Feature | For | Read |
+| --- | --- | --- |
+| Reviewable files | Decks / sheets / docs / PDFs | [ChatGPT Work](./chatgpt-work) |
+| Local / cloud | Local files vs keep-running | [ChatGPT Work](./chatgpt-work#2-choose-local-or-cloud) |
+| Plugins | Drive / Slack / SharePoint… | [ChatGPT Work](./chatgpt-work#plugins-the-connector-layer) |
+| Sites | Hosted websites and apps (public beta) | [ChatGPT Work](./chatgpt-work#sites-when-you-need-a-hosted-page) |
+| Scheduled tasks | Recurring research, agendas, watches | [ChatGPT Work](./chatgpt-work#a-recurring-update) |
+
+### Codex
+
+| Feature | For | Read |
+| --- | --- | --- |
+| CLI | Interactive in the repo; `codex exec` in CI | [CLI](./codex-cli) |
+| IDE extension | Current file / selection | [Product line](./codex-ai) |
+| Desktop Codex | Diffs, PR sidebar, multi-repo, Computer Use | [Product line](./codex-ai) |
+| Web / Cloud | Hosted envs, parallelism, `--attempts` | [Product line](./codex-ai#cloud-web-and-hosted-review) |
+| Hosted review | Cloud code review / QA; GPT-5.6 Sol for eligible customers | [Product line](./codex-ai#cloud-web-and-hosted-review) |
+| `AGENTS.md` | Project briefing | [Integration](./integration) |
+| MCP / Hooks / Skills / Plugins | Extension points | [Glossary](./codex-glossary) |
+| Recipes | Refactors, tests, debugging | [Cookbook](./codex-cookbook) |
+| Config lookup | Flags, keys, decision tables | [Cheatsheet](./codex-cheatsheet) |
+
+## Models
+
+As of August 2026 the recommended 5.6 family is **Sol / Terra / Luna**. The default **Power** setting is Sol at medium reasoning. Names move; [Models](https://learn.chatgpt.com/docs/models) wins.
+
+| Model | Official role | How this guide uses it |
+| --- | --- | --- |
+| GPT-5.6 Sol | Flagship: hard coding, computer use, research, security | Cloud code review / QA selects Sol for eligible customers |
+| GPT-5.6 Terra | Capability / cost balance | Everyday local and web work |
+| GPT-5.6 Luna | Fastest, cheapest | Small edits, subagents, volume |
+| GPT-5.3-Codex-Spark | ChatGPT Pro research preview | Pro only; see the pricing page |
+
+`config.toml` samples still say `model = "gpt-5.6"`. The Chat-only Sol slider does **not** change Work or Codex. GPT-5.4 / 5.4 mini retire from ChatGPT-signed-in Codex on 2026-08-31.
 
 ## Honest limits
 
-- **Review the diff.** Codex is good at plausible code, which is not the same as correct code. Read the changes.
-- **`danger-full-access` is named accurately.** Do not use it on code you have not read.
-- **Search is cached by default.** For a fast-moving library, pass `--search` or you will get stale answers stated confidently.
-- **Version-sensitive details drift.** Stable releases land roughly weekly. When this guide disagrees with `learn.chatgpt.com/docs`, the docs win.
+- **Read the diff and the generated file.** Plausible is not correct.
+- **`danger-full-access` is named accurately.** Do not use it on unread code.
+- **Search is cached by default.** Pass bare `--search` for a fast-moving library.
+- **A Sites deploy URL is production.** Save a version first.
+- **Details drift.** Stable releases land about weekly. When this guide disagrees with `learn.chatgpt.com/docs`, the docs win.
+
+## Among the alternatives
+
+| If you want | Consider |
+| --- | --- |
+| A terminal / cloud agent on an OpenAI plan | **Codex** |
+| The knowledge-work agent on the same plan | [ChatGPT Work](./chatgpt-work) |
+| The Anthropic-family counterpart | [Claude Code](../claude/) |
+| An editor built around AI | [Cursor](../cursor) |
+| Inline completion in an existing editor | [GitHub Copilot](../copilot) |
 
 ## Official sources
 
 | Source | Use it for |
 | --- | --- |
 | [Codex docs root](https://learn.chatgpt.com/docs) | Everything |
-| [Quickstart](https://learn.chatgpt.com/docs/quickstart) | Install through first run |
-| [Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) | Every config key |
+| [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) | Chat / Work / Codex |
+| [Get started with Work](https://learn.chatgpt.com/docs/get-started-with-work) | Work |
+| [Codex cloud](https://learn.chatgpt.com/docs/cloud) | Hosted coding environments |
+| [What's new](https://learn.chatgpt.com/docs/whats-new) | Weekly capability changes |
 | [Pricing](https://learn.chatgpt.com/docs/pricing) | The only authority on plans and quotas |
-| [Changelog](https://learn.chatgpt.com/docs/changelog) | What shipped |
-| [openai/codex](https://github.com/openai/codex) | Source, releases, issues |
+| [Evolving Atlas](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) | Atlas retirement (official) |
+| [openai/codex](https://github.com/openai/codex) | Source and releases |
 
-> The docs use a `?surface=cli|app|ide` selector. If a page seems to describe a different product, check which surface is active.
+> Docs pages use `?surface=cli|app|ide`. If a page looks like another product, check the surface selector.
