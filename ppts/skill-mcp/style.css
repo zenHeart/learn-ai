@@ -17,12 +17,23 @@
   opacity: 1;
 }
 
+/* ── 暗色主题下的辅助文字可读性 ── */
+html.dark .slidev-layout .text-slate-600 {
+  color: #cbd5e1;
+}
+
+html.dark .slidev-layout .text-slate-500,
+html.dark .slidev-layout .text-slate-400 {
+  color: #94a3b8;
+}
+
 /* ── bad / good 对比块（搭配 layout: two-cols-header 使用） ── */
 .col-bad {
   background: #fff1f0;
   border-left: 4px solid #ff4d4f;
   padding: 1rem 1.2rem;
   border-radius: 4px;
+  color: #1e293b;
 }
 
 .col-good {
@@ -30,6 +41,7 @@
   border-left: 4px solid #52c41a;
   padding: 1rem 1.2rem;
   border-radius: 4px;
+  color: #1e293b;
 }
 
 .col-bad h3,
@@ -44,12 +56,24 @@
   line-height: 1.7;
 }
 
+.col-bad .slidev-code,
+.col-good .slidev-code {
+  font-size: 0.65rem !important;
+  line-height: 1.45;
+}
+
+.col-bad .slidev-code code,
+.col-good .slidev-code code {
+  font-size: inherit !important;
+}
+
 /* ── MCP / Skill 主题色块（用于强调身份） ── */
 .theme-mcp {
   background: #eef4ff;
   border-left: 4px solid #3b82f6;
   padding: 0.9rem 1.1rem;
   border-radius: 4px;
+  color: #1e293b;
 }
 
 .theme-skill {
@@ -57,6 +81,7 @@
   border-left: 4px solid #a855f7;
   padding: 0.9rem 1.1rem;
   border-radius: 4px;
+  color: #1e293b;
 }
 
 .theme-combo {
@@ -64,13 +89,32 @@
   border-left: 4px solid #f97316;
   padding: 0.9rem 1.1rem;
   border-radius: 4px;
+  color: #1e293b;
+}
+
+.col-bad :is(.text-slate-500, .text-slate-600),
+.col-good :is(.text-slate-500, .text-slate-600),
+.theme-mcp :is(.text-slate-500, .text-slate-600),
+.theme-skill :is(.text-slate-500, .text-slate-600),
+.theme-combo :is(.text-slate-500, .text-slate-600),
+.chapter-card :is(.text-slate-500, .text-slate-600) {
+  color: #475569 !important;
+}
+
+.col-bad code,
+.col-good code,
+.theme-mcp code,
+.theme-skill code,
+.theme-combo code,
+.chapter-card code {
+  color: #0f172a;
 }
 
 /* ── 表格水平滚动 ── */
 .table-scroll {
   overflow-x: auto;
-  overflow-y: auto;
-  max-height: 85%;
+  overflow-y: visible;
+  max-height: none;
   width: 100%;
   margin-top: 8px;
 }
@@ -112,6 +156,7 @@
   border-radius: 8px;
   padding: 0.9rem 1.1rem;
   background: rgba(255, 255, 255, 0.6);
+  color: #1e293b;
   transition: all 0.2s ease;
 }
 

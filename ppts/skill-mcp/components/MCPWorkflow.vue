@@ -1,332 +1,228 @@
 <script setup>
-  import { ref, computed, watch } from "vue";
-  import { useNav } from "@slidev/client";
+import { ref, computed, watch } from "vue";
+import { useNav } from "@slidev/client";
 
-  const props = defineProps({
-    mini: {
-      type: Boolean,
-      default: false,
-    },
-    activeStepId: {
-      type: String,
-      default: null,
-    },
-  });
+const currentStepIndex = ref(0);
+let slidevNav;
+try { slidevNav = useNav(); } catch (e) {}
 
-  const currentStepIndex = ref(0);
+// ── 核心部件（按三层拓扑摆放：人机界面 / 编排层 / 工具后端）──
+const nodes = {
+  user:   { label: "用户",       sub: "You",         icon: "👤", x: 500, y: 42,  perceivable: true },
+  host:   { label: "Host",       sub: "Claude Code", icon: "🖥️", x: 500, y: 160, perceivable: true },
+  llm:    { label: "LLM",        sub: "推理决策",     icon: "🧠", x: 150, y: 160, perceivable: false },
+  client: { label: "MCP Client", sub: "SDK·一对一",   icon: "🔌", x: 290, y: 288, perceivable: false },
+  server: { label: "MCP Server", sub: "工具提供方",   icon: "⚙️", x: 560, y: 288, perceivable: false },
+  ext:    { label: "外部系统",   sub: "DB·API·FS",   icon: "🗄️", x: 838, y: 288, perceivable: false },
+};
 
-  let slidevNav;
-  try {
-    slidevNav = useNav();
-  } catch (e) {
-    // 允许在无 slidev 上下文时降级
-  }
+// ── 静态接线（永远可见的“地图”）──
+const edges = {
+  E1: { x1: 500, y1: 73,  x2: 500, y2: 129 },  // user ↔ host
+  E2: { x1: 429, y1: 160, x2: 223, y2: 160 },  // host ↔ llm
+  E3: { x1: 470, y1: 191, x2: 305, y2: 257 },  // host ↔ client
+  E4: { x1: 361, y1: 288, x2: 489, y2: 288 },  // client ↔ server
+  E5: { x1: 631, y1: 288, x2: 767, y2: 288 },  // server ↔ ext
+};
 
-  // MCP 工作流步骤定义
-  const steps = [
-    {
-      id: "start",
-      title: "1. Host 发起请求",
-      description: "Claude Code (Host) 作为客户端，发起工具调用请求",
-      tags: ["Request", "Host"],
-      activeNode: "start",
-      line: null,
-    },
-    {
-      id: "tool_call",
-      title: "2. MCP Client 接收",
-      description: "MCP Client 接收请求，解析工具名称和参数",
-      tags: ["Parse", "MCP Client"],
-      activeNode: "mcp-client",
-      line: "start-mcp",
-    },
-    {
-      id: "stdin",
-      title: "3. JSON-RPC 通信",
-      description: "通过 stdin/stdout 使用 JSON-RPC 2.0 协议传输",
-      tags: ["JSON-RPC", "Protocol"],
-      activeNode: "mcp-server",
-      line: "mcp-stdin",
-    },
-    {
-      id: "execute",
-      title: "4. Server 执行工具",
-      description: "MCP Server 调用本地工具（如文件系统、Git）",
-      tags: ["Execute", "Local"],
-      activeNode: "mcp-server",
-      line: "mcp-execute",
-    },
-    {
-      id: "response",
-      title: "5. 返回结果",
-      description: "Server 执行完成后，返回结构化结果给 Client",
-      tags: ["Response", "Result"],
-      activeNode: "mcp-client",
-      line: "execute-client",
-    },
-    {
-      id: "llm",
-      title: "6. LLM 处理结果",
-      description: "MCP Client 将结果返回给 LLM 进行下一步推理",
-      tags: ["LLM", "Reasoning"],
-      activeNode: "llm",
-      line: "client-llm",
-    },
-    {
-      id: "done",
-      title: "7. 完成",
-      description: "任务完成，Host 显示最终结果给用户",
-      tags: ["Complete", "UI"],
-      activeNode: "done",
-      line: "llm-done",
-    },
-  ];
+// ── 三层背景带 ──
+const bands = [
+  { label: "人机界面", y: 6,   h: 70,  color: "#eef2ff" },
+  { label: "编排层",   y: 116, h: 88,  color: "#f5f3ff" },
+  { label: "工具后端", y: 244, h: 88,  color: "#f0fdf4" },
+];
 
-  const currentStep = computed(() => {
-    if (props.mini && props.activeStepId) {
-      return steps.find((s) => s.id === props.activeStepId) || steps[0];
-    }
-    return steps[currentStepIndex.value];
-  });
+// ── 11 步：① 初始化加载（用户无感）→ ② 运行时一次问答（用户有感，含循环）──
+const steps = [
+  { phase: 1, title: "① 读取配置", desc: "Host 启动时读 .mcp.json，确定本次会话要连哪些 MCP Server",
+    nodes: ["host"], flows: [], label: "读 .mcp.json", labelAt: { x: 640, y: 150 }, perceive: false },
+  { phase: 1, title: "② 建连接 + 握手", desc: "Host 为每个 Server 拉起一个 Client；initialize 协商协议版本与能力，建立长连接",
+    nodes: ["host", "client", "server"], flows: [["E3","fwd"],["E4","fwd"]], label: "initialize", labelAt: { x: 388, y: 250 }, perceive: false },
+  { phase: 1, title: "③ 拉取工具清单", desc: "tools/list：Server 返回每个工具的 name + description + 入参 schema",
+    nodes: ["server", "client", "host"], flows: [["E4","rev"],["E3","rev"]], label: "tools/list ↩ 清单", labelAt: { x: 388, y: 250 }, perceive: false },
+  { phase: 1, title: "④ 包装进工具池", desc: "Host 把每个工具包装成 mcp__server__tool 放进「工具池」；随请求作为可用工具清单交给模型（工具多时可按需曝光）",
+    nodes: ["host"], flows: [], label: "🧰 工具池 mcp__server__tool", labelAt: { x: 660, y: 150 }, perceive: false },
+  { phase: 2, title: "⑤ 用户提问", desc: "用户输入一句 prompt，例如「帮我查下 PROJ-1024 这单」",
+    nodes: ["user", "host"], flows: [["E1","fwd"]], label: "prompt", labelAt: { x: 565, y: 101 }, perceive: true },
+  { phase: 2, title: "⑥ LLM 自主决策", desc: "Host 把可用工具清单连同上下文交给 LLM；LLM 自己决定调哪个工具、传什么参数（tool_call）",
+    nodes: ["host", "llm"], flows: [["E2","fwd"]], label: "上下文+工具 → tool_call", labelAt: { x: 326, y: 142 }, perceive: false },
+  { phase: 2, title: "⑦ 权限检查 + 确认", desc: "Host 检查权限与 deny 规则；必要时弹确认「AI 想调用 get_jira_issue」，用户可批准 / 拒绝",
+    nodes: ["host", "user"], flows: [["E1","rev"]], label: "确认 ?", labelAt: { x: 565, y: 101 }, perceive: true },
+  { phase: 2, title: "⑧ 发起调用", desc: "Client 把请求封装成 JSON-RPC tools/call，经 stdio / HTTP 发给 Server",
+    nodes: ["host", "client", "server"], flows: [["E3","fwd"],["E4","fwd"]], label: "tools/call", labelAt: { x: 388, y: 250 }, perceive: false },
+  { phase: 2, title: "⑨ 执行真实能力", desc: "Server 调用 DB / API / 文件系统 —— 密钥只在 Server 端，模型拿不到",
+    nodes: ["server", "ext"], flows: [["E5","fwd"]], label: "查询 / 写入", labelAt: { x: 699, y: 270 }, perceive: false },
+  { phase: 2, title: "⑩ 结果回灌（可循环）", desc: "结果沿原路回到 LLM 上下文；LLM 据此继续 —— 可能再调工具（回到⑥），或给出答案",
+    nodes: ["ext", "server", "client", "host", "llm"], flows: [["E5","rev"],["E4","rev"],["E3","rev"],["E2","fwd"]], label: "result ↩ 回灌", labelAt: { x: 388, y: 250 }, loop: true, perceive: false },
+  { phase: 2, title: "⑪ 回答用户", desc: "LLM 生成带真实数据的最终回答，呈现给用户",
+    nodes: ["host", "user"], flows: [["E1","rev"]], label: "最终答案", labelAt: { x: 565, y: 101 }, perceive: true },
+];
 
-  watch(
-    () => slidevNav?.clicks?.value,
-    (newVal) => {
-      if (newVal !== undefined && !props.mini) {
-        currentStepIndex.value = Math.min(
-          Math.max(newVal, 0),
-          steps.length - 1,
-        );
-      }
-    },
-    { immediate: true },
-  );
+const currentStep = computed(() => steps[currentStepIndex.value] || steps[0]);
+const phaseColor = computed(() => (currentStep.value.phase === 1 ? "amber" : "blue"));
+const strokeColor = computed(() => (currentStep.value.phase === 1 ? "#f59e0b" : "#3b82f6"));
 
-  const nextStep = () => {
-    if (!props.mini && slidevNav) {
-      slidevNav.next();
-    } else if (currentStepIndex.value < steps.length - 1) {
-      currentStepIndex.value++;
-    }
-  };
+watch(() => slidevNav?.clicks?.value, (v) => {
+  if (v !== undefined) currentStepIndex.value = Math.min(Math.max(v, 0), steps.length - 1);
+}, { immediate: true });
 
-  const prevStep = () => {
-    if (!props.mini && slidevNav) {
-      slidevNav.prev();
-    } else if (currentStepIndex.value > 0) {
-      currentStepIndex.value--;
-    }
-  };
+const isActive = (id) => currentStep.value.nodes.includes(id);
+const activeFlows = computed(() =>
+  currentStep.value.flows.map(([k, dir]) => ({ ...edges[k], dir }))
+);
 
-  const reset = () => {
-    if (!props.mini && slidevNav && slidevNav.clicks) {
-      slidevNav.clicks.value = 0;
-    } else {
-      currentStepIndex.value = 0;
-    }
-  };
-
-  const getNodeClass = (nodeName) => {
-    const active = currentStep.value.activeNode;
-    if (active === nodeName) {
-      return "node-active border-blue-500 bg-blue-50 dark:bg-slate-800";
-    }
-    return "opacity-50 grayscale border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900";
-  };
-
-  const getLineClass = (from, to) => {
-    const currentLine = currentStep.value.line;
-    const targetLine = `${from}-${to}`;
-    if (currentLine === targetLine) {
-      return "stroke-blue-500 opacity-100 flow-line";
-    }
-    return "stroke-slate-700 opacity-30";
-  };
+const next = () => { if (slidevNav) slidevNav.next(); else if (currentStepIndex.value < steps.length - 1) currentStepIndex.value++; };
+const prev = () => { if (slidevNav) slidevNav.prev(); else if (currentStepIndex.value > 0) currentStepIndex.value--; };
+const reset = () => { if (slidevNav && slidevNav.clicks) slidevNav.clicks.value = 0; else currentStepIndex.value = 0; };
 </script>
 
 <template>
-  <div
-    class="mcp-workflow-container bg-white dark:bg-[#0b0d11] text-slate-700 dark:text-slate-200 rounded-lg overflow-hidden flex flex-col h-full w-full"
-    :class="{
-      'mini-mode border-none bg-transparent': mini,
-    }"
-  >
-    <!-- 顶部标题区 -->
-    <div
-      v-if="!mini"
-      class="flex-shrink-0 flex justify-between items-center p-3 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#161b22]/50"
-    >
-      <div>
-        <h2 class="text-lg font-bold flex items-center gap-2">
-          MCP 工作流
-        </h2>
-      </div>
-      <div class="flex items-center gap-2 bg-slate-100 dark:bg-[#0d1117] p-1 rounded-lg border border-slate-200 dark:border-slate-700/50">
-        <button
-          @click="prevStep"
-          :disabled="currentStepIndex === 0"
-          class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded disabled:opacity-30"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 19 5 12 12 5" />
-          </svg>
-        </button>
-        <div class="px-2 font-mono text-xs text-blue-600 dark:text-blue-400 font-bold min-w-[60px] text-center">
-          {{ currentStepIndex + 1 }}/{{ steps.length }}
+  <div class="mcpflow">
+    <!-- 头部：阶段 + 控制 -->
+    <div class="head">
+      <div class="phase-bar">
+        <div class="pill amber" :class="{ on: currentStep.phase === 1 }">
+          <b>①</b> 初始化加载 <span>一次性·用户无感</span>
         </div>
-        <button
-          @click="nextStep"
-          :disabled="currentStepIndex === steps.length - 1"
-          class="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded disabled:opacity-30"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-          </svg>
-        </button>
-        <div class="w-px h-4 bg-slate-300 dark:bg-slate-700 mx-1"></div>
-        <button @click="reset" class="px-2 py-1 text-xs hover:bg-slate-200 dark:hover:bg-slate-700 rounded">
-          重置
-        </button>
+        <span class="sep">→</span>
+        <div class="pill blue" :class="{ on: currentStep.phase === 2 }">
+          <b>②</b> 运行时 <span>每次 prompt·用户有感</span>
+        </div>
+      </div>
+      <div class="ctrl">
+        <button @click="prev" :disabled="currentStepIndex === 0">←</button>
+        <span class="no">{{ currentStepIndex + 1 }} / {{ steps.length }}</span>
+        <button @click="next" :disabled="currentStepIndex === steps.length - 1">→</button>
+        <i></i><button class="reset" @click="reset">重置</button>
       </div>
     </div>
 
-    <!-- 可视化区域 -->
-    <div class="flex-1 relative bg-white dark:bg-[#0d1117] overflow-hidden flex items-center justify-center">
-      <div class="relative w-[900px] h-[350px]">
-        <!-- SVG 连接线 -->
-        <svg class="absolute inset-0 w-full h-full pointer-events-none">
-          <defs>
-            <marker id="mcp-arrow-gray" markerWidth="6" markerHeight="6" refX="16" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L6,3 z" fill="currentColor" />
-            </marker>
-            <marker id="mcp-arrow-blue" markerWidth="6" markerHeight="6" refX="16" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L6,3 z" fill="#60a5fa" />
-            </marker>
-          </defs>
-          <line x1="100" y1="160" x2="180" y2="160" stroke-width="2" :class="getLineClass('start', 'mcp')" marker-end="url(#mcp-arrow-gray)" />
-          <line x1="280" y1="160" x2="360" y2="160" stroke-width="2" :class="getLineClass('mcp', 'stdin')" marker-end="url(#mcp-arrow-gray)" />
-          <line x1="460" y1="160" x2="540" y2="160" stroke-width="2" :class="getLineClass('stdin', 'execute')" marker-end="url(#mcp-arrow-gray)" />
-          <line x1="640" y1="160" x2="720" y2="160" stroke-width="2" :class="getLineClass('execute', 'response')" marker-end="url(#mcp-arrow-gray)" />
-          <line x1="820" y1="160" x2="860" y2="160" stroke-width="2" :class="getLineClass('response', 'llm')" marker-end="url(#mcp-arrow-gray)" />
-        </svg>
+    <!-- 拓扑图 -->
+    <div class="stage">
+      <svg viewBox="0 0 1000 340" preserveAspectRatio="xMidYMid meet" class="diagram">
+        <defs>
+          <marker id="arw-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#f59e0b" />
+          </marker>
+          <marker id="arw-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+          </marker>
+        </defs>
 
-        <!-- Host -->
-        <div class="absolute top-[110px] left-[10px] w-[90px] h-[100px]" :class="getNodeClass('start')">
-          <div class="w-full h-full bg-white dark:bg-[#1c2128] border border-slate-200 dark:border-slate-600 rounded-lg p-2 flex flex-col items-center justify-center gap-1 shadow-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-slate-600">
-              <rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" />
-            </svg>
-            <span class="font-bold text-xs">Claude Code</span>
-            <span class="text-[9px] text-slate-500">Host</span>
-          </div>
-        </div>
+        <!-- 三层背景带 -->
+        <g>
+          <rect v-for="b in bands" :key="b.label" :x="10" :y="b.y" :width="980" :height="b.h" :rx="14" :fill="b.color" />
+          <text v-for="b in bands" :key="b.label + 't'" :x="26" :y="b.y + 20" class="band-label">{{ b.label }}</text>
+        </g>
 
-        <!-- MCP Client -->
-        <div class="absolute top-[110px] left-[180px] w-[100px] h-[100px]" :class="getNodeClass('mcp-client')">
-          <div class="w-full h-full bg-white dark:bg-[#1c2128] border border-slate-200 dark:border-slate-600 rounded-lg p-2 flex flex-col items-center justify-center gap-1 shadow-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-blue-500">
-              <path d="M12 2a10 10 0 1 0 10 10" /><path d="M12 12l8-8" /><circle cx="12" cy="12" r="3" />
-            </svg>
-            <span class="font-bold text-xs">MCP Client</span>
-            <span class="text-[9px] text-slate-500">SDK</span>
-          </div>
-        </div>
+        <!-- 静态接线（地图） -->
+        <g>
+          <line v-for="(e, k) in edges" :key="k" :x1="e.x1" :y1="e.y1" :x2="e.x2" :y2="e.y2"
+                stroke="#cbd5e1" stroke-width="2" stroke-dasharray="2 4" opacity="0.7" />
+        </g>
 
-        <!-- MCP Server -->
-        <div class="absolute top-[110px] left-[360px] w-[100px] h-[100px]" :class="getNodeClass('mcp-server')">
-          <div class="w-full h-full bg-white dark:bg-[#1c2128] border border-slate-200 dark:border-slate-600 rounded-lg p-2 flex flex-col items-center justify-center gap-1 shadow-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-green-500">
-              <rect width="4" height="16" x="10" y="4" rx="2" /><rect width="4" height="16" x="4" y="4" rx="2" /><rect width="4" height="16" x="16" y="4" rx="2" />
-            </svg>
-            <span class="font-bold text-xs">MCP Server</span>
-            <span class="text-[9px] text-slate-500">Tool Provider</span>
-          </div>
-        </div>
+        <!-- 当前步骤的流动 -->
+        <g>
+          <line v-for="(f, i) in activeFlows" :key="i" :x1="f.x1" :y1="f.y1" :x2="f.x2" :y2="f.y2"
+                :stroke="strokeColor" stroke-width="3.5" stroke-linecap="round"
+                class="flow" :class="f.dir === 'fwd' ? 'fwd' : 'rev'"
+                :marker-end="f.dir === 'fwd' ? `url(#arw-${phaseColor})` : null"
+                :marker-start="f.dir === 'rev' ? `url(#arw-${phaseColor})` : null" />
+        </g>
 
-        <!-- Local Tools -->
-        <div class="absolute top-[110px] left-[540px] w-[100px] h-[100px]" :class="getNodeClass('execute')">
-          <div class="w-full h-full bg-white dark:bg-[#1c2128] border border-slate-200 dark:border-slate-600 rounded-lg p-2 flex flex-col items-center justify-center gap-1 shadow-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-purple-500">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-            </svg>
-            <span class="font-bold text-xs">Local Tools</span>
-            <span class="text-[9px] text-slate-500">FS/Git/API</span>
-          </div>
-        </div>
+        <!-- 部件节点 -->
+        <g v-for="(n, id) in nodes" :key="id" :transform="`translate(${n.x},${n.y})`"
+           class="node" :class="[phaseColor, isActive(id) ? 'on' : 'off']">
+          <rect x="-71" y="-31" width="142" height="62" rx="13" class="node-box" />
+          <text x="-46" y="4" class="n-icon">{{ n.icon }}</text>
+          <text x="6" y="-3" class="n-label">{{ n.label }}</text>
+          <text x="6" y="16" class="n-sub">{{ n.sub }}</text>
+        </g>
 
-        <!-- LLM -->
-        <div class="absolute top-[110px] left-[720px] w-[80px] h-[100px]" :class="getNodeClass('llm')">
-          <div class="w-full h-full bg-white dark:bg-[#1c2128] border border-slate-200 dark:border-slate-600 rounded-lg p-2 flex flex-col items-center justify-center gap-1 shadow-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-purple-600">
-              <path d="M12 2a2.5 2.5 0 0 1 2.5 2.5c0 .74-.4 1.39-1 1.73v.77a2.5 2.5 0 0 1-5 0v-.77c-.6-.34-1-.99-1-1.73A2.5 2.5 0 0 1 12 2z" /><path d="M12 8.5v3" /><path d="M12 14.5a2.5 2.5 0 0 0 2.5 2.5c.74 0 1.39-.4 1.73-1" /><path d="M12 14.5a2.5 2.5 0 0 1-2.5 2.5c-.74 0-1.39-.4-1.73-1" />
-            </svg>
-            <span class="font-bold text-xs">LLM</span>
-            <span class="text-[9px] text-slate-500">推理</span>
-          </div>
-        </div>
+        <!-- 载荷标签（数据流内容） -->
+        <g v-if="currentStep.label" :transform="`translate(${currentStep.labelAt.x},${currentStep.labelAt.y})`" class="chip" :class="phaseColor">
+          <rect :x="-currentStep.label.length * 4.6 - 10" y="-13" :width="currentStep.label.length * 9.2 + 20" height="26" rx="13" />
+          <text x="0" y="5" class="chip-text">{{ currentStep.label }}</text>
+        </g>
 
-        <!-- Done -->
-        <div class="absolute top-[120px] left-[860px] w-[30px] h-[80px]" :class="getNodeClass('done')">
-          <div class="w-full h-full bg-white dark:bg-[#1c2128] border border-slate-200 dark:border-slate-600 rounded-full p-2 flex flex-col items-center justify-center shadow-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-green-500">
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- Protocol Badge -->
-        <div class="absolute top-[270px] left-[250px] bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-700 px-3 py-1 rounded-full text-xs font-mono text-yellow-800 dark:text-yellow-200">
-          JSON-RPC 2.0 via stdin/stdout
-        </div>
-      </div>
+        <!-- 循环徽标 -->
+        <g v-if="currentStep.loop" transform="translate(310,120)" class="loop-badge">
+          <rect x="-58" y="-13" width="116" height="26" rx="13" />
+          <text x="0" y="5">↻ 可循环回 ⑥</text>
+        </g>
+      </svg>
     </div>
 
-    <!-- 底部状态区 -->
-    <div
-      v-if="!mini"
-      class="flex-shrink-0 bg-slate-50 dark:bg-[#161b22] border-t border-slate-200 dark:border-slate-800 p-3"
-    >
-      <h3 class="font-bold text-sm text-blue-600 dark:text-blue-400 mb-1">
-        {{ currentStep.title }}
-      </h3>
-      <p class="text-slate-600 dark:text-slate-300 text-xs mb-2">
-        {{ currentStep.description }}
-      </p>
-      <div class="flex flex-wrap gap-1">
-        <span
-          v-for="tag in currentStep.tags"
-          :key="tag"
-          class="px-2 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-[10px] font-mono"
-        >#{{ tag }}</span>
+    <!-- 底部：感知提示 + 步骤详情 -->
+    <div class="status" :class="phaseColor">
+      <div class="s-top">
+        <div class="s-title">{{ currentStep.title }}</div>
+        <span class="s-eye" :class="{ on: currentStep.perceive }">{{ currentStep.perceive ? "👁 用户能看到" : "幕后·用户无感" }}</span>
       </div>
+      <div class="s-desc">{{ currentStep.desc }}</div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.flow-line {
-  stroke-dasharray: 8;
-  animation: flow 1s linear infinite;
-}
+.mcpflow { width: 100%; display: flex; flex-direction: column; gap: 0.45rem; font-family: "Inter", system-ui, sans-serif; }
 
-@keyframes flow {
-  from { stroke-dashoffset: 16; }
-  to { stroke-dashoffset: 0; }
-}
+.head { display: flex; justify-content: space-between; align-items: center; }
+.phase-bar { display: flex; align-items: center; gap: 0.5rem; }
+.pill { display: flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.75rem; border-radius: 999px; font-weight: 700; font-size: 0.85rem; border: 1.5px solid #e2e8f0; background: #f8fafc; color: #94a3b8; opacity: 0.7; transition: all .3s; }
+.pill span { font-size: 0.68rem; font-weight: 500; }
+.pill.on.amber { background: #fffbeb; border-color: #f59e0b; color: #b45309; opacity: 1; }
+.pill.on.blue { background: #eff6ff; border-color: #3b82f6; color: #1d4ed8; opacity: 1; }
+.sep { color: #cbd5e1; font-weight: 700; }
+.ctrl { display: flex; align-items: center; gap: 0.35rem; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 0.55rem; padding: 0.15rem 0.35rem; }
+.ctrl button { width: 1.6rem; height: 1.6rem; border-radius: 0.35rem; font-weight: 700; color: #475569; }
+.ctrl button:hover { background: #e2e8f0; }
+.ctrl button:disabled { opacity: 0.3; }
+.ctrl .no { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; font-weight: 700; color: #3b82f6; min-width: 3.2rem; text-align: center; }
+.ctrl i { width: 1px; height: 1rem; background: #cbd5e1; }
+.ctrl .reset { width: auto; padding: 0 0.5rem; font-size: 0.72rem; }
 
-.node-active {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-  z-index: 10;
-}
+.stage { width: 100%; }
+.diagram { width: 100%; aspect-ratio: 1000 / 340; display: block; }
 
-.mini-mode .node-active {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-}
+.band-label { font-size: 11px; font-weight: 700; fill: #94a3b8; }
 
-.mini-mode {
-  background: transparent !important;
-  border: none !important;
-}
+.node-box { fill: #fff; stroke: #e2e8f0; stroke-width: 1.5; transition: all .3s; }
+.node .n-icon { font-size: 22px; text-anchor: middle; }
+.node .n-label { font-size: 14px; font-weight: 700; fill: #334155; text-anchor: middle; }
+.node .n-sub { font-size: 9.5px; fill: #94a3b8; text-anchor: middle; }
+.node.off { opacity: 0.45; }
+.node.on .node-box { stroke-width: 2.5; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.12)); }
+.node.on.amber .node-box { stroke: #f59e0b; fill: #fffbeb; }
+.node.on.blue .node-box { stroke: #3b82f6; fill: #eff6ff; }
+
+.flow { stroke-dasharray: 7 6; }
+.flow.fwd { animation: dash 0.6s linear infinite; }
+.flow.rev { animation: dash 0.6s linear infinite reverse; }
+@keyframes dash { to { stroke-dashoffset: -13; } }
+
+.chip rect { fill: #fff; stroke-width: 1.5; }
+.chip.amber rect { stroke: #f59e0b; }
+.chip.blue rect { stroke: #3b82f6; }
+.chip-text { font-size: 12px; font-weight: 700; text-anchor: middle; font-family: "JetBrains Mono", monospace; }
+.chip.amber .chip-text { fill: #b45309; }
+.chip.blue .chip-text { fill: #1d4ed8; }
+
+.loop-badge rect { fill: #eef2ff; stroke: #6366f1; stroke-width: 1.5; }
+.loop-badge text { font-size: 12px; font-weight: 700; fill: #4338ca; text-anchor: middle; }
+
+.status { border-radius: 0.6rem; padding: 0.55rem 0.9rem; border-left: 4px solid #cbd5e1; background: #f8fafc; }
+.status.amber { border-left-color: #f59e0b; background: #fffbeb; }
+.status.blue { border-left-color: #3b82f6; background: #eff6ff; }
+.s-top { display: flex; align-items: center; justify-content: space-between; }
+.s-title { font-weight: 700; font-size: 0.98rem; }
+.status.amber .s-title { color: #b45309; }
+.status.blue .s-title { color: #1d4ed8; }
+.s-eye { font-size: 0.72rem; font-weight: 600; padding: 0.1rem 0.55rem; border-radius: 999px; background: #f1f5f9; color: #94a3b8; border: 1px dashed #cbd5e1; }
+.s-eye.on { background: #ecfdf5; color: #047857; border: 1px solid #10b981; }
+.s-desc { font-size: 0.82rem; color: #475569; line-height: 1.5; margin-top: 0.2rem; }
+
+:global(.dark) .node-box { fill: #1c2128; }
+:global(.dark) .status, :global(.dark) .ctrl { background: #161b22; border-color: #334155; }
+:global(.dark) .chip rect { fill: #1c2128; }
 </style>

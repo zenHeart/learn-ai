@@ -1,6 +1,6 @@
 # skill-mcp Examples
 
-第三期 PPT「MCP + Skill」配套的可运行示例。
+第四期 PPT「MCP + Skill」配套的可运行示例。
 
 ## 目录
 

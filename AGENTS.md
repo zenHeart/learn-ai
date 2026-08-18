@@ -31,9 +31,9 @@ pnpm docs:build
 # PPT
 pnpm ppt:vibe      # Vibe Coding
 pnpm ppt:prompt   # Prompt + Context
-pnpm ppt:skill    # Skill + MCP（技术附录）
-pnpm ppt:agent    # Agent（技术附录）
 pnpm ppt:ai-native # 从提效到复利：AI Agent 工作模式（第三期）
+pnpm ppt:skill    # Skill + MCP（第四期）
+pnpm ppt:agent    # Agent（第五期）
 
 pnpm ppt:build    # 构建所有 PPT
 ```
@@ -97,7 +97,7 @@ pnpm ppt:build    # 构建所有 PPT
 
 - **部署后 URL**：
   - 文档: `https://ai.zenheart.site/`
-  - PPT: `https://ai.zenheart.site/ppts/vibe-coding/`、`.../prompt-context/`、`.../skill-mcp/`、`.../agent/`
+  - PPT: `https://ai.zenheart.site/ppts/vibe-coding/`、`.../prompt-context/`、`.../ai-native-work/`、`.../skill-mcp/`、`.../agent/`
 
 ## 测试
 

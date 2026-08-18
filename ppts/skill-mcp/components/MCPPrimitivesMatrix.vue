@@ -140,7 +140,7 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.45rem;
 }
 
 .pm-tabs {
@@ -154,8 +154,8 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
   --tab-bg: #f1f5f9;
   border: 1.5px solid transparent;
   background: white;
-  border-radius: 10px;
-  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -174,7 +174,7 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
 
 .pm-tab-name {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--tab-color);
 }
 
@@ -192,8 +192,8 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
   background: white;
   border: 1px solid #e2e8f0;
   border-left: 4px solid var(--panel-color);
-  border-radius: 8px;
-  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
 }
 
 .pm-panel-head {
@@ -201,8 +201,8 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 0.7rem;
-  padding-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
   border-bottom: 1px dashed #e2e8f0;
 }
 
@@ -237,7 +237,7 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
 .pm-panel-body {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.4rem;
 }
 
 .pm-section-title {
@@ -265,8 +265,8 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
 .pm-flow {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  font-size: 0.78rem;
+  gap: 0.16rem;
+  font-size: 0.74rem;
 }
 
 .pm-step {
@@ -274,7 +274,7 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
   grid-template-columns: auto auto auto 1fr;
   gap: 0.4rem;
   align-items: center;
-  padding: 0.25rem 0;
+  padding: 0.16rem 0;
 }
 
 .pm-step-from, .pm-step-to {
@@ -298,13 +298,13 @@ const current = computed(() => tabs.find((t) => t.id === active.value) || tabs[0
 }
 
 .pm-note {
-  margin-top: 0.4rem;
-  padding: 0.55rem 0.7rem;
+  margin-top: 0.25rem;
+  padding: 0.42rem 0.6rem;
   background: #fffbeb;
   border-left: 3px solid #f59e0b;
   border-radius: 4px;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: #78350f;
-  line-height: 1.55;
+  line-height: 1.4;
 }
 </style>

@@ -38,9 +38,11 @@ for ppt in ${PPT_PROJECTS}; do
     fi
 done
 
-# 准备 Docs
-echo "📄 Preparing Docs..."
-cp -r docs/* ${temp_dist}/
+# 准备 Docs（必须用 VitePress 产物，不要拷源码）
+echo "📄 Building Docs..."
+pnpm docs:build
+echo "📄 Copying Docs..."
+cp -r docs/.vitepress/dist/* ${temp_dist}/
 
 # 复制 PPT 导航页
 echo "🎨 Copying PPT navigation..."

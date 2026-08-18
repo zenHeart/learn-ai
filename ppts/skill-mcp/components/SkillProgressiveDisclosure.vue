@@ -26,9 +26,9 @@ const tiers = [
     id: 1,
     title: 'Tier 1 — Metadata',
     badge: '~100 tokens',
-    when: '所有 Skill 启动时全量加载',
+    when: '启动时把每个 Skill 的 name+description 注入系统提示',
     what: '只读 frontmatter：name + description',
-    detail: 'Agent 用 description 做语义匹配，决定是否进入 Tier 2',
+    detail: '模型在系统提示里读到这些 description，自行判断该不该激活 → 进入 Tier 2（没有独立的匹配引擎）',
     color: 'blue',
     active: computed(() => activeStep.value >= 0),
     highlight: computed(() => activeStep.value === 0),
@@ -102,15 +102,15 @@ const colorMap = {
 .pd-container {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.55rem;
   width: 100%;
 }
 
 .pd-tier {
   background: var(--tier-bg);
   border-left: 4px solid var(--tier-border);
-  border-radius: 8px;
-  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  padding: 0.55rem 0.85rem;
   opacity: 0.35;
   transform: translateX(-8px);
   transition: all 0.4s ease;
@@ -130,57 +130,57 @@ const colorMap = {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .pd-tier-title {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.45rem;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   color: var(--tier-text);
 }
 
 .pd-tier-num {
   display: inline-flex;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.35rem;
+  height: 1.35rem;
   border-radius: 999px;
   background: var(--tier-border);
   color: white;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.74rem;
   font-weight: 700;
 }
 
 .pd-tier-badge {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   background: white;
   border: 1px solid var(--tier-border);
   color: var(--tier-text);
-  padding: 0.15rem 0.55rem;
+  padding: 0.1rem 0.42rem;
   border-radius: 999px;
 }
 
 .pd-tier-body {
-  font-size: 0.85rem;
+  font-size: 0.76rem;
   color: #334155;
-  line-height: 1.55;
+  line-height: 1.38;
 }
 
 .pd-row {
   display: flex;
-  gap: 0.6rem;
-  margin-bottom: 0.2rem;
+  gap: 0.45rem;
+  margin-bottom: 0.12rem;
 }
 
 .pd-row-detail {
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   color: #475569;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-style: italic;
 }
 
@@ -192,12 +192,12 @@ const colorMap = {
 }
 
 .pd-summary {
-  margin-top: 0.6rem;
-  padding: 0.7rem 1rem;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.75rem;
   border-radius: 6px;
   background: #f8fafc;
   border: 1px dashed #cbd5e1;
-  font-size: 0.85rem;
+  font-size: 0.76rem;
   color: #1e293b;
 }
 

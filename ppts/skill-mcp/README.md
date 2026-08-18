@@ -1,18 +1,15 @@
-# MCP + Skill（技术自学附录）
+# 第四期 · MCP + Skill
 
-> **系列角色更新**：公司内训 **第三期主场** 已改为  
-> [`../ai-native-work/`](../ai-native-work/)《从提效到复利：AI Agent 工作模式》（理念 + nn-ai 实操）。  
-> 本目录保留为 **MCP / Skill 协议与实现深潜**，供研发自学，不再作为第三期现场主线。
+公司内训 **第三期主场** 是 [`../ai-native-work/`](../ai-native-work/)《从提效到复利：AI Agent 工作模式》。  
+本目录是 **第四期**：MCP / Skill 协议与实现深潜。
 
-> 让 AI 长出手脚（MCP）、形成肌肉记忆（Skill）—— 把团队规范沉淀为可执行的工程资产。
-
-**时长**：45 min（自学） · **能力等级**：L5（能力扩展） · **受众**：前端 / 后端 / Android / iOS / C++ 研发
+**时长**：45 min · **受众**：前端 / 后端 / Android / iOS / C++ 研发
 
 ---
 
 ## 主轴
 
-承接第二期 `Prompt ⊂ Context ⊂ Harness` 的嵌套乘法：
+承接第三期的工作模式，把工作流里的资产讲透：
 
 > Prompt 教 AI 思考 · Context 教 AI 看见 · Harness 教 AI 工作。
 >
@@ -24,14 +21,17 @@
 
 ## 章节结构
 
-| 章节 | 时长 | 屏数 | 核心内容 |
-|---|---|---|---|
-| `01.overview.md` | ~5 min | 8 | 双轴叙事承接第二期 · 三痛点 · 路线图 · 生态规模 · 钩子 |
-| `02.1.mcp-core.md` | ~12 min | 21 | 三方架构 · 两层结构 · **三大原语对照（交互组件）** · Lifecycle · stdio vs Streamable HTTP · TS+Python 最小 Server · 配置 · 安全红线 · 生态 |
-| `02.2.skill-core.md` | ~10 min | 14 | SKILL.md 规范 · Frontmatter 六字段 · **Progressive Disclosure（交互组件）** · 触发机制 · 设计三要素 · 决策表 |
-| `03.integration.md` | ~8 min | 9 | **决策矩阵（交互组件）** · 范式 1 (Skill 调 MCP) · 范式 2 (MCP 暴露 Prompts) · mcp-builder 元 Skill 闭环 · 三层检查清单 |
-| `04.practice.md` | ~8 min | 12 | Demo A (Jira MCP) · Demo B (Code Review Skill) · Demo C (联动发版) · 4 大踩坑警示 |
-| `05.QA.md` | ~2 min | 12 | Q1–Q7 + 新增 Q8 鉴权 / Q9 灰度 / Q10 Skill vs Sub-agent |
+| 章节 | 时长 | 核心内容 |
+|---|---|---|
+| `01.overview.md` | ~5 min | 五期承接 · AI 资产全景 · 选型口诀 |
+| `02.principle.md` | ~10 min | Skill / MCP 核心原理与加载机制 |
+| `03.workflow.md` | ~12 min | 研发工作流 × AI 资产 · 五环节怎么用 |
+| `04.build.md` | ~8 min | 官方最佳实践 · 怎么开发 |
+| `05.practice.md` | ~8 min | 从 0 建一个 Skill + 一个 MCP |
+| `06.QA.md` | ~3 min | 常见问题 |
+| `07.appendix.md` | 会后 | 官方规范入口 |
+
+---
 
 ---
 
@@ -42,9 +42,9 @@
 | 组件 | 用途 | 章节 |
 |---|---|---|
 | `SkillMcpRelationDiagram.vue` | 双轴关系骨架图（MCP × Skill 在 Harness 容器） | 01 |
-| `MCPWorkflow.vue` | 7 步 MCP 调用流程动画（已有） | 01 / 02.1 |
-| `MCPPrimitivesMatrix.vue` | Tools / Resources / Prompts Tab 切换 + JSON-RPC 流程 | 02.1 |
-| `SkillProgressiveDisclosure.vue` | 三层加载（100 → 5000 → 按需）渐进可视化 | 02.2 |
+| `MCPWorkflow.vue` | MCP 全生命周期动画：初始化加载 + 运行时一次问答 | 02 |
+| `MCPPrimitivesMatrix.vue` | Tools / Resources / Prompts Tab 切换 + JSON-RPC 流程 | 02 |
+| `SkillProgressiveDisclosure.vue` | 三层加载（100 → 5000 → 按需）渐进可视化 | 02 |
 | `MCPSkillDecisionMatrix.vue` | 7 行决策矩阵 hover 高亮 | 03 |
 
 ### 自定义 Layout（`layouts/`）

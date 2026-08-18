@@ -3,7 +3,7 @@
     <div class="footer-left">
       <span class="footer-title">MCP + Skill</span>
       <span class="footer-sep">·</span>
-      <span class="footer-sub">AI Coding 三部曲 · 第三期</span>
+      <span class="footer-sub">AI Coding · 第四期</span>
     </div>
     <div class="footer-right">
       <span class="footer-page"><SlideCurrentNo /> / <SlidesTotal /></span>

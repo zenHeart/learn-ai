@@ -9,7 +9,8 @@ routerMode: hash
 # Agent 智能体
 
 Presenter: 程乐   
-Date: 2026-06-30
+Date: 2026-06-30  
+AI Coding 第五期
 
 ---
 src: ./01.overview.md

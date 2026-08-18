@@ -24,13 +24,15 @@ pnpm docs:preview # 预览构建结果
 # PPT 开发（各自独立）
 pnpm ppt:vibe     # Vibe Coding PPT
 pnpm ppt:prompt   # Prompt + Context PPT
-pnpm ppt:skill    # Skill + MCP PPT
-pnpm ppt:agent    # Agent PPT
+pnpm ppt:ai-native # 从提效到复利（第三期）
+pnpm ppt:skill    # Skill + MCP（第四期）
+pnpm ppt:agent    # Agent（第五期）
 
 # PPT 构建
 pnpm ppt:build          # 构建所有 PPT
 pnpm ppt:build:vibe    # 构建指定 PPT
 pnpm ppt:build:prompt
+pnpm ppt:build:ai-native
 pnpm ppt:build:skill
 pnpm ppt:build:agent
 ```
@@ -59,11 +61,13 @@ ppts/<name>/
 └── package.json      # 独立 npm 项目
 ```
 
-多主题 PPT（如 skill-mcp）使用 Pattern B：
+多主题 PPT（如 `prompt-context`、`ai-native-work`）使用 Pattern B：
 
 - `02.1.<主题A>.md`
 - `02.2.<主题B>.md`
 - `03.integration.md`（必选 - 讲解主题组合）
+
+`skill-mcp`（第四期）按资产叙事拆为 `01.overview` → `02.principle` → `03.workflow` → `04.build` → `05.practice` → `06.QA` → `07.appendix`。
 
 ### 部署
 
@@ -182,7 +186,7 @@ pnpm ppt:build    # 构建所有 PPT
 
 - **部署后 URL**：
   - 文档: `https://ai.zenheart.site/`
-  - PPT: `https://ai.zenheart.site/ppts/vibe-coding/`、`.../prompt-context/`、`.../skill-mcp/`、`.../agent/`
+  - PPT: `https://ai.zenheart.site/ppts/vibe-coding/`、`.../prompt-context/`、`.../ai-native-work/`、`.../skill-mcp/`、`.../agent/`
 
 ## 测试
 

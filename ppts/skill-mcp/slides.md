@@ -14,21 +14,21 @@ themeConfig:
   primary: '#3b82f6'
 ---
 
-# MCP + Skill
+# AI 资产 · Skill × MCP
 
-<div class="mt-3 text-2xl text-slate-600 dark:text-slate-300">
-让 AI 长出<span class="text-blue-600 font-semibold">手脚</span>
-· 形成<span class="text-purple-600 font-semibold">肌肉记忆</span>
+<div class="mt-3 text-xl text-slate-600 dark:text-slate-300">
+资产沉淀 · 核心原理 · 研发工作流 · 如何开发 · 实战
 </div>
 
-<div class="mt-12 text-base text-slate-500">
-<div>分享人 · 程乐</div>
-<div>时间 · 2026-05-15 · 周一 · 45 min</div>
-<div class="mt-2 text-xs text-slate-400">L5 · 能力扩展 —— AI Coding 三部曲第三期</div>
-</div>
+* 分享人: 程乐
+* 时间: 2026-06-16
+* AI Coding 第四期 · Skill × MCP
+
 
 <!-- 演讲者备注：
-开场用 30 秒说："上一期我们讲了 Prompt + Context + Harness 三层工程；今天讲怎么把 Harness 容器里的 AI，从"无证打工人"升级成"能打工的协作者" —— 让它能伸手到内部系统、能稳定按团队规范做事。"
+开场 30 秒：第三期讲了从提效到复利的工作模式；这一期讲工作流里的资产——Skill 与 MCP。
+全片 6 段：① 有哪些资产 → ② 讲透 Skill+MCP 核心原理 → ③ 挂到研发工作流每个环节 → ④ 怎么开发 → ⑤ 从 0 实战建一个 → ⑥ QA。
+目标：学完就能用。所有例子来自 nn-ai + stageboard 两个真实仓库 + Anthropic 官方文档。
 -->
 
 ---
@@ -36,21 +36,25 @@ src: ./01.overview.md
 ---
 
 ---
-src: ./02.1.mcp-core.md
+src: ./02.principle.md
 ---
 
 ---
-src: ./02.2.skill-core.md
+src: ./03.workflow.md
 ---
 
 ---
-src: ./03.integration.md
+src: ./04.build.md
 ---
 
 ---
-src: ./04.practice.md
+src: ./05.practice.md
 ---
 
 ---
-src: ./05.QA.md
+src: ./06.QA.md
+---
+
+---
+src: ./07.appendix.md
 ---

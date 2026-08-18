@@ -72,8 +72,9 @@ export default withMermaid(defineConfig({
                   text: 'PPTs', items: [
                      { text: '1. Vibe Coding', link: 'https://ai.zenheart.site/ppts/vibe-coding/' },
                      { text: '2. Prompt + Context', link: 'https://ai.zenheart.site/ppts/prompt-context/' },
-                     { text: '3. MCP + SKILL', link: 'https://ai.zenheart.site/ppts/skill-mcp/' },
-                     { text: '4. AGENT', link: 'https://ai.zenheart.site/ppts/agent/' }
+                     { text: '3. AI Native Work', link: 'https://ai.zenheart.site/ppts/ai-native-work/' },
+                     { text: '4. MCP + SKILL', link: 'https://ai.zenheart.site/ppts/skill-mcp/' },
+                     { text: '5. AGENT', link: 'https://ai.zenheart.site/ppts/agent/' }
                   ]
                }
             ],
@@ -411,8 +412,9 @@ export default withMermaid(defineConfig({
                   text: 'PPTs', items: [
                      { text: '1. Vibe Coding', link: 'https://ai.zenheart.site/ppts/vibe-coding/' },
                      { text: '2. Prompt + Context', link: 'https://ai.zenheart.site/ppts/prompt-context/' },
-                     { text: '3. MCP + SKILL', link: 'https://ai.zenheart.site/ppts/skill-mcp/' },
-                     { text: '4. AGENT', link: 'https://ai.zenheart.site/ppts/agent/' }
+                     { text: '3. AI Native Work', link: 'https://ai.zenheart.site/ppts/ai-native-work/' },
+                     { text: '4. MCP + SKILL', link: 'https://ai.zenheart.site/ppts/skill-mcp/' },
+                     { text: '5. AGENT', link: 'https://ai.zenheart.site/ppts/agent/' }
                   ]
                }
             ],

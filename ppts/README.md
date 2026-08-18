@@ -19,8 +19,8 @@
 | 1 | Vibe Coding | 2026-04-01 | 周三 | 程乐 | 45min | 掌握 AI 辅助编程基本方法，能够利用 AI 完成常见开发任务。 | 待分享 |
 | 2 | Prompt + Context + Harness | 2026-05-08 | 周一 | 程乐 | 45min | 掌握三层工程协同方法，构建稳定可复用的 AI 工作流。 | 待完善初稿 |
 | 3 | 从提效到复利：AI Agent 工作模式 | — | — | 程乐 | — | 范式迁移 + 工作流沉淀 + nn-ai 放大个人与组织效能 | 迭代中 |
-| — | MCP + Skill（技术附录） | — | — | — | 自学 | 协议/实现细节，供研发自学 | 附录 |
-| — | Agent（技术附录） | — | — | — | 自学 | Agent Loop / 框架，供研发自学 | 附录 |
+| 4 | MCP + Skill | — | — | 程乐 | 45min | 协议与实现：让 AI 长出手脚、形成肌肉记忆 | 迭代中 |
+| 5 | Agent | — | — | 程乐 | — | Agent Loop / 框架与编排边界 | 迭代中 |
 
 ## 各系列详情
 
@@ -73,10 +73,39 @@
 - `04.practice.md` - **实操**：报销沉淀 + 研发闭环 + 本周行动
 - `05.QA.md` - **总结与 QA**
 
-**技术自学附录**（原第三期深潜材料，研发自行阅读）:
+### 第四期：MCP + Skill
 
-- `./skill-mcp/` — MCP + Skill 协议与实现
-- `./agent/` — Agent Loop 与框架
+**文件位置**: `./skill-mcp/`
+
+**核心目标**：把第三期工作流里的 Skill / MCP 讲透——怎么用、怎么造。
+
+**章节结构**:
+
+- `01.overview.md` - 五期承接 · 资产全景
+- `02.principle.md` - Skill / MCP 核心原理
+- `03.workflow.md` - 研发工作流 × 资产
+- `04.build.md` - 如何开发
+- `05.practice.md` - 从 0 实战
+- `06.QA.md` - 问答
+- `07.appendix.md` - 官方规范入口
+
+---
+
+### 第五期：Agent
+
+**文件位置**: `./agent/`
+
+**核心目标**：Agent Loop、框架与编排边界。
+
+**章节结构**:
+
+- `01.overview.md` - Agent 概述
+- `02.principle.md` - 核心原理（Agent Loop）
+- `03.features.md` - 框架与能力
+- `04.practice.md` - 实战
+- `05.QA.md` - 问答
+
+---
 
 **核心资料**
 
