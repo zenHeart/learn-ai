@@ -192,6 +192,334 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
+                              {
+                                 text: 'Kimi', link: '/products/kimi/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/kimi/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/kimi/kimi' },
+                                          { text: 'Cookbook', link: '/products/kimi/kimi-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/kimi/kimi-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/kimi/kimi-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Kimi Code', link: '/products/kimi-code/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/kimi-code/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/kimi-code/kimi-code' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/kimi-code/kimi-code-cheatsheet' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'MiniMax Code', link: '/products/minimax-code/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/minimax-code/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/minimax-code/minimax-code' },
+                                          { text: 'Cookbook', link: '/products/minimax-code/minimax-code-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/minimax-code/minimax-code-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/minimax-code/minimax-code-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'MiniMax Agent', link: '/products/minimax-agent/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/minimax-agent/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/minimax-agent/minimax-agent' },
+                                          { text: 'Cookbook', link: '/products/minimax-agent/minimax-agent-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/minimax-agent/minimax-agent-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/minimax-agent/minimax-agent-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Zhipu / Z.ai', link: '/products/zhipu-chat/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/zhipu-chat/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/zhipu-chat/zhipu-chat' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/zhipu-chat/zhipu-chat-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/zhipu-chat/zhipu-chat-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'GLM Coding', link: '/products/glm-coding/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/glm-coding/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/glm-coding/glm-coding' },
+                                          { text: 'Cookbook', link: '/products/glm-coding/glm-coding-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/glm-coding/glm-coding-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/glm-coding/glm-coding-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Yuanbao', link: '/products/yuanbao/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/yuanbao/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/yuanbao/yuanbao' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/yuanbao/yuanbao-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/yuanbao/yuanbao-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Hunyuan', link: '/products/hunyuan/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/hunyuan/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/hunyuan/hunyuan' },
+                                          { text: 'Cookbook', link: '/products/hunyuan/hunyuan-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/hunyuan/hunyuan-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/hunyuan/hunyuan-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'CodeBuddy', link: '/products/codebuddy/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/codebuddy/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/codebuddy/codebuddy' },
+                                          { text: 'Cookbook', link: '/products/codebuddy/codebuddy-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/codebuddy/codebuddy-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/codebuddy/codebuddy-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Doubao', link: '/products/doubao/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/doubao/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/doubao/doubao' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/doubao/doubao-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/doubao/doubao-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Trae', link: '/products/trae/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/trae/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/trae/trae' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/trae/trae-cheatsheet' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Coze', link: '/products/coze/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/coze/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/coze/coze' },
+                                          { text: 'Cookbook', link: '/products/coze/coze-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/coze/coze-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/coze/coze-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Volcengine Ark', link: '/products/volcengine-ark/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/volcengine-ark/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/volcengine-ark/volcengine-ark' },
+                                          { text: 'Cookbook', link: '/products/volcengine-ark/volcengine-ark-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/volcengine-ark/volcengine-ark-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/volcengine-ark/volcengine-ark-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Qwen', link: '/products/qwen/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/qwen/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/qwen/qwen' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/qwen/qwen-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/qwen/qwen-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Lingma / Qoder CN', link: '/products/lingma/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/lingma/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/lingma/lingma' },
+                                          { text: 'Cookbook', link: '/products/lingma/lingma-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/lingma/lingma-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/lingma/lingma-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Bailian', link: '/products/bailian/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/bailian/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Tutorial', link: '/products/bailian/bailian' },
+                                          { text: 'Cookbook', link: '/products/bailian/bailian-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: 'Reference',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/bailian/bailian-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/bailian/bailian-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
 ]
@@ -378,6 +706,334 @@ export const zhAiCodingItems = [
                                        items: [
                                           { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Kimi', link: '/zh/products/kimi/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/kimi/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/kimi/kimi' },
+                                          { text: '实战 Cookbook', link: '/zh/products/kimi/kimi-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/kimi/kimi-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/kimi/kimi-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Kimi Code', link: '/zh/products/kimi-code/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/kimi-code/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/kimi-code/kimi-code' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/kimi-code/kimi-code-cheatsheet' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'MiniMax Code', link: '/zh/products/minimax-code/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/minimax-code/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/minimax-code/minimax-code' },
+                                          { text: '实战 Cookbook', link: '/zh/products/minimax-code/minimax-code-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/minimax-code/minimax-code-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/minimax-code/minimax-code-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'MiniMax Agent', link: '/zh/products/minimax-agent/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/minimax-agent/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/minimax-agent/minimax-agent' },
+                                          { text: '实战 Cookbook', link: '/zh/products/minimax-agent/minimax-agent-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/minimax-agent/minimax-agent-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/minimax-agent/minimax-agent-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '智谱清言 / Z.ai', link: '/zh/products/zhipu-chat/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/zhipu-chat/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/zhipu-chat/zhipu-chat' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/zhipu-chat/zhipu-chat-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/zhipu-chat/zhipu-chat-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'GLM Coding Plan', link: '/zh/products/glm-coding/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/glm-coding/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/glm-coding/glm-coding' },
+                                          { text: '实战 Cookbook', link: '/zh/products/glm-coding/glm-coding-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/glm-coding/glm-coding-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/glm-coding/glm-coding-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '元宝', link: '/zh/products/yuanbao/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/yuanbao/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/yuanbao/yuanbao' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/yuanbao/yuanbao-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/yuanbao/yuanbao-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '混元', link: '/zh/products/hunyuan/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/hunyuan/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/hunyuan/hunyuan' },
+                                          { text: '实战 Cookbook', link: '/zh/products/hunyuan/hunyuan-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/hunyuan/hunyuan-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/hunyuan/hunyuan-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'CodeBuddy', link: '/zh/products/codebuddy/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/codebuddy/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/codebuddy/codebuddy' },
+                                          { text: '实战 Cookbook', link: '/zh/products/codebuddy/codebuddy-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/codebuddy/codebuddy-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/codebuddy/codebuddy-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '豆包', link: '/zh/products/doubao/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/doubao/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/doubao/doubao' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/doubao/doubao-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/doubao/doubao-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'Trae', link: '/zh/products/trae/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/trae/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/trae/trae' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/trae/trae-cheatsheet' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '扣子 / Coze', link: '/zh/products/coze/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/coze/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/coze/coze' },
+                                          { text: '实战 Cookbook', link: '/zh/products/coze/coze-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/coze/coze-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/coze/coze-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '火山方舟', link: '/zh/products/volcengine-ark/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/volcengine-ark/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/volcengine-ark/volcengine-ark' },
+                                          { text: '实战 Cookbook', link: '/zh/products/volcengine-ark/volcengine-ark-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/volcengine-ark/volcengine-ark-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/volcengine-ark/volcengine-ark-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '通义千问', link: '/zh/products/qwen/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/qwen/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/qwen/qwen' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/qwen/qwen-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/qwen/qwen-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '通义灵码', link: '/zh/products/lingma/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/lingma/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/lingma/lingma' },
+                                          { text: '实战 Cookbook', link: '/zh/products/lingma/lingma-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/lingma/lingma-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/lingma/lingma-glossary' }
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: '阿里云百炼', link: '/zh/products/bailian/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/bailian/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '上手教程', link: '/zh/products/bailian/bailian' },
+                                          { text: '实战 Cookbook', link: '/zh/products/bailian/bailian-cookbook' }
+                                       ]
+                                    },
+                                    {
+                                       text: '速查与参考',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/bailian/bailian-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/bailian/bailian-glossary' }
                                        ]
                                     },
                                  ]

@@ -221,3 +221,11 @@ AI 优先 IDE 家族：编辑器（Tab / Agent / Ask / Plan）、CLI `agent`、C
 3. **开始编程**，在 AI 辅助下效率提升 2-3 倍
 
 **有问题？** 加入 [GitHub](https://github.com/zenheart/learn-ai/discussions) 上的讨论
+
+## 更多产品（2026）
+
+编程助手：[Kimi Code](/zh/products/kimi-code/)、[MiniMax Code](/zh/products/minimax-code/)、[GLM Coding](/zh/products/glm-coding/)、[CodeBuddy](/zh/products/codebuddy/)、[Trae](/zh/products/trae/)、[通义灵码](/zh/products/lingma/)。
+
+对话：[Kimi](/zh/products/kimi/)、[智谱清言 / Z.ai](/zh/products/zhipu-chat/)、[元宝](/zh/products/yuanbao/)、[豆包](/zh/products/doubao/)、[通义千问](/zh/products/qwen/)。
+
+平台：[MiniMax Agent](/zh/products/minimax-agent/)、[混元](/zh/products/hunyuan/)、[扣子](/zh/products/coze/)、[火山方舟](/zh/products/volcengine-ark/)、[百炼](/zh/products/bailian/)。

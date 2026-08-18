@@ -70,3 +70,11 @@
 3. **Start coding** 2-3x faster with AI assistance
 
 **Questions?** Join the discussion on [GitHub](https://github.com/zenheart/learn-ai/discussions)
+
+## More products (2026)
+
+Coding agents: [Kimi Code](/products/kimi-code/), [MiniMax Code](/products/minimax-code/), [GLM Coding](/products/glm-coding/), [CodeBuddy](/products/codebuddy/), [Trae](/products/trae/), [Lingma](/products/lingma/).
+
+Chat: [Kimi](/products/kimi/), [Zhipu / Z.ai](/products/zhipu-chat/), [Yuanbao](/products/yuanbao/), [Doubao](/products/doubao/), [Qwen](/products/qwen/).
+
+Platforms: [MiniMax Agent](/products/minimax-agent/), [Hunyuan](/products/hunyuan/), [Coze](/products/coze/), [Volcengine Ark](/products/volcengine-ark/), [Bailian](/products/bailian/).
