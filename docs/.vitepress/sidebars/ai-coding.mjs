@@ -192,6 +192,27 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
+                              {
+                                 text: 'MiniMax Agent', link: '/products/minimax-agent/', items: [
+                                    { text: '🗺️ Learning Map', link: '/products/minimax-agent/' },
+                                    {
+                                       text: 'Core',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'MiniMax Agent Tutorial', link: '/products/minimax-agent/minimax-agent' },
+                                          { text: 'Cookbook', link: '/products/minimax-agent/minimax-agent-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: 'Appendix',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Cheatsheet', link: '/products/minimax-agent/minimax-agent-cheatsheet' },
+                                          { text: 'Glossary', link: '/products/minimax-agent/minimax-agent-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
                               { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
                               { text: 'Other Tools', link: '/products/ai-coding/othertools' },
 ]
@@ -378,6 +399,27 @@ export const zhAiCodingItems = [
                                        items: [
                                           { text: '速查表', link: '/zh/products/ai-coding/grok/grok-cheatsheet' },
                                           { text: '术语表', link: '/zh/products/ai-coding/grok/grok-glossary' },
+                                       ]
+                                    },
+                                 ]
+                              },
+                              {
+                                 text: 'MiniMax Agent', link: '/zh/products/minimax-agent/', items: [
+                                    { text: '🗺️ 学习地图', link: '/zh/products/minimax-agent/' },
+                                    {
+                                       text: '核心',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'MiniMax Agent 教程', link: '/zh/products/minimax-agent/minimax-agent' },
+                                          { text: 'Cookbook', link: '/zh/products/minimax-agent/minimax-agent-cookbook' },
+                                       ]
+                                    },
+                                    {
+                                       text: '附录',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '速查表', link: '/zh/products/minimax-agent/minimax-agent-cheatsheet' },
+                                          { text: '术语表', link: '/zh/products/minimax-agent/minimax-agent-glossary' },
                                        ]
                                     },
                                  ]
