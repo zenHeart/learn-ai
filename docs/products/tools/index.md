@@ -1,20 +1,13 @@
-# AI Tools
+---
+title: AI tools
+description: Local models and pointers to first-class Figma AI and Testing AI handbooks.
+domain: product
+---
 
-> AI-powered tools: Ollama, Figma AI, and Testing AI
+# AI tools
 
-## Contents
+- [Ollama](./ollama) — run models locally
+- [Figma AI](/products/figma-ai/) — official Figma Agent / First Draft / Make
+- [Testing AI](/products/testing-ai/) — AI testing directory (Midscene)
 
-- [Ollama](./ollama) - Run LLMs locally with Ollama
-- [Figma AI](./figma-ai) - Figma AI design features
-- [Testing AI](./testing-ai) - AI-driven testing tools
-
-## Learning Path
-
-- **Beginner**: Start with [Ollama](./ollama) for local LLM
-- **Designers**: Explore [Figma AI](./figma-ai)
-- **QA engineers**: Read [Testing AI](./testing-ai)
-
-## Related Resources
-
-- [Back to parent](../)
-- [Home](/)
+Old URLs under this folder now redirect to the first-class handbooks.

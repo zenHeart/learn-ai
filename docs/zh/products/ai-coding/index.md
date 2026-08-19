@@ -22,7 +22,8 @@
 - [Codex](./codex/) - OpenAI 编程 Agent：CLI、IDE、应用与云端，包含在 ChatGPT 套餐中
 - [Gemini 全家族](./gemini/index.md) - Gemini CLI、Antigravity、Jules、Code Assist、AI Studio、Canvas、Google Flow
 - [Grok](./grok/index.md) - xAI 第一方终端编程 Agent（Grok Build）
-- [其他工具](./othertools.md) - 探索更多 AI 编程工具
+- [Pi Agent](/zh/products/pi-agent/) — 极简终端 coding-agent harness
+- [其他工具](/zh/products/othertools/) - 探索更多 AI 编程工具
 
 ## 快速开始
 
@@ -221,3 +222,11 @@ AI 优先 IDE 家族：编辑器（Tab / Agent / Ask / Plan）、CLI `agent`、C
 3. **开始编程**，在 AI 辅助下效率提升 2-3 倍
 
 **有问题？** 加入 [GitHub](https://github.com/zenheart/learn-ai/discussions) 上的讨论
+
+## 更多产品（2026）
+
+编程助手：[Kimi Code](/zh/products/kimi-code/)、[MiniMax Code](/zh/products/minimax-code/)、[GLM Coding](/zh/products/glm-coding/)、[CodeBuddy](/zh/products/codebuddy/)、[Trae](/zh/products/trae/)、[通义灵码](/zh/products/lingma/)。
+
+对话：[Kimi](/zh/products/kimi/)、[智谱清言 / Z.ai](/zh/products/zhipu-chat/)、[元宝](/zh/products/yuanbao/)、[豆包](/zh/products/doubao/)、[通义千问](/zh/products/qwen/)。
+
+平台：[MiniMax Agent](/zh/products/minimax-agent/)、[混元](/zh/products/hunyuan/)、[扣子](/zh/products/coze/)、[火山方舟](/zh/products/volcengine-ark/)、[百炼](/zh/products/bailian/)。

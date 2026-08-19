@@ -1,12 +1,10 @@
-# AI tools
+---
+title: Other tools moved
+description: "Other tools moved。正文已迁到 /products/othertools/。"
+domain: product
+listed: false
+---
 
-this inbox collect all useful ai tools
+# Other tools moved
 
-text → audio
-
-- https://fish.audio/zh-CN/
-
-text → code
-
-- code read use  https://deepwiki.com/vuejs/core#package-architecture
-    - just change github to deepwiki ,it will show all repo information
+正文在 [Other tools directory](/products/othertools/)。
