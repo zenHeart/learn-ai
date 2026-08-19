@@ -65,6 +65,7 @@ export default withMermaid(defineConfig({
             nav: [
                { text: 'Home', link: '/' },
                { text: 'Paths', link: '/paths/' },
+               { text: 'Products', link: '/products/', activeMatch: '/products/' },
                { text: 'Docs', link: '/tech/' },
                { text: 'Cookbook', link: '/cookbook/' },
                { text: 'AI Tools', link: '/ai-tools/' },
@@ -311,51 +312,15 @@ export default withMermaid(defineConfig({
                         {
                            text: 'AI Coding',
                            items: [
-                              ...enAiCodingItems,
-                              {
-                                 text: 'OpenClaw',
-                                 link: '/zh/products/automation/openclaw/',
-                                 items: [
-                                    { text: 'Overview', link: '/zh/products/automation/openclaw/' },
-                                    { text: 'Feishu Setup', link: '/zh/products/automation/openclaw/feishu' },
-                                    { text: 'WeChat Setup', link: '/zh/products/automation/openclaw/wechat' },
-                                    { text: 'WeCom Setup', link: '/zh/products/automation/openclaw/wecom' },
-                                    {
-                                       text: 'Advanced Guides',
-                                       collapsed: false,
-                                       items: [
-                                          { text: 'CLI Reference', link: '/zh/products/automation/openclaw/cli' },
-                                          { text: 'Deployment', link: '/zh/products/automation/openclaw/deployment' },
-                                          { text: 'Security', link: '/zh/products/automation/openclaw/security' },
-                                          { text: 'Skills Development', link: '/zh/products/automation/openclaw/skills' },
-                                       ]
-                                    },
-                                    {
-                                       text: 'Source Code',
-                                       collapsed: false,
-                                       items: [
-                                          { text: 'Index', link: '/zh/products/automation/openclaw/source-code/' },
-                                          { text: 'Architecture', link: '/zh/products/automation/openclaw/source-code/architecture' },
-                                          { text: 'Channels', link: '/zh/products/automation/openclaw/source-code/channels' },
-                                          { text: 'Agents', link: '/zh/products/automation/openclaw/source-code/agents' },
-                                          { text: 'Sessions', link: '/zh/products/automation/openclaw/source-code/sessions' },
-                                          { text: 'Plugins', link: '/zh/products/automation/openclaw/source-code/plugins' },
-                                          { text: 'Hooks', link: '/zh/products/automation/openclaw/source-code/hooks' },
-                                          { text: 'MCP', link: '/zh/products/automation/openclaw/source-code/mcp' },
-                                          { text: 'ACP', link: '/zh/products/automation/openclaw/source-code/acp' },
-                                          { text: 'Subagent', link: '/zh/products/automation/openclaw/source-code/subagent' },
-                                       ]
-                                    },
-                                 ]
-                              }
+                              ...enAiCodingItems
                            ]
                         },
                         {
                            text: 'Tools',
                            items: [
                               { text: 'Ollama', link: '/products/tools/ollama' },
-                              { text: 'Figma AI', link: '/products/tools/figma-ai' },
-                              { text: 'Testing AI', link: '/products/tools/testing-ai' }
+                              { text: 'Figma AI', link: '/products/figma-ai/' },
+                              { text: 'Testing AI', link: '/products/testing-ai/' }
                            ]
                         },
                         {
@@ -405,6 +370,7 @@ export default withMermaid(defineConfig({
             nav: [
                { text: '首页', link: '/zh/' },
                { text: '路径', link: '/zh/paths/' },
+               { text: '产品', link: '/zh/products/', activeMatch: '/zh/products/' },
                { text: '文档', link: '/zh/tech/' },
                { text: '秘籍', link: '/zh/cookbook/' },
                { text: 'AI 工具', link: '/zh/ai-tools/' },
@@ -716,36 +682,35 @@ export default withMermaid(defineConfig({
                            items: [
                               {
                                  text: 'OpenClaw',
-                                 link: '/zh/products/automation/openclaw/',
+                                 link: '/zh/products/openclaw/',
                                  items: [
-                                    { text: '概述', link: '/zh/products/automation/openclaw/' },
-                                    { text: '飞书接入', link: '/zh/products/automation/openclaw/feishu' },
-                                    { text: '微信接入', link: '/zh/products/automation/openclaw/wechat' },
-                                    { text: '企业微信接入', link: '/zh/products/automation/openclaw/wecom' },
+                                    { text: '概述', link: '/zh/products/openclaw/' },
+                                    { text: '飞书接入', link: '/zh/products/openclaw/feishu' },
+                                    { text: '微信接入', link: '/zh/products/openclaw/wechat' },
+                                    { text: '企业微信接入', link: '/zh/products/openclaw/wecom' },
                                     {
                                        text: '进阶指南',
                                        collapsed: false,
                                        items: [
-                                          { text: 'CLI 命令参考', link: '/zh/products/automation/openclaw/cli' },
-                                          { text: '部署指南', link: '/zh/products/automation/openclaw/deployment' },
-                                          { text: '安全配置', link: '/zh/products/automation/openclaw/security' },
-                                          { text: '技能开发', link: '/zh/products/automation/openclaw/skills' },
+                                          { text: 'CLI 命令参考', link: '/zh/products/openclaw/cli' },
+                                          { text: '部署指南', link: '/zh/products/openclaw/deployment' },
+                                          { text: '安全配置', link: '/zh/products/openclaw/security' },
+                                          { text: '技能开发', link: '/zh/products/openclaw/skills' },
                                        ]
                                     },
                                     {
                                        text: '源码分析',
                                        collapsed: false,
                                        items: [
-                                          { text: '索引', link: '/zh/products/automation/openclaw/source-code/' },
-                                          { text: '核心架构', link: '/zh/products/automation/openclaw/source-code/architecture' },
-                                          { text: '通道接入', link: '/zh/products/automation/openclaw/source-code/channels' },
-                                          { text: '智能体引擎', link: '/zh/products/automation/openclaw/source-code/agents' },
-                                          { text: '会话管理', link: '/zh/products/automation/openclaw/source-code/sessions' },
-                                          { text: '插件系统', link: '/zh/products/automation/openclaw/source-code/plugins' },
-                                          { text: '钩子机制', link: '/zh/products/automation/openclaw/source-code/hooks' },
-                                          { text: 'MCP 协议', link: '/zh/products/automation/openclaw/source-code/mcp' },
-                                          { text: 'ACP 协议', link: '/zh/products/automation/openclaw/source-code/acp' },
-                                          { text: 'Subagent', link: '/zh/products/automation/openclaw/source-code/subagent' },
+                                          { text: '索引', link: '/zh/products/openclaw/source-code/' },
+                                          { text: '核心架构', link: '/zh/products/openclaw/source-code/architecture' },
+                                          { text: '通道接入', link: '/zh/products/openclaw/source-code/channels' },
+                                          { text: '智能体引擎', link: '/zh/products/openclaw/source-code/agents' },
+                                          { text: '会话管理', link: '/zh/products/openclaw/source-code/sessions' },
+                                          { text: '插件系统', link: '/zh/products/openclaw/source-code/plugins' },
+                                          { text: '钩子机制', link: '/zh/products/openclaw/source-code/hooks' },
+                                          { text: 'MCP 协议', link: '/zh/products/openclaw/source-code/mcp' },
+                                          { text: 'ACP 协议', link: '/zh/products/openclaw/source-code/acp' },
                                        ]
                                     },
                                  ]
@@ -786,8 +751,8 @@ export default withMermaid(defineConfig({
                            text: '工具',
                            items: [
                               { text: 'Ollama', link: '/zh/products/tools/ollama' },
-                              { text: 'Figma AI', link: '/zh/products/tools/figma-ai' },
-                              { text: 'Testing AI', link: '/zh/products/tools/testing-ai' }
+                              { text: 'Figma AI', link: '/zh/products/figma-ai/' },
+                              { text: 'Testing AI', link: '/zh/products/testing-ai/' }
                            ]
                         },
                         { text: '📚 资源', link: '/zh/resources' }

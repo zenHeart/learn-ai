@@ -20,10 +20,10 @@
 - [Cursor](./cursor/) - Editor + CLI + Cloud Agents + Bugbot
 - [Claude](./claude/) - Claude ecosystem: Claude.ai, Claude Code, Claude Design, Cowork
 - [Codex](./codex/) - OpenAI's coding agent: CLI, IDE, app, and cloud, included with ChatGPT plans
-- [Pi Agent](./pi-agent.md) - 极简主义 coding agent harness
+- [Pi Agent](/products/pi-agent/) - 极简主义 coding agent harness
 - [Gemini](./gemini/) - Gemini family: Gemini CLI, Antigravity, Jules, Code Assist, AI Studio, Canvas, Google Flow
 - [Grok](./grok/) - xAI's first-party terminal coding agent (Grok Build)
-- [Other Tools](./othertools.md) - Explore more AI coding tools
+- [Other Tools](/products/othertools/) - Explore more AI coding tools
 
 ## Getting Started
 
@@ -70,3 +70,11 @@
 3. **Start coding** 2-3x faster with AI assistance
 
 **Questions?** Join the discussion on [GitHub](https://github.com/zenheart/learn-ai/discussions)
+
+## More products (2026)
+
+Coding agents: [Kimi Code](/products/kimi-code/), [MiniMax Code](/products/minimax-code/), [GLM Coding](/products/glm-coding/), [CodeBuddy](/products/codebuddy/), [Trae](/products/trae/), [Lingma](/products/lingma/).
+
+Chat: [Kimi](/products/kimi/), [Zhipu / Z.ai](/products/zhipu-chat/), [Yuanbao](/products/yuanbao/), [Doubao](/products/doubao/), [Qwen](/products/qwen/).
+
+Platforms: [MiniMax Agent](/products/minimax-agent/), [Hunyuan](/products/hunyuan/), [Coze](/products/coze/), [Volcengine Ark](/products/volcengine-ark/), [Bailian](/products/bailian/).

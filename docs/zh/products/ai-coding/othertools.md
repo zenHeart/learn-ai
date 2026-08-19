@@ -1,12 +1,10 @@
-# AI 工具箱
+---
+title: 其他工具已搬家
+description: "其他工具已搬家。正文已迁到 /zh/products/othertools/。"
+domain: product
+listed: false
+---
 
-这个收件箱收集所有有用的 AI 工具。
+# 其他工具已搬家
 
-文本 → 音频
-
-- https://fish.audio/zh-CN/
-
-文本 → 代码
-
-- 阅读代码使用 https://deepwiki.com/vuejs/core#package-architecture
-    - 只需将 `github` 更改为 `deepwiki`，它就会显示所有仓库信息
+正文在 [其他工具目录](/zh/products/othertools/)。

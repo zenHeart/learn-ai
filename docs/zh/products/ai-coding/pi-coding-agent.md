@@ -6,6 +6,9 @@ outline: [2, 3, 4, 5]
 
 # Pi Coding Agent 开发理念
 
+> 产品手册已迁到 [Pi Agent 学习地图](/zh/products/pi-agent/)。本页保留设计理念原文。
+
+
 > 原文：《What I learned building an opinionated and minimal coding agent》
 > 作者：Mario Zechner
 > 源码：https://github.com/MarioAriasC/pi-coding-agent
