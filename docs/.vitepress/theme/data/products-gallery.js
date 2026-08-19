@@ -18,7 +18,8 @@ export const productGalleryEn = [
       { name: 'GLM Coding', desc: 'Zhipu Coding Plan for Claude Code / Cursor.', url: '/products/glm-coding/', icon: '🧩', tags: ["cli","coding-agent"] },
       { name: 'CodeBuddy', desc: 'Tencent Cloud IDE / plugin / CLI.', url: '/products/codebuddy/', icon: '🐧', tags: ["editor","coding-agent"] },
       { name: 'Trae', desc: 'ByteDance AI coding IDE.', url: '/products/trae/', icon: '⚡', tags: ["editor","coding-agent"] },
-      { name: 'Lingma', desc: 'Tongyi Lingma / Qoder CN.', url: '/products/lingma/', icon: '🔤', tags: ["editor","coding-agent"] }
+      { name: 'Lingma', desc: 'Tongyi Lingma / Qoder CN.', url: '/products/lingma/', icon: '🔤', tags: ["editor","coding-agent"] },
+      { name: 'Pi Agent', desc: 'Minimal terminal coding-agent harness.', url: '/products/pi-agent/', icon: '🥧', tags: ["harness","coding-agent"] }
     ]
   },
   {
@@ -42,6 +43,23 @@ export const productGalleryEn = [
       { name: 'Volcengine Ark', desc: 'Volcengine Ark model API.', url: '/products/volcengine-ark/', icon: '🌋', tags: ["api"] },
       { name: 'Bailian', desc: 'Alibaba Cloud Model Studio.', url: '/products/bailian/', icon: '🧪', tags: ["api"] }
     ]
+  },
+  {
+    name: 'Local & design',
+    icon: '🛠️',
+    tools: [
+      { name: 'Ollama', desc: 'Run models locally.', url: '/products/tools/ollama', icon: '🦙', tags: ["local-llm"] },
+      { name: 'Figma AI', desc: 'Official AI inside Figma: Agent and First Draft.', url: '/products/figma-ai/', icon: '🎨', tags: ["design"] },
+      { name: 'Testing AI', desc: 'AI testing directory; Midscene is the main path.', url: '/products/testing-ai/', icon: '🧪', tags: ["testing"] }
+    ]
+  },
+  {
+    name: 'More',
+    icon: '📚',
+    tools: [
+      { name: 'Other tools', desc: 'More AI products we do not treat as first-class sets.', url: '/products/othertools/', icon: '➕', tags: ["directory"] },
+      { name: 'OpenClaw', desc: 'Self-hosted multi-channel agent gateway.', url: '/products/openclaw/', icon: '🦞', tags: ["agent-runtime"] }
+    ]
   }
 ]
 
@@ -61,7 +79,8 @@ export const productGalleryZh = [
       { name: 'GLM Coding', desc: '智谱 Coding Plan，接到 Claude Code / Cursor。', url: '/zh/products/glm-coding/', icon: '🧩', tags: ["cli","coding-agent"] },
       { name: 'CodeBuddy', desc: '腾讯云 IDE / 插件 / CLI。', url: '/zh/products/codebuddy/', icon: '🐧', tags: ["editor","coding-agent"] },
       { name: 'Trae', desc: '字节跳动 AI 编程 IDE。', url: '/zh/products/trae/', icon: '⚡', tags: ["editor","coding-agent"] },
-      { name: 'Lingma', desc: '通义灵码 / Qoder CN。', url: '/zh/products/lingma/', icon: '🔤', tags: ["editor","coding-agent"] }
+      { name: 'Lingma', desc: '通义灵码 / Qoder CN。', url: '/zh/products/lingma/', icon: '🔤', tags: ["editor","coding-agent"] },
+      { name: 'Pi Agent', desc: '极简终端 coding-agent harness。', url: '/zh/products/pi-agent/', icon: '🥧', tags: ["harness","coding-agent"] }
     ]
   },
   {
@@ -84,6 +103,23 @@ export const productGalleryZh = [
       { name: 'Coze', desc: '扣子 / Coze Agent 搭建。', url: '/zh/products/coze/', icon: '🧩', tags: ["agent-builder"] },
       { name: 'Volcengine Ark', desc: '火山方舟模型 API。', url: '/zh/products/volcengine-ark/', icon: '🌋', tags: ["api"] },
       { name: 'Bailian', desc: '阿里云百炼模型平台。', url: '/zh/products/bailian/', icon: '🧪', tags: ["api"] }
+    ]
+  },
+  {
+    name: '本地与设计',
+    icon: '🛠️',
+    tools: [
+      { name: 'Ollama', desc: '本机跑模型。', url: '/zh/products/tools/ollama', icon: '🦙', tags: ["local-llm"] },
+      { name: 'Figma AI', desc: 'Figma 官方 AI：Agent 与 First Draft。', url: '/zh/products/figma-ai/', icon: '🎨', tags: ["design"] },
+      { name: 'Testing AI', desc: 'AI 测试目录；主教程是 Midscene。', url: '/zh/products/testing-ai/', icon: '🧪', tags: ["testing"] }
+    ]
+  },
+  {
+    name: '更多',
+    icon: '📚',
+    tools: [
+      { name: '其他工具', desc: '未单独成套的 AI 产品一览。', url: '/zh/products/othertools/', icon: '➕', tags: ["directory"] },
+      { name: 'OpenClaw', desc: '自托管多通道 Agent 网关。', url: '/zh/products/openclaw/', icon: '🦞', tags: ["agent-runtime"] }
     ]
   }
 ]

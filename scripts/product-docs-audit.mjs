@@ -26,7 +26,12 @@ const REQUIRED_SLUGS = [
   'volcengine-ark',
   'qwen',
   'lingma',
-  'bailian'
+  'bailian',
+  'pi-agent',
+  'openclaw',
+  'figma-ai',
+  'testing-ai',
+  'othertools'
 ]
 
 function read(rel) {

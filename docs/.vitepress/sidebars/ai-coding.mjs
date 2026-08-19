@@ -520,8 +520,11 @@ export const enAiCodingItems = [
                                     },
                                  ]
                               },
-                              { text: 'Pi Agent', link: '/products/ai-coding/pi-agent' },
-                              { text: 'Other Tools', link: '/products/ai-coding/othertools' },
+                              { text: 'Pi Agent', link: '/products/pi-agent/' },
+                              { text: 'OpenClaw', link: '/products/openclaw/' },
+                              { text: 'Figma AI', link: '/products/figma-ai/' },
+                              { text: 'Testing AI', link: '/products/testing-ai/' },
+                              { text: 'Other Tools', link: '/products/othertools/' },
 ]
 
 export const zhAiCodingItems = [
@@ -1039,7 +1042,10 @@ export const zhAiCodingItems = [
                                  ]
                               },
                               { text: 'Vibe Coding 报告', link: '/zh/products/ai-coding/reporter' },
-                              { text: '其他工具', link: '/zh/products/ai-coding/othertools' },
+                              { text: '其他工具', link: '/zh/products/othertools/' },
                               { text: '采购与实施方案', link: '/zh/products/ai-coding/procurement-plan' },
-                              { text: 'Pi Coding Agent', link: '/zh/products/ai-coding/pi-coding-agent' }
+                              { text: 'Pi Agent', link: '/zh/products/pi-agent/' },
+                              { text: 'OpenClaw', link: '/zh/products/openclaw/' },
+                              { text: 'Figma AI', link: '/zh/products/figma-ai/' },
+                              { text: 'Testing AI', link: '/zh/products/testing-ai/' }
 ]
