@@ -64,11 +64,11 @@ export default withMermaid(defineConfig({
          themeConfig: {
             nav: [
                { text: 'Home', link: '/' },
-               { text: 'Paths', link: '/paths/' },
+               { text: 'Paths', link: '/paths/', activeMatch: '/paths/' },
                { text: 'Products', link: '/products/', activeMatch: '/products/' },
-               { text: 'Docs', link: '/tech/' },
-               { text: 'Cookbook', link: '/cookbook/' },
-               { text: 'AI Tools', link: '/ai-tools/' },
+               { text: 'Docs', link: '/tech/', activeMatch: '^/(tech|integration)/' },
+               { text: 'Cookbook', link: '/cookbook/', activeMatch: '^/(cookbook|projects|deployment|use-cases)/' },
+               { text: 'AI Tools', link: '/ai-tools/', activeMatch: '/ai-tools/' },
                {
                   text: 'PPTs', items: [
                      { text: '1. Vibe Coding', link: 'https://ai.zenheart.site/ppts/vibe-coding/' },
@@ -80,262 +80,624 @@ export default withMermaid(defineConfig({
                }
             ],
             sidebar: {
-               '/': [
+               '/paths/': [
                   {
-                     text: '📘 Featured Tutorials',
-                     collapsed: false,
-                     items: [
-                        { text: 'Claude Code Tutorial', link: '/claude-code-tutorial' },
-                        { text: 'Claude Prompt Best Practices', link: '/claude-prompt-best-practices' },
-                        { text: 'System Prompts Collection', link: '/system-prompts-collection' }
-                     ]
-                  },
+                                       text: '🗺️ Learning Paths',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Path Overview', link: '/paths/' },
+                                          { text: 'Path 1: Productivity', link: '/paths/productivity' },
+                                          { text: 'Path 2: Integration', link: '/paths/integration' },
+                                          { text: 'Path 3: Mastery', link: '/paths/mastery' }
+                                       ]
+                                    }
+               ],
+               '/products/': [
+                  { text: 'All products', link: '/products/' },
+                  ...enAiCodingItems,
+                  { text: 'Ollama', link: '/products/tools/ollama' }
+               ],
+               '/tech/': [
                   {
-                     text: '🗺️ Learning Paths',
-                     collapsed: false,
-                     items: [
-                        { text: 'Path Overview', link: '/paths/' },
-                        { text: 'Path 1: Productivity', link: '/paths/productivity' },
-                        { text: 'Path 2: Integration', link: '/paths/integration' },
-                        { text: 'Path 3: Mastery', link: '/paths/mastery' }
-                     ]
-                  },
+                                       text: '📘 Featured Tutorials',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Claude Code Tutorial', link: '/claude-code-tutorial' },
+                                          { text: 'Claude Prompt Best Practices', link: '/claude-prompt-best-practices' },
+                                          { text: 'System Prompts Collection', link: '/system-prompts-collection' }
+                                       ]
+                                    },
+
                   {
-                     text: '🔌 Integration Guides',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: 'APIs',
-                           collapsed: false,
-                           items: [
-                              { text: 'Comparison & Costs', link: '/integration/apis/' },
-                              { text: 'OpenAI', link: '/integration/apis/openai' },
-                              { text: 'Anthropic (Claude)', link: '/integration/apis/anthropic' },
-                              { text: 'HuggingFace', link: '/integration/apis/huggingface' },
-                              { text: 'Streaming Patterns', link: '/integration/apis/streaming' }
-                           ]
-                        },
-                        {
-                           text: 'Frameworks',
-                           collapsed: false,
-                           items: [
-                              { text: 'Overview', link: '/integration/frameworks/' },
-                              { text: 'Vercel AI SDK', link: '/integration/frameworks/vercel-ai-sdk' },
-                              { text: 'LangChain.js', link: '/integration/frameworks/langchain-js' },
-                              { text: 'LlamaIndex.TS', link: '/integration/frameworks/llamaindex-ts' },
-                              { text: 'Next.js Integration', link: '/integration/frameworks/nextjs' }
-                           ]
-                        },
-                        {
-                           text: 'Protocols',
-                           items: [
-                              { text: 'MCP (Model Context Protocol)', link: '/integration/protocols/mcp' },
-                              { text: 'Tool Calling', link: '/integration/protocols/tool-calling' }
-                           ]
-                        },
-                        {
-                           text: 'Frontend ML',
-                           items: [
-                              { text: 'Overview', link: '/integration/frontend-ml/' },
-                              { text: 'Transformers.js', link: '/integration/frontend-ml/transformersjs' },
-                              { text: 'TensorFlow.js', link: '/integration/frontend-ml/tensorflowjs' },
-                              { text: 'ml5.js', link: '/integration/frontend-ml/ml5js' },
-                              { text: 'ONNX Runtime', link: '/integration/frontend-ml/onnx-runtime' }
-                           ]
-                        }
-                     ]
-                  },
+                                       text: '🔌 Integration Guides',
+                                       collapsed: false,
+                                       items: [
+                                          {
+                                             text: 'APIs',
+                                             collapsed: false,
+                                             items: [
+                                                { text: 'Comparison & Costs', link: '/integration/apis/' },
+                                                { text: 'OpenAI', link: '/integration/apis/openai' },
+                                                { text: 'Anthropic (Claude)', link: '/integration/apis/anthropic' },
+                                                { text: 'HuggingFace', link: '/integration/apis/huggingface' },
+                                                { text: 'Streaming Patterns', link: '/integration/apis/streaming' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Frameworks',
+                                             collapsed: false,
+                                             items: [
+                                                { text: 'Overview', link: '/integration/frameworks/' },
+                                                { text: 'Vercel AI SDK', link: '/integration/frameworks/vercel-ai-sdk' },
+                                                { text: 'LangChain.js', link: '/integration/frameworks/langchain-js' },
+                                                { text: 'LlamaIndex.TS', link: '/integration/frameworks/llamaindex-ts' },
+                                                { text: 'Next.js Integration', link: '/integration/frameworks/nextjs' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Protocols',
+                                             items: [
+                                                { text: 'MCP (Model Context Protocol)', link: '/integration/protocols/mcp' },
+                                                { text: 'Tool Calling', link: '/integration/protocols/tool-calling' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Frontend ML',
+                                             items: [
+                                                { text: 'Overview', link: '/integration/frontend-ml/' },
+                                                { text: 'Transformers.js', link: '/integration/frontend-ml/transformersjs' },
+                                                { text: 'TensorFlow.js', link: '/integration/frontend-ml/tensorflowjs' },
+                                                { text: 'ml5.js', link: '/integration/frontend-ml/ml5js' },
+                                                { text: 'ONNX Runtime', link: '/integration/frontend-ml/onnx-runtime' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
                   {
-                     text: '🧠 Tech Concepts',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: 'Fundamentals',
-                           items: [
-                              { text: 'LLM Basics', link: '/tech/fundamentals/LLM' },
-                              { text: 'Context Window', link: '/tech/fundamentals/context' },
-                              { text: 'Embeddings', link: '/tech/fundamentals/embeddings' },
-                              { text: 'Prompt Engineering', link: '/tech/fundamentals/prompt/' }
-                           ]
-                        },
-                        {
-                           text: 'Frontend AI',
-                           items: [
-                              { text: 'Streaming UI', link: '/tech/frontend/streaming' },
-                              { text: 'Generative UI', link: '/tech/frontend/generative-ui' },
-                              { text: 'Browser AI', link: '/tech/frontend/browser-ai' },
-                              { text: 'State Management', link: '/tech/frontend/state-management' }
-                           ]
-                        },
-                        {
-                           text: 'Engineering',
-                           items: [
-                              { text: 'Testing', link: '/tech/engineering/testing' },
-                              { text: 'Evals', link: '/tech/engineering/evals' },
-                              { text: 'Observability', link: '/tech/engineering/observability' },
-                              { text: 'Security', link: '/tech/engineering/security' },
-                              { text: 'Cost Optimization', link: '/tech/engineering/cost-optimization' }
-                           ]
-                        },
-                        {
-                           text: 'Patterns',
-                           items: [
-                              { text: 'RAG', link: '/tech/patterns/RAG' },
-                              { text: 'RAG · Semantic Search Case Study', link: '/tech/patterns/RAG-semantic-search-case-study' },
-                              { text: 'Agents', link: '/tech/patterns/agent/' },
-                              { text: 'Agent · Agent Course', link: '/tech/patterns/agent/agent-course' },
-                              { text: 'Agent · Agent Design Patterns', link: '/tech/patterns/agent/agent-design-patterns' },
-                              { text: 'Agent · Hooks', link: '/tech/patterns/agent/hooks' },
-                              { text: 'Agent · Skills', link: '/tech/patterns/agent/skills' },
-                              { text: 'Agent · LangChain Harness (2026-04)', link: '/tech/patterns/agent/2026-04-12-langchain-agent-harness' }
-                           ]
-                        },
-                        {
-                           text: 'Prompt Engineering',
-                           items: [
-                              { text: 'Overview', link: '/tech/prompt/' },
-                              { text: 'Agent Engineering Practices', link: '/tech/prompt/agent-engineering-practices' },
-                              { text: 'Context for Agent Engineering', link: '/tech/prompt/context-agent-engineering' },
-                              { text: 'Agents Doc', link: '/tech/prompt/agents-doc' },
-                              { text: 'Case · Copilot', link: '/tech/prompt/cases/copilot' }
-                           ]
-                        },
-                        {
-                           text: 'Tooling & Practice',
-                           items: [
-                              { text: 'Advanced Tool Use', link: '/tech/advanced-tool-use' },
-                              { text: 'AI-Assisted Programming', link: '/tech/ai-assisted-programming' },
-                              { text: 'AI-Driven Workflow Automation', link: '/tech/ai-driven-workflow-automation' },
-                              { text: 'N8n Workflow Automation', link: '/tech/n8n-workflow-automation' },
-                              { text: 'SLS Log Analysis Assistant', link: '/tech/sls-log-analysis-assistant' },
-                              { text: 'TestHub Platform', link: '/tech/testhub-platform' },
-                              { text: 'Midscene UI Automation', link: '/tech/midscene-ui-automation' },
-                              { text: 'Cross-Project Context Input', link: '/tech/cross-project-context-input' },
-                              { text: 'Context Injection Strategies', link: '/tech/context-injection-strategies' },
-                              { text: 'Cross-Tool Context Sharing', link: '/tech/cross-tool-context-sharing' }
-                           ]
-                        },
-                        {
-                           text: 'Testing & Evaluation',
-                           items: [
-                              { text: 'Alibaba AI Testing', link: '/tech/alibaba-ai-testing' },
-                              { text: 'Meituan AI Testing', link: '/tech/meituan-ai-testing' },
-                              { text: 'Generative Benchmarking', link: '/tech/generative-benchmarking' },
-                              { text: 'Golden Dataset Generation', link: '/tech/golden-dataset-generation' }
-                           ]
-                        },
-                        {
-                           text: 'Training',
-                           items: [
-                              { text: 'Overview', link: '/tech/training/' },
-                              { text: 'SFT', link: '/tech/training/SFT' },
-                              { text: 'RLHF', link: '/tech/training/RLHF' },
-                              { text: 'PEFT', link: '/tech/training/PEFT' }
-                           ]
-                        }
-                     ]
-                  },
+                                       text: '🧠 Tech Concepts',
+                                       collapsed: false,
+                                       items: [
+                                          {
+                                             text: 'Fundamentals',
+                                             items: [
+                                                { text: 'LLM Basics', link: '/tech/fundamentals/LLM' },
+                                                { text: 'Context Window', link: '/tech/fundamentals/context' },
+                                                { text: 'Embeddings', link: '/tech/fundamentals/embeddings' },
+                                                { text: 'Prompt Engineering', link: '/tech/fundamentals/prompt/' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Frontend AI',
+                                             items: [
+                                                { text: 'Streaming UI', link: '/tech/frontend/streaming' },
+                                                { text: 'Generative UI', link: '/tech/frontend/generative-ui' },
+                                                { text: 'Browser AI', link: '/tech/frontend/browser-ai' },
+                                                { text: 'State Management', link: '/tech/frontend/state-management' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Engineering',
+                                             items: [
+                                                { text: 'Testing', link: '/tech/engineering/testing' },
+                                                { text: 'Evals', link: '/tech/engineering/evals' },
+                                                { text: 'Observability', link: '/tech/engineering/observability' },
+                                                { text: 'Security', link: '/tech/engineering/security' },
+                                                { text: 'Cost Optimization', link: '/tech/engineering/cost-optimization' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Patterns',
+                                             items: [
+                                                { text: 'RAG', link: '/tech/patterns/RAG' },
+                                                { text: 'RAG · Semantic Search Case Study', link: '/tech/patterns/RAG-semantic-search-case-study' },
+                                                { text: 'Agents', link: '/tech/patterns/agent/' },
+                                                { text: 'Agent · Agent Course', link: '/tech/patterns/agent/agent-course' },
+                                                { text: 'Agent · Agent Design Patterns', link: '/tech/patterns/agent/agent-design-patterns' },
+                                                { text: 'Agent · Hooks', link: '/tech/patterns/agent/hooks' },
+                                                { text: 'Agent · Skills', link: '/tech/patterns/agent/skills' },
+                                                { text: 'Agent · LangChain Harness (2026-04)', link: '/tech/patterns/agent/2026-04-12-langchain-agent-harness' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Prompt Engineering',
+                                             items: [
+                                                { text: 'Overview', link: '/tech/prompt/' },
+                                                { text: 'Agent Engineering Practices', link: '/tech/prompt/agent-engineering-practices' },
+                                                { text: 'Context for Agent Engineering', link: '/tech/prompt/context-agent-engineering' },
+                                                { text: 'Agents Doc', link: '/tech/prompt/agents-doc' },
+                                                { text: 'Case · Copilot', link: '/tech/prompt/cases/copilot' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Tooling & Practice',
+                                             items: [
+                                                { text: 'Advanced Tool Use', link: '/tech/advanced-tool-use' },
+                                                { text: 'AI-Assisted Programming', link: '/tech/ai-assisted-programming' },
+                                                { text: 'AI-Driven Workflow Automation', link: '/tech/ai-driven-workflow-automation' },
+                                                { text: 'N8n Workflow Automation', link: '/tech/n8n-workflow-automation' },
+                                                { text: 'SLS Log Analysis Assistant', link: '/tech/sls-log-analysis-assistant' },
+                                                { text: 'TestHub Platform', link: '/tech/testhub-platform' },
+                                                { text: 'Midscene UI Automation', link: '/tech/midscene-ui-automation' },
+                                                { text: 'Cross-Project Context Input', link: '/tech/cross-project-context-input' },
+                                                { text: 'Context Injection Strategies', link: '/tech/context-injection-strategies' },
+                                                { text: 'Cross-Tool Context Sharing', link: '/tech/cross-tool-context-sharing' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Testing & Evaluation',
+                                             items: [
+                                                { text: 'Alibaba AI Testing', link: '/tech/alibaba-ai-testing' },
+                                                { text: 'Meituan AI Testing', link: '/tech/meituan-ai-testing' },
+                                                { text: 'Generative Benchmarking', link: '/tech/generative-benchmarking' },
+                                                { text: 'Golden Dataset Generation', link: '/tech/golden-dataset-generation' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Training',
+                                             items: [
+                                                { text: 'Overview', link: '/tech/training/' },
+                                                { text: 'SFT', link: '/tech/training/SFT' },
+                                                { text: 'RLHF', link: '/tech/training/RLHF' },
+                                                { text: 'PEFT', link: '/tech/training/PEFT' }
+                                             ]
+                                          }
+                                       ]
+                                    }
+               ],
+               '/integration/': [
                   {
-                     text: '🛠️ Projects',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: 'Beginner',
-                           items: [
-                              { text: 'AI Chatbot', link: '/projects/beginner/ai-chatbot' },
-                              { text: 'Text Summarizer', link: '/projects/beginner/text-summarizer' },
-                              { text: 'Image Generator', link: '/projects/beginner/image-generator' }
-                           ]
-                        },
-                        {
-                           text: 'Intermediate',
-                           items: [
-                              { text: 'RAG Search', link: '/projects/intermediate/rag-search' },
-                              { text: 'Code Autocomplete', link: '/projects/intermediate/code-completion' },
-                              { text: 'AI Form Builder', link: '/projects/intermediate/ai-form-builder' },
-                              { text: 'Semantic Search', link: '/projects/intermediate/semantic-search' }
-                           ]
-                        },
-                        {
-                           text: 'Advanced',
-                           items: [
-                              { text: 'Full Stack SaaS', link: '/projects/advanced/full-stack-saas' },
-                              { text: 'Multi-Agent App', link: '/projects/advanced/multi-agent-app' },
-                              { text: 'AI Design Tool', link: '/projects/advanced/ai-design-tool' }
-                           ]
-                        }
-                     ]
-                  },
+                                       text: '📘 Featured Tutorials',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Claude Code Tutorial', link: '/claude-code-tutorial' },
+                                          { text: 'Claude Prompt Best Practices', link: '/claude-prompt-best-practices' },
+                                          { text: 'System Prompts Collection', link: '/system-prompts-collection' }
+                                       ]
+                                    },
+
                   {
-                     text: '🍳 Cookbook',
-                     collapsed: true,
-                     items: [
-                        { text: 'Overview', link: '/cookbook/' },
-                        { text: 'Chat UI Component', link: '/cookbook/chat-ui' },
-                        { text: 'Secure API Proxy', link: '/cookbook/api-proxy' },
-                        { text: 'Local Embeddings', link: '/cookbook/local-embedding' },
-                        { text: 'Token Counting', link: '/cookbook/token-counting' },
-                        { text: 'Form Autocomplete', link: '/cookbook/form-autocomplete' },
-                        { text: 'Error Handling', link: '/cookbook/error-handling' },
-                        { text: 'Content Moderation', link: '/cookbook/content-moderation' }
-                     ]
-                  },
+                                       text: '🔌 Integration Guides',
+                                       collapsed: false,
+                                       items: [
+                                          {
+                                             text: 'APIs',
+                                             collapsed: false,
+                                             items: [
+                                                { text: 'Comparison & Costs', link: '/integration/apis/' },
+                                                { text: 'OpenAI', link: '/integration/apis/openai' },
+                                                { text: 'Anthropic (Claude)', link: '/integration/apis/anthropic' },
+                                                { text: 'HuggingFace', link: '/integration/apis/huggingface' },
+                                                { text: 'Streaming Patterns', link: '/integration/apis/streaming' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Frameworks',
+                                             collapsed: false,
+                                             items: [
+                                                { text: 'Overview', link: '/integration/frameworks/' },
+                                                { text: 'Vercel AI SDK', link: '/integration/frameworks/vercel-ai-sdk' },
+                                                { text: 'LangChain.js', link: '/integration/frameworks/langchain-js' },
+                                                { text: 'LlamaIndex.TS', link: '/integration/frameworks/llamaindex-ts' },
+                                                { text: 'Next.js Integration', link: '/integration/frameworks/nextjs' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Protocols',
+                                             items: [
+                                                { text: 'MCP (Model Context Protocol)', link: '/integration/protocols/mcp' },
+                                                { text: 'Tool Calling', link: '/integration/protocols/tool-calling' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Frontend ML',
+                                             items: [
+                                                { text: 'Overview', link: '/integration/frontend-ml/' },
+                                                { text: 'Transformers.js', link: '/integration/frontend-ml/transformersjs' },
+                                                { text: 'TensorFlow.js', link: '/integration/frontend-ml/tensorflowjs' },
+                                                { text: 'ml5.js', link: '/integration/frontend-ml/ml5js' },
+                                                { text: 'ONNX Runtime', link: '/integration/frontend-ml/onnx-runtime' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
                   {
-                     text: '🚢 Deployment',
-                     collapsed: true,
-                     items: [
-                        { text: 'Overview', link: '/deployment/' },
-                        { text: 'Vercel Edge', link: '/deployment/vercel-edge' },
-                        { text: 'Cloudflare Workers', link: '/deployment/cloudflare-workers' },
-                        { text: 'Caching Strategies', link: '/deployment/caching' },
-                        { text: 'Rate Limiting', link: '/deployment/rate-limiting' },
-                        { text: 'Monitoring', link: '/deployment/monitoring' },
-                        { text: 'Cost Calculator', link: '/deployment/cost-calculator' }
-                     ]
-                  },
+                                       text: '🧠 Tech Concepts',
+                                       collapsed: false,
+                                       items: [
+                                          {
+                                             text: 'Fundamentals',
+                                             items: [
+                                                { text: 'LLM Basics', link: '/tech/fundamentals/LLM' },
+                                                { text: 'Context Window', link: '/tech/fundamentals/context' },
+                                                { text: 'Embeddings', link: '/tech/fundamentals/embeddings' },
+                                                { text: 'Prompt Engineering', link: '/tech/fundamentals/prompt/' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Frontend AI',
+                                             items: [
+                                                { text: 'Streaming UI', link: '/tech/frontend/streaming' },
+                                                { text: 'Generative UI', link: '/tech/frontend/generative-ui' },
+                                                { text: 'Browser AI', link: '/tech/frontend/browser-ai' },
+                                                { text: 'State Management', link: '/tech/frontend/state-management' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Engineering',
+                                             items: [
+                                                { text: 'Testing', link: '/tech/engineering/testing' },
+                                                { text: 'Evals', link: '/tech/engineering/evals' },
+                                                { text: 'Observability', link: '/tech/engineering/observability' },
+                                                { text: 'Security', link: '/tech/engineering/security' },
+                                                { text: 'Cost Optimization', link: '/tech/engineering/cost-optimization' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Patterns',
+                                             items: [
+                                                { text: 'RAG', link: '/tech/patterns/RAG' },
+                                                { text: 'RAG · Semantic Search Case Study', link: '/tech/patterns/RAG-semantic-search-case-study' },
+                                                { text: 'Agents', link: '/tech/patterns/agent/' },
+                                                { text: 'Agent · Agent Course', link: '/tech/patterns/agent/agent-course' },
+                                                { text: 'Agent · Agent Design Patterns', link: '/tech/patterns/agent/agent-design-patterns' },
+                                                { text: 'Agent · Hooks', link: '/tech/patterns/agent/hooks' },
+                                                { text: 'Agent · Skills', link: '/tech/patterns/agent/skills' },
+                                                { text: 'Agent · LangChain Harness (2026-04)', link: '/tech/patterns/agent/2026-04-12-langchain-agent-harness' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Prompt Engineering',
+                                             items: [
+                                                { text: 'Overview', link: '/tech/prompt/' },
+                                                { text: 'Agent Engineering Practices', link: '/tech/prompt/agent-engineering-practices' },
+                                                { text: 'Context for Agent Engineering', link: '/tech/prompt/context-agent-engineering' },
+                                                { text: 'Agents Doc', link: '/tech/prompt/agents-doc' },
+                                                { text: 'Case · Copilot', link: '/tech/prompt/cases/copilot' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Tooling & Practice',
+                                             items: [
+                                                { text: 'Advanced Tool Use', link: '/tech/advanced-tool-use' },
+                                                { text: 'AI-Assisted Programming', link: '/tech/ai-assisted-programming' },
+                                                { text: 'AI-Driven Workflow Automation', link: '/tech/ai-driven-workflow-automation' },
+                                                { text: 'N8n Workflow Automation', link: '/tech/n8n-workflow-automation' },
+                                                { text: 'SLS Log Analysis Assistant', link: '/tech/sls-log-analysis-assistant' },
+                                                { text: 'TestHub Platform', link: '/tech/testhub-platform' },
+                                                { text: 'Midscene UI Automation', link: '/tech/midscene-ui-automation' },
+                                                { text: 'Cross-Project Context Input', link: '/tech/cross-project-context-input' },
+                                                { text: 'Context Injection Strategies', link: '/tech/context-injection-strategies' },
+                                                { text: 'Cross-Tool Context Sharing', link: '/tech/cross-tool-context-sharing' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Testing & Evaluation',
+                                             items: [
+                                                { text: 'Alibaba AI Testing', link: '/tech/alibaba-ai-testing' },
+                                                { text: 'Meituan AI Testing', link: '/tech/meituan-ai-testing' },
+                                                { text: 'Generative Benchmarking', link: '/tech/generative-benchmarking' },
+                                                { text: 'Golden Dataset Generation', link: '/tech/golden-dataset-generation' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Training',
+                                             items: [
+                                                { text: 'Overview', link: '/tech/training/' },
+                                                { text: 'SFT', link: '/tech/training/SFT' },
+                                                { text: 'RLHF', link: '/tech/training/RLHF' },
+                                                { text: 'PEFT', link: '/tech/training/PEFT' }
+                                             ]
+                                          }
+                                       ]
+                                    }
+               ],
+               '/cookbook/': [
                   {
-                     text: '💡 Use Cases',
-                     collapsed: true,
-                     items: [
-                        { text: 'Library', link: '/use-cases/' },
-                        { text: 'Add AI Search', link: '/use-cases/add-ai-search' },
-                        { text: 'Migrate to AI', link: '/use-cases/migrate-to-ai' },
-                        { text: 'AI Analytics', link: '/use-cases/ai-analytics' },
-                        { text: 'Recommendations', link: '/use-cases/recommendations' },
-                        { text: 'Accessibility', link: '/use-cases/accessibility' }
-                     ]
-                  },
+                                       text: '🍳 Cookbook',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Overview', link: '/cookbook/' },
+                                          { text: 'Chat UI Component', link: '/cookbook/chat-ui' },
+                                          { text: 'Secure API Proxy', link: '/cookbook/api-proxy' },
+                                          { text: 'Local Embeddings', link: '/cookbook/local-embedding' },
+                                          { text: 'Token Counting', link: '/cookbook/token-counting' },
+                                          { text: 'Form Autocomplete', link: '/cookbook/form-autocomplete' },
+                                          { text: 'Error Handling', link: '/cookbook/error-handling' },
+                                          { text: 'Content Moderation', link: '/cookbook/content-moderation' }
+                                       ]
+                                    },
+
                   {
-                     text: '🧰 Products & Tools',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: 'AI Coding',
-                           items: [
-                              ...enAiCodingItems
-                           ]
-                        },
-                        {
-                           text: 'Tools',
-                           items: [
-                              { text: 'Ollama', link: '/products/tools/ollama' },
-                              { text: 'Figma AI', link: '/products/figma-ai/' },
-                              { text: 'Testing AI', link: '/products/testing-ai/' }
-                           ]
-                        },
-                        {
-                           text: 'AI Tools',
-                           link: '/ai-tools/',
-                           items: [
-                              { text: 'Overview', link: '/ai-tools/' },
-                              { text: 'AI Efficiency Practice', link: '/ai-tools/ai-efficiency-practice' },
-                              { text: 'AI Landing Discussion', link: '/ai-tools/ai-landing-discussion' },
-                              { text: 'AI Native Hiring', link: '/ai-tools/ai-native-hiring' }
-                           ]
-                        },
-                        { text: '📚 Resources', link: '/resources' }
-                     ]
-                  }
+                                       text: '🛠️ Projects',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: 'Beginner',
+                                             items: [
+                                                { text: 'AI Chatbot', link: '/projects/beginner/ai-chatbot' },
+                                                { text: 'Text Summarizer', link: '/projects/beginner/text-summarizer' },
+                                                { text: 'Image Generator', link: '/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Intermediate',
+                                             items: [
+                                                { text: 'RAG Search', link: '/projects/intermediate/rag-search' },
+                                                { text: 'Code Autocomplete', link: '/projects/intermediate/code-completion' },
+                                                { text: 'AI Form Builder', link: '/projects/intermediate/ai-form-builder' },
+                                                { text: 'Semantic Search', link: '/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Advanced',
+                                             items: [
+                                                { text: 'Full Stack SaaS', link: '/projects/advanced/full-stack-saas' },
+                                                { text: 'Multi-Agent App', link: '/projects/advanced/multi-agent-app' },
+                                                { text: 'AI Design Tool', link: '/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 Deployment',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Overview', link: '/deployment/' },
+                                          { text: 'Vercel Edge', link: '/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/deployment/cloudflare-workers' },
+                                          { text: 'Caching Strategies', link: '/deployment/caching' },
+                                          { text: 'Rate Limiting', link: '/deployment/rate-limiting' },
+                                          { text: 'Monitoring', link: '/deployment/monitoring' },
+                                          { text: 'Cost Calculator', link: '/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 Use Cases',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Library', link: '/use-cases/' },
+                                          { text: 'Add AI Search', link: '/use-cases/add-ai-search' },
+                                          { text: 'Migrate to AI', link: '/use-cases/migrate-to-ai' },
+                                          { text: 'AI Analytics', link: '/use-cases/ai-analytics' },
+                                          { text: 'Recommendations', link: '/use-cases/recommendations' },
+                                          { text: 'Accessibility', link: '/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/projects/': [
+                  {
+                                       text: '🍳 Cookbook',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Overview', link: '/cookbook/' },
+                                          { text: 'Chat UI Component', link: '/cookbook/chat-ui' },
+                                          { text: 'Secure API Proxy', link: '/cookbook/api-proxy' },
+                                          { text: 'Local Embeddings', link: '/cookbook/local-embedding' },
+                                          { text: 'Token Counting', link: '/cookbook/token-counting' },
+                                          { text: 'Form Autocomplete', link: '/cookbook/form-autocomplete' },
+                                          { text: 'Error Handling', link: '/cookbook/error-handling' },
+                                          { text: 'Content Moderation', link: '/cookbook/content-moderation' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🛠️ Projects',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: 'Beginner',
+                                             items: [
+                                                { text: 'AI Chatbot', link: '/projects/beginner/ai-chatbot' },
+                                                { text: 'Text Summarizer', link: '/projects/beginner/text-summarizer' },
+                                                { text: 'Image Generator', link: '/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Intermediate',
+                                             items: [
+                                                { text: 'RAG Search', link: '/projects/intermediate/rag-search' },
+                                                { text: 'Code Autocomplete', link: '/projects/intermediate/code-completion' },
+                                                { text: 'AI Form Builder', link: '/projects/intermediate/ai-form-builder' },
+                                                { text: 'Semantic Search', link: '/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Advanced',
+                                             items: [
+                                                { text: 'Full Stack SaaS', link: '/projects/advanced/full-stack-saas' },
+                                                { text: 'Multi-Agent App', link: '/projects/advanced/multi-agent-app' },
+                                                { text: 'AI Design Tool', link: '/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 Deployment',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Overview', link: '/deployment/' },
+                                          { text: 'Vercel Edge', link: '/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/deployment/cloudflare-workers' },
+                                          { text: 'Caching Strategies', link: '/deployment/caching' },
+                                          { text: 'Rate Limiting', link: '/deployment/rate-limiting' },
+                                          { text: 'Monitoring', link: '/deployment/monitoring' },
+                                          { text: 'Cost Calculator', link: '/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 Use Cases',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Library', link: '/use-cases/' },
+                                          { text: 'Add AI Search', link: '/use-cases/add-ai-search' },
+                                          { text: 'Migrate to AI', link: '/use-cases/migrate-to-ai' },
+                                          { text: 'AI Analytics', link: '/use-cases/ai-analytics' },
+                                          { text: 'Recommendations', link: '/use-cases/recommendations' },
+                                          { text: 'Accessibility', link: '/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/deployment/': [
+                  {
+                                       text: '🍳 Cookbook',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Overview', link: '/cookbook/' },
+                                          { text: 'Chat UI Component', link: '/cookbook/chat-ui' },
+                                          { text: 'Secure API Proxy', link: '/cookbook/api-proxy' },
+                                          { text: 'Local Embeddings', link: '/cookbook/local-embedding' },
+                                          { text: 'Token Counting', link: '/cookbook/token-counting' },
+                                          { text: 'Form Autocomplete', link: '/cookbook/form-autocomplete' },
+                                          { text: 'Error Handling', link: '/cookbook/error-handling' },
+                                          { text: 'Content Moderation', link: '/cookbook/content-moderation' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🛠️ Projects',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: 'Beginner',
+                                             items: [
+                                                { text: 'AI Chatbot', link: '/projects/beginner/ai-chatbot' },
+                                                { text: 'Text Summarizer', link: '/projects/beginner/text-summarizer' },
+                                                { text: 'Image Generator', link: '/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Intermediate',
+                                             items: [
+                                                { text: 'RAG Search', link: '/projects/intermediate/rag-search' },
+                                                { text: 'Code Autocomplete', link: '/projects/intermediate/code-completion' },
+                                                { text: 'AI Form Builder', link: '/projects/intermediate/ai-form-builder' },
+                                                { text: 'Semantic Search', link: '/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Advanced',
+                                             items: [
+                                                { text: 'Full Stack SaaS', link: '/projects/advanced/full-stack-saas' },
+                                                { text: 'Multi-Agent App', link: '/projects/advanced/multi-agent-app' },
+                                                { text: 'AI Design Tool', link: '/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 Deployment',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Overview', link: '/deployment/' },
+                                          { text: 'Vercel Edge', link: '/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/deployment/cloudflare-workers' },
+                                          { text: 'Caching Strategies', link: '/deployment/caching' },
+                                          { text: 'Rate Limiting', link: '/deployment/rate-limiting' },
+                                          { text: 'Monitoring', link: '/deployment/monitoring' },
+                                          { text: 'Cost Calculator', link: '/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 Use Cases',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Library', link: '/use-cases/' },
+                                          { text: 'Add AI Search', link: '/use-cases/add-ai-search' },
+                                          { text: 'Migrate to AI', link: '/use-cases/migrate-to-ai' },
+                                          { text: 'AI Analytics', link: '/use-cases/ai-analytics' },
+                                          { text: 'Recommendations', link: '/use-cases/recommendations' },
+                                          { text: 'Accessibility', link: '/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/use-cases/': [
+                  {
+                                       text: '🍳 Cookbook',
+                                       collapsed: false,
+                                       items: [
+                                          { text: 'Overview', link: '/cookbook/' },
+                                          { text: 'Chat UI Component', link: '/cookbook/chat-ui' },
+                                          { text: 'Secure API Proxy', link: '/cookbook/api-proxy' },
+                                          { text: 'Local Embeddings', link: '/cookbook/local-embedding' },
+                                          { text: 'Token Counting', link: '/cookbook/token-counting' },
+                                          { text: 'Form Autocomplete', link: '/cookbook/form-autocomplete' },
+                                          { text: 'Error Handling', link: '/cookbook/error-handling' },
+                                          { text: 'Content Moderation', link: '/cookbook/content-moderation' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🛠️ Projects',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: 'Beginner',
+                                             items: [
+                                                { text: 'AI Chatbot', link: '/projects/beginner/ai-chatbot' },
+                                                { text: 'Text Summarizer', link: '/projects/beginner/text-summarizer' },
+                                                { text: 'Image Generator', link: '/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Intermediate',
+                                             items: [
+                                                { text: 'RAG Search', link: '/projects/intermediate/rag-search' },
+                                                { text: 'Code Autocomplete', link: '/projects/intermediate/code-completion' },
+                                                { text: 'AI Form Builder', link: '/projects/intermediate/ai-form-builder' },
+                                                { text: 'Semantic Search', link: '/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Advanced',
+                                             items: [
+                                                { text: 'Full Stack SaaS', link: '/projects/advanced/full-stack-saas' },
+                                                { text: 'Multi-Agent App', link: '/projects/advanced/multi-agent-app' },
+                                                { text: 'AI Design Tool', link: '/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 Deployment',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Overview', link: '/deployment/' },
+                                          { text: 'Vercel Edge', link: '/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/deployment/cloudflare-workers' },
+                                          { text: 'Caching Strategies', link: '/deployment/caching' },
+                                          { text: 'Rate Limiting', link: '/deployment/rate-limiting' },
+                                          { text: 'Monitoring', link: '/deployment/monitoring' },
+                                          { text: 'Cost Calculator', link: '/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 Use Cases',
+                                       collapsed: true,
+                                       items: [
+                                          { text: 'Library', link: '/use-cases/' },
+                                          { text: 'Add AI Search', link: '/use-cases/add-ai-search' },
+                                          { text: 'Migrate to AI', link: '/use-cases/migrate-to-ai' },
+                                          { text: 'AI Analytics', link: '/use-cases/ai-analytics' },
+                                          { text: 'Recommendations', link: '/use-cases/recommendations' },
+                                          { text: 'Accessibility', link: '/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/ai-tools/': [
+                  { text: 'Overview', link: '/ai-tools/' },
+                  { text: 'AI Efficiency Practice', link: '/ai-tools/ai-efficiency-practice' },
+                  { text: 'AI Landing Discussion', link: '/ai-tools/ai-landing-discussion' },
+                  { text: 'AI Native Hiring', link: '/ai-tools/ai-native-hiring' }
                ]
             }
          },
@@ -369,11 +731,11 @@ export default withMermaid(defineConfig({
             langMenuLabel: '切换语言',
             nav: [
                { text: '首页', link: '/zh/' },
-               { text: '路径', link: '/zh/paths/' },
+               { text: '路径', link: '/zh/paths/', activeMatch: '/zh/paths/' },
                { text: '产品', link: '/zh/products/', activeMatch: '/zh/products/' },
-               { text: '文档', link: '/zh/tech/' },
-               { text: '秘籍', link: '/zh/cookbook/' },
-               { text: 'AI 工具', link: '/zh/ai-tools/' },
+               { text: '文档', link: '/zh/tech/', activeMatch: '^/zh/(tech|integration)/' },
+               { text: '秘籍', link: '/zh/cookbook/', activeMatch: '^/zh/(cookbook|projects|deployment|use-cases)/' },
+               { text: 'AI 工具', link: '/zh/ai-tools/', activeMatch: '^/zh/(ai-tools|skills)/' },
                {
                   text: 'PPTs', items: [
                      { text: '1. Vibe Coding', link: 'https://ai.zenheart.site/ppts/vibe-coding/' },
@@ -385,379 +747,755 @@ export default withMermaid(defineConfig({
                }
             ],
             sidebar: {
-               '/zh/': [
+               '/zh/paths/': [
                   {
-                     text: '🗺️ 学习路径',
-                     collapsed: false,
-                     items: [
-                        { text: '路径概览', link: '/zh/paths/' },
-                        { text: '路径 1: 生产力', link: '/zh/paths/productivity' },
-                        { text: '路径 2: 集成', link: '/zh/paths/integration' },
-                        { text: '路径 3: 精通', link: '/zh/paths/mastery' }
-                     ]
-                  },
-                  {
-                     text: '🔌 集成指南',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: 'API',
-                           collapsed: false,
-                           items: [
-                              { text: '对比与成本', link: '/zh/integration/apis/' },
-                              { text: 'OpenAI', link: '/zh/integration/apis/openai' },
-                              { text: 'Anthropic (Claude)', link: '/zh/integration/apis/anthropic' },
-                              { text: 'HuggingFace', link: '/zh/integration/apis/huggingface' },
-                              { text: '流式模式', link: '/zh/integration/apis/streaming' }
-                           ]
-                        },
-                        {
-                           text: '框架',
-                           collapsed: false,
-                           items: [
-                              { text: '概览', link: '/zh/integration/frameworks/' },
-                              { text: 'Vercel AI SDK', link: '/zh/integration/frameworks/vercel-ai-sdk' },
-                              { text: 'LangChain.js', link: '/zh/integration/frameworks/langchain-js' },
-                              { text: 'LlamaIndex.TS', link: '/zh/integration/frameworks/llamaindex-ts' },
-                              { text: 'Next.js 集成', link: '/zh/integration/frameworks/nextjs' }
-                           ]
-                        },
-                        {
-                           text: '协议',
-                           items: [
-                              {
-                                 text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp/',
-                                 items: [
-                                    { text: '概览', link: '/zh/integration/protocols/mcp/' },
-                                    { text: '架构', link: '/zh/integration/protocols/mcp/architecture' },
-                                    { text: 'MCP Apps', link: '/zh/integration/protocols/mcp/mcp-apps' },
-                                    { text: 'list', link: '/zh/integration/protocols/mcp/list' }
-                                 ]
-                              },
-                              { text: '工具调用 (Tool Calling)', link: '/zh/integration/protocols/tool-calling' }
-                           ]
-                        },
-                        {
-                           text: '前端 ML',
-                           items: [
-                              { text: '概览', link: '/zh/integration/frontend-ml/' },
-                              { text: 'Transformers.js', link: '/zh/integration/frontend-ml/transformersjs' },
-                              { text: 'TensorFlow.js', link: '/zh/integration/frontend-ml/tensorflowjs' },
-                              { text: 'ml5.js', link: '/zh/integration/frontend-ml/ml5js' },
-                              { text: 'ONNX Runtime', link: '/zh/integration/frontend-ml/onnx-runtime' }
-                           ]
-                        }
-                     ]
-                  },
-                  {
-                     text: '🧠 技术概念',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: '基础',
-                           items: [
-                              { text: 'LLM 基础', link: '/zh/tech/fundamentals/LLM' },
-                              { text: '提示工程', link: '/zh/tech/fundamentals/prompt/' },
-                              { text: '上下文窗口', link: '/zh/tech/fundamentals/context' },
-                              { text: '上下文工程', link: '/zh/tech/fundamentals/context-engineering' },
-                              { text: 'Embeddings (嵌入)', link: '/zh/tech/fundamentals/embeddings' },
-                           ]
-                        },
-                        {
-                           text: '前端 AI',
-                           items: [
-                              { text: '流式 UI (Streaming)', link: '/zh/tech/frontend/streaming' },
-                              { text: '生成式 UI', link: '/zh/tech/frontend/generative-ui' },
-                              { text: '浏览器 AI', link: '/zh/tech/frontend/browser-ai' },
-                              { text: '状态管理', link: '/zh/tech/frontend/state-management' }
-                           ]
-                        },
-                        {
-                           text: '工程化',
-                           items: [
-                              { text: '测试', link: '/zh/tech/engineering/testing' },
-                              { text: '评估 (Evals)', link: '/zh/tech/engineering/evals' },
-                              { text: '可观测性', link: '/zh/tech/engineering/observability' },
-                              { text: '安全', link: '/zh/tech/engineering/security' },
-                              { text: '成本优化', link: '/zh/tech/engineering/cost-optimization' }
-                           ]
-                        },
-                        {
-                           text: '模式',
-                           items: [
-                              { text: 'RAG', link: '/zh/tech/patterns/RAG' },
-                              { text: 'Agents (智能体)', link: '/zh/tech/patterns/agent/' },
-                              { text: 'Agent 模式 · Harness', link: '/zh/tech/patterns/agent/harness' },
-                              { text: 'Agent 模式 · 工作流', link: '/zh/tech/patterns/agent/workflow-patterns' },
-                              { text: 'Agent 模式 · Hello Agents', link: '/zh/tech/patterns/agent/hello-agents' },
-                              { text: 'Agent 模式 · Agentic Engineering', link: '/zh/tech/patterns/agent/agentic-engineering-patterns' },
-                              { text: 'Agent · Hooks', link: '/zh/tech/patterns/agent/hooks' },
-                              { text: 'Agent · Skills', link: '/zh/tech/patterns/agent/skills' }
-                           ]
-                        },
-                        {
-                           text: 'Agent 学习',
-                           items: [
-                              { text: 'Agent 设计模式', link: '/zh/tech/agent/agent-design-patterns' },
-                              { text: 'Agentic Engineering Patterns', link: '/zh/tech/agent/agentic-engineering-patterns' },
-                              { text: 'AI Ops Agent 探索', link: '/zh/tech/agent/aiops-agent-exploration' },
-                              { text: '阿里事故复盘 Agent', link: '/zh/tech/agent/alibaba-incident-review-agent' },
-                              { text: 'AI Agent 常见工作流', link: '/zh/tech/agent/common-workflow-patterns-ai-agents' },
-                              { text: 'Hello Agents (Datawhale)', link: '/zh/tech/agent/hello-agents-datwhale' },
-                              { text: 'How I Use Claude Code', link: '/zh/tech/agent/how-i-use-claude-code' },
-                              { text: 'Human in the Loop', link: '/zh/tech/agent/human-in-the-loop-patterns' },
-                              { text: 'LangChain Agent Harness', link: '/zh/tech/agent/langchain-agent-harness' },
-                              { text: 'Multi-Agent 编排', link: '/zh/tech/agent/multi-agent-orchestration' },
-                              { text: 'OpenAI Agents SDK', link: '/zh/tech/agent/openai-agents-sdk' },
-                              { text: 'Pi Agent 设计哲学', link: '/zh/tech/agent/pi-agent-design-philosophy' }
-                           ]
-                        },
-                        {
-                           text: 'Prompt 工程',
-                           items: [
-                              { text: '概览', link: '/zh/tech/prompt/' },
-                              { text: '官方指南 2026', link: '/zh/tech/prompt/official-guide-2026' },
-                              { text: 'Advanced Tool Use', link: '/zh/tech/prompt/advanced-tool-use' },
-                              { text: 'Agentic Engineering Patterns', link: '/zh/tech/prompt/agentic-engineering-patterns' },
-                              { text: 'Token Counting & Embedding', link: '/zh/tech/prompt/token-counting-embedding-basics' },
-                              { text: 'System Prompts 集锦', link: '/zh/tech/prompt/system-prompts-collection' },
-                              { text: 'JSON Prompt 最佳实践', link: '/zh/tech/prompt/json-prompt-best-practices' },
-                              { text: 'Agents Doc', link: '/zh/tech/prompt/agents-doc' },
-                              { text: '案例 · Copilot', link: '/zh/tech/prompt/cases/copilot' }
-                           ]
-                        },
-                        {
-                           text: 'Skills 学习',
-                           items: [
-                              { text: 'Claude Skills 概览', link: '/zh/tech/skills/claude-skills-overview' },
-                              { text: 'Skills 机制详解', link: '/zh/tech/skills/skills-mechanics-explained' },
-                              { text: 'How to Create Skills', link: '/zh/tech/skills/how-to-create-skills' },
-                              { text: 'Skills 最佳实践', link: '/zh/tech/skills/skills-best-practices' }
-                           ]
-                        },
-                        {
-                           text: 'AI 编程',
-                           items: [
-                              { text: 'AI 编程工程化', link: '/zh/tech/ai-coding/ai-coding-engineering' },
-                              { text: 'Claude Code Auto Mode 安全', link: '/zh/tech/ai-coding/claude-code-auto-mode-security' },
-                              { text: '上下文注入策略', link: '/zh/tech/ai-coding/context-injection-strategies' },
-                              { text: '跨工具上下文共享', link: '/zh/tech/ai-coding/cross-tool-context-sharing' },
-                              { text: 'Cursor IDE 架构', link: '/zh/tech/ai-coding/cursor-ide-architecture' },
-                              { text: 'Cursor Rules', link: '/zh/tech/ai-coding/cursor-rules' }
-                           ]
-                        },
-                        {
-                           text: 'AI 应用',
-                           items: [
-                              { text: '构建语义搜索', link: '/zh/tech/ai-application/building-semantic-search' },
-                              { text: '得物 AI 实施', link: '/zh/tech/ai-application/dewu-ai-implementation' }
-                           ]
-                        },
-                        {
-                           text: '评估 (Evaluation)',
-                           items: [
-                              { text: 'AI 测试', link: '/zh/tech/evaluation/ai-testing' },
-                              { text: '生成式基准', link: '/zh/tech/evaluation/generative-benchmarking' }
-                           ]
-                        },
-                        {
-                           text: 'MCP 学习',
-                           items: [
-                              { text: 'Chrome DevTools MCP', link: '/zh/tech/mcp/chrome-devtools-mcp' },
-                              { text: 'MCP Apps 实践', link: '/zh/tech/mcp/mcp-apps-practice' },
-                              { text: 'MCP 课程笔记', link: '/zh/tech/mcp/mcp-course-notes' }
-                           ]
-                        },
-                        {
-                           text: '方法论',
-                           items: [
-                              { text: 'BMAD 方法论', link: '/zh/tech/method/bmad-methodology' }
-                           ]
-                        },
-                        {
-                           text: '多模态',
-                           items: [
-                              { text: 'Claude 视觉能力', link: '/zh/tech/multimodal/claude-vision-capabilities' }
-                           ]
-                        },
-                        {
-                           text: '哲学',
-                           items: [
-                              { text: 'Vibe Coding 哲学', link: '/zh/tech/philosophy/vibe-coding-philosophy' }
-                           ]
-                        },
-                        {
-                           text: '测试',
-                           items: [
-                              { text: 'AI 自动化测试 · 知乎', link: '/zh/tech/testing/ai-automation-testing-zhihu' },
-                              { text: ' Midscene UI 自动化', link: '/zh/tech/testing/midscene-ui-automation' }
-                           ]
-                        },
-                        {
-                           text: '训练',
-                           items: [
-                              { text: '概览', link: '/zh/tech/training/' },
-                              { text: 'SFT (微调)', link: '/zh/tech/training/SFT' },
-                              { text: 'RLHF', link: '/zh/tech/training/RLHF' },
-                              { text: 'PEFT', link: '/zh/tech/training/PEFT' }
-                           ]
-                        }
-                     ]
-                  },
-                  {
-                     text: '🛠️ 实战项目',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: '初级',
-                           items: [
-                              { text: 'AI 聊天机器人', link: '/zh/projects/beginner/ai-chatbot' },
-                              { text: '文本摘要器', link: '/zh/projects/beginner/text-summarizer' },
-                              { text: '图像生成器', link: '/zh/projects/beginner/image-generator' }
-                           ]
-                        },
-                        {
-                           text: '中级',
-                           items: [
-                              { text: 'RAG 搜索', link: '/zh/projects/intermediate/rag-search' },
-                              { text: '代码自动补全', link: '/zh/projects/intermediate/code-completion' },
-                              { text: 'AI 表单构建器', link: '/zh/projects/intermediate/ai-form-builder' },
-                              { text: '语义搜索', link: '/zh/projects/intermediate/semantic-search' }
-                           ]
-                        },
-                        {
-                           text: '高级',
-                           items: [
-                              { text: '全栈 SaaS', link: '/zh/projects/advanced/full-stack-saas' },
-                              { text: '多智能体应用', link: '/zh/projects/advanced/multi-agent-app' },
-                              { text: 'AI 设计工具', link: '/zh/projects/advanced/ai-design-tool' }
-                           ]
-                        }
-                     ]
-                  },
-                  {
-                     text: '🍳 秘籍 (Cookbook)',
-                     collapsed: true,
-                     items: [
-                        { text: '概览', link: '/zh/cookbook/' },
-                        { text: '聊天 UI 组件', link: '/zh/cookbook/chat-ui' },
-                        { text: '安全 API 代理', link: '/zh/cookbook/api-proxy' },
-                        { text: '本地 Embeddings', link: '/zh/cookbook/local-embedding' },
-                        { text: '表单自动补全', link: '/zh/cookbook/form-autocomplete' },
-                        { text: '错误处理', link: '/zh/cookbook/error-handling' },
-                        { text: '内容审查', link: '/zh/cookbook/content-moderation' }
-                     ]
-                  },
-                  {
-                     text: '🚢 部署',
-                     collapsed: true,
-                     items: [
-                        { text: '概览', link: '/zh/deployment/' },
-                        { text: 'Vercel Edge', link: '/zh/deployment/vercel-edge' },
-                        { text: 'Cloudflare Workers', link: '/zh/deployment/cloudflare-workers' },
-                        { text: '缓存策略', link: '/zh/deployment/caching' },
-                        { text: '速率限制', link: '/zh/deployment/rate-limiting' },
-                        { text: '监控', link: '/zh/deployment/monitoring' },
-                        { text: '成本计算器', link: '/zh/deployment/cost-calculator' }
-                     ]
-                  },
-                  {
-                     text: '💡 应用场景',
-                     collapsed: true,
-                     items: [
-                        { text: '案例库', link: '/zh/use-cases/' },
-                        { text: '添加 AI 搜索', link: '/zh/use-cases/add-ai-search' },
-                        { text: '迁移到 AI', link: '/zh/use-cases/migrate-to-ai' },
-                        { text: 'AI 分析', link: '/zh/use-cases/ai-analytics' },
-                        { text: '个性化推荐', link: '/zh/use-cases/recommendations' },
-                        { text: '无障碍访问', link: '/zh/use-cases/accessibility' }
-                     ]
-                  },
-                  {
-                     text: '🧰 产品与工具',
-                     collapsed: true,
-                     items: [
-                        {
-                           text: '自动化',
-                           items: [
-                              {
-                                 text: 'OpenClaw',
-                                 link: '/zh/products/openclaw/',
-                                 items: [
-                                    { text: '概述', link: '/zh/products/openclaw/' },
-                                    { text: '飞书接入', link: '/zh/products/openclaw/feishu' },
-                                    { text: '微信接入', link: '/zh/products/openclaw/wechat' },
-                                    { text: '企业微信接入', link: '/zh/products/openclaw/wecom' },
-                                    {
-                                       text: '进阶指南',
+                                       text: '🗺️ 学习路径',
                                        collapsed: false,
                                        items: [
-                                          { text: 'CLI 命令参考', link: '/zh/products/openclaw/cli' },
-                                          { text: '部署指南', link: '/zh/products/openclaw/deployment' },
-                                          { text: '安全配置', link: '/zh/products/openclaw/security' },
-                                          { text: '技能开发', link: '/zh/products/openclaw/skills' },
+                                          { text: '路径概览', link: '/zh/paths/' },
+                                          { text: '路径 1: 生产力', link: '/zh/paths/productivity' },
+                                          { text: '路径 2: 集成', link: '/zh/paths/integration' },
+                                          { text: '路径 3: 精通', link: '/zh/paths/mastery' }
                                        ]
-                                    },
-                                    {
-                                       text: '源码分析',
+                                    }
+               ],
+               '/zh/products/': [
+                  { text: '全部产品', link: '/zh/products/' },
+                  ...zhAiCodingItems,
+                  { text: 'Ollama', link: '/zh/products/tools/ollama' }
+               ],
+               '/zh/tech/': [
+                  {
+                                       text: '🔌 集成指南',
                                        collapsed: false,
                                        items: [
-                                          { text: '索引', link: '/zh/products/openclaw/source-code/' },
-                                          { text: '核心架构', link: '/zh/products/openclaw/source-code/architecture' },
-                                          { text: '通道接入', link: '/zh/products/openclaw/source-code/channels' },
-                                          { text: '智能体引擎', link: '/zh/products/openclaw/source-code/agents' },
-                                          { text: '会话管理', link: '/zh/products/openclaw/source-code/sessions' },
-                                          { text: '插件系统', link: '/zh/products/openclaw/source-code/plugins' },
-                                          { text: '钩子机制', link: '/zh/products/openclaw/source-code/hooks' },
-                                          { text: 'MCP 协议', link: '/zh/products/openclaw/source-code/mcp' },
-                                          { text: 'ACP 协议', link: '/zh/products/openclaw/source-code/acp' },
+                                          {
+                                             text: 'API',
+                                             collapsed: false,
+                                             items: [
+                                                { text: '对比与成本', link: '/zh/integration/apis/' },
+                                                { text: 'OpenAI', link: '/zh/integration/apis/openai' },
+                                                { text: 'Anthropic (Claude)', link: '/zh/integration/apis/anthropic' },
+                                                { text: 'HuggingFace', link: '/zh/integration/apis/huggingface' },
+                                                { text: '流式模式', link: '/zh/integration/apis/streaming' }
+                                             ]
+                                          },
+                                          {
+                                             text: '框架',
+                                             collapsed: false,
+                                             items: [
+                                                { text: '概览', link: '/zh/integration/frameworks/' },
+                                                { text: 'Vercel AI SDK', link: '/zh/integration/frameworks/vercel-ai-sdk' },
+                                                { text: 'LangChain.js', link: '/zh/integration/frameworks/langchain-js' },
+                                                { text: 'LlamaIndex.TS', link: '/zh/integration/frameworks/llamaindex-ts' },
+                                                { text: 'Next.js 集成', link: '/zh/integration/frameworks/nextjs' }
+                                             ]
+                                          },
+                                          {
+                                             text: '协议',
+                                             items: [
+                                                {
+                                                   text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp/',
+                                                   items: [
+                                                      { text: '概览', link: '/zh/integration/protocols/mcp/' },
+                                                      { text: '架构', link: '/zh/integration/protocols/mcp/architecture' },
+                                                      { text: 'MCP Apps', link: '/zh/integration/protocols/mcp/mcp-apps' },
+                                                      { text: 'list', link: '/zh/integration/protocols/mcp/list' }
+                                                   ]
+                                                },
+                                                { text: '工具调用 (Tool Calling)', link: '/zh/integration/protocols/tool-calling' }
+                                             ]
+                                          },
+                                          {
+                                             text: '前端 ML',
+                                             items: [
+                                                { text: '概览', link: '/zh/integration/frontend-ml/' },
+                                                { text: 'Transformers.js', link: '/zh/integration/frontend-ml/transformersjs' },
+                                                { text: 'TensorFlow.js', link: '/zh/integration/frontend-ml/tensorflowjs' },
+                                                { text: 'ml5.js', link: '/zh/integration/frontend-ml/ml5js' },
+                                                { text: 'ONNX Runtime', link: '/zh/integration/frontend-ml/onnx-runtime' }
+                                             ]
+                                          }
                                        ]
                                     },
-                                 ]
-                              },
-                           ]
-                        },
-                        {
-                           text: 'AI 编程',
-                           link: '/zh/products/ai-coding/',
-                           items: [
-                              ...zhAiCodingItems
-                           ]
-                        },
-                        {
-                           text: 'Skills 学习',
-                           link: '/zh/skills/',
-                           items: [
-                              { text: '概览', link: '/zh/skills/' },
-                              { text: 'Engineer Skill', link: '/zh/skills/engineer-skill' },
-                              { text: 'OpenSpec', link: '/zh/skills/openspec' },
-                              { text: 'Superpower', link: '/zh/skills/superpower' }
-                           ]
-                        },
-                        {
-                           text: 'AI 工具',
-                           link: '/zh/ai-tools/',
-                           items: [
-                              { text: '概览', link: '/zh/ai-tools/' },
-                              { text: 'Claude Code Auto Mode', link: '/zh/ai-tools/claude-code-auto-mode' },
-                              { text: 'Claude Skills 深入', link: '/zh/ai-tools/claude-skills-deep-dive' },
-                              { text: 'How to Create Skills', link: '/zh/ai-tools/how-to-create-skills' },
-                              { text: 'Skills Mechanics Explained', link: '/zh/ai-tools/skills-mechanics-explained' },
-                              { text: 'Skills 社区反馈', link: '/zh/ai-tools/skills-community-feedback' },
-                              { text: 'Context Engineering 深入', link: '/zh/ai-tools/context-engineering-deep-dive' }
-                           ]
-                        },
-                        {
-                           text: '工具',
-                           items: [
-                              { text: 'Ollama', link: '/zh/products/tools/ollama' },
-                              { text: 'Figma AI', link: '/zh/products/figma-ai/' },
-                              { text: 'Testing AI', link: '/zh/products/testing-ai/' }
-                           ]
-                        },
-                        { text: '📚 资源', link: '/zh/resources' }
-                     ]
-                  }
+
+                  {
+                                       text: '🧠 技术概念',
+                                       collapsed: false,
+                                       items: [
+                                          {
+                                             text: '基础',
+                                             items: [
+                                                { text: 'LLM 基础', link: '/zh/tech/fundamentals/LLM' },
+                                                { text: '提示工程', link: '/zh/tech/fundamentals/prompt/' },
+                                                { text: '上下文窗口', link: '/zh/tech/fundamentals/context' },
+                                                { text: '上下文工程', link: '/zh/tech/fundamentals/context-engineering' },
+                                                { text: 'Embeddings (嵌入)', link: '/zh/tech/fundamentals/embeddings' },
+                                             ]
+                                          },
+                                          {
+                                             text: '前端 AI',
+                                             items: [
+                                                { text: '流式 UI (Streaming)', link: '/zh/tech/frontend/streaming' },
+                                                { text: '生成式 UI', link: '/zh/tech/frontend/generative-ui' },
+                                                { text: '浏览器 AI', link: '/zh/tech/frontend/browser-ai' },
+                                                { text: '状态管理', link: '/zh/tech/frontend/state-management' }
+                                             ]
+                                          },
+                                          {
+                                             text: '工程化',
+                                             items: [
+                                                { text: '测试', link: '/zh/tech/engineering/testing' },
+                                                { text: '评估 (Evals)', link: '/zh/tech/engineering/evals' },
+                                                { text: '可观测性', link: '/zh/tech/engineering/observability' },
+                                                { text: '安全', link: '/zh/tech/engineering/security' },
+                                                { text: '成本优化', link: '/zh/tech/engineering/cost-optimization' }
+                                             ]
+                                          },
+                                          {
+                                             text: '模式',
+                                             items: [
+                                                { text: 'RAG', link: '/zh/tech/patterns/RAG' },
+                                                { text: 'Agents (智能体)', link: '/zh/tech/patterns/agent/' },
+                                                { text: 'Agent 模式 · Harness', link: '/zh/tech/patterns/agent/harness' },
+                                                { text: 'Agent 模式 · 工作流', link: '/zh/tech/patterns/agent/workflow-patterns' },
+                                                { text: 'Agent 模式 · Hello Agents', link: '/zh/tech/patterns/agent/hello-agents' },
+                                                { text: 'Agent 模式 · Agentic Engineering', link: '/zh/tech/patterns/agent/agentic-engineering-patterns' },
+                                                { text: 'Agent · Hooks', link: '/zh/tech/patterns/agent/hooks' },
+                                                { text: 'Agent · Skills', link: '/zh/tech/patterns/agent/skills' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Agent 学习',
+                                             items: [
+                                                { text: 'Agent 设计模式', link: '/zh/tech/agent/agent-design-patterns' },
+                                                { text: 'Agentic Engineering Patterns', link: '/zh/tech/agent/agentic-engineering-patterns' },
+                                                { text: 'AI Ops Agent 探索', link: '/zh/tech/agent/aiops-agent-exploration' },
+                                                { text: '阿里事故复盘 Agent', link: '/zh/tech/agent/alibaba-incident-review-agent' },
+                                                { text: 'AI Agent 常见工作流', link: '/zh/tech/agent/common-workflow-patterns-ai-agents' },
+                                                { text: 'Hello Agents (Datawhale)', link: '/zh/tech/agent/hello-agents-datwhale' },
+                                                { text: 'How I Use Claude Code', link: '/zh/tech/agent/how-i-use-claude-code' },
+                                                { text: 'Human in the Loop', link: '/zh/tech/agent/human-in-the-loop-patterns' },
+                                                { text: 'LangChain Agent Harness', link: '/zh/tech/agent/langchain-agent-harness' },
+                                                { text: 'Multi-Agent 编排', link: '/zh/tech/agent/multi-agent-orchestration' },
+                                                { text: 'OpenAI Agents SDK', link: '/zh/tech/agent/openai-agents-sdk' },
+                                                { text: 'Pi Agent 设计哲学', link: '/zh/tech/agent/pi-agent-design-philosophy' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Prompt 工程',
+                                             items: [
+                                                { text: '概览', link: '/zh/tech/prompt/' },
+                                                { text: '官方指南 2026', link: '/zh/tech/prompt/official-guide-2026' },
+                                                { text: 'Advanced Tool Use', link: '/zh/tech/prompt/advanced-tool-use' },
+                                                { text: 'Agentic Engineering Patterns', link: '/zh/tech/prompt/agentic-engineering-patterns' },
+                                                { text: 'Token Counting & Embedding', link: '/zh/tech/prompt/token-counting-embedding-basics' },
+                                                { text: 'System Prompts 集锦', link: '/zh/tech/prompt/system-prompts-collection' },
+                                                { text: 'JSON Prompt 最佳实践', link: '/zh/tech/prompt/json-prompt-best-practices' },
+                                                { text: 'Agents Doc', link: '/zh/tech/prompt/agents-doc' },
+                                                { text: '案例 · Copilot', link: '/zh/tech/prompt/cases/copilot' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Skills 学习',
+                                             items: [
+                                                { text: 'Claude Skills 概览', link: '/zh/tech/skills/claude-skills-overview' },
+                                                { text: 'Skills 机制详解', link: '/zh/tech/skills/skills-mechanics-explained' },
+                                                { text: 'How to Create Skills', link: '/zh/tech/skills/how-to-create-skills' },
+                                                { text: 'Skills 最佳实践', link: '/zh/tech/skills/skills-best-practices' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'AI 编程',
+                                             items: [
+                                                { text: 'AI 编程工程化', link: '/zh/tech/ai-coding/ai-coding-engineering' },
+                                                { text: 'Claude Code Auto Mode 安全', link: '/zh/tech/ai-coding/claude-code-auto-mode-security' },
+                                                { text: '上下文注入策略', link: '/zh/tech/ai-coding/context-injection-strategies' },
+                                                { text: '跨工具上下文共享', link: '/zh/tech/ai-coding/cross-tool-context-sharing' },
+                                                { text: 'Cursor IDE 架构', link: '/zh/tech/ai-coding/cursor-ide-architecture' },
+                                                { text: 'Cursor Rules', link: '/zh/tech/ai-coding/cursor-rules' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'AI 应用',
+                                             items: [
+                                                { text: '构建语义搜索', link: '/zh/tech/ai-application/building-semantic-search' },
+                                                { text: '得物 AI 实施', link: '/zh/tech/ai-application/dewu-ai-implementation' }
+                                             ]
+                                          },
+                                          {
+                                             text: '评估 (Evaluation)',
+                                             items: [
+                                                { text: 'AI 测试', link: '/zh/tech/evaluation/ai-testing' },
+                                                { text: '生成式基准', link: '/zh/tech/evaluation/generative-benchmarking' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'MCP 学习',
+                                             items: [
+                                                { text: 'Chrome DevTools MCP', link: '/zh/tech/mcp/chrome-devtools-mcp' },
+                                                { text: 'MCP Apps 实践', link: '/zh/tech/mcp/mcp-apps-practice' },
+                                                { text: 'MCP 课程笔记', link: '/zh/tech/mcp/mcp-course-notes' }
+                                             ]
+                                          },
+                                          {
+                                             text: '方法论',
+                                             items: [
+                                                { text: 'BMAD 方法论', link: '/zh/tech/method/bmad-methodology' }
+                                             ]
+                                          },
+                                          {
+                                             text: '多模态',
+                                             items: [
+                                                { text: 'Claude 视觉能力', link: '/zh/tech/multimodal/claude-vision-capabilities' }
+                                             ]
+                                          },
+                                          {
+                                             text: '哲学',
+                                             items: [
+                                                { text: 'Vibe Coding 哲学', link: '/zh/tech/philosophy/vibe-coding-philosophy' }
+                                             ]
+                                          },
+                                          {
+                                             text: '测试',
+                                             items: [
+                                                { text: 'AI 自动化测试 · 知乎', link: '/zh/tech/testing/ai-automation-testing-zhihu' },
+                                                { text: ' Midscene UI 自动化', link: '/zh/tech/testing/midscene-ui-automation' }
+                                             ]
+                                          },
+                                          {
+                                             text: '训练',
+                                             items: [
+                                                { text: '概览', link: '/zh/tech/training/' },
+                                                { text: 'SFT (微调)', link: '/zh/tech/training/SFT' },
+                                                { text: 'RLHF', link: '/zh/tech/training/RLHF' },
+                                                { text: 'PEFT', link: '/zh/tech/training/PEFT' }
+                                             ]
+                                          }
+                                       ]
+                                    }
+               ],
+               '/zh/integration/': [
+                  {
+                                       text: '🔌 集成指南',
+                                       collapsed: false,
+                                       items: [
+                                          {
+                                             text: 'API',
+                                             collapsed: false,
+                                             items: [
+                                                { text: '对比与成本', link: '/zh/integration/apis/' },
+                                                { text: 'OpenAI', link: '/zh/integration/apis/openai' },
+                                                { text: 'Anthropic (Claude)', link: '/zh/integration/apis/anthropic' },
+                                                { text: 'HuggingFace', link: '/zh/integration/apis/huggingface' },
+                                                { text: '流式模式', link: '/zh/integration/apis/streaming' }
+                                             ]
+                                          },
+                                          {
+                                             text: '框架',
+                                             collapsed: false,
+                                             items: [
+                                                { text: '概览', link: '/zh/integration/frameworks/' },
+                                                { text: 'Vercel AI SDK', link: '/zh/integration/frameworks/vercel-ai-sdk' },
+                                                { text: 'LangChain.js', link: '/zh/integration/frameworks/langchain-js' },
+                                                { text: 'LlamaIndex.TS', link: '/zh/integration/frameworks/llamaindex-ts' },
+                                                { text: 'Next.js 集成', link: '/zh/integration/frameworks/nextjs' }
+                                             ]
+                                          },
+                                          {
+                                             text: '协议',
+                                             items: [
+                                                {
+                                                   text: 'MCP (模型上下文协议)', link: '/zh/integration/protocols/mcp/',
+                                                   items: [
+                                                      { text: '概览', link: '/zh/integration/protocols/mcp/' },
+                                                      { text: '架构', link: '/zh/integration/protocols/mcp/architecture' },
+                                                      { text: 'MCP Apps', link: '/zh/integration/protocols/mcp/mcp-apps' },
+                                                      { text: 'list', link: '/zh/integration/protocols/mcp/list' }
+                                                   ]
+                                                },
+                                                { text: '工具调用 (Tool Calling)', link: '/zh/integration/protocols/tool-calling' }
+                                             ]
+                                          },
+                                          {
+                                             text: '前端 ML',
+                                             items: [
+                                                { text: '概览', link: '/zh/integration/frontend-ml/' },
+                                                { text: 'Transformers.js', link: '/zh/integration/frontend-ml/transformersjs' },
+                                                { text: 'TensorFlow.js', link: '/zh/integration/frontend-ml/tensorflowjs' },
+                                                { text: 'ml5.js', link: '/zh/integration/frontend-ml/ml5js' },
+                                                { text: 'ONNX Runtime', link: '/zh/integration/frontend-ml/onnx-runtime' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🧠 技术概念',
+                                       collapsed: false,
+                                       items: [
+                                          {
+                                             text: '基础',
+                                             items: [
+                                                { text: 'LLM 基础', link: '/zh/tech/fundamentals/LLM' },
+                                                { text: '提示工程', link: '/zh/tech/fundamentals/prompt/' },
+                                                { text: '上下文窗口', link: '/zh/tech/fundamentals/context' },
+                                                { text: '上下文工程', link: '/zh/tech/fundamentals/context-engineering' },
+                                                { text: 'Embeddings (嵌入)', link: '/zh/tech/fundamentals/embeddings' },
+                                             ]
+                                          },
+                                          {
+                                             text: '前端 AI',
+                                             items: [
+                                                { text: '流式 UI (Streaming)', link: '/zh/tech/frontend/streaming' },
+                                                { text: '生成式 UI', link: '/zh/tech/frontend/generative-ui' },
+                                                { text: '浏览器 AI', link: '/zh/tech/frontend/browser-ai' },
+                                                { text: '状态管理', link: '/zh/tech/frontend/state-management' }
+                                             ]
+                                          },
+                                          {
+                                             text: '工程化',
+                                             items: [
+                                                { text: '测试', link: '/zh/tech/engineering/testing' },
+                                                { text: '评估 (Evals)', link: '/zh/tech/engineering/evals' },
+                                                { text: '可观测性', link: '/zh/tech/engineering/observability' },
+                                                { text: '安全', link: '/zh/tech/engineering/security' },
+                                                { text: '成本优化', link: '/zh/tech/engineering/cost-optimization' }
+                                             ]
+                                          },
+                                          {
+                                             text: '模式',
+                                             items: [
+                                                { text: 'RAG', link: '/zh/tech/patterns/RAG' },
+                                                { text: 'Agents (智能体)', link: '/zh/tech/patterns/agent/' },
+                                                { text: 'Agent 模式 · Harness', link: '/zh/tech/patterns/agent/harness' },
+                                                { text: 'Agent 模式 · 工作流', link: '/zh/tech/patterns/agent/workflow-patterns' },
+                                                { text: 'Agent 模式 · Hello Agents', link: '/zh/tech/patterns/agent/hello-agents' },
+                                                { text: 'Agent 模式 · Agentic Engineering', link: '/zh/tech/patterns/agent/agentic-engineering-patterns' },
+                                                { text: 'Agent · Hooks', link: '/zh/tech/patterns/agent/hooks' },
+                                                { text: 'Agent · Skills', link: '/zh/tech/patterns/agent/skills' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Agent 学习',
+                                             items: [
+                                                { text: 'Agent 设计模式', link: '/zh/tech/agent/agent-design-patterns' },
+                                                { text: 'Agentic Engineering Patterns', link: '/zh/tech/agent/agentic-engineering-patterns' },
+                                                { text: 'AI Ops Agent 探索', link: '/zh/tech/agent/aiops-agent-exploration' },
+                                                { text: '阿里事故复盘 Agent', link: '/zh/tech/agent/alibaba-incident-review-agent' },
+                                                { text: 'AI Agent 常见工作流', link: '/zh/tech/agent/common-workflow-patterns-ai-agents' },
+                                                { text: 'Hello Agents (Datawhale)', link: '/zh/tech/agent/hello-agents-datwhale' },
+                                                { text: 'How I Use Claude Code', link: '/zh/tech/agent/how-i-use-claude-code' },
+                                                { text: 'Human in the Loop', link: '/zh/tech/agent/human-in-the-loop-patterns' },
+                                                { text: 'LangChain Agent Harness', link: '/zh/tech/agent/langchain-agent-harness' },
+                                                { text: 'Multi-Agent 编排', link: '/zh/tech/agent/multi-agent-orchestration' },
+                                                { text: 'OpenAI Agents SDK', link: '/zh/tech/agent/openai-agents-sdk' },
+                                                { text: 'Pi Agent 设计哲学', link: '/zh/tech/agent/pi-agent-design-philosophy' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Prompt 工程',
+                                             items: [
+                                                { text: '概览', link: '/zh/tech/prompt/' },
+                                                { text: '官方指南 2026', link: '/zh/tech/prompt/official-guide-2026' },
+                                                { text: 'Advanced Tool Use', link: '/zh/tech/prompt/advanced-tool-use' },
+                                                { text: 'Agentic Engineering Patterns', link: '/zh/tech/prompt/agentic-engineering-patterns' },
+                                                { text: 'Token Counting & Embedding', link: '/zh/tech/prompt/token-counting-embedding-basics' },
+                                                { text: 'System Prompts 集锦', link: '/zh/tech/prompt/system-prompts-collection' },
+                                                { text: 'JSON Prompt 最佳实践', link: '/zh/tech/prompt/json-prompt-best-practices' },
+                                                { text: 'Agents Doc', link: '/zh/tech/prompt/agents-doc' },
+                                                { text: '案例 · Copilot', link: '/zh/tech/prompt/cases/copilot' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'Skills 学习',
+                                             items: [
+                                                { text: 'Claude Skills 概览', link: '/zh/tech/skills/claude-skills-overview' },
+                                                { text: 'Skills 机制详解', link: '/zh/tech/skills/skills-mechanics-explained' },
+                                                { text: 'How to Create Skills', link: '/zh/tech/skills/how-to-create-skills' },
+                                                { text: 'Skills 最佳实践', link: '/zh/tech/skills/skills-best-practices' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'AI 编程',
+                                             items: [
+                                                { text: 'AI 编程工程化', link: '/zh/tech/ai-coding/ai-coding-engineering' },
+                                                { text: 'Claude Code Auto Mode 安全', link: '/zh/tech/ai-coding/claude-code-auto-mode-security' },
+                                                { text: '上下文注入策略', link: '/zh/tech/ai-coding/context-injection-strategies' },
+                                                { text: '跨工具上下文共享', link: '/zh/tech/ai-coding/cross-tool-context-sharing' },
+                                                { text: 'Cursor IDE 架构', link: '/zh/tech/ai-coding/cursor-ide-architecture' },
+                                                { text: 'Cursor Rules', link: '/zh/tech/ai-coding/cursor-rules' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'AI 应用',
+                                             items: [
+                                                { text: '构建语义搜索', link: '/zh/tech/ai-application/building-semantic-search' },
+                                                { text: '得物 AI 实施', link: '/zh/tech/ai-application/dewu-ai-implementation' }
+                                             ]
+                                          },
+                                          {
+                                             text: '评估 (Evaluation)',
+                                             items: [
+                                                { text: 'AI 测试', link: '/zh/tech/evaluation/ai-testing' },
+                                                { text: '生成式基准', link: '/zh/tech/evaluation/generative-benchmarking' }
+                                             ]
+                                          },
+                                          {
+                                             text: 'MCP 学习',
+                                             items: [
+                                                { text: 'Chrome DevTools MCP', link: '/zh/tech/mcp/chrome-devtools-mcp' },
+                                                { text: 'MCP Apps 实践', link: '/zh/tech/mcp/mcp-apps-practice' },
+                                                { text: 'MCP 课程笔记', link: '/zh/tech/mcp/mcp-course-notes' }
+                                             ]
+                                          },
+                                          {
+                                             text: '方法论',
+                                             items: [
+                                                { text: 'BMAD 方法论', link: '/zh/tech/method/bmad-methodology' }
+                                             ]
+                                          },
+                                          {
+                                             text: '多模态',
+                                             items: [
+                                                { text: 'Claude 视觉能力', link: '/zh/tech/multimodal/claude-vision-capabilities' }
+                                             ]
+                                          },
+                                          {
+                                             text: '哲学',
+                                             items: [
+                                                { text: 'Vibe Coding 哲学', link: '/zh/tech/philosophy/vibe-coding-philosophy' }
+                                             ]
+                                          },
+                                          {
+                                             text: '测试',
+                                             items: [
+                                                { text: 'AI 自动化测试 · 知乎', link: '/zh/tech/testing/ai-automation-testing-zhihu' },
+                                                { text: ' Midscene UI 自动化', link: '/zh/tech/testing/midscene-ui-automation' }
+                                             ]
+                                          },
+                                          {
+                                             text: '训练',
+                                             items: [
+                                                { text: '概览', link: '/zh/tech/training/' },
+                                                { text: 'SFT (微调)', link: '/zh/tech/training/SFT' },
+                                                { text: 'RLHF', link: '/zh/tech/training/RLHF' },
+                                                { text: 'PEFT', link: '/zh/tech/training/PEFT' }
+                                             ]
+                                          }
+                                       ]
+                                    }
+               ],
+               '/zh/cookbook/': [
+                  {
+                                       text: '🍳 秘籍 (Cookbook)',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '概览', link: '/zh/cookbook/' },
+                                          { text: '聊天 UI 组件', link: '/zh/cookbook/chat-ui' },
+                                          { text: '安全 API 代理', link: '/zh/cookbook/api-proxy' },
+                                          { text: '本地 Embeddings', link: '/zh/cookbook/local-embedding' },
+                                          { text: '表单自动补全', link: '/zh/cookbook/form-autocomplete' },
+                                          { text: '错误处理', link: '/zh/cookbook/error-handling' },
+                                          { text: '内容审查', link: '/zh/cookbook/content-moderation' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🛠️ 实战项目',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: '初级',
+                                             items: [
+                                                { text: 'AI 聊天机器人', link: '/zh/projects/beginner/ai-chatbot' },
+                                                { text: '文本摘要器', link: '/zh/projects/beginner/text-summarizer' },
+                                                { text: '图像生成器', link: '/zh/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: '中级',
+                                             items: [
+                                                { text: 'RAG 搜索', link: '/zh/projects/intermediate/rag-search' },
+                                                { text: '代码自动补全', link: '/zh/projects/intermediate/code-completion' },
+                                                { text: 'AI 表单构建器', link: '/zh/projects/intermediate/ai-form-builder' },
+                                                { text: '语义搜索', link: '/zh/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: '高级',
+                                             items: [
+                                                { text: '全栈 SaaS', link: '/zh/projects/advanced/full-stack-saas' },
+                                                { text: '多智能体应用', link: '/zh/projects/advanced/multi-agent-app' },
+                                                { text: 'AI 设计工具', link: '/zh/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 部署',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '概览', link: '/zh/deployment/' },
+                                          { text: 'Vercel Edge', link: '/zh/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/zh/deployment/cloudflare-workers' },
+                                          { text: '缓存策略', link: '/zh/deployment/caching' },
+                                          { text: '速率限制', link: '/zh/deployment/rate-limiting' },
+                                          { text: '监控', link: '/zh/deployment/monitoring' },
+                                          { text: '成本计算器', link: '/zh/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 应用场景',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '案例库', link: '/zh/use-cases/' },
+                                          { text: '添加 AI 搜索', link: '/zh/use-cases/add-ai-search' },
+                                          { text: '迁移到 AI', link: '/zh/use-cases/migrate-to-ai' },
+                                          { text: 'AI 分析', link: '/zh/use-cases/ai-analytics' },
+                                          { text: '个性化推荐', link: '/zh/use-cases/recommendations' },
+                                          { text: '无障碍访问', link: '/zh/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/zh/projects/': [
+                  {
+                                       text: '🍳 秘籍 (Cookbook)',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '概览', link: '/zh/cookbook/' },
+                                          { text: '聊天 UI 组件', link: '/zh/cookbook/chat-ui' },
+                                          { text: '安全 API 代理', link: '/zh/cookbook/api-proxy' },
+                                          { text: '本地 Embeddings', link: '/zh/cookbook/local-embedding' },
+                                          { text: '表单自动补全', link: '/zh/cookbook/form-autocomplete' },
+                                          { text: '错误处理', link: '/zh/cookbook/error-handling' },
+                                          { text: '内容审查', link: '/zh/cookbook/content-moderation' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🛠️ 实战项目',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: '初级',
+                                             items: [
+                                                { text: 'AI 聊天机器人', link: '/zh/projects/beginner/ai-chatbot' },
+                                                { text: '文本摘要器', link: '/zh/projects/beginner/text-summarizer' },
+                                                { text: '图像生成器', link: '/zh/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: '中级',
+                                             items: [
+                                                { text: 'RAG 搜索', link: '/zh/projects/intermediate/rag-search' },
+                                                { text: '代码自动补全', link: '/zh/projects/intermediate/code-completion' },
+                                                { text: 'AI 表单构建器', link: '/zh/projects/intermediate/ai-form-builder' },
+                                                { text: '语义搜索', link: '/zh/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: '高级',
+                                             items: [
+                                                { text: '全栈 SaaS', link: '/zh/projects/advanced/full-stack-saas' },
+                                                { text: '多智能体应用', link: '/zh/projects/advanced/multi-agent-app' },
+                                                { text: 'AI 设计工具', link: '/zh/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 部署',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '概览', link: '/zh/deployment/' },
+                                          { text: 'Vercel Edge', link: '/zh/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/zh/deployment/cloudflare-workers' },
+                                          { text: '缓存策略', link: '/zh/deployment/caching' },
+                                          { text: '速率限制', link: '/zh/deployment/rate-limiting' },
+                                          { text: '监控', link: '/zh/deployment/monitoring' },
+                                          { text: '成本计算器', link: '/zh/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 应用场景',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '案例库', link: '/zh/use-cases/' },
+                                          { text: '添加 AI 搜索', link: '/zh/use-cases/add-ai-search' },
+                                          { text: '迁移到 AI', link: '/zh/use-cases/migrate-to-ai' },
+                                          { text: 'AI 分析', link: '/zh/use-cases/ai-analytics' },
+                                          { text: '个性化推荐', link: '/zh/use-cases/recommendations' },
+                                          { text: '无障碍访问', link: '/zh/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/zh/deployment/': [
+                  {
+                                       text: '🍳 秘籍 (Cookbook)',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '概览', link: '/zh/cookbook/' },
+                                          { text: '聊天 UI 组件', link: '/zh/cookbook/chat-ui' },
+                                          { text: '安全 API 代理', link: '/zh/cookbook/api-proxy' },
+                                          { text: '本地 Embeddings', link: '/zh/cookbook/local-embedding' },
+                                          { text: '表单自动补全', link: '/zh/cookbook/form-autocomplete' },
+                                          { text: '错误处理', link: '/zh/cookbook/error-handling' },
+                                          { text: '内容审查', link: '/zh/cookbook/content-moderation' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🛠️ 实战项目',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: '初级',
+                                             items: [
+                                                { text: 'AI 聊天机器人', link: '/zh/projects/beginner/ai-chatbot' },
+                                                { text: '文本摘要器', link: '/zh/projects/beginner/text-summarizer' },
+                                                { text: '图像生成器', link: '/zh/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: '中级',
+                                             items: [
+                                                { text: 'RAG 搜索', link: '/zh/projects/intermediate/rag-search' },
+                                                { text: '代码自动补全', link: '/zh/projects/intermediate/code-completion' },
+                                                { text: 'AI 表单构建器', link: '/zh/projects/intermediate/ai-form-builder' },
+                                                { text: '语义搜索', link: '/zh/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: '高级',
+                                             items: [
+                                                { text: '全栈 SaaS', link: '/zh/projects/advanced/full-stack-saas' },
+                                                { text: '多智能体应用', link: '/zh/projects/advanced/multi-agent-app' },
+                                                { text: 'AI 设计工具', link: '/zh/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 部署',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '概览', link: '/zh/deployment/' },
+                                          { text: 'Vercel Edge', link: '/zh/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/zh/deployment/cloudflare-workers' },
+                                          { text: '缓存策略', link: '/zh/deployment/caching' },
+                                          { text: '速率限制', link: '/zh/deployment/rate-limiting' },
+                                          { text: '监控', link: '/zh/deployment/monitoring' },
+                                          { text: '成本计算器', link: '/zh/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 应用场景',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '案例库', link: '/zh/use-cases/' },
+                                          { text: '添加 AI 搜索', link: '/zh/use-cases/add-ai-search' },
+                                          { text: '迁移到 AI', link: '/zh/use-cases/migrate-to-ai' },
+                                          { text: 'AI 分析', link: '/zh/use-cases/ai-analytics' },
+                                          { text: '个性化推荐', link: '/zh/use-cases/recommendations' },
+                                          { text: '无障碍访问', link: '/zh/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/zh/use-cases/': [
+                  {
+                                       text: '🍳 秘籍 (Cookbook)',
+                                       collapsed: false,
+                                       items: [
+                                          { text: '概览', link: '/zh/cookbook/' },
+                                          { text: '聊天 UI 组件', link: '/zh/cookbook/chat-ui' },
+                                          { text: '安全 API 代理', link: '/zh/cookbook/api-proxy' },
+                                          { text: '本地 Embeddings', link: '/zh/cookbook/local-embedding' },
+                                          { text: '表单自动补全', link: '/zh/cookbook/form-autocomplete' },
+                                          { text: '错误处理', link: '/zh/cookbook/error-handling' },
+                                          { text: '内容审查', link: '/zh/cookbook/content-moderation' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🛠️ 实战项目',
+                                       collapsed: true,
+                                       items: [
+                                          {
+                                             text: '初级',
+                                             items: [
+                                                { text: 'AI 聊天机器人', link: '/zh/projects/beginner/ai-chatbot' },
+                                                { text: '文本摘要器', link: '/zh/projects/beginner/text-summarizer' },
+                                                { text: '图像生成器', link: '/zh/projects/beginner/image-generator' }
+                                             ]
+                                          },
+                                          {
+                                             text: '中级',
+                                             items: [
+                                                { text: 'RAG 搜索', link: '/zh/projects/intermediate/rag-search' },
+                                                { text: '代码自动补全', link: '/zh/projects/intermediate/code-completion' },
+                                                { text: 'AI 表单构建器', link: '/zh/projects/intermediate/ai-form-builder' },
+                                                { text: '语义搜索', link: '/zh/projects/intermediate/semantic-search' }
+                                             ]
+                                          },
+                                          {
+                                             text: '高级',
+                                             items: [
+                                                { text: '全栈 SaaS', link: '/zh/projects/advanced/full-stack-saas' },
+                                                { text: '多智能体应用', link: '/zh/projects/advanced/multi-agent-app' },
+                                                { text: 'AI 设计工具', link: '/zh/projects/advanced/ai-design-tool' }
+                                             ]
+                                          }
+                                       ]
+                                    },
+
+                  {
+                                       text: '🚢 部署',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '概览', link: '/zh/deployment/' },
+                                          { text: 'Vercel Edge', link: '/zh/deployment/vercel-edge' },
+                                          { text: 'Cloudflare Workers', link: '/zh/deployment/cloudflare-workers' },
+                                          { text: '缓存策略', link: '/zh/deployment/caching' },
+                                          { text: '速率限制', link: '/zh/deployment/rate-limiting' },
+                                          { text: '监控', link: '/zh/deployment/monitoring' },
+                                          { text: '成本计算器', link: '/zh/deployment/cost-calculator' }
+                                       ]
+                                    },
+
+                  {
+                                       text: '💡 应用场景',
+                                       collapsed: true,
+                                       items: [
+                                          { text: '案例库', link: '/zh/use-cases/' },
+                                          { text: '添加 AI 搜索', link: '/zh/use-cases/add-ai-search' },
+                                          { text: '迁移到 AI', link: '/zh/use-cases/migrate-to-ai' },
+                                          { text: 'AI 分析', link: '/zh/use-cases/ai-analytics' },
+                                          { text: '个性化推荐', link: '/zh/use-cases/recommendations' },
+                                          { text: '无障碍访问', link: '/zh/use-cases/accessibility' }
+                                       ]
+                                    }
+               ],
+               '/zh/ai-tools/': [
+                  { text: '概览', link: '/zh/ai-tools/' },
+                  { text: 'Claude Code Auto Mode', link: '/zh/ai-tools/claude-code-auto-mode' },
+                  { text: 'Claude Skills 深入', link: '/zh/ai-tools/claude-skills-deep-dive' },
+                  { text: 'How to Create Skills', link: '/zh/ai-tools/how-to-create-skills' },
+                  { text: 'Skills Mechanics Explained', link: '/zh/ai-tools/skills-mechanics-explained' },
+                  { text: 'Skills 社区反馈', link: '/zh/ai-tools/skills-community-feedback' },
+                  { text: 'Context Engineering 深入', link: '/zh/ai-tools/context-engineering-deep-dive' }
+               ],
+               '/zh/skills/': [
+                  { text: '概览', link: '/zh/skills/' },
+                  { text: 'Engineer Skill', link: '/zh/skills/engineer-skill' },
+                  { text: 'OpenSpec', link: '/zh/skills/openspec' },
+                  { text: 'Superpower', link: '/zh/skills/superpower' }
                ]
             }
          }
