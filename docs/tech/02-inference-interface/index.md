@@ -1,147 +1,149 @@
 ---
-title: "Layer 2 · Application Integration"
-description: Turn one controllable model call into a product interaction — the integration layer for API adaptation, streaming, sessions, and error handling.
+title: "Group 2 · Inference & Interface"
+description: One line from the prefill/decode stages to the user-visible interface — the physical structure of latency and cost, the serving cost levers, and a seven-topic guide covering the API contract, structured output, streaming, generative UI, and on-device access.
 domain: tech
-tags: [integration, navigation]
-navOrder: 20
+tags: [inference, interface, navigation]
+navOrder: 19
 topicId: integration
 layer: "2"
 status: canonical
 nodeType: problem
 owner: learn-ai
-prerequisites: [structured-output]
-next: [streaming, session-state, ui, browser-edge, rag]
+prerequisites: [model-lifecycle-bridge]
+next: [model-api, streaming, session-state]
 lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
 
-# Layer 2 · Application Integration
+# Group 2 · Inference & Interface
 
-> **Layer**: 2 · Application Integration ｜ **Previous layer exit**: can write and validate input/output schemas ｜ **This layer exit**: can run a cancellable, observable end-to-end interaction
-> **Prerequisites**: [Structured Output](../02-inference-interface/structured-output), [Tool Calling Contract](../05-action/tool-calling) ｜ **Next**: [Embeddings and Retrieval](../04-grounding/embeddings-retrieval), [Observability](../08-production/observability)
+> **Group**: 2 · Inference & Interface ｜ **Previous group exit**: can explain how the model lifecycle shapes engineering decisions (the model is a replaceable capability with three interface properties: behavior, budget, capability boundary) ｜ **This group exit**: can deliver a user-visible interaction that is attributable (latency decomposes into segments), observable (usage is visible), and cancellable
+> **Prerequisites**: [Model Lifecycle (bridge)](../01-model-lifecycle/) ｜ **Next**: [Session and State](../03-context/session-memory.md), [Embeddings and Retrieval](../04-grounding/rag)
 
 ## 1. Overview
 
-Layer 2 addresses one specific symptom: **the answers are already stable, but they are not in the product yet**. Layer 1 gave you control over model input and output; this layer wires that capability into a real user-facing interface — how to call the API, how output arrives progressively, where multi-turn state lives, and what happens when things fail.
+This group answers one question: **how do parameters become an online service and a contract?** It is a single line that runs from the two-stage prefill/decode generation all the way to the user-visible interface — the first half explains where latency and cost come from (the TTFT and the bill you get are outputs of a pipeline, not magic), and the second half wires model capability into a product interaction (calling contract, output shape, presentation cadence, access point).
 
-The gap between capability and product consists of four things:
+The first half used to be missing: an engineer who only learns "how to call the API" cannot explain why the first token is slow, why cached input is cheaper, or when to self-host serving. This group closes the gap with seven topics:
 
-- **API adaptation**: converge vendor-specific interfaces into one stable calling contract (messages, sampling, usage, errors).
-- **Streaming**: turn "wait for the whole answer" into "watch it appear", reducing perceived latency from total duration to time-to-first-token.
-- **Session**: the model API is stateless; you store, trim, and restore multi-turn history yourself.
-- **Error handling**: rate limits, timeouts, and interruptions are routine in production; retry semantics must be defined at this layer.
+- **Serving side** (what happens inside the model): [Inference Fundamentals](inference-fundamentals.md) decomposes the latency structure; [Efficient Serving](efficient-serving.md) decomposes the cost structure.
+- **Interface side** (how you connect): [Model API Contract](model-api.md) stabilizes the call, [Structured Output](structured-output.md) stabilizes the shape, [Streaming](streaming.md) stabilizes the cadence, [Generative UI](ui.md) upgrades the presentation, [Browser and Edge Inference](browser-edge.md) changes the access point.
 
 ```mermaid
 flowchart LR
-    A[Layer 1 exit: controllable IO] --> B[model-api calling contract]
-    B --> C[streaming progressive display]
-    C --> D[session-state multi-turn state]
-    D --> E[ui structured interface]
-    B --> F[browser-edge on-device access]
-    E --> G[Layer 2 exit: cancellable, observable interaction]
-    F --> G
+    A[Model lifecycle<br/>(group 1 bridge exit)] --> B[inference-fundamentals<br/>latency structure]
+    B --> C[efficient-serving<br/>cost mechanisms]
+    C --> D[model-api<br/>calling contract]
+    D --> E[structured-output<br/>output shape]
+    E --> F[streaming<br/>presentation cadence]
+    F --> G[ui structured interface]
+    D --> H[browser-edge on-device access]
+    G --> I[Group exit: attributable, observable, cancellable interaction]
+    H --> I
 ```
 
-### When to enter this layer / when not to
+### When to enter this group / when not to
 
-- **Enter**: the endpoint works, output is controllable, and you are building a user-facing feature.
-- **Do not enter**: answers are still unstable or unparseable — go back to [Layer 1 interaction contracts](../02-inference-interface/structured-output); answers lack private facts — go to [Layer 3 grounding](../04-grounding/rag); the system must take actions — go to [Layer 4 action](../05-action/tool-execution).
+- **Enter**: you are building a product on a model — read the first two pages to build the latency/cost mental model, then enter the interface side; or you already maintain an AI feature and need to attribute latency and cost.
+- **Do not enter**: training and attention math — go back to the Learn LLM links in [Model Lifecycle (bridge)](../01-model-lifecycle/); answers lack private facts — go to [Embeddings and Retrieval](../04-grounding/rag); the system must take actions — go to [Tool Calling Contract](../05-action/tool-calling).
 
 ### Symptom → topic navigation
 
 | Symptom | Go to | After reading you can |
 | --- | --- | --- |
+| Cannot say why the first token is slow or the bill is rising | [Inference Fundamentals](inference-fundamentals.md) | Decompose one latency into queue / prefill / decode / network and attribute it |
+| Cannot read why cached input has one price and regular input another | [Efficient Serving](efficient-serving.md) | Map quantization and prefix caching onto billing fields; restructure prompts and sessions |
 | First request not sent yet / falls over on 429 | [Model API Contract](model-api.md) | Write a calling loop with error-family classification and retries |
+| Answers are stable but cannot enter a program (parsing by regex) | [Structured Output](structured-output.md) | Constrain and validate model output with a schema |
 | Endpoint works, but UI waits for the full answer | [Streaming](streaming.md) | Consume an SSE stream; cancel and recover from interruption |
-| Longer chats cost more / refresh loses history | [Session and State](../03-context/session-memory.md) | Manage chat history: trimming, persistence, concurrency guards |
 | Want components in answers, not just text | [Generative UI](ui.md) | Render model output through a component whitelist |
 | Need lower latency / privacy / offline | [Browser and Edge Inference](browser-edge.md) | Pick the right on-device runtime and fallback chain |
 
-### Decision table: integration approaches
+### Decision table: interface-side access modes
 
-| Approach | Direction | Control | State | Trust domain | Minimum complexity |
+| Mode | Direction | Control | State | Trust domain | Minimum complexity |
 | --- | --- | --- | --- | --- | --- |
-| Direct fetch to vendor API | Outbound request/response | All yours | None (rebuild per turn) | Key stays server-side | Single file |
-| Official SDK | Outbound request/response | SDK handles retries and types | None | Key stays server-side | +1 dependency |
-| Frontend AI framework | Request + stream + UI bundled | Framework takes over | Framework session model | Key stays server-side | Full framework contract |
-| On-device inference | In-device execution | Entirely yours | Device-local | Data never leaves device | Model delivery + runtime |
+| Direct fetch to a vendor API | Outbound request/response | Fully self-managed | None (rebuilt per turn) | Keys server-side | One runnable file |
+| Official SDK | Outbound request/response | SDK handles retries and types | None | Keys server-side | +1 dependency |
+| Frontend AI framework | Request + stream + UI bundled | Framework takes over | Framework session model | Keys server-side | A framework contract |
+| On-device inference | Runs in the device | Fully self-managed | Device-local | Data never leaves | Model distribution + runtime |
 
-Selection principle: **start at minimum complexity**. Use plain fetch until you need SDK retries and types; adopt a framework only when you need streaming, sessions, and UI at once.
+The serving-side mode decision (API / self-hosted / on-device) is in the decision table of [Inference Fundamentals](inference-fundamentals.md). The selection principle is the same: **start at minimum complexity**, add layers only when blocked.
 
 ### Historical milestones
 
-Vendor API shapes keep evolving (e.g., OpenAI from Chat Completions to Responses API; Anthropic shrinking sampling parameters across model generations). This layer does not maintain a vendor timeline — field-level truth lives in the vendor docs of the day; assertions recorded here carry a retrievedAt date.
+Vendor API shapes keep evolving (e.g. OpenAI from Chat Completions to the Responses API, Anthropic sampling parameters shrinking across model generations, both vendors shipping prefix caching). This group maintains no vendor timeline; specific fields follow the official docs on the day, and decision-relevant claims in this repo carry retrievedAt stamps. This page was rewritten in 2026-09 from the v5 "application integration" layer guide into the v6 "Inference & Interface" group guide as part of Issue #116.
 
 ## 2. Usage
 
-The minimal hands-on for this layer is the zero-key fixture in [Model API Contract](model-api.md): a local mock server plus a client loop with error handling — runnable in a clean environment within 15 minutes.
+The group's minimal hands-on is the zero-key two-stage simulator in [Inference Fundamentals](inference-fundamentals.md):
 
 ```bash
-# Save the full fixture from the model-api page as model-api-mock.mts, then:
-node model-api-mock.mts
+# Save that page's full example as inference-sim.mts, then:
+node inference-sim.mts
 ```
 
-Acceptance: all three output sections appear — a normal call returning content and usage, a 429 triggering one backoff retry then succeeding, and a 400 failing fast without retry. Once it runs, you have personally implemented one "observable" call (you saw usage) and error-family classification (you saw the retryable flag).
+Acceptance: three output sections — the cost structure with KV cache, the no-cache negative case (identical TTFT, decode amplified 12×), and the savings percentage. Once it runs you have personally verified the attribution rule "prompt hits TTFT, output hits total duration".
 
-Every topic in this layer follows the same constraints for its Usage section: zero API keys, single self-contained file, deterministic output, and paired normal/negative paths.
+The cost-side counterpart is the prefix cache calculator in [Efficient Serving](efficient-serving.md) (hit / miss / below-minimum-length scenarios). Every topic's usage section in this group follows the same constraints: zero API keys, single self-contained file, deterministic output, and positive/negative paths in pairs.
 
 ## 3. Principles
 
-On the capability transformation chain, this layer upgrades "one controllable transformation" into "one product interaction chain":
+On the capability-transformation chain, this group turns "one replaceable external capability" into "one operable interaction chain":
 
 ```text
-user action → request assembly (Layer 1 schema + Layer 2 session state)
+User action → request assembly (structured-output schema + session state)
+           → serving (inference fundamentals: queue/prefill/decode; efficient serving: caching and quantization)
            → API call (model-api: error families, retries, usage)
-           → streaming display (streaming: SSE, accumulation, cancellation)
-           → structured rendering (ui: whitelist components)
-           → state write-back (session-state: trimming, persistence, versioning)
+           → streaming presentation (SSE, accumulation, cancellation)
+           → structured rendering (ui: whitelisted components)
 ```
 
-- **Invariant 1**: the model API is stateless. Every request resends all needed history; "conversation memory" is a construct of this layer.
-- **Invariant 2**: model output is untrusted input. It must pass schema and whitelist checks before rendering (the Layer 1 exit applied here directly).
-- **Invariant 3**: the interaction must be cancellable and observable. Cancellation relies on AbortController propagating to the server stopping generation; observability relies on usage and traces reaching your cost dashboard.
+- **Invariant 1**: the model API is stateless. Every request resends all needed history; "conversational memory" is an integration-layer construct (→ [Session and State](../03-context/session-memory.md)).
+- **Invariant 2**: model output is untrusted input. It must pass a schema and a whitelist before rendering.
+- **Invariant 3**: interactions must be cancellable and observable. Cancellation depends on AbortController reaching the server to stop generation; observation depends on usage (including cache-hit fields) reaching the cost dashboard.
+- **Invariant 4**: latency and cost are attributable. TTFT, ITL, input/output tokens, and cache hits are instrumented separately — what cannot be decomposed cannot be optimized.
 
-**Exit criteria**: you can run one cancellable, observable end-to-end interaction — the user sends a request, sees progressive output, can stop mid-flight, ends in a consistent state, and the run can be reconciled afterwards.
-
-Topic-level principles: [model-api](model-api.md), [streaming](streaming.md), [session-state](../03-context/session-memory.md), [ui](ui.md), [browser-edge](browser-edge.md).
+**Exit criteria**: you can deliver a user-visible interaction that is attributable (latency decomposes into segments), observable (usage and hit rates are visible), and cancellable (stops mid-flight with consistent state afterwards).
 
 ## 4. Development
 
-Before entering the layer, locate the right page with three diagnostics.
+Before entering the interface side, use three diagnostics to locate the page you need.
 
 ### Symptom → Evidence → Action → Done when
-**Symptom**: demo works fine, production fails intermittently.
-**Evidence**: HTTP status distribution of failed samples; 429/5xx share.
-**Action**: add error-family classification and backoff per [model-api](model-api.md); for quota errors fix the quota first instead of retrying.
-**Done when**: under the same traffic, client logs show retries converging and no unclassified errors.
+**Symptom**: users report "forever until the first token", then it flows.
+**Evidence**: streaming metrics split TTFT from ITL; prompt token distribution and cache-hit fields.
+**Action**: work the TTFT runbook in [Inference Fundamentals](inference-fundamentals.md) across queue / prefill / cache invalidation.
+**Done when**: TTFT p50/p95 return to baseline and you can name the slow segment from the data.
 
 ### Symptom → Evidence → Action → Done when
-**Symptom**: users report "a long wait, then everything appears at once".
-**Evidence**: the browser network panel shows the response arriving as one block.
-**Action**: open the streaming path per [streaming](streaming.md) (server chunks, no proxy buffering, client renders per event).
-**Done when**: `curl -N` shows chunks arriving progressively; TTFT drops under a second.
+**Symptom**: the bill spikes while traffic is flat.
+**Evidence**: per-turn input tokens inflate linearly with turns; hit rates fall.
+**Action**: fix cache-friendly structure and history trimming per [Efficient Serving](efficient-serving.md) and [Session and State](../03-context/session-memory.md).
+**Done when**: the per-session cost slope falls and hit rates return to baseline.
 
 ### Symptom → Evidence → Action → Done when
-**Symptom**: latency and cost grow with turn count; refresh loses history.
-**Evidence**: request logs show resent messages length growing per turn; the store lives in process memory.
-**Action**: add a token-budget trim and persistence per [session-state](../03-context/session-memory.md).
-**Done when**: resent payload is capped; sessions survive a restart.
+**Symptom**: the demo works perfectly, production fails intermittently.
+**Evidence**: HTTP status code distribution across failure samples; 429/5xx share.
+**Action**: add error-family classification and backoff retries per [Model API Contract](model-api.md); fix quotas before retrying quota errors.
+**Done when**: under the same traffic, retries converge and no error is left unclassified.
 
 ## 5. Resource Library
 
 ### Four-level reading route
 
-- **Beginner**: [Model API Contract](model-api.md) (get one call working) → [Streaming](streaming.md) (let the tokens appear).
-- **Builder**: [Session and State](../03-context/session-memory.md) → [Generative UI](ui.md).
-- **Operator**: the runbooks in each topic's Development section → [Observability](../08-production/observability).
-- **Researcher**: [Browser and Edge Inference](browser-edge.md) → the Layer 3 retrieval chain ([RAG](../04-grounding/rag)).
+- **Beginner**: [Inference Fundamentals](inference-fundamentals.md) (run the simulator) → [Model API Contract](model-api.md) (send the first call).
+- **Builder**: [Efficient Serving](efficient-serving.md) → [Structured Output](structured-output.md) → [Streaming](streaming.md).
+- **Operator**: each topic's development-section runbooks → [Observability](../08-production/observability), [Cost and Performance](../08-production/cost-performance).
+- **Researcher**: [Generative UI](ui.md) → [Browser and Edge Inference](browser-edge.md) → the papers and engine docs linked from this group's resource tables (FlashAttention, vLLM).
 
 ### Active falsification and open questions
 
-- The claim "perceived latency is dominated by TTFT" reflects general streaming engineering experience; thresholds for your product need their own measurement.
-- Vendor field names and error codes change over time; this layer's tables keep only verified versions — the vendor docs of the day win.
+- The claim "perceived latency is dominated by TTFT" comes from general streaming engineering experience; thresholds for a specific product must be measured.
+- The cost units and prices in this group's two fixtures are teaching constants that verify structure and attribution methods, not any vendor's real numbers.
+- Vendor field names, cache tiers, and error codes change with versions; this group's tables keep only verified versions and defer to the official docs.
 
 ### Where learn-ai stops / where to go next
 
-This layer answers "how to connect", not "where answers get their grounding" (→ [Layer 3](../04-grounding/embeddings-retrieval)), "how to execute actions" (→ [Layer 4](../05-action/tool-execution)), or "what proves it is production-ready" (→ [Layer 5](../08-production/testing)).
+This group answers "how to turn a model into an online service and interface", not "what the model sees this turn" (→ [Session and State](../03-context/session-memory.md)), "how to bring in knowledge beyond parameters" (→ [Embeddings and Retrieval](../04-grounding/rag)), "how to take controlled actions" (→ [Tool Calling Contract](../05-action/tool-calling)), or "evidence for launch" (→ [Observability](../08-production/observability)).

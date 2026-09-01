@@ -229,5 +229,7 @@
   "tech/05-operations/deployment": "/tech/08-production/deployment",
   "zh/tech/appendices/multimodal/index": "/zh/tech/09-advanced/multimodal",
   "tech/appendices/multimodal/index": "/tech/09-advanced/multimodal",
-  "zh/tech/appendices/multimodal/claude-vision-capabilities": "/zh/tech/09-advanced/multimodal-vision-case"
+  "zh/tech/appendices/multimodal/claude-vision-capabilities": "/zh/tech/09-advanced/multimodal-vision-case",
+  "zh/tech/01-contracts/context": "/zh/tech/03-context/context-engineering",
+  "tech/01-contracts/context": "/tech/03-context/context-engineering"
 }

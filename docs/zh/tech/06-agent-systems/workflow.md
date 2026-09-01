@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能构建可追溯的检索链 ｜ **本层出口**：能实现带 checkpoint 的多步流程——失败后从持久化状态恢复而不重做副作用，不可逆步骤前有人工批准节点
-> **前置**：[工具执行工程](../05-action/tool-execution.md) ｜ **下一步**：[Agent 运行时](agent-runtime)、[恢复与人工批准](recovery-hitl.md)、[可观测性](../08-production/observability)
+> **所在组**：Agent 系统 ｜ **上一层出口**：能构建可追溯的检索链 ｜ **本层出口**：能实现带 checkpoint 的多步流程——失败后从持久化状态恢复而不重做副作用，不可逆步骤前有人工批准节点
+> **前置**：[工具执行工程](../05-action/tool-execution.md) ｜ **下一步**：[Agent 运行时](agent-runtime.md)、[恢复与人工批准](recovery-hitl.md)、[可观测性](../08-production/observability)
 
 ## 1. 概述
 

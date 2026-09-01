@@ -11,7 +11,7 @@ nodeType: contract
 owner: learn-ai
 externalOwners: []
 prerequisites: [tech-map]
-next: [context]
+next: [context-window]
 lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
@@ -19,8 +19,8 @@ listed: true
 
 # Prompt Engineering
 
-> **Layer**: 1 · Interaction Contracts ｜ **Previous layer exit**: locate your problem domain, audience, and next entry point ｜ **This topic exit**: rewrite a vague request into a four-element, acceptance-testable prompt, and manage that prompt as versioned, tested code
-> **Prerequisites**: [tech-map](../index.md) ｜ **Next**: [context](context-engineering.md)
+> **Group**: Context group ｜ **Previous group exit**: locate your problem domain, audience, and next entry point ｜ **This topic exit**: rewrite a vague request into a four-element, acceptance-testable prompt, and manage that prompt as versioned, tested code
+> **Prerequisites**: [tech-map](../index.md) ｜ **Next**: [Context Window](context-window.md)
 
 ## 1. Overview
 

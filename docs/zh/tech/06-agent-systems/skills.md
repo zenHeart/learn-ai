@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：能把一套重复流程打包成 Skill，让宿主按需加载并稳定触发
+> **所在组**：Agent 系统 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：能把一套重复流程打包成 Skill，让宿主按需加载并稳定触发
 > **前置**：[上下文工程](../03-context/context-engineering)、[工具调用契约](../05-action/tool-calling) ｜ **下一步**：[Agent Plugins](plugins.md)（打包分发）、[协议地图](../07-interoperability/index.md)
 
 ## 1. 概述

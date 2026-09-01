@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration / Agent Runtime ｜ **Exit of the layer above**: you can execute a single tool call safely and orchestrate fixed steps into a workflow ｜ **Exit of this layer**: you can build a minimal agent loop with stopping conditions and a budget, and you know which page owns state, recovery, and interface automation
+> **Group**: Agent Systems ｜ **Exit of the layer above**: you can execute a single tool call safely and orchestrate fixed steps into a workflow ｜ **Exit of this layer**: you can build a minimal agent loop with stopping conditions and a budget, and you know which page owns state, recovery, and interface automation
 > **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling) · [Tool Execution Engineering](../05-action/tool-execution.md) · [Workflow Patterns](workflow.md) ｜ **Next**: [Agent Design Patterns](design-patterns.md) · [Agent State and Memory](state-memory.md) · [Recovery and Human-in-the-Loop](recovery-hitl.md) · [Computer Use](computer-use.md)
 
 ## 1. Overview

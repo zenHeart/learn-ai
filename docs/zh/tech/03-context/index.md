@@ -1,55 +1,57 @@
 ---
-title: "层 1 · 交互契约：让输入输出可控"
-description: "回答不稳定、输出无法解析时进本层：提示、上下文、结构化输出、工具调用四个契约，出口是能写并验证输入输出 schema、知道失败验收。"
+title: "Context 组：模型这一轮看到什么"
+description: "提示之上的下一问：内容。五个主题回答模型单轮可见内容的全部工程问题——窗口硬预算、组装策略、跨轮会话、仓库约定；入口是 prompt，出口是算得清预算、组得对来源、防得住腐烂。"
 domain: tech
-tags: [contracts, index]
+tags: [context, index, navigation]
 navOrder: 30
-topicId: contracts-index
+topicId: context-index
 layer: "3"
 status: canonical
 nodeType: problem
 owner: learn-ai
 externalOwners: []
-prerequisites: []
-next: [prompt, context, structured-output, tool-calling]
+prerequisites: [structured-output]
+next: [prompt, context-window, context, session-state, repo-context]
 lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
 
-# 层 1 · 交互契约：让输入输出可控
+# Context 组：模型这一轮看到什么
 
-> **在哪一层**：层 1 · 交互契约 ｜ **上一层出口**：能定位问题域、受众和下一入口 ｜ **本层出口**：能写并验证输入/输出 schema，知道失败验收，知道何时升级到层 2
-> **前置**：无（第一层；若还不确定本仓与相邻知识站的分工，先回 [tech-map](../index.md)） ｜ **下一步**：[model-api](../02-inference-interface/model-api.md)
+> **在哪一组**：Context 组 ｜ **进入本组前**：能写并验证输入/输出 schema（[structured-output](../02-inference-interface/structured-output.md)） ｜ **本组出口**：能回答「模型这一轮看到什么」的全链路——算得清预算、组得对来源、防得住腐烂
+> **前置**：[structured-output](../02-inference-interface/structured-output.md) ｜ **下一步**：[嵌入与检索](../04-grounding/embeddings-retrieval.md)、[工具调用契约](../05-action/tool-calling.md)
 
 ## 1. 概述
 
-**结论**：层 1 是金字塔的地基。上层的一切——产品交互、检索接地、安全执行、可靠运营——都建立在两个前提上：**输入可控**（你决定模型看到什么、以什么形式表达意图）与**输出可验证**（输出形状有合同、失败有验收）。这两个前提不成立时，上层做得越多，不可判定的行为越多。
+**结论**：提示写得再好，也只能控制「怎么说」；质量与成本的另一半在「**给模型看什么**」。Context 组把这个问题拆成五个正交的小问题，每页管一个：怎么表达（prompt）、能装多少（context-window）、装什么（context-engineering）、跨轮历史放哪（session-memory）、仓库约定怎么声明（repo-context）。
 
-为什么契约先于一切：模型的输出是概率采样，不是函数返回值。工程化的路径不是消除不确定性，而是**用契约把自由度收敛到可验证的子集**——指令有四要素、输入有预算不变量、输出有 schema、动作有白名单。每个契约都把一类「偶尔坏」变成「可检测地坏」。
+为什么值得一个组：上下文是**有限资源且边际收益递减**——窗口内 token 越多，模型准确回忆越差（context rot，跨模型存在）；同时每一轮重发的内容都在计费。输入侧的策展做不好，上层（检索接地、工具执行、运营对账）都在为噪声付钱。
 
-### 症状路由：什么问题进本层
-
-```text
-回答不稳定 / 输出无法解析            → 层 1 交互契约（你在这里）
-回答稳定，但还没接进产品              → 层 2 应用接入
-回答缺少私有或新鲜事实                → 层 3 知识接地
-需要调用系统或执行动作                → 层 4 行动与协作
-功能已跑，但无法证明可上线 / 不可运营  → 层 5 可靠运营
-```
-
-### 心智模型：能力变换链上的第一站
+### 心智模型：从意图到窗口的变换链
 
 ```text
 人的意图
-   │  ① prompt    —— 怎么表达指令（任务/约束/示例/输出格式）
+   │ ① prompt           怎么表达（任务/约束/示例/输出格式）
    ▼
-可控的输入 ── ② context —— 这一轮让模型看到什么（预算/来源/腐烂）
+可控的指令 ── ② context-window    装得下多少（token 预算、配对、输出预留）
    │
- 模 型
-   │  ③ structured-output —— 输出什么形状（schema 合同 + 验证层）
-   ▼  ④ tool-calling —— 想做什么动作（请求与执行分离）
-可验证的结果 → 层 2（产品交互）→ 层 3（接地）→ 层 4（执行）→ 层 5（运营）
+   │ ③ context-engineering 装什么（来源、优先级、压缩、防腐）
+   ▼
+组装好的窗口 ── ④ session-memory  跨轮历史放哪（存储、裁剪、恢复、并发）
+   │
+   ▼ ⑤ repo-context      仓库约定怎么声明（AGENTS.md、就近优先、宿主注入）
+模型这一轮真正看到的内容
+```
+
+### 症状路由：什么问题进哪页
+
+```text
+输出不稳定、答非所问（表达问题）        → prompt
+请求报 400 超窗、成本线性涨、输出截断    → context-window
+塞了检索还是答不对、答案引用旧内容      → context-engineering
+刷新丢历史、越聊越失忆、并发写坏会话    → session-memory
+换助手就装错依赖、跑错测试命令          → repo-context
 ```
 
 ### 主题导航表
@@ -57,126 +59,112 @@ listed: true
 | 主题 | 回答什么问题 | 出口 | 链接 |
 |---|---|---|---|
 | 提示词工程 | 怎么把意图写成模型可执行的指令？ | 能写四要素提示并当代码管理 | [prompt](prompt.md) |
-| 上下文工程 | 这一轮推理让模型看到什么？ | 能管预算、保配对裁剪、识腐烂 | [context](context-engineering.md) |
-| 结构化输出 | 输出形状怎么才有合同？ | 能写 schema + 验证层 + 失败重试 | [structured-output](../02-inference-interface/structured-output.md) |
-| 工具调用契约 | 模型想执行动作时约定什么？ | 能定义 schema、过闸门、回传结果 | [tool-calling](../05-action/tool-calling.md) |
+| 上下文窗口 | 这一轮装得下多少？ | 能算四块预算、识别超窗症状、保配对裁剪 | [context-window](context-window.md) |
+| 上下文工程 | 这一轮该装什么？ | 能设计多来源组装：优先级、可见挤出、压缩防腐 | [context-engineering](context-engineering.md) |
+| 会话与状态 | 跨轮历史放哪？ | 能建会话：预算裁剪、持久化恢复、并发防护 | [session-memory](session-memory.md) |
+| 仓库上下文 | 仓库约定怎么声明？ | 能落一份命令真实、分层正确的 AGENTS.md | [repo-context](repo-context.md) |
 
-### 何时使用 / 何时不用
+### 何时进本组 / 何时不进
 
 | | |
 |---|---|
-| **写给谁** | 开始把 LLM 接进产品或工作流的前端 / 全栈工程师 |
-| **前置** | 无——这是第一层。会打开模型 API 或任意编码助手即可 |
-| **不是本层** | 模型内部机制（注意力 / 采样数学）→ Learn LLM；评估方法学 → evals；厂商产品用法 → Products |
-| **何时升级到层 2** | 单次请求的契约闭环已验收，要做多轮、流式、可取消的产品交互时 |
+| **写给谁** | 把模型接进产品或工作流、开始关心质量与成本的前端 / 全栈工程师 |
+| **进** | 提示已能写清，但多轮、外部内容（文件 / 检索 / 工具结果）、编码助手任一出现 |
+| **不进** | 回答本身还不稳定、无法解析——先回 [structured-output](../02-inference-interface/structured-output.md) 把契约闭环；模型内部机制 → Learn LLM |
+| **不是本组** | 检索索引怎么建 → [接地组](../04-grounding/index.md)；动作怎么安全执行 → [tool-calling](../05-action/tool-calling.md) |
 
-### 决策表：四个契约怎么分工
+### 决策表：五个主题怎么分工
 
-| | prompt | context | structured-output | tool-calling |
-|---|---|---|---|---|
-| **控制什么** | 指令的表达 | 输入的内容与预算 | 输出的形状 | 动作请求的形状 |
-| **方向** | 人 → 模型（意图） | 系统 → 窗口（策展） | 模型 → 代码（合同） | 模型 → 系统（请求） |
-| **控制权** | 文本，全在你 | 组装，全在你 | schema + 解码器 | schema + 你的闸门 |
-| **状态** | 版本化文本 | 每轮重组 | 每次生成的合同 | 多步循环 |
-| **信任域** | 可 diff | 数据新鲜度要治理 | 形状可信、语义仍校验 | 请求可信 ≠ 执行合理 |
-| **最低复杂度** | 最低 | 低（单轮）到中（多轮） | 低 | 中 |
+| | prompt | context-window | context-engineering | session-memory | repo-context |
+|---|---|---|---|---|---|
+| **控制什么** | 指令的表达 | 输入的容量 | 输入的内容选择 | 跨轮历史的存取 | 仓库级约定 |
+| **方向** | 人 → 模型（意图） | 系统 → 窗口（预算） | 来源 → 窗口（策展） | 会话 → 存储 → 窗口 | 仓库 → 宿主 → 窗口 |
+| **控制权** | 文本，全在你 | 组装层，全在你 | 组装层，全在你 | store 实现，全在你 | 仓库文件 + 宿主读取 |
+| **状态** | 版本化文本 | 每轮重算 | 每轮重组 | 跨请求持久 | 随仓库演进 |
+| **信任域** | 可 diff | 估算 vs 精算 | 来源新鲜度 | 存储与并发 | 命令真实性 |
+| **最低复杂度** | 最低，永远先试 | 低（单轮）到中（多轮） | 中 | 中（+持久化） | 低（一个文本文件） |
 
-先读 [prompt](prompt.md)（表达），再 [context](context-engineering.md)（内容），然后 [structured-output](../02-inference-interface/structured-output.md)（输出合同），最后 [tool-calling](../05-action/tool-calling.md)（动作合同）。
+建议按 navOrder 顺序读：prompt → context-window → context-engineering → session-memory → repo-context。
 
-**版本里程碑**：未验证（本层四契约各自的厂商能力时间线见各主题页，本页不重复断言）。
+**版本里程碑**：未验证（各主题涉及的厂商能力时间线见各自主题页，本页不重复断言）。
 
 ## 2. 使用
 
-本页是导航层，不设独立 fixture——层 1 的统一动手出口是 [structured-output](../02-inference-interface/structured-output.md) 的零 key 验证循环（15 分钟：schema → mock 模型 → 验证 → 失败重试，含三类负例）。它是四个契约的交汇点：提示写行为、上下文管重试轮次、schema 定形状、失败可判定。
+本页是导航层，不设独立 fixture——本组统一的动手出口是 [context-window](context-window.md) 的零 key 预算分配器（15 分钟：四块配比 → 溢出告警 → 保配对裁剪，含负例）。它是整组的交汇点：提示占 system 块、历史占 history 块、检索占 retrieval 块、输出留 output 块——五个主题在一张预算表上会合。
 
 **15 分钟自检**（跑完 fixture 后回答）：
 
-1. 三类负例（缺字段 / 多字段 / 类型错）分别是被谁拒收的？（答：调用方验证层，不是提示）
-2. 重试时错误信息去了哪里？（答：拼进重试反馈回传给模型）
-3. 厂商约束解码保证什么、不保证什么？（答：保证形状；不保证语义，也不免除 refusal / 截断两类失败）
+1. 输出预留为什么必须计入预算？（答：输入输出共享窗口；不留则 `stop_reason: max_tokens` 截断）
+2. 裁历史时哪两类消息绝对不能切断？（答：system 头；`tool_use` / `tool_result` 配对）
+3. 预算超了第一动作是什么？（答：先裁低优先级来源且挤出可见，不是静默丢、也不是换更大窗口模型）
 
-三题都答得出，层 1 出口已达成。
+三题都答得出，本组前半程出口已达成；再跑 [context-engineering](context-engineering.md) 的组装器，把「来源有优先级、挤出必须可见」补齐。
 
-**验收命令**（即 structured-output 的确定性验收）：
+**验收命令**（即 context-window 的确定性验收）：
 
 ```bash
-npx tsx@4 structured-output.ts > run1.txt && npx tsx@4 structured-output.ts > run2.txt && diff run1.txt run2.txt && echo DETERMINISTIC
+npx tsx@4 context-window.ts && echo BUDGET-OK
 ```
 
-**清理**：删除 run1.txt / run2.txt。
+**清理**：删除临时文件。
 
 ## 3. 原理
 
-### 为什么「契约」是正确的第一抽象
+### 为什么「上下文」值得单独一个组
 
-模型 API 的朴素视图是「文本进、文本出」。这个视图下没有可验收的东西：同一个输入两次调用结果不同，你无法说哪次「对」。契约视图把交互拆成四个可分别验证的界面：
+模型 API 的朴素视图是「提示进、文本出」，看起来只有 prompt 一个旋钮。工程化之后，「这一轮看到什么」至少裂成五个各有不变量的问题：token 有预算不变量、来源有优先级与失效条件、历史有存储与并发、仓库约定有就近覆盖与命令真实性。**每个子问题都可以独立验收**——这是把它们拆开的理由。
 
-1. **指令契约**（prompt）：行为的最小来源。可 lint、可版本化。
-2. **输入契约**（context）：预算不变量 + 配对不变量。可计数、可断言。
-3. **形状契约**（structured-output）：schema + 独立验证层。可拒绝、可重试。
-4. **动作契约**（tool-calling）：白名单 + 参数校验。可拒绝、可回传错误。
+### 组级不变量（各页展开，此处总纲）
 
-四者的共同结构：**约定一个机器可判定的谓词，让失败显式**。这是「可控」的工程定义——不是「不失败」，而是「失败时你知道，且知道属于哪一类」。
+1. **预算先算后发**：任何一轮请求组装完即可判定会不会超窗（→ [context-window](context-window.md) I1）。
+2. **裁剪不破坏结构**：system 保留、tool 配对完整、挤出可见（→ I2 与 [context-engineering](context-engineering.md)）。
+3. **每个来源有优先级与失效条件**：没有优先级的组装等于先来先占（→ context-engineering）。
+4. **命令必须真实**：写进 AGENTS.md 的命令助手会照单执行（→ [repo-context](repo-context.md)）。
 
-### 失败的两条通用出口
+### 两条通用的「到此为止」
 
-层 1 的每个契约最终都会遇到两类不归契约管的失败（以 structured-output 为最典型，两家官方文档均明示，检索 2026-09-01）：
-
-- **拒答（refusal）**：安全原因的拒绝。Anthropic 返回 200、照常计费、`stop_reason: 'refusal'`；OpenAI 提供可编程检测的 refusal。重试同样内容无意义。
-- **截断（max_tokens）**：输出预算不足导致不完整。提高预算或拆小输出。
-
-知道这两类失败的存在与验收方式，本身就是层 1 出口的一部分。
-
-### 关键不变量
-
-1. 凡是要进代码的输出，必须有机器可校验的 schema（提示里的「请输出 JSON」不算）。
-2. 凡是会影响动作的输出（工具调用），必须过白名单与参数校验后才执行。
-3. 凡是失败路径，必须显式（重试 / 升级 / 终止三选一），禁止静默吞掉。
-
-### learn-ai 到此为止 / 继续去哪（原理侧）
-
-采样、注意力、few-shot 机制 → Learn LLM [第 15 章](https://llm.zenheart.site/chapters/15-prompt-memory)；契约质量如何变成发布证据 → evals（[evaluation](../08-production/evaluation.md) 桥接）。
+- 注意力数学、KV cache、记忆实现四模式 → Learn LLM [第 15 章](https://llm.zenheart.site/chapters/15-prompt-memory)（本组只取其工程含义）。
+- 厂商窗口数字、缓存价格、token 计数接口字段 → 各家官方文档当天页面（本组不维护数字清单）。
 
 ## 4. 开发
 
-### 层级验收清单（Exit criteria）
+### 组级验收清单（Exit criteria）
 
-- [ ] 能把一条模糊需求改写成四要素提示，并让提示进版本库
-- [ ] 能为一轮请求算 context budget，裁剪不切断 tool 配对
-- [ ] 能写 JSON Schema、加调用方验证层、实现失败重试（三类负例被拒）
-- [ ] 能定义 tool schema，执行前过白名单 + 参数校验，错误按契约回传
-- [ ] 知道 refusal / 截断两类失败的存在与验收方式
-- [ ] 知道何时升级到层 2：单请求契约闭环已验收，要做产品化交互
+- [ ] 能把一条模糊需求改写成四要素提示，并让提示进版本库（prompt）
+- [ ] 能为一轮请求算四块 token 预算，裁剪不切断 tool 配对（context-window）
+- [ ] 能给多来源定优先级，挤出有报告，稳定来源在前缀（context-engineering）
+- [ ] 能给多轮对话建会话：预算裁剪、持久化恢复、并发防护（session-memory）
+- [ ] 能给自己的仓库落一份命令真实、分层正确的 AGENTS.md（repo-context）
 
-### 调试 runbook（层级常见症状）
+### 调试 runbook（组级症状）
 
-#### R1 「模型时好时坏，没法上线」
+#### R1 「症状路由错了层，改提示不裁窗」
 
-**症状**：演示效果不错，试用时输出偶尔完全不能用。
-**证据**：收集失败样本，分类——格式坏（围栏 / 缺字段）→ 缺事实 → 缺动作能力。分类结果决定修哪一层。
-**处理**：格式坏 → [structured-output](../02-inference-interface/structured-output.md)；表达歧义 → [prompt](prompt.md)；缺事实 → 层 3；缺动作 → [tool-calling](../05-action/tool-calling.md)。
-**完成标准**：失败样本归入已知类别，每类有对应契约与回归。
+**症状**：多轮会话质量下降，团队连续改了三版提示词没有改善。
+**证据**：逐轮 token 计数曲线仍单调上涨——问题不在表达，在预算。
+**处理**：按症状路由表回 [context-window](context-window.md) R1；表达类症状（不稳定、答非所问）才进 [prompt](prompt.md)。
+**完成标准**：失败样本先归因（表达 / 预算 / 内容 / 历史 / 约定）再动手，归因记录进 PR。
 
-#### R2 「接进产品后 parse 报警」
+#### R2 「越聊越笨」的定位链
 
-**症状**：对话里好好的，进代码就 `JSON.parse` 失败。
-**证据**：报警样本的原始输出体（带围栏？缺字段？截断？）。
-**处理**：按 [structured-output](../02-inference-interface/structured-output.md) R1 的三类根因处理（围栏 → strict schema；refusal → 业务处置；截断 → 加预算）。
-**完成标准**：parse 失败率归零或归因明确；CI 有坏输出必拒的 fixture。
+**症状**：长会话后半段回答质量明显下滑。
+**证据**：依次检查——token 曲线是否逼近窗口（预算）→ 检索片段是否陈旧（内容）→ 关键轮次是否被裁（历史）。
+**处理**：预算满 → 裁剪或压缩；内容旧 → 换 JIT；历史丢 → 调整保留策略（分别见 [context-window](context-window.md)、[context-engineering](context-engineering.md)、[session-memory](session-memory.md)）。
+**完成标准**：同类会话不再随轮次单调劣化；定位链写进团队排障文档。
 
-#### R3 「工具一上就出事故」
+#### R3 「换助手行为就不一致」
 
-**症状**：模型调了不该调的工具 / 参数离谱，产生真实副作用。
-**证据**：执行日志——是否清单外工具名（幻觉）、参数是否过校验。
-**处理**：按 [tool-calling](../05-action/tool-calling.md) R1 补闸门；副作用工具接权限与人工批准（层 4）。
-**完成标准**：未授权执行次数为 0；闸门拒绝计数可观测。
+**症状**：Cursor 里对的，Claude Code 里装错依赖；新人开局总要踩一遍坑。
+**证据**：仓库根没有 AGENTS.md，或命令与实际不符。
+**处理**：按 [repo-context](repo-context.md) R1 落文件；monorepo 子包例外用嵌套文件。
+**完成标准**：新会话首轮用对命令；跨工具、跨成员行为一致。
 
-### 反模式清单（层级）
+### 反模式清单（组级）
 
-- 跳过契约直接堆编排：Agent 框架叠三层，底层输出还是不可解析。
-- 把「测试一次通过」当验收：采样运气不是合同；确定性 fixture + CI 才是。
-- 用更长提示修一切：该上 schema 的上 schema，该裁上下文的裁上下文。
-- 失败静默吞掉：错误不可见 ≠ 系统稳定。
+- 跳过预算直接堆检索：内容越塞越多，质量反而下降——rot 不因窗口变大而消失。
+- 用更长提示修内容问题：该裁的裁、该换来源的换来源。
+- 组装逻辑散落多处：绕过优先级与守卫的拼装是第二套真相。
+- 失败静默吞掉：挤出、裁剪、过期都必须有报告，否则不可调试。
 
 ## 5. 资料库
 
@@ -184,34 +172,34 @@ npx tsx@4 structured-output.ts > run1.txt && npx tsx@4 structured-output.ts > ru
 
 | 级 | 读什么 | 为什么是这个顺序 |
 |---|---|---|
-| Beginner | [Anthropic 提示工程总览](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) ｜ [OpenAI 提示工程指南](https://developers.openai.com/api/docs/guides/prompt-engineering) | 两家官方第一入口，覆盖层 1 的表达与角色层级 |
-| Builder | 本层四个主题页按序读完 + [structured-output fixture](../02-inference-interface/structured-output.md) 跑通 ｜ [Anthropic 交互式教程](https://github.com/anthropics/prompt-eng-interactive-tutorial) | 手上有一套可回归的契约循环后再扩展 |
-| Operator | [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs) ｜ [Anthropic Structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) ｜ [Anthropic Tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) | 上线前逐家核对支持子集与失败语义 |
-| Researcher | [Anthropic：Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) ｜ Learn LLM [第 15 章](https://llm.zenheart.site/chapters/15-prompt-memory) | 契约背后的机制与心智模型 |
+| Beginner | [Anthropic 提示工程总览](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) ｜ [OpenAI 指南 context window 节](https://developers.openai.com/api/docs/guides/prompt-engineering) | 先有「表达」与「预算」的直觉 |
+| Builder | 本组五页按序读完 + [context-window fixture](context-window.md) 跑通 | 手上有一套可回归的预算与组装循环 |
+| Operator | 两家 prompt caching 与 token counting 文档 ｜ [agents.md](https://agents.md/) | 上线后的对账、命中率与团队约定 |
+| Researcher | [Anthropic：Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) ｜ [Chroma：Context Rot](https://research.trychroma.com/context-rot) ｜ Learn LLM [第 15 章](https://llm.zenheart.site/chapters/15-prompt-memory) | 心智模型、衰减实证与机制层 |
 
 ### 资源表
 
 | 名称 | 层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 |---|---|---|---|---|---|
-| 本层四主题页 | L1 | [prompt](prompt.md) · [context](context-engineering.md) · [structured-output](../02-inference-interface/structured-output.md) · [tool-calling](../05-action/tool-calling.md) | 契约主路径 | — | 按序读 |
-| OpenAI / Anthropic 提示指南 | L1 | 见上表 Beginner 行 | 官方表达技巧 | 角色层级 / prompt-as-code | 下钻各主题 |
-| OpenAI Structured Outputs | L1 | https://developers.openai.com/api/docs/guides/structured-outputs | 输出合同官方口径 | strict 三档 / refusal / 支持子集 | 接真 API |
-| Anthropic Structured outputs | L1 | https://platform.claude.com/docs/en/build-with-claude/structured-outputs | 同上（Anthropic 口径） | output_format / strict 工具 / beta 头 | 同上 |
-| Anthropic Tool use | L1 | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview | 动作合同官方口径 | 五步流 / 配对 / stop_reason | 同上 |
-| Anthropic context engineering | L1 | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | 输入策展心智模型 | 注意力预算 / JIT / compaction | 读原文 |
-| Learn LLM 第 15 章 | L2 | https://llm.zenheart.site/chapters/15-prompt-memory | 机制层桥接 | 四段式 / JSON 三档 / 记忆 | 要「为什么」时读 |
+| 本组五主题页 | L1 | [prompt](prompt.md) · [context-window](context-window.md) · [context-engineering](context-engineering.md) · [session-memory](session-memory.md) · [repo-context](repo-context.md) | 主路径 | — | 按序读 |
+| Anthropic context engineering | L1 | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | 心智模型总纲 | 元原则 / JIT / compaction / rot | 读原文 |
+| OpenAI prompt engineering | L1 | https://developers.openai.com/api/docs/guides/prompt-engineering | 官方预算视角 | 窗口以 token 计 | 读其 Structured Outputs |
+| Anthropic Context windows | L1 | https://platform.claude.com/docs/en/build-with-claude/context-windows | 窗口与计费口径 | 输入输出共享预算 | 配 token counting 用 |
+| agents.md | L1 | https://agents.md/ | 仓库级上下文约定 | 格式、就近优先、工具支持面 | 给仓库落一份 |
+| Chroma Context Rot | L4 | https://research.trychroma.com/context-rot | 衰减实证 | 长 ctx 检索退化 | 设计长文任务前读 |
+| Learn LLM 第 15 章 | L2 | https://llm.zenheart.site/chapters/15-prompt-memory | 机制层桥接 | 注意力 / KV cache / 记忆四模式 | 要「为什么」时读 |
 
 （retrievedAt: 2026-09-01。）
 
 ### 主动证伪与未决问题
 
-- 本层结论建立在 2026-09-01 检索的两家官方文档上；厂商支持子集（如 OpenAI 对 `pattern` 的支持）持续漂移，复核周期建议 ≤ 6 个月。
-- 「四契约」是本仓的教学切分，厂商文档按功能页组织（如 Anthropic 把 JSON outputs 与 strict tool use 合称 structured outputs）——切分服务于验收，不是行业标准。
-- 未决：约束解码对输出质量（不仅是形状）的影响方向，公开证据不足，不下结论。
+- 本组结论建立在 2026-09-01 检索的两家官方文档与 Anthropic 工程文章上；厂商窗口数字、缓存价格持续漂移，复核周期建议 ≤ 6 个月。
+- 五主题切分是本仓的教学组织，服务于各自可验收的出口，不是行业标准分类。
+- 未决：context rot 的量化临界点无通用公式（→ [context-window](context-window.md)）；compaction 保留策略无公开基准（→ [context-engineering](context-engineering.md)）。
 
 ### learn-ai 到此为止 / 继续去哪
 
-- 单请求契约闭环已验收，要做流式 / 可取消 / 多轮产品交互 → [model-api](../02-inference-interface/model-api.md)（层 2）。
-- 输出需要私有或新鲜事实支撑 → [rag](../04-grounding/rag.md)（层 3）。
-- 动作要安全执行、跨边界协作 → [tool-execution](../05-action/tool-execution.md)（层 4）。
-- 契约质量要变成发布证据 → [evaluation](../08-production/evaluation.md)（层 5，桥接 evals.zenheart.site）。
+- 输入侧闭环后，检索依据怎么建 → [嵌入与检索](../04-grounding/embeddings-retrieval.md)、[RAG](../04-grounding/rag.md)。
+- 要执行动作 → [工具调用契约](../05-action/tool-calling.md)。
+- 预算与成本进运营口径 → [成本与性能](../08-production/cost-performance.md)。
+- 注意力与记忆机制 → Learn LLM [第 15 章](https://llm.zenheart.site/chapters/15-prompt-memory)。

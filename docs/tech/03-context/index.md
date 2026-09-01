@@ -1,182 +1,170 @@
 ---
-title: "Layer 1 · Interaction Contracts: Making Input and Output Controllable"
-description: "Enter this layer when answers are unstable or outputs cannot be parsed: four contracts — prompt, context, structured output, tool calling. Exit able to write and validate input/output schemas and know how failures are accepted."
+title: "Context Group: What the Model Sees This Turn"
+description: "The next question after the prompt: content. Five topics cover every engineering aspect of what a model sees in a single turn — the hard window budget, assembly strategy, cross-turn sessions, repo conventions. Entry is prompt; exit is a budget you can compute, sources you can assemble, rot you can counter."
 domain: tech
-tags: [contracts, index]
+tags: [context, index, navigation]
 navOrder: 30
-topicId: contracts-index
+topicId: context-index
 layer: "3"
 status: canonical
 nodeType: problem
 owner: learn-ai
 externalOwners: []
-prerequisites: []
-next: [prompt, context, structured-output, tool-calling]
+prerequisites: [structured-output]
+next: [prompt, context-window, context, session-state, repo-context]
 lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
 
-# Layer 1 · Interaction Contracts: Making Input and Output Controllable
+# Context Group: What the Model Sees This Turn
 
-> **Layer**: 1 · Interaction Contracts ｜ **Previous layer exit**: locate your problem domain, audience, and next entry point ｜ **This layer exit**: write and validate input/output schemas, know how failures are accepted, know when to escalate to Layer 2
-> **Prerequisites**: none (first layer; if you are unsure how this site splits duties with neighboring knowledge sites, start at [tech-map](../index.md)) ｜ **Next**: [model-api](../02-inference-interface/model-api.md)
+> **Group**: Context group ｜ **Before this group**: can write and validate input/output schemas ([structured-output](../02-inference-interface/structured-output.md)) ｜ **Group exit**: the full chain of "what the model sees this turn" — a budget you can compute, sources you can assemble, rot you can counter
+> **Prerequisites**: [structured-output](../02-inference-interface/structured-output.md) ｜ **Next**: [Embeddings and Retrieval](../04-grounding/embeddings-retrieval.md), [Tool Calling Contract](../05-action/tool-calling.md)
 
 ## 1. Overview
 
-**Bottom line**: Layer 1 is the foundation of the pyramid. Everything above it — product interaction, grounded retrieval, safe execution, reliable operations — rests on two premises: **controllable input** (you decide what the model sees and how the intent is expressed) and **verifiable output** (output shape is contractual and failures are testable). When these premises do not hold, every layer you stack on top adds more undecidable behavior.
+**Bottom line**: however well the prompt is written, it controls only "how to say"; the other half of quality and cost lies in "**what the model sees**". The Context group splits that question into five orthogonal sub-questions, one page each: how to express (prompt), how much fits (context-window), what to load (context-engineering), where cross-turn history lives (session-memory), how to declare repo conventions (repo-context).
 
-Why contracts come before everything else: model output is probabilistic sampling, not a function return value. The engineering path is not to eliminate uncertainty but to **use contracts to collapse degrees of freedom into a verifiable subset** — instructions have four elements, input has budget invariants, output has a schema, actions have a whitelist. Each contract turns a class of "occasionally wrong" into "detectably wrong".
+Why a whole group: context is a **finite resource with diminishing returns** — the more tokens in the window, the worse the model's accurate recall (context rot, present across models); meanwhile every resent token is billed. Do input-side curation badly and every layer above (grounded retrieval, tool execution, operations reconciliation) pays for noise.
 
-### Symptom routing: which problems enter this layer
+### Mental model: the transformation chain from intent to window
 
 ```text
-Answers unstable / output cannot be parsed        → Layer 1 Interaction Contracts (you are here)
-Answers stable, but not yet in a product          → Layer 2 Application Integration
-Answers lack private or fresh facts               → Layer 3 Knowledge Grounding
-Needs to call systems or perform actions          → Layer 4 Action and Collaboration
-Feature works, but cannot prove ship-readiness    → Layer 5 Reliable Operations
+human intent
+   │ ① prompt              how to express (task/constraints/examples/output format)
+   ▼
+controlled instruction ── ② context-window      how much fits (token budget, pairs, output reserve)
+   │
+   │ ③ context-engineering  what to load (sources, priorities, compaction, staleness)
+   ▼
+assembled window ── ④ session-memory     where history lives (storage, trimming, recovery, concurrency)
+   │
+   ▼ ⑤ repo-context        how conventions are declared (AGENTS.md, nearest-wins, host injection)
+what the model actually sees this turn
 ```
 
-### Mental model: the first stop on the capability chain
+### Symptom routing: which page takes which problem
 
 ```text
-Human intent
-   │  ① prompt           — how to express the instruction (task/constraints/examples/output format)
-   ▼
-Controllable input ── ② context — what the model sees this turn (budget/sources/rot)
-   │
- MODEL
-   │  ③ structured-output — what shape the output has (schema contract + validation layer)
-   ▼  ④ tool-calling — what action it wants to take (request/execution separation)
-Verifiable result → Layer 2 (product interaction) → Layer 3 (grounding) → Layer 4 (action) → Layer 5 (operations)
+Unstable answers, off-target replies (expression)          → prompt
+400 over-window, linear cost growth, truncated output      → context-window
+Retrieval stuffed in yet still wrong, stale citations      → context-engineering
+History lost on refresh, growing amnesia, concurrent bugs  → session-memory
+Wrong deps / test commands after switching assistants      → repo-context
 ```
 
 ### Topic navigation table
 
 | Topic | What question it answers | Exit | Link |
 |---|---|---|---|
-| Prompt Engineering | How to turn intent into executable instructions? | Write four-element prompts, manage them as code | [prompt](prompt.md) |
-| Context Engineering | What should the model see this turn? | Manage budget, trim without breaking pairs, spot rot | [context](context-engineering.md) |
-| Structured Output | How does output shape become contractual? | Write schema + validation layer + failure retry | [structured-output](../02-inference-interface/structured-output.md) |
-| Tool Calling Contract | What is agreed when the model wants to act? | Define schemas, pass gates, return results | [tool-calling](../05-action/tool-calling.md) |
+| Prompt Engineering | How to turn intent into an executable instruction? | Write four-element prompts managed as code | [prompt](prompt.md) |
+| Context Window | How much fits this turn? | Compute four-block budgets, spot overflow, trim with pairs intact | [context-window](context-window.md) |
+| Context Engineering | What should be loaded this turn? | Design multi-source assembly: priorities, visible eviction, compaction and staleness | [context-engineering](context-engineering.md) |
+| Session and State | Where does cross-turn history live? | Build sessions: budget trimming, persistent recovery, concurrency guards | [session-memory](session-memory.md) |
+| Repo Context | How are repo conventions declared? | Land an AGENTS.md with real commands and correct layering | [repo-context](repo-context.md) |
 
-### When to use / when not to
+### When to enter this group / when not
 
 | | |
 |---|---|
-| **Audience** | Frontend / full-stack engineers starting to wire LLMs into products or workflows |
-| **Prerequisites** | None — this is the first layer. Being able to call a model API or use any coding assistant is enough |
-| **Not this layer** | Model internals (attention / sampling math) → Learn LLM; evaluation methodology → evals; vendor product usage → Products |
-| **When to escalate to Layer 2** | The single-request contract loop has been accepted, and you need multi-turn, streaming, cancellable product interaction |
+| **Audience** | Frontend / full-stack engineers wiring models into products or workflows who start caring about quality and cost |
+| **Enter** | The prompt is clear, but any of these appear: multiple turns, external content (files / retrieval / tool results), coding assistants |
+| **Do not enter** | Answers still unstable or unparseable — close the contract loop first at [structured-output](../02-inference-interface/structured-output.md); model internals → Learn LLM |
+| **Not this group** | Building the retrieval index → [grounding group](../04-grounding/index.md); executing actions safely → [tool-calling](../05-action/tool-calling.md) |
 
-### Decision table: how the four contracts divide the work
+### Decision table: how the five topics divide the work
 
-| | prompt | context | structured-output | tool-calling |
-|---|---|---|---|---|
-| **What it controls** | Expression of instructions | Content and budget of input | Shape of output | Shape of action requests |
-| **Direction** | Human → model (intent) | System → window (curation) | Model → code (contract) | Model → system (request) |
-| **Control** | Text, fully yours | Assembly, fully yours | Schema + decoder | Schema + your gates |
-| **State** | Versioned text | Rebuilt each turn | Contract per generation | Multi-step loop |
-| **Trust domain** | Diffable | Data freshness governed | Shape trusted, semantics still validated | Trusted request ≠ reasonable execution |
-| **Minimum complexity** | Lowest | Low (single turn) to medium (multi-turn) | Low | Medium |
+| | prompt | context-window | context-engineering | session-memory | repo-context |
+|---|---|---|---|---|---|
+| **Controls** | Expression of instructions | Capacity of input | Content selection of input | Cross-turn history I/O | Repo-level conventions |
+| **Direction** | Human → model (intent) | System → window (budget) | Sources → window (curation) | Session → store → window | Repo → host → window |
+| **Control** | Text, fully yours | Assembly layer, fully yours | Assembly layer, fully yours | Store implementation, yours | Repo file + host reading |
+| **State** | Versioned text | Recomputed per turn | Reassembled per turn | Persistent across requests | Evolves with the repo |
+| **Trust domain** | Diffable | Estimate vs exact counting | Source freshness | Storage and concurrency | Command truthfulness |
+| **Min complexity** | Lowest, always try first | Low (single turn) to medium (multi-turn) | Medium | Medium (+ persistence) | Low (one text file) |
 
-Read [prompt](prompt.md) (expression) first, then [context](context-engineering.md) (content), then [structured-output](../02-inference-interface/structured-output.md) (output contract), finally [tool-calling](../05-action/tool-calling.md) (action contract).
+Read in navOrder: prompt → context-window → context-engineering → session-memory → repo-context.
 
-**Version milestones**: unverified (per-topic vendor capability timelines live in each topic page; this page repeats no claims).
+**Version milestones**: unverified (vendor-capability timelines live on each topic page; this page repeats none).
 
 ## 2. Usage
 
-This page is the navigation layer and ships no standalone fixture — the hands-on exit for the whole layer is the zero-key validation loop in [structured-output](../02-inference-interface/structured-output.md) (15 minutes: schema → mock model → validate → retry-on-failure, with three negative cases). It is the confluence of all four contracts: the prompt states behavior, context manages retry turns, the schema fixes shape, failure is decidable.
+This page is navigation and has no standalone fixture — the group's unified hands-on exit is [context-window](context-window.md)'s zero-key budget allocator (15 minutes: four-block planning → overflow alarm → pair-preserving trim, negative case included). It is the group's meeting point: the prompt occupies the system block, history the history block, retrieval the retrieval block, output the output reserve — five topics converge on one budget sheet.
 
 **15-minute self-check** (after running the fixture):
 
-1. Which component rejected the three negative cases (missing field / extra field / wrong type)? (Answer: the caller-side validation layer, not the prompt)
-2. Where did the error information go on retry? (Answer: appended to the retry feedback sent back to the model)
-3. What does provider constrained decoding guarantee, and what does it not? (Answer: shape; not semantics, and it does not remove the refusal / truncation failure classes)
+1. Why must the output reserve count toward the budget? (A: input and output share the window; without a reserve, `stop_reason: max_tokens` truncates)
+2. Which two kinds of messages must trimming never sever? (A: the system head; `tool_use` / `tool_result` pairs)
+3. What is the first action when over budget? (A: evict the lowest-priority source visibly — not silently, and not by switching to a bigger-window model)
 
-If you can answer all three, the Layer 1 exit is met.
+Answer all three and the front half of the group's exit is met; then run [context-engineering](context-engineering.md)'s assembler to add "sources have priorities, eviction is visible".
 
-**Acceptance command** (the deterministic acceptance from structured-output):
+**Acceptance command** (the deterministic acceptance of context-window):
 
 ```bash
-npx tsx@4 structured-output.ts > run1.txt && npx tsx@4 structured-output.ts > run2.txt && diff run1.txt run2.txt && echo DETERMINISTIC
+npx tsx@4 context-window.ts && echo BUDGET-OK
 ```
 
-**Cleanup**: delete run1.txt / run2.txt.
+**Cleanup**: delete temporary files.
 
 ## 3. Principles
 
-### Why "contract" is the right first abstraction
+### Why "context" deserves its own group
 
-The naive view of a model API is "text in, text out". Under that view nothing is acceptable: two calls with the same input produce different results, and you cannot say which one is "right". The contract view splits the interaction into four separately verifiable interfaces:
+The naive view of a model API is "prompt in, text out" — apparently one knob: the prompt. Once engineered, "what is seen this turn" splits into at least five sub-problems, each with its own invariants: tokens have budget invariants, sources have priorities and invalidation conditions, history has storage and concurrency, repo conventions have nearest-wins and command truthfulness. **Each sub-problem is independently acceptance-testable** — that is the reason to split them.
 
-1. **Instruction contract** (prompt): the minimal source of behavior. Lintable, versionable.
-2. **Input contract** (context): budget invariant + pairing invariant. Countable, assertable.
-3. **Shape contract** (structured-output): schema + independent validation layer. Rejectable, retryable.
-4. **Action contract** (tool-calling): whitelist + parameter validation. Rejectable, error-returnable.
+### Group-level invariants (expanded per page; the synopsis here)
 
-The shared structure: **agree on a machine-decidable predicate and make failure explicit**. That is the engineering definition of "controllable" — not "never fails", but "when it fails, you know, and you know which class it belongs to".
+1. **Count before sending**: any assembled request can be judged for overflow before it ships (→ [context-window](context-window.md) I1).
+2. **Trimming must not break structure**: system kept, tool pairs intact, eviction visible (→ I2 and [context-engineering](context-engineering.md)).
+3. **Every source has a priority and an invalidation condition**: assembly without priorities is arrival-order by another name (→ context-engineering).
+4. **Commands must be real**: assistants execute what AGENTS.md lists (→ [repo-context](repo-context.md)).
 
-### Two universal failure exits
+### Two universal "stop here" lines
 
-Every contract in Layer 1 eventually meets two failure classes that contracts alone do not govern (most visible in structured-output; both providers document them, retrieved 2026-09-01):
-
-- **Refusal**: the model declines for safety reasons. Anthropic returns HTTP 200, bills normally, sets `stop_reason: 'refusal'`; OpenAI offers programmatically detectable refusals. Retrying the same content is pointless.
-- **Truncation (max_tokens)**: the output budget ran out mid-generation. Raise the budget or split the output.
-
-Knowing these two failure classes exist — and how to accept them — is itself part of the Layer 1 exit.
-
-### Key invariants
-
-1. Any output that enters code must carry a machine-verifiable schema ("please output JSON" in a prompt does not count).
-2. Any output that triggers actions (tool calls) must pass a whitelist and parameter validation before execution.
-3. Every failure path must be explicit (retry / escalate / terminate — pick one); silent swallowing is forbidden.
-
-### Where learn-ai stops / where to continue (principles)
-
-Sampling, attention, few-shot mechanisms → Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory); how contract quality becomes release evidence → evals ([evaluation](../08-production/evaluation.md) bridge).
+- Attention math, KV cache, the four memory patterns → Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory) (this group takes only the engineering implications).
+- Vendor window numbers, caching prices, token-counting endpoint fields → each vendor's docs on the day (this group maintains no number lists).
 
 ## 4. Development
 
-### Layer exit criteria
+### Group exit criteria
 
-- [ ] Can rewrite a vague request into a four-element prompt and keep the prompt in version control
-- [ ] Can compute context budget for a request and trim without breaking tool pairs
-- [ ] Can write a JSON Schema, add a caller-side validation layer, implement failure retry (three negative cases rejected)
-- [ ] Can define a tool schema, pass whitelist + parameter validation before execution, return errors per contract
-- [ ] Knows the refusal / truncation failure classes exist and how to accept them
-- [ ] Knows when to escalate to Layer 2: single-request contract loop accepted, product-grade interaction needed
+- [ ] Rewrite a vague request into a four-element prompt that enters version control (prompt)
+- [ ] Compute a four-block token budget for a request; trim without severing tool pairs (context-window)
+- [ ] Assign priorities to multiple sources with reported eviction and stable sources in the prefix (context-engineering)
+- [ ] Build sessions for multi-turn chat: budget trimming, persistent recovery, concurrency guards (session-memory)
+- [ ] Land an AGENTS.md with real commands and correct layering for your repo (repo-context)
 
-### Debug runbooks (common layer-level symptoms)
+### Debug runbooks (group-level symptoms)
 
-#### R1 "The model is inconsistently good; we cannot ship"
+#### R1 "Routed to the wrong layer; editing prompts instead of trimming the window"
 
-**Symptom**: demos look fine; in trials the output occasionally becomes unusable.
-**Evidence**: collect failure samples and classify — broken format (fences / missing fields) → missing facts → missing action capability. The class decides which layer to fix.
-**Action**: broken format → [structured-output](../02-inference-interface/structured-output.md); ambiguous expression → [prompt](prompt.md); missing facts → Layer 3; missing actions → [tool-calling](../05-action/tool-calling.md).
-**Done when**: failure samples fall into known classes; each class has a matching contract and regression.
+**Symptom**: multi-turn quality drops; the team ships three prompt revisions with no improvement.
+**Evidence**: the per-turn token curve still rises monotonically — the problem is not expression but budget.
+**Action**: return to [context-window](context-window.md) R1 per the symptom routing table; expression symptoms (instability, off-target) belong in [prompt](prompt.md).
+**Done when**: failure samples are attributed (expression / budget / content / history / conventions) before action; the attribution is recorded in the PR.
 
-#### R2 "Parse alerts after integrating into the product"
+#### R2 The "gets dumber as it goes" localization chain
 
-**Symptom**: fine in chat, `JSON.parse` failures once wired into code.
-**Evidence**: raw output bodies of alerting samples (fenced? missing fields? truncated?).
-**Action**: follow the three root causes in [structured-output](../02-inference-interface/structured-output.md) R1 (fences → strict schema; refusal → business handling; truncation → raise budget).
-**Done when**: parse failure rate drops to zero or is fully attributed; CI has a bad-output-must-be-rejected fixture.
+**Symptom**: answer quality clearly declines in the second half of long sessions.
+**Evidence**: check in order — is the token curve near the window (budget) → are retrieval chunks stale (content) → were key turns trimmed (history).
+**Action**: budget full → trim or compact; content stale → switch to JIT; history lost → adjust retention (see [context-window](context-window.md), [context-engineering](context-engineering.md), [session-memory](session-memory.md) respectively).
+**Done when**: similar sessions stop degrading monotonically with turns; the chain is written into the team's troubleshooting doc.
 
-#### R3 "Accidents as soon as tools go live"
+#### R3 "Behavior changes with every assistant"
 
-**Symptom**: the model called a tool it should not have / with absurd parameters, causing real side effects.
-**Evidence**: execution logs — was the tool name outside the list (hallucination)? did parameters pass validation?
-**Action**: add gates per [tool-calling](../05-action/tool-calling.md) R1; attach permission and human approval to side-effecting tools (Layer 4).
-**Done when**: unauthorized executions equal zero; gate rejection counts are observable.
+**Symptom**: correct in Cursor, wrong deps in Claude Code; every newcomer steps on the same rake.
+**Evidence**: no AGENTS.md at the repo root, or commands that do not match reality.
+**Action**: land the file per [repo-context](repo-context.md) R1; monorepo exceptions use nested files.
+**Done when**: fresh sessions use the right commands on turn one; behavior is consistent across tools and teammates.
 
-### Anti-patterns (layer level)
+### Anti-patterns (group level)
 
-- Skipping contracts and stacking orchestration: three layers of agent framework while the underlying output still fails to parse.
-- Treating "passed once" as acceptance: sampling luck is not a contract; deterministic fixtures + CI are.
-- Fixing everything with longer prompts: use a schema where a schema belongs; trim context where context belongs.
-- Silently swallowing failures: invisible errors ≠ stable system.
+- Skipping the budget and piling on retrieval: more content, worse quality — rot does not vanish with a bigger window.
+- Fixing content problems with longer prompts: trim what should be trimmed; change sources that should be changed.
+- Assembly logic scattered in many places: concatenation that bypasses priorities and guards is a second source of truth.
+- Failures swallowed silently: eviction, trimming, and expiry must all be reported, or none of it is debuggable.
 
 ## 5. Resource Library
 
@@ -184,34 +172,34 @@ Sampling, attention, few-shot mechanisms → Learn LLM [Chapter 15](https://llm.
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | [Anthropic prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) ｜ [OpenAI prompt engineering guide](https://developers.openai.com/api/docs/guides/prompt-engineering) | The two official first entries covering Layer 1 expression and role hierarchy |
-| Builder | The four topic pages in order + run the [structured-output fixture](../02-inference-interface/structured-output.md) ｜ [Anthropic interactive tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) | Build one regressable contract loop before expanding |
-| Operator | [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs) ｜ [Anthropic Structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) ｜ [Anthropic Tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) | Verify supported subsets and failure semantics per provider before launch |
-| Researcher | [Anthropic: Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) ｜ Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory) | Mechanisms and mental models behind the contracts |
+| Beginner | [Anthropic prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) ｜ [OpenAI guide, context window section](https://developers.openai.com/api/docs/guides/prompt-engineering) | "Expression" and "budget" intuition first |
+| Builder | The group's five pages in order + the [context-window fixture](context-window.md) | A regression-checkable budget and assembly loop in hand |
+| Operator | Both providers' prompt caching and token counting docs ｜ [agents.md](https://agents.md/) | Post-launch reconciliation, hit rates, and team conventions |
+| Researcher | [Anthropic: Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) ｜ [Chroma: Context Rot](https://research.trychroma.com/context-rot) ｜ Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory) | Mental model, empirical decay, and the mechanism layer |
 
 ### Resource table
 
 | Name | Level | canonical URL | Use | Supports | Next |
 |---|---|---|---|---|---|
-| This layer's four topic pages | L1 | [prompt](prompt.md) · [context](context-engineering.md) · [structured-output](../02-inference-interface/structured-output.md) · [tool-calling](../05-action/tool-calling.md) | Contract main path | — | Read in order |
-| OpenAI / Anthropic prompt guides | L1 | see Beginner row above | Official expression tactics | Role hierarchy / prompt-as-code | Drill into topics |
-| OpenAI Structured Outputs | L1 | https://developers.openai.com/api/docs/guides/structured-outputs | Official output-contract canon | strict tiers / refusal / supported subset | Wire a real API |
-| Anthropic Structured outputs | L1 | https://platform.claude.com/docs/en/build-with-claude/structured-outputs | Same (Anthropic canon) | output_format / strict tools / beta header | Same |
-| Anthropic Tool use | L1 | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview | Official action-contract canon | Five-step flow / pairing / stop_reason | Same |
-| Anthropic context engineering | L1 | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | Input-curation mental model | Attention budget / JIT / compaction | Read the original |
-| Learn LLM Chapter 15 | L2 | https://llm.zenheart.site/chapters/15-prompt-memory | Mechanism-layer bridge | Four-part structure / JSON tiers / memory | When you need the "why" |
+| The group's five topic pages | L1 | [prompt](prompt.md) · [context-window](context-window.md) · [context-engineering](context-engineering.md) · [session-memory](session-memory.md) · [repo-context](repo-context.md) | Main path | — | Read in order |
+| Anthropic context engineering | L1 | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | Mental model overview | Meta-principle / JIT / compaction / rot | Read the original |
+| OpenAI prompt engineering | L1 | https://developers.openai.com/api/docs/guides/prompt-engineering | Official budget view | Windows measured in tokens | Read their Structured Outputs |
+| Anthropic Context windows | L1 | https://platform.claude.com/docs/en/build-with-claude/context-windows | Window and billing basis | Input and output share the budget | Pair with token counting |
+| agents.md | L1 | https://agents.md/ | Repo-level context convention | Format, nearest-wins, tool support | Land one for your repo |
+| Chroma Context Rot | L4 | https://research.trychroma.com/context-rot | Empirical decay | Long-context retrieval degradation | Read before designing long-document tasks |
+| Learn LLM Chapter 15 | L2 | https://llm.zenheart.site/chapters/15-prompt-memory | Mechanism bridge | Attention / KV cache / four memory patterns | When you need the "why" |
 
 (retrievedAt: 2026-09-01.)
 
 ### Active falsification and open questions
 
-- Layer conclusions rest on the two providers' official docs retrieved 2026-09-01; provider subsets (e.g. OpenAI's `pattern` support) keep drifting — re-verify at most every 6 months.
-- The "four contracts" split is this site's teaching cut; providers organize by feature pages (Anthropic groups JSON outputs and strict tool use under structured outputs) — the cut serves acceptance, not an industry standard.
-- Open: whether constrained decoding helps output quality (not just shape) lacks public evidence; no conclusion drawn.
+- This group's conclusions rest on the two vendors' docs and Anthropic's engineering article as retrieved 2026-09-01; window numbers and caching prices drift — recheck within ≤ 6 months.
+- The five-topic split is this repo's pedagogical organization, serving each page's acceptance-testable exit; it is not an industry-standard taxonomy.
+- Open: no general formula for the context-rot knee (→ [context-window](context-window.md)); no public benchmark for compaction retention (→ [context-engineering](context-engineering.md)).
 
 ### Where learn-ai stops / where to continue
 
-- Single-request contract loop accepted, need streaming / cancellable / multi-turn product interaction → [model-api](../02-inference-interface/model-api.md) (Layer 2).
-- Output needs private or fresh facts → [rag](../04-grounding/rag.md) (Layer 3).
-- Actions need safe execution and cross-boundary collaboration → [tool-execution](../05-action/tool-execution.md) (Layer 4).
-- Contract quality must become release evidence → [evaluation](../08-production/evaluation.md) (Layer 5, bridges to evals.zenheart.site).
+- With the input side closed, how to build retrieval grounding → [Embeddings and Retrieval](../04-grounding/embeddings-retrieval.md), [RAG](../04-grounding/rag.md).
+- Executing actions → [Tool Calling Contract](../05-action/tool-calling.md).
+- Budget and cost as operational metrics → [Cost and Performance](../08-production/cost-performance.md).
+- Attention and memory mechanisms → Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory).

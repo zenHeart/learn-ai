@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration / Agent Runtime ｜ **Exit of the layer above**: you can build a minimal agent loop and know how to install recovery and human approval ｜ **Exit of this layer**: you can decide whether an interface-automation need calls for an API, DOM automation, or Computer Use, and you can equip Computer Use with a sandbox, approval gates, and injection defenses
+> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a minimal agent loop and know how to install recovery and human approval ｜ **Exit of this layer**: you can decide whether an interface-automation need calls for an API, DOM automation, or Computer Use, and you can equip Computer Use with a sandbox, approval gates, and injection defenses
 > **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [Multi-Agent Systems](multi-agent.md) · [Security](../08-production/security) · [A2A](../07-interoperability/a2a.md)
 
 ## 1. Overview

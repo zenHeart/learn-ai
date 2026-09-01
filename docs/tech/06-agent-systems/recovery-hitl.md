@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration / Agent Runtime ｜ **Exit of the layer above**: you can save and restore an agent's site with checkpoints ｜ **Exit of this layer**: you can pick the right recovery strategy for a failed action (retry / rollback / compensation) and install fail-closed human approval gates at irreversible, high-cost, and low-confidence points
+> **Group**: Agent Systems ｜ **Exit of the layer above**: you can save and restore an agent's site with checkpoints ｜ **Exit of this layer**: you can pick the right recovery strategy for a failed action (retry / rollback / compensation) and install fail-closed human approval gates at irreversible, high-cost, and low-confidence points
 > **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Agent State and Memory](state-memory.md) ｜ **Next**: [Computer Use](computer-use.md) · [Security](../08-production/security)
 
 ## 1. Overview

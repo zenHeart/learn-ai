@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能构建可追溯的检索链 ｜ **本层出口**：能判断何时值得上多 agent，写出四要素委派契约，用 supervisor 拓扑委派专家并在路由失败时降级而不是崩溃
-> **前置**：[Agent 运行时](agent-runtime)、[工作流模式](workflow.md) ｜ **下一步**：[A2A](../07-interoperability/a2a.md)（跨边界才需要协议）、[可观测性](../08-production/observability)、[成本与性能](../08-production/cost-performance)
+> **所在组**：Agent 系统 ｜ **上一层出口**：能构建可追溯的检索链 ｜ **本层出口**：能判断何时值得上多 agent，写出四要素委派契约，用 supervisor 拓扑委派专家并在路由失败时降级而不是崩溃
+> **前置**：[Agent 运行时](agent-runtime.md)、[工作流模式](workflow.md) ｜ **下一步**：[A2A](../07-interoperability/a2a.md)（跨边界才需要协议）、[可观测性](../08-production/observability)、[成本与性能](../08-production/cost-performance)
 
 ## 1. 概述
 

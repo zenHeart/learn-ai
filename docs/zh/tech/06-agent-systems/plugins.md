@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：能判断「打包分发」何时需要 Agent Plugins、它管什么与不管什么
+> **所在组**：Agent 系统 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：能判断「打包分发」何时需要 Agent Plugins、它管什么与不管什么
 > **前置**：[Agent Skills](skills.md)、[MCP](../07-interoperability/mcp.md) ｜ **下一步**：[协议地图](../07-interoperability/index.md)
 
 ## 1. 概述

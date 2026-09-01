@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Where you are**: Layer 4 · Action and Collaboration ｜ **Exit of the layer above**: you can build a traceable retrieval chain ｜ **Exit of this page**: you can implement a checkpointed multi-step flow — recover from persisted state after failure without redoing side effects, and pause for a human before irreversible steps
-> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [Agent Runtime](agent-runtime), [Recovery and Human-in-the-Loop](recovery-hitl.md), [Observability](../08-production/observability)
+> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a traceable retrieval chain ｜ **Exit of this page**: you can implement a checkpointed multi-step flow — recover from persisted state after failure without redoing side effects, and pause for a human before irreversible steps
+> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [Agent Runtime](agent-runtime.md), [Recovery and Human-in-the-Loop](recovery-hitl.md), [Observability](../08-production/observability)
 
 ## 1. Overview
 

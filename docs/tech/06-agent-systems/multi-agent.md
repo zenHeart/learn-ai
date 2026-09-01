@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Where you are**: Layer 4 · Action and Collaboration ｜ **Exit of the layer above**: you can build a traceable retrieval chain ｜ **Exit of this page**: you can judge when multi-agent is worth it, write the four-element delegation contract, delegate to specialists via a supervisor topology, and degrade gracefully on routing failure instead of crashing
-> **Prerequisites**: [Agent Runtime](agent-runtime), [Workflow Patterns](workflow.md) ｜ **Next**: [A2A](../07-interoperability/a2a.md) (protocols only across boundaries), [Observability](../08-production/observability), [Cost and Performance](../08-production/cost-performance)
+> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a traceable retrieval chain ｜ **Exit of this page**: you can judge when multi-agent is worth it, write the four-element delegation contract, delegate to specialists via a supervisor topology, and degrade gracefully on routing failure instead of crashing
+> **Prerequisites**: [Agent Runtime](agent-runtime.md), [Workflow Patterns](workflow.md) ｜ **Next**: [A2A](../07-interoperability/a2a.md) (protocols only across boundaries), [Observability](../08-production/observability), [Cost and Performance](../08-production/cost-performance)
 
 ## 1. Overview
 

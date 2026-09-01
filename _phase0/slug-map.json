@@ -134,8 +134,7 @@
         "zh/tech/prompt/agents-doc.md",
         "tech/prompt/agents-doc.md"
       ],
-      "notes": "context window + context engineering + repo context (AGENTS.md) 合并为一个 canonical",
-      "pending": true
+      "notes": "context window + context engineering + repo context (AGENTS.md) 合并为一个 canonical"
     },
     {
       "topicId": "structured-output",
@@ -766,7 +765,7 @@
       "notes": "cursor/copilot 产品案例；工程通用部分已并入 context/tool-execution canonical"
     },
     {
-      "topicId": "contracts-index",
+      "topicId": "context-index",
       "layer": "3",
       "slug": "index",
       "status": "canonical",
@@ -775,7 +774,7 @@
         "en": "Layer 1 Guide"
       },
       "mergeSources": [],
-      "notes": "层 index（agent 命名 contracts-index）"
+      "notes": "Context 组导览（原 contracts-index 更名）"
     },
     {
       "topicId": "integration",
@@ -844,8 +843,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "architecture",
@@ -854,8 +852,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "data-pretraining-scaling",
@@ -864,8 +861,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "inference-fundamentals",
@@ -874,8 +870,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "efficient-serving",
@@ -884,8 +879,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "context-window",
@@ -894,8 +888,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "repo-context",
@@ -904,8 +897,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "hooks",
@@ -914,8 +906,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "agentops",
@@ -924,8 +915,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "interpretability",
@@ -934,8 +924,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "reasoning-ttc",
@@ -944,8 +933,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     },
     {
       "topicId": "moe-frontier",
@@ -954,8 +942,7 @@
       "status": "canonical",
       "title": {},
       "mergeSources": [],
-      "notes": "Wave A v6 新页",
-      "pending": true
+      "notes": "Wave A v6 新页"
     }
   ],
   "productsMoves": [

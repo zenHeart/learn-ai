@@ -11,7 +11,7 @@ nodeType: contract
 owner: learn-ai
 externalOwners: []
 prerequisites: [tech-map]
-next: [context]
+next: [context-window]
 lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
@@ -19,8 +19,8 @@ listed: true
 
 # 提示词工程
 
-> **在哪一层**：层 1 · 交互契约 ｜ **上一层出口**：能定位问题域、受众和下一入口 ｜ **本层出口**：能把一条模糊需求改写成四要素齐全、可验收的提示，并把提示当代码管理（版本化、类型化、可回归）
-> **前置**：[tech-map](../index.md) ｜ **下一步**：[context](context-engineering.md)
+> **在哪一组**：Context 组 ｜ **上一组出口**：能定位问题域、受众和下一入口 ｜ **本页出口**：能把一条模糊需求改写成四要素齐全、可验收的提示，并把提示当代码管理（版本化、类型化、可回归）
+> **前置**：[tech-map](../index.md) ｜ **下一步**：[上下文窗口](context-window.md)
 
 ## 1. 概述
 

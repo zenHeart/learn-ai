@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration / Agent Runtime ｜ **Exit of the layer above**: you can build a minimal agent loop with stopping conditions and a budget ｜ **Exit of this layer**: you can pick the right control structure for a loop already justified to be autonomous, and name each structure's failure modes
+> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a minimal agent loop with stopping conditions and a budget ｜ **Exit of this layer**: you can pick the right control structure for a loop already justified to be autonomous, and name each structure's failure modes
 > **Prerequisites**: [Agent Runtime](agent-runtime.md) ｜ **Next**: [Multi-Agent Systems](multi-agent.md) · [Workflow Patterns](workflow.md)
 
 ## 1. Overview

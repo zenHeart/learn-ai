@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Exit of the layer above**: you can wire model output into sessions and state ｜ **Exit of this layer**: you can judge when distribution needs Agent Plugins, and what it does and does not govern
+> **Group**: Agent Systems ｜ **Exit of the layer above**: you can wire model output into sessions and state ｜ **Exit of this layer**: you can judge when distribution needs Agent Plugins, and what it does and does not govern
 > **Prerequisites**: [Agent Skills](skills.md), [MCP](../07-interoperability/mcp.md) ｜ **Next**: [Protocol Map](../07-interoperability/index.md)
 
 ## 1. Overview

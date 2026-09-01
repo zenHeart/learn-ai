@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 / Agent Runtime ｜ **上一层出口**：能搭出带停止条件与预算的最小 Agent 循环 ｜ **本层出口**：能为跨步状态选对存放层（working / persistent / semantic），用 checkpoint 做到崩溃后无重复地恢复
+> **所在组**：Agent 系统 ｜ **上一层出口**：能搭出带停止条件与预算的最小 Agent 循环 ｜ **本层出口**：能为跨步状态选对存放层（working / persistent / semantic），用 checkpoint 做到崩溃后无重复地恢复
 > **前置**：[Agent 运行时](agent-runtime.md) · [上下文工程](../03-context/context-engineering) ｜ **下一步**：[恢复与人工批准](recovery-hitl.md)
 
 ## 1. 概述

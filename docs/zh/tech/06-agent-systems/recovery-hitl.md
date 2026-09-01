@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 / Agent Runtime ｜ **上一层出口**：能用 checkpoint 保存与恢复 Agent 现场 ｜ **本层出口**：能为失败动作选出正确的恢复策略（重试 / 回退 / 补偿），并在不可逆、高成本、低置信度处架设 fail-closed 的人工批准门
+> **所在组**：Agent 系统 ｜ **上一层出口**：能用 checkpoint 保存与恢复 Agent 现场 ｜ **本层出口**：能为失败动作选出正确的恢复策略（重试 / 回退 / 补偿），并在不可逆、高成本、低置信度处架设 fail-closed 的人工批准门
 > **前置**：[Agent 运行时](agent-runtime.md) · [Agent 状态与记忆](state-memory.md) ｜ **下一步**：[Computer Use](computer-use.md) · [安全](../08-production/security)
 
 ## 1. 概述

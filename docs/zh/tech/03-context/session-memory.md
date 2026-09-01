@@ -3,7 +3,7 @@ title: 会话与状态
 description: 模型 API 无状态，多轮对话是你构造的——历史放哪、token 预算内怎么裁、断了怎么续、并发怎么防。
 domain: tech
 tags: [session, state, integration]
-navOrder: 33
+navOrder: 34
 topicId: session-state
 layer: "3"
 status: canonical
@@ -18,8 +18,8 @@ listed: true
 
 # 会话与状态
 
-> **在哪一层**：层 2 · 应用接入 ｜ **上一层出口**：能写并验证输入/输出 schema ｜ **本层出口**：能给多轮对话建会话——历史有预算裁剪、能持久化恢复、并发写入有防护
-> **前置**：[流式响应](../02-inference-interface/streaming.md)、[上下文工程](context-engineering) ｜ **下一步**：[生成式 UI](../02-inference-interface/ui.md)、[工具执行工程](../05-action/tool-execution)
+> **在哪一组**：Context 组 ｜ **上一组出口**：能写并验证输入/输出 schema ｜ **本页出口**：能给多轮对话建会话——历史有预算裁剪、能持久化恢复、并发写入有防护
+> **前置**：[流式响应](../02-inference-interface/streaming.md)、[上下文工程](context-engineering.md) ｜ **下一步**：[生成式 UI](../02-inference-interface/ui.md)、[工具执行工程](../05-action/tool-execution)
 
 ## 1. 概述
 

@@ -3,7 +3,7 @@ title: Session and State
 description: The model API is stateless and multi-turn conversation is your construction — where history lives, how to trim within a token budget, how to resume, and how to guard concurrency.
 domain: tech
 tags: [session, state, integration]
-navOrder: 33
+navOrder: 34
 topicId: session-state
 layer: "3"
 status: canonical
@@ -18,8 +18,8 @@ listed: true
 
 # Session and State
 
-> **Layer**: 2 · Application Integration ｜ **Previous layer exit**: can write and validate input/output schemas ｜ **This layer exit**: can build sessions for multi-turn conversation — budget-trimmed history, persistent recovery, and concurrency guards
-> **Prerequisites**: [Streaming](../02-inference-interface/streaming.md), [Context Engineering](context-engineering) ｜ **Next**: [Generative UI](../02-inference-interface/ui.md), [Tool Execution Engineering](../05-action/tool-execution)
+> **Group**: Context group ｜ **Previous group exit**: can write and validate input/output schemas ｜ **This topic exit**: can build sessions for multi-turn conversation — budget-trimmed history, persistent recovery, and concurrency guards
+> **Prerequisites**: [Streaming](../02-inference-interface/streaming.md), [Context Engineering](context-engineering.md) ｜ **Next**: [Generative UI](../02-inference-interface/ui.md), [Tool Execution Engineering](../05-action/tool-execution)
 
 ## 1. Overview
 
