@@ -20,7 +20,7 @@ listed: true
 # 层 1 · 交互契约：让输入输出可控
 
 > **在哪一层**：层 1 · 交互契约 ｜ **上一层出口**：能定位问题域、受众和下一入口 ｜ **本层出口**：能写并验证输入/输出 schema，知道失败验收，知道何时升级到层 2
-> **前置**：无（第一层；若还不确定本仓与相邻知识站的分工，先回 [tech-map](../00-orientation/index.md)） ｜ **下一步**：[model-api](../02-integration/model-api.md)
+> **前置**：无（第一层；若还不确定本仓与相邻知识站的分工，先回 [tech-map](../index.md)） ｜ **下一步**：[model-api](../02-integration/model-api.md)
 
 ## 1. 概述
 

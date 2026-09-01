@@ -20,7 +20,7 @@ listed: true
 # Prompt Engineering
 
 > **Layer**: 1 · Interaction Contracts ｜ **Previous layer exit**: locate your problem domain, audience, and next entry point ｜ **This topic exit**: rewrite a vague request into a four-element, acceptance-testable prompt, and manage that prompt as versioned, tested code
-> **Prerequisites**: [tech-map](../00-orientation/index.md) ｜ **Next**: [context](context.md)
+> **Prerequisites**: [tech-map](../index.md) ｜ **Next**: [context](context.md)
 
 ## 1. Overview
 

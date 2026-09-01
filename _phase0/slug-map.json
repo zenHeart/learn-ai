@@ -753,6 +753,78 @@
         "tech/context-injection-strategies.md"
       ],
       "notes": "cursor/copilot 产品案例；工程通用部分已并入 context/tool-execution canonical"
+    },
+    {
+      "topicId": "contracts-index",
+      "layer": "1",
+      "slug": "index",
+      "status": "canonical",
+      "title": {
+        "zh": "层 1 导览",
+        "en": "Layer 1 Guide"
+      },
+      "mergeSources": [],
+      "notes": "层 index（agent 命名 contracts-index）"
+    },
+    {
+      "topicId": "integration",
+      "layer": "2",
+      "slug": "index",
+      "status": "canonical",
+      "title": {
+        "zh": "层 2 导览",
+        "en": "Layer 2 Guide"
+      },
+      "mergeSources": [],
+      "notes": "层 index（agent 命名 integration）"
+    },
+    {
+      "topicId": "grounding",
+      "layer": "3",
+      "slug": "index",
+      "status": "canonical",
+      "title": {
+        "zh": "层 3 导览",
+        "en": "Layer 3 Guide"
+      },
+      "mergeSources": [],
+      "notes": "层 index（agent 命名 grounding）"
+    },
+    {
+      "topicId": "action-index",
+      "layer": "4",
+      "slug": "index",
+      "status": "canonical",
+      "title": {
+        "zh": "层 4 导览",
+        "en": "Layer 4 Guide"
+      },
+      "mergeSources": [],
+      "notes": "层 index（agent 命名 action-index）"
+    },
+    {
+      "topicId": "operations-index",
+      "layer": "5",
+      "slug": "index",
+      "status": "canonical",
+      "title": {
+        "zh": "层 5 导览",
+        "en": "Layer 5 Guide"
+      },
+      "mergeSources": [],
+      "notes": "层 index（agent 命名 operations-index）"
+    },
+    {
+      "topicId": "appendices",
+      "layer": "appendix",
+      "slug": "appendices/index",
+      "status": "canonical",
+      "title": {
+        "zh": "附录导览",
+        "en": "Appendix Guide"
+      },
+      "mergeSources": [],
+      "notes": "附录区 index"
     }
   ],
   "productsMoves": [

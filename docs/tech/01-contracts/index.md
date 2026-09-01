@@ -20,7 +20,7 @@ listed: true
 # Layer 1 · Interaction Contracts: Making Input and Output Controllable
 
 > **Layer**: 1 · Interaction Contracts ｜ **Previous layer exit**: locate your problem domain, audience, and next entry point ｜ **This layer exit**: write and validate input/output schemas, know how failures are accepted, know when to escalate to Layer 2
-> **Prerequisites**: none (first layer; if you are unsure how this site splits duties with neighboring knowledge sites, start at [tech-map](../00-orientation/index.md)) ｜ **Next**: [model-api](../02-integration/model-api.md)
+> **Prerequisites**: none (first layer; if you are unsure how this site splits duties with neighboring knowledge sites, start at [tech-map](../index.md)) ｜ **Next**: [model-api](../02-integration/model-api.md)
 
 ## 1. Overview
 

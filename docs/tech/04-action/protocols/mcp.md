@@ -19,7 +19,7 @@ listed: true
 ---
 
 > **Layer**: 4 · Action and Collaboration ｜ **Exit of the layer above**: you can wire model output into sessions and state ｜ **Exit of this layer**: you can implement and debug an MCP server (including path safety and error semantics) and make migration decisions with 2026-07-28 version awareness
-> **Prerequisites**: [Tool Calling Contract](../../../01-contracts/tool-calling), [Tool Execution Engineering](../tool-execution) ｜ **Next**: [A2A](a2a) (the agent↔agent direction), [Protocol Map](index)
+> **Prerequisites**: [Tool Calling Contract](../../01-contracts/tool-calling), [Tool Execution Engineering](../tool-execution) ｜ **Next**: [A2A](a2a) (the agent↔agent direction), [Protocol Map](index)
 
 ## 1. Overview
 
@@ -47,7 +47,7 @@ One server serves many clients; one host runs many servers; each client pairs wi
 
 - Use: the agent needs external tools/data (files, databases, APIs, browsers); the tool set must be reused across applications; you need a unified authorization and audit boundary.
 - Do not use:
-  - plain in-host function calls — a direct function suffices (rung 3 of the [Complexity Decision Ladder](../../../00-orientation/complexity-ladder));
+  - plain in-host function calls — a direct function suffices (rung 3 of the [Complexity Decision Ladder](../../00-orientation/complexity-ladder));
   - agent↔agent collaboration — that is the [A2A](a2a) direction;
   - merely reusing procedural knowledge — [Skills](../skills) are not a protocol.
 
@@ -447,7 +447,7 @@ Four-level reading route:
 
 ### learn-ai stops here / where to go next
 
-- The model-side contract of tool calling (schemas, selection, argument validation): [Tool Calling Contract](../../../01-contracts/tool-calling).
+- The model-side contract of tool calling (schemas, selection, argument validation): [Tool Calling Contract](../../01-contracts/tool-calling).
 - Execution engineering for idempotency/timeouts/retries/approval: [Tool Execution Engineering](../tool-execution).
-- The agent↔agent direction: [A2A](a2); the panorama: [Protocol Map](index).
+- The agent↔agent direction: [A2A](a2a); the panorama: [Protocol Map](index).
 - Usage of specific third-party MCP servers (e.g. chrome-devtools-mcp): the Products area.

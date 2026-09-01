@@ -19,7 +19,7 @@ listed: true
 ---
 
 > **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：能把一套重复流程打包成 Skill，让宿主按需加载并稳定触发
-> **前置**：[上下文工程](../../01-contracts/context)、[工具调用契约](../../01-contracts/tool-calling) ｜ **下一步**：[Agent Plugins](plugins)（打包分发）、[协议地图](protocols/index)
+> **前置**：[上下文工程](../01-contracts/context)、[工具调用契约](../01-contracts/tool-calling) ｜ **下一步**：[Agent Plugins](plugins)（打包分发）、[协议地图](protocols/index)
 
 ## 1. 概述
 
@@ -325,7 +325,7 @@ exit=1
 
 ### 版本与迁移
 
-- 规范当前未标注版本号，字段级兼容风险点是 `allowed-tools`（Experimental）；生产技能不要依赖它做安全边界——权限收敛由宿主的工具授权承担（见[工具执行工程](../tool-execution)）。
+- 规范当前未标注版本号，字段级兼容风险点是 `allowed-tools`（Experimental）；生产技能不要依赖它做安全边界——权限收敛由宿主的工具授权承担（见[工具执行工程](tool-execution)）。
 - 官方校验库 `skills-ref` 的 `validate` 子命令可进 CI：先跑结构 lint，再跑触发测试（正例 + 越界负例）。
 
 ### 反模式清单
@@ -360,7 +360,7 @@ exit=1
 
 ### learn-ai 到此为止 / 继续去哪
 
-- 触发的底层是上下文与语义匹配：[上下文工程](../../01-contracts/context)。
-- 脚本执行的权限、幂等、审批：[工具执行工程](../tool-execution)。
+- 触发的底层是上下文与语义匹配：[上下文工程](../01-contracts/context)。
+- 脚本执行的权限、幂等、审批：[工具执行工程](tool-execution)。
 - 把技能与 MCP server 打包分发：[Agent Plugins](plugins)。
 - 本仓技能资产登记（projection）：[/zh/skills/](/zh/skills/)。

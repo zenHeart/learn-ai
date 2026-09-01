@@ -19,7 +19,7 @@ listed: true
 ---
 
 > **Layer**: 4 · Action and Collaboration ｜ **Exit of the layer above**: you can wire model output into sessions and state ｜ **Exit of this layer**: you can package a repeated procedure into a Skill that hosts load on demand and trigger reliably
-> **Prerequisites**: [Context Engineering](../../01-contracts/context), [Tool Calling Contract](../../01-contracts/tool-calling) ｜ **Next**: [Agent Plugins](plugins) (packaging and distribution), [Protocol Map](protocols/index)
+> **Prerequisites**: [Context Engineering](../01-contracts/context), [Tool Calling Contract](../01-contracts/tool-calling) ｜ **Next**: [Agent Plugins](plugins) (packaging and distribution), [Protocol Map](protocols/index)
 
 ## 1. Overview
 
@@ -325,7 +325,7 @@ The host uses the model's semantic understanding to score task ↔ description r
 
 ### Versioning and migration
 
-- The spec currently carries no version label; the field-level compatibility risk is `allowed-tools` (Experimental) — production skills must not lean on it as a security boundary. Permission confinement is the host's tool-authorization job (see [Tool Execution Engineering](../tool-execution)).
+- The spec currently carries no version label; the field-level compatibility risk is `allowed-tools` (Experimental) — production skills must not lean on it as a security boundary. Permission confinement is the host's tool-authorization job (see [Tool Execution Engineering](tool-execution)).
 - The official `skills-ref` library's `validate` subcommand fits CI: run structural lint first, then trigger tests (positive + boundary negative).
 
 ### Anti-patterns
@@ -360,7 +360,7 @@ Four-level reading route:
 
 ### learn-ai stops here / where to go next
 
-- Triggering bottoms out in context and semantic matching: [Context Engineering](../../01-contracts/context).
-- Permissions, idempotency, and approval for script execution: [Tool Execution Engineering](../tool-execution).
+- Triggering bottoms out in context and semantic matching: [Context Engineering](../01-contracts/context).
+- Permissions, idempotency, and approval for script execution: [Tool Execution Engineering](tool-execution).
 - Packaging skills with MCP servers for distribution: [Agent Plugins](plugins).
 - This repository's skill asset registry (projection): [/zh/skills/](/zh/skills/).

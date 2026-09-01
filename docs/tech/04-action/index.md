@@ -27,7 +27,7 @@ listed: true
 
 ### Symptom entry
 
-From the decision tree of the [tech map](../00-orientation/index), two symptoms land here:
+From the decision tree of the [tech map](../index.md), two symptoms land here:
 
 - **The system must call other systems or perform actions** (query an order, write a database, send a notification) → this layer's main body (tools/workflows/agents).
 - **Collaboration must cross host / organization / agent boundaries** → this layer's protocol branch (pick by connection direction, see the [Protocol Map](protocols/)).

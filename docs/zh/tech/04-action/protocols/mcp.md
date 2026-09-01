@@ -19,7 +19,7 @@ listed: true
 ---
 
 > **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：能实现/调试一个 MCP server（含路径安全与错误语义），并按 2026-07-28 版本意识做迁移决策
-> **前置**：[工具调用契约](../../../01-contracts/tool-calling)、[工具执行工程](../tool-execution) ｜ **下一步**：[A2A](a2a)（Agent↔Agent 方向）、[协议地图](index)
+> **前置**：[工具调用契约](../../01-contracts/tool-calling)、[工具执行工程](../tool-execution) ｜ **下一步**：[A2A](a2a)（Agent↔Agent 方向）、[协议地图](index)
 
 ## 1. 概述
 
@@ -47,7 +47,7 @@ flowchart LR
 
 - 用：Agent 需要接外部工具/数据（文件、数据库、API、浏览器）；工具集需要跨应用复用；需要统一授权与审计边界。
 - 不用：
-  - 同 host 内的普通函数调用——直接函数即可（见[复杂度决策阶梯](../../../00-orientation/complexity-ladder)梯级 3）；
+  - 同 host 内的普通函数调用——直接函数即可（见[复杂度决策阶梯](../../00-orientation/complexity-ladder)梯级 3）；
   - Agent↔Agent 协作——那是 [A2A](a2a) 的方向；
   - 只是想复用流程知识——[Skills](../skills) 不是协议。
 
@@ -446,7 +446,7 @@ export async function readFileSummary(filePath) {
 
 ### learn-ai 到此为止 / 继续去哪
 
-- 工具调用的模型侧契约（schema、选择、参数验证）：[工具调用契约](../../../01-contracts/tool-calling)。
+- 工具调用的模型侧契约（schema、选择、参数验证）：[工具调用契约](../../01-contracts/tool-calling)。
 - 幂等/超时/重试/审批的执行工程：[工具执行工程](../tool-execution)。
 - Agent↔Agent 方向：[A2A](a2a)；全景：[协议地图](index)。
 - 具体第三方 MCP server 的用法（如 chrome-devtools-mcp）：Products 区。
