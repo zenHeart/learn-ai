@@ -1,26 +1,31 @@
-# AI 工程化实战手册 (Cookbook)
+---
+title: 实战手册
+description: 按任务抄：先界面，再安全，再性能。不是概念课。
+domain: recipe
+tags:
+  - cookbook
+listed: false
+outline: false
+pageClass: catalog-page
+---
 
-欢迎来到实战手册。这里收集了一系列用于常见 AI 工程任务的**即拷即用**的代码片段和模式。
+# 实战手册
 
-## 如何使用
-1.  找到你需要的食谱。
-2.  将代码复制到你的项目中。
-3.  调整导入（我们使用 `ai`、`openai`、`zod` 等标准库）。
+**结论**：这里是「打开就能抄」的片段。先做用户能看见的，再补安全和性能。概念去 [技术](/zh/tech/)，完整项目去 [跟着做](/zh/projects/)。
 
-## 🧩 UI 模式
-- **[聊天 UI 组件](./chat-ui.md)**: 一个可复用、带样式的支持流式传输的聊天界面。
-- **[表单自动补全](./form-autocomplete.md)**: 为你的表单添加“魔法填充”按钮。
+## 1. 用户能看见
 
-## 🛡️ 安全与可靠性
-- **[API 代理](./api-proxy.md)**: 从后端安全地调用 LLM。
-- **[内容审查](./content-moderation.md)**: 过滤输入/输出。
-- **[错误处理](./error-handling.md)**: 重试、超时和回退。
+- [聊天 UI](./chat-ui.md) — 流式输出的对话框  
+- [表单自动补全](./form-autocomplete.md) — 表单上的「帮我填」
 
-## 🚀 性能
-- **[本地 Embeddings](./local-embedding.md)**: 在浏览器中进行语义搜索 (Transformers.js)。
+## 2. 别把钥匙暴露出去
 
-## 贡献
-有很酷的模式？
-1.  Fork 仓库。
-2.  在 `docs/cookbook/` 中添加一个 markdown 文件。
-3.  提交 PR。
+- [API 代理](./api-proxy.md) — 密钥只放服务端  
+- [内容审查](./content-moderation.md) — 过滤输入/输出  
+- [错误处理](./error-handling.md) — 重试、超时、回退
+
+## 3. 再谈快和省
+
+- [本地 Embeddings](./local-embedding.md) — 浏览器里做语义检索  
+
+部署、限流、账单见 [部署](/zh/deployment/)。

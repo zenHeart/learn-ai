@@ -1,3 +1,11 @@
+---
+title: Hugging Face 集成
+description: "Hugging Face 是 \"AI 界的 GitHub\"，托管着超过 50 万个开源模型。你可以通过其 Serverless Inference API 运行这些模型，或者在浏览器中本地运行。"
+domain: tech
+tags:
+  - api
+---
+
 # Hugging Face 集成
 
 Hugging Face 是 "AI 界的 GitHub"，托管着超过 50 万个开源模型。你可以通过其 **Serverless Inference API** 运行这些模型，或者在浏览器中本地运行。

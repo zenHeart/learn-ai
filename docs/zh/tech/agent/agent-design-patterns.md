@@ -1,3 +1,11 @@
+---
+title: Agent Design Patterns（Claude Code 实战）
+description: 设计 Agent 工具的关键框架：把模型想象成一个人。
+domain: tech
+tags:
+  - agent
+---
+
 # Agent Design Patterns（Claude Code 实战）
 
 > 来源：@trq212 (Thariq) 的 Twitter/X 长文 "Lessons from building and shipping an agent to 30k+ developers"，关于 Claude Code 的设计经验

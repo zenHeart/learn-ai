@@ -1,84 +1,89 @@
-# API 集成指南
-
-**先决知识**: [LLM 基础](../../tech/fundamentals/LLM.md)
-
-## 概览
-
-将 AI 集成到你的应用程序始于选择合适的模型提供商。虽然有几十种选择，但目前 95% 的生产级应用都建立在三大核心提供商之上：**OpenAI**、**Anthropic** 和 **Google**。
-
-本节将指导你如何将这些强大的模型连接到你的前端应用程序。
-
-## 提供商对比矩阵
-
-| 特性 | OpenAI (GPT-4o) | Anthropic (Claude 3.5 Sonnet) | Google (Gemini 1.5 Pro) |
-| :--- | :--- | :--- | :--- |
-| **最适合** | 通用、函数调用、结构化数据 | 编码、推理、创意写作 | 长上下文 (2M tokens)、多模态 (视频) |
-| **速度** | ⚡️⚡️⚡️⚡️ (快) | ⚡️⚡️⚡️ (中) | ⚡️⚡️⚡️ (中) |
-| **成本** | 💰💰 (中) | 💰💰 (中) | 💰 (低) |
-| **上下文窗口** | 128k Tokens | 200k Tokens | 2M Tokens |
-| **工具使用** | 优秀 | 优秀 | 良好 |
-| **生态系统** | 庞大 (Assistants API, Realtime API) | 强 (Artifacts, Computer Use) | 增长中 (Google 深度集成) |
-
+---
+title: 怎么把模型接到产品
+description: "先定任务再挑一家 API，先会流式再上框架。型号与价格以官方当天页为准。"
+domain: tech
+tags:
+  - api
+llm:
+  - 14
+  - 17
+prev: false
+next:
+  text: 流式
+  link: /zh/integration/apis/streaming
 ---
 
-## 决策树：我该使用哪个 API？
+# 怎么把模型接到产品
 
-```mermaid
-graph TD
-    A[开始] --> B{需要分析视频或<br>海量文档？}
-    B -- 是 --> C[Google Gemini 1.5 Pro]
-    B -- 否 --> D{复杂的编码或<br>细致的写作？}
-    D -- 是 --> E[Anthropic Claude 3.5 Sonnet]
-    D -- 否 --> F{需要结构化 JSON <br>或强大的工具？}
-    F -- 是 --> G[OpenAI GPT-4o]
-    F -- 否 --> H[OpenAI GPT-4o-mini <br>(最便宜/最快)]
+**结论**：先定「这个功能要编码、长上下文，还是便宜聊天」，再挑 **一家** API。先会 `fetch` + 流式，再上 SDK。
+
+> 消息结构、function calling 往返、SSE 见 Learn LLM [第 14、17 章](https://llm.zenheart.site/chapters/14-llm-api)。本页只排前端怎么接。
+
+## 这一栏怎么读
+
+```
+本页（挑一家 + 最小请求）
+  → 1. OpenAI / Anthropic 其中一家的指南
+  → 2. 流式（用户先看到字）
+  → 3. Vercel AI SDK（React / Next 默认）
+  → 4. 工具调用（要动手时）
+  → 附录：LangChain / Next / HuggingFace
 ```
 
----
+| 你卡在哪 | 读什么 |
+|---|---|
+| 还没发过第一条请求 | 下面的最小例子 + [OpenAI](/zh/integration/apis/openai) 或 [Anthropic](/zh/integration/apis/anthropic) |
+| 接口通了，UI 要等整段才出 | [流式](/zh/integration/apis/streaming) |
+| 要在 React 里接聊天 | [Vercel AI SDK](/zh/integration/frameworks/vercel-ai-sdk) |
+| 模型要查天气 / 改库存 | [工具调用](/zh/integration/protocols/tool-calling) |
+| 工作流已经绕、要换模型 | [LangChain.js](/zh/integration/frameworks/langchain-js) |
 
-## 成本对比 (估算)
+## 怎么挑（不要背价格表）
 
-价格为每 100 万 Token (约 75 万个单词) 的价格。
-*价格可能会变动。最后更新：2026 年 1 月。*
+价格和窗口每天都变。打开厂商定价页，按任务选：
 
-| 模型 | 输入成本 | 输出成本 | 约 1000 次请求的总成本 |
-| :--- | :--- | :--- | :--- |
-| **GPT-4o** | $2.50 | $10.00 | ~$5.00 |
-| **Claude 3.5 Sonnet** | $3.00 | $15.00 | ~$6.00 |
-| **Gemini 1.5 Pro** | $1.25 | $5.00 | ~$2.50 |
-| **GPT-4o-mini** | $0.15 | $0.60 | ~$0.30 |
+| 任务 | 先看哪一家 | 不要一上来就 |
+|---|---|---|
+| 编码、按指令办事 | Anthropic | 为「更聪明」同时接三家 |
+| 结构化 JSON、工具多 | OpenAI 兼容端点 | 用提示硬拧 JSON，见 [稳住结构](/zh/tech/prompt/json-prompt-best-practices) |
+| 超长文档 / 视频 | Gemini 官方型号页 | 把整本 PDF 当默认架构 |
+| 只要便宜聊天 | 各家 mini / flash | 旗舰模型跑摘要 |
 
-> **结论**: 对于简单任务（摘要、简单聊天），使用 **GPT-4o-mini**。它比旗舰模型便宜 20 倍。
+选好一家就 pin 快照。换代是发版，不是改一行 env 完事。
 
----
+## 最小请求
 
-## 详细集成指南
+```ts
+export async function chatOnce(input: string) {
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: process.env.OPENAI_MODEL,
+      stream: false,
+      messages: [{ role: 'user', content: input }]
+    })
+  })
+  if (!response.ok) throw new Error(`${response.status} ${await response.text()}`)
+  const json = await response.json()
+  return json.choices[0].message.content as string
+}
+```
 
-准备好写代码了吗？请遵循这些具体指南：
+密钥只放服务端。浏览器直连厂商会把 key 漏出去，见 [安全](/zh/tech/engineering/security)。
 
-- [**OpenAI 指南**](./openai.md): 行业标准。涵盖设置、流式传输和工具调用。
-- [**Anthropic 指南**](./anthropic.md): 最适合“聪明”的任务。涵盖 Anthropic SDK。
-- [**HuggingFace 指南**](./huggingface.md): 用于开源模型和免费推理 API。
+## 常见陷阱
 
----
-
-## 速率限制与配额
-
-当你进入生产环境时，你会遇到限制。
-
-**常见限制**:
-1.  **RPM (每分钟请求数)**: 你可以进行多少次 API 调用。
-2.  **TPM (每分钟 Token 数)**: 你可以发送/接收多少文本。
-
-**处理限制**:
-- **指数退避**: 如果你收到 `429 Too Many Requests`，等待 1 秒，然后 2 秒，然后 4 秒...
-- **层级升级**: 大多数提供商会在你花费更多时增加限制（例如，OpenAI 使用层级）。
-- **负载均衡**: 高级用户轮换密钥或提供商。
-
----
+- 先注册三家再想功能。
+- 把 2024/2025 的 GPT-4o / Claude 3.5 对照表写进架构文档当永久事实。
+- 不会流式就上 LangChain。多数前端项目 [Vercel AI SDK](/zh/integration/frameworks/vercel-ai-sdk) 够用。
+- 429 不退避。见本页后的厂商指南和 [成本](/zh/tech/engineering/cost-optimization)。
 
 ## 下一步
 
-1.  从你选择的提供商处**获取 API Key**。
-2.  **安装 SDK** (`npm install openai` 或 `npm install @anthropic-ai/sdk`)。
-3.  遵循我们的 [OpenAI 指南](./openai.md) **进行第一次调用**。
+1. [OpenAI](/zh/integration/apis/openai) 或 [Anthropic](/zh/integration/apis/anthropic)
+2. [流式](/zh/integration/apis/streaming) → [Vercel AI SDK](/zh/integration/frameworks/vercel-ai-sdk)
+3. 文档必须进回答 → [RAG](/zh/tech/patterns/RAG)

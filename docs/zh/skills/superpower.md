@@ -1,3 +1,11 @@
+---
+title: Superpowers：AI 编程纪律框架
+description: "Superpowers 是一套完整的 AI 编程方法论，通过组合多个 Skill 让 AI 代理从\"随意的代码生成器\"变成\"有纪律的软件工程师\"。"
+domain: tech
+tags:
+  - skill
+---
+
 # Superpowers：AI 编程纪律框架
 
 ## 技能描述

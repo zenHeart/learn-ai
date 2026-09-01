@@ -1,3 +1,12 @@
+---
+title: 模型上下文协议 (MCP) 入门指南
+description: 模型上下文协议 (MCP) 是将 AI 模型连接到外部工具和数据的开放标准。
+domain: tech
+tags:
+  - protocol
+  - mcp
+---
+
 # 模型上下文协议 (MCP) 入门指南
 
 **模型上下文协议 (MCP)** 是将 AI 模型连接到外部工具和数据的开放标准。

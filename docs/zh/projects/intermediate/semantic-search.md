@@ -1,3 +1,11 @@
+---
+title: "Project: Semantic Search Engine"
+description: "Level: Intermediate Time: 1.5 hours Stack: Next.js, Supabase, OpenAI"
+domain: project
+tags:
+  - intermediate
+---
+
 # Project: Semantic Search Engine
 
 **Level**: Intermediate

@@ -1,3 +1,16 @@
+---
+title: "Path 3: Build AI Products"
+description: "Design, build, and deploy production-ready AI-powered applications."
+domain: path
+tags:
+  - path
+navOrder: 30
+prev:
+  text: Path 2 Integration
+  link: /paths/integration
+next: false
+---
+
 # Path 3: Build AI Products
 
 Design, build, and deploy production-ready AI-powered applications.

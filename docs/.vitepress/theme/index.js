@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import LearningPath from './components/LearningPath.vue'
+import CatalogList from './components/CatalogList.vue'
 import AIToolsGallery from './components/AIToolsGallery.vue'
 import AIToolsLayout from './layouts/ai-tools.vue'
 import NotFound from './components/NotFound.vue'
@@ -18,6 +19,7 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('LearningPath', LearningPath)
+    app.component('CatalogList', CatalogList)
     app.component('AIToolsGallery', AIToolsGallery)
     // 注册自定义布局
     app.component('ai-tools', AIToolsLayout)

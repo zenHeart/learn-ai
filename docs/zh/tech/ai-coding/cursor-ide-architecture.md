@@ -1,3 +1,11 @@
+---
+title: Cursor IDE 工作原理深度解析
+description: "Cursor 是一款基于 VS Code 深度定制的 AI 集成开发环境（IDE），通过集成 GPT-4、Claude 等大语言模型重构编程体验。本文深入解析 AI IDE 的底层机制，帮助你从\"凭感觉使用\"升级为\"系统化高效使用\"。"
+domain: tech
+tags:
+  - tech
+---
+
 # Cursor IDE 工作原理深度解析
 
 > 来源：[CSDN - 效率工具：Cursor（AI IDE）的工作原理](https://blog.csdn.net/RQfreefly/article/details/148652082)

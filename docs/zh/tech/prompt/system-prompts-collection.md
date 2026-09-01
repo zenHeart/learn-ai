@@ -1,8 +1,24 @@
-# System Prompts 集合
+---
+title: 附录 · System Prompts 集锦
+description: "对照主流产品怎么写系统提示。查阅页，不是教程。先读完怎么写 Prompt。"
+domain: tech
+tags:
+  - prompt
+navOrder: 90
+listed: false
+prev:
+  text: 换模型时改什么
+  link: /zh/tech/prompt/official-guide-2026
+next:
+  text: 附录 · Copilot 原文
+  link: /zh/tech/prompt/cases/copilot
+---
 
-> 来源：[x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | ⭐ 133K+ Stars | 更新于 2026-03-08
+# 附录 · System Prompts 集锦
+
+> **路径位置**：附录。不要从这里入门。写法骨架在 [怎么写 Prompt](/zh/tech/prompt/)，仓库级约定在 [AGENTS.md](/zh/tech/prompt/agents-doc)。
 >
-> 本文还整合了 [Anthropic 官方 Prompt Engineering 指南](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) 的核心内容。
+> 来源：[x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)。这是别人产品的系统提示存档，用来对照结构，不要整段复制进自己的产品。
 
 ---
 

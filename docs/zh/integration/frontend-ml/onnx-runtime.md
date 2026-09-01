@@ -1,3 +1,11 @@
+---
+title: ONNX Runtime Web
+description: ONNX (开放神经网络交换) 是机器学习的“PDF”。你可以在 PyTorch 中训练模型，将其保存为 .onnx，然后在任何地方运行——包括浏览器。
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # ONNX Runtime Web
 
 **ONNX (开放神经网络交换)** 是机器学习的“PDF”。你可以在 PyTorch 中训练模型，将其保存为 `.onnx`，然后在任何地方运行——包括浏览器。

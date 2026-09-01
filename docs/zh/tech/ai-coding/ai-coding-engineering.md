@@ -1,3 +1,11 @@
+---
+title: AI Coding 工程化改造
+description: "根据 Stack Overflow 2025 年调查，超过 80% 的开发者每周至少使用一次 AI 辅助编程。从 GitHub Copilot 到 Cursor，从 ChatGPT 到 Claude，开发者已经习惯了用自然语言生成代码、调试 Bug、甚至重构整个模块。"
+domain: tech
+tags:
+  - tech
+---
+
 # AI Coding 工程化改造
 
 > 学习来源：[AI Coding 工程化革命：Superpowers 管流程，ui-ux-pro-max 管质感](https://blog.csdn.net/u013970991/article/details/160020776) + [Claude Code + OpenSpec：AI Coding 从模型博弈到工程化](https://blog.csdn.net/peraglobal/article/details/159396174)

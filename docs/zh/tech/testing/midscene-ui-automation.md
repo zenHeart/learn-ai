@@ -1,3 +1,11 @@
+---
+title: Midscene.js — AI 驱动的 UI 自动化测试
+description: Midscene.js 是字节跳动 Web Infra 团队开源的 AI 驱动、视觉感知的 UI 自动化测试工具。通过自然语言交互，开发者无需编写传统选择器（XPath/CSS），即可完成 Web、移动端、桌面端等多端自动化测试。
+domain: tech
+tags:
+  - tech
+---
+
 # Midscene.js — AI 驱动的 UI 自动化测试
 
 > 来源：[Midscene.js 官方文档](https://midscenejs.com/zh/)

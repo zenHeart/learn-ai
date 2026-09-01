@@ -1,3 +1,11 @@
+---
+title: AI 编程能力边界探索：基于 Claude Code 的 Spec Coding 项目实战
+description: "10 天，2.5 万行代码，提效 36%"
+domain: tech
+tags:
+  - tech
+---
+
 # AI 编程能力边界探索：基于 Claude Code 的 Spec Coding 项目实战
 
 > 来源：[SegmentFault - AI编程能力边界探索：基于 Claude Code 的 Spec Coding 项目实战｜得物技术](https://segmentfault.com/a/1190000047648559)

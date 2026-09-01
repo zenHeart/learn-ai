@@ -1,3 +1,11 @@
+---
+title: ml5.js Guide
+description: "\"Friendly Machine Learning for the Web.\" Built on top of TensorFlow.js, but with an API designed for artists, students, and beginners."
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # ml5.js Guide
 
 **"Friendly Machine Learning for the Web."**

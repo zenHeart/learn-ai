@@ -1,3 +1,11 @@
+---
+title: "Claude Code Auto Mode & Claude Vision"
+description: ---
+domain: tech
+tags:
+  - tools
+---
+
 # Claude Code Auto Mode & Claude Vision
 
 > 学习日期: 2026-04-12

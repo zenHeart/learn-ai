@@ -1,6 +1,6 @@
 # Gemini 全家族 维护参考
 
-> 本文件只记录 Gemini 全家族文档特有的维护事实。通用维护流程见 [`maintenance-workflow.md`](./maintenance-workflow.md)，Diataxis 四象限设计见 [`documentation-architecture.md`](./documentation-architecture.md)，读者可见的完整数据源清单在 `docs/zh/products/ai-coding/gemini/gemini-cheatsheet.md` 的「高质量信息源」章节。
+> 本文件只记录 Gemini 全家族文档特有的维护事实。通用维护流程见 [`maintenance-workflow.md`](./maintenance-workflow.md)，Diataxis 四象限设计见 [`documentation-architecture.md`](./documentation-architecture.md)，读者可见的完整数据源清单在 `docs/zh/products/gemini/gemini-cheatsheet.md` 的「高质量信息源」章节。
 
 ## 基本信息
 
@@ -20,7 +20,7 @@
 ## 文档文件结构（Diataxis 四象限）
 
 ```
-docs/zh/products/ai-coding/gemini/       # 英文版同构于 docs/products/ai-coding/gemini/
+docs/zh/products/gemini/       # 英文版同构于 docs/products/gemini/
 ├── index.md                 # 🗺️ 学习地图
 ├── gemini-cli.md            # 📘 Tutorial/How-to — 主教程（族内唯一零前置依赖的完整工具）
 ├── antigravity.md           # 📘 智能体开发平台
@@ -76,4 +76,4 @@ docs(gemini): ...
 - 模型名极易过期：`gemini-3-pro-preview`、`gemini-2.0-flash`、`gemini-2.0-flash-lite`、`gemini-3.1-flash-lite-preview` 已标记 Shut down。示例输出（如 `/stats` 截图）里的模型名也要跟着换。
 - `one.google.com/about/google-ai-plans/` 抓取时经常返回本地化版本（如印尼语）并**吞掉货币金额**，价格类信息拿不到就留 TODO，别照抄旧文档里的 `$20/月`。
 - **2026-06-18 消费者停服**：个人账号、Google AI Pro / Ultra 通过 Login with Google 访问 Gemini CLI 与 Code Assist IDE 扩展已停服，官方要求迁到 Antigravity / Antigravity CLI。Standard / Enterprise 与付费 API key 不受影响。原文：[消费者账号弃用](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals)、[过渡公告](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli)。教程里凡写「个人用 Gemini CLI / Code Assist free」必须同时写这条边界。
-- 中文页与英文页必须技术事实一致；`docs/zh/products/ai-coding/gemini-cli.md` 这个根目录孤儿文件已在 2026-08 删除（与 `gemini/gemini-cli.md` 除 BOM 外完全相同），不要再建。
+- 中文页与英文页必须技术事实一致；`docs/zh/products/gemini-cli.md` 这个根目录孤儿文件已在 2026-08 删除（与 `gemini/gemini-cli.md` 除 BOM 外完全相同），不要再建。

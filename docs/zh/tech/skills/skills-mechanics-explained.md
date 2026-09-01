@@ -1,3 +1,11 @@
+---
+title: Skills 机制详解：Skills、Prompts、Projects、Subagents 与 MCP 的对比
+description: 自引入 Skills 以来，大家对 Claude Agent 生态系统中的各个组件如何协同工作很感兴趣。无论是在 Claude Code 中构建复杂工作流、使用 API 创建企业解决方案，还是在 Claude.ai 上提高生产力，了解何时使用什么工具，可以改变你与 Clau…
+domain: tech
+tags:
+  - skill
+---
+
 # Skills 机制详解：Skills、Prompts、Projects、Subagents 与 MCP 的对比
 
 > 学习来源：https://claude.com/blog/skills-explained

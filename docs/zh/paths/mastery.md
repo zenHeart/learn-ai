@@ -1,3 +1,16 @@
+---
+title: "路径 3: 构建 AI 产品"
+description: 设计、构建并部署生产级 AI 应用。
+domain: path
+tags:
+  - path
+navOrder: 30
+prev:
+  text: 路径 2 集成
+  link: /zh/paths/integration
+next: false
+---
+
 # 路径 3: 构建 AI 产品
 
 设计、构建并部署生产级 AI 应用。

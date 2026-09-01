@@ -1,3 +1,11 @@
+---
+title: AI State Management
+description: "Managing state in AI apps is unique because: 1. Streaming: Data arrives over time, not all at once."
+domain: tech
+tags:
+  - frontend
+---
+
 # AI State Management
 
 Managing state in AI apps is unique because:

@@ -1,3 +1,11 @@
+---
+title: Streaming UI Patterns
+description: "Streaming isn't just a technical implementation; it's a core part of the AI User Experience. This guide covers how to render streams so t…"
+domain: tech
+tags:
+  - frontend
+---
+
 # Streaming UI Patterns
 
 Streaming isn't just a technical implementation; it's a core part of the **AI User Experience**. This guide covers how to render streams so they feel smooth and magical.

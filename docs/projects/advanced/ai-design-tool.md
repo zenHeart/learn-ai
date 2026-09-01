@@ -1,3 +1,11 @@
+---
+title: "Project: AI Design Studio (v0 clone)"
+description: "Level: Advanced Time: 1 Week Stack: Next.js, OpenAI, Tailwind CSS"
+domain: project
+tags:
+  - advanced
+---
+
 # Project: AI Design Studio (v0 clone)
 
 **Level**: Advanced

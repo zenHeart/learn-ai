@@ -1,3 +1,11 @@
+---
+title: Hugging Face Integration
+description: "Hugging Face is the \"GitHub of AI,\" hosting over 500,000 open-source models. You can run these models via their Serverless Inference API…"
+domain: tech
+tags:
+  - api
+---
+
 # Hugging Face Integration
 
 Hugging Face is the "GitHub of AI," hosting over 500,000 open-source models. You can run these models via their **Serverless Inference API** or locally in the browser.

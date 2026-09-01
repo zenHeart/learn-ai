@@ -1,3 +1,11 @@
+---
+title: "Project: Multi-Agent Research Team"
+description: "Level: Advanced Time: 4 hours Stack: LangChain (LangGraph) or Vercel AI SDK"
+domain: project
+tags:
+  - advanced
+---
+
 # Project: Multi-Agent Research Team
 
 **Level**: Advanced

@@ -1,3 +1,11 @@
+---
+title: Deploying to Cloudflare Workers
+description: Cloudflare offers an entire AI stack at the edge.
+domain: deploy
+tags:
+  - deploy
+---
+
 # Deploying to Cloudflare Workers
 
 Cloudflare offers an entire AI stack at the edge.

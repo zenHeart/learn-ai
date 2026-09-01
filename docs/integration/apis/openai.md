@@ -1,3 +1,11 @@
+---
+title: OpenAI API Integration
+description: "The OpenAI API is the industry standard for Generative AI. It powers GPT-4o, DALL-E 3, and Whisper."
+domain: tech
+tags:
+  - api
+---
+
 # OpenAI API Integration
 
 The **OpenAI API** is the industry standard for Generative AI. It powers GPT-4o, DALL-E 3, and Whisper.

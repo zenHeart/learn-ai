@@ -1,3 +1,11 @@
+---
+title: Claude Skills 社区讨论与反馈
+description: Claude Skills 自 2025 年 10 月推出以来，在 12 月底开始火爆，社区涌现了大量实践分享和问题讨论。
+domain: tech
+tags:
+  - skill
+---
+
 # Claude Skills 社区讨论与反馈
 
 > 学习来源: CSDN 博客、社区讨论、GitHub 汇总

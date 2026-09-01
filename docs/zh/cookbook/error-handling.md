@@ -1,3 +1,11 @@
+---
+title: 秘籍：健壮的错误处理
+description: "问题: AI API 经常失败（速率限制、过载、内容过滤）。 解决方案: 实现重试（Retries）、回退（Fallbacks）和优雅的 UI 降级。"
+domain: recipe
+tags:
+  - cookbook
+---
+
 # 秘籍：健壮的错误处理
 
 **问题**: AI API 经常失败（速率限制、过载、内容过滤）。

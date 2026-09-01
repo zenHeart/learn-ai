@@ -1,3 +1,11 @@
+---
+title: Claude Skills 深度解析
+description: Skills 是 Claude 的能力扩展机制，通过文件夹（包含指令、脚本和资源）让 Claude 在特定任务上表现得更加专业。
+domain: tech
+tags:
+  - skill
+---
+
 # Claude Skills 深度解析
 
 > 学习来源: [Introducing Agent Skills](https://claude.com/blog/skills)

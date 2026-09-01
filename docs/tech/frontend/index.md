@@ -1,3 +1,13 @@
+---
+title: Frontend AI
+description: Frontend AI — how to use it in engineering.
+domain: tech
+tags:
+  - frontend
+outline: false
+pageClass: catalog-page
+---
+
 # Frontend AI
 
 > Streaming, Generative UI, Browser AI, and State Management for frontend engineers

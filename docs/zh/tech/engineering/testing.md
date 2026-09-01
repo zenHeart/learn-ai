@@ -1,3 +1,11 @@
+---
+title: 测试 AI 应用
+description: 测试概率性软件 (AI) 与测试确定性软件 (传统) 不同。
+domain: tech
+tags:
+  - engineering
+---
+
 # 测试 AI 应用
 
 测试概率性软件 (AI) 与测试确定性软件 (传统) 不同。

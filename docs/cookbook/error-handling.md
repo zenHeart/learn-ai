@@ -1,3 +1,11 @@
+---
+title: "Recipe: Robust Error Handling"
+description: "Problem: AI APIs fail often (Rate limits, Overloaded, Content Filters). Solution: Implement Retries, Fallbacks, and graceful UI degradation."
+domain: recipe
+tags:
+  - cookbook
+---
+
 # Recipe: Robust Error Handling
 
 **Problem**: AI APIs fail often (Rate limits, Overloaded, Content Filters).

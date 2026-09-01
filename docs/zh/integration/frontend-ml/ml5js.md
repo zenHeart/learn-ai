@@ -1,3 +1,11 @@
+---
+title: ml5.js 指南
+description: "\"面向 Web 的友好机器学习。\" 构建在 TensorFlow.js 之上，但 API 专为艺术家、学生和初学者设计。"
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # ml5.js 指南
 
 **"面向 Web 的友好机器学习。"**

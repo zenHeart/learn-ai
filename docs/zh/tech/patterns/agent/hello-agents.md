@@ -1,3 +1,11 @@
+---
+title: Hello-Agents 学习指南
+description: "如果说 2024 年是\"百模大战\"元年，2025 年则开启了 Agent 元年。Hello-Agents 是 Datawhale 社区的系统性智能体学习教程，旨在提供从零开始、理论与实战并重的智能体构建指南。"
+domain: tech
+tags:
+  - agent
+---
+
 # Hello-Agents 学习指南
 
 > 原文：[Hello-Agents - 从零开始构建智能体](https://datawhalechina.github.io/hello-agents/) — Datawhale

@@ -1,3 +1,11 @@
+---
+title: AI Agent 工作流模式与高级工具调用
+description: 生产环境中，三种模式覆盖了绝大多数用例：
+domain: tech
+tags:
+  - agent
+---
+
 # AI Agent 工作流模式与高级工具调用
 
 ## 工作流模式

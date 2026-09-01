@@ -1,3 +1,11 @@
+---
+title: Next.js Integration Patterns
+description: "Next.js is the most popular framework for building AI applications due to its strong support for streaming, Edge functions, and Server Ac…"
+domain: tech
+tags:
+  - sdk
+---
+
 # Next.js Integration Patterns
 
 Next.js is the most popular framework for building AI applications due to its strong support for **streaming**, **Edge functions**, and **Server Actions**.

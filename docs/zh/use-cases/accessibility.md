@@ -1,3 +1,11 @@
+---
+title: 用例：AI 辅助无障碍 (A11y)
+description: AI 可以让 13 亿残障人士能够访问网络。
+domain: recipe
+tags:
+  - use-case
+---
+
 # 用例：AI 辅助无障碍 (A11y)
 
 AI 可以让 13 亿残障人士能够访问网络。

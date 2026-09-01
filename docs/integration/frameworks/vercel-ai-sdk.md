@@ -1,3 +1,11 @@
+---
+title: Vercel AI SDK Guide
+description: "The Vercel AI SDK is the standard library for building AI-powered user interfaces in React, Next.js, Vue, and Svelte. It abstracts away t…"
+domain: tech
+tags:
+  - sdk
+---
+
 # Vercel AI SDK Guide
 
 The **Vercel AI SDK** is the standard library for building AI-powered user interfaces in React, Next.js, Vue, and Svelte. It abstracts away the complexity of stream parsing and state management.

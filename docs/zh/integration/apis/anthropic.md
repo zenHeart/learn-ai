@@ -1,3 +1,11 @@
+---
+title: Anthropic API 集成 (Claude)
+description: Anthropic 的 Claude 3.5 Sonnet 被广泛认为是目前最适合编码和复杂推理的模型。
+domain: tech
+tags:
+  - api
+---
+
 # Anthropic API 集成 (Claude)
 
 Anthropic 的 **Claude 3.5 Sonnet** 被广泛认为是目前最适合编码和复杂推理的模型。

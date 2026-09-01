@@ -1,3 +1,11 @@
+---
+title: LlamaIndex.TS Guide
+description: LlamaIndex is the best framework for RAG (Retrieval Augmented Generation). It specializes in connecting LLMs to your private data.
+domain: tech
+tags:
+  - sdk
+---
+
 # LlamaIndex.TS Guide
 
 LlamaIndex is the best framework for **RAG (Retrieval Augmented Generation)**. It specializes in connecting LLMs to your private data.

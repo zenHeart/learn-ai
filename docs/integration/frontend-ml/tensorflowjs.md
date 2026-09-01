@@ -1,3 +1,11 @@
+---
+title: TensorFlow.js Guide
+description: "TensorFlow.js is unique because it allows training in the browser, not just inference."
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # TensorFlow.js Guide
 
 TensorFlow.js is unique because it allows **training** in the browser, not just inference.

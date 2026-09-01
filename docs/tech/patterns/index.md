@@ -1,3 +1,13 @@
+---
+title: AI Engineering Patterns for Frontend Developers
+description: "As frontend engineers, we are used to design patterns like Container/Presenter, Hooks, or MVC. AI Engineering has its own set of patterns…"
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # AI Engineering Patterns for Frontend Developers
 
 As frontend engineers, we are used to design patterns like *Container/Presenter*, *Hooks*, or *MVC*. AI Engineering has its own set of patterns that act as the building blocks for intelligent applications.

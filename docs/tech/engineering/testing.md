@@ -1,3 +1,11 @@
+---
+title: Testing AI Applications
+description: Testing probabilistic software (AI) is different from testing deterministic software (Traditional).
+domain: tech
+tags:
+  - engineering
+---
+
 # Testing AI Applications
 
 Testing probabilistic software (AI) is different from testing deterministic software (Traditional).

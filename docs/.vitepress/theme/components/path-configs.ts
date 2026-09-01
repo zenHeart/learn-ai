@@ -103,9 +103,9 @@ export const productivityPathConfig: PathConfig = {
       description: 'Choose your primary tool (Cursor, Copilot, or Claude CLI) and learn to write effective prompts for code generation.',
       status: 'active',
       links: [
-        { text: 'Cursor Guide', url: '/products/ai-coding/cursor' },
-        { text: 'Copilot Guide', url: '/products/ai-coding/copilot' },
-        { text: 'Claude CLI', url: '/products/ai-coding/claude/claude-code' }
+        { text: 'Cursor Guide', url: '/products/cursor' },
+        { text: 'Copilot Guide', url: '/products/copilot' },
+        { text: 'Claude CLI', url: '/products/claude/claude-code' }
       ]
     },
     {
@@ -124,7 +124,7 @@ export const productivityPathConfig: PathConfig = {
       description: 'Master iterative refinement, context loading, and multi-file operations. Generate code that matches your codebase style.',
       status: 'active',
       links: [
-        { text: 'AI Coding Tools', url: '/products/ai-coding/' }
+        { text: 'AI Coding Tools', url: '/products/' }
       ]
     },
     {

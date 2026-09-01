@@ -1,3 +1,11 @@
+---
+title: Building Semantic Search on My Content
+description: Semantic Search（语义搜索）是一种基于向量数据库的搜索技术，能够理解查询的语义含义，而不仅仅是关键词匹配。本文介绍 Kent C. Dodds 在其个人网站上构建语义搜索的完整方案，基于 Cloudflare Workers AI 和 Vectorize 构建。
+domain: tech
+tags:
+  - tech
+---
+
 # Building Semantic Search on My Content
 
 > 来源：[Kent C. Dodds - Building Semantic Search on My Content](https://kentcdodds.com/blog/building-semantic-search-on-my-content)

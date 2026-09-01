@@ -1,3 +1,11 @@
+---
+title: Generative Benchmarking
+description: 当前 benchmark 的核心局限：公开 benchmark 上的强性能并不能直接泛化到真实生产环境。
+domain: tech
+tags:
+  - eval
+---
+
 # Generative Benchmarking
 
 > 原文: [Generative Benchmarking - Chroma](https://research.trychroma.com/generative-benchmarking)

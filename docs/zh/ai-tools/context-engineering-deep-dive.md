@@ -1,3 +1,11 @@
+---
+title: 上下文工程深度解析：从提示词优化到注意力预算管理
+description: ---
+domain: tech
+tags:
+  - skill
+---
+
 # 上下文工程深度解析：从提示词优化到注意力预算管理
 
 > 学习来源：[Anthropic - Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)  

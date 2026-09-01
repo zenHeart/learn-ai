@@ -1,3 +1,13 @@
+---
+title: AI 哲学
+description: AI 哲学 — how to use it in engineering.
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # AI 哲学
 
 > Vibe Coding 等 AI 编程理念

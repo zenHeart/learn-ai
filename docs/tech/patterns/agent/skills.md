@@ -1,3 +1,11 @@
+---
+title: "[Agent Skills](https://agentskills.io/home)"
+description: "By the end of this guide, you'll understand:"
+domain: tech
+tags:
+  - agent
+---
+
 # [Agent Skills](https://agentskills.io/home)
 
 ## What You'll Learn

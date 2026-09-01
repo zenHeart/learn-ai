@@ -1,3 +1,11 @@
+---
+title: n8n 工作流自动化
+description: 1. n8n 定位：开源的工作流自动化工具，支持可视化编排 AI 逻辑，低代码接入多种服务 2. AI 集成能力：内置 LLM 节点、Embedding 节点，支持自定义 Tool 调用，实现复杂 AI 工作流编排
+domain: tech
+tags:
+  - tech
+---
+
 # n8n 工作流自动化
 
 > 来源：https://ce101.ifuryst.com/（上下文工程指南提及）

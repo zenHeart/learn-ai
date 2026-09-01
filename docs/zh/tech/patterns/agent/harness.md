@@ -1,3 +1,11 @@
+---
+title: Agent Harness 剖析
+description: "Agent = Model + Harness"
+domain: tech
+tags:
+  - agent
+---
+
 # Agent Harness 剖析
 
 > 原文：[The Anatomy of an Agent Harness](https://blog.langchain.com/the-anatomy-of-an-agent-harness/) — Vivek Trivedy

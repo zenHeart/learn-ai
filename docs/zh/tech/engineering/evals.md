@@ -1,3 +1,11 @@
+---
+title: 评估 (Evals)
+description: 你无法改进你无法衡量的东西。Evals 是 AI 质量的“单元测试”。
+domain: tech
+tags:
+  - engineering
+---
+
 # 评估 (Evals)
 
 你无法改进你无法衡量的东西。**Evals** 是 AI 质量的“单元测试”。

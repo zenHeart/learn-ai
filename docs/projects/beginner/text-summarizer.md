@@ -1,3 +1,11 @@
+---
+title: "Project: Smart Text Summarizer"
+description: "Level: Beginner Time: 1 hour Stack: Next.js, Vercel AI SDK"
+domain: project
+tags:
+  - beginner
+---
+
 # Project: Smart Text Summarizer
 
 **Level**: Beginner

@@ -1,3 +1,11 @@
+---
+title: Browser AI (Client-Side)
+description: "Running AI directly in the browser (Client-Side Inference) is the ultimate privacy and zero-latency solution. No servers, no API costs."
+domain: tech
+tags:
+  - frontend
+---
+
 # Browser AI (Client-Side)
 
 Running AI **directly in the browser** (Client-Side Inference) is the ultimate privacy and zero-latency solution. No servers, no API costs.

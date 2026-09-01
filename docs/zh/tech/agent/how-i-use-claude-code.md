@@ -1,3 +1,11 @@
+---
+title: How I Use Claude Code
+description: 作者 Boris Trompad 使用 Claude Code 作为主要开发工具约 9 个月，形成了一套与大多数 AI 编程工具使用者截然不同的工作流。
+domain: tech
+tags:
+  - agent
+---
+
 # How I Use Claude Code
 
 > 原文: https://boristane.com/blog/how-i-use-claude-code/

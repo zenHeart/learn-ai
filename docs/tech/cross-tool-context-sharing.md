@@ -1,3 +1,11 @@
+---
+title: 跨工具 Context 共享策略
+description: 1. Shared Context Bus 模式：建立统一的 Context 中间层，各工具通过接口读写，而非各自维护独立 Context 2. Context 序列化与反序列化：工具间传递 Context 时需约定格式（JSON/Proto），确保结构化数据能正确解析
+domain: tech
+tags:
+  - tech
+---
+
 # 跨工具 Context 共享策略
 
 ## 核心要点

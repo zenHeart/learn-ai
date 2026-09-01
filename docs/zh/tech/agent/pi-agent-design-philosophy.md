@@ -1,3 +1,11 @@
+---
+title: Pi Agent 设计哲学
+description: "构建 Agent 的核心理念：\"如果我不需要它，它就不会被构建。\""
+domain: tech
+tags:
+  - agent
+---
+
 # Pi Agent 设计哲学
 
 > 源码：[mariozechner/pi-mono](https://github.com/badlogic/pi-mono)，来自 @badlogic 的博客文章

@@ -1,3 +1,11 @@
+---
+title: Production Monitoring
+description: Observability tracks what the AI said. Monitoring tracks if the server is running.
+domain: deploy
+tags:
+  - deploy
+---
+
 # Production Monitoring
 
 **Observability** tracks *what* the AI said.

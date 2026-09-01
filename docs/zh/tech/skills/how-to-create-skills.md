@@ -1,3 +1,11 @@
+---
+title: 如何创建 Skills：关键步骤、限制与示例
+description: 在写任何内容之前，先明确你的 Skill 要解决什么问题。强大的 Skills 应：
+domain: tech
+tags:
+  - skill
+---
+
 # 如何创建 Skills：关键步骤、限制与示例
 
 > 学习来源：https://claude.com/blog/how-to-create-skills-key-steps-limitations-and-examples

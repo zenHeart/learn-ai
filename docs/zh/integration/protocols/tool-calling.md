@@ -1,3 +1,11 @@
+---
+title: 工具调用 (Tool Calling)
+description: 工具调用 (Tool Calling)（也称为函数调用）是将 LLM 从文本生成器转变为可以采取行动的智能体的机制。
+domain: tech
+tags:
+  - protocol
+---
+
 # 工具调用 (Tool Calling)
 
 **工具调用 (Tool Calling)**（也称为函数调用）是将 LLM 从文本生成器转变为可以采取行动的智能体的机制。

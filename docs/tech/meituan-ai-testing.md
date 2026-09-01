@@ -1,3 +1,11 @@
+---
+title: 美团 AI 自动化测试
+description: 本文档对应内容为 B 站视频，无法自动抓取内容，需手动观看。
+domain: tech
+tags:
+  - eval
+---
+
 # 美团 AI 自动化测试
 
 > 来源：https://www.bilibili.com/video/BV1HgjEzjEac

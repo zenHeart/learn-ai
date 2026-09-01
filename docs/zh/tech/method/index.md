@@ -1,3 +1,13 @@
+---
+title: AI 工程方法论
+description: AI 工程方法论 — how to use it in engineering.
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # AI 工程方法论
 
 > BMAD 等 AI 工程方法论

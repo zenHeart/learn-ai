@@ -1,7 +1,17 @@
+---
+title: "Simon Willison's Agentic Engineering Patterns 深度解析"
+description: "Simon Willison 是我长期关注的技术作家。他的文章有一个鲜明特点：不是告诉你\"怎么做\"，而是帮你理解\"为什么这样做\"。"
+domain: tech
+tags:
+  - prompt
+---
+
 # Simon Willison's Agentic Engineering Patterns 深度解析
 
+> **路径位置**：已从 Prompt 合集挪到 [Agent](/zh/tech/patterns/agent/) 栏。提示骨架仍在 [怎么写 Prompt](/zh/tech/prompt/)。本页是 Willison 的工程模式深读，不是 Prompt 入门。
+>
 > 来源：[Simon Willison - Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/)
-> 作者：Simon Willison（著名技术博主，Datasette 作者）
+> 作者：Simon Willison（Datasette 作者）
 > 整理时间：2026-04-12
 
 ## 前言：为什么这篇文章值得细读

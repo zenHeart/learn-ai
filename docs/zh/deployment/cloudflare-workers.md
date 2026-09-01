@@ -1,3 +1,11 @@
+---
+title: 部署到 Cloudflare Workers
+description: Cloudflare 在边缘提供了完整的 AI 栈。
+domain: deploy
+tags:
+  - deploy
+---
+
 # 部署到 Cloudflare Workers
 
 Cloudflare 在边缘提供了完整的 AI 栈。

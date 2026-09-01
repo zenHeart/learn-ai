@@ -1,3 +1,11 @@
+---
+title: Cursor Rules
+description: Cursor Rules 是一个放在项目根目录的项目级 AI 行为规范配置文件，用于为项目定制 AI 的行为规范（强制代码风格、禁止特定 API 等）。
+domain: tech
+tags:
+  - tech
+---
+
 # Cursor Rules
 
 > 学习来源：[新版 Cursor Rules .mdc 格式文件使用经验](https://juejin.cn/post/7484787785887989798) | [Cursor 官方文档](https://docs.cursor.com/features/rules)

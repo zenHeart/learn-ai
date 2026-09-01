@@ -1,6 +1,6 @@
 # Grok 维护参考
 
-> 通用维护流程见 [`maintenance-workflow.md`](./maintenance-workflow.md)；高质量数据源清单发布在 `docs/zh/products/ai-coding/grok/grok-cheatsheet.md` 的「高质量信息源」章节（方法论见 [`sources/_template.md`](./sources/_template.md)）。文档架构的 Diataxis 四象限设计见 [`documentation-architecture.md`](./documentation-architecture.md)。
+> 通用维护流程见 [`maintenance-workflow.md`](./maintenance-workflow.md)；高质量数据源清单发布在 `docs/zh/products/grok/grok-cheatsheet.md` 的「高质量信息源」章节（方法论见 [`sources/_template.md`](./sources/_template.md)）。文档架构的 Diataxis 四象限设计见 [`documentation-architecture.md`](./documentation-architecture.md)。
 
 ## 产品形态调研结论（写教程前必须先有这一节）
 
@@ -69,7 +69,7 @@
 最终采用 6 文件结构。Grok Build 仍是 5 文件 Diataxis；2026-08-18 官方确认 Grok Bot 有独立文档树（`docs.x.ai/grok-bot/*`），才加一张产品地图。Imagine / Build Mode / grok.me 只进 index 决策树和 glossary，不立页。
 
 ```
-docs/zh/products/ai-coding/grok/
+docs/zh/products/grok/
 ├── index.md              # 🗺️ 学习地图（家族决策树 + Grok Build 功能速查 + 模型参考）
 ├── grok-cli.md           # 📘 Tutorial+How-to — 安装、认证、TUI、headless、ACP、核心功能怎么用
 ├── grok-cookbook.md      # 🔧 How-to — 场景化配方（Claude Code 迁移、CI、hooks、MCP、skills、subagents、worktrees、sandbox）

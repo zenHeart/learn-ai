@@ -1,3 +1,11 @@
+---
+title: Token Counting 与 Embedding 基础
+description: Token counting（令牌计数）让你能够在将消息发送给 Claude 之前确定其中的令牌数量，帮助你做出关于 Prompt 和使用量的明智决策。通过 Token Counting，你可以：
+domain: tech
+tags:
+  - prompt
+---
+
 # Token Counting 与 Embedding 基础
 
 > 来源：[Anthropic Claude 官方文档 - Token counting](https://platform.claude.com/docs/en/build-with-claude/token-counting)

@@ -1,3 +1,11 @@
+---
+title: AI 缓存策略
+description: LLM 请求慢且贵。缓存是解决这两点的最佳方案。
+domain: deploy
+tags:
+  - deploy
+---
+
 # AI 缓存策略
 
 LLM 请求**慢**且**贵**。缓存是解决这两点的最佳方案。

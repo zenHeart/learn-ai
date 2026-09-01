@@ -1,3 +1,11 @@
+---
+title: 流式 UI 模式 (Streaming UI)
+description: 流式传输不仅仅是一个技术实现；它是 AI 用户体验的核心部分。本指南涵盖了如何渲染流，使其感觉流畅和神奇。
+domain: tech
+tags:
+  - frontend
+---
+
 # 流式 UI 模式 (Streaming UI)
 
 流式传输不仅仅是一个技术实现；它是 **AI 用户体验**的核心部分。本指南涵盖了如何渲染流，使其感觉流畅和神奇。

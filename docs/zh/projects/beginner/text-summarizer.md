@@ -1,3 +1,11 @@
+---
+title: 项目：智能文本摘要器
+description: "级别: 初级 时间: 1 小时 技术栈: Next.js, Vercel AI SDK"
+domain: project
+tags:
+  - beginner
+---
+
 # 项目：智能文本摘要器
 
 **级别**: 初级

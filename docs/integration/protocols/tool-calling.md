@@ -1,3 +1,11 @@
+---
+title: Tool Calling (Function Calling)
+description: Tool Calling is the mechanism that turns LLMs from text generators into agents that can take action.
+domain: tech
+tags:
+  - protocol
+---
+
 # Tool Calling (Function Calling)
 
 **Tool Calling** is the mechanism that turns LLMs from text generators into agents that can take action.

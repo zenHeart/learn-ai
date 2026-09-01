@@ -1,3 +1,12 @@
+---
+title: Advanced Projects
+description: Advanced Projects — how to use it in engineering.
+domain: project
+tags:
+  - advanced
+listed: false
+---
+
 # Advanced Projects
 
 > Production-grade AI applications with complex architectures

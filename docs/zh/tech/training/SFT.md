@@ -1,3 +1,11 @@
+---
+title: SFT (监督微调)
+description: "监督微调 (Supervised Fine-Tuning, SFT) 是在你特定的数据上训练现有的预训练模型，使其适应你的领域或任务的过程。它调整模型的参数以专门针对你的用例。"
+domain: tech
+tags:
+  - training
+---
+
 # SFT (监督微调)
 
 ## 什么是微调？

@@ -1,3 +1,11 @@
+---
+title: 跨工具 Context 共享策略
+description: "本文总结主流 AI Coding 工具（Cursor、Copilot 等）在跨工具场景下的 Context 共享机制，包括 prompts 仓库、Cursor @ 引用、Copilot ./ 引用等策略。"
+domain: tech
+tags:
+  - tech
+---
+
 # 跨工具 Context 共享策略
 
 本文总结主流 AI Coding 工具（Cursor、Copilot 等）在跨工具场景下的 Context 共享机制，包括 prompts 仓库、Cursor @ 引用、Copilot ./ 引用等策略。

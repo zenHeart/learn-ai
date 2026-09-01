@@ -1,3 +1,11 @@
+---
+title: AIOps 通用 Agent 探索
+description: 在使用 Cursor 进行研发时，除了编码外，还会在需求分析、技术文档编写、代码评审、代码部署调试、线上日志分析等场景借助 AI 进行提效。AI 贯穿研发整个流程，但 Cursor 局限在单机设备上，无法方便地与现有系统集成。为每个场景开发独立 Agent 非常耗费人力。
+domain: tech
+tags:
+  - agent
+---
+
 # AIOps 通用 Agent 探索
 
 > 学习来源：[AIOps 通用 Agent 探索（Simple）](https://tech.qimao.com/aiops-tong-yong-agent-tan-suo-simple/) - @秦皓

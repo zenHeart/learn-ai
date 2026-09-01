@@ -1,3 +1,11 @@
+---
+title: 基于飞书 Aily 搭建 SLS 日志分析助手
+description: 1. 飞书 Aily 能力：任务深度规划 + 多工具集成（官方 MCP + 自定义工具）+ 多轮对话理解 + 可视化报告生成 2. SLS 日志分析：阿里云 SLS 日志 MCP 接入 Aily，自动获取 error 日志并生成分析报告
+domain: tech
+tags:
+  - tech
+---
+
 # 基于飞书 Aily 搭建 SLS 日志分析助手
 
 > 来源：https://tech.qimao.com/ji-yu-fei-shu-aily-da-jian-slsri-zhi-fen-xi-zhu-shou/

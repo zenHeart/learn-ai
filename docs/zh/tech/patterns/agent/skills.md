@@ -1,3 +1,11 @@
+---
+title: 智能体技能 (Agent Skills)
+description: 在本指南结束时，你将理解：
+domain: tech
+tags:
+  - agent
+---
+
 # 智能体技能 (Agent Skills)
 
 ## 你将学到什么

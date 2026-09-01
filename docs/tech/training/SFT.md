@@ -1,3 +1,11 @@
+---
+title: SFT (Supervised Fine-Tuning)
+description: Supervised Fine-Tuning (SFT) is the process of training an existing pre-trained model on your specific data to adapt it to your domain or…
+domain: tech
+tags:
+  - training
+---
+
 # SFT (Supervised Fine-Tuning)
 
 ## What is Fine-Tuning?

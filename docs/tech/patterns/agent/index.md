@@ -1,3 +1,13 @@
+---
+title: AI Agents
+description: "An AI Agent is an autonomous system that uses LLMs to perceive, reason, and act to achieve goals. Unlike simple chatbots that just respon…"
+domain: tech
+tags:
+  - agent
+outline: false
+pageClass: catalog-page
+---
+
 # AI Agents
 
 ## What is an AI Agent?

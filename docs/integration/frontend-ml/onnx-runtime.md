@@ -1,3 +1,11 @@
+---
+title: ONNX Runtime Web
+description: "ONNX (Open Neural Network Exchange) is the \"PDF\" of machine learning. You can train a model in PyTorch, save it as .onnx, and run it anyw…"
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # ONNX Runtime Web
 
 **ONNX (Open Neural Network Exchange)** is the "PDF" of machine learning. You can train a model in PyTorch, save it as `.onnx`, and run it anywhere—including the browser.

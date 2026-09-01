@@ -14,8 +14,8 @@
 Codex 是「订阅套餐 + CLI + 云端 + 生态」四层结构，因此比单 CLI 工具多出 `chatgpt-plus.md` 与 `codex-ai.md` 两页；文件名保持中英一一对应：
 
 ```
-docs/products/ai-coding/codex/        (英文)
-docs/zh/products/ai-coding/codex/     (中文)
+docs/products/codex/        (英文)
+docs/zh/products/codex/     (中文)
 ├── index.md                # 🗺️ 学习地图（全家桶产品树 +「我要做什么」决策树）
 ├── codex-cli.md            # 📘 Tutorial — 安装、交互、核心功能
 ├── codex-ai.md             # 📘 Tutorial — Codex 入口全景（CLI / IDE / 桌面 / Cloud / 托管评审）

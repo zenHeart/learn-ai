@@ -1,3 +1,11 @@
+---
+title: Transformers.js 指南
+description: 直接在浏览器中运行来自 Hugging Face 的最先进模型。
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # Transformers.js 指南
 
 直接在浏览器中运行来自 Hugging Face 的最先进模型。

@@ -1,3 +1,11 @@
+---
+title: TensorFlow.js 指南
+description: TensorFlow.js 独特之处在于它允许在浏览器中进行 训练，而不仅仅是推理。
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # TensorFlow.js 指南
 
 TensorFlow.js 独特之处在于它允许在浏览器中进行 **训练**，而不仅仅是推理。

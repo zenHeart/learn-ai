@@ -1,3 +1,13 @@
+---
+title: AI 评估方法
+description: AI 评估方法 — how to use it in engineering.
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # AI 评估方法
 
 > AI Testing 与 Generative Benchmarking 等评估手段

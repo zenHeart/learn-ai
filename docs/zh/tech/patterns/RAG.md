@@ -1,216 +1,62 @@
-# RAG (检索增强生成)
+---
+title: RAG
+description: "回答必须基于我们自己的文档时，先检索再生成。不要一上来微调。机制见 Learn LLM 第 11–12 章。"
+domain: tech
+tags:
+  - rag
+llm:
+  - 11
+  - 12
+prev: false
+next:
+  text: 构建语义搜索
+  link: /zh/tech/ai-application/building-semantic-search
+---
 
-## 什么是 RAG？
+# RAG
 
-**RAG** 解决了在不重新训练模型的情况下让 LLM 访问**外部知识**的问题。这是构建需要最新或特定领域信息的 AI 应用程序的最实用和最具成本效益的方法。
+**结论**：模型背不住你们的文档、工单和代码。先 **检索出几段带出处的原文**，再让它基于这些段落回答。答不上就拒答。
 
-**核心思想**: 我们不希望 LLM 知道答案，而是：
-1. 从知识库中检索相关信息
-2. 将其注入到提示词中
-3. 让 LLM 基于该信息生成答案
+> 切块、召回、ACL、引用正确率见 Learn LLM [第 11–12 章](https://llm.zenheart.site/chapters/11-rag)。本页只写前端何时上、怎么验收。
 
-**为什么 RAG 对前端工程师很重要**:
-- 为你的产品文档构建聊天机器人
-- 创建 AI 驱动的搜索
-- 为你的应用添加问答功能
-- 无需重新训练即可保持知识更新
-
-## RAG vs 其他方法
-
-| 方法 | 成本 | 速度 | 准确性 | 更新 | 最适合 |
-|----------|------|-------|----------|---------|----------|
-| **无 RAG** | 最低 | 最快 | 差 (幻觉) | N/A | 通用知识 |
-| **RAG** | 低 | 中 | 高 | 实时 | 动态知识 |
-| **微调 (Fine-tuning)** | 非常高 | 快 | 中-高 | 需要重新训练 | 专业领域 |
-| **长上下文** | 中-高 | 慢 | 中 | N/A | 单个大文档 |
-
-**前端开发者建议**: 对于任何特定于知识的功能，从 RAG 开始。
-
-## RAG 的三个阶段
-
-### 阶段 1: 准备 (构建知识库)
-
-将你的数据转换为可搜索的向量：
+## 概念
 
 ```
-文档 → 分割成块 → 生成 Embeddings → 存储在向量 DB 中
+文档 → 切块 + embedding → 存（原文+来源+权限）
+用户问题 → embedding → 取 top-k → 拼进提示 → 生成（必须引用）
 ```
 
-**实现**:
+| | RAG | 把全文塞进窗口 | 微调 |
+|---|---|---|---|
+| 知识会变 | 重建索引 | 每次重贴 | 重训 |
+| 成本 | 检索 + 少量 token | 窗口费很快爆炸 | 高一个数量级 |
+| 默认 | **先走这条** | 只适合单份短文档 | 默认不要 |
 
-```javascript
-import { OpenAI } from 'openai';
-import { createClient } from '@supabase/supabase-js';
+Embedding 概念见 [Embeddings](/zh/tech/fundamentals/embeddings)。
 
-const openai = new OpenAI();
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+## 这一栏怎么读
 
-// 1. 加载文档
-const documents = [
-  { id: 1, content: 'React is a JavaScript library for building UIs...' },
-  { id: 2, content: 'Vue.js is a progressive framework...' },
-  { id: 3, content: 'Next.js is a React framework...' }
-];
+1. 读完本页，确认你的问题真的是「必须引用我们的资料」。
+2. 跟一篇可跑的：[构建语义搜索](/zh/tech/ai-application/building-semantic-search)。
+3. 权限、拒答、评测不够再回 Learn LLM 第 11–12 章，不要在应用站再写一遍原理。
 
-// 2. 分割成块 (如果需要)
-function splitIntoChunks(text, chunkSize = 500) {
-  const words = text.split(' ');
-  const chunks = [];
+## 工程验收（少了就不算做成）
 
-  for (let i = 0; i < words.length; i += chunkSize) {
-    chunks.push(words.slice(i, i + chunkSize).join(' '));
-  }
+1. 每条回答带 **来源路径或标题**。编不出来就说「文档里没有」。
+2. 索引和查询 **同一 embedding 模型**。
+3. 块不要太大。按标题 / 段落切，不按「一篇文章一块」。
+4. 有权限的文档不能被没权限的人检索到。元数据里带 ACL，过滤发生在召回时，不是生成后再藏。
+5. 用 20 条真实问题当 fixture：该命中的命中，该拒答的拒答。不要只看「感觉通顺」。
 
-  return chunks;
-}
+## 常见陷阱
 
-// 3. 生成 Embeddings
-async function generateEmbeddings(documents) {
-  const embeddings = [];
+- 检索到就当事实。相似度高只表示「像」。
+- 报错码、函数名走向量搜。先关键词 / grep。
+- 用微调代替更新文档。知识变了重建索引即可。
+- 把整仓当一块 embedding。助手场景用 [上下文工程](/zh/tech/fundamentals/context-engineering)，产品问答才上 RAG。
 
-  for (const doc of documents) {
-    const response = await openai.embeddings.create({
-      model: 'text-embedding-ada-002',
-      input: doc.content
-    });
+## 下一步
 
-    embeddings.push({
-      id: doc.id,
-      content: doc.content,
-      embedding: response.data[0].embedding
-    });
-  }
-
-  return embeddings;
-}
-
-// 4. 存储在向量数据库中
-async function storeEmbeddings(embeddings) {
-  for (const item of embeddings) {
-    await supabase
-      .from('documents')
-      .insert({
-        id: item.id,
-        content: item.content,
-        embedding: item.embedding
-      });
-  }
-}
-
-// 运行准备
-const embeddings = await generateEmbeddings(documents);
-await storeEmbeddings(embeddings);
-```
-
-### 阶段 2: 检索 (查找相关内容)
-
-当用户提问时，查找最相关的文档：
-
-```
-用户查询 → 生成 Embedding → 搜索向量 DB → 返回前 K 个结果
-```
-
-**实现**:
-
-```javascript
-async function retrieveRelevantDocs(query, topK = 3) {
-  // 1. 生成查询 Embedding
-  const queryEmbedding = await openai.embeddings.create({
-    model: 'text-embedding-ada-002',
-    input: query
-  });
-
-  // 2. 搜索向量数据库 (在 Supabase 中使用 pgvector)
-  const { data, error } = await supabase.rpc('match_documents', {
-    query_embedding: queryEmbedding.data[0].embedding,
-    match_threshold: 0.7, // 相似度阈值
-    match_count: topK
-  });
-
-  if (error) throw error;
-
-  return data; // 相关文档数组
-}
-
-// 用法示例
-const query = 'How do I use React hooks?';
-const relevantDocs = await retrieveRelevantDocs(query);
-
-console.log(relevantDocs);
-// [
-//   { id: 1, content: 'React hooks allow...', similarity: 0.92 },
-//   { id: 5, content: 'useState is a hook...', similarity: 0.88 },
-//   { id: 12, content: 'useEffect handles...', similarity: 0.85 }
-// ]
-```
-
-**向量数据库设置 (Supabase with pgvector)**:
-
-```sql
--- 启用 pgvector 扩展
-CREATE EXTENSION vector;
-
--- 创建文档表
-CREATE TABLE documents (
-  id BIGSERIAL PRIMARY KEY,
-  content TEXT,
-  embedding VECTOR(1536) -- OpenAI embeddings 是 1536 维
-);
-
--- 创建索引以进行快速相似度搜索
-CREATE INDEX ON documents
-USING ivfflat (embedding vector_cosine_ops)
-WITH (lists = 100);
-
--- 创建相似度搜索函数
-CREATE OR REPLACE FUNCTION match_documents (
-  query_embedding VECTOR(1536),
-  match_threshold FLOAT,
-  match_count INT
-)
-RETURNS TABLE (
-  id BIGINT,
-  content TEXT,
-  similarity FLOAT
-)
-LANGUAGE SQL STABLE
-AS $$
-  SELECT
-    id,
-    content,
-    1 - (embedding <=> query_embedding) AS similarity
-  FROM documents
-  WHERE 1 - (embedding <=> query_embedding) > match_threshold
-  ORDER BY similarity DESC
-  LIMIT match_count;
-$$;
-```
-
-### 阶段 3: 生成 (使用上下文创建答案)
-
-结合检索到的文档和用户查询，生成答案：
-
-```
-相关文档 + 用户查询 → 构建提示词 → 调用 LLM → 返回答案
-```
-
-**实现**:
-
-```javascript
-async function generateAnswer(query, relevantDocs) {
-  // 从相关文档构建上下文
-  const context = relevantDocs
-    .map((doc, i) => `Document ${i + 1}:\n${doc.content}`)
-    .join('\n\n');
-
-  // 创建带上下文的提示词
-  const prompt = `You are a helpful assistant. Answer the question based on the provided documents.
-
-Documents:
-${context}
-
-Question: ${query}
-
-Instructions:
-- Only use information from the provided documents
-- If the documents don't contain the answer, say
+- 动手：[构建语义搜索](/zh/tech/ai-application/building-semantic-search)
+- 接到聊天 UI：[流式](/zh/integration/apis/streaming)
+- 默认别微调：[SFT](/zh/tech/training/SFT)

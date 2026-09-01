@@ -1,3 +1,11 @@
+---
+title: "Use Case: AI Analytics Dashboard"
+description: "Scenario: Managers ask \"Why are sales down?\" Goal: Allow them to ask in plain English and see a chart."
+domain: recipe
+tags:
+  - use-case
+---
+
 # Use Case: AI Analytics Dashboard
 
 **Scenario**: Managers ask "Why are sales down?"

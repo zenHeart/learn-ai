@@ -1,4 +1,8 @@
 ---
+domain: product
+tags:
+  - gallery
+listed: false
 layout: ai-tools
 title: AI 工具导航
 description: 发现最佳 AI 工具，提升你的工作效率

@@ -1,3 +1,11 @@
+---
+title: Agent 工程实践与工具链
+description: ┌─────────────────────────────────────────────────────┐ │ User Interface │
+domain: tech
+tags:
+  - prompt
+---
+
 # Agent 工程实践与工具链
 
 > 本文档整理自 Inbox 学习任务（第二批次），来源包括 Microsoft AI Agents、StackOverflow、GitHub 等。

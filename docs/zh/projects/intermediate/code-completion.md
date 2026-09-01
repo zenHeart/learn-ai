@@ -1,3 +1,11 @@
+---
+title: "Project: AI Code Autocomplete"
+description: "Level: Intermediate Time: 1.5 hours Stack: Next.js, Monaco Editor"
+domain: project
+tags:
+  - intermediate
+---
+
 # Project: AI Code Autocomplete
 
 **Level**: Intermediate

@@ -1,3 +1,11 @@
+---
+title: LlamaIndex.TS 指南
+description: LlamaIndex 是 RAG (检索增强生成) 的最佳框架。它专注于将 LLM 连接到你的私有数据。
+domain: tech
+tags:
+  - sdk
+---
+
 # LlamaIndex.TS 指南
 
 LlamaIndex 是 **RAG (检索增强生成)** 的最佳框架。它专注于将 LLM 连接到你的私有数据。

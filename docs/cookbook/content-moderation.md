@@ -1,3 +1,11 @@
+---
+title: "Recipe: Content Moderation"
+description: "Problem: Users might try to make your bot say offensive things (Jailbreaking) or generate harmful content."
+domain: recipe
+tags:
+  - cookbook
+---
+
 # Recipe: Content Moderation
 
 **Problem**: Users might try to make your bot say offensive things (Jailbreaking) or generate harmful content.

@@ -1,3 +1,11 @@
+---
+title: Migrating to an AI-First Architecture
+description: "Problem: You have a monolithic app. Management wants \"AI everywhere\". Risk: AI is non-deterministic. It might break core workflows."
+domain: recipe
+tags:
+  - use-case
+---
+
 # Migrating to an AI-First Architecture
 
 **Problem**: You have a monolithic app. Management wants "AI everywhere".

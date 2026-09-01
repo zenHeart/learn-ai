@@ -1,3 +1,11 @@
+---
+title: LangChain.js Guide
+description: "LangChain is a framework for developing applications powered by language models. It excels at orchestrating complex workflows, managing m…"
+domain: tech
+tags:
+  - sdk
+---
+
 # LangChain.js Guide
 
 LangChain is a framework for developing applications powered by language models. It excels at **orchestrating complex workflows**, managing memory, and connecting to external data.

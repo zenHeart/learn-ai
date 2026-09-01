@@ -1,3 +1,11 @@
+---
+title: "Agent Hooks: Event-Driven Control for AI Assistants"
+description: "Reading Time: 25 minutes | Difficulty: Intermediate | Prerequisites: Basic understanding of AI coding agents, command-line scripting"
+domain: tech
+tags:
+  - agent
+---
+
 # Agent Hooks: Event-Driven Control for AI Assistants
 
 **Reading Time:** 25 minutes | **Difficulty:** Intermediate | **Prerequisites:** Basic understanding of AI coding agents, command-line scripting

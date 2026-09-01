@@ -1,3 +1,11 @@
+---
+title: Vercel AI SDK 指南
+description: "Vercel AI SDK 是用于在 React, Next.js, Vue 和 Svelte 中构建 AI 驱动的用户界面的标准库。它抽象了流解析和状态管理的复杂性。"
+domain: tech
+tags:
+  - sdk
+---
+
 # Vercel AI SDK 指南
 
 **Vercel AI SDK** 是用于在 React, Next.js, Vue 和 Svelte 中构建 AI 驱动的用户界面的标准库。它抽象了流解析和状态管理的复杂性。

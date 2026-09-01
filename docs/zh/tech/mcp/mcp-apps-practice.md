@@ -1,3 +1,11 @@
+---
+title: MCP Apps 实践指南
+description: MCP Apps 是构建在 MCP（Model Context Protocol）之上的交互式应用，它们运行在 AI 客户端内部，可以访问 MCP 服务器提供的丰富工具和数据。
+domain: tech
+tags:
+  - mcp
+---
+
 # MCP Apps 实践指南
 
 > 学习来源：https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/

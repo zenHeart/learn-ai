@@ -1,3 +1,11 @@
+---
+title: "Recipe: Local Semantic Search (Embeddings)"
+description: "Problem: You want to search through a list of items by meaning (Semantic Search), not just keywords, but you don't want to pay for a vect…"
+domain: recipe
+tags:
+  - cookbook
+---
+
 # Recipe: Local Semantic Search (Embeddings)
 
 **Problem**: You want to search through a list of items by *meaning* (Semantic Search), not just keywords, but you don't want to pay for a vector database or API calls.
