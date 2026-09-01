@@ -1,94 +1,116 @@
+// Tech sidebar — pyramid mainline (Issue #116).
+// One nav axis only: how capability turns intent into outcome (layer 0→5).
+// Vendor/framework pages live under Products; scenario routes under Paths.
+
 export const enTechSidebar = [
   {
     text: 'Map',
     items: [
-      { text: 'How to read this section', link: '/tech/' }
+      { text: 'Tech map · where to start', link: '/tech/' },
+      { text: 'Complexity decision ladder', link: '/tech/00-orientation/complexity-ladder' },
+      { text: 'Site boundaries & ownership', link: '/tech/00-orientation/site-boundaries' },
+      { text: 'Model lifecycle (bridge)', link: '/tech/00-orientation/model-lifecycle-bridge' }
     ]
   },
   {
-    text: 'Fundamentals',
+    text: 'L1 · Interaction Contracts',
     collapsed: false,
     items: [
-      { text: 'LLM basics', link: '/tech/fundamentals/LLM' },
-      { text: 'Context window', link: '/tech/fundamentals/context' },
-      { text: 'Embeddings', link: '/tech/fundamentals/embeddings' }
+      { text: 'Layer guide', link: '/tech/01-contracts/' },
+      { text: 'Prompt engineering', link: '/tech/01-contracts/prompt' },
+      { text: 'Context engineering', link: '/tech/01-contracts/context' },
+      { text: 'Structured output', link: '/tech/01-contracts/structured-output' },
+      { text: 'Tool calling contract', link: '/tech/01-contracts/tool-calling' }
     ]
   },
   {
-    text: 'Prompt',
+    text: 'L2 · Application Integration',
     collapsed: false,
     items: [
-      { text: 'How to write (map)', link: '/tech/prompt/' },
-      { text: '1. Be clear · Claude official', link: '/tech/prompt/claude-prompt-best-practices' },
-      { text: '2. Write it for the repo', link: '/tech/prompt/agents-doc' },
-      { text: '3. Agent engineering', link: '/tech/prompt/agent-engineering-practices' },
-      { text: '4. Context for agents', link: '/tech/prompt/context-agent-engineering' },
-      { text: 'Appendix · System prompts', link: '/tech/prompt/system-prompts-collection' },
-      { text: 'Appendix · Copilot', link: '/tech/prompt/cases/copilot' }
+      { text: 'Layer guide', link: '/tech/02-integration/' },
+      { text: 'Model API contract', link: '/tech/02-integration/model-api' },
+      { text: 'Streaming', link: '/tech/02-integration/streaming' },
+      { text: 'Session & state', link: '/tech/02-integration/session-state' },
+      { text: 'Generative UI', link: '/tech/02-integration/ui' },
+      { text: 'Browser & edge inference', link: '/tech/02-integration/browser-edge' }
     ]
   },
   {
-    text: 'Integrate',
-    collapsed: true,
+    text: 'L3 · Knowledge Grounding',
+    collapsed: false,
     items: [
-      { text: 'API comparison', link: '/integration/apis/' },
-      { text: 'OpenAI', link: '/integration/apis/openai' },
-      { text: 'Anthropic', link: '/integration/apis/anthropic' },
-      { text: 'HuggingFace', link: '/integration/apis/huggingface' },
-      { text: 'Streaming', link: '/integration/apis/streaming' },
-      { text: 'Vercel AI SDK', link: '/integration/frameworks/vercel-ai-sdk' },
-      { text: 'LangChain.js', link: '/integration/frameworks/langchain-js' },
-      { text: 'LlamaIndex.TS', link: '/integration/frameworks/llamaindex-ts' },
-      { text: 'Next.js', link: '/integration/frameworks/nextjs' },
-      { text: 'MCP', link: '/integration/protocols/mcp' },
-      { text: 'Tool calling', link: '/integration/protocols/tool-calling' },
-      { text: 'Transformers.js', link: '/integration/frontend-ml/transformersjs' },
-      { text: 'TensorFlow.js', link: '/integration/frontend-ml/tensorflowjs' },
-      { text: 'ONNX Runtime', link: '/integration/frontend-ml/onnx-runtime' }
+      { text: 'Layer guide', link: '/tech/03-grounding/' },
+      { text: 'Embeddings & retrieval', link: '/tech/03-grounding/embeddings-retrieval' },
+      { text: 'RAG', link: '/tech/03-grounding/rag' },
+      { text: 'Advanced retrieval', link: '/tech/03-grounding/advanced-retrieval' }
     ]
   },
   {
-    text: 'RAG',
-    collapsed: true,
+    text: 'L4 · Action & Collaboration',
+    collapsed: false,
     items: [
-      { text: 'RAG', link: '/tech/patterns/RAG' },
-      { text: 'Semantic search case', link: '/tech/patterns/RAG-semantic-search-case-study' }
+      { text: 'Layer guide', link: '/tech/04-action/' },
+      { text: 'Tool execution engineering', link: '/tech/04-action/tool-execution' },
+      { text: 'Workflow patterns', link: '/tech/04-action/workflow' },
+      {
+        text: 'Agent runtime',
+        collapsed: true,
+        items: [
+          { text: 'Runtime · loop & state', link: '/tech/04-action/agent-runtime/' },
+          { text: 'Design patterns', link: '/tech/04-action/agent-runtime/design-patterns' },
+          { text: 'State & memory', link: '/tech/04-action/agent-runtime/state-memory' },
+          { text: 'Recovery & HITL', link: '/tech/04-action/agent-runtime/recovery-hitl' },
+          { text: 'Computer use', link: '/tech/04-action/agent-runtime/computer-use' }
+        ]
+      },
+      { text: 'Multi-agent systems', link: '/tech/04-action/multi-agent' },
+      { text: 'Agent Skills', link: '/tech/04-action/skills' },
+      { text: 'Agent Plugins (watchlist)', link: '/tech/04-action/plugins' },
+      {
+        text: 'Protocols (by boundary)',
+        collapsed: true,
+        items: [
+          { text: 'Protocol map', link: '/tech/04-action/protocols/' },
+          { text: 'MCP · agent ↔ tools/data', link: '/tech/04-action/protocols/mcp' },
+          { text: 'A2A · agent ↔ agent', link: '/tech/04-action/protocols/a2a' },
+          { text: 'ACP · editor ↔ coding agent', link: '/tech/04-action/protocols/acp-agent-client' },
+          { text: 'AG-UI · agent ↔ user app', link: '/tech/04-action/protocols/ag-ui' },
+          { text: 'A2UI & MCP Apps', link: '/tech/04-action/protocols/a2ui-mcp-apps' },
+          { text: 'Watchlist', link: '/tech/04-action/protocols/watchlist' }
+        ]
+      }
     ]
   },
   {
-    text: 'Agent',
-    collapsed: true,
+    text: 'L5 · Reliable Operations',
+    collapsed: false,
     items: [
-      { text: 'Agents overview', link: '/tech/patterns/agent/' },
-      { text: 'Agent course', link: '/tech/agent-course' },
-      { text: 'Design patterns', link: '/tech/agent-design-patterns' },
-      { text: 'Hooks', link: '/tech/patterns/agent/hooks' },
-      { text: 'Skills', link: '/tech/patterns/agent/skills' }
+      { text: 'Layer guide', link: '/tech/05-operations/' },
+      { text: 'Testing', link: '/tech/05-operations/testing' },
+      { text: 'Evaluation (bridge → evals)', link: '/tech/05-operations/evaluation' },
+      { text: 'Observability', link: '/tech/05-operations/observability' },
+      { text: 'Security', link: '/tech/05-operations/security' },
+      { text: 'Cost & performance', link: '/tech/05-operations/cost-performance' },
+      { text: 'Deployment & release', link: '/tech/05-operations/deployment' }
     ]
   },
   {
-    text: 'Engineering',
+    text: 'Appendices',
     collapsed: true,
     items: [
-      { text: 'Testing', link: '/tech/engineering/testing' },
-      { text: 'Evals', link: '/tech/engineering/evals' },
-      { text: 'Observability', link: '/tech/engineering/observability' },
-      { text: 'Security', link: '/tech/engineering/security' },
-      { text: 'Cost', link: '/tech/engineering/cost-optimization' },
-      { text: 'Alibaba testing', link: '/tech/alibaba-ai-testing' },
-      { text: 'Meituan testing', link: '/tech/meituan-ai-testing' },
-      { text: 'Benchmarking', link: '/tech/generative-benchmarking' },
-      { text: 'Golden datasets', link: '/tech/golden-dataset-generation' }
+      { text: 'Appendix guide', link: '/tech/appendices/' },
+      { text: 'Model lifecycle bridges', link: '/tech/appendices/model-lifecycle/' },
+      { text: 'Case studies', link: '/tech/appendices/cases/' },
+      { text: 'Course notes (legacy)', link: '/tech/appendices/course-notes/' },
+      { text: 'Methodology archive', link: '/tech/appendices/methodology/' },
+      { text: 'Multimodal (bridge)', link: '/tech/appendices/multimodal/' },
+      { text: 'AI coding tool cases', link: '/tech/appendices/ai-coding/' }
     ]
   },
   {
-    text: 'More',
-    collapsed: true,
+    text: 'Resources',
     items: [
-      { text: 'SFT', link: '/tech/training/SFT' },
-      { text: 'RLHF', link: '/tech/training/RLHF' },
-      { text: 'PEFT', link: '/tech/training/PEFT' },
-      { text: 'Resources', link: '/resources' }
+      { text: 'Resource library', link: '/resources' }
     ]
   }
 ]
@@ -97,101 +119,111 @@ export const zhTechSidebar = [
   {
     text: '总览',
     items: [
-      { text: '怎么读这一栏', link: '/zh/tech/' }
+      { text: '技术地图 · 从哪开始', link: '/zh/tech/' },
+      { text: '复杂度决策阶梯', link: '/zh/tech/00-orientation/complexity-ladder' },
+      { text: '站点边界与 ownership', link: '/zh/tech/00-orientation/site-boundaries' },
+      { text: '模型生命周期（桥接）', link: '/zh/tech/00-orientation/model-lifecycle-bridge' }
     ]
   },
   {
-    text: '基础',
+    text: '层 1 · 交互契约',
     collapsed: false,
     items: [
-      { text: 'LLM 基础', link: '/zh/tech/fundamentals/LLM' },
-      { text: '上下文窗口', link: '/zh/tech/fundamentals/context' },
-      { text: '上下文工程', link: '/zh/tech/fundamentals/context-engineering' },
-      { text: 'Embeddings', link: '/zh/tech/fundamentals/embeddings' }
+      { text: '本层导览', link: '/zh/tech/01-contracts/' },
+      { text: '提示词工程', link: '/zh/tech/01-contracts/prompt' },
+      { text: '上下文工程', link: '/zh/tech/01-contracts/context' },
+      { text: '结构化输出', link: '/zh/tech/01-contracts/structured-output' },
+      { text: '工具调用契约', link: '/zh/tech/01-contracts/tool-calling' }
     ]
   },
   {
-    text: 'Prompt',
+    text: '层 2 · 应用接入',
     collapsed: false,
     items: [
-      { text: '地图 · 怎么写', link: '/zh/tech/prompt/' },
-      { text: '1. 说清楚 · Claude 官方', link: '/tech/prompt/claude-prompt-best-practices' },
-      { text: '2. 稳住结构 · JSON', link: '/zh/tech/prompt/json-prompt-best-practices' },
-      { text: '3. 写给仓库 · AGENTS.md', link: '/zh/tech/prompt/agents-doc' },
-      { text: '4. 换模型时改什么', link: '/zh/tech/prompt/official-guide-2026' },
-      { text: '附录 · System Prompts', link: '/zh/tech/prompt/system-prompts-collection' },
-      { text: '附录 · Copilot 原文', link: '/zh/tech/prompt/cases/copilot' }
+      { text: '本层导览', link: '/zh/tech/02-integration/' },
+      { text: '模型 API 契约', link: '/zh/tech/02-integration/model-api' },
+      { text: '流式响应', link: '/zh/tech/02-integration/streaming' },
+      { text: '会话与状态', link: '/zh/tech/02-integration/session-state' },
+      { text: '生成式 UI', link: '/zh/tech/02-integration/ui' },
+      { text: '浏览器与端侧推理', link: '/zh/tech/02-integration/browser-edge' }
     ]
   },
   {
-    text: '集成',
-    collapsed: true,
+    text: '层 3 · 知识接地',
+    collapsed: false,
     items: [
-      { text: 'API 对比', link: '/zh/integration/apis/' },
-      { text: 'OpenAI', link: '/zh/integration/apis/openai' },
-      { text: 'Anthropic', link: '/zh/integration/apis/anthropic' },
-      { text: '流式', link: '/zh/integration/apis/streaming' },
-      { text: 'Vercel AI SDK', link: '/zh/integration/frameworks/vercel-ai-sdk' },
-      { text: 'LangChain.js', link: '/zh/integration/frameworks/langchain-js' },
-      { text: 'Next.js', link: '/zh/integration/frameworks/nextjs' },
-      { text: '工具调用', link: '/zh/integration/protocols/tool-calling' }
+      { text: '本层导览', link: '/zh/tech/03-grounding/' },
+      { text: '嵌入与检索', link: '/zh/tech/03-grounding/embeddings-retrieval' },
+      { text: 'RAG · 检索增强生成', link: '/zh/tech/03-grounding/rag' },
+      { text: '高级检索', link: '/zh/tech/03-grounding/advanced-retrieval' }
     ]
   },
   {
-    text: 'RAG',
-    collapsed: true,
+    text: '层 4 · 行动与协作',
+    collapsed: false,
     items: [
-      { text: 'RAG', link: '/zh/tech/patterns/RAG' },
-      { text: '语义搜索', link: '/zh/tech/ai-application/building-semantic-search' }
+      { text: '本层导览', link: '/zh/tech/04-action/' },
+      { text: '工具执行工程', link: '/zh/tech/04-action/tool-execution' },
+      { text: '工作流模式', link: '/zh/tech/04-action/workflow' },
+      {
+        text: 'Agent 运行时',
+        collapsed: true,
+        items: [
+          { text: '运行时 · 循环与状态', link: '/zh/tech/04-action/agent-runtime/' },
+          { text: '设计模式', link: '/zh/tech/04-action/agent-runtime/design-patterns' },
+          { text: '状态与记忆', link: '/zh/tech/04-action/agent-runtime/state-memory' },
+          { text: '恢复与人工批准', link: '/zh/tech/04-action/agent-runtime/recovery-hitl' },
+          { text: 'Computer Use', link: '/zh/tech/04-action/agent-runtime/computer-use' }
+        ]
+      },
+      { text: '多 Agent 系统', link: '/zh/tech/04-action/multi-agent' },
+      { text: 'Agent Skills', link: '/zh/tech/04-action/skills' },
+      { text: 'Agent Plugins（观察）', link: '/zh/tech/04-action/plugins' },
+      {
+        text: '协议（按边界分组）',
+        collapsed: true,
+        items: [
+          { text: '协议地图', link: '/zh/tech/04-action/protocols/' },
+          { text: 'MCP · Agent↔工具/数据', link: '/zh/tech/04-action/protocols/mcp' },
+          { text: 'A2A · Agent↔Agent', link: '/zh/tech/04-action/protocols/a2a' },
+          { text: 'ACP · 编辑器↔编码 Agent', link: '/zh/tech/04-action/protocols/acp-agent-client' },
+          { text: 'AG-UI · Agent↔用户应用', link: '/zh/tech/04-action/protocols/ag-ui' },
+          { text: 'A2UI 与 MCP Apps', link: '/zh/tech/04-action/protocols/a2ui-mcp-apps' },
+          { text: '协议观察清单', link: '/zh/tech/04-action/protocols/watchlist' }
+        ]
+      }
     ]
   },
   {
-    text: 'Agent',
-    collapsed: true,
+    text: '层 5 · 可靠运营',
+    collapsed: false,
     items: [
-      { text: '概览', link: '/zh/tech/patterns/agent/' },
-      { text: 'Agent Course', link: '/tech/agent-course' },
-      { text: '设计模式', link: '/zh/tech/agent/agent-design-patterns' },
-      { text: '工程模式（Willison）', link: '/zh/tech/prompt/agentic-engineering-patterns' },
-      { text: '高级工具使用', link: '/zh/tech/prompt/advanced-tool-use' },
-      { text: 'Hooks', link: '/zh/tech/patterns/agent/hooks' },
-      { text: '工作流', link: '/zh/tech/patterns/agent/workflow-patterns' },
-      { text: '编排', link: '/zh/tech/agent/multi-agent-orchestration' }
+      { text: '本层导览', link: '/zh/tech/05-operations/' },
+      { text: '测试', link: '/zh/tech/05-operations/testing' },
+      { text: '评估（桥接 → evals）', link: '/zh/tech/05-operations/evaluation' },
+      { text: '可观测性', link: '/zh/tech/05-operations/observability' },
+      { text: '安全', link: '/zh/tech/05-operations/security' },
+      { text: '成本与性能', link: '/zh/tech/05-operations/cost-performance' },
+      { text: '部署与发布', link: '/zh/tech/05-operations/deployment' }
     ]
   },
   {
-    text: 'Skills 与 MCP',
+    text: '附录',
     collapsed: true,
     items: [
-      { text: 'Claude Skills 概览', link: '/zh/tech/skills/claude-skills-overview' },
-      { text: 'Skills 机制', link: '/zh/tech/skills/skills-mechanics-explained' },
-      { text: '怎么写 Skill', link: '/zh/tech/skills/how-to-create-skills' },
-      { text: 'Skills 最佳实践', link: '/zh/tech/skills/skills-best-practices' },
-      { text: 'MCP 课程', link: '/zh/tech/mcp/mcp-course-notes' },
-      { text: 'Chrome DevTools MCP', link: '/zh/tech/mcp/chrome-devtools-mcp' }
+      { text: '附录导览', link: '/zh/tech/appendices/' },
+      { text: '模型生命周期桥接', link: '/zh/tech/appendices/model-lifecycle/' },
+      { text: '案例研究', link: '/zh/tech/appendices/cases/' },
+      { text: '课程笔记（legacy）', link: '/zh/tech/appendices/course-notes/' },
+      { text: '方法论存档', link: '/zh/tech/appendices/methodology/' },
+      { text: '多模态（桥接）', link: '/zh/tech/appendices/multimodal/' },
+      { text: 'AI 编码工具案例', link: '/zh/tech/appendices/ai-coding/' }
     ]
   },
   {
-    text: '工程与评估',
-    collapsed: true,
+    text: '资源',
     items: [
-      { text: '测试', link: '/zh/tech/engineering/testing' },
-      { text: '评估', link: '/zh/tech/engineering/evals' },
-      { text: '可观测性', link: '/zh/tech/engineering/observability' },
-      { text: '安全', link: '/zh/tech/engineering/security' },
-      { text: '成本', link: '/zh/tech/engineering/cost-optimization' },
-      { text: 'AI 测试', link: '/zh/tech/evaluation/ai-testing' },
-      { text: '生成式基准', link: '/zh/tech/evaluation/generative-benchmarking' }
-    ]
-  },
-  {
-    text: '更多',
-    collapsed: true,
-    items: [
-      { text: '前端 AI', link: '/zh/tech/frontend/streaming' },
-      { text: 'SFT', link: '/zh/tech/training/SFT' },
-      { text: 'RLHF', link: '/zh/tech/training/RLHF' },
-      { text: '资源', link: '/zh/resources' }
+      { text: '资料库', link: '/zh/resources' }
     ]
   }
 ]

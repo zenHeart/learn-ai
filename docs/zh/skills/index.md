@@ -1,12 +1,18 @@
 ---
-title: 技能 (Skills)
-description: 技能是可移植、可重用的模块，将专业知识、工作流和能力打包，任何智能体都可以按需加载和使用。
+title: 技能资产目录
+description: 本页是可安装技能（Skill）资产的目录（registry projection）；技能的技术原理、规范与开发方法见层 4 的 Agent Skills 章节。
 domain: tech
 tags:
   - skill
+  - registry
+status: catalog
+topicId: skills-registry
+listed: true
 ---
 
-# 技能 (Skills)
+> **定位**：本页是**技能资产目录**（capability-package registry），只登记可安装的技能包。技能是什么、如何编写与验证 → [Agent Skills（canonical）](/zh/tech/04-action/skills)。
+
+# 技能资产目录
 
 技能是可移植、可重用的模块，将专业知识、工作流和能力打包，任何智能体都可以按需加载和使用。
 

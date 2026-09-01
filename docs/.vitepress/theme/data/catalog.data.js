@@ -48,7 +48,12 @@ export default createContentLoader(
           navOrder: page.frontmatter.navOrder ?? 100,
           role: page.frontmatter.role || '',
           llm: page.frontmatter.llm || [],
-          listed: page.frontmatter.listed !== false
+          listed: page.frontmatter.listed !== false,
+          // Pyramid graph fields (Issue #116): page frontmatter is the SSOT.
+          topicId: page.frontmatter.topicId || '',
+          layer: page.frontmatter.layer || '',
+          status: page.frontmatter.status || '',
+          lastVerified: page.frontmatter.lastVerified || ''
         }))
         .sort((a, b) => {
           if (a.navOrder !== b.navOrder) return a.navOrder - b.navOrder

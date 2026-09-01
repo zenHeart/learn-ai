@@ -1,71 +1,186 @@
 ---
-title: Tech
-description: Speak first, retrieve second, let the model act third. Start from LLM / prompt / context.
+title: "Tech Map: From Intent to Outcome"
+description: Entry point of the tech track — the engineering essence of AI is converting intent into verifiable outcomes under uncertainty, external state, and permission constraints; reach the right layer from your symptom in two hops.
 domain: tech
-tags:
-  - tech
-listed: false
-outline: [2, 3]
-pageClass: catalog-page
+tags: [tech, orientation, map]
+navOrder: 1
+topicId: tech-map
+layer: "0"
+status: canonical
+nodeType: resource
+owner: learn-ai
+externalOwners: []
+prerequisites: []
+next: [complexity-ladder, site-boundaries, model-lifecycle-bridge]
+specVersion: ""
+lastVerified: "2026-09-01"
+bilingualParity: exact
+listed: true
 ---
 
-# Tech
+> **Layer**: 0 · Orientation and Boundaries ｜ **Exit of the layer above**: none ｜ **Exit of this layer**: you can locate your problem domain, audience, and next entry point
+> **Prerequisites**: none (site entry) ｜ **Next**: [Complexity Decision Ladder](00-orientation/complexity-ladder) · [Site Boundaries and Knowledge Ownership](00-orientation/site-boundaries) · [Model Lifecycle (Bridge)](00-orientation/model-lifecycle-bridge)
 
-**Lead with the answer**: a frontend engineer does not start by training a model. The order is—
+## 1. Overview
 
-1. Talk to the model (prompt + context)  
-2. Wire it into your app (API / streaming UI)  
-3. Let it read *your* files (RAG)  
-4. Let it act (tools / agents / skills / MCP)  
-5. Only then: eval, cost, and fine-tuning  
+**Lead with the answer**: the engineering essence of AI technology is converting human intent, step by step, into verifiable system outcomes — under uncertainty, external state, and permission constraints. This track is organized along that capability-transformation chain. Protocols (MCP, A2A, ACP, AG-UI, and friends) are implementation choices for specific boundaries, not a learning order.
 
-Same pattern as a product map: panorama first, then tasks. The sidebar follows this order.
+This map answers one question: **where are you stuck, and where do you go next.** It teaches no individual technology — every layer and topic has its own five-part chapter (Overview → Usage → Principles → Development → Resource Library).
 
-**Not this section**: click-by-click product tutorials ([Products](/products/)) or Transformer internals ([Learn LLM](https://llm.zenheart.site/)).
+### Mental model: one capability-transformation chain
 
-## Where are you stuck?
-
-```
-What do I need?
-├── What the model sees and remembers     → Fundamentals
-├── Unclear prompts, shaky output         → Prompt
-├── Put a model in React / Vue            → Integrate
-├── Answers must come from our docs       → RAG
-├── Multi-step work, tools, repo edits    → Agent
-└── Ship, test, cap the bill              → Engineering
+```mermaid
+flowchart TB
+    I["Intent<br/>goal · constraints · acceptance"] --> L1["Layer 1 Interaction Contract<br/>input · context · output · errors"]
+    L1 --> L2["Layer 2 Application Integration<br/>API · streaming · session · UI"]
+    L2 --> L3["Layer 3 Grounding<br/>retrieval · RAG · citations · updates"]
+    L3 --> L4["Layer 4 Action and Collaboration<br/>tools · workflows · agents · protocols"]
+    L4 --> L5["Layer 5 Reliable Operations<br/>testing · security · observability · cost · deployment"]
+    L5 --> W["World Outcome"]
+    W -. "observe · verify · feedback · version evolution" .-> I
 ```
 
-## 1. Fundamentals
+Arrows mark the **default order of increasing complexity**, not a hard runtime dependency: a RAG service may pass through only layers 1 and 3; a tool script may pass through only layers 1 and 4. Implementation always falls back to the lowest complexity that satisfies acceptance.
 
-| Idea | Use it as | Page |
-|---|---|---|
-| LLM | A text-in, text-out API | [LLM basics](/tech/fundamentals/LLM) |
-| Context window | Token budget for this turn | [Context](/tech/fundamentals/context) |
-| Embeddings | Comparable sentence vectors | [Embeddings](/tech/fundamentals/embeddings) |
+### When to use / when not to
 
-## 2. Prompt
+- Use: first time in this track, unsure what to learn, or arriving with a concrete symptom.
+- Do not use: model internals (→ [Learn LLM](https://llm.zenheart.site/)); click-by-click product tutorials (→ Products); evaluation methodology (→ [evals](https://evals.zenheart.site/)).
 
-This section is a path, not a pile. Mechanisms stay on Learn LLM [chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory).
+### Symptom-driven decision tree
 
-1. [How to write (map)](/tech/prompt/) — assistant prompt you can send today, then product prompt-as-code
-2. [Be clear](/tech/prompt/claude-prompt-best-practices) → [AGENTS.md](/tech/prompt/agents-doc)
-3. System prompts are an appendix. Read them after the path, not instead of it.
+Start from symptoms, not nouns. Find your symptom and enter the matching layer:
 
-## 3. Integrate
+| Your symptom | Go to |
+| --- | --- |
+| Answers unstable / output cannot be parsed | [Layer 1 · Interaction Contract](01-contracts/) |
+| Answers stable, but not yet in a product | [Layer 2 · Application Integration](02-integration/) |
+| Answers missing private or fresh facts | [Layer 3 · Grounding](03-grounding/) |
+| Need to call systems or perform actions | [Layer 4 · Action and Collaboration](04-action/) |
+| Need collaboration across host / org / agent boundaries | [Layer 4 · Protocol branch](04-action/protocols) (choose by connection direction) |
+| Feature works, but cannot be proven / operated | [Layer 5 · Reliable Operations](05-operations/) |
 
-- [API comparison](/integration/apis/)  
-- [Vercel AI SDK](/integration/frameworks/vercel-ai-sdk)  
-- [Streaming](/integration/apis/streaming)
+### The six-layer pyramid
 
-## 4. RAG
+| Layer | Question it answers | Core topics | Depends on | Exit capability |
+| --- | --- | --- | --- | --- |
+| [0 · Orientation and Boundaries](00-orientation/complexity-ladder) | Where do I start; what is out of scope here? | Map, complexity ladder, site boundaries | none | Locate problem domain and next entry |
+| [1 · Interaction Contract](01-contracts/) | How do I make input / output controllable? | Prompt, context, structured output, tool-calling contract | Layer 0 | Write and validate schemas; know failure acceptance |
+| [2 · Application Integration](02-integration/) | How does capability become a product interaction? | Model API, streaming, session and state, generative UI | Layer 1 | One cancellable, observable end-to-end interaction |
+| [3 · Grounding](03-grounding/) | How do results get a data basis? | Embeddings and retrieval, RAG, advanced retrieval | Layer 2 | Traceable retrieval chain and update path |
+| [4 · Action and Collaboration](04-action/) | How do systems act safely or collaborate across boundaries? | Tool execution, workflows, agent runtime, protocols | Layers 1–3 | Constrain permissions, pause / resume tasks, pick lowest-complexity collaboration |
+| [5 · Reliable Operations](05-operations/) | How do I prove it can ship and keep running? | Testing, observability, security, cost, deployment | Layers 1–4 | Replayable evidence of quality, risk, rollback, ownership |
 
-- [RAG](/tech/patterns/RAG)
+### What this repository does not teach (three boundaries)
 
-## 5. Agent
+| Not expanded here | Canonical owner | What this repo keeps |
+| --- | --- | --- |
+| Model internals: Transformers, training math, KV-cache derivation | [Learn LLM](https://llm.zenheart.site/) | Decision impact + stop point + deep link; see [Site Boundaries](00-orientation/site-boundaries) |
+| Evaluation methodology: benchmarks, judges, release evidence | [evals](https://evals.zenheart.site/) | When evidence is needed; how release gates plug in |
+| Vendor docs / blog captures and EPUB indexing | sites-epub ([epub.zenheart.site](https://epub.zenheart.site/)) | Second-pass treatment of stable cross-vendor concepts + reading routes |
 
-- [Agents](/tech/patterns/agent/)  
-- [Design patterns](/tech/agent-design-patterns)
+Version milestones: this map was frozen on 2026-09 under the Issue #116 pyramid restructure; the previous entry organized as "Fundamentals → Prompt → Integrate → RAG → Agent → Engineering" was merged into this page. Earlier history is unverified and will not be fabricated.
 
-## 6. Engineering
+## 2. Usage
 
-- [Testing](/tech/engineering/testing) · [Evals](/tech/engineering/evals) · [Cost](/tech/engineering/cost-optimization)
+This page is a map; it produces no runnable artifact. "Usage" = navigation drills. The acceptance bar is one line: **from a symptom, reach the correct layer within two hops.**
+
+### Drill 1: unstable output
+
+- **Symptom**: "The JSON the model returns fails to parse three times out of ten."
+- **Hop 1**: decision tree above → "Answers unstable / output cannot be parsed" → [Layer 1 · Interaction Contract](01-contracts/).
+- **Hop 2**: layer 1 topic table → the symptom maps to [Structured Output](01-contracts/structured-output).
+- **Arrival**: you can write and validate an output schema and know how failures are accepted.
+
+### Drill 2: missing fresh facts
+
+- **Symptom**: "The internal assistant does not know the refund policy we updated last week."
+- **Hop 1**: decision tree → "Answers missing private or fresh facts" → [Layer 3 · Grounding](03-grounding/).
+- **Hop 2**: layer 3 topic table → [RAG](03-grounding/rag).
+- **Arrival**: you can build a traceable retrieval chain and update path.
+
+### Drill 3: you want the system to act
+
+- **Symptom**: "We want an agent to mark resolved tickets automatically, but we fear bad edits."
+- **Hop 1**: decision tree → "Need to call systems or perform actions" → [Layer 4 · Action and Collaboration](04-action/).
+- **Hop 2**: layer 4 topic table → for one controlled action, start with [Tool Execution Engineering](04-action/tool-execution).
+- **Arrival**: you can constrain permissions and make the action idempotent and reversible.
+
+If all three drills fail: read the [Complexity Decision Ladder](00-orientation/complexity-ladder) to pin down your requirement level, then return to the decision tree.
+
+## 3. Principles
+
+### Why this main line
+
+The old directory placed Fundamentals (knowledge abstraction), Prompt (interaction means), Integrate (implementation), RAG / Agent (architecture patterns), Skills / MCP (assets / protocols), and Engineering (lifecycle) at the same level — six classification axes mixed together, so readers could not reason from "where am I stuck" to "which page do I read."
+
+This map keeps exactly one axis: **how capability turns intent into outcome.** The other dimensions (semantic layer, trust domain, lifecycle, evidence level, ownership, view) are demoted to page metadata and comparison tables, never competing top-level sections.
+
+### Two axes, one picture
+
+- **Capability main line (vertical)**: from "the model can answer" to "the system can safely complete work" — the chain above.
+- **Engineering cross-cut (horizontal)**: every layer passes through Overview → Usage → Principles → Development → Resource Library; security, privacy, cost, observability, and human approval cut across all layers.
+
+### Why protocols live in layer 4, not layer 0
+
+Protocols solve communication and capability discovery at specific boundaries: MCP connects agents to tools / data, A2A connects agents across trust domains, ACP connects editors to coding agents, AG-UI connects agents to user interfaces. They are implementation choices **after the boundary is known**. Learning protocols before problems is buying a screwdriver before finding a screw — the root of the old "protocol list" structure. Selection rules: rung 6 of the [Complexity Decision Ladder](00-orientation/complexity-ladder).
+
+### Teaching order is not runtime dependency
+
+Arrows mark the default learning and complexity order for newcomers. Real engineering can build bottom-up from contracts and fixtures; RAG, tools / agents, and API / streaming can combine per scenario. Every layer index states both "what to learn first by default" and "which scenarios may skip."
+
+## 4. Development
+
+This page wires no code; "Development" = how to maintain this map.
+
+### Maintenance flow
+
+1. **Register**: a new topic is first registered in `_phase0/slug-map.json` with topicId, layer, slug, and mergeSources; one topicId has exactly one canonical owner.
+2. **Place by layer**: assign layers by "what question does this page answer," never by technology noun. If it fits no layer, ask whether it belongs to Products / appendices / a sibling site.
+3. **Rewire**: once a topic lands in a layer, re-check this page — does the decision tree need a new branch? Does the six-layer table's core-topics column need a word?
+4. **Keep bilingual parity**: zh and en pages share topicId, structure, conclusions, diagrams, and links; `bilingualParity: exact` marks completion.
+5. **Close out**: merged old paths go to `docs/public/redirects.json`; they never linger in the sidebar.
+
+### Inventory and acceptance
+
+- Structural facts come from `node scripts/pyramid-inventory.mjs` output, not memory.
+- Graph-level acceptance: starting from any real symptom, reach the right layer within two navigations; any orphan page, unowned protocol page, or resource card with links but no problem context is a map defect.
+
+### Maintenance anti-patterns
+
+- A "More" bucket for unclassifiable pages — the trash-can taxonomy re-pollutes the main axis.
+- Top-level entries for trending protocols — protocols always enter from a boundary problem.
+- Letting zh / en pages drift — a `bilingualParity: partial` older than one writing cycle is a defect.
+
+## 5. Resource Library
+
+This page is an entry point; resources are "next hops." Four-level route:
+
+- **Beginner**: this page + the [Complexity Decision Ladder](00-orientation/complexity-ladder); locate your layer.
+- **Builder**: enter [Layer 1](01-contracts/) and [Layer 2](02-integration/); finish your first keyless fixture.
+- **Operator**: enter [Layer 5](05-operations/); learn to prove ship-readiness with evidence.
+- **Researcher**: descend to sibling sites for deep principles.
+
+### Three-site entry table
+
+| Site | Canonical URL | Purpose | Status |
+| --- | --- | --- | --- |
+| Learn LLM | https://llm.zenheart.site/ | Model internals, training math | HTTP 200 (retrievedAt 2026-09-01) |
+| Learn LLM chapter index | https://llm.zenheart.site/chapters/ | 21-chapter map; deep-link entry | HTTP 200 (retrievedAt 2026-09-01) |
+| evals | https://evals.zenheart.site/ | Evaluation methods, benchmarks, release evidence | HTTP 200 (retrievedAt 2026-09-01) |
+| sites-epub | https://epub.zenheart.site/ | Vendor source captures and EPUB index | warning: TLS certificate mismatch, HTTPS currently unreachable (retrievedAt 2026-09-01; re-check before citing) |
+
+Ownership details, stop points, and bridge metadata rules per site: [Site Boundaries and Knowledge Ownership](00-orientation/site-boundaries).
+
+### Active falsification and open questions
+
+- If a symptom finds no branch in the decision tree, or a branch drops you into the wrong layer — that is a map defect; fix the map first instead of routing around it.
+- Open: sites-epub is currently unreachable over HTTPS (certificate mismatch); its ownership claims follow the bridge register until the site is re-verified.
+- Open: the "by connection direction" protocol drill-down lands in layer 4; the entry point is the [Protocol Map](04-action/protocols).
+
+### Where learn-ai stops / where to continue
+
+- How models "think": Learn LLM's [chapter index](https://llm.zenheart.site/chapters/).
+- How to prove quality: [evals](https://evals.zenheart.site/).
+- Vendor originals and offline reading: sites-epub (once restored).
+- Next in this repo: [Complexity Decision Ladder](00-orientation/complexity-ladder).
