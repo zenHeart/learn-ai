@@ -3,34 +3,44 @@
   "frozenAt": "2026-09-01",
   "layers": {
     "0": {
-      "dir": "00-orientation",
-      "question": "我在解决什么问题？本仓与哪些知识 owner 分工？",
-      "exit": "能定位问题域、受众和下一入口"
+      "dir": "00-map",
+      "question": "我在哪？谁拥有什么？"
     },
     "1": {
-      "dir": "01-contracts",
-      "question": "如何让模型输入/输出可控？",
-      "exit": "能写并验证输入/输出 schema，知道失败验收"
+      "dir": "01-model-lifecycle",
+      "question": "模型能力从哪来？（桥接组）"
     },
     "2": {
-      "dir": "02-integration",
-      "question": "如何让能力成为产品交互？",
-      "exit": "能做一次可取消、可观测的端到端交互"
+      "dir": "02-inference-interface",
+      "question": "推理与接口：参数如何变成在线服务与契约？"
     },
     "3": {
-      "dir": "03-grounding",
-      "question": "如何让结果有数据依据？",
-      "exit": "能构建可追溯的检索链和更新路径"
+      "dir": "03-context",
+      "question": "模型这一轮看到什么？"
     },
     "4": {
-      "dir": "04-action",
-      "question": "如何安全地让系统做事或跨边界协作？",
-      "exit": "能限制权限、暂停/恢复任务并选择最低复杂度的协作方式"
+      "dir": "04-grounding",
+      "question": "如何引入参数之外的知识？（读世界）"
     },
     "5": {
-      "dir": "05-operations",
-      "question": "如何证明它可以上线并持续运行？",
-      "exit": "能用可回放证据说明质量、风险、性能、回滚和责任人"
+      "dir": "05-action",
+      "question": "如何受控地影响外部世界？（写世界）"
+    },
+    "6": {
+      "dir": "06-agent-systems",
+      "question": "如何形成有状态闭环？"
+    },
+    "7": {
+      "dir": "07-interoperability",
+      "question": "跨边界如何通信？（按连接方向）"
+    },
+    "8": {
+      "dir": "08-production",
+      "question": "如何可靠上线？"
+    },
+    "9": {
+      "dir": "09-advanced",
+      "question": "如何理解与扩展边界？（桥接组）"
     }
   },
   "topics": [
@@ -75,8 +85,8 @@
     },
     {
       "topicId": "model-lifecycle-bridge",
-      "layer": "0",
-      "slug": "model-lifecycle-bridge",
+      "layer": "1",
+      "slug": "index",
       "status": "bridge",
       "title": {
         "zh": "模型生命周期（桥接）",
@@ -89,7 +99,7 @@
     },
     {
       "topicId": "prompt",
-      "layer": "1",
+      "layer": "3",
       "slug": "prompt",
       "status": "canonical",
       "title": {
@@ -104,8 +114,8 @@
     },
     {
       "topicId": "context",
-      "layer": "1",
-      "slug": "context",
+      "layer": "3",
+      "slug": "context-engineering",
       "status": "canonical",
       "title": {
         "zh": "上下文工程",
@@ -124,11 +134,12 @@
         "zh/tech/prompt/agents-doc.md",
         "tech/prompt/agents-doc.md"
       ],
-      "notes": "context window + context engineering + repo context (AGENTS.md) 合并为一个 canonical"
+      "notes": "context window + context engineering + repo context (AGENTS.md) 合并为一个 canonical",
+      "pending": true
     },
     {
       "topicId": "structured-output",
-      "layer": "1",
+      "layer": "2",
       "slug": "structured-output",
       "status": "canonical",
       "title": {
@@ -142,7 +153,7 @@
     },
     {
       "topicId": "tool-calling",
-      "layer": "1",
+      "layer": "5",
       "slug": "tool-calling",
       "status": "canonical",
       "title": {
@@ -186,9 +197,9 @@
       "notes": "SSE 生命周期/部分输出/取消/背压"
     },
     {
-      "topicId": "session-state",
-      "layer": "2",
-      "slug": "session-state",
+      "topicId": "session-memory",
+      "layer": "3",
+      "slug": "session-memory",
       "status": "canonical",
       "title": {
         "zh": "会话与状态",
@@ -232,7 +243,7 @@
     },
     {
       "topicId": "embeddings-retrieval",
-      "layer": "3",
+      "layer": "4",
       "slug": "embeddings-retrieval",
       "status": "canonical",
       "title": {
@@ -247,7 +258,7 @@
     },
     {
       "topicId": "rag",
-      "layer": "3",
+      "layer": "4",
       "slug": "rag",
       "status": "canonical",
       "title": {
@@ -262,7 +273,7 @@
     },
     {
       "topicId": "advanced-retrieval",
-      "layer": "3",
+      "layer": "4",
       "slug": "advanced-retrieval",
       "status": "canonical",
       "title": {
@@ -274,7 +285,7 @@
     },
     {
       "topicId": "tool-execution",
-      "layer": "4",
+      "layer": "5",
       "slug": "tool-execution",
       "status": "canonical",
       "title": {
@@ -289,7 +300,7 @@
     },
     {
       "topicId": "workflow",
-      "layer": "4",
+      "layer": "6",
       "slug": "workflow",
       "status": "canonical",
       "title": {
@@ -303,7 +314,7 @@
     },
     {
       "topicId": "agent-runtime",
-      "layer": "4",
+      "layer": "6",
       "slug": "agent-runtime",
       "status": "canonical",
       "title": {
@@ -322,8 +333,8 @@
     },
     {
       "topicId": "agent-design-patterns",
-      "layer": "4",
-      "slug": "agent-runtime/design-patterns",
+      "layer": "6",
+      "slug": "design-patterns",
       "status": "canonical",
       "title": {
         "zh": "Agent 设计模式",
@@ -338,8 +349,8 @@
     },
     {
       "topicId": "agent-state-memory",
-      "layer": "4",
-      "slug": "agent-runtime/state-memory",
+      "layer": "6",
+      "slug": "state-memory",
       "status": "canonical",
       "title": {
         "zh": "Agent 状态与记忆",
@@ -350,8 +361,8 @@
     },
     {
       "topicId": "agent-recovery-hitl",
-      "layer": "4",
-      "slug": "agent-runtime/recovery-hitl",
+      "layer": "6",
+      "slug": "recovery-hitl",
       "status": "canonical",
       "title": {
         "zh": "恢复与人工批准",
@@ -364,8 +375,8 @@
     },
     {
       "topicId": "computer-use",
-      "layer": "4",
-      "slug": "agent-runtime/computer-use",
+      "layer": "6",
+      "slug": "computer-use",
       "status": "canonical",
       "title": {
         "zh": "Computer Use",
@@ -376,7 +387,7 @@
     },
     {
       "topicId": "multi-agent",
-      "layer": "4",
+      "layer": "6",
       "slug": "multi-agent",
       "status": "canonical",
       "title": {
@@ -390,7 +401,7 @@
     },
     {
       "topicId": "skills",
-      "layer": "4",
+      "layer": "6",
       "slug": "skills",
       "status": "canonical",
       "title": {
@@ -412,7 +423,7 @@
     },
     {
       "topicId": "plugins",
-      "layer": "4",
+      "layer": "6",
       "slug": "plugins",
       "status": "watchlist",
       "title": {
@@ -424,8 +435,8 @@
     },
     {
       "topicId": "protocol-map",
-      "layer": "4",
-      "slug": "protocols",
+      "layer": "7",
+      "slug": "index",
       "status": "canonical",
       "title": {
         "zh": "协议地图",
@@ -436,8 +447,8 @@
     },
     {
       "topicId": "mcp",
-      "layer": "4",
-      "slug": "protocols/mcp",
+      "layer": "7",
+      "slug": "mcp",
       "status": "canonical",
       "title": {
         "zh": "MCP：模型上下文协议",
@@ -454,8 +465,8 @@
     },
     {
       "topicId": "a2a",
-      "layer": "4",
-      "slug": "protocols/a2a",
+      "layer": "7",
+      "slug": "a2a",
       "status": "canonical",
       "title": {
         "zh": "A2A：Agent 到 Agent 协议",
@@ -466,8 +477,8 @@
     },
     {
       "topicId": "acp-agent-client",
-      "layer": "4",
-      "slug": "protocols/acp-agent-client",
+      "layer": "7",
+      "slug": "acp-agent-client",
       "status": "canonical",
       "title": {
         "zh": "ACP：Agent Client Protocol",
@@ -478,8 +489,8 @@
     },
     {
       "topicId": "ag-ui",
-      "layer": "4",
-      "slug": "protocols/ag-ui",
+      "layer": "7",
+      "slug": "ag-ui",
       "status": "canonical",
       "title": {
         "zh": "AG-UI：Agent 用户交互协议",
@@ -490,8 +501,8 @@
     },
     {
       "topicId": "a2ui-mcp-apps",
-      "layer": "4",
-      "slug": "protocols/a2ui-mcp-apps",
+      "layer": "7",
+      "slug": "a2ui-mcp-apps",
       "status": "canonical",
       "title": {
         "zh": "A2UI 与 MCP Apps",
@@ -505,8 +516,8 @@
     },
     {
       "topicId": "protocol-watchlist",
-      "layer": "4",
-      "slug": "protocols/watchlist",
+      "layer": "7",
+      "slug": "watchlist",
       "status": "watchlist",
       "title": {
         "zh": "协议观察清单",
@@ -517,7 +528,7 @@
     },
     {
       "topicId": "testing",
-      "layer": "5",
+      "layer": "8",
       "slug": "testing",
       "status": "canonical",
       "title": {
@@ -534,7 +545,7 @@
     },
     {
       "topicId": "evaluation",
-      "layer": "5",
+      "layer": "8",
       "slug": "evaluation",
       "status": "bridge",
       "title": {
@@ -550,7 +561,7 @@
     },
     {
       "topicId": "observability",
-      "layer": "5",
+      "layer": "8",
       "slug": "observability",
       "status": "canonical",
       "title": {
@@ -564,7 +575,7 @@
     },
     {
       "topicId": "security",
-      "layer": "5",
+      "layer": "8",
       "slug": "security",
       "status": "canonical",
       "title": {
@@ -579,7 +590,7 @@
     },
     {
       "topicId": "cost-performance",
-      "layer": "5",
+      "layer": "8",
       "slug": "cost-performance",
       "status": "canonical",
       "title": {
@@ -593,7 +604,7 @@
     },
     {
       "topicId": "deployment",
-      "layer": "5",
+      "layer": "8",
       "slug": "deployment",
       "status": "canonical",
       "title": {
@@ -620,8 +631,8 @@
     },
     {
       "topicId": "model-lifecycle-sft",
-      "layer": "appendix",
-      "slug": "appendices/model-lifecycle/sft",
+      "layer": "1",
+      "slug": "post-training/sft",
       "status": "bridge",
       "title": {
         "zh": "SFT（桥接）",
@@ -634,8 +645,8 @@
     },
     {
       "topicId": "model-lifecycle-rlhf",
-      "layer": "appendix",
-      "slug": "appendices/model-lifecycle/rlhf",
+      "layer": "1",
+      "slug": "post-training/rlhf",
       "status": "bridge",
       "title": {
         "zh": "RLHF（桥接）",
@@ -648,8 +659,8 @@
     },
     {
       "topicId": "model-lifecycle-peft",
-      "layer": "appendix",
-      "slug": "appendices/model-lifecycle/peft",
+      "layer": "1",
+      "slug": "post-training/peft",
       "status": "bridge",
       "title": {
         "zh": "PEFT（桥接）",
@@ -723,8 +734,8 @@
     },
     {
       "topicId": "multimodal-bridge",
-      "layer": "appendix",
-      "slug": "appendices/multimodal/index",
+      "layer": "9",
+      "slug": "multimodal",
       "status": "bridge",
       "title": {
         "zh": "多模态（桥接）",
@@ -756,7 +767,7 @@
     },
     {
       "topicId": "contracts-index",
-      "layer": "1",
+      "layer": "3",
       "slug": "index",
       "status": "canonical",
       "title": {
@@ -780,7 +791,7 @@
     },
     {
       "topicId": "grounding",
-      "layer": "3",
+      "layer": "4",
       "slug": "index",
       "status": "canonical",
       "title": {
@@ -804,7 +815,7 @@
     },
     {
       "topicId": "operations-index",
-      "layer": "5",
+      "layer": "8",
       "slug": "index",
       "status": "canonical",
       "title": {
@@ -825,6 +836,126 @@
       },
       "mergeSources": [],
       "notes": "附录区 index"
+    },
+    {
+      "topicId": "llm-mental-model",
+      "layer": "1",
+      "slug": "llm-mental-model",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "architecture",
+      "layer": "1",
+      "slug": "architecture",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "data-pretraining-scaling",
+      "layer": "1",
+      "slug": "data-pretraining-scaling",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "inference-fundamentals",
+      "layer": "2",
+      "slug": "inference-fundamentals",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "efficient-serving",
+      "layer": "2",
+      "slug": "efficient-serving",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "context-window",
+      "layer": "3",
+      "slug": "context-window",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "repo-context",
+      "layer": "3",
+      "slug": "repo-context",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "hooks",
+      "layer": "6",
+      "slug": "hooks",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "agentops",
+      "layer": "8",
+      "slug": "agentops",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "interpretability",
+      "layer": "9",
+      "slug": "interpretability",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "reasoning-ttc",
+      "layer": "9",
+      "slug": "reasoning-ttc",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
+    },
+    {
+      "topicId": "moe-frontier",
+      "layer": "9",
+      "slug": "moe-frontier",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "Wave A v6 新页",
+      "pending": true
     }
   ],
   "productsMoves": [
@@ -901,5 +1032,6 @@
       "to": "products/prompt/",
       "note": "token/embedding 基础笔记；概念并入 embeddings-retrieval 与 Learn LLM 桥接"
     }
-  ]
+  ],
+  "scope": "v6 (user decision 2026-09-01): report-aligned groups"
 }

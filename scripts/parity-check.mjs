@@ -13,6 +13,7 @@ function h2s(p) {
 const problems = []
 let pairs = 0
 for (const t of map.topics) {
+  if (t.pending) continue
   const layer = layers[t.layer]
   let base
   if (t.topicId === 'tech-map') base = 'tech/index'

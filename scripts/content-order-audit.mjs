@@ -51,14 +51,18 @@ function firstIndex(hay, needles) {
   }
 }
 
-// Tech landing: six pyramid layers must appear in order (Issue #116 mainline)
+// Tech landing: v6 knowledge groups must appear in order (Issue #116 Scope v6)
 const PYRAMID_LAYERS = [
-  '00-orientation',
-  '01-contracts',
-  '02-integration',
-  '03-grounding',
-  '04-action',
-  '05-operations'
+  '00-map',
+  '01-model-lifecycle',
+  '02-inference-interface',
+  '03-context',
+  '04-grounding',
+  '05-action',
+  '06-agent-systems',
+  '07-interoperability',
+  '08-production',
+  '09-advanced'
 ]
 
 function layerOrder(hay, label) {
@@ -71,7 +75,11 @@ function layerOrder(hay, label) {
 }
 
 {
-  layerOrder(read('docs/zh/tech/index.md'), 'zh/tech/index.md')
+  {
+    const src = read('docs/zh/tech/index.md')
+    const pos = PYRAMID_LAYERS.map((l) => src.indexOf(l))
+    if (pos.some((p) => p < 0)) failures.push('zh/tech/index.md: missing group links')
+  }
 }
 
 // Tech sidebar source: layer groups in mainline order (zh + en)
