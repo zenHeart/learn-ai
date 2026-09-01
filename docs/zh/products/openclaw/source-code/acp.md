@@ -1,3 +1,14 @@
+---
+title: "ACP Agent Communication Protocol 详解"
+description: "OpenClaw 产品内部的 Agent Communication Protocol 源码解析（product-adapter，区别于社区 Agent Client Protocol）。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - acp
+status: case
+---
+
 # ACP Agent Communication Protocol 详解
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解智能体架构的开发者。  

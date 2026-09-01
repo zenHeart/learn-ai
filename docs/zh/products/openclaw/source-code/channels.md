@@ -1,3 +1,14 @@
+---
+title: "Channels 通道接入详解"
+description: "OpenClaw 通道层源码：接入适配与消息流转。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - channels
+status: canonical
+---
+
 # Channels 通道接入详解
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解 WebSocket 和 HTTP 通信机制的开发者。

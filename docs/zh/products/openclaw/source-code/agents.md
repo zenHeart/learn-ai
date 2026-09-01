@@ -1,3 +1,14 @@
+---
+title: "Agents 智能体引擎详解"
+description: "OpenClaw Agents 引擎的源码结构与生命周期。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - agents
+status: canonical
+---
+
 # Agents 智能体引擎详解
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解 AI 模型 API 调用机制的开发者。

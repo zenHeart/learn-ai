@@ -1,3 +1,13 @@
+---
+title: "OpenClaw 源码分析"
+description: "OpenClaw 源码分析入口：模块地图与阅读路线。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+status: canonical
+---
+
 # OpenClaw 源码分析
 
 > 本目录深入解析 OpenClaw 源码架构，帮助读者从内部视角理解系统运作原理。

@@ -1,3 +1,13 @@
+---
+title: "飞书接入指南"
+description: "OpenClaw 飞书通道接入：应用创建、回调配置与消息联动。"
+domain: product
+tags:
+  - openclaw
+  - feishu
+  - channel
+---
+
 # 飞书接入指南
 
 > **前置知识**：本章节面向具备基础 TypeScript/Node.js 经验的开发者。

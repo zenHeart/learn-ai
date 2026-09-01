@@ -34,7 +34,11 @@ function read(rel) {
 }
 
 function mdExists(urlPath) {
-  const rel = urlPath.split('#')[0].replace(/^\//, '').replace(/\/$/, '')
+  const rel = urlPath
+    .split('#')[0]
+    .replace(/^\//, '')
+    .replace(/\/$/, '')
+    .replace(/\.html$/, '')
   return [
     join(docsRoot, `${rel}.md`),
     join(docsRoot, rel, 'index.md')

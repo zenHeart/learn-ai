@@ -1,3 +1,14 @@
+---
+title: "MCP Model Context Protocol 详解"
+description: "OpenClaw 中 MCP 的接入与实现源码解析。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - mcp
+status: canonical
+---
+
 # MCP Model Context Protocol 详解
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解 AI 工具调用机制的开发者。  

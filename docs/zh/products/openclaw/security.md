@@ -1,3 +1,12 @@
+---
+title: "OpenClaw 安全配置指南"
+description: "OpenClaw 安全配置、风险管理与最佳实践。"
+domain: product
+tags:
+  - openclaw
+  - security
+---
+
 # OpenClaw 安全配置指南
 
 > 本章节涵盖 OpenClaw 的安全配置、风险管理和最佳实践。

@@ -1,3 +1,12 @@
+---
+title: "OpenClaw 技能开发指南"
+description: "OpenClaw 自定义技能（Skills）开发：结构、清单与调试。"
+domain: product
+tags:
+  - openclaw
+  - skills
+---
+
 # OpenClaw 技能开发指南
 
 > 本章节详细介绍如何开发自定义技能（Skills），扩展 OpenClaw 智能体能力。
