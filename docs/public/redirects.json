@@ -231,5 +231,7 @@
   "tech/appendices/multimodal/index": "/tech/09-advanced/multimodal",
   "zh/tech/appendices/multimodal/claude-vision-capabilities": "/zh/tech/09-advanced/multimodal-vision-case",
   "zh/tech/01-contracts/context": "/zh/tech/03-context/context-engineering",
-  "tech/01-contracts/context": "/tech/03-context/context-engineering"
+  "tech/01-contracts/context": "/tech/03-context/context-engineering",
+  "zh/tech/04-action/index": "/zh/tech/06-agent-systems/agent-runtime",
+  "tech/04-action/index": "/tech/06-agent-systems/agent-runtime"
 }

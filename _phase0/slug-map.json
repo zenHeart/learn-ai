@@ -801,18 +801,6 @@
       "notes": "层 index（agent 命名 grounding）"
     },
     {
-      "topicId": "action-index",
-      "layer": "4",
-      "slug": "index",
-      "status": "canonical",
-      "title": {
-        "zh": "层 4 导览",
-        "en": "Layer 4 Guide"
-      },
-      "mergeSources": [],
-      "notes": "层 index（agent 命名 action-index）"
-    },
-    {
       "topicId": "operations-index",
       "layer": "8",
       "slug": "index",

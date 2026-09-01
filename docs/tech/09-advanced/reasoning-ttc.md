@@ -1,6 +1,6 @@
 ---
 title: "Reasoning Models and Test-Time Compute (Bridge)"
-description: "Letting the model think longer" is a performance axis alongside model scale — this page gives app engineers positional sense: thinking and acting are two kinds of spend (when to use a reasoning model vs an agent loop), latency structure, billing, and stop conditions; training-side mechanics bridge to Learn LLM.
+description: "Letting the model think longer' is a performance axis alongside model scale — this page gives app engineers positional sense: thinking and acting are two kinds of spend (when to use a reasoning model vs an agent loop), latency structure, billing, and stop conditions; training-side mechanics bridge to Learn LLM."
 domain: tech
 tags: [tech, reasoning, test-time-compute, bridge]
 navOrder: 92

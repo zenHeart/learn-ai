@@ -1,6 +1,6 @@
 ---
 title: Interpretability (Bridge)
-description: Why the model produced this output — mechanistic interpretability (superposition, features, attribution graphs) bridges entirely to Learn LLM; this repo keeps only the app engineer's positional sense: it shapes trust boundaries, audit promises, and expectations when debugging "why did it say that".
+description: "Why the model produced this output — mechanistic interpretability (superposition, features, attribution graphs) bridges entirely to Learn LLM; this repo keeps only the app engineer's positional sense: it shapes trust boundaries, audit promises, and expectations when debugging 'why did it say that'."
 domain: tech
 tags: [tech, interpretability, bridge, safety]
 navOrder: 91

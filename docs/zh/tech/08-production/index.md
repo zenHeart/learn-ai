@@ -11,7 +11,7 @@ nodeType: problem
 owner: learn-ai
 externalOwners: []
 prerequisites: [agent-recovery-hitl]
-next: [testing, evaluation, observability, security, cost-performance, deployment, resources]
+next: [testing, evaluation, observability, security, cost-performance, deployment, resources, agentops]
 specVersion: ""
 lastVerified: "2026-09-01"
 bilingualParity: exact

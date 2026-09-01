@@ -1,6 +1,6 @@
 ---
 title: "Efficient Serving: Making Tokens Cheaper"
-description: The four serving-side cost levers — quantization, paged KV, prefix caching, speculative decoding — and how they map onto vendor billing fields: why cached input is cheaper, why cache writes carry a premium, and what decides your hit rate.
+description: "The four serving-side cost levers — quantization, paged KV, prefix caching, speculative decoding — and how they map onto vendor billing fields: why cached input is cheaper, why cache writes carry a premium, and what decides your hit rate."
 domain: tech
 tags: [serving, cost, quantization, prefix-caching, paged-attention]
 navOrder: 21
