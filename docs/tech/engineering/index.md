@@ -1,32 +1,17 @@
 ---
-title: Engineering Practices
-description: Engineering Practices — how to use it in engineering.
+title: "Moved"
+description: "This page has been merged into the new structure."
 domain: tech
-tags:
-  - engineering
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/tech/05-operations/'
+  - - link
+    - rel: canonical
+    - href: /tech/05-operations/
 ---
 
-# Engineering Practices
-
-> Testing, Evals, Observability, Security, and Cost Optimization for AI applications
-
-## Contents
-
-- [Testing](./testing) - AI testing strategies
-- [Evals](./evals) - Evaluation methods for AI systems
-- [Observability](./observability) - Monitoring and tracing AI apps
-- [Security](./security) - Security patterns for AI systems
-- [Cost Optimization](./cost-optimization) - Managing LLM costs
-
-## Learning Path
-
-- **Beginner**: Start with [Testing](./testing) and [Evals](./evals)
-- **Production**: Read [Observability](./observability) and [Security](./security)
-- **Scale**: Apply [Cost Optimization](./cost-optimization)
-
-## Related Resources
-
-- [Back to parent](../)
-- [Home](/)
+This page has moved to [/tech/05-operations/](/tech/05-operations/).

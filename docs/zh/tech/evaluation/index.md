@@ -1,28 +1,17 @@
 ---
-title: AI 评估方法
-description: AI 评估方法 — how to use it in engineering.
+title: "已迁移"
+description: "本页内容已并入新结构。"
 domain: tech
-tags:
-  - tech
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/zh/tech/05-operations/evaluation'
+  - - link
+    - rel: canonical
+    - href: /zh/tech/05-operations/evaluation
 ---
 
-# AI 评估方法
-
-> AI Testing 与 Generative Benchmarking 等评估手段
-
-## 本节内容
-
-- [AI Testing](./ai-testing) - AI 应用的测试方法论
-- [Generative Benchmarking](./generative-benchmarking) - 生成式模型的基准评估
-
-## 学习路径
-
-- **初学者**: 从 [AI Testing](./ai-testing) 了解测试基础
-- **进阶**: 阅读 [Generative Benchmarking](./generative-benchmarking) 掌握评估技术
-
-## 相关资源
-
-- [返回上级目录](../)
-- [返回首页](/)
+本页已迁移到 [/zh/tech/05-operations/evaluation](/zh/tech/05-operations/evaluation).

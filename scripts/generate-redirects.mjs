@@ -51,8 +51,12 @@ for (const mv of moves) {
   if (!mv.from) continue
   const oldAbs = join(docsRoot, mv.from)
   if (!existsSync(oldAbs)) continue
-  const toAbs = join(docsRoot, mv.to.replace(/^\//, '').replace(/\/$/, '') + '.md')
-    .replace(/\.md\.md$/, '.md')
+  // Guard: the old path may itself be the new canonical (e.g. tech/index.md for tech-map).
+  const toRelMd = mv.to.replace(/^\//, '').replace(/\/$/, '') + '.md'
+  if (mv.from === toRelMd || mv.from === 'zh/' + mv.to.replace(/^\//, '').replace(/\/$/, '') + '.md') {
+    continue
+  }
+  const toAbs = join(docsRoot, toRelMd).replace(/\.md\.md$/, '.md')
   const toIndex = join(docsRoot, mv.to.replace(/^\//, '').replace(/\/$/, ''), 'index.md')
   if (!existsSync(toAbs) && !existsSync(toIndex)) {
     console.log(`SKIP (target missing): ${mv.from} -> ${mv.to}`)

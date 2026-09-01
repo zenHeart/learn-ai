@@ -1,26 +1,17 @@
 ---
-title: Prompt Cases
-description: Prompt Cases — how to use it in engineering.
+title: "Moved"
+description: "This page has been merged into the new structure."
 domain: tech
-tags:
-  - prompt
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/tech/01-contracts/prompt'
+  - - link
+    - rel: canonical
+    - href: /tech/01-contracts/prompt
 ---
 
-# Prompt Cases
-
-> Real-world prompt engineering examples
-
-## Contents
-
-- [Copilot](./copilot) - GitHub Copilot prompt patterns and use cases
-
-## Learning Path
-
-- **Beginner**: Read the [Copilot](./copilot) case study
-
-## Related Resources
-
-- [Back to parent](../)
-- [Home](/)
+This page has moved to [/tech/01-contracts/prompt](/tech/01-contracts/prompt).
