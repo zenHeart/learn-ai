@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能构建可追溯的检索链和更新路径 ｜ **本层出口**：能跨信任域委派任务给不透明 Agent，并在断流、需要输入、版本不一致时恢复
+> **所在组**：互操作 ｜ **上一组出口**：能构建可追溯的检索链和更新路径 ｜ **本组出口**：能跨信任域委派任务给不透明 Agent，并在断流、需要输入、版本不一致时恢复
 > **前置**：[协议地图](index.md) ｜ [多 Agent 系统](../06-agent-systems/multi-agent.md) ｜ **下一步**：[ACP：Agent Client Protocol](acp-agent-client.md) ｜ [A2UI 与 MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. 概述
@@ -85,7 +85,7 @@ Task 的九个规范状态（wire 值为 SCREAMING_SNAKE_CASE）：
 
 ### 历史版本里程碑
 
-规范页公开的版本序列：`1.0.0`（最新发布）← `0.3.0` ← `0.2.6` ← `0.1.0`；项目由 Google 发起后捐赠给 Linux Foundation（2026-09-01 检索自官方站与仓库 llms.txt）。1.0 的两处破坏性变更（迁移附录 A.2）：① 移除 `kind` 判别字段，改用 JSON 成员名本身判别 Part 与流事件类型；② `extendedAgentCard` 从 Card 顶层迁入 `capabilities`。各版本具体发布日期：未验证。
+规范页公开的版本序列：`1.0.0`（最新发布）← `0.3.0` ← `0.2.6` ← `0.1.0`（2026-09-01 复核，1.0.0 仍为最新发布版，无漂移）；项目由 Google 发起后捐赠给 Linux Foundation，现由技术指导委员会维护——AWS、Cisco、Google、IBM Research、Microsoft、Salesforce、SAP、ServiceNow 各有代表（官方站 Governance 节，2026-09-01 检索）。1.0 的两处破坏性变更（迁移附录 A.2）：① 移除 `kind` 判别字段，改用 JSON 成员名本身判别 Part 与流事件类型；② `extendedAgentCard` 从 Card 顶层迁入 `capabilities`。各版本具体发布日期：未验证。
 
 ### 本章 DoD 自检
 

@@ -1,6 +1,6 @@
 ---
 title: A2UI and MCP Apps
-description: Two "UI payload / host extension" approaches covered together — agents emit declarative component descriptions (A2UI) or interactive HTML resources (MCP Apps), and hosts render them in a sandbox; transport semantics belong to AG-UI/A2A, frontend implementation to layer 2.
+description: Two "UI payload / host extension" approaches covered together — agents emit declarative component descriptions (A2UI) or interactive HTML resources (MCP Apps), and hosts render them in a sandbox; transport semantics belong to AG-UI/A2A, frontend implementation to the inference-interface group.
 domain: tech
 tags: [tech, action, protocols, a2ui, mcp-apps, generative-ui]
 navOrder: 73
@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Previous layer exit**: build a traceable retrieval chain with an update path ｜ **This layer exit**: decide whether an agent should emit declarative components or sandboxed host HTML, and write a renderer skeleton with allowlist validation
+> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: decide whether an agent should emit declarative components or sandboxed host HTML, and write a renderer skeleton with allowlist validation
 > **Prerequisites**: [MCP](mcp.md) ｜ [AG-UI](ag-ui.md) ｜ **Next**: [Protocol Watchlist](watchlist.md)
 
 ## 1. Overview
@@ -28,7 +28,7 @@ listed: true
 - **A2UI (Agent to UI)**: agents emit **declarative component descriptions** (JSON) that clients render with their own native components — safe like data, expressive like code. Created by Google (Apache 2.0), with contributions from CopilotKit and the community.
 - **MCP Apps**: an official MCP extension — a server's tool declares a `ui://` resource reference, the host renders the returned **interactive HTML** in a sandboxed iframe, and the two sides talk over a JSON-RPC dialect on postMessage.
 
-Division of labor in one line: **A2UI answers "what UI does the agent ask for" (declarative); MCP Apps answers "what UI is embedded in an MCP host" (HTML + sandbox)**; both define payload/host behavior only — **how it travels** belongs to transport protocols (A2A, AG-UI, SSE, WebSocket all work), and **how the frontend is built** belongs to layer 2 [Generative UI](../02-inference-interface/ui).
+Division of labor in one line: **A2UI answers "what UI does the agent ask for" (declarative); MCP Apps answers "what UI is embedded in an MCP host" (HTML + sandbox)**; both define payload/host behavior only — **how it travels** belongs to transport protocols (A2A, AG-UI, SSE, WebSocket all work), and **how the frontend is built** belongs to the inference-interface group [Generative UI](../02-inference-interface/ui).
 
 ### Mental model: the agent describes, the host renders and enforces security
 
@@ -57,7 +57,7 @@ MCP Apps is an extension document on modelcontextprotocol.io (not an independent
 
 - Use A2UI: cross-platform native rendering (one description for web/mobile/desktop); incremental LLM generation (flat streaming-JSON friendly); arbitrary code execution forbidden by policy.
 - Use MCP Apps: the host is already an MCP client (Claude, VS Code Copilot, etc.); you want the mature web ecosystem (visualization libraries, forms); you accept the sandboxed-iframe model.
-- Do not (non-goals for both): transport-layer semantics (→ [AG-UI](ag-ui.md) / [A2A](a2a.md)); frontend component implementation details (→ layer 2 [Generative UI](../02-inference-interface/ui)); scenarios where plain text conversation is enough.
+- Do not (non-goals for both): transport-layer semantics (→ [AG-UI](ag-ui.md) / [A2A](a2a.md)); frontend component implementation details (→ the inference-interface group's [Generative UI](../02-inference-interface/ui)); scenarios where plain text conversation is enough.
 
 ### Decision table
 
@@ -236,7 +236,7 @@ SDK surface: the `App` class from `@modelcontextprotocol/ext-apps` is a convenie
 | What UI the agent delivers (declarative) | **A2UI** |
 | What UI is embedded in an MCP host (HTML/sandbox) | **MCP Apps** |
 | How events/messages flow | [AG-UI](ag-ui.md) (frontend interaction) / [A2A](a2a.md) (inter-agent; A2UI officially lists it as a transport) |
-| How frontend components and state are written | layer 2 [Generative UI](../02-inference-interface/ui) |
+| How frontend components and state are written | the inference-interface group [Generative UI](../02-inference-interface/ui) |
 
 ### Spec requirements vs local test
 
@@ -321,4 +321,4 @@ All entries retrieved 2026-09-01. Renderer/host lists are snapshots; defer to th
 - Open 3: the fixture uses a v0.8-style `surfaceUpdate` teaching subset; the full v0.9+ message family (`createSurface`/`dataModelUpdate`/`beginRendering`) is not covered by the fixture (spec pages not verified field by field).
 - Open 4: the host support matrix changes over time (8 hosts listed officially, snapshot 2026-09-01); recheck before adoption decisions.
 
-**learn-ai stops here**: the payload contract, security boundaries, a runnable validator. **Where to go next**: frontend implementation → layer 2 [Generative UI](../02-inference-interface/ui); transport → [AG-UI](ag-ui.md) / [A2A](a2a.md); MCP basics → [MCP](mcp.md).
+**learn-ai stops here**: the payload contract, security boundaries, a runnable validator. **Where to go next**: frontend implementation → the inference-interface group [Generative UI](../02-inference-interface/ui); transport → [AG-UI](ag-ui.md) / [A2A](a2a.md); MCP basics → [MCP](mcp.md).

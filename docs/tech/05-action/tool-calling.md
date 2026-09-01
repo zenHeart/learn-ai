@@ -19,14 +19,16 @@ listed: true
 
 # Tool Calling Contract
 
-> **Layer**: 1 · Interaction Contracts ｜ **Previous layer exit**: locate your problem domain, audience, and next entry point ｜ **This topic exit**: define tool schemas, draw the minimal message flow, validate tool name and parameters before execution, and return results (including errors) in the contract format
+> **Group**: 5 · Action (writing the world) ｜ **Previous group exit**: write and validate input/output schemas (group 3), and deliver a cancellable, observable end-to-end interaction (group 2) ｜ **This page exit**: define tool schemas, draw the minimal message flow, validate tool name and parameters before execution, and return results (including errors) in the contract format
 > **Prerequisites**: [structured-output](../02-inference-interface/structured-output.md) ｜ **Next**: [model-api](../02-inference-interface/model-api.md), [tool-execution](../05-action/tool-execution.md)
 
 ## 1. Overview
 
 **Bottom line**: the engineering essence of tool calling (OpenAI calls it function calling) is an **action-request contract**: after reading the tool list, the model may produce one structured request (tool name + arguments JSON); **your code executes it**. The separation between "the model wants to call" and "the system actually executes" is not an implementation detail — it is the foundation of the security boundary; every permission control is built on that seam.
 
-This page covers only the contract: schema definition, selection, parameter validation, result-return format. Execution engineering (idempotency, timeouts, retries, permissions, human approval) lives in Layer 4 [tool-execution](../05-action/tool-execution.md).
+This page covers only the contract: schema definition, selection, parameter validation, result-return format. Execution engineering (idempotency, timeouts, retries, permissions, human approval) lives in [Tool Execution Engineering](../05-action/tool-execution.md), later in this group.
+
+**Group boundary**: this group (Action, writing the world) delivers the **primitives** of writing to the world—one controlled single-step action (contract + executor); the **closed loops** of multi-step composition, pause/resume, and approval queues belong to the [Agent Systems group](../06-agent-systems/agent-runtime.md) (group 6). The test: if your failure case is "this one action executed wrongly", stay here; if it is "it ran eight steps and cannot stop or recover", go to group 6.
 
 ### Mental model: the minimal message flow
 
@@ -46,7 +48,7 @@ This page covers only the contract: schema definition, selection, parameter vali
   │ ◀───────────────────────── │   (or a new tool_use — the loop continues)
 ```
 
-OpenAI's official summary is a five-step flow (retrieved 2026-09-01): request with tools → receive a tool call → execute application-side → re-request with the tool output → receive the final reply (or more tool calls). Anthropic's version is isomorphic, marking ② with `stop_reason: "tool_use"`. Note the official statement that ③④ are **optional** — some workflows need only the model's call request itself.
+OpenAI's official summary is a five-step flow (retrieved 2026-09-01): request with tools → receive a tool call → execute application-side → re-request with the tool output → receive the final reply (or more tool calls). Anthropic's version is isomorphic, marking ② with `stop_reason: "tool_use"`. Steps ③④ are implemented by your code—provider APIs do not execute functions; OpenAI states "When the model calls a function, you must execute it and return the result" (retrievedAt 2026-09-01).
 
 ### When to use / when not to
 
@@ -55,7 +57,7 @@ OpenAI's official summary is a five-step flow (retrieved 2026-09-01): request wi
 | **Audience** | Application and agent developers letting models query data, trigger actions, or drive UI |
 | **When to use** | Answers need state beyond training data (orders, weather, private stores); actions must run (send email, file an issue) |
 | **When not to use** | Text only → no tools; structured data only → [structured-output](../02-inference-interface/structured-output.md) (OpenAI's official split: function calling to connect to your systems, response_format to structure the user-facing reply); knowledge is static → try the prompt first |
-| **Not this page** | Safety and reliability of execution → [tool-execution](../05-action/tool-execution.md); the protocolized tool ecosystem → [MCP](../07-interoperability/mcp.md) |
+| **Not this page** | Safety and reliability of execution → [tool-execution](../05-action/tool-execution.md); multi-step / recoverable / approval loops → [agent-runtime](../06-agent-systems/agent-runtime.md); the protocolized tool ecosystem → [MCP](../07-interoperability/mcp.md) |
 
 ### Decision table: structured-output vs tool-calling
 
@@ -68,7 +70,7 @@ OpenAI's official summary is a five-step flow (retrieved 2026-09-01): request wi
 | **Minimum complexity** | low | medium (loop and pairing to manage) |
 | **Failure surface** | refusal / truncation / schema 400 | hallucinated tool names / wrong argument types / broken pairing / execution failure |
 
-**Version milestones** (officially documented, retrieved 2026-09-01): OpenAI strict mode "works by leveraging our structured outputs feature" and is officially recommended to always be enabled; parallel function calls may issue multiple calls in one turn on supported models, and `parallel_tool_calls: false` enforces "exactly zero or one". Anthropic's tool-use system prompt adds roughly 346 tokens for `auto` / `none` (about 313 for `any` / `tool`). Other timelines: unverified.
+**Version milestones** (officially documented, retrieved 2026-09-01): OpenAI strict mode "works by leveraging our structured outputs feature" and is officially recommended to always be enabled; parallel function calls may issue multiple calls in one turn on supported models, and `parallel_tool_calls: false` enforces "exactly zero or one". Anthropic's tool-use system prompt tokens are **per model**: Opus 5 is 286 (`auto`/`none`) / 406 (`any`/`tool`), Sonnet 5 is 354/474, the previous generation 4 models 313/315 (pricing-table figures, retrievedAt 2026-09-01). Other timelines: unverified.
 
 ## 2. Usage
 
@@ -279,7 +281,7 @@ npx tsx@4 tool-calling.ts && echo CONTRACT-OK
 - **description**: the selection basis the model reads — it is the tool's "prompt". Stating **when to use it** ("use when the user asks about order history") sharply reduces mis-selection.
 - **input_schema**: JSON Schema, the same language as [structured-output](../02-inference-interface/structured-output.md). Force fixed option sets with `enum`; describe every parameter.
 
-Anthropic's tool-design principles (retrieved 2026-09-01): tools should be self-contained, robust to error, and unambiguous about intended use; the most common failure mode is a **bloated tool set** — "if a human engineer can't definitively say which tool should be used, an AI agent can't be expected to do better".
+Anthropic's tool-design principles (retrieved 2026-09-01): tools should be self-contained, robust to error, and unambiguous about intended use; the most common failure mode is a **bloated tool set** — "if a human engineer can't definitively say which tool should be used, an AI agent can't be expected to do better". Both providers converge the same way: Anthropic recommends 3–4 sentences per tool description and consolidating related operations into fewer tools with an `action` parameter; OpenAI recommends **fewer than 20** initially available functions per turn (a soft suggestion), deferring larger tool surfaces with `defer_loading` / `tool_search` instead of mounting everything (both retrievedAt 2026-09-01).
 
 ### Why "wants to call" and "executes" must be separated
 
@@ -293,7 +295,7 @@ Model output is only text (which happens to be JSON-shaped requests). Provider A
 
 - Every `tool_use` carries a unique `id` (Anthropic `toolu_*` / OpenAI `call_id`); the returned `tool_result` must carry the matching id. **Broken pairing → next round 400.**
 - Parallel calls: one assistant message may contain multiple `tool_use` blocks; **all results must return in one user message, each with its own id** (Anthropic's explicit rule). OpenAI can disable parallelism with `parallel_tool_calls: false` ("ensures exactly zero or one tool is called").
-- Tool definitions themselves count as input tokens: Anthropic adds roughly 313-346 tokens for the tool-use system prompt, and tool schemas and tool_results bill too — more tools, more cost, harder choice.
+- Tool definitions themselves count as input tokens: Anthropic's tool-use system prompt tokens are per model (Opus 5: 286/406; Sonnet 5: 354/474), and tool schemas and tool_results bill too — more tools, more cost, harder choice.
 
 ### The error-handling contract
 
@@ -371,11 +373,11 @@ When a tool execution fails (API down, invalid order ID), **do not throw and kil
 
 | Name | Level | canonical URL | Use | Supports | Next |
 |---|---|---|---|---|---|
-| Anthropic Tool use overview | L1 | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview | Contract fields and flow | input_schema, stop_reason, parallel pairing, 313-346 token system prompt | Read the implementation guide |
+| Anthropic Tool use overview | L1 | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview | Contract fields and flow | input_schema, stop_reason, parallel pairing, per-model tool-system-prompt token table | Read the implementation guide |
 | OpenAI Function calling | L1 | https://developers.openai.com/api/docs/guides/function-calling | Five-step flow and strict | strict is built on Structured Outputs, parallel_tool_calls switch, tool_search (gpt-5.4+) | Run the official examples |
 | Writing tools for AI agents | L1 | https://www.anthropic.com/engineering/writing-tools-for-agents | Tool-design principles | Self-contained / minimal set / description-as-prompt | Rewrite your own tool descriptions |
-| Building effective agents | L1 | https://www.anthropic.com/engineering/building-effective-agents | Agent-shape overview | The workflow-vs-agent boundary above the tool loop | Proceed to Layer 4 |
-| MCP specification | L4 | https://modelcontextprotocol.io/specification/latest | The tool-ecosystem protocol | Standardized tool integration | Layer 4 [mcp](../07-interoperability/mcp.md) |
+| Building effective agents | L1 | https://www.anthropic.com/engineering/building-effective-agents | Agent-shape overview | The workflow-vs-agent boundary above the tool loop | Proceed to group 6 |
+| MCP specification | L4 | https://modelcontextprotocol.io/specification/latest | The tool-ecosystem protocol | Standardized tool integration | Group 7 [mcp](../07-interoperability/mcp.md) |
 
 (retrievedAt: 2026-09-01.)
 

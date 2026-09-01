@@ -18,7 +18,7 @@ listed: true
 
 # 生成式 UI
 
-> **在哪一层**：层 2 · 应用接入 ｜ **上一层出口**：能写并验证输入/输出 schema ｜ **本层出口**：能把模型输出渲染成白名单组件——流式到达、schema 校验、不可信内容被拒绝
+> **在哪一组**：推理与接口组 ｜ **上一组出口**：能消费一次模型流——逐块累积、随时取消、中断可识别、结束原因可判断 ｜ **本页出口**：能把模型输出渲染成白名单组件——流式到达、schema 校验、不可信内容被拒绝
 > **前置**：[结构化输出](../02-inference-interface/structured-output)、[流式响应](streaming.md) ｜ **下一步**：[AG-UI 协议](../07-interoperability/ag-ui)、[A2UI 与 MCP Apps](../07-interoperability/a2ui-mcp-apps)
 
 ## 1. 概述
@@ -39,7 +39,7 @@ flowchart LR
 ### 何时使用 / 何时不用
 
 - **用**：回答本质是数据展示（天气、行情、清单、表单草稿）；聊天流里混排文本与富组件。
-- **不用**：回答本质是论述（文本就是最佳形态）；模型需要操作真实系统而不只是展示——那是 [层 4](../05-action/tool-execution) 的执行问题；要让任意第三方 host 渲染你的 Agent UI——那是协议问题（[AG-UI](../07-interoperability/ag-ui)、[A2UI](../07-interoperability/a2ui-mcp-apps)，本页只给思想基础）。
+- **不用**：回答本质是论述（文本就是最佳形态）；模型需要操作真实系统而不只是展示——那是 [工具执行工程](../05-action/tool-execution) 的执行问题；要让任意第三方 host 渲染你的 Agent UI——那是协议问题（[AG-UI](../07-interoperability/ag-ui)、[A2UI](../07-interoperability/a2ui-mcp-apps)，本页只给思想基础）。
 
 ### 决策表：模型驱动界面的三种形态
 
@@ -54,7 +54,7 @@ flowchart LR
 ### 历史版本里程碑
 
 - 早期实现走"模型输出 JSON/JSX 直接渲染"路线（含 RSC 流式组件方案）；当前主流收敛到"工具调用 + 组件绑定"（Vercel AI SDK v7 文档形态，retrievedAt 2026-09-01）。
-- 协议化路线（AG-UI、A2UI/MCP Apps）在 2025 后出现，属层 4 主题，本页不展开。
+- 协议化路线（AG-UI、A2UI/MCP Apps）在 2025 后出现，属互操作组主题（[07](../07-interoperability/ag-ui)），本页不展开。
 
 ## 2. 使用
 
@@ -183,13 +183,13 @@ rejected: prop "onClick" not allowed on "card" (fallback to text)
 ### 渲染流水线的四个阶段
 
 1. **描述**：模型输出结构化组件描述（本页 fixture 用 NDJSON 事件；产品路径通常是工具调用的参数与结果，见 [工具调用契约](../05-action/tool-calling)）。
-2. **校验**：描述必须通过 schema（形状）与白名单（类型与 props 范围）双重检查——这是层 1 出口在本层的直接应用。
+2. **校验**：描述必须通过 schema（形状）与白名单（类型与 props 范围）双重检查——这是 [结构化输出](../02-inference-interface/structured-output) 出口的直接应用。
 3. **绑定**：合法描述映射到真实组件；传给组件的只有白名单 props。
 4. **降级**：任何不合法描述降级为文本呈现，绝不中断整个流。
 
 ### 与流式的组合
 
-组件事件在流里到达时处于"部分 JSON"状态（一行被网络切断），对策与 [流式响应](streaming.md) 一致：**按事件边界缓冲，凑齐再解析**。产品路径下工具调用有三态（对应 Vercel AI SDK v7 的 tool part 状态，retrievedAt 2026-09-01）：`input-available`（参数到齐，可显示骨架）→ `output-available`（数据到齐，渲染组件）→ `output-error`（显示错误态）。
+组件事件在流里到达时处于"部分 JSON"状态（一行被网络切断），对策与 [流式响应](streaming.md) 一致：**按事件边界缓冲，凑齐再解析**。产品路径下工具调用有三态（对应 Vercel AI SDK v7 的 tool part 状态，part 类型为 `tool-${工具名}`，retrievedAt 2026-09-01）：`input-available`（参数到齐，可显示骨架）→ `output-available`（数据到齐，渲染组件）→ `output-error`（显示错误态）。
 
 ### 安全边界（本页最重要的原理）
 
@@ -250,7 +250,7 @@ rejected: prop "onClick" not allowed on "card" (fallback to text)
 - 校验失败静默丢弃——用户不知道有内容被吞，显示 fallback 并留痕。
 - 组件 props 直通模型输出（无白名单）——注入面随 props 增长。
 - 只存渲染结果不存结构化描述——历史不可重放。
-- 在单一产品内直接引入跨 host UI 协议——复杂度错配（协议留在层 4）。
+- 在单一产品内直接引入跨 host UI 协议——复杂度错配（协议留在互操作组）。
 
 ## 5. 资料库
 
@@ -269,7 +269,7 @@ rejected: prop "onClick" not allowed on "card" (fallback to text)
 | Vercel AI SDK: Chatbot Tool Usage | L0 | https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage | 工具渲染细节 | 工具部分渲染模式 | 扩展组件集 |
 | OWASP Prompt Injection 资料 | L1 | https://owasp.org/www-project-top-ten/ | 注入风险背景 | 模型输出不可信的理由 | 做注入测试 |
 | 本页 fixture | E | ui-mock.mts（正文内联） | 零 key 验证 | 白名单拒绝行为 | 换成真实工具调用 |
-| AG-UI（本仓层 4） | E | ../07-interoperability/ag-ui | 协议化下钻 | 事件/状态/interrupt 语义 | 需要跨 host 时 |
+| AG-UI（本仓互操作组） | E | ../07-interoperability/ag-ui | 协议化下钻 | 事件/状态/interrupt 语义 | 需要跨 host 时 |
 
 retrievedAt：全部网页资源 2026-09-01。
 

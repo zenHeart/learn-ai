@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a traceable retrieval chain ｜ **Exit of this page**: you can implement a checkpointed multi-step flow — recover from persisted state after failure without redoing side effects, and pause for a human before irreversible steps
+> **Group**: Agent Systems ｜ **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely ｜ **Exit of this page**: you can implement a checkpointed multi-step flow — recover from persisted state after failure without redoing side effects, and pause for a human before irreversible steps
 > **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [Agent Runtime](agent-runtime.md), [Recovery and Human-in-the-Loop](recovery-hitl.md), [Observability](../08-production/observability)
 
 ## 1. Overview
@@ -312,7 +312,7 @@ Approval is not a UI popup but **a persisted state of the state machine**: `awai
 
 ### Observability: one trace per step
 
-The debugging unit of a multi-step flow is "the step", not "the run": every node records runId, step, input digest, output digest, duration, and terminal state. Without per-step traces, "the flow is stuck" is a guessing game; with them, the stuck point localizes to a node and branch (details in layer-5 [Observability](../08-production/observability)).
+The debugging unit of a multi-step flow is "the step", not "the run": every node records runId, step, input digest, output digest, duration, and terminal state. Without per-step traces, "the flow is stuck" is a guessing game; with them, the stuck point localizes to a node and branch (details in the [Production](../08-production/) group's [Observability](../08-production/observability)).
 
 ### Spec requirements vs local test
 
@@ -331,7 +331,7 @@ The difference between workflow and agent is not "does an LLM participate" but *
 
 ### Integration
 
-1. **Node-ify LLM calls**: wrap each model call in a `StepDef`; its (structured, per the layer-1 contract) output goes into state; prompts are assembled by code.
+1. **Node-ify LLM calls**: wrap each model call in a `StepDef`; its (structured, per the [tool calling contract](../05-action/tool-calling)) output goes into state; prompts are assembled by code.
 2. **Node-ify tools**: write-world nodes go through the controlled executor of [Tool Execution Engineering](../05-action/tool-execution.md), with idempotency keys of `runId + step`.
 3. **Storage**: replace the `runs` Map with DB tables (runId primary key, state JSON column, step-detail table); "same-runId re-entry" rides on the primary-key uniqueness constraint.
 4. **Triggers**: make the entry idempotent — a duplicate trigger for the same business record reuses the existing run instead of creating a new one.
@@ -402,7 +402,7 @@ Four-level reading route:
 | --- | --- | --- | --- | --- | --- |
 | Building Effective Agents (Anthropic) | L1 (maintainer) | https://www.anthropic.com/engineering/building-effective-agents | Workflow/agent definitions, five patterns, simplicity first | "Workflows orchestrate via predefined code paths; agents direct themselves" (retrievedAt 2026-09-01) | [Agent Runtime](agent-runtime) |
 | Temporal Workflows (official docs) | L1 (maintainer) | https://docs.temporal.io/workflows | Event History, replay, determinism constraints, Activities | "Recovery = re-run code and replay history; activity results are recorded once and reused in replay" (retrievedAt 2026-09-01) | Study the durable-execution family |
-| LangGraph Persistence (official docs) | L1 (maintainer) | https://langchain-ai.github.io/langgraph/concepts/persistence/ | Checkpointer/store split, thread_id, HITL | "Checkpointers back human-in-the-loop and fault tolerance; MemorySaver does not survive restarts" (retrievedAt 2026-09-01) | Compare with the fixture's in-memory store |
+| LangGraph Persistence (official docs) | L1 (maintainer) | https://docs.langchain.com/oss/python/langgraph/persistence | Checkpointer/store split, thread_id, HITL | "Checkpointers back human-in-the-loop and fault tolerance; MemorySaver does not survive restarts" (retrievedAt 2026-09-01; the page has moved to docs.langchain.com) | Compare with the fixture's in-memory store |
 | How we built our multi-agent research system | L1 (maintainer) | https://www.anthropic.com/engineering/built-multi-agent-research-system | Production requirements on checkpoints and deployment | "Retry logic + regular checkpoints to resume from failure; rainbow deployments avoid disrupting runs" (retrievedAt 2026-09-01) | [Multi-Agent Systems](multi-agent.md) |
 | Multi-agent coordination patterns (Claude blog) | L1 (maintainer) | https://claude.com/blog/multi-agent-coordination-patterns | Evolution judgments between patterns | Five coordination patterns (verified via this repo's old-page archive 2026-04-10; not re-verified this round) | [Multi-Agent Systems](multi-agent.md) |
 
@@ -416,5 +416,5 @@ Four-level reading route:
 
 - Unpredictable steps that need model-driven control: [Agent Runtime](agent-runtime).
 - The full agent-side loop of approval, pause, and recovery: [Recovery and Human-in-the-Loop](recovery-hitl.md).
-- Collecting and querying per-step traces: [Observability](../08-production/observability) (layer 5).
+- Collecting and querying per-step traces: [Observability](../08-production/observability) (Production group).
 - Proving flow correctness (replay tests, golden-path assertions): [Testing](../08-production/testing) and [evals](https://evals.zenheart.site/).

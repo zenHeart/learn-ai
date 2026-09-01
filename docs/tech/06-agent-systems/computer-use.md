@@ -23,13 +23,13 @@ listed: true
 
 ## 1. Overview
 
-**Lead with the answer**: the technical essence of Computer Use is **a control loop** — the model takes visual / semantic observations (screenshots, accessibility trees) as input, emits **constrained interface actions** (screenshot, click, type, zoom), and re-observes after every action to verify the result. It is not a new top-level capability category; it is the crossing point of three existing parts: **action capability** (layer 1's structured output and tool execution) + **an environment adapter** (translating pixels / DOM into model-readable form and model actions into environment-executable form) + **the agent runtime** (this subtree's loop, state, recovery, and approval).
+**Lead with the answer**: the technical essence of Computer Use is **a control loop** — the model takes visual / semantic observations (screenshots, accessibility trees) as input, emits **constrained interface actions** (screenshot, click, type, zoom), and re-observes after every action to verify the result. It is not a new top-level capability category; it is the crossing point of three existing parts: **action capability** (the [Action](../05-action/tool-calling) group's structured output and tool execution) + **an environment adapter** (translating pixels / DOM into model-readable form and model actions into environment-executable form) + **the agent runtime** (this subtree's loop, state, recovery, and approval).
 
 ### Placement map: which capabilities it crosses
 
 ```mermaid
 flowchart TB
-    M["multimodal model capability<br/>visual understanding (-> Learn LLM multimodal chapter)"] --> S["layer 1 · structured output and tool execution<br/>actions expressed in constrained formats"]
+    M["multimodal model capability<br/>visual understanding (-> Learn LLM multimodal chapter)"] --> S["action group · structured output and tool execution<br/>actions expressed in constrained formats"]
     S --> C["Computer Use<br/>observe -> act -> verify environment adapter<br/>(this page)"]
     C --> R["Agent Runtime<br/>loop / state / recovery / approval<br/>(the other four pages of this subtree)"]
     R --> I["interoperability<br/>MCP (tool access) · A2A (cross-agent delegation)"]
@@ -286,7 +286,7 @@ Four-level reading route:
 | Computer use tool (Anthropic docs) | L0 (official docs) | https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/computer-use-tool | Agent loop, batch semantics, injection defense, limitation list | All quotes and diagnostic tables on this page come from here (retrievedAt 2026-09-01) | browser use tool docs |
 | Browser use tool (Anthropic docs) | L0 (official docs) | https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/browser-use-tool | The closer-fitting toolset for in-page tasks | "For tasks that stay inside webpages, the browser use tool is the closer fit" (cross-referenced from the computer use page, retrievedAt 2026-09-01) | Official docs |
 | computer-use-demo (anthropic-quickstarts) | L1 (maintainer code) | https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo | Docker + Xvfb reference environment | The five-part sandbox environment, implemented (retrievedAt 2026-09-01) | Clone and run |
-| Playwright | L1 (maintainer) | https://playwright.dev/ | Deterministic automation for stable DOMs | "reliable web automation for testing, scripting, and AI agents" (retrievedAt 2026-09-01, search-snapshot level verification) | [Testing](../08-production/testing) |
+| Playwright | L1 (maintainer) | https://playwright.dev/ | Deterministic automation for stable DOMs (its positioning now explicitly includes AI agents: CLI and MCP) | "Web automation and testing for apps, scripts, and AI agents" (retrievedAt 2026-09-01, verified against the site's meta description) | [Testing](../08-production/testing) |
 | ReAct (Yao et al., 2022) | L4 (research) | https://arxiv.org/abs/2210.03629 | The loop origin of observe-act alternation | Early evidence on GUI interaction tasks like WebShop (retrievedAt 2026-09-01) | Full paper |
 | Learn LLM · multimodal | sibling | https://llm.zenheart.site/chapters/ | Visual encoding and multimodal mechanics | How the model "sees" is not expanded in this repo (retrievedAt 2026-09-01) | Learn LLM |
 
@@ -300,4 +300,4 @@ Four-level reading route:
 - How the model understands screenshots: Learn LLM's multimodal chapter.
 - Deterministic UI automation and testing: this repo's [testing](../08-production/testing).
 - Delegating tasks to other agents: [A2A](../07-interoperability/a2a.md).
-- The full attack surface of injection and isolation: layer 5 [security](../08-production/security).
+- The full attack surface of injection and isolation: the [Production group's security](../08-production/security).

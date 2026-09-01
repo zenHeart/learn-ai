@@ -1,6 +1,6 @@
 ---
 title: 协议地图
-description: 层 4 协议按连接方向分组的选型入口——Agent↔工具用 MCP、Editor↔coding agent 用 ACP、Agent↔用户用 AG-UI、Agent↔Agent 用 A2A；附 ACP 三义消歧与组合决策表。
+description: 互操作组协议按连接方向分组的选型入口——Agent↔工具用 MCP、Editor↔coding agent 用 ACP、Agent↔用户用 AG-UI、Agent↔Agent 用 A2A；附 ACP 三义消歧与组合决策表。
 domain: tech
 tags: [tech, action, protocols, map]
 navOrder: 70
@@ -18,18 +18,18 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：面对跨界需求能按连接方向选出协议，并说清不选其余协议的理由
+> **所在组**：互操作 ｜ **上一组出口**：能把模型输出接入会话与状态 ｜ **本组出口**：面对跨界需求能按连接方向选出协议，并说清不选其余协议的理由
 > **前置**：[工具执行工程](../05-action/tool-execution.md)、[复杂度决策阶梯](../00-map/complexity-ladder) ｜ **下一步**：按地图进入 [MCP](mcp.md)、[A2A](a2a.md)、[ACP](acp-agent-client.md)、[AG-UI](ag-ui.md)、[A2UI 与 MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. 概述
 
-**结论先讲**：层 4 的协议不是竞品，而是**各占一条连接方向**。选型的第一问不是「哪个协议更好」，而是「我要连通的**两边是什么**」：Agent 到工具、编辑器到编码智能体、Agent 到用户界面、还是 Agent 到 Agent。方向定了，候选集通常只剩一个；再用信任域与状态需求确认。
+**结论先讲**：互操作组的协议不是竞品，而是**各占一条连接方向**。选型的第一问不是「哪个协议更好」，而是「我要连通的**两边是什么**」：Agent 到工具、编辑器到编码智能体、Agent 到用户界面、还是 Agent 到 Agent。方向定了，候选集通常只剩一个；再用信任域与状态需求确认。
 
 ### 心智模型：按连接方向分组
 
 ```mermaid
 flowchart LR
-    USER["用户 / 应用"] <-- "AG-UI<br/>(事件/状态/中断)" --> AGENT["本地 Agent"]
+    USER["用户 / 应用"] <-- "AG-UI<br/>(事件/状态/中断)" --> AGENT["你的 Agent"]
     EDITOR["Editor / IDE"] <-- "ACP<br/>(Agent Client Protocol)" --> CAGENT["coding agent"]
     AGENT <-- "MCP<br/>(tools/resources/prompts)" --> TOOLS["工具 / 数据"]
     AGENT <-- "Skills<br/>(知识打包, 非协议)" --> KNOW["可复用流程知识"]
@@ -63,11 +63,11 @@ flowchart LR
 
 | # | 全称 | 是什么 | 边界 | 状态 |
 | --- | --- | --- | --- | --- |
-| ① | **Agent Client Protocol**（agentclientprotocol.com） | 编辑器/IDE ↔ coding agent 的标准通信协议；本地走 JSON-RPC over stdio，远程走 HTTP/WebSocket；复用 MCP 的 JSON 表示 | 本页层 4 协议地图中的 ACP 指**它**；详情见 [ACP 章](acp-agent-client.md) | 活跃（Zed 等编辑器生态） |
+| ① | **Agent Client Protocol**（agentclientprotocol.com） | 编辑器/IDE ↔ coding agent 的标准通信协议；本地走 JSON-RPC over stdio，远程走 HTTP/WebSocket；复用 MCP 的 JSON 表示 | 本互操作组协议地图中的 ACP 指**它**；详情见 [ACP 章](acp-agent-client.md) | 活跃（Zed 等编辑器生态） |
 | ② | IBM/BeeAI **Agent Communication Protocol** | 历史上的 Agent↔Agent 通信方案 | 已并入 A2A 路线；读旧资料遇到时按 A2A 前身理解 | 历史 |
 | ③ | OpenClaw 内部 **Agent Communication Protocol** | OpenClaw 产品的私有内部协议，与 ①② 无关 | 产品实现细节，见 [OpenClaw 源码：ACP](/zh/products/openclaw/source-code/acp) | 产品私有 |
 
-引用规则：本站层 4 所有页面中未加限定的「ACP」一律指 ①；提 ② 必须带「IBM/BeeAI」前缀并注明历史；提 ③ 必须带「OpenClaw」前缀并链到产品区。
+引用规则：本互操作组所有页面中未加限定的「ACP」一律指 ①；提 ② 必须带「IBM/BeeAI」前缀并注明历史；提 ③ 必须带「OpenClaw」前缀并链到产品区。
 
 ### 选择决策表
 
@@ -81,7 +81,7 @@ flowchart LR
 | 只是复用一段流程知识 | 知识 → 上下文 | 宿主进程内 | 无 | Skills（非协议） |
 | 同 host 内一个函数 | 进程内 | 进程内 | 无 | 直接函数调用（别上协议） |
 
-最后一行是防御性提醒：协议解决**跨边界**的通信与发现；同进程内的调用用函数即可，复杂度阶梯（层 0）的梯级 6 触发条件未命中时不要引入任何本页协议。
+最后一行是防御性提醒：协议解决**跨边界**的通信与发现；同进程内的调用用函数即可，[复杂度决策阶梯](../00-map/complexity-ladder)的梯级 6 触发条件未命中时不要引入任何本页协议。
 
 ### 组合示例：一次真实协作的协议拼图
 
@@ -101,7 +101,7 @@ flowchart LR
 - 用：任何跨进程/跨组织/跨信任域的连通选型；评审「要不要引入协议 X」。
 - 不用：协议内部的消息结构学习——进入对应详情页。
 
-历史版本里程碑：本地图于 2026-09 随 Issue #116 冻结；各协议自身版本（如 MCP 2026-07-28、A2A 1.0.0、Agent Plugins 1.0.0）在各自详情页维护。
+历史版本里程碑：本地图于 2026-09 随 Issue #116 冻结；各协议自身版本（如 MCP 2026-07-28、A2A 1.0.0、ACP v1 稳定 + v2 Draft、Agent Plugins 1.0.0）在各自详情页维护（2026-09-01 复核：MCP 与 A2A 无版本漂移，ACP 出现 v2 Draft，见其详情页）。
 
 ## 2. 使用
 

@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 5 · Reliable Operations ｜ **Previous layer exit**: can restrict permissions, pause/resume tasks ｜ **This layer exit**: can write deterministic tests for a probabilistic system and state which problems belong to evaluation
+> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can write deterministic tests for a probabilistic system and state which problems belong to evaluation
 > **Prerequisites**: [Structured Output](../02-inference-interface/structured-output), [Tool Execution Engineering](../05-action/tool-execution) ｜ **Next**: [Evaluation (Bridge)](evaluation.md) (probabilistic quality), [Observability](observability.md) (production evidence)
 
 ## 1. Overview
@@ -34,7 +34,7 @@ flowchart BT
     R --> F["④ failure injection: timeout / cancel / bad input / bad model output<br/>verify failure paths, not success paths"]
 ```
 
-The higher the level, the closer to reality — and the more expensive and slower; **there should be fewer of them**. Levels ①② form the CI workhorse, ③ provides regression protection, ④ guards the failure modes introduced in layer 4 (idempotency, cancellation, timeouts).
+The higher the level, the closer to reality — and the more expensive and slower; **there should be fewer of them**. Levels ①② form the CI workhorse, ③ provides regression protection, ④ guards the failure modes introduced in [Tool Execution](../05-action/tool-execution) (idempotency, cancellation, timeouts).
 
 ### Decision table: compared with adjacent verification approaches
 
@@ -71,7 +71,7 @@ Save the following as `ai-deterministic.test.mjs` (self-contained: code under te
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-// ---- Under test ①: structured-output validator (layer-1 failure acceptance) ----
+// ---- Under test ①: structured-output validator (the inference-interface group's failure acceptance) ----
 const CATEGORIES = ['billing', 'technical', 'other'];
 
 export function validateClassification(raw) {
@@ -92,7 +92,7 @@ export function validateClassification(raw) {
   return errors.length ? { ok: false, errors } : { ok: true, value: parsed };
 }
 
-// ---- Under test ②: tool executor (layer-4 timeout/cancel/allowlist) ----
+// ---- Under test ②: tool executor (the action group's timeout/cancel/allowlist) ----
 export async function runTool(registry, name, args, { timeoutMs = 100, signal } = {}) {
   const tool = registry[name];
   if (!tool) return { ok: false, error: 'tool_not_allowed' };
@@ -245,7 +245,7 @@ Does not duplicate the model internals of [Learn LLM](https://llm.zenheart.site/
 
 - **Snapshot the content**: snapshots storing full model text turn any temperature jitter red — snapshot schema shape only.
 - **Real model calls in CI**: slow, costly, non-deterministic — the classic "high coverage, weak evidence".
-- **Only happy paths**: zero tests for timeout/cancel/bad input leaves layer-4 failure modes naked in layer 5.
+- **Only happy paths**: zero tests for timeout/cancel/bad input leaves the action group's failure modes naked in production.
 - **Tests as evals**: regex-asserting probabilistic behaviors like "the model should apologize" — that is [evaluation](evaluation.md) territory.
 
 ## 5. Resource Library

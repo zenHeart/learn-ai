@@ -38,7 +38,7 @@ flowchart LR
 ### 何时使用 / 何时不用
 
 - **用**：任何多轮交互（聊天、迭代式编辑、带上下文的工具任务）。
-- **不用**：单次无状态的调用（分类、抽取、单轮问答）——直接构造 messages 即可；跨会话的长期记忆与知识沉淀——那是检索问题，去 [层 3](../04-grounding/embeddings-retrieval)。
+- **不用**：单次无状态的调用（分类、抽取、单轮问答）——直接构造 messages 即可；跨会话的长期记忆与知识沉淀——那是检索问题，去 [知识接地组](../04-grounding/embeddings-retrieval)。
 
 ### 决策表：会话状态放哪
 
@@ -52,7 +52,7 @@ flowchart LR
 
 ### 历史版本里程碑
 
-厂商在补服务端会话的便利层（如 OpenAI Responses 的 `previous_response_id` 服务端会话状态，retrievedAt 2026-09-01），但**会话状态的 ownership 仍在接入层**——厂商便利层不可移植，跨厂商迁移时你还是要自己管历史。
+厂商在补服务端会话的便利层（如 OpenAI Responses 的 `previous_response_id` 服务端会话状态，retrievedAt 2026-09-01），但**会话状态的 ownership 仍在接入层**——厂商便利层不可移植，且官方同时明示：即使走 `previous_response_id`，链上此前所有输入 token 仍按 input tokens 计费；跨厂商迁移时你还是要自己管历史。
 
 ## 2. 使用
 
@@ -183,9 +183,9 @@ writeA: { ok: true, version: 4 } | writeB: { ok: false, version: 4 }
 | 尾部窗口 | 保 system + 最近 N 轮 | 丢早期上下文 | 简单聊天 |
 | token 预算 | 保 system + 预算内最新内容（本页 fixture） | 同上，但成本可控 | 生产默认 |
 | 摘要压缩 | 旧轮摘要成一条 system/assistant 消息 | 摘要有损 + 一次额外调用 | 长会话 |
-| 检索式 | 旧内容转向量库按需检索 | 引入整套检索链 | 跨会话知识（→ [层 3](../04-grounding/rag)） |
+| 检索式 | 旧内容转向量库按需检索 | 引入整套检索链 | 跨会话知识（→ [RAG](../04-grounding/rag)） |
 
-token 估算：字符近似（如英文 4 字符 ≈ 1 token）只配做裁剪预算；**精确计数用厂商端点**（如 Anthropic 的 count tokens 接口，retrievedAt 2026-09-01）或 SDK 的计数工具。
+token 估算：字符近似（如英文 4 字符 ≈ 1 token）只配做裁剪预算；**精确计数用厂商端点**（如 Anthropic 的 count tokens 接口——免费、按档位限 RPM，retrievedAt 2026-09-01）或 SDK 的计数工具。注意同一段文本的 token 数随模型世代变化（Anthropic 标注 Fable 5 / Mythos 5 的 tokenizer 比 Opus 4.7 前的模型多产生约 30% token），估算常数要按当前模型重校。
 
 ### 失效与恢复
 
@@ -266,7 +266,7 @@ token 估算：字符近似（如英文 4 字符 ≈ 1 token）只配做裁剪�
 | Anthropic Count tokens 参考 | L0 | https://docs.anthropic.com | 精确 token 计数 | 计数端点存在与用法 | 替换启发式估算 |
 | MDN IndexedDB / Web Storage | L0 | https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API | 浏览器侧会话持久化 | 本地存储能力边界 | 前端回填 |
 | 本页 fixture | E | session-mock.mts（正文内联） | 零 key 验证 | 裁剪/恢复/乐观锁行为 | 换持久化实现 |
-| 上下文工程（本仓） | E | ../03-context/context-engineering | 窗口管理原理 | 裁剪策略的上下文视角 | 衔接层 1 |
+| 上下文工程（本仓） | E | ../03-context/context-engineering | 窗口管理原理 | 裁剪策略的上下文视角 | 衔接推理与接口组 |
 
 retrievedAt：全部网页资源 2026-09-01。
 
@@ -278,4 +278,4 @@ retrievedAt：全部网页资源 2026-09-01。
 
 ### learn-ai 到此为止 / 继续去哪
 
-本页管"会话内状态"。跨会话知识与私有事实 → [层 3 知识接地](../04-grounding/embeddings-retrieval)；会话中要执行动作与工具 → [层 4 工具执行工程](../05-action/tool-execution)；Agent 级的长期记忆与检查点 → [Agent 状态与记忆](../06-agent-systems/state-memory)。
+本页管"会话内状态"。跨会话知识与私有事实 → [嵌入与检索](../04-grounding/embeddings-retrieval)；会话中要执行动作与工具 → [工具执行工程](../05-action/tool-execution)；Agent 级的长期记忆与检查点 → [Agent 状态与记忆](../06-agent-systems/state-memory)。

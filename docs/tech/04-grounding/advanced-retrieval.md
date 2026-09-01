@@ -21,7 +21,7 @@ listed: true
 
 # Advanced Retrieval
 
-> **Layer**: 3 · Knowledge Grounding | **Previous layer exit**: run a cancellable, observable end-to-end interaction | **This layer exit**: raise recall with hybrid search, query rewriting, and reranking, and make permission filtering and citation fidelity invariants of the retrieval layer
+> **Group**: 4 · Grounding (reading the world) | **Previous group exit**: wire retrieval into the generation loop—answers cite sources, no-hit refuses, rebuild after updates ([RAG](rag.md)) | **This page exit**: raise recall with hybrid search, query rewriting, and reranking, and make permission filtering and citation fidelity invariants of the retrieval layer
 > **Prerequisites**: [RAG: Retrieval-Augmented Generation](rag.md) | **Next**: [Tool Execution Engineering](../05-action/tool-execution), [Evaluation (bridge)](../08-production/evaluation)
 
 ## 1. Overview
@@ -43,13 +43,12 @@ Seven things make up this page: **hybrid search** (BM25+vectors, RRF fusion), **
 ```mermaid
 flowchart LR
     Q[question] --> W[query rewrite / multi-query]
-    W --> B[BM25 lexical recall]
-    W --> V[vector semantic recall]
+    W --> B[BM25 lexical recall<br/>+ tenant/permission filter]
+    W --> V[vector semantic recall<br/>+ tenant/permission filter]
     B --> F[RRF fusion]
     V --> F
     F --> R[rerank cross-encoder]
-    R --> ACL[permission / tenant filter]
-    ACL --> G[top-k into generation, with chunk ids]
+    R --> G[top-k into generation, with chunk ids]
 ```
 
 ### When to use / when not to
@@ -70,7 +69,7 @@ flowchart LR
 
 - 2009: Reciprocal Rank Fusion published (Cormack, Clarke, Büttcher, SIGIR 2009)—simple reciprocal-rank fusion outperforming several learned fusion methods (DOI: 10.1145/1571941.1572114, verified via Semantic Scholar, retrievedAt 2026-09-01).
 - BM25 originates in Robertson et al.'s probabilistic retrieval framework (dates outside this verification pass—marked unverified); the Anthropic post's description of its mechanism is verified: TF-IDF plus term-frequency saturation and document-length normalization.
-- Anthropic Contextual Retrieval: content verified (see the table above); publish time outside this verification pass—marked unverified.
+- 2024-09-19: Anthropic published the Contextual Retrieval post—content verified (see the table above); the publish date was cross-checked against multiple independent secondary sources (retrievedAt 2026-09-01).
 
 ## 2. Usage
 

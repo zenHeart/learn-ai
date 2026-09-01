@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 5 · 可靠运营 ｜ **上一层出口**：能限制权限、暂停/恢复任务 ｜ **本层出口**：能为概率系统写出确定性测试，并说清哪些问题必须交给评估
+> **所在组**：Production ｜ **上一组出口**：能限制权限、暂停/恢复任务 ｜ **本组出口**：能为概率系统写出确定性测试，并说清哪些问题必须交给评估
 > **前置**：[结构化输出](../02-inference-interface/structured-output)、[工具执行工程](../05-action/tool-execution) ｜ **下一步**：[评估（桥接）](evaluation.md)（概率性质量）、[可观测性](observability.md)（线上证据）
 
 ## 1. 概述
@@ -34,7 +34,7 @@ flowchart BT
     R --> F["④ failure injection：超时 / 取消 / 坏输入 / 坏模型输出<br/>验证失败路径而非成功路径"]
 ```
 
-越往上越接近真实、越贵越慢；**数量应越少**。①② 构成 CI 主力，③ 提供回归保护，④ 守住层 4 引入的失败模式（幂等、取消、超时）。
+越往上越接近真实、越贵越慢；**数量应越少**。①② 构成 CI 主力，③ 提供回归保护，④ 守住[工具执行](../05-action/tool-execution)引入的失败模式（幂等、取消、超时）。
 
 ### 决策表：与相邻验证手段对比
 
@@ -71,7 +71,7 @@ flowchart BT
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-// ---- 被测 ①：结构化输出校验器（层 1 的失败验收落地）----
+// ---- 被测 ①：结构化输出校验器（推理接口组的失败验收落地）----
 const CATEGORIES = ['billing', 'technical', 'other'];
 
 export function validateClassification(raw) {
@@ -92,7 +92,7 @@ export function validateClassification(raw) {
   return errors.length ? { ok: false, errors } : { ok: true, value: parsed };
 }
 
-// ---- 被测 ②：工具执行器（层 4 的超时/取消/allowlist）----
+// ---- 被测 ②：工具执行器（行动组的超时/取消/allowlist）----
 export async function runTool(registry, name, args, { timeoutMs = 100, signal } = {}) {
   const tool = registry[name];
   if (!tool) return { ok: false, error: 'tool_not_allowed' };
@@ -245,7 +245,7 @@ CI 以非零退出码阻断合并——这就是「确定性测试接入发布�
 
 - **快照比内容**：snapshot 存了整段模型输出文字，任何温度波动都导致红——应只快照 schema 形状。
 - **CI 里调真模型**：慢、贵、非确定；这是「看似覆盖很高但证据不足」的典型。
-- **只测成功路径**：超时/取消/坏输入一个不测，层 4 的失败模式在层 5 裸奔。
+- **只测成功路径**：超时/取消/坏输入一个不测，行动组守住的失败模式在生产裸奔。
 - **测试当评估用**：用正则断言「模型应道歉」这类概率性行为——那是[评估](evaluation.md)的领地。
 
 ## 5. 资料库

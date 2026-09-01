@@ -18,7 +18,7 @@ listed: true
 
 # 流式响应
 
-> **在哪一层**：层 2 · 应用接入 ｜ **上一层出口**：能写并验证输入/输出 schema ｜ **本层出口**：能消费一次模型流——逐块累积、随时取消、中断可识别、结束原因可判断
+> **在哪一组**：推理与接口组 ｜ **上一组出口**：能写出带错误族分类、重试语义与用量观测的模型调用循环 ｜ **本页出口**：能消费一次模型流——逐块累积、随时取消、中断可识别、结束原因可判断
 > **前置**：[模型 API 契约](model-api.md) ｜ **下一步**：[会话与状态](../03-context/session-memory.md)、[生成式 UI](ui.md)
 
 ## 1. 概述
@@ -54,7 +54,7 @@ sequenceDiagram
 | WebSocket | 双向 | 自管协议、心跳、重连 | 可有状态 | 升级协议，需额外网关配置 | 中：需要双向时才值得 |
 | 轮询 | 客户端拉 | 完全自管 | 服务端存结果 | 普通 HTTP | 低但延迟差、浪费请求 |
 
-**默认 SSE**：模型流是纯单向推送，SSE 复用 HTTP 基础设施；只有需要边生成边上行输入（如实时语音打断）才上 WebSocket。
+**默认 SSE**：模型流是纯单向推送，SSE 复用 HTTP 基础设施；只有需要边生成边上行输入（如实时语音打断）才上 WebSocket。OpenAI Responses 现已提供官方 WebSocket 模式承载这类增量输入（retrievedAt 2026-09-01）——它解决的是"边生成边上行输入"，不是恢复中断的生成（见"原理"段），SSE 仍是默认的 HTTP 流路径。
 
 ### 历史版本里程碑
 
@@ -290,7 +290,7 @@ aborted: true | finish_reason: null
 | 名称 | 层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | MDN Using SSE | L0 | https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events | wire 格式权威 | 字段/空行分隔/重连/6 连接上限 | 写解析器 |
-| OpenAI Streaming 指南 | L0 | https://platform.openai.com/docs/guides/streaming | 厂商流式总览 | delta 结构、[DONE]、审核提示 | 接真实厂商 |
+| OpenAI Streaming 指南 | L0 | https://developers.openai.com/api/docs/guides/streaming-responses | 厂商流式总览 | Responses 语义事件、审核提示 | 接真实厂商 |
 | Anthropic Streaming 参考 | L0 | https://docs.anthropic.com | 事件生命周期 | message_start/delta/stop 事件族 | 接真实厂商 |
 | WHATWG HTML 规范 | L0 | https://html.spec.whatwg.org/multipage/server-sent-events.html | 语法规范 | 事件流语法与解析规则 | 需要精确定义时查 |
 | 本页 fixture | E | streaming-mock.mts（正文内联） | 零 key 验证 | 累积/取消/结束原因行为 | 换成真实厂商端点 |

@@ -21,7 +21,7 @@ listed: true
 
 # 高级检索
 
-> **在哪一层**：层 3 · 知识接地 ｜ **上一层出口**：能做一次可取消、可观测的端到端交互 ｜ **本层出口**：能用混合检索、查询改写与重排把召回质量提上去，并让权限过滤与引用忠实度成为检索层不变量
+> **所在组**：组 4 · 知识接地（读世界） ｜ **上一组出口**：能把检索接进生成循环——答案带出处、无命中拒答、更新后可重建（[RAG](rag.md)） ｜ **本页出口**：能用混合检索、查询改写与重排把召回质量提上去，并让权限过滤与引用忠实度成为检索层不变量
 > **前置**：[RAG：检索增强生成](rag.md) ｜ **下一步**：[工具执行工程](../05-action/tool-execution)、[评估（桥接）](../08-production/evaluation)
 
 ## 1. 概述
@@ -43,13 +43,12 @@ listed: true
 ```mermaid
 flowchart LR
     Q[问题] --> W[查询改写 / 多查询]
-    W --> B[BM25 词法召回]
-    W --> V[向量语义召回]
+    W --> B[BM25 词法召回<br/>+ 租户/权限过滤]
+    W --> V[向量语义召回<br/>+ 租户/权限过滤]
     B --> F[RRF 融合]
     V --> F
     F --> R[重排 cross-encoder]
-    R --> ACL[权限/租户过滤]
-    ACL --> G[top-k 进生成，带 chunk id]
+    R --> G[top-k 进生成，带 chunk id]
 ```
 
 ### 何时使用 / 何时不用
@@ -70,7 +69,7 @@ flowchart LR
 
 - 2009：Reciprocal Rank Fusion 发表（Cormack, Clarke, Büttcher，SIGIR 2009）——简单倒数排名融合胜过多种学习式融合（DOI: 10.1145/1571941.1572114，经 Semantic Scholar 核验，retrievedAt 2026-09-01）。
 - BM25 源自 Robertson 等人的概率检索框架（年代未在本次核验范围，标注未验证）；Anthropic 博文对其机制的描述已核验：在 TF-IDF 上加词频饱和与文档长度归一。
-- Anthropic Contextual Retrieval：内容已核验（见上表数字）；发布时间未在本次核验范围，标注未验证。
+- 2024-09-19：Anthropic 发布 Contextual Retrieval 博文——内容已核验（见上表数字）；发布日期经多个独立转载源交叉核验（retrievedAt 2026-09-01）。
 
 ## 2. 使用
 

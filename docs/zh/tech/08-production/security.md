@@ -20,7 +20,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 5 · 可靠运营 ｜ **上一层出口**：能限制权限、暂停/恢复任务 ｜ **本层出口**：能识别三层风险，并用输入过滤、权限边界与输出扫描的组合防线拦下注入负例
+> **所在组**：Production ｜ **上一组出口**：能限制权限、暂停/恢复任务 ｜ **本组出口**：能识别三层风险，并用输入过滤、权限边界与输出扫描的组合防线拦下注入负例
 > **前置**：[工具执行工程](../05-action/tool-execution)、[Agent 运行时](../06-agent-systems/agent-runtime) ｜ **下一步**：[部署与发布](deployment.md)（密钥管理、审计与人工批准的落地点）
 
 ## 1. 概述
@@ -31,9 +31,9 @@ listed: true
 
 ```mermaid
 flowchart TB
-    U["用户 / 外部内容"] --> G1["② 应用安全层（canonical）<br/>输入过滤 · 权限边界 · 输出扫描"]
+    U["用户 / 外部内容"] --> G1["② 应用安全层（canonical）<br/>三道防线：输入过滤 / 权限边界 / 输出扫描<br/>（分布在请求路径的入口、工具前、出口）"]
     G1 --> M["① 模型对齐层（桥接 → Learn LLM）<br/>模型被骗时的行为倾向"]
-    M --> G2["② 工具执行边界<br/>allowlist · SSRF 防护 · 超时"]
+    M --> G2["② 工具执行边界<br/>权限边界防线的落点：allowlist · SSRF 防护 · 超时"]
     G2 --> G3["③ 治理层<br/>版本 · 审计 · 人工批准 · 租户隔离"]
 ```
 
@@ -201,18 +201,18 @@ node guard-demo.mjs
 | LLM02 | Sensitive Information Disclosure | ②-3 泄露 |
 | LLM03 | Excessive Agency（升至第 3，2026 最重要变动） | ②-2 过度代理 |
 | LLM04 | Supply Chain（含模型工件信任失效） | ②-4 供应链 |
-| LLM05 | Data and Model Poisoning（吸收微调颠覆） | ②-4 + ①（数据侧归 [层 3](../04-grounding/) 更新链路） |
-| LLM06 | Unbounded Consumption（升 4 位） | 成本侧 → [成本与性能](cost-performance.md) 的预算熔断 |
-| LLM07 | Misinformation（事故数据将其拉高） | 质量侧 → [评估](evaluation.md) |
+| LLM05 | Data and Model Poisoning | ②-4 + ①（数据侧归[检索组](../04-grounding/)更新链路） |
+| LLM06 | Unbounded Consumption（较上版升 4 位） | 成本侧 → [成本与性能](cost-performance.md) 的预算熔断 |
+| LLM07 | Misinformation | 质量侧 → [评估](evaluation.md) |
 | LLM08 | Hidden Context Exposure（原 System Prompt Leakage 扩名） | ②-3 |
 | LLM09 | Vector and Embedding Weaknesses | 检索侧 → [高级检索](../04-grounding/advanced-retrieval) 的 ACL/ poisoned docs |
 | LLM10 | Improper Output Handling（降至第 10） | ②-6 输出处理 |
 
-边界声明（OWASP 官方）：该清单覆盖**模型作为组件**时的风险；模型一旦成为**行动者**（有工具、跨会话记忆、下游后果），风险划归 OWASP Agentic Top 10——与本仓层 4/层 5 的分界一致。
+边界声明（OWASP 官方）：该清单覆盖**模型作为组件**时的风险；模型一旦成为**行动者**（有工具、跨会话记忆、下游后果），风险划归 OWASP Agentic Top 10——与本仓 Agent 系统组 / Production 组的分界一致。
 
 ### 治理层锚点（NIST AI RMF）
 
-[NIST AI RMF 1.0](https://www.nist.gov/itl/ai-risk-management-framework)（2023-01-26 发布，自愿采用）以 GOVERN/MAP/MEASURE/MANAGE 四函数组织风险管理；其生成式 AI Profile（NIST AI 600-1，2024-07-26）给出 GenAI 特有行动项。本仓只取其工程含义：**风险要有 owner、有度量、有处置路径**——对应本层的版本化、审计日志、人工批准与租户隔离四件套。
+[NIST AI RMF 1.0](https://www.nist.gov/itl/ai-risk-management-framework)（2023-01-26 发布，自愿采用；NIST 官网注明 1.0 正随白宫 AI 行动计划修订，retrievedAt 2026-09-01）以 GOVERN/MAP/MEASURE/MANAGE 四函数组织风险管理；其生成式 AI Profile（NIST AI 600-1，2024-07-26）给出 GenAI 特有行动项。本仓只取其工程含义：**风险要有 owner、有度量、有处置路径**——对应本组的版本化、审计日志、人工批准与租户隔离四件套。
 
 ### 规范要求 vs 本地实测
 
@@ -267,7 +267,7 @@ node guard-demo.mjs
 | --- | --- | --- | --- | --- | --- |
 | OWASP GenAI LLM Top 10 2026 | L0（官方清单） | https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/ | 风险基线 | 2026-08-04 发布；十项定名与排序；事故语料校准（retrievedAt 2026-09-01） | 读 LLM01/03/10 全文 |
 | GenAI-LLM-Top10 仓库（2026/final） | L0（canonical 源） | https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/tree/main/2026/final | 逐项深读 | 序言确认「组件 vs 行动者」边界与 Agentic Top 10 分工（retrievedAt 2026-09-01） | 与 Agentic 清单对照 |
-| NIST AI RMF | L0（官方框架） | https://www.nist.gov/itl/ai-risk-management-framework | 治理层框架 | AI RMF 1.0 于 2023-01-26 发布、自愿采用；GenAI Profile 2024-07-26（retrievedAt 2026-09-01） | 读 AI 600-1 Profile |
+| NIST AI RMF | L0（官方框架） | https://www.nist.gov/itl/ai-risk-management-framework | 治理层框架 | AI RMF 1.0 于 2023-01-26 发布、自愿采用，正随白宫 AI 行动计划修订；GenAI Profile 2024-07-26（retrievedAt 2026-09-01） | 读 AI 600-1 Profile |
 | Learn LLM | sibling（跨仓 owner） | https://llm.zenheart.site/ | 模型对齐层机理 | bridge-register：本仓停止在「应用侧消费前提」（2026-09-01） | 其后训练章 |
 
 ### 主动证伪与未决问题

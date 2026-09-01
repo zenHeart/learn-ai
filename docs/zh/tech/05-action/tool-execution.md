@@ -18,12 +18,12 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能构建可追溯的检索链 ｜ **本层出口**：能把一次模型发起的动作放进一个可拒绝、可超时、可取消、可去重的受控执行器里
+> **所在组**：组 5 · 行动（写世界） ｜ **上一组出口**：能定义并校验工具调用契约（schema、白名单、参数验证、结果回传，[工具调用契约](../05-action/tool-calling)） ｜ **本页出口**：能把一次模型发起的动作放进一个可拒绝、可超时、可取消、可去重的受控执行器里
 > **前置**：[工具调用契约](../05-action/tool-calling)、[结构化输出](../02-inference-interface/structured-output) ｜ **下一步**：[工作流模式](../06-agent-systems/workflow.md)、[恢复与人工批准](../06-agent-systems/recovery-hitl.md)、[安全](../08-production/security)
 
 ## 1. 概述
 
-**结论先讲**：模型返回的 `tool_use` 只是一个「请求」，不是一次执行。层 1 的[工具调用契约](../05-action/tool-calling)规定了模型如何表达调用；本章规定**你的代码如何执行它**。凡是改变外部状态的动作（写文件、发请求、改数据库），都必须过五道门：**幂等去重 → allowlist → 参数校验 → 人工批准 → 超时与取消**。缺任何一道，重试、网络抖动或模型幻觉都会变成真实世界的副作用。
+**结论先讲**：模型返回的 `tool_use` 只是一个「请求」，不是一次执行。同组上游的[工具调用契约](../05-action/tool-calling)规定了模型如何表达调用；本章规定**你的代码如何执行它**。凡是改变外部状态的动作（写文件、发请求、改数据库），都必须过五道门：**幂等去重 → allowlist → 参数校验 → 人工批准 → 超时与取消**。缺任何一道，重试、网络抖动或模型幻觉都会变成真实世界的副作用。
 
 ### 心智模型：执行状态机
 
@@ -31,7 +31,9 @@ listed: true
 
 ```mermaid
 flowchart TD
-    P["pending"] --> G1{"allowlist 命中？"}
+    P["pending"] --> G0{"幂等键命中？"}
+    G0 -->|"是（此前已成功）"| X["复用既有结果，不执行"]
+    G0 -->|否| G1{"allowlist 命中？"}
     G1 -->|"否（默认拒绝）"| D["denied"]
     G1 -->|是| G2{"参数校验 + 批准门"}
     G2 -->|失败 / 未批准| D
@@ -48,6 +50,7 @@ flowchart TD
 
 - 用：任何会进入生产的工具调用——无论来自 agent 循环、workflow 还是单次 API 交互。
 - 不用：纯只读且无成本的查询在原型期可以裸调用；但只要它会出现在重试路径上，`readonly` 也是一种需要登记的副作用档位。
+- 不用（组边界）：多步编排、暂停/恢复、审批队列的完整闭环是 [Agent 系统组](../06-agent-systems/agent-runtime.md)（组 6）的主题——本页交付**单次动作的受控执行原语**，`approval` 档只留批准门钩子，审批流程本身在组 6 的[恢复与人工批准](../06-agent-systems/recovery-hitl.md)。
 
 ### 决策表
 
@@ -364,7 +367,7 @@ flowchart LR
 | strict 模式要求 `additionalProperties:false` + 全字段 required，保证调用匹配 schema | OpenAI function calling 文档（L1，retrievedAt 2026-09-01） | fixture 用手写 `validate()`；生产用 JSON Schema 校验库 |
 | 「模型可能一次返回多个调用」 | 同上 | agent 循环中逐个 `execute`，天然串行 |
 
-### 与层 1 的分工
+### 与工具调用契约页的分工（组内）
 
 [工具调用契约](../05-action/tool-calling)回答「模型如何**表达**调用」（schema、选择、验证）；本章回答「系统如何**执行**调用」。契约层把参数验证做在**发给模型前后**，执行层把验证做在**触碰世界之前**——前者防模型说错，后者防错误真的发生。
 
@@ -456,5 +459,5 @@ flowchart LR
 
 - 一次动作受控之后，多步如何组合与恢复：[工作流模式](../06-agent-systems/workflow.md)。
 - 审批队列、暂停/恢复的完整协议：[恢复与人工批准](../06-agent-systems/recovery-hitl.md)。
-- 注入、SSRF、提示词攻击的攻防全景：[安全](../08-production/security)（层 5）。
+- 注入、SSRF、提示词攻击的攻防全景：[安全](../08-production/security)（组 8 生产与运营）。
 - 工具执行质量如何被证明（而非演示）：[测试](../08-production/testing)与 [evals](https://evals.zenheart.site/)。

@@ -38,7 +38,7 @@ flowchart LR
 ### When to use / when not to
 
 - **Use**: any multi-turn interaction (chat, iterative editing, tool tasks with context).
-- **Do not use**: single stateless calls (classification, extraction, one-shot Q&A) — just build the messages array; cross-session long-term memory and knowledge consolidation — that is a retrieval problem, go to [Layer 3](../04-grounding/embeddings-retrieval).
+- **Do not use**: single stateless calls (classification, extraction, one-shot Q&A) — just build the messages array; cross-session long-term memory and knowledge consolidation — that is a retrieval problem, go to [Embeddings and Retrieval](../04-grounding/embeddings-retrieval).
 
 ### Decision table: where session state lives
 
@@ -52,7 +52,7 @@ flowchart LR
 
 ### Historical milestones
 
-Vendors have been adding server-side session conveniences (e.g., OpenAI Responses' `previous_response_id` server-side conversation state, retrievedAt 2026-09-01), but **ownership of session state still sits in this layer** — vendor conveniences are not portable; when migrating across vendors you still manage history yourself.
+Vendors have been adding server-side session conveniences (e.g., OpenAI Responses' `previous_response_id` server-side conversation state, retrievedAt 2026-09-01), but **ownership of session state still sits in this layer** — vendor conveniences are not portable, and the official docs also state plainly that even with `previous_response_id`, all previous input tokens in the chain are still billed as input tokens; when migrating across vendors you still manage history yourself.
 
 ## 2. Usage
 
@@ -183,9 +183,9 @@ The invariant: **the vendor API sees only this request's messages; "the session"
 | Tail window | keep system + last N turns | loses early context | simple chat |
 | Token budget | keep system + newest content within budget (this page's fixture) | same, but cost-capped | production default |
 | Summary compression | summarize old turns into one system/assistant message | lossy summary + one extra call | long conversations |
-| Retrieval-based | move old content to a vector store, retrieve on demand | a full retrieval pipeline | cross-session knowledge (→ [Layer 3](../04-grounding/rag)) |
+| Retrieval-based | move old content to a vector store, retrieve on demand | a full retrieval pipeline | cross-session knowledge (→ [RAG](../04-grounding/rag)) |
 
-Token estimation: a character approximation (e.g., ~4 English chars ≈ 1 token) is fit only for budget sizing; **exact counting uses the vendor endpoint** (e.g., Anthropic's count-tokens endpoint, retrievedAt 2026-09-01) or the SDK's counting utility.
+Token estimation: a character approximation (e.g., ~4 English chars ≈ 1 token) is fit only for budget sizing; **exact counting uses the vendor endpoint** (e.g., Anthropic's count-tokens endpoint — free to use, RPM-capped by tier, retrievedAt 2026-09-01) or the SDK's counting utility. Note that the token count of the same text shifts across model generations (Anthropic states that Fable 5 / Mythos 5 tokenizers produce roughly 30% more tokens than pre-Opus-4.7 models), so recalibrate estimation constants per model.
 
 ### Expiry and recovery
 
@@ -266,7 +266,7 @@ Concurrent requests on one session cause two kinds of pollution: **interleaved h
 | Anthropic Count tokens reference | L0 | https://docs.anthropic.com | exact token counting | endpoint existence and usage | replace the heuristic |
 | MDN IndexedDB / Web Storage | L0 | https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API | browser-side persistence | local storage boundaries | client hydration |
 | This page's fixture | E | session-mock.mts (inline) | zero-key verification | trim/restore/optimistic-lock behavior | swap in persistence |
-| Context Engineering (this repo) | E | ../03-context/context-engineering | window management principles | the context view of trimming | bridge to Layer 1 |
+| Context Engineering (this repo) | E | ../03-context/context-engineering | window management principles | the context view of trimming | bridge to the Inference & Interface group |
 
 retrievedAt: all web resources 2026-09-01.
 
@@ -278,4 +278,4 @@ retrievedAt: all web resources 2026-09-01.
 
 ### Where learn-ai stops / where to go next
 
-This page owns in-session state. Cross-session knowledge and private facts → [Layer 3 grounding](../04-grounding/embeddings-retrieval); executing actions and tools within a session → [Layer 4 tool execution](../05-action/tool-execution); agent-scale long-term memory and checkpoints → [Agent State and Memory](../06-agent-systems/state-memory).
+This page owns in-session state. Cross-session knowledge and private facts → [Embeddings and Retrieval](../04-grounding/embeddings-retrieval); executing actions and tools within a session → [Tool Execution Engineering](../05-action/tool-execution); agent-scale long-term memory and checkpoints → [Agent State and Memory](../06-agent-systems/state-memory).

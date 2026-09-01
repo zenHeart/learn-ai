@@ -12,13 +12,13 @@ owner: learn-ai
 externalOwners: []
 prerequisites: [protocol-map, mcp]
 next: [ag-ui, a2a]
-specVersion: "ACP protocolVersion 1（2026-09-01 检索）"
+specVersion: "ACP protocolVersion 1（stable）+ v2 Draft（2026-07-20 公告）（均 2026-09-01 检索）"
 lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能构建可追溯的检索链和更新路径 ｜ **本层出口**：能把一个编码 Agent 接进任意 ACP 编辑器，并说清它与 MCP/A2A 的分工
+> **所在组**：互操作 ｜ **上一组出口**：能构建可追溯的检索链和更新路径 ｜ **本组出口**：能把一个编码 Agent 接进任意 ACP 编辑器，并说清它与 MCP/A2A 的分工
 > **前置**：[协议地图](index.md) ｜ [MCP](mcp.md) ｜ **下一步**：[AG-UI](ag-ui.md) ｜ [A2A](a2a.md)
 
 ## 1. 概述
@@ -80,7 +80,9 @@ flowchart LR
 
 ### 历史版本里程碑
 
-`protocolVersion` 为整数主版本，当前 1；能力以增量方式演进（新增能力不算破坏性变更）。站点 updates 页记录演进（未逐条核验）。更早的历史与发布日期：未验证。
+`protocolVersion` 为整数主版本；**v1 是当前稳定版**。自 v1 发布以来，官方经 RFD 流程并入 15+ 个特性——`session/resume`（免重放重连）、`session/close`、`session/list`、`session/delete`、elicitation、additionalDirectories 等已陆续 stabilize（站点 announcements 页，2026-06 至 2026-07；未逐条核验）。
+
+**v2 已于 2026-07-20 进入 Draft**（公告原文，2026-09-01 检索）：schema 以 `v2.0.0-alphaX` 发布，五大主题——① 超越 turn：`session/update` 可在会话任意时刻发出，prompt 响应只表示「消息已被 Agent 确认」，不再是 turn 的终点；② 消息与工具调用按稳定 ID 流式更新、可替换（含撤回重发）；③ diff 重构为结构化文件变更（add/delete/modify/move/copy + 二进制场景，可选 `git_patch`）；④ 权限请求携带独立的 title/description 与可扩展 subject，不再硬绑 tool call；⑤ 枚举值接受 `_` 前缀未知变体，默认前向兼容。官方对 Draft 的使用边界说得很清楚：各处仍会变，实现必须用版本协商 + feature flag 门控，稳定前不上生产；**支持 v2 不等于弃 v1**——v1-only 对端将长期存在，双版本并存是官方建议。更早的历史与发布日期：未验证。
 
 ### 本章 DoD 自检
 
@@ -285,7 +287,7 @@ node acp-editor.mjs
 | 标准 turn | 普通文本 prompt | update 流 + `end_turn` | 日常问答/改码 | — |
 | 工具授权 | Agent 发 `request_permission` | 用户选择 allow/reject | 写文件、执行命令前 | 只读分析（可不问） |
 | 打断 | prompt 后发 `session/cancel` | `stopReason=cancelled` | 用户反悔/超时 | 已结束的 turn |
-| 会话恢复 | `session/load`（需 `loadSession:true`） | 重放历史 update | 跨重启续聊 | 本 fixture 未实现 |
+| 会话恢复 | `session/load`（重放历史，需 `loadSession:true`）或 `session/resume`（免重连重放，需 `sessionCapabilities.resume`） | 重放/恢复会话上下文 | 跨重启续聊 | 本 fixture 未实现 |
 | 资源回调 | Agent 调 `fs/read_text_file` 等 | 客户端代读写 | Agent 无直接磁盘权限时 | 本 fixture 未实现 |
 
 ## 3. 原理
@@ -296,7 +298,7 @@ ACP 的两条方法轴（简表，字段以官方 schema 为准）：
 
 | 方向 | 方法 / 通知 | 说明 |
 | --- | --- | --- |
-| Client → Agent | `initialize` / `authenticate` / `session/new` / `session/load` / `session/prompt` / `session/set_mode` / `logout` | 生命周期与输入 |
+| Client → Agent | `initialize` / `authenticate` / `session/new` / `session/load` / `session/resume` / `session/close` / `session/list` / `session/delete` / `session/prompt` / `session/set_mode` / `logout` | 生命周期与输入；`load`/`resume`/`close`/`list`/`delete` 均为能力门控，以 initialize 声明为准 |
 | Client → Agent（通知） | `session/cancel` | 打断当前 turn，无响应 |
 | Agent → Client | `session/request_permission` | 工具授权请求（请求-响应） |
 | Agent → Client（通知） | `session/update` | agent/user/thought 消息块、tool_call、plan、命令列表、模式变更 |
@@ -387,7 +389,7 @@ ACP 的两条方法轴（简表，字段以官方 schema 为准）：
 | Libraries（TS/Rust/Python/Kotlin） | L1 | https://agentclientprotocol.com/libraries/typescript 等各页 | 官方 SDK | 语言支持清单 | 用 SDK 替换手写 JSON-RPC |
 | ACP Registry | L2 | https://agentclientprotocol.com/get-started/registry | 兼容 Agent/客户端生态 | — | 选型时查兼容矩阵 |
 
-以上条目均于 2026-09-01 检索（站点 sitemap 显示 protocol/schema 更新于 2026-02-04）。
+以上条目均于 2026-09-01 检索（站点 sitemap 显示 protocol/v1/schema 更新于 2026-08-20）。
 
 ### 主动证伪与未决问题
 
@@ -395,5 +397,6 @@ ACP 的两条方法轴（简表，字段以官方 schema 为准）：
 - 未决 1：Streamable HTTP 传输仍标「draft proposal in progress」，远程 Agent 部署形态未定稿。
 - 未决 2：治理/所有权细节（Zed 主导到什么程度、是否基金会化）在 governance 页，未逐字核验。
 - 未决 3：RFD（mcp-over-acp、session-resume、logout 等）均为讨论稿，不作为能力承诺。
+- 未决 4：v2 的稳定时间表未公布（Draft 自 2026-07-20 起）；本页 fixture 与生命周期描述基于 v1 稳定面，接 v2 前先读官方迁移指南。
 
 **learn-ai 到此为止**：协议契约、编辑器-Agent 边界、可运行 fixture。**继续去哪**：模型内部 → Learn LLM；具体编辑器/Agent 产品的接入命令 → Products；评估 → evals 站点。

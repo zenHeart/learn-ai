@@ -18,12 +18,14 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**：能构建可追溯的检索链 ｜ **本层出口**：能判断何时值得上多 agent，写出四要素委派契约，用 supervisor 拓扑委派专家并在路由失败时降级而不是崩溃
+> **所在组**：Agent 系统 ｜ **上一层出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本层出口**：能判断何时值得上多 agent，写出四要素委派契约，用 supervisor 拓扑委派专家并在路由失败时降级而不是崩溃
 > **前置**：[Agent 运行时](agent-runtime.md)、[工作流模式](workflow.md) ｜ **下一步**：[A2A](../07-interoperability/a2a.md)（跨边界才需要协议）、[可观测性](../08-production/observability)、[成本与性能](../08-production/cost-performance)
 
 ## 1. 概述
 
 **结论先讲**：多 agent 不是更强的单 agent，而是**用协调换容量**的架构。它用独立上下文窗口做并行探索与压缩（subagent 把海量原始材料蒸馏成结论回传），换来单 agent 无法企及的覆盖面；代价是约 **15 倍于聊天**的 token 消耗、协调复杂度与错误传播。判断式只有三条，全部命中才考虑：**任务价值高到付得起、子方向天然可并行、信息量超出单一上下文**。缺任何一条，先回到[工作流](workflow.md)或单 agent。
+
+**范围先划清**：本页只讲**同一信任域内**（同 host / 同进程）spawn subagent 的编排；要把任务委派给**跨进程、跨组织、跨信任域**的 agent，不在本页展开——先过 [A2A](../07-interoperability/a2a.md)，按[协议地图](../07-interoperability/)选连接方向（判据见下文「关键边界」）。
 
 ### 心智模型：supervisor + 专家 + 产物
 
@@ -258,7 +260,7 @@ subagent 的产出质量上限由委派描述决定。Anthropic 的最小契约�
 
 ### 失败定位
 
-多 agent 的调试单位是**委派**：每次 `delegate` 记录 brief 摘要、路由结果、subagent 终态。行为是涌现的——supervisor 提示词的小改动会不可预测地改变 subagent 行为——所以评估以**终态**（end-state）为准而不是逐步骤路径：断言最终状态正确，而非路径符合预设。跨片因果链靠 trace 拼装（进层 5 [可观测性](../08-production/observability)）。
+多 agent 的调试单位是**委派**：每次 `delegate` 记录 brief 摘要、路由结果、subagent 终态。行为是涌现的——supervisor 提示词的小改动会不可预测地改变 subagent 行为——所以评估以**终态**（end-state）为准而不是逐步骤路径：断言最终状态正确，而非路径符合预设。跨片因果链靠 trace 拼装（进[生产与运营](../08-production/)组的[可观测性](../08-production/observability)）。
 
 ### 规范要求 vs 本地实测
 
@@ -354,5 +356,5 @@ subagent 的产出质量上限由委派描述决定。Anthropic 的最小契约�
 
 - specialist 的本体——单 agent 循环与状态记忆：[Agent 运行时](agent-runtime)。
 - 跨进程/组织/信任域的 agent 协作：[A2A](../07-interoperability/a2a.md)（先读[协议地图](../07-interoperability/)按连接方向选）。
-- 委派级 trace 与终态评估的落地：[可观测性](../08-production/observability)、[evals](https://evals.zenheart.site/)（层 5）。
+- 委派级 trace 与终态评估的落地：[可观测性](../08-production/observability)、[evals](https://evals.zenheart.site/)（生产与运营组）。
 - 15× token 的账怎么算：[成本与性能](../08-production/cost-performance)。

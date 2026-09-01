@@ -20,14 +20,14 @@ listed: true
 
 # 结构化输出
 
-> **在哪一层**：层 1 · 交互契约 ｜ **上一层出口**：能定位问题域、受众和下一入口 ｜ **本层出口**：能写出 JSON Schema 输出合同、在调用方加验证层与失败重试，并知道两类失败（拒答与截断）的验收方式
-> **前置**：[prompt](../03-context/prompt.md)、[context](../03-context/context-engineering.md) ｜ **下一步**：[tool-calling](../05-action/tool-calling.md)
+> **在哪一组**：推理与接口组 ｜ **上一组出口**：能把一条模糊需求改写成四要素齐全、可验收的提示 ｜ **本页出口**：能写出 JSON Schema 输出合同、在调用方加验证层与失败重试，并知道两类失败（拒答与截断）的验收方式
+> **前置**：[prompt](../03-context/prompt) ｜ **下一步**：[tool-calling](../05-action/tool-calling)
 
 ## 1. 概述
 
 **结论**：只要模型输出要进 `JSON.parse` 之后的代码，就把输出形状定义成 **JSON Schema（JSON Schema，一种描述 JSON 数据结构的规范）合同**，用厂商的约束解码执行，并在调用方保留独立验证层。在提示里写「请务必输出合法 JSON」不是合同——它没有机器可判定的失败条件。
 
-本页是层 1 的试点章节：完整的验证循环示例可以零 API key 运行，负例（缺字段、多余字段、类型错误）全部演示。
+本页的验证循环可以零 API key 运行：完整闭环加全部负例（缺字段、多余字段、类型错误）都有确定性演示。
 
 ### 心智模型：两条路线，一个不变量
 
@@ -63,7 +63,7 @@ listed: true
 | **信任域** | 不可信任 | 只信任「是 JSON」 | 信任形状，不信任语义 |
 | **最低复杂度** | 最低，但故障率不可控 | 低，已被官方标为旧路径（OpenAI 建议总是用 Structured Outputs 替代 JSON mode） | 略高（要维护 schema），产品默认档 |
 
-**版本里程碑**（均来自官方文档，检索日期 2026-09-01）：OpenAI Structured Outputs 自 `gpt-4o-mini-2024-07-18` 与 `gpt-4o-2024-08-06` 起支持 `response_format: json_schema`；Anthropic 结构化输出为公开 beta（beta 头 `structured-outputs-2025-11-13`），覆盖 Sonnet 4.5、Opus 4.1、Opus 4.5、Haiku 4.5。除此之外的采用率与时间线：未验证。
+**版本里程碑**（均来自官方文档，检索日期 2026-09-01）：OpenAI Structured Outputs 自 `gpt-4o-mini-2024-07-18` 与 `gpt-4o-2024-08-06` 起支持 `response_format: json_schema`；Anthropic 结构化输出已从公开 beta 转正（参数为 `output_config.format`；早期 beta 头 `structured-outputs-2025-11-13` 与旧参数名 `output_format` 已不出现在 2026-09-01 的文档中），覆盖 Sonnet 4.5/4.6/5、Opus 4.5–4.8/5、Fable 5、Mythos 5、Haiku 4.5。除此之外的采用率与时间线：未验证。
 
 ## 2. 使用
 
@@ -241,13 +241,13 @@ npx tsx@4 structured-output.ts > run1.txt && npx tsx@4 structured-output.ts > ru
 
 | 维度 | OpenAI | Anthropic |
 |---|---|---|
-| 输出格式参数 | `response_format: { type: 'json_schema', json_schema: { name, strict: true, schema } }`（Chat Completions）；`text.format`（Responses API） | `output_format: { type: 'json_schema', schema }`，需 beta 头 `structured-outputs-2025-11-13` |
+| 输出格式参数 | `response_format: { type: 'json_schema', json_schema: { name, strict: true, schema } }`（Chat Completions）；`text.format`（Responses API） | `output_config.format: { type: 'json_schema', schema }`（2026-09-01 文档；旧参数名 `output_format` 与 beta 头已不再出现） |
 | 工具参数约束 | function 定义上 `strict: true`（官方建议总是开启） | tool 定义上 `strict: true`（同一 beta） |
 | 支持的关键字 | 类型 + `enum` + `anyOf`；string 的 `pattern` / `format`（date-time、email、uuid 等）；number 的 `minimum` / `maximum` 等；array 的 `minItems` / `maxItems` | JSON Schema 子集；Python/TS SDK 会自动剥离不支持的关键字（如 `minimum`、`maxLength`），把约束改写进字段 description，再由 SDK 按你的原始 schema 做客户端校验 |
-| 硬性限制 | 根必须是 object（不能 `anyOf`）；所有字段必须 `required`（可选字段用 `type: ['string', 'null']` 模拟）；对象必须 `additionalProperties: false`；≤5000 个属性、≤10 层嵌套、≤1000 个枚举值 | schema 过于复杂或递归定义过多 → 400（`Schema is too complex` / `Too many recursive definitions in schema`） |
+| 硬性限制 | 根必须是 object（不能 `anyOf`）；所有字段必须 `required`（可选字段用 `type: ['string', 'null']` 模拟）；对象必须 `additionalProperties: false`；≤5000 个属性、≤10 层嵌套、≤1000 个枚举值 | 显式复杂度上限：strict 工具 ≤20、可选参数 ≤24、union 类型参数 ≤16；超出或编译语法过大 → 400（`Schema is too complex for compilation`，编译超时上限 180 秒） |
 | 明确不支持 | `allOf` / `not` / `if` / `then` / `else` / `dependentRequired` / `dependentSchemas`；微调模型暂不支持 `pattern` / `format` / 数值与数组约束 | 与 Citations 同用会 400；与 assistant 消息预填充（prefill）不兼容 |
-| 失败语义 | 安全拒答可编程检测（refusal）；`max_tokens` 截断时输出可能不完整 | `stop_reason: 'refusal'`（HTTP 200、照常计费、输出可不符 schema）；`stop_reason: 'max_tokens'` 截断 |
-| 其他特性 | 输出键顺序与 schema 一致 | 首次请求需编译语法（额外延迟），编译缓存 24 小时；仅改 `name` / `description` 不失效缓存 |
+| 失败语义 | 安全拒答可编程检测（refusal）；`max_tokens` 截断时输出可能不完整 | `stop_reason: 'refusal'`（HTTP 200、照常计费、输出可不符 schema）；`stop_reason: 'max_tokens'` 截断；枚举值大小写不保证精确匹配（官方建议枚举比较用大小写不敏感） |
+| 其他特性 | 首次请求需处理 schema（额外延迟），同 schema 后续请求无额外延迟；输出键顺序与 schema 一致 | 首次请求需编译语法（额外延迟），编译缓存 24 小时；仅改 `name` / `description` 不失效缓存 |
 
 开放模型生态同样有约束解码实现（[outlines](https://dottxt-ai.github.io/outlines/)、[xgrammar](https://github.com/mlc-ai/xgrammar)，检索 2026-09-01 均 200）；框架层（如 [Vercel AI SDK `generateObject`](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data)）把多厂商差异抽象成统一的 schema 入参。**逐家的支持子集会漂移**——上表的某一行可能在几个月后变化，接入前以官方文档当日为准。
 
@@ -287,7 +287,7 @@ npx tsx@4 structured-output.ts > run1.txt && npx tsx@4 structured-output.ts > ru
 #### R2 请求直接 400：schema 被拒
 
 **症状**：换 schema 后所有请求 400，模型一个 token 都没出。
-**证据**：错误体。OpenAI 会指明不支持的关键字（如 `allOf`）；Anthropic 报 `Schema is too complex` 或 `Too many recursive definitions in schema`。
+**证据**：错误体。OpenAI 会指明不支持的关键字（如 `allOf`）；Anthropic 报 `Schema is too complex for compilation`（显式上限：strict 工具 20、可选参数 24、union 参数 16）。
 **处理**：去掉 `allOf` / `not` / `if-then`，改写为扁平结构或 `anyOf`；拆小 schema；减少严格模式的工具数量（Anthropic 明示此解法）。
 **完成标准**：同一业务字段下 200 恢复；把被拒关键字记入团队 schema 约定。
 
@@ -341,6 +341,7 @@ npx tsx@4 structured-output.ts > run1.txt && npx tsx@4 structured-output.ts > ru
 
 ### 主动证伪与未决问题
 
+- Anthropic 参数名与 beta 状态已按 2026-09-01 复核更新（`output_format` → `output_config.format`，beta 头移除，模型面扩展到 Fable 5 / Mythos 5）；若你的代码仍用旧参数，以官方迁移说明为准。
 - 本页 mock 未接真实厂商。refusal 的 200-计费行为、语法编译首延迟只有官方文档佐证，未实测——接真 key 后先各跑一条拒答与截断样本再信。
 - OpenAI 对 `pattern` / `minimum` 的支持是后加的；旧资料（含本仓被本页取代的旧页）仍写着「收下但不强制」，已按 2026-09-01 文档更正。子集会继续漂移，复核周期建议 ≤ 6 个月。
 - 未决：嵌套 anyOf 根对象的官方推荐改写方式（两家文档都禁止根 anyOf，等价写法没有单一标准答案）。

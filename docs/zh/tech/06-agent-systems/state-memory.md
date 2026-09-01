@@ -52,7 +52,7 @@ flowchart TB
 | 控制权 | 运行时全控 | 运行时决定写什么 | 你控索引与更新节奏 | 你控快照粒度 |
 | 状态 | 内存内消息历史 | 进程外 KV / 文件 | 向量库 / 索引 | 每快照一份完整现场 |
 | 信任域 | 进程内 | 存储边界 | 数据源边界 | 存储边界（必须可信） |
-| 最低复杂度 | 无 | NOTES.md / todo 文件 | → [层 3 检索](../04-grounding/) | 每步序列化 |
+| 最低复杂度 | 无 | NOTES.md / todo 文件 | → [知识接地](../04-grounding/) | 每步序列化 |
 
 升级规则：**上一层失效才加下一层**——历史放不进窗口才落 notes；notes 多到翻不动才上检索；任务长到崩溃不可承受才做 checkpoint。
 
@@ -246,7 +246,7 @@ Anthropic 对长任务给的三件工具正好覆盖三层：compaction（workin
 
 ### 集成要点
 
-- **存储选型**：开发用 SQLite / 文件，生产用 Postgres 级别——LangGraph 文档明确警告内存版 checkpointer 重启即失。语义层选型回到[层 3 检索](../04-grounding/)，不在本页重复。
+- **存储选型**：开发用 SQLite / 文件，生产用 Postgres 级别——LangGraph 文档明确警告内存版 checkpointer 重启即失。语义层选型回到[知识接地](../04-grounding/)组，不在本页重复。
 - **序列化契约**：快照必须包含**重建运行时所需的一切**（状态、计划游标、工具结果摘要）。OpenAI 的口径是序列化运行状态 + 给待决任务打版本标记，防模型 / 提示变更后反序列化错位。
 
 ### 症状 → 证据 → 处理 → 完成标准
@@ -297,11 +297,11 @@ Anthropic 对长任务给的三件工具正好覆盖三层：compaction（workin
 
 | 名称 | 证据层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
-| Persistence（LangGraph） | L1（维护者） | https://langchain-ai.github.io/langgraph/concepts/persistence/ | checkpointer vs store 的原语划分 | 线程内短期 / 跨线程长期二分；快照膨胀故障（retrievedAt 2026-09-01） | 生产存储选型 |
+| Persistence（LangGraph） | L1（维护者） | https://docs.langchain.com/oss/python/langgraph/persistence | checkpointer vs store 的原语划分 | 线程内短期 / 跨线程长期二分；快照膨胀故障（retrievedAt 2026-09-01，本轮复核时页面已迁至 docs.langchain.com，旧 langchain-ai.github.io 地址重定向中） | 生产存储选型 |
 | Effective context engineering for AI agents（Anthropic） | L1（维护者） | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | 长任务三技术：compaction / 笔记 / 子 agent | context rot；子 agent 回传蒸馏摘要（retrievedAt 2026-09-01） | [上下文工程](../03-context/context-engineering) |
-| Agents guide（OpenAI） | L1（维护者） | https://platform.openai.com/docs/guides/agents | SDK 视角的 sessions 与可恢复运行状态 | 运行状态可序列化续跑（retrievedAt 2026-09-01） | [恢复与人工批准](recovery-hitl.md) |
+| Human-in-the-loop（OpenAI Agents SDK） | L1（维护者） | https://openai.github.io/openai-agents-python/human_in_the_loop/ | `RunState` 的可序列化运行状态与待决任务版本标记 | 运行状态可序列化续跑；模型 / 提示变更前给待决任务打版本标记（retrievedAt 2026-09-01） | [恢复与人工批准](recovery-hitl.md) |
 | Learn LLM 第 16 章 | sibling | https://llm.zenheart.site/chapters/ | LangGraph 状态机制推导 | 机制推导归 Learn LLM（retrievedAt 2026-09-01） | [multi-agent](multi-agent.md) |
-| 本仓层 3 · 知识接地 | 本仓 | [03-grounding](../04-grounding/) | 语义层的检索与新鲜度 | 语义记忆 = 检索问题 | [嵌入与检索](../04-grounding/) |
+| 本仓 · 知识接地组 | 本仓 | [04-grounding](../04-grounding/) | 语义层的检索与新鲜度 | 语义记忆 = 检索问题 | [嵌入与检索](../04-grounding/) |
 
 ### 主动证伪与未决问题
 
@@ -312,4 +312,4 @@ Anthropic 对长任务给的三件工具正好覆盖三层：compaction（workin
 
 - 恢复策略（重试 / 回退 / 补偿）与人工批准：[恢复与人工批准](recovery-hitl.md)。
 - 单次调用进窗口的 token 构成：[上下文工程](../03-context/context-engineering)。
-- 语义记忆的检索机制：Learn LLM 第 11 章与本仓[层 3](../04-grounding/)。
+- 语义记忆的检索机制：Learn LLM 第 11 章与本仓[知识接地组](../04-grounding/)。

@@ -18,7 +18,7 @@ listed: true
 
 # Generative UI
 
-> **Layer**: 2 · Application Integration ｜ **Previous layer exit**: can write and validate input/output schemas ｜ **This layer exit**: can render model output as whitelisted components — streamed, schema-validated, with untrusted content rejected
+> **Group**: Inference & Interface ｜ **Previous group exit**: can consume one model stream — accumulate chunks, cancel at any time, recognize interruption, and read the finish reason ｜ **This topic exit**: can render model output as whitelisted components — streamed, schema-validated, with untrusted content rejected
 > **Prerequisites**: [Structured Output](../02-inference-interface/structured-output), [Streaming](streaming.md) ｜ **Next**: [AG-UI Protocol](../07-interoperability/ag-ui), [A2UI and MCP Apps](../07-interoperability/a2ui-mcp-apps)
 
 ## 1. Overview
@@ -39,7 +39,7 @@ flowchart LR
 ### When to use / when not to
 
 - **Use**: answers that are fundamentally data displays (weather, quotes, checklists, form drafts); mixing text and rich components inside one chat stream.
-- **Do not use**: answers that are fundamentally prose (text is the best form); when the model must operate real systems rather than display — that is a [Layer 4](../05-action/tool-execution) execution concern; when arbitrary third-party hosts must render your agent UI — that is a protocol concern ([AG-UI](../07-interoperability/ag-ui), [A2UI](../07-interoperability/a2ui-mcp-apps); this page provides only the conceptual base).
+- **Do not use**: answers that are fundamentally prose (text is the best form); when the model must operate real systems rather than display — that is a [Tool Execution Engineering](../05-action/tool-execution) concern; when arbitrary third-party hosts must render your agent UI — that is a protocol concern ([AG-UI](../07-interoperability/ag-ui), [A2UI](../07-interoperability/a2ui-mcp-apps); this page provides only the conceptual base).
 
 ### Decision table: three shapes of model-driven interface
 
@@ -54,7 +54,7 @@ flowchart LR
 ### Historical milestones
 
 - Early implementations rendered "model-emitted JSON/JSX" directly (including RSC streamed-component approaches); the mainstream has since converged on "tool calls + component binding" (the Vercel AI SDK v7 shape, retrievedAt 2026-09-01).
-- Protocol tracks (AG-UI, A2UI/MCP Apps) emerged after 2025 and belong to Layer 4; not expanded here.
+- Protocol tracks (AG-UI, A2UI/MCP Apps) emerged after 2025 and belong to the interoperability group ([07](../07-interoperability/ag-ui)); not expanded here.
 
 ## 2. Usage
 
@@ -183,13 +183,13 @@ Cleanup: delete the file.
 ### The four stages of the render pipeline
 
 1. **Description**: the model emits a structured component description (NDJSON events in this page's fixture; the product path is usually tool-call parameters and results, see [Tool Calling Contract](../05-action/tool-calling)).
-2. **Validation**: the description must pass both schema (shape) and whitelist (type and prop range) — the Layer 1 exit applied here directly.
+2. **Validation**: the description must pass both schema (shape) and whitelist (type and prop range) — the [Structured Output](../02-inference-interface/structured-output) exit applied here directly.
 3. **Binding**: a legal description maps to a real component; only whitelisted props reach the component.
 4. **Fallback**: any illegal description degrades to text display and never breaks the whole stream.
 
 ### Combining with streaming
 
-Component events arrive in a partial-JSON state mid-stream (a line cut by the network), and the countermeasure matches [Streaming](streaming.md): **buffer at event boundaries, parse when complete**. In the product path a tool call has three states (matching Vercel AI SDK v7's tool-part states, retrievedAt 2026-09-01): `input-available` (args complete, show a skeleton) → `output-available` (data complete, render the component) → `output-error` (show an error state).
+Component events arrive in a partial-JSON state mid-stream (a line cut by the network), and the countermeasure matches [Streaming](streaming.md): **buffer at event boundaries, parse when complete**. In the product path a tool call has three states (matching Vercel AI SDK v7's tool-part states, with part type `tool-${toolName}`, retrievedAt 2026-09-01): `input-available` (args complete, show a skeleton) → `output-available` (data complete, render the component) → `output-error` (show an error state).
 
 ### The security boundary (the most important principle on this page)
 
@@ -250,7 +250,7 @@ Component events arrive in a partial-JSON state mid-stream (a line cut by the ne
 - Silently dropping failed validations — the user never learns content was swallowed; show fallback and log.
 - Passing model output straight through to component props (no whitelist) — the injection surface grows with the props.
 - Storing only the render result instead of the structured description — history stops being replayable.
-- Pulling a cross-host UI protocol into a single product — a complexity mismatch (protocols stay in Layer 4).
+- Pulling a cross-host UI protocol into a single product — a complexity mismatch (protocols stay in the interoperability group).
 
 ## 5. Resource Library
 
@@ -269,7 +269,7 @@ Component events arrive in a partial-JSON state mid-stream (a line cut by the ne
 | Vercel AI SDK: Chatbot Tool Usage | L0 | https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage | tool rendering details | tool-part rendering patterns | extend the component set |
 | OWASP Prompt Injection material | L1 | https://owasp.org/www-project-top-ten/ | injection risk background | why model output is untrusted | build injection tests |
 | This page's fixture | E | ui-mock.mts (inline) | zero-key verification | whitelist rejection behavior | swap in real tool calls |
-| AG-UI (this repo, Layer 4) | E | ../07-interoperability/ag-ui | protocol deep-dive | event/state/interrupt semantics | when going cross-host |
+| AG-UI (this repo, interoperability group) | E | ../07-interoperability/ag-ui | protocol deep-dive | event/state/interrupt semantics | when going cross-host |
 
 retrievedAt: all web resources 2026-09-01.
 

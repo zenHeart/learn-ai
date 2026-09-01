@@ -348,7 +348,7 @@ OpenAI's fail-closed detail is worth copying: when the SDK cannot safely inspect
 
 - **Gate placement**: declare it on the tool (`requiresApproval`), not scattered through business code — the gate travels with the tool definition, so every loop calling the same tool passes the same gate.
 - **Sticky approvals**: "always approve for this run" must be explicit (OpenAI's `always_approve`) and scoped to the current run only; never inherited across sessions.
-- **Audit**: every approve / reject / timeout decision, with the request's five fields, lands in the audit log and feeds layer 5 [observability](../08-production/observability).
+- **Audit**: every approve / reject / timeout decision, with the request's five fields, lands in the audit log and feeds the [Production](../08-production/) group's [observability](../08-production/observability).
 
 ### Symptom -> Evidence -> Action -> Done criteria
 
@@ -400,7 +400,7 @@ Four-level reading route:
 | Name | Evidence level | Canonical URL | Purpose | Supported claim | Next |
 | --- | --- | --- | --- | --- | --- |
 | Human-in-the-loop (OpenAI Agents SDK) | L1 (maintainer) | https://openai.github.io/openai-agents-python/human_in_the_loop/ | Production semantics of needs_approval / interruptions / RunState | Fail-closed parsing, sticky approvals, serializable pending state (retrievedAt 2026-09-01) | Official example repo |
-| Persistence (LangGraph) | L1 (maintainer) | https://langchain-ai.github.io/langgraph/concepts/persistence/ | Interruption and resume built on the checkpointer primitive | HITL requires thread-scoped persistent state (retrievedAt 2026-09-01) | [State and Memory](state-memory.md) |
+| Persistence (LangGraph) | L1 (maintainer) | https://docs.langchain.com/oss/python/langgraph/persistence | Interruption and resume built on the checkpointer primitive | HITL requires thread-scoped persistent state (retrievedAt 2026-09-01; the page has moved to docs.langchain.com) | [State and Memory](state-memory.md) |
 | Building Effective Agents (Anthropic) | L1 (maintainer) | https://www.anthropic.com/research/building-effective-agents | The positioning of agents pausing at checkpoints for human feedback | "pause for human feedback at checkpoints or when encountering blockers" (retrievedAt 2026-09-01) | [Agent Runtime](agent-runtime.md) |
 | Computer use tool (Anthropic docs) | L0 (official docs) | https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/computer-use-tool | Approval for sensitive actions must run before each block in a batch | Consequential actions in batches need per-block confirmation (retrievedAt 2026-09-01) | [Computer Use](computer-use.md) |
 | This repo · Tool Execution Engineering | this repo | [tool-execution](../05-action/tool-execution.md) | Idempotency / timeouts / cancellation / side effects | The precondition engineering for retry and compensation | [Security](../08-production/security) |
@@ -413,5 +413,5 @@ Four-level reading route:
 ### learn-ai stops here / where to go next
 
 - Approval for sensitive operations in interface automation: [Computer Use](computer-use.md).
-- The injection and privilege-escalation attack surface: layer 5 [security](../08-production/security).
+- The injection and privilege-escalation attack surface: the [Production group's security](../08-production/security).
 - Distributed-consistency theory of sagas / compensating transactions: see distributed-transaction literature (not expanded in this repo).

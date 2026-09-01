@@ -348,7 +348,7 @@ OpenAI 的 fail-closed 细节值得抄：当 SDK 无法安全解析工具参数�
 
 - **门的位置**：声明在工具上（`requiresApproval`），不是散在业务代码里——这样门随工具定义走，任何循环调用同一工具都过同一道门。
 - **粘性批准**：同一工具的「本次运行内始终批准」要显式（OpenAI 的 `always_approve`），且只作用于当前运行；跨会话不继承。
-- **审计**：每个批准 / 拒绝 / 超时决定连同请求五要素落审计日志，进层 5 [可观测性](../08-production/observability)。
+- **审计**：每个批准 / 拒绝 / 超时决定连同请求五要素落审计日志，进[生产与运营](../08-production/)组的[可观测性](../08-production/observability)。
 
 ### 症状 → 证据 → 处理 → 完成标准
 
@@ -400,7 +400,7 @@ OpenAI 的 fail-closed 细节值得抄：当 SDK 无法安全解析工具参数�
 | 名称 | 证据层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | Human-in-the-loop（OpenAI Agents SDK） | L1（维护者） | https://openai.github.io/openai-agents-python/human_in_the_loop/ | needs_approval / interruptions / RunState 的生产语义 | fail-closed 解析、粘性批准、可序列化待决状态（retrievedAt 2026-09-01） | 官方示例仓库 |
-| Persistence（LangGraph） | L1（维护者） | https://langchain-ai.github.io/langgraph/concepts/persistence/ | 中断与恢复建在 checkpoint 原语上 | HITL 需要 thread 级状态持久化（retrievedAt 2026-09-01） | [状态与记忆](state-memory.md) |
+| Persistence（LangGraph） | L1（维护者） | https://docs.langchain.com/oss/python/langgraph/persistence | 中断与恢复建在 checkpoint 原语上 | HITL 需要 thread 级状态持久化（retrievedAt 2026-09-01，页面已迁至 docs.langchain.com） | [状态与记忆](state-memory.md) |
 | Building Effective Agents（Anthropic） | L1（维护者） | https://www.anthropic.com/research/building-effective-agents | agent 在检查点暂停等人反馈的定位 | 「检查点暂停 / 遇阻塞返回人类」（retrievedAt 2026-09-01） | [Agent 运行时](agent-runtime.md) |
 | Computer use tool（Anthropic docs） | L0（官方文档） | https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/computer-use-tool | 敏感动作批准要插在批执行每个块之前 | batch 内后果性动作需逐块确认（retrievedAt 2026-09-01） | [Computer Use](computer-use.md) |
 | 本仓 · 工具执行工程 | 本仓 | [tool-execution](../05-action/tool-execution.md) | 幂等 / 超时 / 取消 / 副作用 | 重试与补偿的前提工程 | [安全](../08-production/security) |
@@ -413,5 +413,5 @@ OpenAI 的 fail-closed 细节值得抄：当 SDK 无法安全解析工具参数�
 ### learn-ai 到此为止 / 继续去哪
 
 - 界面自动化里的敏感操作批准：[Computer Use](computer-use.md)。
-- 注入与越权的攻击面：层 5 [安全](../08-production/security)。
+- 注入与越权的攻击面：[生产与运营组的安全](../08-production/security)。
 - saga / 补偿事务的分布式一致性理论：见分布式事务文献（本仓不展开）。

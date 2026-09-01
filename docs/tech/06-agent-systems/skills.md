@@ -41,7 +41,7 @@ flowchart TB
     A --> B --> C
 ```
 
-The key invariant: **most skills stay at tier ①**. One hundred skills cost only ~10k tokens of metadata budget; only the skill matched by the task puts its body into context. This is progressive disclosure — context engineering (layer 1) applied to capability packaging.
+The key invariant: **most skills stay at tier ①**. One hundred skills cost only ~10k tokens of metadata budget; only the skill matched by the task puts its body into context. This is progressive disclosure — context engineering applied to capability packaging.
 
 ### When to use / when not to
 
@@ -232,6 +232,18 @@ result: 3 failure(s): name matches ^[a-z0-9]+(-[a-z0-9]+)*$ and is <= 64 chars; 
 exit=1
 ```
 
+### Step 5: post-install verification (how to confirm it works after installing)
+
+Structural validation only proves "the file is well-formed", not "the host is using it". After dropping the skill into the host's skills directory, pass three gates — each gate has a different failure path:
+
+| Gate | Checks | How | On failure |
+| --- | --- | --- | --- |
+| ① Structure | the file is valid | `node validate-skill.mjs <skill-dir>` exits 0 | fix the frontmatter against the step 4 negative output |
+| ② Discovery | the host can see it | restart the host, then find the skill in its skill list/debug output | check the install path is inside the host's scan scope (this repository's convention is `.claude/skills/<name>/SKILL.md`; the wrong level is never discovered) |
+| ③ Triggering | a task drives it | send a natural-language task that should hit; watch the skill activate and its steps execute; then send a neighboring unrelated task and confirm it does not trigger | rewrite the description (§4 triggering runbook) |
+
+Note that gate ② depends on the host lifecycle: hosts usually scan the skills directory **at startup** — verifying ③ immediately after installing, without a restart, yields a false negative.
+
 ### Acceptance and cleanup
 
 - Acceptance: happy path exits 0 and the negative case exits 1, with output matching the above.
@@ -268,6 +280,35 @@ Directory conventions: `SKILL.md` is required; `scripts/` (executable code), `re
 | ① Metadata | host startup, all skills | ~100 tokens per skill | name + description |
 | ② Body | skill activated by a matching task | < 5000 tokens recommended; body under 500 lines | the SKILL.md Markdown body |
 | ③ Resources | when the body references them | on demand, per file | scripts / references / assets |
+
+### The Goldilocks Zone: a good Skill is not the most detailed one
+
+"More detail is more reliable" does not hold for Skills — over-specification fails at three distinct layers:
+
+| Excess | Failure mechanism |
+| --- | --- |
+| description too long or too broad | the hit surface widens; neighboring tasks trigger too (the lesion of the §4 interference runbook); over 1024 chars it violates the spec outright |
+| body too detailed | the body enters context **in full** on every activation: when a task uses only a small part, the rest wastes budget, and the more instructions, the lower the per-instruction adherence |
+| every edge case written as a rule | maintenance cost grows linearly with rule count; once rules drift from the real procedure they are worse than no rules — the model faithfully executes stale steps |
+
+The right granularity (the Goldilocks Zone): the body carries only the **procedure skeleton and decision points** (what to do, when, and the done-criteria); detail sinks into `references/` for on-demand loading. Litmus test: delete any paragraph of the body — if most tasks are unaffected, that paragraph should sink.
+
+### Token economics: costing progressive disclosure
+
+Every skill carries two costs with different payment moments:
+
+- **Standing cost**: ~100 tokens per skill (name + description), paid **in every session** regardless of use. One hundred skills ≈ 10k standing tokens — retiring untriggered skills is budget management, not tidiness.
+- **Activation cost**: the full body (recommended < 5000 tokens), paid **only on a hit**. The counterfactual: without progressive disclosure, 100 skills × 5000 tokens = 500k standing tokens — beyond any usable context window; progressive disclosure turns that multiplication into an addition paid only by the matched skill.
+
+The boundary question when writing the body: "does every execution need this paragraph, or only some?" Every time → keep it in the body; occasionally → move it to `references/` and leave one line in the body saying when to read which file.
+
+### Skill conflict handling: when multiple skills compete for one task
+
+What happens when two descriptions both match a task? The spec defines **no** priority or mutual-exclusion mechanism — triggering and scheduling are host behavior, not format contract (the agentskills.io spec covers format and loading only, with no triggering-priority clause; verified 2026-09-01). Handle it in three layers:
+
+1. **Prevention at writing time (the main battleground)**: one skill, one domain; state exclusions explicitly in the description ("Not for ..."); distinguish neighboring skills by object words — one owns "commit messages", another "changelogs"; do not let both say "handles git text".
+2. **Observation at host time**: common hosts either let the model pick one by relevance, or load multiple matched skills side by side — the latter puts two bodies into context at once, diluting both. Which kind is yours? Measure with one dual-hit task; do not assume.
+3. **Convergence at repair time**: on false hits, split or narrow the description (§4 interference runbook); if two skills always trigger and get used together, consider merging them rather than permanent coexistence.
 
 ### Triggering is semantic matching, not keyword registration
 

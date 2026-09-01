@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 5 · Reliable Operations ｜ **Previous layer exit**: can restrict permissions, pause/resume tasks ｜ **This layer exit**: can define the release gate, the rollback path, and the on-call owners, and run a health check with graceful shutdown
-> **Prerequisites**: [Testing](testing.md), [Evaluation (Bridge)](evaluation.md), [Observability](observability.md), [Security](security.md), [Cost and Performance](cost-performance.md) ｜ **Next**: [Resource Library](../../resources.md) (layer exit)
+> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can define the release gate, the rollback path, and the on-call owners, and run a health check with graceful shutdown
+> **Prerequisites**: [Testing](testing.md), [Evaluation (Bridge)](evaluation.md), [Observability](observability.md), [Security](security.md), [Cost and Performance](cost-performance.md) ｜ **Next**: [Resource Library](../../resources.md) (group exit)
 
 ## 1. Overview
 
@@ -158,7 +158,7 @@ The gate's value is **impartiality**: a one-line prompt change walks the same ch
 2. **Prompt**: prompts versioned in the repo (e.g. `prompts/v12/classify.txt`), selected at runtime by configuration; rollback = switch back to `v11`.
 3. **Model**: the model version is a configuration item; rollback = a config change deploy, minutes not hours. **Dual-write switching**: the new model first runs in shadow mode (results recorded, not returned to users); after [evaluation](evaluation.md) comparison meets the bar, shift traffic by percentage (1% → 10% → 100%), rolling back on anomaly.
 
-Independent rollback across the three axes covers the vast majority of incidents; only when the **data** (index/memory) itself is corrupted is data-layer recovery needed — that is the [layer 3](../04-grounding/) update-chain problem.
+Independent rollback across the three axes covers the vast majority of incidents; only when the **data** (index/memory) itself is corrupted is data-layer recovery needed — that is the [grounding group](../04-grounding/) update-chain problem.
 
 ### Canary and observability reconciliation
 
@@ -185,7 +185,7 @@ No protocol spec here; the "spec" side is the common orchestration convention (S
 
 **Symptom**: error rate rises after release.
 **Evidence**: the canary dashboards (error rate/cost/latency) comparing pre/post shift; trace sampling pinpoints the failing segment (→[observability](observability.md)).
-**Action**: roll back along the version axes — first determine whether the change belongs to code/prompt/model, and switch that axis back; data-axis problems recover via layer 3 instead.
+**Action**: roll back along the version axes — first determine whether the change belongs to code/prompt/model, and switch that axis back; data-axis problems recover via the grounding group's update chain instead.
 **Done when**: metrics return to the baseline band; the incident record includes "which axis, how many minutes to switch, which gate should tighten".
 
 ### Symptom → Evidence → Action → Done when
@@ -236,4 +236,4 @@ Four-level reading route:
 
 - Deployment and capacity knowledge for self-hosted inference engines: [Learn LLM](https://llm.zenheart.site/).
 - The detailed engineering of each gate: [Testing](testing.md), [Evaluation (Bridge)](evaluation.md), [Security](security.md), [Cost and Performance](cost-performance.md).
-- The full resource index after this layer: [Resource Library](../../resources.md).
+- The full resource index after this group: [Resource Library](../../resources.md).

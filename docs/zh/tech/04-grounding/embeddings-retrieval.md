@@ -21,7 +21,7 @@ listed: true
 
 # 嵌入与检索
 
-> **在哪一层**：层 3 · 知识接地 ｜ **上一层出口**：能做一次可取消、可观测的端到端交互 ｜ **本层出口**：能搭一个带元数据过滤与无命中路径的向量检索入口，并知道换模型必须重建索引
+> **所在组**：组 4 · 知识接地（读世界） ｜ **上一组出口**：能写并验证输入输出 schema，并交付一次可取消、可观测的端到端交互（组 2–3） ｜ **本页出口**：能搭一个带元数据过滤与无命中路径的向量检索入口，并知道换模型必须重建索引
 > **前置**：[模型 API 契约](../02-inference-interface/model-api) ｜ **下一步**：[RAG：检索增强生成](rag.md)、[高级检索](advanced-retrieval.md)
 
 ## 1. 概述
@@ -53,7 +53,7 @@ flowchart LR
 ### 何时使用 / 何时不用
 
 - **用**：自然语言问题、表述多变、跨大量文档找"讲这件事的段落"；推荐、聚类、异常检测等相似度任务（OpenAI 指南列举的用途，retrievedAt 2026-09-01）。
-- **不用**：精确标识符（错误码、函数名、订单号）——先 grep / 全文检索 / [BM25](advanced-retrieval.md)；语料小到能整批塞进上下文——直接塞（见 [层 3 决策表](index.md)）。
+- **不用**：精确标识符（错误码、函数名、订单号）——先 grep / 全文检索 / [BM25](advanced-retrieval.md)；语料小到能整批塞进上下文——直接塞（见 [本组决策表](index.md)）。
 
 ### 决策表：检索方式对比
 
@@ -66,7 +66,7 @@ flowchart LR
 ### 历史版本里程碑
 
 - 2016：HNSW 图索引发表（Malkov & Yashunin，arXiv:1603.09320）：多层近邻图、对数复杂度、结构类似跳表（retrievedAt 2026-09-01）。
-- Matryoshka 表示学习（arXiv:2205.13147）：训练出的向量可截短前若干维而不丢主要语义；OpenAI `text-embedding-3` 系列与 Cohere `embed-v4.0` 都实现了该特性（retrievedAt 2026-09-01）。`text-embedding-3` 系列的发布时间未在本次核验范围，标注未验证。
+- Matryoshka 表示学习（arXiv:2205.13147）：训练出的向量可截短前若干维而不丢主要语义；OpenAI `text-embedding-3` 系列与 Cohere `embed-v4.0` 都实现了该特性——Cohere 经 `output_dimension` 参数支持 256/512/1024/1536 档（retrievedAt 2026-09-01）。`text-embedding-3` 系列的发布时间未在本次核验范围，标注未验证。
 
 ## 2. 使用
 
@@ -249,6 +249,7 @@ HNSW 论文（arXiv:1603.09320，retrievedAt 2026-09-01）描述的结构：元�
 | 查询/文档嵌入 | Cohere 要求 `input_type` 区分 `search_query` / `search_document` | 教学哈希无此区分（换真模型时要加） |
 | 向量维度 | OpenAI 3-small 1536 / 3-large 3072，可 `dimensions` 截短 | 512（教学哈希） |
 | 默认 chunk | OpenAI 800 token / 重叠 400 | 无切块（整文档入库） |
+| 检索返回条数 | OpenAI 向量存储默认 10 条，`max_num_results` 上限 50 | topK = 3 |
 | 无命中行为 | 规范不规定，属于产品设计 | 阈值 0.15 之下返回空列表 |
 
 ## 4. 开发

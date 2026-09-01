@@ -21,7 +21,7 @@ listed: true
 
 # Embeddings and Retrieval
 
-> **Layer**: 3 · Knowledge Grounding | **Previous layer exit**: run a cancellable, observable end-to-end interaction | **This layer exit**: build a vector retrieval entry with metadata filtering and a no-hit path, and know that changing models requires an index rebuild
+> **Group**: 4 · Grounding (reading the world) | **Previous group exit**: write and validate input/output schemas, and deliver a cancellable, observable end-to-end interaction (groups 2–3) | **This page exit**: build a vector retrieval entry with metadata filtering and a no-hit path, and know that changing models requires an index rebuild
 > **Prerequisites**: [Model API Contract](../02-inference-interface/model-api) | **Next**: [RAG: Retrieval-Augmented Generation](rag.md), [Advanced Retrieval](advanced-retrieval.md)
 
 ## 1. Overview
@@ -53,7 +53,7 @@ flowchart LR
 ### When to use / when not to
 
 - **Use**: natural-language questions, variable phrasing, finding "the passage about this" across many documents; similarity tasks such as recommendation, clustering, anomaly detection (use-case list from the OpenAI guide, retrievedAt 2026-09-01).
-- **Do not use**: exact identifiers (error codes, function names, order numbers)—grep / full-text / [BM25](advanced-retrieval.md) first; a corpus small enough to stuff into context—just stuff it (see the [Layer 3 decision table](index.md)).
+- **Do not use**: exact identifiers (error codes, function names, order numbers)—grep / full-text / [BM25](advanced-retrieval.md) first; a corpus small enough to stuff into context—just stuff it (see the [group decision table](index.md)).
 
 ### Decision table: retrieval options
 
@@ -66,7 +66,7 @@ flowchart LR
 ### Historical milestones
 
 - 2016: HNSW graph index published (Malkov & Yashunin, arXiv:1603.09320): multi-layer proximity graphs, logarithmic complexity, structure similar to a skip list (retrievedAt 2026-09-01).
-- Matryoshka representation learning (arXiv:2205.13147): vectors trained so leading dimensions can be truncated without losing core semantics; both the OpenAI `text-embedding-3` family and Cohere `embed-v4.0` implement it (retrievedAt 2026-09-01). The `text-embedding-3` release date is outside this verification pass—marked unverified.
+- Matryoshka representation learning (arXiv:2205.13147): vectors trained so leading dimensions can be truncated without losing core semantics; both the OpenAI `text-embedding-3` family and Cohere `embed-v4.0` implement it—Cohere supports 256/512/1024/1536 via the `output_dimension` parameter (retrievedAt 2026-09-01). The `text-embedding-3` release date is outside this verification pass—marked unverified.
 
 ## 2. Usage
 
@@ -249,6 +249,7 @@ The idea: build a golden set—each item is "question → document/chunk that sh
 | Query/document embedding | Cohere requires `input_type` to distinguish `search_query` / `search_document` | Teaching hash has no such split (add it when moving to a real model) |
 | Vector dimensions | OpenAI 3-small 1536 / 3-large 3072, truncatable via `dimensions` | 512 (teaching hash) |
 | Default chunking | OpenAI 800 tokens / 400 overlap | None (whole docs indexed) |
+| Result count | OpenAI vector stores return 10 by default, `max_num_results` up to 50 | topK = 3 |
 | No-hit behavior | Not specified by any spec—product design | Below threshold 0.15, return empty |
 
 ## 4. Development

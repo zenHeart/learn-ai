@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能把模型输出接入会话与状态 ｜ **本层出口**：能实现/调试一个 MCP server（含路径安全与错误语义），并按 2026-07-28 版本意识做迁移决策
+> **所在组**：互操作 ｜ **上一组出口**：能把模型输出接入会话与状态 ｜ **本组出口**：能实现/调试一个 MCP server（含路径安全与错误语义），并按 2026-07-28 版本意识做迁移决策
 > **前置**：[工具调用契约](../05-action/tool-calling)、[工具执行工程](../05-action/tool-execution.md) ｜ **下一步**：[A2A](a2a.md)（Agent↔Agent 方向）、[协议地图](index.md)
 
 ## 1. 概述
@@ -263,12 +263,149 @@ client fixture 内置两个负例，单独看原始响应：
 - 清理：`rm server.mjs client.mjs`。
 - 旧 fixture：仓库的 `examples/mcp-lab/` 是基于官方 SDK 的旧教学示例；本页零依赖版是协议层最小实现，两者并存，读源码时以本页的代次叙述为准。
 
+### 步骤 5：场景变体——数据查询型 server（零 key mock）
+
+echo 只演示了「原样返回」。真实 server 的三类典型结构——**数据查询**（查库/记事）、**发消息**（桥接外部 API，见场景矩阵第二行）、**跑代码**（执行型工具，安全边界见 §4 runbook 3）——在协议面上是同一套 `tools/list` + `tools/call`，差别全在 handler。本步把步骤 1 的 server 换成**数据查询型**：内存数据集 + 过滤参数的查询工具，并第一次演示 **resources** 原语（只读数据源）。骨架（readline 循环、错误码、stdin 关闭退出）与步骤 1 完全相同。
+
+`db-server.mjs`（= 步骤 1 的 `server.mjs`，只替换数据与 `handle()`）：
+
+```javascript fixture
+// db-server.mjs — 数据查询型 MCP server（零依赖，内存数据集）
+// 仅列出与步骤 1 不同的部分：NOTES 数据、handle()、capabilities 加 resources
+const NOTES = [
+  { id: 1, tag: "release", text: "v2.1 shipped with streaming fixes" },
+  { id: 2, tag: "incident", text: "gateway 502 spike traced to upstream pool" },
+  { id: 3, tag: "release", text: "v2.2 rolled out canary to 5%" },
+];
+
+function handle(msg) {
+  if (msg.method === "initialize") {
+    return result(msg.id, {
+      protocolVersion: PROTOCOL_VERSION,
+      capabilities: { tools: {}, resources: {} }, // 声明两个 server 原语
+      serverInfo: { name: "notes-server", version: "1.0.0" },
+    });
+  }
+  if (msg.method === "notifications/initialized") return null;
+  if (msg.method === "tools/list") {
+    return result(msg.id, {
+      tools: [{
+        name: "notes_query",
+        description: "Queries the in-memory notes store. Optional tag filters by exact tag match.",
+        inputSchema: {
+          type: "object",
+          properties: { tag: { type: "string" } }, // 可选过滤参数
+        },
+      }],
+    });
+  }
+  if (msg.method === "tools/call") {
+    const { name, arguments: args } = msg.params ?? {};
+    if (name !== "notes_query") return error(msg.id, -32602, `Unknown tool: ${name}`);
+    if (args?.tag !== undefined && typeof args.tag !== "string") {
+      return error(msg.id, -32602, "arguments.tag must be a string");
+    }
+    const hits = args?.tag ? NOTES.filter((n) => n.tag === args.tag) : NOTES;
+    return result(msg.id, { content: [{ type: "text", text: JSON.stringify(hits) }] });
+  }
+  if (msg.method === "resources/list") {
+    return result(msg.id, {
+      resources: [{
+        uri: "notes://all",
+        name: "all-notes",
+        description: "The full read-only notes dataset.",
+        mimeType: "application/json",
+      }],
+    });
+  }
+  if (msg.method === "resources/read") {
+    if (msg.params?.uri !== "notes://all") {
+      return error(msg.id, -32602, `Unknown resource: ${msg.params?.uri}`); // uri 属参数错误，用 Invalid params
+    }
+    return result(msg.id, {
+      contents: [{ uri: "notes://all", mimeType: "application/json", text: JSON.stringify(NOTES) }],
+    });
+  }
+  return error(msg.id, -32601, `Method not found: ${msg.method}`);
+}
+```
+
+`db-client.mjs`（驱动：initialize → 查全部 → 按 tag 过滤 → 类型负例 → 读 resource → 未知 resource 负例）：
+
+```javascript fixture
+// db-client.mjs — 驱动 notes-server（Node ≥ 18，零依赖）
+// spawn/按行解析的骨架与步骤 2 的 client.mjs 相同，这里只保留请求序列。
+import { spawn } from "node:child_process";
+const child = spawn(process.execPath, ["db-server.mjs"], { stdio: ["pipe", "pipe", "inherit"] });
+let nextId = 1; const pending = new Map(); let buf = "";
+child.stdout.on("data", (chunk) => {
+  buf += chunk; let nl;
+  while ((nl = buf.indexOf("\n")) !== -1) {
+    const line = buf.slice(0, nl); buf = buf.slice(nl + 1);
+    if (!line.trim()) continue;
+    const msg = JSON.parse(line);
+    pending.get(msg.id)?.resolve(msg); pending.delete(msg.id);
+  }
+});
+function request(method, params) {
+  const id = nextId++;
+  return new Promise((resolve) => {
+    pending.set(id, { resolve });
+    child.stdin.write(JSON.stringify({ jsonrpc: "2.0", id, method, ...(params ? { params } : {}) }) + "\n");
+  });
+}
+function notify(method) { child.stdin.write(JSON.stringify({ jsonrpc: "2.0", method }) + "\n"); }
+
+const init = await request("initialize", { protocolVersion: "2025-11-25", capabilities: {}, clientInfo: { name: "db-client", version: "1.0.0" } });
+console.log("PASS  initialize:", init.result.serverInfo.name, "caps:", Object.keys(init.result.capabilities).join("+"));
+notify("notifications/initialized");
+const list = await request("tools/list", {});
+console.log("PASS  tools:", list.result.tools.map((t) => t.name).join(","));
+const all = await request("tools/call", { name: "notes_query", arguments: {} });
+console.log("PASS  query all ->", all.result.content[0].text);
+const rel = await request("tools/call", { name: "notes_query", arguments: { tag: "release" } });
+console.log("PASS  query tag=release ->", rel.result.content[0].text);
+const badTag = await request("tools/call", { name: "notes_query", arguments: { tag: 42 } });
+console.log("PASS  bad tag type ->", badTag.error.code, badTag.error.message);
+const rlist = await request("resources/list", {});
+console.log("PASS  resources:", rlist.result.resources.map((r) => r.uri).join(","));
+const rread = await request("resources/read", { uri: "notes://all" });
+console.log("PASS  read notes://all ->", rread.result.contents[0].text.slice(0, 60), "…");
+const badUri = await request("resources/read", { uri: "notes://nope" });
+console.log("PASS  unknown resource ->", badUri.error.code);
+child.stdin.end();
+const code = await new Promise((r) => child.on("exit", r));
+console.log("PASS  server exits", code);
+```
+
+```bash fixture
+node db-client.mjs; echo "exit=$?"
+```
+
+实测输出（Node 24，节选）：
+
+```text fixture
+PASS  initialize: notes-server caps: tools+resources
+PASS  tools: notes_query
+PASS  query all -> [{"id":1,"tag":"release","text":"v2.1 shipped with streaming fixes"},{"id":2,"tag":"incident","text":"gateway 502 spike traced to upstream pool"},{"id":3,"tag":"release","text":"v2.2 rolled out canary to 5%"}]
+PASS  query tag=release -> [{"id":1,"tag":"release","text":"v2.1 shipped with streaming fixes"},{"id":3,"tag":"release","text":"v2.2 rolled out canary to 5%"}]
+PASS  bad tag type -> -32602 arguments.tag must be a string
+PASS  resources: notes://all
+PASS  read notes://all -> [{"id":1,"tag":"release","text":"v2.1 shipped with streaming fixes","…
+PASS  unknown resource -> -32602
+PASS  server exits 0
+exit=0
+```
+
+读法：**查询走 tools（模型控制、参数可过滤），整表只读走 resources（应用控制）**——同一份数据的两种暴露方式，对应第 3 节原语表的控制权分界。真实落地时把 `NOTES` 换成数据库只读视图或内部 API 的缓存即可，协议面不变。本步验收：`node db-client.mjs` 退出码 0、九项 PASS；清理时删除两个脚本。
+
 ### 场景矩阵
 
 | 场景 | 输入 | 动作 | 输出 | 适用 | 不适用 |
 | --- | --- | --- |---|--- | --- |
-| 基础：本地工具 | 文件/计算等本地能力 | stdio server 暴露 tools | host 内模型按需调用 | 个人/IDE 场景 | 需要跨网络共享 |
-| 常见：桥接 HTTP API | 第三方 REST 服务 | server 做协议转换（对上是 MCP，对外是普通 HTTP client） | 统一成 MCP 工具 | 聚合多 API、集中鉴权审计 | 单一简单调用（直接 HTTP 更省） |
+| 基础：数据查询 | 本地/内部只读数据集（步骤 5 的 notes mock，或真实 DB 的只读视图） | tools 带过滤参数查询 + resources 暴露只读源 | 结构化查询结果 | 记事本/查库/内部数据检索 | 写入型操作 |
+| 常见：桥接外部 API（发消息类） | 第三方 REST/邮件/通知服务 | server 做协议转换（对上是 MCP，对外是普通 HTTP client） | 统一成 MCP 工具 | 聚合多 API、集中鉴权审计 | 单一简单调用（直接 HTTP 更省） |
+| 执行型（跑代码） | 文件写入、命令或代码执行 | 工具执行 + 显式边界约束 | 受控执行结果 | 需要副作用的能力 | 无边界约束的生产环境（先做 §4 runbook 3） |
 | 组合：MCP + Skills | 「连上之后怎么用」 | MCP 供连接，Skill 供流程 | 连接与步骤分工 | 工具使用规范 | 互替思维 |
 
 ## 3. 原理

@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Previous layer exit**: build a traceable retrieval chain with an update path ｜ **This layer exit**: consume an agent backend's event stream in a frontend and reconcile state correctly, and know how it divides labor with "raw SSE" and A2UI
+> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: consume an agent backend's event stream in a frontend and reconcile state correctly, and know how it divides labor with "raw SSE" and A2UI
 > **Prerequisites**: [Protocol Map](index.md) ｜ **Next**: [A2UI and MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. Overview
@@ -43,6 +43,7 @@ flowchart LR
 
 - **Core abstraction**: `run(input: RunAgentInput) -> Observable<BaseEvent>`; the standard HTTP client `HttpAgent` calls any endpoint that accepts a POST of `RunAgentInput` and returns a stream of `BaseEvent`.
 - **Transport-agnostic**: SSE, webhooks, WebSockets, HTTP binary all work — AG-UI standardizes **event semantics**, not the pipe.
+- **The client is not necessarily a web app**: the protocol describes an event stream, not a rendering target — a terminal, a mobile app, or a chat platform can each act as the AG-UI client (stated explicitly in the official Overview, re-checked 2026-09-01).
 - **Three-way complementarity** (official positioning): MCP connects agent↔tools/data; A2A connects agent↔agent; AG-UI connects agent↔user (through user-facing apps). One agent can use all three at once.
 
 ### Event families (docs.ag-ui.com is authoritative)
@@ -349,4 +350,4 @@ All entries retrieved 2026-09-01. SDK install counts/adoption: no official data,
 - Open 2: the generative-ui proposal under `drafts/` is still evolving; do not cite it as shipped capability.
 - Open 3: details of the official "handshakes" with MCP/A2A (announced but not expanded on the pages verified this round) — marked unverified.
 
-**learn-ai stops here**: the event contract, state reconciliation, a runnable fixture. **Where to go next**: streaming fundamentals (SSE lifecycle) → layer 2 Streaming; UI component descriptions → [A2UI and MCP Apps](a2ui-mcp-apps.md); frontend implementation → [Generative UI](../02-inference-interface/ui).
+**learn-ai stops here**: the event contract, state reconciliation, a runnable fixture. **Where to go next**: streaming fundamentals (SSE lifecycle) → [Streaming](../02-inference-interface/streaming); UI component descriptions → [A2UI and MCP Apps](a2ui-mcp-apps.md); frontend implementation → [Generative UI](../02-inference-interface/ui).

@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Previous layer exit**: build a traceable retrieval chain with an update path ｜ **This layer exit**: on encountering any listed protocol, immediately state what it solves, who owns it, and which threshold it is missing
+> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: on encountering any listed protocol, immediately state what it solves, who owns it, and which threshold it is missing
 > **Prerequisites**: [Protocol Map](index.md) ｜ **Next**: protocols meeting the threshold get promoted to standalone canonical chapters
 
 ## 1. Overview

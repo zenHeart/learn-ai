@@ -18,14 +18,14 @@ listed: true
 
 # Browser and Edge Inference
 
-> **Layer**: 2 · Application Integration ｜ **Previous layer exit**: can write and validate input/output schemas ｜ **This layer exit**: can decide whether to go on-device, pick the right runtime library, and design an access chain with fallback
+> **Group**: Inference & Interface ｜ **Previous group exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability ｜ **This topic exit**: can decide whether to go on-device, pick the right runtime library, and design an access chain with fallback
 > **Prerequisites**: [Model API Contract](model-api.md) ｜ **Next**: [Embeddings and Retrieval](../04-grounding/embeddings-retrieval), [Cost and Performance](../08-production/cost-performance)
 
 ## 1. Overview
 
 Edge inference solves this problem: **some tasks should never send the data out, and some contexts cannot wait for the network**. Running the model in the browser buys privacy (data never leaves the device), offline availability, zero per-token cost, and low latency for small tasks; the price is a **model-quality ceiling** — on-device runs quantized small models, not in the same capability class as cloud flagships.
 
-This page is an **access-location decision** within Layer 2: the same "capability → product interaction" question, with the execution environment moved from a cloud API to the device itself.
+This page is an **access-location decision** within the Inference & Interface group: the same "capability → product interaction" question, with the execution environment moved from a cloud API to the device itself.
 
 ```mermaid
 flowchart TD
@@ -132,7 +132,7 @@ This block follows the official docs' current API (retrievedAt 2026-09-01) but w
 | Scenario | Input | Action | Output | Fits | Does not fit |
 | --- | --- | --- | --- | --- | --- |
 | Basic: on-device sentiment | user text | pipeline + q8 quantized model | label + score | privacy-sensitive light tasks | flagship-quality needs |
-| Common: on-device embeddings | text chunks | embedding pipeline | vectors | local retrieval/semantic caching (→ [Layer 3](../04-grounding/embeddings-retrieval)) | large-scale indexing (insufficient compute) |
+| Common: on-device embeddings | text chunks | embedding pipeline | vectors | local retrieval/semantic caching (→ [Embeddings and Retrieval](../04-grounding/embeddings-retrieval)) | large-scale indexing (insufficient compute) |
 | Combined: edge pre-filter + cloud generation | classify locally first | sensitive on-device, complex to cloud | hybrid result | production privacy products | pure display tasks |
 
 ## 3. Principles

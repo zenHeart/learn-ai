@@ -1,6 +1,6 @@
 ---
 title: "Protocol Map"
-description: The layer 4 protocol selection entry, grouped by connection direction — MCP for Agent↔tools, ACP for Editor↔coding agent, AG-UI for Agent↔user, A2A for Agent↔Agent; with the ACP triple-homonym disambiguation and a combination decision table.
+description: The interoperability-group protocol selection entry, grouped by connection direction — MCP for Agent↔tools, ACP for Editor↔coding agent, AG-UI for Agent↔user, A2A for Agent↔Agent; with the ACP triple-homonym disambiguation and a combination decision table.
 domain: tech
 tags: [tech, action, protocols, map]
 navOrder: 70
@@ -18,18 +18,18 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Exit of the layer above**: you can wire model output into sessions and state ｜ **Exit of this layer**: given a cross-boundary requirement you can pick the protocol by connection direction and justify rejecting the rest
+> **Group**: Interoperability ｜ **Exit of the group above**: you can wire model output into sessions and state ｜ **Exit of this group**: given a cross-boundary requirement you can pick the protocol by connection direction and justify rejecting the rest
 > **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md), [Complexity Decision Ladder](../00-map/complexity-ladder) ｜ **Next**: proceed by map to [MCP](mcp.md), [A2A](a2a.md), [ACP](acp-agent-client.md), [AG-UI](ag-ui.md), [A2UI and MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. Overview
 
-**Lead with the answer**: layer 4 protocols are not competitors; they **each occupy one connection direction**. The first selection question is not "which protocol is better" but "**what are the two ends I am connecting**": agent to tools, editor to coding agent, agent to user interface, or agent to agent. Once the direction is fixed, the candidate set usually shrinks to one; trust domain and state needs then confirm the choice.
+**Lead with the answer**: the protocols of the interoperability group are not competitors; they **each occupy one connection direction**. The first selection question is not "which protocol is better" but "**what are the two ends I am connecting**": agent to tools, editor to coding agent, agent to user interface, or agent to agent. Once the direction is fixed, the candidate set usually shrinks to one; trust domain and state needs then confirm the choice.
 
 ### Mental model: grouped by connection direction
 
 ```mermaid
 flowchart LR
-    USER["User / app"] <-- "AG-UI<br/>(events/state/interrupts)" --> AGENT["local agent"]
+    USER["User / app"] <-- "AG-UI<br/>(events/state/interrupts)" --> AGENT["your agent"]
     EDITOR["Editor / IDE"] <-- "ACP<br/>(Agent Client Protocol)" --> CAGENT["coding agent"]
     AGENT <-- "MCP<br/>(tools/resources/prompts)" --> TOOLS["tools / data"]
     AGENT <-- "Skills<br/>(knowledge packaging, not a protocol)" --> KNOW["reusable procedural knowledge"]
@@ -63,11 +63,11 @@ Note: **Skills are not a protocol** — they are a knowledge packaging format (n
 
 | # | Full name | What it is | Boundary | Status |
 | --- | --- | --- | --- | --- |
-| ① | **Agent Client Protocol** (agentclientprotocol.com) | the standard protocol between editors/IDEs and coding agents; JSON-RPC over stdio locally, HTTP/WebSocket remotely; reuses MCP's JSON representations | "ACP" on this site's layer 4 pages always means **this one**; details in the [ACP chapter](acp-agent-client.md) | active (Zed and editor ecosystems) |
+| ① | **Agent Client Protocol** (agentclientprotocol.com) | the standard protocol between editors/IDEs and coding agents; JSON-RPC over stdio locally, HTTP/WebSocket remotely; reuses MCP's JSON representations | "ACP" on this site's interoperability pages always means **this one**; details in the [ACP chapter](acp-agent-client.md) | active (Zed and editor ecosystems) |
 | ② | IBM/BeeAI **Agent Communication Protocol** | a historical agent↔agent communication scheme | folded into the A2A line; when old material mentions it, read it as an A2A predecessor | historical |
 | ③ | OpenClaw internal **Agent Communication Protocol** | OpenClaw's private internal protocol, unrelated to ① and ② | product implementation detail, see [OpenClaw source: ACP](/zh/products/openclaw/source-code/acp) | product-private |
 
-Citation rule: unqualified "ACP" anywhere in this site's layer 4 means ①; mentioning ② requires the "IBM/BeeAI" qualifier and a historical note; mentioning ③ requires the "OpenClaw" qualifier and a link into the Products area.
+Citation rule: unqualified "ACP" anywhere in this site's interoperability pages means ①; mentioning ② requires the "IBM/BeeAI" qualifier and a historical note; mentioning ③ requires the "OpenClaw" qualifier and a link into the Products area.
 
 ### Selection decision table
 
@@ -81,7 +81,7 @@ Citation rule: unqualified "ACP" anywhere in this site's layer 4 means ①; ment
 | Just reusing a procedure | knowledge → context | inside host process | none | Skills (not a protocol) |
 | One function inside the same host | in-process | in-process | none | a direct function call (no protocol) |
 
-The last row is a defensive reminder: protocols solve communication and discovery **across boundaries**; in-process calls need functions. When the rung 6 trigger of the complexity ladder (layer 0) has not fired, introduce none of the protocols on this page.
+The last row is a defensive reminder: protocols solve communication and discovery **across boundaries**; in-process calls need functions. When the rung 6 trigger of the [Complexity Decision Ladder](../00-map/complexity-ladder) has not fired, introduce none of the protocols on this page.
 
 ### Combination example: the protocol jigsaw of one real collaboration
 
@@ -101,7 +101,7 @@ One session can use four directions at once: AG-UI carries user-facing progress,
 - Use: any selection for cross-process/cross-org/cross-trust-domain connectivity; reviewing "should we adopt protocol X".
 - Do not use: learning a protocol's internal message structures — go to its detail page.
 
-Historical milestones: this map was frozen in 2026-09 with Issue #116; each protocol's own versions (MCP 2026-07-28, A2A 1.0.0, Agent Plugins 1.0.0) are maintained on their detail pages.
+Historical milestones: this map was frozen in 2026-09 with Issue #116; each protocol's own versions (MCP 2026-07-28, A2A 1.0.0, ACP v1 stable + v2 Draft, Agent Plugins 1.0.0) are maintained on their detail pages (re-checked 2026-09-01: no version drift for MCP and A2A; ACP has a v2 Draft — see its detail page).
 
 ## 2. Usage
 

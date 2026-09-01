@@ -1,6 +1,6 @@
 ---
 title: Agent Runtime
-description: Agent = model + context + tools + state + control loop + environment; this page gives a minimal loop implementation, the agent vs workflow boundary, stopping conditions and budgets, and navigation for the four topics in this subtree.
+description: Agent = model + context + tools + state + control loop + environment; this page gives a minimal loop implementation, the agent vs workflow boundary, stopping conditions and budgets, and navigation for the other topics in this group.
 domain: tech
 tags: [agent, runtime, loop]
 navOrder: 60
@@ -18,12 +18,12 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can execute a single tool call safely and orchestrate fixed steps into a workflow ｜ **Exit of this layer**: you can build a minimal agent loop with stopping conditions and a budget, and you know which page owns state, recovery, and interface automation
+> **Group**: Agent Systems ｜ **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely ｜ **Exit of this page**: you can build a minimal agent loop with stopping conditions and a budget, and you know which page owns state, recovery, and interface automation
 > **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling) · [Tool Execution Engineering](../05-action/tool-execution.md) · [Workflow Patterns](workflow.md) ｜ **Next**: [Agent Design Patterns](design-patterns.md) · [Agent State and Memory](state-memory.md) · [Recovery and Human-in-the-Loop](recovery-hitl.md) · [Computer Use](computer-use.md)
 
 ## 1. Overview
 
-**Lead with the answer**: an agent runtime is the layer of code that puts a model, context, tools, and state inside a control loop, places that loop in an environment, and runs it until a stopping condition fires. Anthropic summarizes an agent as an LLM "using tools based on environmental feedback in a loop"; OpenAI's definition is isomorphic: agents are applications that "plan, call tools, collaborate across specialists, and keep enough state to complete multi-step work". You do not train the model — you write this runtime layer.
+**Lead with the answer**: an agent runtime is the layer of code that puts a model, context, tools, and state inside a control loop, places that loop in an environment, and runs it until a stopping condition fires. Anthropic summarizes an agent as an LLM "using tools based on environmental feedback in a loop", later tightened to "LLMs autonomously using tools in a loop" in its context engineering essay; OpenAI's current Agents guide points the same way — agents are "systems that intelligently accomplish tasks, from simple goals to complex, open-ended workflows", built from models, tools, and orchestration. You do not train the model — you write this runtime layer.
 
 ### The agent definition formula
 
@@ -50,7 +50,7 @@ flowchart LR
     end
     L --> S{"stop condition"}
     S -->|model returns a final answer| F["done"]
-    S -->|budget / step cap hit| X["terminate and report"]
+    S -->|budget exhausted (steps / tokens / time)| X["terminate and report"]
 ```
 
 Each turn of the loop costs one model call plus some tool executions. **Environmental feedback is the only source of truth for progress**: the model must see the tool result to pick the next step — this is a correctness requirement, not an optimization.
@@ -64,6 +64,7 @@ Each turn of the loop costs one model call plus some tool executions. **Environm
 | State | One call result | Multi-step artifacts | Session + memory + checkpoints | Isolated per-agent state |
 | Trust domain | In-process | In-process | Within host + permission boundary | Same shape → [multi-agent](multi-agent.md); cross-domain → [protocols](../07-interoperability/index.md) |
 | Minimum complexity | function call | static orchestration | loop + stop condition + permissions | delegation mechanism |
+| Reverse criterion (when to fall back left) | — (already minimal) | steps statically enumerable, path stable → **stay at workflow, do not adopt an agent** | environmental feedback unverifiable, no writable stopping condition or budget → fall back to workflow | one loop with two or three tools already suffices → fall back to a single agent |
 
 Anthropic's boundary in one sentence: **workflows orchestrate LLMs and tools through predefined code paths; agents dynamically direct their own processes and tool usage**. Both are agentic systems; the selection criterion is "can the steps be statically enumerated".
 
@@ -264,10 +265,12 @@ Delete the directory.
 
 ### Key invariants
 
-1. **Stopping conditions exist before the loop does**: success criteria go into the prompt; step and token caps go into code. Without both, do not ship.
+1. **Stopping conditions exist before the loop does**: success criteria go into the prompt; step, token, and time caps go into code. Without both, do not ship.
 2. **Observations must be fed back**: every tool result enters the next model turn (the transcript convention in the fixture; the message history in real systems).
 3. **The environment is the only source of truth**: judge "done or not" by tool results and verification, not by the model's self-report.
 4. **Budgets decrease monotonically**: deduct every step, terminate on exhaustion — this is a cost and safety hard cap, not a statistics metric.
+
+The budget has three axes, with source claims checked in tiers (retrievedAt 2026-09-01): **steps** — Anthropic states verbatim to "include stopping conditions (such as a maximum number of iterations) to maintain control"; **tokens** — Anthropic's multi-agent retrospective quantifies the burn (agents ≈ 4× chat, multi-agent ≈ 15× chat), so a hard total cap is mandatory; **time** — no unified vendor-doc wording exists; the engineering meaning is lifting the per-call timeout gate of [tool execution engineering](../05-action/tool-execution.md) into a **wall-clock cap for the whole loop** (for long runs parked in unsupervised queues, it is the only backstop left). The fixture implements the first two axes; the third is the time version of the same stopping condition and changes nothing about the loop's structure.
 
 ### State and lifecycle (brief)
 
@@ -279,14 +282,14 @@ One run's lifecycle is `load goal -> loop N steps -> final or termination`. Data
 | --- | --- | --- |
 | Agents are systems "using tools based on environmental feedback in a loop" | Anthropic, "Building Effective Agents" | `runAgent` is that loop in ~40 lines |
 | Stopping conditions (e.g. max iterations) are required to stay in control | Same | `max_steps_exceeded` in scenario 2 |
-| Agents must "keep enough state to complete multi-step work" | OpenAI Agents docs | The fixture's transcript and `tokens` counter |
+| Agent run state is serializable and resumes from the breakpoint after a pause (the other face of cross-step state) | OpenAI Agents SDK HITL docs (`RunState`) | The fixture's transcript and `tokens` counter |
 | Frameworks add abstraction that obscures prompts and complicates debugging; start with APIs directly | Anthropic | The hand-written loop fits on one page, breakpoints and replays work |
 
 ## 4. Development
 
 ### Integration and selection
 
-- **Who owns the loop**: if you want control over parsing and executing every `tool_use` block, own the loop with the model API (OpenAI's framing: Responses API = you own it, Agents SDK = it is managed for you); if you want ready-made sessions, approval flows, and traces, use an Agent SDK. The core loop is a few dozen lines, so migration in either direction is cheap.
+- **Who owns the loop**: if you want control over parsing and executing every `tool_use` block, own the loop with the model API; if you want ready-made sessions, approval flows, and traces, use an Agent SDK (OpenAI's current framing: Agent Builder for visual orchestration, or the Agents SDK for your own code — both keep the loop inside the framework). The core loop is a few dozen lines, so migration in either direction is cheap.
 - **Version pinning**: tool definitions couple to model behavior — Anthropic states tool definitions deserve the same engineering attention as prompts. Pin the model version and the tool set together in production; any change to either requires re-evaluation.
 
 ### Symptom -> Evidence -> Action -> Done criteria
@@ -324,7 +327,7 @@ Four-level reading route:
 
 - **Beginner**: read this page and run the minimal loop; restate the definition formula and the four invariants.
 - **Builder**: read [design patterns](design-patterns.md) to pick the loop's structure; read [state and memory](state-memory.md) to add checkpoints.
-- **Operator**: read [recovery and approval](recovery-hitl.md), then layer 5's [observability](../08-production/observability) and [cost and performance](../08-production/cost-performance).
+- **Operator**: read [recovery and approval](recovery-hitl.md), then the [Production](../08-production/) group's [observability](../08-production/observability) and [cost and performance](../08-production/cost-performance).
 - **Researcher**: read the ReAct paper and Learn LLM chapters 13 / 16 / 21 for the mechanism derivations.
 
 ### Resource table
@@ -332,10 +335,10 @@ Four-level reading route:
 | Name | Evidence level | Canonical URL | Purpose | Supported claim | Next |
 | --- | --- | --- | --- | --- | --- |
 | Building Effective Agents (Anthropic) | L1 (maintainer) | https://www.anthropic.com/research/building-effective-agents | Workflow/agent boundary and composition patterns | "tools in a loop" and "stopping conditions" definitions (retrievedAt 2026-09-01) | [Agent Design Patterns](design-patterns.md) |
-| Agents guide (OpenAI) | L1 (maintainer) | https://platform.openai.com/docs/guides/agents | Production-SDK view of agent composition | "plan / call tools / keep state" definition; owned vs managed loop (retrievedAt 2026-09-01) | [Recovery and Human-in-the-Loop](recovery-hitl.md) |
+| Agents guide (OpenAI) | L1 (maintainer) | https://platform.openai.com/docs/guides/agents | AgentKit-era agent composition (Builder / SDK / tools / guardrails) | "Agents are systems that intelligently accomplish tasks, from simple goals to complex, open-ended workflows"; Builder visual orchestration vs Agents SDK code (retrievedAt 2026-09-01, re-verified this round: the older "plan / call tools / keep state" wording is no longer on the page) | [Recovery and Human-in-the-Loop](recovery-hitl.md) |
 | ReAct: Synergizing Reasoning and Acting (Yao et al., 2022) | L4 (research) | https://arxiv.org/abs/2210.03629 | The original argument for interleaved reasoning and acting | Reasoning traces help the model track and revise plans (retrievedAt 2026-09-01) | [Agent Design Patterns](design-patterns.md) |
 | Learn LLM chapters 13 / 16 / 21 | sibling | https://llm.zenheart.site/chapters/ | Hand-written loops, LangGraph, multi-agent mechanics | Mechanism derivations belong to Learn LLM (retrievedAt 2026-09-01) | [multi-agent](multi-agent.md) |
-| What is an agent? (Simon Willison) | L2 (authoritative secondary) | https://simonwillison.net/2025/Sep/18/agents/ | The minimal definition "autonomously using tools in a loop" | Cited by Anthropic's context engineering essay (retrievedAt 2026-09-01, cited via Anthropic's original text) | This page's overview |
+| What is an agent? (Simon Willison) | L2 (authoritative secondary) | https://simonwillison.net/2025/Sep/18/agents/ | The minimal definition "autonomously using tools in a loop" | Matches, word for word, the phrasing Anthropic restates in its context engineering essay (retrievedAt 2026-09-01; Anthropic does not name him) | This page's overview |
 
 ### Active falsification and open questions
 

@@ -18,19 +18,19 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 5 · Reliable Operations ｜ **Previous layer exit**: can restrict permissions, pause/resume tasks ｜ **This layer exit**: can break down a request's cost and latency and pick the cost-effective lever on the optimization ladder
+> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can break down a request's cost and latency and pick the cost-effective lever on the optimization ladder
 > **Prerequisites**: [Model API Contract](../02-inference-interface/model-api) (usage field), [Observability](observability.md) (per-request records) ｜ **Next**: [Deployment and Release](deployment.md) (budget alerts and breakers)
 
 ## 1. Overview
 
-**BLUF**: an AI application's cost and latency are not a vendor-owned black box — they are **decomposable, accountable, optimizable engineering quantities**. Cost = per-request token usage × the price structure (input/output/cache tiers); latency = TTFT (time to first token) + generation throughput + tool roundtrips. The right order is **account first, then optimize** — without [observability](observability.md)'s per-request records, all optimization is guessing. Dynamic unit prices **always defer to vendor pricing pages** (this page cites structure, not numbers; see the verified table in Principles).
+**BLUF**: an AI application's cost and latency are not a vendor-owned black box — they are **decomposable, accountable, optimizable engineering quantities**. Cost = per-request token usage × the price structure (input / cache write / cache hit / output — four tiers); latency = TTFT (time to first token) + generation throughput + tool roundtrips. The right order is **account first, then optimize** — without [observability](observability.md)'s per-request records, all optimization is guessing. Dynamic unit prices **always defer to vendor pricing pages** (this page cites structure, not numbers; see the verified table in Principles).
 
 ### Mental model: where the money and the milliseconds go
 
 ```mermaid
 flowchart LR
     subgraph Cost side
-    A["input tokens<br/>(context/retrieval results)"] --> P["price structure<br/>input / cache hit / output"]
+    A["input tokens<br/>(context/retrieval results)"] --> P["price structure<br/>input / cache write / cache hit / output"]
     B["output tokens<br/>(incl. invisible reasoning tokens)"] --> P
     P --> C["per-request cost"]
     end
@@ -73,18 +73,22 @@ import assert from 'node:assert/strict';
 
 // Price structure: real projects enter this from the vendor pricing page (per 1M tokens)
 // and record retrievedAt. The structure itself is the industry-common form:
-// input / cache hit / output tiers (isomorphic across OpenAI and Anthropic, verified 2026-09-01).
+// input / cache write (~1.25x) / cache hit (~0.1x) / output — four tiers
+// (isomorphic across OpenAI and Anthropic, verified 2026-09-01).
 const PRICES = {
-  'model-large':  { input: 5.0, cacheRead: 0.5, output: 25.0, retrievedAt: 'fixture' },
-  'model-small':  { input: 0.5, cacheRead: 0.05, output: 2.0, retrievedAt: 'fixture' },
+  'model-large':  { input: 5.0, cacheWrite: 6.25, cacheRead: 0.5, output: 25.0, retrievedAt: 'fixture' },
+  'model-small':  { input: 0.5, cacheWrite: 0.625, cacheRead: 0.05, output: 2.0, retrievedAt: 'fixture' },
 };
 
 function requestCost(model, usage) {
   const p = PRICES[model];
   if (!p) throw new Error(`unknown model: ${model}`);
   const m = (n) => n / 1e6; // tokens -> per-million units
-  return p.input * m(usage.inputTokens - (usage.cacheReadTokens ?? 0))
-       + p.cacheRead * m(usage.cacheReadTokens ?? 0)
+  const write = usage.cacheWriteTokens ?? 0; // prefix written to cache this request
+  const read = usage.cacheReadTokens ?? 0;   // prefix served from cache
+  return p.input * m(usage.inputTokens - write - read)
+       + p.cacheWrite * m(write)
+       + p.cacheRead * m(read)
        + p.output * m(usage.outputTokens);
 }
 
@@ -111,15 +115,23 @@ function latencyProfile(segments) {
   };
 }
 
-// ---- Demo (deterministic): three accounting cases ----
+// ---- Demo (deterministic): "first write" vs "replay read" of the same prefix ----
 const guard = createBudgetGuard(1.0); // demo budget of 1 USD
-const r1 = requestCost('model-small', { inputTokens: 2000, cacheReadTokens: 0, outputTokens: 200 });
+const r1 = requestCost('model-small', { inputTokens: 2000, outputTokens: 200 });
 assert.ok(Math.abs(r1 - (0.5 * 0.002 + 2.0 * 0.0002)) < 1e-9);
 guard.record(r1);
 
+// First request: a 40k-token prefix is billed at the cache-write tier (25% above plain input)
 const r2 = requestCost('model-large',
-  { inputTokens: 50000, cacheReadTokens: 40000, outputTokens: 1500 }); // 80% cache hit
-assert.ok(r2 > 0); guard.record(r2);
+  { inputTokens: 50000, cacheWriteTokens: 40000, outputTokens: 1500 });
+assert.ok(Math.abs(r2 - (5.0 * 0.01 + 6.25 * 0.04 + 25.0 * 0.0015)) < 1e-9);
+guard.record(r2);
+
+// Replay: the same prefix hits the cache and is billed at the hit tier (~1/10 of input)
+const r2b = requestCost('model-large',
+  { inputTokens: 50000, cacheReadTokens: 40000, outputTokens: 1500 });
+assert.ok(Math.abs(r2b - (5.0 * 0.01 + 0.5 * 0.04 + 25.0 * 0.0015)) < 1e-9);
+guard.record(r2b);
 
 const profile = latencyProfile([
   { name: 'retrieve', ms: 120 },
@@ -130,7 +142,8 @@ assert.equal(profile.toolRoundtrips, 2);
 assert.ok(profile.tokensPerSec > 0 && profile.tokensPerSec < 2000);
 
 console.log('small-model request:', r1.toFixed(6), 'USD');
-console.log('big model + 80% cache:', r2.toFixed(6), 'USD');
+console.log('big model, first cache write:', r2.toFixed(6), 'USD');
+console.log('big model, same-prefix replay:', r2b.toFixed(6), 'USD');
 console.log('cumulative:', guard.spent().toFixed(6), 'USD / limit 1');
 console.log('latency breakdown:', JSON.stringify(profile));
 
@@ -149,37 +162,40 @@ node cost-tracker.mjs
 
 ```text
 small-model request: 0.001400 USD
-big model + 80% cache: 0.107500 USD
-cumulative: 0.108900 USD / limit 1
+big model, first cache write: 0.337500 USD
+big model, same-prefix replay: 0.107500 USD
+cumulative: 0.446400 USD / limit 1
 latency breakdown: {"totalMs":2620,"ttftMs":350,"tokensPerSec":833.3333333333333,"toolRoundtrips":2}
 budget breaker: budget_exhausted thrown as expected
 ```
 
+How to read it: the first cache write (0.3375) costs **25% more** than not caching and billing the whole prefix as plain input (0.2875) — the write is a prepayment; the second same-prefix request (0.1075) moves the 40k tokens from the input tier to the 0.1x hit tier, and the prepayment pays for itself.
+
 ### Step 4: negative observation
 
-Set case 2's `cacheReadTokens` to 0 (cache fully missed) — the cost rises sharply, showing cache hit rate as the direct cost lever. Lower `monthlyLimitUsd` to 0.05 and the breaker trips after the first record.
+Set the replay case's `cacheReadTokens` to 0 (cache fully missed — the 40k tokens fall back to the plain input tier) — the cost rises from 0.1075 to 0.2875, showing cache hit rate as the direct cost lever. Lower `monthlyLimitUsd` to 0.05 and the breaker trips after the second large record.
 
 ### Acceptance and cleanup
 
-- Acceptance: all assertions pass; you can answer "which tier does an 80% cache hit save money on".
+- Acceptance: all assertions pass; you can answer "which tier a cache hit saves money on, and why a cache write costs more".
 - Cleanup: delete the file.
 
 ## 3. Principles
 
 ### Token cost structure (verified 2026-09-01; unit prices defer to vendor pricing pages)
 
-| Structure item | OpenAI (platform.openai.com/docs/pricing) | Anthropic (docs.claude.com/en/docs/about-claude/pricing) |
+| Structure item | OpenAI (developers.openai.com/api/docs/pricing) | Anthropic (platform.claude.com/docs/en/build-with-claude/prompt-caching) |
 | --- | --- | --- |
-| Billing tiers | Input / **cached input** / output, per 1M tokens | Base input / **cache writes** (5-minute and 1-hour tiers) / **cache reads** / output |
-| Cache-hit price | About a tenth of the input price (e.g. the gpt-5.2 family's cached input is 10% of input) | Cache read at 0.1x input; cache write at 1.25x (5m) / 2x (1h) |
-| Batching | Batch API discount (non-time-sensitive requests) | Batch API at 50% off both input and output |
+| Billing tiers | Input / **cache hit** / **cache write** / output, per 1M tokens (separate short/long-context prices) | Base input / **cache writes** (5-minute and 1-hour tiers) / **cache reads** / output |
+| Cache-tier prices | Hit at 10% of input; cache write at 1.25x (verified on the gpt-5.6 family) | Cache read at 0.1x input; cache write at 1.25x (5m) / 2x (1h) |
+| Batching | Batch and Flex tiers at 50% off (non-time-sensitive, within 24h) | Batch API at 50% off both input and output (within 24h) |
 | Invisible reasoning tokens | Billed as output tokens (occupy context but are invisible) | Reasoning billed as output (billing is independent of thinking display) |
 
-Two engineering corollaries: **a cache hit costs roughly a tenth of the input price** (consistent across both vendors) — caching is the first lever for high-repetition-prefix workloads; **invisible reasoning tokens are billed as output** — "the output looks short" does not mean cheap.
+Three engineering corollaries: **a cache hit costs roughly a tenth of the input price** (consistent across both vendors) — caching is the first lever for high-repetition-prefix workloads; **the first cache-write tier is 1.25x at both vendors** — the write costs 25% extra up front, pays for itself on the second same-prefix request, and collects rent on every hit after; **invisible reasoning tokens are billed as output** — "the output looks short" does not mean cheap.
 
 ### The engineering premise of caching (prefix match)
 
-Prompt caching is a **strict prefix match**: any byte change in the prefix invalidates everything after it. Put stable content first (frozen system prompt, deterministically ordered tool lists) and volatile content last (timestamps, request IDs, the user's question). Verification: read the usage field's cache-hit tokens (e.g. `cache_read_input_tokens`); persistently zero across repeated requests indicates a **silent invalidator** (a timestamp in the system prompt, unsorted JSON serialization, a varying tool set). Cache-failure triage shares the same usage records as [observability](observability.md).
+Prompt caching is a **strict prefix match**: any byte change in the prefix invalidates everything after it. Put stable content first (frozen system prompt, deterministically ordered tool lists) and volatile content last (timestamps, request IDs, the user's question). Verification: read the usage field's cache tokens (Anthropic: `cache_creation_input_tokens` and `cache_read_input_tokens`); persistently zero across repeated requests indicates a **silent invalidator** (a timestamp in the system prompt, unsorted JSON serialization, a varying tool set). A second silent failure is a **prefix that is too short** — Claude models have a minimum cacheable length of 512–4,096 tokens; below the threshold the request skips caching outright (both cache fields 0, no error), so rule this out first when debugging hit rate (Anthropic prompt-caching docs, retrievedAt 2026-09-01). Cache-failure triage shares the same usage records as [observability](observability.md).
 
 ### Latency breakdown
 
@@ -199,7 +215,7 @@ Interactive products are TTFT-sensitive (perceived speed); batch work is through
 3. **Model routing**: easy cases to the small model, hard cases up to the big one; route on [evaluation](evaluation.md) thresholds, not intuition.
 4. **Batching**: non-time-sensitive tasks on the batch tier (both vendors have discount structures).
 5. **Distillation/fine-tuning**: cement high-frequency big-model behavior into a small model — high investment, requiring [Learn LLM](https://llm.zenheart.site/) training knowledge plus this repo's [evaluation](evaluation.md) quality gate.
-6. **Architecture**: change retrieval to reduce injection volume, change the agent loop to reduce steps — redesigning back in layers 3/4.
+6. **Architecture**: change retrieval to reduce injection volume, change the agent loop to reduce steps — redesigning back in the grounding and action groups.
 
 **Account before climbing the ladder**: every rung must validate its return with per-request cost data, or the optimization itself becomes the new cost.
 
@@ -219,7 +235,7 @@ No protocol spec to implement here; the "spec" side is the structural claims of 
 ### Symptom → Evidence → Action → Done when
 
 **Symptom**: cache hit rate stays at zero; caching is decorative.
-**Evidence**: the usage field's cache-hit tokens remain 0 across repeated requests; diff the serialized prefixes of two requests.
+**Evidence**: the usage field's cache-hit tokens remain 0 across repeated requests, and the prefix already exceeds the model's minimum cacheable threshold (ruling out a too-short prefix); diff the serialized prefixes of two requests.
 **Action**: remove the churn in the prefix — move timestamps/request IDs to the tail, fix JSON key ordering, freeze the tool list order.
 **Done when**: the cache-hit field is positive and stable for repeated same-prefix requests; hit rate joins the routine dashboard.
 
@@ -250,8 +266,8 @@ Four-level reading route:
 
 | Name | Evidence level | Canonical URL | Purpose | Supported claim | Next |
 | --- | --- | --- | --- | --- | --- |
-| OpenAI API pricing page | L0 (vendor official) | https://platform.openai.com/docs/pricing | Unit prices and tier structure | Input/cached/output tiers; batch discount; reasoning tokens billed as output (retrievedAt 2026-09-01) | Enter current prices into config |
-| Anthropic pricing docs | L0 (vendor official) | https://docs.claude.com/en/docs/about-claude/pricing | Unit prices and cache structure | Cache write 1.25x/2x, read 0.1x; batch at 50% (retrievedAt 2026-09-01) | Read its prompt-caching implementation docs |
+| OpenAI API pricing page | L0 (vendor official) | https://developers.openai.com/api/docs/pricing | Unit prices and tier structure | Input/cache-hit/cache-write/output tiers; Batch and Flex at 50%; reasoning tokens billed as output (retrievedAt 2026-09-01) | Enter current prices into config |
+| Anthropic pricing and caching docs | L0 (vendor official) | https://platform.claude.com/docs/en/build-with-claude/prompt-caching | Unit prices and cache structure | Cache write 1.25x (5m)/2x (1h), read 0.1x; minimum cacheable length 512–4,096 tokens; batch at 50% (retrievedAt 2026-09-01) | Read its batch-processing docs |
 | OpenTelemetry GenAI semantic conventions | L0 (official spec) | https://github.com/open-telemetry/semantic-conventions-genai | Unified naming for token/latency attributes | `gen_ai.usage.*` and TTFT-class metrics (Development level, retrievedAt 2026-09-01) | [Observability](observability.md) |
 | OWASP GenAI LLM Top 10 2026 | L0 (official list) | https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/ | Unbounded-consumption risk | LLM06 Unbounded Consumption (retrievedAt 2026-09-01) | [Security](security.md) |
 

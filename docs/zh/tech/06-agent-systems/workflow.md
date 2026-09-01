@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**：能构建可追溯的检索链 ｜ **本层出口**：能实现带 checkpoint 的多步流程——失败后从持久化状态恢复而不重做副作用，不可逆步骤前有人工批准节点
+> **所在组**：Agent 系统 ｜ **上一层出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本层出口**：能实现带 checkpoint 的多步流程——失败后从持久化状态恢复而不重做副作用，不可逆步骤前有人工批准节点
 > **前置**：[工具执行工程](../05-action/tool-execution.md) ｜ **下一步**：[Agent 运行时](agent-runtime.md)、[恢复与人工批准](recovery-hitl.md)、[可观测性](../08-production/observability)
 
 ## 1. 概述
@@ -312,7 +312,7 @@ Temporal 把「重放」做成了体系：Event History 是唯一事实源，恢
 
 ### 可观测性：每步一条 trace
 
-多步流程的调试单位是「步」而不是「次」：每个节点记录 runId、step、输入摘要、输出摘要、耗时与终态。没有 per-step trace，「流程卡住了」只能靠猜；有了它，卡点直接定位到节点与决策分支（细节进层 5 [可观测性](../08-production/observability)）。
+多步流程的调试单位是「步」而不是「次」：每个节点记录 runId、step、输入摘要、输出摘要、耗时与终态。没有 per-step trace，「流程卡住了」只能靠猜；有了它，卡点直接定位到节点与决策分支（细节进[生产与运营](../08-production/)组的[可观测性](../08-production/observability)）。
 
 ### 规范要求 vs 本地实测
 
@@ -331,7 +331,7 @@ workflow 与 agent 的差异不是「有没有 LLM」，而是**控制流住在�
 
 ### 集成
 
-1. **LLM 节点化**：把每次模型调用包成 `StepDef`，输出（结构化，见层 1 契约）进 state；prompt 由代码拼装。
+1. **LLM 节点化**：把每次模型调用包成 `StepDef`，输出（结构化，见[工具调用契约](../05-action/tool-calling)）进 state；prompt 由代码拼装。
 2. **工具节点化**：写世界节点内部走[工具执行工程](../05-action/tool-execution.md)的受控 executor，幂等键用 `runId + step`。
 3. **存储**：`runs` Map 换成 DB 表（runId 主键、state JSON 列、steps 明细表）；「同 runId 重入」靠主键唯一约束。
 4. **触发**：入口幂等——同一业务单据重复触发时复用已有 run 而不是新建。
@@ -402,7 +402,7 @@ workflow 与 agent 的差异不是「有没有 LLM」，而是**控制流住在�
 | --- | --- | --- | --- | --- | --- |
 | Building Effective Agents（Anthropic） | L1（维护者） | https://www.anthropic.com/engineering/building-effective-agents | workflow/agent 定义、五种模式、最简原则 | 「workflows 通过预定义代码路径编排；agents 动态主导自身过程」（retrievedAt 2026-09-01） | [Agent 运行时](agent-runtime) |
 | Temporal Workflows（官方文档） | L1（维护者） | https://docs.temporal.io/workflows | Event History、replay、确定性约束、Activity | 「恢复 = 重跑代码并重放历史；activity 结果记录一次、重放复用」（retrievedAt 2026-09-01） | 研究 durable execution 全家桶 |
-| LangGraph Persistence（官方文档） | L1（维护者） | https://langchain-ai.github.io/langgraph/concepts/persistence/ | checkpointer/store 分工、thread_id、HITL | 「checkpointers 支撑 human-in-the-loop 与容错；MemorySaver 不跨重启」（retrievedAt 2026-09-01） | 对照本 fixture 的内存存储 |
+| LangGraph Persistence（官方文档） | L1（维护者） | https://docs.langchain.com/oss/python/langgraph/persistence | checkpointer/store 分工、thread_id、HITL | 「checkpointers 支撑 human-in-the-loop 与容错；MemorySaver 不跨重启」（retrievedAt 2026-09-01，页面已迁至 docs.langchain.com） | 对照本 fixture 的内存存储 |
 | How we built our multi-agent research system | L1（维护者） | https://www.anthropic.com/engineering/built-multi-agent-research-system | 生产系统对 checkpoint 与部署的要求 | 「用重试逻辑与定期 checkpoint 从出错处恢复；rainbow deployment 防止部署打断」（retrievedAt 2026-09-01） | [多 Agent 系统](multi-agent.md) |
 | Multi-agent coordination patterns（Claude 博客） | L1（维护者） | https://claude.com/blog/multi-agent-coordination-patterns | 模式间演进判断 | 五种协调模式（本仓旧页存档核验 2026-04-10，本次未重验） | [多 Agent 系统](multi-agent.md) |
 
@@ -416,5 +416,5 @@ workflow 与 agent 的差异不是「有没有 LLM」，而是**控制流住在�
 
 - 步骤不可预测、需要模型主导控制流：[Agent 运行时](agent-runtime)。
 - 批准、暂停、恢复的 agent 侧完整闭环：[恢复与人工批准](recovery-hitl.md)。
-- per-step trace 的采集与查询：[可观测性](../08-production/observability)（层 5）。
+- per-step trace 的采集与查询：[可观测性](../08-production/observability)（生产与运营组）。
 - 流程正确性的证明（回放测试、金路径断言）：[测试](../08-production/testing)与 [evals](https://evals.zenheart.site/)。

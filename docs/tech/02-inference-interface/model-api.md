@@ -18,7 +18,7 @@ listed: true
 
 # Model API Contract
 
-> **Layer**: 2 · Application Integration ｜ **Previous layer exit**: can write and validate input/output schemas ｜ **This layer exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability
+> **Group**: Inference & Interface ｜ **Previous group exit**: can write and validate input/output schemas ｜ **This topic exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability
 > **Prerequisites**: [Structured Output](../02-inference-interface/structured-output) ｜ **Next**: [Streaming](streaming.md), [Session and State](../03-context/session-memory.md)
 
 ## 1. Overview
@@ -310,7 +310,7 @@ Verified vendor notes (retrievedAt 2026-09-01): OpenAI's billing-class 429s (e.g
 | Name | Level | Canonical URL | Use | Supported claim | Next |
 | --- | --- | --- | --- | --- | --- |
 | OpenAI Text generation guide | L0 | https://developers.openai.com/api/docs/guides/text | roles/request basics | developer>user priority; snapshot pinning advice | run your first real request |
-| OpenAI Streaming guide | L0 | https://platform.openai.com/docs/guides/streaming | streaming overview | Chat Completions delta chunks | → [Streaming](streaming.md) |
+| OpenAI Streaming guide | L0 | https://developers.openai.com/api/docs/guides/streaming-responses | streaming overview | Responses semantic events; streamed output is harder to moderate | → [Streaming](streaming.md) |
 | OpenAI Error codes guide | L0 | https://developers.openai.com/api/docs/guides/error-codes | error handling | billing 429 not retryable; Retry-After semantics | add error families to your client |
 | OpenAI Rate limits guide | L0 | https://developers.openai.com/api/docs/guides/rate-limits | rate-limit operations | limit tiers and backoff advice | design throttling |
 | Anthropic API docs | L0 | https://docs.anthropic.com | Messages API reference | required max_tokens; error type table | write the adapter side |

@@ -21,7 +21,7 @@ listed: true
 
 # RAG: Retrieval-Augmented Generation
 
-> **Layer**: 3 · Knowledge Grounding | **Previous layer exit**: run a cancellable, observable end-to-end interaction | **This layer exit**: wire retrieval into the generation loop—answers cite sources, no-hit refuses, and a re-runnable rebuild pipeline exists for corpus updates
+> **Group**: 4 · Grounding (reading the world) | **Previous group exit**: write and validate input/output schemas, and deliver a cancellable, observable end-to-end interaction (groups 2–3) | **This page exit**: wire retrieval into the generation loop—answers cite sources, no-hit refuses, and a re-runnable rebuild pipeline exists for corpus updates
 > **Prerequisites**: [Embeddings and Retrieval](embeddings-retrieval.md) | **Next**: [Advanced Retrieval](advanced-retrieval.md), [Tool Execution Engineering](../05-action/tool-execution)
 
 ## 1. Overview
@@ -45,7 +45,7 @@ flowchart LR
 
 | Stage | Responsibility | Failure mode | Symptom |
 | --- | --- | --- | --- |
-| ingest | fetch, clean, dedupe | dirty/stale documents indexed | answers carry old versions |
+| ingest | fetch, clean, dedupe (multi-format checklist in 3.3) | dirty/stale documents indexed | answers carry old versions |
 | chunk | cut into retrieval units | boundaries split semantics; granularity too coarse | misses; citations mismatch |
 | embed | text → vectors | query and index use different models | globally broken results |
 | retrieve | top-k recall | threshold/lexical mismatch | false refusals or noise |
@@ -69,8 +69,8 @@ Selection order: **stuff → RAG → fine-tune**. Move to RAG when any of "no lo
 
 ### Historical milestones
 
-- 2020: RAG paper (Lewis et al., NeurIPS 2020): two formulations (RAG-Sequence conditions on the same retrieved passages across the sequence / RAG-Token can switch passages per token); set then-state-of-the-art on three open-domain QA tasks (arXiv:2005.11401, retrievedAt 2026-09-01).
-- 2024-09: Anthropic published Contextual Retrieval (contextualized chunks + BM25 + reranking)—publish date outside this verification pass, marked unverified; content in [Advanced Retrieval](advanced-retrieval.md).
+- 2020: RAG paper (Lewis et al., NeurIPS 2020, submitted to arXiv 2020-05-22): two formulations (RAG-Sequence conditions on the same retrieved passages across the sequence / RAG-Token can switch passages per token); set then-state-of-the-art on three open-domain QA tasks (abstract re-verified, arXiv:2005.11401, retrievedAt 2026-09-01).
+- 2024-09-19: Anthropic published Contextual Retrieval (contextualized chunks + BM25 + reranking)—publish date cross-checked against multiple independent secondary sources (retrievedAt 2026-09-01); content in [Advanced Retrieval](advanced-retrieval.md).
 
 ## 2. Usage
 
@@ -259,7 +259,22 @@ A RAG answer's trustworthiness comes from **every claim tracing back to a source
 
 No-hit is not an exception branch but product behavior, handled in two tiers: retrieval returns nothing (refusal tier 1); retrieval returned results but none supports the question (refusal tier 2, still listing what was looked at). Both tiers need explicit user copy and instrumentation—the false-refusal rate is a core RAG operating metric (methodology at [evals](https://evals.zenheart.site/)). The opposite is silently passing emptiness to the model and letting it improvise: the direct source of hallucination.
 
-### 3.3 The update pipeline: rebuilding when data changes
+### 3.3 Multi-format ingestion: corpora are rarely plain text
+
+The first lesson of ingest: **real corpora are seldom plain text**. Markdown, PDF, web pages, spreadsheets, and scans each have their own extraction path and pitfalls; the cost of extracting the wrong shape only surfaces at retrieval time—"should have hit but didn't", and it is hard to attribute. A multi-format checklist (coverage parallels the structure of Ch.1 of Huang Jia's *RAG in Practice*; tool ideas are generic approaches, not product endorsements):
+
+| Format | Tool approach | Dominant failure mode |
+| --- | --- | --- |
+| Markdown / HTML | parse into a heading tree, chunk on structural boundaries | navigation/footer boilerplate leaks into chunks; source and rendered text diverge |
+| PDF (text layer) | extract the text layer (e.g. pypdf / pdf-parse), keep page numbers for citation backlinks | two-column reading order scrambles; tables shatter into fragments |
+| Scans / images | OCR first (e.g. Tesseract or a cloud OCR), store confidence in metadata | low-confidence garbage enters the index and pollutes it—retrieval "answers wrong" with no clear cause |
+| Web pages | fetch + main-content extraction (e.g. readability), record fetch timestamp | silent content loss on site redesign; dynamically rendered parts missed |
+| CSV / tables | chunk per row, prepend headers to every record | a whole table in one chunk loses column semantics; cross-row aggregation questions go unanswered |
+| Office (docx / pptx) | unpack the XML or convert to Markdown, then chunk | comments / revisions / hidden slides leak in; untitled slides lose structural cues |
+
+Two format-independent guardrails: **normalize every ingest product into an internal representation of "plain text + metadata (source, page or line number, fetch time)"**, so downstream chunk / embed / index never sees the source format; and **route low-confidence OCR and failed parses to a quarantine queue for human review**, not into the index. Hosted reference points: OpenAI vector stores accept doc / docx / pdf / html / md / pptx / json / code formats directly and auto-chunk (official MIME table, retrievedAt 2026-09-01). Multimodal embedding is the other route: Cohere `embed-v4.0` embeds mixed text+image content such as screenshots and slide decks directly (officially positioned as removing the text-extraction ETL, retrievedAt 2026-09-01), suited to fidelity-first corpora.
+
+### 3.4 The update pipeline: rebuilding when data changes
 
 RAG's unit of knowledge update is **rebuilding the index**, not retraining the model. A re-runnable incremental pipeline:
 
@@ -272,7 +287,7 @@ document change → compute a content fingerprint per chunk (e.g. SHA-256)
 
 Stable ids (`docId:chunk:i` style) make updates and deletes deterministic; fingerprint comparison avoids paying to re-embed unchanged content. (Pattern distilled from the on-site semantic-search case study; the case itself lives in the appendices. For upsert semantics, see your vector DB's docs.)
 
-### 3.4 Invariants
+### 3.5 Invariants
 
 - **Index and query use the same embedding model**: changing models requires an index rebuild; validate model name and dimensions at startup.
 - **Permission filtering at retrieval time**: ACLs enter retrieval predicates, not post-generation hiding (see [Embeddings and Retrieval](embeddings-retrieval.md)).
@@ -285,14 +300,14 @@ Stable ids (`docId:chunk:i` style) make updates and deletes deterministic; finge
 | Chunk granularity | Anthropic: usually a few hundred tokens per chunk | 12 words per chunk, 4-word overlap (demo) |
 | Refusal prompting | OpenAI sample: "if it cannot be found, say I don't know" | Generator has built-in two-tier refusal, prompt-independent |
 | Citation shape | OpenAI file search returns provenance via `file_citation` annotations | `source` field + inline `[runbook.md]` |
-| Update semantics | Vector DBs provide upsert (update if exists) | Not implemented (pipeline described in 3.3) |
+| Update semantics | Vector DBs provide upsert (update if exists) | Not implemented (pipeline described in 3.4) |
 | Hosted RAG | OpenAI file search: vector stores + built-in semantic/keyword search | This page hand-writes the full chain, for teaching |
 
 ## 4. Development
 
 ### Integration, testing, rollback
 
-- **Into Layer 2**: after swapping in a real model, stream answer rendering reuses [Streaming](../02-inference-interface/streaming); the citation list arrives once after the stream ends, with `sources`.
+- **Into the product interaction (group 2)**: after swapping in a real model, stream answer rendering reuses [Streaming](../02-inference-interface/streaming); the citation list arrives once after the stream ends, with `sources`.
 - **Version pinning**: the index records the embedding model version; upgrading = new-version index + alias switch + golden-set comparison, never in-place overwrite.
 - **Testing**: at least 20 real questions as fixtures—half "should hit" (answers must cite the right document), half "should refuse" (must refuse). Testing only "feels fluent" is not acceptance.
 - **Rollback**: keep the previous index version; the traffic switch lives on the alias—rollback is pointing it back.
@@ -315,7 +330,7 @@ Stable ids (`docId:chunk:i` style) make updates and deletes deterministic; finge
 
 **Symptom**: after a document update, answers still give the old version.
 **Evidence**: compare index-entry fingerprints against current document content; check whether the update pipeline runs and stale chunks are cleaned.
-**Action**: add fingerprint comparison and deletion per 3.3; hook index rebuilds into the document publishing flow.
+**Action**: add fingerprint comparison and deletion per 3.4; hook index rebuilds into the document publishing flow.
 **Done when**: within N minutes of publishing, the same question's answer points to the new version.
 
 ### Symptom → Evidence → Action → Done when

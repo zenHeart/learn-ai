@@ -12,13 +12,13 @@ owner: learn-ai
 externalOwners: []
 prerequisites: [protocol-map, mcp]
 next: [ag-ui, a2a]
-specVersion: "ACP protocolVersion 1 (retrieved 2026-09-01)"
+specVersion: "ACP protocolVersion 1 (stable) + v2 Draft (announced 2026-07-20) (both retrieved 2026-09-01)"
 lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Previous layer exit**: build a traceable retrieval chain with an update path ｜ **This layer exit**: wire a coding agent into any ACP editor and articulate its division of labor with MCP/A2A
+> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: wire a coding agent into any ACP editor and articulate its division of labor with MCP/A2A
 > **Prerequisites**: [Protocol Map](index.md) ｜ [MCP](mcp.md) ｜ **Next**: [AG-UI](ag-ui.md) ｜ [A2A](a2a.md)
 
 ## 1. Overview
@@ -80,7 +80,9 @@ Working with MCP (one client, two protocols): the `session/new` parameters inclu
 
 ### History milestones
 
-`protocolVersion` is an integer major version, currently 1; capabilities evolve additively (new capabilities are not breaking changes). The site's updates page records evolution (not verified entry by entry). Earlier history and release dates: unverified.
+`protocolVersion` is an integer major version; **v1 is the current stable version**. Since v1 shipped, the official RFD process has folded in 15+ features — `session/resume` (reconnect without replay), `session/close`, `session/list`, `session/delete`, elicitation, additionalDirectories, and more have stabilized one after another (site announcements, 2026-06 through 2026-07; not verified entry by entry).
+
+**v2 entered Draft on 2026-07-20** (announcement, retrieved 2026-09-01): the schema is published as `v2.0.0-alphaX` with five big themes — ① beyond the turn: `session/update` may arrive at any point in the session, and a prompt response only means "the agent acknowledged the message", no longer the end of the turn; ② messages and tool calls update, replace, and stream by stable ID (including redaction); ③ the diff is overhauled into structured file changes (add/delete/modify/move/copy plus binary cases, optional `git_patch`); ④ permission requests carry their own title/description and an extensible subject, no longer hard-wired to a tool call; ⑤ enum values accept unknown `_`-prefixed variants, forward-compatible by default. The announcement is explicit about draft boundaries: pieces will change, implementations must gate behind version negotiation AND feature flags, and must not ship in production before stabilization; **adding v2 does not mean dropping v1** — v1-only peers will remain common, and side-by-side support is the official recommendation. Earlier history and release dates: unverified.
 
 ### DoD self-check for this chapter
 
@@ -285,7 +287,7 @@ node acp-editor.mjs
 | Standard turn | an ordinary text prompt | update stream + `end_turn` | everyday Q&A / code edits | — |
 | Tool permission | the agent sends `request_permission` | the user picks allow/reject | before writing files, running commands | read-only analysis (may skip asking) |
 | Interruption | send `session/cancel` during a prompt | `stopReason=cancelled` | user changes their mind / timeout | a turn that already finished |
-| Session resume | `session/load` (needs `loadSession:true`) | replays history updates | continuing across restarts | not implemented in this fixture |
+| Session resume | `session/load` (replays history, needs `loadSession:true`) or `session/resume` (reconnects without replay, needs `sessionCapabilities.resume`) | replays/restores the session context | continuing across restarts | not implemented in this fixture |
 | Resource callbacks | the agent calls `fs/read_text_file` etc. | the client reads/writes on its behalf | when the agent has no direct disk access | not implemented in this fixture |
 
 ## 3. Principles
@@ -296,7 +298,7 @@ ACP's two method axes (summary; field-level truth is the official schema):
 
 | Direction | Methods / notifications | Notes |
 | --- | --- | --- |
-| Client → Agent | `initialize` / `authenticate` / `session/new` / `session/load` / `session/prompt` / `session/set_mode` / `logout` | lifecycle and input |
+| Client → Agent | `initialize` / `authenticate` / `session/new` / `session/load` / `session/resume` / `session/close` / `session/list` / `session/delete` / `session/prompt` / `session/set_mode` / `logout` | lifecycle and input; `load`/`resume`/`close`/`list`/`delete` are all capability-gated per the initialize declaration |
 | Client → Agent (notification) | `session/cancel` | interrupts the current turn, no response |
 | Agent → Client | `session/request_permission` | tool authorization request (request-response) |
 | Agent → Client (notification) | `session/update` | agent/user/thought message chunks, tool_call, plan, command list, mode changes |
@@ -387,7 +389,7 @@ The `prompt` of `session/prompt` is a `ContentBlock[]` (isomorphic with MCP Cont
 | Libraries (TS/Rust/Python/Kotlin) | L1 | https://agentclientprotocol.com/libraries/typescript and siblings | official SDKs | language support list | replace hand-rolled JSON-RPC with an SDK |
 | ACP Registry | L2 | https://agentclientprotocol.com/get-started/registry | the compatible agent/client ecosystem | — | check the matrix when selecting |
 
-All entries retrieved 2026-09-01 (the site sitemap shows protocol/schema updated 2026-02-04).
+All entries retrieved 2026-09-01 (the site sitemap shows protocol/v1/schema updated 2026-08-20).
 
 ### Active falsification and open questions
 
@@ -395,5 +397,6 @@ All entries retrieved 2026-09-01 (the site sitemap shows protocol/schema updated
 - Open 1: the Streamable HTTP transport is still marked "draft proposal in progress"; the remote-agent deployment shape is unsettled.
 - Open 2: governance/ownership details (how Zed-led, whether foundation-bound) live on the governance page, not verified verbatim.
 - Open 3: RFDs (mcp-over-acp, session-resume, logout, etc.) are discussion drafts, not capability commitments.
+- Open 4: no stabilization timeline published for v2 (Draft since 2026-07-20); this page's fixture and lifecycle description target the v1 stable surface — read the official migration guide before adopting v2.
 
 **learn-ai stops here**: the protocol contract, the editor-agent boundary, a runnable fixture. **Where to go next**: model internals → Learn LLM; access commands for specific editors/agents → Products; evaluation → the evals site.

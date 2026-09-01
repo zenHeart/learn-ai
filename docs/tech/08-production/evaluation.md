@@ -20,7 +20,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 5 · Reliable Operations ｜ **Previous layer exit**: can restrict permissions, pause/resume tasks ｜ **This layer exit**: can decide when evaluation evidence is required and wire it into a release gate with thresholds and blocking
+> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can decide when evaluation evidence is required and wire it into a release gate with thresholds and blocking
 > **Prerequisites**: [Testing: The Deterministic Boundary](testing.md) ｜ **Next**: [Deployment and Release](deployment.md) (where the gate lands); methodology continues at [evals](https://evals.zenheart.site/)
 
 ## 1. Overview
@@ -34,11 +34,12 @@ flowchart LR
     A["Change<br/>prompt / model / retrieval params"] --> G["Release gate<br/>golden set + scorer + threshold"]
     G -->|meets bar| M["merge / release"]
     G -->|below bar<br/>non-zero exit| B["blocked → back to the change"]
-    M --> P["Production feedback<br/>flows back as new golden cases"]
-    P -.accumulates.-> G
+    M --> P["Production feedback<br/>explicit / implicit signals"]
+    P --> D["minimal reproduction of negatives<br/>into the golden set (with source tags)"]
+    D -.accumulates.-> G
 ```
 
-The gate is the midpoint of the loop: pre-launch blocking depends on it, post-launch feedback nourishes it.
+The gate is the midpoint of the loop: pre-launch blocking depends on it, post-launch feedback nourishes it (the feedback path is detailed in the user-feedback loop below).
 
 ### Decision table: when evaluation evidence is mandatory
 
@@ -187,6 +188,30 @@ Exit code 1, CI blocks — that is the entire mechanism of "evaluation evidence 
 | Statistical evaluation | Score + variance + significance | Model/prompt swap decisions (→ evals site) |
 | Human review | Sampled blind review | Gold standard and judge calibration (→ evals site) |
 
+### What each layer evaluates: six evaluation facets
+
+The follow-up question after "evaluation evidence is required" is "which layer of the system am I evaluating". One release gate can carry evidence from different facets; pick the wrong facet and the score detaches from what users feel:
+
+| Facet | What it evaluates | Typical evidence form | Boundary and destination |
+| --- | --- | --- | --- |
+| Model Eval (model/inference) | Base capability and behavior shifts after a model or version swap | Golden set before/after + per-dimension scores + variance | Methodology → the evals site's model-eval chapters |
+| RAG Eval (retrieval grounding) | Retrieval hits, faithfulness, citation traceability | Hit rate + end-to-end joint eval | Methodology → the evals site's RAG chapters; engineering → [Advanced Retrieval](../04-grounding/advanced-retrieval) |
+| Tool Eval (tool action) | Tool selection and argument correctness, failure-path behavior | Call-trajectory assertions + replay fixtures | Assertable parts sink into [testing](testing.md); probabilistic parts → evals site |
+| Agent Eval (multi-step tasks) | Task success rate, step efficiency, cost per task | End-to-end task set + trace reconciliation | Methodology → the evals site's agent chapters; trajectories → [observability](observability.md) |
+| Protocol Eval (contract conformance) | Whether the implementation satisfies MCP/A2A contracts | The spec side's TCK/validators | Conformance testing (section below), not evaluation methodology |
+| App Eval (whole application) | User-perceived quality and business metrics | Online metrics + sampled human review + A/B | Online-signal entry → the user-feedback loop (section below) |
+
+### The user-feedback loop: from production signals to the next version
+
+The release gate governs **pre-launch**; the feedback loop governs **post-launch** — together they form the complete data flywheel. Four steps:
+
+1. **Collect feedback signals**: explicit (thumbs up/down, user edits, agent corrections) and implicit (retries, abandonment, escalation to humans, answer-adoption rate). Implicit signals are plentiful but heavily biased — users who bother to vote are not the population, so sample in strata. Collection points are the traces of [observability](observability.md) plus product analytics; do not build a second pipeline.
+2. **Turn signals into data**: distill negatives into **minimal reproductions** that enter the golden set (with source tags: channel/date/scenario); cluster and deduplicate so high-frequency scenarios do not drown the long tail. The discipline is "minimize every case" — dumping whole chat transcripts into the set pollutes it.
+3. **Let data drive iteration**: three exits ordered by cost — prompt wording/structure (cheapest, verified by this page's gate); retrieval and context fixes (middle, back to the [grounding group](../04-grounding/)); model swap or fine-tuning (most expensive, needs statistical-grade evaluation plus [Learn LLM](https://llm.zenheart.site/) training knowledge).
+4. **Verify at the same gate**: whichever facet changed, the next version still passes the same release gate — the loop's exit is not "launch", it is "passes the gate".
+
+Health metrics for the loop: golden-set monthly growth rate, negative-reflow latency (days from production discovery to entering the set), and the fix rate of reflowed cases. Reference structure: Chapter 10 of Chip Huyen's *AI Engineering* organizes this loop as "feedback-signal analysis → data iteration" (structural reference only; methodology details belong to the [evals](https://evals.zenheart.site/) site).
+
 ### Conformance testing for protocols
 
 For protocol systems (MCP/A2A etc.), the concrete form of "evaluation" is **contract/conformance testing** — validating the implementation against the spec-side TCK/validators; that belongs to [testing](testing.md) and the protocol chapters (e.g. the conformance section of the [A2A chapter](../07-interoperability/a2a)), not to evaluation methodology.
@@ -220,6 +245,13 @@ No external spec to implement here; the only measurement is the gate skeleton's 
 **Action**: first measure the current production version's pass rate on the golden set; use it as the baseline and only allow "not below baseline − ε" for new versions.
 **Done when**: the threshold is expressed as "allowed regression versus baseline", with baselines recorded per version.
 
+### Symptom → Evidence → Action → Done when
+
+**Symptom**: three months after launch, the golden set has not grown by one case; the eval is forever green.
+**Evidence**: the set's commit history shows the last change in launch week; production negatives (complaints, escalations-to-human records) have zero intersection with set entries.
+**Action**: establish a reflow routine — weekly, sample negatives from [observability](observability.md) traces, distill minimal reproductions into the set (with source tags); set an upper bound on negative-reflow latency (e.g. 7 days).
+**Done when**: the set's monthly growth rate is above zero; the set run by the most recent release gate contains minimal reproductions of last month's production negatives.
+
 ### Anti-patterns
 
 - **Report-style evaluation**: scores produced, no blocking, no feedback loop — evaluation never entered the delivery chain.
@@ -232,7 +264,7 @@ Four-level reading route:
 
 - **Beginner**: run this page's gate skeleton; internalize "evidence = blockable".
 - **Builder**: build a first golden set for your system (20 cases to start, including negatives) and wire it into CI.
-- **Operator**: establish the negative-feedback mechanism; manage thresholds against baselines; record gate results per version.
+- **Operator**: establish the negative-feedback mechanism (the user-feedback loop); manage thresholds against baselines; record gate results per version.
 - **Researcher**: read the full methodology on [evals](https://evals.zenheart.site/) (datasets/judges/statistics/red-teaming).
 
 ### Resource table
@@ -253,4 +285,4 @@ Four-level reading route:
 
 - All evaluation methodology: [evals](https://evals.zenheart.site/) (deliberately not expanded here).
 - The engineering landing point of the gate (gate chain, blocking, rollback): [Deployment and Release](deployment.md).
-- Resource index after this layer: [Resource Library](../../resources.md).
+- Resource index after this group: [Resource Library](../../resources.md).

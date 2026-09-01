@@ -1,6 +1,6 @@
 ---
 title: Agent 运行时
-description: Agent = model + context + tools + state + control loop + environment；本页给出最小循环的实现、agent 与 workflow 的分界线、停止条件与预算，并导航本子树四个主题。
+description: Agent = model + context + tools + state + control loop + environment；本页给出最小循环的实现、agent 与 workflow 的分界线、停止条件与预算，并导航本组其余主题。
 domain: tech
 tags: [agent, runtime, loop]
 navOrder: 60
@@ -18,12 +18,12 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**：能安全执行单次工具调用，并把固定步骤编排成工作流 ｜ **本层出口**：能搭出带停止条件与预算的最小 Agent 循环，并知道状态、恢复、界面自动化各读哪页
+> **所在组**：Agent 系统 ｜ **上一层出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本层出口**：能搭出带停止条件与预算的最小 Agent 循环，并知道状态、恢复、界面自动化各读哪页
 > **前置**：[工具调用契约](../05-action/tool-calling) · [工具执行工程](../05-action/tool-execution.md) · [工作流模式](workflow.md) ｜ **下一步**：[Agent 设计模式](design-patterns.md) · [Agent 状态与记忆](state-memory.md) · [恢复与人工批准](recovery-hitl.md) · [Computer Use](computer-use.md)
 
 ## 1. 概述
 
-**结论先讲**：Agent 运行时（agent runtime）是把「模型、上下文、工具、状态」装进一个**控制循环**、放进**环境**里跑到停止条件为止的那层代码。Anthropic 把 agent 总结为「基于环境反馈在循环中使用工具的 LLM」；OpenAI 的定义同构：agent 是「规划、调用工具、跨专家协作，并保留足够状态以完成多步工作」的应用。你不训练模型，你写的是这层运行时。
+**结论先讲**：Agent 运行时（agent runtime）是把「模型、上下文、工具、状态」装进一个**控制循环**、放进**环境**里跑到停止条件为止的那层代码。Anthropic 把 agent 总结为「基于环境反馈在循环中使用工具的 LLM」，并在上下文工程文中收敛为「LLMs autonomously using tools in a loop」；OpenAI 当前 Agents 指南的口径同向——agent 是「智能完成任务的系统，从简单目标到开放式工作流」，以模型、工具与编排为基元。你不训练模型，你写的是这层运行时。
 
 ### Agent 定义公式
 
@@ -50,7 +50,7 @@ flowchart LR
     end
     L --> S{"停止条件"}
     S -->|模型给出最终答案| F["完成"]
-    S -->|预算耗尽 / 步数上限| X["终止并报告"]
+    S -->|预算耗尽（步数 / token / 时间）| X["终止并报告"]
 ```
 
 循环每转一圈消耗一次模型调用加若干工具执行。**环境反馈是进展的唯一事实源**：模型必须看到工具结果才知道下一步——这不是优化项，是正确性要求。
@@ -64,6 +64,7 @@ flowchart LR
 | 状态 | 单次调用结果 | 多步中间产物 | 会话 + 记忆 + checkpoint | 各 Agent 状态隔离 |
 | 信任域 | 进程内 | 进程内 | host 内 + 权限边界 | 同构 → [multi-agent](multi-agent.md)；跨域 → [协议](../07-interoperability/index.md) |
 | 最低复杂度 | function call | 静态编排 | 循环 + 停止条件 + 权限 | delegation 机制 |
+| 反向判据（何时退回左边） | —（已是最简形态） | 步骤可静态枚举、路径稳定 → **留在 workflow，不上 agent** | 环境反馈不可验证、写不出停止条件与预算 → 退回 workflow | 一个循环加两三个工具已达标 → 退回单 agent |
 
 Anthropic 的分界一句话：**workflow 是 LLM 与工具按预定代码路径编排；agent 是 LLM 动态指挥自己的过程与工具用法**。两者同属 agentic system，选择标准是「步骤能否静态枚举」。
 
@@ -264,10 +265,12 @@ node --experimental-strip-types minimal-agent-loop.ts
 
 ### 关键不变量
 
-1. **停止条件先于循环存在**：成功标准写进提示，步数与 token 上限写进代码；两样都没有就不要上线。
+1. **停止条件先于循环存在**：成功标准写进提示，步数、token 与时间上限写进代码；两样都没有就不要上线。
 2. **观察必须回填**：每次工具结果都进入下一轮模型输入（fixture 里是 transcript 约定，真实系统是消息历史）。
 3. **环境是唯一事实源**：判断「做到没有」看工具结果与验证，不看模型自述。
 4. **预算单调递减**：每步扣减，耗尽即终止——这是成本与安全的硬顶，不是统计指标。
+
+预算有三条轴，断言来源分层核对（retrievedAt 2026-09-01）：**步数**——Anthropic 明文「include stopping conditions (such as a maximum number of iterations) to maintain control」；**token**——Anthropic 多 agent 复盘给出量级（agent ≈ 4× 聊天、多 agent ≈ 15× 聊天），故总量必须有硬顶；**时间**——厂商文档没有统一明文口径，工程含义是把[工具执行工程](../05-action/tool-execution.md)里单次调用的超时门上提为**整循环的墙上时钟上限**（长跑任务挂在无人监督的队列里时，这是唯一能兜底的反悔机制）。fixture 只实现了前两轴；第三轴是同一停止条件的时间版本，不改变循环结构。
 
 ### 状态与生命周期（简述）
 
@@ -279,14 +282,14 @@ node --experimental-strip-types minimal-agent-loop.ts
 | --- | --- | --- |
 | Agent 是「循环中使用工具、基于环境反馈」的系统 | Anthropic《Building Effective Agents》 | `runAgent` 即该循环的约 40 行实现 |
 | 需要停止条件（如最大迭代数）保持控制 | 同上 | scenario 2 的 `max_steps_exceeded` |
-| Agent 要「保留足够状态完成多步工作」 | OpenAI Agents 文档 | fixture 的 transcript 与 `tokens` 计数 |
+| Agent 的运行状态可序列化、暂停后从断点续跑（跨步状态的另一面） | OpenAI Agents SDK HITL 文档（`RunState`） | fixture 的 transcript 与 `tokens` 计数 |
 | 框架会加抽象层、增加调试成本，建议先直接用 API | Anthropic | 手写循环一页可读完、可断点、可回放 |
 
 ## 4. 开发
 
 ### 集成与选型
 
-- **谁拥有循环**：想控制每个 `tool_use` 块的解析与执行 → 用模型 API 自持循环（OpenAI 口径：Responses API 自持、Agents SDK 托管）；要现成的 sessions、审批流、trace → 用 Agent SDK。核心循环只有几十行，两边迁移成本都低。
+- **谁拥有循环**：想控制每个 `tool_use` 块的解析与执行 → 用模型 API 自持循环；要现成的 sessions、审批流、trace → 用 Agent SDK（OpenAI 当前口径：Agent Builder 可视化编排，或 Agents SDK 自写代码，两条路都把循环封在框架里）。核心循环只有几十行，两边迁移成本都低。
 - **版本 pin**：工具定义与模型行为耦合——Anthropic 明确说工具定义应当获得与 prompt 同等的工程投入。生产上同时 pin 模型版本与工具集，任一变更都要重新评估行为。
 
 ### 症状 → 证据 → 处理 → 完成标准
@@ -324,7 +327,7 @@ node --experimental-strip-types minimal-agent-loop.ts
 
 - **Beginner**：读本页并跑通最小循环；能复述定义公式与四个不变量。
 - **Builder**：读[设计模式](design-patterns.md)为循环选结构；读[状态与记忆](state-memory.md)接入 checkpoint。
-- **Operator**：读[恢复与人工批准](recovery-hitl.md)，再进层 5 的[可观测性](../08-production/observability)与[成本与性能](../08-production/cost-performance)。
+- **Operator**：读[恢复与人工批准](recovery-hitl.md)，再进[生产与运营](../08-production/)组的[可观测性](../08-production/observability)与[成本与性能](../08-production/cost-performance)。
 - **Researcher**：读 ReAct 论文与 Learn LLM 第 13 / 16 / 21 章，看机制推导。
 
 ### 资源表
@@ -332,10 +335,10 @@ node --experimental-strip-types minimal-agent-loop.ts
 | 名称 | 证据层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | Building Effective Agents（Anthropic） | L1（维护者） | https://www.anthropic.com/research/building-effective-agents | workflow / agent 边界与组合模式 | 「循环中使用工具」「停止条件」定义（retrievedAt 2026-09-01） | [Agent 设计模式](design-patterns.md) |
-| Agents guide（OpenAI） | L1（维护者） | https://platform.openai.com/docs/guides/agents | 生产 SDK 视角的 agent 组成 | 「plan / call tools / keep state」定义；自持循环 vs 托管循环（retrievedAt 2026-09-01） | [恢复与人工批准](recovery-hitl.md) |
+| Agents guide（OpenAI） | L1（维护者） | https://platform.openai.com/docs/guides/agents | AgentKit 时代的 agent 组成（Builder / SDK / 工具 / guardrails） | 「agent 是智能完成任务的系统，从简单目标到开放式工作流」；Builder 可视化编排 vs Agents SDK 自写代码（retrievedAt 2026-09-01，本轮复核：旧版「plan / call tools / keep state」表述已不在当前页面） | [恢复与人工批准](recovery-hitl.md) |
 | ReAct: Synergizing Reasoning and Acting（Yao et al., 2022） | L4（研究） | https://arxiv.org/abs/2210.03629 | 推理-行动交替的原始论证 | 推理 trace 帮助模型跟踪与修正计划（retrievedAt 2026-09-01） | [Agent 设计模式](design-patterns.md) |
 | Learn LLM 第 13 / 16 / 21 章 | sibling | https://llm.zenheart.site/chapters/ | 手写 loop、LangGraph、多 Agent 机制 | 机制推导归 Learn LLM（retrievedAt 2026-09-01） | [multi-agent](multi-agent.md) |
-| What is an agent?（Simon Willison） | L2（权威二次） | https://simonwillison.net/2025/Sep/18/agents/ | 极简定义「autonomously using tools in a loop」 | 被 Anthropic 上下文工程文引用的口径（retrievedAt 2026-09-01，转引自 Anthropic 原文） | 本页概述 |
+| What is an agent?（Simon Willison） | L2（权威二次） | https://simonwillison.net/2025/Sep/18/agents/ | 极简定义「autonomously using tools in a loop」 | 与 Anthropic 上下文工程文自述的同句口径一致（retrievedAt 2026-09-01；Anthropic 原文未具名署引） | 本页概述 |
 
 ### 主动证伪与未决问题
 

@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 5 · Reliable Operations ｜ **Previous layer exit**: can restrict permissions, pause/resume tasks ｜ **This layer exit**: can make one AI request's full trajectory replayable, attributable, and redacted
+> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can make one AI request's full trajectory replayable, attributable, and redacted
 > **Prerequisites**: [Model API Contract](../02-inference-interface/model-api) (usage field), [Tool Execution Engineering](../05-action/tool-execution) ｜ **Next**: [Cost and Performance](cost-performance.md) (accounting on observability data), [Deployment and Release](deployment.md) (alerts and runbooks)
 
 ## 1. Overview

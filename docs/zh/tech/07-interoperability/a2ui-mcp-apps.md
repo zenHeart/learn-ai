@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能构建可追溯的检索链和更新路径 ｜ **本层出口**：能判断「Agent 该发声明式组件还是宿主沙箱 HTML」，并写出一个带 allowlist 校验的渲染器骨架
+> **所在组**：互操作 ｜ **上一组出口**：能构建可追溯的检索链和更新路径 ｜ **本组出口**：能判断「Agent 该发声明式组件还是宿主沙箱 HTML」，并写出一个带 allowlist 校验的渲染器骨架
 > **前置**：[MCP](mcp.md) ｜ [AG-UI](ag-ui.md) ｜ **下一步**：[协议观察清单](watchlist.md)
 
 ## 1. 概述
@@ -28,7 +28,7 @@ listed: true
 - **A2UI（Agent to UI）**：Agent 发**声明式组件描述**（JSON），客户端用自己的原生组件渲染——安全如数据、表达如代码。Google 创建（Apache 2.0），CopilotKit 等共建。
 - **MCP Apps**：MCP 官方扩展——server 的工具声明一个 `ui://` 资源引用，宿主把返回的**交互式 HTML** 渲染在沙箱 iframe 里，双方经 postMessage 上的 JSON-RPC 方言双向通信。
 
-一句话分工：**A2UI 管「Agent 说要什么 UI」（声明式），MCP Apps 管「MCP 宿主内嵌什么 UI」（HTML + 沙箱）**；两者都只定义 payload/宿主行为，**怎么传**归传输协议（A2A、AG-UI、SSE、WebSocket 都行），**前端怎么实现**归层 2 [生成式 UI](../02-inference-interface/ui)。
+一句话分工：**A2UI 管「Agent 说要什么 UI」（声明式），MCP Apps 管「MCP 宿主内嵌什么 UI」（HTML + 沙箱）**；两者都只定义 payload/宿主行为，**怎么传**归传输协议（A2A、AG-UI、SSE、WebSocket 都行），**前端怎么实现**归推理与接口组 [生成式 UI](../02-inference-interface/ui)。
 
 ### 心智模型：Agent 出描述，宿主出渲染与安全
 
@@ -57,7 +57,7 @@ MCP Apps 为 modelcontextprotocol.io 的官方扩展文档（非独立协议版�
 
 - 用 A2UI：跨平台原生渲染（web/移动/桌面一套描述）；LLM 逐步生成（扁平流式 JSON 友好）；安全上禁止任意代码执行。
 - 用 MCP Apps：宿主本来就是 MCP 客户端（Claude、VS Code Copilot 等）；需要成熟 Web 生态（可视化库、表单）；接受沙箱 iframe 模型。
-- 不用（两案皆非目标）：传输层语义（→ [AG-UI](ag-ui.md) / [A2A](a2a.md)）；前端组件实现细节（→ 层 2 [生成式 UI](../02-inference-interface/ui)）；纯文本对话够用的场景。
+- 不用（两案皆非目标）：传输层语义（→ [AG-UI](ag-ui.md) / [A2A](a2a.md)）；前端组件实现细节（→ 推理与接口组 [生成式 UI](../02-inference-interface/ui)）；纯文本对话够用的场景。
 
 ### 决策表
 
@@ -236,7 +236,7 @@ SDK 面：`@modelcontextprotocol/ext-apps` 的 `App` 类是便捷封装（非必
 | Agent 交付什么 UI（声明式） | **A2UI** |
 | MCP 宿主内嵌什么 UI（HTML/沙箱） | **MCP Apps** |
 | 事件/消息怎么流 | [AG-UI](ag-ui.md)（前端交互）/ [A2A](a2a.md)（Agent 间，A2UI 官方列为其传输之一） |
-| 前端组件与状态怎么写 | 层 2 [生成式 UI](../02-inference-interface/ui) |
+| 前端组件与状态怎么写 | 推理与接口组 [生成式 UI](../02-inference-interface/ui) |
 
 ### 规范要求 vs 本地实测
 
@@ -321,4 +321,4 @@ SDK 面：`@modelcontextprotocol/ext-apps` 的 `App` 类是便捷封装（非必
 - 未决 3：fixture 采用 v0.8 风格 `surfaceUpdate` 教学子集；v0.9+ 的 `createSurface`/`dataModelUpdate`/`beginRendering` 完整消息族未在 fixture 覆盖（规范页未逐字段核验）。
 - 未决 4：宿主支持矩阵动态变化（官方列出 8 个宿主，2026-09-01 快照），采用决策前复查。
 
-**learn-ai 到此为止**：payload 契约、安全边界、可运行校验器。**继续去哪**：前端实现 → 层 2 [生成式 UI](../02-inference-interface/ui)；传输 → [AG-UI](ag-ui.md) / [A2A](a2a.md)；MCP 基础 → [MCP](mcp.md)。
+**learn-ai 到此为止**：payload 契约、安全边界、可运行校验器。**继续去哪**：前端实现 → 推理与接口组 [生成式 UI](../02-inference-interface/ui)；传输 → [AG-UI](ag-ui.md) / [A2A](a2a.md)；MCP 基础 → [MCP](mcp.md)。

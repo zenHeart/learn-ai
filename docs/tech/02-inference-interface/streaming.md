@@ -18,7 +18,7 @@ listed: true
 
 # Streaming
 
-> **Layer**: 2 · Application Integration ｜ **Previous layer exit**: can write and validate input/output schemas ｜ **This layer exit**: can consume one model stream — accumulate chunks, cancel at any time, recognize interruption, and read the finish reason
+> **Group**: Inference & Interface ｜ **Previous group exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability ｜ **This topic exit**: can consume one model stream — accumulate chunks, cancel at any time, recognize interruption, and read the finish reason
 > **Prerequisites**: [Model API Contract](model-api.md) ｜ **Next**: [Session and State](../03-context/session-memory.md), [Generative UI](ui.md)
 
 ## 1. Overview
@@ -54,7 +54,7 @@ sequenceDiagram
 | WebSocket | bidirectional | you own protocol, heartbeats, reconnect | optionally stateful | upgraded protocol, extra gateway config | medium: worth it only for two-way needs |
 | Polling | client pulls | fully manual | server stores results | plain HTTP | low, but poor latency and wasted requests |
 
-**Default to SSE**: model streams are pure one-way pushes over ordinary HTTP infrastructure; move to WebSocket only when you must send input mid-generation (e.g., real-time barge-in).
+**Default to SSE**: model streams are pure one-way pushes over ordinary HTTP infrastructure; move to WebSocket only when you must send input mid-generation (e.g., real-time barge-in). OpenAI Responses now ships an official WebSocket mode for exactly that incremental input (retrievedAt 2026-09-01) — it solves "send input mid-generation", not resuming an interrupted generation (see Principles); SSE remains the default HTTP streaming path.
 
 ### Historical milestones
 
@@ -290,7 +290,7 @@ Network arrival speed and rendering speed are decoupled. Calling `setState` per 
 | Name | Level | Canonical URL | Use | Supported claim | Next |
 | --- | --- | --- | --- | --- | --- |
 | MDN Using SSE | L0 | https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events | wire-format authority | fields/blank-line separation/reconnect/6-connection cap | write a parser |
-| OpenAI Streaming guide | L0 | https://platform.openai.com/docs/guides/streaming | vendor streaming overview | delta structure, [DONE], moderation note | connect a real vendor |
+| OpenAI Streaming guide | L0 | https://developers.openai.com/api/docs/guides/streaming-responses | vendor streaming overview | Responses semantic events, moderation note | connect a real vendor |
 | Anthropic Streaming reference | L0 | https://docs.anthropic.com | event lifecycle | message_start/delta/stop event family | connect a real vendor |
 | WHATWG HTML spec | L0 | https://html.spec.whatwg.org/multipage/server-sent-events.html | syntax norm | event-stream grammar and parsing rules | consult for exact definitions |
 | This page's fixture | E | streaming-mock.mts (inline) | zero-key verification | accumulation/cancellation/finish-reason behavior | swap in a real vendor endpoint |

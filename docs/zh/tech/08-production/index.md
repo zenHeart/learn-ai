@@ -1,6 +1,6 @@
 ---
-title: 层 5 · 可靠运营
-description: 功能跑通不等于可以上线——本层用测试、评估、可观测性、安全、成本与部署六类证据，把「能演示」变成「能运营、能回放、能追责」。
+title: Production 组
+description: 功能跑通不等于可以上线——本组用测试、评估、可观测性、安全、成本与部署六类证据，把「能演示」变成「能运营、能回放、能追责」。
 domain: tech
 tags: [tech, operations]
 navOrder: 80
@@ -18,18 +18,18 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 5 · 可靠运营 ｜ **上一层出口**：能限制权限、暂停/恢复任务 ｜ **本层出口**：能用可回放证据说明质量、风险、性能、回滚和责任人
-> **前置**：[恢复与人工批准](../06-agent-systems/recovery-hitl) ｜ **下一步**：[测试](testing.md)、[评估（桥接）](evaluation.md)、[可观测性](observability.md)、[安全](security.md)、[成本与性能](cost-performance.md)、[部署与发布](deployment.md)，出层后进[资料库](../../resources.md)
+> **所在组**：Production ｜ **上一组出口**：能限制权限、暂停/恢复任务 ｜ **本组出口**：能用可回放证据说明质量、风险、性能、回滚和责任人
+> **前置**：[恢复与人工批准](../06-agent-systems/recovery-hitl) ｜ **下一步**：[测试](testing.md)、[评估（桥接）](evaluation.md)、[可观测性](observability.md)、[安全](security.md)、[成本与性能](cost-performance.md)、[部署与发布](deployment.md)，出组后进[资料库](../../resources.md)
 
 ## 1. 概述
 
-**结论先讲**：「功能已跑通」与「可以上线运营」之间隔着一整层工作。演示只需要一次成功；运营需要**可回放的证据**——出问题时能重放当时发生了什么、改动前能预测影响、故障时有明确的责任人和回滚路径。本层把前四层散落的工程手段收口为五类上线证据：质量、风险、性能、回滚、责任人。
+**结论先讲**：「功能已跑通」与「可以上线运营」之间隔着一整组工作。演示只需要一次成功；运营需要**可回放的证据**——出问题时能重放当时发生了什么、改动前能预测影响、故障时有明确的责任人和回滚路径。本组把上游各组散落的工程手段收口为五类上线证据：质量、风险、性能、回滚、责任人。
 
 ### 心智模型：六条证据链
 
 ```mermaid
 flowchart TB
-    Q["层 5 的问题：如何证明它可以上线并持续运行？"]
+    Q["Production 组的问题：如何证明它可以上线并持续运行？"]
     Q --> T["测试<br/>确定性可断言的行为边界"]
     Q --> E["评估（桥接）<br/>概率性质量证据 → evals 站"]
     Q --> O["可观测性<br/>轨迹可回放、可归因"]
@@ -64,14 +64,14 @@ flowchart TB
 
 ### 横切声明
 
-安全、成本、观测**不是本层才出现的话题**：权限边界在[工具执行](../05-action/tool-execution)就已引入，token 用量在[模型 API](../02-inference-interface/model-api) 的 usage 字段就已返回，脱敏在[上下文工程](../03-context/context-engineering)就要考虑。层 1–4 在各自场景里就地处理这些关注点；**层 5 把它们收口为系统性的上线证据**——不再是「某处做对了」，而是「处处可证明」。
+安全、成本、观测**不是本组才出现的话题**：权限边界在[工具执行](../05-action/tool-execution)就已引入，token 用量在[模型 API](../02-inference-interface/model-api) 的 usage 字段就已返回，脱敏在[上下文工程](../03-context/context-engineering)就要考虑。上游各组在各自场景里就地处理这些关注点；**Production 组把它们收口为系统性的上线证据**——不再是「某处做对了」，而是「处处可证明」。
 
 ### 何时使用 / 何时不用
 
 - 用：任何要越过「个人 demo」进入「有用户、有值班、有账单」的系统。
 - 不用：一次性脚本、本地实验、学习性玩具——为它们建设五类证据是过度工程。判断依据见[复杂度决策阶梯](../00-map/complexity-ladder)。
 
-历史版本里程碑：本层结构于 2026-09 随 Issue #116 冻结，由旧 `engineering/`（testing/evals/observability/security/cost-optimization）与 `testing/`、`evaluation/` 目录合并升级；更早来源未验证，不编造。
+历史版本里程碑：本组结构于 2026-09 随 Issue #116 冻结，由旧 `engineering/`（testing/evals/observability/security/cost-optimization）与 `testing/`、`evaluation/` 目录合并升级；更早来源未验证，不编造。
 
 ## 2. 使用
 
@@ -89,14 +89,14 @@ flowchart TB
 
 ### 使用边界
 
-- 本层不教你「怎么写测试/怎么埋点」——那是六个子章的内容；本页只负责把症状路由到正确的证据链。
+- 本组不教你「怎么写测试/怎么埋点」——那是六个子章的内容；本页只负责把症状路由到正确的证据链。
 - 五类证据的**深度**按业务风险缩放：内部工具不需要金融级审计日志，但需要能回答上面五问的最低版本。
 
 ## 3. 原理
 
-### 为什么「收口」发生在层 5
+### 为什么「收口」发生在 Production 组
 
-层 1–4 的每一层都以「跑通」为出口：schema 校验通过、端到端可取消、检索可追溯、权限可暂停恢复。但「跑通」是**单次属性**；运营要求的是**持续属性**——第一百次请求和第一次一样可靠，第七次改动和第一次一样可预测。把单次属性升级为持续属性的手段就是证据化：
+上游每一组的出口都是「跑通」：schema 校验通过、端到端可取消、检索可追溯、权限可暂停恢复。但「跑通」是**单次属性**；运营要求的是**持续属性**——第一百次请求和第一次一样可靠，第七次改动和第一次一样可预测。把单次属性升级为持续属性的手段就是证据化：
 
 - 行为的可预测性 ← 测试 + 评估（改动前后可比）
 - 故障的可解释性 ← 可观测性（轨迹可回放）
@@ -104,13 +104,13 @@ flowchart TB
 - 资用的可核算性 ← 成本与性能（每请求可记账）
 - 变更的可逆性 ← 部署（版本可切回）
 
-### 可回放性是本层的统一不变量
+### 可回放性是本组的统一不变量
 
 五类证据共享同一个验收标准：**事后能重放**。测试可重跑、评估数据集可复现、trace 可导出重看、攻击样本可重放到过滤器、成本可按请求重算、版本可重新部署。任何「当时看到了、现在找不回」的观测都不算证据——这是区分真观测与「碰巧看见」的分界线。
 
 ### 与外部 owner 的分工
 
-本层有两处刻意停止：评估方法论（数据集/scorer/judge/统计/红队）由 [evals](https://evals.zenheart.site/) 拥有，本仓只回答「何时需要证据、如何接入发布门」；模型对齐层的风险机理（reward hacking、越狱倾向）由 [Learn LLM](https://llm.zenheart.site/) 拥有，本仓只做应用侧工程。分工细节见 `_phase0/bridge-register.md`。
+本组有两处刻意停止：评估方法论（数据集/scorer/judge/统计/红队）由 [evals](https://evals.zenheart.site/) 拥有，本仓只回答「何时需要证据、如何接入发布门」；模型对齐层的风险机理（reward hacking、越狱倾向）由 [Learn LLM](https://llm.zenheart.site/) 拥有，本仓只做应用侧工程。分工细节见 `_phase0/bridge-register.md`。
 
 ### 规范要求 vs 本地实测
 
@@ -143,7 +143,7 @@ flowchart TB
 
 ### 反模式清单
 
-- **证据表演**：为了过评审临时拼凑截图与数字，事后不可重放——这是「看似成功但证据不足」在层 5 的形态。
+- **证据表演**：为了过评审临时拼凑截图与数字，事后不可重放——这是「看似成功但证据不足」在 Production 组的形态。
 - **五链全上**：内部工具配上金融级审计与全量 trace 采样，把证据成本做成了新的运营负担。
 - **证据与系统脱钩**：测试跑在 mock 上、trace 只在 staging 开——生产路径恰恰没有覆盖。
 
@@ -161,17 +161,17 @@ flowchart TB
 | 名称 | 证据层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | OWASP GenAI LLM Top 10 2026 | L0（官方清单） | https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/ | 风险证据的业界基线 | 2026-08-04 发布，风险排序基于 7,714 起真实事故语料（retrievedAt 2026-09-01） | [安全](security.md) |
-| NIST AI RMF 1.0 | L0（官方框架） | https://www.nist.gov/itl/ai-risk-management-framework | 治理层风险管理的志愿框架 | 2023-01-26 发布，自愿采用；生成式 AI Profile（NIST AI 600-1）2024-07-26 发布（retrievedAt 2026-09-01） | [安全](security.md) 治理节 |
+| NIST AI RMF 1.0 | L0（官方框架） | https://www.nist.gov/itl/ai-risk-management-framework | 治理层风险管理的志愿框架 | 2023-01-26 发布，自愿采用；生成式 AI Profile（NIST AI 600-1）2024-07-26 发布；NIST 官网注明 1.0 正随白宫 AI 行动计划修订（retrievedAt 2026-09-01） | [安全](security.md) 治理节 |
 | OpenTelemetry GenAI 语义约定 | L0（官方规范） | https://github.com/open-telemetry/semantic-conventions-genai | 观测证据的属性命名基线 | GenAI 约定 2026-06 迁入独立仓库，覆盖 GenAI 客户端/MCP/厂商特定约定（retrievedAt 2026-09-01） | [可观测性](observability.md) |
 | evals 站 | sibling（跨仓 owner） | https://evals.zenheart.site/ | 评估方法论唯一 owner | 本仓只保留发布门接入（bridge-register 2026-09-01） | [评估（桥接）](evaluation.md) |
 
 ### 主动证伪与未决问题
 
-- 证伪入口：如果你找到一个「能稳定运营却缺五类证据之一」的真实系统，说明该类证据的必要性假设有漏洞——先检查它是否用了本表之外的等价证据形式，再考虑修订本层出口。
+- 证伪入口：如果你找到一个「能稳定运营却缺五类证据之一」的真实系统，说明该类证据的必要性假设有漏洞——先检查它是否用了本表之外的等价证据形式，再考虑修订本组出口。
 - 未决：六链深度如何按业务风险分级（哪些场景可以明确豁免哪类证据），待各子章运行手册积累案例后回填。
 
 ### learn-ai 到此为止 / 继续去哪
 
 - 评估方法论、数据集构建、judge 与统计：[evals](https://evals.zenheart.site/)。
 - 模型对齐与后训练如何影响风险行为：[Learn LLM](https://llm.zenheart.site/)。
-- 出层之后的完整资源索引：[资料库](../../resources.md)。
+- 出组之后的完整资源索引：[资料库](../../resources.md)。

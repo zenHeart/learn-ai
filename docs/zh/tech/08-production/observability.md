@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 5 · 可靠运营 ｜ **上一层出口**：能限制权限、暂停/恢复任务 ｜ **本层出口**：能让一次 AI 请求的完整轨迹可回放、可归因、可脱敏
+> **所在组**：Production ｜ **上一组出口**：能限制权限、暂停/恢复任务 ｜ **本组出口**：能让一次 AI 请求的完整轨迹可回放、可归因、可脱敏
 > **前置**：[模型 API 契约](../02-inference-interface/model-api)（usage 字段）、[工具执行工程](../05-action/tool-execution) ｜ **下一步**：[成本与性能](cost-performance.md)（观测数据记账）、[部署与发布](deployment.md)（告警与运行手册）
 
 ## 1. 概述

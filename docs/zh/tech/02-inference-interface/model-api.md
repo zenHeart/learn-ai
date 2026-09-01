@@ -18,7 +18,7 @@ listed: true
 
 # 模型 API 契约
 
-> **在哪一层**：层 2 · 应用接入 ｜ **上一层出口**：能写并验证输入/输出 schema ｜ **本层出口**：能写出带错误族分类、重试语义与用量观测的模型调用循环
+> **在哪一组**：推理与接口组 ｜ **上一组出口**：能写并验证输入/输出 schema ｜ **本页出口**：能写出带错误族分类、重试语义与用量观测的模型调用循环
 > **前置**：[结构化输出](../02-inference-interface/structured-output) ｜ **下一步**：[流式响应](streaming.md)、[会话与状态](../03-context/session-memory.md)
 
 ## 1. 概述
@@ -310,7 +310,7 @@ HTTP 400: request rejected | retryable: false
 | 名称 | 层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | OpenAI Text generation 指南 | L0 | https://developers.openai.com/api/docs/guides/text | 角色/请求基础 | developer>user 优先级；pin 快照建议 | 跑通第一条真实请求 |
-| OpenAI Streaming 指南 | L0 | https://platform.openai.com/docs/guides/streaming | 流式总览 | Chat Completions 用 delta chunk | → [流式响应](streaming.md) |
+| OpenAI Streaming 指南 | L0 | https://developers.openai.com/api/docs/guides/streaming-responses | 流式总览 | Responses 语义事件；流式输出更难审核 | → [流式响应](streaming.md) |
 | OpenAI Error codes 指南 | L0 | https://developers.openai.com/api/docs/guides/error-codes | 错误处理 | 计费类 429 重试无效；Retry-After 语义 | 给客户端补错误族 |
 | OpenAI Rate limits 指南 | L0 | https://developers.openai.com/api/docs/guides/rate-limits | 限流运营 | 限流分层与退避建议 | 设计节流 |
 | Anthropic API 文档 | L0 | https://docs.anthropic.com | Messages API 参考 | max_tokens 必填；错误类型表 | 对照写适配层 |

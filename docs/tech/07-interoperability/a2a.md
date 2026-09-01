@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Previous layer exit**: build a traceable retrieval chain with an update path ｜ **This layer exit**: delegate tasks to an opaque agent across trust domains, and recover from dropped streams, missing input, and version mismatches
+> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: delegate tasks to an opaque agent across trust domains, and recover from dropped streams, missing input, and version mismatches
 > **Prerequisites**: [Protocol Map](index.md) ｜ [Multi-Agent Systems](../06-agent-systems/multi-agent.md) ｜ **Next**: [ACP: Agent Client Protocol](acp-agent-client.md) ｜ [A2UI and MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. Overview
@@ -85,7 +85,7 @@ The spec defines the state set, the terminal set, and constraints such as "strea
 
 ### History milestones
 
-Version sequence published on the spec page: `1.0.0` (latest) ← `0.3.0` ← `0.2.6` ← `0.1.0`; the project was initiated by Google and donated to the Linux Foundation (retrieved 2026-09-01 from the official site and repo llms.txt). Two breaking changes in 1.0 (migration appendix A.2): ① the `kind` discriminator was removed — the JSON member name itself now discriminates Part and stream-event types; ② `extendedAgentCard` moved from the card top level into `capabilities`. Exact release dates per version: unverified.
+Version sequence published on the spec page: `1.0.0` (latest) ← `0.3.0` ← `0.2.6` ← `0.1.0` (re-checked 2026-09-01: 1.0.0 remains the latest release, no drift); the project was initiated by Google and donated to the Linux Foundation, and is now maintained by a Technical Steering Committee with representatives from AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow (official site Governance section, retrieved 2026-09-01). Two breaking changes in 1.0 (migration appendix A.2): ① the `kind` discriminator was removed — the JSON member name itself now discriminates Part and stream-event types; ② `extendedAgentCard` moved from the card top level into `capabilities`. Exact release dates per version: unverified.
 
 ### DoD self-check for this chapter
 

@@ -52,7 +52,7 @@ Only two questions define the layers: **how long it lives** (one run / across ru
 | Control | Runtime fully | Runtime decides what to write | You own indexing and refresh | You own snapshot granularity |
 | State | In-memory history | Out-of-process KV / files | Vector store / index | One full site per snapshot |
 | Trust domain | In-process | Storage boundary | Data-source boundary | Storage boundary (must be trusted) |
-| Minimum complexity | none | NOTES.md / todo file | -> [layer 3 retrieval](../04-grounding/) | serialize every step |
+| Minimum complexity | none | NOTES.md / todo file | -> [grounding](../04-grounding/) | serialize every step |
 
 Upgrade rule: **add the next layer only when the current one fails** — persist notes only when history no longer fits the window; add retrieval only when notes become unsearchable; build checkpoints only when crashes become unaffordable.
 
@@ -246,7 +246,7 @@ Two loops writing the same state produce lost updates. The two cheapest fixes:
 
 ### Integration notes
 
-- **Storage selection**: SQLite or files for development, Postgres-class for production — LangGraph's docs explicitly warn that in-memory checkpointers do not survive restarts. Semantic-layer selection returns to [layer 3 retrieval](../04-grounding/) and is not repeated here.
+- **Storage selection**: SQLite or files for development, Postgres-class for production — LangGraph's docs explicitly warn that in-memory checkpointers do not survive restarts. Semantic-layer selection returns to the [grounding](../04-grounding/) group and is not repeated here.
 - **Serialization contract**: a snapshot must contain **everything needed to rebuild the runtime** (state, plan cursor, tool-result digests). OpenAI's framing: serialize run state and version-tag pending tasks, so model / prompt changes do not deserialize into the wrong code path.
 
 ### Symptom -> Evidence -> Action -> Done criteria
@@ -297,11 +297,11 @@ Four-level reading route:
 
 | Name | Evidence level | Canonical URL | Purpose | Supported claim | Next |
 | --- | --- | --- | --- | --- | --- |
-| Persistence (LangGraph) | L1 (maintainer) | https://langchain-ai.github.io/langgraph/concepts/persistence/ | The checkpointer-vs-store primitive split | Thread-scoped short-term vs cross-thread long-term; snapshot bloat failure (retrievedAt 2026-09-01) | Production storage selection |
+| Persistence (LangGraph) | L1 (maintainer) | https://docs.langchain.com/oss/python/langgraph/persistence | The checkpointer-vs-store primitive split | Thread-scoped short-term vs cross-thread long-term; snapshot bloat failure (retrievedAt 2026-09-01; re-verified this round, the page has moved to docs.langchain.com, the old langchain-ai.github.io URL redirects) | Production storage selection |
 | Effective context engineering for AI agents (Anthropic) | L1 (maintainer) | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | The three long-horizon techniques: compaction / notes / sub-agents | Context rot; sub-agents return distilled summaries (retrievedAt 2026-09-01) | [Context Engineering](../03-context/context-engineering) |
-| Agents guide (OpenAI) | L1 (maintainer) | https://platform.openai.com/docs/guides/agents | SDK view of sessions and resumable run state | Run state can be serialized and continued (retrievedAt 2026-09-01) | [Recovery and Human-in-the-Loop](recovery-hitl.md) |
+| Human-in-the-loop (OpenAI Agents SDK) | L1 (maintainer) | https://openai.github.io/openai-agents-python/human_in_the_loop/ | `RunState`'s serializable run state and versioning of pending tasks | Run state serializes and resumes; version-tag pending tasks before model / prompt changes (retrievedAt 2026-09-01) | [Recovery and Human-in-the-Loop](recovery-hitl.md) |
 | Learn LLM chapter 16 | sibling | https://llm.zenheart.site/chapters/ | LangGraph state mechanism derivations | Mechanism derivations belong to Learn LLM (retrievedAt 2026-09-01) | [multi-agent](multi-agent.md) |
-| This repo's layer 3 · grounding | this repo | [03-grounding](../04-grounding/) | Retrieval and freshness for the semantic layer | Semantic memory is a retrieval problem | [Embeddings and Retrieval](../04-grounding/) |
+| This repo's grounding group | this repo | [04-grounding](../04-grounding/) | Retrieval and freshness for the semantic layer | Semantic memory is a retrieval problem | [Embeddings and Retrieval](../04-grounding/) |
 
 ### Active falsification and open questions
 
@@ -312,4 +312,4 @@ Four-level reading route:
 
 - Recovery strategies (retry / rollback / compensation) and human approval: [Recovery and Human-in-the-Loop](recovery-hitl.md).
 - Which tokens enter the window on a single call: [Context Engineering](../03-context/context-engineering).
-- Retrieval mechanics for semantic memory: Learn LLM chapter 11 and this repo's [layer 3](../04-grounding/).
+- Retrieval mechanics for semantic memory: Learn LLM chapter 11 and this repo's [grounding](../04-grounding/) group.

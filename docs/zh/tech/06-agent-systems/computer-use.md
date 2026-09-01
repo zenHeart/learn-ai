@@ -23,13 +23,13 @@ listed: true
 
 ## 1. 概述
 
-**结论先讲**：Computer Use 的技术本质是**一个控制回路**——模型以视觉 / 语义观察（截图、可访问性树）为输入，产生**受约束的界面动作**（截图、点击、键入、缩放），每个动作后重新观察来验证结果。它不是新的顶层能力类别，而是三个已有件的交叉节点：**行动能力**（层 1 的结构化输出与工具执行）+ **环境适配器**（把像素 / DOM 翻译成模型可读、把模型动作翻译成环境可执行）+ **Agent 运行时**（本子树的循环、状态、恢复、批准）。
+**结论先讲**：Computer Use 的技术本质是**一个控制回路**——模型以视觉 / 语义观察（截图、可访问性树）为输入，产生**受约束的界面动作**（截图、点击、键入、缩放），每个动作后重新观察来验证结果。它不是新的顶层能力类别，而是三个已有件的交叉节点：**行动能力**（[行动组](../05-action/tool-calling)的结构化输出与工具执行）+ **环境适配器**（把像素 / DOM 翻译成模型可读、把模型动作翻译成环境可执行）+ **Agent 运行时**（本子树的循环、状态、恢复、批准）。
 
 ### 归位图：它站在哪些能力的交叉点上
 
 ```mermaid
 flowchart TB
-    M["多模态模型能力<br/>视觉理解（→ Learn LLM 多模态章）"] --> S["层 1 · 结构化输出与工具执行<br/>动作以受约束格式表达"]
+    M["多模态模型能力<br/>视觉理解（→ Learn LLM 多模态章）"] --> S["行动组 · 结构化输出与工具执行<br/>动作以受约束格式表达"]
     S --> C["Computer Use<br/>observe → act → verify 环境适配器<br/>（本页）"]
     C --> R["Agent Runtime<br/>循环 / 状态 / 恢复 / 批准<br/>（本子树其余四页）"]
     R --> I["互操作 Interoperability<br/>MCP（工具接入）· A2A（跨 Agent 委派）"]
@@ -286,7 +286,7 @@ Anthropic 文档把 computer use 的核心定义为 agent loop：模型返回若
 | Computer use tool（Anthropic docs） | L0（官方文档） | https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/computer-use-tool | agent loop、batch 语义、注入防护、局限清单 | 引用与诊断表全部出自此页（retrievedAt 2026-09-01） | browser use tool 文档 |
 | Browser use tool（Anthropic docs） | L0（官方文档） | https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/browser-use-tool | 网页内任务的更贴近工具集 | 「任务限于网页时 browser use 更合适」（转引自 computer use 页，retrievedAt 2026-09-01） | 官方文档 |
 | computer-use-demo（anthropic-quickstarts） | L1（维护者代码） | https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo | Docker + Xvfb 参考环境 | 沙箱环境五件套的落地实现（retrievedAt 2026-09-01） | 克隆跑通 |
-| Playwright | L1（维护者） | https://playwright.dev/ | 稳定 DOM 的确定性自动化 | 「reliable web automation for testing, scripting, and AI agents」（retrievedAt 2026-09-01，搜索快照级核验） | [测试](../08-production/testing) |
+| Playwright | L1（维护者） | https://playwright.dev/ | 稳定 DOM 的确定性自动化（官方定位已含 AI agents：CLI 与 MCP） | 「Web automation and testing for apps, scripts, and AI agents」（retrievedAt 2026-09-01，站点元描述原文核验） | [测试](../08-production/testing) |
 | ReAct（Yao et al., 2022） | L4（研究） | https://arxiv.org/abs/2210.03629 | observe-act 交替的回路起源 | WebShop 等 GUI 交互任务的早期论证（retrievedAt 2026-09-01） | 论文全文 |
 | Learn LLM · 多模态 | sibling | https://llm.zenheart.site/chapters/ | 视觉编码与多模态机制 | 模型怎么「看」不在本仓展开（retrievedAt 2026-09-01） | Learn LLM |
 
@@ -300,4 +300,4 @@ Anthropic 文档把 computer use 的核心定义为 agent loop：模型返回若
 - 模型怎么理解截图：Learn LLM 多模态章。
 - 确定性 UI 自动化与测试：本仓[测试](../08-production/testing)。
 - 把任务委派给别的 Agent：[A2A](../07-interoperability/a2a.md)。
-- 注入与隔离的攻击面全景：层 5 [安全](../08-production/security)。
+- 注入与隔离的攻击面全景：[生产与运营组的安全](../08-production/security)。

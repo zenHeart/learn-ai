@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 4 · Action and Collaboration ｜ **Exit of the layer above**: you can wire model output into sessions and state ｜ **Exit of this layer**: you can implement and debug an MCP server (including path safety and error semantics) and make migration decisions with 2026-07-28 version awareness
+> **Group**: Interoperability ｜ **Exit of the group above**: you can wire model output into sessions and state ｜ **Exit of this group**: you can implement and debug an MCP server (including path safety and error semantics) and make migration decisions with 2026-07-28 version awareness
 > **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling), [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [A2A](a2a.md) (the agent↔agent direction), [Protocol Map](index.md)
 
 ## 1. Overview
@@ -264,12 +264,149 @@ The client fixture embeds two negative cases; the raw responses on their own:
 - Cleanup: `rm server.mjs client.mjs`.
 - Older fixture: the repository's `examples/mcp-lab/` is an SDK-based teaching example; this page's zero-dependency version is the minimal protocol-layer implementation. Both exist; when reading sources, trust this page's era narration.
 
+### Step 5: scenario variant — a data-query server (zero-key mock)
+
+Echo only demonstrates "return as-is". The three typical real-world server structures — **data query** (database/notes lookup), **send message** (bridging an external API, row 2 of the scenario matrix), and **run code** (execution tools, safety boundary in §4 runbook 3) — share the same protocol surface, `tools/list` + `tools/call`; the difference lives entirely in the handler. This step turns the step 1 server into a **data-query** one: an in-memory dataset with a filtered query tool, plus a first demonstration of the **resources** primitive (a read-only data source). The skeleton (readline loop, error codes, exit on stdin close) is identical to step 1.
+
+`db-server.mjs` (= step 1's `server.mjs`, replacing only the data and `handle()`):
+
+```javascript fixture
+// db-server.mjs — data-query MCP server (zero-dependency, in-memory dataset)
+// Only the parts that differ from step 1: the NOTES data, handle(), resources in capabilities
+const NOTES = [
+  { id: 1, tag: "release", text: "v2.1 shipped with streaming fixes" },
+  { id: 2, tag: "incident", text: "gateway 502 spike traced to upstream pool" },
+  { id: 3, tag: "release", text: "v2.2 rolled out canary to 5%" },
+];
+
+function handle(msg) {
+  if (msg.method === "initialize") {
+    return result(msg.id, {
+      protocolVersion: PROTOCOL_VERSION,
+      capabilities: { tools: {}, resources: {} }, // declare both server primitives
+      serverInfo: { name: "notes-server", version: "1.0.0" },
+    });
+  }
+  if (msg.method === "notifications/initialized") return null;
+  if (msg.method === "tools/list") {
+    return result(msg.id, {
+      tools: [{
+        name: "notes_query",
+        description: "Queries the in-memory notes store. Optional tag filters by exact tag match.",
+        inputSchema: {
+          type: "object",
+          properties: { tag: { type: "string" } }, // optional filter parameter
+        },
+      }],
+    });
+  }
+  if (msg.method === "tools/call") {
+    const { name, arguments: args } = msg.params ?? {};
+    if (name !== "notes_query") return error(msg.id, -32602, `Unknown tool: ${name}`);
+    if (args?.tag !== undefined && typeof args.tag !== "string") {
+      return error(msg.id, -32602, "arguments.tag must be a string");
+    }
+    const hits = args?.tag ? NOTES.filter((n) => n.tag === args.tag) : NOTES;
+    return result(msg.id, { content: [{ type: "text", text: JSON.stringify(hits) }] });
+  }
+  if (msg.method === "resources/list") {
+    return result(msg.id, {
+      resources: [{
+        uri: "notes://all",
+        name: "all-notes",
+        description: "The full read-only notes dataset.",
+        mimeType: "application/json",
+      }],
+    });
+  }
+  if (msg.method === "resources/read") {
+    if (msg.params?.uri !== "notes://all") {
+      return error(msg.id, -32602, `Unknown resource: ${msg.params?.uri}`); // an unknown uri is an argument error: Invalid params
+    }
+    return result(msg.id, {
+      contents: [{ uri: "notes://all", mimeType: "application/json", text: JSON.stringify(NOTES) }],
+    });
+  }
+  return error(msg.id, -32601, `Method not found: ${msg.method}`);
+}
+```
+
+`db-client.mjs` (driver: initialize → query all → filter by tag → type negative → read resource → unknown-resource negative):
+
+```javascript fixture
+// db-client.mjs — drives notes-server (Node >= 18, zero-dependency)
+// The spawn/line-parsing skeleton matches step 2's client.mjs; only the request sequence remains.
+import { spawn } from "node:child_process";
+const child = spawn(process.execPath, ["db-server.mjs"], { stdio: ["pipe", "pipe", "inherit"] });
+let nextId = 1; const pending = new Map(); let buf = "";
+child.stdout.on("data", (chunk) => {
+  buf += chunk; let nl;
+  while ((nl = buf.indexOf("\n")) !== -1) {
+    const line = buf.slice(0, nl); buf = buf.slice(nl + 1);
+    if (!line.trim()) continue;
+    const msg = JSON.parse(line);
+    pending.get(msg.id)?.resolve(msg); pending.delete(msg.id);
+  }
+});
+function request(method, params) {
+  const id = nextId++;
+  return new Promise((resolve) => {
+    pending.set(id, { resolve });
+    child.stdin.write(JSON.stringify({ jsonrpc: "2.0", id, method, ...(params ? { params } : {}) }) + "\n");
+  });
+}
+function notify(method) { child.stdin.write(JSON.stringify({ jsonrpc: "2.0", method }) + "\n"); }
+
+const init = await request("initialize", { protocolVersion: "2025-11-25", capabilities: {}, clientInfo: { name: "db-client", version: "1.0.0" } });
+console.log("PASS  initialize:", init.result.serverInfo.name, "caps:", Object.keys(init.result.capabilities).join("+"));
+notify("notifications/initialized");
+const list = await request("tools/list", {});
+console.log("PASS  tools:", list.result.tools.map((t) => t.name).join(","));
+const all = await request("tools/call", { name: "notes_query", arguments: {} });
+console.log("PASS  query all ->", all.result.content[0].text);
+const rel = await request("tools/call", { name: "notes_query", arguments: { tag: "release" } });
+console.log("PASS  query tag=release ->", rel.result.content[0].text);
+const badTag = await request("tools/call", { name: "notes_query", arguments: { tag: 42 } });
+console.log("PASS  bad tag type ->", badTag.error.code, badTag.error.message);
+const rlist = await request("resources/list", {});
+console.log("PASS  resources:", rlist.result.resources.map((r) => r.uri).join(","));
+const rread = await request("resources/read", { uri: "notes://all" });
+console.log("PASS  read notes://all ->", rread.result.contents[0].text.slice(0, 60), "…");
+const badUri = await request("resources/read", { uri: "notes://nope" });
+console.log("PASS  unknown resource ->", badUri.error.code);
+child.stdin.end();
+const code = await new Promise((r) => child.on("exit", r));
+console.log("PASS  server exits", code);
+```
+
+```bash fixture
+node db-client.mjs; echo "exit=$?"
+```
+
+Actual output (Node 24, excerpt):
+
+```text fixture
+PASS  initialize: notes-server caps: tools+resources
+PASS  tools: notes_query
+PASS  query all -> [{"id":1,"tag":"release","text":"v2.1 shipped with streaming fixes"},{"id":2,"tag":"incident","text":"gateway 502 spike traced to upstream pool"},{"id":3,"tag":"release","text":"v2.2 rolled out canary to 5%"}]
+PASS  query tag=release -> [{"id":1,"tag":"release","text":"v2.1 shipped with streaming fixes"},{"id":3,"tag":"release","text":"v2.2 rolled out canary to 5%"}]
+PASS  bad tag type -> -32602 arguments.tag must be a string
+PASS  resources: notes://all
+PASS  read notes://all -> [{"id":1,"tag":"release","text":"v2.1 shipped with streaming fixes","…
+PASS  unknown resource -> -32602
+PASS  server exits 0
+exit=0
+```
+
+How to read it: **queries go through tools (model-controlled, filterable arguments); the full read-only table goes through resources (application-controlled)** — two ways of exposing the same data, matching the control split in the Section 3 primitive table. To go real, replace `NOTES` with a database read-only view or a cache of an internal API; the protocol surface does not change. Acceptance for this step: `node db-client.mjs` exits 0 with nine PASS lines; delete both scripts on cleanup.
+
 ### Scenario matrix
 
 | Scenario | Input | Action | Output | Fits | Does not fit |
 | --- | --- | --- | --- | --- | --- |
-| Basic: local tools | local capabilities like files or computation | a stdio server exposes tools | the in-host model calls them on demand | personal / IDE setups | cross-network sharing |
-| Common: bridging HTTP APIs | a third-party REST service | the server converts protocols (MCP upward, plain HTTP client outward) | unified MCP tools | aggregating APIs, centralized auth and audit | a single simple call (plain HTTP is cheaper) |
+| Basic: data query | a local/internal read-only dataset (step 5's notes mock, or a real DB read-only view) | a filtered-argument query tool + a read-only resource source | structured query results | notes stores / database lookup / internal data retrieval | write operations |
+| Common: bridging external APIs (send-message type) | third-party REST / mail / notification services | the server converts protocols (MCP upward, plain HTTP client outward) | unified MCP tools | aggregating APIs, centralized auth and audit | a single simple call (plain HTTP is cheaper) |
+| Execution (run code) | file writes, commands, or code execution | tool execution + explicit boundary constraints | controlled execution results | capabilities that need side effects | production without boundary constraints (do §4 runbook 3 first) |
 | Combined: MCP + Skills | "how to use it once connected" | MCP supplies the connection, the Skill the procedure | a clean split of connectivity and steps | tool usage conventions | either/or thinking |
 
 ## 3. Principles

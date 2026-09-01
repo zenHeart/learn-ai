@@ -18,12 +18,14 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a traceable retrieval chain ｜ **Exit of this page**: you can judge when multi-agent is worth it, write the four-element delegation contract, delegate to specialists via a supervisor topology, and degrade gracefully on routing failure instead of crashing
+> **Group**: Agent Systems ｜ **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely ｜ **Exit of this page**: you can judge when multi-agent is worth it, write the four-element delegation contract, delegate to specialists via a supervisor topology, and degrade gracefully on routing failure instead of crashing
 > **Prerequisites**: [Agent Runtime](agent-runtime.md), [Workflow Patterns](workflow.md) ｜ **Next**: [A2A](../07-interoperability/a2a.md) (protocols only across boundaries), [Observability](../08-production/observability), [Cost and Performance](../08-production/cost-performance)
 
 ## 1. Overview
 
 **BLUF**: multi-agent is not "a stronger single agent" — it is an architecture that **trades coordination for capacity**. Independent context windows enable parallel exploration and compression (subagents distill vast raw material into conclusions and return them), buying coverage a single agent cannot reach; the price is roughly **15× the tokens of a chat**, coordination complexity, and error propagation. The test has three clauses, and all must hold: **the task is valuable enough to pay for it, the sub-directions are naturally parallel, and the information exceeds a single context**. Missing any, go back to a [workflow](workflow.md) or a single agent.
+
+**Scope up front**: this page covers only orchestration of subagents spawned **inside one trust domain** (same host / process); delegating tasks to agents **across processes, organizations, or trust domains** is not expanded here — go through [A2A](../07-interoperability/a2a.md) first, picking the connection direction on the [Protocol Map](../07-interoperability/) (criteria in "Key boundary" below).
 
 ### Mental model: supervisor + specialists + artifacts
 
@@ -258,7 +260,7 @@ With matching **scaling rules** (written into the supervisor prompt): simple fac
 
 ### Failure localization
 
-The debugging unit of a multi-agent system is the **delegation**: every `delegate` records a brief digest, routing outcome, and subagent terminal state. Behavior is emergent — a small supervisor-prompt change can unpredictably change subagent behavior — so evaluation targets the **end state**, not the step-by-step path: assert the final state is correct rather than the path matching a preset. Cross-shard causal chains are assembled from traces (into layer-5 [Observability](../08-production/observability)).
+The debugging unit of a multi-agent system is the **delegation**: every `delegate` records a brief digest, routing outcome, and subagent terminal state. Behavior is emergent — a small supervisor-prompt change can unpredictably change subagent behavior — so evaluation targets the **end state**, not the step-by-step path: assert the final state is correct rather than the path matching a preset. Cross-shard causal chains are assembled from traces (into the [Production](../08-production/) group's [Observability](../08-production/observability)).
 
 ### Spec requirements vs local test
 
@@ -354,5 +356,5 @@ Four-level reading route:
 
 - What a specialist is — the single-agent loop and state memory: [Agent Runtime](agent-runtime).
 - Cross-process/org/trust-domain agent collaboration: [A2A](../07-interoperability/a2a.md) (read the [Protocol Map](../07-interoperability/) first to pick by connection direction).
-- Delegation-level traces and end-state evaluation: [Observability](../08-production/observability), [evals](https://evals.zenheart.site/) (layer 5).
+- Delegation-level traces and end-state evaluation: [Observability](../08-production/observability), [evals](https://evals.zenheart.site/) (Production group).
 - Accounting for the 15× tokens: [Cost and Performance](../08-production/cost-performance).

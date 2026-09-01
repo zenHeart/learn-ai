@@ -19,14 +19,16 @@ listed: true
 
 # 工具调用契约
 
-> **在哪一层**：层 1 · 交互契约 ｜ **上一层出口**：能定位问题域、受众和下一入口 ｜ **本层出口**：能定义 tool schema、画出最小消息流、在执行前校验工具名与参数、按契约格式回传结果（含错误）
+> **所在组**：组 5 · 行动（写世界） ｜ **上一组出口**：能写并验证输入输出 schema（组 3），并交付一次可取消、可观测的端到端交互（组 2） ｜ **本页出口**：能定义 tool schema、画出最小消息流、在执行前校验工具名与参数、按契约格式回传结果（含错误）
 > **前置**：[structured-output](../02-inference-interface/structured-output.md) ｜ **下一步**：[model-api](../02-inference-interface/model-api.md)、[tool-execution](../05-action/tool-execution.md)
 
 ## 1. 概述
 
 **结论**：工具调用（Tool Calling，OpenAI 称 Function Calling）的工程本质是一份**动作请求契约**：模型读到工具清单后，可能产出一条结构化请求（工具名 + 参数 JSON）；**执行它的是你的代码**。「模型想调用」与「系统实际执行」的分离不是实现细节，而是安全边界的基础——所有权限控制都建立在这条缝隙上。
 
-本页只管契约：schema 定义、选择、参数验证、结果回传格式。执行工程（幂等、超时、重试、权限、人工批准）在层 4 [tool-execution](../05-action/tool-execution.md)。
+本页只管契约：schema 定义、选择、参数验证、结果回传格式。执行工程（幂等、超时、重试、权限、人工批准）在同组的[工具执行工程](../05-action/tool-execution.md)。
+
+**组边界**：本组（Action，写世界）交付写世界的**原语**——一次受控的单步动作（契约 + 执行器）；多步组合、暂停/恢复、审批队列这类**闭环**属于 [Agent 系统组](../06-agent-systems/agent-runtime.md)（组 6）。边界判据：你的失败案例是"这一步动作执行错了"→ 留在本组；是"跑了八步停不下来 / 恢复不了"→ 去组 6。
 
 ### 心智模型：最小消息流
 
@@ -46,7 +48,7 @@ listed: true
   │ ◀───────────────────────── │   （或发起新的 tool_use —— 循环）
 ```
 
-OpenAI 官方把这条流总结为五步（检索 2026-09-01）：带工具发起请求 → 收到 tool call → 应用侧执行 → 带工具输出再请求 → 收到最终回复（或更多 tool call）。Anthropic 的表述同构，用 `stop_reason: "tool_use"` 标记模型停在②。注意官方明示③④是**可选**的——有些工作流只需要模型的调用请求本身。
+OpenAI 官方把这条流总结为五步（检索 2026-09-01）：带工具发起请求 → 收到 tool call → 应用侧执行 → 带工具输出再请求 → 收到最终回复（或更多 tool call）。Anthropic 的表述同构，用 `stop_reason: "tool_use"` 标记模型停在②。③④由你的代码实现——厂商 API 不执行函数；OpenAI 明示「当模型调用函数时，你必须执行并返回结果」（retrievedAt 2026-09-01）。
 
 ### 何时使用 / 何时不用
 
@@ -55,7 +57,7 @@ OpenAI 官方把这条流总结为五步（检索 2026-09-01）：带工具发�
 | **写给谁** | 要让模型查询数据、触发动作、操作 UI 的应用与 Agent 开发者 |
 | **何时用** | 回答需要训练数据之外的状态（订单、天气、私有库）；要执行动作（发邮件、建 issue） |
 | **何时不用** | 只要文本 → 不用工具；只要结构化数据 → [structured-output](../02-inference-interface/structured-output.md)（OpenAI 官方分工：连接系统用 function calling，回复给用户的结构用 response_format）；知识是静态的 → 先试提示 |
-| **不是本页** | 执行的安全与可靠性 → [tool-execution](../05-action/tool-execution.md)；协议化工具生态 → [MCP](../07-interoperability/mcp.md) |
+| **不是本页** | 执行的安全与可靠性 → [tool-execution](../05-action/tool-execution.md)；多步/可恢复/需审批的闭环 → [agent-runtime](../06-agent-systems/agent-runtime.md)；协议化工具生态 → [MCP](../07-interoperability/mcp.md) |
 
 ### 决策表：structured-output vs tool-calling
 
@@ -68,7 +70,7 @@ OpenAI 官方把这条流总结为五步（检索 2026-09-01）：带工具发�
 | **最低复杂度** | 低 | 中（要管理循环与配对） |
 | **失败面** | 拒答 / 截断 / schema 400 | 幻觉工具名 / 参数类型错 / 配对断裂 / 执行失败 |
 
-**版本里程碑**（官方文档明示，检索 2026-09-01）：OpenAI strict 模式「底层即 Structured Outputs」，官方建议总是开启；并行函数调用在支持的模型上默认可能一次发多条，`parallel_tool_calls: false` 可强制「零或一次」。Anthropic 的工具调用系统提示对 `auto` / `none` 模式增加约 346 token（`any` / `tool` 约 313）。其他时间线：未验证。
+**版本里程碑**（官方文档明示，检索 2026-09-01）：OpenAI strict 模式「底层即 Structured Outputs」，官方建议总是开启；并行函数调用在支持的模型上默认可能一次发多条，`parallel_tool_calls: false` 可强制「零或一次」。Anthropic 的工具系统提示额外 token **按模型计**：Opus 5 为 286（`auto`/`none`）/ 406（`any`/`tool`），Sonnet 5 为 354/474，旧 4 代为 313/315（定价表口径，retrievedAt 2026-09-01）。其他时间线：未验证。
 
 ## 2. 使用
 
@@ -278,7 +280,7 @@ npx tsx@4 tool-calling.ts && echo CONTRACT-OK
 - **description**：给模型看的选择依据——它就是工具的「提示词」。写清楚**何时用**（「当用户询问订单历史时使用」），能显著减少误选。
 - **input_schema**：JSON Schema，与 [structured-output](../02-inference-interface/structured-output.md) 同一语言。固定选项用 `enum` 强制；每个参数写 description。
 
-Anthropic 的工具设计原则（检索 2026-09-01）：工具应自包含、对错误鲁棒、用途清晰；最常见的失败模式是**工具集臃肿**——「如果人类工程师说不清该用哪个工具，就别指望 Agent 做得更好」。
+Anthropic 的工具设计原则（检索 2026-09-01）：工具应自包含、对错误鲁棒、用途清晰；最常见的失败模式是**工具集臃肿**——「如果人类工程师说不清该用哪个工具，就别指望 Agent 做得更好」。两家的收敛方向一致：Anthropic 建议每个工具描述写足 3–4 句、把相关操作合并成带 `action` 参数的少数工具；OpenAI 建议单轮初始可用函数**少于 20 个**（软建议），更大工具面用延迟加载（`defer_loading` / `tool_search`）而非全量挂载（均 retrievedAt 2026-09-01）。
 
 ### 为什么「想调用」与「执行」必须分离
 
@@ -292,7 +294,7 @@ Anthropic 的工具设计原则（检索 2026-09-01）：工具应自包含、�
 
 - 每个 `tool_use` 有唯一 `id`（Anthropic `toolu_*` / OpenAI `call_id`）；回传的 `tool_result` 必须带对应 id。**配对断裂 → 下一轮 400**。
 - 并行调用：同一 assistant 消息可含多个 `tool_use` 块；**全部结果必须在同一条 user 消息里、各带自己 id 返回**（Anthropic 明示）。OpenAI 可用 `parallel_tool_calls: false` 关掉并行（「确保零或一次调用」）。
-- 工具定义本身计入输入 token：Anthropic 对开启工具的系统提示额外计约 313-346 token，工具 schema 与 tool_result 同样计费——工具越多越贵，也越难选。
+- 工具定义本身计入输入 token：Anthropic 的工具系统提示额外 token 按模型计（Opus 5：286/406；Sonnet 5：354/474），工具 schema 与 tool_result 同样计费——工具越多越贵，也越难选。
 
 ### 错误处理契约
 
@@ -370,11 +372,11 @@ Anthropic 的工具设计原则（检索 2026-09-01）：工具应自包含、�
 
 | 名称 | 层级 | canonical URL | 用途 | 支持的断言 | 下一步 |
 |---|---|---|---|---|---|
-| Anthropic Tool use 总览 | L1 | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview | 契约字段与流程 | input_schema、stop_reason、并行配对、313-346 token 系统提示 | 读实现指南 |
+| Anthropic Tool use 总览 | L1 | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview | 契约字段与流程 | input_schema、stop_reason、并行配对、按模型计的工具系统提示 token 表 | 读实现指南 |
 | OpenAI Function calling | L1 | https://developers.openai.com/api/docs/guides/function-calling | 五步流与 strict | strict 底层即 Structured Outputs、parallel_tool_calls 开关、tool_search（gpt-5.4+） | 跑官方示例 |
 | Writing tools for AI agents | L1 | https://www.anthropic.com/engineering/writing-tools-for-agents | 工具设计原则 | 自包含 / 最小集 / 描述即提示 | 重写自己的工具描述 |
-| Building effective agents | L1 | https://www.anthropic.com/engineering/building-effective-agents | Agent 形态总览 | 工具循环上的工作流 vs Agent 边界 | 进层 4 |
-| MCP 规范 | L4 | https://modelcontextprotocol.io/specification/latest | 工具生态协议 | 标准化工具接入 | 层 4 [mcp](../07-interoperability/mcp.md) |
+| Building effective agents | L1 | https://www.anthropic.com/engineering/building-effective-agents | Agent 形态总览 | 工具循环上的工作流 vs Agent 边界 | 进组 6 |
+| MCP 规范 | L4 | https://modelcontextprotocol.io/specification/latest | 工具生态协议 | 标准化工具接入 | 组 7 [mcp](../07-interoperability/mcp.md) |
 
 （retrievedAt: 2026-09-01。）
 

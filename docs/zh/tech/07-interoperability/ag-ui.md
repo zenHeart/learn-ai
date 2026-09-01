@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 4 · 行动与协作 ｜ **上一层出口**：能构建可追溯的检索链和更新路径 ｜ **本层出口**：能把一个 Agent 后端的事件流接进前端并正确重组状态，知道它与「直接吐 SSE」和 A2UI 的分工
+> **所在组**：互操作 ｜ **上一组出口**：能构建可追溯的检索链和更新路径 ｜ **本组出口**：能把一个 Agent 后端的事件流接进前端并正确重组状态，知道它与「直接吐 SSE」和 A2UI 的分工
 > **前置**：[协议地图](index.md) ｜ **下一步**：[A2UI 与 MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. 概述
@@ -43,6 +43,7 @@ flowchart LR
 
 - **核心抽象**：`run(input: RunAgentInput) -> Observable<BaseEvent>`；标准 HTTP 客户端 `HttpAgent` 向任意「接受 POST `RunAgentInput`、返回 `BaseEvent` 流」的端点发起调用。
 - **传输不绑定**：SSE、webhook、WebSocket、HTTP binary 都行——AG-UI 规范的是**事件语义**，不是管道。
+- **客户端不限于 Web 应用**：协议描述的是事件流而非渲染目标——终端、移动端、聊天平台都可以作为 AG-UI 客户端（官方 Overview 明示，2026-09-01 复核）。
 - **三方互补**（官方定位）：MCP 连接 Agent↔工具/数据；A2A 连接 Agent↔Agent；AG-UI 连接 Agent↔用户（经用户应用）。一个 Agent 可以同时用三个。
 
 ### 事件族（以 docs.ag-ui.com 为准）
@@ -349,4 +350,4 @@ sequenceDiagram
 - 未决 2：`drafts/` 中的 generative-ui 提案仍在演进，不作为既成能力引用。
 - 未决 3：官方与 MCP/A2A 的「handshake」机制细节（announced 但未在本轮核验页面展开）——标未验证。
 
-**learn-ai 到此为止**：事件契约、状态重组、可运行 fixture。**继续去哪**：流式传输基础（SSE 生命周期）→ 层 2 流式响应；UI 组件描述 → [A2UI 与 MCP Apps](a2ui-mcp-apps.md)；前端实现 → [生成式 UI](../02-inference-interface/ui)。
+**learn-ai 到此为止**：事件契约、状态重组、可运行 fixture。**继续去哪**：流式传输基础（SSE 生命周期）→ [流式响应](../02-inference-interface/streaming)；UI 组件描述 → [A2UI 与 MCP Apps](a2ui-mcp-apps.md)；前端实现 → [生成式 UI](../02-inference-interface/ui)。

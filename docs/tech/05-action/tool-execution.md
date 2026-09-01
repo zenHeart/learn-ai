@@ -18,12 +18,12 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Where you are**: Layer 4 · Action and Collaboration ｜ **Exit of the layer above**: you can build a traceable retrieval chain ｜ **Exit of this page**: you can put a single model-initiated action into a controlled executor that can deny, time out, cancel, and deduplicate
+> **Group**: 5 · Action (writing the world) ｜ **Previous group exit**: define and validate the tool calling contract (schema, whitelist, argument validation, result return — [Tool Calling Contract](../05-action/tool-calling)) ｜ **This page exit**: you can put a single model-initiated action into a controlled executor that can deny, time out, cancel, and deduplicate
 > **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling), [Structured Output](../02-inference-interface/structured-output) ｜ **Next**: [Workflow Patterns](../06-agent-systems/workflow.md), [Recovery and Human-in-the-Loop](../06-agent-systems/recovery-hitl.md), [Security](../08-production/security)
 
 ## 1. Overview
 
-**BLUF**: the `tool_use` block a model returns is a *request*, not an execution. The layer-1 [tool calling contract](../05-action/tool-calling) defines how the model expresses a call; this chapter defines how **your code executes it**. Any action that changes external state (writing files, sending requests, mutating a database) must pass five gates: **idempotency dedup → allowlist → argument validation → human approval → timeout and cancellation**. Miss any gate, and retries, network jitter, or model hallucinations turn into real-world side effects.
+**BLUF**: the `tool_use` block a model returns is a *request*, not an execution. The [tool calling contract](../05-action/tool-calling) earlier in this group defines how the model expresses a call; this chapter defines how **your code executes it**. Any action that changes external state (writing files, sending requests, mutating a database) must pass five gates: **idempotency dedup → allowlist → argument validation → human approval → timeout and cancellation**. Miss any gate, and retries, network jitter, or model hallucinations turn into real-world side effects.
 
 ### Mental model: the execution state machine
 
@@ -31,7 +31,9 @@ The model only sees "call → result"; the execution side is an explicit state m
 
 ```mermaid
 flowchart TD
-    P["pending"] --> G1{"allowlist hit?"}
+    P["pending"] --> G0{"idempotency key hit?"}
+    G0 -->|"yes (a prior success)"| X["reuse the stored result, no execution"]
+    G0 -->|no| G1{"allowlist hit?"}
     G1 -->|"no (deny by default)"| D["denied"]
     G1 -->|yes| G2{"validation + approval gate"}
     G2 -->|"failed / not approved"| D
@@ -48,6 +50,7 @@ The key distinction: `denied` happens **before any side effect** (a policy rejec
 
 - Use: any tool call that will reach production — whether from an agent loop, a workflow, or a single API interaction.
 - Skip: pure readonly queries with zero cost can be called directly during prototyping; but the moment a call sits on a retry path, `readonly` is also a side-effect tier that must be registered.
+- Skip (group boundary): the full closed loop of multi-step orchestration, pause/resume, and approval queues belongs to the [Agent Systems group](../06-agent-systems/agent-runtime.md) (group 6)—this page delivers the **controlled-execution primitive for a single action**; the `approval` tier only keeps the approval-gate hook, while the approval workflow itself lives in group 6's [Recovery and Human-in-the-Loop](../06-agent-systems/recovery-hitl.md).
 
 ### Decision table
 
@@ -364,7 +367,7 @@ Gate order matters: **cheap, deterministic gates first**. Idempotency dedup and 
 | Strict mode requires `additionalProperties:false` + all fields required so calls match the schema | OpenAI function calling docs (L1, retrievedAt 2026-09-01) | The fixture hand-writes `validate()`; production should use a JSON Schema validator |
 | "The model may return several calls at once" | same | The agent loop executes them one by one — serial by construction |
 
-### Split of duties with layer 1
+### Split of duties within the group: contract vs execution
 
 The [tool calling contract](../05-action/tool-calling) answers how the model **expresses** a call (schema, selection, validation); this chapter answers how the system **executes** it. The contract layer validates **around the model call**; the execution layer validates **before touching the world** — the former stops the model from misspeaking, the latter stops the mistake from happening.
 
@@ -456,5 +459,5 @@ Four-level reading route:
 
 - After a single controlled action — composing and recovering multi-step: [Workflow Patterns](../06-agent-systems/workflow.md).
 - The full protocol of approval queues, pause/resume: [Recovery and Human-in-the-Loop](../06-agent-systems/recovery-hitl.md).
-- The full picture of injection, SSRF, and prompt-attack defense: [Security](../08-production/security) (layer 5).
+- The full picture of injection, SSRF, and prompt-attack defense: [Security](../08-production/security) (group 8, Production and Operations).
 - Proving (not demoing) tool-execution quality: [Testing](../08-production/testing) and [evals](https://evals.zenheart.site/).

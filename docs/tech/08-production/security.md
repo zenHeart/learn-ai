@@ -20,7 +20,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 5 · Reliable Operations ｜ **Previous layer exit**: can restrict permissions, pause/resume tasks ｜ **This layer exit**: can identify the three risk layers and stop an injection negative with the combined defense of input filtering, permission boundaries, and output scanning
+> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can identify the three risk layers and stop an injection negative with the combined defense of input filtering, permission boundaries, and output scanning
 > **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution), [Agent Runtime](../06-agent-systems/agent-runtime) ｜ **Next**: [Deployment and Release](deployment.md) (secrets, audit, and human-approval landing points)
 
 ## 1. Overview
@@ -31,9 +31,9 @@ listed: true
 
 ```mermaid
 flowchart TB
-    U["user / external content"] --> G1["② application security (canonical)<br/>input filter · permission boundary · output scanner"]
+    U["user / external content"] --> G1["② application security (canonical)<br/>three defenses: input filter / permission boundary / output scanner<br/>(placed at the entry, before tools, and at the exit)"]
     G1 --> M["① model alignment (bridge → Learn LLM)<br/>behavioral propensity when fooled"]
-    M --> G2["② tool execution boundary<br/>allowlist · SSRF guard · timeouts"]
+    M --> G2["② tool execution boundary<br/>where the permission-boundary defense lands: allowlist · SSRF guard · timeouts"]
     G2 --> G3["③ governance<br/>versioning · audit · human approval · tenant isolation"]
 ```
 
@@ -201,18 +201,18 @@ Checked against the edition published 2026-08-04 (canonical: the genai.owasp.org
 | LLM02 | Sensitive Information Disclosure | ②-3 disclosure |
 | LLM03 | Excessive Agency (rose to #3, the most consequential 2026 move) | ②-2 excessive agency |
 | LLM04 | Supply Chain (includes model-artifact trust failure) | ②-4 supply chain |
-| LLM05 | Data and Model Poisoning (absorbs fine-tuning subversion) | ②-4 + ① (data side → the [layer 3](../04-grounding/) update chain) |
-| LLM06 | Unbounded Consumption (up 4 places) | Cost side → budget breakers in [Cost and Performance](cost-performance.md) |
-| LLM07 | Misinformation (pulled up by incident data) | Quality side → [evaluation](evaluation.md) |
+| LLM05 | Data and Model Poisoning | ②-4 + ① (data side → the [grounding group](../04-grounding/) update chain) |
+| LLM06 | Unbounded Consumption (up 4 places from the prior edition) | Cost side → budget breakers in [Cost and Performance](cost-performance.md) |
+| LLM07 | Misinformation | Quality side → [evaluation](evaluation.md) |
 | LLM08 | Hidden Context Exposure (formerly System Prompt Leakage, broadened) | ②-3 |
 | LLM09 | Vector and Embedding Weaknesses | Retrieval side → ACL/poisoned docs in [Advanced Retrieval](../04-grounding/advanced-retrieval) |
 | LLM10 | Improper Output Handling (fell to #10) | ②-6 output handling |
 
-Boundary statement (OWASP official): the list covers risks when the model is a **component** in your application; once the model becomes an **actor** (with tools, cross-session memory, downstream consequences), risk moves to the OWASP Agentic Top 10 — matching this repo's layer-4/layer-5 divide.
+Boundary statement (OWASP official): the list covers risks when the model is a **component** in your application; once the model becomes an **actor** (with tools, cross-session memory, downstream consequences), risk moves to the OWASP Agentic Top 10 — matching this repo's agent-systems/production group divide.
 
 ### Governance anchor (NIST AI RMF)
 
-The [NIST AI RMF 1.0](https://www.nist.gov/itl/ai-risk-management-framework) (released 2023-01-26, voluntary) organizes risk management around four functions — GOVERN/MAP/MEASURE/MANAGE; its Generative AI Profile (NIST AI 600-1, 2024-07-26) adds GenAI-specific actions. This repo takes only its engineering implication: **risks need an owner, a measure, and a disposition path** — corresponding to this layer's four-piece set of versioning, audit logs, human approval, and tenant isolation.
+The [NIST AI RMF 1.0](https://www.nist.gov/itl/ai-risk-management-framework) (released 2023-01-26, voluntary; NIST notes 1.0 is being revised under the White House AI Action Plan, retrievedAt 2026-09-01) organizes risk management around four functions — GOVERN/MAP/MEASURE/MANAGE; its Generative AI Profile (NIST AI 600-1, 2024-07-26) adds GenAI-specific actions. This repo takes only its engineering implication: **risks need an owner, a measure, and a disposition path** — corresponding to this group's four-piece set of versioning, audit logs, human approval, and tenant isolation.
 
 ### Spec vs local measurement
 
@@ -267,7 +267,7 @@ Four-level reading route:
 | --- | --- | --- | --- | --- | --- |
 | OWASP GenAI LLM Top 10 2026 | L0 (official list) | https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/ | Risk baseline | Published 2026-08-04; names, order, incident-corpus calibration (retrievedAt 2026-09-01) | Read LLM01/03/10 in full |
 | GenAI-LLM-Top10 repo (2026/final) | L0 (canonical source) | https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/tree/main/2026/final | Item-by-item deep read | The preface confirms the component-vs-actor boundary and the Agentic Top 10 split (retrievedAt 2026-09-01) | Compare with the Agentic list |
-| NIST AI RMF | L0 (official framework) | https://www.nist.gov/itl/ai-risk-management-framework | Governance framework | AI RMF 1.0 released 2023-01-26, voluntary; GenAI Profile 2024-07-26 (retrievedAt 2026-09-01) | Read the AI 600-1 Profile |
+| NIST AI RMF | L0 (official framework) | https://www.nist.gov/itl/ai-risk-management-framework | Governance framework | AI RMF 1.0 released 2023-01-26, voluntary, now being revised under the White House AI Action Plan; GenAI Profile 2024-07-26 (retrievedAt 2026-09-01) | Read the AI 600-1 Profile |
 | Learn LLM | sibling (cross-repo owner) | https://llm.zenheart.site/ | Model-alignment mechanics | bridge-register: this repo stops at "the application-side premise" (2026-09-01) | Its post-training chapters |
 
 ### Falsification and open questions

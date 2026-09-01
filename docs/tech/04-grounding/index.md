@@ -1,6 +1,6 @@
 ---
-title: "Layer 3 · Knowledge Grounding"
-description: "Model knowledge is frozen at training time—this layer ties answers to your own evidence: a traceable retrieval chain and a re-runnable update pipeline."
+title: "Group 4 · Grounding"
+description: "Model knowledge is frozen at training time—this group ties answers to your own evidence: a traceable retrieval chain and a re-runnable update pipeline."
 domain: tech
 tags: [grounding, navigation]
 navOrder: 40
@@ -19,18 +19,18 @@ bilingualParity: exact
 listed: true
 ---
 
-# Layer 3 · Knowledge Grounding
+# Group 4 · Grounding
 
-> **Layer**: 3 · Knowledge Grounding | **Previous layer exit**: run a cancellable, observable end-to-end interaction | **This layer exit**: build a traceable retrieval chain and an update pipeline
+> **Group**: 4 · Grounding (reading the world) | **Previous group exit**: write and validate input/output schemas, and deliver a cancellable, observable end-to-end interaction (groups 2–3) | **This group exit**: build a traceable retrieval chain and an update pipeline
 > **Prerequisites**: [Streaming](../02-inference-interface/streaming) | **Next**: [Embeddings and Retrieval](embeddings-retrieval.md), [Tool Execution Engineering](../05-action/tool-execution)
 
 ## 1. Overview
 
-Layer 3 addresses one specific symptom: **answers lack private or fresh facts**. A model's parametric memory is frozen the moment training ends—it does not know your tickets, your code, or the document you changed last week. This layer ties answers to external evidence: retrieve first, generate second, attach provenance to every answer, and rebuild when the data changes.
+This group addresses one specific symptom: **answers lack private or fresh facts**. A model's parametric memory is frozen the moment training ends—it does not know your tickets, your code, or the document you changed last week. This group ties answers to external evidence: retrieve first, generate second, attach provenance to every answer, and rebuild when the data changes.
 
-The original RAG paper (Lewis et al., NeurIPS 2020) named this structure "parametric memory + non-parametric memory": the parametric memory is a pre-trained generator, the non-parametric memory is an external vector index accessed by a retriever. The paper also states that for pure parametric models, "providing provenance for their decisions" and "updating their world knowledge" remain open problems—exactly the two things this layer delivers (a traceable retrieval chain, a re-runnable update pipeline).
+The original RAG paper (Lewis et al., NeurIPS 2020) named this structure "parametric memory + non-parametric memory": the parametric memory is a pre-trained generator, the non-parametric memory is an external vector index accessed by a retriever (in the paper, a dense vector index of Wikipedia). The paper also states that for pure parametric models, "providing provenance for their decisions" and "updating their world knowledge" remain open problems—exactly the two things this group delivers (a traceable retrieval chain, a re-runnable update pipeline) (arXiv:2005.11401, abstract re-verified, retrievedAt 2026-09-01).
 
-This layer also differs fundamentally from Layer 4: **reading the world vs. writing the world**. Everything here is a read—chunking, indexing, retrieving, citing—with no side effects by default; the failure mode is "wrong answer" or "should have refused but didn't", never destruction. Layer 4 starts writing to the world (executing actions, crossing boundaries). Hence the different acceptance criteria: this layer audits **citation correctness and refusal correctness**; Layer 4 audits **restricted permissions and recoverability**.
+This group shares the intuition of letting the model touch things outside itself with the [Action group](../05-action/tool-calling) (05), but the direction is opposite: **reading the world vs. writing the world**. Everything here is a read—chunking, indexing, retrieving, citing—with no side effects by default; the failure mode is "wrong answer" or "should have refused but didn't", never destruction. The Action group writes to the world (executing actions); its failure mode is "broken state". Hence the different acceptance criteria: this group audits **citation correctness and refusal correctness**; the Action group audits **restricted permissions and recoverability**.
 
 ```mermaid
 flowchart LR
@@ -38,16 +38,16 @@ flowchart LR
         A[Corpus] --> B[Chunk] --> C[Embed] --> D[(Index: text + vectors + metadata)]
     end
     subgraph online["Online: retrieval chain"]
-        Q[User question] --> E[Retrieve top-k] --> F[Rerank / filter] --> G[Generate: answer must cite]
+        Q[User question] --> E[Retrieve top-k] --> F[Filter: permissions/tenant] --> G[Rerank] --> H[Generate: answer must cite]
+        E -->|no hit| R[Refuse: rather say no]
     end
     D --> E
-    G -->|no hit| R[Refuse: rather say no]
 ```
 
-### When to enter this layer / when not to
+### When to enter this group / when not to
 
 - **Enter**: answers need private corpora (product docs, tickets, code), need citations, or the knowledge updates frequently.
-- **Do not enter**: answers are unstable or unparseable—go back to [Layer 1 interaction contracts](../02-inference-interface/structured-output); not yet wired into a product interaction—start [Layer 2 application integration](../02-inference-interface/model-api); you need the system to take actions—go to [Layer 4 action and collaboration](../05-action/tool-execution).
+- **Do not enter**: answers are unstable or unparseable—go back to [Group 3 Context](../03-context/) (the output-shape landing point: [structured output](../02-inference-interface/structured-output)); not yet wired into a product interaction—start [Group 2 Inference & Interface](../02-inference-interface/); you need the system to take actions—go to [Group 5 Action](../05-action/tool-calling).
 
 ### Symptom → topic navigation
 
@@ -62,7 +62,7 @@ flowchart LR
 | Option | Direction | Control | State | Trust domain | Minimum complexity |
 | --- | --- | --- | --- | --- | --- |
 | Long-context stuffing | Corpus → prompt (bulk move) | Prompt-layer concat, no retrieval control | Full text resent per request | Entire corpus enters model context | Lowest (small single-batch corpus) |
-| RAG (this layer) | Query → retrieve → context (selective move) | Index, chunking, filtering all yours | Index is derived, rebuildable | Only hit fragments reach the model | Medium (embedding + index + pipeline) |
+| RAG (this group) | Query → retrieve → context (selective move) | Index, chunking, filtering all yours | Index is derived, rebuildable | Only hit fragments reach the model | Medium (embedding + index + pipeline) |
 | Fine-tuning | Corpus → parameters (rewrite the model) | Training recipe and data mix | Baked into weights; update = retrain | Corpus enters the training pipeline | Highest (see Learn LLM bridge) |
 
 Selection principle: **start at the lowest complexity**. If a batch of corpus fits in the context (Anthropic's reference line is about 200,000 tokens, with prompt caching), stuff it first; move to RAG when the corpus is large, updates often, or citations matter; consider fine-tuning only to change behavior style, not facts.
@@ -71,24 +71,25 @@ Selection principle: **start at the lowest complexity**. If a batch of corpus fi
 
 - 2016: HNSW approximate nearest-neighbor index published (Malkov & Yashunin, arXiv:1603.09320); became the mainstream index foundation of vector databases (retrievedAt 2026-09-01).
 - 2020: RAG paper published (Lewis et al., NeurIPS 2020, arXiv:2005.11401), establishing the "parametric + non-parametric memory" framing (retrievedAt 2026-09-01).
-- Anthropic Contextual Retrieval (contextualized chunks + BM25 + reranking): experiment data in [Advanced Retrieval](advanced-retrieval.md); blog publish date outside this verification pass—marked unverified.
+- 2024-09-19: Anthropic published Contextual Retrieval (contextualized chunks + BM25 + reranking); experiment data in [Advanced Retrieval](advanced-retrieval.md). The publish date was cross-checked against multiple independent secondary sources (retrievedAt 2026-09-01).
+- 2026-09: the v6 restructure (Issue #116) replaced the v5 six-layer pyramid with ten dependency-ordered groups; this group went from "Layer 3 · Knowledge Grounding" to "Group 4 · Grounding (reading the world)". The read/write boundary and acceptance criteria are unchanged.
 
 ## 2. Usage
 
-This layer's minimal hands-on is the zero-key example in [Embeddings and Retrieval](embeddings-retrieval.md): a pure-TypeScript deterministic vector retriever that runs in a clean environment within 15 minutes.
+This group's minimal hands-on is the zero-key example in [Embeddings and Retrieval](embeddings-retrieval.md): a pure-TypeScript deterministic vector retriever that runs in a clean environment within 15 minutes.
 
 ```bash
 # Save the full example from the embeddings-retrieval page as embeddings-retrieval.ts, then:
 node embeddings-retrieval.ts
 ```
 
-Acceptance: three output groups present—a lexically overlapping query hits the right document with its source; a paraphrased query (zero lexical overlap) correctly takes the no-hit path; an off-corpus question correctly refuses. Once it runs you have seen this layer's two core behaviors: **a score is not truth** (high similarity only means "similar"), and **no-hit is a path, not an exception**.
+Acceptance: three output groups present—a lexically overlapping query hits the right document with its source; a paraphrased query (zero lexical overlap) correctly takes the no-hit path; an off-corpus question correctly refuses. Once it runs you have seen this group's two core behaviors: **a score is not truth** (high similarity only means "similar"), and **no-hit is a path, not an exception**.
 
 Every topic's Usage section follows the same constraints: zero API keys, single self-contained file, deterministic output, positive and negative paths in pairs.
 
 ## 3. Principles
 
-On the capability chain, this layer upgrades Layer 2's "one interaction" into "one grounded interaction":
+On the capability chain, this group upgrades Group 2's "one interaction" into "one grounded interaction":
 
 ```text
 Offline: corpus → chunk → embed → index (text + vectors + metadata + content fingerprint)
@@ -142,4 +143,4 @@ Before entering the layer, use three diagnostics to locate the right page.
 
 ### Where learn-ai stops / where to go next
 
-This layer answers "how to ground results". It does not answer "embedding training objectives and vector geometry" (→ [Learn LLM](https://llm.zenheart.site/chapters/11-rag)), "evaluation methodology and benchmarks" (→ [evals](https://evals.zenheart.site/)), or "executing actions and permissions" (→ [Layer 4 action and collaboration](../05-action/tool-execution)).
+This group answers "how to ground results". It does not answer "embedding training objectives and vector geometry" (→ [Learn LLM](https://llm.zenheart.site/chapters/11-rag)), "evaluation methodology and benchmarks" (→ [evals](https://evals.zenheart.site/)), or "executing actions and permissions" (→ [Group 5 Action](../05-action/tool-calling)).
