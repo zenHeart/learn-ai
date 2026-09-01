@@ -1,3 +1,11 @@
+---
+title: 跨项目 Context 输入方案
+description: 1. Context 抽象层：定义统一的 Context 接口规范，不同项目按规范实现 Context Producer/Consumer 2. Context Registry：中心化注册所有项目的 Context 类型和 Schema，便于查询和组合
+domain: tech
+tags:
+  - tech
+---
+
 # 跨项目 Context 输入方案
 
 ## 核心要点

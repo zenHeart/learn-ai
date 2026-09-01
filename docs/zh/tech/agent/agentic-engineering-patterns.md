@@ -1,3 +1,11 @@
+---
+title: Agentic Engineering Patterns（Simon Willison）
+description: 用 LLMs + 系统化提示词 + 工具集成来解决问题的工程实践。
+domain: tech
+tags:
+  - agent
+---
+
 # Agentic Engineering Patterns（Simon Willison）
 
 > 来源：Simon Willison 的 [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/) 系列指南

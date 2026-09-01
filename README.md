@@ -46,7 +46,7 @@ Launch your AI-enhanced development environment in minutes.
 
 ### ⚡️ Start Here: Explore AI Coding Tools
 **Available now:** Learn about AI coding assistants
-👉 **[AI Coding Tools Documentation](./docs/products/ai-coding/index.md)** - Cursor, Copilot, Claude CLI, and more
+👉 **[AI Coding Tools Documentation](./docs/products/index.md)** - Cursor, Copilot, Claude CLI, and more
 
 
 

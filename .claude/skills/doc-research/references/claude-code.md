@@ -1,6 +1,6 @@
 # Claude Code 维护参考
 
-> 这是 [`_template.md`](./_template.md) 针对 Claude Code 的具体化，配合 [`maintenance-workflow.md`](./maintenance-workflow.md) 的通用流程使用。完整的高质量数据源清单（官方 Cookbook、核心开发者账号/Blog、GitHub 仓库、Awesome List、三方 Blog）已合并到 `docs/zh/products/ai-coding/claude/claude-code-cheatsheet.md` 的「高质量信息源」章节（读者可见，同时是 Agent 的数据基础），本文件的「监控页面」只是其中日常更新追踪最常用的一个子集。
+> 这是 [`_template.md`](./_template.md) 针对 Claude Code 的具体化，配合 [`maintenance-workflow.md`](./maintenance-workflow.md) 的通用流程使用。完整的高质量数据源清单（官方 Cookbook、核心开发者账号/Blog、GitHub 仓库、Awesome List、三方 Blog）已合并到 `docs/zh/products/claude/claude-code-cheatsheet.md` 的「高质量信息源」章节（读者可见，同时是 Agent 的数据基础），本文件的「监控页面」只是其中日常更新追踪最常用的一个子集。
 
 ## 基本信息
 
@@ -24,7 +24,7 @@
 文档按 [Diataxis 文档架构](https://diataxis.fr/) 四象限组织，每个文件有且只有一个明确的目的，避免不同象限的混搭导致"读者不知道该看哪一份"。
 
 ```
-docs/zh/products/ai-coding/claude/
+docs/zh/products/claude/
 ├── index.md                    # 🗺️ 学习地图（Tutorial 入门导航 + Reference 功能速查）
 ├── claude-ai.md                # 核心产品 1：Claude.ai 平台指南
 ├── claude-code.md              # 核心产品 2：📘 Tutorial — CLI 详解 + 界面变体 + 最佳实践

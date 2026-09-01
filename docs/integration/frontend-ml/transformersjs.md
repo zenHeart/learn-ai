@@ -1,3 +1,11 @@
+---
+title: Transformers.js Guide
+description: Run state-of-the-art models from Hugging Face directly in the browser.
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # Transformers.js Guide
 
 Run state-of-the-art models from Hugging Face directly in the browser.

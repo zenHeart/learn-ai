@@ -1,3 +1,11 @@
+---
+title: Human-in-the-Loop Patterns
+description: Human-in-the-Loop（人在回路，HITL）是一种将人类判断融入 AI 系统流程的设计模式，构成流程的运行闭环。在 Agentic AI 系统中，HITL 扮演关键角色，用于在关键决策点确保系统行为符合预期。
+domain: tech
+tags:
+  - agent
+---
+
 # Human-in-the-Loop Patterns
 
 > 原文: https://claude.com/blog/human-in-the-loop-agentic-ai

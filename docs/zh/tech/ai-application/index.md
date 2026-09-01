@@ -1,3 +1,13 @@
+---
+title: AI 应用实战案例
+description: AI 应用实战案例 — how to use it in engineering.
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # AI 应用实战案例
 
 > 包括得物 AI 落地、Building Semantic Search 等真实业务场景

@@ -1,3 +1,11 @@
+---
+title: "Use Case: AI for Accessibility (A11y)"
+description: AI can make the web accessible to the 1.3 billion people with disabilities.
+domain: recipe
+tags:
+  - use-case
+---
+
 # Use Case: AI for Accessibility (A11y)
 
 AI can make the web accessible to the 1.3 billion people with disabilities.

@@ -1,3 +1,11 @@
+---
+title: 可观测性 (Observability)
+description: "在传统软件中，你记录 \"Request / Response\"。 在 AI 软件中，你必须记录 Prompts, Completions, Tokens, 和 Latency。"
+domain: tech
+tags:
+  - engineering
+---
+
 # 可观测性 (Observability)
 
 在传统软件中，你记录 "Request / Response"。

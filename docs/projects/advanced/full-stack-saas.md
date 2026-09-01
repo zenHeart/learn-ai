@@ -1,3 +1,11 @@
+---
+title: "Project: AI SaaS (Full Stack)"
+description: "Level: Advanced Time: 1-2 Weeks Stack: Next.js, Postgres, Stripe, Clerk, Vercel AI SDK"
+domain: project
+tags:
+  - advanced
+---
+
 # Project: AI SaaS (Full Stack)
 
 **Level**: Advanced

@@ -1,38 +1,30 @@
-# 部署指南
+---
+title: 部署
+description: 先选能撑住流式请求的平台，再谈缓存、限流和账单。
+domain: deploy
+tags:
+  - deploy
+listed: false
+outline: false
+pageClass: catalog-page
+---
 
-部署 AI 应用比标准 Web 应用更难，因为**长时间运行的请求 (流式传输)** 和 **高计算需求 (如果托管模型)**。
+# 部署
 
-## 部署选项
+**结论**：AI 接口和普通 CRUD 不一样——响应要流很久，超时和账单是第一风险。先选平台，再补缓存和限流。
 
-| 平台 | 最适合 | 优点 | 缺点 |
-| :--- | :--- | :--- | :--- |
-| **Vercel** | **Next.js 应用** | 最简单，边缘网络，AI SDK 集成。 | Hobby 计划的超时限制 (10s/60s)。 |
-| **Cloudflare** | **全球低延迟** | Workers AI (免费 Llama 3!), 最便宜。 | 非 Node.js 运行时 (仅 Edge)。 |
-| **AWS / GCP** | **企业级** | 无限扩展，自定义 VPC。 | 设置复杂 (Terraform, IAM)。 |
-| **Railway / Render** | **Docker 应用** | 简单，允许长超时。 | 默认没有边缘网络。 |
+## 先选平台
 
-## 决策矩阵
+| 你的情况 | 先看 |
+|---|---|
+| Next.js 应用 | [Vercel Edge](./vercel-edge.md) |
+| 要全球边缘、能接受 Workers 运行时 | [Cloudflare Workers](./cloudflare-workers.md) |
 
-```mermaid
-graph TD
-    A[开始] --> B{使用 Next.js?}
-    B -- 是 --> C[Vercel (推荐)]
-    B -- 否 --> D{需要运行 Python/自定义模型?}
-    D -- 是 --> E[Railway / AWS EC2]
-    D -- 否 --> F{想要最便宜/最快?}
-    F -- 是 --> G[Cloudflare Workers]
-```
+## 再补生产清单
 
-## 超时问题
+1. [缓存](./caching.md) — 别对同一句话重复打模型  
+2. [限流](./rate-limiting.md) — 防止一把刷爆额度  
+3. [监控](./monitoring.md) — 延迟、失败率、token  
+4. [成本计算器](./cost-calculator.md) — 上线前先算一笔账  
 
-标准 Serverless 函数通常在 10-60 秒后超时。GPT-4 生成长报告可能需要 30 秒以上。
-
-**解决方案**:
-1.  **流式传输 (Streaming)**: 保持连接活跃 (Vercel 支持此功能)。
-2.  **后台任务 (Background Jobs)**: 使用 Inngest or Trigger.dev 在后台运行 AI 任务，然后推送结果。
-3.  **专用服务器 (Dedicated Servers)**: Docker 容器 (Railway) 没有硬性超时限制。
-
-## 下一步
-
-- **[Vercel / Edge 指南](./vercel-edge.md)**
-- **[Cloudflare Workers 指南](./cloudflare-workers.md)**
+评估和安全的概念页在 [技术 · 工程](/zh/tech/engineering/evals)。

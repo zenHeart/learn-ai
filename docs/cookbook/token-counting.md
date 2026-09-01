@@ -1,3 +1,11 @@
+---
+title: "Token Counting & Cost Optimization"
+description: Token Counting 让你在发送请求前预先计算 token 数量，帮助：
+domain: recipe
+tags:
+  - cookbook
+---
+
 # Token Counting & Cost Optimization
 
 > 来源: [Claude Token Counting 官方文档](https://platform.claude.com/docs/en/build-with-claude/token-counting)

@@ -1,3 +1,11 @@
+---
+title: AI Frameworks Overview
+description: "Building AI apps with raw API calls is possible, but frameworks solve common problems like streaming state management, chaining, and docu…"
+domain: tech
+tags:
+  - sdk
+---
+
 # AI Frameworks Overview
 
 Building AI apps with raw API calls is possible, but frameworks solve common problems like **streaming state management**, **chaining**, and **document retrieval**.

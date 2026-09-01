@@ -1,3 +1,11 @@
+---
+title: LangChain：Agent Harness 的解剖学
+description: "Agent = Model + Harness 如果你不是模型，那你就是 Harness"
+domain: tech
+tags:
+  - agent
+---
+
 # LangChain：Agent Harness 的解剖学
 
 > 来源：[The Anatomy of an Agent Harness](https://blog.langchain.com/the-anatomy-of-an-agent-harness/)，作者 Vivek Trivedi

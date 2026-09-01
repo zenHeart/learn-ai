@@ -1,3 +1,11 @@
+---
+title: 用例：AI 推荐
+description: "场景: Netflix/Spotify 风格的“为你推荐”。 传统方式: 协同过滤 (矩阵分解)。难以实现。 AI 方式: 向量相似度。"
+domain: recipe
+tags:
+  - use-case
+---
+
 # 用例：AI 推荐
 
 **场景**: Netflix/Spotify 风格的“为你推荐”。

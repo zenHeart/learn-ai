@@ -1,3 +1,11 @@
+---
+title: Claude Vision 文档
+description: Claude 的视觉能力使其能够理解和分析图像，开启多模态交互的可能性。
+domain: tech
+tags:
+  - tech
+---
+
 # Claude Vision 文档
 
 > 原文: [Vision - Claude API](https://platform.claude.com/docs/en/build-with-claude/vision)

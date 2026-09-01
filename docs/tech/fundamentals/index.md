@@ -1,3 +1,13 @@
+---
+title: AI Fundamentals
+description: AI Fundamentals — how to use it in engineering.
+domain: tech
+tags:
+  - fundamentals
+outline: false
+pageClass: catalog-page
+---
+
 # AI Fundamentals
 
 > Core concepts: LLMs, Context, and Embeddings

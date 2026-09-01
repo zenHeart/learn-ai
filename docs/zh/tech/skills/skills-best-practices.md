@@ -1,3 +1,11 @@
+---
+title: 构建 Skills 最佳实践
+description: 不要凭空构建 Skills。只有当有真实、重复的任务时才创建。
+domain: tech
+tags:
+  - skill
+---
+
 # 构建 Skills 最佳实践
 
 > 学习来源：https://claude.com/blog/how-to-create-skills-key-steps-limitations-and-examples

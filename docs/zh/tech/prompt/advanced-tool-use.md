@@ -1,5 +1,15 @@
+---
+title: Advanced Tool Use (Anthropic)
+description: AI agents 的未来是模型能无缝跨数百乃至数千个工具工作。但传统工具使用面临三个根本问题：
+domain: tech
+tags:
+  - prompt
+---
+
 # Advanced Tool Use (Anthropic)
 
+> **路径位置**：已从 Prompt 合集挪到 [Agent](/zh/tech/patterns/agent/) 栏。还不会写提示，先回 [怎么写 Prompt](/zh/tech/prompt/)。本页讲「工具很多时怎么按需加载」，不是入门。
+>
 > 原文: [Introducing advanced tool use on the Claude Developer Platform](https://www.anthropic.com/engineering/advanced-tool-use)
 
 ## 背景与动机

@@ -1,3 +1,11 @@
+---
+title: MCP 课程笔记：Model Context Protocol 全面指南
+description: ---
+domain: tech
+tags:
+  - mcp
+---
+
 # MCP 课程笔记：Model Context Protocol 全面指南
 
 > 学习来源：Model Context Protocol 官方文档 https://modelcontextprotocol.io

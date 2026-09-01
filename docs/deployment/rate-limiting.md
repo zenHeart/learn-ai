@@ -1,3 +1,11 @@
+---
+title: "Rate Limiting & Quotas"
+description: Protect your wallet. A single viral user can cost you thousands.
+domain: deploy
+tags:
+  - deploy
+---
+
 # Rate Limiting & Quotas
 
 Protect your wallet. A single viral user can cost you thousands.

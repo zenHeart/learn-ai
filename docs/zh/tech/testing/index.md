@@ -1,3 +1,13 @@
+---
+title: AI 自动化测试
+description: AI 自动化测试 — how to use it in engineering.
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # AI 自动化测试
 
 > AI 自动化测试、MidScene UI 自动化等

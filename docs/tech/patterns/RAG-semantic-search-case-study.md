@@ -1,3 +1,11 @@
+---
+title: "Semantic Search Case Study: Kent C. Dodds"
+description: Kent C. Dodds 分享了如何在自己的博客上构建语义搜索系统的完整方案。使用 Cloudflare Workers AI + Vectorize 实现。
+domain: tech
+tags:
+  - rag
+---
+
 # Semantic Search Case Study: Kent C. Dodds
 
 > 来源: [Building Semantic Search on My Content](https://kentcdodds.com/blog/building-semantic-search-on-my-content) by Kent C. Dodds

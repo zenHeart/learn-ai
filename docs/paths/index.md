@@ -1,205 +1,60 @@
-# Learning Paths Overview
-
-Choose your learning path based on your goals and current skill level.
-
-## The Three Paths to AI Mastery
-
-```mermaid
-graph TD
-    Start[Start Here] --> Decision{What's your goal?}
-
-    Decision -->|Boost productivity| Path1[Path 1: Use AI Tools]
-    Decision -->|Add AI features| Path2[Path 2: Add AI Features]
-    Decision -->|Build AI products| Path3[Path 3: Build AI Products]
-
-    Path1 --> Path1Done[2-3x faster coding]
-    Path2 --> Path2Done[AI-powered features]
-    Path3 --> Path3Done[Production AI apps]
-
-    Path1Done -.->|Next| Path2
-    Path2Done -.->|Next| Path3
-```
-
-## Path Comparison
-
-| Path | Difficulty | Prerequisites | You'll Build |
-|------|------------|---------------|--------------|
-| **[Path 1: Use AI Tools](./productivity.md)** | Beginner | Basic programming | Productivity tools mastery |
-| **[Path 2: Add AI Features](./integration.md)** | Intermediate | JavaScript, React basics | Chatbots, AI search, smart forms |
-| **[Path 3: Build AI Products](./mastery.md)** | Advanced | Full-stack development | Complete AI SaaS applications |
-
+---
+title: Learning paths
+description: "Pick by the problem you have now: use the assistant, then add it to your app, then ship."
+domain: path
+tags:
+  - path
+listed: false
+outline: false
+pageClass: catalog-page
+prev: false
+next:
+  text: Path 1 · Use AI tools
+  link: /paths/productivity
 ---
 
-## Path 1: Use AI Tools
+# Learning paths
 
-Master AI coding assistants to code 2-3x faster with Cursor, Copilot, Claude CLI, and Gemini CLI.
+Answer one question: **which sentence is you right now?**
 
-**Learning Outcomes**:
-- ⚡️ Code 2-3x faster with AI autocomplete
-- 🐛 Debug in minutes with AI assistance
-- 📚 Learn codebases rapidly
-- ✨ Generate boilerplate instantly
+1. “I am slow, and I do not know how to drive the assistant.” → Path 1  
+2. “I need the model inside my own product.” → Path 2  
+3. “The demo works; I cannot ship it or price it.” → Path 3  
 
-**[Start Path 1 →](./productivity.md)**
+The three paths **stack**. Default order is 1 → 2 → 3. Skip to 2 only if you already use a coding agent every day.
 
----
+This is not a product manual ([Products](/products/)) and not model internals ([Learn LLM](https://llm.zenheart.site/)).
 
-## Path 2: Add AI Features
+## In reading order
 
-Integrate AI capabilities into existing applications using JavaScript/TypeScript.
+### 1. Use AI tools
 
-**Learning Outcomes**:
-- 🤖 Build streaming AI chatbots
-- 🔍 Implement semantic search with RAG
-- 📝 Create AI-powered forms
-- 🛠️ Use OpenAI, Anthropic, and HuggingFace APIs
+**Problem**: boilerplate by hand, docs by hand, half-day debugging.  
+**After**: you can drive Cursor, Copilot, Claude, or Gemini on a real repo.  
+**Next**: put a model in your app.
 
-**[Start Path 2 →](./integration.md)**
+**[Start path 1](/paths/productivity)**
 
----
+### 2. Add AI features
 
-## Path 3: Build AI Products
+**Problem**: you can use the assistant, but your React / Vue app has no chat, search, or fill.  
+**After**: API calls, streaming UI, RAG search.  
+**Need**: path 1 habits; TypeScript.
 
-Design, build, and deploy production-ready AI-powered applications from scratch.
+**[Start path 2](/paths/integration)**
 
-**Learning Outcomes**:
-- 🚀 Deploy AI apps to Edge/Workers
-- 📊 Implement monitoring and observability
-- 💰 Optimize costs and performance
-- 🔒 Handle security and rate limiting
-- 🧪 Test and evaluate AI systems
+### 3. Build AI products
 
-**[Start Path 3 →](./mastery.md)**
+**Problem**: the demo is fine; production times out and the bill explodes.  
+**After**: deploy, rate-limit, observe, cost, eval.  
+**Need**: at least one working feature from path 2.
 
----
+**[Start path 3](/paths/mastery)**
 
-## How to Choose Your Path
+## How to choose
 
-### Start with Path 1 if...
-- ✅ You're new to AI development
-- ✅ You want immediate productivity gains
-- ✅ You learn best by using tools hands-on
-- ✅ You have limited time (1-2 weeks)
-
-### Skip to Path 2 if...
-- ✅ You already use AI coding tools daily
-- ✅ You want to add AI features to your app
-- ✅ You're comfortable with JavaScript/TypeScript
-- ✅ You can dedicate 2-4 weeks
-
-### Jump to Path 3 if...
-- ✅ You've built AI features before
-- ✅ You're planning a production AI application
-- ✅ You understand RAG, embeddings, and agents
-- ✅ You need deployment and scaling knowledge
-
----
-
-## Prerequisites by Path
-
-### Path 1: Use AI Tools
-- Basic programming knowledge (any language)
-- Code editor (VS Code recommended)
-- Willingness to try new workflows
-
-### Path 2: Add AI Features
-- JavaScript/TypeScript proficiency
-- React or Vue experience
-- Basic understanding of APIs
-- Node.js environment setup
-
-### Path 3: Build AI Products
-- Full-stack development experience
-- Understanding of Path 2 concepts
-- DevOps basics (deployment, monitoring)
-- Database experience
-
----
-
-## Learning Path Roadmap
-
-### Suggested Progression
-
-**Month 1**: Path 1 - Use AI Tools
-- Week 1-2: Master AI coding assistants
-- Practice daily with real projects
-
-**Month 2-3**: Path 2 - Add AI Features
-- Week 3-4: API integration fundamentals
-- Week 5-6: Build chatbot and RAG search
-- Week 7-8: Advanced patterns (agents, tools)
-
-**Month 4+**: Path 3 - Build AI Products
-- Week 9-10: Production deployment
-- Week 11-12: Monitoring and optimization
-- Week 13-16: Complete AI SaaS project
-
-**Total Time to Mastery**: 3-4 months (30-60 min/day)
-
----
-
-## Quick Start Recommendations
-
-### I'm a Frontend Developer
-1. Start: **Path 1** (use AI tools to speed up React/Vue work)
-2. Next: **Path 2** (add AI chat to your app)
-3. Final: **Path 3** (build complete AI product)
-
-### I'm a Backend Developer
-1. Start: **Path 1** (use AI for API development)
-2. Next: **Path 2** (integrate LLM APIs)
-3. Final: **Path 3** (architect AI infrastructure)
-
-### I'm a Product Manager
-1. Start: **Path 1** (understand AI capabilities)
-2. Next: **Path 2** (prototype AI features)
-3. Consider: External development for Path 3
-
-### I'm a Startup Founder
-1. Start: **Path 2** (validate AI features quickly)
-2. Parallel: **Path 1** (boost team productivity)
-3. Next: **Path 3** (scale to production)
-
----
-
-## Additional Resources
-
-### Before You Start
-
-- [AI Decision Framework](https://github.com/zenheart/learn-ai#5-the-ai-decision-framework-for-frontend-engineers)
-
-### Reference Materials
-- [Tech Stack Overview](../tech/index.md)
-- [AI Coding Tools](../products/ai-coding/index.md)
-- [Prompt Engineering](../tech/prompt/index.md)
-
-### Community
-- [GitHub Discussions](https://github.com/zenheart/learn-ai/discussions)
-- [Contribution Guide](https://github.com/zenheart/learn-ai/blob/master/CONTRIBUTING.md) 🚧 (Coming Soon)
-
----
-
-## Frequently Asked Questions
-
-**Q: Can I skip paths?**
-A: Yes, but we recommend Path 1 for everyone. Mastering AI coding tools is foundational for all AI development.
-
-**Q: How much time per day do I need?**
-A: 30-60 minutes/day is ideal. Consistency matters more than intensity.
-
-**Q: Do I need a paid AI tool subscription?**
-A: Path 1 requires a subscription (Cursor $20/mo or Copilot $10/mo). Paths 2-3 use pay-per-use APIs (~$5-20/mo for learning).
-
-**Q: Are there assessments?**
-A: Each path has self-assessment milestones. We'll add certification options in the future.
-
-**Q: Can I learn in a team?**
-A: Absolutely! We encourage team learning. Pair programming with AI tools is highly effective.
-
----
-
-**Ready to start?** Choose your path and begin your AI mastery journey!
-
-- **[Path 1: Use AI Tools](./productivity.md)** - Start here
-- **[Path 2: Add AI Features](./integration.md)** - Integrate AI into apps
-- **[Path 3: Build AI Products](./mastery.md)** - Production AI systems
+| You are here | Take |
+|---|---|
+| Almost never used a coding agent | Path 1 |
+| Use one daily; need it in the product | Path 2 |
+| Already wired an API / RAG; need to ship | Path 3 |

@@ -1,3 +1,11 @@
+---
+title: Cost Optimization
+description: "AI is expensive. A single GPT-4 request can cost $0.03. If you have 10,000 users, that's $300/day."
+domain: tech
+tags:
+  - engineering
+---
+
 # Cost Optimization
 
 AI is expensive. A single GPT-4 request can cost $0.03. If you have 10,000 users, that's $300/day.

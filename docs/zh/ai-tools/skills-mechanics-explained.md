@@ -1,3 +1,11 @@
+---
+title: Skills 机制详解：与其他工具的对比
+description: Claude 的 Agentic 生态由多个构建块组成，每个都有其独特用途。理解它们的区别和组合方式是构建有效工作流的关键。
+domain: tech
+tags:
+  - skill
+---
+
 # Skills 机制详解：与其他工具的对比
 
 > 学习来源: [Skills explained](https://claude.com/blog/skills-explained)

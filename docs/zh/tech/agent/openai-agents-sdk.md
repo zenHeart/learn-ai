@@ -1,3 +1,11 @@
+---
+title: OpenAI Agents SDK
+description: "OpenAI Agents SDK 让你用轻量、易用的方式构建 agentic AI 应用，只用少量抽象。 它是之前 Swarm(https://github.com/openai/swarm/tree/main) 实验的生产就绪升级版。"
+domain: tech
+tags:
+  - agent
+---
+
 # OpenAI Agents SDK
 
 > 原文: https://openai.github.io/openai-agents-python/

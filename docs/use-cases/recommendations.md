@@ -1,3 +1,11 @@
+---
+title: "Use Case: AI Recommendations"
+description: "Scenario: Netflix/Spotify style \"Recommended for You\". Traditional: Collaborative Filtering (Matrix Factorization). Hard to implement."
+domain: recipe
+tags:
+  - use-case
+---
+
 # Use Case: AI Recommendations
 
 **Scenario**: Netflix/Spotify style "Recommended for You".

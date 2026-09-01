@@ -1,3 +1,11 @@
+---
+title: Advanced Tool Use（Anthropic）
+description: 1. 工具定义即 Context 成本：58 个工具定义可消耗 55K+ tokens，GitHub 35 个工具 ~26K tokens，Jira 一个 ~17K tokens
+domain: tech
+tags:
+  - tech
+---
+
 # Advanced Tool Use（Anthropic）
 
 > 来源：https://www.anthropic.com/engineering/advanced-tool-use

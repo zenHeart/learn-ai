@@ -1,147 +1,98 @@
-# 技术栈
+---
+title: 技术
+description: 先会说话，再会查资料，再会让模型动手。从 LLM / 提示 / 上下文拆下去。
+domain: tech
+tags:
+  - tech
+listed: false
+outline: [2, 3]
+pageClass: catalog-page
+---
 
-本节将探讨构建智能应用所需的核心 AI 技术和模式。每种技术都有其特定的解决场景——理解**何时**使用**什么**至关重要。
+# 技术
 
-## AI 应用开发的三大支柱
+**结论先讲**：前端工程师用 AI，不是先训模型。顺序是——
 
-### 1. **LLM (大语言模型)** - 基础
+1. 会跟模型说话（提示 + 上下文）  
+2. 会把模型接到自己的应用（API / 流式 UI）  
+3. 会让它查你的资料（RAG）  
+4. 会让它动手（工具 / Agent / Skill / MCP）  
+5. 最后才谈评估、成本和要不要微调  
 
-**是什么**: 理解并生成文本的预训练模型。
+这和 [Cursor 学习导航](/zh/products/cursor/) 同一套：先全景，再按任务拆。左侧侧栏按这个顺序排。
 
-**何时使用**: 所有 AI 应用的起点。
+**不是**：某个产品的逐步点击（去 [产品](/zh/products/)），也不是 Transformer 内部推导（去 [Learn LLM](https://llm.zenheart.site/)）。
 
-**了解更多**: [LLM 指南](/zh/tech/fundamentals/LLM.md)
+## 一张图：你现在卡在哪
 
-### 2. **提示工程 (Prompt Engineering)** - 接口
-
-**是什么**: 与 LLM 有效沟通的技术。
-
-**何时使用**: 任何与 LLM 的交互都需要好的提示词。
-
-**了解更多**: [提示工程](/zh/tech/prompt/)
-
-### 3. **上下文管理 (Context Management)** - 记忆
-
-**是什么**: 管理 LLM 能看到和记住的信息。
-
-**何时使用**: 聊天应用、文档问答、任何多轮交互。
-
-**了解更多**: [上下文指南](/zh/tech/fundamentals/context.md)
-
-## 核心技术对比
-
-### 微调 (SFT) vs 检索增强生成 (RAG)
-
-| 维度 | 微调 (SFT) | RAG (检索增强生成) |
-|--------|-------------------|--------------------------------------|
-| **核心原理** | 调整模型参数以适应特定任务 | 检索外部知识以增强生成 |
-| **成本** | **高** - 需要 GPU、标注数据、重新训练 | **低** - 使用外部知识库，仅需推理 |
-| **响应时间** | **快** - 知识内化在模型中 | **较慢** - 生成前需要检索步骤 |
-| **适用场景** | 领域特定术语、复杂推理 | 高准确性要求、知识频繁更新 |
-| **维护** | **难** - 更新需要重新训练 | **易** - 随时更新知识库 |
-| **可控性** | 黑盒，训练后行为固定 | 透明，可通过知识库控制 |
-| **搭建复杂度** | 非常高 (数天/数周) | 中等 (数小时/数天) |
-| **何时使用** | 专业领域、知识稳定 | 动态数据、可解释 AI、成本敏感 |
-
-**前端工程师建议**: 从 RAG 开始。仅在以下情况考虑微调：
-- 高度专业化的领域 (医疗、法律等)
-- 有 GPU 训练预算
-- 知识稳定且极少变更
-
-## 技术决策树
-
-```mermaid
-graph TD
-    A{需要专用模型?} -->|是| B{任务复杂度?}
-    A -->|否| C{需要外部知识?}
-    B -->|简单| D[仅 SFT]
-    B -->|复杂| E[RAG + SFT]
-    C -->|否| F[仅提示工程]
-    C -->|是| G[RAG]
-
-    style F fill:#90EE90
-    style G fill:#87CEEB
-    style D fill:#FFB6C1
-    style E fill:#DDA0DD
+```
+我要解决什么？
+├── 模型到底吃什么、记住什么          → 基础（LLM / 上下文 / Embeddings）
+├── 提示写不清楚、输出不稳            → Prompt
+├── 要在 React / Vue 里接上模型        → 集成（API / SDK / 流式）
+├── 回答必须基于我们自己的文档        → RAG
+├── 要它改文件、调工具、走多步        → Agent / Skills / MCP
+└── 要上线、要测、要控账单            → 工程与评估
 ```
 
-### 决策指南
+## 1. 基础：模型看见什么
 
-**场景 1: 为产品文档构建聊天机器人**
-- ✅ 使用: RAG (文档频繁更新)
-- ❌ 不使用: 微调 (昂贵，难以更新)
+先建立三块词汇，后面所有页都用它们。
 
-**场景 2: 构建代码补全工具**
-- ✅ 使用: 提示工程 + 上下文管理
-- 可能: RAG (用于项目特定模式)
-- ❌ 不使用: 微调 (除非你是 GitHub Copilot)
+| 概念 | 你当什么用 | 页 |
+|---|---|---|
+| LLM | 一个吃文本、吐文本的 API | [LLM 基础](/zh/tech/fundamentals/LLM) |
+| 上下文窗口 | 这一轮它能看见的字数上限 | [上下文窗口](/zh/tech/fundamentals/context) |
+| Embeddings | 把句子变成可比较的向量 | [Embeddings](/zh/tech/fundamentals/embeddings) |
+| 上下文工程 | 往窗口里塞什么、丢掉什么 | [上下文工程](/zh/tech/fundamentals/context-engineering) |
 
-**场景 3: 医疗诊断助手**
-- ✅ 使用: RAG + 微调
-- 原因: 专业术语 (SFT) + 最新研究 (RAG)
+机制（注意力、训练、记忆）见 Learn LLM；本栏只建立概念，然后接到工程和工具。
 
-**场景 4: 简单的 AI 聊天功能**
-- ✅ 使用: 仅提示工程
-- 原因: 大多数 LLM 已经很擅长对话
+## 2. 怎么写：Prompt
 
-## 推荐工具与平台
+会用工具之后，质量差几乎都是提示和上下文没写清。这一栏是一条路径，不是合集。
 
-### 开发框架
-1. **LangChain** - Python/JS 的 LLM 应用框架
-2. **Vercel AI SDK** - React 优先的 AI 框架
-3. **LlamaIndex** - RAG 和数据框架
-4. **Anthropic SDK** - Claude 集成
+1. [地图 · 怎么写](/zh/tech/prompt/)：20 分钟主课（任务 / 约束 / 输出 / 示例）  
+2. [说清楚](/tech/prompt/claude-prompt-best-practices) → [稳住结构](/zh/tech/prompt/json-prompt-best-practices) → [写给仓库](/zh/tech/prompt/agents-doc)  
+3. 换了新模型再读 [换模型时改什么](/zh/tech/prompt/official-guide-2026)；System Prompts 只当附录查阅
 
-### 向量数据库 (RAG)
-1. **Pinecone** - 托管型向量数据库
-2. **Weaviate** - 开源向量搜索
-3. **pgvector** - Postgres 扩展
-4. **Chroma** - 轻量级，可嵌入
+## 3. 怎么接到产品：集成
 
-### 低代码平台
-1. **Dify** - 开源 LLM 应用平台
-2. **Flowise** - 可视化 LLM 工作流构建器
-3. **LangFlow** - 拖拽式 LLM 链
+有手感了，再把模型嵌进自己的应用。
 
-### 本地开发
-1. **Ollama** - 本地运行 LLM
-2. **LocalAI** - 自托管 AI API
-3. **LM Studio** - 本地模型 GUI
+- [API 对比](/zh/integration/apis/) → OpenAI / Anthropic / 流式  
+- [框架](/zh/integration/frameworks/)：Vercel AI SDK、LangChain.js、Next.js  
+- [工具调用](/zh/integration/protocols/tool-calling)  
+- 前端本地跑小模型：[Transformers.js](/zh/integration/frontend-ml/transformersjs)
 
-## 学习路径建议
+## 4. 怎么查资料：RAG
 
-**第 1-2 周**: 基础
-- 掌握 [LLM 基础](/zh/tech/fundamentals/LLM.md)
-- 学习 [提示工程](/zh/tech/prompt/)
-- 理解 [上下文管理](/zh/tech/fundamentals/context.md)
+文档、工单、代码库不能靠模型「背下来」。先检索，再生成。
 
-**第 3-4 周**: 构建功能
-- 实现 [RAG](/zh/tech/patterns/RAG.md) 进行知识检索
-- 探索 [MCP](/zh/integration/protocols/mcp/) 进行工具集成
-- 构建简单的 [Agents](/zh/tech/patterns/agent/index.md)
+- [RAG](/zh/tech/patterns/RAG)  
+- 语义搜索实践：[构建语义搜索](/zh/tech/ai-application/building-semantic-search)
 
-**第 5 周+**: 高级模式
-- 微调 ([SFT](/zh/tech/training/SFT.md)) 以满足特定需求
-- 生产环境优化
-- 多智能体工作流
+微调（SFT / RLHF）比 RAG 贵一个数量级，默认别上。见 [SFT](/zh/tech/training/SFT)。
 
-## 避免常见的误区
+## 5. 怎么让它做事：Agent
 
-1. **过度设计**: 如果简单的提示词能解决问题，就不要用 RAG
-2. **错误的模型选择**: 简单任务使用更便宜的模型
-3. **忽视上下文限制**: 始终管理 Token 使用量
-4. **无错误处理**: LLM 会失败——要有后备方案
-5. **过早微调**: 先尝试 RAG 和提示工程
+多步、要调工具、要改仓库时，才需要 Agent。先读选用，再读模式。
 
-## 下一步
+- [Agent 概览](/zh/tech/patterns/agent/)  
+- [设计模式](/zh/tech/agent/agent-design-patterns)  
+- [Skills](/zh/tech/skills/) · [MCP](/zh/tech/mcp/) · [工具调用](/zh/integration/protocols/tool-calling)
 
-根据你的直接需求选择学习路径：
+## 6. 怎么验和控
 
-- **需要了解基础？** → 从 [LLM](/zh/tech/fundamentals/LLM.md) 开始
-- **构建聊天功能？** → 查看 [提示工程](/zh/tech/prompt/)
-- **添加外部知识？** → 学习 [RAG](/zh/tech/patterns/RAG.md)
-- **构建自主 AI？** → 探索 [Agent](/zh/tech/patterns/agent/index.md) 和 [MCP](/zh/integration/protocols/mcp/)
-- **管理成本/性能？** → 阅读 [上下文管理](/zh/tech/fundamentals/context.md)
-- **需要专用模型？** → 查看 [SFT](/zh/tech/training/SFT.md)
+功能能跑之后：测、看、限流、算钱。
 
-本节中的技术是你的构建模块。掌握它们以创建强大的、生产级的 AI 应用程序。
+- [测试](/zh/tech/engineering/testing) · [评估](/zh/tech/engineering/evals)  
+- [可观测性](/zh/tech/engineering/observability) · [安全](/zh/tech/engineering/security) · [成本](/zh/tech/engineering/cost-optimization)
+
+## 建议阅读顺序
+
+路径 1 的人：基础 → Prompt。  
+路径 2 的人：集成 → RAG。  
+路径 3 的人：工程与评估；Agent 按需。
+
+不要从侧栏最底下的「更多」倒着读。

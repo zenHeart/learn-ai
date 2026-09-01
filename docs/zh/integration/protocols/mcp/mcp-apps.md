@@ -1,3 +1,12 @@
+---
+title: MCP Apps — 交互式 UI 能力扩展
+description: "官方文档: https://apps.extensions.modelcontextprotocol.io"
+domain: tech
+tags:
+  - protocol
+  - mcp
+---
+
 # MCP Apps — 交互式 UI 能力扩展
 
 > 官方 MCP 扩展，让工具返回丰富的交互界面（仪表盘、表单、可视化等）

@@ -1,3 +1,11 @@
+---
+title: Evaluations (Evals)
+description: "You can't improve what you don't measure. Evals are the \"Unit Tests\" for AI quality."
+domain: tech
+tags:
+  - engineering
+---
+
 # Evaluations (Evals)
 
 You can't improve what you don't measure. **Evals** are the "Unit Tests" for AI quality.

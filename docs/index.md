@@ -1,4 +1,10 @@
 ---
+title: Learn AI
+description: Frontend engineer guide to using AI tools and shipping AI features.
+domain: path
+tags:
+  - home
+listed: false
 layout: home
 
 hero:

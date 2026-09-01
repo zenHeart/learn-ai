@@ -1,4 +1,14 @@
+---
+title: Context Window Management
+description: "In LLMs, context refers to all the text the model can \"see\" and consider when generating a response. This includes:"
+domain: tech
+tags:
+  - fundamentals
+---
+
 # Context Window Management
+
+> **Concept only.** The window is this turn's token budget. Truncation, summary, and memory modes live on Learn LLM [chapter 15 A5](https://llm.zenheart.site/chapters/15-prompt-memory). Model sizes below go stale — check the vendor model page.
 
 ## What is Context?
 

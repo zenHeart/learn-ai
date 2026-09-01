@@ -1,3 +1,11 @@
+---
+title: "Recipe: AI Form Autocomplete"
+description: "Problem: Filling out long forms is tedious. Solution: Let users type a short sentence, and use AI to map it to the form fields."
+domain: recipe
+tags:
+  - cookbook
+---
+
 # Recipe: AI Form Autocomplete
 
 **Problem**: Filling out long forms is tedious.

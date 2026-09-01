@@ -1,3 +1,18 @@
+---
+title: "路径 1: 使用 AI 工具"
+description: "掌握 AI 编程助手，使用 Cursor, Copilot, Claude CLI 和 Gemini CLI 将编码速度提升 2-3 倍。"
+domain: path
+tags:
+  - path
+navOrder: 10
+prev:
+  text: 路径概览
+  link: /zh/paths/
+next:
+  text: 路径 2 集成
+  link: /zh/paths/integration
+---
+
 # 路径 1: 使用 AI 工具
 
 掌握 AI 编程助手，使用 Cursor, Copilot, Claude CLI 和 Gemini CLI 将编码速度提升 2-3 倍。
@@ -34,10 +49,10 @@ const pathSteps = [
     description: '选择你的主要工具 (Cursor, Copilot, 或 Claude CLI) 并学习编写有效的代码生成提示词。',
     status: 'active',
     links: [
-      { text: 'Cursor 指南', url: '/zh/products/ai-coding/cursor' },
-      { text: 'Copilot 指南', url: '/zh/products/ai-coding/copilot' },
-      { text: 'Claude Code', url: '/zh/products/ai-coding/claude/claude-code' },
-      { text: 'Gemini CLI', url: '/zh/products/ai-coding/gemini/gemini-cli' }
+      { text: 'Cursor 指南', url: '/zh/products/cursor' },
+      { text: 'Copilot 指南', url: '/zh/products/copilot' },
+      { text: 'Claude Code', url: '/zh/products/claude/claude-code' },
+      { text: 'Gemini CLI', url: '/zh/products/gemini/gemini-cli' }
     ]
   },
   {
@@ -56,8 +71,8 @@ const pathSteps = [
     description: '掌握迭代优化、上下文加载和多文件操作。生成符合你代码库风格的代码。',
     status: 'active',
     links: [
-      { text: 'AI 编程工具', url: '/zh/products/ai-coding/' },
-      { text: '其他工具', url: '/zh/products/ai-coding/othertools' }
+      { text: 'AI 编程工具', url: '/zh/products/' },
+      { text: '其他工具', url: '/zh/products/othertools' }
     ]
   },
   {
@@ -82,4 +97,4 @@ const pathSteps = [
 
 **准备好添加 AI 功能了吗？** → [路径 2: 集成](./integration.md)
 
-**探索所有工具？** → [AI 编程工具](../products/ai-coding/)
+**探索所有工具？** → [AI 编程工具](../products/)

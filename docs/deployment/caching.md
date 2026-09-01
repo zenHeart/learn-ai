@@ -1,3 +1,11 @@
+---
+title: Caching Strategies for AI
+description: LLM requests are slow and expensive. Caching is the best way to fix both.
+domain: deploy
+tags:
+  - deploy
+---
+
 # Caching Strategies for AI
 
 LLM requests are **slow** and **expensive**. Caching is the best way to fix both.

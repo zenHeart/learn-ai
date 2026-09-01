@@ -1,3 +1,13 @@
+---
+title: Prompt Cases
+description: Prompt Cases — how to use it in engineering.
+domain: tech
+tags:
+  - prompt
+outline: false
+pageClass: catalog-page
+---
+
 # Prompt Cases
 
 > Real-world prompt engineering examples

@@ -1,4 +1,14 @@
+---
+title: "Vector Databases & Embeddings"
+description: "Embeddings are numerical representations of text (or other data) that capture semantic meaning in high-dimensional space. They're the fou…"
+domain: tech
+tags:
+  - fundamentals
+---
+
 # Vector Databases & Embeddings
+
+> **Concept only.** Sentences become comparable vectors. Implementation and eval live on Learn LLM [chapters 11–12](https://llm.zenheart.site/chapters/11-rag). This page is how a frontend calls an embedding API.
 
 ## What Are Embeddings?
 

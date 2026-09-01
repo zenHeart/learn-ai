@@ -1,3 +1,11 @@
+---
+title: "Project: AI Image Generator"
+description: "Level: Beginner Time: 45 minutes Stack: Next.js, OpenAI (DALL-E 3)"
+domain: project
+tags:
+  - beginner
+---
+
 # Project: AI Image Generator
 
 **Level**: Beginner

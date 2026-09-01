@@ -1,3 +1,11 @@
+---
+title: AI 安全
+description: "AI 引入了新的攻击向量。OWASP Top 10 for LLM(https://owasp.org/www-project-top-10-for-large-language-model-applications/) 是这方面的圣经。"
+domain: tech
+tags:
+  - engineering
+---
+
 # AI 安全
 
 AI 引入了新的攻击向量。[OWASP Top 10 for LLM](https://owasp.org/www-project-top-10-for-large-language-model-applications/) 是这方面的圣经。

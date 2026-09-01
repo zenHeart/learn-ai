@@ -1,3 +1,11 @@
+---
+title: AI 驱动工作流：自动化项目分析与线上问题修复
+description: 1. 自动化修复闭环：Sentry 捕获错误 → AI 自动分析根因 → Claude Code 生成修复代码并创建 MR → 飞书通知 → 人工合并 2. 核心工具链：Sentry（监控）+ Claude Code 无头模式（代码修复）+ MCP（性能分析/飞书/代码托管…
+domain: tech
+tags:
+  - tech
+---
+
 # AI 驱动工作流：自动化项目分析与线上问题修复
 
 > 来源：https://tech.qimao.com/ai-qu-dong-gong-zuo-liu-zi-dong-hua-xiang-mu-fen-xi-yu-xian-shang-wen-ti-xiu-fu/

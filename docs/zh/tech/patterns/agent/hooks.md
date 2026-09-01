@@ -1,3 +1,11 @@
+---
+title: 智能体 Hooks (Agent Hooks)：AI 助手的事件驱动控制
+description: "阅读时间： 25 分钟 | 难度： 中级 | 先决条件： 对 AI 编码智能体、命令行脚本有基本了解"
+domain: tech
+tags:
+  - agent
+---
+
 # 智能体 Hooks (Agent Hooks)：AI 助手的事件驱动控制
 
 **阅读时间：** 25 分钟 | **难度：** 中级 | **先决条件：** 对 AI 编码智能体、命令行脚本有基本了解

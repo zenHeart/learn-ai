@@ -1,4 +1,8 @@
 ---
+domain: product
+tags:
+  - gallery
+listed: false
 layout: ai-tools
 title: AI Tools Gallery
 description: Discover the best AI tools to boost your productivity

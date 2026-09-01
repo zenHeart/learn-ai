@@ -1,3 +1,11 @@
+---
+title: AI Cost Calculator
+description: Calculating AI costs is complex because of token ratios.
+domain: deploy
+tags:
+  - deploy
+---
+
 # AI Cost Calculator
 
 Calculating AI costs is complex because of token ratios.

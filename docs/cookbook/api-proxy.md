@@ -1,3 +1,11 @@
+---
+title: "Recipe: Secure API Proxy"
+description: "Problem: You cannot use your OpenAI API key in client-side code (React/Vue) because anyone can steal it from the \"Network\" tab."
+domain: recipe
+tags:
+  - cookbook
+---
+
 # Recipe: Secure API Proxy
 
 **Problem**: You cannot use your OpenAI API key in client-side code (React/Vue) because anyone can steal it from the "Network" tab.

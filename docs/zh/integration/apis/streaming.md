@@ -1,3 +1,11 @@
+---
+title: 流式传输与 SSE 模式
+description: LLM 很慢。等待 10 秒才能看到完整答案是糟糕的用户体验。流式传输 (Streaming) 允许你在答案生成时逐块显示。
+domain: tech
+tags:
+  - api
+---
+
 # 流式传输与 SSE 模式
 
 LLM 很慢。等待 10 秒才能看到完整答案是糟糕的用户体验。**流式传输 (Streaming)** 允许你在答案生成时逐块显示。

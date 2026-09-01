@@ -1,3 +1,11 @@
+---
+title: RAG (Retrieval-Augmented Generation)
+description: "RAG solves the problem of giving LLMs access to external knowledge without retraining the model. It's the most practical and cost-effecti…"
+domain: tech
+tags:
+  - rag
+---
+
 # RAG (Retrieval-Augmented Generation)
 
 ## What is RAG?

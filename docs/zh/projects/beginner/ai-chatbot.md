@@ -1,3 +1,11 @@
+---
+title: 项目教程：构建你的第一个 AI 聊天机器人
+description: "级别: 初级 时间: 30-45 分钟 技术栈: Next.js 14, Vercel AI SDK, OpenAI"
+domain: project
+tags:
+  - beginner
+---
+
 # 项目教程：构建你的第一个 AI 聊天机器人
 
 **级别**: 初级

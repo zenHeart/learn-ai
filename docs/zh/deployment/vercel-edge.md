@@ -1,3 +1,11 @@
+---
+title: 部署到 Vercel Edge
+description: "\"Edge\" 意味着在全球成千上万台服务器上运行你的代码，靠近用户。 对于 AI 而言，这降低了延迟，并（通常）增加了流式传输的超时限制。"
+domain: deploy
+tags:
+  - deploy
+---
+
 # 部署到 Vercel Edge
 
 "Edge" 意味着在全球成千上万台服务器上运行你的代码，靠近用户。

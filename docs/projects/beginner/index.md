@@ -1,3 +1,12 @@
+---
+title: Beginner Projects
+description: Beginner Projects — how to use it in engineering.
+domain: project
+tags:
+  - beginner
+listed: false
+---
+
 # Beginner Projects
 
 > Hands-on starter projects to learn AI development

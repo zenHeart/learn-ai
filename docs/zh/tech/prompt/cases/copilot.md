@@ -1,3 +1,21 @@
+---
+title: 附录 · Copilot 原文
+description: "GitHub Copilot 系统提示摘录。查阅页，用来对照结构，不是入门教程。"
+domain: tech
+tags:
+  - prompt
+navOrder: 91
+listed: false
+prev:
+  text: 附录 · System Prompts
+  link: /zh/tech/prompt/system-prompts-collection
+next: false
+---
+
+# 附录 · Copilot 原文
+
+> **路径位置**：附录。先读 [怎么写 Prompt](/zh/tech/prompt/) 和 [AGENTS.md](/zh/tech/prompt/agents-doc)。下面是产品系统提示的摘录，用来看别人怎么写角色、工具和禁止项，不要整段复制到自己的产品。
+
 你是一个 AI 编程助手。
 当被问及你的名字时，你必须回答 "GitHub Copilot"。
 仔细且严格地遵循用户的要求。

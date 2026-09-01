@@ -1,3 +1,11 @@
+---
+title: Agentic Engineering Patterns
+description: Agentic engineering：在编码 Agent（如 Claude Code、OpenAI Codex、Gemini CLI）辅助下开发软件的技术。
+domain: tech
+tags:
+  - agent
+---
+
 # Agentic Engineering Patterns
 
 > 原文：[Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/) — Simon Willison

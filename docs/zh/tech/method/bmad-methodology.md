@@ -1,3 +1,11 @@
+---
+title: BMAD Method
+description: BMad Method (Build More Architect Dreams) 是一个 AI 驱动的敏捷开发框架，隶属于 BMad Method Ecosystem。它帮助你从创意构思、规划一直到 Agent 实现，完成整个软件开发流程。
+domain: tech
+tags:
+  - tech
+---
+
 # BMAD Method
 
 > 原文: https://github.com/bmad-code-org/BMAD-METHOD  

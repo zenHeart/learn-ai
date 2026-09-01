@@ -1,3 +1,11 @@
+---
+title: 秘籍：安全 API 代理
+description: "问题: 你不能在客户端代码 (React/Vue) 中使用 OpenAI API Key，因为任何人都可以在“网络”选项卡中窃取它。"
+domain: recipe
+tags:
+  - cookbook
+---
+
 # 秘籍：安全 API 代理
 
 **问题**: 你不能在客户端代码 (React/Vue) 中使用 OpenAI API Key，因为任何人都可以在“网络”选项卡中窃取它。

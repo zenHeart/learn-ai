@@ -1,3 +1,11 @@
+---
+title: How to Create Skills 深度实践指南
+description: Skills 是将 Claude 从通用助手转变为特定领域专家的关键机制。通过 SKILL.md 文件，我们可以编码机构知识、标准化输出、处理复杂多步骤工作流。
+domain: tech
+tags:
+  - skill
+---
+
 # How to Create Skills 深度实践指南
 
 > 学习来源: [How to create Skills](https://claude.com/blog/how-to-create-skills-key-steps-limitations-and-examples)

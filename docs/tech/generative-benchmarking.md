@@ -1,3 +1,11 @@
+---
+title: Generative Benchmarking
+description: 1. 公开基准的局限性：MTEB/BEIR 等公开基准过于通用、数据过于干净、且模型训练时已见过，无法真实反映生产环境效果 2. 生成式基准方法：
+domain: tech
+tags:
+  - eval
+---
+
 # Generative Benchmarking
 
 > 来源：https://research.trychroma.com/generative-benchmarking

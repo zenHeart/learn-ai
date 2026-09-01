@@ -1,3 +1,18 @@
+---
+title: "路径 2: 添加 AI 功能"
+description: 使用 JavaScript/TypeScript 将 AI 能力集成到你的应用中。
+domain: path
+tags:
+  - path
+navOrder: 20
+prev:
+  text: 路径 1 生产力
+  link: /zh/paths/productivity
+next:
+  text: 路径 3 精通
+  link: /zh/paths/mastery
+---
+
 # 路径 2: 添加 AI 功能
 
 使用 JavaScript/TypeScript 将 AI 能力集成到你的应用中。

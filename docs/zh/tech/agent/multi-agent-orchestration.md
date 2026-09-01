@@ -1,3 +1,11 @@
+---
+title: Multi-Agent Coordination Patterns
+description: 多智能体系统的核心决策不仅在于何时使用多智能体，更在于选择哪种协调模式来适配你的问题。
+domain: tech
+tags:
+  - agent
+---
+
 # Multi-Agent Coordination Patterns
 
 > 原文: https://claude.com/blog/multi-agent-coordination-patterns

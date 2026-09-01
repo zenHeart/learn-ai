@@ -1,3 +1,18 @@
+---
+title: "Path 1: Use AI Tools"
+description: "Master AI coding assistants to code 2-3x faster with Cursor, Copilot, Claude CLI, and Gemini CLI."
+domain: path
+tags:
+  - path
+navOrder: 10
+prev:
+  text: Path overview
+  link: /paths/
+next:
+  text: Path 2 Integration
+  link: /paths/integration
+---
+
 # Path 1: Use AI Tools
 
 Master AI coding assistants to code 2-3x faster with Cursor, Copilot, Claude CLI, and Gemini CLI.
@@ -30,7 +45,7 @@ Before diving in, understand the **5 levels of AI coding assistance**:
 
 **New to AI Coding?** Review these concepts first:
 - [Prompt Engineering Basics](../tech/prompt/index.md) - Learn how to talk to AI effectively
-- [AI Coding Tools Overview](../products/ai-coding/index.md) - Understand the different types of tools available
+- [AI Coding Tools Overview](../products/index.md) - Understand the different types of tools available
 
 <script setup>
 const pathSteps = [
@@ -40,10 +55,10 @@ const pathSteps = [
     description: 'Choose your primary tool (Cursor, Copilot, or Claude CLI) and learn to write effective prompts for code generation.',
     status: 'active',
     links: [
-      { text: 'Cursor Guide', url: '/products/ai-coding/cursor' },
-      { text: 'Copilot Guide', url: '/products/ai-coding/copilot' },
-      { text: 'Claude Code', url: '/products/ai-coding/claude/claude-code' },
-      { text: 'Gemini CLI', url: '/products/ai-coding/gemini/gemini-cli' }
+      { text: 'Cursor Guide', url: '/products/cursor' },
+      { text: 'Copilot Guide', url: '/products/copilot' },
+      { text: 'Claude Code', url: '/products/claude/claude-code' },
+      { text: 'Gemini CLI', url: '/products/gemini/gemini-cli' }
     ]
   },
   {
@@ -62,8 +77,8 @@ const pathSteps = [
     description: 'Master iterative refinement, context loading, and multi-file operations. Generate code that matches your codebase style.',
     status: 'active',
     links: [
-      { text: 'AI Coding Tools', url: '/products/ai-coding/' },
-      { text: 'Other Tools', url: '/products/ai-coding/othertools' }
+      { text: 'AI Coding Tools', url: '/products/' },
+      { text: 'Other Tools', url: '/products/othertools' }
     ]
   },
   {
@@ -88,4 +103,4 @@ const pathSteps = [
 
 **Ready to add AI features?** → [Path 2: Integration](./integration.md)
 
-**Explore all tools?** → [AI Coding Tools](../products/ai-coding/)
+**Explore all tools?** → [AI Coding Tools](../products/)

@@ -1,3 +1,13 @@
+---
+title: AI 编程工程化
+description: AI 编程工程化 — how to use it in engineering.
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # AI 编程工程化
 
 > 涵盖 Cursor IDE、Cursor Rules、Claude Code Auto Mode、Context Injection、Cross-Tool Context 等工程实践

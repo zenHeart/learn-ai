@@ -88,8 +88,8 @@ This file tracks all completed milestones and tasks for the Learn AI project.
 - ✅ Task 77: Create `/examples/04-browser-ai/`
 - ✅ Task 78: Create `/examples/05-full-stack-app/`
 - ✅ Task 79: Create `/docs/resources.md`
-- ✅ Task 80: Create `/docs/products/tools/figma-ai.md`
-- ✅ Task 81: Create `/docs/products/tools/testing-ai.md`
+- ✅ Task 80: Create `/docs/products/figma-ai.md`
+- ✅ Task 81: Create `/docs/products/testing-ai.md`
 
 ## 🏁 Phase 6: AI Governance & Automation
 **Status**: 100% Complete

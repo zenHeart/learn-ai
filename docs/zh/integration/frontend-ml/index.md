@@ -1,3 +1,11 @@
+---
+title: 前端机器学习库
+description: 在浏览器中运行 ML 正在成为标准。这里是主要玩家。
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # 前端机器学习库
 
 在浏览器中运行 ML 正在成为标准。这里是主要玩家。

@@ -1,3 +1,11 @@
+---
+title: Deploying to Vercel Edge
+description: "The \"Edge\" means running your code on thousands of servers globally, close to the user."
+domain: deploy
+tags:
+  - deploy
+---
+
 # Deploying to Vercel Edge
 
 The "Edge" means running your code on thousands of servers globally, close to the user.

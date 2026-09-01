@@ -1,3 +1,11 @@
+---
+title: AI 成本计算器
+description: 由于 Token 比例的原因，计算 AI 成本很复杂。
+domain: deploy
+tags:
+  - deploy
+---
+
 # AI 成本计算器
 
 由于 Token 比例的原因，计算 AI 成本很复杂。

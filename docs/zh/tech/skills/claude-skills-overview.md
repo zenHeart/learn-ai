@@ -1,3 +1,11 @@
+---
+title: Claude Skills 介绍
+description: Skills 是包含指令、脚本和资源的文件夹，Claude 能够动态发现并在相关任务中加载它们。可以将 Skills 理解为给 Claude 的专业化培训手册，使其在特定领域获得专业知识——从处理 Excel 电子表格到遵循组织的品牌规范。
+domain: tech
+tags:
+  - skill
+---
+
 # Claude Skills 介绍
 
 > 学习来源：https://claude.com/blog/skills

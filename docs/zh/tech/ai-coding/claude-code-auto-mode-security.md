@@ -1,3 +1,11 @@
+---
+title: Claude Code Auto Mode 安全机制
+description: "Claude Code 默认在运行命令或修改文件前会请求用户批准。这虽然保证了安全，但也带来了\"审批疲劳\"——用户逐渐不再仔细审视每次审批内容。"
+domain: tech
+tags:
+  - tech
+---
+
 # Claude Code Auto Mode 安全机制
 
 > 原文: [Claude Code auto mode: a safer way to skip permissions](https://www.anthropic.com/engineering/claude-code-auto-mode)

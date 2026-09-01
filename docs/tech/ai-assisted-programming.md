@@ -1,3 +1,11 @@
+---
+title: AI 辅助编程工程化
+description: 1. 工程化三要素：标准化 Prompt 模板 + 质量门禁 + 反馈迭代机制，是 AI 编程从玩具走向生产的关键 2. AI 代码的可控性：通过约束性 Prompt 和输出格式校验，确保 AI 代码符合项目规范
+domain: tech
+tags:
+  - tech
+---
+
 # AI 辅助编程工程化
 
 > 来源：https://tech.qimao.com/ai-fu-zhu-bian-cheng-gong-cheng-hua-rang-yi-qie-bian-de-ke-kong-qie-gao-xiao/

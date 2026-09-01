@@ -1,3 +1,11 @@
+---
+title: Generative UI (GenUI)
+description: "Generative UI is the next evolution of Chatbots. Instead of just replying with text, the AI replies with Interactive UI Components."
+domain: tech
+tags:
+  - frontend
+---
+
 # Generative UI (GenUI)
 
 **Generative UI** is the next evolution of Chatbots. Instead of just replying with text, the AI replies with **Interactive UI Components**.

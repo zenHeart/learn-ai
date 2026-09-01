@@ -1,3 +1,12 @@
+---
+title: MCP 协议架构详解
+description: MCP 协议分为两层：
+domain: tech
+tags:
+  - protocol
+  - mcp
+---
+
 # MCP 协议架构详解
 
 > 本文档深入分析 MCP 协议的分层架构、通讯流程，以及 MCP Proxy 模式如何桥接纯 HTTP 第三方服务。

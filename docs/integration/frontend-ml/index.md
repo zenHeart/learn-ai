@@ -1,3 +1,11 @@
+---
+title: Frontend Machine Learning Libraries
+description: Running ML in the browser is becoming standard. Here are the major players.
+domain: tech
+tags:
+  - frontend-ml
+---
+
 # Frontend Machine Learning Libraries
 
 Running ML in the browser is becoming standard. Here are the major players.

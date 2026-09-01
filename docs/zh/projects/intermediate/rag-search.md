@@ -1,3 +1,11 @@
+---
+title: "Project: Semantic Search (RAG)"
+description: "Level: Intermediate Time: 2 hours Stack: Next.js, Supabase (pgvector), OpenAI"
+domain: project
+tags:
+  - intermediate
+---
+
 # Project: Semantic Search (RAG)
 
 **Level**: Intermediate

@@ -1,3 +1,13 @@
+---
+title: Engineering Practices
+description: Engineering Practices — how to use it in engineering.
+domain: tech
+tags:
+  - engineering
+outline: false
+pageClass: catalog-page
+---
+
 # Engineering Practices
 
 > Testing, Evals, Observability, Security, and Cost Optimization for AI applications

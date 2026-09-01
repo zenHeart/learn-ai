@@ -1,3 +1,11 @@
+---
+title: "Use Case: Adding AI Search to a Legacy App"
+description: "Scenario: You have a 10-year-old e-commerce site (SQL Database). Search is terrible."
+domain: recipe
+tags:
+  - use-case
+---
+
 # Use Case: Adding AI Search to a Legacy App
 
 **Scenario**: You have a 10-year-old e-commerce site (SQL Database). Search is terrible.

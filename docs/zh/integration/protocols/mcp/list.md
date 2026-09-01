@@ -1,3 +1,12 @@
+---
+title: 前端常用 MCP
+description: 以下是前端开发中常用且高效的 Model Context Protocol (MCP) 服务器列表：
+domain: tech
+tags:
+  - protocol
+  - mcp
+---
+
 # 前端常用 MCP
 
 以下是前端开发中常用且高效的 Model Context Protocol (MCP) 服务器列表：

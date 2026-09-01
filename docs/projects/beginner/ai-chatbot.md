@@ -1,3 +1,11 @@
+---
+title: "Project Tutorial: Build Your First AI Chatbot"
+description: "Level: Beginner Time: 30-45 minutes Stack: Next.js 14, Vercel AI SDK, OpenAI"
+domain: project
+tags:
+  - beginner
+---
+
 # Project Tutorial: Build Your First AI Chatbot
 
 **Level**: Beginner

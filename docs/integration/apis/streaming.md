@@ -1,3 +1,11 @@
+---
+title: "Streaming & SSE Patterns"
+description: LLMs are slow. Waiting 10 seconds for a full answer is bad UX. Streaming allows you to show the answer chunk-by-chunk as it generates.
+domain: tech
+tags:
+  - api
+---
+
 # Streaming & SSE Patterns
 
 LLMs are slow. Waiting 10 seconds for a full answer is bad UX. **Streaming** allows you to show the answer chunk-by-chunk as it generates.

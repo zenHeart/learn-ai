@@ -1,3 +1,11 @@
+---
+title: "Context Engineering & Agentic Engineering"
+description: Context Engineering 是 Prompt Engineering 的自然进化。核心区别：
+domain: tech
+tags:
+  - prompt
+---
+
 # Context Engineering & Agentic Engineering
 
 > 本文档整理自 Inbox 学习任务，来源包括 Anthropic 官方工程指南、Simon Willison 的 Agentic Engineering Patterns 等。

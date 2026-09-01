@@ -1,3 +1,12 @@
+---
+title: Model Context Protocol (MCP) Implementation Guide
+description: Model Context Protocol (MCP) is the open standard for connecting AI models to external tools and data.
+domain: tech
+tags:
+  - protocol
+  - mcp
+---
+
 # Model Context Protocol (MCP) Implementation Guide
 
 **Model Context Protocol (MCP)** is the open standard for connecting AI models to external tools and data.

@@ -206,7 +206,7 @@ learn-ai/
 **Beginner: Use AI Tools**
 
 - Goal: Boost productivity immediately
-- Content: `/paths/productivity`, `/products/ai-coding/`
+- Content: `/paths/productivity`, `/products/`
 - Outcome: Effective use of Cursor, Copilot, Claude CLI
 
 **Intermediate: Add AI Features**

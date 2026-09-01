@@ -1,4 +1,8 @@
 ---
+title: OpenSpec：规格驱动开发框架
+domain: tech
+tags:
+  - skill
 name: openspec
 description: 规格驱动开发框架。在写代码之前，让人和 AI 在"规格"上达成一致，解决 AI 编程的不可预测性。当需要管理需求变更、定义行为契约、或进行增量式规格管理时使用。触发场景：「定义需求规格」「管理需求变更」「用规格驱动开发」「Delta Spec」「AI 编程对齐」。
 ---

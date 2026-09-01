@@ -1,3 +1,11 @@
+---
+title: OpenAI API 集成
+description: OpenAI API 是生成式 AI 的行业标准。它驱动着 GPT-4o、DALL-E 3 和 Whisper。
+domain: tech
+tags:
+  - api
+---
+
 # OpenAI API 集成
 
 **OpenAI API** 是生成式 AI 的行业标准。它驱动着 GPT-4o、DALL-E 3 和 Whisper。

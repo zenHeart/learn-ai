@@ -1,3 +1,11 @@
+---
+title: AI Security
+description: "AI introduces new attack vectors. The OWASP Top 10 for LLM(https://owasp.org/www-project-top-10-for-large-language-model-applications/) i…"
+domain: tech
+tags:
+  - engineering
+---
+
 # AI Security
 
 AI introduces new attack vectors. The [OWASP Top 10 for LLM](https://owasp.org/www-project-top-10-for-large-language-model-applications/) is the bible for this.

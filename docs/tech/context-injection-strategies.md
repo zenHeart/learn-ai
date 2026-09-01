@@ -1,3 +1,11 @@
+---
+title: Context 注入方案
+description: 1. Context 是 AI 应用的天花板：模型能力决定下限，Context 质量决定上限；好的 Context 能让普通模型超越未优化的高配模型 2. 分层注入策略：
+domain: tech
+tags:
+  - tech
+---
+
 # Context 注入方案
 
 ## 核心要点

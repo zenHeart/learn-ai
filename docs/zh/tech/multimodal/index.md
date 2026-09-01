@@ -1,3 +1,13 @@
+---
+title: 多模态 AI
+description: 多模态 AI — how to use it in engineering.
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # 多模态 AI
 
 > Claude Vision 等多模态能力

@@ -1,4 +1,14 @@
+---
+title: Large Language Models (LLM)
+description: A Large Language Model is a neural network trained on massive amounts of text data to understand and generate human-like text. For fronte…
+domain: tech
+tags:
+  - fundamentals
+---
+
 # Large Language Models (LLM)
+
+> **Concept only.** Token / stateless / you call inference, you do not train. Attention, BPE, and training live on Learn LLM [chapters 4–8](https://llm.zenheart.site/chapters/). This page is how to use the API.
 
 ## What is an LLM?
 

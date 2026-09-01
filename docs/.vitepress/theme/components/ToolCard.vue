@@ -1,8 +1,8 @@
 <template>
   <a
-    :href="tool.url"
-    target="_blank"
-    rel="noopener noreferrer"
+    :href="href"
+    :target="external ? '_blank' : undefined"
+    :rel="external ? 'noopener noreferrer' : undefined"
     class="tool-card"
   >
     <div class="tool-icon">{{ tool.icon || "🔧" }}</div>
@@ -15,12 +15,20 @@
 </template>
 
 <script setup>
-  defineProps({
+  import { computed } from 'vue'
+  import { withBase } from 'vitepress'
+
+  const props = defineProps({
     tool: {
       type: Object,
       required: true,
     },
-  });
+  })
+
+  const external = computed(() => /^https?:\/\//.test(props.tool.url || ''))
+  const href = computed(() =>
+    external.value ? props.tool.url : withBase(props.tool.url || '/')
+  )
 </script>
 
 <style scoped>

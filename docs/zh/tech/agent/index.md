@@ -1,3 +1,13 @@
+---
+title: AI 智能体 (Agent) 学习笔记
+description: AI 智能体 (Agent) 学习笔记 — how to use it in engineering.
+domain: tech
+tags:
+  - agent
+outline: false
+pageClass: catalog-page
+---
+
 # AI 智能体 (Agent) 学习笔记
 
 > 收集 LangChain Agent Harness、OpenAI Agents SDK、Multi-Agent、Human-in-the-Loop、Pi Agent 等学习笔记

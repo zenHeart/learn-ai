@@ -1,3 +1,21 @@
+---
+title: Appendix · Copilot source
+description: "Excerpt of GitHub Copilot's system prompt. Lookup, not a tutorial."
+domain: tech
+tags:
+  - prompt
+navOrder: 91
+listed: false
+prev:
+  text: Appendix · System prompts
+  link: /tech/prompt/system-prompts-collection
+next: false
+---
+
+# Appendix · Copilot source
+
+> **Where this sits:** appendix. Read [How to write prompts](/tech/prompt/) first. The text below is a product system-prompt excerpt. Use it to study structure. Do not paste it into your own product.
+
 You are an AI programming assistant.
 When asked for your name, you must respond with "GitHub Copilot".
 Follow the user's requirements carefully & to the letter.

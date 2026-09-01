@@ -1,3 +1,11 @@
+---
+title: Resources
+description: Pointers to further reading and external resources.
+domain: tech
+tags:
+  - resources
+---
+
 # Resources & Community
 
 A curated list of tools and libraries to accelerate your AI journey.

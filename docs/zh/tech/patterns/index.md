@@ -1,3 +1,13 @@
+---
+title: 面向前段开发者的 AI 工程模式
+description: 作为前端工程师，我们习惯了 Container/Presenter、Hooks 或 MVC 等设计模式。AI 工程也有自己的一套模式，作为智能应用程序的构建模块。
+domain: tech
+tags:
+  - tech
+outline: false
+pageClass: catalog-page
+---
+
 # 面向前段开发者的 AI 工程模式
 
 作为前端工程师，我们习惯了 *Container/Presenter*、*Hooks* 或 *MVC* 等设计模式。AI 工程也有自己的一套模式，作为智能应用程序的构建模块。

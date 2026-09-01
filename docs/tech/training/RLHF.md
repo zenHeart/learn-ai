@@ -1,3 +1,11 @@
+---
+title: RLHF (Reinforcement Learning from Human Feedback)
+description: Reinforcement Learning from Human Feedback (RLHF) is a training technique used to align Language Models with human values and preferences…
+domain: tech
+tags:
+  - training
+---
+
 # RLHF (Reinforcement Learning from Human Feedback)
 
 ## What is RLHF?

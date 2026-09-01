@@ -1,3 +1,11 @@
+---
+title: "Recipe: Reusable Chat UI"
+description: "Problem: You need a clean, auto-scrolling chat interface that handles streaming. Solution: A generic React component wrapping useChat."
+domain: recipe
+tags:
+  - cookbook
+---
+
 # Recipe: Reusable Chat UI
 
 **Problem**: You need a clean, auto-scrolling chat interface that handles streaming.

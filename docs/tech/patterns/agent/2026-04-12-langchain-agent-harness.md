@@ -1,3 +1,11 @@
+---
+title: The Anatomy of an Agent Harness
+description: ---
+domain: tech
+tags:
+  - agent
+---
+
 # The Anatomy of an Agent Harness
 
 > **Title**: The Anatomy of an Agent Harness  

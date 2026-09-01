@@ -1,3 +1,11 @@
+---
+title: Next.js 集成模式
+description: Next.js 是构建 AI 应用程序的最流行框架，因为它对 流式传输、Edge 函数 和 Server Actions 有强大的支持。
+domain: tech
+tags:
+  - sdk
+---
+
 # Next.js 集成模式
 
 Next.js 是构建 AI 应用程序的最流行框架，因为它对 **流式传输**、**Edge 函数** 和 **Server Actions** 有强大的支持。

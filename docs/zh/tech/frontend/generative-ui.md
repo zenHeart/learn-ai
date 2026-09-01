@@ -1,3 +1,11 @@
+---
+title: 生成式 UI (Generative UI)
+description: 生成式 UI (GenUI) 是聊天机器人的下一次进化。AI 不再仅仅用文本回复，而是回复交互式 UI 组件。
+domain: tech
+tags:
+  - frontend
+---
+
 # 生成式 UI (Generative UI)
 
 **生成式 UI (GenUI)** 是聊天机器人的下一次进化。AI 不再仅仅用文本回复，而是回复**交互式 UI 组件**。

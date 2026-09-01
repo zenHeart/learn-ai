@@ -1,6 +1,6 @@
 # GitHub Copilot 维护参考
 
-> 这是 [`_template.md`](./_template.md) 针对 GitHub Copilot 的具体化，配合 [`maintenance-workflow.md`](./maintenance-workflow.md) 的通用流程使用。完整的高质量数据源清单发布在 `docs/zh/products/ai-coding/copilot/copilot-cheatsheet.md` 的「高质量信息源」章节（读者可见），本文件的「监控页面」只是其中日常更新追踪最常用的一个子集。
+> 这是 [`_template.md`](./_template.md) 针对 GitHub Copilot 的具体化，配合 [`maintenance-workflow.md`](./maintenance-workflow.md) 的通用流程使用。完整的高质量数据源清单发布在 `docs/zh/products/copilot/copilot-cheatsheet.md` 的「高质量信息源」章节（读者可见），本文件的「监控页面」只是其中日常更新追踪最常用的一个子集。
 
 ## 基本信息
 
@@ -15,7 +15,7 @@
 按 [Diataxis](https://diataxis.fr/) 切分，每个文件有且只有一个明确目的：
 
 ```
-docs/zh/products/ai-coding/copilot/
+docs/zh/products/copilot/
 ├── index.md                # 🗺️ 学习地图（Tutorial 导航 + Reference 功能速查）
 ├── copilot.md              # 📘 Tutorial — 从零上手：计划选择、四种交互界面、自定义上下文
 ├── copilot-cookbook.md     #   └ 🔧 How-to — 场景化提示模式与工作流（内联/终端/Chat/CLI/Cloud agent）
@@ -23,7 +23,7 @@ docs/zh/products/ai-coding/copilot/
 └── copilot-glossary.md     #   └ 📖 Explanation — 核心概念统一解释（是什么/为什么/与 X 的区别）
 ```
 
-英文树 `docs/products/ai-coding/copilot/` 结构完全一致。
+英文树 `docs/products/copilot/` 结构完全一致。
 
 **每个文件的 Diataxis 定位与边界**：
 

@@ -1,3 +1,11 @@
+---
+title: RLHF (基于人类反馈的强化学习)
+description: "基于人类反馈的强化学习 (Reinforcement Learning from Human Feedback, RLHF) 是一种用于使语言模型与人类价值观和偏好保持一致的训练技术。它是将原始 GPT-3 变成我们今天使用的有用的 ChatGPT 助手的“秘方”。"
+domain: tech
+tags:
+  - training
+---
+
 # RLHF (基于人类反馈的强化学习)
 
 ## 什么是 RLHF？

@@ -1,128 +1,118 @@
-# JSON Prompt 最佳实践：让 LLM 稳定输出结构化数据
+---
+title: 稳住结构 · JSON
+description: "产品里要解析模型输出时，用 Structured Outputs / Schema。JSON mode 只保证括号配对，已被官方标成旧路径。"
+domain: tech
+tags:
+  - prompt
+navOrder: 20
+llm:
+  - 15
+prev:
+  text: 说清楚 · Claude 官方
+  link: /tech/prompt/claude-prompt-best-practices
+next:
+  text: 写给仓库 · AGENTS.md
+  link: /zh/tech/prompt/agents-doc
+---
 
-> 来源：微信公众号「沉浸式趣谈」，原文发表于 2025-05-08
-> 原文链接：LLM 输出 JSON 格式频频出错？直到我五一假期发现这个方法
+# 稳住结构 · JSON
 
-## 问题背景
+**结论**：输出要进 TypeScript，就走 **Structured Outputs / Schema**。不要在提示里吼「必须是合法 JSON」。
 
-在使用 LLM 生成 JSON 格式内容时，即使 Prompt 写得再"命令式"，LLM 仍可能：
-- 在 JSON 外面包一层 `json ...`
-- 开头结尾多几句客套话
-- 偶尔缺逗号、多括号
-- 格式不合法，无法被 JSON.parse 解析
+> **路径位置**：主路径第 2 步。四块骨架先在 [怎么写 Prompt](/zh/tech/prompt/) 写清。
+>
+> 三档保证差异（自由文本 / JSON mode / strict schema）见 Learn LLM [第 15 章 A3](https://llm.zenheart.site/chapters/15-prompt-memory)。本页只写前端怎么接。
 
-## 解决方案：JSON Mode 与 JSON Schema
+## 概念：三档里你该站哪一档
 
-### 1. JSON Mode
+| 档 | API 在做什么 | 工程上能不能当合同 |
+|---|---|---|
+| 提示里写「请输出 JSON」 | 无 | 不能。常包 \`\`\`json、缺逗号、多客套话 |
+| `response_format: { type: 'json_object' }` | 只保证能 `JSON.parse` | **不能当字段合同**。官方已标 legacy |
+| `json_schema` + `strict: true` | 解码时按 schema 采样 | **产品默认档**。字段、类型、必填有保证 |
 
-**原理**：给 LLM 加上"紧箍咒"，保证输出结果能被标准 JSON 解析器成功解析。
+`minimum` / `pattern` 等约束，OpenAI 会收下但不强制。数值范围仍要在解析后自己校验。详见第 15 章，这里不展开。
 
-**使用方式**（以 OpenAI API 为例）：
+## 工程做法：TypeScript + Schema
 
-```javascript
-import OpenAI from 'openai';
+把上一页的工单收口成可 parse 的对象。模型名 **pin 快照**，以你账号里当前可用的官方型号为准。
 
-const openai = new OpenAI();
+```ts
+import OpenAI from 'openai'
 
-async function getSimpleJson() {
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4-turbo',
-    messages: [
-      { role: 'system', content: '你是一个专门输出 JSON 的助手...' },
-      { role: 'user', content: '描述：张三是一位软件工程师。' },
-    ],
-    // 关键配置：指定响应格式为 JSON 对象
-    response_format: { type: 'json_object' },
-  });
-
-  const jsonOutput = response.choices[0]?.message?.content;
-  // 直接解析，无需担心格式问题
-  const parsedJson = JSON.parse(jsonOutput);
-}
-```
-
-### 2. JSON Schema（更严格）
-
-**原理**：不仅保证输出是合法 JSON，还保证结构、字段、字段类型都符合预定义的"规矩"。
-
-**使用方式**：配合 OpenAI 的 Tool Calling（函数调用）功能实现。
-
-```javascript
-import OpenAI from 'openai';
-
-const openai = new OpenAI();
-
-// 定义 JSON Schema
-const userInfoSchema = {
+const ticketSchema = {
   type: 'object',
+  additionalProperties: false,
   properties: {
-    name: { type: 'string', description: '人物的姓名' },
-    occupation: { type: 'string', description: '人物的职业' },
-    age: { type: 'integer', description: '人物的年龄 (必须是整数)' },
+    severity: { type: 'string', enum: ['low', 'medium', 'high'] },
+    area: { type: 'string', enum: ['ui', 'api', 'auth', 'other'] },
+    summary: { type: 'string' },
+    nextAction: { type: 'string' }
   },
-  required: ['name', 'occupation', 'age'],
-};
+  required: ['severity', 'area', 'summary', 'nextAction']
+} as const
 
-async function getJsonWithSchema() {
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4-turbo',
+export async function extractTicket(feedback: string) {
+  const client = new OpenAI()
+
+  const response = await client.chat.completions.create({
+    model: process.env.OPENAI_MODEL!, // 在环境里 pin 快照，不要写死过期型号
     messages: [
-      { role: 'system', content: '根据用户信息，使用提供的工具来提取并结构化信息。' },
-      { role: 'user', content: '描述：李四，30岁，是一名医生。' },
-    ],
-    // 定义工具，参数即 Schema
-    tools: [
       {
-        type: 'function',
-        function: {
-          name: 'extract_user_info',
-          description: '提取并格式化用户信息',
-          parameters: userInfoSchema,
-        },
+        role: 'system',
+        content: `你把用户反馈收成工单。只根据原文判断。
+复现不足时，nextAction 必须以「向用户要：」开头。`
       },
+      { role: 'user', content: `<input>${feedback}</input>` }
     ],
-    // 强制使用该工具
-    tool_choice: { type: 'function', function: { name: 'extract_user_info' } },
-  });
+    response_format: {
+      type: 'json_schema',
+      json_schema: {
+        name: 'ticket',
+        strict: true,
+        schema: ticketSchema
+      }
+    }
+  })
 
-  // 结果在 tool_calls 中
-  const toolCall = response.choices[0]?.message?.tool_calls?.[0];
-  if (toolCall) {
-    const parsedArguments = JSON.parse(toolCall.function.arguments);
-    // parsedArguments 严格符合 Schema
+  const raw = response.choices[0]?.message?.content
+  if (!raw) throw new Error('empty model output')
+  return JSON.parse(raw) as {
+    severity: 'low' | 'medium' | 'high'
+    area: 'ui' | 'api' | 'auth' | 'other'
+    summary: string
+    nextAction: string
   }
 }
 ```
 
-## 两种模式对比
+Gemini 走 [structured output](https://ai.google.dev/gemini-api/docs/structured-output)，同样把 schema 交给 API，不要只靠自然语言。Claude 用 tool / output 约束，不要用 assistant prefill 卡 `{`——4.6 之后 prefill 会 400。
 
-| 特性 | JSON Mode | JSON Schema |
-|------|-----------|-------------|
-| 语法合法性 | ✅ 保证 | ✅ 保证 |
-| 字段结构 | ❌ 不约束 | ✅ 严格约束 |
-| 字段类型 | ❌ 不约束 | ✅ 类型校验 |
-| 使用复杂度 | 低（单参数） | 高（需定义 Schema） |
-| 适用场景 | 简单 JSON 输出 | 严格结构化需求 |
+## 工具怎么选
 
-## 最佳实践建议
+| 你在做 | 用什么 |
+|---|---|
+| Next / Node 产品，OpenAI 兼容端点 | 上面的 `json_schema` |
+| Vercel AI SDK | 框架的 `generateObject` / schema（见 [Vercel AI SDK](/zh/integration/frameworks/vercel-ai-sdk)） |
+| 只要助手在仓库里吐一段 JSON 给你看 | 对话里写字段即可，不必上 API |
+| 还在用 `json_object` 旧代码 | 当过渡；新代码不要再加 |
 
-### 何时用 JSON Mode
-- 只需输出合法 JSON，不关心具体字段
-- 快速原型开发
-- 结构简单、无嵌套的场景
+## 实战验收
 
-### 何时用 JSON Schema
-- 需要直接对接数据库
-- 调用需要固定格式的外部 API
-- 对返回数据结构有严格校验要求
-- 需要枚举值限制可选范围
+1. 用上一节函数跑两条：一条信息齐全，一条缺复现。缺复现时 `nextAction` 必须以「向用户要：」开头。
+2. 故意把 schema 里的 `severity` 改成只允许 `'low'`，确认模型不再发明 `'critical'`。
+3. 解析后再做一次本地校验（枚举、字符串非空）。不要把 `pattern` 寄托在厂商 schema 上。
+4. 把 `extractTicket` 和一条 fixture 推进 CI。提示改了字段名，测试要红。
 
-### 其他工具补充
-- **jsonrepair**：如果 JSON 仍有微小语法问题，可用此库修复
-- **JSON5**：解析更宽容，支持注释和尾逗号
+## 常见陷阱
 
-## 参考链接
+- **把 JSON mode 当 Schema**。能 parse ≠ 有 `area` 字段。
+- **提示里再画一遍 schema**。合同以 API 字段为准；提示只写行为（「缺信息就去要」）。
+- **用 tool calling 硬拧结构，却忘了这是工具而不是最终回复**。要对用户展示的 JSON，走 `response_format`。
+- **正文里的 `gpt-4-turbo` + `json_object` 示例**是旧路径。本页不再推荐。
 
-- [OpenAI 官方 Structured Outputs 文档](https://platform.openai.com/docs/guides/structured-outputs)
-- [Google Gemini JSON Mode](https://ai.google.dev/gemini-api/docs/json-mode)
-- [jsonrepair 库](https://www.npmjs.com/package/jsonrepair)
+## 下一步
+
+- 仓库级规矩 → [AGENTS.md](/zh/tech/prompt/agents-doc)
+- 接到流式 UI → [流式](/zh/integration/apis/streaming)
+- 机制对照 → Learn LLM [第 15 章 A3](https://llm.zenheart.site/chapters/15-prompt-memory)

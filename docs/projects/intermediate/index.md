@@ -1,3 +1,12 @@
+---
+title: Intermediate Projects
+description: Intermediate Projects — how to use it in engineering.
+domain: project
+tags:
+  - intermediate
+listed: false
+---
+
 # Intermediate Projects
 
 > Mid-level AI projects combining multiple techniques

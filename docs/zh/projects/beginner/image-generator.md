@@ -1,3 +1,11 @@
+---
+title: 项目：AI 图像生成器
+description: "级别: 初级 时间: 45 分钟 技术栈: Next.js, OpenAI (DALL-E 3)"
+domain: project
+tags:
+  - beginner
+---
+
 # 项目：AI 图像生成器
 
 **级别**: 初级

@@ -1,3 +1,13 @@
+---
+title: 面向前段工程师的 AI 模型训练
+description: "重要提示: 本节仅从高层次解释训练概念。作为一名前端工程师，你很少需要自己实施训练。"
+domain: tech
+tags:
+  - training
+outline: false
+pageClass: catalog-page
+---
+
 # 面向前段工程师的 AI 模型训练
 
 **重要提示**: 本节仅**从高层次**解释训练概念。作为一名前端工程师，你很少需要自己实施训练。

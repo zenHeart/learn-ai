@@ -1,6 +1,6 @@
 # Cursor 维护参考
 
-> 这是 [`_template.md`](./_template.md) 针对 Cursor 的具体化，配合 [`maintenance-workflow.md`](./maintenance-workflow.md) 的通用流程使用。完整的高质量数据源清单已合并到 `docs/zh/products/ai-coding/cursor/cursor-cheatsheet.md` 的「高质量信息源」章节。本文件只记录该工具特有的维护事实。
+> 这是 [`_template.md`](./_template.md) 针对 Cursor 的具体化，配合 [`maintenance-workflow.md`](./maintenance-workflow.md) 的通用流程使用。完整的高质量数据源清单已合并到 `docs/zh/products/cursor/cursor-cheatsheet.md` 的「高质量信息源」章节。本文件只记录该工具特有的维护事实。
 
 ## 基本信息
 
@@ -12,7 +12,7 @@
 ## 文档文件结构（Diataxis 四象限）
 
 ```
-docs/zh/products/ai-coding/cursor/
+docs/zh/products/cursor/
 ├── index.md                   # 🗺️ 学习地图（Tutorial 导航 + 决策）
 ├── cursor.md                  # 📘 Tutorial — 安装、5 分钟第一例、Rules、Agent 模式、Tab
 ├── cursor-cookbook.md         # 🔧 How-to — 场景化最佳实践
@@ -20,7 +20,7 @@ docs/zh/products/ai-coding/cursor/
 └── cursor-glossary.md         # 📖 Explanation — 核心概念是什么 / 为什么
 ```
 
-英文镜像在 `docs/products/ai-coding/cursor/`，文件名相同。
+英文镜像在 `docs/products/cursor/`，文件名相同。
 
 | 文件 | 象限 | 写什么 | 不写什么 |
 |------|------|--------|----------|

@@ -1,3 +1,11 @@
+---
+title: Common Workflow Patterns for AI Agents
+description: AI agents 自主做出决策，而工作流（Workflows）则为这种自主性引入结构。工作流建立了执行模式，将 agent 的能力引导向需要协调步骤、可预测结果和编排时机的复杂问题。
+domain: tech
+tags:
+  - agent
+---
+
 # Common Workflow Patterns for AI Agents
 
 > 原文: https://claude.com/blog/common-workflow-patterns-for-ai-agents-and-when-to-use-them

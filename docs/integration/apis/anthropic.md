@@ -1,3 +1,11 @@
+---
+title: Anthropic API Integration (Claude)
+description: "Anthropic's Claude 3.5 Sonnet is widely considered the best model for coding and complex reasoning."
+domain: tech
+tags:
+  - api
+---
+
 # Anthropic API Integration (Claude)
 
 Anthropic's **Claude 3.5 Sonnet** is widely considered the best model for coding and complex reasoning.

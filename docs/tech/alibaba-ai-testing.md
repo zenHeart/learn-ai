@@ -1,3 +1,11 @@
+---
+title: 阿里 AI 自动化测试
+description: 本文档对应内容为微信文章，无法自动抓取内容。
+domain: tech
+tags:
+  - eval
+---
+
 # 阿里 AI 自动化测试
 
 > 来源：微信公众号文章（mp.weixin.qq.com）

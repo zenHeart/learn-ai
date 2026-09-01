@@ -1,3 +1,13 @@
+---
+title: AI Model Training for Frontend Engineers
+description: "Important: This section explains training concepts at a high level only. As a frontend engineer, you rarely need to implement training yo…"
+domain: tech
+tags:
+  - training
+outline: false
+pageClass: catalog-page
+---
+
 # AI Model Training for Frontend Engineers
 
 **Important**: This section explains training concepts **at a high level only**. As a frontend engineer, you rarely need to implement training yourself.

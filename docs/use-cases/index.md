@@ -1,4 +1,15 @@
+---
+title: AI Use Cases Library
+description: Find the right implementation pattern for your business problem.
+domain: recipe
+tags:
+  - use-case
+listed: false
+---
+
 # AI Use Cases Library
+
+**Lead**: start from the business problem, then pick a pattern. Do not start from the word RAG.
 
 Find the right implementation pattern for your business problem.
 

@@ -1,3 +1,11 @@
+---
+title: Resources
+description: Pointers to further reading and external resources.
+domain: tech
+tags:
+  - resources
+---
+
 # 资源与社区
 
 精心策划的工具和库列表，加速你的 AI 之旅。

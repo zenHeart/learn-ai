@@ -1,3 +1,11 @@
+---
+title: Vibe Coding 理念
+description: Vibe Coding 是 2025 年提出的最有代表性的 AI 原生构建方式之一，也是 Collins 词典年度词汇。
+domain: tech
+tags:
+  - tech
+---
+
 # Vibe Coding 理念
 
 > 学习来源：[Vibe Vibe](https://www.vibevibe.cn/) | 原文引用于 Andrej Karpathy (2025)

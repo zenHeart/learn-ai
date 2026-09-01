@@ -1,3 +1,11 @@
+---
+title: LangChain.js 指南
+description: LangChain 是一个用于开发由语言模型驱动的应用程序的框架。它擅长编排复杂的工作流、管理记忆以及连接外部数据。
+domain: tech
+tags:
+  - sdk
+---
+
 # LangChain.js 指南
 
 LangChain 是一个用于开发由语言模型驱动的应用程序的框架。它擅长**编排复杂的工作流**、管理记忆以及连接外部数据。

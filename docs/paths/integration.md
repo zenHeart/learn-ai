@@ -1,3 +1,18 @@
+---
+title: "Path 2: Add AI Features"
+description: Integrate AI capabilities into your applications using JavaScript/TypeScript.
+domain: path
+tags:
+  - path
+navOrder: 20
+prev:
+  text: Path 1 Productivity
+  link: /paths/productivity
+next:
+  text: Path 3 Mastery
+  link: /paths/mastery
+---
+
 # Path 2: Add AI Features
 
 Integrate AI capabilities into your applications using JavaScript/TypeScript.

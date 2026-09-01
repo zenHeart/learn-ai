@@ -1,3 +1,11 @@
+---
+title: 阿里故障复盘 Agent 系统
+description: 技术支持工作的本质目标是帮助业务方做好稳定性，提升 C 端用户体验，主张 blameless（无责） 的复盘文化。
+domain: tech
+tags:
+  - agent
+---
+
 # 阿里故障复盘 Agent 系统
 
 > 学习来源：[别让故障复盘流于形式：用AI挖掘每一次"跌倒"的价值](https://new.qq.com/rain/a/20251009A01JF900) | 原始链接：https://www.bestblogs.dev/article/b68d8384

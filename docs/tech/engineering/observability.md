@@ -1,3 +1,11 @@
+---
+title: Observability
+description: "In traditional software, you log \"Request / Response\". In AI software, you must log Prompts, Completions, Tokens, and Latency."
+domain: tech
+tags:
+  - engineering
+---
+
 # Observability
 
 In traditional software, you log "Request / Response".

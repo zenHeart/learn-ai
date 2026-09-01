@@ -1,3 +1,11 @@
+---
+title: PEFT (参数高效微调)
+description: "参数高效微调 (Parameter-Efficient Fine-Tuning, PEFT) 是一组技术，用于在不重新训练所有参数的情况下微调大语言模型 (LLM)。PEFT 不是更新数十亿个权重，而是仅更新一小部分（通常 < 1%）添加的参数。"
+domain: tech
+tags:
+  - training
+---
+
 # PEFT (参数高效微调)
 
 ## 什么是 PEFT？

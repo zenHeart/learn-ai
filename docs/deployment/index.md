@@ -1,6 +1,19 @@
+---
+title: Deployment Guide
+description: Deploying AI apps is harder than standard web apps because of Long-running requests (Streaming) and High Compute Needs (if hosting models).
+domain: deploy
+tags:
+  - deploy
+listed: false
+outline: false
+pageClass: catalog-page
+---
+
 # Deployment Guide
 
-Deploying AI apps is harder than standard web apps because of **Long-running requests (Streaming)** and **High Compute Needs (if hosting models)**.
+**Lead**: pick a host that can stream for a long time, then add cache and rate limits. Timeouts and the bill fail first.
+
+Deploying AI apps is harder than standard web apps because of **long-running requests (streaming)** and **high compute** if you host a model.
 
 ## Deployment Options
 

@@ -1,3 +1,11 @@
+---
+title: AI Protocols
+description: AI Protocols — how to use it in engineering.
+domain: tech
+tags:
+  - protocol
+---
+
 # AI Protocols
 
 > Standardized protocols for AI tool integration: MCP and Tool Calling

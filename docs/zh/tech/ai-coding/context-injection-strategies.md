@@ -1,3 +1,11 @@
+---
+title: Context 注入方案总结
+description: "本文总结当前主流 AI Coding 工具中的 Context 注入策略，聚焦三种核心机制：Cursor index 本地 RAG、.cursor/rules 全局注入、@file 运行时注入。"
+domain: tech
+tags:
+  - tech
+---
+
 # Context 注入方案总结
 
 本文总结当前主流 AI Coding 工具中的 Context 注入策略，聚焦三种核心机制：Cursor index 本地 RAG、.cursor/rules 全局注入、@file 运行时注入。

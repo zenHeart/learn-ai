@@ -1,3 +1,11 @@
+---
+title: Chrome DevTools MCP 集成
+description: 过去两年，AI 编程助手（Cursor、Claude Code、Codex CLI）已经很聪明，能生成代码、修复 bug、重构模块。但有一个根本性问题：
+domain: tech
+tags:
+  - mcp
+---
+
 # Chrome DevTools MCP 集成
 
 > 学习来源：[Chrome DevTools MCP 实战技巧：从入门到精通](https://blog.csdn.net/weixin_28312391/article/details/158311968) | [Chrome DevTools MCP 让 AI 无缝接管浏览器调试会话](https://www.cnblogs.com/catchadmin/p/19719743)

@@ -1,3 +1,11 @@
+---
+title: Midscene：视觉驱动的 UI 自动化
+description: 1. 多端支持：Web（Playwright/Puppeteer）、PC（macOS/Windows/Linux）、Mobile（Android/iOS/HarmonyOS）统一 API
+domain: tech
+tags:
+  - tech
+---
+
 # Midscene：视觉驱动的 UI 自动化
 
 > 来源：https://midscenejs.com/zh/
