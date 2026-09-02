@@ -89,6 +89,9 @@ flowchart TB
 | 功能已跑，但不可证明 / 不可运营 | [08-production](08-production/) |
 | 想懂模型内部 / 训练 / 前沿架构 | [01-model-lifecycle](01-model-lifecycle/) 与 [09-advanced](09-advanced/)（桥接 → Learn LLM） |
 
+
+<SymptomRouter />
+
 ### 本仓不教什么（三条边界）
 
 | 不在本仓展开 | canonical owner | 本仓保留什么 |

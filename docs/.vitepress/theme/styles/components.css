@@ -39,3 +39,36 @@
 .vp-doc th {
   background-color: var(--vp-c-brand-softer);
 }
+
+/* ============================================
+   INTERACTIVE ENHANCEMENTS (v6 UX pass)
+   ============================================ */
+
+/* Wide decision tables scroll horizontally on small screens
+   instead of overflowing the page. */
+.vp-doc :not(pre) > table {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Mermaid click-to-zoom (class toggled by ThemeEnhance.vue). */
+.vp-doc .mermaid svg { cursor: zoom-in; }
+.vp-doc .mermaid.zoomed {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--vp-c-bg);
+  overflow: auto;
+  padding: 2.5rem;
+  cursor: zoom-out;
+}
+.vp-doc .mermaid.zoomed svg {
+  max-width: none;
+  width: 100%;
+  height: auto;
+}
