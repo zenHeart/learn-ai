@@ -1,6 +1,6 @@
 ---
 title: Agent Systems Group Guide
-description: From single actions to autonomous loops: mental model, patterns, state and recovery, control plane, and scale — a ten-page navigation.
+description: "From single actions to autonomous loops: mental model, patterns, state and recovery, control plane, and scale — a ten-page navigation."
 domain: tech
 tags: [tech, agent-systems, navigation]
 navOrder: 59

@@ -1,6 +1,6 @@
 ---
 title: Action Group Guide
-description: Crossing from reading the world to writing it: tool-calling contract and tool-execution engineering — how actions are described, validated, and executed safely.
+description: "Crossing from reading the world to writing it: tool-calling contract and tool-execution engineering — how actions are described, validated, and executed safely."
 domain: tech
 tags: [tech, action, navigation]
 navOrder: 49

@@ -1,6 +1,6 @@
 ---
 title: Advanced Group Guide
-description: Four bridge cards on the frontier: interpretability, reasoning & test-time compute, MoE and new architectures, multimodal — positioning and decision impact only; derivations live in Learn LLM.
+description: "Four bridge cards on the frontier: interpretability, reasoning & test-time compute, MoE and new architectures, multimodal — positioning and decision impact only; derivations live in Learn LLM."
 domain: tech
 tags: [tech, advanced, bridge, navigation]
 navOrder: 90
