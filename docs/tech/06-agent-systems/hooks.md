@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a minimal agent loop with stopping conditions and a budget ｜ **Exit of this layer**: you can mount automated policy gates at host lifecycle points (block / allow / mutate), pick the right failure mode (fail-closed vs fail-open) for each hook, and keep hook, Skill, and HITL responsibilities straight
-> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Agent State and Memory](state-memory.md) ｜ **Next**: [Recovery and Human-in-the-Loop](recovery-hitl.md) (the human gate), [Agent Skills](skills.md) (the knowledge pack)
+> **Group**: Agent Systems  |  **Previous group exit**: you can build a minimal agent loop with stopping conditions and a budget  |  **This group exit**: you can mount automated policy gates at host lifecycle points (block / allow / mutate), pick the right failure mode (fail-closed vs fail-open) for each hook, and keep hook, Skill, and HITL responsibilities straight
+> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Agent State and Memory](state-memory.md)  |  **Next**: [Recovery and Human-in-the-Loop](recovery-hitl.md) (the human gate), [Agent Skills](skills.md) (the knowledge pack)
 
 ## 1. Overview
 

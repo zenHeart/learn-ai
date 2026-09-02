@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/01-contracts/context'
+    - content: '0; url=/zh/tech/03-context/context-engineering'
   - - link
     - rel: canonical
-    - href: /zh/tech/01-contracts/context
+    - href: /zh/tech/03-context/context-engineering
 ---
 
-本页已迁移到 [/zh/tech/01-contracts/context](/zh/tech/01-contracts/context).
+本页已迁移到 [/zh/tech/01-contracts/context](/zh/tech/03-context/context-engineering).

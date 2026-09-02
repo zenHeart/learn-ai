@@ -25,4 +25,4 @@ listed: true
 
 > **待补充**：如有微信文章访问权限，手动整理核心要点。
 
-主线关联：确定性测试方法见[测试](../../05-operations/testing)。
+主线关联：确定性测试方法见[测试](/tech/08-production/testing)。

@@ -22,8 +22,8 @@ listed: true
 
 # Efficient Serving: Making Tokens Cheaper
 
-> **Group**: 2 · Inference & Interface ｜ **Previous group exit**: can decompose one latency into queue / prefill / decode / network ｜ **This group exit**: can read where the cached input / cache write / cache read fields on the bill come from, and restructure prompts and sessions into cache-friendly shapes
-> **Prerequisites**: [Inference Fundamentals](inference-fundamentals.md) ｜ **Next**: [Model API Contract](model-api.md), [Cost and Performance](../08-production/cost-performance)
+> **Group**: 2 · Inference & Interface  |  **Previous group exit**: can decompose one latency into queue / prefill / decode / network  |  **This group exit**: can read where the cached input / cache write / cache read fields on the bill come from, and restructure prompts and sessions into cache-friendly shapes
+> **Prerequisites**: [Inference Fundamentals](inference-fundamentals.md)  |  **Next**: [Model API Contract](model-api.md), [Cost and Performance](../08-production/cost-performance)
 
 ## 1. Overview
 

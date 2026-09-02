@@ -21,8 +21,8 @@ listed: true
 
 # Context Window
 
-> **Group**: Context group ｜ **Previous group exit**: turn intent into a four-element prompt managed as code ｜ **This topic exit**: compute a request's token budget (four blocks + output reserve), recognize over-window symptoms, and trim without breaking tool pairs
-> **Prerequisites**: [Prompt Engineering](prompt.md) ｜ **Next**: [Context Engineering](context-engineering.md), [Structured Output](../02-inference-interface/structured-output.md)
+> **Group**: Context group  |  **Previous group exit**: turn intent into a four-element prompt managed as code  |  **This topic exit**: compute a request's token budget (four blocks + output reserve), recognize over-window symptoms, and trim without breaking tool pairs
+> **Prerequisites**: [Prompt Engineering](prompt.md)  |  **Next**: [Context Engineering](context-engineering.md), [Structured Output](../02-inference-interface/structured-output.md)
 
 ## 1. Overview
 
@@ -62,7 +62,7 @@ Invariant: Σ(four blocks) ≤ window; act at 80%; overstuffing is not just cost
 | Retrieval injection | Lower top-k / truncate chunks | Fully yours | Rebuilt per turn | Summaries are lossy | Medium (→ [context-engineering](context-engineering.md)) |
 | Bigger-window model | Raise the ceiling | Handed to the vendor | Model generation | Cost and latency rise | A purchasing decision — and it does not fix rot |
 
-**Version milestones**: unverified (per-model window ceilings keep changing; this page maintains no number list — check each vendor's docs on the day).
+**Historical milestones**: unverified (per-model window ceilings keep changing; this page maintains no number list — check each vendor's docs on the day).
 
 ## 2. Usage
 
@@ -348,10 +348,10 @@ Needle-in-a-haystack benchmarks reveal **context rot**: the more tokens in the w
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | OpenAI guide's [context window section](https://developers.openai.com/api/docs/guides/prompt-engineering) ｜ Anthropic [Context windows docs](https://platform.claude.com/docs/en/build-with-claude/context-windows) | Build the "budget and tokens" intuition first |
-| Builder | This page's fixture ｜ [Anthropic: Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | A guard in hand, then the official mental model |
-| Operator | Both providers' token counting docs ｜ [Anthropic Context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows) (billing basis) | The ledger for I1 and the budget basis |
-| Researcher | [Chroma: Context Rot research](https://research.trychroma.com/context-rot) ｜ Learn LLM [Chapter 15 A5](https://llm.zenheart.site/chapters/15-prompt-memory) | Empirical decay and the KV cache / attention math |
+| Beginner | OpenAI guide's [context window section](https://developers.openai.com/api/docs/guides/prompt-engineering)  |  Anthropic [Context windows docs](https://platform.claude.com/docs/en/build-with-claude/context-windows) | Build the "budget and tokens" intuition first |
+| Builder | This page's fixture  |  [Anthropic: Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | A guard in hand, then the official mental model |
+| Operator | Both providers' token counting docs  |  [Anthropic Context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows) (billing basis) | The ledger for I1 and the budget basis |
+| Researcher | [Chroma: Context Rot research](https://research.trychroma.com/context-rot)  |  Learn LLM [Chapter 15 A5](https://llm.zenheart.site/chapters/15-prompt-memory) | Empirical decay and the KV cache / attention math |
 
 ### Resource table
 

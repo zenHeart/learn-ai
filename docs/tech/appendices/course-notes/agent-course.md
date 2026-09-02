@@ -16,7 +16,7 @@ listed: true
 # Agent Course (Free) 学习笔记
 
 > 来源: [awesome-generative-ai-guide](https://github.com/aishwaryanr/awesome-generative-ai-guide) - Applied LLMs Mastery & Agents 101
-> 学习日期: 2026-04-12 ｜ 实现机制见 [Learn LLM](https://llm.zenheart.site/) 第 13 章（Agent）
+> 学习日期: 2026-04-12  |  实现机制见 [Learn LLM](https://llm.zenheart.site/) 第 13 章（Agent）
 
 ## 一、Agent 核心理论框架
 
@@ -69,13 +69,13 @@ Memory 检索机制：语义相似性（embedding 向量检索）、重要性加
 
 ## 四、推荐学习路径（5-Day Roadmap）
 
-- **Day 1-2 基础概念**: [LLM Agents Glossary](https://deepchecks.com/glossary/llm-agents/) ｜ [Intro to LLM Agents - Nvidia](https://developer.nvidia.com/blog/introduction-to-llm-agents/)
-- **Day 3-4 核心框架**: [Agents 101 Guide](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agents_101_guide.md) ｜ [LLM Powered Autonomous Agents - Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- **Day 1-2 基础概念**: [LLM Agents Glossary](https://deepchecks.com/glossary/llm-agents/)  |  [Intro to LLM Agents - Nvidia](https://developer.nvidia.com/blog/introduction-to-llm-agents/)
+- **Day 3-4 核心框架**: [Agents 101 Guide](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agents_101_guide.md)  |  [LLM Powered Autonomous Agents - Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
 - **Day 5 实战构建**: [AI Agents in LangGraph - Deeplearning.AI](https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/)
 
 ## 五、与主线文档的关系
 
-本笔记的三组件/四组件框架与多 Agent 交互模式已展开为主线 [Agent 运行时](../../04-action/agent-runtime/)、[Agent 设计模式](../../04-action/agent-runtime/design-patterns)与[多 Agent 系统](../../04-action/multi-agent)；本页保留为课程出处与外部资源索引。
+本笔记的三组件/四组件框架与多 Agent 交互模式已展开为主线 [Agent 运行时](/tech/06-agent-systems/agent-runtime)、[Agent 设计模式](/tech/06-agent-systems/design-patterns)与[多 Agent 系统](/tech/06-agent-systems/multi-agent)；本页保留为课程出处与外部资源索引。
 
 ## 相关资源
 

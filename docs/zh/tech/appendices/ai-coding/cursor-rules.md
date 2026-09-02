@@ -28,7 +28,7 @@ listed: true
 
 > 迁移期建议保留旧文件，团队成员未全部升级到 0.46+ 前不删 `.cursorrules`。
 
-通用化的「规则即上下文资产」视角见主线[上下文工程](../../01-contracts/context)；与 Claude 系的 AGENTS.md、Skills 的对照见 [Agent Skills](../../04-action/skills)。
+通用化的「规则即上下文资产」视角见主线[上下文工程](/zh/tech/03-context/context-engineering)；与 Claude 系的 AGENTS.md、Skills 的对照见 [Agent Skills](/zh/tech/06-agent-systems/skills)。
 
 ## Rule Type（四种生效规则）
 

@@ -33,7 +33,7 @@ while not task_finished:
     context.update(observation)
 ```
 
-主线展开见 [Agent 运行时](../../04-action/agent-runtime/)；本页保留场景化落地证据。
+主线展开见 [Agent 运行时](/zh/tech/06-agent-systems/agent-runtime)；本页保留场景化落地证据。
 
 ## 架构设计
 

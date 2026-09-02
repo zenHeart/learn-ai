@@ -15,6 +15,7 @@ externalOwners:
 lastVerified: "2026-09-01"
 listed: true
 ---
+> **Group**: Model Lifecycle (bridge) | **Previous group exit**: inference fundamentals and interface contracts | **This page exit**: know when to change weights instead of prompts or retrieval
 
 # Model Lifecycle Bridges
 

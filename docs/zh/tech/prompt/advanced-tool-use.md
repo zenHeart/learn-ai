@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/04-action/tool-execution'
+    - content: '0; url=/zh/tech/05-action/tool-execution'
   - - link
     - rel: canonical
-    - href: /zh/tech/04-action/tool-execution
+    - href: /zh/tech/05-action/tool-execution
 ---
 
-本页已迁移到 [/zh/tech/04-action/tool-execution](/zh/tech/04-action/tool-execution).
+本页已迁移到 [/zh/tech/04-action/tool-execution](/zh/tech/05-action/tool-execution).

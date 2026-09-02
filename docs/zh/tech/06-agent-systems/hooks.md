@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**：能搭出带停止条件与预算的最小 Agent 循环 ｜ **本层出口**：能在宿主生命周期点上挂自动化策略门（block / allow / mutate），为 hook 失败选对 fail-closed 与 fail-open，并分清 hook、Skill、HITL 各管什么
+> **所在组**：Agent 系统 ｜ **上一组出口**：能搭出带停止条件与预算的最小 Agent 循环 ｜ **本页出口**：能在宿主生命周期点上挂自动化策略门（block / allow / mutate），为 hook 失败选对 fail-closed 与 fail-open，并分清 hook、Skill、HITL 各管什么
 > **前置**：[Agent 运行时](agent-runtime.md) · [Agent 状态与记忆](state-memory.md) ｜ **下一步**：[恢复与人工批准](recovery-hitl.md)（人工门）、[Agent Skills](skills.md)（知识包）
 
 ## 1. 概述

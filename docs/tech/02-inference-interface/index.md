@@ -18,8 +18,8 @@ listed: true
 
 # Group 2 · Inference & Interface
 
-> **Group**: 2 · Inference & Interface ｜ **Previous group exit**: can explain how the model lifecycle shapes engineering decisions (the model is a replaceable capability with three interface properties: behavior, budget, capability boundary) ｜ **This group exit**: can deliver a user-visible interaction that is attributable (latency decomposes into segments), observable (usage is visible), and cancellable
-> **Prerequisites**: [Model Lifecycle (bridge)](../01-model-lifecycle/) ｜ **Next**: [Session and State](../03-context/session-memory.md), [Embeddings and Retrieval](../04-grounding/rag)
+> **Group**: 2 · Inference & Interface  |  **Previous group exit**: can explain how the model lifecycle shapes engineering decisions (the model is a replaceable capability with three interface properties: behavior, budget, capability boundary)  |  **This group exit**: can deliver a user-visible interaction that is attributable (latency decomposes into segments), observable (usage is visible), and cancellable
+> **Prerequisites**: [Model Lifecycle (bridge)](../01-model-lifecycle/)  |  **Next**: [Session and State](../03-context/session-memory.md), [Embeddings and Retrieval](../04-grounding/rag)
 
 ## 1. Overview
 
@@ -73,7 +73,7 @@ The serving-side mode decision (API / self-hosted / on-device) is in the decisio
 
 ### Historical milestones
 
-Vendor API shapes keep evolving (e.g. OpenAI from Chat Completions to the Responses API, Anthropic sampling parameters shrinking across model generations, both vendors shipping prefix caching). This group maintains no vendor timeline; specific fields follow the official docs on the day, and decision-relevant claims in this repo carry retrievedAt stamps. This page was rewritten in 2026-09 from the v5 "application integration" layer guide into the v6 "Inference & Interface" group guide as part of Issue #116.
+Vendor API shapes keep evolving (e.g. OpenAI from Chat Completions to the Responses API, Anthropic sampling parameters shrinking across model generations, both vendors shipping prefix caching). This group maintains no vendor timeline; specific fields defer to the official docs at the time of reading, and decision-relevant claims in this repo carry retrievedAt stamps. This page was rewritten in 2026-09 from the v5 "application integration" layer guide into the v6 "Inference & Interface" group guide as part of Issue #116.
 
 ## 2. Usage
 

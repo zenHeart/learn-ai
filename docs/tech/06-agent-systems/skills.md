@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can wire model output into sessions and state ｜ **Exit of this layer**: you can package a repeated procedure into a Skill that hosts load on demand and trigger reliably
-> **Prerequisites**: [Context Engineering](../03-context/context-engineering), [Tool Calling Contract](../05-action/tool-calling) ｜ **Next**: [Agent Plugins](plugins.md) (packaging and distribution), [Protocol Map](../07-interoperability/index.md)
+> **Group**: Agent Systems  |  **Previous group exit**: you can wire model output into sessions and state  |  **This group exit**: you can package a repeated procedure into a Skill that hosts load on demand and trigger reliably
+> **Prerequisites**: [Context Engineering](../03-context/context-engineering), [Tool Calling Contract](../05-action/tool-calling)  |  **Next**: [Agent Plugins](plugins.md) (packaging and distribution), [Protocol Map](../07-interoperability/index.md)
 
 ## 1. Overview
 
@@ -326,7 +326,7 @@ The host uses the model's semantic understanding to score task ↔ description r
 ### Versus tools; versus the asset directory
 
 - **Skills vs tools**: a Skill is knowledge packaging (it tells the model *which steps to follow*); a tool is a callable function (it hands the model an executable interface). Scripts inside a Skill still execute through the host's tool capability — Skills add no execution mechanism, they organize knowledge and entry points.
-- **This page vs the asset directory**: this page is the canonical methodology (format, triggering, validation); the [/zh/skills/ asset directory](/zh/skills/) is this repository's skill registry projection listing actual skill assets. Change methodology here; add assets there.
+- **This page vs the asset directory**: this page is the canonical methodology (format, triggering, validation); the [/zh/skills/ asset directory (zh)](/zh/skills/) is this repository's skill registry projection listing actual skill assets. Change methodology here; add assets there.
 
 ## 4. Development
 
@@ -404,4 +404,4 @@ Four-level reading route:
 - Triggering bottoms out in context and semantic matching: [Context Engineering](../03-context/context-engineering).
 - Permissions, idempotency, and approval for script execution: [Tool Execution Engineering](../05-action/tool-execution.md).
 - Packaging skills with MCP servers for distribution: [Agent Plugins](plugins.md).
-- This repository's skill asset registry (projection): [/zh/skills/](/zh/skills/).
+- This repository's skill asset registry (projection): [/zh/skills/ (zh)](/zh/skills/).

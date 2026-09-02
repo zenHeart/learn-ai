@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can define the release gate, the rollback path, and the on-call owners, and run a health check with graceful shutdown
-> **Prerequisites**: [Testing](testing.md), [Evaluation (Bridge)](evaluation.md), [Observability](observability.md), [Security](security.md), [Cost and Performance](cost-performance.md) ｜ **Next**: [Resource Library](../../resources.md) (group exit)
+> **Group**: Production  |  **Previous group exit**: can restrict permissions, pause/resume tasks  |  **This group exit**: can define the release gate, the rollback path, and the on-call owners, and run a health check with graceful shutdown
+> **Prerequisites**: [Testing](testing.md), [Evaluation (Bridge)](evaluation.md), [Observability](observability.md), [Security](security.md), [Cost and Performance](cost-performance.md)  |  **Next**: [Resource Library](../../resources.md) (group exit)
 
 ## 1. Overview
 

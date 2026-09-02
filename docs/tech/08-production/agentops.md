@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 5 · Reliable Operations ｜ **Previous layer exit**: can restrict permissions, pause/resume tasks ｜ **This layer exit**: can enumerate your system's five version axes and answer for each "what to version / how to roll back / how to trace", with drift machine-detectable
-> **Prerequisites**: [Deployment and Release](deployment.md) (mechanics and rollback), [Evaluation (Bridge)](evaluation.md) (gate thresholds), [Observability](observability.md) (trace reconciliation) ｜ **Next**: [Resource Library](../../resources.md) (layer exit)
+> **Group**: 5 · Reliable Operations  |  **Previous layer exit**: can restrict permissions, pause/resume tasks  |  **This page exit**: can enumerate your system's five version axes and answer for each "what to version / how to roll back / how to trace", with drift machine-detectable
+> **Prerequisites**: [Deployment and Release](deployment.md) (mechanics and rollback), [Evaluation (Bridge)](evaluation.md) (gate thresholds), [Observability](observability.md) (trace reconciliation)  |  **Next**: [Resource Library](../../resources.md) (layer exit)
 
 ## 1. Overview
 

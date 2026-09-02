@@ -20,8 +20,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can decide when evaluation evidence is required and wire it into a release gate with thresholds and blocking
-> **Prerequisites**: [Testing: The Deterministic Boundary](testing.md) ｜ **Next**: [Deployment and Release](deployment.md) (where the gate lands); methodology continues at [evals](https://evals.zenheart.site/)
+> **Group**: Production  |  **Previous group exit**: can restrict permissions, pause/resume tasks  |  **This group exit**: can decide when evaluation evidence is required and wire it into a release gate with thresholds and blocking
+> **Prerequisites**: [Testing: The Deterministic Boundary](testing.md)  |  **Next**: [Deployment and Release](deployment.md) (where the gate lands); methodology continues at [evals](https://evals.zenheart.site/)
 
 ## 1. Overview
 

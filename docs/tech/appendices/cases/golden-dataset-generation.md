@@ -30,4 +30,4 @@ listed: true
 
 > 整理自任务"整理黄金数据集生成方法"
 
-主线关联：何时需要评估证据、如何接入上线门，见[评估（桥接）](../../05-operations/evaluation)。
+主线关联：何时需要评估证据、如何接入上线门，见[评估（桥接）](/tech/08-production/evaluation)。

@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/04-action/agent-runtime/'
+    - content: '0; url=/zh/tech/06-agent-systems/agent-runtime'
   - - link
     - rel: canonical
-    - href: /zh/tech/04-action/agent-runtime/
+    - href: /zh/tech/06-agent-systems/agent-runtime
 ---
 
-本页已迁移到 [/zh/tech/04-action/agent-runtime/](/zh/tech/04-action/agent-runtime/).
+本页已迁移到 [/zh/tech/04-action/agent-runtime/](/zh/tech/06-agent-systems/agent-runtime).

@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: on encountering any listed protocol, immediately state what it solves, who owns it, and which threshold it is missing
-> **Prerequisites**: [Protocol Map](index.md) ｜ **Next**: protocols meeting the threshold get promoted to standalone canonical chapters
+> **Group**: Interoperability  |  **Previous group exit**: build a traceable retrieval chain with an update path  |  **This group exit**: on encountering any listed protocol, immediately state what it solves, who owns it, and which threshold it is missing
+> **Prerequisites**: [Protocol Map](index.md)  |  **Next**: protocols meeting the threshold get promoted to standalone canonical chapters
 
 ## 1. Overview
 
@@ -97,7 +97,7 @@ All five must hold before promotion from the watchlist:
 - **canonical**: https://www.anp-protocol.com/ and https://datatracker.ietf.org/ (for the drafts)
 - **Status**: the community site is active (bilingual zh/en); the IETF suite is individual drafts (all retrievedAt 2026-09-01).
 - **Boundary**: a three-layer stack of decentralized identity (W3C DID, `did:wba`) + meta-protocol negotiation + application protocols, aimed at "an internet of billions of agents".
-- **Why on the watchlist**: a路线 contest with A2A's centralized HTTP model rather than a complement; production adoption unverified; the relationship between the two tracks (community site vs IETF drafts) needs watching.
+- **Why on the watchlist**: a competing-architecture contest with A2A's centralized HTTP model rather than a complement; production adoption unverified; the relationship between the two tracks (community site vs IETF drafts) needs watching.
 
 ### AHP — Agent Host Protocol
 

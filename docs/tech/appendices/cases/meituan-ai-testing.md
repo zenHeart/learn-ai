@@ -25,4 +25,4 @@ listed: true
 
 > **待补充**：手动观看视频后整理核心要点。
 
-主线关联：确定性测试方法见[测试](../../05-operations/testing)。
+主线关联：确定性测试方法见[测试](/tech/08-production/testing)。

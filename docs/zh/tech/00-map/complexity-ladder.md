@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 0 · 方向与边界 ｜ **上一层出口**：无 ｜ **本层出口**：能为任一需求选出最低复杂度方案，并说出它的升级触发条件
-> **前置**：[技术地图](../index) ｜ **下一步**：[站点边界与知识 ownership](site-boundaries.md)；准备进入层 1 的先读[提示词工程](../03-context/prompt)
+> **所在组**：Map · 总览 ｜ **上一组出口**：无 ｜ **本页出口**：能为任一需求选出最低复杂度方案，并说出它的升级触发条件
+> **前置**：[技术地图](../index) ｜ **下一步**：[站点边界与知识 ownership](site-boundaries.md)；准备进入 Context 组的先读[提示词工程](../03-context/prompt)
 
 ## 1. 概述
 
@@ -113,7 +113,7 @@ flowchart BT
 
 ### 读世界 / 写世界是横切不变量
 
-梯级 1–2 基本在读世界：提供证据，默认无副作用。梯级 3 起进入写世界：改变外部状态，必须显式处理权限、幂等、取消、重试、人工批准与回滚。这些不是某一级的专属话题，而是从梯级 3 起每一级都要回答的问题——层 4 与层 5 的各章会反复回到这张清单。
+梯级 1–2 基本在读世界：提供证据，默认无副作用。梯级 3 起进入写世界：改变外部状态，必须显式处理权限、幂等、取消、重试、人工批准与回滚。这些不是某一级的专属话题，而是从梯级 3 起每一级都要回答的问题——行动、Agent 系统与生产各组的章节会反复回到这张清单。
 
 ### 为什么协议在梯顶
 
@@ -121,7 +121,7 @@ flowchart BT
 
 ### 规范要求 vs 本地实测
 
-本页是决策模式，无规范可实现测。各梯级方案的「规范 vs 实测」分栏见对应层章节：结构化输出（层 1）、模型 API（层 2）、RAG（层 3）、工具执行与协议（层 4）。
+本页是决策模式，无规范可实现测。各梯级方案的「规范 vs 实测」分栏见对应层章节：结构化输出与模型 API（推理与接口组）、RAG（知识接地组）、工具执行（行动组）、协议（互操作组）。
 
 ## 4. 开发
 
@@ -159,8 +159,8 @@ flowchart BT
 四级阅读路线：
 
 - **Beginner**：读本页 + [技术地图](../index)的决策树；能复述六级与各自触发条件。
-- **Builder**：进 [层 1 · 交互契约](../03-context/)，把梯级 1 做扎实（prompt + schema + 失败验收）。
-- **Operator**：进 [层 4](../06-agent-systems/agent-runtime.md) 与 [层 5](../08-production/)，学习梯级 3–5 的权限、幂等与回滚。
+- **Builder**：进 [Context 组](../03-context/)，把梯级 1 做扎实（prompt + schema + 失败验收）。
+- **Operator**：进 [Agent 系统组](../06-agent-systems/agent-runtime.md) 与 [Production 组](../08-production/)，学习梯级 3–5 的权限、幂等与回滚。
 - **Researcher**：读下面 L1 级资料，理解业界对「workflow vs agent」边界的论证。
 
 ### 资源表
@@ -170,15 +170,15 @@ flowchart BT
 | Building Effective Agents（Anthropic） | L1（维护者） | https://www.anthropic.com/research/building-effective-agents | workflow 与 agent 的边界、从简单组合开始的论证 | 「先组合后升级」的工程口径（retrievedAt 2026-09-01，HTTP 200） | 对照本页梯级 4 / 5 |
 | MCP 官网 | L0（官方规范） | https://modelcontextprotocol.io/ | 梯级 6 候选项之一：Agent ↔ 工具 / 数据边界 | 协议解决边界通信（retrievedAt 2026-09-01，HTTP 200） | [MCP 章](../07-interoperability/mcp) |
 | A2A 官网 | L0（官方规范） | https://a2a-protocol.org/ | 梯级 6 候选项之一：跨信任域 Agent 协作 | 跨信任域才需要远程协作协议（retrievedAt 2026-09-01，HTTP 200） | [A2A 章](../07-interoperability/a2a) |
-| Learn LLM 第 11 章（RAG） | sibling | https://llm.zenheart.site/chapters/11-rag | 梯级 2 的底层原理（何时检索有效） | 检索原理归 Learn LLM（retrievedAt 2026-09-01，HTTP 200） | 本仓[层 3](../04-grounding/) |
+| Learn LLM 第 11 章（RAG） | sibling | https://llm.zenheart.site/chapters/11-rag | 梯级 2 的底层原理（何时检索有效） | 检索原理归 Learn LLM（retrievedAt 2026-09-01，HTTP 200） | 本仓[知识接地组](../04-grounding/) |
 
 ### 主动证伪与未决问题
 
 - 证伪入口：如果你找到了一个场景——梯级 N 的最低方案无法满足验收、且梯级 N-1 的触发条件未命中——本阶梯存在漏洞，应修订触发条件而不是掩盖场景。
-- 未决：梯级 6 的「按连接方向选协议」细则（MCP / A2A / ACP / AG-UI 各自匹配的边界）在层 4 协议地图落地，本页只保留判断框架。
+- 未决：梯级 6 的「按连接方向选协议」细则（MCP / A2A / ACP / AG-UI 各自匹配的边界）在互操作组协议地图落地，本页只保留判断框架。
 
 ### learn-ai 到此为止 / 继续去哪
 
-- 各梯级的实现细节：本仓层 1–5 对应章节。
+- 各梯级的实现细节：本仓各组对应章节。
 - 梯级 2 / 5 的底层原理（检索数学、训练对行为的影响）：[Learn LLM](https://llm.zenheart.site/chapters/)。
 - 证明每一级「做到位了」的评估方法：[evals](https://evals.zenheart.site/)。

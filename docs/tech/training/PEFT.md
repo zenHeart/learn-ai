@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/appendices/model-lifecycle/peft'
+    - content: '0; url=/tech/01-model-lifecycle/post-training/peft'
   - - link
     - rel: canonical
-    - href: /tech/appendices/model-lifecycle/peft
+    - href: /tech/01-model-lifecycle/post-training/peft
 ---
 
-This page has moved to [/tech/appendices/model-lifecycle/peft](/tech/appendices/model-lifecycle/peft).
+This page has moved to [/tech/appendices/model-lifecycle/peft](/tech/01-model-lifecycle/post-training/peft).

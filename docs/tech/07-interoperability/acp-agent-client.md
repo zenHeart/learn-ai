@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: wire a coding agent into any ACP editor and articulate its division of labor with MCP/A2A
-> **Prerequisites**: [Protocol Map](index.md) ｜ [MCP](mcp.md) ｜ **Next**: [AG-UI](ag-ui.md) ｜ [A2A](a2a.md)
+> **Group**: Interoperability  |  **Previous group exit**: build a traceable retrieval chain with an update path  |  **This group exit**: wire a coding agent into any ACP editor and articulate its division of labor with MCP/A2A
+> **Prerequisites**: [Protocol Map](index.md)  |  [MCP](mcp.md)  |  **Next**: [AG-UI](ag-ui.md)  |  [A2A](a2a.md)
 
 ## 1. Overview
 
@@ -78,13 +78,13 @@ Capability rules: an omitted capability in initialize **means unsupported**; add
 
 Working with MCP (one client, two protocols): the `session/new` parameters include an `mcpServers` list — the editor hands the user's configured MCP servers to the agent to connect; the agent declares `mcpCapabilities` (http/sse). There is also an "MCP over ACP" RFD discussion draft (not finalized).
 
-### History milestones
+### Historical milestones
 
 `protocolVersion` is an integer major version; **v1 is the current stable version**. Since v1 shipped, the official RFD process has folded in 15+ features — `session/resume` (reconnect without replay), `session/close`, `session/list`, `session/delete`, elicitation, additionalDirectories, and more have stabilized one after another (site announcements, 2026-06 through 2026-07; not verified entry by entry).
 
 **v2 entered Draft on 2026-07-20** (announcement, retrieved 2026-09-01): the schema is published as `v2.0.0-alphaX` with five big themes — ① beyond the turn: `session/update` may arrive at any point in the session, and a prompt response only means "the agent acknowledged the message", no longer the end of the turn; ② messages and tool calls update, replace, and stream by stable ID (including redaction); ③ the diff is overhauled into structured file changes (add/delete/modify/move/copy plus binary cases, optional `git_patch`); ④ permission requests carry their own title/description and an extensible subject, no longer hard-wired to a tool call; ⑤ enum values accept unknown `_`-prefixed variants, forward-compatible by default. The announcement is explicit about draft boundaries: pieces will change, implementations must gate behind version negotiation AND feature flags, and must not ship in production before stabilization; **adding v2 does not mean dropping v1** — v1-only peers will remain common, and side-by-side support is the official recommendation. Earlier history and release dates: unverified.
 
-### DoD self-check for this chapter
+### DoD self-check for this page
 
 - [ ] Run the §2 two-process fixture (editor ↔ agent mock) within 15 minutes
 - [ ] Draw the initialize → session/new → prompt → update → permission → stopReason sequence

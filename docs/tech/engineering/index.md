@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/05-operations/'
+    - content: '0; url=/tech/08-production/index'
   - - link
     - rel: canonical
-    - href: /tech/05-operations/
+    - href: /tech/08-production/index
 ---
 
-This page has moved to [/tech/05-operations/](/tech/05-operations/).
+This page has moved to [/tech/05-operations/](/tech/08-production/index).

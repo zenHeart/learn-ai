@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Interoperability ｜ **Exit of the group above**: you can wire model output into sessions and state ｜ **Exit of this group**: given a cross-boundary requirement you can pick the protocol by connection direction and justify rejecting the rest
-> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md), [Complexity Decision Ladder](../00-map/complexity-ladder) ｜ **Next**: proceed by map to [MCP](mcp.md), [A2A](a2a.md), [ACP](acp-agent-client.md), [AG-UI](ag-ui.md), [A2UI and MCP Apps](a2ui-mcp-apps.md)
+> **Group**: Interoperability  |  **Exit of the group above**: you can wire model output into sessions and state  |  **Exit of this group**: given a cross-boundary requirement you can pick the protocol by connection direction and justify rejecting the rest
+> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md), [Complexity Decision Ladder](../00-map/complexity-ladder)  |  **Next**: proceed by map to [MCP](mcp.md), [A2A](a2a.md), [ACP](acp-agent-client.md), [AG-UI](ag-ui.md), [A2UI and MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. Overview
 
@@ -65,7 +65,7 @@ Note: **Skills are not a protocol** — they are a knowledge packaging format (n
 | --- | --- | --- | --- | --- |
 | ① | **Agent Client Protocol** (agentclientprotocol.com) | the standard protocol between editors/IDEs and coding agents; JSON-RPC over stdio locally, HTTP/WebSocket remotely; reuses MCP's JSON representations | "ACP" on this site's interoperability pages always means **this one**; details in the [ACP chapter](acp-agent-client.md) | active (Zed and editor ecosystems) |
 | ② | IBM/BeeAI **Agent Communication Protocol** | a historical agent↔agent communication scheme | folded into the A2A line; when old material mentions it, read it as an A2A predecessor | historical |
-| ③ | OpenClaw internal **Agent Communication Protocol** | OpenClaw's private internal protocol, unrelated to ① and ② | product implementation detail, see [OpenClaw source: ACP](/zh/products/openclaw/source-code/acp) | product-private |
+| ③ | OpenClaw internal **Agent Communication Protocol** | OpenClaw's private internal protocol, unrelated to ① and ② | product implementation detail, see [OpenClaw source: ACP (zh)](/zh/products/openclaw/source-code/acp) | product-private |
 
 Citation rule: unqualified "ACP" anywhere in this site's interoperability pages means ①; mentioning ② requires the "IBM/BeeAI" qualifier and a historical note; mentioning ③ requires the "OpenClaw" qualifier and a link into the Products area.
 

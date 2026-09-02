@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/04-action/'
+    - content: '0; url=/tech/06-agent-systems/agent-runtime'
   - - link
     - rel: canonical
-    - href: /tech/04-action/
+    - href: /tech/06-agent-systems/agent-runtime
 ---
 
-This page has moved to [/tech/04-action/](/tech/04-action/).
+This page has moved to [/tech/04-action/](/tech/06-agent-systems/agent-runtime).

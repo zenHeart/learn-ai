@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 0 · 方向与边界 ｜ **上一层出口**：无 ｜ **本层出口**：能判断一段知识该写在本仓还是跳转 sibling，并能写出合格的 bridge 链接
+> **所在组**：层 0 · 方向与边界 ｜ **上一组出口**：无 ｜ **本页出口**：能判断一段知识该写在本仓还是跳转 sibling，并能写出合格的 bridge 链接
 > **前置**：[技术地图](../index) ｜ **下一步**：[模型生命周期（桥接）](../01-model-lifecycle/index.md)——本页规则的第一个完整示范
 
 ## 1. 概述
@@ -192,3 +192,16 @@ sites-epub 的所有权声明继续有效（见 `_phase0/bridge-register.md`）�
 - 本仓下一个示范：[模型生命周期（桥接）](../01-model-lifecycle/index.md)——按本页规则写成的完整 bridge 页。
 - 模型深层原理：[Learn LLM](https://llm.zenheart.site/chapters/)。
 - 评估方法论：[evals](https://evals.zenheart.site/)。
+
+## 资料库证据层级（全树 legend）
+
+各页资料库的「层级」列使用统一字母，定义如下（个别历史页的标注存在 ±1 漂移，以本表为准）：
+
+| 层级 | 含义 | 典型来源 |
+| --- | --- | --- |
+| E | 本地实证 | 本仓可运行的 fixture 实测输出 |
+| L0 | 官方规范 / 一手实现 | 协议规范、SDK 源码、CHANGELOG |
+| L1 | 官方维护者叙述 | 官方文档、官方工程博客 |
+| L2 | 权威二次加工 | 知名工程书、系统综述 |
+| L4 | 背景线索 | 社区讨论、未署名文章（仅作线索） |
+| sibling | 姊妹站 canonical | Learn LLM / evals / sites-epub |

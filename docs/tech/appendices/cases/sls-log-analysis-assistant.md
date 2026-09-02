@@ -25,4 +25,4 @@ listed: true
 4. **可扩展方向**：与 OnCall 告警联动（告警自动触发分析）+ 与 Codeup 对接（分析结果触发代码操作）
 5. **应用场景拓展**：日常问题反馈群消息自动汇总、Grafana 监控分析、火焰图分析等
 
-主线关联：Agent 工具集成的通用契约见 [Agent 运行时](../../04-action/agent-runtime/)与 [MCP](../../04-action/protocols/mcp)；本页是「低代码平台 + MCP」路线的单案例证据。
+主线关联：Agent 工具集成的通用契约见 [Agent 运行时](/tech/06-agent-systems/agent-runtime)与 [MCP](/tech/07-interoperability/mcp)；本页是「低代码平台 + MCP」路线的单案例证据。

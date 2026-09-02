@@ -21,15 +21,15 @@ listed: true
 
 | 笔记 | 类型 | 保留价值 | 已合入主线 |
 | --- | --- | --- | --- |
-| [Hello Agents（DataWhale）](./hello-agents-datwhale) | 开源课程 | Agent 学习路径与 Memory 策略入门 | [Agent 运行时](../../04-action/agent-runtime/) |
-| [Pi Agent 设计哲学](./pi-agent-design-philosophy) | 源码解读 | 极简 Agent 的「不做什么」清单与 token 经济学 | [Agent 运行时](../../04-action/agent-runtime/)、[工具执行工程](../../04-action/tool-execution) |
-| [How I Use Claude Code](./how-i-use-claude-code) | 实践文章 | 计划与执行分离的工作流（research → plan → annotate → implement） | [上下文工程](../../01-contracts/context)、[恢复与人工批准](../../04-action/agent-runtime/recovery-hitl) |
+| [Hello Agents（DataWhale）](./hello-agents-datwhale) | 开源课程 | Agent 学习路径与 Memory 策略入门 | [Agent 运行时](/zh/tech/06-agent-systems/agent-runtime) |
+| [Pi Agent 设计哲学](./pi-agent-design-philosophy) | 源码解读 | 极简 Agent 的「不做什么」清单与 token 经济学 | [Agent 运行时](/zh/tech/06-agent-systems/agent-runtime)、[工具执行工程](/zh/tech/05-action/tool-execution) |
+| [How I Use Claude Code](./how-i-use-claude-code) | 实践文章 | 计划与执行分离的工作流（research → plan → annotate → implement） | [上下文工程](/zh/tech/03-context/context-engineering)、[恢复与人工批准](/zh/tech/06-agent-systems/recovery-hitl) |
 
 ## 英文侧笔记（EN only）
 
 | 笔记 | 类型 | 保留价值 | 已合入主线 |
 | --- | --- | --- | --- |
-| [Agent Course 学习笔记](/tech/appendices/course-notes/agent-course) | 课程笔记 | Brain/Perception/Action 三组件模型与评估基准清单 | [Agent 设计模式](../../04-action/agent-runtime/design-patterns)、[多 Agent 系统](../../04-action/multi-agent) |
+| [Agent Course 学习笔记](/tech/appendices/course-notes/agent-course) | 课程笔记 | Brain/Perception/Action 三组件模型与评估基准清单 | [Agent 设计模式](/zh/tech/06-agent-systems/design-patterns)、[多 Agent 系统](/zh/tech/06-agent-systems/multi-agent) |
 
 ## 阅读建议
 

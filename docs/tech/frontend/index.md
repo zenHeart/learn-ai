@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/02-integration/'
+    - content: '0; url=/tech/02-inference-interface/index'
   - - link
     - rel: canonical
-    - href: /tech/02-integration/
+    - href: /tech/02-inference-interface/index
 ---
 
-This page has moved to [/tech/02-integration/](/tech/02-integration/).
+This page has moved to [/tech/02-integration/](/tech/02-inference-interface/index).

@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can save and restore an agent's site with checkpoints ｜ **Exit of this layer**: you can pick the right recovery strategy for a failed action (retry / rollback / compensation) and install fail-closed human approval gates at irreversible, high-cost, and low-confidence points
-> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Agent State and Memory](state-memory.md) ｜ **Next**: [Computer Use](computer-use.md) · [Security](../08-production/security)
+> **Group**: Agent Systems  |  **Previous group exit**: you can save and restore the agent's execution state with checkpoints  |  **This group exit**: you can pick the right recovery strategy for a failed action (retry / rollback / compensation) and install fail-closed human approval gates at irreversible, high-cost, and low-confidence points
+> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Agent State and Memory](state-memory.md)  |  **Next**: [Computer Use](computer-use.md) · [Security](../08-production/security)
 
 ## 1. Overview
 
@@ -68,7 +68,7 @@ Three triggers; hit any one, install a gate:
 - Use: the agent writes to the world (continuing [tool execution engineering](../05-action/tool-execution.md)); side effects cannot be auto-undone; compliance requires a human approval trail.
 - Do not use: read-only tasks (gates only slow them down); reversible, low-cost actions (auto-rollback is cheaper than waiting for a human); interruption frequency so high that users start rubber-stamping — that is gate failure, not gate success.
 
-History milestones: the OpenAI Agents SDK productized HITL as `needs_approval` + interruptions + a serializable `RunState` (current shape retrievedAt 2026-09-01); LangGraph builds interruption and resume on the checkpointer primitive. Earlier timelines are unverified; we do not fabricate them.
+Historical milestones: the OpenAI Agents SDK productized HITL as `needs_approval` + interruptions + a serializable `RunState` (current shape retrievedAt 2026-09-01); LangGraph builds interruption and resume on the checkpointer primitive. Earlier timelines are unverified; we do not fabricate them.
 
 ## 2. Usage
 

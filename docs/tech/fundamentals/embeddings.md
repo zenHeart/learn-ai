@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/03-grounding/embeddings-retrieval'
+    - content: '0; url=/tech/04-grounding/embeddings-retrieval'
   - - link
     - rel: canonical
-    - href: /tech/03-grounding/embeddings-retrieval
+    - href: /tech/04-grounding/embeddings-retrieval
 ---
 
-This page has moved to [/tech/03-grounding/embeddings-retrieval](/tech/03-grounding/embeddings-retrieval).
+This page has moved to [/tech/03-grounding/embeddings-retrieval](/tech/04-grounding/embeddings-retrieval).

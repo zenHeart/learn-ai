@@ -65,4 +65,4 @@ listed: true
 
 ## 与主线的关系
 
-「极简工具集够用」「上下文渐进加载」的观点与主线 [Agent 运行时](../../04-action/agent-runtime/)、[上下文工程](../../01-contracts/context)互为印证；其 MCP 取舍是单作者立场，与主线 [MCP](../../04-action/protocols/mcp) 的协议视角对照阅读更有价值。
+「极简工具集够用」「上下文渐进加载」的观点与主线 [Agent 运行时](/zh/tech/06-agent-systems/agent-runtime)、[上下文工程](/zh/tech/03-context/context-engineering)互为印证；其 MCP 取舍是单作者立场，与主线 [MCP](/zh/tech/07-interoperability/mcp) 的协议视角对照阅读更有价值。

@@ -78,4 +78,4 @@ do not use any or unknown types. continuously run typecheck.
 
 ## 与主线的关系
 
-「计划/执行分离」「持久化 artifact 作为共享状态」与主线 [恢复与人工批准](../../04-action/agent-runtime/recovery-hitl)（HITL 审批点设计）和 [上下文工程](../../01-contracts/context)（外部化记忆）直接对应。
+「计划/执行分离」「持久化 artifact 作为共享状态」与主线 [恢复与人工批准](/zh/tech/06-agent-systems/recovery-hitl)（HITL 审批点设计）和 [上下文工程](/zh/tech/03-context/context-engineering)（外部化记忆）直接对应。

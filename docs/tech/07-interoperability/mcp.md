@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Interoperability ｜ **Exit of the group above**: you can wire model output into sessions and state ｜ **Exit of this group**: you can implement and debug an MCP server (including path safety and error semantics) and make migration decisions with 2026-07-28 version awareness
-> **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling), [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [A2A](a2a.md) (the agent↔agent direction), [Protocol Map](index.md)
+> **Group**: Interoperability  |  **Exit of the group above**: you can wire model output into sessions and state  |  **Exit of this group**: you can implement and debug an MCP server (including path safety and error semantics) and make migration decisions with 2026-07-28 version awareness
+> **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling), [Tool Execution Engineering](../05-action/tool-execution.md)  |  **Next**: [A2A](a2a.md) (the agent↔agent direction), [Protocol Map](index.md)
 
 ## 1. Overview
 

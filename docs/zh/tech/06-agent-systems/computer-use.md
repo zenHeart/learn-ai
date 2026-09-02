@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**：能搭最小 Agent 循环，并知道恢复与人工批准怎么架 ｜ **本层出口**：能判断一个界面自动化需求该用 API、DOM 自动化还是 Computer Use，并给 Computer Use 配上沙箱、批准门与注入防护
+> **所在组**：Agent 系统 ｜ **上一组出口**：能搭最小 Agent 循环，并知道恢复与人工批准怎么架 ｜ **本页出口**：能判断一个界面自动化需求该用 API、DOM 自动化还是 Computer Use，并给 Computer Use 配上沙箱、批准门与注入防护
 > **前置**：[Agent 运行时](agent-runtime.md) · [工具执行工程](../05-action/tool-execution.md) ｜ **下一步**：[多 Agent 系统](multi-agent.md) · [安全](../08-production/security) · [A2A](../07-interoperability/a2a.md)
 
 ## 1. 概述

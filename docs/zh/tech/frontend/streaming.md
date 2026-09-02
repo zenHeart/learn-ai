@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/02-integration/streaming'
+    - content: '0; url=/zh/tech/02-inference-interface/streaming'
   - - link
     - rel: canonical
-    - href: /zh/tech/02-integration/streaming
+    - href: /zh/tech/02-inference-interface/streaming
 ---
 
-本页已迁移到 [/zh/tech/02-integration/streaming](/zh/tech/02-integration/streaming).
+本页已迁移到 [/zh/tech/02-integration/streaming](/zh/tech/02-inference-interface/streaming).

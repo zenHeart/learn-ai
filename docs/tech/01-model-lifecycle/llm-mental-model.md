@@ -20,8 +20,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: 01 · Model Lifecycle (bridge group) ｜ **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group) ｜ **Exit of this page**: you can explain what prompts, context, and temperature really do using "parametrized conditional probability model", and you hold a correct expectation of hallucination
-> **Prerequisites**: [Model Lifecycle (group guide)](./index) ｜ **Next**: [Model Architecture (Bridge)](architecture.md)
+> **Group**: 01 · Model Lifecycle (bridge group)  |  **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group)  |  **Exit of this page**: you can explain what prompts, context, and temperature really do using "parametrized conditional probability model", and you hold a correct expectation of hallucination
+> **Prerequisites**: [Model Lifecycle (group guide)](./index)  |  **Next**: [Model Architecture (Bridge)](architecture.md)
 
 ## 1. Overview
 

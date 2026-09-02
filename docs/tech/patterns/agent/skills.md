@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/04-action/skills'
+    - content: '0; url=/tech/06-agent-systems/skills'
   - - link
     - rel: canonical
-    - href: /tech/04-action/skills
+    - href: /tech/06-agent-systems/skills
 ---
 
-This page has moved to [/tech/04-action/skills](/tech/04-action/skills).
+This page has moved to [/tech/04-action/skills](/tech/06-agent-systems/skills).

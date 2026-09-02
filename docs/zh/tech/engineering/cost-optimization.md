@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/05-operations/cost-performance'
+    - content: '0; url=/zh/tech/08-production/cost-performance'
   - - link
     - rel: canonical
-    - href: /zh/tech/05-operations/cost-performance
+    - href: /zh/tech/08-production/cost-performance
 ---
 
-本页已迁移到 [/zh/tech/05-operations/cost-performance](/zh/tech/05-operations/cost-performance).
+本页已迁移到 [/zh/tech/05-operations/cost-performance](/zh/tech/08-production/cost-performance).

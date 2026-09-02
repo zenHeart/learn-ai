@@ -25,4 +25,4 @@ listed: true
 4. **性能分析自动化**：监控指标 + 构建产物 → 自动识别瓶颈 → AI 生成优化建议
 5. **人工确认兜底**：AI 生成 MR 后由人审查合并，确保代码安全
 
-主线关联：自动化工作流的模式语言见[工作流模式](../../04-action/workflow)；「AI 产出 → 人工审批」的兜底设计见[恢复与人工批准](../../04-action/agent-runtime/recovery-hitl)。
+主线关联：自动化工作流的模式语言见[工作流模式](/tech/06-agent-systems/workflow)；「AI 产出 → 人工审批」的兜底设计见[恢复与人工批准](/tech/06-agent-systems/recovery-hitl)。

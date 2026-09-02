@@ -21,26 +21,26 @@ listed: true
 
 | 症状 / 问题 | 先去哪（金字塔层 · 章） | 章内资料库 | 读完的下一问题 |
 | --- | --- | --- | --- |
-| 不知道从哪开始、不确定问题域 | 层 0 · [技术地图](/zh/tech/) | 见该章「资料库」段 | 我的需求在复杂度阶梯第几级？→ [复杂度决策阶梯](/zh/tech/00-orientation/complexity-ladder) |
-| 回答不稳定、输出无法解析 | 层 1 · [结构化输出](/zh/tech/01-contracts/structured-output) | 见该章「资料库」段 | 解析稳了但内容离谱？→ 层 3 接地 |
-| 提示写不好、角色与指令混乱 | 层 1 · [提示词工程](/zh/tech/01-contracts/prompt) | 见该章「资料库」段 | 单条提示够不够，要不要项目级上下文？→ [上下文工程](/zh/tech/01-contracts/context) |
-| 模型不知道我的项目/仓库约定 | 层 1 · [上下文工程](/zh/tech/01-contracts/context) | 见该章「资料库」段 | 上下文塞不下或太贵？→ [成本与性能](/zh/tech/05-operations/cost-performance) |
-| 回答稳定但没进产品（怎么调 API、流式、会话） | 层 2 · [模型 API 契约](/zh/tech/02-integration/model-api)、[流式响应](/zh/tech/02-integration/streaming)、[会话与状态](/zh/tech/02-integration/session-state) | 见各章「资料库」段 | 交互想做生成式 UI？→ [生成式 UI](/zh/tech/02-integration/ui) |
-| 回答缺少私有或新事实 | 层 3 · [RAG](/zh/tech/03-grounding/rag)、[嵌入与检索](/zh/tech/03-grounding/embeddings-retrieval) | 见各章「资料库」段 | 检索质量到顶了？→ [高级检索](/zh/tech/03-grounding/advanced-retrieval) |
-| 需要执行动作（调用系统、改数据） | 层 4 · [工具执行工程](/zh/tech/04-action/tool-execution)（契约见层 1 [工具调用契约](/zh/tech/01-contracts/tool-calling)） | 见各章「资料库」段 | 多步、可恢复、需审批？→ [Agent 运行时](/zh/tech/04-action/agent-runtime/) |
-| 需要自治循环的助手 | 层 4 · [Agent 运行时](/zh/tech/04-action/agent-runtime/) | 见该章「资料库」段 | 上下文/记忆管理失控？→ [状态与记忆](/zh/tech/04-action/agent-runtime/state-memory) |
-| 跨 host / 组织 / Agent 边界协作 | 层 4 · [协议地图](/zh/tech/04-action/protocols/) | 见该章「资料库」段 | 该选哪个协议？→ 按连接方向进 MCP / A2A / ACP / AG-UI 分章 |
-| 功能已跑但不可证明、不可运营 | 层 5 · [测试](/zh/tech/05-operations/testing)、[可观测性](/zh/tech/05-operations/observability) | 见各章「资料库」段 | 要不要上线门与评估证据？→ [评估（桥接）](/zh/tech/05-operations/evaluation) |
-| token 成本高、延迟大 | 层 5 · [成本与性能](/zh/tech/05-operations/cost-performance) | 见该章「资料库」段 | 优化到头了要不要小模型/端侧？→ [浏览器与端侧推理](/zh/tech/02-integration/browser-edge) |
-| 要上线、要能回滚 | 层 5 · [部署与发布](/zh/tech/05-operations/deployment) | 见该章「资料库」段 | 上线后谁负责盯？→ [可观测性](/zh/tech/05-operations/observability) |
-| 权限、注入、数据安全 | 层 5 · [安全](/zh/tech/05-operations/security) | 见该章「资料库」段 | 模型对齐层的行为异常？→ 外部 owner Learn LLM |
-| 想动模型权重（微调/对齐） | 附录 · [模型生命周期桥接](/zh/tech/appendices/model-lifecycle/) | 见各桥接页「深层推导」段 | 推导与实现 → Learn LLM |
+| 不知道从哪开始、不确定问题域 | 层 0 · [技术地图](/zh/tech/) | 见该章「资料库」段 | 我的需求在复杂度阶梯第几级？→ [复杂度决策阶梯](/zh/tech/00-map/complexity-ladder) |
+| 回答不稳定、输出无法解析 | 层 1 · [结构化输出](/zh/tech/02-inference-interface/structured-output) | 见该章「资料库」段 | 解析稳了但内容离谱？→ 层 3 接地 |
+| 提示写不好、角色与指令混乱 | 层 1 · [提示词工程](/zh/tech/03-context/prompt) | 见该章「资料库」段 | 单条提示够不够，要不要项目级上下文？→ [上下文工程](/zh/tech/03-context/context-engineering) |
+| 模型不知道我的项目/仓库约定 | 层 1 · [上下文工程](/zh/tech/03-context/context-engineering) | 见该章「资料库」段 | 上下文塞不下或太贵？→ [成本与性能](/zh/tech/08-production/cost-performance) |
+| 回答稳定但没进产品（怎么调 API、流式、会话） | 层 2 · [模型 API 契约](/zh/tech/02-inference-interface/model-api)、[流式响应](/zh/tech/02-inference-interface/streaming)、[会话与状态](/zh/tech/03-context/session-memory) | 见各章「资料库」段 | 交互想做生成式 UI？→ [生成式 UI](/zh/tech/02-inference-interface/ui) |
+| 回答缺少私有或新事实 | 层 3 · [RAG](/zh/tech/04-grounding/rag)、[嵌入与检索](/zh/tech/04-grounding/embeddings-retrieval) | 见各章「资料库」段 | 检索质量到顶了？→ [高级检索](/zh/tech/04-grounding/advanced-retrieval) |
+| 需要执行动作（调用系统、改数据） | 层 4 · [工具执行工程](/zh/tech/05-action/tool-execution)（契约见层 1 [工具调用契约](/zh/tech/05-action/tool-calling)） | 见各章「资料库」段 | 多步、可恢复、需审批？→ [Agent 运行时](/zh/tech/06-agent-systems/agent-runtime) |
+| 需要自治循环的助手 | 层 4 · [Agent 运行时](/zh/tech/06-agent-systems/agent-runtime) | 见该章「资料库」段 | 上下文/记忆管理失控？→ [状态与记忆](/zh/tech/06-agent-systems/state-memory) |
+| 跨 host / 组织 / Agent 边界协作 | 层 4 · [协议地图](/zh/tech/07-interoperability/index) | 见该章「资料库」段 | 该选哪个协议？→ 按连接方向进 MCP / A2A / ACP / AG-UI 分章 |
+| 功能已跑但不可证明、不可运营 | 层 5 · [测试](/zh/tech/08-production/testing)、[可观测性](/zh/tech/08-production/observability) | 见各章「资料库」段 | 要不要上线门与评估证据？→ [评估（桥接）](/zh/tech/08-production/evaluation) |
+| token 成本高、延迟大 | 层 5 · [成本与性能](/zh/tech/08-production/cost-performance) | 见该章「资料库」段 | 优化到头了要不要小模型/端侧？→ [浏览器与端侧推理](/zh/tech/02-inference-interface/browser-edge) |
+| 要上线、要能回滚 | 层 5 · [部署与发布](/zh/tech/08-production/deployment) | 见该章「资料库」段 | 上线后谁负责盯？→ [可观测性](/zh/tech/08-production/observability) |
+| 权限、注入、数据安全 | 层 5 · [安全](/zh/tech/08-production/security) | 见该章「资料库」段 | 模型对齐层的行为异常？→ 外部 owner Learn LLM |
+| 想动模型权重（微调/对齐） | 附录 · [模型生命周期桥接](/zh/tech/01-model-lifecycle/post-training/index) | 见各桥接页「深层推导」段 | 推导与实现 → Learn LLM |
 
 各章「资料库」段提供四级阅读路线（Beginner → Builder → Operator → Researcher），资源均标注来源与 retrievedAt。
 
 ## 2. 外部知识 owner
 
-跨仓分工的完整论述见[站点边界与知识 ownership](/zh/tech/00-orientation/site-boundaries)；下表是检索视角的速查（retrievedAt: 2026-09-01）：
+跨仓分工的完整论述见[站点边界与知识 ownership](/zh/tech/00-map/site-boundaries)；下表是检索视角的速查（retrievedAt: 2026-09-01）：
 
 | Owner | 拥有（scope） | canonical URL | 何时去 |
 | --- | --- | --- | --- |
@@ -65,7 +65,7 @@ listed: true
 
 - [LangChain.js](https://js.langchain.com/) — 链/Agent 编排，生态最全
 - [LlamaIndex.ts](https://ts.llamaindex.ai/) — RAG 与数据接入特化
-- [Transformers.js](https://huggingface.co/docs/transformers.js) — 浏览器内机器学习（配合层 2 [端侧推理](/zh/tech/02-integration/browser-edge)）
+- [Transformers.js](https://huggingface.co/docs/transformers.js) — 浏览器内机器学习（配合层 2 [端侧推理](/zh/tech/02-inference-interface/browser-edge)）
 
 **向量数据库**（层 3 检索落地）：
 

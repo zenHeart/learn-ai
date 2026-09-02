@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: decide whether an agent should emit declarative components or sandboxed host HTML, and write a renderer skeleton with allowlist validation
-> **Prerequisites**: [MCP](mcp.md) ｜ [AG-UI](ag-ui.md) ｜ **Next**: [Protocol Watchlist](watchlist.md)
+> **Group**: Interoperability  |  **Previous group exit**: build a traceable retrieval chain with an update path  |  **This group exit**: decide whether an agent should emit declarative components or sandboxed host HTML, and write a renderer skeleton with allowlist validation
+> **Prerequisites**: [MCP](mcp.md)  |  [AG-UI](ag-ui.md)  |  **Next**: [Protocol Watchlist](watchlist.md)
 
 ## 1. Overview
 
@@ -70,11 +70,11 @@ MCP Apps is an extension document on modelcontextprotocol.io (not an independent
 | Host requirement | none | a renderer | an MCP host + sandbox | none |
 | Minimum complexity | lowest | catalog + renderer | MCP server + `ui://` resource | a whole app |
 
-### History milestones
+### Historical milestones
 
 The A2UI version line is in the table above (published on the a2ui.org homepage); release history for the MCP Apps extension is not shown on the retrieved page: unverified.
 
-### DoD self-check for this chapter
+### DoD self-check for this page
 
 - [ ] Run the §2 fixture (component validation + render mock, including negatives) within 15 minutes
 - [ ] State the trust-model difference between A2UI and MCP Apps (allowlist vs sandbox)

@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/02-integration/session-state'
+    - content: '0; url=/zh/tech/03-context/session-memory'
   - - link
     - rel: canonical
-    - href: /zh/tech/02-integration/session-state
+    - href: /zh/tech/03-context/session-memory
 ---
 
-本页已迁移到 [/zh/tech/02-integration/session-state](/zh/tech/02-integration/session-state).
+本页已迁移到 [/zh/tech/02-integration/session-state](/zh/tech/03-context/session-memory).

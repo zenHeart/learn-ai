@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/01-contracts/prompt'
+    - content: '0; url=/zh/tech/03-context/prompt'
   - - link
     - rel: canonical
-    - href: /zh/tech/01-contracts/prompt
+    - href: /zh/tech/03-context/prompt
 ---
 
-本页已迁移到 [/zh/tech/01-contracts/prompt](/zh/tech/01-contracts/prompt).
+本页已迁移到 [/zh/tech/01-contracts/prompt](/zh/tech/03-context/prompt).

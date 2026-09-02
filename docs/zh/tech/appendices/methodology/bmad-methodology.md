@@ -66,4 +66,4 @@ npx bmad-method install
 
 ## 与主线的关系
 
-BMAD 的「结构化规划 → 按 story 实施 → 代码评审门」与主线 [恢复与人工批准](../../04-action/agent-runtime/recovery-hitl)（审批点）、[测试](../../05-operations/testing)（质量门）同构；其 Agent 角色分工可对照 [多 Agent 系统](../../04-action/multi-agent) 阅读。作为框架选型时注意：它解决的是「流程结构化」，你的工程判断仍是决定性变量。
+BMAD 的「结构化规划 → 按 story 实施 → 代码评审门」与主线 [恢复与人工批准](/zh/tech/06-agent-systems/recovery-hitl)（审批点）、[测试](/zh/tech/08-production/testing)（质量门）同构；其 Agent 角色分工可对照 [多 Agent 系统](/zh/tech/06-agent-systems/multi-agent) 阅读。作为框架选型时注意：它解决的是「流程结构化」，你的工程判断仍是决定性变量。

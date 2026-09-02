@@ -18,8 +18,8 @@ listed: true
 
 # Streaming
 
-> **Group**: Inference & Interface ｜ **Previous group exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability ｜ **This topic exit**: can consume one model stream — accumulate chunks, cancel at any time, recognize interruption, and read the finish reason
-> **Prerequisites**: [Model API Contract](model-api.md) ｜ **Next**: [Session and State](../03-context/session-memory.md), [Generative UI](ui.md)
+> **Group**: Inference & Interface  |  **Previous group exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability  |  **This topic exit**: can consume one model stream — accumulate chunks, cancel at any time, recognize interruption, and read the finish reason
+> **Prerequisites**: [Model API Contract](model-api.md)  |  **Next**: [Session and State](../03-context/session-memory.md), [Generative UI](ui.md)
 
 ## 1. Overview
 

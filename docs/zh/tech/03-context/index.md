@@ -16,6 +16,7 @@ lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
+> **所在组**：Context 组（本组导览） ｜ **上一组出口**：接口契约与推理形态 ｜ **本组出口**：能按预算组装单轮上下文并管理跨轮记忆
 
 # Context 组：模型这一轮看到什么
 

@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本层出口**：能实现带 checkpoint 的多步流程——失败后从持久化状态恢复而不重做副作用，不可逆步骤前有人工批准节点
+> **所在组**：Agent 系统 ｜ **上一组出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本页出口**：能实现带 checkpoint 的多步流程——失败后从持久化状态恢复而不重做副作用，不可逆步骤前有人工批准节点
 > **前置**：[工具执行工程](../05-action/tool-execution.md) ｜ **下一步**：[Agent 运行时](agent-runtime.md)、[恢复与人工批准](recovery-hitl.md)、[可观测性](../08-production/observability)
 
 ## 1. 概述

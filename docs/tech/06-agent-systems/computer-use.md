@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a minimal agent loop and know how to install recovery and human approval ｜ **Exit of this layer**: you can decide whether an interface-automation need calls for an API, DOM automation, or Computer Use, and you can equip Computer Use with a sandbox, approval gates, and injection defenses
-> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [Multi-Agent Systems](multi-agent.md) · [Security](../08-production/security) · [A2A](../07-interoperability/a2a.md)
+> **Group**: Agent Systems  |  **Previous group exit**: you can build a minimal agent loop and know how to install recovery and human approval  |  **This group exit**: you can decide whether an interface-automation need calls for an API, DOM automation, or Computer Use, and you can equip Computer Use with a sandbox, approval gates, and injection defenses
+> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Tool Execution Engineering](../05-action/tool-execution.md)  |  **Next**: [Multi-Agent Systems](multi-agent.md) · [Security](../08-production/security) · [A2A](../07-interoperability/a2a.md)
 
 ## 1. Overview
 
@@ -62,7 +62,7 @@ Evaluate top-down: **each step down is forced**. Prove the two rows above infeas
 - Use: legacy systems with GUI-only surfaces; long-tail cross-application operations (form filling, verification, submission); as a **complement** to deterministic automation for structurally unstable parts.
 - Do not use: a stable API / DOM exists (see the decision table); precision and speed are required (the vendor itself documents high latency and wrong coordinates); unsupervised high-risk operations (payments, deletions, outbound sends must pass an [approval gate](recovery-hitl.md)).
 
-History milestones: Anthropic's computer use toolset is currently `computer_toolset_20260801` (17 member tools); earlier beta versions were `computer_20250124` and `computer_20251124` (per official docs, retrievedAt 2026-09-01). Earlier capability timelines are unverified; we do not fabricate them.
+Historical milestones: Anthropic's computer use toolset is currently `computer_toolset_20260801` (17 member tools); earlier beta versions were `computer_20250124` and `computer_20251124` (per official docs, retrievedAt 2026-09-01). Earlier capability timelines are unverified; we do not fabricate them.
 
 ## 2. Usage
 

@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/04-action/protocols/mcp'
+    - content: '0; url=/zh/tech/07-interoperability/mcp'
   - - link
     - rel: canonical
-    - href: /zh/tech/04-action/protocols/mcp
+    - href: /zh/tech/07-interoperability/mcp
 ---
 
-本页已迁移到 [/zh/tech/04-action/protocols/mcp](/zh/tech/04-action/protocols/mcp).
+本页已迁移到 [/zh/tech/04-action/protocols/mcp](/zh/tech/07-interoperability/mcp).

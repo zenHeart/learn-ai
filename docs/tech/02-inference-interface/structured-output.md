@@ -20,8 +20,8 @@ listed: true
 
 # Structured Output
 
-> **Group**: Inference & Interface ｜ **Previous group exit**: rewrite a vague request into a four-element, acceptance-testable prompt ｜ **This topic exit**: write a JSON Schema output contract, add a caller-side validation layer with failure retry, and know how the two failure classes (refusal and truncation) are accepted
-> **Prerequisites**: [prompt](../03-context/prompt) ｜ **Next**: [tool-calling](../05-action/tool-calling)
+> **Group**: Inference & Interface  |  **Previous group exit**: rewrite a vague request into a four-element, acceptance-testable prompt  |  **This topic exit**: write a JSON Schema output contract, add a caller-side validation layer with failure retry, and know how the two failure classes (refusal and truncation) are accepted
+> **Prerequisites**: [prompt](../03-context/prompt)  |  **Next**: [tool-calling](../05-action/tool-calling)
 
 ## 1. Overview
 
@@ -64,7 +64,7 @@ The two routes are not a binary choice but three guarantee tiers: prompt convent
 | **Trust domain** | Untrusted | Trust only "it is JSON" | Trust the shape, not the semantics |
 | **Minimum complexity** | Lowest, with uncontrolled failure rate | Low; officially marked as the legacy path (OpenAI recommends always using Structured Outputs instead of JSON mode) | Slightly higher (maintain a schema); the product default tier |
 
-**Version milestones** (all from official docs, retrieved 2026-09-01): OpenAI Structured Outputs supports `response_format: json_schema` from `gpt-4o-mini-2024-07-18` and `gpt-4o-2024-08-06` onward; Anthropic structured outputs has graduated from public beta (the parameter is `output_config.format`; the early beta header `structured-outputs-2025-11-13` and the old `output_format` parameter name no longer appear in the 2026-09-01 docs), covering Sonnet 4.5/4.6/5, Opus 4.5–4.8/5, Fable 5, Mythos 5, and Haiku 4.5. Any other adoption or timeline claims: unverified.
+**Historical milestones** (all from official docs, retrieved 2026-09-01): OpenAI Structured Outputs supports `response_format: json_schema` from `gpt-4o-mini-2024-07-18` and `gpt-4o-2024-08-06` onward; Anthropic structured outputs has graduated from public beta (the parameter is `output_config.format`; the early beta header `structured-outputs-2025-11-13` and the old `output_format` parameter name no longer appear in the 2026-09-01 docs), covering Sonnet 4.5/4.6/5, Opus 4.5–4.8/5, Fable 5, Mythos 5, and Haiku 4.5. Any other adoption or timeline claims: unverified.
 
 ## 2. Usage
 
@@ -322,10 +322,10 @@ The open-model ecosystem has its own constrained-decoding implementations ([outl
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | [JSON Schema getting started](https://json-schema.org/learn/getting-started-step-by-step) ｜ [OpenAI Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs) | Speak the schema language first (type/properties/required), then see how providers enforce it |
-| Builder | [Anthropic Structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) ｜ [Vercel AI SDK structured data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data) ｜ wire the fixture to a real provider after it passes | The two providers' parameter differences + the framework's unified entry |
-| Operator | [OpenAI's full supported-schema table](https://developers.openai.com/api/docs/guides/structured-outputs) (Supported schemas section) ｜ [Anthropic beta notes and compatibility](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) (Important considerations section) | The per-keyword checklist before launch; official semantics of refusal / truncation / 400 |
-| Researcher | [JSON Schema specification](https://json-schema.org/specification) ｜ [outlines](https://dottxt-ai.github.io/outlines/) ｜ [xgrammar](https://github.com/mlc-ai/xgrammar) ｜ Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory) | The spec source and open implementations of constrained decoding; why samplers can be grammar-bound |
+| Beginner | [JSON Schema getting started](https://json-schema.org/learn/getting-started-step-by-step)  |  [OpenAI Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs) | Speak the schema language first (type/properties/required), then see how providers enforce it |
+| Builder | [Anthropic Structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)  |  [Vercel AI SDK structured data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data)  |  wire the fixture to a real provider after it passes | The two providers' parameter differences + the framework's unified entry |
+| Operator | [OpenAI's full supported-schema table](https://developers.openai.com/api/docs/guides/structured-outputs) (Supported schemas section)  |  [Anthropic beta notes and compatibility](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) (Important considerations section) | The per-keyword checklist before launch; official semantics of refusal / truncation / 400 |
+| Researcher | [JSON Schema specification](https://json-schema.org/specification)  |  [outlines](https://dottxt-ai.github.io/outlines/)  |  [xgrammar](https://github.com/mlc-ai/xgrammar)  |  Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory) | The spec source and open implementations of constrained decoding; why samplers can be grammar-bound |
 
 ### Resource table
 

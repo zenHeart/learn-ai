@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/04-action/workflow'
+    - content: '0; url=/zh/tech/06-agent-systems/workflow'
   - - link
     - rel: canonical
-    - href: /zh/tech/04-action/workflow
+    - href: /zh/tech/06-agent-systems/workflow
 ---
 
-本页已迁移到 [/zh/tech/04-action/workflow](/zh/tech/04-action/workflow).
+本页已迁移到 [/zh/tech/04-action/workflow](/zh/tech/06-agent-systems/workflow).

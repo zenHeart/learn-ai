@@ -1,6 +1,6 @@
 ---
 title: Tool Execution Engineering
-description: "The tool calling contract only decides 'what the model wants to call'; this chapter decides 'how you execute it under control' — idempotency, timeouts, cancellation, side-effect tiers, least privilege, and human approval: the key bridge from Tool Calling to Safe Agent."
+description: "The tool calling contract only decides 'what the model wants to call'; this page decides 'how you execute it under control' — idempotency, timeouts, cancellation, side-effect tiers, least privilege, and human approval: the key bridge from Tool Calling to Safe Agent."
 domain: tech
 tags: [tech, action, tools, reliability]
 navOrder: 51
@@ -18,12 +18,12 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: 5 · Action (writing the world) ｜ **Previous group exit**: define and validate the tool calling contract (schema, whitelist, argument validation, result return — [Tool Calling Contract](../05-action/tool-calling)) ｜ **This page exit**: you can put a single model-initiated action into a controlled executor that can deny, time out, cancel, and deduplicate
-> **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling), [Structured Output](../02-inference-interface/structured-output) ｜ **Next**: [Workflow Patterns](../06-agent-systems/workflow.md), [Recovery and Human-in-the-Loop](../06-agent-systems/recovery-hitl.md), [Security](../08-production/security)
+> **Group**: 5 · Action (writing the world)  |  **Previous group exit**: define and validate the tool calling contract (schema, whitelist, argument validation, result return — [Tool Calling Contract](../05-action/tool-calling))  |  **This page exit**: you can put a single model-initiated action into a controlled executor that can deny, time out, cancel, and deduplicate
+> **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling), [Structured Output](../02-inference-interface/structured-output)  |  **Next**: [Workflow Patterns](../06-agent-systems/workflow.md), [Recovery and Human-in-the-Loop](../06-agent-systems/recovery-hitl.md), [Security](../08-production/security)
 
 ## 1. Overview
 
-**BLUF**: the `tool_use` block a model returns is a *request*, not an execution. The [tool calling contract](../05-action/tool-calling) earlier in this group defines how the model expresses a call; this chapter defines how **your code executes it**. Any action that changes external state (writing files, sending requests, mutating a database) must pass five gates: **idempotency dedup → allowlist → argument validation → human approval → timeout and cancellation**. Miss any gate, and retries, network jitter, or model hallucinations turn into real-world side effects.
+**BLUF**: the `tool_use` block a model returns is a *request*, not an execution. The [tool calling contract](../05-action/tool-calling) earlier in this group defines how the model expresses a call; this page defines how **your code executes it**. Any action that changes external state (writing files, sending requests, mutating a database) must pass five gates: **idempotency dedup → allowlist → argument validation → human approval → timeout and cancellation**. Miss any gate, and retries, network jitter, or model hallucinations turn into real-world side effects.
 
 ### Mental model: the execution state machine
 
@@ -72,7 +72,7 @@ The key distinction: `denied` happens **before any side effect** (a policy rejec
 | `irreversible` | Cannot be undone | Idempotency key required; no auto-retry on failure | Delete data, outbound send |
 | `approval` | Irreversible and high blast radius | Human approval required before execution | Production release, money movement |
 
-History milestones: this chapter consolidates the old "Advanced Tool Use" page (a repository archive of an Anthropic engineering post); model-side features (tool search, programmatic calling, call examples) moved to the relevant protocol chapters — this page keeps only the **execution-side** invariants. Earlier timelines unverified; not fabricated.
+Historical milestones: this page consolidates the old "Advanced Tool Use" page (a repository archive of an Anthropic engineering post); model-side features (tool search, programmatic calling, call examples) moved to the relevant protocol chapters — this page keeps only the **execution-side** invariants. Earlier timelines unverified; not fabricated.
 
 ## 2. Usage
 
@@ -369,7 +369,7 @@ Gate order matters: **cheap, deterministic gates first**. Idempotency dedup and 
 
 ### Split of duties within the group: contract vs execution
 
-The [tool calling contract](../05-action/tool-calling) answers how the model **expresses** a call (schema, selection, validation); this chapter answers how the system **executes** it. The contract layer validates **around the model call**; the execution layer validates **before touching the world** — the former stops the model from misspeaking, the latter stops the mistake from happening.
+The [tool calling contract](../05-action/tool-calling) answers how the model **expresses** a call (schema, selection, validation); this page answers how the system **executes** it. The contract layer validates **around the model call**; the execution layer validates **before touching the world** — the former stops the model from misspeaking, the latter stops the mistake from happening.
 
 ## 4. Development
 

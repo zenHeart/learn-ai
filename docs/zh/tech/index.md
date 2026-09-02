@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **在哪一层**：层 0 · 方向与边界 ｜ **上一层出口**：无 ｜ **本层出口**：能定位问题域、说出它的依赖与出口，并进入正确的组
+> **所在组**：层 0 · 方向与边界 ｜ **上一组出口**：无 ｜ **本页出口**：能定位问题域、说出它的依赖与出口，并进入正确的组
 > **前置**：无（全站入口） ｜ **下一步**：[复杂度决策阶梯](00-map/complexity-ladder) · [站点边界与知识 ownership](00-map/site-boundaries) · [模型生命周期（桥接）](01-model-lifecycle/)
 
 ## 1. 概述
@@ -26,7 +26,7 @@ listed: true
 **结论先讲**：这是一张**依赖驱动的知识地图**。v6 的组织逻辑不是「按技术名词分类」，而是回答三个结构性问题：
 
 1. **两条链在哪汇合**——模型生命周期链（数据 → 预训练 → 后训练）与 AI 系统工程链（接入 → 上下文 → 接地/行动 → …）在 **Inference** 处汇合：你写的每一行 AI 应用代码都从左链的末端开始。左链的深层原理归 [Learn LLM](https://llm.zenheart.site/)，右链是本仓 canonical 主线。
-2. **读世界与写世界为什么分开**——Grounding（检索、引用、更新）与 Action（工具、执行、权限）都是「让模型接触模型之外的东西」，但失败模式相反：读的失败是**答错**，写的失败是**搞坏**。验收口径因此不同（引用正确 vs 权限受限），分组成 [04-grounding](04-grounding/) 与 [05-action](05-action/tool-calling)。
+2. **读世界与写世界为什么分开**——Grounding（检索、引用、更新）与 Action（工具、执行、权限）都是「让模型接触模型之外的东西」，但失败模式相反：读的失败是**答错**，写的失败是**搞坏**。验收口径因此不同（引用正确 vs 权限受限），分组成 [04-grounding](04-grounding/) 与 [05-action](05-action/)。
 3. **协议为什么按连接方向分组**——MCP、A2A、ACP、AG-UI 不是竞品而是各占一条连接方向（Agent↔工具、Agent↔Agent、编辑器↔coding agent、Agent↔UI）。选型第一问是「我要连的两边是什么」，不是「哪个协议更热」——见 [07-interoperability](07-interoperability/)。
 
 这张地图回答一个问题：**你现在卡在哪，下一步去哪。** 它不教你任何单项技术——每个组、每个主题都有自己的五段式章节（概述 → 使用 → 原理 → 开发 → 资料库）。
@@ -66,11 +66,11 @@ flowchart TB
 | [02-inference-interface](02-inference-interface/) 推理与接口 | 怎么把一次模型调用接进产品？ | model-api、流式、结构化输出、会话与 UI、端侧 | 00–01 | 可取消、可观测的端到端交互 |
 | [03-context](03-context/) 上下文 | 怎么让输入输出可控？ | prompt、上下文工程、会话记忆 | 02 | 能写并验证 schema，知道失败验收 |
 | [04-grounding](04-grounding/) 知识接地（读世界） | 回答怎么有据？ | 嵌入与检索、RAG、高级检索 | 02–03 | 可追溯的检索链与可重跑的更新管道 |
-| [05-action](05-action/tool-calling) 行动（写世界） | 怎么安全地执行动作？ | 工具调用契约、工具执行工程 | 03 | 权限受限、幂等且可撤销的动作 |
-| [06-agent-systems](06-agent-systems/agent-runtime) Agent 系统 | 多步、可恢复、需审批的自主行为怎么做？ | 运行时、工作流、多 Agent、skills、状态与恢复 | 04–05 | 能限制权限、暂停/恢复任务 |
+| [05-action](05-action/) 行动（写世界） | 怎么安全地执行动作？ | 工具调用契约、工具执行工程 | 03 | 权限受限、幂等且可撤销的动作 |
+| [06-agent-systems](06-agent-systems/) Agent 系统 | 多步、可恢复、需审批的自主行为怎么做？ | 运行时、工作流、多 Agent、skills、状态与恢复 | 04–05 | 能限制权限、暂停/恢复任务 |
 | [07-interoperability](07-interoperability/) 互操作 | 跨边界怎么连？ | MCP / A2A / ACP / AG-UI 按连接方向 | 05–06 | 按连接方向选协议并说清不选其余的理由 |
 | [08-production](08-production/) 生产与运营 | 怎么证明可上线并持续运行？ | 测试、评估、可观测、安全、成本、部署、版本轴 | 02–06 | 五类证据齐备，五轴可回滚可追溯 |
-| [09-advanced](09-advanced/interpretability) 进阶（桥接） | 深水区去哪学？ | 可解释性、推理与 TTC、MoE 与前沿架构、多模态 | 按需 | 知道停止点与跳转 Learn LLM 的章节 |
+| [09-advanced](09-advanced/) 进阶（桥接） | 深水区去哪学？ | 可解释性、推理与 TTC、MoE 与前沿架构、多模态 | 按需 | 知道停止点与跳转 Learn LLM 的章节 |
 | [附录区](appendices/) | 还有什么可读？ | 训练桥接、案例、课程笔记、方法论存档 | 不参与主线顺序 | 主线之外的有位置阅读 |
 | [实战手册](../cookbook/) | 按任务抄什么？ | 片段级代码配方 | 各组 | 打开就能抄 |
 | [资料库](../resources.md) | 按问题找什么资源？ | 症状 → 章 → 资源的研究索引 | 各组 | 带着问题进来，带着下一问出去 |
@@ -84,10 +84,10 @@ flowchart TB
 | 输出不稳定 / 无法解析 | [03-context](03-context/)（落点：[结构化输出](02-inference-interface/structured-output)） |
 | 回答稳定，但还没接入产品 | [02-inference-interface](02-inference-interface/) |
 | 回答缺少私有或最新事实 | [04-grounding](04-grounding/) |
-| 需要调用系统或执行动作 | [05-action](05-action/tool-calling)；多步/可恢复/需审批再进 [06-agent-systems](06-agent-systems/agent-runtime) |
+| 需要调用系统或执行动作 | [05-action](05-action/)；多步/可恢复/需审批再进 [06-agent-systems](06-agent-systems/) |
 | 需要跨 host / 组织 / Agent 边界协作 | [07-interoperability](07-interoperability/)（按连接方向选择） |
 | 功能已跑，但不可证明 / 不可运营 | [08-production](08-production/) |
-| 想懂模型内部 / 训练 / 前沿架构 | [01-model-lifecycle](01-model-lifecycle/) 与 [09-advanced](09-advanced/interpretability)（桥接 → Learn LLM） |
+| 想懂模型内部 / 训练 / 前沿架构 | [01-model-lifecycle](01-model-lifecycle/) 与 [09-advanced](09-advanced/)（桥接 → Learn LLM） |
 
 ### 本仓不教什么（三条边界）
 
@@ -125,8 +125,8 @@ flowchart TB
 ### 演练 3：想让系统动手
 
 - **症状**：「想让 Agent 自动把处理完的工单标记为已解决，怕它改错。」
-- **第 1 跳**：决策树 → 「需要调用系统或执行动作」→ [05-action](05-action/tool-calling)。
-- **第 2 跳**：单次受控动作看[工具执行工程](05-action/tool-execution)；确认要多步、可恢复、需审批再进 [Agent 运行时](06-agent-systems/agent-runtime)。
+- **第 1 跳**：决策树 → 「需要调用系统或执行动作」→ [05-action](05-action/)。
+- **第 2 跳**：单次受控动作看[工具执行工程](05-action/tool-execution)；确认要多步、可恢复、需审批再进 [Agent 运行时](06-agent-systems/)。
 - **到达**：能限制权限、把动作做成幂等且可撤销（写世界：验收口径是权限受限，不是引用正确）。
 
 三步都走不通时：先读[复杂度决策阶梯](00-map/complexity-ladder)确认你面对的需求等级，再回决策树。
@@ -179,7 +179,7 @@ Grounding 与 Action 共享「让模型接触外部世界」这个直觉，但�
 - **Beginner**：读本页 + [复杂度决策阶梯](00-map/complexity-ladder)，能定位自己的组。
 - **Builder**：进 [03-context](03-context/)、[02-inference-interface](02-inference-interface/)，完成第一个无密钥 fixture。
 - **Operator**：进 [08-production](08-production/)，学会用证据与版本轴证明可上线。
-- **Researcher**：下沉到 sibling 站点拿深层原理（[01](01-model-lifecycle/)、[09](09-advanced/interpretability) 的桥接页是入口）。
+- **Researcher**：下沉到 sibling 站点拿深层原理（[01](01-model-lifecycle/)、[09](09-advanced/) 的桥接页是入口）。
 
 ### 三站入口表
 
@@ -196,7 +196,7 @@ Grounding 与 Action 共享「让模型接触外部世界」这个直觉，但�
 
 - 若你发现某个症状在决策树上找不到分支，或某分支把你带进了错误的组——这是地图缺陷，优先修地图而不是绕过。
 - 未决：sites-epub 当前 HTTPS 不可达（证书不匹配），其所有权声明暂按 bridge-register 记录，待恢复后复核。
-- 未决：[05-action](05-action/tool-calling)、[06-agent-systems](06-agent-systems/agent-runtime) 的组索引在 v6 迁移期间由并行任务补齐；在本页引用以组目录为准。
+- 未决：[05-action](05-action/)、[06-agent-systems](06-agent-systems/) 的组索引在 v6 迁移期间由并行任务补齐；在本页引用以组目录为准。
 
 ### learn-ai 到此为止 / 继续去哪
 

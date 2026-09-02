@@ -931,6 +931,33 @@
       "title": {},
       "mergeSources": [],
       "notes": "Wave A v6 新页"
+    },
+    {
+      "topicId": "action-guide",
+      "layer": "5",
+      "slug": "index",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "v6 组导览（评审补齐）"
+    },
+    {
+      "topicId": "agent-systems-guide",
+      "layer": "6",
+      "slug": "index",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "v6 组导览（评审补齐）"
+    },
+    {
+      "topicId": "advanced-guide",
+      "layer": "9",
+      "slug": "index",
+      "status": "canonical",
+      "title": {},
+      "mergeSources": [],
+      "notes": "v6 组导览（评审补齐）"
     }
   ],
   "productsMoves": [

@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/02-integration/ui'
+    - content: '0; url=/zh/tech/02-inference-interface/ui'
   - - link
     - rel: canonical
-    - href: /zh/tech/02-integration/ui
+    - href: /zh/tech/02-inference-interface/ui
 ---
 
-本页已迁移到 [/zh/tech/02-integration/ui](/zh/tech/02-integration/ui).
+本页已迁移到 [/zh/tech/02-integration/ui](/zh/tech/02-inference-interface/ui).

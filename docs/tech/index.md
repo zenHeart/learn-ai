@@ -18,15 +18,15 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 0 · Orientation and Boundaries ｜ **Previous layer exit**: none ｜ **This layer exit**: can locate the problem domain, state its dependencies and exits, and enter the right group
-> **Prerequisites**: none (site entry) ｜ **Next**: [Complexity Decision Ladder](00-map/complexity-ladder) · [Site Boundaries and Knowledge Ownership](00-map/site-boundaries) · [Model Lifecycle (Bridge)](01-model-lifecycle/)
+> **Group**: 0 · Orientation and Boundaries  |  **Previous layer exit**: none  |  **This page exit**: can locate the problem domain, state its dependencies and exits, and enter the right group
+> **Prerequisites**: none (site entry)  |  **Next**: [Complexity Decision Ladder](00-map/complexity-ladder) · [Site Boundaries and Knowledge Ownership](00-map/site-boundaries) · [Model Lifecycle (Bridge)](01-model-lifecycle/)
 
 ## 1. Overview
 
 **BLUF**: this is a **dependency-driven knowledge map**. The v6 organizing logic is not "classify by technology noun" but three structural questions:
 
 1. **Where the two chains converge** — the model-lifecycle chain (data → pretraining → post-training) and the AI systems-engineering chain (integration → context → grounding/action → …) converge at **Inference**: every line of AI application code you write starts from the left chain's end. The left chain's deep internals belong to [Learn LLM](https://llm.zenheart.site/); the right chain is this repo's canonical spine.
-2. **Why reading the world and writing the world are separated** — Grounding (retrieval, citation, updates) and Action (tools, execution, permissions) both "connect the model to things outside the model", but their failure modes are opposite: a read fails by **answering wrongly**; a write fails by **breaking things**. The acceptance criteria differ accordingly (correct citations vs restricted permissions), which splits them into [04-grounding](04-grounding/) and [05-action](05-action/tool-calling).
+2. **Why reading the world and writing the world are separated** — Grounding (retrieval, citation, updates) and Action (tools, execution, permissions) both "connect the model to things outside the model", but their failure modes are opposite: a read fails by **answering wrongly**; a write fails by **breaking things**. The acceptance criteria differ accordingly (correct citations vs restricted permissions), which splits them into [04-grounding](04-grounding/) and [05-action](05-action/).
 3. **Why protocols are grouped by connection direction** — MCP, A2A, ACP, and AG-UI are not competitors; each owns one connection direction (Agent↔tools, Agent↔Agent, editor↔coding agent, Agent↔UI). The first selection question is "what are the two sides I'm connecting", not "which protocol is hotter" — see [07-interoperability](07-interoperability/).
 
 This map answers one question: **where you are stuck right now, and where to go next.** It teaches no individual technology — every group and topic has its own five-part chapter (Overview → Usage → Principles → Development → Resource Library).
@@ -66,11 +66,11 @@ Groups appear in group-number order (00 → 09), with the three off-spine exits 
 | [02-inference-interface](02-inference-interface/) Inference & Interface | How do I wire a model call into a product? | model-api, streaming, structured output, session & UI, edge | 00–01 | a cancellable, observable end-to-end interaction |
 | [03-context](03-context/) Context | How do I make input and output controllable? | prompts, context engineering, session memory | 02 | can write and validate schemas; knows how failure is accepted |
 | [04-grounding](04-grounding/) Grounding (reading the world) | How do answers get evidence? | embeddings & retrieval, RAG, advanced retrieval | 02–03 | a traceable retrieval chain and a re-runnable update pipeline |
-| [05-action](05-action/tool-calling) Action (writing the world) | How do I execute actions safely? | tool-calling contract, tool execution | 03 | permission-restricted, idempotent, reversible actions |
-| [06-agent-systems](06-agent-systems/agent-runtime) Agent Systems | How do I build multi-step, recoverable, approval-gated autonomy? | runtime, workflows, multi-agent, skills, state & recovery | 04–05 | can restrict permissions, pause/resume tasks |
+| [05-action](05-action/) Action (writing the world) | How do I execute actions safely? | tool-calling contract, tool execution | 03 | permission-restricted, idempotent, reversible actions |
+| [06-agent-systems](06-agent-systems/) Agent Systems | How do I build multi-step, recoverable, approval-gated autonomy? | runtime, workflows, multi-agent, skills, state & recovery | 04–05 | can restrict permissions, pause/resume tasks |
 | [07-interoperability](07-interoperability/) Interoperability | How do I connect across boundaries? | MCP / A2A / ACP / AG-UI by connection direction | 05–06 | can pick a protocol by connection direction and justify rejecting the rest |
 | [08-production](08-production/) Production | How do I prove it can launch and keep running? | testing, evaluation, observability, security, cost, deployment, version axes | 02–06 | five kinds of evidence; five rollback-able, traceable axes |
-| [09-advanced](09-advanced/interpretability) Advanced (bridge) | Where do I learn the deep water? | interpretability, reasoning & TTC, MoE & frontier architectures, multimodal | as needed | knows the stopping points and which Learn LLM chapter to jump to |
+| [09-advanced](09-advanced/) Advanced (bridge) | Where do I learn the deep water? | interpretability, reasoning & TTC, MoE & frontier architectures, multimodal | as needed | knows the stopping points and which Learn LLM chapter to jump to |
 | [Appendices](appendices/) | What else is there to read? | training bridges, cases, course notes, methodology archive | outside the spine | off-spine reading with a home |
 | [Recipes](../cookbook/) | What can I copy for this task? | snippet-level code recipes | all groups | open and copy |
 | [Resource Library](../resources.md) | Which resource for which problem? | a research index of symptom → chapter → resource | all groups | arrive with a question, leave with the next question |
@@ -84,10 +84,10 @@ Start from symptoms, not nouns. Find your symptom and enter the matching group:
 | Output is unstable / unparseable | [03-context](03-context/) (landing point: [structured output](02-inference-interface/structured-output)) |
 | Answers are stable but not yet integrated into a product | [02-inference-interface](02-inference-interface/) |
 | Answers lack private or fresh facts | [04-grounding](04-grounding/) |
-| Need to call systems or execute actions | [05-action](05-action/tool-calling); multi-step / recoverable / approval-gated → then [06-agent-systems](06-agent-systems/agent-runtime) |
+| Need to call systems or execute actions | [05-action](05-action/); multi-step / recoverable / approval-gated → then [06-agent-systems](06-agent-systems/) |
 | Need to collaborate across host / org / agent boundaries | [07-interoperability](07-interoperability/) (pick by connection direction) |
 | Feature runs, but cannot be proven / operated | [08-production](08-production/) |
-| Want to understand model internals / training / frontier architectures | [01-model-lifecycle](01-model-lifecycle/) and [09-advanced](09-advanced/interpretability) (bridges → Learn LLM) |
+| Want to understand model internals / training / frontier architectures | [01-model-lifecycle](01-model-lifecycle/) and [09-advanced](09-advanced/) (bridges → Learn LLM) |
 
 ### What this repo does not teach (three boundaries)
 
@@ -125,8 +125,8 @@ This is a map page and produces no runnable artifact; "usage" = navigation drill
 ### Drill 3: wanting the system to act
 
 - **Symptom**: "I want the agent to auto-resolve finished tickets, but I'm afraid it will change the wrong thing."
-- **Hop 1**: decision tree → "need to call systems or execute actions" → [05-action](05-action/tool-calling).
-- **Hop 2**: single controlled actions → [tool execution](05-action/tool-execution); multi-step / recoverable / approval-gated → [Agent Runtime](06-agent-systems/agent-runtime).
+- **Hop 1**: decision tree → "need to call systems or execute actions" → [05-action](05-action/).
+- **Hop 2**: single controlled actions → [tool execution](05-action/tool-execution); multi-step / recoverable / approval-gated → [Agent Runtime](06-agent-systems/).
 - **Arrival**: you can restrict permissions and make actions idempotent and reversible (writing the world: the acceptance criterion is restricted permissions, not correct citations).
 
 If none of the three works: read the [Complexity Decision Ladder](00-map/complexity-ladder) to pin down your requirement level, then return to the decision tree.
@@ -179,7 +179,7 @@ This is an entry page; resources are "next hops". Four levels:
 - **Beginner**: read this page + the [Complexity Decision Ladder](00-map/complexity-ladder); locate your group.
 - **Builder**: enter [03-context](03-context/) and [02-inference-interface](02-inference-interface/); finish your first key-free fixture.
 - **Operator**: enter [08-production](08-production/); learn to prove launch-readiness with evidence and version axes.
-- **Researcher**: descend to sibling sites for deep internals (the bridge pages of [01](01-model-lifecycle/) and [09](09-advanced/interpretability) are the entrances).
+- **Researcher**: descend to sibling sites for deep internals (the bridge pages of [01](01-model-lifecycle/) and [09](09-advanced/) are the entrances).
 
 ### Three-station entry table
 
@@ -196,7 +196,7 @@ Division of labor, stopping points, and bridge metadata conventions: see [Site B
 
 - If a symptom finds no branch on the decision tree, or a branch delivers you to the wrong group — that is a map defect; fix the map first rather than routing around it.
 - Open: sites-epub is currently unreachable over HTTPS (certificate mismatch); its ownership claim stands as recorded in bridge-register pending restoration.
-- Open: the group indexes of [05-action](05-action/tool-calling) and [06-agent-systems](06-agent-systems/agent-runtime) are being filled in by parallel tasks during the v6 migration; references here follow the group directories.
+- Open: the group indexes of [05-action](05-action/) and [06-agent-systems](06-agent-systems/) are being filled in by parallel tasks during the v6 migration; references here follow the group directories.
 
 ### Where learn-ai stops / where to go next
 

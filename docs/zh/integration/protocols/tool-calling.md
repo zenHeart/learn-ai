@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/01-contracts/tool-calling'
+    - content: '0; url=/zh/tech/05-action/tool-calling'
   - - link
     - rel: canonical
-    - href: /zh/tech/01-contracts/tool-calling
+    - href: /zh/tech/05-action/tool-calling
 ---
 
-本页已迁移到 [/zh/tech/01-contracts/tool-calling](/zh/tech/01-contracts/tool-calling).
+本页已迁移到 [/zh/tech/01-contracts/tool-calling](/zh/tech/05-action/tool-calling).

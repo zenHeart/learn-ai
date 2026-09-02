@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can write deterministic tests for a probabilistic system and state which problems belong to evaluation
-> **Prerequisites**: [Structured Output](../02-inference-interface/structured-output), [Tool Execution Engineering](../05-action/tool-execution) ｜ **Next**: [Evaluation (Bridge)](evaluation.md) (probabilistic quality), [Observability](observability.md) (production evidence)
+> **Group**: Production  |  **Previous group exit**: can restrict permissions, pause/resume tasks  |  **This group exit**: can write deterministic tests for a probabilistic system and state which problems belong to evaluation
+> **Prerequisites**: [Structured Output](../02-inference-interface/structured-output), [Tool Execution Engineering](../05-action/tool-execution)  |  **Next**: [Evaluation (Bridge)](evaluation.md) (probabilistic quality), [Observability](observability.md) (production evidence)
 
 ## 1. Overview
 

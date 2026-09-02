@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/04-action/agent-runtime/design-patterns'
+    - content: '0; url=/zh/tech/06-agent-systems/design-patterns'
   - - link
     - rel: canonical
-    - href: /zh/tech/04-action/agent-runtime/design-patterns
+    - href: /zh/tech/06-agent-systems/design-patterns
 ---
 
-本页已迁移到 [/zh/tech/04-action/agent-runtime/design-patterns](/zh/tech/04-action/agent-runtime/design-patterns).
+本页已迁移到 [/zh/tech/04-action/agent-runtime/design-patterns](/zh/tech/06-agent-systems/design-patterns).

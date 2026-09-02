@@ -16,6 +16,7 @@ lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
+> **Group**: Advanced (bridge) | **Previous group exit**: run long-term with release gates and versioning | **This page exit**: know which engineering decision this topic affects, and when to go to Learn LLM
 
 # MoE and Frontier Architectures (Bridge)
 

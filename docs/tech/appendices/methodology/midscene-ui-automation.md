@@ -15,7 +15,7 @@ listed: true
 
 # Midscene：视觉驱动的 UI 自动化
 
-> 来源：https://midscenejs.com/zh/ ｜ 开源项目：https://github.com/web-infra-dev/midscene
+> 来源：https://midscenejs.com/zh/  |  开源项目：https://github.com/web-infra-dev/midscene
 
 ## 核心要点
 
@@ -26,4 +26,4 @@ listed: true
 5. **任意界面视觉建模**：突破传统 DOM 限制，支持无结构界面的自动化控制
 6. **报告与 Playground**：可视化回溯自动化流程，方便调试和结果分析
 
-主线关联：UI 自动化在测试体系中的位置见[测试](../../05-operations/testing)（确定性测试优先）；MCP Server 的契约与安全边界见 [MCP](../../04-action/protocols/mcp)。
+主线关联：UI 自动化在测试体系中的位置见[测试](/tech/08-production/testing)（确定性测试优先）；MCP Server 的契约与安全边界见 [MCP](/tech/07-interoperability/mcp)。

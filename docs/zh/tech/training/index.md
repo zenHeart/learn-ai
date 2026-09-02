@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/00-orientation/model-lifecycle-bridge'
+    - content: '0; url=/zh/tech/01-model-lifecycle/index'
   - - link
     - rel: canonical
-    - href: /zh/tech/00-orientation/model-lifecycle-bridge
+    - href: /zh/tech/01-model-lifecycle/index
 ---
 
-本页已迁移到 [/zh/tech/00-orientation/model-lifecycle-bridge](/zh/tech/00-orientation/model-lifecycle-bridge).
+本页已迁移到 [/zh/tech/00-orientation/model-lifecycle-bridge](/zh/tech/01-model-lifecycle/index).

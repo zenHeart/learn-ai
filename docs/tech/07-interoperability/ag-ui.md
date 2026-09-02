@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Interoperability ｜ **Previous group exit**: build a traceable retrieval chain with an update path ｜ **This group exit**: consume an agent backend's event stream in a frontend and reconcile state correctly, and know how it divides labor with "raw SSE" and A2UI
-> **Prerequisites**: [Protocol Map](index.md) ｜ **Next**: [A2UI and MCP Apps](a2ui-mcp-apps.md)
+> **Group**: Interoperability  |  **Previous group exit**: build a traceable retrieval chain with an update path  |  **This group exit**: consume an agent backend's event stream in a frontend and reconcile state correctly, and know how it divides labor with "raw SSE" and A2UI
+> **Prerequisites**: [Protocol Map](index.md)  |  **Next**: [A2UI and MCP Apps](a2ui-mcp-apps.md)
 
 ## 1. Overview
 
@@ -79,11 +79,11 @@ Every event extends `BaseEvent`: `type` (always), optional `timestamp`, `rawEven
 | Interrupt/resume | homegrown | a Run ends with an interrupt outcome; a new Run carries `resume[]` answers |
 | Frontend cost | rewrite the parser per backend | implement once, connect to any compatible backend |
 
-### History milestones
+### Historical milestones
 
 The official docs carry no protocol version number (retrieved 2026-09-01); event types and semantics such as `RunFinished.outcome` and `resume` follow the current docs.ag-ui.com pages, with unfinalized changes published under `drafts/`. Earlier history and release dates: unverified.
 
-### DoD self-check for this chapter
+### DoD self-check for this page
 
 - [ ] Run the §2 fixture (SSE mock + state-reconciling client) within 15 minutes
 - [ ] State the difference in application rules between SNAPSHOT and Delta

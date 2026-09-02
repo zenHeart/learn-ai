@@ -18,8 +18,8 @@ listed: true
 
 # Browser and Edge Inference
 
-> **Group**: Inference & Interface ｜ **Previous group exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability ｜ **This topic exit**: can decide whether to go on-device, pick the right runtime library, and design an access chain with fallback
-> **Prerequisites**: [Model API Contract](model-api.md) ｜ **Next**: [Embeddings and Retrieval](../04-grounding/embeddings-retrieval), [Cost and Performance](../08-production/cost-performance)
+> **Group**: Inference & Interface  |  **Previous group exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability  |  **This topic exit**: can decide whether to go on-device, pick the right runtime library, and design an access chain with fallback
+> **Prerequisites**: [Model API Contract](model-api.md)  |  **Next**: [Embeddings and Retrieval](../04-grounding/embeddings-retrieval), [Cost and Performance](../08-production/cost-performance)
 
 ## 1. Overview
 

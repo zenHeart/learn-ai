@@ -18,8 +18,8 @@ listed: true
 
 # Generative UI
 
-> **Group**: Inference & Interface ｜ **Previous group exit**: can consume one model stream — accumulate chunks, cancel at any time, recognize interruption, and read the finish reason ｜ **This topic exit**: can render model output as whitelisted components — streamed, schema-validated, with untrusted content rejected
-> **Prerequisites**: [Structured Output](../02-inference-interface/structured-output), [Streaming](streaming.md) ｜ **Next**: [AG-UI Protocol](../07-interoperability/ag-ui), [A2UI and MCP Apps](../07-interoperability/a2ui-mcp-apps)
+> **Group**: Inference & Interface  |  **Previous group exit**: can consume one model stream — accumulate chunks, cancel at any time, recognize interruption, and read the finish reason  |  **This topic exit**: can render model output as whitelisted components — streamed, schema-validated, with untrusted content rejected
+> **Prerequisites**: [Structured Output](../02-inference-interface/structured-output), [Streaming](streaming.md)  |  **Next**: [AG-UI Protocol](../07-interoperability/ag-ui), [A2UI and MCP Apps](../07-interoperability/a2ui-mcp-apps)
 
 ## 1. Overview
 

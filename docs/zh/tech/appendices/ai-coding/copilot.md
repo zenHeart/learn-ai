@@ -15,7 +15,7 @@ listed: true
 
 # 附录 · Copilot 系统提示摘录
 
-> **路径位置**：附录。先读主线的 [提示词工程](../../01-contracts/prompt) 与 [上下文工程](../../01-contracts/context)（AGENTS.md 等项目上下文已并入该章）。下面是一个生产级编码助手的系统提示摘录，用来看别人怎么写角色、工具和禁止项，不要整段复制到自己的产品。
+> **路径位置**：附录。先读主线的 [提示词工程](/zh/tech/03-context/prompt) 与 [上下文工程](/zh/tech/03-context/context-engineering)（AGENTS.md 等项目上下文已并入该章）。下面是一个生产级编码助手的系统提示摘录，用来看别人怎么写角色、工具和禁止项，不要整段复制到自己的产品。
 
 你是一个 AI 编程助手。
 当被问及你的名字时，你必须回答 "GitHub Copilot"。

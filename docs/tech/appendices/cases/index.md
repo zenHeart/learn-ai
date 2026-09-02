@@ -33,12 +33,12 @@ Note: the case bodies below are Chinese-language digests of external sources (th
 
 | Case | Domain | Question it answers | Mainline layer |
 | --- | --- | --- | --- |
-| [Dewu: Claude Code Spec Coding](/zh/tech/appendices/cases/dewu-ai-implementation) | AI coding | How a spec system removes AI-coding uncertainty; where AI capability ends | L1 · L4 |
-| [Building Semantic Search](/zh/tech/appendices/cases/building-semantic-search) | Retrieval | Chunking, incremental indexing and vector retrieval on a content site | L3 |
-| [Alibaba incident-review agent](/zh/tech/appendices/cases/alibaba-incident-review-agent) | Agent eng | Multi-Agent + memory management + evaluation in production postmortems | L4 · L5 |
-| [AIOps general agent exploration](/zh/tech/appendices/cases/aiops-agent-exploration) | DevOps agent | Cloud-ifying IDE-bound AI with Prompt + ReAct + Docker sandbox | L4 |
+| [Dewu: Claude Code Spec Coding (zh)](/zh/tech/appendices/cases/dewu-ai-implementation) | AI coding | How a spec system removes AI-coding uncertainty; where AI capability ends | L1 · L4 |
+| [Building Semantic Search (zh)](/zh/tech/appendices/cases/building-semantic-search) | Retrieval | Chunking, incremental indexing and vector retrieval on a content site | L3 |
+| [Alibaba incident-review agent (zh)](/zh/tech/appendices/cases/alibaba-incident-review-agent) | Agent eng | Multi-Agent + memory management + evaluation in production postmortems | L4 · L5 |
+| [AIOps general agent exploration (zh)](/zh/tech/appendices/cases/aiops-agent-exploration) | DevOps agent | Cloud-ifying IDE-bound AI with Prompt + ReAct + Docker sandbox | L4 |
 
 ## Reading advice
 
 - Match cases to the layer you are studying on the mainline; do not read this area sequentially.
-- Effect numbers in cases are **single-case evidence**, not extrapolable benchmarks; for comparison methodology see [Evaluation (bridge)](../../05-operations/evaluation).
+- Effect numbers in cases are **single-case evidence**, not extrapolable benchmarks; for comparison methodology see [Evaluation (bridge)](/tech/08-production/evaluation).

@@ -15,6 +15,7 @@ externalOwners:
 lastVerified: "2026-09-01"
 listed: true
 ---
+> **Group**: Advanced (bridge) | **Previous group exit**: run long-term with release gates and versioning | **This page exit**: know which engineering decision this topic affects, and when to go to Learn LLM
 
 # Multimodal (Bridge)
 
@@ -35,7 +36,7 @@ Productization note: when the same image repeats across turns, use the Files API
 
 | Page | Status | Content | Language side |
 | --- | --- | --- | --- |
-| [Claude Vision capabilities](/zh/tech/appendices/multimodal/claude-vision-capabilities) | case | Claude vision integration details: image sources, limits, token math, prompting tips (figures per the official docs) | ZH only |
+| [Claude Vision capabilities (zh)](/zh/tech/09-advanced/multimodal-vision-case) | case | Claude vision integration details: image sources, limits, token math, prompting tips (figures per the official docs) | ZH only |
 
 ## When to go to Learn LLM
 

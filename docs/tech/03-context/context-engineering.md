@@ -21,8 +21,8 @@ listed: true
 
 # Context Engineering
 
-> **Group**: Context group ｜ **Previous group exit**: compute a request's token budget and trim without breaking pairs ｜ **This topic exit**: design multi-source context assembly — sources have priorities, eviction is visible, compaction and staleness have a method
-> **Prerequisites**: [Prompt Engineering](prompt.md), [Context Window](context-window.md) ｜ **Next**: [Session and State](session-memory.md), [Repo Context](repo-context.md)
+> **Group**: Context group  |  **Previous group exit**: compute a request's token budget and trim without breaking pairs  |  **This topic exit**: design multi-source context assembly — sources have priorities, eviction is visible, compaction and staleness have a method
+> **Prerequisites**: [Prompt Engineering](prompt.md), [Context Window](context-window.md)  |  **Next**: [Session and State](session-memory.md), [Repo Context](repo-context.md)
 
 ## 1. Overview
 
@@ -56,13 +56,13 @@ Two hard rules carry over from [context-window](context-window.md): the total pa
 | Source | Direction | Lifecycle | Trust domain | Min complexity | Failure mode |
 |---|---|---|---|---|---|
 | system / developer | Injected (fixed) | Versioned, long-lived | Code repo | Lowest | Duplicated with prompts, silently dropped |
-| This turn's user data | Injected (per turn) | One request | Caller | Lowest | Kneaded into the rules |
+| This turn's user data | Injected (per turn) | One request | Caller | Lowest | Blends into the rules |
 | Message history | Accumulated | Within session | Session state | Medium (needs trimming) | Over-window, tool pairs severed |
 | Retrieval (RAG / @file) | Pulled on demand | Per retrieval | Source freshness | Medium-high | Stale index, top-k noise |
 | Memory (profile / notes) | Read in | Cross-session | Memory store | Medium | An outdated profile misleads the turn |
 | Repo AGENTS.md | Injected (session start) | Evolves with repo | Repository | Low | Fake commands, becomes a second README (→ [repo-context](repo-context.md)) |
 
-**Version milestones**: vendors are productizing compaction (e.g. Anthropic has productized tool result clearing, retrieved 2026-09-01); exact fields and behavior follow the official docs — this page maintains no vendor timeline.
+**Historical milestones**: vendors are productizing compaction (e.g. Anthropic has productized tool result clearing, retrieved 2026-09-01); exact fields and behavior follow the official docs — this page maintains no vendor timeline.
 
 ## 2. Usage
 
@@ -311,10 +311,10 @@ The general anti-staleness rule: **every source has an invalidation condition** 
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | [Anthropic: Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) ｜ OpenAI guide's [context window section](https://developers.openai.com/api/docs/guides/prompt-engineering) | The official mental model and budget intuition |
-| Builder | This page's assembler fixture ｜ [Anthropic prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) | Multi-source filling in hand, then the payoff of I3 |
-| Operator | Both providers' prompt caching docs ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)) ｜ this page's R1-R3 runbooks | Post-launch operations: hit rate, staleness, compaction |
-| Researcher | [Chroma: Context Rot research](https://research.trychroma.com/context-rot) ｜ Learn LLM [Chapter 15 A5](https://llm.zenheart.site/chapters/15-prompt-memory) | Empirical decay and the four memory patterns |
+| Beginner | [Anthropic: Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)  |  OpenAI guide's [context window section](https://developers.openai.com/api/docs/guides/prompt-engineering) | The official mental model and budget intuition |
+| Builder | This page's assembler fixture  |  [Anthropic prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) | Multi-source filling in hand, then the payoff of I3 |
+| Operator | Both providers' prompt caching docs ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-caching))  |  this page's R1-R3 runbooks | Post-launch operations: hit rate, staleness, compaction |
+| Researcher | [Chroma: Context Rot research](https://research.trychroma.com/context-rot)  |  Learn LLM [Chapter 15 A5](https://llm.zenheart.site/chapters/15-prompt-memory) | Empirical decay and the four memory patterns |
 
 ### Resource table
 

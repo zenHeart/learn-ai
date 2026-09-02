@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本层出口**：能判断何时值得上多 agent，写出四要素委派契约，用 supervisor 拓扑委派专家并在路由失败时降级而不是崩溃
+> **所在组**：Agent 系统 ｜ **上一组出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本页出口**：能判断何时值得上多 agent，写出四要素委派契约，用 supervisor 拓扑委派专家并在路由失败时降级而不是崩溃
 > **前置**：[Agent 运行时](agent-runtime.md)、[工作流模式](workflow.md) ｜ **下一步**：[A2A](../07-interoperability/a2a.md)（跨边界才需要协议）、[可观测性](../08-production/observability)、[成本与性能](../08-production/cost-performance)
 
 ## 1. 概述

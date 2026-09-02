@@ -20,8 +20,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can identify the three risk layers and stop an injection negative with the combined defense of input filtering, permission boundaries, and output scanning
-> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution), [Agent Runtime](../06-agent-systems/agent-runtime) ｜ **Next**: [Deployment and Release](deployment.md) (secrets, audit, and human-approval landing points)
+> **Group**: Production  |  **Previous group exit**: can restrict permissions, pause/resume tasks  |  **This group exit**: can identify the three risk layers and stop an injection negative with the combined defense of input filtering, permission boundaries, and output scanning
+> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution), [Agent Runtime](../06-agent-systems/agent-runtime)  |  **Next**: [Deployment and Release](deployment.md) (secrets, audit, and human-approval landing points)
 
 ## 1. Overview
 
@@ -31,10 +31,13 @@ listed: true
 
 ```mermaid
 flowchart TB
-    U["user / external content"] --> G1["② application security (canonical)<br/>three defenses: input filter / permission boundary / output scanner<br/>(placed at the entry, before tools, and at the exit)"]
-    G1 --> M["① model alignment (bridge → Learn LLM)<br/>behavioral propensity when fooled"]
-    M --> G2["② tool execution boundary<br/>where the permission-boundary defense lands: allowlist · SSRF guard · timeouts"]
-    G2 --> G3["③ governance<br/>versioning · audit · human approval · tenant isolation"]
+    subgraph GOV["Governance: versioning · audit · human approval · tenant isolation (wraps the whole request path)"]
+        U["User / external content"] --> C1["Input filtering<br/>app security · line 1"]
+        C1 --> M["Model<br/>alignment tendencies → bridge to Learn LLM"]
+        M --> C2["Tool execution boundary<br/>allowlist · SSRF guards · timeouts · line 2"]
+        C2 --> C3["Output scanning<br/>app security · line 3"]
+        C3 --> OUT["Outcome / side effects"]
+    end
 ```
 
 Injection will happen (the 2026 OWASP edition opens with exactly this stance: stop trying to build a model that cannot be fooled; build the system so that when it is fooled, nothing important breaks); the defense is a layered combination, never a single point.

@@ -18,7 +18,7 @@ bilingualParity: exact
 listed: true
 ---
 
-> **所在组**：Agent 系统 ｜ **上一层出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本层出口**：能搭出带停止条件与预算的最小 Agent 循环，并知道状态、恢复、界面自动化各读哪页
+> **所在组**：Agent 系统 ｜ **上一组出口**（[行动组](../05-action/tool-calling)）：能安全执行单次工具调用 ｜ **本页出口**：能搭出带停止条件与预算的最小 Agent 循环，并知道状态、恢复、界面自动化各读哪页
 > **前置**：[工具调用契约](../05-action/tool-calling) · [工具执行工程](../05-action/tool-execution.md) · [工作流模式](workflow.md) ｜ **下一步**：[Agent 设计模式](design-patterns.md) · [Agent 状态与记忆](state-memory.md) · [恢复与人工批准](recovery-hitl.md) · [Computer Use](computer-use.md)
 
 ## 1. 概述

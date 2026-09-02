@@ -20,8 +20,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: 01 · Model Lifecycle (bridge group) ｜ **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group) ｜ **Exit of this page**: you can translate vendor-launch architecture terms (long context, MoE, cache pricing) into engineering variables of context length, inference cost, and input modality
-> **Prerequisites**: [The LLM Mental Model (Bridge)](llm-mental-model.md) ｜ **Next**: [Data, Pretraining, and Scaling (Bridge)](data-pretraining-scaling.md)
+> **Group**: 01 · Model Lifecycle (bridge group)  |  **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group)  |  **Exit of this page**: you can translate vendor-launch architecture terms (long context, MoE, cache pricing) into engineering variables of context length, inference cost, and input modality
+> **Prerequisites**: [The LLM Mental Model (Bridge)](llm-mental-model.md)  |  **Next**: [Data, Pretraining, and Scaling (Bridge)](data-pretraining-scaling.md)
 
 ## 1. Overview
 

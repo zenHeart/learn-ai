@@ -32,9 +32,9 @@ Note: the note bodies below are Chinese-language digests (they originate from th
 
 | Archive | Type | One-liner | Still-transferable part |
 | --- | --- | --- | --- |
-| [Vibe Coding philosophy](/zh/tech/appendices/methodology/vibe-coding-philosophy) | Paradigm | Describe goals in natural language; AI implements, you accept | Requirement-description and acceptance skills |
-| [BMAD Method](/zh/tech/appendices/methodology/bmad-methodology) | Agile framework | AI-driven four-phase agile development | Structured planning → story-by-story implementation |
+| [Vibe Coding philosophy (zh)](/zh/tech/appendices/methodology/vibe-coding-philosophy) | Paradigm | Describe goals in natural language; AI implements, you accept | Requirement-description and acceptance skills |
+| [BMAD Method (zh)](/zh/tech/appendices/methodology/bmad-methodology) | Agile framework | AI-driven four-phase agile development | Structured planning → story-by-story implementation |
 
 ## How to read
 
-Treat archives as historical evidence, not current norms: the mainline (e.g. [Workflow patterns](../../04-action/workflow), [Testing](../../05-operations/testing)) is the canonical set of current recommendations.
+Treat archives as historical evidence, not current norms: the mainline (e.g. [Workflow patterns](/tech/06-agent-systems/workflow), [Testing](/tech/08-production/testing)) is the canonical set of current recommendations.

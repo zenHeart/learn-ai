@@ -46,6 +46,6 @@ Hello Agents 是 DataWhale 出品的 Agent 教程，从零开始覆盖 Agent 概
 
 ## 与主线的关系
 
-本笔记的组件分解与 Memory 策略已展开为主线 [Agent 运行时](../../04-action/agent-runtime/)与 [Agent 状态与记忆](../../04-action/agent-runtime/state-memory)；本页保留为课程出处与入门路线索引。
+本笔记的组件分解与 Memory 策略已展开为主线 [Agent 运行时](/zh/tech/06-agent-systems/agent-runtime)与 [Agent 状态与记忆](/zh/tech/06-agent-systems/state-memory)；本页保留为课程出处与入门路线索引。
 
 > 注：本笔记基于 Hello Agents 教程大纲整理，具体内容请参考[官方教程](https://datawhalechina.github.io/hello-agents/#/)。

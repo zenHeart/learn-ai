@@ -23,11 +23,9 @@ listed: true
 
 | Section | One-liner | Status | Language side |
 | --- | --- | --- | --- |
-| [Model lifecycle bridges](./model-lifecycle/) | SFT / RLHF / PEFT decision bridges: when prompt and RAG are not enough and weights must move | bridge | EN + ZH |
 | [Case studies](./cases/) | SLS log assistant, golden dataset, testing cases and more real-world write-ups | case | some pages exist on one side only — see markers |
 | [Course notes](./course-notes/) | Agent Course and other external course/article notes | legacy | some pages exist on one side only — see markers |
 | [Methodology archive](./methodology/) | AI-assisted programming, workflow automation, n8n, Midscene archives | legacy | some pages exist on one side only — see markers |
-| [Multimodal (bridge)](./multimodal/) | Model-side multimodal theory bridges to Learn LLM; minimal application-side usage | bridge | EN + ZH |
 | [AI coding tool cases](./ai-coding/) | Cursor architecture and rules, Copilot system prompt excerpts | case | body on the ZH side |
 
 ## Reading advice

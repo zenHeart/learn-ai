@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/02-integration/model-api'
+    - content: '0; url=/zh/tech/02-inference-interface/model-api'
   - - link
     - rel: canonical
-    - href: /zh/tech/02-integration/model-api
+    - href: /zh/tech/02-inference-interface/model-api
 ---
 
-本页已迁移到 [/zh/tech/02-integration/model-api](/zh/tech/02-integration/model-api).
+本页已迁移到 [/zh/tech/02-integration/model-api](/zh/tech/02-inference-interface/model-api).

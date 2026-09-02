@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 0 · Orientation and Boundaries ｜ **Exit of the layer above**: none ｜ **Exit of this layer**: you can decide whether a piece of knowledge belongs here or at a sibling, and write a qualified bridge link
-> **Prerequisites**: [Tech Map](../index) ｜ **Next**: [Model Lifecycle (Bridge)](../01-model-lifecycle/index.md) — the first full demonstration of the rules on this page
+> **Group**: 0 · Orientation and Boundaries  |  **Previous group exit**: none  |  **This group exit**: you can decide whether a piece of knowledge belongs here or at a sibling, and write a qualified bridge link
+> **Prerequisites**: [Tech Map](../index)  |  **Next**: [Model Lifecycle (Bridge)](../01-model-lifecycle/index.md) — the first full demonstration of the rules on this page
 
 ## 1. Overview
 
@@ -59,7 +59,7 @@ flowchart LR
 | Trust domain | This repo's reputation | The sibling's canonical standing |
 | Lowest complexity | One bridge table + stop point | — |
 
-Version milestones: the four-site split was frozen in 2026-09 with Issue #116; previously the "Learn LLM chapter links" were scattered across pages, and this page consolidates them into the single ownership rule page.
+Historical milestones: the four-site split was frozen in 2026-09 with Issue #116; previously the "Learn LLM chapter links" were scattered across pages, and this page consolidates them into the single ownership rule page.
 
 ## 2. Usage
 
@@ -192,3 +192,17 @@ Four-level reading route:
 - Next demonstration in this repo: [Model Lifecycle (Bridge)](../01-model-lifecycle/index.md) — a complete bridge page written under this page's rules.
 - Deep model principles: [Learn LLM](https://llm.zenheart.site/chapters/).
 - Evaluation methodology: [evals](https://evals.zenheart.site/).
+
+## Resource evidence levels (tree-wide legend)
+
+The "level" column in each page's resource library uses these letters (a few
+historical pages drift by ±1; this table is authoritative):
+
+| Level | Meaning | Typical source |
+| --- | --- | --- |
+| E | Local empirical evidence | measurable output of this repo's fixtures |
+| L0 | Official spec / first-party implementation | protocol specs, SDK source, changelogs |
+| L1 | Official maintainer narrative | official docs, official engineering blogs |
+| L2 | Authoritative secondary | well-known engineering books, surveys |
+| L4 | Background signal | community threads, unattributed posts (leads only) |
+| sibling | Sibling-site canonical | Learn LLM / evals / sites-epub |

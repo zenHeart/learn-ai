@@ -68,6 +68,6 @@ Vibe Coding：想法 → 描述给 AI → AI 生成 → 验收判断 → 调整 
 
 ## 边界与主线的关系
 
-Vibe Coding 的定位是**把想法变成真实作品**，不是把人训练成资深工程师——不会因此突然精通算法或框架源码。它的「描述需求 + 验收判断」内核正是主线 [提示词工程](../../01-contracts/prompt)与[结构化输出](../../01-contracts/structured-output)的工程化版本；而生产级系统的安全与验证要求见层 5（[测试](../../05-operations/testing)、[安全](../../05-operations/security)）——那是 vibe 之外必须补上的部分。
+Vibe Coding 的定位是**把想法变成真实作品**，不是把人训练成资深工程师——不会因此突然精通算法或框架源码。它的「描述需求 + 验收判断」内核正是主线 [提示词工程](/zh/tech/03-context/prompt)与[结构化输出](/zh/tech/02-inference-interface/structured-output)的工程化版本；而生产级系统的安全与验证要求见层 5（[测试](/zh/tech/08-production/testing)、[安全](/zh/tech/08-production/security)）——那是 vibe 之外必须补上的部分。
 
 **项目资源**：[datawhalechina/vibe-vibe](https://github.com/datawhalechina/vibe-vibe)

@@ -18,8 +18,8 @@ listed: true
 
 # Model API Contract
 
-> **Group**: Inference & Interface ｜ **Previous group exit**: can write and validate input/output schemas ｜ **This topic exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability
-> **Prerequisites**: [Structured Output](../02-inference-interface/structured-output) ｜ **Next**: [Streaming](streaming.md), [Session and State](../03-context/session-memory.md)
+> **Group**: Inference & Interface  |  **Previous group exit**: can write and validate input/output schemas  |  **This topic exit**: can write a model-calling loop with error-family classification, retry semantics, and usage observability
+> **Prerequisites**: [Structured Output](../02-inference-interface/structured-output)  |  **Next**: [Streaming](streaming.md), [Session and State](../03-context/session-memory.md)
 
 ## 1. Overview
 

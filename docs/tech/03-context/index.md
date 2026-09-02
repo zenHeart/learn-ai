@@ -16,11 +16,12 @@ lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
+> **Group**: Context (group guide) | **Previous group exit**: interface contracts and serving shapes | **This group exit**: assemble a single-turn context within budget and manage cross-turn memory
 
 # Context Group: What the Model Sees This Turn
 
-> **Group**: Context group ｜ **Before this group**: can write and validate input/output schemas ([structured-output](../02-inference-interface/structured-output.md)) ｜ **Group exit**: the full chain of "what the model sees this turn" — a budget you can compute, sources you can assemble, rot you can counter
-> **Prerequisites**: [structured-output](../02-inference-interface/structured-output.md) ｜ **Next**: [Embeddings and Retrieval](../04-grounding/embeddings-retrieval.md), [Tool Calling Contract](../05-action/tool-calling.md)
+> **Group**: Context group  |  **Before this group**: can write and validate input/output schemas ([structured-output](../02-inference-interface/structured-output.md))  |  **Group exit**: the full chain of "what the model sees this turn" — a budget you can compute, sources you can assemble, rot you can counter
+> **Prerequisites**: [structured-output](../02-inference-interface/structured-output.md)  |  **Next**: [Embeddings and Retrieval](../04-grounding/embeddings-retrieval.md), [Tool Calling Contract](../05-action/tool-calling.md)
 
 ## 1. Overview
 
@@ -86,7 +87,7 @@ Wrong deps / test commands after switching assistants      → repo-context
 
 Read in navOrder: prompt → context-window → context-engineering → session-memory → repo-context.
 
-**Version milestones**: unverified (vendor-capability timelines live on each topic page; this page repeats none).
+**Historical milestones**: unverified (vendor-capability timelines live on each topic page; this page repeats none).
 
 ## 2. Usage
 
@@ -172,10 +173,10 @@ The naive view of a model API is "prompt in, text out" — apparently one knob: 
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | [Anthropic prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) ｜ [OpenAI guide, context window section](https://developers.openai.com/api/docs/guides/prompt-engineering) | "Expression" and "budget" intuition first |
+| Beginner | [Anthropic prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)  |  [OpenAI guide, context window section](https://developers.openai.com/api/docs/guides/prompt-engineering) | "Expression" and "budget" intuition first |
 | Builder | The group's five pages in order + the [context-window fixture](context-window.md) | A regression-checkable budget and assembly loop in hand |
-| Operator | Both providers' prompt caching and token counting docs ｜ [agents.md](https://agents.md/) | Post-launch reconciliation, hit rates, and team conventions |
-| Researcher | [Anthropic: Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) ｜ [Chroma: Context Rot](https://research.trychroma.com/context-rot) ｜ Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory) | Mental model, empirical decay, and the mechanism layer |
+| Operator | Both providers' prompt caching and token counting docs  |  [agents.md](https://agents.md/) | Post-launch reconciliation, hit rates, and team conventions |
+| Researcher | [Anthropic: Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)  |  [Chroma: Context Rot](https://research.trychroma.com/context-rot)  |  Learn LLM [Chapter 15](https://llm.zenheart.site/chapters/15-prompt-memory) | Mental model, empirical decay, and the mechanism layer |
 
 ### Resource table
 

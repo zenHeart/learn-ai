@@ -29,7 +29,7 @@ LLM 的核心能力是**预测下一个 token**。基于这一机制演化出三
 2. **指令微调（ChatGPT 时代）**：直接说 "Refactor Foo 方法"，本质仍是补全，只是前缀里加入了角色标签。
 3. **工具调用（Tool Calling）**：前缀里约定「要读文件就输出 `read_file(path)`」，本地执行后把结果以 `<tool>` 形式回传——模型由此与外部世界交互。
 
-主线展开见[工具调用契约](../../01-contracts/tool-calling)与[工具执行工程](../../04-action/tool-execution)。
+主线展开见[工具调用契约](/zh/tech/05-action/tool-calling)与[工具执行工程](/zh/tech/05-action/tool-execution)。
 
 ## Cursor 的架构
 

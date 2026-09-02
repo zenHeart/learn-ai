@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a minimal agent loop with stopping conditions and a budget ｜ **Exit of this layer**: you can pick the right control structure for a loop already justified to be autonomous, and name each structure's failure modes
-> **Prerequisites**: [Agent Runtime](agent-runtime.md) ｜ **Next**: [Multi-Agent Systems](multi-agent.md) · [Workflow Patterns](workflow.md)
+> **Group**: Agent Systems  |  **Previous group exit**: you can build a minimal agent loop with stopping conditions and a budget  |  **This group exit**: you can pick the right control structure for a loop already justified to be autonomous, and name each structure's failure modes
+> **Prerequisites**: [Agent Runtime](agent-runtime.md)  |  **Next**: [Multi-Agent Systems](multi-agent.md) · [Workflow Patterns](workflow.md)
 
 ## 1. Overview
 
@@ -55,7 +55,7 @@ The same augmented LLM yields different shapes depending on where control sits: 
 - Use: you have already confirmed via the [complexity ladder](../00-map/complexity-ladder) that an agent is warranted (you can write stopping conditions and permission boundaries), and now must answer "how to divide labor inside the loop".
 - Do not use: steps are statically enumerable — go to [Workflow Patterns](workflow.md); you need cross-agent delegation and state isolation — go to [Multi-Agent Systems](multi-agent.md); single-step tasks — [Tool Execution Engineering](../05-action/tool-execution.md).
 
-History milestones: the ReAct paper was submitted 2022-10 (arXiv 2210.03629); Anthropic's "Building Effective Agents" (2024-12) documented the production patterns routing / orchestrator-workers / evaluator-optimizer. How the five patterns evolved across frameworks is unverified; we do not fabricate it.
+Historical milestones: the ReAct paper was submitted 2022-10 (arXiv 2210.03629); Anthropic's "Building Effective Agents" (2024-12) documented the production patterns routing / orchestrator-workers / evaluator-optimizer. How the five patterns evolved across frameworks is unverified; we do not fabricate it.
 
 ## 2. Usage
 

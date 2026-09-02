@@ -44,7 +44,7 @@ export const enTechSidebar = [
       { text: 'Prompt engineering', link: '/tech/03-context/prompt' },
       { text: 'Context window', link: '/tech/03-context/context-window' },
       { text: 'Context engineering', link: '/tech/03-context/context-engineering' },
-      { text: 'Session memory', link: '/tech/03-context/session-memory' },
+      { text: 'Session and State', link: '/tech/03-context/session-memory' },
       { text: 'Repo context · AGENTS.md', link: '/tech/03-context/repo-context' }
     ]
   },
@@ -62,6 +62,7 @@ export const enTechSidebar = [
     text: 'Action',
     collapsed: false,
     items: [
+      { text: 'Group guide', link: '/tech/05-action/' },
       { text: 'Tool calling', link: '/tech/05-action/tool-calling' },
       { text: 'Tool execution engineering', link: '/tech/05-action/tool-execution' }
     ]
@@ -70,6 +71,7 @@ export const enTechSidebar = [
     text: 'Agent Systems',
     collapsed: false,
     items: [
+      { text: 'Group guide', link: '/tech/06-agent-systems/' },
       { text: 'Mental model & runtime', link: '/tech/06-agent-systems/agent-runtime' },
       { text: 'Design patterns', link: '/tech/06-agent-systems/design-patterns' },
       { text: 'State & memory', link: '/tech/06-agent-systems/state-memory' },
@@ -113,6 +115,7 @@ export const enTechSidebar = [
     text: 'Advanced',
     collapsed: true,
     items: [
+      { text: 'Group guide', link: '/tech/09-advanced/' },
       { text: 'Interpretability', link: '/tech/09-advanced/interpretability' },
       { text: 'Reasoning · test-time compute', link: '/tech/09-advanced/reasoning-ttc' },
       { text: 'MoE / frontier architectures', link: '/tech/09-advanced/moe-frontier' },
@@ -186,7 +189,7 @@ export const zhTechSidebar = [
       { text: '提示词工程', link: '/zh/tech/03-context/prompt' },
       { text: '上下文窗口', link: '/zh/tech/03-context/context-window' },
       { text: '上下文工程', link: '/zh/tech/03-context/context-engineering' },
-      { text: '会话记忆', link: '/zh/tech/03-context/session-memory' },
+      { text: '会话与状态', link: '/zh/tech/03-context/session-memory' },
       { text: '仓库上下文 · AGENTS.md', link: '/zh/tech/03-context/repo-context' }
     ]
   },
@@ -204,6 +207,7 @@ export const zhTechSidebar = [
     text: '行动',
     collapsed: false,
     items: [
+      { text: '本组导览', link: '/zh/tech/05-action/' },
       { text: '工具调用契约', link: '/zh/tech/05-action/tool-calling' },
       { text: '工具执行工程', link: '/zh/tech/05-action/tool-execution' }
     ]
@@ -212,6 +216,7 @@ export const zhTechSidebar = [
     text: 'Agent 系统',
     collapsed: false,
     items: [
+      { text: '本组导览', link: '/zh/tech/06-agent-systems/' },
       { text: '心智模型与运行时', link: '/zh/tech/06-agent-systems/agent-runtime' },
       { text: '设计模式', link: '/zh/tech/06-agent-systems/design-patterns' },
       { text: '状态与记忆', link: '/zh/tech/06-agent-systems/state-memory' },
@@ -255,6 +260,7 @@ export const zhTechSidebar = [
     text: '进阶',
     collapsed: true,
     items: [
+      { text: '本组导览', link: '/zh/tech/09-advanced/' },
       { text: '可解释性', link: '/zh/tech/09-advanced/interpretability' },
       { text: '推理 · 测试时计算', link: '/zh/tech/09-advanced/reasoning-ttc' },
       { text: 'MoE / 前沿架构', link: '/zh/tech/09-advanced/moe-frontier' },

@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the layer above**: you can build a minimal agent loop with stopping conditions and a budget ｜ **Exit of this layer**: you can place cross-step state in the right layer (working / persistent / semantic) and use checkpoints to resume after a crash with no duplicated work
-> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Context Engineering](../03-context/context-engineering) ｜ **Next**: [Recovery and Human-in-the-Loop](recovery-hitl.md)
+> **Group**: Agent Systems  |  **Previous group exit**: you can build a minimal agent loop with stopping conditions and a budget  |  **This group exit**: you can place cross-step state in the right layer (working / persistent / semantic) and use checkpoints to resume after a crash with no duplicated work
+> **Prerequisites**: [Agent Runtime](agent-runtime.md) · [Context Engineering](../03-context/context-engineering)  |  **Next**: [Recovery and Human-in-the-Loop](recovery-hitl.md)
 
 ## 1. Overview
 
@@ -61,7 +61,7 @@ Upgrade rule: **add the next layer only when the current one fails** — persist
 - Use: the task spans many steps with valuable intermediate products; the run may be interrupted by crashes, timeouts, or human approval; history length approaches the context budget.
 - Do not use: single-call tasks; acceptance passes without state — pre-building a memory system for an imaginary long task is speculative construction.
 
-History milestones: LangGraph productized this structure as two primitives, checkpointers (short-term, thread-scoped) and stores (long-term, cross-thread) (docs retrievedAt 2026-09-01); Anthropic's 2025 context engineering essay introduced compaction, structured note-taking, and sub-agents as the three long-horizon techniques. Earlier memory-system timelines are unverified; we do not fabricate them.
+Historical milestones: LangGraph productized this structure as two primitives, checkpointers (short-term, thread-scoped) and stores (long-term, cross-thread) (docs retrievedAt 2026-09-01); Anthropic's 2025 context engineering essay introduced compaction, structured note-taking, and sub-agents as the three long-horizon techniques. Earlier memory-system timelines are unverified; we do not fabricate them.
 
 ## 2. Usage
 

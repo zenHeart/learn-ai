@@ -21,9 +21,9 @@ listed: true
 
 | 案例 | 回答的问题 | 已合入主线 |
 | --- | --- | --- |
-| [Cursor IDE 工作原理](./cursor-ide-architecture) | AI IDE 的内部机制：从补全到代理、系统提示设计、优化技巧 | [上下文工程](../../01-contracts/context)、[工具执行工程](../../04-action/tool-execution) |
-| [Cursor Rules 实践](./cursor-rules) | 项目级 AI 行为规范：Rule Type、内容结构、渐进完善 | [上下文工程](../../01-contracts/context)（AGENTS.md/规则注入）、[Agent Skills](../../04-action/skills) |
-| [Copilot 系统提示摘录](./copilot) | 一个生产级编码助手的系统提示长什么样（查阅页） | [提示词工程](../../01-contracts/prompt) |
+| [Cursor IDE 工作原理](./cursor-ide-architecture) | AI IDE 的内部机制：从补全到代理、系统提示设计、优化技巧 | [上下文工程](/zh/tech/03-context/context-engineering)、[工具执行工程](/zh/tech/05-action/tool-execution) |
+| [Cursor Rules 实践](./cursor-rules) | 项目级 AI 行为规范：Rule Type、内容结构、渐进完善 | [上下文工程](/zh/tech/03-context/context-engineering)（AGENTS.md/规则注入）、[Agent Skills](/zh/tech/06-agent-systems/skills) |
+| [Copilot 系统提示摘录](./copilot) | 一个生产级编码助手的系统提示长什么样（查阅页） | [提示词工程](/zh/tech/03-context/prompt) |
 
 语言侧说明：三个案例正文均在中文侧（ZH only）；英文侧本表为占位导航。
 

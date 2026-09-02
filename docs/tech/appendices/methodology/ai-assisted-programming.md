@@ -25,4 +25,4 @@ listed: true
 4. **知识沉淀**：将 AI 生成过程中积累的优质 Prompt 和规则沉淀为团队资产
 5. **适用场景**：重复性高的 CRUD、测试生成、文档撰写最适合 AI 介入；复杂业务逻辑仍需人工
 
-主线关联：输出格式校验 → [结构化输出](../../01-contracts/structured-output)；上下文管理 → [上下文工程](../../01-contracts/context)；规则沉淀 → [Agent Skills](../../04-action/skills)。
+主线关联：输出格式校验 → [结构化输出](/tech/02-inference-interface/structured-output)；上下文管理 → [上下文工程](/tech/03-context/context-engineering)；规则沉淀 → [Agent Skills](/tech/06-agent-systems/skills)。

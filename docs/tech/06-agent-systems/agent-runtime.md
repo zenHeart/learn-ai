@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely ｜ **Exit of this page**: you can build a minimal agent loop with stopping conditions and a budget, and you know which page owns state, recovery, and interface automation
-> **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling) · [Tool Execution Engineering](../05-action/tool-execution.md) · [Workflow Patterns](workflow.md) ｜ **Next**: [Agent Design Patterns](design-patterns.md) · [Agent State and Memory](state-memory.md) · [Recovery and Human-in-the-Loop](recovery-hitl.md) · [Computer Use](computer-use.md)
+> **Group**: Agent Systems  |  **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely  |  **Exit of this page**: you can build a minimal agent loop with stopping conditions and a budget, and you know which page owns state, recovery, and interface automation
+> **Prerequisites**: [Tool Calling Contract](../05-action/tool-calling) · [Tool Execution Engineering](../05-action/tool-execution.md) · [Workflow Patterns](workflow.md)  |  **Next**: [Agent Design Patterns](design-patterns.md) · [Agent State and Memory](state-memory.md) · [Recovery and Human-in-the-Loop](recovery-hitl.md) · [Computer Use](computer-use.md)
 
 ## 1. Overview
 
@@ -64,7 +64,7 @@ Each turn of the loop costs one model call plus some tool executions. **Environm
 | State | One call result | Multi-step artifacts | Session + memory + checkpoints | Isolated per-agent state |
 | Trust domain | In-process | In-process | Within host + permission boundary | Same shape → [multi-agent](multi-agent.md); cross-domain → [protocols](../07-interoperability/index.md) |
 | Minimum complexity | function call | static orchestration | loop + stop condition + permissions | delegation mechanism |
-| Reverse criterion (when to fall back left) | — (already minimal) | steps statically enumerable, path stable → **stay at workflow, do not adopt an agent** | environmental feedback unverifiable, no writable stopping condition or budget → fall back to workflow | one loop with two or three tools already suffices → fall back to a single agent |
+| Fallback trigger (when to drop back to the option on its left) | — (already minimal) | steps statically enumerable, path stable → **stay at workflow, do not adopt an agent** | environmental feedback unverifiable, no writable stopping condition or budget → fall back to workflow | one loop with two or three tools already suffices → fall back to a single agent |
 
 Anthropic's boundary in one sentence: **workflows orchestrate LLMs and tools through predefined code paths; agents dynamically direct their own processes and tool usage**. Both are agentic systems; the selection criterion is "can the steps be statically enumerated".
 
@@ -85,7 +85,7 @@ Anthropic's boundary in one sentence: **workflows orchestrate LLMs and tools thr
 | Reusing tools as manuals instead of code | [Agent Skills](skills.md) |
 | Tools across processes / domains | [MCP](../07-interoperability/mcp.md) |
 
-History milestones: the ReAct paper was submitted to arXiv on 2022-10-06 (v3 on 2023-03-10, ICLR camera-ready); Anthropic's "Building Effective Agents" was published 2024-12 (the page itself notes "the tooling landscape described in this post has changed since December 2024"); this subtree was frozen in 2026-09 with Issue #116. Other timelines are unverified; we do not fabricate them.
+Historical milestones: the ReAct paper was submitted to arXiv on 2022-10-06 (v3 on 2023-03-10, ICLR camera-ready); Anthropic's "Building Effective Agents" was published 2024-12 (the page itself notes "the tooling landscape described in this post has changed since December 2024"); this subtree was frozen in 2026-09 with Issue #116. Other timelines are unverified; we do not fabricate them.
 
 ## 2. Usage
 

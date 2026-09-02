@@ -22,8 +22,8 @@ listed: true
 
 # Inference Fundamentals: Where Latency Comes From
 
-> **Group**: 2 · Inference & Interface ｜ **Previous group exit**: can explain how the model lifecycle shapes engineering decisions (the model is a replaceable capability with three interface properties: behavior, budget, capability boundary) ｜ **This group exit**: can decompose one user-perceived latency into queue / prefill / decode / network, and say who owns each segment and which lever you can pull
-> **Prerequisites**: [Model Lifecycle (bridge)](../01-model-lifecycle/) ｜ **Next**: [Efficient Serving](efficient-serving.md), [Model API Contract](model-api.md)
+> **Group**: 2 · Inference & Interface  |  **Previous group exit**: can explain how the model lifecycle shapes engineering decisions (the model is a replaceable capability with three interface properties: behavior, budget, capability boundary)  |  **This group exit**: can decompose one user-perceived latency into queue / prefill / decode / network, and say who owns each segment and which lever you can pull
+> **Prerequisites**: [Model Lifecycle (bridge)](../01-model-lifecycle/)  |  **Next**: [Efficient Serving](efficient-serving.md), [Model API Contract](model-api.md)
 
 ## 1. Overview
 

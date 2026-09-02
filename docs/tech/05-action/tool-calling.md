@@ -19,8 +19,8 @@ listed: true
 
 # Tool Calling Contract
 
-> **Group**: 5 · Action (writing the world) ｜ **Previous group exit**: write and validate input/output schemas (group 3), and deliver a cancellable, observable end-to-end interaction (group 2) ｜ **This page exit**: define tool schemas, draw the minimal message flow, validate tool name and parameters before execution, and return results (including errors) in the contract format
-> **Prerequisites**: [structured-output](../02-inference-interface/structured-output.md) ｜ **Next**: [model-api](../02-inference-interface/model-api.md), [tool-execution](../05-action/tool-execution.md)
+> **Group**: 5 · Action (writing the world)  |  **Previous group exit**: write and validate input/output schemas (group 3), and deliver a cancellable, observable end-to-end interaction (group 2)  |  **This page exit**: define tool schemas, draw the minimal message flow, validate tool name and parameters before execution, and return results (including errors) in the contract format
+> **Prerequisites**: [structured-output](../02-inference-interface/structured-output.md)  |  **Next**: [model-api](../02-inference-interface/model-api.md), [tool-execution](../05-action/tool-execution.md)
 
 ## 1. Overview
 
@@ -70,7 +70,7 @@ OpenAI's official summary is a five-step flow (retrieved 2026-09-01): request wi
 | **Minimum complexity** | low | medium (loop and pairing to manage) |
 | **Failure surface** | refusal / truncation / schema 400 | hallucinated tool names / wrong argument types / broken pairing / execution failure |
 
-**Version milestones** (officially documented, retrieved 2026-09-01): OpenAI strict mode "works by leveraging our structured outputs feature" and is officially recommended to always be enabled; parallel function calls may issue multiple calls in one turn on supported models, and `parallel_tool_calls: false` enforces "exactly zero or one". Anthropic's tool-use system prompt tokens are **per model**: Opus 5 is 286 (`auto`/`none`) / 406 (`any`/`tool`), Sonnet 5 is 354/474, the previous generation 4 models 313/315 (pricing-table figures, retrievedAt 2026-09-01). Other timelines: unverified.
+**Historical milestones** (officially documented, retrieved 2026-09-01): OpenAI strict mode "works by leveraging our structured outputs feature" and is officially recommended to always be enabled; parallel function calls may issue multiple calls in one turn on supported models, and `parallel_tool_calls: false` enforces "exactly zero or one". Anthropic's tool-use system prompt tokens are **per model**: Opus 5 is 286 (`auto`/`none`) / 406 (`any`/`tool`), Sonnet 5 is 354/474, the previous generation 4 models 313/315 (pricing-table figures, retrievedAt 2026-09-01). Other timelines: unverified.
 
 ## 2. Usage
 
@@ -364,10 +364,10 @@ When a tool execution fails (API down, invalid order ID), **do not throw and kil
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | [Anthropic Tool use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) ｜ [OpenAI Function calling guide](https://developers.openai.com/api/docs/guides/function-calling) | The two providers' five-step flow and terminology (tools / tool calls / outputs) |
-| Builder | Wire this page's fixture to a real provider ｜ [Anthropic: Writing tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents) | Run the contract loop first, then learn tool-design principles |
-| Operator | Anthropic's tool token-cost table (Pricing section of the Tool use overview) ｜ the parallel-calling implementation guide | The metering basis of tools and the parallel return format |
-| Researcher | [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) ｜ [MCP](https://modelcontextprotocol.io/specification/latest) | What sits above the tool loop (agent shapes and the protocolized tool ecosystem) |
+| Beginner | [Anthropic Tool use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview)  |  [OpenAI Function calling guide](https://developers.openai.com/api/docs/guides/function-calling) | The two providers' five-step flow and terminology (tools / tool calls / outputs) |
+| Builder | Wire this page's fixture to a real provider  |  [Anthropic: Writing tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents) | Run the contract loop first, then learn tool-design principles |
+| Operator | Anthropic's tool token-cost table (Pricing section of the Tool use overview)  |  the parallel-calling implementation guide | The metering basis of tools and the parallel return format |
+| Researcher | [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)  |  [MCP](https://modelcontextprotocol.io/specification/latest) | What sits above the tool loop (agent shapes and the protocolized tool ecosystem) |
 
 ### Resource table
 

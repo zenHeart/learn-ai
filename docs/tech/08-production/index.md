@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can substantiate quality, risk, performance, rollback, and ownership with replayable evidence
-> **Prerequisites**: [Recovery and Human-in-the-Loop](../06-agent-systems/recovery-hitl) ｜ **Next**: [Testing](testing.md), [Evaluation (Bridge)](evaluation.md), [Observability](observability.md), [Security](security.md), [Cost and Performance](cost-performance.md), [Deployment and Release](deployment.md); after this group, the [Resource Library](../../resources.md)
+> **Group**: Production  |  **Previous group exit**: can restrict permissions, pause/resume tasks  |  **This group exit**: can substantiate quality, risk, performance, rollback, and ownership with replayable evidence
+> **Prerequisites**: [Recovery and Human-in-the-Loop](../06-agent-systems/recovery-hitl)  |  **Next**: [Testing](testing.md), [Evaluation (Bridge)](evaluation.md), [Observability](observability.md), [Security](security.md), [Cost and Performance](cost-performance.md), [Deployment and Release](deployment.md); after this group, the [Resource Library](../../resources.md)
 
 ## 1. Overview
 

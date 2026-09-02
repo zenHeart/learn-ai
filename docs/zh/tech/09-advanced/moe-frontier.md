@@ -16,6 +16,7 @@ lastVerified: "2026-09-01"
 bilingualParity: exact
 listed: true
 ---
+> **所在组**：进阶（桥接） ｜ **上一组出口**：能用发布门与版本化纪律长期运行 ｜ **本页出口**：知道该主题影响哪个工程决策、何时去 Learn LLM
 
 # MoE 与前沿架构（桥接）
 

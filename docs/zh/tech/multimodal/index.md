@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/appendices/multimodal/index'
+    - content: '0; url=/zh/tech/09-advanced/multimodal'
   - - link
     - rel: canonical
-    - href: /zh/tech/appendices/multimodal/index
+    - href: /zh/tech/09-advanced/multimodal
 ---
 
-本页已迁移到 [/zh/tech/appendices/multimodal/index](/zh/tech/appendices/multimodal/index).
+本页已迁移到 [/zh/tech/appendices/multimodal/index](/zh/tech/09-advanced/multimodal).

@@ -19,8 +19,8 @@ listed: true
 
 # Prompt Engineering
 
-> **Group**: Context group ｜ **Previous group exit**: locate your problem domain, audience, and next entry point ｜ **This topic exit**: rewrite a vague request into a four-element, acceptance-testable prompt, and manage that prompt as versioned, tested code
-> **Prerequisites**: [tech-map](../index.md) ｜ **Next**: [Context Window](context-window.md)
+> **Group**: Context group  |  **Previous group exit**: locate your problem domain, audience, and next entry point  |  **This topic exit**: rewrite a vague request into a four-element, acceptance-testable prompt, and manage that prompt as versioned, tested code
+> **Prerequisites**: [tech-map](../index.md)  |  **Next**: [Context Window](context-window.md)
 
 ## 1. Overview
 
@@ -63,7 +63,7 @@ OpenAI's official analogy (retrieved 2026-09-01): developer / system messages ar
 | **Minimum complexity** | Lowest, always try first | Medium (manage sources and budget) | Highest, after the first two fail |
 | **Typical symptom** | Unstable behavior, missing the point | Answers lack private / fresh facts | Format and style never stick |
 
-**Version milestones**: unverified (no primary evidence for the timeline of prompting techniques; OpenAI has deprecated reusable Prompt objects — creation de-emphasized from 2026-06-03, `v1/prompts` scheduled to shut down 2026-11-30 — these are official documented dates, retrieved 2026-09-01).
+**Historical milestones**: unverified (no primary evidence for the timeline of prompting techniques; OpenAI has deprecated reusable Prompt objects — creation de-emphasized from 2026-06-03, `v1/prompts` scheduled to shut down 2026-11-30 — these are official documented dates, retrieved 2026-09-01).
 
 ## 2. Usage
 
@@ -287,10 +287,10 @@ Isolation delimiters are not this repo's invention: both vendors' official docs 
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | [Anthropic prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) ｜ [OpenAI prompt engineering guide](https://developers.openai.com/api/docs/guides/prompt-engineering) | The two official first entries: clarity, examples, role hierarchy (Anthropic's overview page has shrunk to a router; the techniques now live on the best-practices page, retrieved 2026-09-01) |
-| Builder | [Anthropic interactive tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) (official order: clarity first, XML only in chapter 4) ｜ [OpenAI Cookbook](https://github.com/openai/openai-cookbook) | Hands-on by chapter; the officials say practice "being clear" before format tricks |
-| Operator | OpenAI guide's "prompt as code" and model-pinning sections ｜ Learn LLM [Chapter 15 A4](https://llm.zenheart.site/chapters/15-prompt-memory) | The operational face of versioning / regression / model swaps |
-| Researcher | [OpenAI Model Spec](https://model-spec.openai.com/) (the normative source of message priority) ｜ Anthropic's "right altitude" argument ([context engineering article](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)) | The principle layer of behavior priority and prompt design |
+| Beginner | [Anthropic prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)  |  [OpenAI prompt engineering guide](https://developers.openai.com/api/docs/guides/prompt-engineering) | The two official first entries: clarity, examples, role hierarchy (Anthropic's overview page has shrunk to a router; the techniques now live on the best-practices page, retrieved 2026-09-01) |
+| Builder | [Anthropic interactive tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) (official order: clarity first, XML only in chapter 4)  |  [OpenAI Cookbook](https://github.com/openai/openai-cookbook) | Hands-on by chapter; the officials say practice "being clear" before format tricks |
+| Operator | OpenAI guide's "prompt as code" and model-pinning sections  |  Learn LLM [Chapter 15 A4](https://llm.zenheart.site/chapters/15-prompt-memory) | The operational face of versioning / regression / model swaps |
+| Researcher | [OpenAI Model Spec](https://model-spec.openai.com/) (the normative source of message priority)  |  Anthropic's "right altitude" argument ([context engineering article](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)) | The principle layer of behavior priority and prompt design |
 
 ### Resource table
 

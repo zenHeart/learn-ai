@@ -20,8 +20,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: 01 · Model Lifecycle (bridge group) ｜ **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group) ｜ **Exit of this page**: you can explain the root of knowledge cutoff, and use "the capability ceiling freezes at pretraining" to discipline model selection, freshness strategy, and version-upgrade regression
-> **Prerequisites**: [Model Architecture (Bridge)](architecture.md) ｜ **Next**: [Post-training](post-training/) (in-group subgroup); deep principles at [Learn LLM](https://llm.zenheart.site/chapters/)
+> **Group**: 01 · Model Lifecycle (bridge group)  |  **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group)  |  **Exit of this page**: you can explain the root of knowledge cutoff, and use "the capability ceiling freezes at pretraining" to discipline model selection, freshness strategy, and version-upgrade regression
+> **Prerequisites**: [Model Architecture (Bridge)](architecture.md)  |  **Next**: [Post-training](post-training/) (in-group subgroup); deep principles at [Learn LLM](https://llm.zenheart.site/chapters/)
 
 ## 1. Overview
 

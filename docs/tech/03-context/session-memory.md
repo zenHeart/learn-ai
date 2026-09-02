@@ -18,8 +18,8 @@ listed: true
 
 # Session and State
 
-> **Group**: Context group ｜ **Previous group exit**: can write and validate input/output schemas ｜ **This topic exit**: can build sessions for multi-turn conversation — budget-trimmed history, persistent recovery, and concurrency guards
-> **Prerequisites**: [Streaming](../02-inference-interface/streaming.md), [Context Engineering](context-engineering.md) ｜ **Next**: [Generative UI](../02-inference-interface/ui.md), [Tool Execution Engineering](../05-action/tool-execution)
+> **Group**: Context group  |  **Previous group exit**: can write and validate input/output schemas  |  **This topic exit**: can build sessions for multi-turn conversation — budget-trimmed history, persistent recovery, and concurrency guards
+> **Prerequisites**: [Streaming](../02-inference-interface/streaming.md), [Context Engineering](context-engineering.md)  |  **Next**: [Generative UI](../02-inference-interface/ui.md), [Tool Execution Engineering](../05-action/tool-execution)
 
 ## 1. Overview
 

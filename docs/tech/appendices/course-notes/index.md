@@ -23,15 +23,15 @@ Note: note bodies below are Chinese-language (they originate from the ZH content
 
 | Note | Type | Preserved value | Merged into |
 | --- | --- | --- | --- |
-| [Agent Course notes](./agent-course) | Course notes | Brain/Perception/Action component model and an eval-benchmark list | [Agent design patterns](../../04-action/agent-runtime/design-patterns), [Multi-agent systems](../../04-action/multi-agent) |
+| [Agent Course notes](./agent-course) | Course notes | Brain/Perception/Action component model and an eval-benchmark list | [Agent design patterns](/tech/06-agent-systems/design-patterns), [Multi-agent systems](/tech/06-agent-systems/multi-agent) |
 
 ## Notes on the ZH side (ZH only)
 
 | Note | Type | Preserved value | Merged into |
 | --- | --- | --- | --- |
-| [Hello Agents (DataWhale)](/zh/tech/appendices/course-notes/hello-agents-datwhale) | Open course | Agent learning path and memory-strategy primer | [Agent runtime](../../04-action/agent-runtime/) |
-| [Pi Agent design philosophy](/zh/tech/appendices/course-notes/pi-agent-design-philosophy) | Source reading | The minimalist "what not to build" list and token economics | [Agent runtime](../../04-action/agent-runtime/), [Tool execution](../../04-action/tool-execution) |
-| [How I Use Claude Code](/zh/tech/appendices/course-notes/how-i-use-claude-code) | Practice article | The plan/implement separation workflow (research → plan → annotate → implement) | [Context engineering](../../01-contracts/context), [Recovery & HITL](../../04-action/agent-runtime/recovery-hitl) |
+| [Hello Agents (DataWhale) (zh)](/zh/tech/appendices/course-notes/hello-agents-datwhale) | Open course | Agent learning path and memory-strategy primer | [Agent runtime](/tech/06-agent-systems/agent-runtime) |
+| [Pi Agent design philosophy (zh)](/zh/tech/appendices/course-notes/pi-agent-design-philosophy) | Source reading | The minimalist "what not to build" list and token economics | [Agent runtime](/tech/06-agent-systems/agent-runtime), [Tool execution](/tech/05-action/tool-execution) |
+| [How I Use Claude Code (zh)](/zh/tech/appendices/course-notes/how-i-use-claude-code) | Practice article | The plan/implement separation workflow (research → plan → annotate → implement) | [Context engineering](/tech/03-context/context-engineering), [Recovery & HITL](/tech/06-agent-systems/recovery-hitl) |
 
 ## Reading advice
 

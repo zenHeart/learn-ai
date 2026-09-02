@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/01-contracts/prompt'
+    - content: '0; url=/tech/03-context/prompt'
   - - link
     - rel: canonical
-    - href: /tech/01-contracts/prompt
+    - href: /tech/03-context/prompt
 ---
 
-This page has moved to [/tech/01-contracts/prompt](/tech/01-contracts/prompt).
+This page has moved to [/tech/01-contracts/prompt](/tech/03-context/prompt).

@@ -35,4 +35,4 @@ listed: true
 
 ## 阅读姿势
 
-把存档当历史证据读，不当当前规范用：主线（如 [工作流模式](../../04-action/workflow)、[测试](../../05-operations/testing)）才是当前推荐做法的 canonical。
+把存档当历史证据读，不当当前规范用：主线（如 [工作流模式](/zh/tech/06-agent-systems/workflow)、[测试](/zh/tech/08-production/testing)）才是当前推荐做法的 canonical。

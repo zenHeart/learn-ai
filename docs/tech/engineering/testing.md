@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/05-operations/testing'
+    - content: '0; url=/tech/08-production/testing'
   - - link
     - rel: canonical
-    - href: /tech/05-operations/testing
+    - href: /tech/08-production/testing
 ---
 
-This page has moved to [/tech/05-operations/testing](/tech/05-operations/testing).
+This page has moved to [/tech/05-operations/testing](/tech/08-production/testing).

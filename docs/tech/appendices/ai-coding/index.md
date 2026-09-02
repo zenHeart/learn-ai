@@ -23,9 +23,9 @@ All three case bodies live on the Chinese side; this page is the EN-side placeho
 
 | Case | Question it answers | Merged into |
 | --- | --- | --- |
-| [Cursor IDE internals](/zh/tech/appendices/ai-coding/cursor-ide-architecture) | Inside an AI IDE: from completion to agent, system-prompt design, optimization tips | [Context engineering](../../01-contracts/context), [Tool execution](../../04-action/tool-execution) |
-| [Cursor Rules practice](/zh/tech/appendices/ai-coding/cursor-rules) | Project-level AI behavior specs: rule types, content structure, incremental refinement | [Context engineering](../../01-contracts/context), [Agent Skills](../../04-action/skills) |
-| [Copilot system-prompt excerpt](/zh/tech/appendices/ai-coding/copilot) | What a production coding assistant's system prompt looks like (reference page) | [Prompt engineering](../../01-contracts/prompt) |
+| [Cursor IDE internals (zh)](/zh/tech/appendices/ai-coding/cursor-ide-architecture) | Inside an AI IDE: from completion to agent, system-prompt design, optimization tips | [Context engineering](/tech/03-context/context-engineering), [Tool execution](/tech/05-action/tool-execution) |
+| [Cursor Rules practice (zh)](/zh/tech/appendices/ai-coding/cursor-rules) | Project-level AI behavior specs: rule types, content structure, incremental refinement | [Context engineering](/tech/03-context/context-engineering), [Agent Skills](/tech/06-agent-systems/skills) |
+| [Copilot system-prompt excerpt (zh)](/zh/tech/appendices/ai-coding/copilot) | What a production coding assistant's system prompt looks like (reference page) | [Prompt engineering](/tech/03-context/prompt) |
 
 ## How to read
 

@@ -15,6 +15,7 @@ externalOwners:
 lastVerified: "2026-09-01"
 listed: true
 ---
+> **所在组**：模型生命周期（桥接） ｜ **上一组出口**：理解推理基础与接口契约 ｜ **本页出口**：知道何时该动权重而不是改 Prompt 或上检索
 
 # PEFT（桥接）
 

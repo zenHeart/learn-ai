@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/02-integration/browser-edge'
+    - content: '0; url=/tech/02-inference-interface/browser-edge'
   - - link
     - rel: canonical
-    - href: /tech/02-integration/browser-edge
+    - href: /tech/02-inference-interface/browser-edge
 ---
 
-This page has moved to [/tech/02-integration/browser-edge](/tech/02-integration/browser-edge).
+This page has moved to [/tech/02-integration/browser-edge](/tech/02-inference-interface/browser-edge).

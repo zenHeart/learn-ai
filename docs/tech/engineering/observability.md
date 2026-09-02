@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/tech/05-operations/observability'
+    - content: '0; url=/tech/08-production/observability'
   - - link
     - rel: canonical
-    - href: /tech/05-operations/observability
+    - href: /tech/08-production/observability
 ---
 
-This page has moved to [/tech/05-operations/observability](/tech/05-operations/observability).
+This page has moved to [/tech/05-operations/observability](/tech/08-production/observability).

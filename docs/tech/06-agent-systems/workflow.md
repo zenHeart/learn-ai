@@ -1,6 +1,6 @@
 ---
 title: Workflow Patterns
-description: "If steps can be statically enumerated, use a code workflow; only move to an agent loop when they cannot — this chapter implements a checkpointed multi-step flow: recover from persisted state after failure without redoing side effects, with a human-approval node before irreversible steps, plus a workflow-vs-agent decision table."
+description: "If steps can be statically enumerated, use a code workflow; only move to an agent loop when they cannot — this page implements a checkpointed multi-step flow: recover from persisted state after failure without redoing side effects, with a human-approval node before irreversible steps, plus a workflow-vs-agent decision table."
 domain: tech
 tags: [tech, action, workflow, orchestration]
 navOrder: 66
@@ -18,12 +18,12 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely ｜ **Exit of this page**: you can implement a checkpointed multi-step flow — recover from persisted state after failure without redoing side effects, and pause for a human before irreversible steps
-> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md) ｜ **Next**: [Agent Runtime](agent-runtime.md), [Recovery and Human-in-the-Loop](recovery-hitl.md), [Observability](../08-production/observability)
+> **Group**: Agent Systems  |  **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely  |  **Exit of this page**: you can implement a checkpointed multi-step flow — recover from persisted state after failure without redoing side effects, and pause for a human before irreversible steps
+> **Prerequisites**: [Tool Execution Engineering](../05-action/tool-execution.md)  |  **Next**: [Agent Runtime](agent-runtime.md), [Recovery and Human-in-the-Loop](recovery-hitl.md), [Observability](../08-production/observability)
 
 ## 1. Overview
 
-**BLUF**: a workflow is a system where "LLMs and tools are orchestrated through **predefined code paths**"; an agent is a system where "the model **dynamically directs** its own process and tool usage" (Anthropic's framing). That boundary decides everything: **if steps can be statically enumerated and recovery paths written in advance, use a workflow** — it is predictable, testable, and replayable; hand control to an agent loop only when the number and order of steps depends on what is discovered mid-run. This chapter delivers a minimal checkpointed engine: recover from persisted state after failure, replay completed steps without redoing side effects, and pause for a human before irreversible nodes.
+**BLUF**: a workflow is a system where "LLMs and tools are orchestrated through **predefined code paths**"; an agent is a system where "the model **dynamically directs** its own process and tool usage" (Anthropic's framing). That boundary decides everything: **if steps can be statically enumerated and recovery paths written in advance, use a workflow** — it is predictable, testable, and replayable; hand control to an agent loop only when the number and order of steps depends on what is discovered mid-run. This page delivers a minimal checkpointed engine: recover from persisted state after failure, replay completed steps without redoing side effects, and pause for a human before irreversible nodes.
 
 ### Mental model: nodes, state, and checkpoints
 
@@ -79,7 +79,7 @@ Three components: **nodes** (one unit of work: an LLM call, a tool execution, or
 
 Note the boundary: orchestrator-workers already sits on the transition band between workflow and agent — "the orchestrator dynamically decides subtasks" is agent-style control, even though the overall path is still closed by code. Production systems routinely combine them (outer workflow, inner agent nodes).
 
-History milestones: this chapter consolidates the old "AI Agent Workflow Patterns and Advanced Tool Calling" page; its "advanced tool calling" half (tool search etc.) moved to the resource library of [Tool Execution Engineering](../05-action/tool-execution.md). The old three execution modes (sequential/parallel/evaluate-optimize) map to chaining / parallelization / evaluator-optimizer above. Earlier timelines unverified; not fabricated.
+Historical milestones: this page consolidates the old "AI Agent Workflow Patterns and Advanced Tool Calling" page; its "advanced tool calling" half (tool search etc.) moved to the resource library of [Tool Execution Engineering](../05-action/tool-execution.md). The old three execution modes (sequential/parallel/evaluate-optimize) map to chaining / parallelization / evaluator-optimizer above. Earlier timelines unverified; not fabricated.
 
 ## 2. Usage
 
@@ -318,7 +318,7 @@ The debugging unit of a multi-step flow is "the step", not "the run": every node
 
 | Official statement | Source | Local fixture counterpart |
 | --- | --- | --- |
-| Workflows orchestrate LLMs and tools through predefined code paths; agents dynamically direct themselves | Building Effective Agents (L1, retrievedAt 2026-09-01) | The `steps` array is the predefined path; this chapter has no model-driven branching |
+| Workflows orchestrate LLMs and tools through predefined code paths; agents dynamically direct themselves | Building Effective Agents (L1, retrievedAt 2026-09-01) | The `steps` array is the predefined path; this page has no model-driven branching |
 | Workflow recovery = re-run code + replay the event history; workflows must be deterministic; external interactions live in Activities whose results are recorded once | Temporal docs (L1, retrievedAt 2026-09-01) | `[replay]` reuses stored outputs; mock steps produce deterministic outputs |
 | Checkpointers persist graph state per thread, backing HITL and fault tolerance; the in-memory one does not survive restarts | LangGraph persistence docs (L1, retrievedAt 2026-09-01) | The fixture uses an in-memory `Map`; the text states plainly that production needs durable storage |
 | The five workflow-pattern names | Building Effective Agents (L1, retrievedAt 2026-09-01) | Restated in decision table 1 / overview |

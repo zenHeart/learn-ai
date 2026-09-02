@@ -20,8 +20,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: 01 · Model Lifecycle (bridge group) ｜ **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group) ｜ **Exit of this group**: you can state how the model lifecycle affects engineering decisions (when prompt is not enough, how to choose models, how cost works) and know which Learn LLM chapter holds the deep principles
-> **Prerequisites**: [Site Boundaries and Knowledge Ownership](../00-map/site-boundaries.md) ｜ **Next**: [The LLM Mental Model (Bridge)](llm-mental-model.md); after this group, enter the [02-inference-interface group](../02-inference-interface/)
+> **Group**: 01 · Model Lifecycle (bridge group)  |  **Exit of the group above**: you can decide knowledge ownership and pick the lowest-complexity option for a need (00-map group)  |  **Exit of this group**: you can state how the model lifecycle affects engineering decisions (when prompt is not enough, how to choose models, how cost works) and know which Learn LLM chapter holds the deep principles
+> **Prerequisites**: [Site Boundaries and Knowledge Ownership](../00-map/site-boundaries.md)  |  **Next**: [The LLM Mental Model (Bridge)](llm-mental-model.md); after this group, enter the [02-inference-interface group](../02-inference-interface/)
 
 ## 1. Overview
 

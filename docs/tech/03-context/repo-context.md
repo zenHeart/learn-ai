@@ -19,8 +19,8 @@ listed: true
 
 # Repo Context
 
-> **Group**: Context group ｜ **Previous group exit**: design multi-source context assembly with priorities ｜ **This topic exit**: land an AGENTS.md with real commands and correct layering for your repo, and explain how it enters every turn's context
-> **Prerequisites**: [Context Engineering](context-engineering.md) ｜ **Next**: [ACP: the editor-agent boundary](../07-interoperability/acp-agent-client.md)
+> **Group**: Context group  |  **Previous group exit**: design multi-source context assembly with priorities  |  **This topic exit**: land an AGENTS.md with real commands and correct layering for your repo, and explain how it enters every turn's context
+> **Prerequisites**: [Context Engineering](context-engineering.md)  |  **Next**: [ACP: the editor-agent boundary](../07-interoperability/acp-agent-client.md)
 
 ## 1. Overview
 
@@ -59,7 +59,7 @@ A rule has one body of text; on conflict, **the AGENTS.md nearest the file being
 | In-chat | Typed | Current user | One-off | Session | Zero |
 | User-level global rules | Host-injected | Personal | Cross-repo | Local config | Never enters version control |
 
-**Version milestones**: the AGENTS.md format is defined by [agents.md](https://agents.md/) (hosted by the Agentic AI Foundation / Linux Foundation) and read by Cursor, Codex, GitHub Copilot, Gemini CLI, Claude Code, and others (retrieved 2026-09-01, site returned 200). Each tool's precedence rules follow its own product docs.
+**Historical milestones**: the AGENTS.md format is defined by [agents.md](https://agents.md/) (hosted by the Agentic AI Foundation / Linux Foundation) and read by Cursor, Codex, GitHub Copilot, Gemini CLI, Claude Code, and others (retrieved 2026-09-01, site returned 200). Each tool's precedence rules follow its own product docs.
 
 ## 2. Usage
 
@@ -286,9 +286,9 @@ The host injects more than AGENTS.md: open files, selections, and terminal state
 
 | Level | Read | Why this order |
 |---|---|---|
-| Beginner | The [agents.md](https://agents.md/) site (format and conventions) ｜ this repo's root `AGENTS.md` / `CLAUDE.md` (live sample) | The format in five minutes: Markdown with conventions |
+| Beginner | The [agents.md](https://agents.md/) site (format and conventions)  |  this repo's root `AGENTS.md` / `CLAUDE.md` (live sample) | The format in five minutes: Markdown with conventions |
 | Builder | Land one for your repo + run this page's fixture lint | A regression-checkable validation in hand before team rollout |
-| Operator | Your tools' product-doc chapters on "read precedence / memory" ｜ CI command validation | Tools differ; their docs are authoritative |
+| Operator | Your tools' product-doc chapters on "read precedence / memory"  |  CI command validation | Tools differ; their docs are authoritative |
 | Researcher | [Anthropic: Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (the CLAUDE.md hybrid case) | Where repo context sits in the overall assembly strategy |
 
 ### Resource table

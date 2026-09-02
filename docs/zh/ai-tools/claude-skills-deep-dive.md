@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/04-action/skills'
+    - content: '0; url=/zh/tech/06-agent-systems/skills'
   - - link
     - rel: canonical
-    - href: /zh/tech/04-action/skills
+    - href: /zh/tech/06-agent-systems/skills
 ---
 
-本页已迁移到 [/zh/tech/04-action/skills](/zh/tech/04-action/skills).
+本页已迁移到 [/zh/tech/04-action/skills](/zh/tech/06-agent-systems/skills).

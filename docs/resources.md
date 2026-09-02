@@ -21,26 +21,26 @@ listed: true
 
 | Symptom / problem | Where to go first (layer · chapter) | In-chapter library | Next question after reading |
 | --- | --- | --- | --- |
-| Don't know where to start; problem domain unclear | L0 · [Tech map](/tech/) | see the chapter's "Resource Library" section | Which rung is my need on? → [Complexity decision ladder](/tech/00-orientation/complexity-ladder) |
-| Unstable answers; output won't parse | L1 · [Structured output](/tech/01-contracts/structured-output) | same | Parsing is stable but content is off? → L3 grounding |
-| Prompts are weak; roles and instructions confused | L1 · [Prompt engineering](/tech/01-contracts/prompt) | same | Is one prompt enough, or do I need project-level context? → [Context engineering](/tech/01-contracts/context) |
-| The model doesn't know my repo's conventions | L1 · [Context engineering](/tech/01-contracts/context) | same | Context won't fit or costs too much? → [Cost & performance](/tech/05-operations/cost-performance) |
-| Answers stable but not productized (API calls, streaming, sessions) | L2 · [Model API contract](/tech/02-integration/model-api), [Streaming](/tech/02-integration/streaming), [Session & state](/tech/02-integration/session-state) | same | Want generative UI? → [Generative UI](/tech/02-integration/ui) |
-| Answers lack private or fresh facts | L3 · [RAG](/tech/03-grounding/rag), [Embeddings & retrieval](/tech/03-grounding/embeddings-retrieval) | same | Retrieval quality maxed out? → [Advanced retrieval](/tech/03-grounding/advanced-retrieval) |
-| Need to act (call systems, mutate data) | L4 · [Tool execution](/tech/04-action/tool-execution) (contract: L1 [Tool calling](/tech/01-contracts/tool-calling)) | same | Multi-step, recoverable, needs approval? → [Agent runtime](/tech/04-action/agent-runtime/) |
-| Need an autonomous helper loop | L4 · [Agent runtime](/tech/04-action/agent-runtime/) | same | Context/memory management out of control? → [State & memory](/tech/04-action/agent-runtime/state-memory) |
-| Collaboration across host / org / agent boundaries | L4 · [Protocol map](/tech/04-action/protocols/) | same | Which protocol? → enter the MCP / A2A / ACP / AG-UI chapters by connection direction |
-| Feature works but can't be proven or operated | L5 · [Testing](/tech/05-operations/testing), [Observability](/tech/05-operations/observability) | same | Need release gates and evaluation evidence? → [Evaluation (bridge)](/tech/05-operations/evaluation) |
-| High token cost, high latency | L5 · [Cost & performance](/tech/05-operations/cost-performance) | same | Optimize to the end — smaller/edge models? → [Browser & edge inference](/tech/02-integration/browser-edge) |
-| Time to ship with rollback | L5 · [Deployment & release](/tech/05-operations/deployment) | same | Who watches it in production? → [Observability](/tech/05-operations/observability) |
-| Permissions, injection, data safety | L5 · [Security](/tech/05-operations/security) | same | Alignment-level misbehavior? → external owner Learn LLM |
-| Want to move model weights (fine-tune/align) | Appendix · [Model lifecycle bridges](/tech/appendices/model-lifecycle/) | see each bridge's "deep derivations" section | Derivations & implementation → Learn LLM |
+| Don't know where to start; problem domain unclear | L0 · [Tech map](/tech/) | see the chapter's "Resource Library" section | Which rung is my need on? → [Complexity decision ladder](/tech/00-map/complexity-ladder) |
+| Unstable answers; output won't parse | L1 · [Structured output](/tech/02-inference-interface/structured-output) | same | Parsing is stable but content is off? → L3 grounding |
+| Prompts are weak; roles and instructions confused | L1 · [Prompt engineering](/tech/03-context/prompt) | same | Is one prompt enough, or do I need project-level context? → [Context engineering](/tech/03-context/context-engineering) |
+| The model doesn't know my repo's conventions | L1 · [Context engineering](/tech/03-context/context-engineering) | same | Context won't fit or costs too much? → [Cost & performance](/tech/08-production/cost-performance) |
+| Answers stable but not productized (API calls, streaming, sessions) | L2 · [Model API contract](/tech/02-inference-interface/model-api), [Streaming](/tech/02-inference-interface/streaming), [Session & state](/tech/03-context/session-memory) | same | Want generative UI? → [Generative UI](/tech/02-inference-interface/ui) |
+| Answers lack private or fresh facts | L3 · [RAG](/tech/04-grounding/rag), [Embeddings & retrieval](/tech/04-grounding/embeddings-retrieval) | same | Retrieval quality maxed out? → [Advanced retrieval](/tech/04-grounding/advanced-retrieval) |
+| Need to act (call systems, mutate data) | L4 · [Tool execution](/tech/05-action/tool-execution) (contract: L1 [Tool calling](/tech/05-action/tool-calling)) | same | Multi-step, recoverable, needs approval? → [Agent runtime](/tech/06-agent-systems/agent-runtime) |
+| Need an autonomous helper loop | L4 · [Agent runtime](/tech/06-agent-systems/agent-runtime) | same | Context/memory management out of control? → [State & memory](/tech/06-agent-systems/state-memory) |
+| Collaboration across host / org / agent boundaries | L4 · [Protocol map](/tech/07-interoperability/index) | same | Which protocol? → enter the MCP / A2A / ACP / AG-UI chapters by connection direction |
+| Feature works but can't be proven or operated | L5 · [Testing](/tech/08-production/testing), [Observability](/tech/08-production/observability) | same | Need release gates and evaluation evidence? → [Evaluation (bridge)](/tech/08-production/evaluation) |
+| High token cost, high latency | L5 · [Cost & performance](/tech/08-production/cost-performance) | same | Optimize to the end — smaller/edge models? → [Browser & edge inference](/tech/02-inference-interface/browser-edge) |
+| Time to ship with rollback | L5 · [Deployment & release](/tech/08-production/deployment) | same | Who watches it in production? → [Observability](/tech/08-production/observability) |
+| Permissions, injection, data safety | L5 · [Security](/tech/08-production/security) | same | Alignment-level misbehavior? → external owner Learn LLM |
+| Want to move model weights (fine-tune/align) | Appendix · [Model lifecycle bridges](/tech/01-model-lifecycle/post-training/index) | see each bridge's "deep derivations" section | Derivations & implementation → Learn LLM |
 
 Each chapter's "Resource Library" section provides a four-level reading route (Beginner → Builder → Operator → Researcher); resources carry source and retrievedAt markers.
 
 ## 2. External knowledge owners
 
-The full cross-repo division is in [Site boundaries & ownership](/tech/00-orientation/site-boundaries); this table is the retrieval-oriented quick view (retrievedAt: 2026-09-01):
+The full cross-repo division is in [Site boundaries & ownership](/tech/00-map/site-boundaries); this table is the retrieval-oriented quick view (retrievedAt: 2026-09-01):
 
 | Owner | Scope | canonical URL | When to go |
 | --- | --- | --- | --- |
@@ -65,7 +65,7 @@ A curated set of general tools and services, grouped by purpose (vendor commands
 
 - [LangChain.js](https://js.langchain.com/) — chain/agent orchestration, broadest ecosystem
 - [LlamaIndex.ts](https://ts.llamaindex.ai/) — RAG and data ingestion focus
-- [Transformers.js](https://huggingface.co/docs/transformers.js) — in-browser ML (pairs with L2 [edge inference](/tech/02-integration/browser-edge))
+- [Transformers.js](https://huggingface.co/docs/transformers.js) — in-browser ML (pairs with L2 [edge inference](/tech/02-inference-interface/browser-edge))
 
 **Vector databases** (L3 retrieval):
 

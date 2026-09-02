@@ -21,7 +21,7 @@ listed: true
 
 在个人内容站上构建语义搜索（Semantic Search）：理解查询语义而非关键词匹配。技术选型 [Cloudflare Vectorize](https://developers.cloudflare.com/vectorize/)（配合 Workers AI 生成 embedding）——选它因为 Cloudflare 提供完整的 AI 应用平台（Workers AI + AI Gateway + Vectorize），部署简单、生态完善。
 
-主线概念（embedding、检索、RAG）见[嵌入与检索](../../03-grounding/embeddings-retrieval)与 [RAG](../../03-grounding/rag)；本页只保留工程实现的关键决策。
+主线概念（embedding、检索、RAG）见[嵌入与检索](/zh/tech/04-grounding/embeddings-retrieval)与 [RAG](/zh/tech/04-grounding/rag)；本页只保留工程实现的关键决策。
 
 ## 索引架构
 

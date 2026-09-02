@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/05-operations/security'
+    - content: '0; url=/zh/tech/08-production/security'
   - - link
     - rel: canonical
-    - href: /zh/tech/05-operations/security
+    - href: /zh/tech/08-production/security
 ---
 
-本页已迁移到 [/zh/tech/05-operations/security](/zh/tech/05-operations/security).
+本页已迁移到 [/zh/tech/05-operations/security](/zh/tech/08-production/security).

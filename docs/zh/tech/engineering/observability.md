@@ -8,10 +8,10 @@ status: redirect
 head:
   - - meta
     - http-equiv: refresh
-    - content: '0; url=/zh/tech/05-operations/observability'
+    - content: '0; url=/zh/tech/08-production/observability'
   - - link
     - rel: canonical
-    - href: /zh/tech/05-operations/observability
+    - href: /zh/tech/08-production/observability
 ---
 
-本页已迁移到 [/zh/tech/05-operations/observability](/zh/tech/05-operations/observability).
+本页已迁移到 [/zh/tech/05-operations/observability](/zh/tech/08-production/observability).

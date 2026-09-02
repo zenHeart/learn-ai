@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Layer**: 0 · Orientation and Boundaries ｜ **Exit of the layer above**: none ｜ **Exit of this layer**: you can pick the lowest-complexity solution for any requirement and state its upgrade trigger
-> **Prerequisites**: [Tech Map](../index) ｜ **Next**: [Site Boundaries and Knowledge Ownership](site-boundaries.md); to enter layer 1 now, start with [Prompt Engineering](../03-context/prompt)
+> **Group**: Map · Orientation and Boundaries  |  **Previous group exit**: none  |  **This group exit**: you can pick the lowest-complexity solution for any requirement and state its upgrade trigger
+> **Prerequisites**: [Tech Map](../index)  |  **Next**: [Site Boundaries and Knowledge Ownership](site-boundaries.md); to enter the Context group now, start with [Prompt Engineering](../03-context/prompt)
 
 ## 1. Overview
 
@@ -68,7 +68,7 @@ The ladder has one rule: **default to the lowest rung and let evidence push you 
 - Use: before implementation, in design reviews, and whenever judging "should we adopt an agent / a protocol".
 - Do not use: for the concrete implementation once the rung is decided — go to the matching layer's five-part chapter.
 
-Version milestones: this ladder was frozen in 2026-09 with Issue #116, merging the old "training decision tree" and the "workflow vs agent" discussions; earlier origins are unverified and will not be fabricated.
+Historical milestones: this ladder was frozen in 2026-09 with Issue #116, merging the old "training decision tree" and the "workflow vs agent" discussions; earlier origins are unverified and will not be fabricated.
 
 ## 2. Usage
 
@@ -121,7 +121,7 @@ Protocols (rung 6) solve communication and capability discovery across trust dom
 
 ### Specification vs local measurement
 
-This page is a decision pattern with no specification to test against. "Spec vs measurement" columns for each rung's solution live in the matching layer chapters: structured output (layer 1), model API (layer 2), RAG (layer 3), tool execution and protocols (layer 4).
+This page is a decision pattern with no specification to test against. "Spec vs measurement" columns for each rung's solution live in the matching layer chapters: structured output and model API (Inference & Interface), RAG (Grounding), tool execution (Action), protocols (Interoperability).
 
 ## 4. Development
 
@@ -159,8 +159,8 @@ This page has no code integration; "Development" = using the ladder as a design 
 Four-level reading route:
 
 - **Beginner**: this page + the [Tech Map](../index) decision tree; recite the six rungs and their triggers.
-- **Builder**: enter [Layer 1 · Interaction Contract](../03-context/) and make rung 1 solid (prompt + schema + failure acceptance).
-- **Operator**: enter [Layer 4](../06-agent-systems/agent-runtime.md) and [Layer 5](../08-production/) for permissions, idempotency, and rollback at rungs 3–5.
+- **Builder**: enter the [Context group](../03-context/) and make rung 1 solid (prompt + schema + failure acceptance).
+- **Operator**: enter the [Agent Systems group](../06-agent-systems/agent-runtime.md) and the [Production group](../08-production/) for permissions, idempotency, and rollback at rungs 3–5.
 - **Researcher**: read the L1 resources below on the workflow-vs-agent boundary argument.
 
 ### Resource table
@@ -170,7 +170,7 @@ Four-level reading route:
 | Building Effective Agents (Anthropic) | L1 (maintainer) | https://www.anthropic.com/research/building-effective-agents | The workflow / agent boundary; the case for starting with compositions | The "compose first, escalate later" engineering position (retrievedAt 2026-09-01, HTTP 200) | Compare with rungs 4 / 5 here |
 | MCP official site | L0 (official spec) | https://modelcontextprotocol.io/ | One rung-6 candidate: the agent ↔ tools / data boundary | Protocols solve boundary communication (retrievedAt 2026-09-01, HTTP 200) | [MCP chapter](../07-interoperability/mcp) |
 | A2A official site | L0 (official spec) | https://a2a-protocol.org/ | One rung-6 candidate: cross-trust-domain agent collaboration | Remote collaboration protocols presume cross-trust-domain needs (retrievedAt 2026-09-01, HTTP 200) | [A2A chapter](../07-interoperability/a2a) |
-| Learn LLM chapter 11 (RAG) | sibling | https://llm.zenheart.site/chapters/11-rag | Deep principles behind rung 2 (when retrieval works) | Retrieval internals belong to Learn LLM (retrievedAt 2026-09-01, HTTP 200) | This repo's [Layer 3](../04-grounding/) |
+| Learn LLM chapter 11 (RAG) | sibling | https://llm.zenheart.site/chapters/11-rag | Deep principles behind rung 2 (when retrieval works) | Retrieval internals belong to Learn LLM (retrievedAt 2026-09-01, HTTP 200) | This repo's [Grounding group](../04-grounding/) |
 
 ### Active falsification and open questions
 
@@ -179,6 +179,6 @@ Four-level reading route:
 
 ### Where learn-ai stops / where to continue
 
-- Implementation per rung: this repo's layer 1–5 chapters.
+- Implementation per rung: this repo's group chapters.
 - Deep principles for rungs 2 / 5 (retrieval math, how training shapes behavior): [Learn LLM](https://llm.zenheart.site/chapters/).
 - Methods proving each rung is "done": [evals](https://evals.zenheart.site/).

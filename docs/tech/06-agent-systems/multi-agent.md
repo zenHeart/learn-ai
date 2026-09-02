@@ -1,6 +1,6 @@
 ---
 title: Multi-Agent Systems
-description: Multi-agent trades coordination for capacity that a single agent cannot reach — the price is coordination cost, error propagation, and roughly 15x token consumption. This chapter covers when it is worth it, how to pick a topology, how to write the delegation contract, how to degrade on routing failure, and when you do not need multi-agent at all.
+description: "Multi-agent buys capacity a single agent cannot reach via context isolation and parallelism — at the price of coordination overhead, error propagation, and roughly 15x token consumption. This page covers when it is worth it, how to pick a topology, how to write the delegation contract, how to degrade on routing failure, and when you do not need multi-agent at all."
 domain: tech
 tags: [tech, action, multi-agent, orchestration]
 navOrder: 69
@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Agent Systems ｜ **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely ｜ **Exit of this page**: you can judge when multi-agent is worth it, write the four-element delegation contract, delegate to specialists via a supervisor topology, and degrade gracefully on routing failure instead of crashing
-> **Prerequisites**: [Agent Runtime](agent-runtime.md), [Workflow Patterns](workflow.md) ｜ **Next**: [A2A](../07-interoperability/a2a.md) (protocols only across boundaries), [Observability](../08-production/observability), [Cost and Performance](../08-production/cost-performance)
+> **Group**: Agent Systems  |  **Exit of the group above** ([Action](../05-action/tool-calling)): you can execute a single tool call safely  |  **Exit of this page**: you can judge when multi-agent is worth it, write the four-element delegation contract, delegate to specialists via a supervisor topology, and degrade gracefully on routing failure instead of crashing
+> **Prerequisites**: [Agent Runtime](agent-runtime.md), [Workflow Patterns](workflow.md)  |  **Next**: [A2A](../07-interoperability/a2a.md) (protocols only across boundaries), [Observability](../08-production/observability), [Cost and Performance](../08-production/cost-performance)
 
 ## 1. Overview
 
@@ -80,7 +80,7 @@ Three components: the **supervisor** (decomposes tasks, writes delegation briefs
 
 Anthropic's five patterns (generator-verifier / orchestrator-subagent / agent teams / message bus / shared state) expand these four; evolution criteria are in the resource library.
 
-History milestones: this chapter consolidates the old "Multi-Agent Coordination Patterns" page (a repository archive of a Claude blog post, 2026-04-10); the five patterns remain in the resource library while the body reorganizes around four topologies and adds the delegation contract and degraded-fallback semantics. Earlier timelines unverified; not fabricated.
+Historical milestones: this page consolidates the old "Multi-Agent Coordination Patterns" page (a repository archive of a Claude blog post, 2026-04-10); the five patterns remain in the resource library while the body reorganizes around four topologies and adds the delegation contract and degraded-fallback semantics. Earlier timelines unverified; not fabricated.
 
 ## 2. Usage
 
@@ -268,7 +268,7 @@ The debugging unit of a multi-agent system is the **delegation**: every `delegat
 | --- | --- |
 | Orchestrator-worker pattern: the lead agent plans and spawns parallel subagents (retrievedAt 2026-09-01) | `Supervisor.delegate` routes to `specialists` |
 | Delegation briefs need objective, output format, tool/source guidance, task boundaries | The four `TaskBrief` fields; missing `objective` → `rejected` |
-| Simple queries once spawned 50 subagents → scaling rules embedded | This chapter lists scaling rules in Principles (not implemented in the fixture; it is a prompt-layer concern) |
+| Simple queries once spawned 50 subagents → scaling rules embedded | This page lists scaling rules in Principles (not implemented in the fixture; it is a prompt-layer concern) |
 | Token usage: agents ≈ 4× chat, multi-agent ≈ 15× chat | The fixture's mock specialists cost zero tokens — the decision tables keep the constraint |
 | Large outputs written to the filesystem with references returned, reducing retelling loss | The artifacts bypass in the mental-model diagram |
 
@@ -341,7 +341,7 @@ Four-level reading route:
 | Name | Evidence tier | canonical URL | Use | Supported claim | Next |
 | --- | --- | --- | --- | --- | --- |
 | How we built our multi-agent research system (Anthropic) | L1 (maintainer) | https://www.anthropic.com/engineering/built-multi-agent-research-system | Architecture, delegation contract, scaling rules, production reliability | "Token usage explains 80% of variance; agents ≈4×, multi-agent ≈15× chat; parallelism cut time by up to 90%" (retrievedAt 2026-09-01) | Read the production-reliability section closely |
-| Multi-agent coordination patterns (Claude blog) | L1 (maintainer) | https://claude.com/blog/multi-agent-coordination-patterns | Five patterns and pairwise evolution criteria | Five coordination patterns (verified via this repo's old-page archive 2026-04-10; not re-verified this round) | Map onto this chapter's four topologies |
+| Multi-agent coordination patterns (Claude blog) | L1 (maintainer) | https://claude.com/blog/multi-agent-coordination-patterns | Five patterns and pairwise evolution criteria | Five coordination patterns (verified via this repo's old-page archive 2026-04-10; not re-verified this round) | Map onto this page's four topologies |
 | Building multi-agent systems: when and how | L1 (maintainer) | https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them | Pre-investment judgment | "When multi-agent is worth it" (cited via the old page; not re-verified this round) | Cross-check the three-clause test |
 | Building Effective Agents (Anthropic) | L1 (maintainer) | https://www.anthropic.com/engineering/building-effective-agents | Positioning of the orchestrator-workers pattern | The boundary where an orchestrator decomposes subtasks dynamically (retrievedAt 2026-09-01) | [Workflow Patterns](workflow.md) |
 | Learn LLM (sibling site) | sibling | https://llm.zenheart.site/ | Model-side roots of multi-agent behavior | Model mechanics belong to Learn LLM (retrievedAt 2026-09-01) | Stop points above |
@@ -349,7 +349,7 @@ Four-level reading route:
 ### Active falsification and open questions
 
 - Falsification entry: if you run a **dependency-dense** task on multi-agent both well and cheaply — share the task shape and bill comparison, and the three-clause test of this page needs revision.
-- Open: coordination semantics for asynchronous multi-agent (subagents communicating while running in parallel) are still evolving per Anthropic itself; this chapter covers only the synchronous supervisor pattern.
+- Open: coordination semantics for asynchronous multi-agent (subagents communicating while running in parallel) are still evolving per Anthropic itself; this page covers only the synchronous supervisor pattern.
 - Open: how identity, authorization, and settlement for cross-organization multi-agent map onto the A2A task model — to be expanded in the [Protocol Map](../07-interoperability/) branch.
 
 ### Where learn-ai stops / where to go next

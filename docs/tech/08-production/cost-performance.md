@@ -18,8 +18,8 @@ bilingualParity: exact
 listed: true
 ---
 
-> **Group**: Production ｜ **Previous group exit**: can restrict permissions, pause/resume tasks ｜ **This group exit**: can break down a request's cost and latency and pick the cost-effective lever on the optimization ladder
-> **Prerequisites**: [Model API Contract](../02-inference-interface/model-api) (usage field), [Observability](observability.md) (per-request records) ｜ **Next**: [Deployment and Release](deployment.md) (budget alerts and breakers)
+> **Group**: Production  |  **Previous group exit**: can restrict permissions, pause/resume tasks  |  **This group exit**: can break down a request's cost and latency and pick the cost-effective lever on the optimization ladder
+> **Prerequisites**: [Model API Contract](../02-inference-interface/model-api) (usage field), [Observability](observability.md) (per-request records)  |  **Next**: [Deployment and Release](deployment.md) (budget alerts and breakers)
 
 ## 1. Overview
 
