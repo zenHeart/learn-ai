@@ -89,6 +89,9 @@ Start from symptoms, not nouns. Find your symptom and enter the matching group:
 | Feature runs, but cannot be proven / operated | [08-production](08-production/) |
 | Want to understand model internals / training / frontier architectures | [01-model-lifecycle](01-model-lifecycle/) and [09-advanced](09-advanced/) (bridges → Learn LLM) |
 
+
+<SymptomRouter />
+
 ### What this repo does not teach (three boundaries)
 
 | Not expanded here | canonical owner | What this repo keeps |

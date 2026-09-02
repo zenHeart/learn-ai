@@ -99,6 +99,9 @@ For each scenario, pick a rung yourself first, then compare with the expected ou
 - The ladder decides the **system shape**, not model capability: the same model serves every rung.
 - Rungs can compose (an agent internally calls RAG), but the externally visible shape takes the highest rung involved, and the risk budget is assessed at that rung.
 
+
+<LadderStepper />
+
 ## 3. Principles
 
 ### Why default to the lowest rung
