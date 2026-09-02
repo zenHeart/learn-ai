@@ -1,19 +1,17 @@
 ---
-title: 美团 AI 自动化测试
-description: 本文档对应内容为 B 站视频，无法自动抓取内容，需手动观看。
+title: "Moved"
+description: "This page has been merged into the new structure."
 domain: tech
-tags:
-  - eval
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/tech/appendices/cases/index'
+  - - link
+    - rel: canonical
+    - href: /tech/appendices/cases/index
 ---
 
-# 美团 AI 自动化测试
-
-> 来源：https://www.bilibili.com/video/BV1HgjEzjEac
-
-## 说明
-
-本文档对应内容为 B 站视频，**无法自动抓取内容，需手动观看**。
-
-建议前往原链接观看视频了解美团 AI 自动化测试的实践。
-
-> **待补充**：手动观看视频后整理核心要点
+This page has moved to [/tech/appendices/cases/index](/tech/appendices/cases/index).

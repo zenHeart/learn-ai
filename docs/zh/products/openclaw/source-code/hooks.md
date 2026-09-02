@@ -1,3 +1,14 @@
+---
+title: "Hooks 钩子系统详解"
+description: "OpenClaw Hooks 生命周期钩子的源码实现。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - hooks
+status: canonical
+---
+
 # Hooks 钩子系统详解
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解异步事件处理机制的开发者。

@@ -1,3 +1,13 @@
+---
+title: "OpenClaw 微信接入指南"
+description: "OpenClaw 微信通道接入：账号配置与消息联动。"
+domain: product
+tags:
+  - openclaw
+  - wechat
+  - channel
+---
+
 # OpenClaw 微信接入指南
 
 > **前置知识**：本章节面向具备基础 TypeScript/Node.js 经验的 iOS 开发者。  

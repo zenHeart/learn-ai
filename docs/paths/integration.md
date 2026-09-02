@@ -21,14 +21,14 @@ Integrate AI capabilities into your applications using JavaScript/TypeScript.
 
 - **🎯 Learn by Doing**: Start with [AI Chatbot project](../projects/beginner/ai-chatbot.md) → reference guides when needed
 
-- **📚 Learn by Content**: Read [API Integration Guide](../integration/apis/index.md) first → then build projects
+- **📚 Learn by Content**: Read [API Integration Guide](/tech/02-inference-interface/model-api) first → then build projects
 
 ## Before You Start
 
 **New to AI/LLMs?** Review these concepts first:
-- [LLM Fundamentals](../tech/fundamentals/LLM.md) - Understanding Large Language Models
-- [API Comparison](../integration/apis/index.md) - Choosing the right API provider
-- [Streaming Fundamentals](../tech/frontend/streaming.md) - How AI responses are delivered
+- [LLM Fundamentals](/tech/01-model-lifecycle/index) - Understanding Large Language Models
+- [API Comparison](/tech/02-inference-interface/model-api) - Choosing the right API provider
+- [Streaming Fundamentals](/tech/02-inference-interface/streaming) - How AI responses are delivered
 
 **Assumed Knowledge**: HTTP, REST APIs, JSON, basic Node.js/npm, React/Next.js fundamentals
 

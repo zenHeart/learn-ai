@@ -1,3 +1,12 @@
+---
+title: "OpenClaw 部署指南"
+description: "OpenClaw 部署方式：本地开发、Docker 与生产环境的配置与运维。"
+domain: product
+tags:
+  - openclaw
+  - deployment
+---
+
 # OpenClaw 部署指南
 
 > 本章节涵盖 OpenClaw 的各种部署方式，从本地开发到生产环境。

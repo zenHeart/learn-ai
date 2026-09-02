@@ -1,3 +1,13 @@
+---
+title: "企业微信接入指南"
+description: "OpenClaw 企业微信通道接入：应用配置与消息联动。"
+domain: product
+tags:
+  - openclaw
+  - wecom
+  - channel
+---
+
 # 企业微信接入指南
 
 > **前置知识**：本章节面向具备基础 TypeScript/Node.js 经验的开发者。

@@ -1,28 +1,17 @@
 ---
-title: AI 自动化测试
-description: AI 自动化测试 — how to use it in engineering.
+title: "已迁移"
+description: "本页内容已并入新结构。"
 domain: tech
-tags:
-  - tech
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/zh/tech/08-production/testing'
+  - - link
+    - rel: canonical
+    - href: /zh/tech/08-production/testing
 ---
 
-# AI 自动化测试
-
-> AI 自动化测试、MidScene UI 自动化等
-
-## 本节内容
-
-- [AI 自动化测试 (知乎)](./ai-automation-testing-zhihu) - AI 自动化测试方法总结
-- [MidScene UI 自动化](./midscene-ui-automation) - MidScene 框架的 UI 自动化实践
-
-## 学习路径
-
-- **初学者**: 从 [AI 自动化测试 (知乎)](./ai-automation-testing-zhihu) 了解背景
-- **实战**: 阅读 [MidScene UI 自动化](./midscene-ui-automation) 落地工具
-
-## 相关资源
-
-- [返回上级目录](../)
-- [返回首页](/)
+本页已迁移到 [/zh/tech/05-operations/testing](/zh/tech/08-production/testing).

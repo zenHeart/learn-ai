@@ -1,19 +1,17 @@
 ---
-title: 前端常用 MCP
-description: 以下是前端开发中常用且高效的 Model Context Protocol (MCP) 服务器列表：
+title: "已迁移"
+description: "本页内容已并入新结构。"
 domain: tech
-tags:
-  - protocol
-  - mcp
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/zh/tech/07-interoperability/mcp'
+  - - link
+    - rel: canonical
+    - href: /zh/tech/07-interoperability/mcp
 ---
 
-# 前端常用 MCP
-
-以下是前端开发中常用且高效的 Model Context Protocol (MCP) 服务器列表：
-
-| MCP 名称 | 简要说明 |
-| :--- | :--- |
-| [Chrome DevTools](https://github.com/ChromeDevTools/chrome-devtools-mcp) | 控制和检查实时 Chrome 浏览器，支持网络拦截与截图 |
-| [Vue Devtools mcp](https://github.com/webfansplz/vite-plugin-vue-mcp) | vue devtools mcp |
-| [Figma Layout](https://github.com/GLips/Figma-Context-MCP) | 解析 Figma 设计稿布局，直接提取 CSS 与设计标记 |
-| [Context7](https://github.com/upstash/context7) | 技术文档拉取 mcp |
+本页已迁移到 [/zh/tech/04-action/protocols/mcp](/zh/tech/07-interoperability/mcp).

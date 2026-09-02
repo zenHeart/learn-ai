@@ -1,26 +1,17 @@
 ---
-title: 多模态 AI
-description: 多模态 AI — how to use it in engineering.
+title: "已迁移"
+description: "本页内容已并入新结构。"
 domain: tech
-tags:
-  - tech
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/zh/tech/09-advanced/multimodal'
+  - - link
+    - rel: canonical
+    - href: /zh/tech/09-advanced/multimodal
 ---
 
-# 多模态 AI
-
-> Claude Vision 等多模态能力
-
-## 本节内容
-
-- [Claude Vision 能力](./claude-vision-capabilities) - Claude 视觉能力解析
-
-## 学习路径
-
-- **初学者**: 直接阅读 [Claude Vision 能力](./claude-vision-capabilities)
-
-## 相关资源
-
-- [返回上级目录](../)
-- [返回首页](/)
+本页已迁移到 [/zh/tech/appendices/multimodal/index](/zh/tech/09-advanced/multimodal).

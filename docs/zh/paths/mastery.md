@@ -28,7 +28,7 @@ next: false
 ## 选择你的学习风格
 
 - **🎯 边做边学**: 从 [全栈 SaaS 项目](../projects/advanced/full-stack-saas.md) 开始 → 参考指南
-- **📚 系统学习**: 先阅读 [高级 RAG 模式](../tech/patterns/RAG.md) → 然后构建
+- **📚 系统学习**: 先阅读 [高级 RAG 模式](/zh/tech/04-grounding/rag) → 然后构建
 
 <script setup>
 const pathSteps = [
@@ -92,4 +92,4 @@ const pathSteps = [
 
 **准备好构建了吗？** → [项目部分](../projects/)
 
-**复习概念？** → [技术基础](../tech/fundamentals/LLM.md)
+**复习概念？** → [技术基础](/zh/tech/01-model-lifecycle/index)

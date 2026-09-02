@@ -1,3 +1,14 @@
+---
+title: "Sessions 会话管理详解"
+description: "OpenClaw 会话管理源码：状态、存储与生命周期。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - sessions
+status: canonical
+---
+
 # Sessions 会话管理详解
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解 WebSocket 实时通信的开发者。

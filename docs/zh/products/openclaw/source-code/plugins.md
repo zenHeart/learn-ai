@@ -1,3 +1,14 @@
+---
+title: "Plugins 插件系统详解"
+description: "OpenClaw 插件系统的源码结构与加载机制。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - plugins
+status: canonical
+---
+
 # Plugins 插件系统详解
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础、了解模块化系统和事件驱动编程的开发者。

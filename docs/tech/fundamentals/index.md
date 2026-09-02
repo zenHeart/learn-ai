@@ -1,29 +1,17 @@
 ---
-title: AI Fundamentals
-description: AI Fundamentals — how to use it in engineering.
+title: "Moved"
+description: "This page has been merged into the new structure."
 domain: tech
-tags:
-  - fundamentals
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/tech/'
+  - - link
+    - rel: canonical
+    - href: /tech/
 ---
 
-# AI Fundamentals
-
-> Core concepts: LLMs, Context, and Embeddings
-
-## Contents
-
-- [LLM](./LLM) - Large Language Model fundamentals
-- [Context](./context) - Context management basics
-- [Embeddings](./embeddings) - Vector embeddings explained
-
-## Learning Path
-
-- **Beginner**: Start with [LLM](./LLM)
-- **Core concepts**: Read [Context](./context) and [Embeddings](./embeddings)
-
-## Related Resources
-
-- [Back to parent](../)
-- [Home](/)
+This page has moved to [/tech/](/tech/).

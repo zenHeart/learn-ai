@@ -28,14 +28,14 @@ Before starting Path 3, ensure you understand:
 ## Before You Start
 
 **Preparing for Production?** Review these engineering pillars:
-- [Testing AI Systems](../tech/engineering/testing.md) - Reliability and quality assurance
-- [Observability](../tech/engineering/observability.md) - Monitoring and debugging in production
-- [Security Best Practices](../tech/engineering/security.md) - Protecting keys and user data
+- [Testing AI Systems](/tech/08-production/testing) - Reliability and quality assurance
+- [Observability](/tech/08-production/observability) - Monitoring and debugging in production
+- [Security Best Practices](/tech/08-production/security) - Protecting keys and user data
 
 ## Choose Your Learning Style
 
 - **🎯 Learn by Doing**: Start with [Full-Stack SaaS project](../projects/advanced/full-stack-saas.md) → reference guides
-- **📚 Learn by Content**: Read [Advanced RAG Patterns](../tech/patterns/RAG.md) first → then build
+- **📚 Learn by Content**: Read [Advanced RAG Patterns](/tech/04-grounding/rag) first → then build
 
 <script setup>
 const pathSteps = [
@@ -99,4 +99,4 @@ const pathSteps = [
 
 **Ready to build?** → [Projects Section](../projects/)
 
-**Review concepts?** → [Tech Fundamentals](../tech/fundamentals/LLM.md)
+**Review concepts?** → [Tech Fundamentals](/tech/01-model-lifecycle/index)

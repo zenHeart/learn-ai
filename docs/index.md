@@ -47,8 +47,8 @@ graph LR
 
 ## Recent Additions
 
-- **[MCP Protocol](/integration/protocols/mcp)**: Connect LLMs to your own tools and data.
-- **[Browser AI](/tech/frontend/browser-ai)**: Run models in the browser with WebGPU.
+- **[MCP Protocol](/tech/07-interoperability/mcp)**: Connect LLMs to your own tools and data.
+- **[Browser & Edge Inference](/tech/02-inference-interface/browser-edge)**: Run models in the browser with WebGPU.
 - **[Chat UI Recipe](/cookbook/chat-ui)**: A copy-paste streaming chat component.
 
 ## Community

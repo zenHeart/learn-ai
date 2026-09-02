@@ -1,26 +1,17 @@
 ---
-title: AI 哲学
-description: AI 哲学 — how to use it in engineering.
+title: "已迁移"
+description: "本页内容已并入新结构。"
 domain: tech
-tags:
-  - tech
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/zh/tech/appendices/methodology/index'
+  - - link
+    - rel: canonical
+    - href: /zh/tech/appendices/methodology/index
 ---
 
-# AI 哲学
-
-> Vibe Coding 等 AI 编程理念
-
-## 本节内容
-
-- [Vibe Coding 哲学](./vibe-coding-philosophy) - Vibe Coding 编程理念
-
-## 学习路径
-
-- **初学者**: 直接阅读 [Vibe Coding 哲学](./vibe-coding-philosophy)
-
-## 相关资源
-
-- [返回上级目录](../)
-- [返回首页](/)
+本页已迁移到 [/zh/tech/appendices/methodology/index](/zh/tech/appendices/methodology/index).

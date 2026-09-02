@@ -21,13 +21,13 @@ next:
 
 - **🎯 边做边学**: 从 [AI 聊天机器人项目](../projects/beginner/ai-chatbot.md) 开始 → 需要时查阅指南
 
-- **📚 系统学习**: 先阅读 [API 集成指南](../integration/apis/index.md) → 然后构建项目
+- **📚 系统学习**: 先阅读 [API 集成指南](/zh/tech/02-inference-interface/model-api) → 然后构建项目
 
 ## 开始之前
 
 **AI/LLM 新手？** 先复习这些概念：
-- [LLM 基础](../tech/fundamentals/LLM.md) - 理解大语言模型
-- [API 对比](../integration/apis/index.md) - 选择合适的 API 提供商
+- [LLM 基础](/zh/tech/01-model-lifecycle/index) - 理解大语言模型
+- [API 对比](/zh/tech/02-inference-interface/model-api) - 选择合适的 API 提供商
 
 **预设知识**: HTTP, REST APIs, JSON, 基础 Node.js/npm, React/Next.js 基础
 

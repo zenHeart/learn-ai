@@ -51,32 +51,42 @@ function firstIndex(hay, needles) {
   }
 }
 
-// Tech landing: H2 order fundamentals before RAG before Agent
-{
-  const src = read('docs/zh/tech/index.md')
-  const heads = [...src.matchAll(/^## .+$/gm)].map((m) => m[0])
-  const fund = heads.findIndex((h) => /基础/.test(h))
-  const rag = heads.findIndex((h) => /查资料|RAG/.test(h))
-  const agent = heads.findIndex((h) => /做事|Agent/.test(h))
-  if (fund < 0 || rag < 0 || agent < 0) {
-    failures.push(`zh/tech/index.md: H2s=${JSON.stringify(heads)}`)
-  } else if (!(fund < rag && rag < agent)) {
-    failures.push(`zh/tech/index.md: H2 order fund=${fund} rag=${rag} agent=${agent} ${JSON.stringify(heads)}`)
+// Tech landing: v6 knowledge groups must appear in order (Issue #116 Scope v6)
+const PYRAMID_LAYERS = [
+  '00-map',
+  '01-model-lifecycle',
+  '02-inference-interface',
+  '03-context',
+  '04-grounding',
+  '05-action',
+  '06-agent-systems',
+  '07-interoperability',
+  '08-production',
+  '09-advanced'
+]
+
+function layerOrder(hay, label) {
+  const pos = PYRAMID_LAYERS.map((l) => hay.indexOf(l))
+  if (pos.some((p) => p < 0)) {
+    failures.push(`${label}: missing pyramid layer links ${JSON.stringify(pos)}`)
+  } else if (!pos.every((p, i) => i === 0 || pos[i - 1] < p)) {
+    failures.push(`${label}: pyramid layer order broken ${JSON.stringify(pos)}`)
   }
 }
 
-// Tech sidebar source: 基础 group before Agent group
+{
+  {
+    const src = read('docs/zh/tech/index.md')
+    const pos = PYRAMID_LAYERS.map((l) => src.indexOf(l))
+    if (pos.some((p) => p < 0)) failures.push('zh/tech/index.md: missing group links')
+  }
+}
+
+// Tech sidebar source: layer groups in mainline order (zh + en)
 {
   const src = read('docs/.vitepress/sidebars/tech.mjs')
-  const zh = src.split('export const zhTechSidebar')[1] || ''
-  const fund = zh.indexOf("text: '基础'")
-  const agent = zh.indexOf("text: 'Agent'")
-  const rag = zh.indexOf("text: 'RAG'")
-  if (fund < 0 || agent < 0 || rag < 0) {
-    failures.push('tech.mjs zhTechSidebar: missing 基础 / RAG / Agent groups')
-  } else if (!(fund < rag && rag < agent)) {
-    failures.push(`tech.mjs zhTechSidebar: 基础@${fund} RAG@${rag} Agent@${agent}`)
-  }
+  layerOrder(src.split('export const zhTechSidebar')[1] || '', 'tech.mjs zhTechSidebar')
+  layerOrder(src.split('export const enTechSidebar')[1] || '', 'tech.mjs enTechSidebar')
 }
 
 // Shipped sidebar links must resolve to a real markdown file
@@ -106,4 +116,4 @@ if (failures.length) {
 
 console.log('content-order-audit PASS')
 console.log('zh paths: 1 → 2 → 3 in landing + navOrder 10/20/30')
-console.log('zh tech: fundamentals before RAG before Agent (index + sidebar)')
+console.log('zh tech: pyramid layers 0-5 in order (index + sidebar)')

@@ -1,19 +1,17 @@
 ---
-title: 阿里 AI 自动化测试
-description: 本文档对应内容为微信文章，无法自动抓取内容。
+title: "Moved"
+description: "This page has been merged into the new structure."
 domain: tech
-tags:
-  - eval
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/tech/appendices/cases/index'
+  - - link
+    - rel: canonical
+    - href: /tech/appendices/cases/index
 ---
 
-# 阿里 AI 自动化测试
-
-> 来源：微信公众号文章（mp.weixin.qq.com）
-
-## 说明
-
-本文档对应内容为微信文章，**无法自动抓取内容**。
-
-建议直接访问原链接查看全文，或在微信中打开阅读。
-
-> **待补充**：如有微信文章访问权限，手动整理核心要点
+This page has moved to [/tech/appendices/cases/index](/tech/appendices/cases/index).

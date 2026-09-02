@@ -1,3 +1,14 @@
+---
+title: "OpenClaw 源码架构解析"
+description: "OpenClaw 整体架构分层与模块关系。"
+domain: product
+tags:
+  - openclaw
+  - source-code
+  - architecture
+status: canonical
+---
+
 # OpenClaw 源码架构解析
 
 > **前置知识**：本章节面向具备 TypeScript/Node.js 基础的开发者，建议先阅读 [使用手册](../index.md) 了解 OpenClaw 的基本使用。

@@ -1,31 +1,17 @@
 ---
-title: Frontend AI
-description: Frontend AI — how to use it in engineering.
+title: "Moved"
+description: "This page has been merged into the new structure."
 domain: tech
-tags:
-  - frontend
-outline: false
-pageClass: catalog-page
+tags: [redirect]
+listed: false
+status: redirect
+head:
+  - - meta
+    - http-equiv: refresh
+    - content: '0; url=/tech/02-inference-interface/index'
+  - - link
+    - rel: canonical
+    - href: /tech/02-inference-interface/index
 ---
 
-# Frontend AI
-
-> Streaming, Generative UI, Browser AI, and State Management for frontend engineers
-
-## Contents
-
-- [Streaming](./streaming) - Streaming LLM responses to the UI
-- [Generative UI](./generative-ui) - AI-generated user interfaces
-- [Browser AI](./browser-ai) - Running AI in the browser
-- [State Management](./state-management) - State patterns for AI apps
-
-## Learning Path
-
-- **Beginner**: Start with [Streaming](./streaming)
-- **Intermediate**: Explore [Generative UI](./generative-ui) and [Browser AI](./browser-ai)
-- **Advanced**: Design robust [State Management](./state-management)
-
-## Related Resources
-
-- [Back to parent](../)
-- [Home](/)
+This page has moved to [/tech/02-integration/](/tech/02-inference-interface/index).
