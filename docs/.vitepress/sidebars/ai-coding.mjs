@@ -96,6 +96,7 @@ export const enAiCodingItems = [
                                        collapsed: false,
                                        items: [
                                           { text: 'Codex CLI', link: '/products/codex/codex-cli' },
+                                          { text: 'Models & Shared Configuration', link: '/products/codex/model-providers' },
                                           { text: 'Codex Cookbook', link: '/products/codex/codex-cookbook' },
                                           { text: 'Codex Product Line', link: '/products/codex/codex-ai' },
                                        ]
@@ -292,6 +293,7 @@ export const zhAiCodingItems = [
                                        collapsed: false,
                                        items: [
                                           { text: 'Codex CLI', link: '/zh/products/codex/codex-cli' },
+                                          { text: '第三方模型与双配置', link: '/zh/products/codex/model-providers' },
                                           { text: 'Codex 实战 Cookbook', link: '/zh/products/codex/codex-cookbook' },
                                           { text: 'Codex AI', link: '/zh/products/codex/codex-ai' },
                                        ]

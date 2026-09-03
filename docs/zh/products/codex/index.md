@@ -13,6 +13,8 @@ role: map
 >
 > 官方文档在 `learn.chatgpt.com/docs`。旧地址 `developers.openai.com/codex/*` 会 308 过去。
 
+要让 App 与 CLI 共用官方登录、试用第三方模型或恢复官方默认，请读 [第三方模型与双配置](./model-providers)。
+
 ## 产品全景图
 
 OpenAI 这一侧不是「一个 CLI」，而是同一账号下的几层产品。2026-07-09 起，独立 Codex 桌面应用并入 [ChatGPT 桌面应用](https://learn.chatgpt.com/docs/app)：里面同时有 Chat、Work、Codex。

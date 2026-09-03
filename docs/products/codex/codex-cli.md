@@ -15,6 +15,8 @@ role: tutorial
 >
 > Everything below is traceable to the official documentation at `learn.chatgpt.com/docs`. The older `developers.openai.com/codex/*` URLs now 308-redirect there.
 
+For shared App/CLI sign-in, third-party providers, and recovery to official defaults, see [Models and shared configuration](./model-providers).
+
 ## What you are installing
 
 Codex is an agent, not an autocomplete. You give it a task in natural language; it reads files, runs commands, edits code, and reports back. The three things that make it usable in a real repository — and the three things this page sets up — are:
