@@ -15,6 +15,8 @@ role: tutorial
 >
 > 下面所有命令、flag、配置键都能在 `learn.chatgpt.com/docs` 找到原文。旧地址 `developers.openai.com/codex/*` 会 308 过去。
 
+要让 App 与 CLI 共用官方登录、试用第三方模型或恢复官方默认，请读 [第三方模型与双配置](./model-providers)。
+
 ## 你在装什么
 
 Codex 是 Agent，不是补全。你用自然语言下任务；它读文件、跑命令、改代码、再回报。让它在真实仓库里可用的三件事——也是本页要配齐的三件事：

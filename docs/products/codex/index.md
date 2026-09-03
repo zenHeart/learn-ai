@@ -13,6 +13,8 @@ role: map
 >
 > Docs live at `learn.chatgpt.com/docs`. Older `developers.openai.com/codex/*` URLs 308 there.
 
+For shared App/CLI sign-in, third-party providers, and recovery to official defaults, see [Models and shared configuration](./model-providers).
+
 ## Product map
 
 This is not “a CLI”. It is one account and several products. On 2026-07-09 the standalone Codex app merged into the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app): Chat, Work, and Codex in one window.

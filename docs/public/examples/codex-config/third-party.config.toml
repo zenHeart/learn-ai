@@ -1,0 +1,11 @@
+# Put this in the isolated API home's config.toml for both App and CLI.
+# For CLI-only switching, use gateway.config.toml and --profile gateway.
+model_provider = "example_gateway"
+model = "provider-model-id"
+
+[model_providers.example_gateway]
+name = "Example Responses gateway"
+base_url = "https://gateway.example.com/v1"
+env_key = "EXAMPLE_MODEL_API_KEY"
+wire_api = "responses"
+supports_websockets = false

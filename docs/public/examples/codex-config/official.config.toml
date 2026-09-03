@@ -1,0 +1,4 @@
+# Merge into the user config; do not overwrite integrations or project settings.
+# Leave model, model_provider, model_catalog_json and base URLs unset.
+# App and CLI must resolve the same CODEX_HOME and credential backend.
+cli_auth_credentials_store = "file"
