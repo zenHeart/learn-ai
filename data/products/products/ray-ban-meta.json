@@ -1,0 +1,29 @@
+{
+  "id": "ray-ban-meta",
+  "name": "Ray-Ban Meta",
+  "name_zh": "Ray-Ban Meta 智能眼镜",
+  "vendor_id": "meta-essilorluxottica",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2023-10-17",
+  "homepage": "https://www.meta.com/smart-glasses",
+  "desc": "Camera-and-assistant glasses; the only mass-market AI wearable hit",
+  "desc_zh": "带摄像头与语音助手的智能眼镜，AI 穿戴中唯一真正走量的产品",
+  "tags": [
+    "hardware",
+    "wearable",
+    "camera"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认；产品为 AI 智能眼镜硬件，form 枚举无硬件类，desktop 为最贴近取值，待合并时确认",
+  "revisions": []
+}

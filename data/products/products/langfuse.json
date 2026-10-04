@@ -1,0 +1,30 @@
+{
+  "id": "langfuse",
+  "name": "Langfuse",
+  "name_zh": "Langfuse",
+  "vendor_id": "langfuse",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2023-08-20",
+  "homepage": "https://langfuse.com",
+  "desc": "Open-source tracing, prompt management and LLM evals",
+  "desc_zh": "开源的 LLM 追踪、Prompt 管理与评测平台，自托管友好",
+  "tags": [
+    "open-source",
+    "tracing",
+    "llmops"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

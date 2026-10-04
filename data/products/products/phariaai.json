@@ -1,0 +1,31 @@
+{
+  "id": "phariaai",
+  "name": "PhariaAI",
+  "name_zh": "PhariaAI",
+  "vendor_id": "aleph-alpha",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "local-private"
+  ],
+  "form": "api",
+  "released": "2024-08-26",
+  "homepage": "https://pharia.com/",
+  "desc": "Sovereign, explainable generative AI stack for regulated organisations",
+  "desc_zh": "面向受监管机构的主权型、可解释生成式 AI 技术栈",
+  "tags": [
+    "sovereign-ai",
+    "explainability",
+    "compliance",
+    "on-premises"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

@@ -54,6 +54,7 @@
     variant: { type: String, default: 'card' },
     isZh: { type: Boolean, default: false },
     labels: { type: Object, required: true },
+    category: { type: Object, default: null },
   })
 
   const label = computed(() =>
@@ -66,7 +67,7 @@
     props.isZh ? props.product.vendorZh || props.product.vendor : props.product.vendor
   )
   const categoryLabel = computed(
-    () => props.labels.categories[props.product.category] || props.product.category
+    () => props.category?.name || props.product.category
   )
   const regionLabel = computed(() =>
     props.product.region === 'cn'
@@ -79,9 +80,9 @@
     return /^\d{4}-\d{2}$/.test(raw) ? raw : raw.slice(0, 10)
   })
   const docHref = computed(() => {
-    const route = props.isZh
-      ? props.product.docs?.zh
-      : props.product.docs?.en
+    const handbook = props.product.handbook
+    if (handbook?.status !== 'written') return null
+    const route = props.isZh ? handbook.route?.zh : handbook.route?.en
     return route ? withBase(route) : null
   })
   // A tag that just restates the category chip above it is noise.

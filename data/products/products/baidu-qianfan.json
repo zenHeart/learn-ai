@@ -1,0 +1,29 @@
+{
+  "id": "baidu-qianfan",
+  "name": "百度千帆",
+  "name_zh": "百度千帆",
+  "vendor_id": "baidu",
+  "region": "cn",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2023-11-09",
+  "homepage": "https://qianfan.cloud.baidu.com",
+  "desc": "百度智能云大模型开发与服务平台",
+  "desc_zh": "百度智能云大模型开发与服务平台",
+  "tags": [
+    "model-platform",
+    "maas",
+    "baidu-cloud"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

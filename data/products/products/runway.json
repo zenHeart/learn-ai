@@ -1,0 +1,29 @@
+{
+  "id": "runway",
+  "name": "Runway",
+  "name_zh": "Runway",
+  "vendor_id": "runway",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2018-12-01",
+  "homepage": "https://runwayml.com",
+  "desc": "Generative video platform; Gen-2 text-to-video in 2023-03",
+  "desc_zh": "生成式视频平台，2023-03 推出 Gen-2，首个公开可用的文生视频模型",
+  "tags": [
+    "video-generation",
+    "creative",
+    "multimodal"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

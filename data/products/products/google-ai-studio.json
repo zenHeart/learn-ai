@@ -1,0 +1,30 @@
+{
+  "id": "google-ai-studio",
+  "name": "Google AI Studio",
+  "name_zh": "Google AI Studio",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "web",
+  "released": "2023-12-13",
+  "homepage": "https://aistudio.google.com/",
+  "desc": "Free web playground for prompting and tuning Gemini models",
+  "desc_zh": "免费网页工作台，用于提示词调试与 Gemini 模型微调",
+  "tags": [
+    "playground",
+    "prompt-engineering",
+    "free-tier",
+    "developer-tools"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

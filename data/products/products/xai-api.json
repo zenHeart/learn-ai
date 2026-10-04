@@ -1,0 +1,30 @@
+{
+  "id": "xai-api",
+  "name": "xAI API",
+  "name_zh": "xAI API",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2024-11-04",
+  "homepage": "https://x.ai/api",
+  "desc": "OpenAI-compatible developer API serving Grok models",
+  "desc_zh": "兼容 OpenAI 接口的开发者 API，提供 Grok 系列模型",
+  "tags": [
+    "api",
+    "openai-compatible",
+    "developer-platform",
+    "grok"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

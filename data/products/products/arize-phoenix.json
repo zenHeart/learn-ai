@@ -1,0 +1,29 @@
+{
+  "id": "arize-phoenix",
+  "name": "Arize Phoenix",
+  "name_zh": "Arize Phoenix",
+  "vendor_id": "arize-ai",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability"
+  ],
+  "form": "self-hosted",
+  "released": "2024-06-12",
+  "homepage": "https://phoenix.arize.com",
+  "desc": "Open-source tracing and eval library for LLM applications",
+  "desc_zh": "开源的 LLM 应用追踪与评测库，可在本地 Notebook 中直接跑",
+  "tags": [
+    "open-source",
+    "tracing",
+    "evaluation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认；phoenix.arize.com 已 301 跳转至 https://arize.com/phoenix，homepage 地址待合并时统一更新",
+  "revisions": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qoder",
+  "name": "Qoder",
+  "name_zh": "Qoder",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-08-22",
+  "homepage": "https://qoder.com",
+  "desc": "通义灵码更名的智能编码 IDE",
+  "desc_zh": "通义灵码更名的智能编码 IDE",
+  "tags": [
+    "coding-agent",
+    "ai-ide",
+    "alibaba"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/lingma/",
+      "zh": "/zh/products/lingma/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

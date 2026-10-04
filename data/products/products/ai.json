@@ -1,0 +1,30 @@
+{
+  "id": "ai",
+  "name": "天工AI",
+  "name_zh": "天工AI",
+  "vendor_id": "kunlun",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-04-18",
+  "homepage": "https://www.tiangong.cn",
+  "desc": "昆仑万维天工大模型官方助手",
+  "desc_zh": "昆仑万维天工大模型官方助手",
+  "tags": [
+    "chat-assistant",
+    "skywork",
+    "kunlun"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

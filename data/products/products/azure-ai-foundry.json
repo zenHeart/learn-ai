@@ -1,0 +1,31 @@
+{
+  "id": "azure-ai-foundry",
+  "name": "Azure AI Foundry",
+  "name_zh": "Azure AI Foundry",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-11-19",
+  "homepage": "https://azure.microsoft.com/en-us/products/ai-foundry",
+  "desc": "Unified Microsoft Foundry platform for models, tools and agents",
+  "desc_zh": "微软统一的 Foundry 平台，整合模型、工具与智能体能力",
+  "tags": [
+    "cloud-platform",
+    "enterprise",
+    "agent-service",
+    "model-catalog"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

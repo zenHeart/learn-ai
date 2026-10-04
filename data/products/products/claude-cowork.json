@@ -1,0 +1,35 @@
+{
+  "id": "claude-cowork",
+  "name": "Claude Cowork",
+  "name_zh": "Claude Cowork",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "released": "2026-01-12",
+  "homepage": "https://www.anthropic.com/product/claude-cowork",
+  "desc": "Desktop knowledge-work agent, folded into Claude in Sept 2026",
+  "desc_zh": "桌面端知识工作智能体，2026 年 9 月并入 Claude",
+  "tags": [
+    "autonomous-agent",
+    "knowledge-work",
+    "desktop",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/claude/",
+      "zh": "/zh/products/claude/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

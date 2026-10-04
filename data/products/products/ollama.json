@@ -1,0 +1,33 @@
+{
+  "id": "ollama",
+  "name": "Ollama",
+  "name_zh": "Ollama",
+  "vendor_id": "ollama",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private"
+  ],
+  "form": "cli",
+  "released": "2023-07-08",
+  "homepage": "https://ollama.com",
+  "desc": "One-command local model runner that made LLMs accessible",
+  "desc_zh": "一条命令即可本地跑模型，是本地 LLM 普及的关键推手",
+  "tags": [
+    "open-source",
+    "local-llm",
+    "runtime"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/ollama.html",
+      "zh": "/zh/products/ollama.html"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

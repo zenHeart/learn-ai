@@ -1,0 +1,34 @@
+{
+  "id": "tongyi",
+  "name": "通义",
+  "name_zh": "通义",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-10-31",
+  "homepage": "https://www.tongyi.com",
+  "desc": "通义助手应用，后更名千问",
+  "desc_zh": "通义助手应用，后更名千问",
+  "tags": [
+    "chat-assistant",
+    "qwen",
+    "alibaba"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/qwen/",
+      "zh": "/zh/products/qwen/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网 tongyi.com 已 301 跳转至 qianwen.com，通义并入千问；status/superseded_by 待合并时处理",
+  "revisions": []
+}

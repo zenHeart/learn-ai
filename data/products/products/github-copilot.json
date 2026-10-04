@@ -1,0 +1,34 @@
+{
+  "id": "github-copilot",
+  "name": "GitHub Copilot",
+  "name_zh": "GitHub Copilot",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2021-06-29",
+  "homepage": "https://github.com/features/copilot",
+  "desc": "AI pair programmer with inline completion and agent mode in IDEs",
+  "desc_zh": "AI 结对编程工具，提供行内补全与 IDE 内的智能体模式",
+  "tags": [
+    "code-completion",
+    "ide-extension",
+    "pair-programming",
+    "github"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/copilot/",
+      "zh": "/zh/products/copilot/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

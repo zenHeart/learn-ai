@@ -1,0 +1,33 @@
+{
+  "id": "minimax-agent",
+  "name": "MiniMax Agent",
+  "name_zh": "MiniMax Agent",
+  "vendor_id": "minimax",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-06-19",
+  "homepage": "https://agent.minimaxi.com",
+  "desc": "MiniMax 通用智能体构建平台",
+  "desc_zh": "MiniMax 通用智能体构建平台",
+  "tags": [
+    "agent-platform",
+    "general-agent",
+    "minimax"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/minimax-agent/",
+      "zh": "/zh/products/minimax-agent/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网 agent.minimaxi.com 返回 302 跳转 agent.minimax.cn（境内域名，homepage 字段未改），跳转后确认标题「MiniMax Agent」。",
+  "revisions": []
+}

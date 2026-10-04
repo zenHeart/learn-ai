@@ -1,0 +1,29 @@
+{
+  "id": "relevance-ai",
+  "name": "Relevance AI",
+  "name_zh": "Relevance AI",
+  "vendor_id": "relevance-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2023-02-20",
+  "homepage": "https://relevanceai.com",
+  "desc": "Build and deploy a workforce of no-code AI agents",
+  "desc_zh": "构建并部署一支无代码 AI 员工队伍，支持多智能体团队协作",
+  "tags": [
+    "no-code",
+    "multi-agent",
+    "workforce"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,47 @@
+{
+  "id": "local-private",
+  "title": "Local & private",
+  "title_zh": "本地与私有化",
+  "description": "Running models on your own machine or your own server. The reason is usually privacy, latency, or cost per token.",
+  "description_zh": "把模型跑在自己的机器或服务器上。原因通常是隐私、延迟，或者每 token 成本。",
+  "dimensions": [
+    {
+      "id": "local-runner",
+      "label": "Run on your machine",
+      "label_zh": "本机运行",
+      "weight": 3,
+      "keywords": [
+        "local-llm",
+        "local",
+        "on-device",
+        "model-runtime",
+        "ollama"
+      ]
+    },
+    {
+      "id": "self-hosted",
+      "label": "Self-hosted service",
+      "label_zh": "自托管服务",
+      "weight": 3,
+      "keywords": [
+        "self-hosted",
+        "on-premises",
+        "private",
+        "deploy"
+      ]
+    },
+    {
+      "id": "edge-sdk",
+      "label": "Edge & on-device SDK",
+      "label_zh": "端侧 / 边缘 SDK",
+      "weight": 2,
+      "keywords": [
+        "edge",
+        "mobile",
+        "mlx",
+        "quantization",
+        "small"
+      ]
+    }
+  ]
+}

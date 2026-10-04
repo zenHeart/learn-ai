@@ -1,0 +1,30 @@
+{
+  "id": "krea",
+  "name": "Krea",
+  "name_zh": "Krea",
+  "vendor_id": "krea",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "released": "2023-08-01",
+  "homepage": "https://www.krea.ai",
+  "desc": "Real-time generative canvas with sub-second image feedback",
+  "desc_zh": "实时生成画布，图像反馈进入亚秒级，可边画边生成",
+  "tags": [
+    "real-time",
+    "image-generation",
+    "canvas"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认，标题「Krea: AI Creative Suite for Images, Video & 3D」。",
+  "revisions": []
+}

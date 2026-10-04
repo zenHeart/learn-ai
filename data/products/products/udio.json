@@ -1,0 +1,29 @@
+{
+  "id": "udio",
+  "name": "Udio",
+  "name_zh": "Udio",
+  "vendor_id": "uncharted-labs",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2024-04-10",
+  "homepage": "https://www.udio.com",
+  "desc": "Music generation startup from former DeepMind researchers",
+  "desc_zh": "由前 DeepMind  researcher 创办的音乐生成平台，2024-04 公测",
+  "tags": [
+    "music-generation",
+    "audio",
+    "creative"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

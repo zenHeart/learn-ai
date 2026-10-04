@@ -1,0 +1,34 @@
+{
+  "id": "doubao",
+  "name": "豆包",
+  "name_zh": "豆包",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-08-17",
+  "homepage": "https://www.doubao.com",
+  "desc": "字节跳动通用 AI 助手",
+  "desc_zh": "字节跳动通用 AI 助手",
+  "tags": [
+    "chat-assistant",
+    "bytedance",
+    "consumer"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/doubao/",
+      "zh": "/zh/products/doubao/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

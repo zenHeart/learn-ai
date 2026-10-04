@@ -1,0 +1,33 @@
+{
+  "id": "coze-space",
+  "name": "扣子空间",
+  "name_zh": "扣子空间",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-04-18",
+  "homepage": "https://www.coze.cn/space",
+  "desc": "字节通用 Agent 协作平台",
+  "desc_zh": "字节通用 Agent 协作平台",
+  "tags": [
+    "agent-platform",
+    "general-agent",
+    "bytedance"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/coze/",
+      "zh": "/zh/products/coze/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

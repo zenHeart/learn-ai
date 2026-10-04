@@ -1,0 +1,31 @@
+{
+  "id": "nvidia-nim",
+  "name": "NVIDIA NIM",
+  "name_zh": "NVIDIA NIM",
+  "vendor_id": "nvidia",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "local-private"
+  ],
+  "form": "api",
+  "released": "2024-03-18",
+  "homepage": "https://build.nvidia.com/",
+  "desc": "Optimized inference microservices packaging models for GPU deployment",
+  "desc_zh": "面向 GPU 部署的优化推理微服务，将模型打包为即用容器",
+  "tags": [
+    "inference",
+    "microservices",
+    "on-premises",
+    "openai-compatible"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

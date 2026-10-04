@@ -21,6 +21,7 @@
               variant="row"
               :is-zh="isZh"
               :labels="labels"
+              :category="categoryOf(product.category)"
             />
           </div>
         </div>
@@ -35,9 +36,17 @@
 
   const props = defineProps({
     products: { type: Array, required: true },
+    categories: { type: Array, default: () => [] },
     isZh: { type: Boolean, default: false },
     labels: { type: Object, required: true },
   })
+
+  const categoryIndex = computed(() => {
+    const m = new Map()
+    for (const c of props.categories) m.set(c.id, c)
+    return m
+  })
+  const categoryOf = (id) => categoryIndex.value.get(id) ?? null
 
   // Newest first, so the hub reads as "what just shipped → what came before".
   const groups = computed(() => {

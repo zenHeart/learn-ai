@@ -1,0 +1,29 @@
+{
+  "id": "granola",
+  "name": "Granola",
+  "name_zh": "Granola",
+  "vendor_id": "granola",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2024-05-22",
+  "homepage": "https://www.granola.ai",
+  "desc": "Bot-free AI meeting notepad that merges your own notes",
+  "desc_zh": "不加会议机器人的 AI 笔记，用你的手写笔记与转录合并成纪要",
+  "tags": [
+    "meetings",
+    "notes",
+    "no-bot"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

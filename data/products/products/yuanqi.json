@@ -1,0 +1,29 @@
+{
+  "id": "yuanqi",
+  "name": "腾讯元器",
+  "name_zh": "腾讯元器",
+  "vendor_id": "tencent",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-05-30",
+  "homepage": "https://yuanqi.tencent.com",
+  "desc": "腾讯智能体创建与分发平台",
+  "desc_zh": "腾讯智能体创建与分发平台",
+  "tags": [
+    "agent-platform",
+    "low-code",
+    "tencent"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认，标题「腾讯元器 - AI 智能体创建与分发平台」，是一个智能体广场式的搭建与分发平台。",
+  "revisions": []
+}

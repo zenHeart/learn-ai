@@ -1,0 +1,34 @@
+{
+  "id": "codex-cli",
+  "name": "Codex CLI",
+  "name_zh": "Codex CLI",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-04-16",
+  "homepage": "https://github.com/openai/codex",
+  "desc": "Apache-2.0 open-source terminal coding agent running local repos",
+  "desc_zh": "Apache-2.0 开源终端编程智能体，在本地仓库中读写与执行代码",
+  "tags": [
+    "open-source",
+    "cli",
+    "terminal",
+    "agentic-coding"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/codex/",
+      "zh": "/zh/products/codex/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

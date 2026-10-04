@@ -1,0 +1,31 @@
+{
+  "id": "notebooklm",
+  "name": "NotebookLM",
+  "name_zh": "NotebookLM",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-07-26",
+  "homepage": "https://notebooklm.google.com/",
+  "desc": "Grounded research assistant answering from your own uploaded sources",
+  "desc_zh": "基于你自己上传的资料做溯源问答的研究助手",
+  "tags": [
+    "rag",
+    "research",
+    "grounding",
+    "education"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

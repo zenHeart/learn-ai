@@ -1,0 +1,30 @@
+{
+  "id": "webflow-ai",
+  "name": "Webflow AI",
+  "name_zh": "Webflow AI",
+  "vendor_id": "webflow",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2023-09-05",
+  "homepage": "https://webflow.com/ai",
+  "desc": "AI site builder, copywriter and Figma-to-code inside Webflow",
+  "desc_zh": "Webflow 内置的 AI 建站、文案生成与 Figma 转代码能力",
+  "tags": [
+    "no-code",
+    "web-design",
+    "cms"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "windsurf",
+  "name": "Windsurf",
+  "name_zh": "Windsurf（现 Devin Desktop）",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2023-11-14",
+  "homepage": "https://windsurf.com",
+  "desc": "AI editor acquired by Cognition, now Devin Desktop.",
+  "desc_zh": "AI 编辑器，已被 Cognition 收购，现为 Devin Desktop。",
+  "tags": [
+    "ai-ide",
+    "rebrand",
+    "code-editor"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "2026-10-04 核实：windsurf.com 跳转至 devin.ai/desktop（Windsurf 已更名 Devin Desktop），无独立 Windsurf 页面。homepage 与 status/superseded_by 的调整走 revisions。",
+  "revisions": []
+}

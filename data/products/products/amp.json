@@ -1,0 +1,29 @@
+{
+  "id": "amp",
+  "name": "Amp",
+  "name_zh": "Amp",
+  "vendor_id": "amp-frontier",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-05-18",
+  "homepage": "https://ampcode.com",
+  "desc": "Sourcegraph spin-out coding agent for CLI and editor",
+  "desc_zh": "源自 Sourcegraph 的编码 Agent，2025-12 独立成公司 Amp Frontier",
+  "tags": [
+    "cli-agent",
+    "spinout",
+    "code-editor"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

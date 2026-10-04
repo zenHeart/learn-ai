@@ -1,0 +1,29 @@
+{
+  "id": "dify",
+  "name": "Dify",
+  "name_zh": "Dify",
+  "vendor_id": "langgenius",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2023-05-09",
+  "homepage": "https://dify.ai",
+  "desc": "Open-source LLMOps platform for visual LLM app building",
+  "desc_zh": "开源 LLMOps 平台，可视化编排 LLM 应用、工作流与 Agent",
+  "tags": [
+    "open-source",
+    "llmops",
+    "self-hosted"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

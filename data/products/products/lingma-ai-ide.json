@@ -1,0 +1,33 @@
+{
+  "id": "lingma-ai-ide",
+  "name": "通义灵码 AI IDE",
+  "name_zh": "通义灵码 AI IDE",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-05-30",
+  "homepage": "https://lingma.aliyun.com",
+  "desc": "Alibaba AI-native IDE with a built-in coding agent",
+  "desc_zh": "阿里首款 AI 原生开发环境，内置编程智能体",
+  "tags": [
+    "ai-ide",
+    "agentic-coding",
+    "qwen"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/lingma/",
+      "zh": "/zh/products/lingma/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认；lingma.aliyun.com/ide 子路径需登录才能访问，根路径可正常打开",
+  "revisions": []
+}

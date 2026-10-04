@@ -1,0 +1,29 @@
+{
+  "id": "jan",
+  "name": "Jan",
+  "name_zh": "Jan",
+  "vendor_id": "jan",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private"
+  ],
+  "form": "desktop",
+  "released": "2024-01-20",
+  "homepage": "https://jan.ai",
+  "desc": "Open-source offline ChatGPT alternative with Cortex engine",
+  "desc_zh": "开源离线 ChatGPT 替代方案，自带 Cortex 推理引擎",
+  "tags": [
+    "open-source",
+    "offline",
+    "local-llm"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "deepseek",
+  "name": "DeepSeek 开放平台",
+  "name_zh": "DeepSeek 开放平台",
+  "vendor_id": "deepseek",
+  "region": "cn",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2024-12-26",
+  "homepage": "https://platform.deepseek.com",
+  "desc": "DeepSeek 模型 API 开放平台",
+  "desc_zh": "DeepSeek 模型 API 开放平台",
+  "tags": [
+    "enterprise-api",
+    "api",
+    "deepseek"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

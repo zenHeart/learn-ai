@@ -1,0 +1,30 @@
+{
+  "id": "synthesia",
+  "name": "Synthesia",
+  "name_zh": "Synthesia",
+  "vendor_id": "synthesia",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "office"
+  ],
+  "form": "web",
+  "released": "2020-11-01",
+  "homepage": "https://www.synthesia.io",
+  "desc": "Enterprise avatar video platform for training and comms",
+  "desc_zh": "面向企业培训与沟通的数字人视频平台，品类最早的商业化玩家",
+  "tags": [
+    "avatar",
+    "enterprise",
+    "video-generation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ideogram",
+  "name": "Ideogram",
+  "name_zh": "Ideogram",
+  "vendor_id": "ideogram",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2023-08-22",
+  "homepage": "https://ideogram.ai",
+  "desc": "Best-in-class legible text rendering inside images",
+  "desc_zh": "图像内文字排版准确率领先，是海报与 Logo 生成的常用选择",
+  "tags": [
+    "image-generation",
+    "typography",
+    "creative"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

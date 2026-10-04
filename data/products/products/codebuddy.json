@@ -1,0 +1,33 @@
+{
+  "id": "codebuddy",
+  "name": "CodeBuddy",
+  "name_zh": "CodeBuddy",
+  "vendor_id": "tencent-cloud",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-07-22",
+  "homepage": "https://copilot.tencent.com",
+  "desc": "Tencent Cloud AI coding suite across IDE and CLI.",
+  "desc_zh": "腾讯云的 AI 编程助手套件，覆盖 IDE 与 CLI。",
+  "tags": [
+    "ide",
+    "cli",
+    "china"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/codebuddy/",
+      "zh": "/zh/products/codebuddy/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "claude-api",
+  "name": "Claude API",
+  "name_zh": "Claude API",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2023-06-20",
+  "homepage": "https://platform.claude.com/",
+  "desc": "Anthropic developer API and Claude Agent SDK for building agents",
+  "desc_zh": "Anthropic 开发者 API 与 Claude Agent SDK，用于构建智能体",
+  "tags": [
+    "api",
+    "developer-sdk",
+    "agents",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/claude/",
+      "zh": "/zh/products/claude/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "lovable",
+  "name": "Lovable",
+  "name_zh": "Lovable",
+  "vendor_id": "lovable",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2024-11-21",
+  "homepage": "https://lovable.dev",
+  "desc": "Chat-driven builder for full-stack React web apps",
+  "desc_zh": "对话式全栈 React 应用生成器，上线半年成为最快增长的 AI 应用",
+  "tags": [
+    "app-generation",
+    "fullstack",
+    "no-code"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网反爬未确认（403）",
+  "notes": "",
+  "revisions": []
+}

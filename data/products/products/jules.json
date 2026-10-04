@@ -1,0 +1,34 @@
+{
+  "id": "jules",
+  "name": "Jules",
+  "name_zh": "Jules",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2024-12-11",
+  "homepage": "https://jules.google/",
+  "desc": "Asynchronous cloud coding agent that opens pull requests",
+  "desc_zh": "异步云端编程智能体，后台运行并直接提交 Pull Request",
+  "tags": [
+    "cloud-agent",
+    "async",
+    "github",
+    "agentic-coding"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/gemini/",
+      "zh": "/zh/products/gemini/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

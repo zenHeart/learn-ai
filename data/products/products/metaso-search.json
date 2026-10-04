@@ -1,0 +1,29 @@
+{
+  "id": "metaso-search",
+  "name": "秘塔AI搜索",
+  "name_zh": "秘塔AI搜索",
+  "vendor_id": "metaso",
+  "region": "cn",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2024-03-01",
+  "homepage": "https://metaso.cn",
+  "desc": "无广告直达结果的生成式 AI 搜索",
+  "desc_zh": "无广告直达结果的生成式 AI 搜索",
+  "tags": [
+    "search",
+    "ai-search",
+    "metaso"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

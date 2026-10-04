@@ -1,0 +1,727 @@
+{
+  "$comment": "厂商注册表。id 被产品档 vendor_id 引用；official_domains 是入库发现阶段的官方域名白名单，跳转越界即拒。",
+  "version": "1",
+  "vendors": [
+    {
+      "id": "360",
+      "display_name": "360",
+      "display_name_zh": "360",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "alibaba",
+      "display_name": "阿里巴巴",
+      "display_name_zh": "阿里巴巴",
+      "region": "cn",
+      "product_count": 6
+    },
+    {
+      "id": "baidu",
+      "display_name": "百度",
+      "display_name_zh": "百度",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "stepfun",
+      "display_name": "阶跃星辰",
+      "display_name_zh": "阶跃星辰",
+      "region": "cn",
+      "product_count": 2
+    },
+    {
+      "id": "iflytek",
+      "display_name": "科大讯飞",
+      "display_name_zh": "科大讯飞",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "kunlun",
+      "display_name": "昆仑万维",
+      "display_name_zh": "昆仑万维",
+      "region": "cn",
+      "product_count": 2
+    },
+    {
+      "id": "01ai",
+      "display_name": "零一万物",
+      "display_name_zh": "零一万物",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "metaso",
+      "display_name": "秘塔",
+      "display_name_zh": "秘塔",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "openbmb",
+      "display_name": "面壁智能",
+      "display_name_zh": "面壁智能",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "sensetime",
+      "display_name": "商汤",
+      "display_name_zh": "商汤",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "tencent",
+      "display_name": "腾讯",
+      "display_name_zh": "腾讯",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "tencent-cloud",
+      "display_name": "腾讯云",
+      "display_name_zh": "腾讯云",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "moonshot",
+      "display_name": "月之暗面",
+      "display_name_zh": "月之暗面",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "zhipu",
+      "display_name": "智谱",
+      "display_name_zh": "智谱",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "bytedance",
+      "display_name": "字节跳动",
+      "display_name_zh": "字节跳动",
+      "region": "cn",
+      "product_count": 5
+    },
+    {
+      "id": "ai21-labs",
+      "display_name": "AI21 Labs",
+      "display_name_zh": "AI21 Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "aleph-alpha",
+      "display_name": "Aleph Alpha",
+      "display_name_zh": "Aleph Alpha",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "amazon",
+      "display_name": "Amazon",
+      "display_name_zh": "Amazon",
+      "region": "intl",
+      "product_count": 3
+    },
+    {
+      "id": "amp-frontier",
+      "display_name": "Amp Frontier",
+      "display_name_zh": "Amp Frontier",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "anthropic",
+      "display_name": "Anthropic",
+      "display_name_zh": "Anthropic",
+      "region": "intl",
+      "product_count": 5
+    },
+    {
+      "id": "anysphere",
+      "display_name": "Anysphere",
+      "display_name_zh": "Anysphere",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "apple",
+      "display_name": "Apple",
+      "display_name_zh": "Apple",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "arize-ai",
+      "display_name": "Arize AI",
+      "display_name_zh": "Arize AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "atlassian",
+      "display_name": "Atlassian",
+      "display_name_zh": "Atlassian",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "augment",
+      "display_name": "Augment",
+      "display_name_zh": "Augment",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "aws",
+      "display_name": "AWS",
+      "display_name_zh": "AWS",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "braintrust",
+      "display_name": "Braintrust",
+      "display_name_zh": "Braintrust",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "butterfly-effect",
+      "display_name": "Butterfly Effect",
+      "display_name_zh": "Butterfly Effect",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "canva",
+      "display_name": "Canva",
+      "display_name_zh": "Canva",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "character-ai",
+      "display_name": "Character.AI",
+      "display_name_zh": "Character.AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "cline",
+      "display_name": "Cline",
+      "display_name_zh": "Cline",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "cognition",
+      "display_name": "Cognition",
+      "display_name_zh": "Cognition",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "cohere",
+      "display_name": "Cohere",
+      "display_name_zh": "Cohere",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "crewai",
+      "display_name": "CrewAI",
+      "display_name_zh": "CrewAI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "deepseek",
+      "display_name": "DeepSeek",
+      "display_name_zh": "DeepSeek",
+      "region": "cn",
+      "product_count": 2
+    },
+    {
+      "id": "descript",
+      "display_name": "Descript",
+      "display_name_zh": "Descript",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "element-labs",
+      "display_name": "Element Labs",
+      "display_name_zh": "Element Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "elevenlabs",
+      "display_name": "ElevenLabs",
+      "display_name_zh": "ElevenLabs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "exa-labs",
+      "display_name": "Exa Labs",
+      "display_name_zh": "Exa Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "factory-ai",
+      "display_name": "Factory AI",
+      "display_name_zh": "Factory AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "fathom",
+      "display_name": "Fathom",
+      "display_name_zh": "Fathom",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "figma",
+      "display_name": "Figma",
+      "display_name_zh": "Figma",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "fireflies-ai",
+      "display_name": "Fireflies.ai",
+      "display_name_zh": "Fireflies.ai",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "flowiseai",
+      "display_name": "FlowiseAI",
+      "display_name_zh": "FlowiseAI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "framer",
+      "display_name": "Framer",
+      "display_name_zh": "Framer",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "google",
+      "display_name": "Google",
+      "display_name_zh": "Google",
+      "region": "intl",
+      "product_count": 7
+    },
+    {
+      "id": "granola",
+      "display_name": "Granola",
+      "display_name_zh": "Granola",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "gumloop",
+      "display_name": "Gumloop",
+      "display_name_zh": "Gumloop",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "helicone",
+      "display_name": "Helicone",
+      "display_name_zh": "Helicone",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "heygen",
+      "display_name": "HeyGen",
+      "display_name_zh": "HeyGen",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "higgsfield",
+      "display_name": "Higgsfield",
+      "display_name_zh": "Higgsfield",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "humane",
+      "display_name": "Humane",
+      "display_name_zh": "Humane",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "ideogram",
+      "display_name": "Ideogram",
+      "display_name_zh": "Ideogram",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "inflection-ai",
+      "display_name": "Inflection AI",
+      "display_name_zh": "Inflection AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "jan",
+      "display_name": "Jan",
+      "display_name_zh": "Jan",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "kagi",
+      "display_name": "Kagi",
+      "display_name_zh": "Kagi",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "krea",
+      "display_name": "Krea",
+      "display_name_zh": "Krea",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "langchain-inc",
+      "display_name": "LangChain Inc.",
+      "display_name_zh": "LangChain Inc.",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "langfuse",
+      "display_name": "Langfuse",
+      "display_name_zh": "Langfuse",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "langgenius",
+      "display_name": "LangGenius",
+      "display_name_zh": "LangGenius",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "leonardo-ai",
+      "display_name": "Leonardo.Ai",
+      "display_name_zh": "Leonardo.Ai",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "lindy",
+      "display_name": "Lindy",
+      "display_name_zh": "Lindy",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "lovable",
+      "display_name": "Lovable",
+      "display_name_zh": "Lovable",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "luma-labs",
+      "display_name": "Luma Labs",
+      "display_name_zh": "Luma Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "mem-labs",
+      "display_name": "Mem Labs",
+      "display_name_zh": "Mem Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "meta",
+      "display_name": "Meta",
+      "display_name_zh": "Meta",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "meta-essilorluxottica",
+      "display_name": "Meta / EssilorLuxottica",
+      "display_name_zh": "Meta / EssilorLuxottica",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "microsoft",
+      "display_name": "Microsoft",
+      "display_name_zh": "Microsoft",
+      "region": "intl",
+      "product_count": 4
+    },
+    {
+      "id": "midjourney-inc",
+      "display_name": "Midjourney, Inc.",
+      "display_name_zh": "Midjourney, Inc.",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "minimax",
+      "display_name": "MiniMax",
+      "display_name_zh": "MiniMax",
+      "region": "cn",
+      "product_count": 4
+    },
+    {
+      "id": "mistral-ai",
+      "display_name": "Mistral AI",
+      "display_name_zh": "Mistral AI",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "n8n",
+      "display_name": "n8n",
+      "display_name_zh": "n8n",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "nomic-ai",
+      "display_name": "Nomic AI",
+      "display_name_zh": "Nomic AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "notion",
+      "display_name": "Notion",
+      "display_name_zh": "Notion",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "nvidia",
+      "display_name": "NVIDIA",
+      "display_name_zh": "NVIDIA",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "ollama",
+      "display_name": "Ollama",
+      "display_name_zh": "Ollama",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "openai",
+      "display_name": "OpenAI",
+      "display_name_zh": "OpenAI",
+      "region": "intl",
+      "product_count": 6
+    },
+    {
+      "id": "openclaw",
+      "display_name": "OpenClaw",
+      "display_name_zh": "OpenClaw",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "otter-ai",
+      "display_name": "Otter.ai",
+      "display_name_zh": "Otter.ai",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "perplexity",
+      "display_name": "Perplexity",
+      "display_name_zh": "Perplexity",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "phind",
+      "display_name": "Phind",
+      "display_name_zh": "Phind",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "pi",
+      "display_name": "Pi",
+      "display_name_zh": "Pi",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "pika-labs",
+      "display_name": "Pika Labs",
+      "display_name_zh": "Pika Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "rabbit-inc",
+      "display_name": "Rabbit Inc.",
+      "display_name_zh": "Rabbit Inc.",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "reka-ai",
+      "display_name": "Reka AI",
+      "display_name_zh": "Reka AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "relevance-ai",
+      "display_name": "Relevance AI",
+      "display_name_zh": "Relevance AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "replit",
+      "display_name": "Replit",
+      "display_name_zh": "Replit",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "roo-code",
+      "display_name": "Roo Code",
+      "display_name_zh": "Roo Code",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "runway",
+      "display_name": "Runway",
+      "display_name_zh": "Runway",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "stackblitz",
+      "display_name": "StackBlitz",
+      "display_name_zh": "StackBlitz",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "suno",
+      "display_name": "Suno",
+      "display_name_zh": "Suno",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "synthesia",
+      "display_name": "Synthesia",
+      "display_name_zh": "Synthesia",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "tana-inc",
+      "display_name": "Tana Inc.",
+      "display_name_zh": "Tana Inc.",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "tavily",
+      "display_name": "Tavily",
+      "display_name_zh": "Tavily",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "tl-dv",
+      "display_name": "tl;dv",
+      "display_name_zh": "tl;dv",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "uncharted-labs",
+      "display_name": "Uncharted Labs",
+      "display_name_zh": "Uncharted Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "vercel",
+      "display_name": "Vercel",
+      "display_name_zh": "Vercel",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "w-b",
+      "display_name": "W&B",
+      "display_name_zh": "W&B",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "warp-inc",
+      "display_name": "Warp Inc.",
+      "display_name_zh": "Warp Inc.",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "webflow",
+      "display_name": "Webflow",
+      "display_name_zh": "Webflow",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "xai",
+      "display_name": "xAI",
+      "display_name_zh": "xAI",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "you-com",
+      "display_name": "You.com",
+      "display_name_zh": "You.com",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "zapier",
+      "display_name": "Zapier",
+      "display_name_zh": "Zapier",
+      "region": "intl",
+      "product_count": 1
+    }
+  ]
+}

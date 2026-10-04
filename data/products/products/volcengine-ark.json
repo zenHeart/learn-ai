@@ -1,0 +1,33 @@
+{
+  "id": "volcengine-ark",
+  "name": "火山方舟",
+  "name_zh": "火山方舟",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2023-06-28",
+  "homepage": "https://www.volcengine.com/product/ark",
+  "desc": "火山引擎企业级大模型服务平台",
+  "desc_zh": "火山引擎企业级大模型服务平台",
+  "tags": [
+    "model-platform",
+    "maas",
+    "volcengine"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/volcengine-ark/",
+      "zh": "/zh/products/volcengine-ark/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

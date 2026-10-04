@@ -1,0 +1,60 @@
+{
+  "id": "office",
+  "title": "Office & knowledge work",
+  "title_zh": "办公与知识工作",
+  "description": "Writing, meetings and documents. Pick the moment you need help in, rather than the product that has the most features.",
+  "description_zh": "写作、会议与文档。按你「在哪个环节需要帮忙」来选，而不是按功能多少来选。",
+  "dimensions": [
+    {
+      "id": "writing",
+      "label": "Writing & drafting",
+      "label_zh": "写作与起草",
+      "weight": 3,
+      "keywords": [
+        "writing",
+        "draft",
+        "document",
+        "editor",
+        "workspace"
+      ]
+    },
+    {
+      "id": "meetings",
+      "label": "Meetings & notes",
+      "label_zh": "会议与纪要",
+      "weight": 3,
+      "keywords": [
+        "meeting",
+        "transcript",
+        "notes",
+        "transcription",
+        "minutes"
+      ]
+    },
+    {
+      "id": "knowledge-base",
+      "label": "Team knowledge base",
+      "label_zh": "团队知识库",
+      "weight": 2,
+      "keywords": [
+        "knowledge",
+        "notion",
+        "wiki",
+        "workspace",
+        "rag"
+      ]
+    },
+    {
+      "id": "slides",
+      "label": "Slides & visual docs",
+      "label_zh": "幻灯片与图文",
+      "weight": 1,
+      "keywords": [
+        "slide",
+        "deck",
+        "presentation",
+        "doc"
+      ]
+    }
+  ]
+}

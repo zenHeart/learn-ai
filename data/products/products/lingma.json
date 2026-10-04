@@ -1,0 +1,33 @@
+{
+  "id": "lingma",
+  "name": "通义灵码",
+  "name_zh": "通义灵码",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2023-10-31",
+  "homepage": "https://lingma.aliyun.com",
+  "desc": "Alibaba Cloud coding assistant, renamed Qoder in 2026",
+  "desc_zh": "阿里云智能编码助手，2026 年起系列更名 Qoder",
+  "tags": [
+    "coding-assistant",
+    "ide-plugin",
+    "qwen"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/lingma/",
+      "zh": "/zh/products/lingma/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

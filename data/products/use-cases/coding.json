@@ -1,0 +1,72 @@
+{
+  "id": "coding",
+  "title": "Coding & engineering",
+  "title_zh": "编程与工程",
+  "description": "For engineers who want an assistant inside the editor, in the terminal, or on a real issue. Start by where the agent is allowed to touch your machine.",
+  "description_zh": "面向工程师：助手住在编辑器里、终端里，还是直接接手一个真实的 issue。先想清楚 Agent 能碰你机器的哪一层。",
+  "dimensions": [
+    {
+      "id": "terminal-agent",
+      "label": "Terminal agent",
+      "label_zh": "终端 Agent",
+      "weight": 3,
+      "keywords": [
+        "terminal",
+        "cli",
+        "agentic-coding",
+        "coding-agent",
+        "bash"
+      ]
+    },
+    {
+      "id": "ai-ide",
+      "label": "AI-native IDE",
+      "label_zh": "AI 原生 IDE",
+      "weight": 3,
+      "keywords": [
+        "ai-ide",
+        "code-editor",
+        "editor",
+        "vscode"
+      ]
+    },
+    {
+      "id": "completion",
+      "label": "Completion & inline chat",
+      "label_zh": "补全与行内对话",
+      "weight": 2,
+      "keywords": [
+        "completion",
+        "inline",
+        "autocomplete",
+        "coding-assistant"
+      ]
+    },
+    {
+      "id": "app-builder",
+      "label": "Build an app from a prompt",
+      "label_zh": "一句话生成应用",
+      "weight": 2,
+      "keywords": [
+        "app-builder",
+        "vibe",
+        "prototype",
+        "scaffold",
+        "generative"
+      ]
+    },
+    {
+      "id": "review-migration",
+      "label": "Review & large edits",
+      "label_zh": "评审与大范围改造",
+      "weight": 1,
+      "keywords": [
+        "refactor",
+        "migration",
+        "codebase",
+        "review",
+        "context"
+      ]
+    }
+  ]
+}

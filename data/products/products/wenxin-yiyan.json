@@ -1,0 +1,30 @@
+{
+  "id": "wenxin-yiyan",
+  "name": "文心一言",
+  "name_zh": "文心一言",
+  "vendor_id": "baidu",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-03-16",
+  "homepage": "https://yiyan.baidu.com",
+  "desc": "百度首个生成式 AI 对话应用",
+  "desc_zh": "百度首个生成式 AI 对话应用",
+  "tags": [
+    "chat-assistant",
+    "wenxin",
+    "baidu"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "与「文小言」共用同一入口 yiyan.baidu.com——文小言是同一服务的现行消费端品牌名，两条档案疑似需要合并或标注改名关系，待复核",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "suno",
+  "name": "Suno",
+  "name_zh": "Suno",
+  "vendor_id": "suno",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2023-12-20",
+  "homepage": "https://suno.com",
+  "desc": "Full song generation from text prompts, went viral fast",
+  "desc_zh": "文本提示直接生成完整歌曲，2023-12 公开上线后迅速爆红",
+  "tags": [
+    "music-generation",
+    "audio",
+    "creative"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

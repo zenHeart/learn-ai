@@ -1,0 +1,29 @@
+{
+  "id": "luma-dream-machine",
+  "name": "Luma Dream Machine",
+  "name_zh": "Luma Dream Machine",
+  "vendor_id": "luma-labs",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2024-06-12",
+  "homepage": "https://lumalabs.ai/dream-machine",
+  "desc": "Free text-to-video model that hit 1M users in days",
+  "desc_zh": "免费开放的文生视频模型，上线四天用户破百万",
+  "tags": [
+    "video-generation",
+    "text-to-video",
+    "creative"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "首页地址已不再是 Dream Machine 独立页：现落地在 Luma 更大范围的创意 Agent 站（标题「Creative agents for creative professionals」），Dream Machine（Ray3）作为其中的视频模型存在。域名未失效，未改 homepage 字段。",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "lm-studio",
+  "name": "LM Studio",
+  "name_zh": "LM Studio",
+  "vendor_id": "element-labs",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private"
+  ],
+  "form": "desktop",
+  "released": "2023-05-01",
+  "homepage": "https://lmstudio.ai",
+  "desc": "GUI desktop app for discovering and running local LLMs",
+  "desc_zh": "带图形界面的本地模型运行器，普通用户也能下载即用",
+  "tags": [
+    "desktop",
+    "local-llm",
+    "gui"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "notion-ai",
+  "name": "Notion AI",
+  "name_zh": "Notion AI",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2022-11-16",
+  "homepage": "https://www.notion.so/product/ai",
+  "desc": "AI writing and Q&A embedded across the Notion workspace",
+  "desc_zh": "嵌入 Notion 工作区的 AI 写作与问答，2023-02-22 正式 GA",
+  "tags": [
+    "workspace",
+    "writing",
+    "knowledge-base"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

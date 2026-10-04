@@ -1,0 +1,29 @@
+{
+  "id": "roo-code",
+  "name": "Roo Code",
+  "name_zh": "Roo Code",
+  "vendor_id": "roo-code",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2024-10-31",
+  "homepage": "https://roocode.com",
+  "desc": "Open-source Cline fork with mode-based agent orchestration",
+  "desc_zh": "Cline 的开源分支，主打多模式（架构师/编码/调试）任务编排",
+  "tags": [
+    "open-source",
+    "vscode",
+    "fork"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

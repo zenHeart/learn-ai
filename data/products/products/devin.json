@@ -1,0 +1,29 @@
+{
+  "id": "devin",
+  "name": "Devin",
+  "name_zh": "Devin",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2024-03-12",
+  "homepage": "https://devin.ai",
+  "desc": "Autonomous cloud software engineer marketed to enterprises",
+  "desc_zh": "面向企业的云端自主软件工程师，可自行规划并执行多步开发任务",
+  "tags": [
+    "autonomous-agent",
+    "swe-bench",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

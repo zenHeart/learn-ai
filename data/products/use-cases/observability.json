@@ -1,0 +1,47 @@
+{
+  "id": "observability",
+  "title": "Eval & observability",
+  "title_zh": "评测与可观测",
+  "description": "Knowing whether a model or agent actually got better. Trace what happened before you tune anything.",
+  "description_zh": "判断模型或 Agent 是不是真的变好了。在动手调参之前，先看清发生了什么。",
+  "dimensions": [
+    {
+      "id": "tracing",
+      "label": "Tracing & debugging",
+      "label_zh": "链路追踪与调试",
+      "weight": 3,
+      "keywords": [
+        "tracing",
+        "debug",
+        "observability",
+        "log",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "evaluation",
+      "label": "Evaluation & test sets",
+      "label_zh": "评测与测试集",
+      "weight": 3,
+      "keywords": [
+        "evaluation",
+        "eval",
+        "benchmark",
+        "test",
+        "dataset"
+      ]
+    },
+    {
+      "id": "experiment-tracking",
+      "label": "Experiment tracking",
+      "label_zh": "实验追踪",
+      "weight": 2,
+      "keywords": [
+        "experiment-tracking",
+        "mlops",
+        "registry",
+        "runs"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "xinghuo",
+  "name": "讯飞星火",
+  "name_zh": "讯飞星火",
+  "vendor_id": "iflytek",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-05-06",
+  "homepage": "https://xinghuo.xfyun.cn/chat",
+  "desc": "科大讯飞通用大模型助手",
+  "desc_zh": "科大讯飞通用大模型助手",
+  "tags": [
+    "chat-assistant",
+    "spark",
+    "iflytek"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

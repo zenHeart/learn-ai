@@ -1,0 +1,29 @@
+{
+  "id": "nami-search",
+  "name": "纳米AI搜索",
+  "name_zh": "纳米AI搜索",
+  "vendor_id": "360",
+  "region": "cn",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2024-11-27",
+  "homepage": "https://www.n.cn",
+  "desc": "360 面向普通用户的 AI 搜索",
+  "desc_zh": "360 面向普通用户的 AI 搜索",
+  "tags": [
+    "search",
+    "ai-search",
+    "360"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网可访问但为前端渲染，仅取到「纳米AI」字样，未取到可判读的页面标题，故未完全确认。",
+  "revisions": []
+}

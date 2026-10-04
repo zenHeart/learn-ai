@@ -1,0 +1,35 @@
+{
+  "id": "microsoft-copilot",
+  "name": "Microsoft Copilot",
+  "name_zh": "Microsoft Copilot",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-02-07",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-copilot",
+  "desc": "Consumer AI assistant across Windows, web, mobile and Edge",
+  "desc_zh": "覆盖 Windows、网页、移动端与 Edge 的消费级 AI 助手",
+  "tags": [
+    "consumer",
+    "search-integration",
+    "windows",
+    "ecosystem"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/copilot/",
+      "zh": "/zh/products/copilot/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

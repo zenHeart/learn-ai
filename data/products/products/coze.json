@@ -1,0 +1,33 @@
+{
+  "id": "coze",
+  "name": "扣子",
+  "name_zh": "扣子",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-02-01",
+  "homepage": "https://www.coze.cn",
+  "desc": "低代码 AI 智能体搭建平台",
+  "desc_zh": "低代码 AI 智能体搭建平台",
+  "tags": [
+    "agent-platform",
+    "low-code",
+    "bytedance"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/coze/",
+      "zh": "/zh/products/coze/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

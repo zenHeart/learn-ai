@@ -1,0 +1,30 @@
+{
+  "id": "inflection-pi",
+  "name": "Inflection Pi",
+  "name_zh": "Inflection Pi",
+  "vendor_id": "inflection-ai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-05-02",
+  "homepage": "https://pi.ai/",
+  "desc": "Supportive personal AI companion focused on conversation and empathy",
+  "desc_zh": "以陪伴与共情为核心的私人家人级 AI 助手",
+  "tags": [
+    "companion",
+    "empathetic",
+    "consumer",
+    "voice"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

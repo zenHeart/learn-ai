@@ -1,0 +1,29 @@
+{
+  "id": "crewai",
+  "name": "CrewAI",
+  "name_zh": "CrewAI",
+  "vendor_id": "crewai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "released": "2023-11-01",
+  "homepage": "https://www.crewai.com",
+  "desc": "Role-based framework for orchestrating multi-agent workflows",
+  "desc_zh": "基于角色的多智能体协作编排框架，2023-12 在 PyPI 首次发布",
+  "tags": [
+    "framework",
+    "multi-agent",
+    "python"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认。官网同时在推企业云端版（标题「The Enterprise Agent Build & Runtime」），本档按开源 Python 框架形态建档。",
+  "revisions": []
+}

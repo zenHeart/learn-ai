@@ -1,0 +1,29 @@
+{
+  "id": "otter-ai",
+  "name": "Otter.ai",
+  "name_zh": "Otter.ai",
+  "vendor_id": "otter-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2016-05-01",
+  "homepage": "https://otter.ai",
+  "desc": "Long-running meeting transcription and summary service",
+  "desc_zh": "会议转录与纪要领域最长寿的服务之一，用户基数庞大",
+  "tags": [
+    "meetings",
+    "transcription",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

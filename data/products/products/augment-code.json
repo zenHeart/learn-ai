@@ -1,0 +1,29 @@
+{
+  "id": "augment-code",
+  "name": "Augment Code",
+  "name_zh": "Augment Code",
+  "vendor_id": "augment",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2023-11-21",
+  "homepage": "https://www.augmentcode.com",
+  "desc": "Context engine indexing large codebases for agent context",
+  "desc_zh": "面向大型代码库构建上下文引擎，为编码 Agent 提供高保真上下文",
+  "tags": [
+    "codebase-context",
+    "enterprise",
+    "mcp"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

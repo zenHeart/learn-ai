@@ -1,0 +1,31 @@
+{
+  "id": "chatgpt",
+  "name": "ChatGPT",
+  "name_zh": "ChatGPT",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2022-11-30",
+  "homepage": "https://chatgpt.com/",
+  "desc": "OpenAI's flagship conversational AI assistant, launched November 2022",
+  "desc_zh": "OpenAI 旗舰对话式 AI 助手，2022 年 11 月 30 日上线",
+  "tags": [
+    "chatgpt",
+    "conversational-ai",
+    "consumer"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "you-com",
+  "name": "You.com",
+  "name_zh": "You.com",
+  "vendor_id": "you-com",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2021-12-01",
+  "homepage": "https://you.com",
+  "desc": "AI search and agents pivoted from chat research engine",
+  "desc_zh": "从对话式研究引擎转型为 AI 搜索与 Agent 平台",
+  "tags": [
+    "search",
+    "agents",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网可访问，但当前落地页主推「The Leading Web Search APIs for AI / The Real-Time Web Data Layer for AI」，重心已从消费端搜索转向检索 API。本档仍按面向普通用户的搜索产品记 form=web，是否改记 api 请收口时定夺。",
+  "revisions": []
+}

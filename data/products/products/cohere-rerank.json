@@ -1,0 +1,30 @@
+{
+  "id": "cohere-rerank",
+  "name": "Cohere Rerank",
+  "name_zh": "Cohere Rerank",
+  "vendor_id": "cohere",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2023-05-01",
+  "homepage": "https://cohere.com/rerank",
+  "desc": "Reranking API that reorders retrieved documents for relevance",
+  "desc_zh": "重排序 API，对召回文档按相关性重新排序",
+  "tags": [
+    "reranking",
+    "retrieval",
+    "rag",
+    "search"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

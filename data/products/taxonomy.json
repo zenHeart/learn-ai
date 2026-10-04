@@ -1,0 +1,76 @@
+{
+  "$comment": "类别本体。id 被 data/products/products/*.json 的 category 字段引用；构建投影时以此为唯一文案来源。",
+  "version": "1",
+  "categories": [
+    {
+      "id": "chat-assistant",
+      "name": "Chat assistants",
+      "name_zh": "对话助手",
+      "color": "#2563EB",
+      "icon": "💬"
+    },
+    {
+      "id": "coding-agent",
+      "name": "Coding agents",
+      "name_zh": "编程 Agent",
+      "color": "#16A34A",
+      "icon": "💻"
+    },
+    {
+      "id": "agent-platform",
+      "name": "Agent platforms",
+      "name_zh": "Agent 平台",
+      "color": "#7C3AED",
+      "icon": "🧠"
+    },
+    {
+      "id": "model-platform",
+      "name": "Model platforms",
+      "name_zh": "模型平台",
+      "color": "#0891B2",
+      "icon": "🧬"
+    },
+    {
+      "id": "developer-sdk",
+      "name": "Developer SDKs",
+      "name_zh": "开发 SDK",
+      "color": "#9333EA",
+      "icon": "🧩"
+    },
+    {
+      "id": "enterprise-api",
+      "name": "Enterprise APIs",
+      "name_zh": "企业 API",
+      "color": "#475569",
+      "icon": "🏢"
+    },
+    {
+      "id": "search",
+      "name": "AI search",
+      "name_zh": "AI 搜索",
+      "color": "#EA580C",
+      "icon": "🔍"
+    },
+    {
+      "id": "multimodal-creation",
+      "name": "Multimodal creation",
+      "name_zh": "多模态创作",
+      "color": "#DB2777",
+      "icon": "🎨"
+    },
+    {
+      "id": "local-runner",
+      "name": "Local runners",
+      "name_zh": "本地运行",
+      "color": "#65A30D",
+      "icon": "🦙"
+    },
+    {
+      "id": "eval-observability",
+      "name": "Eval & observability",
+      "name_zh": "评测与可观测",
+      "color": "#DC2626",
+      "icon": "📈"
+    }
+  ]
+}

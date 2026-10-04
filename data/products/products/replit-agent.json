@@ -1,0 +1,29 @@
+{
+  "id": "replit-agent",
+  "name": "Replit Agent",
+  "name_zh": "Replit Agent",
+  "vendor_id": "replit",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2024-09-05",
+  "homepage": "https://replit.com/agent",
+  "desc": "Prompt-to-deployed-app agent inside the Replit IDE",
+  "desc_zh": "在 Replit IDE 内从一句话直接生成并部署可运行应用",
+  "tags": [
+    "app-generation",
+    "cloud-ide",
+    "no-code"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认，标题「The Next Evolution in AI App Building Tools | Agent 4」。Agent 运行在 Replit IDE 内，故 form 记为 ide。",
+  "revisions": []
+}

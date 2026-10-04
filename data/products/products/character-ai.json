@@ -1,0 +1,30 @@
+{
+  "id": "character-ai",
+  "name": "Character.AI",
+  "name_zh": "Character.AI",
+  "vendor_id": "character-ai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2022-09-16",
+  "homepage": "https://character.ai/",
+  "desc": "Platform for building and roleplaying with user-created AI characters",
+  "desc_zh": "用户创建并扮演 AI 角色的对话平台",
+  "tags": [
+    "roleplay",
+    "companion",
+    "consumer",
+    "ugc"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

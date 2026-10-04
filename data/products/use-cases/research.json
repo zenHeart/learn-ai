@@ -1,0 +1,47 @@
+{
+  "id": "research",
+  "title": "Research & search",
+  "title_zh": "调研与检索",
+  "description": "Answer engines with citations versus retrieval you build yourself. Decide whether you need a product or a stack.",
+  "description_zh": "带引用的问答引擎，还是你自己搭的检索。先想清楚你要的是一个产品，还是一套方案。",
+  "dimensions": [
+    {
+      "id": "answer-engine",
+      "label": "Answer engine with sources",
+      "label_zh": "带出处的问答引擎",
+      "weight": 3,
+      "keywords": [
+        "search",
+        "answer-engine",
+        "citations",
+        "web-research",
+        "ai-search"
+      ]
+    },
+    {
+      "id": "retrieval-stack",
+      "label": "Search API for your app",
+      "label_zh": "给应用用的检索 API",
+      "weight": 3,
+      "keywords": [
+        "api",
+        "retrieval",
+        "index",
+        "search"
+      ]
+    },
+    {
+      "id": "document-qa",
+      "label": "Ask your own documents",
+      "label_zh": "问自己的文档",
+      "weight": 2,
+      "keywords": [
+        "rag",
+        "document",
+        "notebook",
+        "knowledge",
+        "pdf"
+      ]
+    }
+  ]
+}

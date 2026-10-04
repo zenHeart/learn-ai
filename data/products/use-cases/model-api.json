@@ -1,0 +1,47 @@
+{
+  "id": "model-api",
+  "title": "Models & APIs",
+  "title_zh": "模型与 API",
+  "description": "Hosted model access for building products. Judge on price, latency, context and data terms — not on leaderboard position.",
+  "description_zh": "给自己的产品接模型。真正要比较的是价格、延迟、上下文和数据条款，而不是排行榜名次。",
+  "dimensions": [
+    {
+      "id": "model-platform",
+      "label": "Model platform / MaaS",
+      "label_zh": "模型平台 / MaaS",
+      "weight": 3,
+      "keywords": [
+        "model-platform",
+        "maas",
+        "foundation-models",
+        "cloud-platform",
+        "console"
+      ]
+    },
+    {
+      "id": "inference-api",
+      "label": "Inference API",
+      "label_zh": "推理 API",
+      "weight": 3,
+      "keywords": [
+        "enterprise-api",
+        "api",
+        "inference",
+        "model-access",
+        "sdk"
+      ]
+    },
+    {
+      "id": "app-builder-platform",
+      "label": "Build apps on a platform",
+      "label_zh": "平台内直接搭应用",
+      "weight": 2,
+      "keywords": [
+        "app-builder",
+        "low-code",
+        "agent-builder",
+        "studio"
+      ]
+    }
+  ]
+}

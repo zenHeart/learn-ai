@@ -1,0 +1,29 @@
+{
+  "id": "tl-dv",
+  "name": "tl;dv",
+  "name_zh": "tl;dv",
+  "vendor_id": "tl-dv",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2020-01-01",
+  "homepage": "https://tldv.io",
+  "desc": "Meeting recording with AI highlights and CRM sync",
+  "desc_zh": "会议录制加 AI 高光片段提取，可同步到 CRM",
+  "tags": [
+    "meetings",
+    "highlights",
+    "crm"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

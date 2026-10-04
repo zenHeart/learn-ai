@@ -1,0 +1,29 @@
+{
+  "id": "fathom",
+  "name": "Fathom",
+  "name_zh": "Fathom",
+  "vendor_id": "fathom",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2021-12-01",
+  "homepage": "https://fathom.video",
+  "desc": "Free AI meeting notetaker popular with sales and support",
+  "desc_zh": "免费 AI 会议纪要工具，在销售与客服团队中广泛使用",
+  "tags": [
+    "meetings",
+    "free-tier",
+    "sales"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

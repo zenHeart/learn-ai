@@ -1,0 +1,34 @@
+{
+  "id": "claude-code",
+  "name": "Claude Code",
+  "name_zh": "Claude Code",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-02-24",
+  "homepage": "https://claude.com/product/claude-code",
+  "desc": "Agentic command-line coding tool with CLAUDE.md project memory",
+  "desc_zh": "智能体式命令行编程工具，支持 CLAUDE.md 项目记忆",
+  "tags": [
+    "cli",
+    "agentic-coding",
+    "developer-tools",
+    "mcp"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/claude/",
+      "zh": "/zh/products/claude/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

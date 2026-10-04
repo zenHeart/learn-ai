@@ -30,7 +30,13 @@
     </header>
 
     <main class="hub-main">
-      <ProductHub :products="products" :is-zh="isZh" :labels="labels" />
+      <ProductHub
+        :products="products"
+        :categories="productHub.categories"
+        :use-cases="productHub.useCases"
+        :is-zh="isZh"
+        :labels="labels"
+      />
     </main>
 
     <footer class="hub-footer">
@@ -53,7 +59,57 @@
 
   const { frontmatter, lang } = useData()
   const isZh = computed(() => String(lang.value || '').startsWith('zh'))
-  const labels = computed(() => (isZh.value ? productHub.zh : productHub.en))
+
+  // UI strings live with the UI. The data projection carries ledger content
+  // only (products / categories / use-cases), never presentation copy.
+  const COPY = {
+    en: {
+      searchPlaceholder: 'Search by name, vendor, or what it does…',
+      viewLabel: 'View mode',
+      views: { timeline: 'Timeline', grid: 'Categories', select: 'Pick by need' },
+      selectIntro: 'Start from what you are trying to do. Pick a scenario, then narrow it down.',
+      allUseCases: 'All scenarios',
+      allDimensions: 'Everything',
+      all: 'All',
+      allRegions: 'All regions',
+      regionIntl: 'International',
+      regionCn: 'China',
+      allVendors: 'All vendors',
+      docOnly: 'With handbook',
+      empty: 'No product matches these filters.',
+      reset: 'Reset filters',
+      statProducts: 'Products',
+      statVendors: 'Vendors',
+      statYears: 'Span',
+      statGuides: 'Handbooks',
+      hint: 'Click a name to open the product homepage. Products marked 📖 have a handbook on this site.',
+      doc: 'Handbook',
+    },
+    zh: {
+      searchPlaceholder: '按名称、厂商或用途搜索…',
+      viewLabel: '视图',
+      views: { timeline: '时间轴', grid: '分类', select: '按需求选型' },
+      selectIntro: '从你要做的事开始选。先选场景，再往下细分。',
+      allUseCases: '全部场景',
+      allDimensions: '不细分',
+      all: '全部',
+      allRegions: '全部地区',
+      regionIntl: '海外',
+      regionCn: '国内',
+      allVendors: '全部厂商',
+      docOnly: '有本站手册',
+      empty: '没有符合条件的产品。',
+      reset: '重置筛选',
+      statProducts: '产品数',
+      statVendors: '厂商数',
+      statYears: '时间跨度',
+      statGuides: '站内手册',
+      hint: '点击产品名跳转到官网；带 📖 的产品在本站另有教程。',
+      doc: '站内手册',
+    },
+  }
+
+  const labels = computed(() => (isZh.value ? COPY.zh : COPY.en))
   const products = computed(() => productHub.products)
 
   const total = computed(() => products.value.length)
@@ -61,7 +117,7 @@
     () => new Set(products.value.map((p) => p.vendor)).size
   )
   const guideCount = computed(
-    () => products.value.filter((p) => p.docs?.en || p.docs?.zh).length
+    () => products.value.filter((p) => p.handbook?.status === 'written').length
   )
   const yearSpan = computed(() => {
     const years = products.value

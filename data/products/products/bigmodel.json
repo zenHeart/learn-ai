@@ -1,0 +1,34 @@
+{
+  "id": "bigmodel",
+  "name": "BigModel 开放平台",
+  "name_zh": "BigModel 开放平台",
+  "vendor_id": "zhipu",
+  "region": "cn",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2023-11-01",
+  "homepage": "https://bigmodel.cn",
+  "desc": "智谱大模型开放平台与 API 服务",
+  "desc_zh": "智谱大模型开放平台与 API 服务",
+  "tags": [
+    "model-platform",
+    "api",
+    "zhipu"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/zhipu-chat/",
+      "zh": "/zh/products/zhipu-chat/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

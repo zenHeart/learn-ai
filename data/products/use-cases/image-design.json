@@ -1,0 +1,47 @@
+{
+  "id": "image-design",
+  "title": "Image & design",
+  "title_zh": "图像与设计",
+  "description": "Generating pixels versus editing the layout you already have. These are different jobs with different tools.",
+  "description_zh": "生成像素，和编辑你已有的版式，是两份不同的工作，用的工具也不同。",
+  "dimensions": [
+    {
+      "id": "image-generation",
+      "label": "Generate images",
+      "label_zh": "生成图像",
+      "weight": 3,
+      "keywords": [
+        "image-generation",
+        "text-to-image",
+        "ideogram",
+        "midjourney",
+        "creative"
+      ]
+    },
+    {
+      "id": "design-tools",
+      "label": "Design in context",
+      "label_zh": "在设计稿里协作",
+      "weight": 3,
+      "keywords": [
+        "design",
+        "figma",
+        "framer",
+        "webflow",
+        "canvas"
+      ]
+    },
+    {
+      "id": "upscale-edit",
+      "label": "Upscale & retouch",
+      "label_zh": "放大与修图",
+      "weight": 2,
+      "keywords": [
+        "upscale",
+        "retouch",
+        "edit",
+        "enhance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "zapier-agents",
+  "name": "Zapier Agents",
+  "name_zh": "Zapier Agents",
+  "vendor_id": "zapier",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-03-06",
+  "homepage": "https://zapier.com/agents",
+  "desc": "No-code agents across 8000+ app integrations",
+  "desc_zh": "无代码 Agent 平台，连接 8000+ 应用；2024-03 以 Zapier Central 形态推出",
+  "tags": [
+    "no-code",
+    "automation",
+    "integrations"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

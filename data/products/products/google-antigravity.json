@@ -1,0 +1,34 @@
+{
+  "id": "google-antigravity",
+  "name": "Google Antigravity",
+  "name_zh": "Google Antigravity",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-11-18",
+  "homepage": "https://antigravity.google/",
+  "desc": "Agent-first IDE with parallel agent manager view, built on Gemini 3",
+  "desc_zh": "智能体优先的 IDE，支持并行智能体管理视图，基于 Gemini 3",
+  "tags": [
+    "ide",
+    "agentic-coding",
+    "autonomous",
+    "vscode-fork"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/gemini/",
+      "zh": "/zh/products/gemini/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

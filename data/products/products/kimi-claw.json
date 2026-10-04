@@ -1,0 +1,29 @@
+{
+  "id": "kimi-claw",
+  "name": "Kimi Claw",
+  "name_zh": "Kimi Claw",
+  "vendor_id": "moonshot",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-02-15",
+  "homepage": "https://www.kimi.com/claw",
+  "desc": "浏览器内一键部署的云端 Agent",
+  "desc_zh": "浏览器内一键部署的云端 Agent",
+  "tags": [
+    "agent-platform",
+    "cloud-agent",
+    "moonshot"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "2026-10-04 核实：kimi.com/claw 返回 200 但跳转回 Kimi 官网首页，未见独立 Kimi Claw 入口页。homepage 是否需调整走 revisions。",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "rabbit-r1",
+  "name": "Rabbit R1",
+  "name_zh": "Rabbit R1",
+  "vendor_id": "rabbit-inc",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2024-01-09",
+  "homepage": "https://www.rabbit.tech",
+  "desc": "Pocket voice-first device with a large language action model",
+  "desc_zh": "口袋级语音优先设备，宣称用大模型直接操作手机应用",
+  "tags": [
+    "hardware",
+    "voice",
+    "consumer"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "形态取 desktop：R1 是实体硬件设备，rabbitOS 为其预装客户端，本仓枚举无独立 device 值",
+  "revisions": []
+}

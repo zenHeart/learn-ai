@@ -1,0 +1,59 @@
+{
+  "id": "audio-voice",
+  "title": "Audio & voice",
+  "title_zh": "音频与语音",
+  "description": "Speaking, singing, or turning speech into text. Voice cloning and dubbing are a different market from plain TTS.",
+  "description_zh": "让机器说话、唱歌，还是把语音转成文字。声音克隆与配音，和普通文字转语音是两回事。",
+  "dimensions": [
+    {
+      "id": "text-to-speech",
+      "label": "Speech synthesis",
+      "label_zh": "语音合成",
+      "weight": 3,
+      "keywords": [
+        "text-to-speech",
+        "voice",
+        "tts",
+        "synthesis",
+        "audio"
+      ]
+    },
+    {
+      "id": "music",
+      "label": "Music generation",
+      "label_zh": "音乐生成",
+      "weight": 3,
+      "keywords": [
+        "music",
+        "suno",
+        "udio",
+        "song",
+        "audio"
+      ]
+    },
+    {
+      "id": "transcription",
+      "label": "Transcription",
+      "label_zh": "语音转文字",
+      "weight": 2,
+      "keywords": [
+        "transcription",
+        "transcript",
+        "speech-to-text",
+        "whisper"
+      ]
+    },
+    {
+      "id": "voice-cloning",
+      "label": "Cloning & dubbing",
+      "label_zh": "声音克隆与配音",
+      "weight": 2,
+      "keywords": [
+        "cloning",
+        "dubbing",
+        "voice-clone",
+        "localization"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "llama-api",
+  "name": "Llama API",
+  "name_zh": "Llama API",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2025-04-29",
+  "homepage": "https://www.llama.com/",
+  "desc": "Hosted Llama developer platform with console, SDKs and fine-tuning",
+  "desc_zh": "托管的 Llama 开发者平台，含控制台、SDK 与微调能力",
+  "tags": [
+    "api",
+    "llama",
+    "openai-compatible",
+    "fine-tuning"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

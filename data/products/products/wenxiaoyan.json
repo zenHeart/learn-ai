@@ -1,0 +1,30 @@
+{
+  "id": "wenxiaoyan",
+  "name": "文小言",
+  "name_zh": "文小言",
+  "vendor_id": "baidu",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2024-09-03",
+  "homepage": "https://yiyan.baidu.com",
+  "desc": "文心一言 App 更名后的新版助手",
+  "desc_zh": "文心一言 App 更名后的新版助手",
+  "tags": [
+    "chat-assistant",
+    "wenxin",
+    "baidu"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

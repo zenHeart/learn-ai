@@ -1,0 +1,30 @@
+{
+  "id": "mistral-la-plateforme",
+  "name": "Mistral La Plateforme",
+  "name_zh": "Mistral La Plateforme",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2023-12-11",
+  "homepage": "https://console.mistral.ai/",
+  "desc": "Mistral's hosted API and console for models, fine-tuning and agents",
+  "desc_zh": "Mistral 的托管 API 与控制台，提供模型、微调与智能体能力",
+  "tags": [
+    "api",
+    "developer-platform",
+    "fine-tuning",
+    "european-sovereignty"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网跳转登录（302 循环），未取到公开页面",
+  "revisions": []
+}

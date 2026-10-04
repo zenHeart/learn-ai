@@ -1,0 +1,34 @@
+{
+  "id": "qianwen",
+  "name": "千问",
+  "name_zh": "千问",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-11-17",
+  "homepage": "https://qianwen.com",
+  "desc": "阿里新一代 AI 助手应用",
+  "desc_zh": "阿里新一代 AI 助手应用",
+  "tags": [
+    "chat-assistant",
+    "qwen",
+    "alibaba"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/qwen/",
+      "zh": "/zh/products/qwen/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认；qianwen.com 会 301 跳转至 www.qianwen.com，功能已含 AI 搜索、网页总结、PPT 生成与语音转写",
+  "revisions": []
+}

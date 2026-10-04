@@ -1,0 +1,60 @@
+{
+  "id": "agent-building",
+  "title": "Building agents",
+  "title_zh": "搭建 Agent",
+  "description": "No-code builders, workflow platforms, or code frameworks. The deciding factor is who maintains the thing after launch.",
+  "description_zh": "零代码平台、工作流编排，还是自己写框架。真正的分水岭是：上线之后谁来维护。",
+  "dimensions": [
+    {
+      "id": "no-code",
+      "label": "No-code builder",
+      "label_zh": "零代码搭建",
+      "weight": 3,
+      "keywords": [
+        "no-code",
+        "low-code",
+        "agent-builder",
+        "visual",
+        "bot-platform"
+      ]
+    },
+    {
+      "id": "workflow",
+      "label": "Workflow & automation",
+      "label_zh": "工作流与自动化",
+      "weight": 3,
+      "keywords": [
+        "workflow",
+        "automation",
+        "integration",
+        "node",
+        "zapier"
+      ]
+    },
+    {
+      "id": "framework",
+      "label": "Code framework / SDK",
+      "label_zh": "代码框架 / SDK",
+      "weight": 2,
+      "keywords": [
+        "framework",
+        "sdk",
+        "library",
+        "rag",
+        "agents"
+      ]
+    },
+    {
+      "id": "autonomous",
+      "label": "Autonomous task agent",
+      "label_zh": "自主任务 Agent",
+      "weight": 2,
+      "keywords": [
+        "autonomous-agent",
+        "autonomous",
+        "computer-use",
+        "self-directed"
+      ]
+    }
+  ]
+}

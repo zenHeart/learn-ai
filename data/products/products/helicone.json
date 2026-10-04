@@ -1,0 +1,29 @@
+{
+  "id": "helicone",
+  "name": "Helicone",
+  "name_zh": "Helicone",
+  "vendor_id": "helicone",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability"
+  ],
+  "form": "web",
+  "released": "2023-01-01",
+  "homepage": "https://www.helicone.ai",
+  "desc": "One-line proxy observability for LLM API traffic",
+  "desc_zh": "改一行 base_url 即可接入的 LLM 流量观测代理，2026-03 被 Mintlify 收购",
+  "tags": [
+    "open-source",
+    "proxy",
+    "observability"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

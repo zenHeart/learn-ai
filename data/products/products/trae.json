@@ -1,0 +1,33 @@
+{
+  "id": "trae",
+  "name": "Trae",
+  "name_zh": "Trae",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-03-03",
+  "homepage": "https://www.trae.cn",
+  "desc": "国产首个 AI 原生集成开发环境",
+  "desc_zh": "国产首个 AI 原生集成开发环境",
+  "tags": [
+    "coding-agent",
+    "ai-ide",
+    "bytedance"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/trae/",
+      "zh": "/zh/products/trae/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

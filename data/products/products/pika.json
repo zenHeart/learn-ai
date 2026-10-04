@@ -1,0 +1,29 @@
+{
+  "id": "pika",
+  "name": "Pika",
+  "name_zh": "Pika",
+  "vendor_id": "pika-labs",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2023-11-29",
+  "homepage": "https://pika.art",
+  "desc": "Text-to-video tool with strong social-first distribution",
+  "desc_zh": "以社交平台起家的文生视频工具，2023-11 随 Pika 1.0 正式上线",
+  "tags": [
+    "video-generation",
+    "social",
+    "creative"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

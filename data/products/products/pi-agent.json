@@ -1,0 +1,33 @@
+{
+  "id": "pi-agent",
+  "name": "Pi Agent",
+  "name_zh": "Pi Agent",
+  "vendor_id": "pi",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-06-01",
+  "homepage": "https://github.com/badlogic/pi-mono",
+  "desc": "Minimal terminal coding-agent harness.",
+  "desc_zh": "极简的终端 coding agent harness。",
+  "tags": [
+    "harness",
+    "terminal",
+    "minimal"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/pi-agent/",
+      "zh": "/zh/products/pi-agent/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认；GitHub 仓库已迁移至 earendil-works/pi，badlogic/pi-mono 为旧地址跳转",
+  "revisions": []
+}

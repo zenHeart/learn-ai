@@ -1,0 +1,34 @@
+{
+  "id": "openai-codex",
+  "name": "OpenAI Codex",
+  "name_zh": "OpenAI Codex",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2025-05-16",
+  "homepage": "https://chatgpt.com/codex",
+  "desc": "Cloud-based parallel software engineering agent with IDE integration",
+  "desc_zh": "云端并行软件工程智能体，并提供 IDE 扩展集成",
+  "tags": [
+    "cloud-agent",
+    "ide-extension",
+    "pull-request",
+    "agentic-coding"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/codex/",
+      "zh": "/zh/products/codex/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

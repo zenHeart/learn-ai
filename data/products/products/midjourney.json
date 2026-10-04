@@ -1,0 +1,29 @@
+{
+  "id": "midjourney",
+  "name": "Midjourney",
+  "name_zh": "Midjourney",
+  "vendor_id": "midjourney-inc",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2022-07-12",
+  "homepage": "https://www.midjourney.com",
+  "desc": "Aesthetic image generation that reset industry quality bars",
+  "desc_zh": "把图像生成美学水准拉到新高度的产品，2022-07 开放公测",
+  "tags": [
+    "image-generation",
+    "diffusion",
+    "creative"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403，www.midjourney.com 与 docs.midjourney.com 均返回 403）",
+  "revisions": []
+}

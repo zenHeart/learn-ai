@@ -1,0 +1,30 @@
+{
+  "id": "phind",
+  "name": "Phind",
+  "name_zh": "Phind",
+  "vendor_id": "phind",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2022-07-01",
+  "homepage": "https://www.phind.com",
+  "desc": "Developer-focused search; shut down January 2026",
+  "desc_zh": "面向开发者的搜索工具，2026-01-16 因巨头内置联网搜索而关停",
+  "tags": [
+    "developer-search",
+    "discontinued",
+    "search"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

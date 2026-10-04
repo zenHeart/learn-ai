@@ -1,0 +1,34 @@
+{
+  "id": "gemini-cli",
+  "name": "Gemini CLI",
+  "name_zh": "Gemini CLI",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-06-25",
+  "homepage": "https://geminicli.com/",
+  "desc": "Apache-2.0 open-source terminal agent for Gemini models",
+  "desc_zh": "Apache-2.0 开源终端智能体，驱动 Gemini 系列模型",
+  "tags": [
+    "open-source",
+    "cli",
+    "terminal",
+    "agentic-coding"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/gemini/",
+      "zh": "/zh/products/gemini/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

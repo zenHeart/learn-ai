@@ -1,0 +1,31 @@
+{
+  "id": "le-chat",
+  "name": "Le Chat",
+  "name_zh": "Le Chat",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2024-02-26",
+  "homepage": "https://chat.mistral.ai/",
+  "desc": "Mistral's consumer assistant emphasizing speed and European sovereignty",
+  "desc_zh": "Mistral 的消费级助手，强调速度与欧洲数据主权",
+  "tags": [
+    "consumer",
+    "european-sovereignty",
+    "fast-inference",
+    "mobile"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

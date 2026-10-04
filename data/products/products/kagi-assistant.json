@@ -1,0 +1,29 @@
+{
+  "id": "kagi-assistant",
+  "name": "Kagi Assistant",
+  "name_zh": "Kagi Assistant",
+  "vendor_id": "kagi",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2024-09-04",
+  "homepage": "https://kagi.com",
+  "desc": "Paid-search-grounded assistant on top of Kagi Search",
+  "desc_zh": "基于 Kagi 自有搜索索引的问答助手，2025-04 开放给全部用户",
+  "tags": [
+    "answer-engine",
+    "privacy",
+    "citations"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

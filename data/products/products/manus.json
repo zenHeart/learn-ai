@@ -1,0 +1,31 @@
+{
+  "id": "manus",
+  "name": "Manus",
+  "name_zh": "Manus",
+  "vendor_id": "butterfly-effect",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-03-06",
+  "homepage": "https://manus.im",
+  "desc": "General-purpose cloud agent that executes tasks end to end",
+  "desc_zh": "云端通用智能体，可自主完成检索、生成与执行的完整任务链",
+  "tags": [
+    "general-agent",
+    "autonomous-agent",
+    "cloud"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

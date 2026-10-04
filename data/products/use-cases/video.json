@@ -1,0 +1,60 @@
+{
+  "id": "video",
+  "title": "Video production",
+  "title_zh": "视频制作",
+  "description": "From a one-line prompt to a finished cut. The first question is whether you are generating footage or editing what you already shot.",
+  "description_zh": "从一句话到成片。第一个问题不是「哪个工具更强」，而是你要生成素材，还是剪自己拍的东西。",
+  "dimensions": [
+    {
+      "id": "text-to-video",
+      "label": "Text / image to video",
+      "label_zh": "文生视频 / 图生视频",
+      "weight": 3,
+      "keywords": [
+        "text-to-video",
+        "video-generation",
+        "generative",
+        "sora",
+        "model"
+      ]
+    },
+    {
+      "id": "video-editing",
+      "label": "Editing existing footage",
+      "label_zh": "剪辑已有素材",
+      "weight": 3,
+      "keywords": [
+        "video-editing",
+        "audio-editing",
+        "editor",
+        "transcription",
+        "edit"
+      ]
+    },
+    {
+      "id": "avatar-presenter",
+      "label": "Avatars & presenters",
+      "label_zh": "数字人与出镜",
+      "weight": 2,
+      "keywords": [
+        "avatar",
+        "presenter",
+        "talking",
+        "synthesia",
+        "dubbing"
+      ]
+    },
+    {
+      "id": "storyboard",
+      "label": "Storyboard & ideation",
+      "label_zh": "分镜与创意",
+      "weight": 1,
+      "keywords": [
+        "storyboard",
+        "ideation",
+        "creative",
+        "image-generation"
+      ]
+    }
+  ]
+}

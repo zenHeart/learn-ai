@@ -1,0 +1,29 @@
+{
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "name_zh": "ElevenLabs",
+  "vendor_id": "elevenlabs",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2023-01-23",
+  "homepage": "https://elevenlabs.io",
+  "desc": "Most realistic open TTS and voice cloning API",
+  "desc_zh": "语音合成与声音克隆中最具真实感的平台与 API",
+  "tags": [
+    "tts",
+    "voice-cloning",
+    "audio"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

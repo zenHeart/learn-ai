@@ -1,0 +1,30 @@
+{
+  "id": "higgsfield",
+  "name": "Higgsfield",
+  "name_zh": "Higgsfield",
+  "vendor_id": "higgsfield",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2025-03-01",
+  "homepage": "https://higgsfield.ai",
+  "desc": "Cinematic AI video with camera-move control presets",
+  "desc_zh": "主打电影级镜头语言与运镜预设的 AI 视频平台",
+  "tags": [
+    "video-generation",
+    "cinematography",
+    "social"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "warp",
+  "name": "Warp",
+  "name_zh": "Warp",
+  "vendor_id": "warp-inc",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2023-03-17",
+  "homepage": "https://warp.dev",
+  "desc": "GPU-rendered terminal with natural-language command execution",
+  "desc_zh": "GPU 渲染的现代终端，支持自然语言转命令与多步 Agent 模式",
+  "tags": [
+    "terminal",
+    "cli",
+    "agentic-ide"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认；官网已扩展为多产品平台（Warp Terminal / Warp Factories / Warp Agent CLI），本档仅指 Warp 终端",
+  "revisions": []
+}

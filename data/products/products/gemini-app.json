@@ -1,0 +1,35 @@
+{
+  "id": "gemini-app",
+  "name": "Gemini app",
+  "name_zh": "Gemini 应用",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2024-02-08",
+  "homepage": "https://gemini.google.com/",
+  "desc": "Google's assistant, formerly Bard, with Android and iOS apps",
+  "desc_zh": "Google 的助手产品，前身 Bard，提供 Android 与 iOS 应用",
+  "tags": [
+    "consumer",
+    "mobile",
+    "search-integration",
+    "multimodal"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/gemini/",
+      "zh": "/zh/products/gemini/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

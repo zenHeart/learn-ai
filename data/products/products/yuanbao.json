@@ -1,0 +1,34 @@
+{
+  "id": "yuanbao",
+  "name": "腾讯元宝",
+  "name_zh": "腾讯元宝",
+  "vendor_id": "tencent",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2024-05-30",
+  "homepage": "https://yuanbao.tencent.com",
+  "desc": "腾讯基于混元大模型的 AI 助手",
+  "desc_zh": "腾讯基于混元大模型的 AI 助手",
+  "tags": [
+    "chat-assistant",
+    "hunyuan",
+    "tencent"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/yuanbao/",
+      "zh": "/zh/products/yuanbao/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网可访问（搜索框、下载中心、AI 免责声明均在），但页面为前端渲染，未取到可判读的产品标题，故未完全确认。",
+  "revisions": []
+}

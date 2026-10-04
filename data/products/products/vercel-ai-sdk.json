@@ -1,0 +1,30 @@
+{
+  "id": "vercel-ai-sdk",
+  "name": "Vercel AI SDK",
+  "name_zh": "Vercel AI SDK",
+  "vendor_id": "vercel",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "model-api",
+    "coding"
+  ],
+  "form": "api",
+  "released": "2023-06-15",
+  "homepage": "https://sdk.vercel.ai",
+  "desc": "TypeScript toolkit for streaming LLM UIs across providers",
+  "desc_zh": "面向 TypeScript 的流式 LLM UI 工具包，统一多家模型接口",
+  "tags": [
+    "typescript",
+    "sdk",
+    "streaming"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

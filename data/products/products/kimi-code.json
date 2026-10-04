@@ -1,0 +1,33 @@
+{
+  "id": "kimi-code",
+  "name": "Kimi Code",
+  "name_zh": "Kimi Code",
+  "vendor_id": "moonshot",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-07-11",
+  "homepage": "https://www.kimi.com/code",
+  "desc": "Kimi 编程智能体与命令行工具",
+  "desc_zh": "Kimi 编程智能体与命令行工具",
+  "tags": [
+    "coding-agent",
+    "cli",
+    "moonshot"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/kimi-code/",
+      "zh": "/zh/products/kimi-code/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

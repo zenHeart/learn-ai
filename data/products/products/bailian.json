@@ -1,0 +1,34 @@
+{
+  "id": "bailian",
+  "name": "阿里云百炼",
+  "name_zh": "阿里云百炼",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2023-11-01",
+  "homepage": "https://bailian.console.aliyun.com",
+  "desc": "一站式大模型开发与应用平台",
+  "desc_zh": "一站式大模型开发与应用平台",
+  "tags": [
+    "model-platform",
+    "maas",
+    "alibaba-cloud"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/bailian/",
+      "zh": "/zh/products/bailian/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "leonardo-ai",
+  "name": "Leonardo AI",
+  "name_zh": "Leonardo AI",
+  "vendor_id": "leonardo-ai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2022-12-07",
+  "homepage": "https://leonardo.ai",
+  "desc": "Game and product asset generation studio, acquired by Canva",
+  "desc_zh": "面向游戏与电商素材的图像生成工作台，2024 年被 Canva 收购",
+  "tags": [
+    "image-generation",
+    "game-assets",
+    "creative"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

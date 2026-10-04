@@ -1,0 +1,33 @@
+{
+  "id": "figma-ai",
+  "name": "Figma AI",
+  "name_zh": "Figma AI",
+  "vendor_id": "figma",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2023-11-07",
+  "homepage": "https://www.figma.com/ai/",
+  "desc": "AI features spanning FigJam, design and prototyping",
+  "desc_zh": "覆盖 FigJam 白板、设计与原型的 AI 能力，2024-06 扩展为完整套件",
+  "tags": [
+    "design",
+    "whiteboard",
+    "prototyping"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/figma-ai/",
+      "zh": "/zh/products/figma-ai/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

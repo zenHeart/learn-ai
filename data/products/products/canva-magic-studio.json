@@ -1,0 +1,30 @@
+{
+  "id": "canva-magic-studio",
+  "name": "Canva Magic Studio",
+  "name_zh": "Canva 魔法工作室",
+  "vendor_id": "canva",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-10-24",
+  "homepage": "https://www.canva.com/magic-studio/",
+  "desc": "AI design suite that pushed generative creation to non-designers",
+  "desc_zh": "把生成式创作带给非设计用户的套件，是最大规模的消费级 AI 创作入口之一",
+  "tags": [
+    "design",
+    "consumer",
+    "image-generation"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网 404，homepage 未改（需走 revisions）",
+  "revisions": []
+}

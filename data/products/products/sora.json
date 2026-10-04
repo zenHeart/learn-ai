@@ -1,0 +1,30 @@
+{
+  "id": "sora",
+  "name": "Sora",
+  "name_zh": "Sora",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2024-02-15",
+  "homepage": "https://sora.com/",
+  "desc": "Text-to-video generation product producing photorealistic short clips",
+  "desc_zh": "文本生成视频产品，可产出照片级短片",
+  "tags": [
+    "text-to-video",
+    "generative-media",
+    "creative"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

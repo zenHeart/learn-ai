@@ -1,0 +1,29 @@
+{
+  "id": "minicpm",
+  "name": "面壁 MiniCPM",
+  "name_zh": "面壁 MiniCPM",
+  "vendor_id": "openbmb",
+  "region": "cn",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2023-08-01",
+  "homepage": "https://openbmb.cn",
+  "desc": "端侧优先的轻量大模型与工具链",
+  "desc_zh": "端侧优先的轻量大模型与工具链",
+  "tags": [
+    "local-runner",
+    "on-device",
+    "openbmb"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

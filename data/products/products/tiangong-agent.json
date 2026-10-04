@@ -1,0 +1,30 @@
+{
+  "id": "tiangong-agent",
+  "name": "天工超级智能体",
+  "name_zh": "天工超级智能体",
+  "vendor_id": "kunlun",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-05-22",
+  "homepage": "https://www.tiangong.cn/chat",
+  "desc": "面向办公场景的专家智能体平台",
+  "desc_zh": "面向办公场景的专家智能体平台",
+  "tags": [
+    "agent-platform",
+    "office-agent",
+    "kunlun"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

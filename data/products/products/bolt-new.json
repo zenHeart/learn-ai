@@ -1,0 +1,29 @@
+{
+  "id": "bolt-new",
+  "name": "Bolt.new",
+  "name_zh": "Bolt.new",
+  "vendor_id": "stackblitz",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2024-10-03",
+  "homepage": "https://bolt.new",
+  "desc": "Browser IDE running full Node apps with AI edits",
+  "desc_zh": "浏览器内运行的 WebContainers IDE，AI 可直接修改并运行 Node 应用",
+  "tags": [
+    "webcontainer",
+    "browser-ide",
+    "fullstack"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认，标题「Bolt AI builder: Websites, apps & prototypes」。形态记为 ide：它是浏览器内运行完整文件树与终端的编辑器，而非普通网页应用。",
+  "revisions": []
+}

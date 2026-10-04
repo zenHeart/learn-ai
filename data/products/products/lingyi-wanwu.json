@@ -1,0 +1,30 @@
+{
+  "id": "lingyi-wanwu",
+  "name": "万智",
+  "name_zh": "万智",
+  "vendor_id": "01ai",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-05-21",
+  "homepage": "https://www.lingyiwanwu.com",
+  "desc": "零一万物企业级多智能体平台",
+  "desc_zh": "零一万物企业级多智能体平台",
+  "tags": [
+    "agent-platform",
+    "multi-agent",
+    "01-ai"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网 lingyiwanwu.com 确认为零一万物公司站（「大模型赋能千行百业」），但它是公司主页而非产品页；产品独立站为 wanzhi.com（未改 homepage 字段）。公司站对该产品的正式称谓是「万智企业大模型平台」，与本档 desc 写的「企业级多智能体平台」不一致；released 2026-05-21 未找到一级来源佐证。",
+  "revisions": []
+}

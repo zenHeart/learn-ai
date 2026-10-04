@@ -1,0 +1,30 @@
+{
+  "id": "shangliang",
+  "name": "商量",
+  "name_zh": "商量",
+  "vendor_id": "sensetime",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-06-21",
+  "homepage": "https://chat.sensetime.com",
+  "desc": "商汤日日新大模型对话助手",
+  "desc_zh": "商汤日日新大模型对话助手",
+  "tags": [
+    "chat-assistant",
+    "sensenova",
+    "sensetime"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "factory",
+  "name": "Factory",
+  "name_zh": "Factory",
+  "vendor_id": "factory-ai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2024-06-01",
+  "homepage": "https://factory.ai",
+  "desc": "Task-specific autonomous Droids for software engineering",
+  "desc_zh": "面向软件工程的多款专职自主 Droids：Review、Test、Code 等",
+  "tags": [
+    "autonomous-agent",
+    "enterprise",
+    "swe-bench"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网 factory.ai 返回 307 跳转 factory.com（域名变更，未改 homepage 字段）。新站确认产品为 Droid 系列，主入口是 Droid CLI，同时提供桌面端与 Web 端，故 form 记为 cli。",
+  "revisions": []
+}

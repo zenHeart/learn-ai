@@ -1,0 +1,30 @@
+{
+  "id": "descript",
+  "name": "Descript",
+  "name_zh": "Descript",
+  "vendor_id": "descript",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "audio-voice"
+  ],
+  "form": "desktop",
+  "released": "2020-10-21",
+  "homepage": "https://www.descript.com",
+  "desc": "Edit audio and video by editing the transcript text",
+  "desc_zh": "像改文字稿一样编辑音视频，代表了 AI 辅助创作的新交互范式",
+  "tags": [
+    "video-editing",
+    "audio",
+    "transcription"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

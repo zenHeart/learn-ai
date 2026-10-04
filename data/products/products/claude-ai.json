@@ -1,0 +1,34 @@
+{
+  "id": "claude-ai",
+  "name": "Claude.ai",
+  "name_zh": "Claude.ai",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2023-03-14",
+  "homepage": "https://claude.ai/",
+  "desc": "Anthropic's conversational assistant for analysis, writing and code",
+  "desc_zh": "Anthropic 的对话式助手，面向分析、写作与编程任务",
+  "tags": [
+    "conversational-ai",
+    "consumer",
+    "reasoning"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/claude/",
+      "zh": "/zh/products/claude/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

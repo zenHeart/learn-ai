@@ -1,0 +1,30 @@
+{
+  "id": "atlassian-rovo",
+  "name": "Atlassian Rovo",
+  "name_zh": "Atlassian Rovo",
+  "vendor_id": "atlassian",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2024-10-09",
+  "homepage": "https://www.atlassian.com/software/rovo",
+  "desc": "Search, chat and agents over the Atlassian Teamwork Graph",
+  "desc_zh": "基于 Teamwork Graph 的搜索、对话与预置 Agent，2024-10-09 正式 GA",
+  "tags": [
+    "enterprise",
+    "agents",
+    "knowledge-graph"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

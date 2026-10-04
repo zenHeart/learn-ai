@@ -1,0 +1,30 @@
+{
+  "id": "ai21-studio",
+  "name": "AI21 Studio",
+  "name_zh": "AI21 Studio",
+  "vendor_id": "ai21-labs",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2021-08-17",
+  "homepage": "https://studio.ai21.com/",
+  "desc": "Developer console for the Jamba model family and NLP APIs",
+  "desc_zh": "面向 Jamba 模型系列与 NLP 接口的开发者控制台",
+  "tags": [
+    "developer-console",
+    "nlp",
+    "jamba",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

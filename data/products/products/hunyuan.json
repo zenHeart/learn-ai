@@ -1,0 +1,33 @@
+{
+  "id": "hunyuan",
+  "name": "腾讯混元",
+  "name_zh": "腾讯混元",
+  "vendor_id": "tencent",
+  "region": "cn",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "web",
+  "released": "2023-09-01",
+  "homepage": "https://hunyuan.tencent.com",
+  "desc": "腾讯通用大语言模型与 API 平台",
+  "desc_zh": "腾讯通用大语言模型与 API 平台",
+  "tags": [
+    "model-platform",
+    "hunyuan",
+    "tencent"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/hunyuan/",
+      "zh": "/zh/products/hunyuan/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网可访问，标题「腾讯混元」，但页面为前端渲染，未取到可判读的产品说明正文，故未完全确认。",
+  "revisions": []
+}

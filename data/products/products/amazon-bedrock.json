@@ -1,0 +1,30 @@
+{
+  "id": "amazon-bedrock",
+  "name": "Amazon Bedrock",
+  "name_zh": "Amazon Bedrock",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2023-09-28",
+  "homepage": "https://aws.amazon.com/bedrock/",
+  "desc": "AWS managed service for foundation models with agents and RAG",
+  "desc_zh": "AWS 托管的基础模型服务，内置智能体与 RAG 能力",
+  "tags": [
+    "cloud-platform",
+    "enterprise",
+    "foundation-models",
+    "aws"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

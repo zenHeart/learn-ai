@@ -1,0 +1,30 @@
+{
+  "id": "microsoft-copilot-studio",
+  "name": "Microsoft Copilot Studio",
+  "name_zh": "Microsoft Copilot Studio",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2023-11-15",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio",
+  "desc": "Low-code platform for building and publishing enterprise agents",
+  "desc_zh": "低代码平台，用于构建并发布企业级智能体",
+  "tags": [
+    "low-code",
+    "no-code",
+    "enterprise",
+    "agent-builder"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

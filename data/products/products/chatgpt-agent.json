@@ -1,0 +1,30 @@
+{
+  "id": "chatgpt-agent",
+  "name": "ChatGPT agent",
+  "name_zh": "ChatGPT 智能体",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "research"
+  ],
+  "form": "web",
+  "released": "2025-07-17",
+  "homepage": "https://chatgpt.com",
+  "desc": "Autonomous agent combining browser, terminal and connectors",
+  "desc_zh": "融合浏览器、终端与连接器的自主智能体",
+  "tags": [
+    "agent",
+    "computer-use",
+    "connectors"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

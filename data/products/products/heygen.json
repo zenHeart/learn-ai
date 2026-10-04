@@ -1,0 +1,29 @@
+{
+  "id": "heygen",
+  "name": "HeyGen",
+  "name_zh": "HeyGen",
+  "vendor_id": "heygen",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2022-07-29",
+  "homepage": "https://www.heygen.com",
+  "desc": "AI avatar video generation and multilingual dubbing",
+  "desc_zh": "AI 数字人视频生成与多语言配音平台",
+  "tags": [
+    "avatar",
+    "video-generation",
+    "localization"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

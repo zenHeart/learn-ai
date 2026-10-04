@@ -1,0 +1,30 @@
+{
+  "id": "meta-ai",
+  "name": "Meta AI",
+  "name_zh": "Meta AI",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-04-29",
+  "homepage": "https://www.meta.ai/",
+  "desc": "Standalone voice-first AI app built on Llama 4",
+  "desc_zh": "基于 Llama 4 的独立语音优先 AI 应用",
+  "tags": [
+    "consumer",
+    "voice",
+    "social",
+    "llama"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

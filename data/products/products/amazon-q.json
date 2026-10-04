@@ -1,0 +1,30 @@
+{
+  "id": "amazon-q",
+  "name": "Amazon Q",
+  "name_zh": "Amazon Q",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2024-04-30",
+  "homepage": "https://aws.amazon.com/q/",
+  "desc": "Enterprise work assistant answering over internal company data",
+  "desc_zh": "面向企业的工作助手，可基于内部数据作答",
+  "tags": [
+    "enterprise",
+    "internal-data",
+    "aws",
+    "productivity"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

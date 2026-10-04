@@ -1,0 +1,34 @@
+{
+  "id": "grok",
+  "name": "Grok",
+  "name_zh": "Grok",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-11-04",
+  "homepage": "https://grok.com/",
+  "desc": "xAI's real-time conversational assistant with X platform data",
+  "desc_zh": "xAI 的实时对话助手，融合 X 平台数据",
+  "tags": [
+    "consumer",
+    "realtime",
+    "social-data"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/grok/",
+      "zh": "/zh/products/grok/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网反爬未确认（403）",
+  "revisions": []
+}

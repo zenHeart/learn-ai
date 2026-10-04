@@ -1,0 +1,30 @@
+{
+  "id": "flowise",
+  "name": "Flowise",
+  "name_zh": "Flowise",
+  "vendor_id": "flowiseai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2023-03-29",
+  "homepage": "https://flowiseai.com",
+  "desc": "Drag-and-drop LangChain flow builder, acquired by Workday",
+  "desc_zh": "拖拽式 LangChain 流程搭建工具，2025-08 被 Workday 收购",
+  "tags": [
+    "open-source",
+    "langchain",
+    "low-code"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

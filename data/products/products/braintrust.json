@@ -1,0 +1,29 @@
+{
+  "id": "braintrust",
+  "name": "Braintrust",
+  "name_zh": "Braintrust",
+  "vendor_id": "braintrust",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability"
+  ],
+  "form": "web",
+  "released": "2023-08-01",
+  "homepage": "https://www.braintrust.dev",
+  "desc": "Eval-first platform combining scoring, logging and playgrounds",
+  "desc_zh": "以评测为核心的打分、日志与 Playground 一体化平台",
+  "tags": [
+    "evaluation",
+    "llmops",
+    "experimentation"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

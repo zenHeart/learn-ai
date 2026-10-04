@@ -1,0 +1,34 @@
+{
+  "id": "kimi",
+  "name": "Kimi",
+  "name_zh": "Kimi",
+  "vendor_id": "moonshot",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-10-01",
+  "homepage": "https://www.kimi.com",
+  "desc": "支持超长上下文的 AI 智能助手",
+  "desc_zh": "支持超长上下文的 AI 智能助手",
+  "tags": [
+    "chat-assistant",
+    "long-context",
+    "moonshot"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/kimi/",
+      "zh": "/zh/products/kimi/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

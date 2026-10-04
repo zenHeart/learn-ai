@@ -1,0 +1,30 @@
+{
+  "id": "v0",
+  "name": "v0",
+  "name_zh": "v0",
+  "vendor_id": "vercel",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2023-10-11",
+  "homepage": "https://v0.app",
+  "desc": "Generate React and Tailwind UI from text prompts",
+  "desc_zh": "用文本提示生成 React 与 Tailwind 前端界面，Vercel 官方出品",
+  "tags": [
+    "ui-generation",
+    "react",
+    "frontend"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

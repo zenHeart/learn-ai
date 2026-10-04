@@ -1,0 +1,29 @@
+{
+  "id": "mem",
+  "name": "Mem",
+  "name_zh": "Mem",
+  "vendor_id": "mem-labs",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-10-01",
+  "homepage": "https://get.mem.ai",
+  "desc": "Self-organising AI notes and thought partner",
+  "desc_zh": "自动组织笔记的 AI 记录工具，2025-10 推出重写后的 2.0 正式版",
+  "tags": [
+    "notes",
+    "personal-ai",
+    "knowledge-base"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

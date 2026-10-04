@@ -1,0 +1,30 @@
+{
+  "id": "deepseek-2",
+  "name": "DeepSeek",
+  "name_zh": "DeepSeek",
+  "vendor_id": "deepseek",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "coding",
+    "research"
+  ],
+  "form": "web",
+  "released": "2025-01-15",
+  "homepage": "https://www.deepseek.com",
+  "desc": "DeepSeek 官方 AI 对话助手",
+  "desc_zh": "DeepSeek 官方 AI 对话助手",
+  "tags": [
+    "chat-assistant",
+    "reasoning",
+    "deepseek"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

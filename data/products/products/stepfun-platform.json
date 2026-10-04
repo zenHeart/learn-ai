@@ -1,0 +1,30 @@
+{
+  "id": "stepfun-platform",
+  "name": "阶跃星辰开放平台",
+  "name_zh": "阶跃星辰开放平台",
+  "vendor_id": "stepfun",
+  "region": "cn",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2024-03-19",
+  "homepage": "https://platform.stepfun.com",
+  "desc": "Step 系列大模型 API 服务平台",
+  "desc_zh": "Step 系列大模型 API 服务平台",
+  "tags": [
+    "enterprise-api",
+    "api",
+    "stepfun"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "kiro",
+  "name": "Kiro",
+  "name_zh": "Kiro",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-07-14",
+  "homepage": "https://kiro.dev",
+  "desc": "AWS spec-driven agentic IDE built on Code OSS",
+  "desc_zh": "AWS 出品的规格驱动（spec-driven）Agentic IDE，基于 Code OSS",
+  "tags": [
+    "spec-driven",
+    "aws",
+    "agentic-ide"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

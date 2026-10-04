@@ -1,0 +1,30 @@
+{
+  "id": "amazon-q-developer",
+  "name": "Amazon Q Developer",
+  "name_zh": "Amazon Q Developer",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2023-11-28",
+  "homepage": "https://aws.amazon.com/q/developer/",
+  "desc": "AWS coding assistant with agentic testing, review and migration",
+  "desc_zh": "AWS 编程助手，支持智能化的测试、评审与迁移",
+  "tags": [
+    "coding-assistant",
+    "aws",
+    "agentic-coding",
+    "code-review"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

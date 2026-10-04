@@ -1,0 +1,34 @@
+{
+  "id": "chatglm",
+  "name": "智谱清言",
+  "name_zh": "智谱清言",
+  "vendor_id": "zhipu",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2023-08-31",
+  "homepage": "https://chatglm.cn",
+  "desc": "智谱面向 C 端的生成式 AI 助手",
+  "desc_zh": "智谱面向 C 端的生成式 AI 助手",
+  "tags": [
+    "chat-assistant",
+    "glm",
+    "zhipu"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/zhipu-chat/",
+      "zh": "/zh/products/zhipu-chat/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

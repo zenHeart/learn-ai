@@ -1,0 +1,29 @@
+{
+  "id": "humane-ai-pin",
+  "name": "Humane AI Pin",
+  "name_zh": "Humane AI Pin",
+  "vendor_id": "humane",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2024-04-11",
+  "homepage": "https://humane.com",
+  "desc": "Screenless lapel pin assistant, discontinued in 2025",
+  "desc_zh": "无屏胸针式 AI 助手，口碑不佳，2025-02 停售并被 HP 收购",
+  "tags": [
+    "hardware",
+    "discontinued",
+    "wearable"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网 humane.com 域名解析失败（DNS 无法解析，非 404），产品已停售。form 记为 desktop：枚举中没有 hardware，桌面硬件是其中最贴近的一项。status 字段仍为 active，与「2025-02 停售」的事实不符，建议按 discontinued 处理。",
+  "revisions": []
+}

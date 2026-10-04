@@ -1,0 +1,30 @@
+{
+  "id": "exa",
+  "name": "Exa",
+  "name_zh": "Exa",
+  "vendor_id": "exa-labs",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2022-11-01",
+  "homepage": "https://exa.ai",
+  "desc": "Neural search API built for retrieval by AI agents",
+  "desc_zh": "为 AI Agent 检索设计的神经搜索引擎与 API，前身 Metaphor",
+  "tags": [
+    "search-api",
+    "retrieval",
+    "agents"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

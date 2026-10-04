@@ -1,0 +1,30 @@
+{
+  "id": "reka-ai",
+  "name": "Reka AI",
+  "name_zh": "Reka AI",
+  "vendor_id": "reka-ai",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2024-04-15",
+  "homepage": "https://www.reka.ai/",
+  "desc": "Multimodal language models handling text, image, video and audio",
+  "desc_zh": "统一处理文本、图像、视频与音频的多模态语言模型",
+  "tags": [
+    "multimodal",
+    "foundation-models",
+    "research-lab",
+    "api"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

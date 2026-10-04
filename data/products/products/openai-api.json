@@ -1,0 +1,29 @@
+{
+  "id": "openai-api",
+  "name": "OpenAI API",
+  "name_zh": "OpenAI API",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2020-06-17",
+  "homepage": "https://platform.openai.com/",
+  "desc": "Developer API platform powering GPT, DALL-E and Whisper workloads",
+  "desc_zh": "OpenAI 开发者 API 平台，支撑 GPT、DALL-E 与 Whisper 等模型调用",
+  "tags": [
+    "api",
+    "developer-platform",
+    "foundation-models"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

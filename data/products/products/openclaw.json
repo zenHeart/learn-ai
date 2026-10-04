@@ -1,0 +1,34 @@
+{
+  "id": "openclaw",
+  "name": "OpenClaw",
+  "name_zh": "OpenClaw",
+  "vendor_id": "openclaw",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2026-01-15",
+  "homepage": "https://openclaw.ai/",
+  "desc": "Self-hosted multi-channel agent gateway you run yourself.",
+  "desc_zh": "自托管的多通道 Agent 网关，运行时完全由你掌控。",
+  "tags": [
+    "self-hosted",
+    "gateway",
+    "messaging"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/openclaw/",
+      "zh": "/zh/products/openclaw/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

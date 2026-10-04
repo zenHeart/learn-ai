@@ -1,0 +1,30 @@
+{
+  "id": "lindy",
+  "name": "Lindy",
+  "name_zh": "Lindy",
+  "vendor_id": "lindy",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-02-16",
+  "homepage": "https://www.lindy.ai",
+  "desc": "Personal AI agents for email, meetings and support",
+  "desc_zh": "面向邮件、会议与客户支持的个性化 AI 助理平台",
+  "tags": [
+    "personal-agent",
+    "assistant",
+    "automation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

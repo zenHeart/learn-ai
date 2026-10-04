@@ -1,0 +1,29 @@
+{
+  "id": "cline",
+  "name": "Cline",
+  "name_zh": "Cline",
+  "vendor_id": "cline",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2024-07-01",
+  "homepage": "https://cline.bot",
+  "desc": "Open-source VS Code agent, first released as Claude Dev",
+  "desc_zh": "开源 VS Code 编码 Agent，2024-07 以 Claude Dev 之名发布，2024-10-09 更名 Cline",
+  "tags": [
+    "open-source",
+    "vscode",
+    "openrouter"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

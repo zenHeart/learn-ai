@@ -1,0 +1,29 @@
+{
+  "id": "gumloop",
+  "name": "Gumloop",
+  "name_zh": "Gumloop",
+  "vendor_id": "gumloop",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-02-07",
+  "homepage": "https://www.gumloop.com",
+  "desc": "No-code AI workflow automation for scraped business data",
+  "desc_zh": "面向业务数据处理的无代码 AI 工作流自动化平台，前身 AgentHub",
+  "tags": [
+    "no-code",
+    "automation",
+    "workflow"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

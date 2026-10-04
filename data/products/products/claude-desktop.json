@@ -1,0 +1,34 @@
+{
+  "id": "claude-desktop",
+  "name": "Claude Desktop",
+  "name_zh": "Claude Desktop",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "released": "2024-10-31",
+  "homepage": "https://claude.ai/download",
+  "desc": "Native macOS and Windows desktop client, flagship for MCP",
+  "desc_zh": "macOS 与 Windows 原生桌面客户端，MCP 的主要承载端",
+  "tags": [
+    "desktop-app",
+    "mcp",
+    "consumer"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/claude/",
+      "zh": "/zh/products/claude/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "",
+  "revisions": []
+}

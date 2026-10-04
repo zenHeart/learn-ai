@@ -1,0 +1,30 @@
+{
+  "id": "hailuo",
+  "name": "海螺AI",
+  "name_zh": "海螺AI",
+  "vendor_id": "minimax",
+  "region": "cn",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2024-09-01",
+  "homepage": "https://hailuoai.com",
+  "desc": "海螺音视频与图像 AI 创作平台",
+  "desc_zh": "海螺音视频与图像 AI 创作平台",
+  "tags": [
+    "multimodal",
+    "video-generation",
+    "minimax"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认：页面标题「海螺视频」，主推文生视频与图像生成。",
+  "revisions": []
+}

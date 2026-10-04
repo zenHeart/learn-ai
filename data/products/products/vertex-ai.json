@@ -1,0 +1,30 @@
+{
+  "id": "vertex-ai",
+  "name": "Vertex AI",
+  "name_zh": "Vertex AI",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "web",
+  "released": "2021-05-18",
+  "homepage": "https://cloud.google.com/vertex-ai",
+  "desc": "Google Cloud enterprise platform for generative AI and agents",
+  "desc_zh": "Google Cloud 面向企业的生成式 AI 与智能体平台",
+  "tags": [
+    "cloud-platform",
+    "enterprise",
+    "foundation-models",
+    "mlops"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

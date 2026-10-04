@@ -1,0 +1,29 @@
+{
+  "id": "mlx",
+  "name": "MLX",
+  "name_zh": "MLX",
+  "vendor_id": "apple",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2023-12-05",
+  "homepage": "https://github.com/ml-explore/mlx",
+  "desc": "Apple's array framework for efficient ML on Apple Silicon",
+  "desc_zh": "苹果为 Apple Silicon 打造的机器学习数组框架，统一内存架构",
+  "tags": [
+    "apple-silicon",
+    "open-source",
+    "framework"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

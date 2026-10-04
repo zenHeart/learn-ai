@@ -14,16 +14,15 @@
       </div>
       <div class="hub-views" role="tablist" :aria-label="labels.viewLabel">
         <button
-          v-for="mode in ['grid', 'timeline']"
+          v-for="mode in ['timeline', 'grid', 'select']"
           :key="mode"
           :class="['hub-view-btn', { active: view === mode }]"
           role="tab"
           :aria-selected="view === mode"
           @click="view = mode"
         >
-          <span aria-hidden="true">{{ mode === 'grid' ? '▦' : '◷' }}</span>
+          <span aria-hidden="true">{{ { timeline: '◷', grid: '▦', select: '🧭' }[mode] }}</span>
           <span class="hub-view-name">{{ labels.views[mode] }}</span>
-          <span class="hub-view-count">{{ mode === 'grid' ? total : total }}</span>
         </button>
       </div>
     </div>
@@ -39,13 +38,13 @@
         <span class="hub-chip-count">{{ total }}</span>
       </button>
       <button
-        v-for="cat in categories"
+        v-for="cat in visibleCategories"
         :key="cat.id"
         :class="['hub-chip', { active: activeCategory === cat.id }]"
         @click="activeCategory = cat.id"
       >
         <span aria-hidden="true">{{ cat.icon }}</span>
-        {{ cat.name }}
+        {{ isZh ? cat.nameZh : cat.name }}
         <span class="hub-chip-count">{{ cat.count }}</span>
       </button>
     </div>
@@ -93,13 +92,28 @@
       {{ filtered.length }} / {{ total }}
     </p>
 
+    <!-- Selection view: pick a scenario, see which tools fit -->
+    <div v-if="view === 'select'" class="hub-select-view">
+      <ProductSelection
+        :use-cases="useCases"
+        :products="filtered"
+        :categories="categories"
+        :active-use-case="activeUseCase"
+        :active-dimension="activeDimension"
+        :is-zh="isZh"
+        :labels="labels"
+        @update:active-use-case="activeUseCase = $event"
+        @update:active-dimension="activeDimension = $event"
+      />
+    </div>
+
     <!-- Grid view -->
-    <div v-if="view === 'grid'" class="hub-grid-view">
+    <div v-else-if="view === 'grid'" class="hub-grid-view">
       <template v-if="byCategory.length">
         <section v-for="group in byCategory" :key="group.id" class="hub-group">
           <h2 class="hub-group-title">
             <span class="hub-group-icon" aria-hidden="true">{{ group.icon }}</span>
-            {{ group.name }}
+            {{ isZh ? group.nameZh : group.name }}
             <span class="hub-group-count">{{ group.items.length }}</span>
           </h2>
           <div class="hub-grid">
@@ -109,6 +123,7 @@
               :product="product"
               :is-zh="isZh"
               :labels="labels"
+              :category="group"
             />
           </div>
         </section>
@@ -121,6 +136,7 @@
       <ProductTimeline
         v-if="filtered.length"
         :products="filtered"
+        :categories="categories"
         :is-zh="isZh"
         :labels="labels"
       />
@@ -130,34 +146,107 @@
 </template>
 
 <script setup>
-  import { ref, computed } from 'vue'
+  import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
   import ProductEntry from './ProductEntry.vue'
   import ProductTimeline from './ProductTimeline.vue'
+  import ProductSelection from './ProductSelection.vue'
   import EmptyState from './ProductHubEmpty.vue'
 
   const props = defineProps({
     products: { type: Array, required: true },
+    categories: { type: Array, required: true },
+    useCases: { type: Array, default: () => [] },
     isZh: { type: Boolean, default: false },
     labels: { type: Object, required: true },
   })
 
+  // ---- filter state (single source of truth for rendering) ----
   const query = ref('')
   const view = ref('timeline')
   const activeCategory = ref('all')
   const activeVendor = ref('all')
   const region = ref('all')
   const docOnly = ref(false)
+  const activeUseCase = ref('all')
+  const activeDimension = ref('')
+
+  // ---- URL synchronisation ----
+  // VitePress has no vue-router. Its `useRouter()` returns a path-only
+  // `{ route, go }` with no `currentRoute` and no `replace()`, and it discards
+  // the query string when resolving pages. So we talk to the History API
+  // directly instead of fighting it.
+  //
+  // Writes use replaceState (never pushState) so tweaking a filter does not
+  // add a history entry per click, and we carry VitePress's own history.state
+  // through unchanged — it holds the scroll position VitePress relies on.
+  // Reads happen on mount plus on popstate, so arriving from another page or
+  // stepping back onto this URL restores the filter.
+  //
+  // VitePress builds one static HTML per route and drops the query, so the
+  // server-rendered first paint can only ever show defaults; the URL is
+  // applied on mount. Every window/history access stays behind onMounted.
+  const VIEWS = ['timeline', 'grid', 'select']
+  // Set while applying URL → state, so the resulting state change does not
+  // immediately write the same values back and start a loop.
+  let applyingFromUrl = false
+
+  const parseList = (v) =>
+    v ? String(v).split(',').map((s) => s.trim()).filter(Boolean) : []
+
+  function readFromUrl() {
+    const q = Object.fromEntries(new URLSearchParams(window.location.search))
+    applyingFromUrl = true
+    view.value = VIEWS.includes(q.view) ? q.view : 'timeline'
+    query.value = q.q ?? ''
+    const cat = parseList(q.cat)
+    activeCategory.value =
+      cat.length === 1 && props.categories.some((c) => c.id === cat[0]) ? cat[0] : 'all'
+    const vendor = parseList(q.vendor)
+    activeVendor.value = vendor.length === 1 ? vendor[0] : 'all'
+    region.value = ['intl', 'cn'].includes(q.region) ? q.region : 'all'
+    docOnly.value = q.docs === '1'
+    activeUseCase.value = props.useCases.some((u) => u.id === q.use) ? q.use : 'all'
+    activeDimension.value = q.dim ?? ''
+    applyingFromUrl = false
+  }
+
+  function writeToUrl() {
+    if (applyingFromUrl || typeof window === 'undefined') return
+    const q = {}
+    if (view.value !== 'timeline') q.view = view.value
+    if (query.value) q.q = query.value
+    if (activeCategory.value !== 'all') q.cat = activeCategory.value
+    if (activeVendor.value !== 'all') q.vendor = activeVendor.value
+    if (region.value !== 'all') q.region = region.value
+    if (docOnly.value) q.docs = '1'
+    if (activeUseCase.value !== 'all') q.use = activeUseCase.value
+    if (activeDimension.value) q.dim = activeDimension.value
+    const qs = new URLSearchParams(q).toString()
+    const next = window.location.pathname + (qs ? `?${qs}` : '') + window.location.hash
+    // Preserve VitePress's scrollPosition state; only the URL changes.
+    window.history.replaceState(window.history.state, '', next)
+  }
+
+  onMounted(() => {
+    readFromUrl()
+    window.addEventListener('popstate', readFromUrl)
+  })
+  onUnmounted(() => window.removeEventListener('popstate', readFromUrl))
+
+  // One watcher for every filter, so URL writes stay in one place.
+  watch(
+    [view, query, activeCategory, activeVendor, region, docOnly, activeUseCase, activeDimension],
+    writeToUrl
+  )
 
   const total = computed(() => props.products.length)
 
-  const categories = computed(() =>
-    Object.entries(props.labels.categories)
-      .map(([id, name]) => {
-        const count = props.products.filter((p) => p.category === id).length
-        return { id, name, count, icon: props.labels.categoryIcons[id] || '◆' }
-      })
-      .filter((c) => c.count > 0)
-      .sort((a, b) => b.count - a.count)
+  const visibleCategories = computed(() =>
+    props.categories.filter((c) => c.count > 0)
+  )
+
+  const activeCategoryMeta = computed(() =>
+    props.categories.find((c) => c.id === activeCategory.value) ?? null
   )
 
   const regionOptions = computed(() => [
@@ -166,7 +255,7 @@
     { id: 'cn', name: props.labels.regionCn },
   ])
 
-  // Vendor counts respect the other active filters, so the sidebar never
+  // Vendor counts respect the category filter, so the vendor list never
   // offers a combination that yields zero rows.
   const vendors = computed(() => {
     const pool = props.products.filter(
@@ -174,8 +263,7 @@
     )
     const counts = new Map()
     for (const p of pool) {
-      const key = p.vendor
-      counts.set(key, (counts.get(key) || 0) + 1)
+      counts.set(p.vendor, (counts.get(p.vendor) || 0) + 1)
     }
     return [...counts.entries()]
       .map(([id, count]) => ({ id, name: id, count }))
@@ -183,7 +271,7 @@
       .slice(0, 28)
   })
 
-  const docRoute = (p) => (props.isZh ? p.docs?.zh : p.docs?.en)
+  const hasHandbook = (p) => p.handbook?.status === 'written'
 
   const filtered = computed(() => {
     const q = query.value.toLowerCase().trim()
@@ -192,7 +280,7 @@
         return false
       if (activeVendor.value !== 'all' && p.vendor !== activeVendor.value) return false
       if (region.value !== 'all' && p.region !== region.value) return false
-      if (docOnly.value && !docRoute(p)) return false
+      if (docOnly.value && !hasHandbook(p)) return false
       if (!q) return true
       const haystack = [
         p.name,
@@ -212,12 +300,10 @@
   })
 
   const byCategory = computed(() =>
-    categories.value
+    props.categories
       .map((cat) => ({
         ...cat,
-        items: filtered.value
-          .filter((p) => p.category === cat.id)
-          .sort((a, b) => (a.released < b.released ? 1 : -1)),
+        items: filtered.value.filter((p) => p.category === cat.id),
       }))
       .filter((g) => g.items.length)
   )
@@ -228,6 +314,8 @@
     activeVendor.value = 'all'
     region.value = 'all'
     docOnly.value = false
+    activeUseCase.value = 'all'
+    activeDimension.value = ''
   }
 </script>
 

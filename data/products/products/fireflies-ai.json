@@ -1,0 +1,30 @@
+{
+  "id": "fireflies-ai",
+  "name": "Fireflies.ai",
+  "name_zh": "Fireflies.ai",
+  "vendor_id": "fireflies-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2019-10-01",
+  "homepage": "https://fireflies.ai",
+  "desc": "Meeting bot with searchable archive and 200+ integrations",
+  "desc_zh": "会议机器人与可检索会议库，对接 200+ 应用",
+  "tags": [
+    "meetings",
+    "bot",
+    "integrations"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认",
+  "revisions": []
+}

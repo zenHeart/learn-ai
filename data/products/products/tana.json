@@ -1,0 +1,29 @@
+{
+  "id": "tana",
+  "name": "Tana",
+  "name_zh": "Tana",
+  "vendor_id": "tana-inc",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2024-12-01",
+  "homepage": "https://tana.inc",
+  "desc": "Supertag outliner with an agentic AI workspace layer",
+  "desc_zh": "以 supertag 为核心的大纲工具，叠加 Agent 式 AI 工作区",
+  "tags": [
+    "notes",
+    "outliner",
+    "personal-ai"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "",
+  "revisions": []
+}

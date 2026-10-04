@@ -1,0 +1,29 @@
+{
+  "id": "n8n",
+  "name": "n8n",
+  "name_zh": "n8n",
+  "vendor_id": "n8n",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "released": "2023-10-04",
+  "homepage": "https://n8n.io",
+  "desc": "Source-available workflow automation with native LLM nodes",
+  "desc_zh": "源码可用的工作流自动化平台，2023-10 加入原生 LangChain 节点",
+  "tags": [
+    "workflow",
+    "automation",
+    "self-hosted"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-04",
+  "notes": "官网已确认，标题「AI Workflow Automation Platform - n8n」。站点明确提供 Docker 部署与 on-prem/air-gapped 自托管，form 记为 self-hosted。",
+  "revisions": []
+}
