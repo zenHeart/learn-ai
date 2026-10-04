@@ -1,0 +1,30 @@
+{
+  "id": "junie",
+  "name": "Junie",
+  "name_zh": "Junie",
+  "vendor_id": "jetbrains",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-04-16",
+  "homepage": "https://www.jetbrains.com/junie/",
+  "desc": "JetBrains' own coding agent, bundled with the IDE subscription",
+  "desc_zh": "JetBrains 自研编程智能体，随 IDE 订阅一起提供",
+  "tags": [
+    "jetbrains-ide",
+    "multi-step-tasks",
+    "free-tier",
+    "subscription"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The agent for teams already paying JetBrains — no second editor, no second subscription, and a free AI tier since 2025.1. 来源：https://blog.jetbrains.com/pycharm/2025/04/pycharm-2025-1/",
+  "revisions": []
+}

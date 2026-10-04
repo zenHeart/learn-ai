@@ -1,0 +1,31 @@
+{
+  "id": "muse",
+  "name": "Muse",
+  "name_zh": "Muse 个人智能体",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-09-08",
+  "homepage": "https://www.meta.com/ai/",
+  "desc": "Personal AI agent that acts on your accounts and completes real errands.",
+  "desc_zh": "能调用你的账号、真正替你办事的个人 AI 智能体。",
+  "tags": [
+    "personal-agent",
+    "proactive",
+    "shopping",
+    "email"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Meta's biggest consumer bet; runs each agent in its own cloud VM so tasks continue after you close the app. 来源：https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent",
+  "revisions": []
+}

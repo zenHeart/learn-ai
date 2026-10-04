@@ -1,0 +1,31 @@
+{
+  "id": "harvey",
+  "name": "Harvey",
+  "name_zh": "Harvey",
+  "vendor_id": "harvey",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2022-11-01",
+  "homepage": "https://www.harvey.ai/",
+  "desc": "Generative AI platform purpose-built for law firm and in-house legal work.",
+  "desc_zh": "面向律所与企业法务的生成式 AI 工作平台。",
+  "tags": [
+    "legal-ai",
+    "vertical-ai",
+    "citation-grounding",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The clearest case of a vertical AI product winning an entire regulated profession. 首次公开发布日期精度：month-only 来源：https://en.wikipedia.org/wiki/Harvey_(software)",
+  "revisions": []
+}

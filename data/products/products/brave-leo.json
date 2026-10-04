@@ -1,0 +1,30 @@
+{
+  "id": "brave-leo",
+  "name": "Brave Leo",
+  "name_zh": "Brave Leo 助手",
+  "vendor_id": "brave",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2023-11-02",
+  "homepage": "https://brave.com/search/",
+  "desc": "Privacy-first AI assistant built into the Brave browser.",
+  "desc_zh": "内置于 Brave 浏览器的注重隐私的 AI 助手。",
+  "tags": [
+    "privacy-first",
+    "browser-ai",
+    "no-login",
+    "free-tier"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The reference point for 'AI that doesn't watch you' — no login, no chat logging, no training on your prompts. 来源：https://cloud.tencent.com/developer/news/1236871",
+  "revisions": []
+}

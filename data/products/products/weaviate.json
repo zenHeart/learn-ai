@@ -1,0 +1,31 @@
+{
+  "id": "weaviate",
+  "name": "Weaviate",
+  "name_zh": "Weaviate",
+  "vendor_id": "weaviate",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2021-01-14",
+  "homepage": "https://weaviate.io/",
+  "desc": "Open-source vector database with native hybrid keyword-vector search.",
+  "desc_zh": "开源自托管向量数据库，原生支持关键词与向量混合检索。",
+  "tags": [
+    "vector-database",
+    "hybrid-search",
+    "open-source",
+    "self-hosted"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The open-source option when data sovereignty rules out managed vector stores. 来源：https://weaviate.io/developers/weaviate/current/roadmap",
+  "revisions": []
+}

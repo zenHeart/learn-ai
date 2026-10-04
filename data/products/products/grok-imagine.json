@@ -1,0 +1,30 @@
+{
+  "id": "grok-imagine",
+  "name": "Grok Imagine",
+  "name_zh": "Grok Imagine 图像与视频创作",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-01-28",
+  "homepage": "https://grok.com/",
+  "desc": "xAI's image and video generation surface inside Grok.",
+  "desc_zh": "Grok 内的图像与视频生成创作界面。",
+  "tags": [
+    "image-generation",
+    "video-generation",
+    "creative"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Marginal on naming — it is a branded surface and API rather than a standalone app, but it is the one xAI competitor to Midjourney and Runway. 首次公开发布日期精度：month-only 来源：https://x.ai/news 复核：xAI 未为该子产品提供独立入口页，homepage 暂用 Grok 主站（grok.com 反爬 403，无法机器确认）。已核实该产品确实存在（图像/视频生成）。",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "frontier",
+  "name": "Frontier",
+  "name_zh": "Frontier 企业智能体平台",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-02-05",
+  "homepage": "https://openai.com/frontier/",
+  "desc": "OpenAI's no-code platform to build and govern enterprise AI agents.",
+  "desc_zh": "OpenAI 用于构建和治理企业级 AI 智能体的无代码平台。",
+  "tags": [
+    "enterprise",
+    "no-code",
+    "governance",
+    "orchestration"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Notable because it runs third-party agents (Google, Microsoft, Anthropic) too, not just OpenAI's own. 来源：https://www.cnbc.com/2026/02/05/openai-launches-frontier-in-bid-to-win-more-business.html",
+  "revisions": []
+}

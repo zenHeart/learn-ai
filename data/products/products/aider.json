@@ -1,0 +1,31 @@
+{
+  "id": "aider",
+  "name": "Aider",
+  "name_zh": "Aider",
+  "vendor_id": "aider-ai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "local-private"
+  ],
+  "form": "cli",
+  "released": "2023-05-10",
+  "homepage": "https://aider.chat",
+  "desc": "terminal pair programmer that commits every change to git",
+  "desc_zh": "终端里的 AI 结对程序员，每次改动自动提交 Git",
+  "tags": [
+    "open-source",
+    "git-native",
+    "bring-your-own-key",
+    "repo-map"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Still the most transparent way to see exactly what an agent changed — every edit lands as a reviewable commit. 来源：https://www.cuobiezi.net/github/project/view/49k3v8j0mq",
+  "revisions": []
+}

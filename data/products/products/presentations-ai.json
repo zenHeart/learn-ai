@@ -1,0 +1,30 @@
+{
+  "id": "presentations-ai",
+  "name": "Presentations.AI",
+  "name_zh": "Presentations.AI",
+  "vendor_id": "presentations-ai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-01-01",
+  "homepage": "https://www.presentations.ai/",
+  "desc": "Deck generator that pulls brand colors from your website.",
+  "desc_zh": "能从你的公司网站自动提取品牌配色的 PPT 生成器。",
+  "tags": [
+    "slides",
+    "brand-sync",
+    "pptx-export",
+    "template-resilient"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Set the bar on brand sync and on templates that survive editing — the two things decks get rejected for at work. 首次公开发布日期精度：month-only 来源：https://www.presentations.ai/zh/ai-presentation-maker",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sierra-ai",
+  "name": "Sierra AI",
+  "name_zh": "Sierra AI",
+  "vendor_id": "sierra",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-02-01",
+  "homepage": "https://sierra.ai/",
+  "desc": "Agent OS for customer-experience agents billed per resolved outcome.",
+  "desc_zh": "面向客服场景的 Agent OS，按解决结果计费。",
+  "tags": [
+    "customer-service",
+    "outcome-pricing",
+    "voice",
+    "agent-runtime"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "First widely adopted pure-play where agents complete transactions, not just answer. 首次公开发布日期精度：month-only 来源：https://sierra.ai/author/bret-taylor",
+  "revisions": []
+}

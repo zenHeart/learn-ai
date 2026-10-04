@@ -1,0 +1,31 @@
+{
+  "id": "hume-ai",
+  "name": "Hume AI",
+  "name_zh": "Hume AI",
+  "vendor_id": "hume-ai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-06-19",
+  "homepage": "https://hume.ai/",
+  "desc": "Voice AI that listens to your tone before answering.",
+  "desc_zh": "会先听你语气再回应的情感智能语音 AI。",
+  "tags": [
+    "emotion-aware",
+    "voice-clone",
+    "tts",
+    "expression-control"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The strongest differentiator in voice is now performance direction — what the tool is instructed to feel, not just naturalness. 来源：https://apps.apple.com/mo/app/hume-your-personal-ai/id6502917807",
+  "revisions": []
+}

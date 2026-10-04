@@ -1,0 +1,32 @@
+{
+  "id": "gemini-enterprise-agent-platform",
+  "name": "Gemini Enterprise Agent Platform",
+  "name_zh": "Gemini 企业智能体平台",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "model-api",
+    "observability"
+  ],
+  "form": "api",
+  "released": "2026-04-22",
+  "homepage": "https://cloud.google.com/gemini-enterprise",
+  "desc": "Google Cloud's unified platform to build, govern and scale enterprise agents.",
+  "desc_zh": "Google Cloud 用于构建、治理和扩展企业智能体的统一平台。",
+  "tags": [
+    "enterprise",
+    "orchestration",
+    "governance",
+    "rebrand"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "This supersedes Vertex AI and Google AI Studio — the existing Vertex AI entry in the ledger needs a rename note, not a parallel record. 来源：https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
+  "revisions": []
+}

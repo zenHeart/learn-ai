@@ -1,0 +1,31 @@
+{
+  "id": "dia",
+  "name": "Dia",
+  "name_zh": "Dia 浏览器",
+  "vendor_id": "the-browser-company",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2025-10-08",
+  "homepage": "https://www.diabrowser.com/",
+  "desc": "Browser built around an AI chat that reads your open tabs.",
+  "desc_zh": "以 AI 对话为核心、可以直接读取你打开的标签页的浏览器。",
+  "tags": [
+    "ai-browser",
+    "chat-with-tabs",
+    "mac-only",
+    "arc-successor"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The most-copied AI browser design — Arc team's rebuild of the browser around chat rather than a sidebar. 来源：https://baike.baidu.com/item/Dia/65727450",
+  "revisions": []
+}

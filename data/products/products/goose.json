@@ -1,0 +1,32 @@
+{
+  "id": "goose",
+  "name": "Goose",
+  "name_zh": "Goose",
+  "vendor_id": "block",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building",
+    "local-private"
+  ],
+  "form": "desktop",
+  "released": "2025-01-01",
+  "homepage": "https://block.github.io/goose/",
+  "desc": "open-source general-purpose agent with desktop, CLI and API",
+  "desc_zh": "开源通用智能体，提供桌面端、命令行与 API 三种形态",
+  "tags": [
+    "open-source",
+    "linux-foundation",
+    "mcp-extensions",
+    "local-first"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Not just a coding tool — it runs recipes and MCP extensions locally, donated to the Linux Foundation's Agentic AI Foundation for neutral governance. 首次公开发布日期精度：month-only 来源：https://www.chenxutan.com/d/5754.html",
+  "revisions": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "p8244",
+  "name": "华为云码道",
+  "name_zh": "华为云码道",
+  "vendor_id": "huawei",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2026-02-26",
+  "homepage": "https://www.huaweicloud.com/product/codearts/ai.html",
+  "desc": "华为云 AI 编码智能体",
+  "desc_zh": "华为云 AI 编码智能体",
+  "tags": [
+    "harmonyos",
+    "ascend",
+    "spec-driven",
+    "on-premise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "鸿蒙 ArkTS 与昇腾算力生态覆盖最全的国产编码智能体，信创场景基本盘 来源：https://www.ithome.com/0/923/944.htm",
+  "revisions": []
+}

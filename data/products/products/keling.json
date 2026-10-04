@@ -1,0 +1,30 @@
+{
+  "id": "keling",
+  "name": "可灵AI",
+  "name_zh": "可灵AI",
+  "vendor_id": "kuaishou",
+  "region": "cn",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2024-06-06",
+  "homepage": "https://klingai.kuaishou.com/",
+  "desc": "文生视频与图片创作平台",
+  "desc_zh": "文生视频与图片创作平台",
+  "tags": [
+    "video-generation",
+    "text-to-video",
+    "image-generation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "国产视频生成第一梯队，海外榜单上与 Veo、Sora 正面对比的主流选择 来源：https://baike.baidu.com/item/%E5%8F%AF%E7%81%B5/64521309",
+  "revisions": []
+}

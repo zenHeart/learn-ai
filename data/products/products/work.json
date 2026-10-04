@@ -1,0 +1,32 @@
+{
+  "id": "work",
+  "name": "纳米Work",
+  "name_zh": "纳米Work",
+  "vendor_id": "360",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-07-28",
+  "homepage": "https://www.360.cn/",
+  "desc": "360 企业级智能体工作平台",
+  "desc_zh": "360 企业级智能体工作平台",
+  "tags": [
+    "enterprise-agent",
+    "multi-model",
+    "cloud-desktop",
+    "sandbox"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "面向中小企业主的一体化智能体平台，云端隔离沙箱是其安全设计的核心卖点 来源：https://www.chinadaily.com.cn/a/202607/30/WS6a6b0de4a310986e2b4682eb.html",
+  "revisions": []
+}

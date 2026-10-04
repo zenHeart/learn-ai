@@ -1,0 +1,32 @@
+{
+  "id": "vibe",
+  "name": "Vibe",
+  "name_zh": "Vibe 智能体",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-05-28",
+  "homepage": "https://mistral.ai/vibe",
+  "desc": "Mistral's unified agent for chat, productivity work and coding.",
+  "desc_zh": "Mistral 将对话、办公与编程合并在一起的统一智能体。",
+  "tags": [
+    "work-mode",
+    "code-mode",
+    "european",
+    "rename"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "This is the current name of Le Chat — the existing Le Chat entry should be marked as the predecessor, not kept as a separate product. 来源：https://futurumgroup.com/insights/mistral-ai-shifts-to-full-stack-strategy-with-vibe-and-industrial-ai",
+  "revisions": []
+}

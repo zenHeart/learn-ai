@@ -1,0 +1,31 @@
+{
+  "id": "zed",
+  "name": "Zed",
+  "name_zh": "Zed",
+  "vendor_id": "zed-industries",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "local-private"
+  ],
+  "form": "ide",
+  "released": "2023-03-01",
+  "homepage": "https://zed.dev",
+  "desc": "Rust-native editor with parallel agents and ACP support",
+  "desc_zh": "Rust 编写的 AI 原生编辑器，支持并行智能体与 ACP 协议",
+  "tags": [
+    "open-source",
+    "rust",
+    "acp-protocol",
+    "gpu-rendered"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Runs Claude Code, Codex and OpenCode as managed threads inside the editor, so you are not locked into one agent vendor. 首次公开发布日期精度：month-only 来源：http://m.zhiding.cn/article/3185882.htm",
+  "revisions": []
+}

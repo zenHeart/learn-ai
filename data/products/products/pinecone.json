@@ -1,0 +1,30 @@
+{
+  "id": "pinecone",
+  "name": "Pinecone",
+  "name_zh": "Pinecone",
+  "vendor_id": "pinecone",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2021-01-27",
+  "homepage": "https://www.pinecone.io/",
+  "desc": "Fully managed vector database for retrieval and agent memory.",
+  "desc_zh": "全托管向量数据库，用于检索与智能体记忆。",
+  "tags": [
+    "vector-database",
+    "rag",
+    "serverless",
+    "managed"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Made semantic search a two-line integration instead of an infrastructure project. 来源：https://docs.beta.pinecone.io/company",
+  "revisions": []
+}

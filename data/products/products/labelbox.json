@@ -1,0 +1,30 @@
+{
+  "id": "labelbox",
+  "name": "Labelbox",
+  "name_zh": "Labelbox",
+  "vendor_id": "labelbox",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2018-07-01",
+  "homepage": "https://labelbox.com/",
+  "desc": "Data and evaluation platform enterprises operate themselves.",
+  "desc_zh": "由企业自行运营的数据与模型评测平台。",
+  "tags": [
+    "annotation-platform",
+    "model-evaluation",
+    "self-operated",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The buy-not-outsource option when data must stay inside the company. 首次公开发布日期精度：month-only 来源：https://www.cbinsights.com/compare/labelbox-vs-surge-ai",
+  "revisions": []
+}

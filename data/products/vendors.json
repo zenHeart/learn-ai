@@ -10,104 +10,6 @@
       "product_count": 1
     },
     {
-      "id": "alibaba",
-      "display_name": "阿里巴巴",
-      "display_name_zh": "阿里巴巴",
-      "region": "cn",
-      "product_count": 6
-    },
-    {
-      "id": "baidu",
-      "display_name": "百度",
-      "display_name_zh": "百度",
-      "region": "cn",
-      "product_count": 3
-    },
-    {
-      "id": "stepfun",
-      "display_name": "阶跃星辰",
-      "display_name_zh": "阶跃星辰",
-      "region": "cn",
-      "product_count": 2
-    },
-    {
-      "id": "iflytek",
-      "display_name": "科大讯飞",
-      "display_name_zh": "科大讯飞",
-      "region": "cn",
-      "product_count": 1
-    },
-    {
-      "id": "kunlun",
-      "display_name": "昆仑万维",
-      "display_name_zh": "昆仑万维",
-      "region": "cn",
-      "product_count": 2
-    },
-    {
-      "id": "01ai",
-      "display_name": "零一万物",
-      "display_name_zh": "零一万物",
-      "region": "cn",
-      "product_count": 1
-    },
-    {
-      "id": "metaso",
-      "display_name": "秘塔",
-      "display_name_zh": "秘塔",
-      "region": "cn",
-      "product_count": 1
-    },
-    {
-      "id": "openbmb",
-      "display_name": "面壁智能",
-      "display_name_zh": "面壁智能",
-      "region": "cn",
-      "product_count": 1
-    },
-    {
-      "id": "sensetime",
-      "display_name": "商汤",
-      "display_name_zh": "商汤",
-      "region": "cn",
-      "product_count": 1
-    },
-    {
-      "id": "tencent",
-      "display_name": "腾讯",
-      "display_name_zh": "腾讯",
-      "region": "cn",
-      "product_count": 3
-    },
-    {
-      "id": "tencent-cloud",
-      "display_name": "腾讯云",
-      "display_name_zh": "腾讯云",
-      "region": "cn",
-      "product_count": 1
-    },
-    {
-      "id": "moonshot",
-      "display_name": "月之暗面",
-      "display_name_zh": "月之暗面",
-      "region": "cn",
-      "product_count": 3
-    },
-    {
-      "id": "zhipu",
-      "display_name": "智谱",
-      "display_name_zh": "智谱",
-      "region": "cn",
-      "product_count": 3
-    },
-    {
-      "id": "bytedance",
-      "display_name": "字节跳动",
-      "display_name_zh": "字节跳动",
-      "region": "cn",
-      "product_count": 5
-    },
-    {
       "id": "ai21-labs",
       "display_name": "AI21 Labs",
       "display_name_zh": "AI21 Labs",
@@ -115,9 +17,30 @@
       "product_count": 1
     },
     {
+      "id": "aws",
+      "display_name": "AWS",
+      "display_name_zh": "AWS",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "aider-ai",
+      "display_name": "Aider AI",
+      "display_name_zh": "Aider AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "aleph-alpha",
       "display_name": "Aleph Alpha",
       "display_name_zh": "Aleph Alpha",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "all-hands-ai",
+      "display_name": "All Hands AI",
+      "display_name_zh": "All Hands AI",
       "region": "intl",
       "product_count": 1
     },
@@ -178,9 +101,30 @@
       "product_count": 1
     },
     {
-      "id": "aws",
-      "display_name": "AWS",
-      "display_name_zh": "AWS",
+      "id": "beautiful-ai",
+      "display_name": "Beautiful.ai",
+      "display_name_zh": "Beautiful.ai",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "bending-spoons",
+      "display_name": "Bending Spoons",
+      "display_name_zh": "Bending Spoons",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "berriai",
+      "display_name": "BerriAI",
+      "display_name_zh": "BerriAI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "block",
+      "display_name": "Block",
+      "display_name_zh": "Block",
       "region": "intl",
       "product_count": 1
     },
@@ -188,6 +132,13 @@
       "id": "braintrust",
       "display_name": "Braintrust",
       "display_name_zh": "Braintrust",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "brave",
+      "display_name": "Brave",
+      "display_name_zh": "Brave",
       "region": "intl",
       "product_count": 1
     },
@@ -206,6 +157,13 @@
       "product_count": 1
     },
     {
+      "id": "cartesia-ai",
+      "display_name": "Cartesia AI",
+      "display_name_zh": "Cartesia AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "character-ai",
       "display_name": "Character.AI",
       "display_name_zh": "Character.AI",
@@ -213,9 +171,23 @@
       "product_count": 1
     },
     {
+      "id": "chroma",
+      "display_name": "Chroma",
+      "display_name_zh": "Chroma",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "cline",
       "display_name": "Cline",
       "display_name_zh": "Cline",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "coderabbit",
+      "display_name": "CodeRabbit",
+      "display_name_zh": "CodeRabbit",
       "region": "intl",
       "product_count": 1
     },
@@ -232,6 +204,13 @@
       "display_name_zh": "Cohere",
       "region": "intl",
       "product_count": 2
+    },
+    {
+      "id": "harvey",
+      "display_name": "Counsel AI Corporation",
+      "display_name_zh": "Counsel AI Corporation",
+      "region": "intl",
+      "product_count": 1
     },
     {
       "id": "crewai",
@@ -304,6 +283,13 @@
       "product_count": 1
     },
     {
+      "id": "fireworks-ai",
+      "display_name": "Fireworks AI",
+      "display_name_zh": "Fireworks AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "flowiseai",
       "display_name": "FlowiseAI",
       "display_name_zh": "FlowiseAI",
@@ -318,6 +304,27 @@
       "product_count": 1
     },
     {
+      "id": "gamma",
+      "display_name": "Gamma",
+      "display_name_zh": "Gamma",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "genspark",
+      "display_name": "Genspark",
+      "display_name_zh": "Genspark",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "glean",
+      "display_name": "Glean",
+      "display_name_zh": "Glean",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "google",
       "display_name": "Google",
       "display_name_zh": "Google",
@@ -328,6 +335,13 @@
       "id": "granola",
       "display_name": "Granola",
       "display_name_zh": "Granola",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "greptile",
+      "display_name": "Greptile",
+      "display_name_zh": "Greptile",
       "region": "intl",
       "product_count": 1
     },
@@ -367,6 +381,13 @@
       "product_count": 1
     },
     {
+      "id": "hume-ai",
+      "display_name": "Hume AI",
+      "display_name_zh": "Hume AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "ideogram",
       "display_name": "Ideogram",
       "display_name_zh": "Ideogram",
@@ -388,6 +409,13 @@
       "product_count": 1
     },
     {
+      "id": "jetbrains",
+      "display_name": "JetBrains",
+      "display_name_zh": "JetBrains",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "kagi",
       "display_name": "Kagi",
       "display_name_zh": "Kagi",
@@ -402,6 +430,13 @@
       "product_count": 1
     },
     {
+      "id": "labelbox",
+      "display_name": "Labelbox",
+      "display_name_zh": "Labelbox",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "langchain-inc",
       "display_name": "LangChain Inc.",
       "display_name_zh": "LangChain Inc.",
@@ -409,16 +444,16 @@
       "product_count": 2
     },
     {
-      "id": "langfuse",
-      "display_name": "Langfuse",
-      "display_name_zh": "Langfuse",
+      "id": "langgenius",
+      "display_name": "LangGenius",
+      "display_name_zh": "LangGenius",
       "region": "intl",
       "product_count": 1
     },
     {
-      "id": "langgenius",
-      "display_name": "LangGenius",
-      "display_name_zh": "LangGenius",
+      "id": "langfuse",
+      "display_name": "Langfuse",
+      "display_name_zh": "Langfuse",
       "region": "intl",
       "product_count": 1
     },
@@ -437,9 +472,23 @@
       "product_count": 1
     },
     {
+      "id": "llamaindex",
+      "display_name": "LlamaIndex",
+      "display_name_zh": "LlamaIndex",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "lovable",
       "display_name": "Lovable",
       "display_name_zh": "Lovable",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "luka",
+      "display_name": "Luka",
+      "display_name_zh": "Luka",
       "region": "intl",
       "product_count": 1
     },
@@ -500,9 +549,16 @@
       "product_count": 2
     },
     {
-      "id": "n8n",
-      "display_name": "n8n",
-      "display_name_zh": "n8n",
+      "id": "nvidia",
+      "display_name": "NVIDIA",
+      "display_name_zh": "NVIDIA",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "netease",
+      "display_name": "NetEase",
+      "display_name_zh": "NetEase",
       "region": "intl",
       "product_count": 1
     },
@@ -517,13 +573,6 @@
       "id": "notion",
       "display_name": "Notion",
       "display_name_zh": "Notion",
-      "region": "intl",
-      "product_count": 1
-    },
-    {
-      "id": "nvidia",
-      "display_name": "NVIDIA",
-      "display_name_zh": "NVIDIA",
       "region": "intl",
       "product_count": 1
     },
@@ -545,6 +594,13 @@
       "id": "openclaw",
       "display_name": "OpenClaw",
       "display_name_zh": "OpenClaw",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "opera",
+      "display_name": "Opera",
+      "display_name_zh": "Opera",
       "region": "intl",
       "product_count": 1
     },
@@ -580,6 +636,34 @@
       "id": "pika-labs",
       "display_name": "Pika Labs",
       "display_name_zh": "Pika Labs",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "pinecone",
+      "display_name": "Pinecone Systems",
+      "display_name_zh": "Pinecone Systems",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "portkey",
+      "display_name": "Portkey",
+      "display_name_zh": "Portkey",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "presentations-ai",
+      "display_name": "Presentations.AI",
+      "display_name_zh": "Presentations.AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "qdrant",
+      "display_name": "Qdrant",
+      "display_name_zh": "Qdrant",
       "region": "intl",
       "product_count": 1
     },
@@ -626,6 +710,34 @@
       "product_count": 1
     },
     {
+      "id": "salesforce",
+      "display_name": "Salesforce",
+      "display_name_zh": "Salesforce",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "scale-ai",
+      "display_name": "Scale AI",
+      "display_name_zh": "Scale AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "sierra",
+      "display_name": "Sierra",
+      "display_name_zh": "Sierra",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "sourcegraph",
+      "display_name": "Sourcegraph",
+      "display_name_zh": "Sourcegraph",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "stackblitz",
       "display_name": "StackBlitz",
       "display_name_zh": "StackBlitz",
@@ -636,6 +748,13 @@
       "id": "suno",
       "display_name": "Suno",
       "display_name_zh": "Suno",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "surge-ai",
+      "display_name": "Surge AI",
+      "display_name_zh": "Surge AI",
       "region": "intl",
       "product_count": 1
     },
@@ -661,9 +780,16 @@
       "product_count": 1
     },
     {
-      "id": "tl-dv",
-      "display_name": "tl;dv",
-      "display_name_zh": "tl;dv",
+      "id": "the-browser-company",
+      "display_name": "The Browser Company",
+      "display_name_zh": "The Browser Company",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "together-ai",
+      "display_name": "Together AI",
+      "display_name_zh": "Together AI",
       "region": "intl",
       "product_count": 1
     },
@@ -689,9 +815,23 @@
       "product_count": 1
     },
     {
+      "id": "wanyo",
+      "display_name": "Wanyo (万有)",
+      "display_name_zh": "万有",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
       "id": "warp-inc",
       "display_name": "Warp Inc.",
       "display_name_zh": "Warp Inc.",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "weaviate",
+      "display_name": "Weaviate",
+      "display_name_zh": "Weaviate",
       "region": "intl",
       "product_count": 1
     },
@@ -701,13 +841,6 @@
       "display_name_zh": "Webflow",
       "region": "intl",
       "product_count": 1
-    },
-    {
-      "id": "xai",
-      "display_name": "xAI",
-      "display_name_zh": "xAI",
-      "region": "intl",
-      "product_count": 2
     },
     {
       "id": "you-com",
@@ -721,6 +854,188 @@
       "display_name": "Zapier",
       "display_name_zh": "Zapier",
       "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "zed-industries",
+      "display_name": "Zed Industries",
+      "display_name_zh": "Zed Industries",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "zilliz",
+      "display_name": "Zilliz",
+      "display_name_zh": "Zilliz",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "n8n",
+      "display_name": "n8n",
+      "display_name_zh": "n8n",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "tl-dv",
+      "display_name": "tl;dv",
+      "display_name_zh": "tl;dv",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "xai",
+      "display_name": "xAI",
+      "display_name_zh": "xAI",
+      "region": "intl",
+      "product_count": 2
+    },
+    {
+      "id": "jd",
+      "display_name": "京东",
+      "display_name_zh": "京东",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "huawei",
+      "display_name": "华为",
+      "display_name_zh": "华为",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "sensetime",
+      "display_name": "商汤",
+      "display_name_zh": "商汤",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "bytedance",
+      "display_name": "字节跳动",
+      "display_name_zh": "字节跳动",
+      "region": "cn",
+      "product_count": 5
+    },
+    {
+      "id": "xiaomi",
+      "display_name": "小米",
+      "display_name_zh": "小米",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "kuaishou",
+      "display_name": "快手",
+      "display_name_zh": "快手",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "kunlun",
+      "display_name": "昆仑万维",
+      "display_name_zh": "昆仑万维",
+      "region": "cn",
+      "product_count": 2
+    },
+    {
+      "id": "zhipu",
+      "display_name": "智谱",
+      "display_name_zh": "智谱",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "moonshot",
+      "display_name": "月之暗面",
+      "display_name_zh": "月之暗面",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "shengshu-ai",
+      "display_name": "生数科技 ShengShu AI",
+      "display_name_zh": "生数科技 ShengShu AI",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "baidu",
+      "display_name": "百度",
+      "display_name_zh": "百度",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "siliconflow",
+      "display_name": "硅基流动",
+      "display_name_zh": "硅基流动",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "iflytek",
+      "display_name": "科大讯飞",
+      "display_name_zh": "科大讯飞",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "metaso",
+      "display_name": "秘塔",
+      "display_name_zh": "秘塔",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "meituan",
+      "display_name": "美团",
+      "display_name_zh": "美团",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "tencent",
+      "display_name": "腾讯",
+      "display_name_zh": "腾讯",
+      "region": "cn",
+      "product_count": 3
+    },
+    {
+      "id": "tencent-cloud",
+      "display_name": "腾讯云",
+      "display_name_zh": "腾讯云",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "stepfun",
+      "display_name": "阶跃星辰",
+      "display_name_zh": "阶跃星辰",
+      "region": "cn",
+      "product_count": 2
+    },
+    {
+      "id": "alibaba",
+      "display_name": "阿里巴巴",
+      "display_name_zh": "阿里巴巴",
+      "region": "cn",
+      "product_count": 6
+    },
+    {
+      "id": "01ai",
+      "display_name": "零一万物",
+      "display_name_zh": "零一万物",
+      "region": "cn",
+      "product_count": 1
+    },
+    {
+      "id": "openbmb",
+      "display_name": "面壁智能",
+      "display_name_zh": "面壁智能",
+      "region": "cn",
       "product_count": 1
     }
   ]

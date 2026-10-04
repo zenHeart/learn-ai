@@ -1,0 +1,31 @@
+{
+  "id": "joyai",
+  "name": "JoyAI",
+  "name_zh": "JoyAI",
+  "vendor_id": "jd",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-02-05",
+  "homepage": "https://joy.jd.com/",
+  "desc": "京东万能数字人生活助手",
+  "desc_zh": "京东万能数字人生活助手",
+  "tags": [
+    "digital-human",
+    "ai-shopping",
+    "voice-first",
+    "companion"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "京东 AI 商业化的门面 App，能在对话里完成外卖、购物、酒旅的真实下单 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/JoyAI/67350847",
+  "revisions": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "vidu",
+  "name": "Vidu",
+  "name_zh": "Vidu",
+  "vendor_id": "shengshu-ai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2024-04-27",
+  "homepage": "https://www.vidu.com/",
+  "desc": "Tsinghua and ShengShu's natively-developed video generation model.",
+  "desc_zh": "清华大学与生数科技联合推出的国产自研视频生成大模型。",
+  "tags": [
+    "text-to-video",
+    "anime-style",
+    "reference-video",
+    "chinese-elements"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "One of the first fully self-developed video models, built on the U-ViT architecture rather than copying Sora's DiT. 来源：https://baike.baidu.com/item/VIDU",
+  "revisions": []
+}

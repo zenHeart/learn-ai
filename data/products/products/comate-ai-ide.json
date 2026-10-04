@@ -1,0 +1,31 @@
+{
+  "id": "comate-ai-ide",
+  "name": "Comate AI IDE",
+  "name_zh": "文心快码 AI IDE",
+  "vendor_id": "baidu",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "image-design"
+  ],
+  "form": "ide",
+  "released": "2025-06-23",
+  "homepage": "https://comate.baidu.com/",
+  "desc": "standalone AI-native IDE with Figma-to-code and multi-agent mode",
+  "desc_zh": "独立 AI 原生 IDE，支持设计稿转代码与多智能体协同",
+  "tags": [
+    "design-to-code",
+    "multi-agent",
+    "mcp",
+    "standalone-ide"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Baidu splitting the plugin from a full IDE signals where enterprise Chinese coding tools are heading: spec plus designers in the loop. 来源：https://baike.baidu.com/item/Comate%20AI%20IDE/65811996",
+  "revisions": []
+}

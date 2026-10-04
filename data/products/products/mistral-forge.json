@@ -1,0 +1,31 @@
+{
+  "id": "mistral-forge",
+  "name": "Mistral Forge",
+  "name_zh": "Mistral Forge 模型定制平台",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-03-17",
+  "homepage": "https://mistral.ai/forge",
+  "desc": "Enterprise service to train, align, evaluate and deploy your own models.",
+  "desc_zh": "用于训练、对齐、评估和部署自有模型的企业平台。",
+  "tags": [
+    "fine-tuning",
+    "evaluation",
+    "sovereign",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Distinct from La Plateforme: Forge is the customization layer for organisations that want their own model, not rented API calls. 首次公开发布日期精度：month-only 来源：https://mistral.ai",
+  "revisions": []
+}

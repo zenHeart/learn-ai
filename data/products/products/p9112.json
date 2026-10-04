@@ -1,0 +1,31 @@
+{
+  "id": "p9112",
+  "name": "问小团",
+  "name_zh": "问小团",
+  "vendor_id": "meituan",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-01-22",
+  "homepage": "https://www.meituan.com/",
+  "desc": "美团本地生活 AI 决策助手",
+  "desc_zh": "美团本地生活 AI 决策助手",
+  "tags": [
+    "local-services",
+    "recommendation",
+    "transactional-ai",
+    "longcat"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "唯一把本地生活实时商户数据接进对话决策并直连交易的助手，是「AI 参与交易」的代表样本 来源：https://m.thepaper.cn/newsDetail_forward_32590949",
+  "revisions": []
+}

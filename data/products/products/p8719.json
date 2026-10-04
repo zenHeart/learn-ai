@@ -1,0 +1,31 @@
+{
+  "id": "p8719",
+  "name": "通义万相",
+  "name_zh": "通义万相",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "released": "2023-07-07",
+  "homepage": "https://tongyi.aliyun.com/wanxiang",
+  "desc": "AI 绘画与视频创作平台",
+  "desc_zh": "AI 绘画与视频创作平台",
+  "tags": [
+    "text-to-image",
+    "video-generation",
+    "open-source",
+    "chinese-style"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "中文语义理解最强的图像视频工具之一，2.1 模型已开源可在消费级显卡本地跑 来源：https://baike.baidu.com/item/%E9%80%9A%E4%B9%89%E4%B8%87%E7%9B%B8/63176825",
+  "revisions": []
+}

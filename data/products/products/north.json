@@ -1,0 +1,32 @@
+{
+  "id": "north",
+  "name": "North",
+  "name_zh": "North 企业智能体平台",
+  "vendor_id": "cohere",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "agent-building",
+    "office",
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2025-01-10",
+  "homepage": "https://cohere.com/north",
+  "desc": "Cohere's secure agent platform for running on your own infrastructure.",
+  "desc_zh": "Cohere 面向自有基础设施部署的安全智能体平台。",
+  "tags": [
+    "on-premise",
+    "sovereign",
+    "government",
+    "connectors"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Built for regulated buyers that must run agents on their own infrastructure — a segment the US-first vendors do not serve well. 首次公开发布日期精度：month-only 来源：https://winbuzzer.com/2025/01/10/cohere-unveils-north-ai-platform-challenges-microsoft/",
+  "revisions": []
+}

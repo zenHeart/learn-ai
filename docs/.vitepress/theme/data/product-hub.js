@@ -8,7 +8,7 @@
  *   data/products/vendors.json      厂商注册表
  *   data/products/use-cases/*.json  场景选型
  *
- * products 153 条 · categories 10 个 · use-cases 10 个
+ * products 226 条 · categories 10 个 · use-cases 10 个
  *
  * 本文件不含生成时间戳：否则每次运行都会产生差异，--check 闸门将永远报红。
  * 什么时候改的由 git 记录。
@@ -17,20 +17,12 @@
 export const productHub = {
   categories: [
   {
-    "id": "chat-assistant",
-    "name": "Chat assistants",
-    "nameZh": "对话助手",
-    "color": "#2563EB",
-    "icon": "💬",
-    "count": 31
-  },
-  {
     "id": "coding-agent",
     "name": "Coding agents",
     "nameZh": "编程 Agent",
     "color": "#16A34A",
     "icon": "💻",
-    "count": 31
+    "count": 48
   },
   {
     "id": "agent-platform",
@@ -38,7 +30,15 @@ export const productHub = {
     "nameZh": "Agent 平台",
     "color": "#7C3AED",
     "icon": "🧠",
-    "count": 26
+    "count": 42
+  },
+  {
+    "id": "chat-assistant",
+    "name": "Chat assistants",
+    "nameZh": "对话助手",
+    "color": "#2563EB",
+    "icon": "💬",
+    "count": 36
   },
   {
     "id": "multimodal-creation",
@@ -46,7 +46,7 @@ export const productHub = {
     "nameZh": "多模态创作",
     "color": "#DB2777",
     "icon": "🎨",
-    "count": 20
+    "count": 31
   },
   {
     "id": "enterprise-api",
@@ -54,7 +54,7 @@ export const productHub = {
     "nameZh": "企业 API",
     "color": "#475569",
     "icon": "🏢",
-    "count": 10
+    "count": 17
   },
   {
     "id": "model-platform",
@@ -62,7 +62,15 @@ export const productHub = {
     "nameZh": "模型平台",
     "color": "#0891B2",
     "icon": "🧬",
-    "count": 10
+    "count": 14
+  },
+  {
+    "id": "developer-sdk",
+    "name": "Developer SDKs",
+    "nameZh": "开发 SDK",
+    "color": "#9333EA",
+    "icon": "🧩",
+    "count": 13
   },
   {
     "id": "search",
@@ -70,7 +78,7 @@ export const productHub = {
     "nameZh": "AI 搜索",
     "color": "#EA580C",
     "icon": "🔍",
-    "count": 8
+    "count": 13
   },
   {
     "id": "eval-observability",
@@ -87,14 +95,6 @@ export const productHub = {
     "color": "#65A30D",
     "icon": "🦙",
     "count": 6
-  },
-  {
-    "id": "developer-sdk",
-    "name": "Developer SDKs",
-    "nameZh": "开发 SDK",
-    "color": "#9333EA",
-    "icon": "🧩",
-    "count": 5
   }
 ],
   useCases: [
@@ -105,24 +105,37 @@ export const productHub = {
     "description": "Writing, meetings and documents. Pick the moment you need help in, rather than the product that has the most features.",
     "descriptionZh": "写作、会议与文档。按你「在哪个环节需要帮忙」来选，而不是按功能多少来选。",
     "products": [
+      "agentforce",
       "ai",
       "amazon-q",
+      "amazon-quick-suite",
       "atlassian-rovo",
+      "beautiful-ai",
       "canva-magic-studio",
       "character-ai",
       "chatglm",
       "chatgpt",
+      "chatgpt-atlas",
       "claude-ai",
       "claude-cowork",
       "claude-desktop",
+      "codewave",
+      "copilot-cowork",
+      "dia",
       "doubao",
       "fathom",
       "fireflies-ai",
+      "frontier",
+      "gamma",
       "gemini-app",
+      "genspark",
+      "glean",
       "granola",
       "grok",
+      "harvey",
       "humane-ai-pin",
       "inflection-pi",
+      "joyai",
       "kimi",
       "le-chat",
       "lindy",
@@ -130,25 +143,40 @@ export const productHub = {
       "mem",
       "meta-ai",
       "microsoft-copilot",
+      "muse",
+      "north",
       "notebooklm",
       "notion-ai",
+      "opera-neon",
       "otter-ai",
+      "p2061",
+      "p2265",
+      "p9112",
+      "perplexity-comet",
+      "presentations-ai",
       "qianwen",
+      "quark",
       "rabbit-r1",
       "ray-ban-meta",
+      "replika",
       "shangliang",
+      "sierra-ai",
       "synthesia",
+      "talkie",
       "tana",
       "tiangong-agent",
       "tl-dv",
       "tongyi",
+      "vibe",
+      "wanyo",
       "wenxiaoyan",
       "wenxin-yiyan",
+      "work",
       "xinghuo",
       "yuanbao",
       "yuewen"
     ],
-    "productCount": 42,
+    "productCount": 70,
     "dimensions": [
       {
         "id": "meetings",
@@ -173,11 +201,16 @@ export const productHub = {
         "labelZh": "写作与起草",
         "weight": 3,
         "productIds": [
+          "amazon-quick-suite",
           "claude-ai",
+          "codewave",
+          "gamma",
+          "genspark",
           "notion-ai",
+          "quark",
           "tana"
         ],
-        "productCount": 3
+        "productCount": 8
       },
       {
         "id": "knowledge-base",
@@ -185,14 +218,196 @@ export const productHub = {
         "labelZh": "团队知识库",
         "weight": 2,
         "productIds": [
+          "amazon-quick-suite",
           "atlassian-rovo",
           "claude-cowork",
+          "genspark",
+          "glean",
           "mem",
           "notebooklm",
           "notion-ai",
+          "p2061",
+          "p2265",
           "tana"
         ],
-        "productCount": 6
+        "productCount": 11
+      },
+      {
+        "id": "slides",
+        "label": "Slides & visual docs",
+        "labelZh": "幻灯片与图文",
+        "weight": 1,
+        "productIds": [
+          "beautiful-ai",
+          "gamma",
+          "genspark",
+          "presentations-ai",
+          "quark"
+        ],
+        "productCount": 5
+      }
+    ]
+  },
+  {
+    "id": "agent-building",
+    "title": "Building agents",
+    "titleZh": "搭建 Agent",
+    "description": "No-code builders, workflow platforms, or code frameworks. The deciding factor is who maintains the thing after launch.",
+    "descriptionZh": "零代码平台、工作流编排，还是自己写框架。真正的分水岭是：上线之后谁来维护。",
+    "products": [
+      "agentforce",
+      "amazon-quick-suite",
+      "azure-ai-foundry",
+      "bailian",
+      "bigmodel",
+      "cartesia",
+      "chatgpt",
+      "chatgpt-agent",
+      "chroma",
+      "claude-api",
+      "claude-cowork",
+      "claude-desktop",
+      "copilot-cowork",
+      "coze",
+      "coze-space",
+      "crewai",
+      "deepseek",
+      "dify",
+      "exa",
+      "fireflies-ai",
+      "flowise",
+      "frontier",
+      "gemini-enterprise-agent-platform",
+      "genspark",
+      "glean",
+      "goose",
+      "grok-build",
+      "gumloop",
+      "hume-ai",
+      "kimi-claw",
+      "labelbox",
+      "langchain",
+      "lindy",
+      "lingyi-wanwu",
+      "litellm",
+      "llamaindex",
+      "manus",
+      "meta-model-api",
+      "microsoft-copilot-studio",
+      "milvus",
+      "minimax-agent",
+      "mistral-studio",
+      "muse",
+      "muse-code",
+      "n8n",
+      "north",
+      "nvidia-nemo",
+      "openclaw",
+      "openhands",
+      "p2061",
+      "p2265",
+      "pinecone",
+      "qdrant",
+      "relevance-ai",
+      "scale-ai",
+      "sierra-ai",
+      "siliconflow",
+      "stepfun-platform",
+      "surge-ai",
+      "tiangong-agent",
+      "together-ai",
+      "vibe",
+      "wanyo",
+      "weaviate",
+      "work",
+      "yuanqi",
+      "zapier-agents"
+    ],
+    "productCount": 67,
+    "dimensions": [
+      {
+        "id": "no-code",
+        "label": "No-code builder",
+        "labelZh": "零代码搭建",
+        "weight": 3,
+        "productIds": [
+          "agentforce",
+          "coze",
+          "dify",
+          "flowise",
+          "frontier",
+          "gumloop",
+          "microsoft-copilot-studio",
+          "p2061",
+          "relevance-ai",
+          "yuanqi",
+          "zapier-agents"
+        ],
+        "productCount": 11
+      },
+      {
+        "id": "workflow",
+        "label": "Workflow & automation",
+        "labelZh": "工作流与自动化",
+        "weight": 3,
+        "productIds": [
+          "crewai",
+          "fireflies-ai",
+          "grok-build",
+          "gumloop",
+          "lindy",
+          "mistral-studio",
+          "n8n",
+          "zapier-agents"
+        ],
+        "productCount": 8
+      },
+      {
+        "id": "autonomous",
+        "label": "Autonomous task agent",
+        "labelZh": "自主任务 Agent",
+        "weight": 2,
+        "productIds": [
+          "agentforce",
+          "chatgpt-agent",
+          "claude-cowork",
+          "manus",
+          "openhands"
+        ],
+        "productCount": 5
+      },
+      {
+        "id": "framework",
+        "label": "Code framework / SDK",
+        "labelZh": "代码框架 / SDK",
+        "weight": 2,
+        "productIds": [
+          "agentforce",
+          "amazon-quick-suite",
+          "azure-ai-foundry",
+          "cartesia",
+          "claude-api",
+          "crewai",
+          "exa",
+          "flowise",
+          "frontier",
+          "gemini-enterprise-agent-platform",
+          "genspark",
+          "glean",
+          "grok-build",
+          "langchain",
+          "lindy",
+          "llamaindex",
+          "microsoft-copilot-studio",
+          "mistral-studio",
+          "nvidia-nemo",
+          "p2061",
+          "pinecone",
+          "relevance-ai",
+          "sierra-ai",
+          "zapier-agents"
+        ],
+        "productCount": 24
       }
     ]
   },
@@ -203,15 +418,21 @@ export const productHub = {
     "description": "For engineers who want an assistant inside the editor, in the terminal, or on a real issue. Start by where the agent is allowed to touch your machine.",
     "descriptionZh": "面向工程师：助手住在编辑器里、终端里，还是直接接手一个真实的 issue。先想清楚 Agent 能碰你机器的哪一层。",
     "products": [
+      "aider",
       "amazon-q-developer",
       "amp",
       "augment-code",
+      "baidu-comate",
       "bolt-new",
       "claude-ai",
       "claude-code",
       "cline",
       "codebuddy",
+      "coderabbit",
+      "codewave",
       "codex-cli",
+      "cody",
+      "comate-ai-ide",
       "cursor",
       "deepseek-2",
       "devin",
@@ -220,14 +441,24 @@ export const productHub = {
       "github-copilot",
       "glm-coding-plan",
       "google-antigravity",
+      "goose",
+      "greptile",
+      "grok-build",
       "jules",
+      "junie",
       "kimi-code",
       "kiro",
       "lingma",
       "lingma-ai-ide",
       "lovable",
+      "marscode",
+      "mimo-code",
       "minimax-code",
+      "muse-code",
       "openai-codex",
+      "openhands",
+      "p7887",
+      "p8244",
       "phind",
       "pi-agent",
       "qoder",
@@ -236,11 +467,13 @@ export const productHub = {
       "trae",
       "v0",
       "vercel-ai-sdk",
+      "vibe",
       "warp",
       "webflow-ai",
-      "windsurf"
+      "windsurf",
+      "zed"
     ],
-    "productCount": 36,
+    "productCount": 54,
     "dimensions": [
       {
         "id": "ai-ide",
@@ -256,9 +489,10 @@ export const productHub = {
           "qoder",
           "roo-code",
           "trae",
-          "windsurf"
+          "windsurf",
+          "zed"
         ],
-        "productCount": 9
+        "productCount": 10
       },
       {
         "id": "terminal-agent",
@@ -266,6 +500,7 @@ export const productHub = {
         "labelZh": "终端 Agent",
         "weight": 3,
         "productIds": [
+          "aider",
           "amazon-q-developer",
           "amp",
           "claude-code",
@@ -276,10 +511,14 @@ export const productHub = {
           "gemini-cli",
           "glm-coding-plan",
           "google-antigravity",
+          "goose",
+          "grok-build",
           "jules",
           "kimi-code",
           "lingma-ai-ide",
+          "mimo-code",
           "minimax-code",
+          "muse-code",
           "openai-codex",
           "pi-agent",
           "qoder",
@@ -287,7 +526,17 @@ export const productHub = {
           "trae",
           "warp"
         ],
-        "productCount": 20
+        "productCount": 25
+      },
+      {
+        "id": "app-builder",
+        "label": "Build an app from a prompt",
+        "labelZh": "一句话生成应用",
+        "weight": 2,
+        "productIds": [
+          "vibe"
+        ],
+        "productCount": 1
       },
       {
         "id": "completion",
@@ -297,9 +546,11 @@ export const productHub = {
         "productIds": [
           "amazon-q-developer",
           "github-copilot",
-          "lingma"
+          "lingma",
+          "marscode",
+          "p7887"
         ],
-        "productCount": 3
+        "productCount": 5
       },
       {
         "id": "review-migration",
@@ -309,115 +560,12 @@ export const productHub = {
         "productIds": [
           "amazon-q-developer",
           "augment-code",
-          "factory"
-        ],
-        "productCount": 3
-      }
-    ]
-  },
-  {
-    "id": "agent-building",
-    "title": "Building agents",
-    "titleZh": "搭建 Agent",
-    "description": "No-code builders, workflow platforms, or code frameworks. The deciding factor is who maintains the thing after launch.",
-    "descriptionZh": "零代码平台、工作流编排，还是自己写框架。真正的分水岭是：上线之后谁来维护。",
-    "products": [
-      "azure-ai-foundry",
-      "bailian",
-      "bigmodel",
-      "chatgpt",
-      "chatgpt-agent",
-      "claude-api",
-      "claude-cowork",
-      "claude-desktop",
-      "coze",
-      "coze-space",
-      "crewai",
-      "deepseek",
-      "dify",
-      "exa",
-      "fireflies-ai",
-      "flowise",
-      "gumloop",
-      "kimi-claw",
-      "langchain",
-      "lindy",
-      "lingyi-wanwu",
-      "manus",
-      "microsoft-copilot-studio",
-      "minimax-agent",
-      "n8n",
-      "openclaw",
-      "relevance-ai",
-      "stepfun-platform",
-      "tiangong-agent",
-      "yuanqi",
-      "zapier-agents"
-    ],
-    "productCount": 31,
-    "dimensions": [
-      {
-        "id": "no-code",
-        "label": "No-code builder",
-        "labelZh": "零代码搭建",
-        "weight": 3,
-        "productIds": [
-          "coze",
-          "dify",
-          "flowise",
-          "gumloop",
-          "microsoft-copilot-studio",
-          "relevance-ai",
-          "yuanqi",
-          "zapier-agents"
-        ],
-        "productCount": 8
-      },
-      {
-        "id": "workflow",
-        "label": "Workflow & automation",
-        "labelZh": "工作流与自动化",
-        "weight": 3,
-        "productIds": [
-          "crewai",
-          "fireflies-ai",
-          "gumloop",
-          "lindy",
-          "n8n",
-          "zapier-agents"
+          "coderabbit",
+          "cody",
+          "factory",
+          "greptile"
         ],
         "productCount": 6
-      },
-      {
-        "id": "autonomous",
-        "label": "Autonomous task agent",
-        "labelZh": "自主任务 Agent",
-        "weight": 2,
-        "productIds": [
-          "chatgpt-agent",
-          "claude-cowork",
-          "manus"
-        ],
-        "productCount": 3
-      },
-      {
-        "id": "framework",
-        "label": "Code framework / SDK",
-        "labelZh": "代码框架 / SDK",
-        "weight": 2,
-        "productIds": [
-          "azure-ai-foundry",
-          "claude-api",
-          "crewai",
-          "exa",
-          "flowise",
-          "langchain",
-          "lindy",
-          "microsoft-copilot-studio",
-          "relevance-ai",
-          "zapier-agents"
-        ],
-        "productCount": 10
       }
     ]
   },
@@ -430,37 +578,54 @@ export const productHub = {
     "products": [
       "ai",
       "atlassian-rovo",
+      "brave-leo",
       "chatglm",
       "chatgpt",
       "chatgpt-agent",
+      "chatgpt-atlas",
       "deepseek-2",
+      "dia",
       "doubao",
       "exa",
       "gemini-app",
+      "genspark",
+      "glean",
       "grok",
+      "harvey",
+      "joyai",
       "kagi-assistant",
       "kimi",
       "le-chat",
+      "llamaindex",
       "manus",
       "metaso-search",
       "microsoft-copilot",
+      "mistral-forge",
       "nami-search",
       "notebooklm",
       "notion-ai",
+      "opera-neon",
+      "p2061",
+      "p2265",
+      "p9112",
       "perplexity",
+      "perplexity-comet",
       "phind",
       "qianwen",
+      "quark",
       "shangliang",
       "tavily",
       "tongyi",
+      "wanyo",
       "wenxiaoyan",
       "wenxin-yiyan",
+      "work",
       "xinghuo",
       "you-com",
       "yuanbao",
       "yuewen"
     ],
-    "productCount": 31,
+    "productCount": 48,
     "dimensions": [
       {
         "id": "answer-engine",
@@ -471,6 +636,7 @@ export const productHub = {
           "atlassian-rovo",
           "exa",
           "gemini-app",
+          "glean",
           "kagi-assistant",
           "metaso-search",
           "microsoft-copilot",
@@ -478,10 +644,11 @@ export const productHub = {
           "notebooklm",
           "perplexity",
           "phind",
+          "quark",
           "tavily",
           "you-com"
         ],
-        "productCount": 12
+        "productCount": 14
       },
       {
         "id": "retrieval-stack",
@@ -492,17 +659,20 @@ export const productHub = {
           "atlassian-rovo",
           "exa",
           "gemini-app",
+          "glean",
           "kagi-assistant",
+          "llamaindex",
           "metaso-search",
           "microsoft-copilot",
           "nami-search",
           "notebooklm",
           "perplexity",
           "phind",
+          "quark",
           "tavily",
           "you-com"
         ],
-        "productCount": 12
+        "productCount": 15
       },
       {
         "id": "document-qa",
@@ -511,10 +681,15 @@ export const productHub = {
         "weight": 2,
         "productIds": [
           "atlassian-rovo",
+          "glean",
+          "llamaindex",
           "notebooklm",
-          "notion-ai"
+          "notion-ai",
+          "p2061",
+          "p2265",
+          "quark"
         ],
-        "productCount": 3
+        "productCount": 8
       }
     ]
   },
@@ -535,23 +710,33 @@ export const productHub = {
       "cohere-command",
       "cohere-rerank",
       "deepseek",
+      "fireworks-ai",
+      "gemini-enterprise-agent-platform",
       "google-ai-studio",
       "hunyuan",
       "lingyi-wanwu",
+      "litellm",
       "llama-api",
+      "meta-model-api",
       "minimax",
+      "mistral-forge",
       "mistral-la-plateforme",
+      "mistral-studio",
+      "nvidia-nemo",
       "nvidia-nim",
       "openai-api",
       "phariaai",
+      "portkey",
       "reka-ai",
+      "siliconflow",
       "stepfun-platform",
+      "together-ai",
       "vercel-ai-sdk",
       "vertex-ai",
       "volcengine-ark",
       "xai-api"
     ],
-    "productCount": 25,
+    "productCount": 35,
     "dimensions": [
       {
         "id": "inference-api",
@@ -564,18 +749,22 @@ export const productHub = {
           "claude-api",
           "cohere-rerank",
           "deepseek",
+          "fireworks-ai",
           "hunyuan",
+          "litellm",
           "llama-api",
+          "meta-model-api",
           "minimax",
           "mistral-la-plateforme",
           "nvidia-nim",
           "openai-api",
           "reka-ai",
           "stepfun-platform",
+          "together-ai",
           "vercel-ai-sdk",
           "xai-api"
         ],
-        "productCount": 15
+        "productCount": 19
       },
       {
         "id": "model-platform",
@@ -594,10 +783,11 @@ export const productHub = {
           "mistral-la-plateforme",
           "openai-api",
           "reka-ai",
+          "siliconflow",
           "vertex-ai",
           "volcengine-ark"
         ],
-        "productCount": 13
+        "productCount": 14
       },
       {
         "id": "app-builder-platform",
@@ -606,9 +796,10 @@ export const productHub = {
         "weight": 2,
         "productIds": [
           "ai21-studio",
-          "google-ai-studio"
+          "google-ai-studio",
+          "mistral-studio"
         ],
-        "productCount": 2
+        "productCount": 3
       }
     ]
   },
@@ -620,19 +811,27 @@ export const productHub = {
     "descriptionZh": "生成像素，和编辑你已有的版式，是两份不同的工作，用的工具也不同。",
     "products": [
       "canva-magic-studio",
+      "comate-ai-ide",
       "figma-ai",
       "framer-ai",
+      "gamma",
+      "google-flow",
+      "grok-imagine",
       "hailuo",
       "higgsfield",
       "ideogram",
+      "jimeng",
+      "keling",
       "krea",
       "leonardo-ai",
       "midjourney",
+      "p8719",
+      "remini",
       "sora",
       "v0",
       "webflow-ai"
     ],
-    "productCount": 12,
+    "productCount": 20,
     "dimensions": [
       {
         "id": "design-tools",
@@ -641,12 +840,14 @@ export const productHub = {
         "weight": 3,
         "productIds": [
           "canva-magic-studio",
+          "comate-ai-ide",
           "figma-ai",
           "framer-ai",
+          "gamma",
           "krea",
           "webflow-ai"
         ],
-        "productCount": 5
+        "productCount": 7
       },
       {
         "id": "image-generation",
@@ -655,13 +856,18 @@ export const productHub = {
         "weight": 3,
         "productIds": [
           "canva-magic-studio",
+          "google-flow",
+          "grok-imagine",
           "ideogram",
+          "jimeng",
+          "keling",
           "krea",
           "leonardo-ai",
           "midjourney",
+          "p8719",
           "sora"
         ],
-        "productCount": 6
+        "productCount": 11
       },
       {
         "id": "upscale-edit",
@@ -669,9 +875,12 @@ export const productHub = {
         "labelZh": "放大与修图",
         "weight": 2,
         "productIds": [
-          "framer-ai"
+          "framer-ai",
+          "gamma",
+          "google-flow",
+          "remini"
         ],
-        "productCount": 1
+        "productCount": 4
       }
     ]
   },
@@ -682,19 +891,27 @@ export const productHub = {
     "description": "Running models on your own machine or your own server. The reason is usually privacy, latency, or cost per token.",
     "descriptionZh": "把模型跑在自己的机器或服务器上。原因通常是隐私、延迟，或者每 token 成本。",
     "products": [
+      "aider",
+      "cody",
       "flowise",
+      "goose",
       "gpt4all",
       "jan",
       "langfuse",
       "lm-studio",
+      "milvus",
       "minicpm",
       "mlx",
+      "north",
       "nvidia-nim",
       "ollama",
       "openclaw",
-      "phariaai"
+      "phariaai",
+      "qdrant",
+      "weaviate",
+      "zed"
     ],
-    "productCount": 11,
+    "productCount": 19,
     "dimensions": [
       {
         "id": "local-runner",
@@ -702,13 +919,14 @@ export const productHub = {
         "labelZh": "本机运行",
         "weight": 3,
         "productIds": [
+          "goose",
           "gpt4all",
           "jan",
           "lm-studio",
           "minicpm",
           "ollama"
         ],
-        "productCount": 5
+        "productCount": 6
       },
       {
         "id": "self-hosted",
@@ -718,9 +936,10 @@ export const productHub = {
         "productIds": [
           "nvidia-nim",
           "openclaw",
-          "phariaai"
+          "phariaai",
+          "weaviate"
         ],
-        "productCount": 3
+        "productCount": 4
       },
       {
         "id": "edge-sdk",
@@ -743,17 +962,23 @@ export const productHub = {
     "descriptionZh": "从一句话到成片。第一个问题不是「哪个工具更强」，而是你要生成素材，还是剪自己拍的东西。",
     "products": [
       "descript",
+      "google-flow",
+      "grok-imagine",
       "hailuo",
       "heygen",
       "higgsfield",
+      "jimeng",
+      "keling",
       "krea",
       "luma-dream-machine",
+      "p8719",
       "pika",
       "runway",
       "sora",
-      "synthesia"
+      "synthesia",
+      "vidu"
     ],
-    "productCount": 10,
+    "productCount": 16,
     "dimensions": [
       {
         "id": "text-to-video",
@@ -761,17 +986,22 @@ export const productHub = {
         "labelZh": "文生视频 / 图生视频",
         "weight": 3,
         "productIds": [
+          "grok-imagine",
           "hailuo",
           "heygen",
           "higgsfield",
+          "jimeng",
+          "keling",
           "krea",
           "luma-dream-machine",
+          "p8719",
           "pika",
           "runway",
           "sora",
-          "synthesia"
+          "synthesia",
+          "vidu"
         ],
-        "productCount": 9
+        "productCount": 14
       },
       {
         "id": "video-editing",
@@ -779,9 +1009,10 @@ export const productHub = {
         "labelZh": "剪辑已有素材",
         "weight": 3,
         "productIds": [
-          "descript"
+          "descript",
+          "google-flow"
         ],
-        "productCount": 1
+        "productCount": 2
       },
       {
         "id": "avatar-presenter",
@@ -800,13 +1031,16 @@ export const productHub = {
         "labelZh": "分镜与创意",
         "weight": 1,
         "productIds": [
+          "google-flow",
+          "grok-imagine",
+          "keling",
           "krea",
           "luma-dream-machine",
           "pika",
           "runway",
           "sora"
         ],
-        "productCount": 5
+        "productCount": 8
       }
     ]
   },
@@ -819,12 +1053,20 @@ export const productHub = {
     "products": [
       "arize-phoenix",
       "braintrust",
+      "coderabbit",
+      "cody",
+      "gemini-enterprise-agent-platform",
+      "greptile",
       "helicone",
       "langfuse",
       "langsmith",
+      "litellm",
+      "mistral-studio",
+      "nvidia-nemo",
+      "portkey",
       "weights-biases"
     ],
-    "productCount": 6,
+    "productCount": 14,
     "dimensions": [
       {
         "id": "evaluation",
@@ -835,9 +1077,11 @@ export const productHub = {
           "arize-phoenix",
           "braintrust",
           "langfuse",
-          "langsmith"
+          "langsmith",
+          "mistral-studio",
+          "nvidia-nemo"
         ],
-        "productCount": 4
+        "productCount": 6
       },
       {
         "id": "tracing",
@@ -849,9 +1093,10 @@ export const productHub = {
           "braintrust",
           "helicone",
           "langfuse",
-          "langsmith"
+          "langsmith",
+          "portkey"
         ],
-        "productCount": 5
+        "productCount": 6
       },
       {
         "id": "experiment-tracking",
@@ -872,12 +1117,14 @@ export const productHub = {
     "description": "Speaking, singing, or turning speech into text. Voice cloning and dubbing are a different market from plain TTS.",
     "descriptionZh": "让机器说话、唱歌，还是把语音转成文字。声音克隆与配音，和普通文字转语音是两回事。",
     "products": [
+      "cartesia",
       "descript",
       "elevenlabs",
+      "hume-ai",
       "suno",
       "udio"
     ],
-    "productCount": 4,
+    "productCount": 6,
     "dimensions": [
       {
         "id": "music",
@@ -898,12 +1145,14 @@ export const productHub = {
         "labelZh": "语音合成",
         "weight": 3,
         "productIds": [
+          "cartesia",
           "descript",
           "elevenlabs",
+          "hume-ai",
           "suno",
           "udio"
         ],
-        "productCount": 4
+        "productCount": 6
       },
       {
         "id": "transcription",
@@ -921,14 +1170,328 @@ export const productHub = {
         "labelZh": "声音克隆与配音",
         "weight": 2,
         "productIds": [
-          "elevenlabs"
+          "cartesia",
+          "elevenlabs",
+          "hume-ai"
         ],
-        "productCount": 1
+        "productCount": 3
       }
     ]
   }
 ],
   products: [
+  {
+    "id": "muse",
+    "name": "Muse",
+    "nameZh": "Muse 个人智能体",
+    "vendor": "Meta",
+    "vendorZh": "Meta",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2026-09-08",
+    "homepage": "https://www.meta.com/ai/",
+    "desc": "Personal AI agent that acts on your accounts and completes real errands.",
+    "descZh": "能调用你的账号、真正替你办事的个人 AI 智能体。",
+    "tags": [
+      "personal-agent",
+      "proactive",
+      "shopping",
+      "email"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "M"
+  },
+  {
+    "id": "wanyo",
+    "name": "万有无界",
+    "nameZh": "万有无界",
+    "vendor": "Wanyo (万有)",
+    "vendorZh": "万有",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "office",
+      "research"
+    ],
+    "form": "web",
+    "released": "2026-09-02",
+    "homepage": "https://work.wanyo.cn/",
+    "desc": "多角色 Agent 协作工作台",
+    "descZh": "多角色 Agent 协作工作台",
+    "tags": [
+      "multi-agent",
+      "enterprise",
+      "a2a",
+      "workbench"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "万"
+  },
+  {
+    "id": "p2265",
+    "name": "商汤小浣熊",
+    "nameZh": "商汤小浣熊 Raccoon Work",
+    "vendor": "商汤",
+    "vendorZh": "商汤",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building",
+      "research"
+    ],
+    "form": "desktop",
+    "released": "2026-08-25",
+    "homepage": "https://www.xiaohuanxiong.com/",
+    "desc": "能搞定工作的桌面 AI 智能体",
+    "descZh": "能搞定工作的桌面 AI 智能体",
+    "tags": [
+      "desktop-agent",
+      "data-analysis",
+      "knowledge-base",
+      "private-deployment"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "商"
+  },
+  {
+    "id": "muse-code",
+    "name": "Muse Code",
+    "nameZh": "Muse Code 编程智能体",
+    "vendor": "Meta",
+    "vendorZh": "Meta",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "agent-building"
+    ],
+    "form": "cli",
+    "released": "2026-08-01",
+    "homepage": "https://ai.meta.com/",
+    "desc": "Meta's terminal coding agent, built on the Muse Spark model family.",
+    "descZh": "Meta 基于 Muse Spark 系列模型推出的终端编程智能体。",
+    "tags": [
+      "terminal",
+      "beta",
+      "multi-file",
+      "macos"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "M"
+  },
+  {
+    "id": "work",
+    "name": "纳米Work",
+    "nameZh": "纳米Work",
+    "vendor": "360",
+    "vendorZh": "360",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "office",
+      "research"
+    ],
+    "form": "web",
+    "released": "2026-07-28",
+    "homepage": "https://www.360.cn/",
+    "desc": "360 企业级智能体工作平台",
+    "descZh": "360 企业级智能体工作平台",
+    "tags": [
+      "enterprise-agent",
+      "multi-model",
+      "cloud-desktop",
+      "sandbox"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "纳"
+  },
+  {
+    "id": "meta-model-api",
+    "name": "Meta Model API",
+    "nameZh": "Meta 模型 API",
+    "vendor": "Meta",
+    "vendorZh": "Meta",
+    "region": "intl",
+    "category": "model-platform",
+    "useCases": [
+      "model-api",
+      "agent-building"
+    ],
+    "form": "api",
+    "released": "2026-07-09",
+    "homepage": "https://ai.meta.com/",
+    "desc": "Meta's developer API for the Muse Spark and Muse Image model families.",
+    "descZh": "Meta 面向开发者的模型接口，提供 Muse Spark 与 Muse Image 系列。",
+    "tags": [
+      "openai-compatible",
+      "spark",
+      "image-generation"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "M"
+  },
+  {
+    "id": "copilot-cowork",
+    "name": "Copilot Cowork",
+    "nameZh": "Copilot Cowork 协作智能体",
+    "vendor": "Microsoft",
+    "vendorZh": "Microsoft",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2026-06-16",
+    "homepage": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available",
+    "desc": "Microsoft 365 Copilot mode that runs multi-step tasks and returns deliverables.",
+    "descZh": "Microsoft 365 Copilot 中可执行多步任务并交付成果的协作模式。",
+    "tags": [
+      "m365",
+      "multi-step",
+      "deliverables",
+      "ga"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
+  },
+  {
+    "id": "mimo-code",
+    "name": "MiMo Code",
+    "nameZh": "MiMo Code",
+    "vendor": "小米",
+    "vendorZh": "小米",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "cli",
+    "released": "2026-06-11",
+    "homepage": "https://mimo.mi.com/docs/zh-CN/news/latest/mimocode",
+    "desc": "小米开源终端 AI 编程助手",
+    "descZh": "小米开源终端 AI 编程助手",
+    "tags": [
+      "open-source",
+      "terminal",
+      "persistent-memory",
+      "voice-input"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "M"
+  },
+  {
+    "id": "vibe",
+    "name": "Vibe",
+    "nameZh": "Vibe 智能体",
+    "vendor": "Mistral AI",
+    "vendorZh": "Mistral AI",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "coding",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2026-05-28",
+    "homepage": "https://mistral.ai/vibe",
+    "desc": "Mistral's unified agent for chat, productivity work and coding.",
+    "descZh": "Mistral 将对话、办公与编程合并在一起的统一智能体。",
+    "tags": [
+      "work-mode",
+      "code-mode",
+      "european",
+      "rename"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "V"
+  },
+  {
+    "id": "grok-build",
+    "name": "Grok Build",
+    "nameZh": "Grok Build 编程智能体",
+    "vendor": "xAI",
+    "vendorZh": "xAI",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "agent-building"
+    ],
+    "form": "cli",
+    "released": "2026-05-25",
+    "homepage": "https://grok.com/",
+    "desc": "Terminal-native coding agent that fans work out across parallel agents.",
+    "descZh": "运行在终端里的编程智能体，可把任务分派给大量并行智能体。",
+    "tags": [
+      "terminal",
+      "open-source",
+      "parallel",
+      "workflows"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
+  },
   {
     "id": "lingyi-wanwu",
     "name": "万智",
@@ -960,6 +1523,99 @@ export const productHub = {
     "glyph": "万"
   },
   {
+    "id": "gemini-enterprise-agent-platform",
+    "name": "Gemini Enterprise Agent Platform",
+    "nameZh": "Gemini 企业智能体平台",
+    "vendor": "Google",
+    "vendorZh": "Google",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "model-api",
+      "observability"
+    ],
+    "form": "api",
+    "released": "2026-04-22",
+    "homepage": "https://cloud.google.com/gemini-enterprise",
+    "desc": "Google Cloud's unified platform to build, govern and scale enterprise agents.",
+    "descZh": "Google Cloud 用于构建、治理和扩展企业智能体的统一平台。",
+    "tags": [
+      "enterprise",
+      "orchestration",
+      "governance",
+      "rebrand"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
+  },
+  {
+    "id": "mistral-forge",
+    "name": "Mistral Forge",
+    "nameZh": "Mistral Forge 模型定制平台",
+    "vendor": "Mistral AI",
+    "vendorZh": "Mistral AI",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "model-api",
+      "research"
+    ],
+    "form": "web",
+    "released": "2026-03-17",
+    "homepage": "https://mistral.ai/forge",
+    "desc": "Enterprise service to train, align, evaluate and deploy your own models.",
+    "descZh": "用于训练、对齐、评估和部署自有模型的企业平台。",
+    "tags": [
+      "fine-tuning",
+      "evaluation",
+      "sovereign",
+      "enterprise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "M"
+  },
+  {
+    "id": "p8244",
+    "name": "华为云码道",
+    "nameZh": "华为云码道",
+    "vendor": "华为",
+    "vendorZh": "华为",
+    "region": "cn",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "ide",
+    "released": "2026-02-26",
+    "homepage": "https://www.huaweicloud.com/product/codearts/ai.html",
+    "desc": "华为云 AI 编码智能体",
+    "descZh": "华为云 AI 编码智能体",
+    "tags": [
+      "harmonyos",
+      "ascend",
+      "spec-driven",
+      "on-premise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "华"
+  },
+  {
     "id": "kimi-claw",
     "name": "Kimi Claw",
     "nameZh": "Kimi Claw",
@@ -987,6 +1643,129 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "K"
+  },
+  {
+    "id": "frontier",
+    "name": "Frontier",
+    "nameZh": "Frontier 企业智能体平台",
+    "vendor": "OpenAI",
+    "vendorZh": "OpenAI",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "office"
+    ],
+    "form": "web",
+    "released": "2026-02-05",
+    "homepage": "https://openai.com/frontier/",
+    "desc": "OpenAI's no-code platform to build and govern enterprise AI agents.",
+    "descZh": "OpenAI 用于构建和治理企业级 AI 智能体的无代码平台。",
+    "tags": [
+      "enterprise",
+      "no-code",
+      "governance",
+      "orchestration"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "F"
+  },
+  {
+    "id": "joyai",
+    "name": "JoyAI",
+    "nameZh": "JoyAI",
+    "vendor": "京东",
+    "vendorZh": "京东",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office",
+      "research"
+    ],
+    "form": "web",
+    "released": "2026-02-05",
+    "homepage": "https://joy.jd.com/",
+    "desc": "京东万能数字人生活助手",
+    "descZh": "京东万能数字人生活助手",
+    "tags": [
+      "digital-human",
+      "ai-shopping",
+      "voice-first",
+      "companion"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "J"
+  },
+  {
+    "id": "grok-imagine",
+    "name": "Grok Imagine",
+    "nameZh": "Grok Imagine 图像与视频创作",
+    "vendor": "xAI",
+    "vendorZh": "xAI",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "video"
+    ],
+    "form": "web",
+    "released": "2026-01-28",
+    "homepage": "https://grok.com/",
+    "desc": "xAI's image and video generation surface inside Grok.",
+    "descZh": "Grok 内的图像与视频生成创作界面。",
+    "tags": [
+      "image-generation",
+      "video-generation",
+      "creative"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
+  },
+  {
+    "id": "p9112",
+    "name": "问小团",
+    "nameZh": "问小团",
+    "vendor": "美团",
+    "vendorZh": "美团",
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "released": "2026-01-22",
+    "homepage": "https://www.meituan.com/",
+    "desc": "美团本地生活 AI 决策助手",
+    "descZh": "美团本地生活 AI 决策助手",
+    "tags": [
+      "local-services",
+      "recommendation",
+      "transactional-ai",
+      "longcat"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "问"
   },
   {
     "id": "openclaw",
@@ -1159,6 +1938,99 @@ export const productHub = {
     "glyph": "M"
   },
   {
+    "id": "chatgpt-atlas",
+    "name": "ChatGPT Atlas",
+    "nameZh": "ChatGPT Atlas 浏览器",
+    "vendor": "OpenAI",
+    "vendorZh": "OpenAI",
+    "region": "intl",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "desktop",
+    "released": "2025-10-22",
+    "homepage": "https://openai.com/index/introducing-chatgpt-atlas/",
+    "desc": "OpenAI's ChatGPT-native browser, now discontinued.",
+    "descZh": "OpenAI 推出的 ChatGPT 原生浏览器，现已停服。",
+    "tags": [
+      "ai-browser",
+      "discontinued",
+      "mac-only",
+      "agentic"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
+  },
+  {
+    "id": "amazon-quick-suite",
+    "name": "Amazon Quick Suite",
+    "nameZh": "Amazon Quick Suite 智能工作台",
+    "vendor": "Amazon",
+    "vendorZh": "Amazon",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2025-10-09",
+    "homepage": "https://aws.amazon.com/quicksuite/",
+    "desc": "AWS's agentic workspace where business users run agents on their data.",
+    "descZh": "AWS 面向业务用户的智能体工作台，可直接操作企业数据。",
+    "tags": [
+      "aws",
+      "workspace",
+      "analytics",
+      "saas-connectors"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "A"
+  },
+  {
+    "id": "dia",
+    "name": "Dia",
+    "nameZh": "Dia 浏览器",
+    "vendor": "The Browser Company",
+    "vendorZh": "The Browser Company",
+    "region": "intl",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "desktop",
+    "released": "2025-10-08",
+    "homepage": "https://www.diabrowser.com/",
+    "desc": "Browser built around an AI chat that reads your open tabs.",
+    "descZh": "以 AI 对话为核心、可以直接读取你打开的标签页的浏览器。",
+    "tags": [
+      "ai-browser",
+      "chat-with-tabs",
+      "mac-only",
+      "arc-successor"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "D"
+  },
+  {
     "id": "mem",
     "name": "Mem",
     "nameZh": "Mem",
@@ -1186,6 +2058,69 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "M"
+  },
+  {
+    "id": "mistral-studio",
+    "name": "Mistral Studio",
+    "nameZh": "Mistral Studio 开发平台",
+    "vendor": "Mistral AI",
+    "vendorZh": "Mistral AI",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building",
+      "model-api",
+      "observability"
+    ],
+    "form": "web",
+    "released": "2025-10-01",
+    "homepage": "https://mistral.ai/studio",
+    "desc": "Mistral's workbench for building, testing and running agents and apps.",
+    "descZh": "Mistral 用于构建、测试和运行智能体与应用的开发平台。",
+    "tags": [
+      "workbench",
+      "workflows",
+      "evaluation",
+      "agents"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "M"
+  },
+  {
+    "id": "opera-neon",
+    "name": "Opera Neon",
+    "nameZh": "Opera Neon 浏览器",
+    "vendor": "Opera",
+    "vendorZh": "Opera",
+    "region": "intl",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "desktop",
+    "released": "2025-09-30",
+    "homepage": "https://www.opera.com/neon/",
+    "desc": "Opera subscription browser that automates tasks and runs AI locally.",
+    "descZh": "Opera 的订阅制浏览器，能自动代办任务且部分 AI 在本地运行。",
+    "tags": [
+      "ai-browser",
+      "agentic",
+      "local-processing",
+      "subscription"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "O"
   },
   {
     "id": "qoder",
@@ -1379,6 +2314,37 @@ export const productHub = {
     "glyph": "K"
   },
   {
+    "id": "perplexity-comet",
+    "name": "Perplexity Comet",
+    "nameZh": "Perplexity Comet 浏览器",
+    "vendor": "Perplexity",
+    "vendorZh": "Perplexity",
+    "region": "intl",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "desktop",
+    "released": "2025-07-09",
+    "homepage": "https://www.perplexity.ai/comet",
+    "desc": "Free AI browser whose assistant acts on pages across tabs.",
+    "descZh": "免费 AI 浏览器，助手可跨标签页直接操作网页。",
+    "tags": [
+      "ai-browser",
+      "agentic",
+      "free-tier",
+      "cross-platform"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "P"
+  },
+  {
     "id": "gemini-cli",
     "name": "Gemini CLI",
     "nameZh": "Gemini CLI",
@@ -1411,6 +2377,37 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "G"
+  },
+  {
+    "id": "comate-ai-ide",
+    "name": "Comate AI IDE",
+    "nameZh": "文心快码 AI IDE",
+    "vendor": "百度",
+    "vendorZh": "百度",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "image-design"
+    ],
+    "form": "ide",
+    "released": "2025-06-23",
+    "homepage": "https://comate.baidu.com/",
+    "desc": "standalone AI-native IDE with Figma-to-code and multi-agent mode",
+    "descZh": "独立 AI 原生 IDE，支持设计稿转代码与多智能体协同",
+    "tags": [
+      "design-to-code",
+      "multi-agent",
+      "mcp",
+      "standalone-ide"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
   },
   {
     "id": "minimax-agent",
@@ -1540,6 +2537,37 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "天"
+  },
+  {
+    "id": "google-flow",
+    "name": "Google Flow",
+    "nameZh": "Google Flow 创意工作室",
+    "vendor": "Google",
+    "vendorZh": "Google",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "image-design"
+    ],
+    "form": "web",
+    "released": "2025-05-20",
+    "homepage": "https://labs.google/fx/tools/flow",
+    "desc": "Google's AI creative studio for making and editing video and images.",
+    "descZh": "Google 用于生成与剪辑视频、图像的 AI 创意工作室。",
+    "tags": [
+      "veo",
+      "storyboarding",
+      "video-editing",
+      "noir"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
   },
   {
     "id": "amp",
@@ -1732,6 +2760,68 @@ export const productHub = {
     "glyph": "C"
   },
   {
+    "id": "junie",
+    "name": "Junie",
+    "nameZh": "Junie",
+    "vendor": "JetBrains",
+    "vendorZh": "JetBrains",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "ide",
+    "released": "2025-04-16",
+    "homepage": "https://www.jetbrains.com/junie/",
+    "desc": "JetBrains' own coding agent, bundled with the IDE subscription",
+    "descZh": "JetBrains 自研编程智能体，随 IDE 订阅一起提供",
+    "tags": [
+      "jetbrains-ide",
+      "multi-step-tasks",
+      "free-tier",
+      "subscription"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "J"
+  },
+  {
+    "id": "nvidia-nemo",
+    "name": "NVIDIA NeMo",
+    "nameZh": "NVIDIA NeMo 智能体平台",
+    "vendor": "NVIDIA",
+    "vendorZh": "NVIDIA",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "observability",
+      "model-api"
+    ],
+    "form": "self-hosted",
+    "released": "2025-04-01",
+    "homepage": "https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
+    "desc": "NVIDIA's platform to build, monitor and optimise AI agents end to end.",
+    "descZh": "英伟达用于构建、监控和优化 AI 智能体的全流程平台。",
+    "tags": [
+      "agent-ops",
+      "guardrails",
+      "evaluation",
+      "self-hosted"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "N"
+  },
+  {
     "id": "manus",
     "name": "Manus",
     "nameZh": "Manus",
@@ -1826,6 +2916,37 @@ export const productHub = {
     "glyph": "H"
   },
   {
+    "id": "quark",
+    "name": "夸克AI",
+    "nameZh": "夸克AI",
+    "vendor": "阿里巴巴",
+    "vendorZh": "阿里巴巴",
+    "region": "cn",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "released": "2025-03-01",
+    "homepage": "https://www.quark.cn/",
+    "desc": "AI 超级框一站式搜索助手",
+    "descZh": "AI 超级框一站式搜索助手",
+    "tags": [
+      "ai-search",
+      "super-box",
+      "document-qa",
+      "user-scale"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "夸"
+  },
+  {
     "id": "claude-code",
     "name": "Claude Code",
     "nameZh": "Claude Code",
@@ -1888,6 +3009,70 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "D"
+  },
+  {
+    "id": "north",
+    "name": "North",
+    "nameZh": "North 企业智能体平台",
+    "vendor": "Cohere",
+    "vendorZh": "Cohere",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "agent-building",
+      "office",
+      "local-private"
+    ],
+    "form": "self-hosted",
+    "released": "2025-01-10",
+    "homepage": "https://cohere.com/north",
+    "desc": "Cohere's secure agent platform for running on your own infrastructure.",
+    "descZh": "Cohere 面向自有基础设施部署的安全智能体平台。",
+    "tags": [
+      "on-premise",
+      "sovereign",
+      "government",
+      "connectors"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "N"
+  },
+  {
+    "id": "goose",
+    "name": "Goose",
+    "nameZh": "Goose",
+    "vendor": "Block",
+    "vendorZh": "Block",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "agent-building",
+      "local-private"
+    ],
+    "form": "desktop",
+    "released": "2025-01-01",
+    "homepage": "https://block.github.io/goose/",
+    "desc": "open-source general-purpose agent with desktop, CLI and API",
+    "descZh": "开源通用智能体，提供桌面端、命令行与 API 三种形态",
+    "tags": [
+      "open-source",
+      "linux-foundation",
+      "mcp-extensions",
+      "local-first"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
   },
   {
     "id": "deepseek",
@@ -2224,6 +3409,37 @@ export const productHub = {
     "glyph": "B"
   },
   {
+    "id": "agentforce",
+    "name": "Agentforce",
+    "nameZh": "Agentforce",
+    "vendor": "Salesforce",
+    "vendorZh": "Salesforce",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2024-09-12",
+    "homepage": "https://www.salesforce.com/agentforce/",
+    "desc": "Salesforce's platform for autonomous CRM, service and sales agents.",
+    "descZh": "Salesforce 面向 CRM、客服与销售的自主智能体平台。",
+    "tags": [
+      "crm",
+      "autonomous-agents",
+      "no-code",
+      "enterprise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "A"
+  },
+  {
     "id": "replit-agent",
     "name": "Replit Agent",
     "nameZh": "Replit Agent",
@@ -2431,6 +3647,38 @@ export const productHub = {
     "glyph": "P"
   },
   {
+    "id": "p2061",
+    "name": "言犀智能体平台",
+    "nameZh": "言犀智能体平台",
+    "vendor": "京东",
+    "vendorZh": "京东",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "office",
+      "research"
+    ],
+    "form": "web",
+    "released": "2024-07-30",
+    "homepage": "https://www.jdcloud.com/cn/products/yanxi",
+    "desc": "京东云一站式 Agent 开发平台",
+    "descZh": "京东云一站式 Agent 开发平台",
+    "tags": [
+      "low-code",
+      "rag",
+      "industry-templates",
+      "retail"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "言"
+  },
+  {
     "id": "cline",
     "name": "Cline",
     "nameZh": "Cline",
@@ -2458,6 +3706,67 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "C"
+  },
+  {
+    "id": "marscode",
+    "name": "豆包 MarsCode",
+    "nameZh": "豆包 MarsCode",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "region": "cn",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "ide",
+    "released": "2024-06-26",
+    "homepage": "https://www.marscode.cn/",
+    "desc": "免费 AI 编程助手与云端 IDE",
+    "descZh": "免费 AI 编程助手与云端 IDE",
+    "tags": [
+      "cloud-ide",
+      "free-tier",
+      "code-completion",
+      "multi-model"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "豆"
+  },
+  {
+    "id": "hume-ai",
+    "name": "Hume AI",
+    "nameZh": "Hume AI",
+    "vendor": "Hume AI",
+    "vendorZh": "Hume AI",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "audio-voice",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2024-06-19",
+    "homepage": "https://hume.ai/",
+    "desc": "Voice AI that listens to your tone before answering.",
+    "descZh": "会先听你语气再回应的情感智能语音 AI。",
+    "tags": [
+      "emotion-aware",
+      "voice-clone",
+      "tts",
+      "expression-control"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "H"
   },
   {
     "id": "yuewen",
@@ -2548,6 +3857,36 @@ export const productHub = {
     "glyph": "L"
   },
   {
+    "id": "keling",
+    "name": "可灵AI",
+    "nameZh": "可灵AI",
+    "vendor": "快手",
+    "vendorZh": "快手",
+    "region": "cn",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "image-design"
+    ],
+    "form": "web",
+    "released": "2024-06-06",
+    "homepage": "https://klingai.kuaishou.com/",
+    "desc": "文生视频与图片创作平台",
+    "descZh": "文生视频与图片创作平台",
+    "tags": [
+      "video-generation",
+      "text-to-video",
+      "image-generation"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "可"
+  },
+  {
     "id": "factory",
     "name": "Factory",
     "nameZh": "Factory",
@@ -2575,6 +3914,38 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "F"
+  },
+  {
+    "id": "genspark",
+    "name": "Genspark",
+    "nameZh": "Genspark",
+    "vendor": "Genspark",
+    "vendorZh": "Genspark",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "research",
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2024-06-01",
+    "homepage": "https://www.genspark.ai/",
+    "desc": "AI workspace that dispatches many agents to finish a whole task.",
+    "descZh": "调度多个智能体把整件任务做完的 AI 工作空间。",
+    "tags": [
+      "multi-agent",
+      "task-completion",
+      "workspace",
+      "slides-and-sheets"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
   },
   {
     "id": "yuanqi",
@@ -2669,6 +4040,67 @@ export const productHub = {
     "glyph": "G"
   },
   {
+    "id": "jimeng",
+    "name": "即梦AI",
+    "nameZh": "即梦AI",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "region": "cn",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "image-design"
+    ],
+    "form": "web",
+    "released": "2024-05-09",
+    "homepage": "https://jimeng.jianying.com/",
+    "desc": "一站式 AI 图像视频创作平台",
+    "descZh": "一站式 AI 图像视频创作平台",
+    "tags": [
+      "video-generation",
+      "text-to-image",
+      "short-video"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "即"
+  },
+  {
+    "id": "siliconflow",
+    "name": "硅基流动 SiliconFlow",
+    "nameZh": "硅基流动",
+    "vendor": "硅基流动",
+    "vendorZh": "硅基流动",
+    "region": "cn",
+    "category": "model-platform",
+    "useCases": [
+      "model-api",
+      "agent-building"
+    ],
+    "form": "api",
+    "released": "2024-05-01",
+    "homepage": "https://siliconflow.cn/",
+    "desc": "Chinese MaaS serving 170+ open models on domestic AI chips.",
+    "descZh": "在国产芯片上服务 170+ 开源模型的 MaaS 平台。",
+    "tags": [
+      "maas",
+      "domestic-chips",
+      "open-models",
+      "cost-optimization"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "硅"
+  },
+  {
     "id": "amazon-q",
     "name": "Amazon Q",
     "nameZh": "Amazon Q",
@@ -2697,6 +4129,36 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "A"
+  },
+  {
+    "id": "vidu",
+    "name": "Vidu",
+    "nameZh": "Vidu",
+    "vendor": "生数科技 ShengShu AI",
+    "vendorZh": "生数科技 ShengShu AI",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video"
+    ],
+    "form": "web",
+    "released": "2024-04-27",
+    "homepage": "https://www.vidu.com/",
+    "desc": "Tsinghua and ShengShu's natively-developed video generation model.",
+    "descZh": "清华大学与生数科技联合推出的国产自研视频生成大模型。",
+    "tags": [
+      "text-to-video",
+      "anime-style",
+      "reference-video",
+      "chinese-elements"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "V"
   },
   {
     "id": "reka-ai",
@@ -2875,6 +4337,37 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "D"
+  },
+  {
+    "id": "openhands",
+    "name": "OpenHands",
+    "nameZh": "OpenHands",
+    "vendor": "All Hands AI",
+    "vendorZh": "All Hands AI",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "agent-building"
+    ],
+    "form": "self-hosted",
+    "released": "2024-03-12",
+    "homepage": "https://openhands.dev",
+    "desc": "open-source autonomous agent that resolves issues end to end",
+    "descZh": "开源自主智能体，端到端完成从读代码到提 PR",
+    "tags": [
+      "open-source",
+      "self-hosted",
+      "sandboxed",
+      "model-agnostic"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "O"
   },
   {
     "id": "zapier-agents",
@@ -3090,6 +4583,37 @@ export const productHub = {
     "glyph": "G"
   },
   {
+    "id": "sierra-ai",
+    "name": "Sierra AI",
+    "nameZh": "Sierra AI",
+    "vendor": "Sierra",
+    "vendorZh": "Sierra",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2024-02-01",
+    "homepage": "https://sierra.ai/",
+    "desc": "Agent OS for customer-experience agents billed per resolved outcome.",
+    "descZh": "面向客服场景的 Agent OS，按解决结果计费。",
+    "tags": [
+      "customer-service",
+      "outcome-pricing",
+      "voice",
+      "agent-runtime"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "S"
+  },
+  {
     "id": "coze",
     "name": "扣子",
     "nameZh": "扣子",
@@ -3179,6 +4703,68 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "R"
+  },
+  {
+    "id": "cartesia",
+    "name": "Cartesia",
+    "nameZh": "Cartesia",
+    "vendor": "Cartesia AI",
+    "vendorZh": "Cartesia AI",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building",
+      "audio-voice"
+    ],
+    "form": "api",
+    "released": "2024-01-01",
+    "homepage": "https://cartesia.ai/",
+    "desc": "Speech API engineered for real-time voice agents under 100ms.",
+    "descZh": "为实时语音智能体设计的语音 API，延迟低于 100 毫秒。",
+    "tags": [
+      "tts",
+      "low-latency",
+      "voice-clone",
+      "on-device"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
+  },
+  {
+    "id": "greptile",
+    "name": "Greptile",
+    "nameZh": "Greptile",
+    "vendor": "Greptile",
+    "vendorZh": "Greptile",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "observability"
+    ],
+    "form": "web",
+    "released": "2024-01-01",
+    "homepage": "https://www.greptile.com",
+    "desc": "graph-indexes your repo then reviews PRs with an agent swarm",
+    "descZh": "先为仓库建图谱，再用智能体集群审查 PR",
+    "tags": [
+      "pull-request",
+      "code-graph",
+      "self-hosting",
+      "team-rules"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
   },
   {
     "id": "suno",
@@ -3297,6 +4883,38 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "M"
+  },
+  {
+    "id": "cody",
+    "name": "Cody",
+    "nameZh": "Cody",
+    "vendor": "Sourcegraph",
+    "vendorZh": "Sourcegraph",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "local-private",
+      "observability"
+    ],
+    "form": "ide",
+    "released": "2023-12-01",
+    "homepage": "https://sourcegraph.com/cody",
+    "desc": "code-graph assistant for large multi-repo codebases",
+    "descZh": "面向大型多仓库代码库的代码图谱助手",
+    "tags": [
+      "code-graph",
+      "self-hosting",
+      "cross-repo",
+      "enterprise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
   },
   {
     "id": "pika",
@@ -3542,6 +5160,36 @@ export const productHub = {
     "glyph": "G"
   },
   {
+    "id": "brave-leo",
+    "name": "Brave Leo",
+    "nameZh": "Brave Leo 助手",
+    "vendor": "Brave",
+    "vendorZh": "Brave",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research"
+    ],
+    "form": "desktop",
+    "released": "2023-11-02",
+    "homepage": "https://brave.com/search/",
+    "desc": "Privacy-first AI assistant built into the Brave browser.",
+    "descZh": "内置于 Brave 浏览器的注重隐私的 AI 助手。",
+    "tags": [
+      "privacy-first",
+      "browser-ai",
+      "no-login",
+      "free-tier"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "B"
+  },
+  {
     "id": "bigmodel",
     "name": "BigModel 开放平台",
     "nameZh": "BigModel 开放平台",
@@ -3734,6 +5382,36 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "C"
+  },
+  {
+    "id": "p7887",
+    "name": "文心快码",
+    "nameZh": "文心快码",
+    "vendor": "百度",
+    "vendorZh": "百度",
+    "region": "cn",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "ide",
+    "released": "2023-10-24",
+    "homepage": "https://comate.baidu.com/",
+    "desc": "百度智能代码助手",
+    "descZh": "百度智能代码助手",
+    "tags": [
+      "code-completion",
+      "china-first",
+      "enterprise",
+      "figma-to-code"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "文"
   },
   {
     "id": "ray-ban-meta",
@@ -4167,6 +5845,38 @@ export const productHub = {
     "glyph": "K"
   },
   {
+    "id": "litellm",
+    "name": "LiteLLM",
+    "nameZh": "LiteLLM",
+    "vendor": "BerriAI",
+    "vendorZh": "BerriAI",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "model-api",
+      "agent-building",
+      "observability"
+    ],
+    "form": "self-hosted",
+    "released": "2023-08-01",
+    "homepage": "https://www.litellm.ai/",
+    "desc": "Open-source gateway putting one OpenAI-shaped API in front of 100+ models.",
+    "descZh": "开源网关，用统一的 OpenAI 格式接口接入 100+ 模型。",
+    "tags": [
+      "llm-gateway",
+      "routing",
+      "cost-control",
+      "open-source"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "L"
+  },
+  {
     "id": "minicpm",
     "name": "面壁 MiniCPM",
     "nameZh": "面壁 MiniCPM",
@@ -4287,6 +5997,37 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "O"
+  },
+  {
+    "id": "p8719",
+    "name": "通义万相",
+    "nameZh": "通义万相",
+    "vendor": "阿里巴巴",
+    "vendorZh": "阿里巴巴",
+    "region": "cn",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "video"
+    ],
+    "form": "web",
+    "released": "2023-07-07",
+    "homepage": "https://tongyi.aliyun.com/wanxiang",
+    "desc": "AI 绘画与视频创作平台",
+    "descZh": "AI 绘画与视频创作平台",
+    "tags": [
+      "text-to-image",
+      "video-generation",
+      "open-source",
+      "chinese-style"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "通"
   },
   {
     "id": "volcengine-ark",
@@ -4446,6 +6187,97 @@ export const productHub = {
     "glyph": "F"
   },
   {
+    "id": "baidu-comate",
+    "name": "Baidu Comate",
+    "nameZh": "文心快码",
+    "vendor": "百度",
+    "vendorZh": "百度",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "ide",
+    "released": "2023-06-06",
+    "homepage": "https://comate.baidu.com/zh",
+    "desc": "Baidu's AI coding assistant with spec-driven multi-agent flow",
+    "descZh": "百度的 AI 编程助手，支持规范驱动的多智能体流程",
+    "tags": [
+      "spec-driven",
+      "multi-agent",
+      "private-deployment",
+      "enterprise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "B"
+  },
+  {
+    "id": "talkie",
+    "name": "Talkie",
+    "nameZh": "Talkie",
+    "vendor": "MiniMax",
+    "vendorZh": "MiniMax",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "released": "2023-06-01",
+    "homepage": "https://www.talkie-ai.com/",
+    "desc": "Character chat app with collectible cards and visual avatars.",
+    "descZh": "带抽卡机制和形象立绘的角色聊天应用。",
+    "tags": [
+      "companion",
+      "gacha-cards",
+      "anime-style",
+      "overseas-hit"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "T"
+  },
+  {
+    "id": "aider",
+    "name": "Aider",
+    "nameZh": "Aider",
+    "vendor": "Aider AI",
+    "vendorZh": "Aider AI",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "local-private"
+    ],
+    "form": "cli",
+    "released": "2023-05-10",
+    "homepage": "https://aider.chat",
+    "desc": "terminal pair programmer that commits every change to git",
+    "descZh": "终端里的 AI 结对程序员，每次改动自动提交 Git",
+    "tags": [
+      "open-source",
+      "git-native",
+      "bring-your-own-key",
+      "repo-map"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "A"
+  },
+  {
     "id": "dify",
     "name": "Dify",
     "nameZh": "Dify",
@@ -4592,6 +6424,37 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "L"
+  },
+  {
+    "id": "codewave",
+    "name": "CodeWave",
+    "nameZh": "网易 CodeWave",
+    "vendor": "NetEase",
+    "vendorZh": "NetEase",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "office"
+    ],
+    "form": "web",
+    "released": "2023-04-25",
+    "homepage": "https://codewave.163.com",
+    "desc": "low-code platform with natural-language to NASL code writing",
+    "descZh": "低代码平台，支持用自然语言编写 NASL 代码",
+    "tags": [
+      "low-code",
+      "domain-language",
+      "enterprise",
+      "on-premises"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
   },
   {
     "id": "ai",
@@ -4809,6 +6672,68 @@ export const productHub = {
     "glyph": "C"
   },
   {
+    "id": "portkey",
+    "name": "Portkey",
+    "nameZh": "Portkey",
+    "vendor": "Portkey",
+    "vendorZh": "Portkey",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "model-api",
+      "observability"
+    ],
+    "form": "web",
+    "released": "2023-03-01",
+    "homepage": "https://portkey.ai/",
+    "desc": "Hosted AI gateway adding routing, governance and observability to LLM calls.",
+    "descZh": "托管式 AI 网关，为模型调用补上路由、治理与可观测性。",
+    "tags": [
+      "ai-gateway",
+      "governance",
+      "reliability",
+      "cost-tracking"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "P"
+  },
+  {
+    "id": "zed",
+    "name": "Zed",
+    "nameZh": "Zed",
+    "vendor": "Zed Industries",
+    "vendorZh": "Zed Industries",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "local-private"
+    ],
+    "form": "ide",
+    "released": "2023-03-01",
+    "homepage": "https://zed.dev",
+    "desc": "Rust-native editor with parallel agents and ACP support",
+    "descZh": "Rust 编写的 AI 原生编辑器，支持并行智能体与 ACP 协议",
+    "tags": [
+      "open-source",
+      "rust",
+      "acp-protocol",
+      "gpu-rendered"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "Z"
+  },
+  {
     "id": "relevance-ai",
     "name": "Relevance AI",
     "nameZh": "Relevance AI",
@@ -4902,6 +6827,37 @@ export const productHub = {
     "glyph": "E"
   },
   {
+    "id": "coderabbit",
+    "name": "CodeRabbit",
+    "nameZh": "CodeRabbit",
+    "vendor": "CodeRabbit",
+    "vendorZh": "CodeRabbit",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "observability"
+    ],
+    "form": "web",
+    "released": "2023-01-01",
+    "homepage": "https://www.coderabbit.ai",
+    "desc": "reviews every pull request with full repository context",
+    "descZh": "基于全仓库上下文审查每一个 Pull Request",
+    "tags": [
+      "pull-request",
+      "static-analysis",
+      "self-hosting",
+      "sarif"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
+  },
+  {
     "id": "helicone",
     "name": "Helicone",
     "nameZh": "Helicone",
@@ -4929,6 +6885,36 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "H"
+  },
+  {
+    "id": "presentations-ai",
+    "name": "Presentations.AI",
+    "nameZh": "Presentations.AI",
+    "vendor": "Presentations.AI",
+    "vendorZh": "Presentations.AI",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "released": "2023-01-01",
+    "homepage": "https://www.presentations.ai/",
+    "desc": "Deck generator that pulls brand colors from your website.",
+    "descZh": "能从你的公司网站自动提取品牌配色的 PPT 生成器。",
+    "tags": [
+      "slides",
+      "brand-sync",
+      "pptx-export",
+      "template-resilient"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "P"
   },
   {
     "id": "leonardo-ai",
@@ -5081,6 +7067,128 @@ export const productHub = {
     "glyph": "E"
   },
   {
+    "id": "harvey",
+    "name": "Harvey",
+    "nameZh": "Harvey",
+    "vendor": "Counsel AI Corporation",
+    "vendorZh": "Counsel AI Corporation",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "research"
+    ],
+    "form": "web",
+    "released": "2022-11-01",
+    "homepage": "https://www.harvey.ai/",
+    "desc": "Generative AI platform purpose-built for law firm and in-house legal work.",
+    "descZh": "面向律所与企业法务的生成式 AI 工作平台。",
+    "tags": [
+      "legal-ai",
+      "vertical-ai",
+      "citation-grounding",
+      "enterprise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "H"
+  },
+  {
+    "id": "llamaindex",
+    "name": "LlamaIndex",
+    "nameZh": "LlamaIndex",
+    "vendor": "LlamaIndex",
+    "vendorZh": "LlamaIndex",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building",
+      "research"
+    ],
+    "form": "self-hosted",
+    "released": "2022-11-01",
+    "homepage": "https://www.llamaindex.ai/",
+    "desc": "Data framework for ingestion, indexing and retrieval over private documents.",
+    "descZh": "面向私有文档的摄取、索引与检索数据框架。",
+    "tags": [
+      "rag",
+      "data-connectors",
+      "indexing",
+      "open-source"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "L"
+  },
+  {
+    "id": "chroma",
+    "name": "Chroma",
+    "nameZh": "Chroma",
+    "vendor": "Chroma",
+    "vendorZh": "Chroma",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "self-hosted",
+    "released": "2022-10-01",
+    "homepage": "https://www.trychroma.com/",
+    "desc": "Embedded open-source embedding store for prototypes and local apps.",
+    "descZh": "嵌入式开源向量存储，面向原型与本地应用。",
+    "tags": [
+      "vector-database",
+      "embedded",
+      "open-source",
+      "prototyping"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "C"
+  },
+  {
+    "id": "fireworks-ai",
+    "name": "Fireworks AI",
+    "nameZh": "Fireworks AI",
+    "vendor": "Fireworks AI",
+    "vendorZh": "Fireworks AI",
+    "region": "intl",
+    "category": "model-platform",
+    "useCases": [
+      "model-api"
+    ],
+    "form": "api",
+    "released": "2022-10-01",
+    "homepage": "https://fireworks.ai/",
+    "desc": "Inference platform running open models on its own optimized serving stack.",
+    "descZh": "基于自研推理引擎托管开源大模型的平台。",
+    "tags": [
+      "inference",
+      "open-models",
+      "serving-engine",
+      "fine-tuning"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "F"
+  },
+  {
     "id": "langchain",
     "name": "LangChain",
     "nameZh": "LangChain",
@@ -5138,6 +7246,37 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "C"
+  },
+  {
+    "id": "gamma",
+    "name": "Gamma",
+    "nameZh": "Gamma",
+    "vendor": "Gamma",
+    "vendorZh": "Gamma",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "office",
+      "image-design"
+    ],
+    "form": "web",
+    "released": "2022-08-01",
+    "homepage": "https://gamma.app/",
+    "desc": "Turns a prompt into a designed deck, doc, or webpage.",
+    "descZh": "把一句话变成排好版的演示文稿、文档或网页。",
+    "tags": [
+      "slides",
+      "prompt-to-deck",
+      "card-editor",
+      "web-native"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
   },
   {
     "id": "heygen",
@@ -5228,6 +7367,37 @@ export const productHub = {
     "glyph": "P"
   },
   {
+    "id": "together-ai",
+    "name": "Together AI",
+    "nameZh": "Together AI",
+    "vendor": "Together AI",
+    "vendorZh": "Together AI",
+    "region": "intl",
+    "category": "model-platform",
+    "useCases": [
+      "model-api",
+      "agent-building"
+    ],
+    "form": "api",
+    "released": "2022-06-01",
+    "homepage": "https://www.together.ai/",
+    "desc": "Cloud for serving and fine-tuning open-weight models at scale.",
+    "descZh": "面向开源权重模型的规模化推理与微调云平台。",
+    "tags": [
+      "open-models",
+      "inference",
+      "fine-tuning",
+      "gpu-cloud"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "T"
+  },
+  {
     "id": "fathom",
     "name": "Fathom",
     "nameZh": "Fathom",
@@ -5284,6 +7454,38 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "Y"
+  },
+  {
+    "id": "glean",
+    "name": "Glean",
+    "nameZh": "Glean",
+    "vendor": "Glean",
+    "vendorZh": "Glean",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building",
+      "research"
+    ],
+    "form": "web",
+    "released": "2021-09-15",
+    "homepage": "https://www.glean.com/",
+    "desc": "Permission-aware enterprise search and work AI agents over company data.",
+    "descZh": "在企业数据上做权限感知的搜索与工作 AI 智能体。",
+    "tags": [
+      "enterprise-search",
+      "rag",
+      "permissions",
+      "knowledge-graph"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "G"
   },
   {
     "id": "ai21-studio",
@@ -5380,6 +7582,98 @@ export const productHub = {
     "glyph": "V"
   },
   {
+    "id": "pinecone",
+    "name": "Pinecone",
+    "nameZh": "Pinecone",
+    "vendor": "Pinecone Systems",
+    "vendorZh": "Pinecone Systems",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "api",
+    "released": "2021-01-27",
+    "homepage": "https://www.pinecone.io/",
+    "desc": "Fully managed vector database for retrieval and agent memory.",
+    "descZh": "全托管向量数据库，用于检索与智能体记忆。",
+    "tags": [
+      "vector-database",
+      "rag",
+      "serverless",
+      "managed"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "P"
+  },
+  {
+    "id": "weaviate",
+    "name": "Weaviate",
+    "nameZh": "Weaviate",
+    "vendor": "Weaviate",
+    "vendorZh": "Weaviate",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building",
+      "local-private"
+    ],
+    "form": "self-hosted",
+    "released": "2021-01-14",
+    "homepage": "https://weaviate.io/",
+    "desc": "Open-source vector database with native hybrid keyword-vector search.",
+    "descZh": "开源自托管向量数据库，原生支持关键词与向量混合检索。",
+    "tags": [
+      "vector-database",
+      "hybrid-search",
+      "open-source",
+      "self-hosted"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "W"
+  },
+  {
+    "id": "qdrant",
+    "name": "Qdrant",
+    "nameZh": "Qdrant",
+    "vendor": "Qdrant",
+    "vendorZh": "Qdrant",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building",
+      "local-private"
+    ],
+    "form": "self-hosted",
+    "released": "2021-01-01",
+    "homepage": "https://qdrant.tech/",
+    "desc": "Rust-based open-source vector search engine with rich payload filtering.",
+    "descZh": "基于 Rust 的开源向量搜索引擎，支持丰富的元数据过滤。",
+    "tags": [
+      "vector-database",
+      "rust",
+      "filtering",
+      "open-source"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "Q"
+  },
+  {
     "id": "synthesia",
     "name": "Synthesia",
     "nameZh": "Synthesia",
@@ -5469,6 +7763,36 @@ export const productHub = {
     "glyph": "O"
   },
   {
+    "id": "surge-ai",
+    "name": "Surge AI",
+    "nameZh": "Surge AI",
+    "vendor": "Surge AI",
+    "vendorZh": "Surge AI",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "api",
+    "released": "2020-01-01",
+    "homepage": "https://www.surgehq.ai/",
+    "desc": "Expert human feedback and RLHF data services for large labs.",
+    "descZh": "面向大模型实验室的专家人类反馈与 RLHF 数据服务。",
+    "tags": [
+      "rlhf",
+      "expert-annotators",
+      "human-feedback",
+      "preference-data"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "S"
+  },
+  {
     "id": "tl-dv",
     "name": "tl;dv",
     "nameZh": "tl;dv",
@@ -5496,6 +7820,37 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "T"
+  },
+  {
+    "id": "milvus",
+    "name": "Milvus",
+    "nameZh": "Milvus",
+    "vendor": "Zilliz",
+    "vendorZh": "Zilliz",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building",
+      "local-private"
+    ],
+    "form": "self-hosted",
+    "released": "2019-11-01",
+    "homepage": "https://milvus.io/",
+    "desc": "Cloud-native distributed vector database for billion-scale similarity search.",
+    "descZh": "云原生分布式向量数据库，面向十亿级相似度检索。",
+    "tags": [
+      "vector-database",
+      "distributed",
+      "open-source",
+      "scale"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "M"
   },
   {
     "id": "fireflies-ai",
@@ -5528,6 +7883,36 @@ export const productHub = {
     "glyph": "F"
   },
   {
+    "id": "remini",
+    "name": "Remini",
+    "nameZh": "Remini",
+    "vendor": "Bending Spoons",
+    "vendorZh": "Bending Spoons",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "released": "2019-01-01",
+    "homepage": "https://remini.ai/",
+    "desc": "Restores and sharpens old or blurry photos in one tap.",
+    "descZh": "一键修复和增强老照片、模糊照片的修图应用。",
+    "tags": [
+      "photo-restoration",
+      "upscale",
+      "one-tap",
+      "viral-trend"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "R"
+  },
+  {
     "id": "runway",
     "name": "Runway",
     "nameZh": "Runway",
@@ -5554,6 +7939,96 @@ export const productHub = {
       "status": "candidate"
     },
     "lastVerifiedAt": "2026-10-04",
+    "glyph": "R"
+  },
+  {
+    "id": "labelbox",
+    "name": "Labelbox",
+    "nameZh": "Labelbox",
+    "vendor": "Labelbox",
+    "vendorZh": "Labelbox",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2018-07-01",
+    "homepage": "https://labelbox.com/",
+    "desc": "Data and evaluation platform enterprises operate themselves.",
+    "descZh": "由企业自行运营的数据与模型评测平台。",
+    "tags": [
+      "annotation-platform",
+      "model-evaluation",
+      "self-operated",
+      "enterprise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "L"
+  },
+  {
+    "id": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "nameZh": "Beautiful.ai",
+    "vendor": "Beautiful.ai",
+    "vendorZh": "Beautiful.ai",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "released": "2018-01-01",
+    "homepage": "https://www.beautiful.ai/",
+    "desc": "Slides that re-layout themselves as you edit the content.",
+    "descZh": "内容一改，幻灯片排版自动跟着重排的演示工具。",
+    "tags": [
+      "slides",
+      "auto-layout",
+      "brand-consistency",
+      "enterprise"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "B"
+  },
+  {
+    "id": "replika",
+    "name": "Replika",
+    "nameZh": "Replika",
+    "vendor": "Luka",
+    "vendorZh": "Luka",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "released": "2017-09-01",
+    "homepage": "https://replika.com/",
+    "desc": "AI companion you customize into a friend, partner, or mentor.",
+    "descZh": "可自定义为朋友、恋人或导师的 AI 伴侣应用。",
+    "tags": [
+      "companion",
+      "avatar",
+      "voice-video",
+      "memory"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
     "glyph": "R"
   },
   {
@@ -5584,6 +8059,36 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "W"
+  },
+  {
+    "id": "scale-ai",
+    "name": "Scale AI",
+    "nameZh": "Scale AI",
+    "vendor": "Scale AI",
+    "vendorZh": "Scale AI",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "api",
+    "released": "2016-06-01",
+    "homepage": "https://scale.com/",
+    "desc": "Human data, RLHF and model evaluation services for frontier labs.",
+    "descZh": "为前沿实验室提供人类数据、RLHF 与模型评测服务。",
+    "tags": [
+      "data-annotation",
+      "rlhf",
+      "model-evaluation",
+      "human-data"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "S"
   },
   {
     "id": "otter-ai",

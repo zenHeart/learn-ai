@@ -1,0 +1,30 @@
+{
+  "id": "baidu-comate",
+  "name": "Baidu Comate",
+  "name_zh": "文心快码",
+  "vendor_id": "baidu",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2023-06-06",
+  "homepage": "https://comate.baidu.com/zh",
+  "desc": "Baidu's AI coding assistant with spec-driven multi-agent flow",
+  "desc_zh": "百度的 AI 编程助手，支持规范驱动的多智能体流程",
+  "tags": [
+    "spec-driven",
+    "multi-agent",
+    "private-deployment",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Forces a Doc-to-Tasks-to-Changes flow instead of blind generation, and supports fully private deployment for regulated teams. 来源：https://baike.baidu.com/item/%E6%96%87%E5%BF%83%E5%BF%AB%E7%A0%81/64857881",
+  "revisions": []
+}

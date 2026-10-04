@@ -1,0 +1,31 @@
+{
+  "id": "greptile",
+  "name": "Greptile",
+  "name_zh": "Greptile",
+  "vendor_id": "greptile",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "observability"
+  ],
+  "form": "web",
+  "released": "2024-01-01",
+  "homepage": "https://www.greptile.com",
+  "desc": "graph-indexes your repo then reviews PRs with an agent swarm",
+  "desc_zh": "先为仓库建图谱，再用智能体集群审查 PR",
+  "tags": [
+    "pull-request",
+    "code-graph",
+    "self-hosting",
+    "team-rules"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Builds a dependency graph of the whole repo first, so it catches cross-file breakage a diff-only reviewer misses. 首次公开发布日期精度：month-only 来源：https://www.ycombinator.com/companies/greptile",
+  "revisions": []
+}

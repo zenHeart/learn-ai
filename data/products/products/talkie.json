@@ -1,0 +1,30 @@
+{
+  "id": "talkie",
+  "name": "Talkie",
+  "name_zh": "Talkie",
+  "vendor_id": "minimax",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-06-01",
+  "homepage": "https://www.talkie-ai.com/",
+  "desc": "Character chat app with collectible cards and visual avatars.",
+  "desc_zh": "带抽卡机制和形象立绘的角色聊天应用。",
+  "tags": [
+    "companion",
+    "gacha-cards",
+    "anime-style",
+    "overseas-hit"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Proved a Chinese model lab could win a consumer app category overseas — 11M MAU in a year, now MiniMax's revenue pillar. 首次公开发布日期精度：month-only 来源：https://zhuanlan.zhihu.com/p/2023457218998051543",
+  "revisions": []
+}

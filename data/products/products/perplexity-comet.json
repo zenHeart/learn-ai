@@ -1,0 +1,31 @@
+{
+  "id": "perplexity-comet",
+  "name": "Perplexity Comet",
+  "name_zh": "Perplexity Comet 浏览器",
+  "vendor_id": "perplexity",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2025-07-09",
+  "homepage": "https://www.perplexity.ai/comet",
+  "desc": "Free AI browser whose assistant acts on pages across tabs.",
+  "desc_zh": "免费 AI 浏览器，助手可跨标签页直接操作网页。",
+  "tags": [
+    "ai-browser",
+    "agentic",
+    "free-tier",
+    "cross-platform"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Went from a $200/month Max-plan exclusive to free for everyone in three months, and is now the largest AI browser by share. 来源：https://www.ithome.com/tags/Comet",
+  "revisions": []
+}

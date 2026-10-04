@@ -1,0 +1,31 @@
+{
+  "id": "codewave",
+  "name": "CodeWave",
+  "name_zh": "网易 CodeWave",
+  "vendor_id": "netease",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-04-25",
+  "homepage": "https://codewave.163.com",
+  "desc": "low-code platform with natural-language to NASL code writing",
+  "desc_zh": "低代码平台，支持用自然语言编写 NASL 代码",
+  "tags": [
+    "low-code",
+    "domain-language",
+    "enterprise",
+    "on-premises"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Buyers who need a governed application platform, not a code generator — it ships its own language, compiler and IDE rather than patching a general-purpose one. 来源：https://m.autohome.com.cn",
+  "revisions": []
+}

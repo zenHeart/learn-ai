@@ -1,0 +1,31 @@
+{
+  "id": "opera-neon",
+  "name": "Opera Neon",
+  "name_zh": "Opera Neon 浏览器",
+  "vendor_id": "opera",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2025-09-30",
+  "homepage": "https://www.opera.com/neon/",
+  "desc": "Opera subscription browser that automates tasks and runs AI locally.",
+  "desc_zh": "Opera 的订阅制浏览器，能自动代办任务且部分 AI 在本地运行。",
+  "tags": [
+    "ai-browser",
+    "agentic",
+    "local-processing",
+    "subscription"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The only major AI browser that runs its agent model on-device, keeping browsing history and cookies local. 来源：https://baike.baidu.com/item/Opera%20Neon/67639827",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "llamaindex",
+  "name": "LlamaIndex",
+  "name_zh": "LlamaIndex",
+  "vendor_id": "llamaindex",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "research"
+  ],
+  "form": "self-hosted",
+  "released": "2022-11-01",
+  "homepage": "https://www.llamaindex.ai/",
+  "desc": "Data framework for ingestion, indexing and retrieval over private documents.",
+  "desc_zh": "面向私有文档的摄取、索引与检索数据框架。",
+  "tags": [
+    "rag",
+    "data-connectors",
+    "indexing",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "LangChain's main counterpart, but owns the data layer rather than orchestration. 首次公开发布日期精度：month-only 来源：https://www.llamaindex.ai/blog/llamaindex-turns-1-f69dcdd45fe3",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "muse-code",
+  "name": "Muse Code",
+  "name_zh": "Muse Code 编程智能体",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "cli",
+  "released": "2026-08-01",
+  "homepage": "https://ai.meta.com/",
+  "desc": "Meta's terminal coding agent, built on the Muse Spark model family.",
+  "desc_zh": "Meta 基于 Muse Spark 系列模型推出的终端编程智能体。",
+  "tags": [
+    "terminal",
+    "beta",
+    "multi-file",
+    "macos"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Marginal still — it shipped in beta; worth watching as a fourth entrant alongside Codex, Claude Code and Grok Build. 首次公开发布日期精度：month-only 来源：https://www.meta.com/ai/",
+  "revisions": []
+}

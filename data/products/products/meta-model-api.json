@@ -1,0 +1,30 @@
+{
+  "id": "meta-model-api",
+  "name": "Meta Model API",
+  "name_zh": "Meta 模型 API",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-07-09",
+  "homepage": "https://ai.meta.com/",
+  "desc": "Meta's developer API for the Muse Spark and Muse Image model families.",
+  "desc_zh": "Meta 面向开发者的模型接口，提供 Muse Spark 与 Muse Image 系列。",
+  "tags": [
+    "openai-compatible",
+    "spark",
+    "image-generation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Meta's successor to the Llama API — an OpenAI- and Anthropic-SDK-compatible endpoint at api.meta.ai, not a proprietary wrapper. 首次公开发布日期精度：month-only 来源：https://www.eesel.ai",
+  "revisions": []
+}

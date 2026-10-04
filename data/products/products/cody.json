@@ -1,0 +1,32 @@
+{
+  "id": "cody",
+  "name": "Cody",
+  "name_zh": "Cody",
+  "vendor_id": "sourcegraph",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "local-private",
+    "observability"
+  ],
+  "form": "ide",
+  "released": "2023-12-01",
+  "homepage": "https://sourcegraph.com/cody",
+  "desc": "code-graph assistant for large multi-repo codebases",
+  "desc_zh": "面向大型多仓库代码库的代码图谱助手",
+  "tags": [
+    "code-graph",
+    "self-hosting",
+    "cross-repo",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Answers cross-service dependency questions that only work when the index spans every repo you own, not one checkout. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/Sourcegraph/62904405",
+  "revisions": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "remini",
+  "name": "Remini",
+  "name_zh": "Remini",
+  "vendor_id": "bending-spoons",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2019-01-01",
+  "homepage": "https://remini.ai/",
+  "desc": "Restores and sharpens old or blurry photos in one tap.",
+  "desc_zh": "一键修复和增强老照片、模糊照片的修图应用。",
+  "tags": [
+    "photo-restoration",
+    "upscale",
+    "one-tap",
+    "viral-trend"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Went from a niche tool to a global and China-wide chart topper twice via trend filters — a case study in consumer AI virality. 首次公开发布日期精度：month-only 来源：https://www.aitop100.cn/tools/detail/1997.html",
+  "revisions": []
+}

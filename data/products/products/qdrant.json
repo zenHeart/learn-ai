@@ -1,0 +1,31 @@
+{
+  "id": "qdrant",
+  "name": "Qdrant",
+  "name_zh": "Qdrant",
+  "vendor_id": "qdrant",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2021-01-01",
+  "homepage": "https://qdrant.tech/",
+  "desc": "Rust-based open-source vector search engine with rich payload filtering.",
+  "desc_zh": "基于 Rust 的开源向量搜索引擎，支持丰富的元数据过滤。",
+  "tags": [
+    "vector-database",
+    "rust",
+    "filtering",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Strongest filtered-search throughput per dollar when you precompute embeddings. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/vector_database",
+  "revisions": []
+}

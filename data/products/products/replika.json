@@ -1,0 +1,30 @@
+{
+  "id": "replika",
+  "name": "Replika",
+  "name_zh": "Replika",
+  "vendor_id": "luka",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2017-09-01",
+  "homepage": "https://replika.com/",
+  "desc": "AI companion you customize into a friend, partner, or mentor.",
+  "desc_zh": "可自定义为朋友、恋人或导师的 AI 伴侣应用。",
+  "tags": [
+    "companion",
+    "avatar",
+    "voice-video",
+    "memory"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The category founder — 30M+ users and the reference point every AI companion product since is measured against. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/Replika/62670028",
+  "revisions": []
+}

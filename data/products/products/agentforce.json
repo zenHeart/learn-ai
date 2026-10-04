@@ -1,0 +1,31 @@
+{
+  "id": "agentforce",
+  "name": "Agentforce",
+  "name_zh": "Agentforce",
+  "vendor_id": "salesforce",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-09-12",
+  "homepage": "https://www.salesforce.com/agentforce/",
+  "desc": "Salesforce's platform for autonomous CRM, service and sales agents.",
+  "desc_zh": "Salesforce 面向 CRM、客服与销售的自主智能体平台。",
+  "tags": [
+    "crm",
+    "autonomous-agents",
+    "no-code",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Brings outcome-priced autonomous agents into the system of record most enterprises already run. 来源：https://www.salesforce.com/ap/news/press-releases/2024/09/13/salesforce-unveils-agentforce-what-ai-was-meant-to-be",
+  "revisions": []
+}

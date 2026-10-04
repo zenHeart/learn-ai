@@ -1,0 +1,31 @@
+{
+  "id": "google-flow",
+  "name": "Google Flow",
+  "name_zh": "Google Flow 创意工作室",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2025-05-20",
+  "homepage": "https://labs.google/fx/tools/flow",
+  "desc": "Google's AI creative studio for making and editing video and images.",
+  "desc_zh": "Google 用于生成与剪辑视频、图像的 AI 创意工作室。",
+  "tags": [
+    "veo",
+    "storyboarding",
+    "video-editing",
+    "noir"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Unusually tool-builder oriented: creators publish reusable tools inside Flow itself, not just one-off generations. 首次公开发布日期精度：month-only 来源：https://labs.google/fx/tools/flow",
+  "revisions": []
+}

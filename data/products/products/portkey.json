@@ -1,0 +1,31 @@
+{
+  "id": "portkey",
+  "name": "Portkey",
+  "name_zh": "Portkey",
+  "vendor_id": "portkey",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "observability"
+  ],
+  "form": "web",
+  "released": "2023-03-01",
+  "homepage": "https://portkey.ai/",
+  "desc": "Hosted AI gateway adding routing, governance and observability to LLM calls.",
+  "desc_zh": "托管式 AI 网关，为模型调用补上路由、治理与可观测性。",
+  "tags": [
+    "ai-gateway",
+    "governance",
+    "reliability",
+    "cost-tracking"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Managed alternative to building the same control plane yourself. 首次公开发布日期精度：month-only 来源：https://www.portkey.ai/portkey-ai-info-page",
+  "revisions": []
+}

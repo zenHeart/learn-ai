@@ -1,0 +1,32 @@
+{
+  "id": "litellm",
+  "name": "LiteLLM",
+  "name_zh": "LiteLLM",
+  "vendor_id": "berriai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "model-api",
+    "agent-building",
+    "observability"
+  ],
+  "form": "self-hosted",
+  "released": "2023-08-01",
+  "homepage": "https://www.litellm.ai/",
+  "desc": "Open-source gateway putting one OpenAI-shaped API in front of 100+ models.",
+  "desc_zh": "开源网关，用统一的 OpenAI 格式接口接入 100+ 模型。",
+  "tags": [
+    "llm-gateway",
+    "routing",
+    "cost-control",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The routing and spend-control layer most self-hosted model stacks end up adding. 首次公开发布日期精度：month-only 来源：https://faun.dev/company/berri-ai/",
+  "revisions": []
+}

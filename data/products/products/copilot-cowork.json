@@ -1,0 +1,31 @@
+{
+  "id": "copilot-cowork",
+  "name": "Copilot Cowork",
+  "name_zh": "Copilot Cowork 协作智能体",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-06-16",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available",
+  "desc": "Microsoft 365 Copilot mode that runs multi-step tasks and returns deliverables.",
+  "desc_zh": "Microsoft 365 Copilot 中可执行多步任务并交付成果的协作模式。",
+  "tags": [
+    "m365",
+    "multi-step",
+    "deliverables",
+    "ga"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Generally available worldwide and grounded in Microsoft Graph, so it competes directly with Muse and Grok Bot on office work. 来源：https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available",
+  "revisions": []
+}

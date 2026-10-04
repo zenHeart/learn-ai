@@ -14,6 +14,7 @@
     "products:build": "node scripts/products/build-hub.mjs",
     "products:check": "node scripts/products/validate-products.mjs && node scripts/products/build-hub.mjs --check",
     "products:checkpoint": "node scripts/products/checkpoint.mjs",
+    "products:coverage": "node scripts/products/coverage-audit.mjs",
     "ppt:vibe": "pnpm --filter vibe-coding dev",
     "ppt:prompt": "pnpm --filter prompt-context dev",
     "ppt:skill": "pnpm --filter skill-mcp dev",

@@ -1,0 +1,30 @@
+{
+  "id": "chroma",
+  "name": "Chroma",
+  "name_zh": "Chroma",
+  "vendor_id": "chroma",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "released": "2022-10-01",
+  "homepage": "https://www.trychroma.com/",
+  "desc": "Embedded open-source embedding store for prototypes and local apps.",
+  "desc_zh": "嵌入式开源向量存储，面向原型与本地应用。",
+  "tags": [
+    "vector-database",
+    "embedded",
+    "open-source",
+    "prototyping"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Lets a prototype run real retrieval without standing up any database server. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/vector_database",
+  "revisions": []
+}

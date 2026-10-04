@@ -1,0 +1,30 @@
+{
+  "id": "fireworks-ai",
+  "name": "Fireworks AI",
+  "name_zh": "Fireworks AI",
+  "vendor_id": "fireworks-ai",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2022-10-01",
+  "homepage": "https://fireworks.ai/",
+  "desc": "Inference platform running open models on its own optimized serving stack.",
+  "desc_zh": "基于自研推理引擎托管开源大模型的平台。",
+  "tags": [
+    "inference",
+    "open-models",
+    "serving-engine",
+    "fine-tuning"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Its custom kernels are why latency-sensitive products run open models there instead. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/Fireworks_AI",
+  "revisions": []
+}

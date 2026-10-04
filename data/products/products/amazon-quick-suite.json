@@ -1,0 +1,31 @@
+{
+  "id": "amazon-quick-suite",
+  "name": "Amazon Quick Suite",
+  "name_zh": "Amazon Quick Suite 智能工作台",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-10-09",
+  "homepage": "https://aws.amazon.com/quicksuite/",
+  "desc": "AWS's agentic workspace where business users run agents on their data.",
+  "desc_zh": "AWS 面向业务用户的智能体工作台，可直接操作企业数据。",
+  "tags": [
+    "aws",
+    "workspace",
+    "analytics",
+    "saas-connectors"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Bundles structured BI data with Microsoft 365, Jira and Salesforce, which is the specific gap Bedrock and Amazon Q leave open. 来源：https://www.computerworld.com/article/3967788/aws-new-ai-agentic-platform-aims-to-automate-business-workflows.html",
+  "revisions": []
+}

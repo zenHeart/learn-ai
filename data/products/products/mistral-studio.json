@@ -1,0 +1,32 @@
+{
+  "id": "mistral-studio",
+  "name": "Mistral Studio",
+  "name_zh": "Mistral Studio 开发平台",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "model-api",
+    "observability"
+  ],
+  "form": "web",
+  "released": "2025-10-01",
+  "homepage": "https://mistral.ai/studio",
+  "desc": "Mistral's workbench for building, testing and running agents and apps.",
+  "desc_zh": "Mistral 用于构建、测试和运行智能体与应用的开发平台。",
+  "tags": [
+    "workbench",
+    "workflows",
+    "evaluation",
+    "agents"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Mistral's counterpart to Google AI Studio and Anthropic's console workbench; the ledger had only the API tier recorded. 首次公开发布日期精度：month-only 来源：https://mistral.ai",
+  "revisions": []
+}

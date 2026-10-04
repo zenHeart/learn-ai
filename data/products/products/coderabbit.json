@@ -1,0 +1,31 @@
+{
+  "id": "coderabbit",
+  "name": "CodeRabbit",
+  "name_zh": "CodeRabbit",
+  "vendor_id": "coderabbit",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "observability"
+  ],
+  "form": "web",
+  "released": "2023-01-01",
+  "homepage": "https://www.coderabbit.ai",
+  "desc": "reviews every pull request with full repository context",
+  "desc_zh": "基于全仓库上下文审查每一个 Pull Request",
+  "tags": [
+    "pull-request",
+    "static-analysis",
+    "self-hosting",
+    "sarif"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The default reviewer once agent-written PRs outnumber human reviewers — it answers what a human reviewer no longer has time to. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/CodeRabbit/67627695",
+  "revisions": []
+}

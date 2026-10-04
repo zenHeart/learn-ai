@@ -1,0 +1,31 @@
+{
+  "id": "siliconflow",
+  "name": "硅基流动 SiliconFlow",
+  "name_zh": "硅基流动",
+  "vendor_id": "siliconflow",
+  "region": "cn",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2024-05-01",
+  "homepage": "https://siliconflow.cn/",
+  "desc": "Chinese MaaS serving 170+ open models on domestic AI chips.",
+  "desc_zh": "在国产芯片上服务 170+ 开源模型的 MaaS 平台。",
+  "tags": [
+    "maas",
+    "domestic-chips",
+    "open-models",
+    "cost-optimization"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The reference option when a Chinese deployment must run on Ascend-class hardware. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20260616A081NQ00",
+  "revisions": []
+}

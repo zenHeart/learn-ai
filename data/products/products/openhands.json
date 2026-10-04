@@ -1,0 +1,31 @@
+{
+  "id": "openhands",
+  "name": "OpenHands",
+  "name_zh": "OpenHands",
+  "vendor_id": "all-hands-ai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "released": "2024-03-12",
+  "homepage": "https://openhands.dev",
+  "desc": "open-source autonomous agent that resolves issues end to end",
+  "desc_zh": "开源自主智能体，端到端完成从读代码到提 PR",
+  "tags": [
+    "open-source",
+    "self-hosted",
+    "sandboxed",
+    "model-agnostic"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The reference open-source answer to Devin: run it in Docker with your own model key and keep your code in your own infrastructure. 来源：https://www.promptquorum.com/zh/power-local-llm/openhands-review",
+  "revisions": []
+}

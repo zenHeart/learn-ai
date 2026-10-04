@@ -41,7 +41,16 @@ node scripts/products/validate-products.mjs && node scripts/products/build-hub.m
 
 ## Step 1 · 发现增量产品
 
-按 `data/products/vendors.json` 的在册厂商分区派发。`coverage_tier: 1` 的厂商必扫，`2` 的低频扫。
+先看覆盖缺口，再看增量：
+
+```bash
+node scripts/products/coverage-audit.mjs
+```
+
+它按 `references/discovery-channels.md` 的两张矩阵（大厂产品线、品类下限）报出「该有却没有」的位置。
+**这是漏检的主要防线**——账本不会因为漏了三个月前的产品而报错，只会安静地少一格。
+
+然后按 `data/products/vendors.json` 的在册厂商分区派发。`coverage_tier: 1` 的厂商必扫，`2` 的低频扫。
 
 对每个分区：
 
@@ -74,6 +83,7 @@ dry-run 到此为止：输出候选清单后结束。
 
 ```bash
 node scripts/products/validate-products.mjs
+node scripts/products/coverage-audit.mjs
 node scripts/products/build-hub.mjs
 node scripts/products/build-hub.mjs --check
 node scripts/product-docs-audit.mjs

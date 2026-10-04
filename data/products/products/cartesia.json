@@ -1,0 +1,31 @@
+{
+  "id": "cartesia",
+  "name": "Cartesia",
+  "name_zh": "Cartesia",
+  "vendor_id": "cartesia-ai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "audio-voice"
+  ],
+  "form": "api",
+  "released": "2024-01-01",
+  "homepage": "https://cartesia.ai/",
+  "desc": "Speech API engineered for real-time voice agents under 100ms.",
+  "desc_zh": "为实时语音智能体设计的语音 API，延迟低于 100 毫秒。",
+  "tags": [
+    "tts",
+    "low-latency",
+    "voice-clone",
+    "on-device"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The default build choice when latency is the binding constraint — the bar every other voice API is measured against. 首次公开发布日期精度：month-only 来源：https://www.cnblogs.com/Agora/p/18700753",
+  "revisions": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "jimeng",
+  "name": "即梦AI",
+  "name_zh": "即梦AI",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2024-05-09",
+  "homepage": "https://jimeng.jianying.com/",
+  "desc": "一站式 AI 图像视频创作平台",
+  "desc_zh": "一站式 AI 图像视频创作平台",
+  "tags": [
+    "video-generation",
+    "text-to-image",
+    "short-video"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "字节面向创作者的 AI 影像主入口，接入 Seedance / Seedream 模型并与抖音分发打通 来源：https://baike.baidu.com/item/%E5%8D%B3%E6%A2%A6AI/64609531",
+  "revisions": []
+}

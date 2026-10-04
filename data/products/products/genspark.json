@@ -1,0 +1,32 @@
+{
+  "id": "genspark",
+  "name": "Genspark",
+  "name_zh": "Genspark",
+  "vendor_id": "genspark",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2024-06-01",
+  "homepage": "https://www.genspark.ai/",
+  "desc": "AI workspace that dispatches many agents to finish a whole task.",
+  "desc_zh": "调度多个智能体把整件任务做完的 AI 工作空间。",
+  "tags": [
+    "multi-agent",
+    "task-completion",
+    "workspace",
+    "slides-and-sheets"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Pivoted from AI search to a general agent platform in 2025 and hit unicorn valuation on revenue growth, not demos. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/Genspark.ai/67657522",
+  "revisions": []
+}

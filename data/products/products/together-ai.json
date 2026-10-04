@@ -1,0 +1,31 @@
+{
+  "id": "together-ai",
+  "name": "Together AI",
+  "name_zh": "Together AI",
+  "vendor_id": "together-ai",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2022-06-01",
+  "homepage": "https://www.together.ai/",
+  "desc": "Cloud for serving and fine-tuning open-weight models at scale.",
+  "desc_zh": "面向开源权重模型的规模化推理与微调云平台。",
+  "tags": [
+    "open-models",
+    "inference",
+    "fine-tuning",
+    "gpu-cloud"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The default escape hatch when a closed frontier API gets too expensive. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/together_ai",
+  "revisions": []
+}

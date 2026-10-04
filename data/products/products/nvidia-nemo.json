@@ -1,0 +1,32 @@
+{
+  "id": "nvidia-nemo",
+  "name": "NVIDIA NeMo",
+  "name_zh": "NVIDIA NeMo 智能体平台",
+  "vendor_id": "nvidia",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "observability",
+    "model-api"
+  ],
+  "form": "self-hosted",
+  "released": "2025-04-01",
+  "homepage": "https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
+  "desc": "NVIDIA's platform to build, monitor and optimise AI agents end to end.",
+  "desc_zh": "英伟达用于构建、监控和优化 AI 智能体的全流程平台。",
+  "tags": [
+    "agent-ops",
+    "guardrails",
+    "evaluation",
+    "self-hosted"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "The agent ops and guardrail layer enterprises bolt onto any model, including open-weight ones; date is approximate because the brand has been re-versioned repeatedly. 首次公开发布日期精度：month-only 来源：https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
+  "revisions": []
+}

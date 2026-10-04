@@ -1,0 +1,30 @@
+{
+  "id": "beautiful-ai",
+  "name": "Beautiful.ai",
+  "name_zh": "Beautiful.ai",
+  "vendor_id": "beautiful-ai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2018-01-01",
+  "homepage": "https://www.beautiful.ai/",
+  "desc": "Slides that re-layout themselves as you edit the content.",
+  "desc_zh": "内容一改，幻灯片排版自动跟着重排的演示工具。",
+  "tags": [
+    "slides",
+    "auto-layout",
+    "brand-consistency",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Founded in 2015, well before generative AI — the earliest design-rule-based 'AI slides' product still running. 首次公开发布日期精度：month-only 来源：https://www.beautiful.ai/comparison/tome-vs-gamma",
+  "revisions": []
+}

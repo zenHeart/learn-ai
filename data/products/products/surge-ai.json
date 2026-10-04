@@ -1,0 +1,30 @@
+{
+  "id": "surge-ai",
+  "name": "Surge AI",
+  "name_zh": "Surge AI",
+  "vendor_id": "surge-ai",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2020-01-01",
+  "homepage": "https://www.surgehq.ai/",
+  "desc": "Expert human feedback and RLHF data services for large labs.",
+  "desc_zh": "面向大模型实验室的专家人类反馈与 RLHF 数据服务。",
+  "tags": [
+    "rlhf",
+    "expert-annotators",
+    "human-feedback",
+    "preference-data"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Shows quality of training data, not headcount, decides model behaviour. 首次公开发布日期精度：month-only 来源：https://www.cbinsights.com/compare/labelbox-vs-surge-ai",
+  "revisions": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "glean",
+  "name": "Glean",
+  "name_zh": "Glean",
+  "vendor_id": "glean",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building",
+    "research"
+  ],
+  "form": "web",
+  "released": "2021-09-15",
+  "homepage": "https://www.glean.com/",
+  "desc": "Permission-aware enterprise search and work AI agents over company data.",
+  "desc_zh": "在企业数据上做权限感知的搜索与工作 AI 智能体。",
+  "tags": [
+    "enterprise-search",
+    "rag",
+    "permissions",
+    "knowledge-graph"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "Shows that enterprise AI value comes from company context, not a bigger model. 来源：https://www.glean.com/about/glean-story",
+  "revisions": []
+}

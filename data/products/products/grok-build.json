@@ -1,0 +1,31 @@
+{
+  "id": "grok-build",
+  "name": "Grok Build",
+  "name_zh": "Grok Build 编程智能体",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "cli",
+  "released": "2026-05-25",
+  "homepage": "https://grok.com/",
+  "desc": "Terminal-native coding agent that fans work out across parallel agents.",
+  "desc_zh": "运行在终端里的编程智能体，可把任务分派给大量并行智能体。",
+  "tags": [
+    "terminal",
+    "open-source",
+    "parallel",
+    "workflows"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "xAI open-sourced the harness in July 2026, so you can self-host it and point it at your own inference. 来源：https://x.ai/news 复核：xAI 未为该子产品提供独立入口页，homepage 暂用 Grok 主站（grok.com 反爬 403，无法机器确认）。已核实该产品确实存在（CLI 编程平台）。",
+  "revisions": []
+}

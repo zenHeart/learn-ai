@@ -1,0 +1,41 @@
+{
+  "id": "wanyo",
+  "name": "万有无界",
+  "name_zh": "万有无界",
+  "vendor_id": "wanyo",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-09-02",
+  "homepage": "https://work.wanyo.cn/",
+  "desc": "多角色 Agent 协作工作台",
+  "desc_zh": "多角色 Agent 协作工作台",
+  "tags": [
+    "multi-agent",
+    "enterprise",
+    "a2a",
+    "workbench"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "万有的多角色 Agent 协作工作台。阿里最新旗舰模型的企业级 Agent 落地入口，把一件事拆给多个数字员工接力推进 来源：https://new.qq.com/rain/a/20260902A0931R00 复核：www.wanyo.cn 301 跳转至 work.wanyo.cn；docs.wanyo.cn 为文档站。",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "homepage",
+      "from": "https://www.qianwenai.com/agents/wanyou",
+      "to": "https://work.wanyo.cn/",
+      "why": "原记录指向阿里云百炼的 Agent 市场页面，不是本产品官网；万有官网 work.wanyo.cn 为产品入口"
+    }
+  ]
+}

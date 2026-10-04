@@ -1,0 +1,32 @@
+{
+  "id": "p2265",
+  "name": "商汤小浣熊",
+  "name_zh": "商汤小浣熊 Raccoon Work",
+  "vendor_id": "sensetime",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building",
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-08-25",
+  "homepage": "https://www.xiaohuanxiong.com/",
+  "desc": "能搞定工作的桌面 AI 智能体",
+  "desc_zh": "能搞定工作的桌面 AI 智能体",
+  "tags": [
+    "desktop-agent",
+    "data-analysis",
+    "knowledge-base",
+    "private-deployment"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "能直接读本地文件、自动跑分析的桌面智能体，累计服务超 2000 万用户 来源：https://www.sensetime.com/cn/news/-2",
+  "revisions": []
+}
