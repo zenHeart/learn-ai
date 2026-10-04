@@ -2312,6 +2312,35 @@ export const productHub = {
     "glyph": "文"
   },
   {
+    "id": "minimax",
+    "name": "MiniMax 开放平台",
+    "nameZh": "MiniMax 开放平台",
+    "vendor": "MiniMax",
+    "vendorZh": "MiniMax",
+    "region": "cn",
+    "category": "enterprise-api",
+    "useCases": [
+      "model-api"
+    ],
+    "form": "api",
+    "released": "2024-09-01",
+    "homepage": "https://platform.minimaxi.com",
+    "desc": "MiniMax 模型 API 开放服务平台",
+    "descZh": "MiniMax 模型 API 开放服务平台",
+    "tags": [
+      "enterprise-api",
+      "api",
+      "minimax"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-04",
+    "glyph": "M"
+  },
+  {
     "id": "hailuo",
     "name": "海螺AI",
     "nameZh": "海螺AI",
@@ -2340,35 +2369,6 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "海"
-  },
-  {
-    "id": "minimax",
-    "name": "MiniMax 开放平台",
-    "nameZh": "MiniMax 开放平台",
-    "vendor": "MiniMax",
-    "vendorZh": "MiniMax",
-    "region": "cn",
-    "category": "enterprise-api",
-    "useCases": [
-      "model-api"
-    ],
-    "form": "api",
-    "released": "2024-09-01",
-    "homepage": "https://platform.minimaxi.com",
-    "desc": "MiniMax 模型 API 开放服务平台",
-    "descZh": "MiniMax 模型 API 开放服务平台",
-    "tags": [
-      "enterprise-api",
-      "api",
-      "minimax"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "handbook": {
-      "status": "none"
-    },
-    "lastVerifiedAt": "2026-10-04",
-    "glyph": "M"
   },
   {
     "id": "tavily",
@@ -2577,6 +2577,35 @@ export const productHub = {
     "glyph": "F"
   },
   {
+    "id": "yuanqi",
+    "name": "腾讯元器",
+    "nameZh": "腾讯元器",
+    "vendor": "腾讯",
+    "vendorZh": "腾讯",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "web",
+    "released": "2024-05-30",
+    "homepage": "https://yuanqi.tencent.com",
+    "desc": "腾讯智能体创建与分发平台",
+    "descZh": "腾讯智能体创建与分发平台",
+    "tags": [
+      "agent-platform",
+      "low-code",
+      "tencent"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-04",
+    "glyph": "腾"
+  },
+  {
     "id": "yuanbao",
     "name": "腾讯元宝",
     "nameZh": "腾讯元宝",
@@ -2606,35 +2635,6 @@ export const productHub = {
         "en": "/products/yuanbao/",
         "zh": "/zh/products/yuanbao/"
       }
-    },
-    "lastVerifiedAt": "2026-10-04",
-    "glyph": "腾"
-  },
-  {
-    "id": "yuanqi",
-    "name": "腾讯元器",
-    "nameZh": "腾讯元器",
-    "vendor": "腾讯",
-    "vendorZh": "腾讯",
-    "region": "cn",
-    "category": "agent-platform",
-    "useCases": [
-      "agent-building"
-    ],
-    "form": "web",
-    "released": "2024-05-30",
-    "homepage": "https://yuanqi.tencent.com",
-    "desc": "腾讯智能体创建与分发平台",
-    "descZh": "腾讯智能体创建与分发平台",
-    "tags": [
-      "agent-platform",
-      "low-code",
-      "tencent"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "handbook": {
-      "status": "none"
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "腾"
@@ -3542,40 +3542,6 @@ export const productHub = {
     "glyph": "G"
   },
   {
-    "id": "bailian",
-    "name": "阿里云百炼",
-    "nameZh": "阿里云百炼",
-    "vendor": "阿里巴巴",
-    "vendorZh": "阿里巴巴",
-    "region": "cn",
-    "category": "model-platform",
-    "useCases": [
-      "model-api",
-      "agent-building"
-    ],
-    "form": "api",
-    "released": "2023-11-01",
-    "homepage": "https://bailian.console.aliyun.com",
-    "desc": "一站式大模型开发与应用平台",
-    "descZh": "一站式大模型开发与应用平台",
-    "tags": [
-      "model-platform",
-      "maas",
-      "alibaba-cloud"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "handbook": {
-      "status": "written",
-      "route": {
-        "en": "/products/bailian/",
-        "zh": "/zh/products/bailian/"
-      }
-    },
-    "lastVerifiedAt": "2026-10-04",
-    "glyph": "阿"
-  },
-  {
     "id": "bigmodel",
     "name": "BigModel 开放平台",
     "nameZh": "BigModel 开放平台",
@@ -3637,6 +3603,40 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "C"
+  },
+  {
+    "id": "bailian",
+    "name": "阿里云百炼",
+    "nameZh": "阿里云百炼",
+    "vendor": "阿里巴巴",
+    "vendorZh": "阿里巴巴",
+    "region": "cn",
+    "category": "model-platform",
+    "useCases": [
+      "model-api",
+      "agent-building"
+    ],
+    "form": "api",
+    "released": "2023-11-01",
+    "homepage": "https://bailian.console.aliyun.com",
+    "desc": "一站式大模型开发与应用平台",
+    "descZh": "一站式大模型开发与应用平台",
+    "tags": [
+      "model-platform",
+      "maas",
+      "alibaba-cloud"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "written",
+      "route": {
+        "en": "/products/bailian/",
+        "zh": "/zh/products/bailian/"
+      }
+    },
+    "lastVerifiedAt": "2026-10-04",
+    "glyph": "阿"
   },
   {
     "id": "tongyi",
@@ -4108,35 +4108,6 @@ export const productHub = {
     "glyph": "豆"
   },
   {
-    "id": "minicpm",
-    "name": "面壁 MiniCPM",
-    "nameZh": "面壁 MiniCPM",
-    "vendor": "面壁智能",
-    "vendorZh": "面壁智能",
-    "region": "cn",
-    "category": "local-runner",
-    "useCases": [
-      "local-private"
-    ],
-    "form": "self-hosted",
-    "released": "2023-08-01",
-    "homepage": "https://openbmb.cn",
-    "desc": "端侧优先的轻量大模型与工具链",
-    "descZh": "端侧优先的轻量大模型与工具链",
-    "tags": [
-      "local-runner",
-      "on-device",
-      "openbmb"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "handbook": {
-      "status": "none"
-    },
-    "lastVerifiedAt": null,
-    "glyph": "面"
-  },
-  {
     "id": "braintrust",
     "name": "Braintrust",
     "nameZh": "Braintrust",
@@ -4194,6 +4165,35 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "K"
+  },
+  {
+    "id": "minicpm",
+    "name": "面壁 MiniCPM",
+    "nameZh": "面壁 MiniCPM",
+    "vendor": "面壁智能",
+    "vendorZh": "面壁智能",
+    "region": "cn",
+    "category": "local-runner",
+    "useCases": [
+      "local-private"
+    ],
+    "form": "self-hosted",
+    "released": "2023-08-01",
+    "homepage": "https://openbmb.cn",
+    "desc": "端侧优先的轻量大模型与工具链",
+    "descZh": "端侧优先的轻量大模型与工具链",
+    "tags": [
+      "local-runner",
+      "on-device",
+      "openbmb"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "面"
   },
   {
     "id": "notebooklm",

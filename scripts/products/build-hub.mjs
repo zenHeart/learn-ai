@@ -27,6 +27,9 @@ const dataDir = join(root, 'data/products')
 const outPath = join(root, 'docs/.vitepress/theme/data/product-hub.js')
 const checkOnly = process.argv.includes('--check')
 
+/** Locale-independent string ordering (UTF-16 code units). */
+const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
+
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'))
 const listJson = (dir) =>
   existsSync(dir)
@@ -55,7 +58,7 @@ const categories = taxonomy.categories
     icon: c.icon,
     count: products.filter((p) => p.category === c.id).length,
   }))
-  .sort((a, b) => b.count - a.count || a.id.localeCompare(b.id))
+  .sort((a, b) => b.count - a.count || cmp(a.id, b.id))
 
 const projectProducts = products
   .map((p) => {
@@ -85,9 +88,13 @@ const projectProducts = products
       })(),
     }
   })
+  // NB: plain code-unit comparison, never localeCompare. ICU locale data
+  // differs between platforms, so localeCompare sorts CJK names differently on
+  // Windows and Linux — which would make this projection non-reproducible and
+  // fail the --check gate on CI while passing locally.
   .sort((a, b) =>
     a.released === b.released
-      ? a.name.localeCompare(b.name)
+      ? cmp(a.name, b.name)
       : a.released < b.released
         ? 1
         : -1
@@ -116,7 +123,7 @@ const projectUseCases = useCases
       .sort()
     const dimensions = u.dimensions
       .slice()
-      .sort((a, b) => b.weight - a.weight || a.id.localeCompare(b.id))
+      .sort((a, b) => b.weight - a.weight || cmp(a.id, b.id))
       .map((d) => {
         const productIds = members.filter((id) => {
           const p = byId.get(id)
@@ -145,7 +152,7 @@ const projectUseCases = useCases
       dimensions,
     }
   })
-  .sort((a, b) => b.productCount - a.productCount || a.id.localeCompare(b.id))
+  .sort((a, b) => b.productCount - a.productCount || cmp(a.id, b.id))
 
 const j = (v) => JSON.stringify(v, null, 2)
 
@@ -179,7 +186,11 @@ if (checkOnly) {
     console.error('build-hub --check FAIL：投影文件不存在，请运行 node scripts/products/build-hub.mjs')
     process.exit(1)
   }
-  const current = readFileSync(outPath, 'utf8')
+  // Compare with line endings normalised: a Windows checkout with
+  // core.autocrlf=true rewrites the working copy to CRLF, and a byte
+  // comparison would then fail on a perfectly fresh projection.
+  const norm = (t) => t.replace(/\r\n/g, '\n')
+  const current = norm(readFileSync(outPath, 'utf8'))
   if (current !== body) {
     console.error('build-hub --check FAIL：投影与账本不一致（投影已陈旧）。')
     console.error('  账本 →', `data/products/ (${projectProducts.length} products)`)
