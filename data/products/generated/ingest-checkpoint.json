@@ -1,0 +1,5 @@
+{
+  "last_scan_at": "2026-10-04",
+  "last_max_release_date": "2026-05-21",
+  "_comment": "ingest-products 技能的扫描检查点：last_max_release_date 是下次增量窗口的锚点（自动回退重叠天数）。由 checkpoint.mjs commit 维护，勿手改。"
+}
