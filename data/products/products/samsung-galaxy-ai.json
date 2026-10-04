@@ -14,9 +14,9 @@
   "surface": "in-product",
   "released": "2024-01-01",
   "date_precision": "month",
-  "homepage": "https://www.samsung.com/global/galaxy/galaxy-s24/galaxy-ai/",
-  "desc": "On-device assistants are usually one app you open. Galaxy AI puts Circle to Search, call s",
-  "desc_zh": "端侧助手通常是你需要专门打开的一个应用。Galaxy AI 把圈选搜索、通话筛选、通话转文字和照片编辑直接放进手机自带的界面里。",
+  "homepage": "https://www.samsung.com/global/galaxy/",
+  "desc": "AI features built into Samsung Galaxy phones.",
+  "desc_zh": "内置在三星手机里的 AI 能力。",
   "solves": "On-device assistants are usually one app you open. Galaxy AI puts Circle to Search, call screening, transcript, and photo editing into the phone's own surfaces.",
   "solves_zh": "端侧助手通常是你需要专门打开的一个应用。Galaxy AI 把圈选搜索、通话筛选、通话转文字和照片编辑直接放进手机自带的界面里。",
   "best_for": "You want AI features that are part of the phone you already carry, not another app install.",
@@ -31,7 +31,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "集成在 Galaxy 内的能力。来源：https://www.samsung.com/global/galaxy/galaxy-s24/galaxy-ai/",
+  "notes": "集成在 Galaxy 内的能力。来源：https://www.samsung.com/global/galaxy/galaxy-s24/galaxy-ai/ 复核：原 galaxy-ai 深链 404（三星改版下线），改用 Galaxy 官方页（已确认 200）；该页为产品族页，非 Galaxy AI 专页。",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -40,6 +40,14 @@
       "from": "2024-01-31",
       "to": "2024-01-01",
       "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    },
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "homepage",
+      "from": "https://www.samsung.com/global/galaxy/galaxy-s24/galaxy-ai/",
+      "to": "https://www.samsung.com/global/galaxy/",
+      "why": "原地址 404，三星官网改版后路径失效"
     }
   ]
 }

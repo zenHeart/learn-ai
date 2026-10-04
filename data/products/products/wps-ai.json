@@ -13,8 +13,8 @@
   "released": "2023-11-01",
   "date_precision": "month",
   "homepage": "https://ai.wps.cn/",
-  "desc": "Office AI usually means a Microsoft subscription. WPS AI puts writing, long-document readi",
-  "desc_zh": "办公 AI 通常等于一份微软订阅。WPS AI 把写作、长文阅读、PPT 生成和表格分析放进一套谁都能用的办公软件里。",
+  "desc": "AI writing, slides, and sheets inside the WPS Office suite.",
+  "desc_zh": "金山办公里的写作、PPT 与表格 AI。",
   "solves": "Office AI usually means a Microsoft subscription. WPS AI puts writing, long-document reading, PPT generation, and spreadsheet analysis into an office suite anyone can use.",
   "solves_zh": "办公 AI 通常等于一份微软订阅。WPS AI 把写作、长文阅读、PPT 生成和表格分析放进一套谁都能用的办公软件里。",
   "best_for": "You need AI writing and document work in an office suite without a Microsoft 365 license.",
@@ -30,14 +30,5 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "集成在 WPS Office 内的能力。来源：https://ai.wps.cn/",
-  "revisions": [
-    {
-      "at": "2026-10-04",
-      "by": "merge",
-      "field": "released",
-      "from": "2023-11-01",
-      "to": "2023-11-01",
-      "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
-    }
-  ]
+  "revisions": []
 }

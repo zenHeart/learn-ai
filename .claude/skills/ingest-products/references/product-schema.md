@@ -85,6 +85,27 @@
 - 英文 12–28 词，中文 20–45 字。说人话，不用「赋能 / 革新 / 无缝」这类词。
 - `tags` **不要**再抄一遍——卡片上已经不放标签行了，标签只用于筛选。
 - 中英两个字段都必须写。中文产品也要有英文版，反之亦然：站内两种语言都要读得通。
+- 字段约定固定：`solves`/`best_for` 永远是英文，`solves_zh`/`best_for_zh` 永远是中文，
+  与产品来自哪里无关。中文产品的英文写在基础键里，不要另开 `_en` 键——校验器和投影都只认这一对。
+
+### desc —— 一句话摘要，不能截断
+
+`desc` 是产品名下方的**一句话摘要**，回答「这是什么东西」。
+
+**绝对不要**用 `solves[:90]` 这类截断去凑数：截断会切在词中间，卡片上会出现
+「…and n」「…with no help. Co」这种碎片，比不写更糟。校验器会拦：
+
+- `desc` 必须是 `solves` 的**前缀**（说明是截断）→ 报错
+- `desc_zh` 与 `solves_zh` **完全相同**（说明是照抄）→ 报错
+- `desc` 超过 14 词 → 报错
+
+好例子：
+- `dots` → "A ChatGPT agent that keeps running in the cloud after you leave." / "关掉标签页也在云端继续跑的智能体。"
+- `adobe-generative-fill-in-photoshop` → "Remove an object from a photo by describing it in words." / "用一句话去掉照片里的物件。"
+
+### revisions[] 只能记真实变化
+
+`from == to` 的修订是噪声，会让下一个读账本的人以为发生过一次修改。记不下变化就**不要写这条**。
 
 ### surface —— 它住在哪
 

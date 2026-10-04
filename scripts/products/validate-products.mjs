@@ -120,6 +120,27 @@ for (const file of productFiles) {
   if (r.solves && String(r.solves).length > 400) {
     fail(`${where}: solves 过长（${String(r.solves).length} 字），一句话说清即可`)
   }
+
+  // `desc` is a short summary; `solves` is the pain. A desc that is a prefix of
+  // solves is a truncation, which lands on the card as a mid-word fragment.
+  const desc = String(r.desc || '')
+  const solves = String(r.solves || '')
+  if (desc && solves.length >= 60 && solves.startsWith(desc.slice(0, 40))) {
+    fail(`${where}: desc 像是 solves 的截断（"${desc.slice(-24)}"）——desc 要另写一句话，不要截断`)
+  }
+  if (r.desc_zh && r.solves_zh && r.desc_zh === r.solves_zh) {
+    fail(`${where}: desc_zh 与 solves_zh 完全相同——desc 要另写，不能照抄`)
+  }
+  if (desc && desc.split(/\s+/).length > 14) {
+    fail(`${where}: desc 过长（${desc.split(/\s+/).length} 词），一句话说清即可`)
+  }
+
+  // A revision that records no change is noise that misleads the next reader.
+  for (const rev of r.revisions || []) {
+    if (rev.from === rev.to) {
+      fail(`${where}: revisions 里有空修订（${rev.field} from==to=="${rev.from}"），没有变化就不要记`)
+    }
+  }
   if (['merged', 'renamed'].includes(r.status) && !r.superseded_by) {
     fail(`${where}: status="${r.status}" 但没有 superseded_by——产品去哪了必须写明，否则时间轴讲不出演变`)
   }

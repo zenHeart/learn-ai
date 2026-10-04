@@ -233,11 +233,10 @@ export const productHub = {
           "microsoft-365-copilot",
           "notion-ai",
           "quark",
-          "slackbot",
           "tana",
           "wps-ai"
         ],
-        "productCount": 12
+        "productCount": 11
       },
       {
         "id": "knowledge-base",
@@ -256,10 +255,9 @@ export const productHub = {
           "notion-ai",
           "p2061",
           "p2265",
-          "slackbot",
           "tana"
         ],
-        "productCount": 13
+        "productCount": 12
       },
       {
         "id": "slides",
@@ -267,18 +265,16 @@ export const productHub = {
         "labelZh": "幻灯片与图文",
         "weight": 1,
         "productIds": [
-          "aily",
           "beautiful-ai",
           "feature",
           "gamma",
           "gemini-in-google-docs-and-sheets",
           "genspark",
-          "microsoft-365-copilot",
           "presentations-ai",
           "quark",
           "wps-ai"
         ],
-        "productCount": 10
+        "productCount": 8
       }
     ]
   },
@@ -390,7 +386,6 @@ export const productHub = {
         "labelZh": "工作流与自动化",
         "weight": 3,
         "productIds": [
-          "ai",
           "crewai",
           "fireflies-ai",
           "grok-build",
@@ -400,7 +395,7 @@ export const productHub = {
           "n8n",
           "zapier-agents"
         ],
-        "productCount": 9
+        "productCount": 8
       },
       {
         "id": "autonomous",
@@ -527,37 +522,12 @@ export const productHub = {
         "productIds": [
           "atlassian-rovo",
           "chatgpt-deep-research",
+          "chatgpt-pulse",
           "exa",
           "gemini-app",
           "glean",
           "google-search-ai-mode",
           "kagi-assistant",
-          "metaso-search",
-          "microsoft-copilot",
-          "nami-search",
-          "notebooklm",
-          "perplexity",
-          "phind",
-          "quark",
-          "tavily",
-          "you-com"
-        ],
-        "productCount": 16
-      },
-      {
-        "id": "retrieval-stack",
-        "label": "Search API for your app",
-        "labelZh": "给应用用的检索 API",
-        "weight": 3,
-        "productIds": [
-          "atlassian-rovo",
-          "chatgpt-deep-research",
-          "exa",
-          "gemini-app",
-          "glean",
-          "google-search-ai-mode",
-          "kagi-assistant",
-          "llamaindex",
           "metaso-search",
           "microsoft-copilot",
           "nami-search",
@@ -571,12 +541,40 @@ export const productHub = {
         "productCount": 17
       },
       {
+        "id": "retrieval-stack",
+        "label": "Search API for your app",
+        "labelZh": "给应用用的检索 API",
+        "weight": 3,
+        "productIds": [
+          "atlassian-rovo",
+          "chatgpt-deep-research",
+          "chatgpt-pulse",
+          "exa",
+          "gemini-app",
+          "glean",
+          "google-search-ai-mode",
+          "kagi-assistant",
+          "llamaindex",
+          "metaso-search",
+          "microsoft-copilot",
+          "nami-search",
+          "notebooklm",
+          "perplexity",
+          "phind",
+          "quark",
+          "tavily",
+          "you-com"
+        ],
+        "productCount": 18
+      },
+      {
         "id": "document-qa",
         "label": "Ask your own documents",
         "labelZh": "问自己的文档",
         "weight": 2,
         "productIds": [
           "atlassian-rovo",
+          "chatgpt-memory",
           "glean",
           "llamaindex",
           "notebooklm",
@@ -585,7 +583,7 @@ export const productHub = {
           "p2265",
           "quark"
         ],
-        "productCount": 8
+        "productCount": 9
       }
     ]
   },
@@ -664,7 +662,6 @@ export const productHub = {
           "amp",
           "cline",
           "cursor",
-          "cursor-background-agents",
           "google-antigravity",
           "lingma-ai-ide",
           "qoder",
@@ -673,7 +670,7 @@ export const productHub = {
           "windsurf",
           "zed"
         ],
-        "productCount": 11
+        "productCount": 10
       },
       {
         "id": "terminal-agent",
@@ -690,7 +687,6 @@ export const productHub = {
           "codex-cli",
           "cursor",
           "gemini-cli",
-          "github-copilot-agent-mode",
           "glm-coding-plan",
           "google-antigravity",
           "goose",
@@ -708,7 +704,7 @@ export const productHub = {
           "trae",
           "warp"
         ],
-        "productCount": 26
+        "productCount": 25
       },
       {
         "id": "app-builder",
@@ -937,13 +933,12 @@ export const productHub = {
         "labelZh": "放大与修图",
         "weight": 2,
         "productIds": [
-          "adobe-generative-fill-in-photoshop",
           "framer-ai",
           "gamma",
           "google-flow",
           "remini"
         ],
-        "productCount": 5
+        "productCount": 4
       }
     ]
   },
@@ -1269,8 +1264,8 @@ export const productHub = {
     "released": "2026-09-29",
     "datePrecision": "day",
     "homepage": "https://openai.com/index/introducing-dots/",
-    "desc": "You close the tab and the work stops. A dot keeps going in its own cloud, so a long job su",
-    "descZh": "你一关标签页，活就停了。dot 在自己的云端继续跑，长任务不会因为你走开而中断。",
+    "desc": "A ChatGPT agent that keeps running in the cloud after you leave.",
+    "descZh": "关掉标签页也在云端继续跑的智能体。",
     "tags": [
       "in-product",
       "chatgpt"
@@ -2066,8 +2061,8 @@ export const productHub = {
     "released": "2026-01-13",
     "datePrecision": "day",
     "homepage": "https://slack.com/features/ai",
-    "desc": "A workspace assistant that has to be re-taught your context each time. Slackbot learns you",
-    "descZh": "工作区助手每次都要你重新教一遍它上下文。Slackbot 会学到你的语气和工作区习惯，能自己准备会议、分析报告、起草项目简介。",
+    "desc": "A personal agent in Slack that learns your working style.",
+    "descZh": "会学你工作习惯的 Slack 个人助手。",
     "tags": [
       "in-product",
       "slack"
@@ -2492,8 +2487,8 @@ export const productHub = {
     "released": "2025-09-25",
     "datePrecision": "day",
     "homepage": "https://openai.com/index/introducing-chatgpt-pulse/",
-    "desc": "An assistant only speaks when you open it, so all the things worth knowing about have to b",
-    "descZh": "助手只在你打开它时才说话，所以值得知道的事全靠你自己想出该问的问题。Pulse 会在夜里自己研究，第二天早上给你一份简报。",
+    "desc": "A daily briefing it researches and writes while you sleep.",
+    "descZh": "夜里自动研究、早上给你简报的助手。",
     "tags": [
       "in-product",
       "chatgpt"
@@ -2527,8 +2522,8 @@ export const productHub = {
     "released": "2025-09-01",
     "datePrecision": "month",
     "homepage": "https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/",
-    "desc": "Edit mode only changes the snippet you highlighted, and you run the terminal command yours",
-    "descZh": "编辑模式只改你选中的那几行，终端命令还得你自己敲。智能体模式自己选文件、跨仓库写改动、跑命令，并会根据报错继续调整。",
+    "desc": "A mode that plans and runs a whole multi-file change.",
+    "descZh": "自主完成多文件改动的编码模式。",
     "tags": [
       "in-product",
       "github-copilot"
@@ -2602,8 +2597,8 @@ export const productHub = {
     "released": "2025-08-20",
     "datePrecision": "day",
     "homepage": "https://work.weixin.qq.com/nl/index/aioffice",
-    "desc": "Information about a customer is scattered across chats, docs, and meetings, and nobody has",
-    "descZh": "关于某个客户的信息散落在聊天、文档和会议里，没人有时间重新拼起来。智能总结把这些线索变成每周简报和可检索的记录。",
+    "desc": "WeCom's digest of customer threads, docs, and meetings.",
+    "descZh": "把客户线索汇成周报的企业微信功能。",
     "tags": [
       "in-product"
     ],
@@ -2636,8 +2631,8 @@ export const productHub = {
     "released": "2025-07-29",
     "datePrecision": "day",
     "homepage": "https://openai.com/index/chatgpt-study-mode/",
-    "desc": "You hand homework or a concept to a chatbot and it hands back the finished answer, which t",
-    "descZh": "你把作业或一个概念丢给聊天机器人，它直接把答案给你，你什么也没学到。学习模式反过来问你问题、给提示，而不是直接给答案。",
+    "desc": "A tutoring mode that quizzes you instead of handing over answers.",
+    "descZh": "反问你、只给提示的辅导模式。",
     "tags": [
       "in-product",
       "chatgpt"
@@ -3176,8 +3171,8 @@ export const productHub = {
     "released": "2025-05-20",
     "datePrecision": "day",
     "homepage": "https://blog.google/products-and-platforms/products/search/google-search-ai-mode-update/",
-    "desc": "A traditional results page gives you ten blue links and makes you do the comparing. AI Mod",
-    "descZh": "传统结果页给你十条蓝色链接，比较的工作得你自己做。AI 模式用对话方式回答，会自己规划多步检索，并直接给出带信源的整合结论。",
+    "desc": "A search tab that answers conversationally instead of listing links.",
+    "descZh": "用对话直接作答的搜索模式。",
     "tags": [
       "in-product",
       "google-search"
@@ -3480,8 +3475,8 @@ export const productHub = {
     "released": "2025-04-10",
     "datePrecision": "day",
     "homepage": "https://openai.com/index/memory-and-new-controls-for-chatgpt/",
-    "desc": "You re-introduce yourself, your role, and your preferences at the start of nearly every se",
-    "descZh": "几乎每次开启新对话，你都要重新介绍自己、你的岗位和你的偏好。记忆会把这些事实带过去，你不用再说一遍。",
+    "desc": "Persistent storage of your standing facts across chats.",
+    "descZh": "跨对话记住你的长期个人信息。",
     "tags": [
       "in-product",
       "chatgpt"
@@ -3515,8 +3510,8 @@ export const productHub = {
     "released": "2025-04-01",
     "datePrecision": "month",
     "homepage": "https://cursor.com/docs/background-agent",
-    "desc": "One editor means one task at a time, so parallelizable chores queue up behind whatever you",
-    "descZh": "一个编辑器只能干一件事，于是能并行的杂活全排在你手头工作后面。后台智能体会把你的仓库克隆到云端沙箱，同时处理多个独立任务。",
+    "desc": "Cloud agents that work on your repo in parallel.",
+    "descZh": "在云端并行处理仓库任务的智能体。",
     "tags": [
       "in-product",
       "cursor"
@@ -3783,8 +3778,8 @@ export const productHub = {
     "released": "2025-02-02",
     "datePrecision": "day",
     "homepage": "https://openai.com/index/introducing-deep-research/",
-    "desc": "Ordinary chat answers from memory, so a report that needs forty sources ends up with none.",
-    "descZh": "普通对话靠记忆作答，需要四十个信源的报告最后一个也没有。深度研究会自己在开放网络上检索，并把每条论断都标上出处。",
+    "desc": "A research mode that browses the web and writes a cited report.",
+    "descZh": "自己上网检索、输出带引用报告的模式。",
     "tags": [
       "in-product",
       "chatgpt"
@@ -3894,8 +3889,8 @@ export const productHub = {
     "released": "2025-01-01",
     "datePrecision": "month",
     "homepage": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
-    "desc": "A recurring question — a morning briefing, a daily check on something — requires you to be",
-    "descZh": "每天早上要的那份简报、每天要复查的那件事，都要求你恰好在那个时刻在线。定时任务会按计划自动跑你的提示词并把结果送来。",
+    "desc": "Scheduled prompts that run themselves and deliver the result.",
+    "descZh": "按计划自动执行的定时提示词。",
     "tags": [
       "in-product",
       "chatgpt"
@@ -4006,8 +4001,8 @@ export const productHub = {
     "released": "2024-12-13",
     "datePrecision": "day",
     "homepage": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
-    "desc": "Every conversation is its own island, so you re-upload the same brief and re-explain the s",
-    "descZh": "每段对话都是一个孤岛，同一份 brief 要反复上传、同样的约束要反复解释。项目把一件事的文件、指令和历史集中在一处。",
+    "desc": "A shared container for one body of work's files and history.",
+    "descZh": "把一件事的文件与指令集中在一处。",
     "tags": [
       "in-product",
       "chatgpt"
@@ -4344,8 +4339,8 @@ export const productHub = {
     "released": "2024-10-28",
     "datePrecision": "day",
     "homepage": "https://www.apple.com/newsroom/2024/10/apple-intelligence-is-available-today-on-iphone-ipad-and-mac",
-    "desc": "Generic AI lives in a browser tab you have to go find. Apple Intelligence runs on-device a",
-    "descZh": "通用 AI 都在一个要专门打开的浏览器标签里。Apple Intelligence 跑在设备本地，直接出现在你已经在用的 App 里——邮件和信息里的写作工具、通知摘要，以及重新设计的 Siri。",
+    "desc": "Apple's on-device AI layer for iPhone, iPad, and Mac.",
+    "descZh": "内置在 iPhone 和 Mac 里的端侧 AI。",
     "tags": [
       "in-product",
       "ios"
@@ -4378,9 +4373,9 @@ export const productHub = {
     "bestForZh": "修补素材长度不足、让剪切点顺滑，或填补已拍素材中的缺口。",
     "released": "2024-10-14",
     "datePrecision": "day",
-    "homepage": "https://news.adobe.com/news/2024/10/adobe-unveils-new-premiere-pro-features",
-    "desc": "A clip is two seconds too short and there is no footage to cover the gap. Generative Exten",
-    "descZh": "素材短了两秒，又没有多余画面来补。生成式扩展会合成缺失的帧，让这个剪辑成立。",
+    "homepage": "https://helpx.adobe.com/premiere-pro/using/generative-extend.html",
+    "desc": "A Premiere Pro tool that synthesizes the missing frames.",
+    "descZh": "合成缺失画面的剪辑工具。",
     "tags": [
       "in-product",
       "premiere-pro"
@@ -4488,8 +4483,8 @@ export const productHub = {
     "released": "2024-10-01",
     "datePrecision": "month",
     "homepage": "https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-vision-with-microsoft-copilot",
-    "desc": "Describing what is on your screen in text is slow and imprecise, so Copilot's answers stop",
-    "descZh": "用文字描述屏幕上有什么既慢又不准，于是 Copilot 的回答只能停在你打的字上。Vision 让它直接看你的屏幕、窗口或摄像头，并针对它真正看到的内容作答。",
+    "desc": "Lets Copilot look at your screen, a window, or your camera.",
+    "descZh": "让 Copilot 直接看屏幕或摄像头。",
     "tags": [
       "in-product",
       "microsoft-copilot"
@@ -4929,8 +4924,8 @@ export const productHub = {
     "released": "2024-06-24",
     "datePrecision": "day",
     "homepage": "https://workspaceupdates.googleblog.com/2024/06/gemini-in-side-panel-of-google-docs-sheets-slides-drive.html",
-    "desc": "Copying a document out to a chatbot to edit it and copying it back is a lot of steps for a",
-    "descZh": "为了改一点点就把文档复制到聊天工具、再复制回来，步骤太多。Gemini 就待在文件本身的侧边栏里。",
+    "desc": "Gemini living in a side panel of the file itself.",
+    "descZh": "待在文件侧边栏里的 Gemini。",
     "tags": [
       "in-product",
       "google-workspace"
@@ -5070,8 +5065,8 @@ export const productHub = {
     "surface": "standalone",
     "solves": "You want to try text-to-video but aren't sure what it produces, and you don't want to pay first. Here you can generate a few free seconds and look.",
     "solvesZh": "想试文生视频但不确定效果，也不想先付费。这里可以先免费生成几秒片段看看。",
-    "bestFor": "You want a low-cost look at what text-to-video can actually produce.",
-    "bestForZh": "你想低成本试试文生视频能做出什么。",
+    "bestFor": "When a concept test beats a production render — you need a look, not a film.",
+    "bestForZh": "当你要的是先看一眼概念效果，而不是成片交付时。",
     "released": "2024-06-12",
     "datePrecision": "day",
     "homepage": "https://lumalabs.ai/dream-machine",
@@ -5485,8 +5480,8 @@ export const productHub = {
     "released": "2024-04-18",
     "datePrecision": "day",
     "homepage": "https://slack.com/features/ai",
-    "desc": "Scrolling back through a week of threads to find one decision is slow and error-prone. Sla",
-    "descZh": "往回翻一周的会话串去找一个决定，既慢又容易漏。Slack AI 总结会话串、生成频道回顾，并能在整个工作区历史里直接回答你的问题。",
+    "desc": "Search, summaries, and recaps across your Slack history.",
+    "descZh": "在 Slack 历史里搜索和总结。",
     "tags": [
       "in-product",
       "slack"
@@ -6191,8 +6186,8 @@ export const productHub = {
     "released": "2024-01-09",
     "datePrecision": "day",
     "homepage": "https://open.dingtalk.com/document/assistants-overview",
-    "desc": "Buying a dedicated AI tool for one workflow means a separate login, a separate bill, and n",
-    "descZh": "为某一条工作流单独买一个 AI 工具，意味着另一套账号、另一笔费用，而且碰不到它真正需要的工作数据。AI 助理长在钉钉里，能直接取到钉钉内的数据。",
+    "desc": "An AI assistant built inside DingTalk, wired to its own data.",
+    "descZh": "钉钉内置的 AI 助理，能读到钉钉数据。",
     "tags": [
       "in-product"
     ],
@@ -6302,9 +6297,9 @@ export const productHub = {
     "bestForZh": "你想要的是已经装在手机里的 AI 能力，而不是再装一个新应用。",
     "released": "2024-01-01",
     "datePrecision": "month",
-    "homepage": "https://www.samsung.com/global/galaxy/galaxy-s24/galaxy-ai/",
-    "desc": "On-device assistants are usually one app you open. Galaxy AI puts Circle to Search, call s",
-    "descZh": "端侧助手通常是你需要专门打开的一个应用。Galaxy AI 把圈选搜索、通话筛选、通话转文字和照片编辑直接放进手机自带的界面里。",
+    "homepage": "https://www.samsung.com/global/galaxy/",
+    "desc": "AI features built into Samsung Galaxy phones.",
+    "descZh": "内置在三星手机里的 AI 能力。",
     "tags": [
       "in-product",
       "galaxy"
@@ -6936,8 +6931,8 @@ export const productHub = {
     "released": "2023-11-01",
     "datePrecision": "day",
     "homepage": "https://www.microsoft.com/en-us/copilot/blog/2023/09/21/announcing-microsoft-365-copilot-general-availability-and-microsoft-365-chat/",
-    "desc": "Word, Excel, Outlook, and Teams each make you start from a blank document with no help. Co",
-    "descZh": "Word、Excel、Outlook、Teams 都只是让你从一张白纸开始，没有任何帮手。Copilot 直接在你正在编辑的那个文件里起草和分析。",
+    "desc": "AI drafting and analysis built into Word, Excel, Outlook, and Teams.",
+    "descZh": "Office 各应用内置的 AI 助手。",
     "tags": [
       "in-product",
       "microsoft-365"
@@ -6971,8 +6966,8 @@ export const productHub = {
     "released": "2023-11-01",
     "datePrecision": "month",
     "homepage": "https://ai.wps.cn/",
-    "desc": "Office AI usually means a Microsoft subscription. WPS AI puts writing, long-document readi",
-    "descZh": "办公 AI 通常等于一份微软订阅。WPS AI 把写作、长文阅读、PPT 生成和表格分析放进一套谁都能用的办公软件里。",
+    "desc": "AI writing, slides, and sheets inside the WPS Office suite.",
+    "descZh": "金山办公里的写作、PPT 与表格 AI。",
     "tags": [
       "in-product",
       "wps-office"
@@ -7463,8 +7458,8 @@ export const productHub = {
     "released": "2023-09-01",
     "datePrecision": "month",
     "homepage": "https://news.zoom.com/zoom-introduces-ai-companion-2-0",
-    "desc": "Nobody can stay for the whole meeting and nobody wants to transcribe it either. AI Compani",
-    "descZh": "没人能全程参会，也没人想手工记纪要。AI 智能助手会实时总结、帮你追上进度，并回答会中提出的问题。",
+    "desc": "A meeting companion that summarizes and answers live.",
+    "descZh": "会中实时总结并答疑的会议助手。",
     "tags": [
       "in-product",
       "zoom"
@@ -7538,9 +7533,9 @@ export const productHub = {
     "bestForZh": "要做一个必须基于飞书文档、多维表格数据和会话记录来推理的内部助手。",
     "released": "2023-09-01",
     "datePrecision": "month",
-    "homepage": "https://www.feishu.cn/product/aily",
-    "desc": "Enterprise assistants built elsewhere cannot read the docs, tables, and chats that hold th",
-    "descZh": "在别处搭的企业助手读不到真正承载业务上下文的文档、表格和会话。Aily 是直接工作在飞书自有数据与工具之上的智能体平台。",
+    "homepage": "https://www.feishu.cn/product/feishuai",
+    "desc": "An enterprise agent platform that runs on Feishu's own data.",
+    "descZh": "跑在飞书自身数据之上的企业智能体平台。",
     "tags": [
       "in-product"
     ],
@@ -8294,8 +8289,8 @@ export const productHub = {
     "released": "2023-05-23",
     "datePrecision": "day",
     "homepage": "https://blog.adobe.com/en/publish/2023/05/23/future-of-photoshop-powered-by-adobe-firefly",
-    "desc": "Removing an object from a photo used to require cloning and retouching by hand. Generative",
-    "descZh": "从照片里去掉一个物件，过去要靠手动修补和仿制。生成式填充只需一句文字描述，就能重建周围的像素。",
+    "desc": "A Photoshop tool that paints new pixels from a text prompt.",
+    "descZh": "用文字提示补出像素的 PS 工具。",
     "tags": [
       "in-product",
       "photoshop"
@@ -8852,8 +8847,8 @@ export const productHub = {
     "released": "2023-03-01",
     "datePrecision": "month",
     "homepage": "https://www.intercom.com/blog/announcing-fin-2-ai-agent-customer-service",
-    "desc": "Support volume scales linearly with headcount. Fin resolves a large share of incoming tick",
-    "descZh": "支持工作量随人头线性增长。Fin 能独立解决相当大比例的进线工单，依据是你的帮助中心和你自己的政策。",
+    "desc": "An AI agent that resolves support tickets inside Intercom.",
+    "descZh": "Intercom 内自助解决工单的 AI。",
     "tags": [
       "in-product",
       "intercom"

@@ -15,8 +15,8 @@
   "desc_zh": "免费开放的文生视频模型，上线四天用户破百万",
   "solves": "You want to try text-to-video but aren't sure what it produces, and you don't want to pay first. Here you can generate a few free seconds and look.",
   "solves_zh": "想试文生视频但不确定效果，也不想先付费。这里可以先免费生成几秒片段看看。",
-  "best_for": "You want a low-cost look at what text-to-video can actually produce.",
-  "best_for_zh": "你想低成本试试文生视频能做出什么。",
+  "best_for": "When a concept test beats a production render — you need a look, not a film.",
+  "best_for_zh": "当你要的是先看一眼概念效果，而不是成片交付时。",
   "surface": "standalone",
   "tags": [
     "video-generation",
@@ -30,6 +30,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "首页地址已不再是 Dream Machine 独立页：现落地在 Luma 更大范围的创意 Agent 站（标题「Creative agents for creative professionals」），Dream Machine（Ray3）作为其中的视频模型存在。域名未失效，未改 homepage 字段。",
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "best_for",
+      "from": "You want a low-cost look at what text-to-video can actually produce.",
+      "to": "When a concept test beats a production render — you need a look, not a film.",
+      "why": "原文只是把 solves 换了个说法；改成真正的使用场景判断"
+    }
+  ],
   "date_precision": "day"
 }
