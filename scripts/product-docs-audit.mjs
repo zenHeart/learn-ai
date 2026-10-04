@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Asserts product gallery + sidebar links resolve, and #70–#85 slugs have ZH+EN maps.
+ * Asserts product hub + sidebar links resolve, and #70–#85 slugs have ZH+EN maps.
  */
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -55,7 +55,7 @@ function collectLinks(src) {
 
 {
   const srcs = [
-    'docs/.vitepress/theme/data/products-gallery.js',
+    'docs/.vitepress/theme/data/product-hub.js',
     'docs/.vitepress/sidebars/ai-coding.mjs'
   ]
   for (const rel of srcs) {

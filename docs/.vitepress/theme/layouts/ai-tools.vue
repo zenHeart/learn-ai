@@ -17,19 +17,14 @@
     <main class="tools-main">
       <AIToolsGallery
         :placeholder="frontmatter.searchPlaceholder"
-        :categories="galleryCategories"
+        :categories="toolsData"
         :all-label="allLabel"
       />
     </main>
 
     <!-- 页脚 -->
     <footer class="tools-footer">
-      <p v-if="frontmatter.gallery === 'products'">
-        <a :href="isZh ? '/zh/paths/' : '/paths/'">{{ isZh ? '按路径学' : 'Learn by path' }}</a>
-        ·
-        <a :href="isZh ? '/zh/ai-tools/' : '/ai-tools/'">{{ isZh ? '外部工具目录' : 'External tool directory' }}</a>
-      </p>
-      <p v-else>
+      <p>
         💡 发现更多工具？欢迎
         <a
           href="https://github.com/zenheart/learn-ai"
@@ -48,21 +43,11 @@
   import { useData } from "vitepress";
   import AIToolsGallery from "../components/AIToolsGallery.vue";
   import { toolsData } from "../data/ai-tools";
-  import {
-    productGalleryEn,
-    productGalleryZh,
-  } from "../data/products-gallery.js";
 
   const { frontmatter, lang } = useData();
 
   const isZh = computed(() => String(lang.value || "").startsWith("zh"));
   const allLabel = computed(() => (isZh.value ? "全部" : "All"));
-  const galleryCategories = computed(() => {
-    if (frontmatter.value.gallery === "products") {
-      return isZh.value ? productGalleryZh : productGalleryEn;
-    }
-    return toolsData;
-  });
 </script>
 
 <style scoped>

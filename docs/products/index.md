@@ -1,9 +1,8 @@
 ---
 title: Products
-description: Find a tool, then open its handbook. No ranking between products.
-layout: ai-tools
-gallery: products
-searchPlaceholder: Search by name or what it does…
+description: A hub of AI products on one timeline — who shipped what, when, and where to read our own handbook.
+layout: product-hub
+searchPlaceholder: Search by name, vendor, or what it does…
 domain: product
 tags:
   - catalog

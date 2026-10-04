@@ -18,3 +18,6 @@ poster/
 .github/workflows/pr-check.yml
 docs/.vitepress/dist-test/
 
+
+# Playwright MCP browser artifacts
+.playwright-mcp/

@@ -4,6 +4,7 @@ import LearningPath from './components/LearningPath.vue'
 import CatalogList from './components/CatalogList.vue'
 import AIToolsGallery from './components/AIToolsGallery.vue'
 import AIToolsLayout from './layouts/ai-tools.vue'
+import ProductHubLayout from './layouts/product-hub.vue'
 import NotFound from './components/NotFound.vue'
 import SymptomRouter from './components/SymptomRouter.vue'
 import LadderStepper from './components/LadderStepper.vue'
@@ -30,5 +31,6 @@ export default {
     app.component('LadderStepper', LadderStepper)
     // 注册自定义布局
     app.component('ai-tools', AIToolsLayout)
+    app.component('product-hub', ProductHubLayout)
   }
 }
