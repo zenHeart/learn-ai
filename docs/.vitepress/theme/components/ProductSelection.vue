@@ -1,7 +1,7 @@
 <template>
   <div class="sel">
     <!-- Scenario picker -->
-    <div v-if="!activeUseCase" class="sel-intro">
+    <div v-if="!current" class="sel-intro">
       <p class="sel-intro-text">{{ labels.selectIntro }}</p>
     </div>
 
@@ -25,8 +25,35 @@
       </button>
     </div>
 
+    <!-- No scenario chosen yet: show every scenario with its products, so the
+         first paint is a problem-organised list rather than an empty picker. -->
+    <div v-if="!current" class="sel-board">
+      <section v-for="uc in useCases" :key="uc.id" class="sel-board-group">
+        <header class="sel-board-head">
+          <h2 class="sel-board-title">
+            <button class="sel-board-link" @click="pickUseCase(uc.id)">
+              {{ isZh ? uc.titleZh : uc.title }}
+            </button>
+            <span class="sel-board-count">{{ uc.productCount }}</span>
+          </h2>
+          <p class="sel-board-desc">{{ isZh ? uc.descriptionZh : uc.description }}</p>
+        </header>
+        <div class="sel-grid">
+          <ProductEntry
+            v-for="product in membersOf(uc)"
+            :key="product.id"
+            :product="product"
+            :is-zh="isZh"
+            :labels="labels"
+            :category="categoryOf(product.category)"
+            :successor-name="successorNameOf(product)"
+          />
+        </div>
+      </section>
+    </div>
+
     <!-- Scenario detail -->
-    <template v-if="current">
+    <template v-else>
       <header class="sel-head">
         <h2 class="sel-title">
           {{ isZh ? current.titleZh : current.title }}
@@ -67,6 +94,7 @@
           :is-zh="isZh"
           :labels="labels"
           :category="categoryOf(product.category)"
+          :successor-name="product.successorName || ''"
         />
       </div>
 
@@ -110,6 +138,15 @@
     const ids = dim ? new Set(dim.productIds) : new Set(current.value.products)
     return props.products.filter((p) => ids.has(p.id))
   })
+
+  // A scenario with 70 products would swamp the page before anyone clicks, so
+  // the unselected state previews the most recent ones and links to the rest.
+  const PREVIEW = 6
+  const membersOf = (uc) => {
+    const ids = new Set(uc.products)
+    return props.products.filter((p) => ids.has(p.id)).slice(0, PREVIEW)
+  }
+  const successorNameOf = (product) => product.successorName || ''
 
   const categoryIndex = computed(() => {
     const m = new Map()
@@ -253,6 +290,52 @@
     color: var(--vp-c-text-3);
   }
 
+  .sel-board-group {
+    margin-bottom: 40px;
+  }
+
+  .sel-board-head {
+    margin-bottom: 14px;
+  }
+
+  .sel-board-title {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    margin: 0 0 5px;
+  }
+
+  .sel-board-link {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .sel-board-link:hover {
+    color: var(--vp-c-brand);
+  }
+
+  .sel-board-count {
+    font-size: 12.5px;
+    padding: 2px 10px;
+    border-radius: 13px;
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-3);
+  }
+
+  .sel-board-desc {
+    margin: 0;
+    max-width: 760px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--vp-c-text-2);
+  }
+
   .sel-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -266,7 +349,53 @@
   }
 
   @media (max-width: 768px) {
-    .sel-grid {
+    .sel-board-group {
+    margin-bottom: 40px;
+  }
+
+  .sel-board-head {
+    margin-bottom: 14px;
+  }
+
+  .sel-board-title {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    margin: 0 0 5px;
+  }
+
+  .sel-board-link {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .sel-board-link:hover {
+    color: var(--vp-c-brand);
+  }
+
+  .sel-board-count {
+    font-size: 12.5px;
+    padding: 2px 10px;
+    border-radius: 13px;
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-3);
+  }
+
+  .sel-board-desc {
+    margin: 0;
+    max-width: 760px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--vp-c-text-2);
+  }
+
+  .sel-grid {
       grid-template-columns: 1fr;
       gap: 12px;
     }
