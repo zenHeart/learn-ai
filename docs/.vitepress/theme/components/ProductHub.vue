@@ -1,5 +1,6 @@
 <template>
   <div class="hub">
+    <template v-if="mounted">
     <!-- Search + view toggle -->
     <div class="hub-bar">
       <div class="hub-search">
@@ -142,6 +143,13 @@
       />
       <EmptyState v-else :labels="labels" @reset="reset" />
     </div>
+    </template>
+
+    <!-- SSR placeholder. The real body needs the query string, which a static
+         build does not carry, so it can only be built after mount. -->
+    <div v-else class="hub-pending" aria-busy="true">
+      <span class="hub-pending-text">{{ labels.loading }}</span>
+    </div>
   </div>
 </template>
 
@@ -169,6 +177,12 @@
   const docOnly = ref(false)
   const activeUseCase = ref('all')
   const activeDimension = ref('')
+  // VitePress ships one static HTML per route and drops the query string, so
+  // the server can only ever render the defaults. Rendering the interactive
+  // subtree before the URL has been read would make the first client render
+  // disagree with the SSR output and trip a hydration mismatch, so the body
+  // stays behind this flag until mount.
+  const mounted = ref(false)
 
   // ---- URL synchronisation ----
   // VitePress has no vue-router. Its `useRouter()` returns a path-only
@@ -229,6 +243,7 @@
 
   onMounted(() => {
     readFromUrl()
+    mounted.value = true
     window.addEventListener('popstate', readFromUrl)
   })
   onUnmounted(() => window.removeEventListener('popstate', readFromUrl))
@@ -324,6 +339,17 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+  }
+
+  .hub-pending {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+  }
+
+  .hub-pending-text {
+    font-size: 14px;
+    color: var(--vp-c-text-3);
   }
 
   .hub-bar {
