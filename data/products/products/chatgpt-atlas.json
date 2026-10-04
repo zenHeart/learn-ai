@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Launched to a market-leading hype and was shut down in under 10 months — a useful data point on the AI browser bet. 来源：https://www.newrank.cn/article/detail/34672 复核：产品页 chatgpt.com/atlas 反爬 403 无法机器确认，homepage 暂用 OpenAI 官方公告页（schema 期望产品入口页，此处为已知偏差）。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

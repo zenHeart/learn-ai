@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "京东 AI 商业化的门面 App，能在对话里完成外卖、购物、酒旅的真实下单 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/JoyAI/67350847",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

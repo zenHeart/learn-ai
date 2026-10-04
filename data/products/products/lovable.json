@@ -24,7 +24,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
-  "notes": "官网反爬未确认（403）",
   "notes": "",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

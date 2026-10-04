@@ -28,5 +28,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The routing and spend-control layer most self-hosted model stacks end up adding. 首次公开发布日期精度：month-only 来源：https://faun.dev/company/berri-ai/",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Went from a niche tool to a global and China-wide chart topper twice via trend filters — a case study in consumer AI virality. 首次公开发布日期精度：month-only 来源：https://www.aitop100.cn/tools/detail/1997.html",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "month"
 }

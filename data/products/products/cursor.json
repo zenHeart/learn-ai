@@ -11,7 +11,7 @@
   "form": "ide",
   "released": "2023-03-01",
   "homepage": "https://cursor.com",
-  "desc": "TAMPERED",
+  "desc": "AI code editor built around whole-codebase AI editing",
   "desc_zh": "基于 VS Code 改造的 AI 原生编辑器，围绕整仓库上下文编辑",
   "tags": [
     "ai-ide",
@@ -29,5 +29,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "desc",
+      "from": "TAMPERED",
+      "to": "AI code editor built around whole-codebase AI editing",
+      "why": "门禁测试时留下的占位值未还原，误随投影发布；按原意恢复"
+    }
+  ],
+  "date_precision": "day"
 }

@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Strongest filtered-search throughput per dollar when you precompute embeddings. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/vector_database",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "month"
 }

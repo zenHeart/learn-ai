@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认：页面标题「海螺视频」，主推文生视频与图像生成。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

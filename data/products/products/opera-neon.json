@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The only major AI browser that runs its agent model on-device, keeping browsing history and cookies local. 来源：https://baike.baidu.com/item/Opera%20Neon/67639827",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

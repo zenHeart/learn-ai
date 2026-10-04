@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The most-copied AI browser design — Arc team's rebuild of the browser around chat rather than a sidebar. 来源：https://baike.baidu.com/item/Dia/65727450",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

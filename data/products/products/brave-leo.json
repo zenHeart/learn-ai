@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The reference point for 'AI that doesn't watch you' — no login, no chat logging, no training on your prompts. 来源：https://cloud.tencent.com/developer/news/1236871",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

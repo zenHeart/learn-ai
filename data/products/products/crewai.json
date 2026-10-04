@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认。官网同时在推企业云端版（标题「The Enterprise Agent Build & Runtime」），本档按开源 Python 框架形态建档。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

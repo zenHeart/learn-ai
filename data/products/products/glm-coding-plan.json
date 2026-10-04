@@ -29,5 +29,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "官网 bigmodel.cn/glm-coding-plan 可访问（200），但仅返回平台通用外壳，未能单独确认 GLM Coding Plan 入口；待人工复核",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

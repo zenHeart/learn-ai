@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Its custom kernels are why latency-sensitive products run open models there instead. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/Fireworks_AI",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

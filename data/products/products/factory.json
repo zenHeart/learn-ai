@@ -34,5 +34,6 @@
       "to": "https://factory.com/",
       "why": "factory.ai 307 跳转"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

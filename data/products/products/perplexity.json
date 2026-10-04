@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网反爬未确认（403）：抓取 perplexity.ai 被反爬拦截，未能确认官网内容。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -24,9 +24,19 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "le-chat",
   "last_verified_at": null,
   "notes": "This is the current name of Le Chat — the existing Le Chat entry should be marked as the predecessor, not kept as a separate product. 来源：https://futurumgroup.com/insights/mistral-ai-shifts-to-full-stack-strategy-with-vibe-and-industrial-ai",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "id",
+      "from": "vibe",
+      "to": "le-chat",
+      "why": "Vibe 是 Le Chat 2026-05 更名后的名字，不是并列产品"
+    }
+  ],
+  "date_precision": "day"
 }

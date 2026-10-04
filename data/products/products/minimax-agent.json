@@ -29,5 +29,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网 agent.minimaxi.com 返回 302 跳转 agent.minimax.cn（境内域名，homepage 字段未改），跳转后确认标题「MiniMax Agent」。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

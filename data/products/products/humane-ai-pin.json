@@ -34,5 +34,6 @@
       "to": "discontinued",
       "why": "humane.com 域名已停止解析，产品停售"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

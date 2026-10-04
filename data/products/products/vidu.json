@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "One of the first fully self-developed video models, built on the U-ViT architecture rather than copying Sora's DiT. 来源：https://baike.baidu.com/item/VIDU",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

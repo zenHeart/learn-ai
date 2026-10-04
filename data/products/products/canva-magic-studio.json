@@ -11,7 +11,7 @@
   ],
   "form": "web",
   "released": "2023-10-24",
-  "homepage": "https://www.canva.com/magic-studio/",
+  "homepage": "https://www.canva.com/ai/",
   "desc": "AI design suite that pushed generative creation to non-designers",
   "desc_zh": "把生成式创作带给非设计用户的套件，是最大规模的消费级 AI 创作入口之一",
   "tags": [
@@ -25,6 +25,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "官网 404，homepage 未改（需走 revisions）",
-  "revisions": []
+  "notes": "官网 404，homepage 未改（需走 revisions） 复核：canva.com/magic-studio/ 已失效，改用 canva 官方 AI 入口（反爬 403，未能机器确认）。",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "homepage",
+      "from": "https://www.canva.com/magic-studio/",
+      "to": "https://www.canva.com/ai/",
+      "why": "原页面 404，Magic Studio 已并入 Canva AI 入口"
+    }
+  ],
+  "date_precision": "day"
 }

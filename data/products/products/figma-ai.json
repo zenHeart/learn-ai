@@ -29,5 +29,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认，标题「LangChain: the open agent platform to own your intelligence」，站点重心已转向 Agent 工程平台。form 记为 self-hosted：本档指的是 pip 安装、在自己进程内运行的开源框架，不是任何托管服务。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Forces a Doc-to-Tasks-to-Changes flow instead of blind generation, and supports fully private deployment for regulated teams. 来源：https://baike.baidu.com/item/%E6%96%87%E5%BF%83%E5%BF%AB%E7%A0%81/64857881",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

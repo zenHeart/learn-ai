@@ -21,15 +21,21 @@
     "ecosystem"
   ],
   "handbook": {
-    "status": "written",
-    "route": {
-      "en": "/products/copilot/",
-      "zh": "/zh/products/copilot/"
-    }
+    "status": "none"
   },
   "status": "active",
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "handbook",
+      "from": "{\"status\": \"written\", \"route\": {\"en\": \"/products/copilot/\", \"zh\": \"/zh/products/copilot/\"}}",
+      "to": "{\"status\": \"none\"}",
+      "why": "本站 /products/copilot/ 是 GitHub Copilot 手册，不是 Microsoft Copilot；无对应手册，不应显示手册链接"
+    }
+  ],
+  "date_precision": "day"
 }

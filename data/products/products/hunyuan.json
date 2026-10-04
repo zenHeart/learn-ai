@@ -38,5 +38,6 @@
       "to": "api",
       "why": "与同类模型平台保持一致"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

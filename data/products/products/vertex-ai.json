@@ -22,8 +22,8 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "merged",
+  "superseded_by": "gemini-enterprise",
   "last_verified_at": "2026-10-04",
   "notes": "",
   "revisions": [
@@ -34,6 +34,15 @@
       "from": "web",
       "to": "api",
       "why": "与同类模型平台保持一致"
+    },
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "已并入 Gemini Enterprise"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

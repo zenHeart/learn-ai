@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Unusually tool-builder oriented: creators publish reusable tools inside Flow itself, not just one-off generations. 首次公开发布日期精度：month-only 来源：https://labs.google/fx/tools/flow",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -22,9 +22,19 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "merged",
+  "superseded_by": "gemini-enterprise",
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "已并入 Gemini Enterprise"
+    }
+  ],
+  "date_precision": "day"
 }

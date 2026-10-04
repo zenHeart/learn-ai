@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "字节免费开放的云端 AI IDE，个人开发者零成本搭环境的典型选择 来源：https://www.ithome.com/0/777/970.htm",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

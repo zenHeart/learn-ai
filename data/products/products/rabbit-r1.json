@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "形态取 desktop：R1 是实体硬件设备，rabbitOS 为其预装客户端，本仓枚举无独立 device 值",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

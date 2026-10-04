@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Builds a dependency graph of the whole repo first, so it catches cross-file breakage a diff-only reviewer misses. 首次公开发布日期精度：month-only 来源：https://www.ycombinator.com/companies/greptile",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "month"
 }

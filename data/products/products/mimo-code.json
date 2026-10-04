@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "MIT 协议开源的国产终端 Coding Agent，持久记忆与 Compose 模式是差异化设计 来源：https://mimo.mi.com/docs/zh-CN/news/latest/mimocode",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

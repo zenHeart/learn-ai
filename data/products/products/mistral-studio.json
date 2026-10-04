@@ -28,5 +28,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Mistral's counterpart to Google AI Studio and Anthropic's console workbench; the ledger had only the API tier recorded. 首次公开发布日期精度：month-only 来源：https://mistral.ai",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

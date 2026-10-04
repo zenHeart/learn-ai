@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The clearest case of a vertical AI product winning an entire regulated profession. 首次公开发布日期精度：month-only 来源：https://en.wikipedia.org/wiki/Harvey_(software)",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

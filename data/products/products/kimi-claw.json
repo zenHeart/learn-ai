@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "2026-10-04 核实：kimi.com/claw 返回 200 但跳转回 Kimi 官网首页，未见独立 Kimi Claw 入口页。homepage 是否需调整走 revisions。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -4,7 +4,7 @@
   "name_zh": "tl;dv",
   "vendor_id": "tl-dv",
   "region": "intl",
-  "category": "agent-platform",
+  "category": "meetings",
   "use_cases": [
     "office"
   ],
@@ -25,5 +25,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "category",
+      "from": "agent-platform",
+      "to": "meetings",
+      "why": "会议录制与纪要工具"
+    }
+  ],
+  "date_precision": "month"
 }

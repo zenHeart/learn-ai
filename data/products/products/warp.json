@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认；官网已扩展为多产品平台（Warp Terminal / Warp Factories / Warp Agent CLI），本档仅指 Warp 终端",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

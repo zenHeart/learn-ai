@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "阿里确立的 AI To C 主入口，月活上亿，是使用量级最大的国产 AI 搜索产品 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/%E5%A4%B8%E5%85%8BAI/68158851",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

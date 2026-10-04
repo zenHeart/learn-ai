@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网跳转登录（302 循环），未取到公开页面",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

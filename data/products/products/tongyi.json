@@ -39,5 +39,6 @@
       "to": "merged",
       "why": "tongyi.com 已 301 跳转至 qianwen.com，通义并入千问"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

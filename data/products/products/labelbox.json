@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The buy-not-outsource option when data must stay inside the company. 首次公开发布日期精度：month-only 来源：https://www.cbinsights.com/compare/labelbox-vs-surge-ai",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

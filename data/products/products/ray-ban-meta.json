@@ -34,5 +34,6 @@
       "to": "hardware",
       "why": "AI 眼镜属硬件，原枚举无对应值"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

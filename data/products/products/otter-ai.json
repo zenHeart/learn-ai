@@ -4,7 +4,7 @@
   "name_zh": "Otter.ai",
   "vendor_id": "otter-ai",
   "region": "intl",
-  "category": "agent-platform",
+  "category": "meetings",
   "use_cases": [
     "office"
   ],
@@ -25,5 +25,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "category",
+      "from": "agent-platform",
+      "to": "meetings",
+      "why": "实时会议转写工具"
+    }
+  ],
+  "date_precision": "day"
 }

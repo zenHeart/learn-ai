@@ -34,5 +34,6 @@
       "to": "https://www.nomic.ai/gpt4all",
       "why": "gpt4all.io 302 跳转"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

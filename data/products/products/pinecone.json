@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Made semantic search a two-line integration instead of an infrastructure project. 来源：https://docs.beta.pinecone.io/company",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

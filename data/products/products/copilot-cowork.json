@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Generally available worldwide and grounded in Microsoft Graph, so it competes directly with Muse and Grok Bot on office work. 来源：https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

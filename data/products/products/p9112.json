@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "唯一把本地生活实时商户数据接进对话决策并直连交易的助手，是「AI 参与交易」的代表样本 来源：https://m.thepaper.cn/newsDetail_forward_32590949",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

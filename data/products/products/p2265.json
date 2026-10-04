@@ -28,5 +28,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "能直接读本地文件、自动跑分析的桌面智能体，累计服务超 2000 万用户 来源：https://www.sensetime.com/cn/news/-2",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

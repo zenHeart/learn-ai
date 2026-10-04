@@ -30,5 +30,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认；qianwen.com 会 301 跳转至 www.qianwen.com，功能已含 AI 搜索、网页总结、PPT 生成与语音转写",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

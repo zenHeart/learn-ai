@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The open-source option when data sovereignty rules out managed vector stores. 来源：https://weaviate.io/developers/weaviate/current/roadmap",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

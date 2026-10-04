@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "官网反爬未确认（403）",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

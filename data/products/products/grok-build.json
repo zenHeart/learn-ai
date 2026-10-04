@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "xAI open-sourced the harness in July 2026, so you can self-host it and point it at your own inference. 来源：https://x.ai/news 复核：xAI 未为该子产品提供独立入口页，homepage 暂用 Grok 主站（grok.com 反爬 403，无法机器确认）。已核实该产品确实存在（CLI 编程平台）。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

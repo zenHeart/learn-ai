@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The agent for teams already paying JetBrains — no second editor, no second subscription, and a free AI tier since 2025.1. 来源：https://blog.jetbrains.com/pycharm/2025/04/pycharm-2025-1/",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -113,6 +113,12 @@ for (const file of productFiles) {
   }
 
   if (r.released && !ISO_DATE.test(r.released)) fail(`${where}: released 不是 ISO 日期 "${r.released}"`)
+  // A "-01-01" date is our month-precision convention. It must be declared, or
+  // a reader takes 1 January for the real launch day.
+  const expectPrecision = String(r.released || '').endsWith('-01-01') ? 'month' : 'day'
+  if (r.date_precision !== expectPrecision) {
+    fail(`${where}: date_precision 应为 "${expectPrecision}"（实际 ${JSON.stringify(r.date_precision)}）`)
+  }
   else if (r.released > today) fail(`${where}: released ${r.released} 晚于今天（${today}），疑似拿抓取日冒充发布日期`)
 
   if (r.homepage && !r.homepage.startsWith('https://')) fail(`${where}: homepage 必须是 https — "${r.homepage}"`)

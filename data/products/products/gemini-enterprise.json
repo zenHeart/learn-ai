@@ -1,5 +1,5 @@
 {
-  "id": "gemini-enterprise-agent-platform",
+  "id": "gemini-enterprise",
   "name": "Gemini Enterprise Agent Platform",
   "name_zh": "Gemini 企业智能体平台",
   "vendor_id": "google",
@@ -28,5 +28,15 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "This supersedes Vertex AI and Google AI Studio — the existing Vertex AI entry in the ledger needs a rename note, not a parallel record. 来源：https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "id",
+      "from": "gemini-enterprise-agent-platform",
+      "to": "gemini-enterprise",
+      "why": "id 过长，改用与官网路径一致的短 id"
+    }
+  ],
+  "date_precision": "day"
 }

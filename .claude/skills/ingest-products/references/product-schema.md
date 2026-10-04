@@ -15,6 +15,7 @@
   "use_cases": ["coding", "office"], // 外键 → data/products/use-cases/*.json，1–3 个
   "form": "ide",                     // cli | ide | web | desktop | api | self-hosted
   "released": "2023-03-01",          // 首次公开发布，YYYY-MM-DD
+  "date_precision": "day",           // day | month —— 只精确到月时 released 用当月 1 日
   "homepage": "https://cursor.com",  // 必须是 https
   "desc": "…",                       // 一句话，≤12 词，读者语言
   "desc_zh": "…",
@@ -36,7 +37,7 @@
 ### released（首次公开发布日）
 
 - 取**产品**首次对公众可用的日子：公测、GA、公开 beta 都算；公司成立日、融资日、模型权重发布日**不算**（除非该产品就是那个权重）。
-- 只有年月精度时用该月 1 日，并在 `notes` 写 `仅精确到月`。
+- 只有年月精度时用该月 1 日，**并把 `date_precision` 置 `month`**——校验器会核对它与 `released` 是否自洽，光在 `notes` 里写一句是不够的。
 - 证据必须可指认：官方发布文、官方博客、官方公告、官方 RSS。**凭记忆的不收。**
 - 改日期必须走 `revisions[]`，并在对账报告里单独列出。
 
@@ -59,6 +60,9 @@
 | `self-hosted` | 主要价值是你自己部署 |
 
 判不准选最贴近的，不要新增枚举值。
+
+`form` 的 11 个取值：`cli` / `ide` / `web` / `desktop` / `api` / `self-hosted` / `hardware`。
+`hardware` 是为 AI 眼镜一类穿戴设备加的——把它们塞进 `desktop` 是不诚实的。
 
 ### use_cases
 
@@ -94,7 +98,19 @@
 - **非拉丁名必须人工给英文/拼音 id**：通义灵码 → `lingma`，字节跳动 → `bytedance`。
 - slug 退化（中文名 slug 成空串、被 `-2`/`-7` 之类序号兜底）是 bug，校验器会拦 `^x(-\d+)?$` 形态的 vendor id，产品 id 同理——给人看的 id 要能读。
 
-## 3. tags
+## 3. category
+
+11 个类别，以 `data/products/taxonomy.json` 为准（校验器按那里的 id 校验）：
+
+`chat-assistant`、`coding-agent`、`agent-platform`、`model-platform`、`developer-sdk`、
+`enterprise-api`、`search`、`multimodal-creation`、`local-runner`、`eval-observability`、
+`meetings`。
+
+`meetings`（会议与纪要）是后加的：会议助手既不是聊天助手也不是 Agent 平台，
+塞进 `agent-platform` 会让按分类浏览的人永远找不到它们。**遇到明显不属于现有类别的产品，
+先加类别再加产品**，不要硬塞进最接近的那个。
+
+## 4. tags
 
 - 二级能力标签，kebab-case，2–4 个。
 - **不要把 category 抄一遍**（`agent-platform` 已经是分类了，tag 再写一次是噪声）。

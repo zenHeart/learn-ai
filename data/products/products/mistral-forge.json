@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Distinct from La Plateforme: Forge is the customization layer for organisations that want their own model, not rented API calls. 首次公开发布日期精度：month-only 来源：https://mistral.ai",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

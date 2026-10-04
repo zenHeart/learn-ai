@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Notable because it runs third-party agents (Google, Microsoft, Anthropic) too, not just OpenAI's own. 来源：https://www.cnbc.com/2026/02/05/openai-launches-frontier-in-bid-to-win-more-business.html",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

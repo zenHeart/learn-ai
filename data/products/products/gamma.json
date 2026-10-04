@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The most-used AI presentation tool by a wide margin, and its card-based editor changed how people think about slides. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20250915A0244F00",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

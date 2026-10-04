@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认，标题「AI Workflow Automation Platform - n8n」。站点明确提供 Docker 部署与 on-prem/air-gapped 自托管，form 记为 self-hosted。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

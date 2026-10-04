@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认，标题「Bolt AI builder: Websites, apps & prototypes」。形态记为 ide：它是浏览器内运行完整文件树与终端的编辑器，而非普通网页应用。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

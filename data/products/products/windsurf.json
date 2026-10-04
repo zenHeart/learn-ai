@@ -34,5 +34,6 @@
       "to": "renamed",
       "why": "2026-06 更名 Devin Desktop（windsurf.com 308 跳转）"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

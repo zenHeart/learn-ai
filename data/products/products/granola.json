@@ -4,7 +4,7 @@
   "name_zh": "Granola",
   "vendor_id": "granola",
   "region": "intl",
-  "category": "agent-platform",
+  "category": "meetings",
   "use_cases": [
     "office"
   ],
@@ -25,5 +25,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "category",
+      "from": "agent-platform",
+      "to": "meetings",
+      "why": "会议笔记工具"
+    }
+  ],
+  "date_precision": "day"
 }

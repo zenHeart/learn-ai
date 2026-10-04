@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网可访问，但当前落地页主推「The Leading Web Search APIs for AI / The Real-Time Web Data Layer for AI」，重心已从消费端搜索转向检索 API。本档仍按面向普通用户的搜索产品记 form=web，是否改记 api 请收口时定夺。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

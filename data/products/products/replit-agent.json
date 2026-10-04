@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认，标题「The Next Evolution in AI App Building Tools | Agent 4」。Agent 运行在 Replit IDE 内，故 form 记为 ide。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

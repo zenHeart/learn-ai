@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "First widely adopted pure-play where agents complete transactions, not just answer. 首次公开发布日期精度：month-only 来源：https://sierra.ai/author/bret-taylor",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

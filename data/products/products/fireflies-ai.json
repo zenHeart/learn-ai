@@ -4,7 +4,7 @@
   "name_zh": "Fireflies.ai",
   "vendor_id": "fireflies-ai",
   "region": "intl",
-  "category": "agent-platform",
+  "category": "meetings",
   "use_cases": [
     "office",
     "agent-building"
@@ -26,5 +26,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "category",
+      "from": "agent-platform",
+      "to": "meetings",
+      "why": "会议转写与纪要工具"
+    }
+  ],
+  "date_precision": "day"
 }

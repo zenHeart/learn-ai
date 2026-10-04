@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认，标题「Tavily - One secure API for real-time web access」，提供 search/extract/crawl/research 等纯 API 端点，无独立消费端产品，form 记为 api。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

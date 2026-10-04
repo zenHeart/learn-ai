@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Marginal still — it shipped in beta; worth watching as a fourth entrant alongside Codex, Claude Code and Grok Build. 首次公开发布日期精度：month-only 来源：https://www.meta.com/ai/",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

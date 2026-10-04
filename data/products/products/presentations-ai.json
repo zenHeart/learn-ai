@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Set the bar on brand sync and on templates that survive editing — the two things decks get rejected for at work. 首次公开发布日期精度：month-only 来源：https://www.presentations.ai/zh/ai-presentation-maker",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "month"
 }

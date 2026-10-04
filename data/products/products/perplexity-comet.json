@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Went from a $200/month Max-plan exclusive to free for everyone in three months, and is now the largest AI browser by share. 来源：https://www.ithome.com/tags/Comet",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

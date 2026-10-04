@@ -28,5 +28,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The agent ops and guardrail layer enterprises bolt onto any model, including open-weight ones; date is approximate because the brand has been re-versioned repeatedly. 首次公开发布日期精度：month-only 来源：https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

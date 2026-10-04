@@ -40,5 +40,6 @@
       "to": "merged",
       "why": "已并入 Claude 对话，2026-09 官方公告"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

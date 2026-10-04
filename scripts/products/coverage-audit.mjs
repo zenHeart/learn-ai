@@ -38,6 +38,7 @@ const CATEGORY_FLOOR = {
   search: 6,
   'multimodal-creation': 15,
   'local-runner': 5,
+  meetings: 4,
   'eval-observability': 5,
 }
 

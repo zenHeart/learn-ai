@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

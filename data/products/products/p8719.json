@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "中文语义理解最强的图像视频工具之一，2.1 模型已开源可在消费级显卡本地跑 来源：https://baike.baidu.com/item/%E9%80%9A%E4%B9%89%E4%B8%87%E7%9B%B8/63176825",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

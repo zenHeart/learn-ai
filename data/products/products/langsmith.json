@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认，标题「LangSmith: Agent & LLM Observability Platform」。为托管 SaaS（有免费额度，另提供自托管部署选项），form 记为 web。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

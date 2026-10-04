@@ -28,5 +28,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Shows that enterprise AI value comes from company context, not a bigger model. 来源：https://www.glean.com/about/glean-story",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

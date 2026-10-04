@@ -29,5 +29,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "⚠️ 待复核：code.minimax.io 返回 302 跳转 agent.minimax.io，落地页是 MiniMax Agent 平台，整页没有出现 MiniMax Code 或任何编码命令行产品的字样。需确认该产品是否已并入 MiniMax Agent 或停止独立运营。form 依 desc 描述记为 cli。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

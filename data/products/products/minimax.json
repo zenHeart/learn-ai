@@ -25,5 +25,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网 platform.minimaxi.com 返回 302 跳转 platform.minimax.cn（境内域名，homepage 字段未改），跳转后落在开放平台文档页，确认覆盖语言、视频、语音、图像、音乐五类模型 API。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

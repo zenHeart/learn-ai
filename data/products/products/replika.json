@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The category founder — 30M+ users and the reference point every AI companion product since is measured against. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/Replika/62670028",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

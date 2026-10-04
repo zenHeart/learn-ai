@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Meta's biggest consumer bet; runs each agent in its own cloud VM so tasks continue after you close the app. 来源：https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

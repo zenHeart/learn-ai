@@ -4,7 +4,7 @@
   "name_zh": "Fathom",
   "vendor_id": "fathom",
   "region": "intl",
-  "category": "agent-platform",
+  "category": "meetings",
   "use_cases": [
     "office"
   ],
@@ -25,5 +25,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "category",
+      "from": "agent-platform",
+      "to": "meetings",
+      "why": "会议转写与纪要工具，原先归入 agent-platform 是因为分类里没有会议类"
+    }
+  ],
+  "date_precision": "day"
 }

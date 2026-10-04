@@ -28,5 +28,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Not just a coding tool — it runs recipes and MCP extensions locally, donated to the Linux Foundation's Agentic AI Foundation for neutral governance. 首次公开发布日期精度：month-only 来源：https://www.chenxutan.com/d/5754.html",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "month"
 }

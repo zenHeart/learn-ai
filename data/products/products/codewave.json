@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Buyers who need a governed application platform, not a code generator — it ships its own language, compiler and IDE rather than patching a general-purpose one. 来源：https://m.autohome.com.cn",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

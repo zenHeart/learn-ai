@@ -30,5 +30,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

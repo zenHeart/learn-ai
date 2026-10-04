@@ -22,9 +22,19 @@
   "handbook": {
     "status": "candidate"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "wenxin-yiyan",
   "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": []
+  "notes": " 复核：文小言与文心一言同一服务（yiyan.baidu.com），系品牌更名，按更名关系表达，不重复建档。",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "与文心一言为同一服务的更名，合并为一条时间轴记录"
+    }
+  ],
+  "date_precision": "day"
 }

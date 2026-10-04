@@ -29,5 +29,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认；lingma.aliyun.com/ide 子路径需登录才能访问，根路径可正常打开",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

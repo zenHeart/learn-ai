@@ -37,5 +37,6 @@
       "to": "https://work.wanyo.cn/",
       "why": "原记录指向阿里云百炼的 Agent 市场页面，不是本产品官网；万有官网 work.wanyo.cn 为产品入口"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

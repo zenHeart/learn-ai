@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "鸿蒙 ArkTS 与昇腾算力生态覆盖最全的国产编码智能体，信创场景基本盘 来源：https://www.ithome.com/0/923/944.htm",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

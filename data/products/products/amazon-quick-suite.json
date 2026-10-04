@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Bundles structured BI data with Microsoft 365, Jira and Salesforce, which is the specific gap Bedrock and Amazon Q leave open. 来源：https://www.computerworld.com/article/3967788/aws-new-ai-agentic-platform-aims-to-automate-business-workflows.html",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

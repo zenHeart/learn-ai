@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Brings outcome-priced autonomous agents into the system of record most enterprises already run. 来源：https://www.salesforce.com/ap/news/press-releases/2024/09/13/salesforce-unveils-agentforce-what-ai-was-meant-to-be",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

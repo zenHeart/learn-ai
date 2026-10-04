@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The reference open-source answer to Devin: run it in Docker with your own model key and keep your code in your own infrastructure. 来源：https://www.promptquorum.com/zh/power-local-llm/openhands-review",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

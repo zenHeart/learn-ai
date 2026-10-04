@@ -30,5 +30,6 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网可访问（搜索框、下载中心、AI 免责声明均在），但页面为前端渲染，未取到可判读的产品标题，故未完全确认。",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

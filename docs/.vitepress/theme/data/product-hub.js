@@ -8,7 +8,7 @@
  *   data/products/vendors.json      厂商注册表
  *   data/products/use-cases/*.json  场景选型
  *
- * products 226 条 · categories 10 个 · use-cases 10 个
+ * products 226 条 · categories 11 个 · use-cases 10 个
  *
  * 本文件不含生成时间戳：否则每次运行都会产生差异，--check 闸门将永远报红。
  * 什么时候改的由 git 记录。
@@ -30,7 +30,7 @@ export const productHub = {
     "nameZh": "Agent 平台",
     "color": "#7C3AED",
     "icon": "🧠",
-    "count": 42
+    "count": 37
   },
   {
     "id": "chat-assistant",
@@ -95,6 +95,14 @@ export const productHub = {
     "color": "#65A30D",
     "icon": "🦙",
     "count": 6
+  },
+  {
+    "id": "meetings",
+    "name": "Meetings & notes",
+    "nameZh": "会议与纪要",
+    "color": "#0D9488",
+    "icon": "🎙️",
+    "count": 5
   }
 ],
   useCases: [
@@ -106,7 +114,6 @@ export const productHub = {
     "descriptionZh": "写作、会议与文档。按你「在哪个环节需要帮忙」来选，而不是按功能多少来选。",
     "products": [
       "agentforce",
-      "ai",
       "amazon-q",
       "amazon-quick-suite",
       "atlassian-rovo",
@@ -164,6 +171,7 @@ export const productHub = {
       "synthesia",
       "talkie",
       "tana",
+      "tiangong",
       "tiangong-agent",
       "tl-dv",
       "tongyi",
@@ -277,7 +285,7 @@ export const productHub = {
       "fireflies-ai",
       "flowise",
       "frontier",
-      "gemini-enterprise-agent-platform",
+      "gemini-enterprise",
       "genspark",
       "glean",
       "goose",
@@ -391,7 +399,7 @@ export const productHub = {
           "exa",
           "flowise",
           "frontier",
-          "gemini-enterprise-agent-platform",
+          "gemini-enterprise",
           "genspark",
           "glean",
           "grok-build",
@@ -562,10 +570,11 @@ export const productHub = {
           "augment-code",
           "coderabbit",
           "cody",
+          "cursor",
           "factory",
           "greptile"
         ],
-        "productCount": 6
+        "productCount": 7
       }
     ]
   },
@@ -576,7 +585,6 @@ export const productHub = {
     "description": "Answer engines with citations versus retrieval you build yourself. Decide whether you need a product or a stack.",
     "descriptionZh": "带引用的问答引擎，还是你自己搭的检索。先想清楚你要的是一个产品，还是一套方案。",
     "products": [
-      "ai",
       "atlassian-rovo",
       "brave-leo",
       "chatglm",
@@ -615,6 +623,7 @@ export const productHub = {
       "quark",
       "shangliang",
       "tavily",
+      "tiangong",
       "tongyi",
       "wanyo",
       "wenxiaoyan",
@@ -711,7 +720,7 @@ export const productHub = {
       "cohere-rerank",
       "deepseek",
       "fireworks-ai",
-      "gemini-enterprise-agent-platform",
+      "gemini-enterprise",
       "google-ai-studio",
       "hunyuan",
       "lingyi-wanwu",
@@ -1055,7 +1064,7 @@ export const productHub = {
       "braintrust",
       "coderabbit",
       "cody",
-      "gemini-enterprise-agent-platform",
+      "gemini-enterprise",
       "greptile",
       "helicone",
       "langfuse",
@@ -1453,8 +1462,8 @@ export const productHub = {
       "european",
       "rename"
     ],
-    "status": "active",
-    "supersededBy": null,
+    "status": "renamed",
+    "supersededBy": "le-chat",
     "handbook": {
       "status": "none"
     },
@@ -1523,7 +1532,7 @@ export const productHub = {
     "glyph": "万"
   },
   {
-    "id": "gemini-enterprise-agent-platform",
+    "id": "gemini-enterprise",
     "name": "Gemini Enterprise Agent Platform",
     "nameZh": "Gemini 企业智能体平台",
     "vendor": "Google",
@@ -3519,8 +3528,8 @@ export const productHub = {
       "wenxin",
       "baidu"
     ],
-    "status": "active",
-    "supersededBy": null,
+    "status": "renamed",
+    "supersededBy": "wenxin-yiyan",
     "handbook": {
       "status": "candidate"
     },
@@ -4017,7 +4026,7 @@ export const productHub = {
     "vendor": "Granola",
     "vendorZh": "Granola",
     "region": "intl",
-    "category": "agent-platform",
+    "category": "meetings",
     "useCases": [
       "office"
     ],
@@ -4817,8 +4826,8 @@ export const productHub = {
       "free-tier",
       "developer-tools"
     ],
-    "status": "active",
-    "supersededBy": null,
+    "status": "merged",
+    "supersededBy": "gemini-enterprise",
     "handbook": {
       "status": "none"
     },
@@ -5367,7 +5376,7 @@ export const productHub = {
     ],
     "form": "web",
     "released": "2023-10-24",
-    "homepage": "https://www.canva.com/magic-studio/",
+    "homepage": "https://www.canva.com/ai/",
     "desc": "AI design suite that pushed generative creation to non-designers",
     "descZh": "把生成式创作带给非设计用户的套件，是最大规模的消费级 AI 创作入口之一",
     "tags": [
@@ -6457,7 +6466,7 @@ export const productHub = {
     "glyph": "C"
   },
   {
-    "id": "ai",
+    "id": "tiangong",
     "name": "天工AI",
     "nameZh": "天工AI",
     "vendor": "昆仑万维",
@@ -6652,7 +6661,7 @@ export const productHub = {
     "form": "ide",
     "released": "2023-03-01",
     "homepage": "https://cursor.com",
-    "desc": "TAMPERED",
+    "desc": "AI code editor built around whole-codebase AI editing",
     "descZh": "基于 VS Code 改造的 AI 原生编辑器，围绕整仓库上下文编辑",
     "tags": [
       "ai-ide",
@@ -6788,11 +6797,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "handbook": {
-      "status": "written",
-      "route": {
-        "en": "/products/copilot/",
-        "zh": "/zh/products/copilot/"
-      }
+      "status": "none"
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "M"
@@ -7404,7 +7409,7 @@ export const productHub = {
     "vendor": "Fathom",
     "vendorZh": "Fathom",
     "region": "intl",
-    "category": "agent-platform",
+    "category": "meetings",
     "useCases": [
       "office"
     ],
@@ -7425,6 +7430,35 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "F"
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "nameZh": "Runway",
+    "vendor": "Runway",
+    "vendorZh": "Runway",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video"
+    ],
+    "form": "web",
+    "released": "2021-12-01",
+    "homepage": "https://runwayml.com",
+    "desc": "Generative video platform; Gen-2 text-to-video in 2023-03",
+    "descZh": "生成式视频平台，2023-03 推出 Gen-2，首个公开可用的文生视频模型",
+    "tags": [
+      "video-generation",
+      "creative",
+      "multimodal"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "handbook": {
+      "status": "candidate"
+    },
+    "lastVerifiedAt": "2026-10-04",
+    "glyph": "R"
   },
   {
     "id": "you-com",
@@ -7573,8 +7607,8 @@ export const productHub = {
       "foundation-models",
       "mlops"
     ],
-    "status": "active",
-    "supersededBy": null,
+    "status": "merged",
+    "supersededBy": "gemini-enterprise",
     "handbook": {
       "status": "none"
     },
@@ -7799,7 +7833,7 @@ export const productHub = {
     "vendor": "tl;dv",
     "vendorZh": "tl;dv",
     "region": "intl",
-    "category": "agent-platform",
+    "category": "meetings",
     "useCases": [
       "office"
     ],
@@ -7859,7 +7893,7 @@ export const productHub = {
     "vendor": "Fireflies.ai",
     "vendorZh": "Fireflies.ai",
     "region": "intl",
-    "category": "agent-platform",
+    "category": "meetings",
     "useCases": [
       "office",
       "agent-building"
@@ -7910,35 +7944,6 @@ export const productHub = {
       "status": "none"
     },
     "lastVerifiedAt": null,
-    "glyph": "R"
-  },
-  {
-    "id": "runway",
-    "name": "Runway",
-    "nameZh": "Runway",
-    "vendor": "Runway",
-    "vendorZh": "Runway",
-    "region": "intl",
-    "category": "multimodal-creation",
-    "useCases": [
-      "video"
-    ],
-    "form": "web",
-    "released": "2018-12-01",
-    "homepage": "https://runwayml.com",
-    "desc": "Generative video platform; Gen-2 text-to-video in 2023-03",
-    "descZh": "生成式视频平台，2023-03 推出 Gen-2，首个公开可用的文生视频模型",
-    "tags": [
-      "video-generation",
-      "creative",
-      "multimodal"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "handbook": {
-      "status": "candidate"
-    },
-    "lastVerifiedAt": "2026-10-04",
     "glyph": "R"
   },
   {
@@ -8097,7 +8102,7 @@ export const productHub = {
     "vendor": "Otter.ai",
     "vendorZh": "Otter.ai",
     "region": "intl",
-    "category": "agent-platform",
+    "category": "meetings",
     "useCases": [
       "office"
     ],

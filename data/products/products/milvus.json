@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Openest large-scale option, and the base Zilliz Cloud is sold on. 首次公开发布日期精度：month-only 来源：https://zilliz.com/learn/introduction-to-milvus-vector-database",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

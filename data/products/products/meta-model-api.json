@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Meta's successor to the Llama API — an OpenAI- and Anthropic-SDK-compatible endpoint at api.meta.ai, not a proprietary wrapper. 首次公开发布日期精度：month-only 来源：https://www.eesel.ai",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

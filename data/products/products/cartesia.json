@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The default build choice when latency is the binding constraint — the bar every other voice API is measured against. 首次公开发布日期精度：month-only 来源：https://www.cnblogs.com/Agora/p/18700753",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "month"
 }

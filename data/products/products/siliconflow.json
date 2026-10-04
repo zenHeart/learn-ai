@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "The reference option when a Chinese deployment must run on Ascend-class hardware. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20260616A081NQ00",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

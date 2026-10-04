@@ -71,6 +71,14 @@
       "name_zh": "评测与可观测",
       "color": "#DC2626",
       "icon": "📈"
+    },
+    {
+      "id": "meetings",
+      "name": "Meetings & notes",
+      "name_zh": "会议与纪要",
+      "color": "#0D9488",
+      "icon": "🎙️",
+      "description": "会议转写、纪要与会后跟进。独立成类是因为会议助手既不是聊天助手也不是 Agent 平台。"
     }
   ]
 }

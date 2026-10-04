@@ -1,5 +1,5 @@
 {
-  "id": "ai",
+  "id": "tiangong",
   "name": "天工AI",
   "name_zh": "天工AI",
   "vendor_id": "kunlun",
@@ -26,5 +26,15 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "id",
+      "from": "ai",
+      "to": "tiangong",
+      "why": "slug 退化产物，非拉丁名需人工给可读 id"
+    }
+  ],
+  "date_precision": "day"
 }

@@ -34,5 +34,6 @@
       "to": "https://arize.com/phoenix",
       "why": "phoenix.arize.com 301 跳转"
     }
-  ]
+  ],
+  "date_precision": "day"
 }

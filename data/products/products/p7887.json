@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "服务超千万开发者的国产编程助手代表，Figma 转代码是少数工具具备的能力 来源：https://comate.baidu.com/zh/page/x9rcbn4gmz2",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

@@ -28,5 +28,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Built for regulated buyers that must run agents on their own infrastructure — a segment the US-first vendors do not serve well. 首次公开发布日期精度：month-only 来源：https://winbuzzer.com/2025/01/10/cohere-unveils-north-ai-platform-challenges-microsoft/",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

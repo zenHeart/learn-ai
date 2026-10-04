@@ -27,5 +27,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "LangChain's main counterpart, but owns the data layer rather than orchestration. 首次公开发布日期精度：month-only 来源：https://www.llamaindex.ai/blog/llamaindex-turns-1-f69dcdd45fe3",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }

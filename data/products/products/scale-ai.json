@@ -26,5 +26,6 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Made post-training data a purchasable commodity rather than an internal chore. 首次公开发布日期精度：month-only 来源：https://handwiki.org/wiki/Company:Scale_AI",
-  "revisions": []
+  "revisions": [],
+  "date_precision": "day"
 }
