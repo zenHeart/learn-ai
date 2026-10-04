@@ -18,6 +18,11 @@
     "free-tier",
     "sales"
   ],
+  "solves": "Somebody still has to write down what the call said. Fathom records it, summarises it, and pushes it to your CRM.",
+  "solves_zh": "通话内容总得有人记下来。Fathom 负责录音、生成摘要，并推送到你的 CRM。",
+  "best_for": "When you are on back-to-back sales or support calls and cannot take notes.",
+  "best_for_zh": "当你连着开销售或支持通话、没空做笔记时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

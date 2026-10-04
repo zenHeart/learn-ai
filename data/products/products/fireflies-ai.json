@@ -14,6 +14,11 @@
   "homepage": "https://fireflies.ai",
   "desc": "Meeting bot with searchable archive and 200+ integrations",
   "desc_zh": "会议机器人与可检索会议库，对接 200+ 应用",
+  "solves": "Nobody remembers what was said in the meeting. It records, transcribes and makes every call searchable later.",
+  "solves_zh": "会上说过什么，事后没人记得。它会录制、转写，让每通电话之后都能搜到。",
+  "best_for": "When you sit in many calls and need to find what was decided weeks later.",
+  "best_for_zh": "经常参会，几周后还想找回当时定了什么的时候。",
+  "surface": "standalone",
   "tags": [
     "meetings",
     "bot",

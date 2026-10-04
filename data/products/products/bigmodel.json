@@ -14,6 +14,11 @@
   "homepage": "https://bigmodel.cn",
   "desc": "智谱大模型开放平台与 API 服务",
   "desc_zh": "智谱大模型开放平台与 API 服务",
+  "solves": "Wiring up a domestic model means finding a provider, comparing prices and hand-assembling the API. Register once, call pay-as-you-go, and keep the model list and billing in one console.",
+  "solves_zh": "接入国产大模型要自己找服务商、比价格、拼接口。注册后按量调用，模型列表和账单在一个后台。",
+  "best_for": "When you need a model inside your own service rather than in a web chat tab.",
+  "best_for_zh": "需要在自家服务里接入大模型，而不是打开网页聊天。",
+  "surface": "standalone",
   "tags": [
     "model-platform",
     "api",

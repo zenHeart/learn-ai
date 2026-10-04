@@ -19,6 +19,11 @@
   "homepage": "https://cursor.com",  // 必须是 https
   "desc": "…",                       // 一句话，≤12 词，读者语言
   "desc_zh": "…",
+  "solves": "…",                     // 痛点：用了它之后什么事不再是问题
+  "solves_zh": "…",
+  "best_for": "…",                   // 场景：什么时候你会打开它
+  "best_for_zh": "…",
+  "surface": "standalone",            // standalone | in-product | plugin | extension
   "tags": ["ai-ide", "agentic-coding"],  // 二级能力标签，kebab-case
   "handbook": {
     "status": "written",             // none | candidate | written
@@ -63,6 +68,32 @@
 
 `form` 的 11 个取值：`cli` / `ide` / `web` / `desktop` / `api` / `self-hosted` / `hardware`。
 `hardware` 是为 AI 眼镜一类穿戴设备加的——把它们塞进 `desktop` 是不诚实的。
+
+### solves / best_for —— 写给普通用户的两个字段
+
+**这是卡片上最重要的一行。** 读者想知道的是「这东西解决我什么问题、什么时候该用」，
+不是它属于哪个分类、有哪些能力标签。
+
+`solves` 先写痛、再写变化。`best_for` 写具体触发场景。
+
+| | 好 | 坏 |
+|---|---|---|
+| `solves` | "Every video edit starts with the timeline. This one lets you cut by editing the transcript instead." | "A generative video platform for creators."（这是分类，不是痛点） |
+| `solves` | "查一件事要开好几个网页才能拼出答案。豆包把搜索、写作和文件处理放在一起，直接问就行。" | "赋能用户高效获取信息"（营销填充物） |
+| `best_for` | "When a meeting ends and someone has to write up what was decided." | "For productivity and efficiency."（什么都没说） |
+
+- 英文 12–28 词，中文 20–45 字。说人话，不用「赋能 / 革新 / 无缝」这类词。
+- `tags` **不要**再抄一遍——卡片上已经不放标签行了，标签只用于筛选。
+- 中英两个字段都必须写。中文产品也要有英文版，反之亦然：站内两种语言都要读得通。
+
+### surface —— 它住在哪
+
+`standalone`（独立入口）/ `in-product`（集成在另一个产品里）/ `plugin` / `extension`。
+
+**`in-product` 是一类必须收录的产品。** 判据：如果用户只能先打开一个更大的产品才能用到它，
+它就不是 `standalone`。大厂把 AI 能力做进已有产品是主流形态——ChatGPT 里的 Dots、
+Microsoft 365 里的 Copilot、Figma 里的 AI、钉钉/飞书里的 AI 助手。
+**漏掉这类，就等于漏掉用户最常打开的那个入口。**
 
 ### use_cases
 

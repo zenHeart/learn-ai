@@ -14,6 +14,11 @@
   "homepage": "https://claude.ai/",
   "desc": "Anthropic's conversational assistant for analysis, writing and code",
   "desc_zh": "Anthropic 的对话式助手，面向分析、写作与编程任务",
+  "solves": "You paste a long document in and get a summary back, losing the reasoning. It works through the material with you and shows where an answer came from.",
+  "solves_zh": "把长文档贴进去，拿到一段摘要，推理过程全丢了。它和你一起逐段读，并标出每个答案来自哪里。",
+  "best_for": "When you have a long document or codebase to think through, not a quick lookup.",
+  "best_for_zh": "当你要慢慢啃一份长文档或一个大 codebase，而不是快速查一下。",
+  "surface": "standalone",
   "tags": [
     "conversational-ai",
     "consumer",

@@ -1,0 +1,36 @@
+{
+  "id": "dots",
+  "name": "Dots",
+  "name_zh": "Dots 常驻智能体",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2026-09-29",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/introducing-dots/",
+  "desc": "You close the tab and the work stops. A dot keeps going in its own cloud, so a long job su",
+  "desc_zh": "你一关标签页，活就停了。dot 在自己的云端继续跑，长任务不会因为你走开而中断。",
+  "solves": "You close the tab and the work stops. A dot keeps going in its own cloud, so a long job survives you stepping away.",
+  "solves_zh": "你一关标签页，活就停了。dot 在自己的云端继续跑，长任务不会因为你走开而中断。",
+  "best_for": "When a job takes hours and you would otherwise have to sit and watch the chat.",
+  "best_for_zh": "当一件事要跑上几小时，而你并不想一直守着对话框等它。",
+  "tags": [
+    "in-product",
+    "chatgpt"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 ChatGPT 内的能力。来源：https://www.reuters.com/business/openai-takes-meta-with-always-on-dots-agent-enterprise-ai-push-2026-09-29",
+  "revisions": []
+}

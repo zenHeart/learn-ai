@@ -13,6 +13,11 @@
   "homepage": "https://www.huaweicloud.com/product/codearts/ai.html",
   "desc": "华为云 AI 编码智能体",
   "desc_zh": "华为云 AI 编码智能体",
+  "solves": "Overseas coding tools cover HarmonyOS and Ascendant poorly, and 信创 rules often bar code leaving the network. This one runs on premises.",
+  "solves_zh": "海外编码工具对 HarmonyOS 和 Ascendant 覆盖很差，而信创规则常常禁止代码出网。这个工具可以私有化部署。",
+  "best_for": "When you build HarmonyOS apps, or a compliance rule keeps code inside Huawei Cloud.",
+  "best_for_zh": "当你要开发鸿蒙应用，或者合规要求把代码留在华为云内。",
+  "surface": "standalone",
   "tags": [
     "harmonyos",
     "ascend",

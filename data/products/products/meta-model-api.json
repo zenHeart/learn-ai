@@ -14,6 +14,11 @@
   "homepage": "https://ai.meta.com/",
   "desc": "Meta's developer API for the Muse Spark and Muse Image model families.",
   "desc_zh": "Meta 面向开发者的模型接口，提供 Muse Spark 与 Muse Image 系列。",
+  "solves": "Adopting a Meta model means learning its own API shape. Here the model families arrive through an OpenAI-compatible endpoint instead.",
+  "solves_zh": "接入 Meta 模型意味着要重新学一套 API 写法。这里通过兼容 OpenAI 的接口就能用上这些模型家族。",
+  "best_for": "When you already speak the OpenAI API and want Meta's models without writing an adapter.",
+  "best_for_zh": "已经熟悉 OpenAI API，想直接用 Meta 模型又不想再写适配层的时候。",
+  "surface": "standalone",
   "tags": [
     "openai-compatible",
     "spark",

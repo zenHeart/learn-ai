@@ -20,6 +20,11 @@
     "agent-service",
     "model-catalog"
   ],
+  "solves": "Model choice, agent wiring, and monitoring end up scattered across separate consoles. One platform holds the catalog, the runtime, and the eval trail.",
+  "solves_zh": "模型选型、智能体编排和监控分散在各自的控制台上。一个平台同时管住模型目录、运行时和评测记录。",
+  "best_for": "When an enterprise ships agents and must keep models, data, and audit trails inside Azure.",
+  "best_for_zh": "当企业要上线智能体，又必须把模型、数据和审计记录留在 Azure 内时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

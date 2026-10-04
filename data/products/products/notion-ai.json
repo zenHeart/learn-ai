@@ -14,6 +14,11 @@
   "homepage": "https://www.notion.so/product/ai",
   "desc": "AI writing and Q&A embedded across the Notion workspace",
   "desc_zh": "嵌入 Notion 工作区的 AI 写作与问答，2023-02-22 正式 GA",
+  "solves": "Your notes sit in Notion but the assistant lives in another tab, so context never makes it across. This one reads the page you are on.",
+  "solves_zh": "笔记在 Notion 里，助手却在另一个标签页，上下文永远传不过来。这个助手直接读你当前所在的页面。",
+  "best_for": "When your working material is already in Notion and you want to write or query in place.",
+  "best_for_zh": "当你的工作材料已经在 Notion 里，你想就地写作或查询。",
+  "surface": "in-product",
   "tags": [
     "workspace",
     "writing",

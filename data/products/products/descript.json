@@ -19,6 +19,11 @@
     "audio",
     "transcription"
   ],
+  "solves": "Cutting a video means scrubbing a timeline frame by frame. Descript lets you cut by editing the transcript.",
+  "solves_zh": "剪视频要在时间轴上一帧帧拖。Descript 让你改文字稿来完成剪辑。",
+  "best_for": "When you edit interviews, podcasts or talking-head video and know the words but not the frame numbers.",
+  "best_for_zh": "当你剪的是访谈、播客或口播视频，记得内容却不记得帧号。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

@@ -14,6 +14,11 @@
   "homepage": "https://mistral.ai/forge",
   "desc": "Enterprise service to train, align, evaluate and deploy your own models.",
   "desc_zh": "用于训练、对齐、评估和部署自有模型的企业平台。",
+  "solves": "A general model doesn't know your company's data or rules, so you have to prepare the corpus and the evaluation yourself. This platform covers the path from training to deployment.",
+  "solves_zh": "通用模型不懂你公司的数据和规矩，你得自己准备语料和评测。这条路从训练到上线在一个平台里。",
+  "best_for": "You need to train a model that serves only your own business and can explain itself.",
+  "best_for_zh": "你要训一个只服务自己业务、且能解释的模型。",
+  "surface": "standalone",
   "tags": [
     "fine-tuning",
     "evaluation",

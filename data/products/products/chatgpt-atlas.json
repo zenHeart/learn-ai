@@ -14,6 +14,11 @@
   "homepage": "https://openai.com/index/introducing-chatgpt-atlas/",
   "desc": "OpenAI's ChatGPT-native browser, now discontinued.",
   "desc_zh": "OpenAI 推出的 ChatGPT 原生浏览器，现已停服。",
+  "solves": "Twenty tabs open at once, and the answer is scattered across all of them. It reads those pages for you and answers from what it found.",
+  "solves_zh": "浏览器里同时开二十个标签，答案散在每个页面。它替你读完这些页面再回答。",
+  "best_for": "Research has piled up across a dozen tabs and you want the conclusion (discontinued).",
+  "best_for_zh": "研究时攒了一堆标签页、想直接要结论（已停服）。",
+  "surface": "standalone",
   "tags": [
     "ai-browser",
     "discontinued",

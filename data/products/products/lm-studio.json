@@ -13,6 +13,11 @@
   "homepage": "https://lmstudio.ai",
   "desc": "GUI desktop app for discovering and running local LLMs",
   "desc_zh": "带图形界面的本地模型运行器，普通用户也能下载即用",
+  "solves": "Hosted models need you to paste code and data into someone else's machine. LM Studio downloads the weights and runs them on your computer.",
+  "solves_zh": "托管模型要求你把代码和数据贴进别人的机器里。LM Studio 直接下载权重，在你自己的电脑上运行。",
+  "best_for": "When the material is confidential, or you are offline and out of credits.",
+  "best_for_zh": "当材料涉密，或者你处在离线环境又已经没额度了。",
+  "surface": "standalone",
   "tags": [
     "desktop",
     "local-llm",

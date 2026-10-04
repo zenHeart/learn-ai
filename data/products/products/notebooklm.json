@@ -14,6 +14,11 @@
   "homepage": "https://notebooklm.google.com/",
   "desc": "Grounded research assistant answering from your own uploaded sources",
   "desc_zh": "基于你自己上传的资料做溯源问答的研究助手",
+  "solves": "The model invents a citation and you cannot check it. It answers only from documents you uploaded, and every line links back to the source.",
+  "solves_zh": "模型编出一个引用，你无从查证。它只依据你上传的文档作答，每一句都能点回原文出处。",
+  "best_for": "When you are working through a fixed pile of papers and need answers you can verify.",
+  "best_for_zh": "当你在啃一批固定的资料，需要能核实的答案时。",
+  "surface": "standalone",
   "tags": [
     "rag",
     "research",

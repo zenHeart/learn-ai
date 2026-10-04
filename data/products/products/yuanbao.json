@@ -14,6 +14,11 @@
   "homepage": "https://yuanbao.tencent.com",
   "desc": "腾讯基于混元大模型的 AI 助手",
   "desc_zh": "腾讯基于混元大模型的 AI 助手",
+  "solves": "A Chinese-language question returns a pile of links you still have to open and read one by one. It hands you a written Chinese answer instead.",
+  "solves_zh": "中文问题搜出来一堆链接，你还得逐个点开自己读。它直接给一段整理好的中文答案。",
+  "best_for": "You want to ask in Chinese and get an answer, not a list of links.",
+  "best_for_zh": "你想用中文问问题、直接拿到答案而不是一串链接。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "hunyuan",

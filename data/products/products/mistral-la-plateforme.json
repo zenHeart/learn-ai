@@ -13,6 +13,11 @@
   "homepage": "https://console.mistral.ai/",
   "desc": "Mistral's hosted API and console for models, fine-tuning and agents",
   "desc_zh": "Mistral 的托管 API 与控制台，提供模型、微调与智能体能力",
+  "solves": "Connecting a model means finding endpoints, writing auth, absorbing each vendor's differences, and handling fine-tuning and rollout. One console plus API covers it.",
+  "solves_zh": "接模型要自己找端点、写鉴权、适配各家差异，还要管微调和上线。一套控制台加 API 就够了。",
+  "best_for": "You want to call models from code and also handle fine-tuning and usage tracking.",
+  "best_for_zh": "你要在代码里调用模型，并顺便做微调和用量管理。",
+  "surface": "standalone",
   "tags": [
     "api",
     "developer-platform",

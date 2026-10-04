@@ -13,6 +13,11 @@
   "homepage": "https://www.beautiful.ai/",
   "desc": "Slides that re-layout themselves as you edit the content.",
   "desc_zh": "内容一改，幻灯片排版自动跟着重排的演示工具。",
+  "solves": "Add one line of text and the title no longer fits, so you nudge boxes by hand. It re-flows the slide and the deck stops drifting off-brand.",
+  "solves_zh": "加一行文字标题就放不下了，你只能手动挪框。它会重排整页，模板不再慢慢偏离规范。",
+  "best_for": "When someone else will keep editing the deck after you hand it over.",
+  "best_for_zh": "当你把这份 deck 交出去之后，还要由别人继续编辑。",
+  "surface": "standalone",
   "tags": [
     "slides",
     "auto-layout",

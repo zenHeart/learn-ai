@@ -18,6 +18,11 @@
     "ai-ide",
     "alibaba"
   ],
+  "solves": "Choosing a coding model and hooking it up is the slow part. Qoder arrives as a full IDE with one already chosen.",
+  "solves_zh": "选编码模型、把它接进编辑器是最耗时间的部分。Qoder 直接就是一个完整 IDE，模型已经选好。",
+  "best_for": "When you want a self-contained coding editor instead of a plugin for an existing one.",
+  "best_for_zh": "你需要一个自带一体的编码编辑器，而不是装在现有编辑器里的插件。",
+  "surface": "standalone",
   "handbook": {
     "status": "written",
     "route": {

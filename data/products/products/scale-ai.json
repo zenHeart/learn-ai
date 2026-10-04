@@ -19,6 +19,11 @@
     "model-evaluation",
     "human-data"
   ],
+  "solves": "Post-training a model needs rated human answers, and a lab has neither the people nor the process. Scale supplies both.",
+  "solves_zh": "模型后训练需要人工评分过的答案，而实验室既缺人也缺流程。Scale 两样都提供。",
+  "best_for": "When you are training or evaluating a model and need human judgement at volume.",
+  "best_for_zh": "当你在训练或评测模型，需要成规模的人工判断。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

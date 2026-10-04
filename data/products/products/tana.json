@@ -18,6 +18,11 @@
     "outliner",
     "personal-ai"
   ],
+  "solves": "Notes become a pile of flat text nobody can query. Tana makes every fact a supertag, so the AI can work with them.",
+  "solves_zh": "笔记会变成一堆没人能查询的扁平文本。Tana 把每条事实做成 supertag，让 AI 能直接处理。",
+  "best_for": "When you want a personal knowledge base that answers questions instead of storing pages.",
+  "best_for_zh": "当你想要一个能回答问题、而不只是存放页面的个人知识库。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

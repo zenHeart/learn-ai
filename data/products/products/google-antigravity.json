@@ -13,6 +13,11 @@
   "homepage": "https://antigravity.google/",
   "desc": "Agent-first IDE with parallel agent manager view, built on Gemini 3",
   "desc_zh": "智能体优先的 IDE，支持并行智能体管理视图，基于 Gemini 3",
+  "solves": "You can only watch one agent at a time, so a slow task blocks everything queued behind it. This one runs several at once in a single view.",
+  "solves_zh": "一次只能盯一个 Agent，排在后面全被慢的那个堵住。它在同一个视图里同时跑多个任务。",
+  "best_for": "When you want three tasks going in parallel without three editor windows.",
+  "best_for_zh": "当你想让三个任务并行推进，而不必开三个编辑器窗口。",
+  "surface": "standalone",
   "tags": [
     "ide",
     "agentic-coding",

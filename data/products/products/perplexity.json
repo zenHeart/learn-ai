@@ -19,6 +19,11 @@
     "answer-engine",
     "consumer"
   ],
+  "solves": "A search page gives you ten links and makes you do the reading. It reads them and hands back an answer with the sources attached.",
+  "solves_zh": "搜索结果页甩给你十个链接，读不读全靠你自己。它替你读完，直接给出答案并附上出处。",
+  "best_for": "When you want a researched answer with links you can click to check, not a list of pages.",
+  "best_for_zh": "当你想要的是一个有据可查、链接点开能核对的答案，而不是一堆网页列表时。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

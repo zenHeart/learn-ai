@@ -13,6 +13,11 @@
   "homepage": "https://kiro.dev",
   "desc": "AWS spec-driven agentic IDE built on Code OSS",
   "desc_zh": "AWS 出品的规格驱动（spec-driven）Agentic IDE，基于 Code OSS",
+  "solves": "Agents start editing code before anyone agrees what to build. It begins from a written spec, so intent is settled first.",
+  "solves_zh": "Agent 常常在需求还没对齐时就开始改代码。它先从一份写下来的规格开始，把意图先谈定。",
+  "best_for": "When you want an agent to build features from a specification you agreed on first.",
+  "best_for_zh": "想让 Agent 照着事先谈定的规格来做功能的时候。",
+  "surface": "standalone",
   "tags": [
     "spec-driven",
     "aws",

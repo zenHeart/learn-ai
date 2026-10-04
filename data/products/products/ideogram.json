@@ -13,6 +13,11 @@
   "homepage": "https://ideogram.ai",
   "desc": "Best-in-class legible text rendering inside images",
   "desc_zh": "图像内文字排版准确率领先，是海报与 Logo 生成的常用选择",
+  "solves": "Image models mangle the text inside pictures. It renders readable headlines and logos, so you can use it for posters.",
+  "solves_zh": "图像模型常把图里的字渲染得认不出来。它能把标题和 Logo 排清楚，所以海报也能用。",
+  "best_for": "When the words in the image matter as much as the picture itself.",
+  "best_for_zh": "图里的文字和画面本身一样重要的时候。",
+  "surface": "standalone",
   "tags": [
     "image-generation",
     "typography",

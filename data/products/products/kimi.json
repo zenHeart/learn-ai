@@ -14,6 +14,11 @@
   "homepage": "https://www.kimi.com",
   "desc": "支持超长上下文的 AI 智能助手",
   "desc_zh": "支持超长上下文的 AI 智能助手",
+  "solves": "Long documents never get finished, and they do not fit in a prompt box. Kimi reads a lot of material at once and you can question it directly.",
+  "solves_zh": "长文档读不完，也塞不进提问框。Kimi 能一次读很长的材料，直接对着它问。",
+  "best_for": "When you need to read through a long report or a batch of material before asking questions.",
+  "best_for_zh": "要通读一份很长的报告或一批资料再提问。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "long-context",

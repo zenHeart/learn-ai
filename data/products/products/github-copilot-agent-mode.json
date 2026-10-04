@@ -1,0 +1,43 @@
+{
+  "id": "github-copilot-agent-mode",
+  "name": "GitHub Copilot agent mode",
+  "name_zh": "GitHub Copilot 智能体模式",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2025-09-01",
+  "date_precision": "month",
+  "homepage": "https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/",
+  "desc": "Edit mode only changes the snippet you highlighted, and you run the terminal command yours",
+  "desc_zh": "编辑模式只改你选中的那几行，终端命令还得你自己敲。智能体模式自己选文件、跨仓库写改动、跑命令，并会根据报错继续调整。",
+  "solves": "Edit mode only changes the snippet you highlighted, and you run the terminal command yourself. Agent mode picks the files, writes the edits across the repo, runs the commands, and reacts to the errors.",
+  "solves_zh": "编辑模式只改你选中的那几行，终端命令还得你自己敲。智能体模式自己选文件、跨仓库写改动、跑命令，并会根据报错继续调整。",
+  "best_for": "Multi-file changes with build and test cycles, where you want the whole loop driven rather than single edits.",
+  "best_for_zh": "涉及多文件改动加上构建与测试循环的任务——你想让整条回路自己跑，而不是一次次手动改。",
+  "tags": [
+    "in-product",
+    "github-copilot"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 GitHub Copilot 内的能力。来源：https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "released",
+      "from": "2025-09-25",
+      "to": "2025-09-01",
+      "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    }
+  ]
+}

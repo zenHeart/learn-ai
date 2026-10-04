@@ -13,6 +13,11 @@
   "homepage": "https://yuanqi.tencent.com",
   "desc": "腾讯智能体创建与分发平台",
   "desc_zh": "腾讯智能体创建与分发平台",
+  "solves": "You want to build an agent and hand it to colleagues or customers, but you don't write code. Here you assemble and publish it by dragging.",
+  "solves_zh": "想做个智能体分发给同事或客户用，但不会写代码。这里拖拽就能搭好、发布出去。",
+  "best_for": "You want to build your own agent and let other people use it directly.",
+  "best_for_zh": "你要做一个自己的智能体，并让别人直接用它。",
+  "surface": "standalone",
   "tags": [
     "agent-platform",
     "low-code",

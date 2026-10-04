@@ -14,6 +14,11 @@
   "homepage": "https://weaviate.io/",
   "desc": "Open-source vector database with native hybrid keyword-vector search.",
   "desc_zh": "开源自托管向量数据库，原生支持关键词与向量混合检索。",
+  "solves": "Pure vector search misses the exact keyword you needed. It runs keyword and vector search together in one query.",
+  "solves_zh": "纯向量检索会漏掉你要的那个准确关键词。它在一次查询里同时跑关键词和向量检索。",
+  "best_for": "When data sovereignty rules out a managed vector store but you still want hybrid retrieval.",
+  "best_for_zh": "数据主权要求排除了托管式向量库、但又仍然需要混合检索的时候。",
+  "surface": "standalone",
   "tags": [
     "vector-database",
     "hybrid-search",

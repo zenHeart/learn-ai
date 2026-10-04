@@ -14,6 +14,11 @@
   "homepage": "https://chat.sensetime.com",
   "desc": "商汤日日新大模型对话助手",
   "desc_zh": "商汤日日新大模型对话助手",
+  "solves": "Writing, translating and reading documents each need their own tool. Shangliang puts them in one conversation, and you can drop a file in and keep asking about it.",
+  "solves_zh": "写作、翻译、读文档各要开一个工具。商量把它们放在同一个对话框里，文件丢进去就能接着问。",
+  "best_for": "You have a piece of text to revise or a long document to actually understand.",
+  "best_for_zh": "手头有一段要改的文字，或一份要读懂的长文档。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "sensenova",

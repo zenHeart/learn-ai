@@ -13,6 +13,11 @@
   "homepage": "https://www.figma.com/ai/",
   "desc": "AI features spanning FigJam, design and prototyping",
   "desc_zh": "覆盖 FigJam 白板、设计与原型的 AI 能力，2024-06 扩展为完整套件",
+  "solves": "Wireframes, sticky notes, and arranging a prototype all come down to dragging by hand. Generate a first draft in one sentence, then keep editing in Figma.",
+  "solves_zh": "画线框、贴便签、整理原型全靠手动拖。一句话生成初稿，再在 Figma 里继续改。",
+  "best_for": "You are working on a whiteboard or prototype in Figma and want a starting draft.",
+  "best_for_zh": "在 Figma 里做白板或原型，想先起个草稿。",
+  "surface": "in-product",
   "tags": [
     "design",
     "whiteboard",

@@ -14,6 +14,11 @@
   "homepage": "https://aws.amazon.com/quicksuite/",
   "desc": "AWS's agentic workspace where business users run agents on their data.",
   "desc_zh": "AWS 面向业务用户的智能体工作台，可直接操作企业数据。",
+  "solves": "The chart says sales dropped and the CRM says otherwise, so the argument takes a week. It queries both and shows you the join.",
+  "solves_zh": "图表说销量下滑，CRM 却说相反，一场争论要耗一周。它同时查两边，并把关联结果摆出来。",
+  "best_for": "When a business question needs numbers from several SaaS tools at once.",
+  "best_for_zh": "当一个业务问题需要同时取好几个 SaaS 工具里的数字。",
+  "surface": "standalone",
   "tags": [
     "aws",
     "workspace",

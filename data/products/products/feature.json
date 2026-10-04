@@ -1,0 +1,33 @@
+{
+  "id": "feature",
+  "name": "企业微信智能总结",
+  "name_zh": "企业微信智能总结",
+  "vendor_id": "tencent",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2025-08-20",
+  "date_precision": "day",
+  "homepage": "https://work.weixin.qq.com/nl/index/aioffice",
+  "desc": "Information about a customer is scattered across chats, docs, and meetings, and nobody has",
+  "desc_zh": "关于某个客户的信息散落在聊天、文档和会议里，没人有时间重新拼起来。智能总结把这些线索变成每周简报和可检索的记录。",
+  "solves": "Information about a customer is scattered across chats, docs, and meetings, and nobody has time to reassemble it. Smart summaries turn those threads into a weekly digest and a searchable record.",
+  "solves_zh": "关于某个客户的信息散落在聊天、文档和会议里，没人有时间重新拼起来。智能总结把这些线索变成每周简报和可检索的记录。",
+  "best_for": "Sales and service teams whose customer history is spread across WeCom conversations and meetings.",
+  "best_for_zh": "客户历史分散在企业微信会话和会议里的销售与服务团队。",
+  "tags": [
+    "in-product"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 企业微信 内的能力。来源：https://work.weixin.qq.com/nl/index/aioffice",
+  "revisions": []
+}

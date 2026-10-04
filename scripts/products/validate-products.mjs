@@ -22,6 +22,7 @@ const docsRoot = join(root, 'docs')
 const FORMS = new Set(['cli', 'ide', 'web', 'desktop', 'api', 'self-hosted', 'hardware'])
 const HANDBOOK_STATUS = new Set(['none', 'candidate', 'written'])
 const PRODUCT_STATUS = new Set(['active', 'renamed', 'merged', 'discontinued'])
+const SURFACES = new Set(['standalone', 'in-product', 'plugin', 'extension'])
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
@@ -105,6 +106,20 @@ for (const file of productFiles) {
   if (r.vendor_id && !vendorIds.has(r.vendor_id)) fail(`${where}: vendor_id "${r.vendor_id}" 不在 vendors.json 中`)
   if (r.form && !FORMS.has(r.form)) fail(`${where}: form 非法 "${r.form}"`)
   if (r.status && !PRODUCT_STATUS.has(r.status)) fail(`${where}: status 非法 "${r.status}"`)
+  if (r.surface && !SURFACES.has(r.surface)) {
+    fail(`${where}: surface 非法 "${r.surface}"（应为 standalone | in-product | plugin | extension）`)
+  }
+
+  // The card leads with the problem, not the spec sheet. A product with no
+  // `solves` renders as a bare name plus jargon, which is the failure mode
+  // this check exists to prevent.
+  for (const [f, zhF] of [['solves', 'solves_zh'], ['best_for', 'best_for_zh']]) {
+    if (!r[f] || !String(r[f]).trim()) fail(`${where}: 缺少 ${f}——卡片要写清楚它解决什么问题`)
+    if (!r[zhF] || !String(r[zhF]).trim()) fail(`${where}: 缺少 ${zhF}——站内两种语言都要读得通`)
+  }
+  if (r.solves && String(r.solves).length > 400) {
+    fail(`${where}: solves 过长（${String(r.solves).length} 字），一句话说清即可`)
+  }
   if (['merged', 'renamed'].includes(r.status) && !r.superseded_by) {
     fail(`${where}: status="${r.status}" 但没有 superseded_by——产品去哪了必须写明，否则时间轴讲不出演变`)
   }
@@ -113,13 +128,15 @@ for (const file of productFiles) {
   }
 
   if (r.released && !ISO_DATE.test(r.released)) fail(`${where}: released 不是 ISO 日期 "${r.released}"`)
-  // A "-01-01" date is our month-precision convention. It must be declared, or
-  // a reader takes 1 January for the real launch day.
-  const expectPrecision = String(r.released || '').endsWith('-01-01') ? 'month' : 'day'
-  if (r.date_precision !== expectPrecision) {
-    fail(`${where}: date_precision 应为 "${expectPrecision}"（实际 ${JSON.stringify(r.date_precision)}）`)
+  // date_precision is authoritative. An earlier version inferred it from the
+  // date ending in "-01-01", which only ever matched January — "2023-11-01"
+  // was indistinguishable from a real 1 November launch.
+  if (r.date_precision !== undefined && !['day', 'month'].includes(r.date_precision)) {
+    fail(`${where}: date_precision 非法 ${JSON.stringify(r.date_precision)}（应为 "day" 或 "month"）`)
   }
-  else if (r.released > today) fail(`${where}: released ${r.released} 晚于今天（${today}），疑似拿抓取日冒充发布日期`)
+  else if (r.released > today) {
+    fail(`${where}: released ${r.released} 晚于今天（${today}），疑似拿抓取日冒充发布日期`)
+  }
 
   if (r.homepage && !r.homepage.startsWith('https://')) fail(`${where}: homepage 必须是 https — "${r.homepage}"`)
 

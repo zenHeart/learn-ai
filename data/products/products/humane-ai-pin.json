@@ -18,6 +18,11 @@
     "discontinued",
     "wearable"
   ],
+  "solves": "Using a phone means looking at a screen. The Pin answered by voice with nothing to look at. HP discontinued it in 2025.",
+  "solves_zh": "用手机就意味着盯着屏幕。Pin 用语音作答，屏幕上什么都不用看。HP 已于 2025 年停产。",
+  "best_for": "When you wanted hands-free answers with no display. The company stopped selling it in February 2025.",
+  "best_for_zh": "当你想要免手操作、没有屏幕的回答。公司已于 2025 年 2 月停售。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

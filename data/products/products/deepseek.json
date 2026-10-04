@@ -14,6 +14,11 @@
   "homepage": "https://platform.deepseek.com",
   "desc": "DeepSeek 模型 API 开放平台",
   "desc_zh": "DeepSeek 模型 API 开放平台",
+  "solves": "Integrating a model means finding a provider, comparing price and compatibility yourself. The open platform gives you one endpoint, with billing and usage in one console.",
+  "solves_zh": "接模型要自己找服务商、比对价格和兼容性。开放平台给一个接口，账单和用量在一个后台。",
+  "best_for": "You need to call models by the token from your own service without prepaying a large sum.",
+  "best_for_zh": "要在自家服务里按量调用模型，且不想为用量预付一大笔。",
+  "surface": "standalone",
   "tags": [
     "enterprise-api",
     "api",

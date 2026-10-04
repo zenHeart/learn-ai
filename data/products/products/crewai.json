@@ -18,6 +18,11 @@
     "multi-agent",
     "python"
   ],
+  "solves": "Your agent workflow is one long prompt that quietly stops cooperating. You give each agent a role and let them hand work to each other.",
+  "solves_zh": "你的智能体流程是一段越来越长的 prompt，到某个长度就开始不听话了。你给每个智能体一个角色，让它们彼此交接任务。",
+  "best_for": "When a single-agent prompt keeps dropping steps and you want the work split across named roles.",
+  "best_for_zh": "当单智能体的 prompt 总是漏掉步骤，你想把活拆到几个有名有姓的角色上时。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

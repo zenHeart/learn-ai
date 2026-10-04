@@ -13,6 +13,11 @@
   "homepage": "https://www.augmentcode.com",
   "desc": "Context engine indexing large codebases for agent context",
   "desc_zh": "面向大型代码库构建上下文引擎，为编码 Agent 提供高保真上下文",
+  "solves": "Big codebases overwhelm built-in autocomplete. It indexes the whole repo so suggestions know the code around yours.",
+  "solves_zh": "代码库一大，内置补全就顶不住了。它给整个仓库建索引，让补全知道你正在写的代码周围是什么。",
+  "best_for": "When your repo is too large for your editor to hold in context.",
+  "best_for_zh": "仓库大到编辑器装不进上下文的时候。",
+  "surface": "standalone",
   "tags": [
     "codebase-context",
     "enterprise",

@@ -15,6 +15,11 @@
   "homepage": "https://block.github.io/goose/",
   "desc": "open-source general-purpose agent with desktop, CLI and API",
   "desc_zh": "开源通用智能体，提供桌面端、命令行与 API 三种形态",
+  "solves": "Coding agents only work inside the one editor you licensed. Goose runs the same recipes from a terminal or desktop, against your own files and keys.",
+  "solves_zh": "编程 Agent 常常只能在授权过的那个编辑器里跑。Goose 让你在终端或桌面端跑同样的流程，操作你自己的文件和密钥。",
+  "best_for": "When you want an agent outside your IDE, and the ability to read what it did.",
+  "best_for_zh": "当你想在 IDE 之外用 Agent，并且能读到它做了什么。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "linux-foundation",

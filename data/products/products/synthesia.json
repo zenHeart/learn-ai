@@ -14,6 +14,11 @@
   "homepage": "https://www.synthesia.io",
   "desc": "Enterprise avatar video platform for training and comms",
   "desc_zh": "面向企业培训与沟通的数字人视频平台，品类最早的商业化玩家",
+  "solves": "Recording a training video means booking a presenter every time the policy changes. A script and an avatar produce the same video in an afternoon.",
+  "solves_zh": "每次政策变动都要重新约人录培训视频。一份脚本加一个数字人，一个下午就能产出同样的视频。",
+  "best_for": "When the message must be consistent and translated, and nobody needs a real face.",
+  "best_for_zh": "当信息需要口径一致并且要多语言版本，而且不需要真人出镜。",
+  "surface": "standalone",
   "tags": [
     "avatar",
     "enterprise",

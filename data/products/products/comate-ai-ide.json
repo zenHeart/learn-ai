@@ -14,6 +14,11 @@
   "homepage": "https://comate.baidu.com/",
   "desc": "standalone AI-native IDE with Figma-to-code and multi-agent mode",
   "desc_zh": "独立 AI 原生 IDE，支持设计稿转代码与多智能体协同",
+  "solves": "The design file reaches a developer and the frontend gets rebuilt line by line by hand. Drag the Figma file in and it produces page code that actually runs.",
+  "solves_zh": "设计稿到了开发手里，前端要靠手一行行还原。把 Figma 文件拖进去，它直接产出可跑的页面代码。",
+  "best_for": "You have a Figma file and need it turned into a working frontend page quickly.",
+  "best_for_zh": "手上有 Figma 设计稿，需要快速变成能跑的前端页面。",
+  "surface": "standalone",
   "tags": [
     "design-to-code",
     "multi-agent",

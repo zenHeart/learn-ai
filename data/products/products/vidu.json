@@ -13,6 +13,11 @@
   "homepage": "https://www.vidu.com/",
   "desc": "Tsinghua and ShengShu's natively-developed video generation model.",
   "desc_zh": "清华大学与生数科技联合推出的国产自研视频生成大模型。",
+  "solves": "Foreign video tools handle Chinese faces and settings poorly, and footage may not leave the country. This one is trained at home.",
+  "solves_zh": "国外视频工具对中国面孔和本土场景处理不好，而且素材未必能出境。这个模型是在国内训练的。",
+  "best_for": "When the subject matter is Chinese, or the footage cannot go to an overseas service.",
+  "best_for_zh": "当题材是中文本土内容，或者素材不能送到海外服务。",
+  "surface": "standalone",
   "tags": [
     "text-to-video",
     "anime-style",

@@ -14,6 +14,11 @@
   "homepage": "https://platform.stepfun.com",
   "desc": "Step 系列大模型 API 服务平台",
   "desc_zh": "Step 系列大模型 API 服务平台",
+  "solves": "Picking a stable domestic multimodal model and understanding its pricing takes research. One interface and one bill cover the Step family, with no per-vendor integration.",
+  "solves_zh": "想用国产多模态模型，不知道哪家稳定、怎么计费。统一的接口和账单，不用逐家对接。",
+  "best_for": "When you need to call the Step model family from a backend.",
+  "best_for_zh": "需要在后端调用 Step 系列模型时。",
+  "surface": "standalone",
   "tags": [
     "enterprise-api",
     "api",

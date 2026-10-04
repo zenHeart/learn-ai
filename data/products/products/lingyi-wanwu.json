@@ -14,6 +14,11 @@
   "homepage": "https://www.lingyiwanwu.com",
   "desc": "零一万物企业级多智能体平台",
   "desc_zh": "零一万物企业级多智能体平台",
+  "solves": "Enterprises adopting large models end up buying deployment, fine-tuning and application tooling separately, then stitching them together. They are collected in one platform here.",
+  "solves_zh": "企业想上大模型，部署、微调和应用要分别采购再拼起来。这里把它们收在一个平台里。",
+  "best_for": "When a company wants to build its own LLM applications without buying three separate toolchains.",
+  "best_for_zh": "企业要自建大模型应用，不想分别采购部署、微调和应用工具。",
+  "surface": "standalone",
   "tags": [
     "agent-platform",
     "multi-agent",

@@ -1,0 +1,34 @@
+{
+  "id": "chatgpt-memory",
+  "name": "ChatGPT memory",
+  "name_zh": "ChatGPT 记忆",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2025-04-10",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/memory-and-new-controls-for-chatgpt/",
+  "desc": "You re-introduce yourself, your role, and your preferences at the start of nearly every se",
+  "desc_zh": "几乎每次开启新对话，你都要重新介绍自己、你的岗位和你的偏好。记忆会把这些事实带过去，你不用再说一遍。",
+  "solves": "You re-introduce yourself, your role, and your preferences at the start of nearly every session. Memory carries those facts forward so you don't.",
+  "solves_zh": "几乎每次开启新对话，你都要重新介绍自己、你的岗位和你的偏好。记忆会把这些事实带过去，你不用再说一遍。",
+  "best_for": "You use ChatGPT as an ongoing assistant and are tired of repeating standing facts about who you are.",
+  "best_for_zh": "你把 ChatGPT 当长期助手用，已经不想反复交代那些关于你的固定信息了。",
+  "tags": [
+    "in-product",
+    "chatgpt"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 ChatGPT 内的能力。来源：https://openai.com/index/memory-and-new-controls-for-chatgpt/",
+  "revisions": []
+}

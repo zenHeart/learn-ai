@@ -19,6 +19,11 @@
     "qwen",
     "alibaba"
   ],
+  "solves": "Researching, reading pages and building a deck means switching between several tools. 千问 pulls them into a single chat box.",
+  "solves_zh": "搜资料、读网页、做 PPT 要在几个工具之间来回切。千问把它们收进一个对话框。",
+  "best_for": "When you want to look things up and produce a document or slides in the same place.",
+  "best_for_zh": "你要一边查资料一边产出文档或演示稿。",
+  "surface": "standalone",
   "handbook": {
     "status": "written",
     "route": {

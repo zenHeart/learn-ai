@@ -13,6 +13,11 @@
   "homepage": "https://lumalabs.ai/dream-machine",
   "desc": "Free text-to-video model that hit 1M users in days",
   "desc_zh": "免费开放的文生视频模型，上线四天用户破百万",
+  "solves": "You want to try text-to-video but aren't sure what it produces, and you don't want to pay first. Here you can generate a few free seconds and look.",
+  "solves_zh": "想试文生视频但不确定效果，也不想先付费。这里可以先免费生成几秒片段看看。",
+  "best_for": "You want a low-cost look at what text-to-video can actually produce.",
+  "best_for_zh": "你想低成本试试文生视频能做出什么。",
+  "surface": "standalone",
   "tags": [
     "video-generation",
     "text-to-video",

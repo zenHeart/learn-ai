@@ -14,6 +14,11 @@
   "homepage": "https://openhands.dev",
   "desc": "open-source autonomous agent that resolves issues end to end",
   "desc_zh": "开源自主智能体，端到端完成从读代码到提 PR",
+  "solves": "A ticket sits in the backlog because no one has time to reproduce the bug. It reads the repo, makes the fix and opens the PR.",
+  "solves_zh": "工单堆在待办里，因为没人有空去复现这个 bug。它读仓库、改好代码，再把 PR 提上来。",
+  "best_for": "When you have well-defined issues you want solved without assigning a person.",
+  "best_for_zh": "有一批描述清楚的 issue 想解决、又不想专门指派一个人的时候。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "self-hosted",

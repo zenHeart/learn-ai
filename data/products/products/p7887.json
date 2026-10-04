@@ -13,6 +13,11 @@
   "homepage": "https://comate.baidu.com/",
   "desc": "百度智能代码助手",
   "desc_zh": "百度智能代码助手",
+  "solves": "Writing code, you keep retyping the same boilerplate and hunting for APIs you cannot find. Completion follows what you are writing, and it turns a Figma file into a page.",
+  "solves_zh": "写代码时手边总有重复的模板和查不到的 API。补全能接着你写，还能把 Figma 稿转成页面。",
+  "best_for": "You code day to day on a mainland network and want a completion assistant that works without a VPN.",
+  "best_for_zh": "在国内网络环境下做日常编码，需要一个不用翻墙的补全助手。",
+  "surface": "standalone",
   "tags": [
     "code-completion",
     "china-first",

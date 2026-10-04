@@ -13,6 +13,11 @@
   "homepage": "https://studio.ai21.com/",
   "desc": "Developer console for the Jamba model family and NLP APIs",
   "desc_zh": "面向 Jamba 模型系列与 NLP 接口的开发者控制台",
+  "solves": "Evaluating a model means writing integration code before you know if it is any good. The console lets you try Jamba on your own text and see the output first.",
+  "solves_zh": "评估模型意味着还不知道好不好用就先写集成代码。这个控制台让你先用自己的文本跑一遍 Jamba，看清输出。",
+  "best_for": "When you are comparing a model against your real documents before signing anything.",
+  "best_for_zh": "当你想在签约前，用自己的真实文档对比模型表现。",
+  "surface": "standalone",
   "tags": [
     "developer-console",
     "nlp",

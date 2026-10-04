@@ -20,6 +20,11 @@
     "open-source",
     "scale"
   ],
+  "solves": "A single-machine vector store stops answering at a few million rows. Milvus spreads the index across nodes instead.",
+  "solves_zh": "单机向量库到几百万行就顶不住了。Milvus 把索引摊开到多个节点上。",
+  "best_for": "When your similarity search outgrew a local index and needs to pass a billion vectors.",
+  "best_for_zh": "当你的相似度检索已经超出本地索引的容量，需要扛住十亿级向量。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

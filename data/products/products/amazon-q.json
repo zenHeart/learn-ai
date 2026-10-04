@@ -13,6 +13,11 @@
   "homepage": "https://aws.amazon.com/q/",
   "desc": "Enterprise work assistant answering over internal company data",
   "desc_zh": "面向企业的工作助手，可基于内部数据作答",
+  "solves": "The answer to a routine question lives in a wiki page nobody can find. Q answers over the company's own data without pasting it into a public chatbot.",
+  "solves_zh": "日常问题的答案藏在没人找得到的 wiki 页里。Q 直接在公司自有数据上作答，不用粘进公开的聊天机器人。",
+  "best_for": "When you need an answer from internal docs and the data cannot leave the company.",
+  "best_for_zh": "当你要从内部文档里找答案，而数据不能离开公司。",
+  "surface": "standalone",
   "tags": [
     "enterprise",
     "internal-data",

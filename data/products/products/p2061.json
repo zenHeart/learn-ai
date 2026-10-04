@@ -15,6 +15,11 @@
   "homepage": "https://www.jdcloud.com/cn/products/yanxi",
   "desc": "京东云一站式 Agent 开发平台",
   "desc_zh": "京东云一站式 Agent 开发平台",
+  "solves": "Building a shippable agent from scratch means wiring a model, connecting a knowledge base and tuning prompts. The platform starts you from ready-made industry templates.",
+  "solves_zh": "从零搭一个能上线的智能体，要配模型、接知识库、调提示词。平台提供现成的行业模板改。",
+  "best_for": "When you need a customer-service, sales-assistant or supply-chain agent without an engineering team behind every change.",
+  "best_for_zh": "要做客服、导购或供应链场景的智能体，且不想全靠工程团队。",
+  "surface": "standalone",
   "tags": [
     "low-code",
     "rag",

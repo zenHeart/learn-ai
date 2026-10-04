@@ -18,6 +18,11 @@
     "fullstack",
     "no-code"
   ],
+  "solves": "A working web app needs a frontend, a backend and a database before you can show anyone. Lovable writes all three from a chat.",
+  "solves_zh": "一个能跑起来的 Web 应用要前端、后端和数据库才能给人看。Lovable 通过对话把三样都写出来。",
+  "best_for": "When you want a working prototype this week without hiring anyone.",
+  "best_for_zh": "当你这周就要一个可用的原型，又不打算招人。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

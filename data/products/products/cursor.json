@@ -13,6 +13,11 @@
   "homepage": "https://cursor.com",
   "desc": "AI code editor built around whole-codebase AI editing",
   "desc_zh": "基于 VS Code 改造的 AI 原生编辑器，围绕整仓库上下文编辑",
+  "solves": "You ask about a function and get the body, with none of the call sites. It answers with the whole picture across the repo.",
+  "solves_zh": "问一个函数，只拿到函数体，看不到任何调用处。它会跨整个仓库给出完整的调用图景。",
+  "best_for": "When a change touches callers, types and tests you have to keep in sync.",
+  "best_for_zh": "当改动牵涉调用方、类型和测试，需要一并同步时。",
+  "surface": "standalone",
   "tags": [
     "ai-ide",
     "code-editor",

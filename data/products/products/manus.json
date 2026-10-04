@@ -15,6 +15,11 @@
   "homepage": "https://manus.im",
   "desc": "General-purpose cloud agent that executes tasks end to end",
   "desc_zh": "云端通用智能体，可自主完成检索、生成与执行的完整任务链",
+  "solves": "Multi-step work means opening a dozen tabs and stitching the results yourself. It runs the whole chain and hands back a finished output.",
+  "solves_zh": "多步骤的活儿意味着开十几个标签页、再自己把结果拼起来。它跑完整条链路，直接交回成品。",
+  "best_for": "When a task needs many steps, such as researching and then building something from what it found.",
+  "best_for_zh": "任务步骤很多，比如先调研、再据此做出东西的时候。",
+  "surface": "standalone",
   "tags": [
     "general-agent",
     "autonomous-agent",

@@ -1,0 +1,44 @@
+{
+  "id": "microsoft-copilot-vision",
+  "name": "Microsoft Copilot Vision",
+  "name_zh": "Copilot Vision 屏幕理解",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2024-10-01",
+  "date_precision": "month",
+  "homepage": "https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-vision-with-microsoft-copilot",
+  "desc": "Describing what is on your screen in text is slow and imprecise, so Copilot's answers stop",
+  "desc_zh": "用文字描述屏幕上有什么既慢又不准，于是 Copilot 的回答只能停在你打的字上。Vision 让它直接看你的屏幕、窗口或摄像头，并针对它真正看到的内容作答。",
+  "solves": "Describing what is on your screen in text is slow and imprecise, so Copilot's answers stop at what you typed. Vision lets it look at your screen, window, or camera and answer about what it actually sees.",
+  "solves_zh": "用文字描述屏幕上有什么既慢又不准，于是 Copilot 的回答只能停在你打的字上。Vision 让它直接看你的屏幕、窗口或摄像头，并针对它真正看到的内容作答。",
+  "best_for": "Troubleshooting an error on screen, or asking about a page you're looking at, without describing it.",
+  "best_for_zh": "排查屏幕上的报错，或者针对眼前这个页面提问，而不必先去描述它。",
+  "tags": [
+    "in-product",
+    "microsoft-copilot"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Microsoft Copilot 内的能力。来源：https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-vision-with-microsoft-copilot",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "released",
+      "from": "2024-10-28",
+      "to": "2024-10-01",
+      "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    }
+  ]
+}

@@ -14,6 +14,11 @@
   "homepage": "https://langfuse.com",
   "desc": "Open-source tracing, prompt management and LLM evals",
   "desc_zh": "开源的 LLM 追踪、Prompt 管理与评测平台，自托管友好",
+  "solves": "A bad answer in production and no way to see what went into it. Traces show every step, and self-hosting keeps the data on your own machines.",
+  "solves_zh": "线上出了个坏答案，却看不到当时喂进去的是什么。Trace 会展开每一步，自托管则让数据留在自己的机器上。",
+  "best_for": "When you run models in production and need to inspect calls, or cannot send logs to a vendor.",
+  "best_for_zh": "当你在生产环境跑模型需要排查调用记录，或者根本不能把日志交给外部厂商。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "tracing",

@@ -13,6 +13,11 @@
   "homepage": "https://github.com/badlogic/pi-mono",
   "desc": "Minimal terminal coding-agent harness.",
   "desc_zh": "极简的终端 coding agent harness。",
+  "solves": "Agents come with sub-agents, plan mode and a bundle of tools you did not ask for. Pi is the harness with those left out, so you decide what a run is allowed to do.",
+  "solves_zh": "很多 Agent 自带子 Agent、计划模式和一堆你并没要求的东西。Pi 把这些都去掉，由你决定一次运行能做什么。",
+  "best_for": "When you want to own the agent's behaviour instead of adopting someone else's defaults.",
+  "best_for_zh": "当你想自己掌控 Agent 的行为，而不是接受别人的默认设定。",
+  "surface": "standalone",
   "tags": [
     "harness",
     "terminal",

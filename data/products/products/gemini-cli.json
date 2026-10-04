@@ -13,6 +13,11 @@
   "homepage": "https://geminicli.com/",
   "desc": "Apache-2.0 open-source terminal agent for Gemini models",
   "desc_zh": "Apache-2.0 开源终端智能体，驱动 Gemini 系列模型",
+  "solves": "Autocomplete only knows the line you are on. It reads the repo and does multi-file work from your shell.",
+  "solves_zh": "自动补全只认得光标所在的那一行。它会读整个仓库，直接在 shell 里完成跨文件的活。",
+  "best_for": "When you want agent work without leaving the terminal or paying for another editor.",
+  "best_for_zh": "当你想用 Agent 干活，却不想离开终端、也不想为另一个编辑器付费。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "cli",

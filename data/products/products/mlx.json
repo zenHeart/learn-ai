@@ -13,6 +13,11 @@
   "homepage": "https://github.com/ml-explore/mlx",
   "desc": "Apple's array framework for efficient ML on Apple Silicon",
   "desc_zh": "苹果为 Apple Silicon 打造的机器学习数组框架，统一内存架构",
+  "solves": "A model that fits in RAM on paper still crawls because every op copies tensors. MLX treats unified memory as the default, so nothing leaves the CPU.",
+  "solves_zh": "纸面上塞得进内存的模型跑起来依然很慢，因为每个算子都在拷贝张量。MLX 默认统一内存，数据不出 CPU。",
+  "best_for": "When you run a model locally on a Mac and the GPU keeps idling.",
+  "best_for_zh": "当你在 Mac 上本地跑模型，GPU 却一直闲着。",
+  "surface": "standalone",
   "tags": [
     "apple-silicon",
     "open-source",

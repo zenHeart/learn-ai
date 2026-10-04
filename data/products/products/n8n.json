@@ -18,6 +18,11 @@
     "automation",
     "self-hosted"
   ],
+  "solves": "The glue between your tools is a pile of scripts that only run on your laptop. It runs the same flows on a server you control.",
+  "solves_zh": "把你各个工具粘在一起的，往往是一堆只在自己电脑上跑得动的脚本。n8n 把同样的流程放到你自己掌控的服务器上跑。",
+  "best_for": "When the connect-the-dots work has to keep running after you close the laptop.",
+  "best_for_zh": "当这种把工具串起来的活，得在你合上笔记本之后还继续跑时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

@@ -14,14 +14,14 @@
       </div>
       <div class="hub-views" role="tablist" :aria-label="labels.viewLabel">
         <button
-          v-for="mode in ['timeline', 'grid', 'select']"
+          v-for="mode in ['select', 'timeline', 'grid']"
           :key="mode"
           :class="['hub-view-btn', { active: view === mode }]"
           role="tab"
           :aria-selected="view === mode"
           @click="view = mode"
         >
-          <span aria-hidden="true">{{ { timeline: '◷', grid: '▦', select: '🧭' }[mode] }}</span>
+          <span aria-hidden="true">{{ { select: '🧭', timeline: '◷', grid: '▦' }[mode] }}</span>
           <span class="hub-view-name">{{ labels.views[mode] }}</span>
         </button>
       </div>
@@ -162,7 +162,7 @@
 
   // ---- filter state (single source of truth for rendering) ----
   const query = ref('')
-  const view = ref('timeline')
+  const view = ref('select')
   const activeCategory = ref('all')
   const activeVendor = ref('all')
   const region = ref('all')
@@ -191,7 +191,7 @@
   // VitePress builds one static HTML per route and drops the query, so the
   // server-rendered first paint can only ever show defaults; the URL is
   // applied on mount. Every window/history access stays behind onMounted.
-  const VIEWS = ['timeline', 'grid', 'select']
+  const VIEWS = ['select', 'timeline', 'grid']
   // Set while applying URL → state, so the resulting state change does not
   // immediately write the same values back and start a loop.
   let applyingFromUrl = false
@@ -202,7 +202,7 @@
   function readFromUrl() {
     const q = Object.fromEntries(new URLSearchParams(window.location.search))
     applyingFromUrl = true
-    view.value = VIEWS.includes(q.view) ? q.view : 'timeline'
+    view.value = VIEWS.includes(q.view) ? q.view : 'select'
     query.value = q.q ?? ''
     const cat = parseList(q.cat)
     activeCategory.value =
@@ -219,7 +219,7 @@
   function writeToUrl() {
     if (applyingFromUrl || typeof window === 'undefined') return
     const q = {}
-    if (view.value !== 'timeline') q.view = view.value
+    if (view.value !== 'select') q.view = view.value
     if (query.value) q.q = query.value
     if (activeCategory.value !== 'all') q.cat = activeCategory.value
     if (activeVendor.value !== 'all') q.vendor = activeVendor.value

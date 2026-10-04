@@ -14,6 +14,11 @@
   "homepage": "https://openclaw.ai/",
   "desc": "Self-hosted multi-channel agent gateway you run yourself.",
   "desc_zh": "自托管的多通道 Agent 网关，运行时完全由你掌控。",
+  "solves": "An agent is stuck inside its own interface, and you cannot drive it from WeChat or a terminal. This gateway connects it to the channels you already use.",
+  "solves_zh": "智能体只能待在它自己的界面里，你想从微信或终端指挥它都做不到。这个网关把它接到常用通道上。",
+  "best_for": "You want the agent running on your own machine and driven from a chat tool.",
+  "best_for_zh": "希望智能体跑在自己机器上，并能用聊天工具指挥它。",
+  "surface": "standalone",
   "tags": [
     "self-hosted",
     "gateway",

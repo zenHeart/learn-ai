@@ -13,6 +13,11 @@
   "homepage": "https://hunyuan.tencent.com",
   "desc": "腾讯通用大语言模型与 API 平台",
   "desc_zh": "腾讯通用大语言模型与 API 平台",
+  "solves": "Picking a large model you can actually call from China means comparing price, terms, and concurrency limits vendor by vendor. Here one provider is enough to connect.",
+  "solves_zh": "选一个国内可直接调用的大模型，要逐家比价格、协议和并发限制。这里一家就能接上。",
+  "best_for": "Your service needs a large-model API that stays reachable on domestic networks.",
+  "best_for_zh": "服务要接大模型 API，要在国内网络下稳定访问。",
+  "surface": "standalone",
   "tags": [
     "model-platform",
     "hunyuan",

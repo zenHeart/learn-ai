@@ -1,0 +1,537 @@
+### premiere-pro-generative-extend [multimodal-creation/intl/in-product] tags=['in-product', 'premiere-pro']
+  DESC: A clip is two seconds too short and there is no footage to cover the gap. Generative Exten
+  DESC_ZH: 素材短了两秒，又没有多余画面来补。生成式扩展会合成缺失的帧，让这个剪辑成立。
+  SOLVES: A clip is two seconds too short and there is no footage to cover the gap. Generative Extend synthesizes the missing frames so the cut works.
+  SOLVES_ZH: 素材短了两秒，又没有多余画面来补。生成式扩展会合成缺失的帧，让这个剪辑成立。
+  BEST: Fixing clip length, smoothing out a cut, or filling a gap in footage you already shot.
+  BEST_ZH: 修补素材长度不足、让剪切点顺滑，或填补已拍素材中的缺口。
+  NOTES: 集成在 Premiere Pro 内的能力。来源：https://news.adobe.com/news/2024/10/adobe-unveils-new-premiere-pro-features
+
+### presentations-ai [multimodal-creation/intl/standalone] tags=['slides', 'brand-sync', 'pptx-export', 'template-resilient']
+  DESC: Deck generator that pulls brand colors from your website.
+  DESC_ZH: 能从你的公司网站自动提取品牌配色的 PPT 生成器。
+  SOLVES: Deck colors never quite match the company brand, and a template falls apart as soon as you edit it. It pulls brand colors from your site, and the pptx stays editable.
+  SOLVES_ZH: 做 PPT，配色总不吻合公司品牌，套模板一改就散。它从你网站抓品牌色，pptx 还能再改。
+  BEST: You have to hand in a deck that matches the company brand, not start from a blank page.
+  BEST_ZH: 要交一份符合公司品牌的演示稿，不是从空白开始。
+  NOTES: Set the bar on brand sync and on templates that survive editing — the two things decks get rejected for at work. 首次公开发布日期精度：month-only 来源：https://www.presentations.ai/zh/ai-presentation-maker
+
+### qdrant [developer-sdk/intl/standalone] tags=['vector-database', 'rust', 'filtering', 'open-source']
+  DESC: Rust-based open-source vector search engine with rich payload filtering.
+  DESC_ZH: 基于 Rust 的开源向量搜索引擎，支持丰富的元数据过滤。
+  SOLVES: Vector search that ignores metadata hands back the wrong neighbours. It filters on structured fields inside the same query.
+  SOLVES_ZH: 不管元数据的向量检索会返回不相关的邻居。它能在同一次查询里按结构化字段过滤。
+  BEST: When your retrieval has to respect filters like tenant, date or user, not just similarity.
+  BEST_ZH: 检索需要按租户、日期、用户这类条件过滤，而不只是看相似度的时候。
+  NOTES: Strongest filtered-search throughput per dollar when you precompute embeddings. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/vector_database
+
+### qianwen [chat-assistant/cn/standalone] tags=['chat-assistant', 'qwen', 'alibaba']
+  DESC: 阿里新一代 AI 助手应用
+  DESC_ZH: 阿里新一代 AI 助手应用
+  SOLVES: Researching, reading pages and building a deck means switching between several tools. 千问 pulls them into a single chat box.
+  SOLVES_ZH: 搜资料、读网页、做 PPT 要在几个工具之间来回切。千问把它们收进一个对话框。
+  BEST: When you want to look things up and produce a document or slides in the same place.
+  BEST_ZH: 你要一边查资料一边产出文档或演示稿。
+  NOTES: 官网已确认；qianwen.com 会 301 跳转至 www.qianwen.com，功能已含 AI 搜索、网页总结、PPT 生成与语音转写
+
+### qoder [coding-agent/cn/standalone] tags=['coding-agent', 'ai-ide', 'alibaba']
+  DESC: 通义灵码更名的智能编码 IDE
+  DESC_ZH: 通义灵码更名的智能编码 IDE
+  SOLVES: Choosing a coding model and hooking it up is the slow part. Qoder arrives as a full IDE with one already chosen.
+  SOLVES_ZH: 选编码模型、把它接进编辑器是最耗时间的部分。Qoder 直接就是一个完整 IDE，模型已经选好。
+  BEST: When you want a self-contained coding editor instead of a plugin for an existing one.
+  BEST_ZH: 你需要一个自带一体的编码编辑器，而不是装在现有编辑器里的插件。
+  NOTES: 官网已确认
+
+### quark [search/cn/standalone] tags=['ai-search', 'super-box', 'document-qa', 'user-scale']
+  DESC: AI 超级框一站式搜索助手
+  DESC_ZH: AI 超级框一站式搜索助手
+  SOLVES: Search hands you a pile of links and leaves you to sort them. 夸克 computes the answer instead, and also reads files and documents.
+  SOLVES_ZH: 搜索只给一堆链接，还要自己筛。夸克把答案直接算出来，顺带读文件、查文档。
+  BEST: When you want one place to search the web, read local files and ask about documents.
+  BEST_ZH: 你要一个入口同时搜网页、读本地文件、问文档。
+  NOTES: 阿里确立的 AI To C 主入口，月活上亿，是使用量级最大的国产 AI 搜索产品 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/%E5%A4%B8%E5%85%8BAI/68158851
+
+### rabbit-r1 [chat-assistant/intl/standalone] tags=['hardware', 'voice', 'consumer']
+  DESC: Pocket voice-first device with a large language action model
+  DESC_ZH: 口袋级语音优先设备，宣称用大模型直接操作手机应用
+  SOLVES: Unlocking the phone to set a timer is most of the task. The r1 listens and works the app for you, screen off and still in your pocket.
+  SOLVES_ZH: 设个计时器，光解锁手机就占掉大半。r1 听懂后直接替你操作，屏幕关着、机器还在口袋里就行。
+  BEST: When your hands are busy and the task is one you would normally do on your phone.
+  BEST_ZH: 当你的手正忙着，而这件事本来要在手机上做。
+  NOTES: 形态取 desktop：R1 是实体硬件设备，rabbitOS 为其预装客户端，本仓枚举无独立 device 值
+
+### ray-ban-meta [chat-assistant/intl/standalone] tags=['hardware', 'wearable', 'camera']
+  DESC: Camera-and-assistant glasses; the only mass-market AI wearable hit
+  DESC_ZH: 带摄像头与语音助手的智能眼镜，AI 穿戴中唯一真正走量的产品
+  SOLVES: You already wear glasses and do not want to pull out a phone to ask or to capture. Ask, and it sees what you point it at.
+  SOLVES_ZH: 你本来就戴着眼镜，不想为了问一句或拍一段再掏出手机。问就行，它看到的就是你面朝的方向。
+  BEST: When you need your hands free for a quick question or a first-person recording.
+  BEST_ZH: 当你需要一个不占手的方式快速问一句，或拍一段第一人称视频时。
+  NOTES: 官网已确认；产品为 AI 智能眼镜硬件，form 枚举无硬件类，desktop 为最贴近取值，待合并时确认
+
+### reka-ai [model-platform/intl/standalone] tags=['multimodal', 'foundation-models', 'research-lab', 'api']
+  DESC: Multimodal language models handling text, image, video and audio
+  DESC_ZH: 统一处理文本、图像、视频与音频的多模态语言模型
+  SOLVES: Piping a document, a chart and an audio clip through three separate models means three prompt formats. One model takes all four together.
+  SOLVES_ZH: 把文档、图表和音频片段分别送进三个模型，就要准备三套 prompt 格式。一个模型可以同时接收这四种输入。
+  BEST: When a single request mixes text, image, video and audio and you want one reasoning pass over it.
+  BEST_ZH: 当一次请求里混合了文字、图片、视频和音频，你希望只推理一遍。
+
+### relevance-ai [agent-platform/intl/standalone] tags=['no-code', 'multi-agent', 'workforce']
+  DESC: Build and deploy a workforce of no-code AI agents
+  DESC_ZH: 构建并部署一支无代码 AI 员工队伍，支持多智能体团队协作
+  SOLVES: A single agent cannot do a job with five steps. Relevance AI lets several no-code agents work one job together.
+  SOLVES_ZH: 单个 Agent 干不完有五步的活。Relevance AI 让多个 no-code Agent 协作完成同一件事。
+  BEST: When a task has a team shape to it — research, drafting, checking — and nobody wants to write the glue code.
+  BEST_ZH: 当一个任务天然有团队分工的样子——调研、起草、核查——而没人想写胶水代码。
+
+### remini [multimodal-creation/intl/standalone] tags=['photo-restoration', 'upscale', 'one-tap', 'viral-trend']
+  DESC: Restores and sharpens old or blurry photos in one tap.
+  DESC_ZH: 一键修复和增强老照片、模糊照片的修图应用。
+  SOLVES: Old photos are blurry and scratched, and enlarging them only makes it worse. One click sharpens the faces, then upscales to something you can print.
+  SOLVES_ZH: 老照片糊了、划痕重，一放大更看不清。一键把人脸补清楚，再放大到能打印。
+  BEST: You want to restore old family photos, or enlarge a small image before using it.
+  BEST_ZH: 你想修复家里的老照片，或者把小图放大再用。
+  NOTES: Went from a niche tool to a global and China-wide chart topper twice via trend filters — a case study in consumer AI virality. 首次公开发布日期精度：month-only 来源：https://www.aitop100.cn/tools/detail/1997.html
+
+### replika [chat-assistant/intl/standalone] tags=['companion', 'avatar', 'voice-video', 'memory']
+  DESC: AI companion you customize into a friend, partner, or mentor.
+  DESC_ZH: 可自定义为朋友、恋人或导师的 AI 伴侣应用。
+  SOLVES: There is no one to talk to at two in the morning. You shape the companion into whoever you want it to be.
+  SOLVES_ZH: 凌晨两点没个人说话。你可以把这个陪伴对象塑造成你想要的任何样子。
+  BEST: When you want a private conversation partner you can customise rather than a task tool.
+  BEST_ZH: 想要一个能自定义的私密聊天对象，而不是一个干活的工具的时候。
+  NOTES: The category founder — 30M+ users and the reference point every AI companion product since is measured against. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/Replika/62670028
+
+### replit-agent [coding-agent/intl/in-product] tags=['app-generation', 'cloud-ide', 'no-code']
+  DESC: Prompt-to-deployed-app agent inside the Replit IDE
+  DESC_ZH: 在 Replit IDE 内从一句话直接生成并部署可运行应用
+  SOLVES: An idea and no environment to run it in. You describe the app and it writes, runs and hosts it — no local install, no deploy config.
+  SOLVES_ZH: 只有想法，没有能跑起来的环境。你描述这个应用，它负责写、跑、托管，不用本地安装，也不用配部署。
+  BEST: When you need something working and shareable today, and do not have a dev machine set up.
+  BEST_ZH: 当你今天就要一个能跑、能分享的东西，却还没配好开发机。
+  NOTES: 官网已确认，标题「The Next Evolution in AI App Building Tools | Agent 4」。Agent 运行在 Replit IDE 内，故 form 记为 ide。
+
+### roo-code [coding-agent/intl/extension] tags=['open-source', 'vscode', 'fork']
+  DESC: Open-source Cline fork with mode-based agent orchestration
+  DESC_ZH: Cline 的开源分支，主打多模式（架构师/编码/调试）任务编排
+  SOLVES: You want the agent to plan the change, then make it, then debug it, but one tool rarely does all three well. It switches modes for each.
+  SOLVES_ZH: 你希望智能体先规划改动、再动手实现、再排查问题，但一个工具通常做不好这三件事里的每件。Roo Code 为每一步切换模式。
+  BEST: When you want an open-source agent in VS Code that changes behaviour depending on the task.
+  BEST_ZH: 当你想在 VS Code 里用一个开源智能体，并希望它根据任务类型切换行为时。
+
+### runway [multimodal-creation/intl/standalone] tags=['video-generation', 'creative', 'multimodal']
+  DESC: Generative video platform; Gen-2 text-to-video in 2023-03
+  DESC_ZH: 生成式视频平台，2023-03 推出 Gen-2，首个公开可用的文生视频模型
+  SOLVES: Shooting a clip means a camera, a location and a crew. A text prompt produces the footage, and the timeline handles the rest of the cut.
+  SOLVES_ZH: 拍一个片段要机器、场地和一组人。一句文本 prompt 就能产出素材，剪辑的其余部分在时间线上完成。
+  BEST: When you need footage of something you cannot or would not actually shoot.
+  BEST_ZH: 当你需要一些拍不了或根本不想去拍的东西的素材。
+  NOTES:  复核：原日期 2018-12-01 是 Runway 公司成立日，不是 AI 视频产品上线日。
+
+### samsung-galaxy-ai [chat-assistant/intl/in-product] tags=['in-product', 'galaxy']
+  DESC: On-device assistants are usually one app you open. Galaxy AI puts Circle to Search, call s
+  DESC_ZH: 端侧助手通常是你需要专门打开的一个应用。Galaxy AI 把圈选搜索、通话筛选、通话转文字和照片编辑直接放进手机自带的界面里。
+  SOLVES: On-device assistants are usually one app you open. Galaxy AI puts Circle to Search, call screening, transcript, and photo editing into the phone's own surfaces.
+  SOLVES_ZH: 端侧助手通常是你需要专门打开的一个应用。Galaxy AI 把圈选搜索、通话筛选、通话转文字和照片编辑直接放进手机自带的界面里。
+  BEST: You want AI features that are part of the phone you already carry, not another app install.
+  BEST_ZH: 你想要的是已经装在手机里的 AI 能力，而不是再装一个新应用。
+  NOTES: 集成在 Galaxy 内的能力。来源：https://www.samsung.com/global/galaxy/galaxy-s24/galaxy-ai/
+
+### scale-ai [enterprise-api/intl/standalone] tags=['data-annotation', 'rlhf', 'model-evaluation', 'human-data']
+  DESC: Human data, RLHF and model evaluation services for frontier labs.
+  DESC_ZH: 为前沿实验室提供人类数据、RLHF 与模型评测服务。
+  SOLVES: Post-training a model needs rated human answers, and a lab has neither the people nor the process. Scale supplies both.
+  SOLVES_ZH: 模型后训练需要人工评分过的答案，而实验室既缺人也缺流程。Scale 两样都提供。
+  BEST: When you are training or evaluating a model and need human judgement at volume.
+  BEST_ZH: 当你在训练或评测模型，需要成规模的人工判断。
+  NOTES: Made post-training data a purchasable commodity rather than an internal chore. 首次公开发布日期精度：month-only 来源：https://handwiki.org/wiki/Company:Scale_AI
+
+### shangliang [chat-assistant/cn/standalone] tags=['chat-assistant', 'sensenova', 'sensetime']
+  DESC: 商汤日日新大模型对话助手
+  DESC_ZH: 商汤日日新大模型对话助手
+  SOLVES: Writing, translating and reading documents each need their own tool. Shangliang puts them in one conversation, and you can drop a file in and keep asking about it.
+  SOLVES_ZH: 写作、翻译、读文档各要开一个工具。商量把它们放在同一个对话框里，文件丢进去就能接着问。
+  BEST: You have a piece of text to revise or a long document to actually understand.
+  BEST_ZH: 手头有一段要改的文字，或一份要读懂的长文档。
+
+### sierra-ai [agent-platform/intl/standalone] tags=['customer-service', 'outcome-pricing', 'voice', 'agent-runtime']
+  DESC: Agent OS for customer-experience agents billed per resolved outcome.
+  DESC_ZH: 面向客服场景的 Agent OS，按解决结果计费。
+  SOLVES: Customer service AI only answers and never acts, so order changes and refunds still go to a human. These agents finish the job, and you pay per resolved case.
+  SOLVES_ZH: 客服 AI 只会回答不会办事，改单退款还得转人工。这里的智能体把事做完，按办成次数计费。
+  BEST: You want to hand over the transactions support can actually automate.
+  BEST_ZH: 你要把客服里能自动完成的交易真正交给 AI。
+  NOTES: First widely adopted pure-play where agents complete transactions, not just answer. 首次公开发布日期精度：month-only 来源：https://sierra.ai/author/bret-taylor
+
+### siliconflow [model-platform/cn/standalone] tags=['maas', 'domestic-chips', 'open-models', 'cost-optimization']
+  DESC: Chinese MaaS serving 170+ open models on domestic AI chips.
+  DESC_ZH: 在国产芯片上服务 170+ 开源模型的 MaaS 平台。
+  SOLVES: Switching models means finding a new deployment every time. Here one endpoint reaches 170+ open models, running on domestic Chinese chips.
+  SOLVES_ZH: 想换一个模型就得重新找部署方案。这里一个接口能调 170+ 开源模型，还跑在国产芯片上。
+  BEST: When you want open models running on domestic Chinese chips without tuning the inference deployment yourself.
+  BEST_ZH: 想在国产芯片上跑开源模型，又不想自己调推理部署。
+  NOTES: The reference option when a Chinese deployment must run on Ascend-class hardware. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20260616A081NQ00
+
+### slack-ai [chat-assistant/intl/in-product] tags=['in-product', 'slack']
+  DESC: Scrolling back through a week of threads to find one decision is slow and error-prone. Sla
+  DESC_ZH: 往回翻一周的会话串去找一个决定，既慢又容易漏。Slack AI 总结会话串、生成频道回顾，并能在整个工作区历史里直接回答你的问题。
+  SOLVES: Scrolling back through a week of threads to find one decision is slow and error-prone. Slack AI summarizes threads, recaps channels, and answers questions across your whole workspace's history.
+  SOLVES_ZH: 往回翻一周的会话串去找一个决定，既慢又容易漏。Slack AI 总结会话串、生成频道回顾，并能在整个工作区历史里直接回答你的问题。
+  BEST: Answering "where did we land on this?" and catching up on channels you don't read in full.
+  BEST_ZH: 回答「这个我们最后怎么定的？」，以及补上那些你来不及看完的频道。
+  NOTES: 集成在 Slack 内的能力。来源：https://slack.com/features/ai
+
+### slackbot [chat-assistant/intl/in-product] tags=['in-product', 'slack']
+  DESC: A workspace assistant that has to be re-taught your context each time. Slackbot learns you
+  DESC_ZH: 工作区助手每次都要你重新教一遍它上下文。Slackbot 会学到你的语气和工作区习惯，能自己准备会议、分析报告、起草项目简介。
+  SOLVES: A workspace assistant that has to be re-taught your context each time. Slackbot learns your tone and your workspace, and can prep meetings, analyze reports, and draft project briefs on its own.
+  SOLVES_ZH: 工作区助手每次都要你重新教一遍它上下文。Slackbot 会学到你的语气和工作区习惯，能自己准备会议、分析报告、起草项目简介。
+  BEST: You want a personal agent inside Slack that already knows your projects and writing style.
+  BEST_ZH: 你想要一个已经了解你项目和写作风格的 Slack 内个人助手。
+  NOTES: 集成在 Slack 内的能力。来源：https://slack.com/features/ai
+
+### sora [multimodal-creation/intl/standalone] tags=['text-to-video', 'generative-media', 'creative']
+  DESC: Text-to-video generation product producing photorealistic short clips
+  DESC_ZH: 文本生成视频产品，可产出照片级短片
+  SOLVES: You want a short clip with some visual weight but all you have is a paragraph of text. One line of description generates a few finished seconds.
+  SOLVES_ZH: 想要一段有画面感的短片，但手上只有一段文字。写一句描述就能生成几秒成片。
+  BEST: You need a concept clip to test an idea, not a real shoot.
+  BEST_ZH: 你需要一段概念短片来试想法，而不是正式拍摄。
+  NOTES: 官网反爬未确认（403）
+
+### stepfun-platform [enterprise-api/cn/standalone] tags=['enterprise-api', 'api', 'stepfun']
+  DESC: Step 系列大模型 API 服务平台
+  DESC_ZH: Step 系列大模型 API 服务平台
+  SOLVES: Picking a stable domestic multimodal model and understanding its pricing takes research. One interface and one bill cover the Step family, with no per-vendor integration.
+  SOLVES_ZH: 想用国产多模态模型，不知道哪家稳定、怎么计费。统一的接口和账单，不用逐家对接。
+  BEST: When you need to call the Step model family from a backend.
+  BEST_ZH: 需要在后端调用 Step 系列模型时。
+  NOTES: 官网已确认
+
+### suno [multimodal-creation/intl/standalone] tags=['music-generation', 'audio', 'creative']
+  DESC: Full song generation from text prompts, went viral fast
+  DESC_ZH: 文本提示直接生成完整歌曲，2023-12 公开上线后迅速爆红
+  SOLVES: Licensing a track means either paying royalties or clearing a song nobody has heard. You describe a song and get a whole one, vocals included.
+  SOLVES_ZH: 给一首曲子办授权，要么付版税，要么去清一首没人听过的歌的版权。你描述一首歌，拿到的就是完整成品，人声也在里面。
+  BEST: When a video, podcast or game needs a piece of music that is yours to use.
+  BEST_ZH: 当视频、播客或游戏需要一段版权归你使用的音乐。
+  NOTES: 官网已确认
+
+### surge-ai [enterprise-api/intl/standalone] tags=['rlhf', 'expert-annotators', 'human-feedback', 'preference-data']
+  DESC: Expert human feedback and RLHF data services for large labs.
+  DESC_ZH: 面向大模型实验室的专家人类反馈与 RLHF 数据服务。
+  SOLVES: Crowd workers produce agreeable, shallow answers, and training on them teaches a model to be agreeable and shallow. It sources domain experts instead.
+  SOLVES_ZH: 众包标注员给出的答案往往讨好而浅薄，用它们训练只会教出同样讨好而浅薄的模型。Surge AI 找的是领域专家来做标注。
+  BEST: When a frontier lab needs preference and RLHF data that a general crowd cannot produce.
+  BEST_ZH: 当前沿实验室需要通用众包做不出来的偏好数据和 RLHF 数据时。
+  NOTES: Shows quality of training data, not headcount, decides model behaviour. 首次公开发布日期精度：month-only 来源：https://www.cbinsights.com/compare/labelbox-vs-surge-ai
+
+### synthesia [multimodal-creation/intl/standalone] tags=['avatar', 'enterprise', 'video-generation']
+  DESC: Enterprise avatar video platform for training and comms
+  DESC_ZH: 面向企业培训与沟通的数字人视频平台，品类最早的商业化玩家
+  SOLVES: Recording a training video means booking a presenter every time the policy changes. A script and an avatar produce the same video in an afternoon.
+  SOLVES_ZH: 每次政策变动都要重新约人录培训视频。一份脚本加一个数字人，一个下午就能产出同样的视频。
+  BEST: When the message must be consistent and translated, and nobody needs a real face.
+  BEST_ZH: 当信息需要口径一致并且要多语言版本，而且不需要真人出镜。
+
+### talkie [chat-assistant/intl/standalone] tags=['companion', 'gacha-cards', 'anime-style', 'overseas-hit']
+  DESC: Character chat app with collectible cards and visual avatars.
+  DESC_ZH: 带抽卡机制和形象立绘的角色聊天应用。
+  SOLVES: Talking to a character is just a text box. Talkie gives them a look, a voice, and cards you collect.
+  SOLVES_ZH: 和角色对话本来就只是个输入框。Talkie 给他形象、声音，还有可以收集的卡牌。
+  BEST: When you want to spend time with a fictional character, not get work done.
+  BEST_ZH: 当你想跟一个虚构角色相处，而不是把活干完。
+  NOTES: Proved a Chinese model lab could win a consumer app category overseas — 11M MAU in a year, now MiniMax's revenue pillar. 首次公开发布日期精度：month-only 来源：https://zhuanlan.zhihu.com/p/2023457218998051543
+
+### tana [chat-assistant/intl/standalone] tags=['notes', 'outliner', 'personal-ai']
+  DESC: Supertag outliner with an agentic AI workspace layer
+  DESC_ZH: 以 supertag 为核心的大纲工具，叠加 Agent 式 AI 工作区
+  SOLVES: Notes become a pile of flat text nobody can query. Tana makes every fact a supertag, so the AI can work with them.
+  SOLVES_ZH: 笔记会变成一堆没人能查询的扁平文本。Tana 把每条事实做成 supertag，让 AI 能直接处理。
+  BEST: When you want a personal knowledge base that answers questions instead of storing pages.
+  BEST_ZH: 当你想要一个能回答问题、而不只是存放页面的个人知识库。
+
+### tavily [search/intl/standalone] tags=['search-api', 'agents', 'research']
+  DESC: Search API optimised for agent research and extraction
+  DESC_ZH: 为 Agent 研究与信息抽取优化的搜索 API，源自 GPT Researcher
+  SOLVES: When AI searches the web, what comes back is long and messy and the model can't find the point. This API hands you already-filtered results and clean page text.
+  SOLVES_ZH: 让 AI 搜网页，搜回来的内容又长又杂，模型抓不到重点。这层接口直接给你筛过的结果和正文。
+  BEST: You want to give your own agent live web search.
+  BEST_ZH: 你要给自己的智能体接上实时网页搜索。
+  NOTES: 官网已确认，标题「Tavily - One secure API for real-time web access」，提供 search/extract/crawl/research 等纯 API 端点，无独立消费端产品，form 记为 api。
+
+### tiangong-agent [agent-platform/cn/standalone] tags=['agent-platform', 'office-agent', 'kunlun']
+  DESC: 面向办公场景的专家智能体平台
+  DESC_ZH: 面向办公场景的专家智能体平台
+  SOLVES: An office task means breaking it into steps, wiring up tools and watching the process yourself. The super agent ships expert agents preconfigured for each role.
+  SOLVES_ZH: 一个办公任务要自己拆步骤、串工具、盯流程。超级智能体按岗位配好专家智能体，接手就能跑。
+  BEST: When you want writing, research and summarising handed off to a chain of agents.
+  BEST_ZH: 你要把写作、检索、整理这类办公活交给智能体接力完成。
+
+### tiangong [chat-assistant/cn/standalone] tags=['chat-assistant', 'skywork', 'kunlun']
+  DESC: 昆仑万维天工大模型官方助手
+  DESC_ZH: 昆仑万维天工大模型官方助手
+  SOLVES: Using the Tiangong models directly means picking interfaces and wiring context yourself. The official assistant is ready to open and answers one question at a time.
+  SOLVES_ZH: 想直接用天工模型却得自己挑接口、配上下文。打开就是官方助手，问一句给一句答案。
+  BEST: When you want to try Kunlun's Tiangong models without calling the API yourself.
+  BEST_ZH: 你想先用昆仑万维的天工模型，不想自己调 API。
+
+### tl-dv [meetings/intl/standalone] tags=['meetings', 'highlights', 'crm']
+  DESC: Meeting recording with AI highlights and CRM sync
+  DESC_ZH: 会议录制加 AI 高光片段提取，可同步到 CRM
+  SOLVES: Nobody wants to sit through the recording again. It pulls the highlights out and pushes them to the CRM on its own.
+  SOLVES_ZH: 没人想再把录像重看一遍。它自动挑出高光片段，再自己推送到 CRM。
+  BEST: When calls happen all day and only the key moments are worth keeping.
+  BEST_ZH: 会议一整天不断，只有关键片刻值得留下的时候。
+
+### together-ai [model-platform/intl/standalone] tags=['open-models', 'inference', 'fine-tuning', 'gpu-cloud']
+  DESC: Cloud for serving and fine-tuning open-weight models at scale.
+  DESC_ZH: 面向开源权重模型的规模化推理与微调云平台。
+  SOLVES: The frontier API works, until the invoice arrives and you cannot move the load. Open-weight models on rented GPUs give you a cheaper floor and somewhere to fine-tune.
+  SOLVES_ZH: 前沿 API 本来好用，直到账单来了又换不动量。租用 GPU 跑开放权重模型能压低成本，也给你一个微调的地方。
+  BEST: When per-token cost at your volume is the problem, not model quality.
+  BEST_ZH: 当问题出在你这个用量下的单 token 成本，而不是模型质量。
+  NOTES: The default escape hatch when a closed frontier API gets too expensive. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/together_ai
+
+### tongyi [chat-assistant/cn/standalone] tags=['chat-assistant', 'qwen', 'alibaba']
+  DESC: 通义助手应用，后更名千问
+  DESC_ZH: 通义助手应用，后更名千问
+  SOLVES: Researching, reading pages and writing documents normally means switching between several tools. 通义 pulls them into a single chat box.
+  SOLVES_ZH: 查资料、读网页、做文档原本要切好几个工具。通义把它们收进一个对话框。
+  BEST: When you want to look things up and produce a document or slides in the same place.
+  BEST_ZH: 你要一边查资料一边产出文档或演示稿。
+  NOTES: 官网 tongyi.com 已 301 跳转至 qianwen.com，通义并入千问；status/superseded_by 待合并时处理
+
+### trae [coding-agent/cn/standalone] tags=['coding-agent', 'ai-ide', 'bytedance']
+  DESC: 国产首个 AI 原生集成开发环境
+  DESC_ZH: 国产首个 AI 原生集成开发环境
+  SOLVES: AI features only add up after installing a pile of plugins, and the result is a mess. Trae builds the coding assistant into the editor.
+  SOLVES_ZH: AI 功能要装一堆插件才凑得齐，拼起来很乱。Trae 把编码助手直接做进编辑器里。
+  BEST: When you want an AI coding environment that works out of the box, without assembling plugins yourself.
+  BEST_ZH: 想要一个开箱即用的 AI 编程环境，不想自己拼插件。
+
+### udio [multimodal-creation/intl/standalone] tags=['music-generation', 'audio', 'creative']
+  DESC: Music generation startup from former DeepMind researchers
+  DESC_ZH: 由前 DeepMind  researcher 创办的音乐生成平台，2024-04 公测
+  SOLVES: Licensing a track for a video or a game takes weeks and costs more than the project. You generate the music and clear it.
+  SOLVES_ZH: 给一支视频或一款游戏配一首授权曲子，要谈上几周，花的钱比项目本身还多。你直接生成音乐，版权也归你。
+  BEST: When you need a music bed that fits the cut and does not come with a rights dispute.
+  BEST_ZH: 当你需要一段配得上剪辑、且不会带来版权纠纷的背景音乐时。
+
+### v0 [coding-agent/intl/standalone] tags=['ui-generation', 'react', 'frontend']
+  DESC: Generate React and Tailwind UI from text prompts
+  DESC_ZH: 用文本提示生成 React 与 Tailwind 前端界面，Vercel 官方出品
+  SOLVES: To design an interface you can only search for stock images or pull from someone else's code. One line of description gets you a React component that actually runs.
+  SOLVES_ZH: 想画个界面，只能搜现成图或者从别人代码里扒。用一句描述就能拿到能跑的 React 组件。
+  BEST: You need a page prototype fast, not a front end written from scratch.
+  BEST_ZH: 你要快速搭一个页面原型，而不是从头写前端。
+
+### vercel-ai-sdk [developer-sdk/intl/standalone] tags=['typescript', 'sdk', 'streaming']
+  DESC: TypeScript toolkit for streaming LLM UIs across providers
+  DESC_ZH: 面向 TypeScript 的流式 LLM UI 工具包，统一多家模型接口
+  SOLVES: Streaming model output onto a page token by token is easy to get janky and messy when you write it yourself. These ready-made components survive a model swap.
+  SOLVES_ZH: 在网页上逐字渲染模型输出，自己写容易卡、容易乱。这里有现成流式组件，换模型不用重写。
+  BEST: You are building a streaming AI chat interface into your own product.
+  BEST_ZH: 要给自己的产品做一个流式输出的 AI 对话界面。
+
+### vertex-ai [model-platform/intl/standalone] tags=['cloud-platform', 'enterprise', 'foundation-models', 'mlops']
+  DESC: Google Cloud enterprise platform for generative AI and agents
+  DESC_ZH: Google Cloud 面向企业的生成式 AI 与智能体平台
+  SOLVES: You assemble the model, the hosting and the audit logging separately. It bundles them with the controls a regulated company has to show a reviewer.
+  SOLVES_ZH: 模型、托管和审计日志要分别拼装。它把三者打包，并带上受监管行业必须向审查方出示的管控能力。
+  BEST: When a regulated team needs Gemini behind a traceable audit trail.
+  BEST_ZH: 当受监管的团队需要在可追溯的审计记录下使用 Gemini。
+
+### vibe [agent-platform/intl/standalone] tags=['work-mode', 'code-mode', 'european', 'rename']
+  DESC: Mistral's unified agent for chat, productivity work and coding.
+  DESC_ZH: Mistral 将对话、办公与编程合并在一起的统一智能体。
+  SOLVES: Chatting, research, and coding live in different assistants, and every switch loses your context. This one agent does all three.
+  SOLVES_ZH: 聊天、查资料、写代码分属不同助手，切换一次上下文就断了。它把三件事合进同一个智能体。
+  BEST: You want one assistant that handles office chat and writes code directly.
+  BEST_ZH: 你要一个既能办公对话、又能直接写代码的助手。
+  NOTES: This is the current name of Le Chat — the existing Le Chat entry should be marked as the predecessor, not kept as a separate product. 来源：https://futurumgroup.com/insights/mistral-ai-shifts-to-full-sta
+
+### vidu [multimodal-creation/intl/standalone] tags=['text-to-video', 'anime-style', 'reference-video', 'chinese-elements']
+  DESC: Tsinghua and ShengShu's natively-developed video generation model.
+  DESC_ZH: 清华大学与生数科技联合推出的国产自研视频生成大模型。
+  SOLVES: Foreign video tools handle Chinese faces and settings poorly, and footage may not leave the country. This one is trained at home.
+  SOLVES_ZH: 国外视频工具对中国面孔和本土场景处理不好，而且素材未必能出境。这个模型是在国内训练的。
+  BEST: When the subject matter is Chinese, or the footage cannot go to an overseas service.
+  BEST_ZH: 当题材是中文本土内容，或者素材不能送到海外服务。
+  NOTES: One of the first fully self-developed video models, built on the U-ViT architecture rather than copying Sora's DiT. 来源：https://baike.baidu.com/item/VIDU
+
+### volcengine-ark [model-platform/cn/standalone] tags=['model-platform', 'maas', 'volcengine']
+  DESC: 火山引擎企业级大模型服务平台
+  DESC_ZH: 火山引擎企业级大模型服务平台
+  SOLVES: Enterprises want the models, but serving, scaling and access control all have to be built first. Here they are hosted and you call them through an API.
+  SOLVES_ZH: 企业想用大模型，但推理、扩容和权限都要自己搭。这里托管起来，接口直接调。
+  BEST: When you need to call models reliably in production without running the inference stack.
+  BEST_ZH: 企业要在生产环境稳定调用大模型，不想自己运维推理服务。
+
+### wanyo [agent-platform/cn/standalone] tags=['multi-agent', 'enterprise', 'a2a', 'workbench']
+  DESC: 多角色 Agent 协作工作台
+  DESC_ZH: 多角色 Agent 协作工作台
+  SOLVES: Splitting one job across several roles means someone has to hold the thread together. 万有无界 lets multiple digital employees take turns finishing it.
+  SOLVES_ZH: 一件事要拆给多个角色分别推进，串起来全靠人盯着。万有无界让多个数字员工接力完成。
+  BEST: When you want a cross-role job handed to a chain of agents to run.
+  BEST_ZH: 你要把一件跨岗位的活拆给多个智能体接力跑。
+  NOTES: 万有的多角色 Agent 协作工作台。阿里最新旗舰模型的企业级 Agent 落地入口，把一件事拆给多个数字员工接力推进 来源：https://new.qq.com/rain/a/20260902A0931R00 复核：www.wanyo.cn 301 跳转至 work.wanyo.cn；docs.wanyo.cn 为文档站。
+
+### warp [coding-agent/intl/standalone] tags=['terminal', 'cli', 'agentic-ide']
+  DESC: GPU-rendered terminal with natural-language command execution
+  DESC_ZH: GPU 渲染的现代终端，支持自然语言转命令与多步 Agent 模式
+  SOLVES: You can't recall the exact command, and looking it up breaks your flow. Describe the intent in plain language and it types it and runs it for you.
+  SOLVES_ZH: 记不住命令长什么样，查文档又打断手上的活。用一句大白话说清意图，它替你敲并执行。
+  BEST: You work in the terminal but often can't remember how a command is written.
+  BEST_ZH: 你在终端里干活，但常常想不起某个命令该怎么写。
+  NOTES: 官网已确认；官网已扩展为多产品平台（Warp Terminal / Warp Factories / Warp Agent CLI），本档仅指 Warp 终端
+
+### weaviate [developer-sdk/intl/standalone] tags=['vector-database', 'hybrid-search', 'open-source', 'self-hosted']
+  DESC: Open-source vector database with native hybrid keyword-vector search.
+  DESC_ZH: 开源自托管向量数据库，原生支持关键词与向量混合检索。
+  SOLVES: Pure vector search misses the exact keyword you needed. It runs keyword and vector search together in one query.
+  SOLVES_ZH: 纯向量检索会漏掉你要的那个准确关键词。它在一次查询里同时跑关键词和向量检索。
+  BEST: When data sovereignty rules out a managed vector store but you still want hybrid retrieval.
+  BEST_ZH: 数据主权要求排除了托管式向量库、但又仍然需要混合检索的时候。
+  NOTES: The open-source option when data sovereignty rules out managed vector stores. 来源：https://weaviate.io/developers/weaviate/current/roadmap
+
+### webflow-ai [multimodal-creation/intl/in-product] tags=['no-code', 'web-design', 'cms']
+  DESC: AI site builder, copywriter and Figma-to-code inside Webflow
+  DESC_ZH: Webflow 内置的 AI 建站、文案生成与 Figma 转代码能力
+  SOLVES: Landing pages take a week of your time and then sit on a staging link. It drafts the sections and copy inside the editor you already publish from.
+  SOLVES_ZH: 落地页要花你一周时间，做完还挂在一个测试链接上。它在你本来就用来发布的编辑器里起草板块和文案。
+  BEST: When you need another page in the site you already maintain.
+  BEST_ZH: 当你只想在现有站点里再加一个页面。
+
+### weights-biases [eval-observability/intl/standalone] tags=['experiment-tracking', 'mlops', 'enterprise']
+  DESC: Experiment tracking that expanded from ML into LLM apps
+  DESC_ZH: 从机器学习实验追踪扩展到 LLM 应用的平台，2025 年被 CoreWeave 收购
+  SOLVES: You changed the prompt and the output got worse, and nobody kept the run that proved it. Every version is tracked and sits side by side.
+  SOLVES_ZH: 你改了 prompt，结果变差了，却没人留下能证明这一点的运行记录。Weights & Biases 把每个版本都记录下来并排放在一起。
+  BEST: When you need to prove which prompt or model version actually produced a result.
+  BEST_ZH: 当你要证明某个结果究竟是由哪个 prompt 或哪版模型产生时。
+
+### wenxiaoyan [chat-assistant/cn/standalone] tags=['chat-assistant', 'wenxin', 'baidu']
+  DESC: 文心一言 App 更名后的新版助手
+  DESC_ZH: 文心一言 App 更名后的新版助手
+  SOLVES: Drafting one document means opening several tabs and copying text back and forth. Wenxiaoyan puts writing, lookup and organizing in a single conversation.
+  SOLVES_ZH: 起草一份文档要开好几个网页、复制粘贴来回复制。文小言把写作、查资料和整理放在一个对话框里。
+  BEST: You want to ask the question and get a finished draft in one place instead of switching tools.
+  BEST_ZH: 想在一个地方问完问题、拿到成稿，而不是切换多个工具。
+  NOTES:  复核：文小言与文心一言同一服务（yiyan.baidu.com），系品牌更名，按更名关系表达，不重复建档。
+
+### wenxin-yiyan [chat-assistant/cn/standalone] tags=['chat-assistant', 'wenxin', 'baidu']
+  DESC: 百度首个生成式 AI 对话应用
+  DESC_ZH: 百度首个生成式 AI 对话应用
+  SOLVES: Drafting one document means opening several tabs and copying text back and forth. Wenxin Yiyan puts writing, lookup and organizing in a single conversation.
+  SOLVES_ZH: 起草一份文档要开好几个网页、复制粘贴来回复制。文心一言把写作、查资料和整理放在一个对话框里。
+  BEST: You want to ask the question and get a finished draft in one place instead of switching tools.
+  BEST_ZH: 想在一个地方问完问题、拿到成稿，而不是切换多个工具。
+  NOTES: 与「文小言」共用同一入口 yiyan.baidu.com——文小言是同一服务的现行消费端品牌名，两条档案疑似需要合并或标注改名关系，待复核
+
+### windsurf [coding-agent/intl/standalone] tags=['ai-ide', 'rebrand', 'code-editor']
+  DESC: AI editor acquired by Cognition, now Devin Desktop.
+  DESC_ZH: AI 编辑器，已被 Cognition 收购，现为 Devin Desktop。
+  SOLVES: Editing code means holding structure in your head across dozens of files. The editor holds it, so you steer instead of navigating.
+  SOLVES_ZH: 改代码意味着要靠脑子记住几十个文件之间的关系。编辑器替你记着，你只需要指挥方向，而不是自己翻文件。
+  BEST: When you want an editor that carries context across the whole repo while you work.
+  BEST_ZH: 当你想要一个在整个仓库范围内替你保持上下文的编辑器时。
+  NOTES: 2026-10-04 核实：windsurf.com 跳转至 devin.ai/desktop（Windsurf 已更名 Devin Desktop），无独立 Windsurf 页面。homepage 与 status/superseded_by 的调整走 revisions。
+
+### work [agent-platform/cn/standalone] tags=['enterprise-agent', 'multi-model', 'cloud-desktop', 'sandbox']
+  DESC: 360 企业级智能体工作平台
+  DESC_ZH: 360 企业级智能体工作平台
+  SOLVES: A small business wants to give its team AI but has nobody to operate it. Agents run in an isolated cloud sandbox, while your code and data stay on your side.
+  SOLVES_ZH: 小企业想给团队上 AI，又没有运维人手。智能体跑在云端隔离沙箱里，代码和数据留在你这一侧。
+  BEST: You run a small business, want AI for your team, and don't want to stand up servers.
+  BEST_ZH: 中小企业主想给团队开 AI，不想自己搭服务器。
+  NOTES: 面向中小企业主的一体化智能体平台，云端隔离沙箱是其安全设计的核心卖点 来源：https://www.chinadaily.com.cn/a/202607/30/WS6a6b0de4a310986e2b4682eb.html
+
+### wps-ai [chat-assistant/intl/in-product] tags=['in-product', 'wps-office']
+  DESC: Office AI usually means a Microsoft subscription. WPS AI puts writing, long-document readi
+  DESC_ZH: 办公 AI 通常等于一份微软订阅。WPS AI 把写作、长文阅读、PPT 生成和表格分析放进一套谁都能用的办公软件里。
+  SOLVES: Office AI usually means a Microsoft subscription. WPS AI puts writing, long-document reading, PPT generation, and spreadsheet analysis into an office suite anyone can use.
+  SOLVES_ZH: 办公 AI 通常等于一份微软订阅。WPS AI 把写作、长文阅读、PPT 生成和表格分析放进一套谁都能用的办公软件里。
+  BEST: You need AI writing and document work in an office suite without a Microsoft 365 license.
+  BEST_ZH: 你没有 Microsoft 365 授权，但在办公套件里需要 AI 写作和文档处理能力。
+  NOTES: 集成在 WPS Office 内的能力。来源：https://ai.wps.cn/
+
+### xai-api [enterprise-api/intl/standalone] tags=['api', 'openai-compatible', 'developer-platform', 'grok']
+  DESC: OpenAI-compatible developer API serving Grok models
+  DESC_ZH: 兼容 OpenAI 接口的开发者 API，提供 Grok 系列模型
+  SOLVES: Swapping model vendors means rewriting your client. It speaks the OpenAI wire format, so you change a base URL.
+  SOLVES_ZH: 换个模型厂商就要重写客户端。它讲的是 OpenAI 那一套协议，你只要改一个 base URL。
+  BEST: When you want to test Grok against another model without rewriting your integration.
+  BEST_ZH: 当你想把 Grok 和别的模型放在一起对比，又不想重写接入代码时。
+
+### xinghuo [chat-assistant/cn/standalone] tags=['chat-assistant', 'spark', 'iflytek']
+  DESC: 科大讯飞通用大模型助手
+  DESC_ZH: 科大讯飞通用大模型助手
+  SOLVES: General questions and drafts otherwise mean switching between search and a separate writing tool. One assistant covers asking and drafting, in Chinese.
+  SOLVES_ZH: 查资料和写稿本来要在搜索和另一个写作工具之间来回切换。一个助手就能同时完成提问和起草，而且全程中文。
+  BEST: When you want a Chinese-language assistant for everyday research and drafting.
+  BEST_ZH: 当你想要一个中文助手，处理日常的资料查询和文稿起草。
+
+### you-com [search/intl/standalone] tags=['search', 'agents', 'enterprise']
+  DESC: AI search and agents pivoted from chat research engine
+  DESC_ZH: 从对话式研究引擎转型为 AI 搜索与 Agent 平台
+  SOLVES: Web search for AI apps means scraping and cleaning pages yourself. You.com sells that retrieval layer instead.
+  SOLVES_ZH: 给 AI 应用做联网搜索，意味着自己抓取和清洗网页。You.com 把这层检索能力直接卖给你。
+  BEST: When your product needs live web data in its answers and you would rather buy it than scrape it.
+  BEST_ZH: 当你的产品回答里需要实时网页数据，而你更愿意买而不是自己抓。
+  NOTES: 官网可访问，但当前落地页主推「The Leading Web Search APIs for AI / The Real-Time Web Data Layer for AI」，重心已从消费端搜索转向检索 API。本档仍按面向普通用户的搜索产品记 form=web，是否改记 api 请收口时定夺。
+
+### yuanbao [chat-assistant/cn/standalone] tags=['chat-assistant', 'hunyuan', 'tencent']
+  DESC: 腾讯基于混元大模型的 AI 助手
+  DESC_ZH: 腾讯基于混元大模型的 AI 助手
+  SOLVES: A Chinese-language question returns a pile of links you still have to open and read one by one. It hands you a written Chinese answer instead.
+  SOLVES_ZH: 中文问题搜出来一堆链接，你还得逐个点开自己读。它直接给一段整理好的中文答案。
+  BEST: You want to ask in Chinese and get an answer, not a list of links.
+  BEST_ZH: 你想用中文问问题、直接拿到答案而不是一串链接。
+  NOTES: 官网可访问（搜索框、下载中心、AI 免责声明均在），但页面为前端渲染，未取到可判读的产品标题，故未完全确认。
+
+### yuanqi [agent-platform/cn/standalone] tags=['agent-platform', 'low-code', 'tencent']
+  DESC: 腾讯智能体创建与分发平台
+  DESC_ZH: 腾讯智能体创建与分发平台
+  SOLVES: You want to build an agent and hand it to colleagues or customers, but you don't write code. Here you assemble and publish it by dragging.
+  SOLVES_ZH: 想做个智能体分发给同事或客户用，但不会写代码。这里拖拽就能搭好、发布出去。
+  BEST: You want to build your own agent and let other people use it directly.
+  BEST_ZH: 你要做一个自己的智能体，并让别人直接用它。
+  NOTES: 官网已确认，标题「腾讯元器 - AI 智能体创建与分发平台」，是一个智能体广场式的搭建与分发平台。
+
+### yuewen [chat-assistant/cn/standalone] tags=['chat-assistant', 'multimodal', 'stepfun']
+  DESC: 阶跃星辰多模态 AI 问答助手
+  DESC_ZH: 阶跃星辰多模态 AI 问答助手
+  SOLVES: Asking about a photo means opening a separate vision tool and asking twice, once for text and once for the image. Send both together and get one answer.
+  SOLVES_ZH: 拍照提问要另开一个识图工具，文字和图片得分两次问。图片和文字一起发，直接得到回答。
+  BEST: When you have an image or a video in front of you and want to ask what is in it.
+  BEST_ZH: 手边有一张图或一段视频，想问里面的内容。
+  NOTES: 官网未确认：页面可访问但返回内容过少，仅有「阶跃星辰」字样，无法判定是否为跃问入口；待人工复核
+
+### zapier-agents [agent-platform/intl/in-product] tags=['no-code', 'automation', 'integrations']
+  DESC: No-code agents across 8000+ app integrations
+  DESC_ZH: 无代码 Agent 平台，连接 8000+ 应用；2024-03 以 Zapier Central 形态推出
+  SOLVES: Running a flow between several apps means writing a rule for every case. These agents read what triggered them and decide the next step.
+  SOLVES_ZH: 想让几个应用间自动跑一段流程，却要为每种情况写一堆规则。它的智能体看着触发内容定下一步。
+  BEST: You already have a set of Zapier connections and want the flow to make its own decisions.
+  BEST_ZH: 已有一堆 Zapier 连接，想让流程自己判断。
+
+### zed [coding-agent/intl/standalone] tags=['open-source', 'rust', 'acp-protocol', 'gpu-rendered']
+  DESC: Rust-native editor with parallel agents and ACP support
+  DESC_ZH: Rust 编写的 AI 原生编辑器，支持并行智能体与 ACP 协议
+  SOLVES: One agent at a time means waiting. It runs several in parallel in the same editor, so you can hand out work at once.
+  SOLVES_ZH: 一次只能跑一个 Agent 就意味着干等。它能在同一个编辑器里并行跑多个，任务可以一次分完。
+  BEST: When you want more than one coding agent working in your editor at the same time.
+  BEST_ZH: 想在编辑器里同时有多个编码 Agent 干活的时候。
+  NOTES: Runs Claude Code, Codex and OpenCode as managed threads inside the editor, so you are not locked into one agent vendor. 首次公开发布日期精度：month-only 来源：http://m.zhiding.cn/article/3185882.htm
+
+### zoom-ai-companion [meetings/intl/in-product] tags=['in-product', 'zoom']
+  DESC: Nobody can stay for the whole meeting and nobody wants to transcribe it either. AI Compani
+  DESC_ZH: 没人能全程参会，也没人想手工记纪要。AI 智能助手会实时总结、帮你追上进度，并回答会中提出的问题。
+  SOLVES: Nobody can stay for the whole meeting and nobody wants to transcribe it either. AI Companion summarizes, catches you up, and answers questions from the meeting while it is happening.
+  SOLVES_ZH: 没人能全程参会，也没人想手工记纪要。AI 智能助手会实时总结、帮你追上进度，并回答会中提出的问题。
+  BEST: Attending only part of a meeting and needing a reliable record of what was decided.
+  BEST_ZH: 你只能参加部分会议，但需要一份可靠的决议记录。
+  NOTES: 集成在 Zoom 内的能力。来源：https://news.zoom.com/zoom-introduces-ai-companion-2-0

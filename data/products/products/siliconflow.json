@@ -14,6 +14,11 @@
   "homepage": "https://siliconflow.cn/",
   "desc": "Chinese MaaS serving 170+ open models on domestic AI chips.",
   "desc_zh": "在国产芯片上服务 170+ 开源模型的 MaaS 平台。",
+  "solves": "Switching models means finding a new deployment every time. Here one endpoint reaches 170+ open models, running on domestic Chinese chips.",
+  "solves_zh": "想换一个模型就得重新找部署方案。这里一个接口能调 170+ 开源模型，还跑在国产芯片上。",
+  "best_for": "When you want open models running on domestic Chinese chips without tuning the inference deployment yourself.",
+  "best_for_zh": "想在国产芯片上跑开源模型，又不想自己调推理部署。",
+  "surface": "standalone",
   "tags": [
     "maas",
     "domestic-chips",

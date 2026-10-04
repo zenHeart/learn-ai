@@ -1,0 +1,34 @@
+{
+  "id": "premiere-pro-generative-extend",
+  "name": "Premiere Pro Generative Extend",
+  "name_zh": "Premiere Pro 生成式扩展",
+  "vendor_id": "adobe",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2024-10-14",
+  "date_precision": "day",
+  "homepage": "https://news.adobe.com/news/2024/10/adobe-unveils-new-premiere-pro-features",
+  "desc": "A clip is two seconds too short and there is no footage to cover the gap. Generative Exten",
+  "desc_zh": "素材短了两秒，又没有多余画面来补。生成式扩展会合成缺失的帧，让这个剪辑成立。",
+  "solves": "A clip is two seconds too short and there is no footage to cover the gap. Generative Extend synthesizes the missing frames so the cut works.",
+  "solves_zh": "素材短了两秒，又没有多余画面来补。生成式扩展会合成缺失的帧，让这个剪辑成立。",
+  "best_for": "Fixing clip length, smoothing out a cut, or filling a gap in footage you already shot.",
+  "best_for_zh": "修补素材长度不足、让剪切点顺滑，或填补已拍素材中的缺口。",
+  "tags": [
+    "in-product",
+    "premiere-pro"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Premiere Pro 内的能力。来源：https://news.adobe.com/news/2024/10/adobe-unveils-new-premiere-pro-features",
+  "revisions": []
+}

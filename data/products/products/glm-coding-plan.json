@@ -13,6 +13,11 @@
   "homepage": "https://bigmodel.cn/glm-coding-plan",
   "desc": "面向开发者的 GLM 编码订阅套餐",
   "desc_zh": "面向开发者的 GLM 编码订阅套餐",
+  "solves": "Coding agents billed by token run out mid-session. A monthly subscription gives you a fixed allowance, so an interruption does not hurt.",
+  "solves_zh": "编码 Agent 按 token 计费，用着用着就断了。按月订阅，额度固定，不心疼中断。",
+  "best_for": "When you want a coding agent running in your editor or CLI over the long term.",
+  "best_for_zh": "想在编辑器或 CLI 里长期挂着编码 Agent 干活。",
+  "surface": "standalone",
   "tags": [
     "coding-agent",
     "subscription",

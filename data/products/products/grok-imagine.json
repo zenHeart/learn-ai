@@ -19,6 +19,11 @@
     "video-generation",
     "creative"
   ],
+  "solves": "You want a picture or a short clip from a sentence without leaving the chat you are already in.",
+  "solves_zh": "你只想在当前对话里，用一句话换来一张图或一段短片，不用切走。",
+  "best_for": "When you are mid-conversation and want to try a visual instead of describing one.",
+  "best_for_zh": "当聊天正进行到一半，你想直接看个视觉结果而不是描述它时。",
+  "surface": "in-product",
   "handbook": {
     "status": "none"
   },

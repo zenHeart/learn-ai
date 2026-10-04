@@ -13,6 +13,11 @@
   "homepage": "https://replit.com/agent",
   "desc": "Prompt-to-deployed-app agent inside the Replit IDE",
   "desc_zh": "在 Replit IDE 内从一句话直接生成并部署可运行应用",
+  "solves": "An idea and no environment to run it in. You describe the app and it writes, runs and hosts it — no local install, no deploy config.",
+  "solves_zh": "只有想法，没有能跑起来的环境。你描述这个应用，它负责写、跑、托管，不用本地安装，也不用配部署。",
+  "best_for": "When you need something working and shareable today, and do not have a dev machine set up.",
+  "best_for_zh": "当你今天就要一个能跑、能分享的东西，却还没配好开发机。",
+  "surface": "in-product",
   "tags": [
     "app-generation",
     "cloud-ide",

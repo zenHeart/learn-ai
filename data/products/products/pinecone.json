@@ -13,6 +13,11 @@
   "homepage": "https://www.pinecone.io/",
   "desc": "Fully managed vector database for retrieval and agent memory.",
   "desc_zh": "全托管向量数据库，用于检索与智能体记忆。",
+  "solves": "Semantic search means running a vector database cluster you now maintain. Pinecone indexes and queries over an API, so there is no cluster to babysit.",
+  "solves_zh": "语义检索意味着你要自己运维一个向量数据库集群。Pinecone 通过 API 完成索引和查询，没有集群要照看。",
+  "best_for": "When your app needs to search by meaning, or an agent needs a memory it can recall from.",
+  "best_for_zh": "当你的应用需要按语义搜索，或者 Agent 需要一份能被回忆起来的记忆。",
+  "surface": "standalone",
   "tags": [
     "vector-database",
     "rag",

@@ -14,6 +14,11 @@
   "homepage": "https://cartesia.ai/",
   "desc": "Speech API engineered for real-time voice agents under 100ms.",
   "desc_zh": "为实时语音智能体设计的语音 API，延迟低于 100 毫秒。",
+  "solves": "Voice agents sound broken because speech generation is too slow. It starts speaking in under 100 milliseconds.",
+  "solves_zh": "语音 Agent 听起来很生硬，是因为语音生成太慢。它在 100 毫秒内就开始说话。",
+  "best_for": "When you are building a voice agent that must answer without an audible pause.",
+  "best_for_zh": "做语音 Agent，而且要求回答时听不出停顿的时候。",
+  "surface": "standalone",
   "tags": [
     "tts",
     "low-latency",

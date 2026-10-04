@@ -15,6 +15,11 @@
   "homepage": "https://chatgpt.com/",
   "desc": "OpenAI's flagship conversational AI assistant, launched November 2022",
   "desc_zh": "OpenAI 旗舰对话式 AI 助手，2022 年 11 月 30 日上线",
+  "solves": "Writing, researching, and brainstorming means jumping between several tools. This one chat box hands you the draft, and you just edit it.",
+  "solves_zh": "写东西、查资料、想点子要在好几个工具之间来回切。这个对话框直接给成稿，你只管改。",
+  "best_for": "When you need to draft, translate, or clear up a piece of writing.",
+  "best_for_zh": "你要起草、翻译或理清一段文字的时候。",
+  "surface": "standalone",
   "tags": [
     "chatgpt",
     "conversational-ai",

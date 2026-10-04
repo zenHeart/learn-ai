@@ -1,0 +1,34 @@
+{
+  "id": "slack-ai",
+  "name": "Slack AI",
+  "name_zh": "Slack AI",
+  "vendor_id": "salesforce",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2024-04-18",
+  "date_precision": "day",
+  "homepage": "https://slack.com/features/ai",
+  "desc": "Scrolling back through a week of threads to find one decision is slow and error-prone. Sla",
+  "desc_zh": "往回翻一周的会话串去找一个决定，既慢又容易漏。Slack AI 总结会话串、生成频道回顾，并能在整个工作区历史里直接回答你的问题。",
+  "solves": "Scrolling back through a week of threads to find one decision is slow and error-prone. Slack AI summarizes threads, recaps channels, and answers questions across your whole workspace's history.",
+  "solves_zh": "往回翻一周的会话串去找一个决定，既慢又容易漏。Slack AI 总结会话串、生成频道回顾，并能在整个工作区历史里直接回答你的问题。",
+  "best_for": "Answering \"where did we land on this?\" and catching up on channels you don't read in full.",
+  "best_for_zh": "回答「这个我们最后怎么定的？」，以及补上那些你来不及看完的频道。",
+  "tags": [
+    "in-product",
+    "slack"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Slack 内的能力。来源：https://slack.com/features/ai",
+  "revisions": []
+}

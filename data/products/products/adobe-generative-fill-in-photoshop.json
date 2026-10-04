@@ -1,0 +1,34 @@
+{
+  "id": "adobe-generative-fill-in-photoshop",
+  "name": "Adobe Generative Fill in Photoshop",
+  "name_zh": "Photoshop 生成式填充",
+  "vendor_id": "adobe",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2023-05-23",
+  "date_precision": "day",
+  "homepage": "https://blog.adobe.com/en/publish/2023/05/23/future-of-photoshop-powered-by-adobe-firefly",
+  "desc": "Removing an object from a photo used to require cloning and retouching by hand. Generative",
+  "desc_zh": "从照片里去掉一个物件，过去要靠手动修补和仿制。生成式填充只需一句文字描述，就能重建周围的像素。",
+  "solves": "Removing an object from a photo used to require cloning and retouching by hand. Generative Fill reconstructs the surrounding pixels from a text prompt.",
+  "solves_zh": "从照片里去掉一个物件，过去要靠手动修补和仿制。生成式填充只需一句文字描述，就能重建周围的像素。",
+  "best_for": "Object removal, extension, and background changes in an existing photo, done inside Photoshop.",
+  "best_for_zh": "在已有照片里做去物件、扩图、换背景，就地在 Photoshop 里完成。",
+  "tags": [
+    "in-product",
+    "photoshop"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Photoshop 内的能力。来源：https://blog.adobe.com/en/publish/2023/05/23/future-of-photoshop-powered-by-adobe-firefly",
+  "revisions": []
+}

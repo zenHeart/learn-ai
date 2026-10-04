@@ -13,6 +13,11 @@
   "homepage": "https://www.granola.ai",
   "desc": "Bot-free AI meeting notepad that merges your own notes",
   "desc_zh": "不加会议机器人的 AI 笔记，用你的手写笔记与转录合并成纪要",
+  "solves": "Meeting bots join as a participant and record everyone. Granola sits in your notes app and turns your own scrawl plus the transcript into clean notes.",
+  "solves_zh": "会议机器人以参会者身份入场，把所有人都录了。Granola 待在你的笔记应用里，把你自己写的东西加上转录整理成干净记录。",
+  "best_for": "When you already take your own notes and don't want another voice in the room.",
+  "best_for_zh": "当你自己已经在记笔记，不想房间里再多一个声音。",
+  "surface": "standalone",
   "tags": [
     "meetings",
     "notes",

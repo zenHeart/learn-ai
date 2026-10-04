@@ -14,6 +14,11 @@
   "homepage": "https://www.deepseek.com",
   "desc": "DeepSeek 官方 AI 对话助手",
   "desc_zh": "DeepSeek 官方 AI 对话助手",
+  "solves": "The hard question comes back with an answer but no reasoning, so you cannot tell which step went wrong. It lays the reasoning out and you check it step by step.",
+  "solves_zh": "难题给出答案却不给理由，你没法判断哪一步错了。它把推理过程摊开，你能对着步骤检查。",
+  "best_for": "You need to solve something that takes several reasoning steps and want to see how it got there.",
+  "best_for_zh": "要解一道需要分步推理的题，并想看清它每一步怎么想的。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "reasoning",

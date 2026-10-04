@@ -18,6 +18,11 @@
     "rebrand",
     "code-editor"
   ],
+  "solves": "Editing code means holding structure in your head across dozens of files. The editor holds it, so you steer instead of navigating.",
+  "solves_zh": "改代码意味着要靠脑子记住几十个文件之间的关系。编辑器替你记着，你只需要指挥方向，而不是自己翻文件。",
+  "best_for": "When you want an editor that carries context across the whole repo while you work.",
+  "best_for_zh": "当你想要一个在整个仓库范围内替你保持上下文的编辑器时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

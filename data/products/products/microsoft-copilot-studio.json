@@ -19,6 +19,11 @@
     "enterprise",
     "agent-builder"
   ],
+  "solves": "Every department wants its own bot, and hand-coding each one does not scale. You describe the agent and connect it to the data it needs.",
+  "solves_zh": "每个部门都想要自己的机器人，手写代码显然撑不起规模。你把智能体描述出来，再接上它需要的数据。",
+  "best_for": "When people outside engineering need to publish an internal bot without writing code.",
+  "best_for_zh": "当工程之外的人也要不写代码就发布一个内部机器人时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

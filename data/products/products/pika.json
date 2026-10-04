@@ -18,6 +18,11 @@
     "social",
     "creative"
   ],
+  "solves": "A mood board is a still image, but the client wants to know how it moves. It turns a prompt or a picture into a short clip.",
+  "solves_zh": "情绪板是一张静止的图，但客户想看到它动起来是什么样。它把一句 prompt 或一张图变成一段短片。",
+  "best_for": "When a static idea needs to be pitched as something that actually plays.",
+  "best_for_zh": "当一个静态创意需要被拿成一段真能播放的东西去提案时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

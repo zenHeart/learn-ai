@@ -18,6 +18,11 @@
     "privacy",
     "citations"
   ],
+  "solves": "A general search engine answers from ads and SEO. Kagi Assistant answers from its own paid index, with a link behind each claim.",
+  "solves_zh": "通用搜索引擎靠广告和 SEO 作答。Kagi Assistant 用自建的付费索引回答，每条结论都附链接。",
+  "best_for": "When you already pay for Kagi Search and want the answer mode with citations.",
+  "best_for_zh": "当你已经付费用 Kagi Search，并想要带引用的回答模式。",
+  "surface": "in-product",
   "handbook": {
     "status": "none"
   },

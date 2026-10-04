@@ -19,6 +19,11 @@
     "self-operated",
     "enterprise"
   ],
+  "solves": "The model is only as good as its labels, and the labels sit scattered across contractors and spreadsheets. You bring labelling and evaluation in-house.",
+  "solves_zh": "模型的上限就是标注质量的上限，而标注散落在各家外包和一堆表格里。你把标注和评测收回自己内部做。",
+  "best_for": "When the training data has to stay inside the company and cannot go to an outside annotation vendor.",
+  "best_for_zh": "当训练数据必须留在公司内部、不能交给外部标注厂商时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

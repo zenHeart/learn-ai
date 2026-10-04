@@ -18,6 +18,11 @@
     "game-assets",
     "creative"
   ],
+  "solves": "Commissioning a game or product visual costs days of back-and-forth. Leonardo generates the asset, then lets you tune it.",
+  "solves_zh": "约一张游戏或产品视觉稿，来回沟通要耗掉好几天。Leonardo 先出素材，再交给你细调。",
+  "best_for": "When you need production art for a game or a product page, not a one-off sketch.",
+  "best_for_zh": "当你需要能直接上线的游戏或产品图素材，而不是一张一次性草图。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

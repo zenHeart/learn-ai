@@ -13,6 +13,11 @@
   "homepage": "https://www.helicone.ai",
   "desc": "One-line proxy observability for LLM API traffic",
   "desc_zh": "改一行 base_url 即可接入的 LLM 流量观测代理，2026-03 被 Mintlify 收购",
+  "solves": "Your model bill doubled and the provider's dashboard only shows totals. Point your base_url at Helicone and every call, cost and error shows up per user.",
+  "solves_zh": "模型账单翻倍，服务商的后台却只有总额。把 base_url 指向 Helicone，每次调用、成本和错误都按用户列出来。",
+  "best_for": "When you need to attribute spend and failures to specific users or features.",
+  "best_for_zh": "当你需要把花费和失败归因到具体用户或功能时。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "proxy",

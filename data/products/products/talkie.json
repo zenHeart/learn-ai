@@ -19,6 +19,11 @@
     "anime-style",
     "overseas-hit"
   ],
+  "solves": "Talking to a character is just a text box. Talkie gives them a look, a voice, and cards you collect.",
+  "solves_zh": "和角色对话本来就只是个输入框。Talkie 给他形象、声音，还有可以收集的卡牌。",
+  "best_for": "When you want to spend time with a fictional character, not get work done.",
+  "best_for_zh": "当你想跟一个虚构角色相处，而不是把活干完。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

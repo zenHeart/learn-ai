@@ -13,6 +13,11 @@
   "homepage": "https://www.rabbit.tech",
   "desc": "Pocket voice-first device with a large language action model",
   "desc_zh": "口袋级语音优先设备，宣称用大模型直接操作手机应用",
+  "solves": "Unlocking the phone to set a timer is most of the task. The r1 listens and works the app for you, screen off and still in your pocket.",
+  "solves_zh": "设个计时器，光解锁手机就占掉大半。r1 听懂后直接替你操作，屏幕关着、机器还在口袋里就行。",
+  "best_for": "When your hands are busy and the task is one you would normally do on your phone.",
+  "best_for_zh": "当你的手正忙着，而这件事本来要在手机上做。",
+  "surface": "standalone",
   "tags": [
     "hardware",
     "voice",

@@ -14,6 +14,11 @@
   "homepage": "https://www.doubao.com",
   "desc": "字节跳动通用 AI 助手",
   "desc_zh": "字节跳动通用 AI 助手",
+  "solves": "Answering one question means opening half a dozen tabs to piece it together. Doubao puts search, writing and file handling in one place.",
+  "solves_zh": "查一件事要开好几个网页才能拼出答案。豆包把搜索、写作和文件处理放在一起，直接问就行。",
+  "best_for": "When you want to research a topic and write it up in one go, without switching apps.",
+  "best_for_zh": "想一次把资料查清楚并整理成文，不想来回切应用。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "bytedance",

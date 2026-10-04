@@ -14,6 +14,11 @@
   "homepage": "https://chatglm.cn",
   "desc": "智谱面向 C 端的生成式 AI 助手",
   "desc_zh": "智谱面向 C 端的生成式 AI 助手",
+  "solves": "You want to try a domestic model but do not know where to start. Chat on the web directly, with no API key to apply for.",
+  "solves_zh": "想试一个国产大模型却不知道从哪打开。网页直接对话，不用申请接口。",
+  "best_for": "When you want to see what a domestic model can do at zero cost.",
+  "best_for_zh": "想先零成本试一下国产模型能做什么。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "glm",

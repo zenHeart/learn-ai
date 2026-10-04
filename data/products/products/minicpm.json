@@ -13,6 +13,11 @@
   "homepage": "https://openbmb.cn",
   "desc": "端侧优先的轻量大模型与工具链",
   "desc_zh": "端侧优先的轻量大模型与工具链",
+  "solves": "Using AI means sending the content to a cloud model, which many settings forbid. A small model runs locally, so the data never leaves the machine.",
+  "solves_zh": "把内容交给云端模型才能用 AI，很多场景不允许。小模型在本地跑，数据不出机器。",
+  "best_for": "When data cannot leave the machine but you still want model capabilities on the local device.",
+  "best_for_zh": "数据不能出本机，但又想在本地用上模型能力。",
+  "surface": "standalone",
   "tags": [
     "local-runner",
     "on-device",

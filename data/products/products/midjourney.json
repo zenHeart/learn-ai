@@ -13,6 +13,11 @@
   "homepage": "https://www.midjourney.com",
   "desc": "Aesthetic image generation that reset industry quality bars",
   "desc_zh": "把图像生成美学水准拉到新高度的产品，2022-07 开放公测",
+  "solves": "Generators produce technically correct images that look obviously generated. Midjourney's output holds up in a deck or a cover without cleanup.",
+  "solves_zh": "很多生成器出的图技术上没错，一眼却看出是机器做的。Midjourney 的成品放进演示稿或封面，不需要再返工。",
+  "best_for": "When the image has to look designed, not just illustrate the prompt.",
+  "best_for_zh": "当这张图要看起来像设计过，而不只是把 prompt 画出来。",
+  "surface": "standalone",
   "tags": [
     "image-generation",
     "diffusion",

@@ -18,6 +18,11 @@
     "agents",
     "enterprise"
   ],
+  "solves": "Web search for AI apps means scraping and cleaning pages yourself. You.com sells that retrieval layer instead.",
+  "solves_zh": "给 AI 应用做联网搜索，意味着自己抓取和清洗网页。You.com 把这层检索能力直接卖给你。",
+  "best_for": "When your product needs live web data in its answers and you would rather buy it than scrape it.",
+  "best_for_zh": "当你的产品回答里需要实时网页数据，而你更愿意买而不是自己抓。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

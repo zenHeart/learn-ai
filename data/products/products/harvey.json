@@ -14,6 +14,11 @@
   "homepage": "https://www.harvey.ai/",
   "desc": "Generative AI platform purpose-built for law firm and in-house legal work.",
   "desc_zh": "面向律所与企业法务的生成式 AI 工作平台。",
+  "solves": "Legal research eats hours and every claim needs a citation. It drafts work and points back to the source document.",
+  "solves_zh": "法律检索要耗掉几小时，而且每条结论都得给出处。它能起草文书，并指回原始文件。",
+  "best_for": "When a lawyer or legal team needs a first draft or document review with traceable sources.",
+  "best_for_zh": "律师或法务团队需要初稿、或需要带可追溯出处的文件审阅的时候。",
+  "surface": "standalone",
   "tags": [
     "legal-ai",
     "vertical-ai",

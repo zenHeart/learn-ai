@@ -13,6 +13,11 @@
   "homepage": "https://cline.bot",
   "desc": "Open-source VS Code agent, first released as Claude Dev",
   "desc_zh": "开源 VS Code 编码 Agent，2024-07 以 Claude Dev 之名发布，2024-10-09 更名 Cline",
+  "solves": "The built-in agent can act without showing you each step. Cline shows every edit and lets you approve or reject it one at a time.",
+  "solves_zh": "内置 Agent 可以不逐步展示就动手。Cline 把每一次修改都摆出来，你可以逐条批准或驳回。",
+  "best_for": "When you want an agent in your own VS Code and want to watch what it changes.",
+  "best_for_zh": "当你要在自己的 VS Code 里用 Agent，并且要盯着它改了什么。",
+  "surface": "extension",
   "tags": [
     "open-source",
     "vscode",

@@ -60,6 +60,8 @@ const categories = taxonomy.categories
   }))
   .sort((a, b) => b.count - a.count || cmp(a.id, b.id))
 
+const byId = new Map(products.map((p) => [p.id, p]))
+
 const projectProducts = products
   .map((p) => {
     const v = vendorById.get(p.vendor_id)
@@ -73,13 +75,23 @@ const projectProducts = products
       category: p.category,
       useCases: p.use_cases ?? [],
       form: p.form,
+      surface: p.surface ?? 'standalone',
+      solves: p.solves ?? '',
+      solvesZh: p.solves_zh ?? '',
+      bestFor: p.best_for ?? '',
+      bestForZh: p.best_for_zh ?? '',
       released: p.released,
+      datePrecision: p.date_precision ?? 'day',
       homepage: p.homepage,
       desc: p.desc,
       descZh: p.desc_zh,
       tags: p.tags ?? [],
       status: p.status ?? 'active',
       supersededBy: p.superseded_by ?? null,
+      successorName:
+        (p.superseded_by && byId.get(p.superseded_by)?.name_zh) ||
+        (p.superseded_by && byId.get(p.superseded_by)?.name) ||
+        '',
       handbook: p.handbook ?? { status: 'none' },
       lastVerifiedAt: p.last_verified_at ?? null,
       glyph: (() => {
@@ -112,8 +124,6 @@ const matchDimension = (product, dim) => {
     .toLowerCase()
   return (dim.keywords ?? []).some((k) => hay.includes(String(k).toLowerCase()))
 }
-
-const byId = new Map(products.map((p) => [p.id, p]))
 
 const projectUseCases = useCases
   .map((u) => {

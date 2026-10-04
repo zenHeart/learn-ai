@@ -18,6 +18,11 @@
     "llm-apps",
     "developer-tools"
   ],
+  "solves": "Wiring prompts, tools and retries by hand is fragile and repetitive. LangChain hands you the plumbing and leaves the logic yours.",
+  "solves_zh": "手写 prompt、工具和重试的拼装既脆弱又重复。LangChain 把这些管道活接好，逻辑仍然归你。",
+  "best_for": "When you are building a multi-step agent and would rather not re-solve tool calling and memory.",
+  "best_for_zh": "当你在搭一个多步 Agent，又不想重新解决工具调用和记忆管理。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

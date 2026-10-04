@@ -13,6 +13,11 @@
   "homepage": "https://www.gumloop.com",
   "desc": "No-code AI workflow automation for scraped business data",
   "desc_zh": "面向业务数据处理的无代码 AI 工作流自动化平台，前身 AgentHub",
+  "solves": "Scraping a pile of data off the web every day and cleaning it by hand is repetitive and easy to get wrong. Drag scraping, cleaning, and output into one line that runs itself.",
+  "solves_zh": "每天从网页扒一堆数据再手工整理，反复做还容易错。用拖拽把抓取、清洗和输出连成一条线自己跑。",
+  "best_for": "You have a repetitive data-moving job and want it to run on a schedule by itself.",
+  "best_for_zh": "你有一套重复的数据搬运工作，想让它自己定时跑。",
+  "surface": "standalone",
   "tags": [
     "no-code",
     "automation",

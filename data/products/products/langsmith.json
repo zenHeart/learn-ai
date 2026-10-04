@@ -18,6 +18,11 @@
     "evaluation",
     "llmops"
   ],
+  "solves": "An LLM app breaks and you cannot see which prompt caused it. LangSmith records every step and scores the output.",
+  "solves_zh": "LLM 应用出错时，你看不到是哪一段 prompt 引起的。LangSmith 记录每一步并给输出打分。",
+  "best_for": "When a chain misbehaves only on real traffic and you need the trace to find it.",
+  "best_for_zh": "当链路只在真实流量下出问题，你需要 trace 才能定位。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

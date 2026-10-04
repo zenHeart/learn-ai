@@ -18,6 +18,11 @@
     "swe-bench",
     "enterprise"
   ],
+  "solves": "A ticket needing hours of coding, testing, and file hunting is hard to hand to one person. Devin takes it and hands back a branch.",
+  "solves_zh": "一个要花几小时写代码、做测试、翻文件的 issue，很难塞给一个人做完。Devin 接过去，最后交回一个分支。",
+  "best_for": "When a well-scoped ticket could occupy a developer for a day of steady work.",
+  "best_for_zh": "当一个边界清晰的 issue 够一个开发者稳稳干上一整天时。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

@@ -13,6 +13,11 @@
   "homepage": "https://jules.google/",
   "desc": "Asynchronous cloud coding agent that opens pull requests",
   "desc_zh": "异步云端编程智能体，后台运行并直接提交 Pull Request",
+  "solves": "Work you do not want to sit and watch. You file the task and it comes back as a pull request to review.",
+  "solves_zh": "有些活你不想守着干完。把任务提交出去，它做完回一个 pull request 给你审。",
+  "best_for": "When a chore is well described and you have something else to work on.",
+  "best_for_zh": "当一件杂活描述得很清楚，而你手头正好有别的事要做。",
+  "surface": "standalone",
   "tags": [
     "cloud-agent",
     "async",

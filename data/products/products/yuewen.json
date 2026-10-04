@@ -14,6 +14,11 @@
   "homepage": "https://www.stepfun.com/yuewen",
   "desc": "阶跃星辰多模态 AI 问答助手",
   "desc_zh": "阶跃星辰多模态 AI 问答助手",
+  "solves": "Asking about a photo means opening a separate vision tool and asking twice, once for text and once for the image. Send both together and get one answer.",
+  "solves_zh": "拍照提问要另开一个识图工具，文字和图片得分两次问。图片和文字一起发，直接得到回答。",
+  "best_for": "When you have an image or a video in front of you and want to ask what is in it.",
+  "best_for_zh": "手边有一张图或一段视频，想问里面的内容。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "multimodal",

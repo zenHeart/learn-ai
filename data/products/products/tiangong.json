@@ -19,6 +19,11 @@
     "skywork",
     "kunlun"
   ],
+  "solves": "Using the Tiangong models directly means picking interfaces and wiring context yourself. The official assistant is ready to open and answers one question at a time.",
+  "solves_zh": "想直接用天工模型却得自己挑接口、配上下文。打开就是官方助手，问一句给一句答案。",
+  "best_for": "When you want to try Kunlun's Tiangong models without calling the API yourself.",
+  "best_for_zh": "你想先用昆仑万维的天工模型，不想自己调 API。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

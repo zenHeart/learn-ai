@@ -18,6 +18,11 @@
     "vscode",
     "fork"
   ],
+  "solves": "You want the agent to plan the change, then make it, then debug it, but one tool rarely does all three well. It switches modes for each.",
+  "solves_zh": "你希望智能体先规划改动、再动手实现、再排查问题，但一个工具通常做不好这三件事里的每件。Roo Code 为每一步切换模式。",
+  "best_for": "When you want an open-source agent in VS Code that changes behaviour depending on the task.",
+  "best_for_zh": "当你想在 VS Code 里用一个开源智能体，并希望它根据任务类型切换行为时。",
+  "surface": "extension",
   "handbook": {
     "status": "candidate"
   },

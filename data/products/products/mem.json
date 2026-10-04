@@ -13,6 +13,11 @@
   "homepage": "https://get.mem.ai",
   "desc": "Self-organising AI notes and thought partner",
   "desc_zh": "自动组织笔记的 AI 记录工具，2025-10 推出重写后的 2.0 正式版",
+  "solves": "You write everything down and can never find any of it. Notes get linked to related ones automatically, so recall stops depending on the title you chose.",
+  "solves_zh": "你什么都记下来，却永远找不到。笔记会自动关联到相关内容，找东西不再取决于当时起的标题。",
+  "best_for": "When you keep a notes app and only ever search inside it.",
+  "best_for_zh": "当你有个笔记应用，却只在里面翻来翻去找东西。",
+  "surface": "standalone",
   "tags": [
     "notes",
     "personal-ai",

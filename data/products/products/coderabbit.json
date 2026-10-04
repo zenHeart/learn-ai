@@ -14,6 +14,11 @@
   "homepage": "https://www.coderabbit.ai",
   "desc": "reviews every pull request with full repository context",
   "desc_zh": "基于全仓库上下文审查每一个 Pull Request",
+  "solves": "AI-written PRs pile up faster than people can review them, and nobody reads them closely. It understands the whole repository and flags what's wrong in each PR.",
+  "solves_zh": "AI 写的 PR 越来越多，人手审不过来也没人细看。它读懂整个仓库，逐个 PR 指出坏处。",
+  "best_for": "Your team has started shipping large volumes of AI-written PRs and needs one consistent check.",
+  "best_for_zh": "团队开始大量用 AI 写 PR，需要一道固定检查。",
+  "surface": "standalone",
   "tags": [
     "pull-request",
     "static-analysis",

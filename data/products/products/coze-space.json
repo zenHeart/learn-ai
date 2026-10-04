@@ -13,6 +13,11 @@
   "homepage": "https://www.coze.cn/space",
   "desc": "字节通用 Agent 协作平台",
   "desc_zh": "字节通用 Agent 协作平台",
+  "solves": "Building an agent from scratch means wiring models, tools and prompts. Here you get a ready platform to build it on.",
+  "solves_zh": "从零搭一个 Agent 要接模型、配工具、调提示词。这里给你一个现成的平台直接搭。",
+  "best_for": "When you want to turn an idea into a working agent fast without writing the code yourself.",
+  "best_for_zh": "想把一个想法快速做成能跑的 Agent，不想自己写代码。",
+  "surface": "standalone",
   "tags": [
     "agent-platform",
     "general-agent",

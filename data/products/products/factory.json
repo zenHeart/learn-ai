@@ -13,6 +13,11 @@
   "homepage": "https://factory.com/",
   "desc": "Task-specific autonomous Droids for software engineering",
   "desc_zh": "面向软件工程的多款专职自主 Droids：Review、Test、Code 等",
+  "solves": "Mechanical chores like writing the test file for a PR sit in the queue forever. You hand them to a dedicated droid and get the diff back.",
+  "solves_zh": "给 PR 补测试文件这类机械活，永远排在队列里。交给专门的 droid 去做，你拿回一份 diff。",
+  "best_for": "When a ticket is scoped enough that a droid can finish it while you work on something else.",
+  "best_for_zh": "当一个任务的范围已经清楚到 droid 能在你忙别的时候独立做完。",
+  "surface": "standalone",
   "tags": [
     "autonomous-agent",
     "enterprise",

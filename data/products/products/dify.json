@@ -13,6 +13,11 @@
   "homepage": "https://dify.ai",
   "desc": "Open-source LLMOps platform for visual LLM app building",
   "desc_zh": "开源 LLMOps 平台，可视化编排 LLM 应用、工作流与 Agent",
+  "solves": "Wiring a model API is the easy part; prompts, retrieval and versioning are the rest. It puts all of it in one place you host yourself.",
+  "solves_zh": "接模型 API 只是简单的一步，提示词、检索和版本管理才是重头。这些都被放进一个你可以自己托管的地方。",
+  "best_for": "When you need to build and run LLM apps without giving up control of where the data lives.",
+  "best_for_zh": "想搭建和运行 LLM 应用、但又不想放弃数据存放地的控制权的时候。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "llmops",

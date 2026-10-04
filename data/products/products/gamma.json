@@ -20,6 +20,11 @@
     "card-editor",
     "web-native"
   ],
+  "solves": "A blank slide deck is just a blank page. Gamma turns one sentence into a laid-out deck you can then edit.",
+  "solves_zh": "空白幻灯片就是一张白纸。Gamma 把一句话变成排好版的 deck，之后你再改。",
+  "best_for": "When you need a presentable deck today and the content is already in your head.",
+  "best_for_zh": "当你今天就要一份能拿出去的 deck，内容已经在你脑子里。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

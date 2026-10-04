@@ -14,6 +14,11 @@
   "homepage": "https://higgsfield.ai",
   "desc": "Cinematic AI video with camera-move control presets",
   "desc_zh": "主打电影级镜头语言与运镜预设的 AI 视频平台",
+  "solves": "Text-to-video gives you a static subject doing nothing. Camera-move presets let you push in, orbit and rack focus the way a shot is actually filmed.",
+  "solves_zh": "文生视频给出的主体往往一动不动。运镜预设让你像实际拍摄一样推近、环绕、变焦对焦。",
+  "best_for": "When the shot needs camera movement, not just a subject that exists.",
+  "best_for_zh": "当镜头需要运镜，而不只是画面里有个主体。",
+  "surface": "standalone",
   "tags": [
     "video-generation",
     "cinematography",

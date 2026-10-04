@@ -18,6 +18,11 @@
     "local-llm",
     "runtime"
   ],
+  "solves": "Running a model locally is a weekend of drivers and Python environments. Ollama pulls one down with a single command.",
+  "solves_zh": "在本地跑一个模型要耗掉一个周末去折腾驱动和 Python 环境。Ollama 一条命令就把它拉下来。",
+  "best_for": "When you want to try a model on your own machine before sending anything to an API.",
+  "best_for_zh": "当你想先在自己机器上试一个模型，再决定要不要把请求发到 API。",
+  "surface": "standalone",
   "handbook": {
     "status": "written",
     "route": {

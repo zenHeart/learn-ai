@@ -13,6 +13,11 @@
   "homepage": "https://www.presentations.ai/",
   "desc": "Deck generator that pulls brand colors from your website.",
   "desc_zh": "能从你的公司网站自动提取品牌配色的 PPT 生成器。",
+  "solves": "Deck colors never quite match the company brand, and a template falls apart as soon as you edit it. It pulls brand colors from your site, and the pptx stays editable.",
+  "solves_zh": "做 PPT，配色总不吻合公司品牌，套模板一改就散。它从你网站抓品牌色，pptx 还能再改。",
+  "best_for": "You have to hand in a deck that matches the company brand, not start from a blank page.",
+  "best_for_zh": "要交一份符合公司品牌的演示稿，不是从空白开始。",
+  "surface": "standalone",
   "tags": [
     "slides",
     "brand-sync",

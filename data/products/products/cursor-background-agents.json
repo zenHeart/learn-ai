@@ -1,0 +1,43 @@
+{
+  "id": "cursor-background-agents",
+  "name": "Cursor background agents",
+  "name_zh": "Cursor 后台智能体",
+  "vendor_id": "anysphere",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2025-04-01",
+  "date_precision": "month",
+  "homepage": "https://cursor.com/docs/background-agent",
+  "desc": "One editor means one task at a time, so parallelizable chores queue up behind whatever you",
+  "desc_zh": "一个编辑器只能干一件事，于是能并行的杂活全排在你手头工作后面。后台智能体会把你的仓库克隆到云端沙箱，同时处理多个独立任务。",
+  "solves": "One editor means one task at a time, so parallelizable chores queue up behind whatever you're doing. Background agents clone your repo into a cloud sandbox and work on separate tasks at the same time.",
+  "solves_zh": "一个编辑器只能干一件事，于是能并行的杂活全排在你手头工作后面。后台智能体会把你的仓库克隆到云端沙箱，同时处理多个独立任务。",
+  "best_for": "Two or more independent code tasks you could run at once but currently have to wait on each other.",
+  "best_for_zh": "手上有两件以上互相独立、理论上可以同时做的代码任务。",
+  "tags": [
+    "in-product",
+    "cursor"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Cursor 内的能力。来源：https://cursor.com/docs/background-agent",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "released",
+      "from": "2025-04-15",
+      "to": "2025-04-01",
+      "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    }
+  ]
+}

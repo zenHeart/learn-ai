@@ -13,6 +13,11 @@
   "homepage": "https://comate.baidu.com/zh",
   "desc": "Baidu's AI coding assistant with spec-driven multi-agent flow",
   "desc_zh": "百度的 AI 编程助手，支持规范驱动的多智能体流程",
+  "solves": "You let AI edit code, so you stop trusting the merge. Comate writes the doc and breaks down the tasks first, and only touches files after you approve — and the whole thing can run on your own servers.",
+  "solves_zh": "让 AI 直接改代码，你不敢合并。Comate 先写文档、拆任务，你确认后才动手，还能整套部署在自己的服务器上。",
+  "best_for": "Your code cannot leave the internal network, and you want a reviewable plan before the AI changes anything.",
+  "best_for_zh": "代码不能出内网，且希望 AI 改动前先出一份可审的计划。",
+  "surface": "standalone",
   "tags": [
     "spec-driven",
     "multi-agent",

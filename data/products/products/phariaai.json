@@ -14,6 +14,11 @@
   "homepage": "https://pharia.com/",
   "desc": "Sovereign, explainable generative AI stack for regulated organisations",
   "desc_zh": "面向受监管机构的主权型、可解释生成式 AI 技术栈",
+  "solves": "Regulated industries can neither send data out of the country nor return an answer with no stated basis. This runs entirely on your own machine.",
+  "solves_zh": "受管行业既不能把数据送出境外，也交不出一个说不清依据的答案。这套东西整套跑在你自己机器上。",
+  "best_for": "You work on finance, government, or other projects with compliance and explainability requirements.",
+  "best_for_zh": "你在做金融、政务这类有合规和可解释要求的项目。",
+  "surface": "standalone",
   "tags": [
     "sovereign-ai",
     "explainability",

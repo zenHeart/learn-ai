@@ -20,6 +20,11 @@
     "reliability",
     "cost-tracking"
   ],
+  "solves": "One provider going down or one key blowing its budget takes the whole app with it. Portkey routes around both.",
+  "solves_zh": "一家供应商宕机或一个 key 爆了预算，都会把整个应用拖垮。Portkey 的路由能绕开这两种情况。",
+  "best_for": "When your model calls span several vendors and you need fallback, rate limits and a cost breakdown.",
+  "best_for_zh": "当你的模型调用横跨多家供应商，需要 fallback、限流和成本明细。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

@@ -1,0 +1,34 @@
+{
+  "id": "chatgpt-pulse",
+  "name": "ChatGPT Pulse",
+  "name_zh": "ChatGPT Pulse 每日简报",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2025-09-25",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/introducing-chatgpt-pulse/",
+  "desc": "An assistant only speaks when you open it, so all the things worth knowing about have to b",
+  "desc_zh": "助手只在你打开它时才说话，所以值得知道的事全靠你自己想出该问的问题。Pulse 会在夜里自己研究，第二天早上给你一份简报。",
+  "solves": "An assistant only speaks when you open it, so all the things worth knowing about have to be remembered as questions you never ask. Pulse researches on its own overnight and hands you a morning brief.",
+  "solves_zh": "助手只在你打开它时才说话，所以值得知道的事全靠你自己想出该问的问题。Pulse 会在夜里自己研究，第二天早上给你一份简报。",
+  "best_for": "You want a short personalized daily digest shaped by what you've actually been discussing and working on.",
+  "best_for_zh": "你想要一份根据你实际在聊、在做的事定制的每日短简报。",
+  "tags": [
+    "in-product",
+    "chatgpt"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 ChatGPT 内的能力。来源：https://openai.com/index/introducing-chatgpt-pulse/",
+  "revisions": []
+}

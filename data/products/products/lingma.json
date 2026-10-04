@@ -18,6 +18,11 @@
     "ide-plugin",
     "qwen"
   ],
+  "solves": "Writing the repetitive parts by hand takes an hour. It fills them in and explains the rest inside the editor you already have.",
+  "solves_zh": "样板代码手写要花一个钟头。它在你已经在用的编辑器里补齐这些部分，并解释剩下的逻辑。",
+  "best_for": "When you want code help without switching away from your current IDE.",
+  "best_for_zh": "你想在不离开当前 IDE 的前提下拿到代码协助。",
+  "surface": "plugin",
   "handbook": {
     "status": "written",
     "route": {

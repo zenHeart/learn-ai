@@ -20,6 +20,11 @@
     "indexing",
     "open-source"
   ],
+  "solves": "Your documents sit in ten places with different formats, and the model has never seen any of them. It ingests, indexes, and retrieves across all of them.",
+  "solves_zh": "你的文档散在十个地方、格式各不相同，模型一份也没见过。它把这些文档统一摄取、建索引并跨库检索。",
+  "best_for": "When you are building a question-answering feature over a document pile nobody has organized.",
+  "best_for_zh": "当你要在一堆没人整理过的文档上做一个问答功能时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

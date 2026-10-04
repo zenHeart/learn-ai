@@ -1,0 +1,35 @@
+{
+  "id": "slackbot",
+  "name": "Slackbot",
+  "name_zh": "Slackbot",
+  "vendor_id": "salesforce",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2026-01-13",
+  "date_precision": "day",
+  "homepage": "https://slack.com/features/ai",
+  "desc": "A workspace assistant that has to be re-taught your context each time. Slackbot learns you",
+  "desc_zh": "工作区助手每次都要你重新教一遍它上下文。Slackbot 会学到你的语气和工作区习惯，能自己准备会议、分析报告、起草项目简介。",
+  "solves": "A workspace assistant that has to be re-taught your context each time. Slackbot learns your tone and your workspace, and can prep meetings, analyze reports, and draft project briefs on its own.",
+  "solves_zh": "工作区助手每次都要你重新教一遍它上下文。Slackbot 会学到你的语气和工作区习惯，能自己准备会议、分析报告、起草项目简介。",
+  "best_for": "You want a personal agent inside Slack that already knows your projects and writing style.",
+  "best_for_zh": "你想要一个已经了解你项目和写作风格的 Slack 内个人助手。",
+  "tags": [
+    "in-product",
+    "slack"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Slack 内的能力。来源：https://slack.com/features/ai",
+  "revisions": []
+}

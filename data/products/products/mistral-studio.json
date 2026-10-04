@@ -15,6 +15,11 @@
   "homepage": "https://mistral.ai/studio",
   "desc": "Mistral's workbench for building, testing and running agents and apps.",
   "desc_zh": "Mistral 用于构建、测试和运行智能体与应用的开发平台。",
+  "solves": "You only find out what's wrong with an agent after it ships. Studio lets you run it while you build, read the evaluation results, and go back and fix things.",
+  "solves_zh": "智能体写完只能上线才知道哪里不对。Studio 让你边搭边跑，还能看评估结果再回头改。",
+  "best_for": "You are tuning an agent flow and need to retry each step's inputs and outputs repeatedly.",
+  "best_for_zh": "你在调一条智能体流程，要反复试各步骤的输入输出。",
+  "surface": "standalone",
   "tags": [
     "workbench",
     "workflows",

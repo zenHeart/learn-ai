@@ -15,6 +15,11 @@
   "homepage": "https://mistral.ai/vibe",
   "desc": "Mistral's unified agent for chat, productivity work and coding.",
   "desc_zh": "Mistral 将对话、办公与编程合并在一起的统一智能体。",
+  "solves": "Chatting, research, and coding live in different assistants, and every switch loses your context. This one agent does all three.",
+  "solves_zh": "聊天、查资料、写代码分属不同助手，切换一次上下文就断了。它把三件事合进同一个智能体。",
+  "best_for": "You want one assistant that handles office chat and writes code directly.",
+  "best_for_zh": "你要一个既能办公对话、又能直接写代码的助手。",
+  "surface": "standalone",
   "tags": [
     "work-mode",
     "code-mode",

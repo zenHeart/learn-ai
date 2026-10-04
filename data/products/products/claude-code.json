@@ -13,6 +13,11 @@
   "homepage": "https://claude.com/product/claude-code",
   "desc": "Agentic command-line coding tool with CLAUDE.md project memory",
   "desc_zh": "智能体式命令行编程工具，支持 CLAUDE.md 项目记忆",
+  "solves": "Every new chat forgets your project conventions and you re-explain them. It reads the repo and keeps the rules in a file it checks each session.",
+  "solves_zh": "每次新开对话都要重新交代项目规范。它会读仓库，并把规则存进一个文件，每次会话都去核对。",
+  "best_for": "When you want a coding agent to work across a whole repo, not just the open file.",
+  "best_for_zh": "当你要一个编码 Agent 能在整个仓库上干活，而不只是当前打开的文件。",
+  "surface": "standalone",
   "tags": [
     "cli",
     "agentic-coding",

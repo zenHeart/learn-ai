@@ -13,6 +13,11 @@
   "homepage": "https://fireworks.ai/",
   "desc": "Inference platform running open models on its own optimized serving stack.",
   "desc_zh": "基于自研推理引擎托管开源大模型的平台。",
+  "solves": "Self-hosting an open model means renting GPUs and tuning a serving stack yourself. Fireworks runs it on kernels they wrote, with a per-token bill.",
+  "solves_zh": "自托管开放模型意味着自己租 GPU、调推理栈。Fireworks 用自研 kernel 跑起来，只按 token 计费。",
+  "best_for": "When you want an open-weight model in production without buying hardware.",
+  "best_for_zh": "当你想在生产环境用开放权重模型，又不打算自购硬件。",
+  "surface": "standalone",
   "tags": [
     "inference",
     "open-models",

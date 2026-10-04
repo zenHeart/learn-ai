@@ -14,6 +14,11 @@
   "homepage": "https://zed.dev",
   "desc": "Rust-native editor with parallel agents and ACP support",
   "desc_zh": "Rust 编写的 AI 原生编辑器，支持并行智能体与 ACP 协议",
+  "solves": "One agent at a time means waiting. It runs several in parallel in the same editor, so you can hand out work at once.",
+  "solves_zh": "一次只能跑一个 Agent 就意味着干等。它能在同一个编辑器里并行跑多个，任务可以一次分完。",
+  "best_for": "When you want more than one coding agent working in your editor at the same time.",
+  "best_for_zh": "想在编辑器里同时有多个编码 Agent 干活的时候。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "rust",

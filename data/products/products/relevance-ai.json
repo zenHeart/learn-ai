@@ -18,6 +18,11 @@
     "multi-agent",
     "workforce"
   ],
+  "solves": "A single agent cannot do a job with five steps. Relevance AI lets several no-code agents work one job together.",
+  "solves_zh": "单个 Agent 干不完有五步的活。Relevance AI 让多个 no-code Agent 协作完成同一件事。",
+  "best_for": "When a task has a team shape to it — research, drafting, checking — and nobody wants to write the glue code.",
+  "best_for_zh": "当一个任务天然有团队分工的样子——调研、起草、核查——而没人想写胶水代码。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

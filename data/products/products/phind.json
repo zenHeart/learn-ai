@@ -14,6 +14,11 @@
   "homepage": "https://www.phind.com",
   "desc": "Developer-focused search; shut down January 2026",
   "desc_zh": "面向开发者的搜索工具，2026-01-16 因巨头内置联网搜索而关停",
+  "solves": "General search gives shallow answers about code. It was built to explain code the way another developer would.",
+  "solves_zh": "通用搜索对代码只能给出很浅的答案。它被做出来就是为了像同行开发者那样解释代码。",
+  "best_for": "Reference only; the service was shut down in January 2026.",
+  "best_for_zh": "仅作参考；服务已于 2026 年 1 月关停。",
+  "surface": "standalone",
   "tags": [
     "developer-search",
     "discontinued",

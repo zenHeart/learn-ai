@@ -15,6 +15,11 @@
   "homepage": "https://www.genspark.ai/",
   "desc": "AI workspace that dispatches many agents to finish a whole task.",
   "desc_zh": "调度多个智能体把整件任务做完的 AI 工作空间。",
+  "solves": "One task splits into researching, building a sheet, and making slides, so the assistant hands half of it back to you. It sends out multiple agents to finish it between them.",
+  "solves_zh": "一件事要拆成查资料、做表、做幻灯片好几步，助手做一半就得你接手。它派多个智能体分头做完。",
+  "best_for": "You want the finished artifact — a report, slides, or a table — not an answer.",
+  "best_for_zh": "你要一份成品——报告、幻灯片或表格，不是回答。",
+  "surface": "standalone",
   "tags": [
     "multi-agent",
     "task-completion",

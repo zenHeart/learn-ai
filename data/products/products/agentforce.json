@@ -14,6 +14,11 @@
   "homepage": "https://www.salesforce.com/agentforce/",
   "desc": "Salesforce's platform for autonomous CRM, service and sales agents.",
   "desc_zh": "Salesforce 面向 CRM、客服与销售的自主智能体平台。",
+  "solves": "Support and sales questions pile up in queues. It answers and acts on them using your CRM records.",
+  "solves_zh": "客服和销售的问题堆在队列里。它调用你 CRM 里的记录，既能回答也能代办。",
+  "best_for": "When your service and sales teams are drowning in repetitive customer requests.",
+  "best_for_zh": "客服和销售团队被大量重复的客户咨询淹没的时候。",
+  "surface": "in-product",
   "tags": [
     "crm",
     "autonomous-agents",

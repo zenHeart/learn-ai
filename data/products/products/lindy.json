@@ -14,6 +14,11 @@
   "homepage": "https://www.lindy.ai",
   "desc": "Personal AI agents for email, meetings and support",
   "desc_zh": "面向邮件、会议与客户支持的个性化 AI 助理平台",
+  "solves": "Email, meetings, and support messages eat up the day. Set up an assistant here to handle that traffic by rules you define.",
+  "solves_zh": "邮件、会议、客服消息每天占满时间。这里配一个助理，让它按你定的规则去处理这些往来。",
+  "best_for": "You want to hand routine email and scheduling admin to an assistant.",
+  "best_for_zh": "你想把日常的邮件和日程杂事交给一个助理。",
+  "surface": "standalone",
   "tags": [
     "personal-agent",
     "assistant",

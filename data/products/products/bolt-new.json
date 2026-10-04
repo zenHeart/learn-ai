@@ -18,6 +18,11 @@
     "browser-ide",
     "fullstack"
   ],
+  "solves": "You have an idea for a full app but no local Node and no scaffold. It runs the whole thing in a browser tab.",
+  "solves_zh": "你有一个完整应用的设想，但本地没装 Node，也没有脚手架。它在浏览器标签页里把整套东西跑起来。",
+  "best_for": "When you want to see a working full-stack app in a tab before installing anything.",
+  "best_for_zh": "当你想在装任何东西之前，先在一个标签页里看到能跑的全栈应用时。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

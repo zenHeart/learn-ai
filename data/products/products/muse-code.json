@@ -14,6 +14,11 @@
   "homepage": "https://ai.meta.com/",
   "desc": "Meta's terminal coding agent, built on the Muse Spark model family.",
   "desc_zh": "Meta 基于 Muse Spark 系列模型推出的终端编程智能体。",
+  "solves": "You have to leave your terminal to ask for a code change. It works in the shell you already live in, across files.",
+  "solves_zh": "想让它改代码，就得先离开终端。它直接在你平时用的 shell 里工作，能跨文件操作。",
+  "best_for": "When you want a coding agent without switching away from the command line.",
+  "best_for_zh": "想要一个编码 Agent，但不想离开命令行的时候。",
+  "surface": "standalone",
   "tags": [
     "terminal",
     "beta",

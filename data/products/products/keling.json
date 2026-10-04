@@ -14,6 +14,11 @@
   "homepage": "https://klingai.kuaishou.com/",
   "desc": "文生视频与图片创作平台",
   "desc_zh": "文生视频与图片创作平台",
+  "solves": "You want a video but can't shoot it or afford footage. Give it one line of text or a single image and it generates a few seconds you can use directly.",
+  "solves_zh": "想做一段视频，拍不出来也买不起素材。给一句文字或一张图，生成几秒能直接用的画面。",
+  "best_for": "You want to test a video idea quickly rather than shoot it for real.",
+  "best_for_zh": "你要快速试一段视频创意，而不是正式去拍。",
+  "surface": "standalone",
   "tags": [
     "video-generation",
     "text-to-video",

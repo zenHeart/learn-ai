@@ -24,6 +24,13 @@
       "product_count": 1
     },
     {
+      "id": "adobe",
+      "display_name": "Adobe",
+      "display_name_zh": "Adobe",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "aider-ai",
       "display_name": "Aider AI",
       "display_name_zh": "Aider AI",
@@ -402,6 +409,13 @@
       "product_count": 1
     },
     {
+      "id": "intercom",
+      "display_name": "Intercom",
+      "display_name_zh": "Intercom",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "jan",
       "display_name": "Jan",
       "display_name_zh": "Jan",
@@ -419,6 +433,13 @@
       "id": "kagi",
       "display_name": "Kagi",
       "display_name_zh": "Kagi",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "kingsoft-office",
+      "display_name": "Kingsoft Office",
+      "display_name_zh": "Kingsoft Office",
       "region": "intl",
       "product_count": 1
     },
@@ -717,6 +738,13 @@
       "product_count": 1
     },
     {
+      "id": "samsung",
+      "display_name": "Samsung",
+      "display_name_zh": "Samsung",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
       "id": "scale-ai",
       "display_name": "Scale AI",
       "display_name_zh": "Scale AI",
@@ -867,6 +895,13 @@
       "id": "zilliz",
       "display_name": "Zilliz",
       "display_name_zh": "Zilliz",
+      "region": "intl",
+      "product_count": 1
+    },
+    {
+      "id": "zoom",
+      "display_name": "Zoom",
+      "display_name_zh": "Zoom",
       "region": "intl",
       "product_count": 1
     },

@@ -19,6 +19,11 @@
     "developer-platform",
     "grok"
   ],
+  "solves": "Swapping model vendors means rewriting your client. It speaks the OpenAI wire format, so you change a base URL.",
+  "solves_zh": "换个模型厂商就要重写客户端。它讲的是 OpenAI 那一套协议，你只要改一个 base URL。",
+  "best_for": "When you want to test Grok against another model without rewriting your integration.",
+  "best_for_zh": "当你想把 Grok 和别的模型放在一起对比，又不想重写接入代码时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

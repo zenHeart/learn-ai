@@ -20,6 +20,11 @@
     "document-qa",
     "user-scale"
   ],
+  "solves": "Search hands you a pile of links and leaves you to sort them. 夸克 computes the answer instead, and also reads files and documents.",
+  "solves_zh": "搜索只给一堆链接，还要自己筛。夸克把答案直接算出来，顺带读文件、查文档。",
+  "best_for": "When you want one place to search the web, read local files and ask about documents.",
+  "best_for_zh": "你要一个入口同时搜网页、读本地文件、问文档。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

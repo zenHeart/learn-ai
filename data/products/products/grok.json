@@ -19,6 +19,11 @@
     "realtime",
     "social-data"
   ],
+  "solves": "News breaks faster than search indexes it, and you want the reaction, not the press release. It reads X in real time.",
+  "solves_zh": "新闻跑得比搜索引擎收录更快，而你想看的是现场反应，不是通稿。它实时读取 X 上的内容。",
+  "best_for": "When you want a live read on what people are saying right now about an event.",
+  "best_for_zh": "当你想实时了解此刻人们正在怎么谈论一件事时。",
+  "surface": "standalone",
   "handbook": {
     "status": "written",
     "route": {

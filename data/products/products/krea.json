@@ -14,6 +14,11 @@
   "homepage": "https://www.krea.ai",
   "desc": "Real-time generative canvas with sub-second image feedback",
   "desc_zh": "实时生成画布，图像反馈进入亚秒级，可边画边生成",
+  "solves": "You sketch a rough shape and wait a queue slot to see whether the model agrees. Here the image updates as you draw.",
+  "solves_zh": "你画个大概形状，还得排队等结果看模型认不认。这里图像跟着你画的过程实时更新。",
+  "best_for": "When you are exploring an idea and need many cheap variations, not one polished render.",
+  "best_for_zh": "当你在探索一个想法，需要的是大量廉价变体，而不是一张精修成图。",
+  "surface": "standalone",
   "tags": [
     "real-time",
     "image-generation",

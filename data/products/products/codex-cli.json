@@ -13,6 +13,11 @@
   "homepage": "https://github.com/openai/codex",
   "desc": "Apache-2.0 open-source terminal coding agent running local repos",
   "desc_zh": "Apache-2.0 开源终端编程智能体，在本地仓库中读写与执行代码",
+  "solves": "An AI that edits code never sees your project structure and won't run what it changed. This open-source assistant reads and writes inside your repo directly.",
+  "solves_zh": "让 AI 改代码，它看不见你的项目结构，改完也不敢跑。这个开源助手在你仓库里直接读写。",
+  "best_for": "You want AI to actually change code in your own repository.",
+  "best_for_zh": "你想在自己的仓库里让 AI 动手改代码。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "cli",

@@ -18,6 +18,11 @@
     "offline",
     "local-llm"
   ],
+  "solves": "You want a chat window that never phones home, and every hosted alternative does. It runs open models locally with no account.",
+  "solves_zh": "你想要一个完全不上报数据的聊天窗口，而托管的替代品都会上报。它在本地跑开源模型，不需要注册账号。",
+  "best_for": "When you want a private offline chat on your own machine and will bring your own model.",
+  "best_for_zh": "当你想在自己的机器上离线私聊，并且愿意自带模型时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

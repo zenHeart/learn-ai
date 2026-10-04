@@ -20,6 +20,11 @@
     "free-tier",
     "cross-platform"
   ],
+  "solves": "The research sits in one tab, the form in another, and you are the one shuttling data between them. Its assistant acts across tabs.",
+  "solves_zh": "资料在一个标签页，表单在另一个，来回复制粘贴的是你。它的助手可以跨标签页直接操作。",
+  "best_for": "When a task needs you to read, compare, and fill in a form across several sites.",
+  "best_for_zh": "当一个任务需要你在几个网站之间读、比、再填表时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

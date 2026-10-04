@@ -14,6 +14,11 @@
   "homepage": "https://sdk.vercel.ai",
   "desc": "TypeScript toolkit for streaming LLM UIs across providers",
   "desc_zh": "面向 TypeScript 的流式 LLM UI 工具包，统一多家模型接口",
+  "solves": "Streaming model output onto a page token by token is easy to get janky and messy when you write it yourself. These ready-made components survive a model swap.",
+  "solves_zh": "在网页上逐字渲染模型输出，自己写容易卡、容易乱。这里有现成流式组件，换模型不用重写。",
+  "best_for": "You are building a streaming AI chat interface into your own product.",
+  "best_for_zh": "要给自己的产品做一个流式输出的 AI 对话界面。",
+  "surface": "standalone",
   "tags": [
     "typescript",
     "sdk",

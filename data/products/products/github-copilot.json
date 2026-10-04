@@ -19,6 +19,11 @@
     "pair-programming",
     "github"
   ],
+  "solves": "Typing out boilerplate line by line wears you down. It finishes the line you are on and can take a whole assigned issue.",
+  "solves_zh": "样板代码一行行手敲很耗人。它能补完你正在写的那一行，也能独立接下一个完整的 issue。",
+  "best_for": "When you are in an editor and want the next few lines already written.",
+  "best_for_zh": "当你在编辑器里，希望接下来几行已经替你写好了。",
+  "surface": "extension",
   "handbook": {
     "status": "written",
     "route": {

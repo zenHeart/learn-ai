@@ -13,6 +13,11 @@
   "homepage": "https://www.meta.ai/",
   "desc": "Standalone voice-first AI app built on Llama 4",
   "desc_zh": "基于 Llama 4 的独立语音优先 AI 应用",
+  "solves": "Typing is slow when you are on the move. It answers by voice, inside the app you already have open.",
+  "solves_zh": "走路的时候打字太慢。它直接用语音回答，就在你已经打开的那个应用里。",
+  "best_for": "When you want to ask something hands-free without leaving the Meta app.",
+  "best_for_zh": "想不开手机、随手用语音问一句的时候。",
+  "surface": "in-product",
   "tags": [
     "consumer",
     "voice",

@@ -13,6 +13,11 @@
   "homepage": "https://mimo.mi.com/docs/zh-CN/news/latest/mimocode",
   "desc": "小米开源终端 AI 编程助手",
   "desc_zh": "小米开源终端 AI 编程助手",
+  "solves": "Every new conversation means re-explaining the project, and requirements still have to be typed. This open-source assistant remembers the project and takes spoken instructions.",
+  "solves_zh": "换个会话就得把项目背景重讲一遍，需求还得手打。这个开源助手会记住项目，还能听你说话下指令。",
+  "best_for": "You work on one project for a long time and don't want to keep restating the context.",
+  "best_for_zh": "你长期跟同一个项目写代码，不想反复交代上下文。",
+  "surface": "standalone",
   "tags": [
     "open-source",
     "terminal",

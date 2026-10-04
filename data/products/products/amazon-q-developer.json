@@ -13,6 +13,11 @@
   "homepage": "https://aws.amazon.com/q/developer/",
   "desc": "AWS coding assistant with agentic testing, review and migration",
   "desc_zh": "AWS 编程助手，支持智能化的测试、评审与迁移",
+  "solves": "A framework upgrade means changing hundreds of call sites by hand. It walks the diff, rewrites the calls and runs the tests itself.",
+  "solves_zh": "升级一个框架意味着手动改上百处调用。它遍历 diff、改写调用，并自己跑测试。",
+  "best_for": "When a library upgrade touches more files than you want to review one at a time.",
+  "best_for_zh": "当一次库升级牵涉的文件太多，你不想逐个 review。",
+  "surface": "standalone",
   "tags": [
     "coding-assistant",
     "aws",

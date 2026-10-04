@@ -15,6 +15,11 @@
   "homepage": "https://www.litellm.ai/",
   "desc": "Open-source gateway putting one OpenAI-shaped API in front of 100+ models.",
   "desc_zh": "开源网关，用统一的 OpenAI 格式接口接入 100+ 模型。",
+  "solves": "Every provider has its own client, its own error shapes and its own invoice. One OpenAI-shaped endpoint sits in front, with keys and a budget per team.",
+  "solves_zh": "每家服务商都有自己的客户端、错误结构和账单。前面放一个 OpenAI 形状的接口，密钥和预算按团队分配。",
+  "best_for": "When you want to switch models, or cap what one team can spend, without a rewrite.",
+  "best_for_zh": "当你想换模型，或给某个团队设个花费上限，又不想重写代码。",
+  "surface": "standalone",
   "tags": [
     "llm-gateway",
     "routing",

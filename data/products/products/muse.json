@@ -14,6 +14,11 @@
   "homepage": "https://www.meta.com/ai/",
   "desc": "Personal AI agent that acts on your accounts and completes real errands.",
   "desc_zh": "能调用你的账号、真正替你办事的个人 AI 智能体。",
+  "solves": "Errands pile up because each one means logging in and clicking. It uses your accounts to carry them out for you.",
+  "solves_zh": "杂事堆着是因为每件都要登录、点点点。它用你的账号把这些事替你做完。",
+  "best_for": "When you want shopping or email handled for you without doing the clicking yourself.",
+  "best_for_zh": "想让购物、邮件这类事自动代办、自己不用动手点的时候。",
+  "surface": "in-product",
   "tags": [
     "personal-agent",
     "proactive",

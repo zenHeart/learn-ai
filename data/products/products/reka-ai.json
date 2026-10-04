@@ -13,6 +13,11 @@
   "homepage": "https://www.reka.ai/",
   "desc": "Multimodal language models handling text, image, video and audio",
   "desc_zh": "统一处理文本、图像、视频与音频的多模态语言模型",
+  "solves": "Piping a document, a chart and an audio clip through three separate models means three prompt formats. One model takes all four together.",
+  "solves_zh": "把文档、图表和音频片段分别送进三个模型，就要准备三套 prompt 格式。一个模型可以同时接收这四种输入。",
+  "best_for": "When a single request mixes text, image, video and audio and you want one reasoning pass over it.",
+  "best_for_zh": "当一次请求里混合了文字、图片、视频和音频，你希望只推理一遍。",
+  "surface": "standalone",
   "tags": [
     "multimodal",
     "foundation-models",

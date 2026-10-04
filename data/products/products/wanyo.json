@@ -21,6 +21,11 @@
     "a2a",
     "workbench"
   ],
+  "solves": "Splitting one job across several roles means someone has to hold the thread together. 万有无界 lets multiple digital employees take turns finishing it.",
+  "solves_zh": "一件事要拆给多个角色分别推进，串起来全靠人盯着。万有无界让多个数字员工接力完成。",
+  "best_for": "When you want a cross-role job handed to a chain of agents to run.",
+  "best_for_zh": "你要把一件跨岗位的活拆给多个智能体接力跑。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

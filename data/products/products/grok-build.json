@@ -20,6 +20,11 @@
     "parallel",
     "workflows"
   ],
+  "solves": "One agent working serially is the bottleneck on a large task. It fans the work out across parallel agents in your terminal.",
+  "solves_zh": "大任务上，一个智能体串行干活就是瓶颈。它在终端里把工作分派给多个并行智能体。",
+  "best_for": "When a task is big enough that you would rather start many agents than watch one grind.",
+  "best_for_zh": "当任务大到你更想一次开多个智能体，而不是盯着一个慢慢磨时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

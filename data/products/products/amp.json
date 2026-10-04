@@ -13,6 +13,11 @@
   "homepage": "https://ampcode.com",
   "desc": "Sourcegraph spin-out coding agent for CLI and editor",
   "desc_zh": "源自 Sourcegraph 的编码 Agent，2025-12 独立成公司 Amp Frontier",
+  "solves": "Autocomplete completes lines, not tasks. It reads the whole codebase and makes the multi-file change you asked for.",
+  "solves_zh": "自动补全补的是单行，不是整个任务。它读完整个代码库，做出你要的跨文件改动。",
+  "best_for": "When a change spans many files and you would rather describe it than do it.",
+  "best_for_zh": "当一个改动横跨很多文件，你更愿意描述它而不是自己动手。",
+  "surface": "standalone",
   "tags": [
     "cli-agent",
     "spinout",

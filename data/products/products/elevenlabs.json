@@ -13,6 +13,11 @@
   "homepage": "https://elevenlabs.io",
   "desc": "Most realistic open TTS and voice cloning API",
   "desc_zh": "语音合成与声音克隆中最具真实感的平台与 API",
+  "solves": "Synthetic narration sounds like a robot, so listeners tune out. The output carries the pauses and emphasis a real voice would.",
+  "solves_zh": "合成配音一听就是机器味，听众很快走神。它的输出带着真人该有的停顿和重音。",
+  "best_for": "When you need a voice for a product, a video or a game and cannot book a human.",
+  "best_for_zh": "当你需要给产品、视频或游戏配人声，却请不到真人时。",
+  "surface": "standalone",
   "tags": [
     "tts",
     "voice-cloning",

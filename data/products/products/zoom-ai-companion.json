@@ -1,0 +1,43 @@
+{
+  "id": "zoom-ai-companion",
+  "name": "Zoom AI Companion",
+  "name_zh": "Zoom AI 智能助手",
+  "vendor_id": "zoom",
+  "region": "intl",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2023-09-01",
+  "date_precision": "month",
+  "homepage": "https://news.zoom.com/zoom-introduces-ai-companion-2-0",
+  "desc": "Nobody can stay for the whole meeting and nobody wants to transcribe it either. AI Compani",
+  "desc_zh": "没人能全程参会，也没人想手工记纪要。AI 智能助手会实时总结、帮你追上进度，并回答会中提出的问题。",
+  "solves": "Nobody can stay for the whole meeting and nobody wants to transcribe it either. AI Companion summarizes, catches you up, and answers questions from the meeting while it is happening.",
+  "solves_zh": "没人能全程参会，也没人想手工记纪要。AI 智能助手会实时总结、帮你追上进度，并回答会中提出的问题。",
+  "best_for": "Attending only part of a meeting and needing a reliable record of what was decided.",
+  "best_for_zh": "你只能参加部分会议，但需要一份可靠的决议记录。",
+  "tags": [
+    "in-product",
+    "zoom"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Zoom 内的能力。来源：https://news.zoom.com/zoom-introduces-ai-companion-2-0",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "released",
+      "from": "2023-09-21",
+      "to": "2023-09-01",
+      "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    }
+  ]
+}

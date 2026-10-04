@@ -14,6 +14,11 @@
   "homepage": "https://www.anthropic.com/product/claude-cowork",
   "desc": "Desktop knowledge-work agent, folded into Claude in Sept 2026",
   "desc_zh": "桌面端知识工作智能体，2026 年 9 月并入 Claude",
+  "solves": "Desk work you never finish because it is dozens of small file operations. It runs them on your machine and hands back the result.",
+  "solves_zh": "桌面上那些琐碎文件操作太多，总是做不完。它在你本机跑完这些操作，然后把结果交回来。",
+  "best_for": "When a task is defined by its steps and files, and you would rather review than perform it.",
+  "best_for_zh": "当任务可以用步骤和文件说清楚，而你更想审一遍而不是亲手做。",
+  "surface": "standalone",
   "tags": [
     "autonomous-agent",
     "knowledge-work",

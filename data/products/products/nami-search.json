@@ -13,6 +13,11 @@
   "homepage": "https://www.n.cn",
   "desc": "360 面向普通用户的 AI 搜索",
   "desc_zh": "360 面向普通用户的 AI 搜索",
+  "solves": "Search gives you a pile of URLs, not an answer. It turns the results into a Chinese write-up you can read once and understand.",
+  "solves_zh": "搜出来的是一堆网址，不是答案。它把结果整理成一篇读完就懂的中文说明。",
+  "best_for": "You want to look something up and read the conclusion, not sift links yourself.",
+  "best_for_zh": "你想查一件事、想直接看结论而不是自己筛链接。",
+  "surface": "standalone",
   "tags": [
     "search",
     "ai-search",

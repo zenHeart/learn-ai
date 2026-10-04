@@ -1,0 +1,43 @@
+{
+  "id": "intercom-fin",
+  "name": "Intercom Fin",
+  "name_zh": "Intercom Fin",
+  "vendor_id": "intercom",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2023-03-01",
+  "date_precision": "month",
+  "homepage": "https://www.intercom.com/blog/announcing-fin-2-ai-agent-customer-service",
+  "desc": "Support volume scales linearly with headcount. Fin resolves a large share of incoming tick",
+  "desc_zh": "支持工作量随人头线性增长。Fin 能独立解决相当大比例的进线工单，依据是你的帮助中心和你自己的政策。",
+  "solves": "Support volume scales linearly with headcount. Fin resolves a large share of incoming tickets on its own, using your help center and your own policies as its source of truth.",
+  "solves_zh": "支持工作量随人头线性增长。Fin 能独立解决相当大比例的进线工单，依据是你的帮助中心和你自己的政策。",
+  "best_for": "A support team whose ticket volume outstrips its headcount and needs resolution, not deflection.",
+  "best_for_zh": "工单量超过人手、且需要真正解决（而不是把客户挡回去）的支持团队。",
+  "tags": [
+    "in-product",
+    "intercom"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Intercom 内的能力。来源：https://www.intercom.com/blog/announcing-fin-2-ai-agent-customer-service",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "released",
+      "from": "2023-03-15",
+      "to": "2023-03-01",
+      "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    }
+  ]
+}

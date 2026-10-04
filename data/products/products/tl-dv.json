@@ -13,6 +13,11 @@
   "homepage": "https://tldv.io",
   "desc": "Meeting recording with AI highlights and CRM sync",
   "desc_zh": "会议录制加 AI 高光片段提取，可同步到 CRM",
+  "solves": "Nobody wants to sit through the recording again. It pulls the highlights out and pushes them to the CRM on its own.",
+  "solves_zh": "没人想再把录像重看一遍。它自动挑出高光片段，再自己推送到 CRM。",
+  "best_for": "When calls happen all day and only the key moments are worth keeping.",
+  "best_for_zh": "会议一整天不断，只有关键片刻值得留下的时候。",
+  "surface": "standalone",
   "tags": [
     "meetings",
     "highlights",

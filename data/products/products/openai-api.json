@@ -13,6 +13,11 @@
   "homepage": "https://platform.openai.com/",
   "desc": "Developer API platform powering GPT, DALL-E and Whisper workloads",
   "desc_zh": "OpenAI 开发者 API 平台，支撑 GPT、DALL-E 与 Whisper 等模型调用",
+  "solves": "Wiring up a model yourself means handling auth, retries, billing, and rate limits. Call these endpoints and it takes care of all of that.",
+  "solves_zh": "自己接模型要处理鉴权、重试、计费和限流。直接调这套接口，这些事它替你扛。",
+  "best_for": "You are adding GPT, image, or voice capability to your own product.",
+  "best_for_zh": "你把自己的产品接上 GPT、绘图或语音能力时。",
+  "surface": "standalone",
   "tags": [
     "api",
     "developer-platform",

@@ -14,6 +14,11 @@
   "homepage": "https://labs.google/fx/tools/flow",
   "desc": "Google's AI creative studio for making and editing video and images.",
   "desc_zh": "Google 用于生成与剪辑视频、图像的 AI 创意工作室。",
+  "solves": "Clips are generated one at a time and stitched elsewhere, so the character changes every shot. It holds a storyboard and a consistent look across shots.",
+  "solves_zh": "片段是一个一个生成、到别处再拼的，所以同一个角色每镜都不一样。它用一份分镜脚本锁住整段画面的统一风格。",
+  "best_for": "When a short video has to look like one piece rather than a pile of clips.",
+  "best_for_zh": "当短片要看起来是完整成片，而不是一堆拼起来的片段。",
+  "surface": "standalone",
   "tags": [
     "veo",
     "storyboarding",

@@ -13,6 +13,11 @@
   "homepage": "https://replika.com/",
   "desc": "AI companion you customize into a friend, partner, or mentor.",
   "desc_zh": "可自定义为朋友、恋人或导师的 AI 伴侣应用。",
+  "solves": "There is no one to talk to at two in the morning. You shape the companion into whoever you want it to be.",
+  "solves_zh": "凌晨两点没个人说话。你可以把这个陪伴对象塑造成你想要的任何样子。",
+  "best_for": "When you want a private conversation partner you can customise rather than a task tool.",
+  "best_for_zh": "想要一个能自定义的私密聊天对象，而不是一个干活的工具的时候。",
+  "surface": "standalone",
   "tags": [
     "companion",
     "avatar",

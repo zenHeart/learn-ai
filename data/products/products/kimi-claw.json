@@ -13,6 +13,11 @@
   "homepage": "https://www.kimi.com/claw",
   "desc": "浏览器内一键部署的云端 Agent",
   "desc_zh": "浏览器内一键部署的云端 Agent",
+  "solves": "Deploying an agent to the cloud means setting up an environment and installing dependencies. Here it deploys from the browser in one click.",
+  "solves_zh": "在云上部署一个 Agent 要配环境、装依赖。在浏览器里就能一键部署起来。",
+  "best_for": "When you want to deploy and run an agent in the cloud straight from a browser.",
+  "best_for_zh": "想在浏览器里直接把一个 Agent 部署到云上跑起来。",
+  "surface": "standalone",
   "tags": [
     "agent-platform",
     "cloud-agent",

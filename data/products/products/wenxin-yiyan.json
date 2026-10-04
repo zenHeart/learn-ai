@@ -14,6 +14,11 @@
   "homepage": "https://yiyan.baidu.com",
   "desc": "百度首个生成式 AI 对话应用",
   "desc_zh": "百度首个生成式 AI 对话应用",
+  "solves": "Drafting one document means opening several tabs and copying text back and forth. Wenxin Yiyan puts writing, lookup and organizing in a single conversation.",
+  "solves_zh": "起草一份文档要开好几个网页、复制粘贴来回复制。文心一言把写作、查资料和整理放在一个对话框里。",
+  "best_for": "You want to ask the question and get a finished draft in one place instead of switching tools.",
+  "best_for_zh": "想在一个地方问完问题、拿到成稿，而不是切换多个工具。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "wenxin",

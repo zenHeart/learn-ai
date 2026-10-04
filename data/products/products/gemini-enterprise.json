@@ -15,6 +15,11 @@
   "homepage": "https://cloud.google.com/gemini-enterprise",
   "desc": "Google Cloud's unified platform to build, govern and scale enterprise agents.",
   "desc_zh": "Google Cloud 用于构建、治理和扩展企业智能体的统一平台。",
+  "solves": "Every team builds agents differently and nobody can say who may touch production. It puts building, permissions and run history in one place.",
+  "solves_zh": "每个团队搭 Agent 的方式都不一样，也没人说得清谁有权动生产环境。它把构建、权限和运行记录收在一处。",
+  "best_for": "When a company has more than a handful of internal agents and needs an audit trail.",
+  "best_for_zh": "当公司内部的 Agent 超过几个，需要一条可追溯的审计线索时。",
+  "surface": "standalone",
   "tags": [
     "enterprise",
     "orchestration",

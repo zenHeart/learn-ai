@@ -13,6 +13,11 @@
   "homepage": "https://www.coze.cn",
   "desc": "低代码 AI 智能体搭建平台",
   "desc_zh": "低代码 AI 智能体搭建平台",
+  "solves": "You want to build an AI agent but nobody on the team can write code. Drag models, tools and knowledge together and it ships.",
+  "solves_zh": "想做个 AI 智能体却没人会写代码。用拖拽把模型、工具和知识拼起来就能上线。",
+  "best_for": "When it is your first agent and you have no development team.",
+  "best_for_zh": "第一次做智能体，手上没有开发团队。",
+  "surface": "standalone",
   "tags": [
     "agent-platform",
     "low-code",

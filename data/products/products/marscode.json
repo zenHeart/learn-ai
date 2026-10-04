@@ -13,6 +13,11 @@
   "homepage": "https://www.marscode.cn/",
   "desc": "免费 AI 编程助手与云端 IDE",
   "desc_zh": "免费 AI 编程助手与云端 IDE",
+  "solves": "Autocomplete and looking up an error mean switching context while you type. Here both happen inside the editor, and you can swap models.",
+  "solves_zh": "写代码时补全和查报错要来回翻。这里在编辑器里直接补全、解释报错，还能换模型。",
+  "best_for": "When you want an AI coding assistant for free and are not ready to buy the enterprise plan.",
+  "best_for_zh": "想先免费用上 AI 编程助手，不打算立刻买企业版。",
+  "surface": "standalone",
   "tags": [
     "cloud-ide",
     "free-tier",

@@ -18,6 +18,11 @@
     "transcription",
     "enterprise"
   ],
+  "solves": "Nobody remembers what was decided in the meeting, and the recording is 50 minutes long. It transcribes live and hands you the summary.",
+  "solves_zh": "会开完没人记得定了什么，而录音有 50 分钟长。它实时转写，散会时把纪要直接交给你。",
+  "best_for": "When you sit in back-to-back calls and need the recap written before you have left the room.",
+  "best_for_zh": "当你连着开会，需要在走出会议室之前就拿到写好的纪要时。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

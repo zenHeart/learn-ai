@@ -18,6 +18,11 @@
     "ai-search",
     "metaso"
   ],
+  "solves": "Chinese search results are ads you have to scroll past before the answer. It drops the ads and puts the answer at the top.",
+  "solves_zh": "中文搜索结果页前面全是广告，你得先划过去才能看到答案。秘塔把广告去掉，答案直接放在最上面。",
+  "best_for": "When you want a Chinese-language answer without the sponsored links sitting between you and it.",
+  "best_for_zh": "当你想要一个中文答案，而不想中间夹着赞助链接时。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

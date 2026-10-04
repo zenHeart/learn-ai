@@ -13,6 +13,11 @@
   "homepage": "https://www.trae.cn",
   "desc": "国产首个 AI 原生集成开发环境",
   "desc_zh": "国产首个 AI 原生集成开发环境",
+  "solves": "AI features only add up after installing a pile of plugins, and the result is a mess. Trae builds the coding assistant into the editor.",
+  "solves_zh": "AI 功能要装一堆插件才凑得齐，拼起来很乱。Trae 把编码助手直接做进编辑器里。",
+  "best_for": "When you want an AI coding environment that works out of the box, without assembling plugins yourself.",
+  "best_for_zh": "想要一个开箱即用的 AI 编程环境，不想自己拼插件。",
+  "surface": "standalone",
   "tags": [
     "coding-agent",
     "ai-ide",

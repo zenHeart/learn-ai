@@ -14,6 +14,11 @@
   "homepage": "https://www.together.ai/",
   "desc": "Cloud for serving and fine-tuning open-weight models at scale.",
   "desc_zh": "面向开源权重模型的规模化推理与微调云平台。",
+  "solves": "The frontier API works, until the invoice arrives and you cannot move the load. Open-weight models on rented GPUs give you a cheaper floor and somewhere to fine-tune.",
+  "solves_zh": "前沿 API 本来好用，直到账单来了又换不动量。租用 GPU 跑开放权重模型能压低成本，也给你一个微调的地方。",
+  "best_for": "When per-token cost at your volume is the problem, not model quality.",
+  "best_for_zh": "当问题出在你这个用量下的单 token 成本，而不是模型质量。",
+  "surface": "standalone",
   "tags": [
     "open-models",
     "inference",

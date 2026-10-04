@@ -13,6 +13,11 @@
   "homepage": "https://suno.com",
   "desc": "Full song generation from text prompts, went viral fast",
   "desc_zh": "文本提示直接生成完整歌曲，2023-12 公开上线后迅速爆红",
+  "solves": "Licensing a track means either paying royalties or clearing a song nobody has heard. You describe a song and get a whole one, vocals included.",
+  "solves_zh": "给一首曲子办授权，要么付版税，要么去清一首没人听过的歌的版权。你描述一首歌，拿到的就是完整成品，人声也在里面。",
+  "best_for": "When a video, podcast or game needs a piece of music that is yours to use.",
+  "best_for_zh": "当视频、播客或游戏需要一段版权归你使用的音乐。",
+  "surface": "standalone",
   "tags": [
     "music-generation",
     "audio",

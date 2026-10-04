@@ -18,6 +18,11 @@
     "cli",
     "minimax"
   ],
+  "solves": "A coding assistant that only works inside an IDE leaves the terminal out. MiniMax Code gives you both a CLI and a desktop app for having a model edit your code.",
+  "solves_zh": "编码助手只在 IDE 里能用。想在终端里让模型改代码，命令行和桌面工具各接一处。",
+  "best_for": "When you prefer having the model edit code in the terminal rather than clicking through an IDE.",
+  "best_for_zh": "你习惯在终端里让模型改代码，而不是在 IDE 里点按钮。",
+  "surface": "standalone",
   "handbook": {
     "status": "written",
     "route": {

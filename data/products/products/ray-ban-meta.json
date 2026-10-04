@@ -18,6 +18,11 @@
     "wearable",
     "camera"
   ],
+  "solves": "You already wear glasses and do not want to pull out a phone to ask or to capture. Ask, and it sees what you point it at.",
+  "solves_zh": "你本来就戴着眼镜，不想为了问一句或拍一段再掏出手机。问就行，它看到的就是你面朝的方向。",
+  "best_for": "When you need your hands free for a quick question or a first-person recording.",
+  "best_for_zh": "当你需要一个不占手的方式快速问一句，或拍一段第一人称视频时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

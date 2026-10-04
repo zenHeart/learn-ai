@@ -1,0 +1,36 @@
+{
+  "id": "apple-intelligence",
+  "name": "Apple Intelligence",
+  "name_zh": "Apple Intelligence 苹果智能",
+  "vendor_id": "apple",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "image-design",
+    "audio-voice"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2024-10-28",
+  "date_precision": "day",
+  "homepage": "https://www.apple.com/newsroom/2024/10/apple-intelligence-is-available-today-on-iphone-ipad-and-mac",
+  "desc": "Generic AI lives in a browser tab you have to go find. Apple Intelligence runs on-device a",
+  "desc_zh": "通用 AI 都在一个要专门打开的浏览器标签里。Apple Intelligence 跑在设备本地，直接出现在你已经在用的 App 里——邮件和信息里的写作工具、通知摘要，以及重新设计的 Siri。",
+  "solves": "Generic AI lives in a browser tab you have to go find. Apple Intelligence runs on-device and surfaces in the apps you already have open — writing tools in Mail and Messages, notification summaries, and a redesigned Siri.",
+  "solves_zh": "通用 AI 都在一个要专门打开的浏览器标签里。Apple Intelligence 跑在设备本地，直接出现在你已经在用的 App 里——邮件和信息里的写作工具、通知摘要，以及重新设计的 Siri。",
+  "best_for": "You want AI woven into your phone's own apps, on-device, rather than in a separate app you switch to.",
+  "best_for_zh": "你想要 AI 直接嵌进手机自带的应用里、在设备本地运行，而不是再多开一个应用。",
+  "tags": [
+    "in-product",
+    "ios"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 iOS 内的能力。来源：https://www.apple.com/newsroom/2024/10/apple-intelligence-is-available-today-on-iphone-ipad-and-mac",
+  "revisions": []
+}

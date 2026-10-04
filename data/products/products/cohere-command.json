@@ -19,6 +19,11 @@
     "tool-use",
     "private-cloud"
   ],
+  "solves": "Answers a model invents are unusable in a regulated setting. Command cites the exact source span behind every claim.",
+  "solves_zh": "在受监管的场景里，模型编出来的答案不能用。Command 会为每条结论标出对应的原文出处。",
+  "best_for": "When a reviewer has to be able to check where each statement came from.",
+  "best_for_zh": "当审核者必须能查证每条说法的出处时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

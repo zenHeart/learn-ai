@@ -19,6 +19,11 @@
     "langchain",
     "low-code"
   ],
+  "solves": "You wire a LangChain chain by editing nested Python objects until the shape is unreadable. It draws the graph instead and exports it.",
+  "solves_zh": "接一条 LangChain 链要靠改嵌套的 Python 对象，改到后来结构自己也读不懂了。它改成让你画这张图，再导出代码。",
+  "best_for": "When a team wants to design and hand off an agent flow without reading raw Python.",
+  "best_for_zh": "当团队要设计并交付一条智能体流程，却不想读原始 Python 代码时。",
+  "surface": "standalone",
   "handbook": {
     "status": "candidate"
   },

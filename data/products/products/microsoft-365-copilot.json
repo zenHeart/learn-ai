@@ -1,0 +1,34 @@
+{
+  "id": "microsoft-365-copilot",
+  "name": "Microsoft 365 Copilot",
+  "name_zh": "Microsoft 365 Copilot",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2023-11-01",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/copilot/blog/2023/09/21/announcing-microsoft-365-copilot-general-availability-and-microsoft-365-chat/",
+  "desc": "Word, Excel, Outlook, and Teams each make you start from a blank document with no help. Co",
+  "desc_zh": "Word、Excel、Outlook、Teams 都只是让你从一张白纸开始，没有任何帮手。Copilot 直接在你正在编辑的那个文件里起草和分析。",
+  "solves": "Word, Excel, Outlook, and Teams each make you start from a blank document with no help. Copilot drafts and analyzes inside the file you're already editing.",
+  "solves_zh": "Word、Excel、Outlook、Teams 都只是让你从一张白纸开始，没有任何帮手。Copilot 直接在你正在编辑的那个文件里起草和分析。",
+  "best_for": "You live in Office all day and want drafting and analysis without copying content out into a separate chatbot.",
+  "best_for_zh": "你整天泡在 Office 里，想要起草和分析，但不想把内容复制到另一个聊天工具去。",
+  "tags": [
+    "in-product",
+    "microsoft-365"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 Microsoft 365 内的能力。来源：https://www.microsoft.com/en-us/copilot/blog/2023/09/21/announcing-microsoft-365-copilot-general-availability-and-microsoft-365-chat/",
+  "revisions": []
+}

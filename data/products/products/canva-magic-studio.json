@@ -14,6 +14,11 @@
   "homepage": "https://www.canva.com/ai/",
   "desc": "AI design suite that pushed generative creation to non-designers",
   "desc_zh": "把生成式创作带给非设计用户的套件，是最大规模的消费级 AI 创作入口之一",
+  "solves": "People who can't design never quite get a poster right, and editing a template always lands slightly off. Generate image and layout from text, and you still get an editable design file.",
+  "solves_zh": "不会设计的人做海报，套模板改完总差点意思。文字出图和版式，产出的还是能接着改的设计文件。",
+  "best_for": "You need a cover, social image, or poster without learning design software.",
+  "best_for_zh": "你要出封面、社媒图或海报，但不想学设计软件。",
+  "surface": "in-product",
   "tags": [
     "design",
     "consumer",

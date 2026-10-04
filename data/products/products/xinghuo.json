@@ -14,6 +14,11 @@
   "homepage": "https://xinghuo.xfyun.cn/chat",
   "desc": "科大讯飞通用大模型助手",
   "desc_zh": "科大讯飞通用大模型助手",
+  "solves": "General questions and drafts otherwise mean switching between search and a separate writing tool. One assistant covers asking and drafting, in Chinese.",
+  "solves_zh": "查资料和写稿本来要在搜索和另一个写作工具之间来回切换。一个助手就能同时完成提问和起草，而且全程中文。",
+  "best_for": "When you want a Chinese-language assistant for everyday research and drafting.",
+  "best_for_zh": "当你想要一个中文助手，处理日常的资料查询和文稿起草。",
+  "surface": "standalone",
   "tags": [
     "chat-assistant",
     "spark",

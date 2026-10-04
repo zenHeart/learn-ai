@@ -14,6 +14,11 @@
   "homepage": "https://gemini.google.com/",
   "desc": "Google's assistant, formerly Bard, with Android and iOS apps",
   "desc_zh": "Google 的助手产品，前身 Bard，提供 Android 与 iOS 应用",
+  "solves": "Typing a question and getting a page of links back. It answers in the thread and takes a photo or screenshot as input.",
+  "solves_zh": "输入一个问题，搜回一整页链接。它直接在对话里给出答案，也能以照片或截图作为输入。",
+  "best_for": "When one question needs several sources and you want the answer, not the list.",
+  "best_for_zh": "当一个问题需要多个来源，而你要的是答案本身而不是链接列表。",
+  "surface": "standalone",
   "tags": [
     "consumer",
     "mobile",

@@ -14,6 +14,11 @@
   "homepage": "https://www.atlassian.com/software/rovo",
   "desc": "Search, chat and agents over the Atlassian Teamwork Graph",
   "desc_zh": "基于 Teamwork Graph 的搜索、对话与预置 Agent，2024-10-09 正式 GA",
+  "solves": "The answer is scattered across tickets, documents, and chat logs, so finding one decision means turning through a dozen pages. It searches them for you and answers.",
+  "solves_zh": "答案散在任务、文档和聊天记录里，找一个决定要翻十几个页面。它替你搜完再回答。",
+  "best_for": "Your team lives in Jira and Confluence and you need to trace an old decision.",
+  "best_for_zh": "团队在用 Jira、Confluence，你要查旧决策。",
+  "surface": "in-product",
   "tags": [
     "enterprise",
     "agents",

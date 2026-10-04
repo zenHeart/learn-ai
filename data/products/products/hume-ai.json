@@ -14,6 +14,11 @@
   "homepage": "https://hume.ai/",
   "desc": "Voice AI that listens to your tone before answering.",
   "desc_zh": "会先听你语气再回应的情感智能语音 AI。",
+  "solves": "Synthesized speech sounds like an announcement with no feeling in it. You can direct the emotion it speaks with, and clone your own voice.",
+  "solves_zh": "合成语音念得像播报，听不出情绪。你能指定它用什么情绪去说，也能克隆自己的声音。",
+  "best_for": "Making audio content where the voice needs to sound like it is expressing something, not reading a script.",
+  "best_for_zh": "做有声内容，需要声音听起来在表达而不是在念字。",
+  "surface": "standalone",
   "tags": [
     "emotion-aware",
     "voice-clone",

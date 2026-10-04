@@ -13,6 +13,11 @@
   "homepage": "https://aistudio.google.com/",
   "desc": "Free web playground for prompting and tuning Gemini models",
   "desc_zh": "免费网页工作台，用于提示词调试与 Gemini 模型微调",
+  "solves": "Guessing whether a prompt is any good by shipping it. You run variants against each other and see the difference before wiring it in.",
+  "solves_zh": "判断一个 prompt 好不好，只能上线之后才知道。跑多个变体互相对比，接进应用前先看清差别。",
+  "best_for": "When you are tuning a Gemini prompt before it goes into an app.",
+  "best_for_zh": "当你要在 Gemini prompt 接进应用之前先调一调。",
+  "surface": "standalone",
   "tags": [
     "playground",
     "prompt-engineering",

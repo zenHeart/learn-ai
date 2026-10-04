@@ -14,6 +14,11 @@
   "homepage": "https://codewave.163.com",
   "desc": "low-code platform with natural-language to NASL code writing",
   "desc_zh": "低代码平台，支持用自然语言编写 NASL 代码",
+  "solves": "Business rules are locked in code only specialists can read. You describe the change in plain language and get working NASL back.",
+  "solves_zh": "业务规则锁在代码里，只有专业的人读得懂。你用日常语言描述改动，它直接返回可用的 NASL。",
+  "best_for": "When domain experts need to change business logic without waiting on a developer.",
+  "best_for_zh": "业务专家想改业务逻辑、又不用等开发排期的时候。",
+  "surface": "standalone",
   "tags": [
     "low-code",
     "domain-language",

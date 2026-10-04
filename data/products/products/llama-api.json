@@ -13,6 +13,11 @@
   "homepage": "https://www.llama.com/",
   "desc": "Hosted Llama developer platform with console, SDKs and fine-tuning",
   "desc_zh": "托管的 Llama 开发者平台，含控制台、SDK 与微调能力",
+  "solves": "Running Llama yourself means buying GPUs, writing the serving code and keeping it patched. This hands you an OpenAI-compatible endpoint, SDKs and fine-tuning instead.",
+  "solves_zh": "自己部署 Llama 要买 GPU、写推理服务代码，还要一直跟着打补丁。这里直接给你兼容 OpenAI 的接口、SDK 和微调能力。",
+  "best_for": "When you want Llama behind an OpenAI-compatible API without running the infrastructure.",
+  "best_for_zh": "想用上 Llama 但不想自己运维一套 OpenAI 兼容 API 的时候。",
+  "surface": "standalone",
   "tags": [
     "api",
     "llama",

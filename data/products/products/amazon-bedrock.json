@@ -13,6 +13,11 @@
   "homepage": "https://aws.amazon.com/bedrock/",
   "desc": "AWS managed service for foundation models with agents and RAG",
   "desc_zh": "AWS 托管的基础模型服务，内置智能体与 RAG 能力",
+  "solves": "Model choice, the guardrails and the audit trail are three separate purchases. Bedrock keeps them in one AWS account your security team already reviews.",
+  "solves_zh": "选模型、加护栏、留审计记录是三笔独立采购。Bedrock 把它们收在一个 AWS 账号里，安全团队本来就在审这个账号。",
+  "best_for": "When procurement wants one vendor and one compliance story behind your model calls.",
+  "best_for_zh": "当采购希望模型调用背后只有一家供应商、一套合规说法时。",
+  "surface": "standalone",
   "tags": [
     "cloud-platform",
     "enterprise",

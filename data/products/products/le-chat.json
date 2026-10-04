@@ -14,6 +14,11 @@
   "homepage": "https://chat.mistral.ai/",
   "desc": "Mistral's consumer assistant emphasizing speed and European sovereignty",
   "desc_zh": "Mistral 的消费级助手，强调速度与欧洲数据主权",
+  "solves": "General assistants answer slowly, and you never know where your data was sent. This one is built for fast replies and keeps your data in Europe.",
+  "solves_zh": "普通助手答得慢，你的数据又不知道被发去了哪。这里主打快回应，并保证数据留在欧洲。",
+  "best_for": "Everyday questions where you care about both reply speed and where your data lives.",
+  "best_for_zh": "你在意回复速度、也在意数据存在哪里的日常问答。",
+  "surface": "standalone",
   "tags": [
     "consumer",
     "european-sovereignty",

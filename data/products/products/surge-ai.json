@@ -19,6 +19,11 @@
     "human-feedback",
     "preference-data"
   ],
+  "solves": "Crowd workers produce agreeable, shallow answers, and training on them teaches a model to be agreeable and shallow. It sources domain experts instead.",
+  "solves_zh": "众包标注员给出的答案往往讨好而浅薄，用它们训练只会教出同样讨好而浅薄的模型。Surge AI 找的是领域专家来做标注。",
+  "best_for": "When a frontier lab needs preference and RLHF data that a general crowd cannot produce.",
+  "best_for_zh": "当前沿实验室需要通用众包做不出来的偏好数据和 RLHF 数据时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

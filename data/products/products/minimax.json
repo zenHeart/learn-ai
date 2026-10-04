@@ -18,6 +18,11 @@
     "api",
     "minimax"
   ],
+  "solves": "Language, video, speech, image and music each come from a different vendor, and the accounts and billing split five ways. The open platform puts them in one place.",
+  "solves_zh": "语言、视频、语音、图像、音乐各接一家，账号和计费散成五套。开放平台收在一处。",
+  "best_for": "When you want to call MiniMax's multimodal models under a single account.",
+  "best_for_zh": "你要在同一个账号下调用 MiniMax 的多模态模型。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

@@ -13,6 +13,11 @@
   "homepage": "https://pi.ai/",
   "desc": "Supportive personal AI companion focused on conversation and empathy",
   "desc_zh": "以陪伴与共情为核心的私人家人级 AI 助手",
+  "solves": "Assistants are built to finish the task, so talking is treated as a problem to solve. Pi listens first and answers like a person would.",
+  "solves_zh": "助手是为完成任务而造的，聊天本身成了要解决的问题。Pi 先听，再像人一样回答。",
+  "best_for": "When you want to think out loud about something and not be handed a plan.",
+  "best_for_zh": "当你想把一件事说出来理一理，而不是拿到一份执行计划。",
+  "surface": "standalone",
   "tags": [
     "companion",
     "empathetic",

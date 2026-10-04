@@ -1,0 +1,43 @@
+{
+  "id": "chatgpt-tasks",
+  "name": "ChatGPT Tasks",
+  "name_zh": "ChatGPT 定时任务",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
+  "desc": "A recurring question — a morning briefing, a daily check on something — requires you to be",
+  "desc_zh": "每天早上要的那份简报、每天要复查的那件事，都要求你恰好在那个时刻在线。定时任务会按计划自动跑你的提示词并把结果送来。",
+  "solves": "A recurring question — a morning briefing, a daily check on something — requires you to be there at the right moment. Tasks runs the prompt on a schedule and delivers the result.",
+  "solves_zh": "每天早上要的那份简报、每天要复查的那件事，都要求你恰好在那个时刻在线。定时任务会按计划自动跑你的提示词并把结果送来。",
+  "best_for": "A prompt you want re-run on a fixed cadence, rather than a one-off question.",
+  "best_for_zh": "你想按固定节奏反复运行的提示词，而不是一次性的提问。",
+  "tags": [
+    "in-product",
+    "chatgpt"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "集成在 ChatGPT 内的能力。来源：https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "released",
+      "from": "2025-01-14",
+      "to": "2025-01-01",
+      "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    }
+  ]
+}

@@ -13,6 +13,11 @@
   "homepage": "https://www.braintrust.dev",
   "desc": "Eval-first platform combining scoring, logging and playgrounds",
   "desc_zh": "以评测为核心的打分、日志与 Playground 一体化平台",
+  "solves": "You changed a prompt and have no idea whether outputs improved. It runs a scored set before and after, so the change has numbers behind it.",
+  "solves_zh": "改了 prompt 之后，不知道输出到底有没有变好。它在改动前后各跑一遍带评分的用例，让这次改动有数字可依。",
+  "best_for": "When you are tuning a prompt or a model and need evidence it improved.",
+  "best_for_zh": "当你在调 prompt 或模型，需要证据证明它确实变好了。",
+  "surface": "standalone",
   "tags": [
     "evaluation",
     "llmops",

@@ -20,6 +20,11 @@
     "self-hosting",
     "team-rules"
   ],
+  "solves": "A reviewer reading only the diff misses what breaks elsewhere. Greptile maps the whole repo first, then reviews the PR.",
+  "solves_zh": "只看 diff 的评审会漏掉别处被破坏的地方。Greptile 先摸清整个仓库，再评这个 PR。",
+  "best_for": "When a pull request touches shared code and you want a second pair of eyes before merge.",
+  "best_for_zh": "当一个 PR 改动了公共代码，你想在合并前多一双眼睛。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

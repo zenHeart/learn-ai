@@ -20,6 +20,11 @@
     "bring-your-own-key",
     "repo-map"
   ],
+  "solves": "An agent's edits arrive as a diff you cannot audit. Every change lands as its own commit, so you can read the run backwards.",
+  "solves_zh": "智能体的改动只给你一个没法审的 diff。它的每一步改动都是独立提交，你可以倒着把整次运行读回来。",
+  "best_for": "When you want to hand a repo to a model and still review every line it touched.",
+  "best_for_zh": "当你把仓库交给模型之后，仍想逐行复核它改过的每一处时。",
+  "surface": "standalone",
   "handbook": {
     "status": "none"
   },

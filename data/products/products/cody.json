@@ -15,6 +15,11 @@
   "homepage": "https://sourcegraph.com/cody",
   "desc": "code-graph assistant for large multi-repo codebases",
   "desc_zh": "面向大型多仓库代码库的代码图谱助手",
+  "solves": "The bug lives in a service you never checked out, so you grep three repos and find nothing. Cody indexes them all and answers across them.",
+  "solves_zh": "bug 在一个你从没 clone 过的服务里，你 grep 三个仓库都搜不到。Cody 把它们都建了索引，跨仓库作答。",
+  "best_for": "When the file you need is in a repo you do not have open.",
+  "best_for_zh": "当你需要的文件在一个你本地没打开的仓库里。",
+  "surface": "standalone",
   "tags": [
     "code-graph",
     "self-hosting",

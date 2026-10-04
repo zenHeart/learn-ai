@@ -18,6 +18,11 @@
     "cli",
     "china"
   ],
+  "solves": "Filling in code across a project is manual without a model that reads the repo. CodeBuddy does it inside the IDE you already run.",
+  "solves_zh": "没有能读懂仓库的模型，跨项目补全代码就得手写。CodeBuddy 在你已在用的 IDE 里完成这件事。",
+  "best_for": "When your team writes Tencent-backed code and wants the same assistant in the terminal as in the editor.",
+  "best_for_zh": "当你的团队写腾讯系技术栈的代码，并希望终端和编辑器里是同一个助手。",
+  "surface": "plugin",
   "handbook": {
     "status": "written",
     "route": {

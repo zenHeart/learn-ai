@@ -20,6 +20,11 @@
     "transactional-ai",
     "longcat"
   ],
+  "solves": "Asking about a restaurant or booking a service means scrolling lists, comparing them and jumping to another app. Wenxiaotuan answers inside Meituan and completes the order.",
+  "solves_zh": "问餐厅、订服务要自己翻列表、比对、再跳转。问小团在美团里直接给答案并完成下单。",
+  "best_for": "When you want to decide where to eat or which service to book on Meituan and place the order on the spot.",
+  "best_for_zh": "你要在美团上决定今晚吃什么或办哪项服务，并当场下单。",
+  "surface": "in-product",
   "handbook": {
     "status": "none"
   },

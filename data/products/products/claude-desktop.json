@@ -14,6 +14,11 @@
   "homepage": "https://claude.ai/download",
   "desc": "Native macOS and Windows desktop client, flagship for MCP",
   "desc_zh": "macOS 与 Windows 原生桌面客户端，MCP 的主要承载端",
+  "solves": "A chat window on a website cannot reach your files or tools. The desktop app connects to local things through MCP so the answer comes from your machine.",
+  "solves_zh": "网页上的聊天窗口碰不到你的文件或工具。桌面端通过 MCP 连上本地资源，答案来自你自己的机器。",
+  "best_for": "When you want the assistant to act on local files and tools, not just reply in a tab.",
+  "best_for_zh": "当你要助手真的操作本地文件和工具，而不只是在一个标签页里回话。",
+  "surface": "standalone",
   "tags": [
     "desktop-app",
     "mcp",
