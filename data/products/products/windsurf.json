@@ -21,9 +21,18 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "devin",
   "last_verified_at": null,
   "notes": "2026-10-04 核实：windsurf.com 跳转至 devin.ai/desktop（Windsurf 已更名 Devin Desktop），无独立 Windsurf 页面。homepage 与 status/superseded_by 的调整走 revisions。",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "2026-06 更名 Devin Desktop（windsurf.com 308 跳转）"
+    }
+  ]
 }

@@ -19,7 +19,7 @@ const productsDir = join(dataDir, 'products')
 const useCasesDir = join(dataDir, 'use-cases')
 const docsRoot = join(root, 'docs')
 
-const FORMS = new Set(['cli', 'ide', 'web', 'desktop', 'api', 'self-hosted'])
+const FORMS = new Set(['cli', 'ide', 'web', 'desktop', 'api', 'self-hosted', 'hardware'])
 const HANDBOOK_STATUS = new Set(['none', 'candidate', 'written'])
 const PRODUCT_STATUS = new Set(['active', 'renamed', 'merged', 'discontinued'])
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
@@ -105,6 +105,12 @@ for (const file of productFiles) {
   if (r.vendor_id && !vendorIds.has(r.vendor_id)) fail(`${where}: vendor_id "${r.vendor_id}" 不在 vendors.json 中`)
   if (r.form && !FORMS.has(r.form)) fail(`${where}: form 非法 "${r.form}"`)
   if (r.status && !PRODUCT_STATUS.has(r.status)) fail(`${where}: status 非法 "${r.status}"`)
+  if (['merged', 'renamed'].includes(r.status) && !r.superseded_by) {
+    fail(`${where}: status="${r.status}" 但没有 superseded_by——产品去哪了必须写明，否则时间轴讲不出演变`)
+  }
+  if (r.status === 'active' && r.superseded_by) {
+    fail(`${where}: status=active 却有 superseded_by="${r.superseded_by}"，两者矛盾`)
+  }
 
   if (r.released && !ISO_DATE.test(r.released)) fail(`${where}: released 不是 ISO 日期 "${r.released}"`)
   else if (r.released > today) fail(`${where}: released ${r.released} 晚于今天（${today}），疑似拿抓取日冒充发布日期`)

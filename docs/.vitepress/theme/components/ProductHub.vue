@@ -1,6 +1,5 @@
 <template>
   <div class="hub">
-    <template v-if="mounted">
     <!-- Search + view toggle -->
     <div class="hub-bar">
       <div class="hub-search">
@@ -142,13 +141,6 @@
         :labels="labels"
       />
       <EmptyState v-else :labels="labels" @reset="reset" />
-    </div>
-    </template>
-
-    <!-- SSR placeholder. The real body needs the query string, which a static
-         build does not carry, so it can only be built after mount. -->
-    <div v-else class="hub-pending" aria-busy="true">
-      <span class="hub-pending-text">{{ labels.loading }}</span>
     </div>
   </div>
 </template>
@@ -339,17 +331,6 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
-  }
-
-  .hub-pending {
-    display: flex;
-    justify-content: center;
-    padding: 70px 0;
-  }
-
-  .hub-pending-text {
-    font-size: 14px;
-    color: var(--vp-c-text-3);
   }
 
   .hub-bar {

@@ -26,9 +26,18 @@
       "zh": "/zh/products/qwen/"
     }
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "merged",
+  "superseded_by": "qianwen",
   "last_verified_at": "2026-10-04",
   "notes": "官网 tongyi.com 已 301 跳转至 qianwen.com，通义并入千问；status/superseded_by 待合并时处理",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "tongyi.com 已 301 跳转至 qianwen.com，通义并入千问"
+    }
+  ]
 }

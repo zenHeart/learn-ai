@@ -8,7 +8,7 @@
   "use_cases": [
     "office"
   ],
-  "form": "desktop",
+  "form": "hardware",
   "released": "2023-10-17",
   "homepage": "https://www.meta.com/smart-glasses",
   "desc": "Camera-and-assistant glasses; the only mass-market AI wearable hit",
@@ -25,5 +25,14 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网已确认；产品为 AI 智能眼镜硬件，form 枚举无硬件类，desktop 为最贴近取值，待合并时确认",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "form",
+      "from": "desktop",
+      "to": "hardware",
+      "why": "AI 眼镜属硬件，原枚举无对应值"
+    }
+  ]
 }

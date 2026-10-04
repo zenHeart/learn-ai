@@ -21,9 +21,18 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
+  "status": "discontinued",
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网 humane.com 域名解析失败（DNS 无法解析，非 404），产品已停售。form 记为 desktop：枚举中没有 hardware，桌面硬件是其中最贴近的一项。status 字段仍为 active，与「2025-02 停售」的事实不符，建议按 discontinued 处理。",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "discontinued",
+      "why": "humane.com 域名已停止解析，产品停售"
+    }
+  ]
 }

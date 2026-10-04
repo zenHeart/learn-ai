@@ -21,8 +21,16 @@
           </span>
         </div>
       </div>
-      <span :class="['entry-region', `entry-region--${product.region}`]">
-        {{ regionLabel }}
+      <span class="entry-badges">
+        <span
+          v-if="product.status && product.status !== 'active'"
+          :class="['entry-status', `entry-status--${product.status}`]"
+        >
+          {{ statusLabel }}
+        </span>
+        <span :class="['entry-region', `entry-region--${product.region}`]">
+          {{ regionLabel }}
+        </span>
       </span>
     </div>
 
@@ -69,6 +77,12 @@
   const categoryLabel = computed(
     () => props.category?.name || props.product.category
   )
+  // A renamed / merged / discontinued product is history worth showing, not
+  // a dead row — the timeline only tells the evolution story if it is visible.
+  const statusLabel = computed(() => {
+    const map = props.labels.statuses || {}
+    return map[props.product.status] || props.product.status
+  })
   const regionLabel = computed(() =>
     props.product.region === 'cn'
       ? props.labels.regionCn
@@ -165,6 +179,37 @@
 
   .entry-date {
     font-variant-numeric: tabular-nums;
+  }
+
+  .entry-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .entry-status {
+    padding: 2px 8px;
+    font-size: 11px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .entry-status--renamed {
+    background: rgba(234, 88, 12, 0.12);
+    color: #c2410c;
+  }
+
+  .entry-status--merged {
+    background: rgba(124, 58, 237, 0.12);
+    color: #6d28d9;
+  }
+
+  .entry-status--discontinued {
+    background: rgba(100, 116, 139, 0.15);
+    color: #64748b;
+    text-decoration: line-through;
   }
 
   .entry-region {

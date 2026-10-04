@@ -10,7 +10,7 @@
   ],
   "form": "desktop",
   "released": "2023-04-03",
-  "homepage": "https://gpt4all.io",
+  "homepage": "https://www.nomic.ai/gpt4all",
   "desc": "Early consumer desktop app for running LLMs locally",
   "desc_zh": "早期面向普通用户的本地 LLM 桌面运行器，模型能力后来被追平",
   "tags": [
@@ -25,5 +25,14 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "官网 gpt4all.io 返回 302 跳转 nomic.ai/gpt4all（域名变更，未改 homepage 字段）。新站确认主形态是 macOS/Windows/Linux 桌面图形应用，故 form 记为 desktop。",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "homepage",
+      "from": "https://gpt4all.io",
+      "to": "https://www.nomic.ai/gpt4all",
+      "why": "gpt4all.io 302 跳转"
+    }
+  ]
 }

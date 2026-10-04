@@ -1045,8 +1045,8 @@ export const productHub = {
       "desktop",
       "enterprise"
     ],
-    "status": "active",
-    "supersededBy": null,
+    "status": "merged",
+    "supersededBy": "claude-ai",
     "handbook": {
       "status": "written",
       "route": {
@@ -2502,7 +2502,7 @@ export const productHub = {
     ],
     "form": "self-hosted",
     "released": "2024-06-12",
-    "homepage": "https://phoenix.arize.com",
+    "homepage": "https://arize.com/phoenix",
     "desc": "Open-source tracing and eval library for LLM applications",
     "descZh": "开源的 LLM 应用追踪与评测库，可在本地 Notebook 中直接跑",
     "tags": [
@@ -2560,7 +2560,7 @@ export const productHub = {
     ],
     "form": "cli",
     "released": "2024-06-01",
-    "homepage": "https://factory.ai",
+    "homepage": "https://factory.com/",
     "desc": "Task-specific autonomous Droids for software engineering",
     "descZh": "面向软件工程的多款专职自主 Droids：Review、Test、Code 等",
     "tags": [
@@ -2749,7 +2749,7 @@ export const productHub = {
       "discontinued",
       "wearable"
     ],
-    "status": "active",
+    "status": "discontinued",
     "supersededBy": null,
     "handbook": {
       "status": "none"
@@ -3437,8 +3437,8 @@ export const productHub = {
       "rebrand",
       "code-editor"
     ],
-    "status": "active",
-    "supersededBy": null,
+    "status": "renamed",
+    "supersededBy": "devin",
     "handbook": {
       "status": "none"
     },
@@ -3660,8 +3660,8 @@ export const productHub = {
       "qwen",
       "alibaba"
     ],
-    "status": "active",
-    "supersededBy": null,
+    "status": "merged",
+    "supersededBy": "qianwen",
     "handbook": {
       "status": "written",
       "route": {
@@ -3746,7 +3746,7 @@ export const productHub = {
     "useCases": [
       "office"
     ],
-    "form": "desktop",
+    "form": "hardware",
     "released": "2023-10-17",
     "homepage": "https://www.meta.com/smart-glasses",
     "desc": "Camera-and-assistant glasses; the only mass-market AI wearable hit",
@@ -3958,7 +3958,7 @@ export const productHub = {
     "useCases": [
       "model-api"
     ],
-    "form": "web",
+    "form": "api",
     "released": "2023-09-01",
     "homepage": "https://hunyuan.tencent.com",
     "desc": "腾讯通用大语言模型与 API 平台",
@@ -4636,7 +4636,7 @@ export const productHub = {
     ],
     "form": "desktop",
     "released": "2023-04-03",
-    "homepage": "https://gpt4all.io",
+    "homepage": "https://www.nomic.ai/gpt4all",
     "desc": "Early consumer desktop app for running LLMs locally",
     "descZh": "早期面向普通用户的本地 LLM 桌面运行器，模型能力后来被追平",
     "tags": [
@@ -5360,7 +5360,7 @@ export const productHub = {
     "useCases": [
       "model-api"
     ],
-    "form": "web",
+    "form": "api",
     "released": "2021-05-18",
     "homepage": "https://cloud.google.com/vertex-ai",
     "desc": "Google Cloud enterprise platform for generative AI and agents",

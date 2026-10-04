@@ -27,9 +27,18 @@
       "zh": "/zh/products/claude/"
     }
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "merged",
+  "superseded_by": "claude-ai",
   "last_verified_at": null,
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "已并入 Claude 对话，2026-09 官方公告"
+    }
+  ]
 }

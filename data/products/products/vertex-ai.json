@@ -8,7 +8,7 @@
   "use_cases": [
     "model-api"
   ],
-  "form": "web",
+  "form": "api",
   "released": "2021-05-18",
   "homepage": "https://cloud.google.com/vertex-ai",
   "desc": "Google Cloud enterprise platform for generative AI and agents",
@@ -26,5 +26,14 @@
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
   "notes": "",
-  "revisions": []
+  "revisions": [
+    {
+      "at": "2026-10-04",
+      "by": "merge",
+      "field": "form",
+      "from": "web",
+      "to": "api",
+      "why": "与同类模型平台保持一致"
+    }
+  ]
 }
