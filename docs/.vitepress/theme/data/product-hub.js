@@ -2624,45 +2624,6 @@ export const productHub = {
     "glyph": "F"
   },
   {
-    "id": "joyai",
-    "name": "JoyAI",
-    "nameZh": "JoyAI",
-    "vendor": "京东",
-    "vendorZh": "京东",
-    "logo": "/assets/logos/jd.png",
-    "region": "intl",
-    "category": "chat-assistant",
-    "useCases": [
-      "office",
-      "research"
-    ],
-    "form": "web",
-    "surface": "standalone",
-    "solves": "Ordering takeout, booking a hotel — separate apps and a lot of typing. State the need and a digital human does the comparing and the order.",
-    "solvesZh": "点外卖、订酒店要开好几个 App，一步步填单。说清需求，数字人替你比完再下单。",
-    "bestFor": "Buying something routine that would otherwise mean searching, comparing prices and typing an address.",
-    "bestForZh": "买一件日常的东西，而原本要翻找、比价、填地址才能下单。",
-    "released": "2026-02-01",
-    "datePrecision": "month",
-    "homepage": "https://joy.jd.com/",
-    "desc": "JD's voice-first shopping assistant with a digital human",
-    "descZh": "京东的语音购物助手，配一个数字人",
-    "tags": [
-      "digital-human",
-      "ai-shopping",
-      "voice-first",
-      "companion"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "successorName": "",
-    "handbook": {
-      "status": "none"
-    },
-    "lastVerifiedAt": null,
-    "glyph": "J"
-  },
-  {
     "id": "grok-imagine",
     "name": "Grok Imagine",
     "nameZh": "Grok Imagine 图像与视频创作",
@@ -3748,6 +3709,45 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "G"
+  },
+  {
+    "id": "joyai",
+    "name": "JoyAI",
+    "nameZh": "JoyAI",
+    "vendor": "京东",
+    "vendorZh": "京东",
+    "logo": "/assets/logos/jd.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office",
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Ordering takeout, booking a hotel — separate apps and a lot of typing. State the need and a digital human does the comparing and the order.",
+    "solvesZh": "点外卖、订酒店要开好几个 App，一步步填单。说清需求，数字人替你比完再下单。",
+    "bestFor": "Buying something routine that would otherwise mean searching, comparing prices and typing an address.",
+    "bestForZh": "买一件日常的东西，而原本要翻找、比价、填地址才能下单。",
+    "released": "2025-07-27",
+    "datePrecision": "day",
+    "homepage": "https://joy.jd.com/",
+    "desc": "JD's voice-first shopping assistant with a digital human",
+    "descZh": "京东的语音购物助手，配一个数字人",
+    "tags": [
+      "digital-human",
+      "ai-shopping",
+      "voice-first",
+      "companion"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "J"
   },
   {
     "id": "lovart",

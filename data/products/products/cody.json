@@ -32,7 +32,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Answers cross-service dependency questions that only work when the index spans every repo you own, not one checkout. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/Sourcegraph/62904405",
+  "notes": "Answers cross-service dependency questions that only work when the index spans every repo you own, not one checkout. 首次公开发布日期精度：month-only 来源：https://sourcegraph.com/blog/cody-is-generally-available",
   "revisions": [],
   "date_precision": "day"
 }

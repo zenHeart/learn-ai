@@ -24,6 +24,9 @@ const HANDBOOK_STATUS = new Set(['none', 'candidate', 'written'])
 const PRODUCT_STATUS = new Set(['active', 'renamed', 'merged', 'discontinued'])
 const SURFACES = new Set(['standalone', 'in-product', 'plugin', 'extension'])
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
+// User-editable reference works are not primary sources. A record whose only
+// provenance is one of these has not been verified, whatever the date says.
+const WEAK_SOURCE_HOSTS = ['baike.baidu.com', 'zh.wikipedia.org', 'zhihu.com', 'reddit.com', 'quora.com']
 const READER_FIELDS = new Set(['solves', 'solves_zh', 'best_for', 'best_for_zh', 'desc', 'desc_zh'])
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
@@ -130,6 +133,11 @@ for (const file of productFiles) {
   for (const [f, zhF] of [['solves', 'solves_zh'], ['best_for', 'best_for_zh']]) {
     if (!r[f] || !String(r[f]).trim()) fail(`${where}: 缺少 ${f}——卡片要写清楚它解决什么问题`)
     if (!r[zhF] || !String(r[zhF]).trim()) fail(`${where}: 缺少 ${zhF}——站内两种语言都要读得通`)
+  }
+  const notesText = String(r.notes || '')
+  const weakSource = WEAK_SOURCE_HOSTS.find((h) => notesText.includes(h))
+  if (weakSource) {
+    fail(`${where}: notes 引用了 ${weakSource}——可编辑的参考条目不满足一级来源要求`)
   }
   if (r.solves && String(r.solves).length > 400) {
     fail(`${where}: solves 过长（${String(r.solves).length} 字），一句话说清即可`)

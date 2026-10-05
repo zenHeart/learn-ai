@@ -10,7 +10,7 @@
     "research"
   ],
   "form": "web",
-  "released": "2026-02-01",
+  "released": "2025-07-27",
   "homepage": "https://joy.jd.com/",
   "desc": "JD's voice-first shopping assistant with a digital human",
   "desc_zh": "京东的语音购物助手，配一个数字人",
@@ -31,7 +31,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "京东 AI 商业化的门面 App，能在对话里完成外卖、购物、酒旅的真实下单 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/JoyAI/67350847",
+  "notes": "京东 AI 商业化的门面 App，能在对话里完成外卖、购物、酒旅的真实下单。 复核：言犀大模型品牌于 2025-07-27 WAIC 期间升级为 JoyAI（凤凰科技、新浪转载 2025-07-28 报道一致）。原记录的 2026-02 与来源为百度百科（可编辑词条，不作为一级来源），已按此更正。",
   "revisions": [
     {
       "at": "2026-10-05",
@@ -40,7 +40,23 @@
       "from": "2026-02-05",
       "to": "2026-02-01",
       "why": "notes 自述仅精确到月，却标了 day 且带具体日；按约定截断"
+    },
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "released",
+      "from": "2026-02-01",
+      "to": "2025-07-27",
+      "why": "原日期取自百度百科且指向另一个里程碑；据 WAIC 报道更正为品牌升级公告日"
+    },
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "notes",
+      "from": "京东 AI 商业化的门面 App，能在对话里完成外卖、购物、酒旅的真实下单 首次",
+      "to": "（来源已更换为 WAIC 报道）",
+      "why": "百度百科为可编辑词条，不满足一级来源要求"
     }
   ],
-  "date_precision": "month"
+  "date_precision": "day"
 }

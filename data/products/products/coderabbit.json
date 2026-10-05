@@ -31,7 +31,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "The default reviewer once agent-written PRs outnumber human reviewers — it answers what a human reviewer no longer has time to. 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/CodeRabbit/67627695",
+  "notes": "The default reviewer once agent-written PRs outnumber human reviewers — it answers what a human reviewer no longer has time to. 首次公开发布日期精度：month-only 来源：https://www.coderabbit.ai/blog/coderabbit-deep-dive",
   "revisions": [],
   "date_precision": "month"
 }
