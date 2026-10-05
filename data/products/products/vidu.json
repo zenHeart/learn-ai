@@ -9,7 +9,7 @@
     "video"
   ],
   "form": "web",
-  "released": "2024-04-27",
+  "released": "2024-04-01",
   "homepage": "https://www.vidu.com/",
   "desc": "Domestic video model strong in anime and 2D",
   "desc_zh": "国产视频生成模型，二次元与 2D 见长",
@@ -30,7 +30,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "One of the first fully self-developed video models, built on the U-ViT architecture rather than copying Sora's DiT. 来源：https://www.tsinghua.edu.cn/info/1182/113034.htm",
-  "revisions": [],
-  "date_precision": "day"
+  "notes": "One of the first fully self-developed video models, built on the U-ViT architecture rather than copying Sora's DiT. 来源：https://www.tsinghua.edu.cn/info/1182/113034.htm 复核：清华/新华社只支持到「2024 年 4 月」，具体日未获一级来源佐证，按约定截断到当月 1 日。",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "released",
+      "from": "2024-04-27/day",
+      "to": "2024-04-01/month",
+      "why": "复核：清华/新华社只支持到「2024 年 4 月」，具体日未获一级来源佐证，按约定截断到当月 1 日。"
+    }
+  ],
+  "date_precision": "month"
 }

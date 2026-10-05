@@ -3262,45 +3262,6 @@ export const productHub = {
     "glyph": "A"
   },
   {
-    "id": "dia",
-    "name": "Dia",
-    "nameZh": "Dia 浏览器",
-    "vendor": "The Browser Company",
-    "vendorZh": "The Browser Company",
-    "logo": "/assets/logos/the-browser-company.png",
-    "region": "intl",
-    "category": "search",
-    "useCases": [
-      "research",
-      "office"
-    ],
-    "form": "desktop",
-    "surface": "standalone",
-    "solves": "The answer is spread across twelve open tabs and you would have to read every one. Dia reads the pages you have open and answers across them.",
-    "solvesZh": "答案散在十二个开着的标签页里，你得挨个读。Dia 直接读你打开的页面，跨页给你一个答案。",
-    "bestFor": "Research already piled up in tabs, and you want it read in one pass.",
-    "bestForZh": "研究已经攒下一堆标签页，想让 AI 一次读完再给结论。",
-    "released": "2025-10-08",
-    "datePrecision": "day",
-    "homepage": "https://www.diabrowser.com/",
-    "desc": "AI browser that surfaces answers without being asked.",
-    "descZh": "会主动给答案的 AI 浏览器。",
-    "tags": [
-      "ai-browser",
-      "chat-with-tabs",
-      "mac-only",
-      "arc-successor"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "successorName": "",
-    "handbook": {
-      "status": "none"
-    },
-    "lastVerifiedAt": null,
-    "glyph": "D"
-  },
-  {
     "id": "mem",
     "name": "Mem",
     "nameZh": "Mem",
@@ -4202,6 +4163,45 @@ export const productHub = {
     "glyph": "M"
   },
   {
+    "id": "dia",
+    "name": "Dia",
+    "nameZh": "Dia 浏览器",
+    "vendor": "The Browser Company",
+    "vendorZh": "The Browser Company",
+    "logo": "/assets/logos/the-browser-company.png",
+    "region": "intl",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "The answer is spread across twelve open tabs and you would have to read every one. Dia reads the pages you have open and answers across them.",
+    "solvesZh": "答案散在十二个开着的标签页里，你得挨个读。Dia 直接读你打开的页面，跨页给你一个答案。",
+    "bestFor": "Research already piled up in tabs, and you want it read in one pass.",
+    "bestForZh": "研究已经攒下一堆标签页，想让 AI 一次读完再给结论。",
+    "released": "2025-06-11",
+    "datePrecision": "day",
+    "homepage": "https://www.diabrowser.com/",
+    "desc": "AI browser that surfaces answers without being asked.",
+    "descZh": "会主动给答案的 AI 浏览器。",
+    "tags": [
+      "ai-browser",
+      "chat-with-tabs",
+      "mac-only",
+      "arc-successor"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "D"
+  },
+  {
     "id": "pi-agent",
     "name": "Pi Agent",
     "nameZh": "Pi Agent",
@@ -5055,6 +5055,45 @@ export const productHub = {
     "glyph": "A"
   },
   {
+    "id": "quark",
+    "name": "夸克AI",
+    "nameZh": "夸克AI",
+    "vendor": "阿里巴巴",
+    "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
+    "region": "cn",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "A search engine hands back a list of links. Quark's global assistant answers instead, and its PDF and PPT tools stay in the same browser.",
+    "solvesZh": "搜索引擎丢回来的是一串链接。夸克的全局 AI 助手直接给答案，PDF 和 PPT 也在同一个浏览器里。",
+    "bestFor": "One place for web search, reading local files and working on documents.",
+    "bestForZh": "搜网页、读本地文件、处理文档，想在一个入口里完成。",
+    "released": "2025-03-13",
+    "datePrecision": "day",
+    "homepage": "https://www.quark.cn/",
+    "desc": "Alibaba's browser with search, AI and document tools",
+    "descZh": "阿里的 AI 浏览器，搜索与文档工具都在里面",
+    "tags": [
+      "ai-search",
+      "super-box",
+      "document-qa",
+      "user-scale"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "夸"
+  },
+  {
     "id": "manus",
     "name": "Manus",
     "nameZh": "Manus",
@@ -5171,45 +5210,6 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "H"
-  },
-  {
-    "id": "quark",
-    "name": "夸克AI",
-    "nameZh": "夸克AI",
-    "vendor": "阿里巴巴",
-    "vendorZh": "阿里巴巴",
-    "logo": "/assets/logos/alibaba.png",
-    "region": "cn",
-    "category": "search",
-    "useCases": [
-      "research",
-      "office"
-    ],
-    "form": "web",
-    "surface": "standalone",
-    "solves": "A search engine hands back a list of links. Quark's global assistant answers instead, and its PDF and PPT tools stay in the same browser.",
-    "solvesZh": "搜索引擎丢回来的是一串链接。夸克的全局 AI 助手直接给答案，PDF 和 PPT 也在同一个浏览器里。",
-    "bestFor": "One place for web search, reading local files and working on documents.",
-    "bestForZh": "搜网页、读本地文件、处理文档，想在一个入口里完成。",
-    "released": "2025-03-01",
-    "datePrecision": "day",
-    "homepage": "https://www.quark.cn/",
-    "desc": "Alibaba's browser with search, AI and document tools",
-    "descZh": "阿里的 AI 浏览器，搜索与文档工具都在里面",
-    "tags": [
-      "ai-search",
-      "super-box",
-      "document-qa",
-      "user-scale"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "successorName": "",
-    "handbook": {
-      "status": "none"
-    },
-    "lastVerifiedAt": null,
-    "glyph": "夸"
   },
   {
     "id": "claude-code",
@@ -7671,44 +7671,6 @@ export const productHub = {
     "glyph": "A"
   },
   {
-    "id": "vidu",
-    "name": "Vidu",
-    "nameZh": "Vidu",
-    "vendor": "生数科技 ShengShu AI",
-    "vendorZh": "生数科技 ShengShu AI",
-    "logo": "/assets/logos/shengshu-ai.png",
-    "region": "intl",
-    "category": "multimodal-creation",
-    "useCases": [
-      "video"
-    ],
-    "form": "web",
-    "surface": "standalone",
-    "solves": "Holding a character across shots is where most generators drift. Vidu's reference-to-video starts from a reference image and keeps the character; the 2D and anime work is strong.",
-    "solvesZh": "同一角色能否在多个镜头里保持一致，是多数生成模型的短板。Vidu 的参考生视频从参考图起步，二次元尤其稳。",
-    "bestFor": "Anime and 2D work, or a cast that has to look like the same person in every shot.",
-    "bestForZh": "二次元和 2D 题材，或者要求同一个角色每镜都像同一个人。",
-    "released": "2024-04-27",
-    "datePrecision": "day",
-    "homepage": "https://www.vidu.com/",
-    "desc": "Domestic video model strong in anime and 2D",
-    "descZh": "国产视频生成模型，二次元与 2D 见长",
-    "tags": [
-      "text-to-video",
-      "anime-style",
-      "reference-video",
-      "chinese-elements"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "successorName": "",
-    "handbook": {
-      "status": "none"
-    },
-    "lastVerifiedAt": null,
-    "glyph": "V"
-  },
-  {
     "id": "slack-ai",
     "name": "Slack AI",
     "nameZh": "Slack AI",
@@ -7855,6 +7817,44 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "U"
+  },
+  {
+    "id": "vidu",
+    "name": "Vidu",
+    "nameZh": "Vidu",
+    "vendor": "生数科技 ShengShu AI",
+    "vendorZh": "生数科技 ShengShu AI",
+    "logo": "/assets/logos/shengshu-ai.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Holding a character across shots is where most generators drift. Vidu's reference-to-video starts from a reference image and keeps the character; the 2D and anime work is strong.",
+    "solvesZh": "同一角色能否在多个镜头里保持一致，是多数生成模型的短板。Vidu 的参考生视频从参考图起步，二次元尤其稳。",
+    "bestFor": "Anime and 2D work, or a cast that has to look like the same person in every shot.",
+    "bestForZh": "二次元和 2D 题材，或者要求同一个角色每镜都像同一个人。",
+    "released": "2024-04-01",
+    "datePrecision": "month",
+    "homepage": "https://www.vidu.com/",
+    "desc": "Domestic video model strong in anime and 2D",
+    "descZh": "国产视频生成模型，二次元与 2D 见长",
+    "tags": [
+      "text-to-video",
+      "anime-style",
+      "reference-video",
+      "chinese-elements"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "V"
   },
   {
     "id": "stepfun-platform",
@@ -8988,7 +8988,7 @@ export const productHub = {
     "bestFor": "When the file you need sits in a repo that is not open on your machine.",
     "bestForZh": "当你要找的文件在一个本地没打开的仓库里。",
     "released": "2023-12-01",
-    "datePrecision": "day",
+    "datePrecision": "month",
     "homepage": "https://sourcegraph.com/cody",
     "desc": "Sourcegraph's assistant that searches across your repos",
     "descZh": "跨仓库检索上下文的 Sourcegraph 编程助手",
@@ -14151,44 +14151,6 @@ export const productHub = {
     "glyph": "讯"
   },
   {
-    "id": "replika",
-    "name": "Replika",
-    "nameZh": "Replika",
-    "vendor": "Luka",
-    "vendorZh": "Luka",
-    "logo": "/assets/logos/luka.ico",
-    "region": "intl",
-    "category": "chat-assistant",
-    "useCases": [
-      "office"
-    ],
-    "form": "web",
-    "surface": "standalone",
-    "solves": "Some conversations have no second person in them. Replika remembers the routines and plans you tell it, and picks up when you call.",
-    "solvesZh": "有些对话里就是没有第二个人。Replika 记得你告诉它的日常和计划，你打过去，它就接。",
-    "bestFor": "A private conversation partner you shape yourself, rather than a tool with a task list.",
-    "bestForZh": "想要一个自己能塑造的私密聊天对象，而不是带任务清单的工具。",
-    "released": "2017-09-01",
-    "datePrecision": "day",
-    "homepage": "https://replika.com/",
-    "desc": "AI companion you customize in appearance and personality.",
-    "descZh": "可自定义形象与性格的 AI 伴侣",
-    "tags": [
-      "companion",
-      "avatar",
-      "voice-video",
-      "memory"
-    ],
-    "status": "active",
-    "supersededBy": null,
-    "successorName": "",
-    "handbook": {
-      "status": "none"
-    },
-    "lastVerifiedAt": null,
-    "glyph": "R"
-  },
-  {
     "id": "weights-biases",
     "name": "Weights & Biases",
     "nameZh": "Weights & Biases",
@@ -14224,6 +14186,44 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "W"
+  },
+  {
+    "id": "replika",
+    "name": "Replika",
+    "nameZh": "Replika",
+    "vendor": "Luka",
+    "vendorZh": "Luka",
+    "logo": "/assets/logos/luka.ico",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Some conversations have no second person in them. Replika remembers the routines and plans you tell it, and picks up when you call.",
+    "solvesZh": "有些对话里就是没有第二个人。Replika 记得你告诉它的日常和计划，你打过去，它就接。",
+    "bestFor": "A private conversation partner you shape yourself, rather than a tool with a task list.",
+    "bestForZh": "想要一个自己能塑造的私密聊天对象，而不是带任务清单的工具。",
+    "released": "2017-03-13",
+    "datePrecision": "day",
+    "homepage": "https://replika.com/",
+    "desc": "AI companion you customize in appearance and personality.",
+    "descZh": "可自定义形象与性格的 AI 伴侣",
+    "tags": [
+      "companion",
+      "avatar",
+      "voice-video",
+      "memory"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": null,
+    "glyph": "R"
   },
   {
     "id": "d-id",

@@ -9,7 +9,7 @@
     "office"
   ],
   "form": "web",
-  "released": "2017-09-01",
+  "released": "2017-03-13",
   "homepage": "https://replika.com/",
   "desc": "AI companion you customize in appearance and personality.",
   "desc_zh": "可自定义形象与性格的 AI 伴侣",
@@ -30,7 +30,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "The category founder — 30M+ users and the reference point every AI companion product since is measured against. 首次公开发布日期精度：month-only 来源：https://apps.apple.com/us/app/replika-ai-companion-chat/id1158555867",
-  "revisions": [],
+  "notes": "The category founder — 30M+ users and the reference point every AI companion product since is measured against. 首次公开发布日期精度：month-only 来源：https://apps.apple.com/us/app/replika-ai-companion-chat/id1158555867 复核：苹果官方 lookup API（trackId 1158555867）返回 releaseDate 2017-03-13；原 2017-09-01 取自第三方统计站。",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "released",
+      "from": "2017-09-01/day",
+      "to": "2017-03-13/day",
+      "why": "复核：苹果官方 lookup API（trackId 1158555867）返回 releaseDate 2017-03-13；原 2017-09-01 取自第三方统计站。"
+    }
+  ],
   "date_precision": "day"
 }

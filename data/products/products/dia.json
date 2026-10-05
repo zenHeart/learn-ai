@@ -10,7 +10,7 @@
     "office"
   ],
   "form": "desktop",
-  "released": "2025-10-08",
+  "released": "2025-06-11",
   "homepage": "https://www.diabrowser.com/",
   "desc": "AI browser that surfaces answers without being asked.",
   "desc_zh": "会主动给答案的 AI 浏览器。",
@@ -31,7 +31,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "The most-copied AI browser design — Arc team's rebuild of the browser around chat rather than a sidebar. 来源：https://techcrunch.com/2025/06/11/the-browser-company-launches-its-ai-first-browser-dia-in-beta",
-  "revisions": [],
+  "notes": "The most-copied AI browser design — Arc team's rebuild of the browser around chat rather than a sidebar. 来源：https://techcrunch.com/2025/06/11/the-browser-company-launches-its-ai-first-browser-dia-in-beta 复核：TechCrunch 报道 beta 于 2025-06-11 上线；原 2025-10-08 是面向全体开放的时间。",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "released",
+      "from": "2025-10-08/day",
+      "to": "2025-06-11/day",
+      "why": "复核：TechCrunch 报道 beta 于 2025-06-11 上线；原 2025-10-08 是面向全体开放的时间。"
+    }
+  ],
   "date_precision": "day"
 }

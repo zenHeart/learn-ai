@@ -32,7 +32,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Answers cross-service dependency questions that only work when the index spans every repo you own, not one checkout. 首次公开发布日期精度：month-only 来源：https://sourcegraph.com/blog/cody-is-generally-available",
-  "revisions": [],
-  "date_precision": "day"
+  "notes": "Answers cross-service dependency questions that only work when the index spans every repo you own, not one checkout. 首次公开发布日期精度：month-only 来源：https://sourcegraph.com/blog/cody-is-generally-available 复核：2023-12-14 为 Cody 1.0 GA 公告日，账本存的是 2023-12-01 月份占位，date_precision 应为 month。",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "date_precision",
+      "from": "2023-12-01/day",
+      "to": "2023-12-01/month",
+      "why": "复核：2023-12-14 为 Cody 1.0 GA 公告日，账本存的是 2023-12-01 月份占位，date_precision 应为 month。"
+    }
+  ],
+  "date_precision": "month"
 }

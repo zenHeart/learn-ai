@@ -117,6 +117,22 @@ for (const uc of useCases) {
   console.log(`  ${ok ? 'OK  ' : 'LOW '} ${uc.id.padEnd(20)} ${String(n).padStart(4)}`)
 }
 
+const MONTH_START = /^\d{4}-\d{2}-01$/
+
+// ---- 精度标注自相矛盾：日期落在月初，却标成 day ----
+// 本仓约定「只有年月精度时用当月 1 日」，所以月初的日期配 day 标注是矛盾的。
+// 这里只报数不报错：全库有五十余条，逐条核实日期的成本远高于收益，
+// 而批量把标注改成 month 属于未经核实的批量改动，比留着矛盾更糟。
+const mislabelled = products.filter((x) =>
+  x.date_precision === 'day' && MONTH_START.test(String(x.released || ''))
+)
+if (mislabelled.length) {
+  console.log(`\n## 精度标注矛盾 (${mislabelled.length})`)
+  console.log('  以下记录 released 落在月初却标了 day 精度：' +
+    mislabelled.map((x) => x.id).slice(0, 12).join(', ') +
+    (mislabelled.length > 12 ? ` … 等 ${mislabelled.length} 条` : ''))
+}
+
 console.log(`\n合计 ${products.length} 产品 / ${vendors.length} 厂商`)
 
 if (gaps.length) {
