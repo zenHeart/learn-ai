@@ -24,6 +24,7 @@ const HANDBOOK_STATUS = new Set(['none', 'candidate', 'written'])
 const PRODUCT_STATUS = new Set(['active', 'renamed', 'merged', 'discontinued'])
 const SURFACES = new Set(['standalone', 'in-product', 'plugin', 'extension'])
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
+const READER_FIELDS = new Set(['solves', 'solves_zh', 'best_for', 'best_for_zh', 'desc', 'desc_zh'])
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
 const failures = []
@@ -91,7 +92,12 @@ for (const file of productFiles) {
   // A disambiguated stub ("product", "ai-3", "x-2") means the name slugified
   // to nothing or to something meaningless. Non-Latin product names need a
   // hand-written id that a human can read.
-  if (r.id === 'product' || r.id.startsWith('product-') || /^[a-z]{1,2}-\d+$/.test(r.id)) {
+  if (
+    r.id === 'product' ||
+    r.id.startsWith('product-') ||
+    /^[a-z]{1,2}-\d+$/.test(r.id) ||
+    /^p\d+$/.test(r.id)
+  ) {
     fail(`${where}: id "${r.id}"（${r.name}）是 slug 退化产物，请给一个有意义的 id`)
   }
   if (productIds.has(r.id)) fail(`${where}: 重复 id ${r.id}`)
@@ -144,9 +150,19 @@ for (const file of productFiles) {
   }
 
   // A revision that records no change is noise that misleads the next reader.
+  // One that records a value the file no longer holds is worse: it asserts a
+  // text that is not there. Superseded entries must say so.
   for (const rev of r.revisions || []) {
     if (rev.from === rev.to) {
       fail(`${where}: revisions 里有空修订（${rev.field} from==to=="${rev.from}"），没有变化就不要记`)
+    }
+    if (
+      rev.superseded_by_rewrite_at === undefined &&
+      READER_FIELDS.has(rev.field) &&
+      rev.to !== undefined &&
+      String(rev.to) !== String(r[rev.field] ?? '')
+    ) {
+      fail(`${where}: revisions[${rev.field}] 记录的值与当前字段不一致，且未标注被后续改写取代`)
     }
   }
   if (['merged', 'renamed'].includes(r.status) && !r.superseded_by) {

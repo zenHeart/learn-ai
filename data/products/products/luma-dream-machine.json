@@ -37,7 +37,9 @@
       "field": "best_for",
       "from": "You want a low-cost look at what text-to-video can actually produce.",
       "to": "When a concept test beats a production render — you need a look, not a film.",
-      "why": "原文只是把 solves 换了个说法；改成真正的使用场景判断"
+      "why": "原文只是把 solves 换了个说法；改成真正的使用场景判断",
+      "superseded_by_rewrite_at": "2026-10-05",
+      "note": "此条记录的值随后被改写，保留原值以说明改动轨迹；当前值见文件"
     }
   ],
   "date_precision": "day"

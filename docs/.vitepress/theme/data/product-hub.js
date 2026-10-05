@@ -17,20 +17,20 @@
 export const productHub = {
   categories: [
   {
-    "id": "chat-assistant",
-    "name": "Chat assistants",
-    "nameZh": "对话助手",
-    "color": "#2563EB",
-    "icon": "💬",
-    "count": 50
-  },
-  {
     "id": "coding-agent",
     "name": "Coding agents",
     "nameZh": "编程 Agent",
     "color": "#16A34A",
     "icon": "💻",
     "count": 50
+  },
+  {
+    "id": "chat-assistant",
+    "name": "Chat assistants",
+    "nameZh": "对话助手",
+    "color": "#2563EB",
+    "icon": "💬",
+    "count": 49
   },
   {
     "id": "agent-platform",
@@ -81,6 +81,14 @@ export const productHub = {
     "count": 13
   },
   {
+    "id": "meetings",
+    "name": "Meetings & notes",
+    "nameZh": "会议与纪要",
+    "color": "#0D9488",
+    "icon": "🎙️",
+    "count": 7
+  },
+  {
     "id": "eval-observability",
     "name": "Eval & observability",
     "nameZh": "评测与可观测",
@@ -94,14 +102,6 @@ export const productHub = {
     "nameZh": "本地运行",
     "color": "#65A30D",
     "icon": "🦙",
-    "count": 6
-  },
-  {
-    "id": "meetings",
-    "name": "Meetings & notes",
-    "nameZh": "会议与纪要",
-    "color": "#0D9488",
-    "icon": "🎙️",
     "count": 6
   }
 ],
@@ -148,6 +148,7 @@ export const productHub = {
       "harvey",
       "humane-ai-pin",
       "inflection-pi",
+      "jingxi-agents",
       "joyai",
       "kimi",
       "le-chat",
@@ -164,9 +165,6 @@ export const productHub = {
       "notion-ai",
       "opera-neon",
       "otter-ai",
-      "p2061",
-      "p2265",
-      "p9112",
       "perplexity-comet",
       "presentations-ai",
       "qianwen",
@@ -188,10 +186,12 @@ export const productHub = {
       "tongyi",
       "vibe",
       "wanyo",
+      "wenxiaotuan",
       "wenxiaoyan",
       "wenxin-yiyan",
       "work",
       "wps-ai",
+      "xiaohuanxiong",
       "xinghuo",
       "yuanbao",
       "yuewen",
@@ -248,12 +248,12 @@ export const productHub = {
           "gemini-in-google-docs-and-sheets",
           "genspark",
           "glean",
+          "jingxi-agents",
           "mem",
           "notebooklm",
           "notion-ai",
           "otter-ai",
-          "p2061",
-          "p2265"
+          "xiaohuanxiong"
         ],
         "productCount": 12
       },
@@ -317,6 +317,7 @@ export const productHub = {
       "gumloop",
       "hume-ai",
       "intercom-fin",
+      "jingxi-agents",
       "kimi-claw",
       "labelbox",
       "langchain",
@@ -337,8 +338,6 @@ export const productHub = {
       "nvidia-nemo",
       "openclaw",
       "openhands",
-      "p2061",
-      "p2265",
       "pinecone",
       "qdrant",
       "relevance-ai",
@@ -353,6 +352,7 @@ export const productHub = {
       "wanyo",
       "weaviate",
       "work",
+      "xiaohuanxiong",
       "yuanqi",
       "zapier-agents"
     ],
@@ -370,8 +370,8 @@ export const productHub = {
           "flowise",
           "frontier",
           "gumloop",
+          "jingxi-agents",
           "microsoft-copilot-studio",
-          "p2061",
           "relevance-ai",
           "yuanqi",
           "zapier-agents"
@@ -425,6 +425,7 @@ export const productHub = {
           "gemini-enterprise",
           "glean",
           "grok-build",
+          "jingxi-agents",
           "langchain",
           "lindy",
           "llamaindex",
@@ -432,7 +433,6 @@ export const productHub = {
           "minimax-agent",
           "mistral-studio",
           "nvidia-nemo",
-          "p2061",
           "pinecone",
           "relevance-ai",
           "tiangong-agent",
@@ -473,6 +473,7 @@ export const productHub = {
       "google-search-ai-mode",
       "grok",
       "harvey",
+      "jingxi-agents",
       "joyai",
       "kagi-assistant",
       "kimi",
@@ -487,9 +488,6 @@ export const productHub = {
       "notebooklm",
       "notion-ai",
       "opera-neon",
-      "p2061",
-      "p2265",
-      "p9112",
       "perplexity",
       "perplexity-comet",
       "phind",
@@ -501,9 +499,11 @@ export const productHub = {
       "tiangong",
       "tongyi",
       "wanyo",
+      "wenxiaotuan",
       "wenxiaoyan",
       "wenxin-yiyan",
       "work",
+      "xiaohuanxiong",
       "xinghuo",
       "you-com",
       "yuanbao",
@@ -576,12 +576,12 @@ export const productHub = {
         "productIds": [
           "atlassian-rovo",
           "glean",
+          "jingxi-agents",
           "llamaindex",
           "notebooklm",
           "notion-ai",
-          "p2061",
-          "p2265",
-          "quark"
+          "quark",
+          "xiaohuanxiong"
         ],
         "productCount": 8
       }
@@ -622,6 +622,7 @@ export const productHub = {
       "goose",
       "greptile",
       "grok-build",
+      "huawei-codearts",
       "jules",
       "junie",
       "kimi-code",
@@ -635,8 +636,6 @@ export const productHub = {
       "muse-code",
       "openai-codex",
       "openhands",
-      "p7887",
-      "p8244",
       "phind",
       "pi-agent",
       "qoder",
@@ -648,6 +647,7 @@ export const productHub = {
       "vibe",
       "warp",
       "webflow-ai",
+      "wenxin-fastcode",
       "windsurf",
       "zed"
     ],
@@ -725,7 +725,7 @@ export const productHub = {
           "github-copilot",
           "lingma",
           "marscode",
-          "p7887"
+          "wenxin-fastcode"
         ],
         "productCount": 5
       },
@@ -879,10 +879,10 @@ export const productHub = {
       "krea",
       "leonardo-ai",
       "midjourney",
-      "p8719",
       "remini",
       "samsung-galaxy-ai",
       "sora",
+      "tongyi-wanxiang",
       "v0",
       "webflow-ai"
     ],
@@ -919,8 +919,8 @@ export const productHub = {
           "krea",
           "leonardo-ai",
           "midjourney",
-          "p8719",
-          "sora"
+          "sora",
+          "tongyi-wanxiang"
         ],
         "productCount": 11
       },
@@ -1027,12 +1027,12 @@ export const productHub = {
       "keling",
       "krea",
       "luma-dream-machine",
-      "p8719",
       "pika",
       "premiere-pro-generative-extend",
       "runway",
       "sora",
       "synthesia",
+      "tongyi-wanxiang",
       "vidu"
     ],
     "productCount": 17,
@@ -1050,12 +1050,12 @@ export const productHub = {
           "jimeng",
           "keling",
           "luma-dream-machine",
-          "p8719",
           "pika",
           "premiere-pro-generative-extend",
           "runway",
           "sora",
           "synthesia",
+          "tongyi-wanxiang",
           "vidu"
         ],
         "productCount": 14
@@ -1361,7 +1361,7 @@ export const productHub = {
     "glyph": "万"
   },
   {
-    "id": "p2265",
+    "id": "xiaohuanxiong",
     "name": "商汤小浣熊",
     "nameZh": "商汤小浣熊 Raccoon Work",
     "vendor": "商汤",
@@ -1625,9 +1625,9 @@ export const productHub = {
       "european",
       "rename"
     ],
-    "status": "renamed",
-    "supersededBy": "le-chat",
-    "successorName": "Le Chat",
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
     "handbook": {
       "status": "none"
     },
@@ -1791,7 +1791,7 @@ export const productHub = {
     "glyph": "M"
   },
   {
-    "id": "p8244",
+    "id": "huawei-codearts",
     "name": "华为云码道",
     "nameZh": "华为云码道",
     "vendor": "华为",
@@ -1816,8 +1816,7 @@ export const productHub = {
     "tags": [
       "harmonyos",
       "ascend",
-      "spec-driven",
-      "on-premise"
+      "spec-driven"
     ],
     "status": "active",
     "supersededBy": null,
@@ -1923,8 +1922,8 @@ export const productHub = {
     "solvesZh": "点外卖、订酒店要开好几个 App，一步步填单。说清需求，数字人替你比完再下单。",
     "bestFor": "Buying something routine that would otherwise mean searching, comparing prices and typing an address.",
     "bestForZh": "买一件日常的东西，而原本要翻找、比价、填地址才能下单。",
-    "released": "2026-02-05",
-    "datePrecision": "day",
+    "released": "2026-02-01",
+    "datePrecision": "month",
     "homepage": "https://joy.jd.com/",
     "desc": "JD's voice-first shopping assistant with a digital human",
     "descZh": "京东的语音购物助手，配一个数字人",
@@ -1982,7 +1981,7 @@ export const productHub = {
     "glyph": "G"
   },
   {
-    "id": "p9112",
+    "id": "wenxiaotuan",
     "name": "问小团",
     "nameZh": "问小团",
     "vendor": "美团",
@@ -4140,7 +4139,7 @@ export const productHub = {
     "vendorZh": "Tana Inc.",
     "logo": "/assets/logos/tana-inc.svg",
     "region": "intl",
-    "category": "chat-assistant",
+    "category": "meetings",
     "useCases": [
       "office"
     ],
@@ -4157,8 +4156,9 @@ export const productHub = {
     "descZh": "面向会议的智能体平台，已不是原来的大纲工具",
     "tags": [
       "notes",
-      "outliner",
-      "personal-ai"
+      "personal-ai",
+      "meetings",
+      "agents"
     ],
     "status": "active",
     "supersededBy": null,
@@ -4888,7 +4888,7 @@ export const productHub = {
     "glyph": "P"
   },
   {
-    "id": "p2061",
+    "id": "jingxi-agents",
     "name": "言犀智能体平台",
     "nameZh": "言犀智能体平台",
     "vendor": "京东",
@@ -5978,9 +5978,9 @@ export const productHub = {
       "fast-inference",
       "mobile"
     ],
-    "status": "active",
-    "supersededBy": null,
-    "successorName": "",
+    "status": "renamed",
+    "supersededBy": "vibe",
+    "successorName": "Vibe 智能体",
     "handbook": {
       "status": "none"
     },
@@ -6054,7 +6054,7 @@ export const productHub = {
       "generative-media",
       "creative"
     ],
-    "status": "active",
+    "status": "discontinued",
     "supersededBy": null,
     "successorName": "",
     "handbook": {
@@ -7299,7 +7299,7 @@ export const productHub = {
     "glyph": "C"
   },
   {
-    "id": "p7887",
+    "id": "wenxin-fastcode",
     "name": "文心快码",
     "nameZh": "文心快码",
     "vendor": "百度",
@@ -8146,7 +8146,7 @@ export const productHub = {
     "glyph": "O"
   },
   {
-    "id": "p8719",
+    "id": "tongyi-wanxiang",
     "name": "通义万相",
     "nameZh": "通义万相",
     "vendor": "阿里巴巴",

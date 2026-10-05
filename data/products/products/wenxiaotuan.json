@@ -1,5 +1,5 @@
 {
-  "id": "p9112",
+  "id": "wenxiaotuan",
   "name": "问小团",
   "name_zh": "问小团",
   "vendor_id": "meituan",
@@ -32,6 +32,15 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "唯一把本地生活实时商户数据接进对话决策并直连交易的助手，是「AI 参与交易」的代表样本 来源：https://m.thepaper.cn/newsDetail_forward_32590949",
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "id",
+      "from": "p9112",
+      "to": "wenxiaotuan",
+      "why": "slug 退化产物：非拉丁名被哈希成了 p<数字>，换成可读 id"
+    }
+  ],
   "date_precision": "day"
 }

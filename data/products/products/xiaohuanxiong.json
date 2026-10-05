@@ -1,5 +1,5 @@
 {
-  "id": "p2265",
+  "id": "xiaohuanxiong",
   "name": "商汤小浣熊",
   "name_zh": "商汤小浣熊 Raccoon Work",
   "vendor_id": "sensetime",
@@ -33,6 +33,15 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "能直接读本地文件、自动跑分析的桌面智能体，累计服务超 2000 万用户 来源：https://www.sensetime.com/cn/news/-2",
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "id",
+      "from": "p2265",
+      "to": "xiaohuanxiong",
+      "why": "slug 退化产物：非拉丁名被哈希成了 p<数字>，换成可读 id"
+    }
+  ],
   "date_precision": "day"
 }

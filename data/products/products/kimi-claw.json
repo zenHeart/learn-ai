@@ -29,7 +29,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "2026-10-04 核实：kimi.com/claw 返回 200 但跳转回 Kimi 官网首页，未见独立 Kimi Claw 入口页。homepage 是否需调整走 revisions。",
+  "notes": "2026-10-04 核实：kimi.com/claw 返回 200 但跳转回 Kimi 官网首页，未见独立 Kimi Claw 入口页。homepage 是否需调整走 revisions。 复核：产品本身确实存在（月之暗面云端智能体服务，集成 OpenClaw 框架），只是没有独立官网；homepage 指向 kimi.com/claw 会跳到 Kimi 首页，故按可用地址保留。",
   "revisions": [],
   "date_precision": "day"
 }

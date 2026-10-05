@@ -1,5 +1,5 @@
 {
-  "id": "p8244",
+  "id": "huawei-codearts",
   "name": "华为云码道",
   "name_zh": "华为云码道",
   "vendor_id": "huawei",
@@ -21,8 +21,7 @@
   "tags": [
     "harmonyos",
     "ascend",
-    "spec-driven",
-    "on-premise"
+    "spec-driven"
   ],
   "handbook": {
     "status": "none"
@@ -31,6 +30,23 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "鸿蒙 ArkTS 与昇腾算力生态覆盖最全的国产编码智能体，信创场景基本盘 来源：https://www.ithome.com/0/923/944.htm",
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "id",
+      "from": "p8244",
+      "to": "huawei-codearts",
+      "why": "slug 退化产物：非拉丁名被哈希成了 p<数字>，换成可读 id"
+    },
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "tags",
+      "from": "harmonyos,ascend,spec-driven,on-premise",
+      "to": "harmonyos,ascend,spec-driven",
+      "why": "官方页面只讲零信任访问与本地存储，未宣称私有化部署；tag 与正文自相矛盾"
+    }
+  ],
   "date_precision": "day"
 }

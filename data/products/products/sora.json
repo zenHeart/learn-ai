@@ -27,10 +27,19 @@
   "handbook": {
     "status": "candidate"
   },
-  "status": "active",
+  "status": "discontinued",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "官网反爬未确认（403）",
-  "revisions": [],
+  "notes": "官网反爬未确认（403） 复核：Sora 网页与 App 于 2026-04-26 停止服务，API 于 2026-09-24 下线（多个来源一致）。",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "discontinued",
+      "why": "产品已停运，仍标 active 会误导读者"
+    }
+  ],
   "date_precision": "day"
 }

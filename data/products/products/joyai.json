@@ -10,7 +10,7 @@
     "research"
   ],
   "form": "web",
-  "released": "2026-02-05",
+  "released": "2026-02-01",
   "homepage": "https://joy.jd.com/",
   "desc": "JD's voice-first shopping assistant with a digital human",
   "desc_zh": "京东的语音购物助手，配一个数字人",
@@ -32,6 +32,15 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "京东 AI 商业化的门面 App，能在对话里完成外卖、购物、酒旅的真实下单 首次公开发布日期精度：month-only 来源：https://baike.baidu.com/item/JoyAI/67350847",
-  "revisions": [],
-  "date_precision": "day"
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "released",
+      "from": "2026-02-05",
+      "to": "2026-02-01",
+      "why": "notes 自述仅精确到月，却标了 day 且带具体日；按约定截断"
+    }
+  ],
+  "date_precision": "month"
 }

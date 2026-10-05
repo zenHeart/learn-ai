@@ -4,7 +4,7 @@
   "name_zh": "Tana",
   "vendor_id": "tana-inc",
   "region": "intl",
-  "category": "chat-assistant",
+  "category": "meetings",
   "use_cases": [
     "office"
   ],
@@ -15,8 +15,9 @@
   "desc_zh": "面向会议的智能体平台，已不是原来的大纲工具",
   "tags": [
     "notes",
-    "outliner",
-    "personal-ai"
+    "personal-ai",
+    "meetings",
+    "agents"
   ],
   "solves": "The follow-up work after a meeting is the real cost. Tana's agents write the document, file the issue and update the context graph while you are still talking.",
   "solves_zh": "会开完之后的活才是真成本。Tana 的智能体在你还在说的时候写文档、提 issue、更新 context graph。",
@@ -29,7 +30,24 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
+  "notes": "Tana 已从大纲工具转为 agentic 会议平台（agents 写文档、提 issue、更新 context graph）；原大纲能力拆到独立产品 Tana Outliner（outliner.tana.inc），该产品尚未入账。",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "category",
+      "from": "chat-assistant",
+      "to": "meetings",
+      "why": "Tana 已是 agentic 会议平台，旧分类 outliner 属于独立产品"
+    },
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "tags",
+      "from": "notes,outliner,personal-ai",
+      "to": "notes,personal-ai,meetings,agents",
+      "why": "outliner 标签随产品拆分失效"
+    }
+  ],
   "date_precision": "day"
 }

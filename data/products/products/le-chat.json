@@ -28,10 +28,19 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "vibe",
   "last_verified_at": "2026-10-04",
-  "notes": "官网反爬未确认（403）",
-  "revisions": [],
+  "notes": "官网反爬未确认（403） 复核：2026-05 更名 Vibe（官网自述 formerly Le Chat）。",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "已更名为 Vibe"
+    }
+  ],
   "date_precision": "day"
 }

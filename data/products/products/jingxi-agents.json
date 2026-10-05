@@ -1,5 +1,5 @@
 {
-  "id": "p2061",
+  "id": "jingxi-agents",
   "name": "言犀智能体平台",
   "name_zh": "言犀智能体平台",
   "vendor_id": "jd",
@@ -33,6 +33,15 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "电商与供应链行业 Know-how 最深的智能体搭建平台，沉淀了一百余个行业方案模板 来源：https://baike.baidu.com/item/%E8%A8%80%E7%8A%80%E6%99%BA%E8%83%BD%E4%BD%93%E5%B9%B3%E5%8F%B0/64733051",
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "id",
+      "from": "p2061",
+      "to": "jingxi-agents",
+      "why": "slug 退化产物：非拉丁名被哈希成了 p<数字>，换成可读 id"
+    }
+  ],
   "date_precision": "day"
 }

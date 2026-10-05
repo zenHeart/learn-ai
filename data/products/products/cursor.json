@@ -41,7 +41,9 @@
       "field": "desc",
       "from": "TAMPERED",
       "to": "AI code editor built around whole-codebase AI editing",
-      "why": "门禁测试时留下的占位值未还原，误随投影发布；按原意恢复"
+      "why": "门禁测试时留下的占位值未还原，误随投影发布；按原意恢复",
+      "superseded_by_rewrite_at": "2026-10-05",
+      "note": "此条记录的值随后被改写，保留原值以说明改动轨迹；当前值见文件"
     }
   ],
   "date_precision": "day"
