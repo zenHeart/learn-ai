@@ -12,12 +12,12 @@
   "form": "ide",
   "released": "2023-03-01",
   "homepage": "https://zed.dev",
-  "desc": "Rust-native editor with parallel agents and ACP support",
-  "desc_zh": "Rust 编写的 AI 原生编辑器，支持并行智能体与 ACP 协议",
-  "solves": "One agent at a time means waiting. It runs several in parallel in the same editor, so you can hand out work at once.",
-  "solves_zh": "一次只能跑一个 Agent 就意味着干等。它能在同一个编辑器里并行跑多个，任务可以一次分完。",
-  "best_for": "When you want more than one coding agent working in your editor at the same time.",
-  "best_for_zh": "想在编辑器里同时有多个编码 Agent 干活的时候。",
+  "desc": "A code editor with an agent panel and edit prediction.",
+  "desc_zh": "Rust 写的编辑器，并行跑多个 Agent",
+  "solves": "An editor first, not an agent. The agent is a guest here, and several can work at once in the same files over ACP.",
+  "solves_zh": "它先是编辑器，不是 Agent。Agent 是这里的客人：通过 ACP，可以有几个同时在同一个编辑器里干活。",
+  "best_for": "More than one coding agent working in your editor at the same time.",
+  "best_for_zh": "想在编辑器里同时有多个编码 Agent 干活。",
   "surface": "standalone",
   "tags": [
     "open-source",
@@ -32,6 +32,15 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "Runs Claude Code, Codex and OpenCode as managed threads inside the editor, so you are not locked into one agent vendor. 首次公开发布日期精度：month-only 来源：http://m.zhiding.cn/article/3185882.htm",
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "desc",
+      "from": "Rust 写的编辑器，并行跑多个 Agent",
+      "to": "A code editor with an agent panel and edit prediction.",
+      "why": "desc 误填中文；基础键按约定只能是英文"
+    }
+  ],
   "date_precision": "day"
 }

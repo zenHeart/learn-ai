@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2024-09-04",
   "homepage": "https://kagi.com",
-  "desc": "Paid-search-grounded assistant on top of Kagi Search",
-  "desc_zh": "基于 Kagi 自有搜索索引的问答助手，2025-04 开放给全部用户",
+  "desc": "Answer mode on top of Kagi's own paid search index",
+  "desc_zh": "基于 Kagi 自有索引的问答模式",
   "tags": [
     "answer-engine",
     "privacy",
     "citations"
   ],
-  "solves": "A general search engine answers from ads and SEO. Kagi Assistant answers from its own paid index, with a link behind each claim.",
-  "solves_zh": "通用搜索引擎靠广告和 SEO 作答。Kagi Assistant 用自建的付费索引回答，每条结论都附链接。",
-  "best_for": "When you already pay for Kagi Search and want the answer mode with citations.",
-  "best_for_zh": "当你已经付费用 Kagi Search，并想要带引用的回答模式。",
+  "solves": "A general engine answers out of ads and SEO. Kagi Assistant answers from Kagi's own index and links every claim back to a page.",
+  "solves_zh": "通用搜索引擎的答案里混着广告和 SEO。Kagi Assistant 用自建索引回答，每条结论都指回具体页面。",
+  "best_for": "Already paying for Kagi Search and wanting the answer mode with links.",
+  "best_for_zh": "已经在付费订阅 Kagi Search，想再加一个带链接的问答模式。",
   "surface": "in-product",
   "handbook": {
     "status": "none"

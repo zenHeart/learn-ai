@@ -11,16 +11,16 @@
   "form": "web",
   "released": "2024-03-12",
   "homepage": "https://devin.ai",
-  "desc": "Autonomous cloud software engineer marketed to enterprises",
-  "desc_zh": "面向企业的云端自主软件工程师，可自行规划并执行多步开发任务",
+  "desc": "Autonomous software engineer that works until the PR is ready",
+  "desc_zh": "一直干到 PR 可合并的自主软件工程师",
   "tags": [
     "autonomous-agent",
     "swe-bench",
     "enterprise"
   ],
-  "solves": "A ticket needing hours of coding, testing, and file hunting is hard to hand to one person. Devin takes it and hands back a branch.",
-  "solves_zh": "一个要花几小时写代码、做测试、翻文件的 issue，很难塞给一个人做完。Devin 接过去，最后交回一个分支。",
-  "best_for": "When a well-scoped ticket could occupy a developer for a day of steady work.",
+  "solves": "A ticket needing hours of coding and testing is hard to hand to one person. The work happens in its own browser and comes back as a branch.",
+  "solves_zh": "一个要花几小时写代码、跑测试的 issue，很难塞给一个人。活在自带的浏览器里做完，交回一个分支。",
+  "best_for": "When a well-scoped ticket would occupy a developer for a solid day.",
   "best_for_zh": "当一个边界清晰的 issue 够一个开发者稳稳干上一整天时。",
   "surface": "standalone",
   "handbook": {

@@ -110,6 +110,14 @@ for (const file of productFiles) {
     fail(`${where}: surface 非法 "${r.surface}"（应为 standalone | in-product | plugin | extension）`)
   }
 
+  // The bilingual convention is absolute, not per-product: the base key is
+  // always English and the _zh key is always Chinese, whatever the product's
+  // origin. 46 records had Chinese sitting in `desc` before this check existed.
+  const hasCjk = (t) => /[一-鿿]/.test(String(t || ''))
+  if (hasCjk(r.desc)) {
+    fail(`${where}: desc 应为英文（当前是中文）——基础键永远是英文，中文放 desc_zh`)
+  }
+
   // The card leads with the problem, not the spec sheet. A product with no
   // `solves` renders as a bare name plus jargon, which is the failure mode
   // this check exists to prevent.

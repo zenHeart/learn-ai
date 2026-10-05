@@ -11,18 +11,18 @@
   "form": "self-hosted",
   "released": "2022-10-01",
   "homepage": "https://www.trychroma.com/",
-  "desc": "Embedded open-source embedding store for prototypes and local apps.",
-  "desc_zh": "嵌入式开源向量存储，面向原型与本地应用。",
+  "desc": "Open-source search infrastructure: vector, full-text, regex, metadata",
+  "desc_zh": "开源检索基础设施，兼容向量、全文、正则与元数据",
   "tags": [
     "vector-database",
     "embedded",
     "open-source",
     "prototyping"
   ],
-  "solves": "Your prototype needs real semantic search, but standing up a vector database service is a whole afternoon. It embeds into the app as a library.",
-  "solves_zh": "原型需要真正的语义检索，但搭一套向量数据库服务要耗掉一下午。它以库的形式直接嵌进应用里。",
-  "best_for": "When a prototype or local app needs retrieval and you do not want to run a database server.",
-  "best_for_zh": "当原型或本地应用需要检索能力，而你又不想再跑一个数据库服务时。",
+  "solves": "Semantic search that needs a running database service eats an afternoon. Retrieval runs serverless on object storage, or embedded in the app.",
+  "solves_zh": "语义检索要先跑起一个数据库服务，搭完要一下午。检索可以无服务器跑在对象存储上，也能嵌进应用。",
+  "best_for": "When a prototype needs real retrieval and you refuse to run a database server.",
+  "best_for_zh": "当原型需要真正的检索，而你又不想再跑一个数据库服务时。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

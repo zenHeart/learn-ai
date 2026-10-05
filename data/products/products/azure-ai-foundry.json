@@ -12,18 +12,18 @@
   "form": "web",
   "released": "2024-11-19",
   "homepage": "https://azure.microsoft.com/en-us/products/ai-foundry",
-  "desc": "Unified Microsoft Foundry platform for models, tools and agents",
-  "desc_zh": "微软统一的 Foundry 平台，整合模型、工具与智能体能力",
+  "desc": "Microsoft's platform to build, ground, and govern AI apps",
+  "desc_zh": "微软用于构建、接入数据并治理 AI 应用的统一平台",
   "tags": [
     "cloud-platform",
     "enterprise",
     "agent-service",
     "model-catalog"
   ],
-  "solves": "Model choice, agent wiring, and monitoring end up scattered across separate consoles. One platform holds the catalog, the runtime, and the eval trail.",
-  "solves_zh": "模型选型、智能体编排和监控分散在各自的控制台上。一个平台同时管住模型目录、运行时和评测记录。",
-  "best_for": "When an enterprise ships agents and must keep models, data, and audit trails inside Azure.",
-  "best_for_zh": "当企业要上线智能体，又必须把模型、数据和审计记录留在 Azure 内时。",
+  "solves": "Models, your own data, and the rules around them live in three different consoles. Building, grounding, and governance happen in one place.",
+  "solves_zh": "模型、自有数据和治理规则分散在三个控制台里。构建、接入业务上下文和治理在一处完成。",
+  "best_for": "When an agent has to stay inside Azure with its data and its audit trail.",
+  "best_for_zh": "当智能体连同数据和审计记录都必须留在 Azure 内时。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

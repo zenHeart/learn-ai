@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2024-04-10",
   "homepage": "https://www.udio.com",
-  "desc": "Music generation startup from former DeepMind researchers",
-  "desc_zh": "由前 DeepMind  researcher 创办的音乐生成平台，2024-04 公测",
+  "desc": "Music generation with clearance for commercial use",
+  "desc_zh": "生成的音乐可用于商业项目的音乐生成工具",
   "tags": [
     "music-generation",
     "audio",
     "creative"
   ],
-  "solves": "Licensing a track for a video or a game takes weeks and costs more than the project. You generate the music and clear it.",
-  "solves_zh": "给一支视频或一款游戏配一首授权曲子，要谈上几周，花的钱比项目本身还多。你直接生成音乐，版权也归你。",
-  "best_for": "When you need a music bed that fits the cut and does not come with a rights dispute.",
-  "best_for_zh": "当你需要一段配得上剪辑、且不会带来版权纠纷的背景音乐时。",
+  "solves": "Licensing a track for a video or a game takes weeks and costs more than the project. The music is generated instead, cleared to ship.",
+  "solves_zh": "给一支视频或一款游戏配一首授权曲子，要谈几周，花的比项目本身还多。改为直接生成，版权可用于交付。",
+  "best_for": "When you need a music bed that fits the cut and will not arrive with a rights dispute.",
+  "best_for_zh": "当你要一段配得上剪辑、且不会带着版权纠纷来的背景音乐时。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

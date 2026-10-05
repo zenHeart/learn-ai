@@ -11,17 +11,17 @@
   "form": "ide",
   "released": "2025-08-22",
   "homepage": "https://qoder.com",
-  "desc": "通义灵码更名的智能编码 IDE",
+  "desc": "Autonomous development IDE with coding agents inside",
   "desc_zh": "通义灵码更名的智能编码 IDE",
   "tags": [
     "coding-agent",
     "ai-ide",
     "alibaba"
   ],
-  "solves": "Choosing a coding model and hooking it up is the slow part. Qoder arrives as a full IDE with one already chosen.",
-  "solves_zh": "选编码模型、把它接进编辑器是最耗时间的部分。Qoder 直接就是一个完整 IDE，模型已经选好。",
-  "best_for": "When you want a self-contained coding editor instead of a plugin for an existing one.",
-  "best_for_zh": "你需要一个自带一体的编码编辑器，而不是装在现有编辑器里的插件。",
+  "solves": "Choosing a coding model, wiring it into an editor and pointing it at a repo is the slow part. Qoder is an IDE with one already chosen.",
+  "solves_zh": "选编码模型、接进编辑器、指到仓库上，这几步最耗时间。Qoder 直接是一个 IDE，模型已经定了。",
+  "best_for": "Wanting a self-contained coding editor instead of a plugin inside another one.",
+  "best_for_zh": "想要一个自成一体的编码编辑器，而不是装在别人编辑器里的插件。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

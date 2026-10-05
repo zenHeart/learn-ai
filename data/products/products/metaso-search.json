@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2024-03-01",
   "homepage": "https://metaso.cn",
-  "desc": "无广告直达结果的生成式 AI 搜索",
-  "desc_zh": "无广告直达结果的生成式 AI 搜索",
+  "desc": "Chinese AI search that shows no ads before the answer",
+  "desc_zh": "没有广告、直达结果的生成式中文搜索",
   "tags": [
     "search",
     "ai-search",
     "metaso"
   ],
-  "solves": "Chinese search results are ads you have to scroll past before the answer. It drops the ads and puts the answer at the top.",
-  "solves_zh": "中文搜索结果页前面全是广告，你得先划过去才能看到答案。秘塔把广告去掉，答案直接放在最上面。",
-  "best_for": "When you want a Chinese-language answer without the sponsored links sitting between you and it.",
-  "best_for_zh": "当你想要一个中文答案，而不想中间夹着赞助链接时。",
+  "solves": "Chinese search results stack ads above the answer, so you scroll before you read. The ads go, and the answer goes to the top.",
+  "solves_zh": "中文搜索结果页前面堆着广告，你得先划过去才看到答案。广告去掉，答案放到最前面。",
+  "best_for": "When you want a Chinese-language answer with no sponsored links in the way.",
+  "best_for_zh": "当你要一个中文答案，而不想中间夹着赞助链接时。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

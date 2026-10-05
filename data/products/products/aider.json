@@ -12,18 +12,18 @@
   "form": "cli",
   "released": "2023-05-10",
   "homepage": "https://aider.chat",
-  "desc": "terminal pair programmer that commits every change to git",
-  "desc_zh": "终端里的 AI 结对程序员，每次改动自动提交 Git",
+  "desc": "Terminal pair programmer; every change lands as a git commit",
+  "desc_zh": "终端里的结对编程，每次改动都是一个 git 提交",
   "tags": [
     "open-source",
     "git-native",
     "bring-your-own-key",
     "repo-map"
   ],
-  "solves": "An agent's edits arrive as a diff you cannot audit. Every change lands as its own commit, so you can read the run backwards.",
-  "solves_zh": "智能体的改动只给你一个没法审的 diff。它的每一步改动都是独立提交，你可以倒着把整次运行读回来。",
-  "best_for": "When you want to hand a repo to a model and still review every line it touched.",
-  "best_for_zh": "当你把仓库交给模型之后，仍想逐行复核它改过的每一处时。",
+  "solves": "Aider writes each edit as its own commit, so an agent's whole run reads backwards as reviewable history.",
+  "solves_zh": "Aider 把每一步改动写成独立提交，智能体的整个运行过程可以倒着当代码评审读。",
+  "best_for": "When you want to see what an agent actually changed, not just its final diff.",
+  "best_for_zh": "当你想看清智能体到底改了什么，而不只是最后那个 diff。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

@@ -11,16 +11,16 @@
   "form": "desktop",
   "released": "2023-04-03",
   "homepage": "https://www.nomic.ai/gpt4all",
-  "desc": "Early consumer desktop app for running LLMs locally",
-  "desc_zh": "早期面向普通用户的本地 LLM 桌面运行器，模型能力后来被追平",
+  "desc": "Desktop app for running open models entirely on your machine",
+  "desc_zh": "把开源模型完全跑在本机的桌面应用",
   "tags": [
     "desktop",
     "local-llm",
     "quantization"
   ],
-  "solves": "You do not want a private document going to someone else's server, and you do not want to learn a terminal. It runs the model on your machine.",
-  "solves_zh": "你不想把私密文档传到别人的服务器上，也不想为了这事去学终端。它把模型跑在你自己的机器上。",
-  "best_for": "When you want to try a local model on your own files without installing any command-line tooling.",
+  "solves": "Private documents should not go to someone else’s server, and a terminal is a poor way to run a local model. It ships as a desktop app.",
+  "solves_zh": "私密文档不该传到别人的服务器上，而本地模型又不适合用终端跑。它直接做成桌面应用。",
+  "best_for": "When you want to try a local model on your own files without command-line tooling.",
   "best_for_zh": "当你想拿自己的文件试一个本地模型，又不想装任何命令行工具时。",
   "surface": "standalone",
   "handbook": {

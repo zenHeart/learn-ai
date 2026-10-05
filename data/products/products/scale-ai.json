@@ -11,18 +11,18 @@
   "form": "api",
   "released": "2016-06-01",
   "homepage": "https://scale.com/",
-  "desc": "Human data, RLHF and model evaluation services for frontier labs.",
-  "desc_zh": "为前沿实验室提供人类数据、RLHF 与模型评测服务。",
+  "desc": "Human data and evaluations for frontier labs",
+  "desc_zh": "为前沿实验室提供人工数据与评测",
   "tags": [
     "data-annotation",
     "rlhf",
     "model-evaluation",
     "human-data"
   ],
-  "solves": "Post-training a model needs rated human answers, and a lab has neither the people nor the process. Scale supplies both.",
-  "solves_zh": "模型后训练需要人工评分过的答案，而实验室既缺人也缺流程。Scale 两样都提供。",
-  "best_for": "When you are training or evaluating a model and need human judgement at volume.",
-  "best_for_zh": "当你在训练或评测模型，需要成规模的人工判断。",
+  "solves": "Post-training needs rated human answers at volume, and a lab has neither the people nor the process. Scale supplies both, and keeps humans in the loop.",
+  "solves_zh": "后训练需要成规模、有人评分过的答案，实验室既缺人也缺流程。Scale 两样都提供，并让人留在环里。",
+  "best_for": "Training or evaluating a model where human judgement is the real bottleneck.",
+  "best_for_zh": "训练或评测模型，而人工判断是真正卡住的那一环。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

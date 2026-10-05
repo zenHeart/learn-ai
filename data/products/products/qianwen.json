@@ -12,17 +12,17 @@
   "form": "web",
   "released": "2025-11-17",
   "homepage": "https://qianwen.com",
-  "desc": "阿里新一代 AI 助手应用",
-  "desc_zh": "阿里新一代 AI 助手应用",
+  "desc": "Alibaba's assistant, with search, slides and notes",
+  "desc_zh": "阿里官方的 AI 助手，前身是通义",
   "tags": [
     "chat-assistant",
     "qwen",
     "alibaba"
   ],
-  "solves": "Researching, reading pages and building a deck means switching between several tools. 千问 pulls them into a single chat box.",
-  "solves_zh": "搜资料、读网页、做 PPT 要在几个工具之间来回切。千问把它们收进一个对话框。",
-  "best_for": "When you want to look things up and produce a document or slides in the same place.",
-  "best_for_zh": "你要一边查资料一边产出文档或演示稿。",
+  "solves": "Search, read a page, draft the deck and take the minutes are four apps. 千问 does all four in one chat box.",
+  "solves_zh": "搜索、读网页、做 PPT、录音转纪要，原本是四个应用。千问在一个对话框里做完。",
+  "best_for": "Looking things up and producing a document or slides in the same place.",
+  "best_for_zh": "一边查资料，一边要在同一处产出文档或演示稿。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

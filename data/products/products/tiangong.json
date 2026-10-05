@@ -12,17 +12,17 @@
   "form": "web",
   "released": "2023-04-18",
   "homepage": "https://www.tiangong.cn",
-  "desc": "昆仑万维天工大模型官方助手",
-  "desc_zh": "昆仑万维天工大模型官方助手",
+  "desc": "Kunlun Wanwei's assistant, built on Tiangong models",
+  "desc_zh": "昆仑万维天工模型的官方助手",
   "tags": [
     "chat-assistant",
     "skywork",
     "kunlun"
   ],
-  "solves": "Using the Tiangong models directly means picking interfaces and wiring context yourself. The official assistant is ready to open and answers one question at a time.",
-  "solves_zh": "想直接用天工模型却得自己挑接口、配上下文。打开就是官方助手，问一句给一句答案。",
-  "best_for": "When you want to try Kunlun's Tiangong models without calling the API yourself.",
-  "best_for_zh": "你想先用昆仑万维的天工模型，不想自己调 API。",
+  "solves": "The Tiangong models exist; reaching them from a chat window takes an API key and a client. This is the assistant the lab ships.",
+  "solves_zh": "天工模型是有的，但从一个对话框用到它，要 API key 加一个客户端。这是昆仑自己出的那个入口。",
+  "best_for": "Wanting to try Kunlun's Tiangong models without writing an API client yourself.",
+  "best_for_zh": "想先用上昆仑的天工模型，又不想自己写客户端。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

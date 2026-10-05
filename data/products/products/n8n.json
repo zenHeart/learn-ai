@@ -11,17 +11,17 @@
   "form": "self-hosted",
   "released": "2023-10-04",
   "homepage": "https://n8n.io",
-  "desc": "Source-available workflow automation with native LLM nodes",
-  "desc_zh": "源码可用的工作流自动化平台，2023-10 加入原生 LangChain 节点",
+  "desc": "Workflow automation with native LLM nodes, self-hostable",
+  "desc_zh": "带原生 LLM 节点、可自托管的工作流自动化平台",
   "tags": [
     "workflow",
     "automation",
     "self-hosted"
   ],
-  "solves": "The glue between your tools is a pile of scripts that only run on your laptop. It runs the same flows on a server you control.",
-  "solves_zh": "把你各个工具粘在一起的，往往是一堆只在自己电脑上跑得动的脚本。n8n 把同样的流程放到你自己掌控的服务器上跑。",
-  "best_for": "When the connect-the-dots work has to keep running after you close the laptop.",
-  "best_for_zh": "当这种把工具串起来的活，得在你合上笔记本之后还继续跑时。",
+  "solves": "The glue between your tools is scripts that only run on your laptop. The same flows run on a server you decide, on-prem or air-gapped.",
+  "solves_zh": "把工具粘在一起的是只在自己电脑上跑得动的脚本。同样的流程跑在你指定的服务器上，可做隔离网部署。",
+  "best_for": "When the connect-the-dots work must keep running after you close the laptop, on your own server.",
+  "best_for_zh": "当这种串工具的活得在合上笔记本后继续跑，而且要跑在你自己掌控的服务器上时。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

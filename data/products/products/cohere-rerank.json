@@ -11,18 +11,18 @@
   "form": "api",
   "released": "2023-05-01",
   "homepage": "https://cohere.com/rerank",
-  "desc": "Reranking API that reorders retrieved documents for relevance",
-  "desc_zh": "重排序 API，对召回文档按相关性重新排序",
+  "desc": "Reranking model, the last filter before your model reads",
+  "desc_zh": "检索链路末端的重排序模型",
   "tags": [
     "reranking",
     "retrieval",
     "rag",
     "search"
   ],
-  "solves": "A search index returns the ten closest matches, not the right one. Reranking puts the actual answer at the top.",
-  "solves_zh": "检索索引返回的是最相似的十条，不一定是真正有用的那一条。重排把对的答案放到最前。",
-  "best_for": "When your RAG pipeline retrieves plenty of documents and still answers badly.",
-  "best_for_zh": "当你的 RAG 流程召回了大量文档，回答质量却依然不好。",
+  "solves": "A vector index returns the closest matches, not necessarily the right one. Rerank sits at the end and reorders, so fewer documents reach the model.",
+  "solves_zh": "向量索引给的是最相似的一批，不一定是最相关的一条。Rerank 放在末端重排，进模型的文档自然少了。",
+  "best_for": "A RAG pipeline that retrieves plenty of documents and still answers badly.",
+  "best_for_zh": "召回了大量文档、回答质量却还是上不去的检索流程。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

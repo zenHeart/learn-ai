@@ -12,17 +12,17 @@
   "form": "desktop",
   "released": "2020-10-21",
   "homepage": "https://www.descript.com",
-  "desc": "Edit audio and video by editing the transcript text",
-  "desc_zh": "像改文字稿一样编辑音视频，代表了 AI 辅助创作的新交互范式",
+  "desc": "Edit audio and video by editing the transcript",
+  "desc_zh": "像改文字稿一样剪音视频",
   "tags": [
     "video-editing",
     "audio",
     "transcription"
   ],
-  "solves": "Cutting a video means scrubbing a timeline frame by frame. Descript lets you cut by editing the transcript.",
-  "solves_zh": "剪视频要在时间轴上一帧帧拖。Descript 让你改文字稿来完成剪辑。",
-  "best_for": "When you edit interviews, podcasts or talking-head video and know the words but not the frame numbers.",
-  "best_for_zh": "当你剪的是访谈、播客或口播视频，记得内容却不记得帧号。",
+  "solves": "Cutting means scrubbing a timeline frame by frame. Here the words are the timeline — edit a sentence, the video changes.",
+  "solves_zh": "剪片子要在时间轴上一帧帧拖。这里文字就是时间轴，改一句话，画面跟着变。",
+  "best_for": "Editing interviews or podcasts where the words are known but the frame numbers are not.",
+  "best_for_zh": "剪访谈、播客这类口播内容：记得说了什么，不记得在第几帧。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

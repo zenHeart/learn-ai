@@ -12,18 +12,18 @@
   "form": "web",
   "released": "2024-01-01",
   "homepage": "https://www.greptile.com",
-  "desc": "graph-indexes your repo then reviews PRs with an agent swarm",
-  "desc_zh": "先为仓库建图谱，再用智能体集群审查 PR",
+  "desc": "PR review agents with a graph index of your codebase",
+  "desc_zh": "先建仓库图谱再评审 PR 的智能体",
   "tags": [
     "pull-request",
     "code-graph",
     "self-hosting",
     "team-rules"
   ],
-  "solves": "A reviewer reading only the diff misses what breaks elsewhere. Greptile maps the whole repo first, then reviews the PR.",
-  "solves_zh": "只看 diff 的评审会漏掉别处被破坏的地方。Greptile 先摸清整个仓库，再评这个 PR。",
-  "best_for": "When a pull request touches shared code and you want a second pair of eyes before merge.",
-  "best_for_zh": "当一个 PR 改动了公共代码，你想在合并前多一双眼睛。",
+  "solves": "A diff shows what changed, not what it breaks. Greptile indexes the codebase first, then a swarm of agents reads the PR in that context.",
+  "solves_zh": "diff 只告诉你哪里改了，会坏在哪里是另一回事。Greptile 先建图谱，再让一组智能体在这个上下文里读 PR。",
+  "best_for": "A pull request that touches shared code and needs a second reader.",
+  "best_for_zh": "改动公共代码的 PR，合并之前想再有一双眼睛看过。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

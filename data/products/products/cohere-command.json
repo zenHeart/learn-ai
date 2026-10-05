@@ -11,18 +11,18 @@
   "form": "api",
   "released": "2023-09-29",
   "homepage": "https://cohere.com/",
-  "desc": "Enterprise RAG and tool-use models with inline citations",
-  "desc_zh": "面向企业的 RAG 与工具调用模型，支持行内引用",
+  "desc": "Cohere's enterprise models for RAG, tools and agents",
+  "desc_zh": "面向企业的 RAG、工具调用与智能体模型",
   "tags": [
     "rag",
     "enterprise",
     "tool-use",
     "private-cloud"
   ],
-  "solves": "Answers a model invents are unusable in a regulated setting. Command cites the exact source span behind every claim.",
-  "solves_zh": "在受监管的场景里，模型编出来的答案不能用。Command 会为每条结论标出对应的原文出处。",
-  "best_for": "When a reviewer has to be able to check where each statement came from.",
-  "best_for_zh": "当审核者必须能查证每条说法的出处时。",
+  "solves": "An invented answer cannot go to a reviewer. Command anchors every claim to a span of your own source.",
+  "solves_zh": "编出来的答案送不到审核环节。Command 把每条结论都挂在你的原文片段上。",
+  "best_for": "A reviewer who has to be able to check where every statement came from.",
+  "best_for_zh": "留给审核的那个人，他需要能逐句查证结论出自哪段原文。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

@@ -12,18 +12,18 @@
   "form": "web",
   "released": "2022-08-01",
   "homepage": "https://gamma.app/",
-  "desc": "Turns a prompt into a designed deck, doc, or webpage.",
-  "desc_zh": "把一句话变成排好版的演示文稿、文档或网页。",
+  "desc": "Turns a prompt into a deck, doc or webpage",
+  "desc_zh": "一句话变出演示稿、文档或网页",
   "tags": [
     "slides",
     "prompt-to-deck",
     "card-editor",
     "web-native"
   ],
-  "solves": "A blank slide deck is just a blank page. Gamma turns one sentence into a laid-out deck you can then edit.",
-  "solves_zh": "空白幻灯片就是一张白纸。Gamma 把一句话变成排好版的 deck，之后你再改。",
-  "best_for": "When you need a presentable deck today and the content is already in your head.",
-  "best_for_zh": "当你今天就要一份能拿出去的 deck，内容已经在你脑子里。",
+  "solves": "A blank first slide is a blank page. One sentence produces a laid-out deck; the cards move like ordinary blocks afterwards.",
+  "solves_zh": "空白的第一页就是一张白纸。一句话先出排好版的 deck，之后按卡片继续改。",
+  "best_for": "A deck needed today, with the content already formed in your head.",
+  "best_for_zh": "今天就要拿出去一份能看的 deck，内容已经在脑子里成形。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

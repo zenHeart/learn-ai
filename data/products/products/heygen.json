@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2022-07-29",
   "homepage": "https://www.heygen.com",
-  "desc": "AI avatar video generation and multilingual dubbing",
-  "desc_zh": "AI 数字人视频生成与多语言配音平台",
+  "desc": "AI avatar video with voice cloning and multilingual dubbing",
+  "desc_zh": "带声音克隆与多语言配音的 AI 数字人视频",
   "tags": [
     "avatar",
     "video-generation",
     "localization"
   ],
-  "solves": "The training video must exist in six languages and the speaker cannot be in all of them. It clones voice and face, then dubs the video.",
-  "solves_zh": "培训视频要做六种语言，而主讲人不可能六种都会讲。它克隆声音和面部，再给视频配上对应语言的配音。",
-  "best_for": "When one recorded video has to ship in several languages with the same on-camera presenter.",
-  "best_for_zh": "当一条录好的视频要以同一位出镜主讲人的形象，发到多个语言版本时。",
+  "solves": "The training video has to ship in six languages and the speaker speaks none of the other five. The voice is cloned, then lip-synced to the dub.",
+  "solves_zh": "培训视频要做六种语言，而主讲人一种都不会。声音被克隆出来，再对着另一种语言做嘴型。",
+  "best_for": "When one recorded video has to ship in several languages with the same presenter on camera.",
+  "best_for_zh": "当一条录好的视频要以同一位出镜主讲人，发到多个语言版本时。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

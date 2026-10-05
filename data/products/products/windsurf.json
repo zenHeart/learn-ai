@@ -11,17 +11,17 @@
   "form": "ide",
   "released": "2023-11-14",
   "homepage": "https://windsurf.com",
-  "desc": "AI editor acquired by Cognition, now Devin Desktop.",
-  "desc_zh": "AI 编辑器，已被 Cognition 收购，现为 Devin Desktop。",
+  "desc": "AI editor acquired by Cognition, now Devin Desktop",
+  "desc_zh": "被 Cognition 收购的 AI 代码编辑器，现已更名为 Devin Desktop",
   "tags": [
     "ai-ide",
     "rebrand",
     "code-editor"
   ],
-  "solves": "Editing code means holding structure in your head across dozens of files. The editor holds it, so you steer instead of navigating.",
-  "solves_zh": "改代码意味着要靠脑子记住几十个文件之间的关系。编辑器替你记着，你只需要指挥方向，而不是自己翻文件。",
-  "best_for": "When you want an editor that carries context across the whole repo while you work.",
-  "best_for_zh": "当你想要一个在整个仓库范围内替你保持上下文的编辑器时。",
+  "solves": "An editor that held repo-wide context so you steered instead of navigating. Cognition acquired it; the name now redirects to Devin Desktop.",
+  "solves_zh": "一个替你保持整个仓库上下文、只需指挥不必翻找的编辑器。Cognition 收购后，这个名字已跳转至 Devin Desktop。",
+  "best_for": "When you are tracing what Windsurf became after the Cognition acquisition, or checking older docs.",
+  "best_for_zh": "当你想弄清 Windsurf 被 Cognition 收购之后变成了什么，或者在翻旧文档时。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

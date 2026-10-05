@@ -12,7 +12,7 @@
   "form": "web",
   "released": "2023-08-17",
   "homepage": "https://www.doubao.com",
-  "desc": "字节跳动通用 AI 助手",
+  "desc": "ByteDance's general-purpose AI assistant.",
   "desc_zh": "字节跳动通用 AI 助手",
   "solves": "Answering one question means opening half a dozen tabs to piece it together. Doubao puts search, writing and file handling in one place.",
   "solves_zh": "查一件事要开好几个网页才能拼出答案。豆包把搜索、写作和文件处理放在一起，直接问就行。",

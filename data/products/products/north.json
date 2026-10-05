@@ -13,18 +13,18 @@
   "form": "self-hosted",
   "released": "2025-01-10",
   "homepage": "https://cohere.com/north",
-  "desc": "Cohere's secure agent platform for running on your own infrastructure.",
-  "desc_zh": "Cohere 面向自有基础设施部署的安全智能体平台。",
+  "desc": "Cohere's platform you can run in your own VPC",
+  "desc_zh": "可跑在自有 VPC 里的 Cohere 智能体平台",
   "tags": [
     "on-premise",
     "sovereign",
     "government",
     "connectors"
   ],
-  "solves": "Regulators will not let agent traffic leave the building. North runs the whole platform on your own hardware.",
-  "solves_zh": "监管不允许 Agent 的流量走出内网。North 把整个平台跑在你自己控制的硬件上。",
-  "best_for": "When the law requires your data and your agent to stay on infrastructure you control.",
-  "best_for_zh": "当法规要求你的数据和 Agent 都留在自己掌控的基础设施上。",
+  "solves": "Some regulators will not let agent traffic leave the building. North runs in your own VPC, on-prem, or in Cohere's Model Vault.",
+  "solves_zh": "有些监管场景不允许 Agent 流量走出内网。North 可以跑在你的 VPC、本地机房，或 Cohere 的 Model Vault 里。",
+  "best_for": "A compliance regime that names the infrastructure your agents are allowed to run on.",
+  "best_for_zh": "合规条款明确规定 Agent 只能跑在哪套基础设施上的时候。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

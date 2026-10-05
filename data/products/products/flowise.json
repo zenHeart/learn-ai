@@ -12,16 +12,16 @@
   "form": "self-hosted",
   "released": "2023-03-29",
   "homepage": "https://flowiseai.com",
-  "desc": "Drag-and-drop LangChain flow builder, acquired by Workday",
-  "desc_zh": "拖拽式 LangChain 流程搭建工具，2025-08 被 Workday 收购",
+  "desc": "Open-source agentic platform you build by dragging nodes",
+  "desc_zh": "拖拽节点搭智能体流程的开源平台",
   "tags": [
     "open-source",
     "langchain",
     "low-code"
   ],
-  "solves": "You wire a LangChain chain by editing nested Python objects until the shape is unreadable. It draws the graph instead and exports it.",
-  "solves_zh": "接一条 LangChain 链要靠改嵌套的 Python 对象，改到后来结构自己也读不懂了。它改成让你画这张图，再导出代码。",
-  "best_for": "When a team wants to design and hand off an agent flow without reading raw Python.",
+  "solves": "A LangChain chain is wired by editing nested Python objects until the shape is unreadable. The graph gets drawn, then exported back to code.",
+  "solves_zh": "接一条 LangChain 链要改嵌套的 Python 对象，改到后来结构自己也读不懂。改成画图，再导出回代码。",
+  "best_for": "When a team designs and hands off an agent flow without reading raw Python.",
   "best_for_zh": "当团队要设计并交付一条智能体流程，却不想读原始 Python 代码时。",
   "surface": "standalone",
   "handbook": {

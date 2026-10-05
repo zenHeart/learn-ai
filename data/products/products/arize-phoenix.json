@@ -11,17 +11,17 @@
   "form": "self-hosted",
   "released": "2024-06-12",
   "homepage": "https://arize.com/phoenix",
-  "desc": "Open-source tracing and eval library for LLM applications",
-  "desc_zh": "开源的 LLM 应用追踪与评测库，可在本地 Notebook 中直接跑",
+  "desc": "Open-source tracing and eval library you run yourself",
+  "desc_zh": "自己跑的开源 LLM 追踪与评测库",
   "tags": [
     "open-source",
     "tracing",
     "evaluation"
   ],
-  "solves": "A hosted tracing bill is a bad fit for a notebook experiment. Phoenix runs the same traces locally, for free.",
-  "solves_zh": "托管式 tracing 的账单不适合 Notebook 里的实验。Phoenix 在本地跑同样的 trace，免费。",
-  "best_for": "When you are prototyping in a notebook and cannot send traces to a vendor.",
-  "best_for_zh": "你在 Notebook 里做原型，不能把 trace 发给外部厂商。",
+  "solves": "Hosted tracing wants your traces, your data residency questions and a per-span invoice. Phoenix runs the same traces on your own laptop.",
+  "solves_zh": "托管式 tracing 要走你的数据、要面对跨境问题、还要按 span 计费。Phoenix 把同样的 trace 跑在自己笔记本上。",
+  "best_for": "A prototype in a notebook where the traces cannot leave the machine.",
+  "best_for_zh": "原型还在 Notebook 里，trace 不适合发给外部厂商，费用也不用另算一笔。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

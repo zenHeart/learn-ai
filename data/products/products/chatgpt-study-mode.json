@@ -13,12 +13,12 @@
   "released": "2025-07-29",
   "date_precision": "day",
   "homepage": "https://openai.com/index/chatgpt-study-mode/",
-  "desc": "A tutoring mode that quizzes you instead of handing over answers.",
-  "desc_zh": "反问你、只给提示的辅导模式。",
-  "solves": "You hand homework or a concept to a chatbot and it hands back the finished answer, which teaches you nothing. Study mode asks you questions back and gives hints instead of solutions.",
-  "solves_zh": "你把作业或一个概念丢给聊天机器人，它直接把答案给你，你什么也没学到。学习模式反过来问你问题、给提示，而不是直接给答案。",
-  "best_for": "You want to actually understand a topic or prepare for an exam, not just copy an answer out of the chat.",
-  "best_for_zh": "你想真正搞懂一个主题或准备考试，而不是从对话里抄一个答案了事。",
+  "desc": "Tutoring mode: Socratic questions and hints, not answers.",
+  "desc_zh": "用反问和提示带着你走的辅导模式，不直接给答案。",
+  "solves": "Hand it homework and it hands back the finished answer, which teaches nothing. Study mode asks you back and offers hints. OpenAI says it is inconsistent across conversations.",
+  "solves_zh": "把作业丢进去，它把做完的答案还给你。 学习模式反过来问你、给提示；OpenAI 说它在不同对话里表现并不稳定。",
+  "best_for": "Homework, an exam coming up, or a concept you have failed to grasp three times.",
+  "best_for_zh": "写作业、准备考试，或者一个你已经啃了三次还没懂的概念。",
   "tags": [
     "in-product",
     "chatgpt"

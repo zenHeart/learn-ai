@@ -11,17 +11,17 @@
   "form": "cli",
   "released": "2023-07-08",
   "homepage": "https://ollama.com",
-  "desc": "One-command local model runner that made LLMs accessible",
-  "desc_zh": "一条命令即可本地跑模型，是本地 LLM 普及的关键推手",
+  "desc": "One command to run open models locally",
+  "desc_zh": "一条命令在本地跑开源模型",
   "tags": [
     "open-source",
     "local-llm",
     "runtime"
   ],
-  "solves": "Running a model locally is a weekend of drivers and Python environments. Ollama pulls one down with a single command.",
-  "solves_zh": "在本地跑一个模型要耗掉一个周末去折腾驱动和 Python 环境。Ollama 一条命令就把它拉下来。",
-  "best_for": "When you want to try a model on your own machine before sending anything to an API.",
-  "best_for_zh": "当你想先在自己机器上试一个模型，再决定要不要把请求发到 API。",
+  "solves": "A local model used to mean a driver hunt and a Python environment. Ollama pulls the model down in one command.",
+  "solves_zh": "本地跑模型，本来是折腾驱动和 Python 环境。Ollama 一条命令把它拉下来。",
+  "best_for": "Trying a model on your own machine before any of it reaches an API.",
+  "best_for_zh": "先在自己机器上试一个模型，再决定要不要发到 API。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

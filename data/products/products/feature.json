@@ -13,12 +13,12 @@
   "released": "2025-08-20",
   "date_precision": "day",
   "homepage": "https://work.weixin.qq.com/nl/index/aioffice",
-  "desc": "WeCom's digest of customer threads, docs, and meetings.",
-  "desc_zh": "把客户线索汇成周报的企业微信功能。",
-  "solves": "Information about a customer is scattered across chats, docs, and meetings, and nobody has time to reassemble it. Smart summaries turn those threads into a weekly digest and a searchable record.",
-  "solves_zh": "关于某个客户的信息散落在聊天、文档和会议里，没人有时间重新拼起来。智能总结把这些线索变成每周简报和可检索的记录。",
-  "best_for": "Sales and service teams whose customer history is spread across WeCom conversations and meetings.",
-  "best_for_zh": "客户历史分散在企业微信会话和会议里的销售与服务团队。",
+  "desc": "WeCom feature that turns scattered threads into a weekly digest.",
+  "desc_zh": "把散落的客户线索汇成周报的企业微信功能。",
+  "solves": "What you know about a customer is spread across chats, docs, and meetings. Smart summaries turn it into a weekly digest you can search.",
+  "solves_zh": "关于一个客户的信息散落在聊天、文档和会议里。智能总结把这些线索汇成可检索的每周简报。",
+  "best_for": "Sales and service teams whose customer history lives in WeCom conversations and meetings.",
+  "best_for_zh": "客户历史都留在企业微信会话里的销售和服务团队。",
   "tags": [
     "in-product"
   ],

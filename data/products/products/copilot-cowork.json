@@ -12,18 +12,18 @@
   "form": "web",
   "released": "2026-06-16",
   "homepage": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available",
-  "desc": "Microsoft 365 Copilot mode that runs multi-step tasks and returns deliverables.",
-  "desc_zh": "Microsoft 365 Copilot 中可执行多步任务并交付成果的协作模式。",
+  "desc": "Microsoft 365 Copilot mode that returns finished deliverables",
+  "desc_zh": "Microsoft 365 Copilot 里直接交付成品的模式",
   "tags": [
     "m365",
     "multi-step",
     "deliverables",
     "ga"
   ],
-  "solves": "A finished deliverable needs a dozen tools and a long chain of steps. It runs the whole job and hands back the result.",
-  "solves_zh": "要做出一份成品，得用十几个工具串一长串步骤。它把整件事跑完，直接交出结果。",
-  "best_for": "When you need a real output, like a flow chart or a ranked list, built from your Microsoft 365 files.",
-  "best_for_zh": "当你需要基于 Microsoft 365 文件产出真东西，比如流程图或一份排好序的清单时。",
+  "solves": "Copilot Cowork runs long multi-tool jobs to completion and returns results, not drafts.",
+  "solves_zh": "Copilot Cowork 把多工具的长任务整个跑完，交回来的是结果，不是草稿。",
+  "best_for": "When the deliverable is the point — a flow chart, a ranked list, a finished draft.",
+  "best_for_zh": "当要的本身就是那份成品——流程图、排好序的清单、写完的稿子。",
   "surface": "in-product",
   "handbook": {
     "status": "none"

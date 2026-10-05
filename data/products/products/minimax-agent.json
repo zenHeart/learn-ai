@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2025-06-19",
   "homepage": "https://agent.minimaxi.com",
-  "desc": "MiniMax 通用智能体构建平台",
-  "desc_zh": "MiniMax 通用智能体构建平台",
+  "desc": "MiniMax's platform for building general-purpose agents",
+  "desc_zh": "MiniMax 的通用智能体搭建平台",
   "tags": [
     "agent-platform",
     "general-agent",
     "minimax"
   ],
-  "solves": "Building an agent that runs on its own means choosing the models, writing the orchestration and handling failures. The platform ships all of that already configured.",
-  "solves_zh": "从零搭一个能自己跑起来的智能体，要自己选模型、写编排、兜异常。平台把这些配好直接用。",
-  "best_for": "When you want to ship a general-purpose agent without building the runtime yourself.",
-  "best_for_zh": "你要上线一个通用智能体，但不想自己搭运行时。",
+  "solves": "An agent that runs unattended still needs models chosen, orchestration written and failures handled. The platform arrives with those set.",
+  "solves_zh": "一个能自己跑起来的智能体，模型要选、编排要写、异常要兜。这三样平台已经配好。",
+  "best_for": "Shipping a general-purpose agent without hand-building the runtime underneath it yourself first.",
+  "best_for_zh": "要上线一个通用智能体，但不想自己搭底层运行时。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

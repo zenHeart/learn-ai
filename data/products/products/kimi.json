@@ -12,12 +12,12 @@
   "form": "web",
   "released": "2023-10-01",
   "homepage": "https://www.kimi.com",
-  "desc": "支持超长上下文的 AI 智能助手",
-  "desc_zh": "支持超长上下文的 AI 智能助手",
-  "solves": "Long documents never get finished, and they do not fit in a prompt box. Kimi reads a lot of material at once and you can question it directly.",
-  "solves_zh": "长文档读不完，也塞不进提问框。Kimi 能一次读很长的材料，直接对着它问。",
-  "best_for": "When you need to read through a long report or a batch of material before asking questions.",
-  "best_for_zh": "要通读一份很长的报告或一批资料再提问。",
+  "desc": "Long-context chat assistant with built-in deep research.",
+  "desc_zh": "长上下文对话助手，带深度研究",
+  "solves": "A long report will not fit in a prompt box. Kimi takes the whole document in first, and the questioning comes after that.",
+  "solves_zh": "长报告塞不进一个提问框。Kimi 先把整份材料吃进去，之后再对着它问。",
+  "best_for": "Reading a long report, or a pile of material, before you know what to ask.",
+  "best_for_zh": "得先读完一份长报告或一批材料，才知道该问什么。",
   "surface": "standalone",
   "tags": [
     "chat-assistant",
@@ -35,6 +35,15 @@
   "superseded_by": null,
   "last_verified_at": null,
   "notes": "",
-  "revisions": [],
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "desc",
+      "from": "长上下文对话助手，带深度研究",
+      "to": "Long-context chat assistant with built-in deep research.",
+      "why": "desc 误填中文；基础键按约定只能是英文"
+    }
+  ],
   "date_precision": "day"
 }

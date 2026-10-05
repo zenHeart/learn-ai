@@ -11,17 +11,17 @@
   "form": "self-hosted",
   "released": "2022-10-01",
   "homepage": "https://www.langchain.com",
-  "desc": "Framework that popularised LLM application development",
-  "desc_zh": "推动 LLM 应用开发普及的框架，2022 年发布并迅速成为事实标准",
+  "desc": "Open-source framework for building agents",
+  "desc_zh": "构建智能体的开源框架",
   "tags": [
     "framework",
     "llm-apps",
     "developer-tools"
   ],
-  "solves": "Wiring prompts, tools and retries by hand is fragile and repetitive. LangChain hands you the plumbing and leaves the logic yours.",
-  "solves_zh": "手写 prompt、工具和重试的拼装既脆弱又重复。LangChain 把这些管道活接好，逻辑仍然归你。",
-  "best_for": "When you are building a multi-step agent and would rather not re-solve tool calling and memory.",
-  "best_for_zh": "当你在搭一个多步 Agent，又不想重新解决工具调用和记忆管理。",
+  "solves": "Tool calling, memory and retries are the same three problems in every agent. LangChain already solved them, and the logic stays yours.",
+  "solves_zh": "工具调用、记忆、重试，每个 Agent 都要重解一遍同样的三个问题。LangChain 已经解过，逻辑仍然归你。",
+  "best_for": "A multi-step agent where tool calling and memory are not the interesting part.",
+  "best_for_zh": "在搭一个多步 Agent，而工具调用和记忆不是你要琢磨的部分。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

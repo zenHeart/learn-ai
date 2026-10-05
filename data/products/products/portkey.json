@@ -12,18 +12,18 @@
   "form": "web",
   "released": "2023-03-01",
   "homepage": "https://portkey.ai/",
-  "desc": "Hosted AI gateway adding routing, governance and observability to LLM calls.",
-  "desc_zh": "托管式 AI 网关，为模型调用补上路由、治理与可观测性。",
+  "desc": "AI gateway sitting between your app and every model",
+  "desc_zh": "挡在应用与模型之间的 AI 网关",
   "tags": [
     "ai-gateway",
     "governance",
     "reliability",
     "cost-tracking"
   ],
-  "solves": "One provider going down or one key blowing its budget takes the whole app with it. Portkey routes around both.",
-  "solves_zh": "一家供应商宕机或一个 key 爆了预算，都会把整个应用拖垮。Portkey 的路由能绕开这两种情况。",
-  "best_for": "When your model calls span several vendors and you need fallback, rate limits and a cost breakdown.",
-  "best_for_zh": "当你的模型调用横跨多家供应商，需要 fallback、限流和成本明细。",
+  "solves": "One provider having a bad afternoon, or one key overrunning its budget, takes the whole app down. Routing in front does not.",
+  "solves_zh": "一家供应商状态变差，或者一个 key 超了预算，整个应用跟着挂。前置的路由不会。",
+  "best_for": "Model calls across several vendors that need fallbacks, rate limits and a cost breakdown.",
+  "best_for_zh": "模型调用横跨多家供应商，需要的是 fallback、限流和一份成本明细。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

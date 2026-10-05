@@ -13,12 +13,12 @@
   "released": "2025-02-02",
   "date_precision": "day",
   "homepage": "https://openai.com/index/introducing-deep-research/",
-  "desc": "A research mode that browses the web and writes a cited report.",
-  "desc_zh": "自己上网检索、输出带引用报告的模式。",
-  "solves": "Ordinary chat answers from memory, so a report that needs forty sources ends up with none. Deep research browses the open web on its own and cites every claim.",
-  "solves_zh": "普通对话靠记忆作答，需要四十个信源的报告最后一个也没有。深度研究会自己在开放网络上检索，并把每条论断都标上出处。",
-  "best_for": "A due-diligence, market, or academic question where you need a sourced report in minutes rather than an afternoon of tab-switching.",
-  "best_for_zh": "尽调、竞品或学术类问题——你要的是几分钟内出的一份有信源的报告，而不是自己开一堆标签页翻一下午。",
+  "desc": "A research mode that browses and writes a cited report.",
+  "desc_zh": "自己上网查资料、输出带引用报告的模式。",
+  "solves": "Ordinary chat answers from memory, so a report needing forty sources cites none. This browses the open web itself and cites what it used.",
+  "solves_zh": "普通对话靠记忆作答，要四十个信源的报告一个也引不出来。它自己在开放网络上检索，并标注出处。",
+  "best_for": "Due diligence or a market question, when five to thirty minutes of waiting beats an afternoon of tabs.",
+  "best_for_zh": "尽调或竞品问题，等五到三十分钟比你自己翻一下午标签页划算。",
   "tags": [
     "in-product",
     "chatgpt"

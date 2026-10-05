@@ -13,12 +13,12 @@
   "released": "2025-04-10",
   "date_precision": "day",
   "homepage": "https://openai.com/index/memory-and-new-controls-for-chatgpt/",
-  "desc": "Persistent storage of your standing facts across chats.",
-  "desc_zh": "跨对话记住你的长期个人信息。",
-  "solves": "You re-introduce yourself, your role, and your preferences at the start of nearly every session. Memory carries those facts forward so you don't.",
-  "solves_zh": "几乎每次开启新对话，你都要重新介绍自己、你的岗位和你的偏好。记忆会把这些事实带过去，你不用再说一遍。",
-  "best_for": "You use ChatGPT as an ongoing assistant and are tired of repeating standing facts about who you are.",
-  "best_for_zh": "你把 ChatGPT 当长期助手用，已经不想反复交代那些关于你的固定信息了。",
+  "desc": "ChatGPT keeps standing facts across separate chats.",
+  "desc_zh": "跨对话记住你的固定信息，也能随时让它忘掉。",
+  "solves": "Re-explaining your role and preferences at the start of every session. Memory carries them forward — and deleting the chat does not delete them.",
+  "solves_zh": "每次开新对话都要重讲一遍身份和偏好。记忆替你带过去——但删掉对话并不会删掉它记的东西。",
+  "best_for": "You use it as a standing assistant and have stopped wanting to repeat who you are.",
+  "best_for_zh": "你把它当长期助手用，已经不想反复交代自己是谁了。",
   "tags": [
     "in-product",
     "chatgpt"

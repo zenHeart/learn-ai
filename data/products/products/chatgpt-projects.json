@@ -14,12 +14,12 @@
   "released": "2024-12-13",
   "date_precision": "day",
   "homepage": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
-  "desc": "A shared container for one body of work's files and history.",
-  "desc_zh": "把一件事的文件与指令集中在一处。",
-  "solves": "Every conversation is its own island, so you re-upload the same brief and re-explain the same constraints each time. A project holds the files, instructions, and history for one piece of work in one place.",
-  "solves_zh": "每段对话都是一个孤岛，同一份 brief 要反复上传、同样的约束要反复解释。项目把一件事的文件、指令和历史集中在一处。",
-  "best_for": "You are working on one ongoing thing — a client, a paper, a codebase — across many separate chats.",
-  "best_for_zh": "你在长期推进同一件事——一个客户、一篇论文、一个代码库——分散在很多段不同对话里。",
+  "desc": "A container for one piece of work's files and chats.",
+  "desc_zh": "把一件事的文件和对话收在一处的容器。",
+  "solves": "Same brief uploaded again, same constraints re-explained again. A project holds the files, instructions, and history for one body of work.",
+  "solves_zh": "同一份 brief 反复上传，同样的约束反复解释。项目把一件事的文件、指令和历史放在一起。",
+  "best_for": "One ongoing thing — a client, a paper, a codebase — spread across many separate chats.",
+  "best_for_zh": "长期推进同一件事——一个客户、一篇论文、一个代码库——却散在很多段对话里。",
   "tags": [
     "in-product",
     "chatgpt"

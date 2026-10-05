@@ -12,17 +12,17 @@
   "form": "web",
   "released": "2026-01-28",
   "homepage": "https://grok.com/",
-  "desc": "xAI's image and video generation surface inside Grok.",
-  "desc_zh": "Grok 内的图像与视频生成创作界面。",
+  "desc": "xAI's image and video generation, also on the Imagine API",
+  "desc_zh": "xAI 的图像与视频生成，同时开放 Imagine API",
   "tags": [
     "image-generation",
     "video-generation",
     "creative"
   ],
-  "solves": "You want a picture or a short clip from a sentence without leaving the chat you are already in.",
-  "solves_zh": "你只想在当前对话里，用一句话换来一张图或一段短片，不用切走。",
-  "best_for": "When you are mid-conversation and want to try a visual instead of describing one.",
-  "best_for_zh": "当聊天正进行到一半，你想直接看个视觉结果而不是描述它时。",
+  "solves": "It is a surface inside Grok rather than a separate app. Images and video generate from the same conversation, and the same models sit behind an API.",
+  "solves_zh": "它是 Grok 里的一个界面，不是独立应用。图像和视频都在同一段对话里生成，同样的模型也开放成 API。",
+  "best_for": "When you are mid-conversation and want to see the picture rather than describe it.",
+  "best_for_zh": "当聊天正进行到一半，你想直接看到画面而不是描述它时。",
   "surface": "in-product",
   "handbook": {
     "status": "none"

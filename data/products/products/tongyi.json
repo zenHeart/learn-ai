@@ -12,17 +12,17 @@
   "form": "web",
   "released": "2023-10-31",
   "homepage": "https://www.tongyi.com",
-  "desc": "通义助手应用，后更名千问",
-  "desc_zh": "通义助手应用，后更名千问",
+  "desc": "Alibaba's assistant, now folded into Qwen",
+  "desc_zh": "阿里的助手应用，已并入千问",
   "tags": [
     "chat-assistant",
     "qwen",
     "alibaba"
   ],
-  "solves": "Researching, reading pages and writing documents normally means switching between several tools. 通义 pulls them into a single chat box.",
-  "solves_zh": "查资料、读网页、做文档原本要切好几个工具。通义把它们收进一个对话框。",
-  "best_for": "When you want to look things up and produce a document or slides in the same place.",
-  "best_for_zh": "你要一边查资料一边产出文档或演示稿。",
+  "solves": "Tongyi no longer takes new work on its own. The same features — search, page summaries, documents — now live in 千问.",
+  "solves_zh": "通义已经不再单独承接新活。搜索、网页总结、文档这些能力现在都在千问里。",
+  "best_for": "Arriving from an older link or a habit; the working product is Qwen.",
+  "best_for_zh": "从旧链接或旧习惯找过来——现在真正能用的是千问。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

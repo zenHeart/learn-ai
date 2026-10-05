@@ -11,17 +11,17 @@
   "form": "ide",
   "released": "2024-10-31",
   "homepage": "https://roocode.com",
-  "desc": "Open-source Cline fork with mode-based agent orchestration",
-  "desc_zh": "Cline 的开源分支，主打多模式（架构师/编码/调试）任务编排",
+  "desc": "Open-source VS Code agent with switchable modes",
+  "desc_zh": "可在多种模式间切换的开源 VS Code 智能体",
   "tags": [
     "open-source",
     "vscode",
     "fork"
   ],
-  "solves": "You want the agent to plan the change, then make it, then debug it, but one tool rarely does all three well. It switches modes for each.",
-  "solves_zh": "你希望智能体先规划改动、再动手实现、再排查问题，但一个工具通常做不好这三件事里的每件。Roo Code 为每一步切换模式。",
-  "best_for": "When you want an open-source agent in VS Code that changes behaviour depending on the task.",
-  "best_for_zh": "当你想在 VS Code 里用一个开源智能体，并希望它根据任务类型切换行为时。",
+  "solves": "Planning, writing, and debugging are different jobs, and one agent rarely does all three well. The mode switches between them.",
+  "solves_zh": "规划、写代码、排查问题是三种活，一个智能体通常做不好全部三件。模式在其中切换。",
+  "best_for": "When you want an open-source agent in VS Code whose behaviour follows the task.",
+  "best_for_zh": "当你想在 VS Code 里用一个开源智能体，并希望它按任务类型改变行为时。",
   "surface": "extension",
   "handbook": {
     "status": "candidate"

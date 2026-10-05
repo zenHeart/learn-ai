@@ -13,12 +13,12 @@
   "released": "2024-06-24",
   "date_precision": "day",
   "homepage": "https://workspaceupdates.googleblog.com/2024/06/gemini-in-side-panel-of-google-docs-sheets-slides-drive.html",
-  "desc": "Gemini living in a side panel of the file itself.",
-  "desc_zh": "待在文件侧边栏里的 Gemini。",
-  "solves": "Copying a document out to a chatbot to edit it and copying it back is a lot of steps for a small change. Gemini sits in a side panel of the file itself.",
-  "solves_zh": "为了改一点点就把文档复制到聊天工具、再复制回来，步骤太多。Gemini 就待在文件本身的侧边栏里。",
-  "best_for": "Drafting, rewriting, and summarizing inside Docs and Sheets without leaving the document.",
-  "best_for_zh": "在文档和表格里起草、改写、总结，而不用离开这个文件。",
+  "desc": "Gemini in a side panel of Docs and Sheets",
+  "desc_zh": "待在 Docs 和 Sheets 侧边栏里的 Gemini 助手",
+  "solves": "No copy, paste, come back. The side panel opens inside the document you are already editing, with the text and cells in view.",
+  "solves_zh": "不用复制、粘贴、再复制回来。侧边栏就开在你正在编辑的文档里，文字和表格都在眼前。",
+  "best_for": "Drafting, rewriting and summarising inside Docs and Sheets, where the data is the document.",
+  "best_for_zh": "在 Docs 和 Sheets 里起草、改写、做摘要，而数据本身就在这个文档里。",
   "tags": [
     "in-product",
     "google-workspace"

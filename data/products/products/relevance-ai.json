@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2023-02-20",
   "homepage": "https://relevanceai.com",
-  "desc": "Build and deploy a workforce of no-code AI agents",
-  "desc_zh": "构建并部署一支无代码 AI 员工队伍，支持多智能体团队协作",
+  "desc": "No-code teams of AI agents you deploy",
+  "desc_zh": "用无代码智能体组队干活",
   "tags": [
     "no-code",
     "multi-agent",
     "workforce"
   ],
-  "solves": "A single agent cannot do a job with five steps. Relevance AI lets several no-code agents work one job together.",
-  "solves_zh": "单个 Agent 干不完有五步的活。Relevance AI 让多个 no-code Agent 协作完成同一件事。",
-  "best_for": "When a task has a team shape to it — research, drafting, checking — and nobody wants to write the glue code.",
-  "best_for_zh": "当一个任务天然有团队分工的样子——调研、起草、核查——而没人想写胶水代码。",
+  "solves": "Jobs have more than one step. Relevance AI sells the team, not the individual — several no-code agents on one assignment.",
+  "solves_zh": "一件活往往不止一步。Relevance AI 卖的是团队而不是单人：多个无代码智能体接同一件活。",
+  "best_for": "Work with a team shape to it — research, drafting, checking — and no glue code.",
+  "best_for_zh": "任务本身像个小团队——调研、起草、核查——又不想写胶水代码。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

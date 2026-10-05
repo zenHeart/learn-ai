@@ -11,17 +11,17 @@
   "form": "api",
   "released": "2020-01-01",
   "homepage": "https://www.surgehq.ai/",
-  "desc": "Expert human feedback and RLHF data services for large labs.",
-  "desc_zh": "面向大模型实验室的专家人类反馈与 RLHF 数据服务。",
+  "desc": "Expert human data and RLHF services for frontier labs",
+  "desc_zh": "面向前沿实验室的专家数据与 RLHF 服务",
   "tags": [
     "rlhf",
     "expert-annotators",
     "human-feedback",
     "preference-data"
   ],
-  "solves": "Crowd workers produce agreeable, shallow answers, and training on them teaches a model to be agreeable and shallow. It sources domain experts instead.",
-  "solves_zh": "众包标注员给出的答案往往讨好而浅薄，用它们训练只会教出同样讨好而浅薄的模型。Surge AI 找的是领域专家来做标注。",
-  "best_for": "When a frontier lab needs preference and RLHF data that a general crowd cannot produce.",
+  "solves": "Smart is not useful. Training on agreeable crowd answers teaches a model to be agreeable. Domain experts are sourced instead, and benchmarks are built in-house.",
+  "solves_zh": "聪明不等于有用。用讨好的众包答案训练，只会让模型也变得讨好。改为找领域专家，基准也自己出。",
+  "best_for": "When a frontier lab needs preference and RLHF data a general crowd cannot produce.",
   "best_for_zh": "当前沿实验室需要通用众包做不出来的偏好数据和 RLHF 数据时。",
   "surface": "standalone",
   "handbook": {

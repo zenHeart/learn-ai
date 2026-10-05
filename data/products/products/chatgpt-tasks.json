@@ -13,12 +13,12 @@
   "released": "2025-01-01",
   "date_precision": "month",
   "homepage": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
-  "desc": "Scheduled prompts that run themselves and deliver the result.",
-  "desc_zh": "按计划自动执行的定时提示词。",
-  "solves": "A recurring question — a morning briefing, a daily check on something — requires you to be there at the right moment. Tasks runs the prompt on a schedule and delivers the result.",
-  "solves_zh": "每天早上要的那份简报、每天要复查的那件事，都要求你恰好在那个时刻在线。定时任务会按计划自动跑你的提示词并把结果送来。",
-  "best_for": "A prompt you want re-run on a fixed cadence, rather than a one-off question.",
-  "best_for_zh": "你想按固定节奏反复运行的提示词，而不是一次性的提问。",
+  "desc": "Prompts that run on a schedule and deliver themselves.",
+  "desc_zh": "按计划自动跑、自己把结果送来的提示词。",
+  "solves": "A daily briefing needs you online at the same minute. Tasks reruns the prompt — free accounts get one run a day, and none support voice or GPTs.",
+  "solves_zh": "每天那份简报要求你准时在线。定时任务替你重跑提示词——免费账号每天一次，且都不支持语音和 GPTs。",
+  "best_for": "A prompt worth re-running on a fixed cadence rather than asking once.",
+  "best_for_zh": "值得按固定节奏反复跑的提示词，而不是问一次就完的事。",
   "tags": [
     "in-product",
     "chatgpt"

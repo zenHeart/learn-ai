@@ -11,17 +11,17 @@
   "form": "ide",
   "released": "2025-05-30",
   "homepage": "https://lingma.aliyun.com",
-  "desc": "Alibaba AI-native IDE with a built-in coding agent",
-  "desc_zh": "阿里首款 AI 原生开发环境，内置编程智能体",
+  "desc": "Alibaba's AI-native IDE with a coding agent inside",
+  "desc_zh": "阿里 AI 原生 IDE，内置编程智能体",
   "tags": [
     "ai-ide",
     "agentic-coding",
     "qwen"
   ],
-  "solves": "Wiring a coding agent into a fresh project takes an afternoon of config. This IDE ships it already connected.",
-  "solves_zh": "把 coding agent 接进一个新项目要配一下午。这个 IDE 开箱就是接好的状态。",
-  "best_for": "When you want the agent driving the editor rather than only completing a line.",
-  "best_for_zh": "你希望 agent 驱动整个编辑器，而不只是补全一行代码。",
+  "solves": "Wiring an agent into a new repository is an afternoon of index and config. This one ships connected, with the terminal included.",
+  "solves_zh": "把智能体接进一个新仓库，索引和配置要花一下午。这个 IDE 开箱就是接好的，终端也一并带。",
+  "best_for": "When you want the agent driving the editor rather than completing one line.",
+  "best_for_zh": "希望智能体驱动整个编辑器，而不只是补全一行。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

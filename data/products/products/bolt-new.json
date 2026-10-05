@@ -11,17 +11,17 @@
   "form": "ide",
   "released": "2024-10-03",
   "homepage": "https://bolt.new",
-  "desc": "Browser IDE running full Node apps with AI edits",
-  "desc_zh": "浏览器内运行的 WebContainers IDE，AI 可直接修改并运行 Node 应用",
+  "desc": "Browser IDE that runs full Node apps while you chat",
+  "desc_zh": "在浏览器标签页里跑完整 Node 应用的 IDE",
   "tags": [
     "webcontainer",
     "browser-ide",
     "fullstack"
   ],
-  "solves": "You have an idea for a full app but no local Node and no scaffold. It runs the whole thing in a browser tab.",
-  "solves_zh": "你有一个完整应用的设想，但本地没装 Node，也没有脚手架。它在浏览器标签页里把整套东西跑起来。",
-  "best_for": "When you want to see a working full-stack app in a tab before installing anything.",
-  "best_for_zh": "当你想在装任何东西之前，先在一个标签页里看到能跑的全栈应用时。",
+  "solves": "A full app idea, no local Node, no scaffold. The file tree, terminal, and server all run inside one tab.",
+  "solves_zh": "想做完整的应用，本地没装 Node 也没有脚手架。文件树、终端和服务器全跑在一个标签页里。",
+  "best_for": "When you want a running full-stack app before installing anything on your own machine.",
+  "best_for_zh": "当你想在本地装任何东西之前，先看到一个能跑的全栈应用时。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

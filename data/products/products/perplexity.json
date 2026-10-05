@@ -11,18 +11,18 @@
   "form": "web",
   "released": "2022-12-07",
   "homepage": "https://www.perplexity.ai/",
-  "desc": "Answer engine returning cited search results over language models",
-  "desc_zh": "基于语言模型的答案引擎，回答附带可溯源的搜索引用",
+  "desc": "Answer engine that reads pages and cites the sources",
+  "desc_zh": "读完网页并标注出处的答案引擎",
   "tags": [
     "ai-search",
     "citations",
     "answer-engine",
     "consumer"
   ],
-  "solves": "A search page gives you ten links and makes you do the reading. It reads them and hands back an answer with the sources attached.",
-  "solves_zh": "搜索结果页甩给你十个链接，读不读全靠你自己。它替你读完，直接给出答案并附上出处。",
-  "best_for": "When you want a researched answer with links you can click to check, not a list of pages.",
-  "best_for_zh": "当你想要的是一个有据可查、链接点开能核对的答案，而不是一堆网页列表时。",
+  "solves": "A search page hands you ten links and leaves the reading to you. An answer comes back instead, with the sources attached.",
+  "solves_zh": "搜索结果页甩给你十个链接，读不读全靠自己。回来的直接是答案，附上出处。",
+  "best_for": "When you want a researched answer with links you can open to check it.",
+  "best_for_zh": "当你想要一个有据可查、点开链接能核对的答案时。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

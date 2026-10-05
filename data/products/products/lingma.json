@@ -12,16 +12,16 @@
   "released": "2023-10-31",
   "homepage": "https://lingma.aliyun.com",
   "desc": "Alibaba Cloud coding assistant, renamed Qoder in 2026",
-  "desc_zh": "阿里云智能编码助手，2026 年起系列更名 Qoder",
+  "desc_zh": "阿里云编码助手，2026 年起更名 Qoder",
   "tags": [
     "coding-assistant",
     "ide-plugin",
     "qwen"
   ],
-  "solves": "Writing the repetitive parts by hand takes an hour. It fills them in and explains the rest inside the editor you already have.",
-  "solves_zh": "样板代码手写要花一个钟头。它在你已经在用的编辑器里补齐这些部分，并解释剩下的逻辑。",
-  "best_for": "When you want code help without switching away from your current IDE.",
-  "best_for_zh": "你想在不离开当前 IDE 的前提下拿到代码协助。",
+  "solves": "It plugs into VS Code, Visual Studio and the JetBrains editors instead of asking you to move to a new one.",
+  "solves_zh": "它装进 VS Code、Visual Studio 和 JetBrains 系编辑器里，不要求你换一个全新的环境。",
+  "best_for": "Staying in the current IDE while a second opinion stays one keystroke away.",
+  "best_for_zh": "留在现在的编辑器里，同时多一个随时能问的帮手。",
   "surface": "plugin",
   "handbook": {
     "status": "written",

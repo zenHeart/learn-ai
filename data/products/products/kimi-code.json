@@ -11,7 +11,7 @@
   "form": "cli",
   "released": "2025-07-11",
   "homepage": "https://www.kimi.com/code",
-  "desc": "Kimi 编程智能体与命令行工具",
+  "desc": "Moonshot's coding agent, available as a CLI and IDE plugin.",
   "desc_zh": "Kimi 编程智能体与命令行工具",
   "solves": "Reading and changing code means switching windows all day. From the command line, Kimi reads and writes across the whole project.",
   "solves_zh": "读代码、改代码要一直切窗口。用命令行直接让 Kimi 读写整个项目。",

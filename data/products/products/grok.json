@@ -12,17 +12,17 @@
   "form": "web",
   "released": "2023-11-04",
   "homepage": "https://grok.com/",
-  "desc": "xAI's real-time conversational assistant with X platform data",
-  "desc_zh": "xAI 的实时对话助手，融合 X 平台数据",
+  "desc": "xAI's assistant with live access to posts on X",
+  "desc_zh": "可实时读取 X 内容的 xAI 对话助手",
   "tags": [
     "consumer",
     "realtime",
     "social-data"
   ],
-  "solves": "News breaks faster than search indexes it, and you want the reaction, not the press release. It reads X in real time.",
-  "solves_zh": "新闻跑得比搜索引擎收录更快，而你想看的是现场反应，不是通稿。它实时读取 X 上的内容。",
-  "best_for": "When you want a live read on what people are saying right now about an event.",
-  "best_for_zh": "当你想实时了解此刻人们正在怎么谈论一件事时。",
+  "solves": "News breaks faster than search indexes it, and a press release tells you nothing. Reading X as it happens is a different answer.",
+  "solves_zh": "新闻跑得比搜索收录还快，而通稿什么也说明不了。读 X 上此刻正在发的内容，是另一种答案。",
+  "best_for": "When you want a live read on what people are saying about something right now.",
+  "best_for_zh": "当你想实时看看此刻人们正在怎么谈一件事时。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

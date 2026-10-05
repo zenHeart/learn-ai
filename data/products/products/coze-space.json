@@ -11,7 +11,7 @@
   "form": "web",
   "released": "2025-04-18",
   "homepage": "https://www.coze.cn/space",
-  "desc": "字节通用 Agent 协作平台",
+  "desc": "ByteDance's collaboration platform for general-purpose agents.",
   "desc_zh": "字节通用 Agent 协作平台",
   "solves": "Building an agent from scratch means wiring models, tools and prompts. Here you get a ready platform to build it on.",
   "solves_zh": "从零搭一个 Agent 要接模型、配工具、调提示词。这里给你一个现成的平台直接搭。",

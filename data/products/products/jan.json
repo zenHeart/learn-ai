@@ -11,16 +11,16 @@
   "form": "desktop",
   "released": "2024-01-20",
   "homepage": "https://jan.ai",
-  "desc": "Open-source offline ChatGPT alternative with Cortex engine",
-  "desc_zh": "开源离线 ChatGPT 替代方案，自带 Cortex 推理引擎",
+  "desc": "Open-source chat that runs any model, locally or online",
+  "desc_zh": "可跑任意模型的开源聊天工具，支持本地与在线",
   "tags": [
     "open-source",
     "offline",
     "local-llm"
   ],
-  "solves": "You want a chat window that never phones home, and every hosted alternative does. It runs open models locally with no account.",
-  "solves_zh": "你想要一个完全不上报数据的聊天窗口，而托管的替代品都会上报。它在本地跑开源模型，不需要注册账号。",
-  "best_for": "When you want a private offline chat on your own machine and will bring your own model.",
+  "solves": "Hosted chat assistants all phone home. Open models can run on your own machine instead, with no account and nothing leaving the device.",
+  "solves_zh": "托管的聊天助手都会上报。开源模型可以直接跑在你自己的机器上，不需要账号，数据也不出设备。",
+  "best_for": "When you want an offline chat on your own machine and will bring your own model.",
   "best_for_zh": "当你想在自己的机器上离线私聊，并且愿意自带模型时。",
   "surface": "standalone",
   "handbook": {

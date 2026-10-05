@@ -59,6 +59,11 @@ async function head(url) {
   }
 }
 
+// A logo that renders in a 34px tile has no business being 400KB. .ico files
+// bundle 16/32/48/256px variants and dominated the repo at 1.8MB, so anything
+// over the cap falls through to the single-resolution cache copy.
+const SIZE_CAP = 40 * 1024
+
 async function fetchIcon(domain) {
   for (const path of PREFERRED) {
     const res = await head(`https://${domain}${path}`)
@@ -67,6 +72,7 @@ async function fetchIcon(domain) {
     if (!type.startsWith('image/')) continue
     const buf = Buffer.from(await res.arrayBuffer())
     if (buf.length < 120) continue // 1x1 tracking pixel or an error page
+    if (buf.length > SIZE_CAP) continue // multi-resolution bundle, see SIZE_CAP
     const ext = type.includes('svg')
       ? 'svg'
       : type.includes('ico')

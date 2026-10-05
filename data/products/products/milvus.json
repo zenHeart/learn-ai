@@ -12,18 +12,18 @@
   "form": "self-hosted",
   "released": "2019-11-01",
   "homepage": "https://milvus.io/",
-  "desc": "Cloud-native distributed vector database for billion-scale similarity search.",
-  "desc_zh": "云原生分布式向量数据库，面向十亿级相似度检索。",
+  "desc": "Distributed vector database for tens of billions of vectors",
+  "desc_zh": "云原生分布式向量数据库",
   "tags": [
     "vector-database",
     "distributed",
     "open-source",
     "scale"
   ],
-  "solves": "A single-machine vector store stops answering at a few million rows. Milvus spreads the index across nodes instead.",
-  "solves_zh": "单机向量库到几百万行就顶不住了。Milvus 把索引摊开到多个节点上。",
-  "best_for": "When your similarity search outgrew a local index and needs to pass a billion vectors.",
-  "best_for_zh": "当你的相似度检索已经超出本地索引的容量，需要扛住十亿级向量。",
+  "solves": "Milvus Standalone stops at millions of vectors; Distributed is a different deployment, not a bigger machine.",
+  "solves_zh": "Standalone 到百万级向量就够不着了；Distributed 是换一种部署，不是换一台更大的机器。",
+  "best_for": "Similarity search that has outgrown a single-box index and needs horizontal scale.",
+  "best_for_zh": "相似度检索已经撑爆单机索引，需要的是横向扩容。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2024-12-01",
   "homepage": "https://tana.inc",
-  "desc": "Supertag outliner with an agentic AI workspace layer",
-  "desc_zh": "以 supertag 为核心的大纲工具，叠加 Agent 式 AI 工作区",
+  "desc": "Agentic meeting platform, not the old outliner",
+  "desc_zh": "面向会议的智能体平台，已不是原来的大纲工具",
   "tags": [
     "notes",
     "outliner",
     "personal-ai"
   ],
-  "solves": "Notes become a pile of flat text nobody can query. Tana makes every fact a supertag, so the AI can work with them.",
-  "solves_zh": "笔记会变成一堆没人能查询的扁平文本。Tana 把每条事实做成 supertag，让 AI 能直接处理。",
-  "best_for": "When you want a personal knowledge base that answers questions instead of storing pages.",
-  "best_for_zh": "当你想要一个能回答问题、而不只是存放页面的个人知识库。",
+  "solves": "The follow-up work after a meeting is the real cost. Tana's agents write the document, file the issue and update the context graph while you are still talking.",
+  "solves_zh": "会开完之后的活才是真成本。Tana 的智能体在你还在说的时候写文档、提 issue、更新 context graph。",
+  "best_for": "A meeting whose output has to become real work, not just minutes.",
+  "best_for_zh": "开完会要真的产出后续动作，而不只是留一份纪要。",
   "surface": "standalone",
   "handbook": {
     "status": "candidate"

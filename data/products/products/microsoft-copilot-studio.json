@@ -11,18 +11,18 @@
   "form": "web",
   "released": "2023-11-15",
   "homepage": "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio",
-  "desc": "Low-code platform for building and publishing enterprise agents",
-  "desc_zh": "低代码平台，用于构建并发布企业级智能体",
+  "desc": "Build and publish custom agents with no code",
+  "desc_zh": "零代码构建并发布自定义智能体的平台",
   "tags": [
     "low-code",
     "no-code",
     "enterprise",
     "agent-builder"
   ],
-  "solves": "Every department wants its own bot, and hand-coding each one does not scale. You describe the agent and connect it to the data it needs.",
-  "solves_zh": "每个部门都想要自己的机器人，手写代码显然撑不起规模。你把智能体描述出来，再接上它需要的数据。",
-  "best_for": "When people outside engineering need to publish an internal bot without writing code.",
-  "best_for_zh": "当工程之外的人也要不写代码就发布一个内部机器人时。",
+  "solves": "Every department wants its own bot and hand-coding each one does not scale. This one is no-code, with 1500+ connectors to the data behind it.",
+  "solves_zh": "每个部门都想要自己的机器人，手写撑不起规模。这个零代码，配 1500 多个数据连接器。",
+  "best_for": "When people outside engineering need to publish an internal agent without writing code.",
+  "best_for_zh": "当工程之外的人也要不写代码就发布一个内部智能体时。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

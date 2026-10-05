@@ -12,17 +12,17 @@
   "form": "api",
   "released": "2023-11-01",
   "homepage": "https://bailian.console.aliyun.com",
-  "desc": "一站式大模型开发与应用平台",
-  "desc_zh": "一站式大模型开发与应用平台",
+  "desc": "Alibaba Cloud platform for building and shipping model apps",
+  "desc_zh": "阿里云上做大模型应用的平台",
   "tags": [
     "model-platform",
     "maas",
     "alibaba-cloud"
   ],
-  "solves": "Wiring up access, retrieval and orchestration for a model app takes more time than it should. Bailian puts all three behind one console you enable as needed.",
-  "solves_zh": "大模型应用的接入、检索、编排要自己拼装，周期拖长。百炼把它们收进一个控制台，按需开通。",
-  "best_for": "When you want to ship a model application on Alibaba Cloud without starting from a raw API.",
-  "best_for_zh": "你要在阿里云上上线一个模型应用，不想从裸接口开始搭。",
+  "solves": "The API is OpenAI-compatible, the models sit in one marketplace, and retrieval and orchestration are built in. Non-developers get a visual builder instead.",
+  "solves_zh": "接口兼容 OpenAI，模型集中在模型广场，检索和编排都是现成的；不写代码的人有可视化搭建入口。",
+  "best_for": "Shipping a model application on Alibaba Cloud without wiring a retrieval stack first.",
+  "best_for_zh": "你要在阿里云上线模型应用，又不想先自己搭一套检索链路。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

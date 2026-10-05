@@ -11,17 +11,17 @@
   "form": "cli",
   "released": "2025-10-27",
   "homepage": "https://code.minimax.io",
-  "desc": "MiniMax 编码命令行与桌面工具",
-  "desc_zh": "MiniMax 编码命令行与桌面工具",
+  "desc": "MiniMax coding tool for the terminal",
+  "desc_zh": "MiniMax 的命令行与桌面编码工具",
   "tags": [
     "coding-agent",
     "cli",
     "minimax"
   ],
-  "solves": "A coding assistant that only works inside an IDE leaves the terminal out. MiniMax Code gives you both a CLI and a desktop app for having a model edit your code.",
-  "solves_zh": "编码助手只在 IDE 里能用。想在终端里让模型改代码，命令行和桌面工具各接一处。",
-  "best_for": "When you prefer having the model edit code in the terminal rather than clicking through an IDE.",
-  "best_for_zh": "你习惯在终端里让模型改代码，而不是在 IDE 里点按钮。",
+  "solves": "An assistant that only exists inside an IDE leaves the shell out. This one is built for the terminal.",
+  "solves_zh": "只在 IDE 里存在的助手，终端就用不上。这个工具是为终端做的。",
+  "best_for": "Preferring a model that edits code in the shell to one you click through.",
+  "best_for_zh": "习惯在终端里让模型改代码，而不是在 IDE 里一路点。",
   "surface": "standalone",
   "handbook": {
     "status": "written",

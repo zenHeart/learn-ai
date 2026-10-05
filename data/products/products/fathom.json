@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2021-12-01",
   "homepage": "https://fathom.video",
-  "desc": "Free AI meeting notetaker popular with sales and support",
-  "desc_zh": "免费 AI 会议纪要工具，在销售与客服团队中广泛使用",
+  "desc": "Free meeting notetaker that syncs to Salesforce and HubSpot",
+  "desc_zh": "免费会议纪要工具，同步进 CRM",
   "tags": [
     "meetings",
     "free-tier",
     "sales"
   ],
-  "solves": "Somebody still has to write down what the call said. Fathom records it, summarises it, and pushes it to your CRM.",
-  "solves_zh": "通话内容总得有人记下来。Fathom 负责录音、生成摘要，并推送到你的 CRM。",
-  "best_for": "When you are on back-to-back sales or support calls and cannot take notes.",
-  "best_for_zh": "当你连着开销售或支持通话、没空做笔记时。",
+  "solves": "The call is already the record — nobody has to sit through it again to write it up. Fathom transcribes, summarises and files it.",
+  "solves_zh": "通话本身就是记录，不用再有人听一遍写一遍。Fathom 转写、摘要，再推到 Salesforce 或 HubSpot。",
+  "best_for": "Back-to-back sales or support calls with no time left to take notes.",
+  "best_for_zh": "销售或客服通话一场接一场，中间抽不出手做笔记。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

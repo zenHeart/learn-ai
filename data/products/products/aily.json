@@ -14,12 +14,12 @@
   "released": "2023-09-01",
   "date_precision": "month",
   "homepage": "https://www.feishu.cn/product/feishuai",
-  "desc": "An enterprise agent platform that runs on Feishu's own data.",
-  "desc_zh": "跑在飞书自身数据之上的企业智能体平台。",
-  "solves": "Enterprise assistants built elsewhere cannot read the docs, tables, and chats that hold the actual business context. Aily is an agent platform that works over Feishu's own data and tools.",
-  "solves_zh": "在别处搭的企业助手读不到真正承载业务上下文的文档、表格和会话。Aily 是直接工作在飞书自有数据与工具之上的智能体平台。",
-  "best_for": "Building an internal assistant that must reason over Feishu docs, Bitable data, and chat history.",
-  "best_for_zh": "要做一个必须基于飞书文档、多维表格数据和会话记录来推理的内部助手。",
+  "desc": "Enterprise AI that works only on Feishu's own data",
+  "desc_zh": "只覆盖飞书自有数据的企业 AI 助手",
+  "solves": "It only sees what already lives in Feishu — docs, Bitable, chats. That boundary is also why it answers without a connector for every other tool.",
+  "solves_zh": "只能看见飞书里已有的文档、多维表格和会话。也正因这个上限，回答时不必再为别的工具逐个接连接器。",
+  "best_for": "The answer is in Feishu, and context is currently being pasted in by hand.",
+  "best_for_zh": "答案本来就在飞书里，而你现在只能靠手动粘贴上下文。",
   "tags": [
     "in-product"
   ],

@@ -13,12 +13,12 @@
   "released": "2025-09-25",
   "date_precision": "day",
   "homepage": "https://openai.com/index/introducing-chatgpt-pulse/",
-  "desc": "A daily briefing it researches and writes while you sleep.",
-  "desc_zh": "夜里自动研究、早上给你简报的助手。",
-  "solves": "An assistant only speaks when you open it, so all the things worth knowing about have to be remembered as questions you never ask. Pulse researches on its own overnight and hands you a morning brief.",
-  "solves_zh": "助手只在你打开它时才说话，所以值得知道的事全靠你自己想出该问的问题。Pulse 会在夜里自己研究，第二天早上给你一份简报。",
-  "best_for": "You want a short personalized daily digest shaped by what you've actually been discussing and working on.",
-  "best_for_zh": "你想要一份根据你实际在聊、在做的事定制的每日短简报。",
+  "desc": "A daily briefing it researches for you each night.",
+  "desc_zh": "夜里自己去查资料、清早推给你的一份每日简报。",
+  "solves": "A chat assistant only speaks when you open it, so what you never thought to ask is never covered. Pulse researches overnight and delivers a morning digest.",
+  "solves_zh": "助手只在你打开它时才开口，所以没想到问的就永远不会被提。Pulse 夜里自己去查，早上送来一份简报。",
+  "best_for": "You want a short daily digest, and accept that a preview will sometimes miss.",
+  "best_for_zh": "你想要一份每日短简报，也接受它作为预览版偶尔跑偏。",
   "tags": [
     "in-product",
     "chatgpt"

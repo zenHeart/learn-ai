@@ -12,17 +12,17 @@
   "form": "self-hosted",
   "released": "2022-11-01",
   "homepage": "https://www.llamaindex.ai/",
-  "desc": "Data framework for ingestion, indexing and retrieval over private documents.",
-  "desc_zh": "面向私有文档的摄取、索引与检索数据框架。",
+  "desc": "Turns documents into AI-ready context for agents to use",
+  "desc_zh": "把文档转成智能体可直接使用的上下文",
   "tags": [
     "rag",
     "data-connectors",
     "indexing",
     "open-source"
   ],
-  "solves": "Your documents sit in ten places with different formats, and the model has never seen any of them. It ingests, indexes, and retrieves across all of them.",
-  "solves_zh": "你的文档散在十个地方、格式各不相同，模型一份也没见过。它把这些文档统一摄取、建索引并跨库检索。",
-  "best_for": "When you are building a question-answering feature over a document pile nobody has organized.",
+  "solves": "Your documents sit in ten places in ten formats and the model has read none of them. Parsing, chunking, embedding, and retrieval all run across them.",
+  "solves_zh": "你的文档散在十个地方、十种格式里，模型一份也没读过。解析、切块、嵌入和检索统一跑一遍。",
+  "best_for": "When you are building question answering over a document pile nobody has organized.",
   "best_for_zh": "当你要在一堆没人整理过的文档上做一个问答功能时。",
   "surface": "standalone",
   "handbook": {

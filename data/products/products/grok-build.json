@@ -12,18 +12,18 @@
   "form": "cli",
   "released": "2026-05-25",
   "homepage": "https://grok.com/",
-  "desc": "Terminal-native coding agent that fans work out across parallel agents.",
-  "desc_zh": "运行在终端里的编程智能体，可把任务分派给大量并行智能体。",
+  "desc": "Terminal coding agent that fans work across parallel agents",
+  "desc_zh": "在终端里把任务分给多个智能体并行的编程工具",
   "tags": [
     "terminal",
     "open-source",
     "parallel",
     "workflows"
   ],
-  "solves": "One agent working serially is the bottleneck on a large task. It fans the work out across parallel agents in your terminal.",
-  "solves_zh": "大任务上，一个智能体串行干活就是瓶颈。它在终端里把工作分派给多个并行智能体。",
-  "best_for": "When a task is big enough that you would rather start many agents than watch one grind.",
-  "best_for_zh": "当任务大到你更想一次开多个智能体，而不是盯着一个慢慢磨时。",
+  "solves": "One agent working serially is the bottleneck on a large task. The work splits, and the agents run in parallel.",
+  "solves_zh": "大任务上，一个智能体串行干活就是瓶颈。活被拆开，多个智能体并行跑。",
+  "best_for": "When the task is big enough that starting many agents beats watching one grind.",
+  "best_for_zh": "当任务大到与其盯着一个磨，不如一次开多个智能体时。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

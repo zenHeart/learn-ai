@@ -13,12 +13,12 @@
   "released": "2025-09-01",
   "date_precision": "month",
   "homepage": "https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/",
-  "desc": "A mode that plans and runs a whole multi-file change.",
-  "desc_zh": "自主完成多文件改动的编码模式。",
-  "solves": "Edit mode only changes the snippet you highlighted, and you run the terminal command yourself. Agent mode picks the files, writes the edits across the repo, runs the commands, and reacts to the errors.",
-  "solves_zh": "编辑模式只改你选中的那几行，终端命令还得你自己敲。智能体模式自己选文件、跨仓库写改动、跑命令，并会根据报错继续调整。",
-  "best_for": "Multi-file changes with build and test cycles, where you want the whole loop driven rather than single edits.",
-  "best_for_zh": "涉及多文件改动加上构建与测试循环的任务——你想让整条回路自己跑，而不是一次次手动改。",
+  "desc": "Copilot mode that carries a change across files and commands",
+  "desc_zh": "跨文件跨命令完成一次改动的 Copilot 模式",
+  "solves": "Edit mode proposes changes and leaves the commands to you. Agent mode carries the subtask across files, runs the commands, and self-heals on errors.",
+  "solves_zh": "编辑模式只提出改动，命令还得你自己敲。智能体模式跨文件推进子任务、跑命令，遇到运行时报错会自己修。",
+  "best_for": "A change that spans files and needs build or test cycles run in a loop.",
+  "best_for_zh": "当改动横跨多个文件，而且需要构建或测试循环跑起来时。",
   "tags": [
     "in-product",
     "github-copilot"

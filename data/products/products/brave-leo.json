@@ -11,18 +11,18 @@
   "form": "desktop",
   "released": "2023-11-02",
   "homepage": "https://brave.com/search/",
-  "desc": "Privacy-first AI assistant built into the Brave browser.",
-  "desc_zh": "内置于 Brave 浏览器的注重隐私的 AI 助手。",
+  "desc": "AI assistant in the Brave browser that keeps no chat log",
+  "desc_zh": "Brave 浏览器内的 AI 助手，不留聊天记录",
   "tags": [
     "privacy-first",
     "browser-ai",
     "no-login",
     "free-tier"
   ],
-  "solves": "Every assistant you paste a question into learns something from it. Leo answers without logging your prompts or training on them.",
-  "solves_zh": "你把问题贴进哪个助手，哪个都在从中学东西。Leo 作答时不记录你的 prompt，也不拿它训练。",
-  "best_for": "When you want to ask something from the address bar without handing over your search history.",
-  "best_for_zh": "当你想在地址栏直接提问，又不想交出搜索历史。",
+  "solves": "Every assistant you paste a question into keeps a copy somewhere. Leo discards chats when they close and trains nothing on them.",
+  "solves_zh": "问题贴进哪个助手，哪个都会留一份。Leo 关掉对话即删除，也不会拿它训练。",
+  "best_for": "Asking something from the address bar without handing over a search history.",
+  "best_for_zh": "想在地址栏直接提问、又不想交出搜索历史的人。",
   "surface": "in-product",
   "handbook": {
     "status": "none"

@@ -13,12 +13,12 @@
   "released": "2025-04-01",
   "date_precision": "month",
   "homepage": "https://cursor.com/docs/background-agent",
-  "desc": "Cloud agents that work on your repo in parallel.",
-  "desc_zh": "在云端并行处理仓库任务的智能体。",
-  "solves": "One editor means one task at a time, so parallelizable chores queue up behind whatever you're doing. Background agents clone your repo into a cloud sandbox and work on separate tasks at the same time.",
-  "solves_zh": "一个编辑器只能干一件事，于是能并行的杂活全排在你手头工作后面。后台智能体会把你的仓库克隆到云端沙箱，同时处理多个独立任务。",
-  "best_for": "Two or more independent code tasks you could run at once but currently have to wait on each other.",
-  "best_for_zh": "手上有两件以上互相独立、理论上可以同时做的代码任务。",
+  "desc": "Cloud agents in isolated VMs, one per task",
+  "desc_zh": "各自独立云端 VM 的并行编码 Agent",
+  "solves": "Each agent gets its own cloud VM: a full clone, a branch, your repo's secrets. Nothing runs on the laptop, and no two share a disk.",
+  "solves_zh": "每个智能体分到一台云端 VM：完整克隆、独立分支和仓库密钥。都不在笔记本上跑，之间也不共享磁盘。",
+  "best_for": "Two or more independent changes you could start at once, or work that should not touch your machine at all.",
+  "best_for_zh": "手上有两件以上互不相干的改动，或者活本身不该占你的机器。",
   "tags": [
     "in-product",
     "cursor"

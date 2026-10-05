@@ -12,18 +12,18 @@
   "form": "web",
   "released": "2023-02-07",
   "homepage": "https://www.microsoft.com/en-us/microsoft-copilot",
-  "desc": "Consumer AI assistant across Windows, web, mobile and Edge",
-  "desc_zh": "覆盖 Windows、网页、移动端与 Edge 的消费级 AI 助手",
+  "desc": "Microsoft's assistant for content, mail, and meetings",
+  "desc_zh": "微软面向内容、邮件与会议的 AI 助手",
   "tags": [
     "consumer",
     "search-integration",
     "windows",
     "ecosystem"
   ],
-  "solves": "You need an answer about your mail and calendar, not a guess. It reads your Microsoft account and answers with that context.",
-  "solves_zh": "你要的是关于邮件和日程的确定答案，不是猜测。它读取你的 Microsoft 账号，基于这些上下文作答。",
-  "best_for": "When the question is about your Outlook mail, your calendar, or your PC settings.",
-  "best_for_zh": "当问题涉及 Outlook 邮件、日历或电脑设置时。",
+  "solves": "Mail and calendar questions deserve facts, not guesses. Inbox summaries, drafted replies, and answers grounded in your Microsoft account.",
+  "solves_zh": "关于邮件和日程的问题要的是事实，不是猜测。收件箱摘要、代拟回复，答案基于你的 Microsoft 账号。",
+  "best_for": "When the question is about your Outlook mail, your calendar, or a meeting you just sat through.",
+  "best_for_zh": "当问题涉及 Outlook 邮件、日历，或者是你刚开完的那场会时。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

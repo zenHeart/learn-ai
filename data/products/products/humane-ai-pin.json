@@ -11,17 +11,17 @@
   "form": "desktop",
   "released": "2024-04-11",
   "homepage": "https://humane.com",
-  "desc": "Screenless lapel pin assistant, discontinued in 2025",
-  "desc_zh": "无屏胸针式 AI 助手，口碑不佳，2025-02 停售并被 HP 收购",
+  "desc": "Screenless voice assistant pin, discontinued in 2025",
+  "desc_zh": "无屏语音胸针式助手，2025 年停售",
   "tags": [
     "hardware",
     "discontinued",
     "wearable"
   ],
-  "solves": "Using a phone means looking at a screen. The Pin answered by voice with nothing to look at. HP discontinued it in 2025.",
-  "solves_zh": "用手机就意味着盯着屏幕。Pin 用语音作答，屏幕上什么都不用看。HP 已于 2025 年停产。",
-  "best_for": "When you wanted hands-free answers with no display. The company stopped selling it in February 2025.",
-  "best_for_zh": "当你想要免手操作、没有屏幕的回答。公司已于 2025 年 2 月停售。",
+  "solves": "Answering without looking at a screen. HP discontinued the Pin in 2025, so it is no longer on sale.",
+  "solves_zh": "作答时不用看屏幕。HP 已于 2025 年停产这款胸针，不再销售。",
+  "best_for": "Nothing to buy — it is only here as a record of the attempt.",
+  "best_for_zh": "今天没有可买的用途了，这一条只作为一次尝试的记录。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

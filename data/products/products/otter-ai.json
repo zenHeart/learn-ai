@@ -11,16 +11,16 @@
   "form": "web",
   "released": "2016-05-01",
   "homepage": "https://otter.ai",
-  "desc": "Long-running meeting transcription and summary service",
-  "desc_zh": "会议转录与纪要领域最长寿的服务之一，用户基数庞大",
+  "desc": "Meeting notetaker that turns calls into searchable knowledge",
+  "desc_zh": "把会议转成可检索知识库的 AI 记录助手",
   "tags": [
     "meetings",
     "transcription",
     "enterprise"
   ],
-  "solves": "Nobody remembers what was decided in the meeting, and the recording is 50 minutes long. It transcribes live and hands you the summary.",
-  "solves_zh": "会开完没人记得定了什么，而录音有 50 分钟长。它实时转写，散会时把纪要直接交给你。",
-  "best_for": "When you sit in back-to-back calls and need the recap written before you have left the room.",
+  "solves": "Nobody remembers what was decided and the recording is fifty minutes long. Live transcription, speaker recognition, and decisions and action items back at you.",
+  "solves_zh": "会开完没人记得定了什么，而录音有五十分钟。实时转写、区分发言人，散会时交回决议和待办。",
+  "best_for": "When you sit in back-to-back calls and need the recap written before you leave the room.",
   "best_for_zh": "当你连着开会，需要在走出会议室之前就拿到写好的纪要时。",
   "surface": "standalone",
   "handbook": {

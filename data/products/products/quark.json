@@ -12,18 +12,18 @@
   "form": "web",
   "released": "2025-03-01",
   "homepage": "https://www.quark.cn/",
-  "desc": "AI 超级框一站式搜索助手",
-  "desc_zh": "AI 超级框一站式搜索助手",
+  "desc": "Alibaba's browser with search, AI and document tools",
+  "desc_zh": "阿里的 AI 浏览器，搜索与文档工具都在里面",
   "tags": [
     "ai-search",
     "super-box",
     "document-qa",
     "user-scale"
   ],
-  "solves": "Search hands you a pile of links and leaves you to sort them. 夸克 computes the answer instead, and also reads files and documents.",
-  "solves_zh": "搜索只给一堆链接，还要自己筛。夸克把答案直接算出来，顺带读文件、查文档。",
-  "best_for": "When you want one place to search the web, read local files and ask about documents.",
-  "best_for_zh": "你要一个入口同时搜网页、读本地文件、问文档。",
+  "solves": "A search engine hands back a list of links. Quark's global assistant answers instead, and its PDF and PPT tools stay in the same browser.",
+  "solves_zh": "搜索引擎丢回来的是一串链接。夸克的全局 AI 助手直接给答案，PDF 和 PPT 也在同一个浏览器里。",
+  "best_for": "One place for web search, reading local files and working on documents.",
+  "best_for_zh": "搜网页、读本地文件、处理文档，想在一个入口里完成。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

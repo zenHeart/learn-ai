@@ -12,17 +12,17 @@
   "form": "web",
   "released": "2025-05-22",
   "homepage": "https://www.tiangong.cn/chat",
-  "desc": "面向办公场景的专家智能体平台",
-  "desc_zh": "面向办公场景的专家智能体平台",
+  "desc": "Kunlun's office agent platform, with expert agents preset",
+  "desc_zh": "昆仑万维的办公智能体平台",
   "tags": [
     "agent-platform",
     "office-agent",
     "kunlun"
   ],
-  "solves": "An office task means breaking it into steps, wiring up tools and watching the process yourself. The super agent ships expert agents preconfigured for each role.",
-  "solves_zh": "一个办公任务要自己拆步骤、串工具、盯流程。超级智能体按岗位配好专家智能体，接手就能跑。",
-  "best_for": "When you want writing, research and summarising handed off to a chain of agents.",
-  "best_for_zh": "你要把写作、检索、整理这类办公活交给智能体接力完成。",
+  "solves": "Breaking an office job into steps, wiring the tools and watching the process is the part nobody wants. Here the expert agents arrive configured per role.",
+  "solves_zh": "把一件办公的活拆步骤、串工具、盯流程，是谁都不想干的活。专家智能体按岗位配好，接手就跑。",
+  "best_for": "Handing writing, research and summarising off to a chain of agents instead.",
+  "best_for_zh": "把写作、调研、整理这类活交给一串智能体接力完成。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

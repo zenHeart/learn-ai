@@ -13,12 +13,12 @@
   "released": "2024-04-18",
   "date_precision": "day",
   "homepage": "https://slack.com/features/ai",
-  "desc": "Search, summaries, and recaps across your Slack history.",
-  "desc_zh": "在 Slack 历史里搜索和总结。",
-  "solves": "Scrolling back through a week of threads to find one decision is slow and error-prone. Slack AI summarizes threads, recaps channels, and answers questions across your whole workspace's history.",
-  "solves_zh": "往回翻一周的会话串去找一个决定，既慢又容易漏。Slack AI 总结会话串、生成频道回顾，并能在整个工作区历史里直接回答你的问题。",
-  "best_for": "Answering \"where did we land on this?\" and catching up on channels you don't read in full.",
-  "best_for_zh": "回答「这个我们最后怎么定的？」，以及补上那些你来不及看完的频道。",
+  "desc": "Search and summaries across your whole Slack history.",
+  "desc_zh": "跨整个工作区历史的搜索与总结",
+  "solves": "One decision, three weeks back, buried in a thread nobody reads to the end. Slack AI recaps the channel and answers across the history.",
+  "solves_zh": "一个三周前的决定，埋在一串没人读到头的会话里。Slack AI 给出频道回顾，也能跨历史回答。",
+  "best_for": "Answering “where did we land on this?” without scrolling back through a week.",
+  "best_for_zh": "回答「这个我们最后怎么定的？」，而不用往回翻一周的会话。",
   "tags": [
     "in-product",
     "slack"

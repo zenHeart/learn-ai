@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2022-12-07",
   "homepage": "https://leonardo.ai",
-  "desc": "Game and product asset generation studio, acquired by Canva",
-  "desc_zh": "面向游戏与电商素材的图像生成工作台，2024 年被 Canva 收购",
+  "desc": "Image, video and 3D generation platform, now Canva's",
+  "desc_zh": "图像、视频与 3D 生成平台，已被 Canva 收购",
   "tags": [
     "image-generation",
     "game-assets",
     "creative"
   ],
-  "solves": "Commissioning a game or product visual costs days of back-and-forth. Leonardo generates the asset, then lets you tune it.",
-  "solves_zh": "约一张游戏或产品视觉稿，来回沟通要耗掉好几天。Leonardo 先出素材，再交给你细调。",
-  "best_for": "When you need production art for a game or a product page, not a one-off sketch.",
-  "best_for_zh": "当你需要能直接上线的游戏或产品图素材，而不是一张一次性草图。",
+  "solves": "A production asset needs the right subject, the right style and the right size, and stock does not have it. Leonardo generates, then you tune.",
+  "solves_zh": "能上线的素材要主体对、风格对、尺寸也对，素材库给不了。Leonardo 先生成，再交给你调。",
+  "best_for": "Game and product imagery that has to look finished and shipped, not merely sketched out.",
+  "best_for_zh": "游戏和产品图，要的是能直接用的成品感，不是一张草图。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

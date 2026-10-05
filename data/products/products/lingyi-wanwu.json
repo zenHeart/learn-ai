@@ -12,7 +12,7 @@
   "form": "web",
   "released": "2026-05-21",
   "homepage": "https://www.lingyiwanwu.com",
-  "desc": "零一万物企业级多智能体平台",
+  "desc": "01.AI's enterprise platform for multi-agent model deployments.",
   "desc_zh": "零一万物企业级多智能体平台",
   "solves": "Enterprises adopting large models end up buying deployment, fine-tuning and application tooling separately, then stitching them together. They are collected in one platform here.",
   "solves_zh": "企业想上大模型，部署、微调和应用要分别采购再拼起来。这里把它们收在一个平台里。",

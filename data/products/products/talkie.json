@@ -11,18 +11,18 @@
   "form": "web",
   "released": "2023-06-01",
   "homepage": "https://www.talkie-ai.com/",
-  "desc": "Character chat app with collectible cards and visual avatars.",
-  "desc_zh": "带抽卡机制和形象立绘的角色聊天应用。",
+  "desc": "Character chat app with collectible image cards",
+  "desc_zh": "带可收集角色卡的 AI 角色聊天应用",
   "tags": [
     "companion",
     "gacha-cards",
     "anime-style",
     "overseas-hit"
   ],
-  "solves": "Talking to a character is just a text box. Talkie gives them a look, a voice, and cards you collect.",
-  "solves_zh": "和角色对话本来就只是个输入框。Talkie 给他形象、声音，还有可以收集的卡牌。",
-  "best_for": "When you want to spend time with a fictional character, not get work done.",
-  "best_for_zh": "当你想跟一个虚构角色相处，而不是把活干完。",
+  "solves": "Character chat is usually a bare text box. Talkie gives the character a face and a voice, and cards to collect.",
+  "solves_zh": "角色聊天通常就是一个光秃秃的输入框。Talkie 给了角色形象和声音，还有卡可以抽。",
+  "best_for": "Spending time with a fictional character rather than getting work done today.",
+  "best_for_zh": "想跟一个虚构角色待一会儿，不是来把活干完的。",
   "surface": "standalone",
   "handbook": {
     "status": "none"

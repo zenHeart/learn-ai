@@ -11,17 +11,17 @@
   "form": "web",
   "released": "2023-07-18",
   "homepage": "https://www.langchain.com/langsmith",
-  "desc": "Tracing, evaluation and monitoring for LLM applications",
-  "desc_zh": "面向 LLM 应用的追踪、评测与监控平台，2024-02 正式 GA",
+  "desc": "Tracing, evaluation and monitoring for LLM apps",
+  "desc_zh": "LLM 应用的追踪、评测与监控平台",
   "tags": [
     "tracing",
     "evaluation",
     "llmops"
   ],
-  "solves": "An LLM app breaks and you cannot see which prompt caused it. LangSmith records every step and scores the output.",
-  "solves_zh": "LLM 应用出错时，你看不到是哪一段 prompt 引起的。LangSmith 记录每一步并给输出打分。",
-  "best_for": "When a chain misbehaves only on real traffic and you need the trace to find it.",
-  "best_for_zh": "当链路只在真实流量下出问题，你需要 trace 才能定位。",
+  "solves": "An agent breaks on real traffic and the log says nothing. LangSmith keeps every step, then scores what came out.",
+  "solves_zh": "Agent 在真实流量下才崩，日志里什么也看不到。LangSmith 记下每一步，再给输出打分。",
+  "best_for": "When a chain only misbehaves in production and the trace is the only lead.",
+  "best_for_zh": "链路只在生产环境出问题，trace 成了手上唯一的线索。",
   "surface": "standalone",
   "handbook": {
     "status": "none"
