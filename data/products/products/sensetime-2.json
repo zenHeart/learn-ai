@@ -1,0 +1,31 @@
+{
+  "id": "sensetime-2",
+  "name": "如影",
+  "name_zh": "如影",
+  "vendor_id": "sensetime",
+  "region": "cn",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.senseavatar.com/",
+  "desc": "Digital human video and livestream platform.",
+  "desc_zh": "数字人视频与直播生成平台",
+  "solves": "Hiring a presenter for every product video does not scale. Text or audio in, a presenter out, live or recorded.",
+  "solves_zh": "每条产品视频都请一个主播是撑不住的。输入文案或音频，输出主播，直播或录制都行。",
+  "best_for": "You need presenter-led video at volume without a studio.",
+  "best_for_zh": "你需要批量出镜视频，又没有摄影棚。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.sensetime.com/cn。来源：https://senseavatar.sensetime.com/",
+  "revisions": []
+}

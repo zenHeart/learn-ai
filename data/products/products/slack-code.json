@@ -1,0 +1,32 @@
+{
+  "id": "slack-code",
+  "name": "Slack Code",
+  "name_zh": "Slack Code",
+  "vendor_id": "slack",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2026-01-01",
+  "date_precision": "month",
+  "homepage": "https://slack.com/features/code-channels",
+  "desc": "Coding agents working in Slack channels, reviewed by the team.",
+  "desc_zh": "在 Slack 频道里协作的编程智能体，团队可审阅",
+  "solves": "A coding agent's work is invisible until review. Here the agent writes in a channel, so review happens where the discussion already is.",
+  "solves_zh": "编程智能体的工作在审阅前是看不见的。这里它在频道里写，审阅就发生在讨论已经在的地方。",
+  "best_for": "Your team reviews code in Slack and you want the agent in that loop, not in a separate tool.",
+  "best_for_zh": "你的团队在 Slack 里审代码，你想让智能体在这个回路里，而不是另开一个工具。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://slack.com/features/ai。来源：https://slack.com/features/code-channels",
+  "revisions": []
+}

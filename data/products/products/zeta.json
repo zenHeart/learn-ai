@@ -1,0 +1,31 @@
+{
+  "id": "zeta",
+  "name": "zeta",
+  "name_zh": "zeta",
+  "vendor_id": "zeta",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-01-01",
+  "date_precision": "month",
+  "homepage": "https://zeta.ai/",
+  "desc": "AI character and story app",
+  "desc_zh": "AI 角色与故事创作应用",
+  "solves": "Turns a prompt into a character you can keep returning to over time.",
+  "solves_zh": "把一个提示词变成可以反复回到其中的角色。",
+  "best_for": "Storytelling practice where continuity of the character matters.",
+  "best_for_zh": "写故事时需要角色前后一致。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 全球增速榜 App #4, 2.32M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

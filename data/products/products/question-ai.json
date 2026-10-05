@@ -1,0 +1,41 @@
+{
+  "id": "question-ai",
+  "name": "Question.AI",
+  "name_zh": "Question.AI",
+  "vendor_id": "dputable",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-06-01",
+  "date_precision": "month",
+  "homepage": "https://question.ai/",
+  "desc": "Homework and maths assistant with a general chatbot",
+  "desc_zh": "作业与数学助手，附带通用聊天",
+  "solves": "Answers a photographed problem across 140+ languages in one tap.",
+  "solves_zh": "拍题即答，支持 140 多种语言。",
+  "best_for": "Homework photos in a language whose tutor you cannot easily find.",
+  "best_for_zh": "作业是找不到 tutor 的小语种时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 全球降速榜 App #10, 3.65M MAU。来源：https://play.google.com/store/apps/details?id=com.qianfan.aihomework",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "released",
+      "from": "2023-06",
+      "to": "2023-06-01",
+      "why": "来源只精确到月，按约定补成当月 1 日"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "cohere-compass",
+  "name": "Cohere Compass",
+  "name_zh": "Cohere Compass",
+  "vendor_id": "cohere",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "research",
+    "agent-building",
+    "observability"
+  ],
+  "form": "api",
+  "surface": "standalone",
+  "released": "2026-09-25",
+  "date_precision": "day",
+  "homepage": "https://cohere.com/compass",
+  "desc": "Managed enterprise search and retrieval for agents.",
+  "desc_zh": "面向智能体的托管式企业搜索与检索",
+  "solves": "RAG means running a vector database and an indexing pipeline. Compass parses documents, indexes them, and serves retrieval without either.",
+  "solves_zh": "做 RAG 意味着自己养一套向量库和索引流水线。Compass 解析文档、建索引并提供检索，两样都不用你管。",
+  "best_for": "You need document retrieval for an agent and do not want to run the index yourself.",
+  "best_for_zh": "你的智能体需要文档检索，但不想自己维护索引。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://cohere.com/。来源：https://cohere.com/blog/compass-cloud-beta",
+  "revisions": []
+}

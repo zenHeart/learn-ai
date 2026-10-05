@@ -1,0 +1,32 @@
+{
+  "id": "traework",
+  "name": "TraeWork",
+  "name_zh": "TraeWork",
+  "vendor_id": "bytedance",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2026-01-01",
+  "date_precision": "month",
+  "homepage": "https://work.trae.ai/",
+  "desc": "ByteDance's professional AI work assistant.",
+  "desc_zh": "字节跳动的专业级 AI 工作助手",
+  "solves": "Trae covers code. Most of the workday is not code. TraeWork is the same team's answer for documents, slides and analysis.",
+  "solves_zh": "Trae 管代码，但一个工作日大部分时间不写代码。TraeWork 是同一团队给文档、幻灯片和分析做的答案。",
+  "best_for": "You want the Trae team's agent handling documents and research, not the IDE.",
+  "best_for_zh": "你想让 Trae 团队的智能体处理文档和调研，而不是在 IDE 里。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.trae.ai/。来源：https://www.trae.ai/",
+  "revisions": []
+}

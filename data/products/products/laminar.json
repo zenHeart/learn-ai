@@ -1,0 +1,32 @@
+{
+  "id": "laminar",
+  "name": "Laminar",
+  "name_zh": "Laminar",
+  "vendor_id": "laminar",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "surface": "standalone",
+  "released": "2024-06-01",
+  "date_precision": "month",
+  "homepage": "https://laminar.sh",
+  "desc": "Open-source observability with browser recordings synced to agent traces.",
+  "desc_zh": "开源可观测平台，把浏览器录像与 Agent 轨迹对齐。",
+  "solves": "Shows you what the agent actually saw on screen when a run went wrong, not just the final log line.",
+  "solves_zh": "Agent 出错时能看到它当时在屏幕上看到了什么，而不只是最后一行日志。",
+  "best_for": "Reaching for it when you are debugging browser or computer-use agents specifically.",
+  "best_for_zh": "专门调试浏览器类或 computer-use 类 Agent 时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 Langfuse-alternative comparison articles; YC S24 listing。来源：https://laminar.sh/article/langfuse-alternatives-2026",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zhihu",
+  "name": "知乎直答",
+  "name_zh": "知乎直答",
+  "vendor_id": "zhihu",
+  "region": "cn",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-06-29",
+  "date_precision": "day",
+  "homepage": "https://zhida.zhihu.com/",
+  "desc": "Zhihu's AI search over its own answer archive",
+  "desc_zh": "知乎基于社区真实问答数据的AI搜索引擎",
+  "solves": "Each claim links to the named Zhihu author who wrote it.",
+  "solves_zh": "每个论断都能溯源到写下它的知乎答主本人。",
+  "best_for": "Chinese questions where you want a named human source.",
+  "best_for_zh": "中文提问、且希望来源是具体真人的场景。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：北京市科委 中关村 / 央广网报道。来源：https://kw.beijing.gov.cn/xwdt/kcyx/xwdtyqqy/202407/t20240703_3821941.html",
+  "revisions": []
+}

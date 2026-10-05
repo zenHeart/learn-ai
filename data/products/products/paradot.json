@@ -1,0 +1,31 @@
+{
+  "id": "paradot",
+  "name": "Paradot",
+  "name_zh": "Paradot",
+  "vendor_id": "paradot",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-06-01",
+  "date_precision": "month",
+  "homepage": "https://paradot.ai/",
+  "desc": "Chat with a virtual being, an AI persona you configure",
+  "desc_zh": "和自建设定的 AI 虚拟角色聊天",
+  "solves": "Gives a persona with a fixed personality rather than a chat that resets each time.",
+  "solves_zh": "给你一个性格固定的 AI 角色，而不是每次重置的聊天。",
+  "best_for": "Rehearsing a conversation where tone and persona must stay consistent.",
+  "best_for_zh": "需要语气和人格前后一致的对话练习。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 出海增速榜 App #7, 3.80M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

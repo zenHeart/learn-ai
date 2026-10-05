@@ -1,0 +1,32 @@
+{
+  "id": "typeless",
+  "name": "Typeless",
+  "name_zh": "Typeless",
+  "vendor_id": "typeless",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "coding"
+  ],
+  "form": "desktop",
+  "surface": "standalone",
+  "released": "2025-08-14",
+  "date_precision": "day",
+  "homepage": "https://www.typeless.com",
+  "desc": "Dictates into any app and rewrites speech into clean written text.",
+  "desc_zh": "在任意应用里口述，自动改写成干净书面文字。",
+  "solves": "Turns rambling speech into text that reads as if you typed it, inside any app.",
+  "solves_zh": "把絮叨的口语变成读起来像你亲手写的文字，任何应用里都能用。",
+  "best_for": "Reaching for it when your typing speed, not your thinking speed, is the bottleneck.",
+  "best_for_zh": "瓶颈在打字速度而不是思考速度时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AI with me / AIwithKay tool directories listing Typeless as a top voice dictation app。来源：https://www.typeless.com/help/release-notes/macos/introducing-typeless-macos-app-beta",
+  "revisions": []
+}

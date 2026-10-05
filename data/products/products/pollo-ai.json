@@ -1,0 +1,32 @@
+{
+  "id": "pollo-ai",
+  "name": "Pollo AI",
+  "name_zh": "Pollo AI",
+  "vendor_id": "pollo-ai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-01-01",
+  "date_precision": "month",
+  "homepage": "https://pollo.ai",
+  "desc": "One interface over many image and video generation models.",
+  "desc_zh": "把多个图像与视频生成模型收进同一个界面。",
+  "solves": "Lets you try several generation models side by side instead of committing to one vendor's look.",
+  "solves_zh": "可以横向试多种生成模型，不必锁定某一家画风。",
+  "best_for": "Reaching for it when no single model reliably gives you the style you need.",
+  "best_for_zh": "单一模型总给不出你要的风格时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AIwith.me tool directory recommendations for AI image and video generators。来源：https://pollo.ai",
+  "revisions": []
+}

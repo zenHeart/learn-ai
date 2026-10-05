@@ -1,0 +1,32 @@
+{
+  "id": "nvidia-dynamo",
+  "name": "NVIDIA Dynamo",
+  "name_zh": "NVIDIA Dynamo",
+  "vendor_id": "nvidia",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "observability",
+    "model-api"
+  ],
+  "form": "self-hosted",
+  "surface": "standalone",
+  "released": "2025-04-01",
+  "date_precision": "month",
+  "homepage": "https://www.nvidia.com/en-us/ai/dynamo/",
+  "desc": "Open-source distributed inference serving for multi-node GPU.",
+  "desc_zh": "面向多节点 GPU 的开源分布式推理服务框架",
+  "solves": "A single GPU is fine until it is not. Dynamo splits prefill and decode across nodes, routes around redundant work, and caches KV to cheaper storage.",
+  "solves_zh": "单卡够用的时候没问题，不够用时就是了。Dynamo 把 prefill 和 decode 拆到不同节点，绕开重复计算，并把 KV 缓存到更便宜的存储。",
+  "best_for": "You are serving LLMs across a multi-GPU cluster and prefill/decode is your bottleneck.",
+  "best_for_zh": "你在多卡集群上服务大模型，瓶颈卡在 prefill/decode 上。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.nvidia.com/en-us/ai/。来源：https://www.nvidia.com/en-us/ai/dynamo/",
+  "revisions": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "base44",
+  "name": "Base44",
+  "name_zh": "Base44",
+  "vendor_id": "wix",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-10-01",
+  "date_precision": "month",
+  "homepage": "https://base44.com",
+  "desc": "Chat-driven builder for full-stack apps with its own database.",
+  "desc_zh": "对话式全栈应用构建器，自带数据库。",
+  "solves": "Produces a working full-stack app with a database from a description, with no scaffold or setup step.",
+  "solves_zh": "一段描述就能产出带数据库的可运行全栈应用，无需脚手架和配置。",
+  "best_for": "Reaching for it when you need a working internal tool, not a scalable product.",
+  "best_for_zh": "需要一个能用的内部工具而不是可扩展产品时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Wix $80M acquisition coverage; 2026 no-code app builder roundups (2M+ users)。来源：https://www.technology.org/2025/06/19/barely-six-month-old-startup-turned-into-80m-wix-deal/",
+  "revisions": []
+}

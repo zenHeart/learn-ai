@@ -1,0 +1,31 @@
+{
+  "id": "minimax-2",
+  "name": "星野",
+  "name_zh": "星野",
+  "vendor_id": "minimax",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-09-01",
+  "date_precision": "month",
+  "homepage": "https://www.xingyeai.com/",
+  "desc": "Character-building AI companion app from MiniMax.",
+  "desc_zh": "MiniMax 出品的角色创建类 AI 陪伴应用",
+  "solves": "Chat assistants answer questions. This one lets you build a character with a persona, backstory and voice, then talk to it.",
+  "solves_zh": "聊天助手回答问题。这个让你设定角色的人格、背景与声线，然后和它对话。",
+  "best_for": "You want to roleplay and interact with a character you designed, not a generic assistant.",
+  "best_for_zh": "你想和自己设计的角色互动，而不是一个泛用助手。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.minimax.cn/。来源：https://www.minimax.cn/",
+  "revisions": []
+}

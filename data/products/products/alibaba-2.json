@@ -1,0 +1,32 @@
+{
+  "id": "alibaba-2",
+  "name": "千问办公",
+  "name_zh": "千问办公",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "surface": "standalone",
+  "released": "2026-08-03",
+  "date_precision": "day",
+  "homepage": "https://qwenwork.cn/",
+  "desc": "Alibaba's desktop, cloud and collab agent in one product",
+  "desc_zh": "阿里把桌面端、云端和企业协同Agent合到一体的办公平台",
+  "solves": "One product covers desktop, cloud and DingTalk-embedded agents.",
+  "solves_zh": "一个产品同时覆盖桌面端、云端和钉钉内嵌的智能体。",
+  "best_for": "Alibaba-ecosystem teams consolidating scattered agent tools.",
+  "best_for_zh": "阿里生态内、想把分散 Agent 工具收拢的团队。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：新华网 / 阿里巴巴集团官方发布。来源：https://www.news.cn/tech/20260804/9735997ec1ce4738a74d8ea933b9ec0d/c.html",
+  "revisions": []
+}

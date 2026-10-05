@@ -1,0 +1,32 @@
+{
+  "id": "zoommate",
+  "name": "ZoomMate",
+  "name_zh": "ZoomMate",
+  "vendor_id": "zoom",
+  "region": "intl",
+  "category": "meetings",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2026-01-01",
+  "date_precision": "month",
+  "homepage": "https://zoom.com/en/ai-assistant/",
+  "desc": "Zoom's AI teammate for agents, workflows and search.",
+  "desc_zh": "Zoom 的 AI 同事，涵盖智能体、工作流与搜索",
+  "solves": "AI Companion summarizes meetings. ZoomMate acts on what happened in them — agents, workflows, search across the conversation record.",
+  "solves_zh": "AI Companion 只总结会议。ZoomMate 会对会议里发生的事采取行动——智能体、工作流、跨对话记录的搜索。",
+  "best_for": "You live in Zoom and want the assistant to act after the call, not just report on it.",
+  "best_for_zh": "你整天在 Zoom 里，想让助手在会后采取行动，而不只是汇报。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://zoom.com/en/ai-assistant/。来源：https://zoom.com/en/ai-assistant/",
+  "revisions": []
+}

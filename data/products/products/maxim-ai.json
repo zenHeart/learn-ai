@@ -1,0 +1,32 @@
+{
+  "id": "maxim-ai",
+  "name": "Maxim AI",
+  "name_zh": "Maxim AI",
+  "vendor_id": "maxim-ai",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.getmaxim.ai",
+  "desc": "Simulation, evaluation and observability for AI agents.",
+  "desc_zh": "面向 AI Agent 的模拟、评估与可观测平台。",
+  "solves": "Lets you test an agent against simulated scenarios before real users hit its failure modes.",
+  "solves_zh": "在真实用户踩坑之前，先用模拟场景把 Agent 测一遍。",
+  "best_for": "Reaching for it when an agent has unpredictable behaviour you cannot reproduce on demand.",
+  "best_for_zh": "Agent 行为不可预测、无法按需复现时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 top-5 agent observability platform comparisons。来源：https://www.getmaxim.ai/articles/top-5-ai-observability-platforms-in-2026",
+  "revisions": []
+}

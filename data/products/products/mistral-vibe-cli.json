@@ -1,0 +1,31 @@
+{
+  "id": "mistral-vibe-cli",
+  "name": "Mistral Vibe CLI",
+  "name_zh": "Mistral Vibe CLI",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "surface": "standalone",
+  "released": "2025-12-09",
+  "date_precision": "day",
+  "homepage": "https://github.com/mistralai/mistral-vibe-cli",
+  "desc": "Open-source terminal coding agent powered by Devstral 2.",
+  "desc_zh": "由 Devstral 2 驱动的开源终端编程智能体",
+  "solves": "Vibe the product needs a subscription and a browser. Vibe CLI is Apache 2.0, runs in your terminal, and works on your own codebase with your own model endpoint.",
+  "solves_zh": "Vive 这个产品要订阅、要浏览器。Vibe CLI 是 Apache 2.0，跑在终端里，用你自己的模型端点跑你自己的代码库。",
+  "best_for": "You want an open-source coding agent in the terminal that you can point at your own models.",
+  "best_for_zh": "你要一个终端里的开源编程智能体，并且能指向自己的模型。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://mistral.ai/。来源：https://mistral.ai/news/devstral-2-vibe-cli",
+  "revisions": []
+}

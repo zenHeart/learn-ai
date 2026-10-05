@@ -1,0 +1,32 @@
+{
+  "id": "adobe-firefly",
+  "name": "Adobe Firefly",
+  "name_zh": "Adobe Firefly",
+  "vendor_id": "adobe",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-03-01",
+  "date_precision": "month",
+  "homepage": "https://www.adobe.com/products/firefly.html",
+  "desc": "Adobe's commercially-safe generative image and video model family.",
+  "desc_zh": "Adobe 的商用安全生成式图像与视频模型家族。",
+  "solves": "Generates images and video licensed for commercial work, removing the legal doubt around AI-made assets.",
+  "solves_zh": "生成可用于商用的图像与视频，消掉 AI 素材的版权顾虑。",
+  "best_for": "Reaching for it when a client or legal team requires provably licensed output.",
+  "best_for_zh": "客户或法务要求素材来源可追溯时用它。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Similarweb global AI traffic ranking, #5 worldwide with ~338M monthly visits。来源：https://www.nypost.com/2024/04/23/photoshop-ai-image-generator-after-firefly/",
+  "revisions": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "bytedance-6",
+  "name": "飞书知识问答",
+  "name_zh": "飞书知识问答",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2024-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.feishu.cn/product/ai",
+  "desc": "Q&A over your Feishu wiki, docs and chat history.",
+  "desc_zh": "对飞书知识库、文档与群聊历史的问答",
+  "solves": "The answer exists in a doc from last quarter or in a message from a colleague who has since left. This reads the Feishu record you already have.",
+  "solves_zh": "答案在去年某个文档里，或者在一条同事早就离职前的消息里。这个读的就是你已经有的飞书记录。",
+  "best_for": "You need an answer that is already somewhere in your workspace.",
+  "best_for_zh": "你要找的答案其实已经在工作区某个地方了。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.feishu.cn/product/ai。来源：https://www.feishu.cn/product/ai",
+  "revisions": []
+}

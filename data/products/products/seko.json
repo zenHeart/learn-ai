@@ -1,0 +1,31 @@
+{
+  "id": "seko",
+  "name": "Seko",
+  "name_zh": "商汤 Seko",
+  "vendor_id": "sensetime",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-12-01",
+  "date_precision": "month",
+  "homepage": "https://www.sensetime.com/",
+  "desc": "SenseTime's multi-episode short-drama generation agent",
+  "desc_zh": "商汤的多集短剧生成智能体",
+  "solves": "Characters and props stay consistent across up to 100 episodes.",
+  "solves_zh": "最多 100 集里角色和道具保持一致，不用一集集重做。",
+  "best_for": "Short-drama and motion-comic studios producing series.",
+  "best_for_zh": "要连续出剧的短剧和动态漫工作室。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：商汤官方 Product Launch Week 英文稿。来源：https://legacy.sensetime.com/en/news-detail/51170337?categoryId=1072",
+  "revisions": []
+}

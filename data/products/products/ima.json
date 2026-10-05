@@ -1,0 +1,32 @@
+{
+  "id": "ima",
+  "name": "ima",
+  "name_zh": "腾讯 ima",
+  "vendor_id": "tencent",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-11-01",
+  "date_precision": "month",
+  "homepage": "https://ima.qq.com/",
+  "desc": "Tencent's knowledge-base-first AI workbench",
+  "desc_zh": "腾讯以知识库为核心的AI智能工作台",
+  "solves": "Answers cite the exact passage in your own files, not just the web.",
+  "solves_zh": "回答能定位到你自己的文件原文，而不只是给个网页链接。",
+  "best_for": "When you keep research material in scattered documents.",
+  "best_for_zh": "资料散落在几十个文档里需要反复查证时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：腾讯搜一搜 / 少数派 类工具推荐。来源：https://new.qq.com/rain/a/20241115A04JQ200",
+  "revisions": []
+}

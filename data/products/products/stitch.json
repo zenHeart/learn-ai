@@ -1,0 +1,31 @@
+{
+  "id": "stitch",
+  "name": "Stitch",
+  "name_zh": "Stitch",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-05-01",
+  "date_precision": "month",
+  "homepage": "https://stitch.withgoogle.com/",
+  "desc": "Google's natural language to UI design tool.",
+  "desc_zh": "Google 的自然语言转 UI 设计工具",
+  "solves": "Getting a first-pass interface means describing it to a designer. Stitch turns the sentence into editable UI you can refine.",
+  "solves_zh": "要拿到第一版界面，常规做法是写需求给设计师。Stitch 把那句话变成可继续改的 UI。",
+  "best_for": "You need a rough interface fast and would rather start editing than start briefing.",
+  "best_for_zh": "你需要很快拿到一版界面，想直接在上面改，而不是先写需求文档。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://ai.google/。来源：https://stitch.withgoogle.com/",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "rythmix",
+  "name": "Rythmix",
+  "name_zh": "Rythmix",
+  "vendor_id": "rythmix",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://rythmix.ai/",
+  "desc": "AI music generator app",
+  "desc_zh": "AI 音乐生成应用",
+  "solves": "Produces a usable backing track without a composer or a session musician.",
+  "solves_zh": "没有作曲和乐手时，也能拿到能用的伴奏。",
+  "best_for": "A video that needs original background music cleared for use.",
+  "best_for_zh": "视频需要一首版权干净的原创配乐时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 全球增速榜 App #8, 1.54M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "pixverse",
+  "name": "PixVerse",
+  "name_zh": "PixVerse",
+  "vendor_id": "aishi-tech",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-10-01",
+  "date_precision": "month",
+  "homepage": "https://pixverse.ai/",
+  "desc": "AI video generation from text and images.",
+  "desc_zh": "文生图生视频工具，国内名为拍我AI",
+  "solves": "Turns a still photo or a sentence into a short video clip without any 3D or editing skill.",
+  "solves_zh": "把一张照片或一句话变成短视频，不需要三维或剪辑基础。",
+  "best_for": "You need a usable generated clip fast and cannot wait on a long queue.",
+  "best_for_zh": "要快速拿到能用的生成片段、等不起长队列时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 出海总榜 App #5, 17.42M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "desc",
+      "from": "Text and image to video generator, also sold as 拍我AI",
+      "to": "AI video generation from text and images.",
+      "why": "desc 误填中文；基础键按约定只能是英文"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "bytedance-3",
+  "name": "猫箱",
+  "name_zh": "猫箱",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.maoxiangai.com/",
+  "desc": "ByteDance's AI character chat and roleplay app.",
+  "desc_zh": "字节跳动的 AI 角色聊天与角色扮演应用",
+  "solves": "General assistants flatten personality into helpfulness. This one is built around characters you write and inhabit.",
+  "solves_zh": "通用助手会把人格压平成「有用」。这个产品是围绕你自己写、自己代入的角色建的。",
+  "best_for": "You want character roleplay rather than task completion.",
+  "best_for_zh": "你想要的是角色扮演，而不是把任务做完。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.doubao.com/。来源：https://www.doubao.com/",
+  "revisions": []
+}

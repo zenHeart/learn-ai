@@ -1,0 +1,31 @@
+{
+  "id": "consensus",
+  "name": "Consensus",
+  "name_zh": "Consensus",
+  "vendor_id": "consensus",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2022-01-01",
+  "date_precision": "month",
+  "homepage": "https://consensus.app",
+  "desc": "Searches 220M+ peer-reviewed papers and answers with citations.",
+  "desc_zh": "检索两亿多篇同行评审论文，回答附带引用。",
+  "solves": "Answers research questions from the literature instead of the open web, so you get findings rather than blog posts.",
+  "solves_zh": "答案来自学术文献而非开放网页，给的是研究结论而不是博客观点。",
+  "best_for": "Reaching for it when you need what the evidence actually says about a question.",
+  "best_for_zh": "想知道某个问题上的证据到底怎么说时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 research-tool roundups; Consensus $30M Series B coverage (2.5M monthly researchers)。来源：https://docs.consensus.app",
+  "revisions": []
+}

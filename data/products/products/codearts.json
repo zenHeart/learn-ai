@@ -1,0 +1,32 @@
+{
+  "id": "codearts",
+  "name": "华为云码道 CodeArts",
+  "name_zh": "华为云码道 CodeArts",
+  "vendor_id": "huawei",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://codearts.huaweicloud.com/",
+  "desc": "Huawei Cloud's multi-agent coding platform for enterprises.",
+  "desc_zh": "华为云面向企业的多智能体编程平台",
+  "solves": "The gap between an AI IDE and enterprise delivery is code comprehension, memory and governance. CodeArts covers the full cycle from spec to release, with a CLI for the terminal.",
+  "solves_zh": "AI IDE 和企业交付之间的差距在于代码理解、记忆与管控。CodeArts 覆盖从规格到发布的全周期，还有终端 CLI。",
+  "best_for": "Your organisation needs AI coding with code-base memory, quality gates and audit behind it.",
+  "best_for_zh": "你的组织需要带代码库记忆、质量门禁和审计的 AI 编程。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.huaweicloud.com/product/pangu.html。来源：https://codearts.huaweicloud.com/",
+  "revisions": []
+}

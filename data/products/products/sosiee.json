@@ -1,0 +1,31 @@
+{
+  "id": "sosiee",
+  "name": "Sosiee",
+  "name_zh": "Sosiee",
+  "vendor_id": "sosiee",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-01-01",
+  "date_precision": "month",
+  "homepage": "https://sosiee.ai/",
+  "desc": "AI face swap and avatar generator",
+  "desc_zh": "AI 换脸与头像生成工具",
+  "solves": "Makes a consistent avatar for stories and social posts quickly.",
+  "solves_zh": "快速做出一个风格统一的头像，用于故事和社媒。",
+  "best_for": "Content that needs the same character across many posts.",
+  "best_for_zh": "需要同一个角色贯穿多篇内容时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 全球增速榜 App #7, 8.44M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

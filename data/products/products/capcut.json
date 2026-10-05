@@ -1,0 +1,41 @@
+{
+  "id": "capcut",
+  "name": "CapCut",
+  "name_zh": "CapCut",
+  "vendor_id": "bytedance",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2020-04-01",
+  "date_precision": "month",
+  "homepage": "https://www.capcut.com/",
+  "desc": "ByteDance's video editor, including AI generation and editing.",
+  "desc_zh": "字节跳动出海的 AI 剪辑工具，即剪映国际版",
+  "solves": "Lets you cut and finish a short video on a phone without learning a desktop editor.",
+  "solves_zh": "让人在手机上直接剪完一条短视频，不必学桌面剪辑软件。",
+  "best_for": "You are making vertical video for social and want AI captions and templates built in.",
+  "best_for_zh": "做竖屏短视频、需要自带字幕和模板时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Apple App Store US Photo & Video Top Free #1。来源：https://apps.apple.com/us/iphone/charts/6008",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "desc",
+      "from": "AI-assisted video editor, the global build of 剪映",
+      "to": "ByteDance's video editor, including AI generation and editing.",
+      "why": "desc 误填中文；基础键按约定只能是英文"
+    }
+  ]
+}

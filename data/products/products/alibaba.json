@@ -1,0 +1,31 @@
+{
+  "id": "alibaba",
+  "name": "通义听悟",
+  "name_zh": "通义听悟",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-06-27",
+  "date_precision": "day",
+  "homepage": "https://tingwu.aliyun.com/",
+  "desc": "Alibaba Cloud's audio and video comprehension assistant",
+  "desc_zh": "阿里云的音视频理解与记录AI助手",
+  "solves": "One hour of recording turns into minutes of minutes-ready notes.",
+  "solves_zh": "一小时录音，几分钟变成能直接用的纪要。",
+  "best_for": "Meetings, lectures and interviews that need minutes.",
+  "best_for_zh": "会议、课程和访谈需要出纪要时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：阿里云开发者社区发布报道。来源：https://yq.aliyun.com/articles/1261558",
+  "revisions": []
+}

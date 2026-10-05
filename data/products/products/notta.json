@@ -1,0 +1,31 @@
+{
+  "id": "notta",
+  "name": "Notta",
+  "name_zh": "Notta",
+  "vendor_id": "notta",
+  "region": "intl",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2020-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.notta.ai",
+  "desc": "Records, transcribes and summarises meetings in 58 languages.",
+  "desc_zh": "录制、转写并总结会议，支持 58 种语言。",
+  "solves": "Produces a searchable transcript and summary of every meeting without assigning a note-taker.",
+  "solves_zh": "每场会议自动留下可搜索的转写与总结，不用再指定专人记录。",
+  "best_for": "Reaching for it when meetings run in mixed languages or nobody owns the notes.",
+  "best_for_zh": "会议语言混杂，或没人负责记纪要时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 AI meeting-notes tool roundups。来源：https://www.techjockey.com/reviews/notta-pricing",
+  "revisions": []
+}

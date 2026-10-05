@@ -1,0 +1,31 @@
+{
+  "id": "grammarly",
+  "name": "Grammarly",
+  "name_zh": "Grammarly",
+  "vendor_id": "grammarly",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2009-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.grammarly.com",
+  "desc": "AI writing assistant for grammar, clarity and tone across every app.",
+  "desc_zh": "覆盖全应用的 AI 写作助手，管语法、清晰度与语气。",
+  "solves": "Catches grammar and tone problems as you write, wherever you write.",
+  "solves_zh": "在哪个应用里写都能实时挑出语法和语气问题。",
+  "best_for": "Reaching for it when you write a lot and want the basics fixed without leaving your document.",
+  "best_for_zh": "写得比较多、又不想为了改基础错误而离开当前文档时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Similarweb global AI traffic list, #21 with ~62.9M monthly visits。来源：https://www.grammarly.com/blog/a-history-of-innovation-at-grammarly/",
+  "revisions": []
+}

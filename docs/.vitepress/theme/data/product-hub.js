@@ -8,7 +8,7 @@
  *   data/products/vendors.json      厂商注册表
  *   data/products/use-cases/*.json  场景选型
  *
- * products 251 条 · categories 11 个 · use-cases 10 个
+ * products 350 条 · categories 11 个 · use-cases 10 个
  *
  * 本文件不含生成时间戳：否则每次运行都会产生差异，--check 闸门将永远报红。
  * 什么时候改的由 git 记录。
@@ -17,28 +17,12 @@
 export const productHub = {
   categories: [
   {
-    "id": "coding-agent",
-    "name": "Coding agents",
-    "nameZh": "编程 Agent",
-    "color": "#16A34A",
-    "icon": "💻",
-    "count": 50
-  },
-  {
     "id": "chat-assistant",
     "name": "Chat assistants",
     "nameZh": "对话助手",
     "color": "#2563EB",
     "icon": "💬",
-    "count": 49
-  },
-  {
-    "id": "agent-platform",
-    "name": "Agent platforms",
-    "nameZh": "Agent 平台",
-    "color": "#7C3AED",
-    "icon": "🧠",
-    "count": 42
+    "count": 70
   },
   {
     "id": "multimodal-creation",
@@ -46,7 +30,23 @@ export const productHub = {
     "nameZh": "多模态创作",
     "color": "#DB2777",
     "icon": "🎨",
-    "count": 33
+    "count": 62
+  },
+  {
+    "id": "agent-platform",
+    "name": "Agent platforms",
+    "nameZh": "Agent 平台",
+    "color": "#7C3AED",
+    "icon": "🧠",
+    "count": 60
+  },
+  {
+    "id": "coding-agent",
+    "name": "Coding agents",
+    "nameZh": "编程 Agent",
+    "color": "#16A34A",
+    "icon": "💻",
+    "count": 58
   },
   {
     "id": "enterprise-api",
@@ -54,7 +54,23 @@ export const productHub = {
     "nameZh": "企业 API",
     "color": "#475569",
     "icon": "🏢",
-    "count": 17
+    "count": 19
+  },
+  {
+    "id": "search",
+    "name": "AI search",
+    "nameZh": "AI 搜索",
+    "color": "#EA580C",
+    "icon": "🔍",
+    "count": 19
+  },
+  {
+    "id": "developer-sdk",
+    "name": "Developer SDKs",
+    "nameZh": "开发 SDK",
+    "color": "#9333EA",
+    "icon": "🧩",
+    "count": 16
   },
   {
     "id": "model-platform",
@@ -65,19 +81,11 @@ export const productHub = {
     "count": 14
   },
   {
-    "id": "search",
-    "name": "AI search",
-    "nameZh": "AI 搜索",
-    "color": "#EA580C",
-    "icon": "🔍",
-    "count": 14
-  },
-  {
-    "id": "developer-sdk",
-    "name": "Developer SDKs",
-    "nameZh": "开发 SDK",
-    "color": "#9333EA",
-    "icon": "🧩",
+    "id": "eval-observability",
+    "name": "Eval & observability",
+    "nameZh": "评测与可观测",
+    "color": "#DC2626",
+    "icon": "📈",
     "count": 13
   },
   {
@@ -86,15 +94,7 @@ export const productHub = {
     "nameZh": "会议与纪要",
     "color": "#0D9488",
     "icon": "🎙️",
-    "count": 7
-  },
-  {
-    "id": "eval-observability",
-    "name": "Eval & observability",
-    "nameZh": "评测与可观测",
-    "color": "#DC2626",
-    "icon": "📈",
-    "count": 6
+    "count": 12
   },
   {
     "id": "local-runner",
@@ -102,7 +102,7 @@ export const productHub = {
     "nameZh": "本地运行",
     "color": "#65A30D",
     "icon": "🦙",
-    "count": 6
+    "count": 7
   }
 ],
   useCases: [
@@ -113,14 +113,25 @@ export const productHub = {
     "description": "Writing, meetings and documents. Pick the moment you need help in, rather than the product that has the most features.",
     "descriptionZh": "写作、会议与文档。按你「在哪个环节需要帮忙」来选，而不是按功能多少来选。",
     "products": [
+      "360-ai-2",
       "agentforce",
       "ai",
       "aily",
+      "alibaba",
+      "alibaba-2",
       "amazon-q",
       "amazon-quick-suite",
+      "ant",
+      "appbuilder",
       "apple-intelligence",
       "atlassian-rovo",
+      "autoglm",
       "beautiful-ai",
+      "bytedance",
+      "bytedance-2",
+      "bytedance-4",
+      "bytedance-5",
+      "bytedance-6",
       "canva-magic-studio",
       "character-ai",
       "chatglm",
@@ -129,9 +140,12 @@ export const productHub = {
       "claude-ai",
       "claude-cowork",
       "claude-desktop",
+      "claw",
       "codewave",
       "copilot-cowork",
+      "deepl",
       "dia",
+      "dola",
       "dots",
       "doubao",
       "fathom",
@@ -143,40 +157,56 @@ export const productHub = {
       "gemini-in-google-docs-and-sheets",
       "genspark",
       "glean",
+      "grammarly",
       "granola",
       "grok",
       "harvey",
       "humane-ai-pin",
+      "iflytek",
+      "ima",
       "inflection-pi",
       "jingxi-agents",
+      "jotform-ai-agents",
       "joyai",
       "kimi",
       "le-chat",
       "lindy",
+      "lobsterai",
       "manus",
+      "meituan",
       "mem",
       "meta-ai",
       "microsoft-365-copilot",
       "microsoft-copilot",
       "microsoft-copilot-vision",
+      "monica",
       "muse",
+      "netease-youdao",
       "north",
       "notebooklm",
+      "notion-agent",
       "notion-ai",
+      "notta",
       "opera-neon",
       "otter-ai",
       "perplexity-comet",
       "presentations-ai",
       "qianwen",
       "quark",
+      "question-ai",
       "rabbit-r1",
       "ray-ban-meta",
       "replika",
       "samsung-galaxy-ai",
+      "sensetime-3",
       "shangliang",
       "sierra-ai",
+      "skywork-ai-workspace-agents",
       "slack-ai",
+      "slack-code",
+      "slack-today",
       "slackbot",
+      "sudowrite",
       "synthesia",
       "talkie",
       "tana",
@@ -184,20 +214,26 @@ export const productHub = {
       "tiangong-agent",
       "tl-dv",
       "tongyi",
+      "traework",
+      "typeless",
       "vibe",
       "wanyo",
       "wenxiaotuan",
       "wenxiaoyan",
       "wenxin-yiyan",
       "work",
+      "workbuddy",
       "wps-ai",
       "xiaohuanxiong",
+      "xiaomi",
       "xinghuo",
       "yuanbao",
       "yuewen",
-      "zoom-ai-companion"
+      "zhipu-input",
+      "zoom-ai-companion",
+      "zoommate"
     ],
-    "productCount": 83,
+    "productCount": 119,
     "dimensions": [
       {
         "id": "meetings",
@@ -205,19 +241,22 @@ export const productHub = {
         "labelZh": "会议与纪要",
         "weight": 3,
         "productIds": [
+          "bytedance-5",
           "fathom",
           "fireflies-ai",
           "granola",
+          "iflytek",
           "lindy",
           "mem",
           "microsoft-copilot",
+          "notta",
           "otter-ai",
           "qianwen",
           "tana",
           "tl-dv",
           "zoom-ai-companion"
         ],
-        "productCount": 11
+        "productCount": 14
       },
       {
         "id": "writing",
@@ -225,16 +264,23 @@ export const productHub = {
         "labelZh": "写作与起草",
         "weight": 3,
         "productIds": [
+          "360-ai-2",
           "amazon-quick-suite",
+          "deepl",
           "gamma",
           "gemini-in-google-docs-and-sheets",
           "genspark",
+          "grammarly",
           "microsoft-365-copilot",
+          "netease-youdao",
           "notion-ai",
           "quark",
-          "wps-ai"
+          "skywork-ai-workspace-agents",
+          "sudowrite",
+          "wps-ai",
+          "zhipu-input"
         ],
-        "productCount": 8
+        "productCount": 15
       },
       {
         "id": "knowledge-base",
@@ -244,18 +290,23 @@ export const productHub = {
         "productIds": [
           "amazon-quick-suite",
           "atlassian-rovo",
+          "bytedance-6",
           "claude-cowork",
           "gemini-in-google-docs-and-sheets",
           "genspark",
           "glean",
+          "ima",
           "jingxi-agents",
           "mem",
+          "netease-youdao",
           "notebooklm",
+          "notion-agent",
           "notion-ai",
           "otter-ai",
+          "skywork-ai-workspace-agents",
           "xiaohuanxiong"
         ],
-        "productCount": 12
+        "productCount": 17
       },
       {
         "id": "slides",
@@ -264,15 +315,19 @@ export const productHub = {
         "weight": 1,
         "productIds": [
           "beautiful-ai",
+          "bytedance-6",
           "gamma",
           "gemini-in-google-docs-and-sheets",
           "genspark",
+          "netease-youdao",
           "presentations-ai",
           "qianwen",
           "quark",
+          "sensetime-3",
+          "skywork-ai-workspace-agents",
           "wps-ai"
         ],
-        "productCount": 8
+        "productCount": 12
       }
     ]
   },
@@ -283,13 +338,23 @@ export const productHub = {
     "description": "No-code builders, workflow platforms, or code frameworks. The deciding factor is who maintains the thing after launch.",
     "descriptionZh": "零代码平台、工作流编排，还是自己写框架。真正的分水岭是：上线之后谁来维护。",
     "products": [
+      "360-ai-2",
+      "agentarts",
       "agentforce",
       "ai",
       "aily",
+      "alibaba-2",
       "amazon-quick-suite",
+      "appbuilder",
       "azure-ai-foundry",
       "bailian",
+      "base44",
       "bigmodel",
+      "browser-use",
+      "bytedance",
+      "bytedance-2",
+      "bytedance-3",
+      "bytedance-4",
       "cartesia",
       "chatgpt",
       "chatgpt-agent",
@@ -298,10 +363,14 @@ export const productHub = {
       "claude-api",
       "claude-cowork",
       "claude-desktop",
+      "codearts",
+      "cohere-compass",
+      "confident-ai",
       "copilot-cowork",
       "coze",
       "coze-space",
       "crewai",
+      "d-id",
       "deepseek",
       "dify",
       "dots",
@@ -309,6 +378,7 @@ export const productHub = {
       "fireflies-ai",
       "flowise",
       "frontier",
+      "galileo",
       "gemini-enterprise",
       "genspark",
       "glean",
@@ -318,45 +388,62 @@ export const productHub = {
       "hume-ai",
       "intercom-fin",
       "jingxi-agents",
+      "jotform-ai-agents",
       "kimi-claw",
       "labelbox",
+      "laminar",
       "langchain",
       "lindy",
       "lingyi-wanwu",
       "litellm",
       "llamaindex",
+      "lobsterai",
       "manus",
+      "maxim-ai",
+      "meituan",
       "meta-model-api",
       "microsoft-copilot-studio",
       "milvus",
+      "minimax-2",
       "minimax-agent",
       "mistral-studio",
       "muse",
       "muse-code",
       "n8n",
       "north",
+      "notion-agent",
+      "nvidia-cosmos",
       "nvidia-nemo",
+      "open-webui",
       "openclaw",
       "openhands",
       "pinecone",
+      "promptlayer",
       "qdrant",
       "relevance-ai",
       "scale-ai",
+      "sensetime-3",
       "sierra-ai",
       "siliconflow",
+      "skywork-ai-workspace-agents",
       "stepfun-platform",
       "surge-ai",
       "tiangong-agent",
       "together-ai",
+      "traework",
+      "vellum",
       "vibe",
       "wanyo",
       "weaviate",
       "work",
+      "workbuddy",
       "xiaohuanxiong",
       "yuanqi",
-      "zapier-agents"
+      "zapier-agents",
+      "zcode",
+      "zoommate"
     ],
-    "productCount": 72,
+    "productCount": 104,
     "dimensions": [
       {
         "id": "no-code",
@@ -365,6 +452,7 @@ export const productHub = {
         "weight": 3,
         "productIds": [
           "agentforce",
+          "appbuilder",
           "coze",
           "dify",
           "flowise",
@@ -376,7 +464,7 @@ export const productHub = {
           "yuanqi",
           "zapier-agents"
         ],
-        "productCount": 11
+        "productCount": 12
       },
       {
         "id": "workflow",
@@ -391,9 +479,11 @@ export const productHub = {
           "lindy",
           "mistral-studio",
           "n8n",
-          "zapier-agents"
+          "nvidia-cosmos",
+          "zapier-agents",
+          "zoommate"
         ],
-        "productCount": 8
+        "productCount": 10
       },
       {
         "id": "autonomous",
@@ -415,8 +505,11 @@ export const productHub = {
         "weight": 2,
         "productIds": [
           "agentforce",
+          "browser-use",
           "cartesia",
           "claude-api",
+          "cohere-compass",
+          "confident-ai",
           "coze-space",
           "crewai",
           "exa",
@@ -426,20 +519,24 @@ export const productHub = {
           "glean",
           "grok-build",
           "jingxi-agents",
+          "jotform-ai-agents",
           "langchain",
           "lindy",
           "llamaindex",
+          "maxim-ai",
           "microsoft-copilot-studio",
           "minimax-agent",
           "mistral-studio",
           "nvidia-nemo",
           "pinecone",
           "relevance-ai",
+          "skywork-ai-workspace-agents",
           "tiangong-agent",
           "yuanqi",
-          "zapier-agents"
+          "zapier-agents",
+          "zoommate"
         ],
-        "productCount": 24
+        "productCount": 31
       }
     ]
   },
@@ -450,8 +547,16 @@ export const productHub = {
     "description": "Answer engines with citations versus retrieval you build yourself. Decide whether you need a product or a stack.",
     "descriptionZh": "带引用的问答引擎，还是你自己搭的检索。先想清楚你要的是一个产品，还是一套方案。",
     "products": [
+      "360-ai",
+      "anara",
+      "ant",
+      "aq",
+      "arena",
       "atlassian-rovo",
+      "autoglm",
       "brave-leo",
+      "browser-use",
+      "bytedance-6",
       "chatglm",
       "chatgpt",
       "chatgpt-agent",
@@ -462,17 +567,22 @@ export const productHub = {
       "chatgpt-pulse",
       "chatgpt-study-mode",
       "chatgpt-tasks",
+      "cohere-compass",
+      "consensus",
       "deepseek-2",
       "dia",
+      "dola",
       "dots",
       "doubao",
       "exa",
+      "gauth",
       "gemini-app",
       "genspark",
       "glean",
       "google-search-ai-mode",
       "grok",
       "harvey",
+      "ima",
       "jingxi-agents",
       "joyai",
       "kagi-assistant",
@@ -484,15 +594,21 @@ export const productHub = {
       "microsoft-copilot",
       "microsoft-copilot-vision",
       "mistral-forge",
+      "monica",
       "nami-search",
+      "netease-youdao",
       "notebooklm",
+      "notion-agent",
       "notion-ai",
       "opera-neon",
+      "paradot",
       "perplexity",
       "perplexity-comet",
       "phind",
+      "polybuzz",
       "qianwen",
       "quark",
+      "question-ai",
       "shangliang",
       "slackbot",
       "tavily",
@@ -507,9 +623,11 @@ export const productHub = {
       "xinghuo",
       "you-com",
       "yuanbao",
-      "yuewen"
+      "yuewen",
+      "zeta",
+      "zhihu"
     ],
-    "productCount": 58,
+    "productCount": 79,
     "dimensions": [
       {
         "id": "answer-engine",
@@ -517,9 +635,14 @@ export const productHub = {
         "labelZh": "带出处的问答引擎",
         "weight": 3,
         "productIds": [
+          "360-ai",
+          "anara",
           "atlassian-rovo",
+          "autoglm",
           "chatgpt-deep-research",
           "chatgpt-pulse",
+          "cohere-compass",
+          "consensus",
           "exa",
           "gemini-app",
           "glean",
@@ -535,9 +658,10 @@ export const productHub = {
           "qianwen",
           "quark",
           "tavily",
-          "you-com"
+          "you-com",
+          "zhihu"
         ],
-        "productCount": 19
+        "productCount": 25
       },
       {
         "id": "retrieval-stack",
@@ -545,9 +669,14 @@ export const productHub = {
         "labelZh": "给应用用的检索 API",
         "weight": 3,
         "productIds": [
+          "360-ai",
+          "anara",
           "atlassian-rovo",
+          "autoglm",
           "chatgpt-deep-research",
           "chatgpt-pulse",
+          "cohere-compass",
+          "consensus",
           "exa",
           "gemini-app",
           "glean",
@@ -564,9 +693,10 @@ export const productHub = {
           "qianwen",
           "quark",
           "tavily",
-          "you-com"
+          "you-com",
+          "zhihu"
         ],
-        "productCount": 20
+        "productCount": 26
       },
       {
         "id": "document-qa",
@@ -576,14 +706,16 @@ export const productHub = {
         "productIds": [
           "atlassian-rovo",
           "glean",
+          "ima",
           "jingxi-agents",
           "llamaindex",
+          "netease-youdao",
           "notebooklm",
           "notion-ai",
           "quark",
           "xiaohuanxiong"
         ],
-        "productCount": 8
+        "productCount": 10
       }
     ]
   },
@@ -599,10 +731,13 @@ export const productHub = {
       "amp",
       "augment-code",
       "baidu-comate",
+      "base44",
       "bolt-new",
+      "charm-crush",
       "claude-ai",
       "claude-code",
       "cline",
+      "codearts",
       "codebuddy",
       "coderabbit",
       "codewave",
@@ -614,34 +749,43 @@ export const productHub = {
       "deepseek-2",
       "devin",
       "factory",
+      "figma-make",
       "gemini-cli",
       "github-copilot",
       "github-copilot-agent-mode",
       "glm-coding-plan",
       "google-antigravity",
+      "google-stitch",
       "goose",
       "greptile",
       "grok-build",
       "huawei-codearts",
       "jules",
       "junie",
+      "kilo-code",
       "kimi-code",
       "kiro",
       "lingma",
       "lingma-ai-ide",
+      "lobsterai",
       "lovable",
       "marscode",
       "mimo-code",
       "minimax-code",
+      "mistral-vibe-cli",
       "muse-code",
       "openai-codex",
+      "opencode",
       "openhands",
       "phind",
       "pi-agent",
       "qoder",
       "replit-agent",
       "roo-code",
+      "sensetime",
+      "slack-code",
       "trae",
+      "typeless",
       "v0",
       "vercel-ai-sdk",
       "vibe",
@@ -649,9 +793,10 @@ export const productHub = {
       "webflow-ai",
       "wenxin-fastcode",
       "windsurf",
+      "zcode",
       "zed"
     ],
-    "productCount": 56,
+    "productCount": 69,
     "dimensions": [
       {
         "id": "ai-ide",
@@ -682,6 +827,7 @@ export const productHub = {
           "aider",
           "amazon-q-developer",
           "amp",
+          "charm-crush",
           "claude-code",
           "cline",
           "codebuddy",
@@ -692,18 +838,21 @@ export const productHub = {
           "google-antigravity",
           "grok-build",
           "jules",
+          "kilo-code",
           "kimi-code",
           "lingma-ai-ide",
           "mimo-code",
           "minimax-code",
+          "mistral-vibe-cli",
           "muse-code",
           "openai-codex",
+          "opencode",
           "pi-agent",
           "qoder",
           "trae",
           "warp"
         ],
-        "productCount": 23
+        "productCount": 27
       },
       {
         "id": "app-builder",
@@ -711,9 +860,11 @@ export const productHub = {
         "labelZh": "一句话生成应用",
         "weight": 2,
         "productIds": [
+          "figma-make",
+          "mistral-vibe-cli",
           "vibe"
         ],
-        "productCount": 1
+        "productCount": 3
       },
       {
         "id": "completion",
@@ -738,9 +889,125 @@ export const productHub = {
           "amazon-q-developer",
           "augment-code",
           "coderabbit",
-          "greptile"
+          "greptile",
+          "slack-code"
         ],
-        "productCount": 4
+        "productCount": 5
+      }
+    ]
+  },
+  {
+    "id": "image-design",
+    "title": "Image & design",
+    "titleZh": "图像与设计",
+    "description": "Generating pixels versus editing the layout you already have. These are different jobs with different tools.",
+    "descriptionZh": "生成像素，和编辑你已有的版式，是两份不同的工作，用的工具也不同。",
+    "products": [
+      "adobe-firefly",
+      "adobe-generative-fill-in-photoshop",
+      "apple-intelligence",
+      "artflo",
+      "canva-magic-studio",
+      "capcut",
+      "comate-ai-ide",
+      "figma-ai",
+      "figma-make",
+      "fotor",
+      "framer-ai",
+      "gamma",
+      "google-flow",
+      "google-stitch",
+      "grok-imagine",
+      "hailuo",
+      "higgsfield",
+      "ideogram",
+      "jimeng",
+      "keling",
+      "krea",
+      "leonardo-ai",
+      "lovart",
+      "midjourney",
+      "minimax-design",
+      "openart",
+      "picchi",
+      "picsart",
+      "pixverse",
+      "pollo-ai",
+      "recraft",
+      "remini",
+      "remove-bg",
+      "retake-ai",
+      "roboneo",
+      "samsung-galaxy-ai",
+      "skywork-ai-workspace-agents",
+      "sora",
+      "sosiee",
+      "stitch",
+      "tongyi-wanxiang",
+      "v0",
+      "vivago-ai",
+      "webflow-ai"
+    ],
+    "productCount": 44,
+    "dimensions": [
+      {
+        "id": "design-tools",
+        "label": "Design in context",
+        "labelZh": "在设计稿里协作",
+        "weight": 3,
+        "productIds": [
+          "canva-magic-studio",
+          "comate-ai-ide",
+          "figma-ai",
+          "figma-make",
+          "framer-ai",
+          "google-stitch",
+          "krea",
+          "lovart",
+          "midjourney",
+          "minimax-design",
+          "stitch",
+          "webflow-ai"
+        ],
+        "productCount": 12
+      },
+      {
+        "id": "image-generation",
+        "label": "Generate images",
+        "labelZh": "生成图像",
+        "weight": 3,
+        "productIds": [
+          "canva-magic-studio",
+          "grok-imagine",
+          "higgsfield",
+          "ideogram",
+          "jimeng",
+          "keling",
+          "krea",
+          "leonardo-ai",
+          "midjourney",
+          "sora",
+          "tongyi-wanxiang"
+        ],
+        "productCount": 11
+      },
+      {
+        "id": "upscale-edit",
+        "label": "Upscale & retouch",
+        "labelZh": "放大与修图",
+        "weight": 2,
+        "productIds": [
+          "capcut",
+          "fotor",
+          "framer-ai",
+          "gamma",
+          "google-flow",
+          "picsart",
+          "recraft",
+          "remini",
+          "retake-ai"
+        ],
+        "productCount": 9
       }
     ]
   },
@@ -770,9 +1037,12 @@ export const productHub = {
       "llama-api",
       "meta-model-api",
       "minimax",
+      "mistral-ai-cloud",
       "mistral-forge",
       "mistral-la-plateforme",
       "mistral-studio",
+      "nvidia-ai-enterprise",
+      "nvidia-dynamo",
       "nvidia-nemo",
       "nvidia-nim",
       "openai-api",
@@ -787,7 +1057,7 @@ export const productHub = {
       "volcengine-ark",
       "xai-api"
     ],
-    "productCount": 35,
+    "productCount": 38,
     "dimensions": [
       {
         "id": "inference-api",
@@ -805,7 +1075,9 @@ export const productHub = {
           "llama-api",
           "meta-model-api",
           "minimax",
+          "mistral-ai-cloud",
           "mistral-la-plateforme",
+          "nvidia-dynamo",
           "nvidia-nim",
           "openai-api",
           "reka-ai",
@@ -816,7 +1088,7 @@ export const productHub = {
           "volcengine-ark",
           "xai-api"
         ],
-        "productCount": 20
+        "productCount": 22
       },
       {
         "id": "model-platform",
@@ -856,186 +1128,46 @@ export const productHub = {
     ]
   },
   {
-    "id": "image-design",
-    "title": "Image & design",
-    "titleZh": "图像与设计",
-    "description": "Generating pixels versus editing the layout you already have. These are different jobs with different tools.",
-    "descriptionZh": "生成像素，和编辑你已有的版式，是两份不同的工作，用的工具也不同。",
-    "products": [
-      "adobe-generative-fill-in-photoshop",
-      "apple-intelligence",
-      "canva-magic-studio",
-      "comate-ai-ide",
-      "figma-ai",
-      "framer-ai",
-      "gamma",
-      "google-flow",
-      "grok-imagine",
-      "hailuo",
-      "higgsfield",
-      "ideogram",
-      "jimeng",
-      "keling",
-      "krea",
-      "leonardo-ai",
-      "midjourney",
-      "remini",
-      "samsung-galaxy-ai",
-      "sora",
-      "tongyi-wanxiang",
-      "v0",
-      "webflow-ai"
-    ],
-    "productCount": 23,
-    "dimensions": [
-      {
-        "id": "design-tools",
-        "label": "Design in context",
-        "labelZh": "在设计稿里协作",
-        "weight": 3,
-        "productIds": [
-          "canva-magic-studio",
-          "comate-ai-ide",
-          "figma-ai",
-          "framer-ai",
-          "krea",
-          "midjourney",
-          "webflow-ai"
-        ],
-        "productCount": 7
-      },
-      {
-        "id": "image-generation",
-        "label": "Generate images",
-        "labelZh": "生成图像",
-        "weight": 3,
-        "productIds": [
-          "canva-magic-studio",
-          "grok-imagine",
-          "higgsfield",
-          "ideogram",
-          "jimeng",
-          "keling",
-          "krea",
-          "leonardo-ai",
-          "midjourney",
-          "sora",
-          "tongyi-wanxiang"
-        ],
-        "productCount": 11
-      },
-      {
-        "id": "upscale-edit",
-        "label": "Upscale & retouch",
-        "labelZh": "放大与修图",
-        "weight": 2,
-        "productIds": [
-          "framer-ai",
-          "gamma",
-          "google-flow",
-          "remini"
-        ],
-        "productCount": 4
-      }
-    ]
-  },
-  {
-    "id": "local-private",
-    "title": "Local & private",
-    "titleZh": "本地与私有化",
-    "description": "Running models on your own machine or your own server. The reason is usually privacy, latency, or cost per token.",
-    "descriptionZh": "把模型跑在自己的机器或服务器上。原因通常是隐私、延迟，或者每 token 成本。",
-    "products": [
-      "aider",
-      "cody",
-      "flowise",
-      "goose",
-      "gpt4all",
-      "jan",
-      "langfuse",
-      "lm-studio",
-      "milvus",
-      "minicpm",
-      "mlx",
-      "north",
-      "nvidia-nim",
-      "ollama",
-      "openclaw",
-      "phariaai",
-      "qdrant",
-      "weaviate",
-      "zed"
-    ],
-    "productCount": 19,
-    "dimensions": [
-      {
-        "id": "local-runner",
-        "label": "Run on your machine",
-        "labelZh": "本机运行",
-        "weight": 3,
-        "productIds": [
-          "goose",
-          "gpt4all",
-          "jan",
-          "lm-studio",
-          "minicpm",
-          "ollama"
-        ],
-        "productCount": 6
-      },
-      {
-        "id": "self-hosted",
-        "label": "Self-hosted service",
-        "labelZh": "自托管服务",
-        "weight": 3,
-        "productIds": [
-          "nvidia-nim",
-          "openclaw",
-          "phariaai",
-          "weaviate"
-        ],
-        "productCount": 4
-      },
-      {
-        "id": "edge-sdk",
-        "label": "Edge & on-device SDK",
-        "labelZh": "端侧 / 边缘 SDK",
-        "weight": 2,
-        "productIds": [
-          "gpt4all",
-          "minicpm",
-          "mlx"
-        ],
-        "productCount": 3
-      }
-    ]
-  },
-  {
     "id": "video",
     "title": "Video production",
     "titleZh": "视频制作",
     "description": "From a one-line prompt to a finished cut. The first question is whether you are generating footage or editing what you already shot.",
     "descriptionZh": "从一句话到成片。第一个问题不是「哪个工具更强」，而是你要生成素材，还是剪自己拍的东西。",
     "products": [
+      "adobe-firefly",
+      "capcut",
+      "d-id",
       "descript",
       "google-flow",
       "grok-imagine",
       "hailuo",
       "heygen",
       "higgsfield",
+      "invideo-ai",
       "jimeng",
       "keling",
+      "klap",
       "krea",
       "luma-dream-machine",
+      "minimax-design",
+      "mvland",
+      "openart",
+      "picsart",
       "pika",
+      "pixverse",
+      "pollo-ai",
       "premiere-pro-generative-extend",
+      "roboneo",
       "runway",
+      "seko",
+      "sensetime-2",
       "sora",
       "synthesia",
       "tongyi-wanxiang",
-      "vidu"
+      "vidu",
+      "vivago-ai"
     ],
-    "productCount": 17,
+    "productCount": 32,
     "dimensions": [
       {
         "id": "text-to-video",
@@ -1043,6 +1175,7 @@ export const productHub = {
         "labelZh": "文生视频 / 图生视频",
         "weight": 3,
         "productIds": [
+          "adobe-firefly",
           "grok-imagine",
           "hailuo",
           "heygen",
@@ -1050,7 +1183,9 @@ export const productHub = {
           "jimeng",
           "keling",
           "luma-dream-machine",
+          "picsart",
           "pika",
+          "pollo-ai",
           "premiere-pro-generative-extend",
           "runway",
           "sora",
@@ -1058,7 +1193,7 @@ export const productHub = {
           "tongyi-wanxiang",
           "vidu"
         ],
-        "productCount": 14
+        "productCount": 17
       },
       {
         "id": "video-editing",
@@ -1066,11 +1201,13 @@ export const productHub = {
         "labelZh": "剪辑已有素材",
         "weight": 3,
         "productIds": [
+          "capcut",
           "descript",
           "google-flow",
+          "picsart",
           "runway"
         ],
-        "productCount": 3
+        "productCount": 5
       },
       {
         "id": "avatar-presenter",
@@ -1078,10 +1215,11 @@ export const productHub = {
         "labelZh": "数字人与出镜",
         "weight": 2,
         "productIds": [
+          "d-id",
           "heygen",
           "synthesia"
         ],
-        "productCount": 2
+        "productCount": 3
       },
       {
         "id": "storyboard",
@@ -1110,22 +1248,32 @@ export const productHub = {
     "description": "Knowing whether a model or agent actually got better. Trace what happened before you tune anything.",
     "descriptionZh": "判断模型或 Agent 是不是真的变好了。在动手调参之前，先看清发生了什么。",
     "products": [
+      "agentarts",
       "arize-phoenix",
       "braintrust",
       "coderabbit",
       "cody",
+      "cohere-compass",
+      "confident-ai",
+      "galileo",
       "gemini-enterprise",
       "greptile",
       "helicone",
+      "laminar",
       "langfuse",
       "langsmith",
       "litellm",
+      "maxim-ai",
       "mistral-studio",
+      "nvidia-ai-enterprise",
+      "nvidia-dynamo",
       "nvidia-nemo",
       "portkey",
+      "promptlayer",
+      "vellum",
       "weights-biases"
     ],
-    "productCount": 14,
+    "productCount": 24,
     "dimensions": [
       {
         "id": "evaluation",
@@ -1135,13 +1283,19 @@ export const productHub = {
         "productIds": [
           "arize-phoenix",
           "braintrust",
+          "cohere-compass",
+          "confident-ai",
+          "galileo",
           "langfuse",
           "langsmith",
+          "maxim-ai",
           "mistral-studio",
           "nvidia-nemo",
+          "promptlayer",
+          "vellum",
           "weights-biases"
         ],
-        "productCount": 7
+        "productCount": 13
       },
       {
         "id": "tracing",
@@ -1152,12 +1306,15 @@ export const productHub = {
           "arize-phoenix",
           "braintrust",
           "helicone",
+          "laminar",
           "langfuse",
           "langsmith",
+          "maxim-ai",
           "nvidia-nemo",
+          "promptlayer",
           "weights-biases"
         ],
-        "productCount": 7
+        "productCount": 10
       },
       {
         "id": "experiment-tracking",
@@ -1172,6 +1329,84 @@ export const productHub = {
     ]
   },
   {
+    "id": "local-private",
+    "title": "Local & private",
+    "titleZh": "本地与私有化",
+    "description": "Running models on your own machine or your own server. The reason is usually privacy, latency, or cost per token.",
+    "descriptionZh": "把模型跑在自己的机器或服务器上。原因通常是隐私、延迟，或者每 token 成本。",
+    "products": [
+      "aider",
+      "claw",
+      "cody",
+      "flowise",
+      "goose",
+      "gpt4all",
+      "jan",
+      "langfuse",
+      "lm-studio",
+      "milvus",
+      "minicpm",
+      "mistral-ai-cloud",
+      "mlx",
+      "north",
+      "nvidia-nim",
+      "ollama",
+      "open-webui",
+      "openclaw",
+      "phariaai",
+      "qdrant",
+      "weaviate",
+      "xiaomi",
+      "zed"
+    ],
+    "productCount": 23,
+    "dimensions": [
+      {
+        "id": "local-runner",
+        "label": "Run on your machine",
+        "labelZh": "本机运行",
+        "weight": 3,
+        "productIds": [
+          "goose",
+          "gpt4all",
+          "jan",
+          "lm-studio",
+          "minicpm",
+          "ollama",
+          "open-webui",
+          "xiaomi"
+        ],
+        "productCount": 8
+      },
+      {
+        "id": "self-hosted",
+        "label": "Self-hosted service",
+        "labelZh": "自托管服务",
+        "weight": 3,
+        "productIds": [
+          "nvidia-nim",
+          "open-webui",
+          "openclaw",
+          "phariaai",
+          "weaviate"
+        ],
+        "productCount": 5
+      },
+      {
+        "id": "edge-sdk",
+        "label": "Edge & on-device SDK",
+        "labelZh": "端侧 / 边缘 SDK",
+        "weight": 2,
+        "productIds": [
+          "gpt4all",
+          "minicpm",
+          "mlx"
+        ],
+        "productCount": 3
+      }
+    ]
+  },
+  {
     "id": "audio-voice",
     "title": "Audio & voice",
     "titleZh": "音频与语音",
@@ -1179,15 +1414,20 @@ export const productHub = {
     "descriptionZh": "让机器说话、唱歌，还是把语音转成文字。声音克隆与配音，和普通文字转语音是两回事。",
     "products": [
       "apple-intelligence",
+      "bandlab",
       "cartesia",
       "descript",
       "elevenlabs",
       "hume-ai",
+      "iflytek",
+      "mureka",
+      "mvland",
+      "rythmix",
       "samsung-galaxy-ai",
       "suno",
       "udio"
     ],
-    "productCount": 8,
+    "productCount": 13,
     "dimensions": [
       {
         "id": "music",
@@ -1195,12 +1435,16 @@ export const productHub = {
         "labelZh": "音乐生成",
         "weight": 3,
         "productIds": [
+          "bandlab",
           "descript",
           "elevenlabs",
+          "mureka",
+          "mvland",
+          "rythmix",
           "suno",
           "udio"
         ],
-        "productCount": 4
+        "productCount": 8
       },
       {
         "id": "text-to-speech",
@@ -1223,9 +1467,10 @@ export const productHub = {
         "labelZh": "语音转文字",
         "weight": 2,
         "productIds": [
-          "descript"
+          "descript",
+          "iflytek"
         ],
-        "productCount": 1
+        "productCount": 2
       },
       {
         "id": "voice-cloning",
@@ -1280,6 +1525,41 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "D"
+  },
+  {
+    "id": "cohere-compass",
+    "name": "Cohere Compass",
+    "nameZh": "Cohere Compass",
+    "vendor": "Cohere",
+    "vendorZh": "Cohere",
+    "logo": "/assets/logos/cohere.png",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "research",
+      "agent-building",
+      "observability"
+    ],
+    "form": "api",
+    "surface": "standalone",
+    "solves": "RAG means running a vector database and an indexing pipeline. Compass parses documents, indexes them, and serves retrieval without either.",
+    "solvesZh": "做 RAG 意味着自己养一套向量库和索引流水线。Compass 解析文档、建索引并提供检索，两样都不用你管。",
+    "bestFor": "You need document retrieval for an agent and do not want to run the index yourself.",
+    "bestForZh": "你的智能体需要文档检索，但不想自己维护索引。",
+    "released": "2026-09-25",
+    "datePrecision": "day",
+    "homepage": "https://cohere.com/compass",
+    "desc": "Managed enterprise search and retrieval for agents.",
+    "descZh": "面向智能体的托管式企业搜索与检索",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "C"
   },
   {
     "id": "muse",
@@ -1401,6 +1681,142 @@ export const productHub = {
     "glyph": "商"
   },
   {
+    "id": "bytedance",
+    "name": "豆包工作",
+    "nameZh": "豆包工作",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "It reads your Feishu chats and minutes, so it knows the real business context.",
+    "solvesZh": "它能读你飞书里的聊天和纪要，知道真实的业务上下文。",
+    "bestFor": "Teams already living in Feishu who want an agent.",
+    "bestForZh": "公司已经在用飞书、需要一个智能体的人。",
+    "released": "2026-08-25",
+    "datePrecision": "day",
+    "homepage": "https://www.doubao.com/work",
+    "desc": "ByteDance's office agent wired into Feishu context",
+    "descZh": "字节跳动的办公Agent，打通飞书企业上下文",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "豆"
+  },
+  {
+    "id": "minimax-design",
+    "name": "MiniMax Design",
+    "nameZh": "MiniMax Design",
+    "vendor": "MiniMax",
+    "vendorZh": "MiniMax",
+    "logo": "/assets/logos/minimax.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "It plans shots, generates and edits the cut, so you stay in one tool.",
+    "solvesZh": "分镜、生成、剪辑成片都在一处完成，不用来回切软件。",
+    "bestFor": "Commercial video with many revisions and many steps.",
+    "bestForZh": "环节多、要反复改的商业视频制作。",
+    "released": "2026-08-20",
+    "datePrecision": "day",
+    "homepage": "https://design.minimax.io/",
+    "desc": "Multimodal video creation agent built on H3",
+    "descZh": "基于H3的多模态视频创作Agent工作台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "M"
+  },
+  {
+    "id": "xiaomi",
+    "name": "超级小爱",
+    "nameZh": "超级小爱",
+    "vendor": "小米",
+    "vendorZh": "小米",
+    "logo": "/assets/logos/xiaomi.png",
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "office",
+      "local-private"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "It plans and executes across apps on your phone, not just answers.",
+    "solvesZh": "它能在手机里跨应用规划和执行，而不只是回答问题。",
+    "bestFor": "If your phone, car and home gear are all Xiaomi.",
+    "bestForZh": "手机、车和米家设备都是小米的人。",
+    "released": "2026-08-18",
+    "datePrecision": "day",
+    "homepage": "https://xiaoai.mi.com/",
+    "desc": "Xiaomi's system agent running on the on-device MiMo model",
+    "descZh": "小米基于端侧MiMo大模型的系统级AI智能体",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "超"
+  },
+  {
+    "id": "alibaba-2",
+    "name": "千问办公",
+    "nameZh": "千问办公",
+    "vendor": "阿里巴巴",
+    "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "One product covers desktop, cloud and DingTalk-embedded agents.",
+    "solvesZh": "一个产品同时覆盖桌面端、云端和钉钉内嵌的智能体。",
+    "bestFor": "Alibaba-ecosystem teams consolidating scattered agent tools.",
+    "bestForZh": "阿里生态内、想把分散 Agent 工具收拢的团队。",
+    "released": "2026-08-03",
+    "datePrecision": "day",
+    "homepage": "https://qwenwork.cn/",
+    "desc": "Alibaba's desktop, cloud and collab agent in one product",
+    "descZh": "阿里把桌面端、云端和企业协同Agent合到一体的办公平台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "千"
+  },
+  {
     "id": "muse-code",
     "name": "Muse Code",
     "nameZh": "Muse Code 编程智能体",
@@ -1518,6 +1934,40 @@ export const productHub = {
     "glyph": "M"
   },
   {
+    "id": "meituan",
+    "name": "妙手",
+    "nameZh": "妙手",
+    "vendor": "美团",
+    "vendorZh": "美团",
+    "logo": "/assets/logos/meituan.png",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Chain and small merchants get store operations analysis without a data team.",
+    "solvesZh": "连锁和中小商家不用自建数据团队也能做门店经营分析。",
+    "bestFor": "When you run restaurants, hotels or pharmacies on Meituan.",
+    "bestForZh": "在美团开餐饮、酒店、药店的商家。",
+    "released": "2026-07-01",
+    "datePrecision": "month",
+    "homepage": "https://catpaw.meituan.com/",
+    "desc": "Meituan's AI workbench for local-life merchants",
+    "descZh": "美团面向本地生活商家的AI经营工作台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "妙"
+  },
+  {
     "id": "copilot-cowork",
     "name": "Copilot Cowork",
     "nameZh": "Copilot Cowork 协作智能体",
@@ -1593,6 +2043,106 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "M"
+  },
+  {
+    "id": "artflo",
+    "name": "Artflo",
+    "nameZh": "Artflo",
+    "vendor": "美图",
+    "vendorZh": "美图",
+    "logo": "/assets/logos/meitu.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "A current art-generation option from a vendor with real shipping experience.",
+    "solvesZh": "来自有实际交付经验厂商的当下绘画生成选择。",
+    "bestFor": "You already use Meitu tools and want the new art line too.",
+    "bestForZh": "已经在用美图系工具、也想试它的绘画新线时。",
+    "released": "2026-06-01",
+    "datePrecision": "month",
+    "homepage": "https://www.meitu.com/",
+    "desc": "New Meitu art product from the 2026 imaging festival",
+    "descZh": "美图 2026 影像节发布的新绘画产品",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "A"
+  },
+  {
+    "id": "mvland",
+    "name": "MVLAND",
+    "nameZh": "MVLAND",
+    "vendor": "美图",
+    "vendorZh": "美图",
+    "logo": "/assets/logos/meitu.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "audio-voice"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Pairs a track with visuals without a separate editing tool.",
+    "solvesZh": "给一首曲子配画面，不用再开另一个剪辑工具。",
+    "bestFor": "Artists who need a video for a release and work alone.",
+    "bestForZh": "独立音乐人发歌需要配一个视频时。",
+    "released": "2026-06-01",
+    "datePrecision": "month",
+    "homepage": "https://www.meitu.com/",
+    "desc": "New Meitu product for music video creation",
+    "descZh": "美图 2026 影像节发布的新音乐视频产品",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "M"
+  },
+  {
+    "id": "picchi",
+    "name": "Picchi",
+    "nameZh": "Picchi",
+    "vendor": "美图",
+    "vendorZh": "美图",
+    "logo": "/assets/logos/meitu.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "A new option from a vendor that has shipped imaging tools for two decades.",
+    "solvesZh": "一家做了二十年影像工具的厂商给出的新选择。",
+    "bestFor": "You follow Meitu's product line and want the current release rather than the old editor.",
+    "bestForZh": "长期跟美图这条线、想要最新版而不是老编辑器时。",
+    "released": "2026-06-01",
+    "datePrecision": "month",
+    "homepage": "https://www.meitu.com/",
+    "desc": "New Meitu AI product announced at the 2026 imaging festival",
+    "descZh": "美图 2026 影像节新发布的 AI 产品",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "P"
   },
   {
     "id": "vibe",
@@ -1712,6 +2262,39 @@ export const productHub = {
     "glyph": "万"
   },
   {
+    "id": "slack-today",
+    "name": "Slack Today",
+    "nameZh": "Slack Today",
+    "vendor": "Slack",
+    "vendorZh": "Slack",
+    "logo": "/assets/logos/slack.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "in-product",
+    "solves": "The morning scroll is an unpaid job. Today reads the calendar and the connected apps and states what matters, first.",
+    "solvesZh": "早上那一轮翻消息是没报酬的工作。Today 读完日历和已连接的应用，先把要紧的说出来。",
+    "bestFor": "You want one screen before you start, not a scroll to work through.",
+    "bestForZh": "你希望在开工前看一屏，而不是翻一遍。",
+    "released": "2026-05-06",
+    "datePrecision": "day",
+    "homepage": "https://slack.com/features/today",
+    "desc": "Daily briefing in Slack over priorities, calendar, tasks.",
+    "descZh": "Slack 里的每日简报，汇总优先级、日历与待办",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "S"
+  },
+  {
     "id": "gemini-enterprise",
     "name": "Gemini Enterprise Agent Platform",
     "nameZh": "Gemini 企业智能体平台",
@@ -1752,6 +2335,40 @@ export const productHub = {
     "glyph": "G"
   },
   {
+    "id": "netease-youdao",
+    "name": "有道宝库",
+    "nameZh": "有道宝库",
+    "vendor": "网易有道",
+    "vendorZh": "网易有道",
+    "logo": "/assets/logos/netease-youdao.svg",
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Drop in 50 sources and get a cited answer plus a finished deck.",
+    "solvesZh": "丢进 50 份资料，得到带引用的回答和成品演示文稿。",
+    "bestFor": "Literature review, course prep, or a research brief.",
+    "bestForZh": "文献综述、备课或需要一份调研简报时。",
+    "released": "2026-04-07",
+    "datePrecision": "day",
+    "homepage": "https://baoku.youdao.com/",
+    "desc": "Youdao's knowledge base that turns documents into outputs",
+    "descZh": "网易有道的AI知识库，把资料直接变成PPT、播客和脑图",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "有"
+  },
+  {
     "id": "mistral-forge",
     "name": "Mistral Forge",
     "nameZh": "Mistral Forge 模型定制平台",
@@ -1789,6 +2406,74 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "M"
+  },
+  {
+    "id": "workbuddy",
+    "name": "WorkBuddy",
+    "nameZh": "WorkBuddy",
+    "vendor": "腾讯",
+    "vendorZh": "腾讯",
+    "logo": "/assets/logos/tencent.png",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Install once and run OpenClaw skills without any server setup.",
+    "solvesZh": "装完即用，不用自己搭服务器就能跑OpenClaw技能。",
+    "bestFor": "Office workers who want an agent on their own PC.",
+    "bestForZh": "想在自己电脑上装个能干活的智能体的办公人群。",
+    "released": "2026-03-09",
+    "datePrecision": "day",
+    "homepage": "https://www.workbuddy.cn/",
+    "desc": "Tencent's OpenClaw-compatible desktop work agent",
+    "descZh": "腾讯的全场景AI办公工作台，兼容OpenClaw技能",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "W"
+  },
+  {
+    "id": "claw",
+    "name": "小艺Claw",
+    "nameZh": "小艺Claw",
+    "vendor": "华为",
+    "vendorZh": "华为",
+    "logo": "/assets/logos/huawei.ico",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "local-private"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "You get an OpenClaw-style agent with system permissions, no key management.",
+    "solvesZh": "不用管密钥和部署，就有一个带系统权限的OpenClaw式智能体。",
+    "bestFor": "HarmonyOS phone or tablet owners doing office tasks.",
+    "bestForZh": "用鸿蒙手机或平板、需要处理办公事务的人。",
+    "released": "2026-03-01",
+    "datePrecision": "month",
+    "homepage": "https://xiaoyi.huawei.com/",
+    "desc": "HarmonyOS system agent built on the OpenClaw pattern",
+    "descZh": "鸿蒙系统级AI智能体，基于OpenClaw模式深度定制",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "小"
   },
   {
     "id": "huawei-codearts",
@@ -1863,6 +2548,41 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "K"
+  },
+  {
+    "id": "lobsterai",
+    "name": "LobsterAI",
+    "nameZh": "有道龙虾",
+    "vendor": "网易有道",
+    "vendorZh": "网易有道",
+    "logo": "/assets/logos/netease-youdao.svg",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "coding",
+      "agent-building"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Open code, local memory, and IM remote control in one desktop agent.",
+    "solvesZh": "开源代码、本地记忆、IM 远程遥控都在一个桌面智能体里。",
+    "bestFor": "When you want an auditable agent, not a black box.",
+    "bestForZh": "想要一个可审计的智能体，而不是黑盒的人。",
+    "released": "2026-02-11",
+    "datePrecision": "day",
+    "homepage": "https://lobsterai.youdao.com/",
+    "desc": "NetEase Youdao's open-source desktop assistant agent",
+    "descZh": "网易有道的开源桌面级全场景个人助理Agent",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "L"
   },
   {
     "id": "frontier",
@@ -2142,6 +2862,208 @@ export const productHub = {
     "glyph": "C"
   },
   {
+    "id": "slack-code",
+    "name": "Slack Code",
+    "nameZh": "Slack Code",
+    "vendor": "Slack",
+    "vendorZh": "Slack",
+    "logo": "/assets/logos/slack.png",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "office"
+    ],
+    "form": "web",
+    "surface": "in-product",
+    "solves": "A coding agent's work is invisible until review. Here the agent writes in a channel, so review happens where the discussion already is.",
+    "solvesZh": "编程智能体的工作在审阅前是看不见的。这里它在频道里写，审阅就发生在讨论已经在的地方。",
+    "bestFor": "Your team reviews code in Slack and you want the agent in that loop, not in a separate tool.",
+    "bestForZh": "你的团队在 Slack 里审代码，你想让智能体在这个回路里，而不是另开一个工具。",
+    "released": "2026-01-01",
+    "datePrecision": "month",
+    "homepage": "https://slack.com/features/code-channels",
+    "desc": "Coding agents working in Slack channels, reviewed by the team.",
+    "descZh": "在 Slack 频道里协作的编程智能体，团队可审阅",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "S"
+  },
+  {
+    "id": "traework",
+    "name": "TraeWork",
+    "nameZh": "TraeWork",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Trae covers code. Most of the workday is not code. TraeWork is the same team's answer for documents, slides and analysis.",
+    "solvesZh": "Trae 管代码，但一个工作日大部分时间不写代码。TraeWork 是同一团队给文档、幻灯片和分析做的答案。",
+    "bestFor": "You want the Trae team's agent handling documents and research, not the IDE.",
+    "bestForZh": "你想让 Trae 团队的智能体处理文档和调研，而不是在 IDE 里。",
+    "released": "2026-01-01",
+    "datePrecision": "month",
+    "homepage": "https://work.trae.ai/",
+    "desc": "ByteDance's professional AI work assistant.",
+    "descZh": "字节跳动的专业级 AI 工作助手",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "T"
+  },
+  {
+    "id": "zcode",
+    "name": "ZCode",
+    "nameZh": "ZCode",
+    "vendor": "智谱",
+    "vendorZh": "智谱",
+    "logo": "/assets/logos/zhipu.png",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "agent-building"
+    ],
+    "form": "cli",
+    "surface": "standalone",
+    "solves": "Long jobs die when you close the terminal. ZCode keeps a Goal running, and you can trigger it from WeChat, Feishu or Telegram.",
+    "solvesZh": "长任务一关终端就死。ZCode 让 Goal 持续跑，你还能用微信、飞书或 Telegram 远程触发。",
+    "bestFor": "You hand over a multi-step build and want it to keep going while you do something else.",
+    "bestForZh": "你想把一个多步开发任务交出去，自己去做别的事时它还在跑。",
+    "released": "2026-01-01",
+    "datePrecision": "month",
+    "homepage": "https://zcode.z.ai/",
+    "desc": "Ambient multi-agent coding tool built for GLM-5.3.",
+    "descZh": "为 GLM-5.3 打造的多智能体氛围编程工具",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "Z"
+  },
+  {
+    "id": "zoommate",
+    "name": "ZoomMate",
+    "nameZh": "ZoomMate",
+    "vendor": "Zoom",
+    "vendorZh": "Zoom",
+    "logo": "/assets/logos/zoom.png",
+    "region": "intl",
+    "category": "meetings",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "in-product",
+    "solves": "AI Companion summarizes meetings. ZoomMate acts on what happened in them — agents, workflows, search across the conversation record.",
+    "solvesZh": "AI Companion 只总结会议。ZoomMate 会对会议里发生的事采取行动——智能体、工作流、跨对话记录的搜索。",
+    "bestFor": "You live in Zoom and want the assistant to act after the call, not just report on it.",
+    "bestForZh": "你整天在 Zoom 里，想让助手在会后采取行动，而不只是汇报。",
+    "released": "2026-01-01",
+    "datePrecision": "month",
+    "homepage": "https://zoom.com/en/ai-assistant/",
+    "desc": "Zoom's AI teammate for agents, workflows and search.",
+    "descZh": "Zoom 的 AI 同事，涵盖智能体、工作流与搜索",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "Z"
+  },
+  {
+    "id": "mistral-vibe-cli",
+    "name": "Mistral Vibe CLI",
+    "nameZh": "Mistral Vibe CLI",
+    "vendor": "Mistral AI",
+    "vendorZh": "Mistral AI",
+    "logo": "/assets/logos/mistral-ai.svg",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "cli",
+    "surface": "standalone",
+    "solves": "Vibe the product needs a subscription and a browser. Vibe CLI is Apache 2.0, runs in your terminal, and works on your own codebase with your own model endpoint.",
+    "solvesZh": "Vive 这个产品要订阅、要浏览器。Vibe CLI 是 Apache 2.0，跑在终端里，用你自己的模型端点跑你自己的代码库。",
+    "bestFor": "You want an open-source coding agent in the terminal that you can point at your own models.",
+    "bestForZh": "你要一个终端里的开源编程智能体，并且能指向自己的模型。",
+    "released": "2025-12-09",
+    "datePrecision": "day",
+    "homepage": "https://github.com/mistralai/mistral-vibe-cli",
+    "desc": "Open-source terminal coding agent powered by Devstral 2.",
+    "descZh": "由 Devstral 2 驱动的开源终端编程智能体",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "M"
+  },
+  {
+    "id": "seko",
+    "name": "Seko",
+    "nameZh": "商汤 Seko",
+    "vendor": "商汤",
+    "vendorZh": "商汤",
+    "logo": "/assets/logos/sensetime.svg",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Characters and props stay consistent across up to 100 episodes.",
+    "solvesZh": "最多 100 集里角色和道具保持一致，不用一集集重做。",
+    "bestFor": "Short-drama and motion-comic studios producing series.",
+    "bestForZh": "要连续出剧的短剧和动态漫工作室。",
+    "released": "2025-12-01",
+    "datePrecision": "month",
+    "homepage": "https://www.sensetime.com/",
+    "desc": "SenseTime's multi-episode short-drama generation agent",
+    "descZh": "商汤的多集短剧生成智能体",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "S"
+  },
+  {
     "id": "google-antigravity",
     "name": "Google Antigravity",
     "nameZh": "Google Antigravity",
@@ -2182,6 +3104,40 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "G"
+  },
+  {
+    "id": "ant",
+    "name": "灵光",
+    "nameZh": "灵光",
+    "vendor": "蚂蚁集团",
+    "vendorZh": "蚂蚁集团",
+    "logo": null,
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "You get a working calculator or planner in 30 seconds, no coding.",
+    "solvesZh": "三十秒得到一个能用的计算器或计划器，不用写代码。",
+    "bestFor": "When you need a one-off tool more than a conversation.",
+    "bestForZh": "需要一个一次性的小工具，而不是一次聊天。",
+    "released": "2025-11-18",
+    "datePrecision": "day",
+    "homepage": "https://www.lingguang.com/",
+    "desc": "Ant's multimodal assistant that builds mini-apps from a sentence",
+    "descZh": "蚂蚁的全模态AI助手，一句话生成可交互小应用",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "灵"
   },
   {
     "id": "qianwen",
@@ -2572,6 +3528,41 @@ export const productHub = {
     "glyph": "G"
   },
   {
+    "id": "notion-agent",
+    "name": "Notion Agent",
+    "nameZh": "Notion Agent",
+    "vendor": "Notion",
+    "vendorZh": "Notion",
+    "logo": "/assets/logos/notion.png",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building",
+      "research"
+    ],
+    "form": "web",
+    "surface": "in-product",
+    "solves": "Notion AI writes inside a page. Notion Agent takes actions across your workspace and the apps you connected, under your own permissions.",
+    "solvesZh": "Notion AI 在页面里写。Notion Agent 则以你自己的权限，跨工作区和已连接的应用采取行动。",
+    "bestFor": "You want an agent that does the multi-step work, not one that drafts the paragraph.",
+    "bestForZh": "你要一个真正做完多步工作的智能体，而不是帮你起草那一段的。",
+    "released": "2025-09-01",
+    "datePrecision": "month",
+    "homepage": "https://www.notion.com/product/agents",
+    "desc": "On-demand agent acting across Notion and connected tools.",
+    "descZh": "按需响应的智能体，可跨 Notion 与已连接工具行动",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "N"
+  },
+  {
     "id": "qoder",
     "name": "Qoder",
     "nameZh": "Qoder",
@@ -2646,6 +3637,40 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "企"
+  },
+  {
+    "id": "typeless",
+    "name": "Typeless",
+    "nameZh": "Typeless",
+    "vendor": "Typeless",
+    "vendorZh": "Typeless",
+    "logo": "/assets/logos/typeless.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office",
+      "coding"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Turns rambling speech into text that reads as if you typed it, inside any app.",
+    "solvesZh": "把絮叨的口语变成读起来像你亲手写的文字，任何应用里都能用。",
+    "bestFor": "Reaching for it when your typing speed, not your thinking speed, is the bottleneck.",
+    "bestForZh": "瓶颈在打字速度而不是思考速度时。",
+    "released": "2025-08-14",
+    "datePrecision": "day",
+    "homepage": "https://www.typeless.com",
+    "desc": "Dictates into any app and rewrites speech into clean written text.",
+    "descZh": "在任意应用里口述，自动改写成干净书面文字。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "T"
   },
   {
     "id": "chatgpt-study-mode",
@@ -2723,6 +3748,39 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "G"
+  },
+  {
+    "id": "lovart",
+    "name": "Lovart",
+    "nameZh": "Lovart",
+    "vendor": "LiblibAI",
+    "vendorZh": "LiblibAI",
+    "logo": "/assets/logos/liblibai.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Removes the gap between a rough idea and a finished design file, so you stop assembling brand assets by hand.",
+    "solvesZh": "把想法直接变成可交付的设计文件，不用再手工拼凑品牌物料。",
+    "bestFor": "Reaching for it when you need a full brand or marketing set in minutes, not just one image.",
+    "bestForZh": "需要在几分钟内拿到整套品牌或营销物料，而不只是单张图的时候。",
+    "released": "2025-07-23",
+    "datePrecision": "day",
+    "homepage": "https://www.lovart.ai",
+    "desc": "Conversational design agent that delivers complete brand and design work.",
+    "descZh": "对话式设计 Agent，直接产出完整品牌与设计交付物。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "L"
   },
   {
     "id": "codebuddy",
@@ -2921,6 +3979,107 @@ export const productHub = {
     "glyph": "P"
   },
   {
+    "id": "figma-make",
+    "name": "Figma Make",
+    "nameZh": "Figma Make",
+    "vendor": "Figma",
+    "vendorZh": "Figma",
+    "logo": "/assets/logos/figma.ico",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "coding"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "A Figma file cannot be shipped. Make turns the design — or a sentence — into working code you can run and edit, keeping the design context attached.",
+    "solvesZh": "Figma 文件交付不了。Make 把设计稿——或者一句话——变成能跑能改的真代码，同时保留设计上下文。",
+    "bestFor": "You are a designer who needs a working prototype, or a dev who wants to start from a real design file.",
+    "bestForZh": "你是设计师，需要一个能跑的原型；或者你是开发，想从真实设计稿起步。",
+    "released": "2025-07-01",
+    "datePrecision": "month",
+    "homepage": "https://www.figma.com/make/",
+    "desc": "Prompt or design file into a code-backed prototype.",
+    "descZh": "从提示词或设计稿生成有代码支撑的原型",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "F"
+  },
+  {
+    "id": "roboneo",
+    "name": "RoboNeo",
+    "nameZh": "RoboNeo",
+    "vendor": "美图",
+    "vendorZh": "美图",
+    "logo": "/assets/logos/meitu.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Turns a plain-language brief into finished visuals instead of a stack of retouch steps.",
+    "solvesZh": "把一句需求直接做成成品图，而不是一步步手动修。",
+    "bestFor": "A small creative team that needs finished assets on a deadline without a designer.",
+    "bestForZh": "没有设计师、却要在期限内出图的小团队。",
+    "released": "2025-07-01",
+    "datePrecision": "month",
+    "homepage": "https://www.meitu.com/",
+    "desc": "Meitu's AI agent for image and video work by instruction",
+    "descZh": "美图的影像 AI 智能体，用指令完成修图与视频",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "R"
+  },
+  {
+    "id": "aq",
+    "name": "AQ",
+    "nameZh": "蚂蚁 AQ",
+    "vendor": "蚂蚁集团",
+    "vendorZh": "蚂蚁集团",
+    "logo": null,
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "It asks follow-up questions and reads your reports before you reach a hospital.",
+    "solvesZh": "在去医院之前，它先追问症状、读懂你的报告。",
+    "bestFor": "Everyday health questions and reading lab reports.",
+    "bestForZh": "日常健康疑问、化验单看不懂的时候。",
+    "released": "2025-06-26",
+    "datePrecision": "day",
+    "homepage": "https://www.antgroup.com/news-media/press-releases/1750919400000",
+    "desc": "Ant's AI health assistant with doctor agents",
+    "descZh": "蚂蚁的AI健康管家，接入名医AI分身与5000家医院",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "A"
+  },
+  {
     "id": "gemini-cli",
     "name": "Gemini CLI",
     "nameZh": "Gemini CLI",
@@ -3084,6 +4243,74 @@ export const productHub = {
     "glyph": "P"
   },
   {
+    "id": "vivago-ai",
+    "name": "vivago.ai",
+    "nameZh": "vivago.ai",
+    "vendor": "vivago",
+    "vendorZh": "vivago",
+    "logo": "/assets/logos/vivago.ico",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Keeps a short film's look consistent across shots without manual continuity work.",
+    "solvesZh": "让短片各镜头风格一致，不用手动做连续性。",
+    "bestFor": "A short film where visual consistency across shots matters.",
+    "bestForZh": "重视镜头间视觉一致性的短片。",
+    "released": "2025-06-01",
+    "datePrecision": "month",
+    "homepage": "https://vivago.ai/",
+    "desc": "AI director that carries a script to finished film",
+    "descZh": "从剧本一路做到成片的 AI 导演",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "V"
+  },
+  {
+    "id": "agentarts",
+    "name": "智果 AgentArts",
+    "nameZh": "智果 AgentArts",
+    "vendor": "华为",
+    "vendorZh": "华为",
+    "logo": "/assets/logos/huawei.ico",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "observability"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "An agent demo dies in production because nobody can see what it did. AgentArts pairs multi-agent runtime with end-to-end observability and evaluation, which is the part enterprises actually buy.",
+    "solvesZh": "Agent 演示到了生产就死，因为没人看得见它干了什么。AgentArts 把多智能体运行时和端到端可观测可评估放在一起，这才是企业真正买的部分。",
+    "bestFor": "You are shipping agents to production and need runtime plus observability together.",
+    "bestForZh": "你要把智能体送进生产，需要运行时和可观测性一起要。",
+    "released": "2025-06-01",
+    "datePrecision": "month",
+    "homepage": "https://www.huaweicloud.com/product/agentarts.html",
+    "desc": "Huawei Cloud's enterprise agent-building platform.",
+    "descZh": "华为云的企业级智能体构建平台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "智"
+  },
+  {
     "id": "lingma-ai-ide",
     "name": "通义灵码 AI IDE",
     "nameZh": "通义灵码 AI IDE",
@@ -3123,6 +4350,40 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "通"
+  },
+  {
+    "id": "jotform-ai-agents",
+    "name": "Jotform AI Agents",
+    "nameZh": "Jotform AI Agents",
+    "vendor": "Jotform",
+    "vendorZh": "Jotform",
+    "logo": "/assets/logos/jotform.png",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Deploys a support agent that already knows your forms and order fields, so it stops asking users to repeat themselves.",
+    "solvesZh": "上线即懂你的表单和订单字段的客服 Agent，不用让用户重复说明。",
+    "bestFor": "Reaching for it when support volume is real but engineering help is not available.",
+    "bestForZh": "客服量真实存在但没有工程资源时。",
+    "released": "2025-05-27",
+    "datePrecision": "day",
+    "homepage": "https://www.jotform.com/ai/agents/",
+    "desc": "Customer-support agents trained on your forms and data, no code.",
+    "descZh": "用你的表单和数据训练客服 Agent，无需写代码。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "J"
   },
   {
     "id": "tiangong-agent",
@@ -3315,6 +4576,73 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "O"
+  },
+  {
+    "id": "google-stitch",
+    "name": "Google Stitch",
+    "nameZh": "Google Stitch",
+    "vendor": "Google",
+    "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "coding"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Gets you from a rough layout idea to several real UI variants without opening a design tool.",
+    "solvesZh": "不用打开设计软件，就能从模糊的布局想法拿到几版真实界面。",
+    "bestFor": "Reaching for it when you need to explore interface directions fast before committing to one.",
+    "bestForZh": "想定稿前快速比较几版界面方向时。",
+    "released": "2025-05-01",
+    "datePrecision": "month",
+    "homepage": "https://stitch.withgoogle.com",
+    "desc": "Google Labs design canvas that turns prompts or sketches into app UIs.",
+    "descZh": "Google Labs 设计画布，把提示词变成应用界面。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "G"
+  },
+  {
+    "id": "stitch",
+    "name": "Stitch",
+    "nameZh": "Stitch",
+    "vendor": "Google",
+    "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Getting a first-pass interface means describing it to a designer. Stitch turns the sentence into editable UI you can refine.",
+    "solvesZh": "要拿到第一版界面，常规做法是写需求给设计师。Stitch 把那句话变成可继续改的 UI。",
+    "bestFor": "You need a rough interface fast and would rather start editing than start briefing.",
+    "bestForZh": "你需要很快拿到一版界面，想直接在上面改，而不是先写需求文档。",
+    "released": "2025-05-01",
+    "datePrecision": "month",
+    "homepage": "https://stitch.withgoogle.com/",
+    "desc": "Google's natural language to UI design tool.",
+    "descZh": "Google 的自然语言转 UI 设计工具",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "S"
   },
   {
     "id": "llama-api",
@@ -3586,6 +4914,40 @@ export const productHub = {
     "glyph": "C"
   },
   {
+    "id": "nvidia-dynamo",
+    "name": "NVIDIA Dynamo",
+    "nameZh": "NVIDIA Dynamo",
+    "vendor": "NVIDIA",
+    "vendorZh": "NVIDIA",
+    "logo": "/assets/logos/nvidia.ico",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "observability",
+      "model-api"
+    ],
+    "form": "self-hosted",
+    "surface": "standalone",
+    "solves": "A single GPU is fine until it is not. Dynamo splits prefill and decode across nodes, routes around redundant work, and caches KV to cheaper storage.",
+    "solvesZh": "单卡够用的时候没问题，不够用时就是了。Dynamo 把 prefill 和 decode 拆到不同节点，绕开重复计算，并把 KV 缓存到更便宜的存储。",
+    "bestFor": "You are serving LLMs across a multi-GPU cluster and prefill/decode is your bottleneck.",
+    "bestForZh": "你在多卡集群上服务大模型，瓶颈卡在 prefill/decode 上。",
+    "released": "2025-04-01",
+    "datePrecision": "month",
+    "homepage": "https://www.nvidia.com/en-us/ai/dynamo/",
+    "desc": "Open-source distributed inference serving for multi-node GPU.",
+    "descZh": "面向多节点 GPU 的开源分布式推理服务框架",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "N"
+  },
+  {
     "id": "nvidia-nemo",
     "name": "NVIDIA NeMo",
     "nameZh": "NVIDIA NeMo 智能体平台",
@@ -3624,6 +4986,73 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "N"
+  },
+  {
+    "id": "autoglm",
+    "name": "AutoGLM",
+    "nameZh": "AutoGLM 沉思",
+    "vendor": "智谱",
+    "vendorZh": "智谱",
+    "logo": "/assets/logos/zhipu.png",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "It browses dozens of pages and files a cited report for free.",
+    "solvesZh": "它自己翻几十个网页，出一份带引用的报告，而且免费。",
+    "bestFor": "Open-ended research where you need the whole answer.",
+    "bestForZh": "开放式调研，需要一份完整答案而不是一句话。",
+    "released": "2025-03-31",
+    "datePrecision": "day",
+    "homepage": "https://autoglm.zhipuai.cn/",
+    "desc": "Zhipu's free deep-research and device-operation agent",
+    "descZh": "智谱免费的深度研究与操作能力一体Agent",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "A"
+  },
+  {
+    "id": "anara",
+    "name": "Anara",
+    "nameZh": "Anara",
+    "vendor": "Anara",
+    "vendorZh": "Anara",
+    "logo": "/assets/logos/anara.png",
+    "region": "intl",
+    "category": "search",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Lets you interrogate a specific set of papers and get sourced answers, instead of searching for them again each time.",
+    "solvesZh": "针对一批指定论文提问并得到带出处的答案，不用每次重新检索。",
+    "bestFor": "Reaching for it when you have a specific reading list to work through.",
+    "bestForZh": "手上有一份要啃完的指定文献清单时。",
+    "released": "2025-03-23",
+    "datePrecision": "day",
+    "homepage": "https://anara.com",
+    "desc": "Research assistant that reasons over your own paper library.",
+    "descZh": "基于你自己的论文库做推理的研究助手。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "A"
   },
   {
     "id": "manus",
@@ -3939,6 +5368,73 @@ export const productHub = {
     "glyph": "N"
   },
   {
+    "id": "360-ai-2",
+    "name": "360 AI办公",
+    "nameZh": "360 AI办公",
+    "vendor": "360",
+    "vendorZh": "360",
+    "logo": "/assets/logos/360.ico",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "WPS AI and Copilot both cover this ground. 360's is free-tiered and pre-wired to its own model line, so it works without a subscription decision.",
+    "solvesZh": "WPS AI 和 Copilot 都做这块。360 这个有免费档，而且接自家模型线，不用先做订阅决定。",
+    "bestFor": "You want office AI features without paying for a tier first.",
+    "bestForZh": "你想先用上办公 AI 功能，不想先付费定档。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://bangong.360.cn/",
+    "desc": "360's office AI suite: writing, PPT, spreadsheets.",
+    "descZh": "360 的办公 AI 套件：写作、PPT、表格",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "3"
+  },
+  {
+    "id": "charm-crush",
+    "name": "Charm Crush",
+    "nameZh": "Charm Crush",
+    "vendor": "Charm",
+    "vendorZh": "Charm",
+    "logo": "/assets/logos/charm.png",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "cli",
+    "surface": "standalone",
+    "solves": "Keeps a fast agent loop entirely in the terminal, with no editor to configure.",
+    "solvesZh": "整个循环都在终端里，不用配编辑器。",
+    "bestFor": "You live in the shell and want an agent that stays there.",
+    "bestForZh": "平时就待在 shell 里、想让智能体也待在终端时。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://charm.land/",
+    "desc": "Open-source terminal coding agent with its own TUI",
+    "descZh": "带自研 TUI 的开源终端编程智能体",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "C"
+  },
+  {
     "id": "chatgpt-tasks",
     "name": "ChatGPT Tasks",
     "nameZh": "ChatGPT 定时任务",
@@ -4013,6 +5509,409 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "G"
+  },
+  {
+    "id": "kilo-code",
+    "name": "Kilo Code",
+    "nameZh": "Kilo Code",
+    "vendor": "Kilo Code",
+    "vendorZh": "Kilo Code",
+    "logo": "/assets/logos/kilo-code.ico",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "ide",
+    "surface": "standalone",
+    "solves": "Gives you an agent that edits a real repo without locking you into a paid cloud plan.",
+    "solvesZh": "给你一个能改真实仓库的智能体，不绑定付费云套餐。",
+    "bestFor": "You want an agent you can run yourself, on your own key and budget.",
+    "bestForZh": "想用自己的 key 和预算本地跑智能体时。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://kilocode.ai/",
+    "desc": "Open-source coding agent for VS Code and its CLI",
+    "descZh": "面向 VS Code 及其 CLI 的开源编程智能体",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "K"
+  },
+  {
+    "id": "mistral-ai-cloud",
+    "name": "Mistral AI Cloud",
+    "nameZh": "Mistral AI Cloud",
+    "vendor": "Mistral AI",
+    "vendorZh": "Mistral AI",
+    "logo": "/assets/logos/mistral-ai.svg",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "model-api",
+      "local-private"
+    ],
+    "form": "api",
+    "surface": "standalone",
+    "solves": "La Plateforme is the API. AI Cloud is the compute underneath it — sovereign and self-hosted deployments for teams that cannot send data out.",
+    "solvesZh": "La Plateforme 是 API。AI Cloud 是它底下的算力——为不能把数据发出去的主权与自托管部署准备的。",
+    "bestFor": "You need Mistral models on infrastructure you control, for sovereignty reasons.",
+    "bestForZh": "出于主权原因，你需要在自己掌控的基础设施上跑 Mistral 模型。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://mistral.ai/products/ai-cloud/",
+    "desc": "Frontier-scale infrastructure for Mistral training and inference.",
+    "descZh": "面向 Mistral 训练与推理的前沿规模基础设施",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "M"
+  },
+  {
+    "id": "nvidia-cosmos",
+    "name": "NVIDIA Cosmos",
+    "nameZh": "NVIDIA Cosmos",
+    "vendor": "NVIDIA",
+    "vendorZh": "NVIDIA",
+    "logo": "/assets/logos/nvidia.ico",
+    "region": "intl",
+    "category": "developer-sdk",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "self-hosted",
+    "surface": "standalone",
+    "solves": "A robot or vehicle needs to predict the physical world, not just generate text. Cosmos gives you world models to train and evaluate against.",
+    "solvesZh": "机器人或车需要预测的是物理世界，不是生成文本。Cosmos 给你可以拿来训练和评测的世界模型。",
+    "bestFor": "You build robots, vehicles or anything that has to reason about physical space.",
+    "bestForZh": "你做机器人、车辆，或者任何需要推理物理空间的东西。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.nvidia.com/en-us/ai/cosmos/",
+    "desc": "World foundation models for physical AI workflows.",
+    "descZh": "面向物理 AI 工作流的世界基础模型",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "N"
+  },
+  {
+    "id": "opencode",
+    "name": "OpenCode",
+    "nameZh": "OpenCode",
+    "vendor": "OpenCode (SST)",
+    "vendorZh": "OpenCode (SST)",
+    "logo": "/assets/logos/sst.png",
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "cli",
+    "surface": "standalone",
+    "solves": "Lets you point the same agent at whichever model provider you hold a key for.",
+    "solvesZh": "同一个智能体可以接到你手里有 key 的任意模型厂商。",
+    "bestFor": "You switch model providers and do not want to relearn the agent each time.",
+    "bestForZh": "经常换模型厂商、不想每次重学一个智能体时。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://opencode.ai/",
+    "desc": "Open-source terminal coding agent, provider-agnostic",
+    "descZh": "不绑定模型厂商的开源终端编程智能体",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "O"
+  },
+  {
+    "id": "rythmix",
+    "name": "Rythmix",
+    "nameZh": "Rythmix",
+    "vendor": "Rythmix",
+    "vendorZh": "Rythmix",
+    "logo": "/assets/logos/rythmix.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "audio-voice"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Produces a usable backing track without a composer or a session musician.",
+    "solvesZh": "没有作曲和乐手时，也能拿到能用的伴奏。",
+    "bestFor": "A video that needs original background music cleared for use.",
+    "bestForZh": "视频需要一首版权干净的原创配乐时。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://rythmix.ai/",
+    "desc": "AI music generator app",
+    "descZh": "AI 音乐生成应用",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "R"
+  },
+  {
+    "id": "skywork-ai-workspace-agents",
+    "name": "Skywork AI Workspace Agents",
+    "nameZh": "Skywork AI Workspace Agents",
+    "vendor": "昆仑万维",
+    "vendorZh": "昆仑万维",
+    "logo": "/assets/logos/kunlun.ico",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building",
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Tiangong is a model and a search engine. This is the deliverable layer — agents that output the actual document, deck or page.",
+    "solvesZh": "天工是模型和搜索。这个是交付层——智能体直接产出文档、幻灯片或网页。",
+    "bestFor": "You want finished office artifacts from an agent, on Kunlun's stack.",
+    "bestForZh": "你希望智能体直接产出办公成品，用昆仑的技术栈。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://skywork.ai/",
+    "desc": "Workspace agents for slides, docs, sheets, images, video.",
+    "descZh": "面向幻灯片、文档、表格、图像、视频的工作区智能体",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "S"
+  },
+  {
+    "id": "codearts",
+    "name": "华为云码道 CodeArts",
+    "nameZh": "华为云码道 CodeArts",
+    "vendor": "华为",
+    "vendorZh": "华为",
+    "logo": "/assets/logos/huawei.ico",
+    "region": "cn",
+    "category": "coding-agent",
+    "useCases": [
+      "coding",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "The gap between an AI IDE and enterprise delivery is code comprehension, memory and governance. CodeArts covers the full cycle from spec to release, with a CLI for the terminal.",
+    "solvesZh": "AI IDE 和企业交付之间的差距在于代码理解、记忆与管控。CodeArts 覆盖从规格到发布的全周期，还有终端 CLI。",
+    "bestFor": "Your organisation needs AI coding with code-base memory, quality gates and audit behind it.",
+    "bestForZh": "你的组织需要带代码库记忆、质量门禁和审计的 AI 编程。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://codearts.huaweicloud.com/",
+    "desc": "Huawei Cloud's multi-agent coding platform for enterprises.",
+    "descZh": "华为云面向企业的多智能体编程平台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "华"
+  },
+  {
+    "id": "bytedance-4",
+    "name": "妙搭",
+    "nameZh": "妙搭",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Building a small internal app usually means picking a host, wiring auth and deploying. Miaoda wraps that as one build-and-host surface.",
+    "solvesZh": "做一个小内部应用通常要选托管、配鉴权、再部署。妙搭把这几步合成一个搭建加托管的入口。",
+    "bestFor": "You need a working internal app fast, hosted, without a backend team.",
+    "bestForZh": "你要快速上线一个能用的内部应用，并托管好，不带后端团队。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://miaoda.feishu.cn/",
+    "desc": "Lark's platform for building and hosting full-stack apps.",
+    "descZh": "飞书用于搭建与托管全栈应用的平台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "妙"
+  },
+  {
+    "id": "sensetime-3",
+    "name": "小浣熊办公",
+    "nameZh": "小浣熊办公",
+    "vendor": "商汤",
+    "vendorZh": "商汤",
+    "logo": "/assets/logos/sensetime.svg",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "The office agent problem is not writing, it is the deliverable. This one ends at a finished deck and a chart, not a paragraph.",
+    "solvesZh": "办公智能体的难点不在写，在交付。这个直接产出成稿幻灯片和图表，不是一段话。",
+    "bestFor": "You need a finished deck or analysis, not a draft to finish by hand.",
+    "bestForZh": "你需要成稿的幻灯片或分析，而不是还要自己收尾的草稿。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://xiaohuanxiong.com/",
+    "desc": "SenseTime's AI office agent for slides, data and infographics.",
+    "descZh": "商汤的 AI 办公智能体，做幻灯片、数据与信息图",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "小"
+  },
+  {
+    "id": "zhipu-input",
+    "name": "智谱AI输入法",
+    "nameZh": "智谱AI输入法",
+    "vendor": "智谱",
+    "vendorZh": "智谱",
+    "logo": "/assets/logos/zhipu.png",
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "hardware",
+    "surface": "standalone",
+    "solves": "Mobile typing is where most writing actually happens, and that is exactly where chat assistants are not. An IME reaches you where you already type.",
+    "solvesZh": "手机上才是真正在写字的地方，而聊天助手恰恰不在那儿。输入法能到你已经在打字的地方。",
+    "bestFor": "You draft and edit text mostly on a phone and want AI help at the keyboard.",
+    "bestForZh": "你主要在手机上起草和修改文字，希望 AI 在键盘边帮上忙。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://autoglm.zhipuai.cn/autotyper/",
+    "desc": "Zhipu's AI keyboard for writing on mobile.",
+    "descZh": "智谱的 AI 输入法，面向移动端写作",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "智"
+  },
+  {
+    "id": "bytedance-3",
+    "name": "猫箱",
+    "nameZh": "猫箱",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "General assistants flatten personality into helpfulness. This one is built around characters you write and inhabit.",
+    "solvesZh": "通用助手会把人格压平成「有用」。这个产品是围绕你自己写、自己代入的角色建的。",
+    "bestFor": "You want character roleplay rather than task completion.",
+    "bestForZh": "你想要的是角色扮演，而不是把任务做完。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.maoxiangai.com/",
+    "desc": "ByteDance's AI character chat and roleplay app.",
+    "descZh": "字节跳动的 AI 角色聊天与角色扮演应用",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "猫"
+  },
+  {
+    "id": "bytedance-2",
+    "name": "豆包电脑版",
+    "nameZh": "豆包电脑版",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "office",
+      "agent-building"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "A phone-only assistant cannot see the file you have open. The desktop build reads the window in front of you.",
+    "solvesZh": "只在手机上的助手看不见你正打开的文件。电脑版读得到你眼前的窗口。",
+    "bestFor": "You want Doubao to work against the files and windows on your computer.",
+    "bestForZh": "你想让豆包针对你电脑上的文件和窗口干活。",
+    "released": "2025-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.doubao.com/download/desktop",
+    "desc": "Desktop build of ByteDance's Doubao assistant.",
+    "descZh": "字节跳动豆包助手的电脑版",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "豆"
   },
   {
     "id": "deepseek",
@@ -4321,6 +6220,74 @@ export const productHub = {
     "glyph": "X"
   },
   {
+    "id": "browser-use",
+    "name": "Browser Use",
+    "nameZh": "Browser Use",
+    "vendor": "Browser Use",
+    "vendorZh": "Browser Use",
+    "logo": "/assets/logos/browser-use.png",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "research"
+    ],
+    "form": "self-hosted",
+    "surface": "standalone",
+    "solves": "Lets your agent operate websites through the DOM, so it can do the clicking and form-filling you would rather not.",
+    "solvesZh": "让 Agent 通过 DOM 操作网站，把点击和填表这类活交给它。",
+    "bestFor": "Reaching for it when your agent has to complete tasks on sites with no API.",
+    "bestForZh": "Agent 要在那些没有 API 的网站上干活时。",
+    "released": "2024-11-01",
+    "datePrecision": "month",
+    "homepage": "https://browser-use.com",
+    "desc": "Open-source library that lets agents drive a real web browser.",
+    "descZh": "开源库，让 Agent 直接驱动真实浏览器。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "B"
+  },
+  {
+    "id": "ima",
+    "name": "ima",
+    "nameZh": "腾讯 ima",
+    "vendor": "腾讯",
+    "vendorZh": "腾讯",
+    "logo": "/assets/logos/tencent.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Answers cite the exact passage in your own files, not just the web.",
+    "solvesZh": "回答能定位到你自己的文件原文，而不只是给个网页链接。",
+    "bestFor": "When you keep research material in scattered documents.",
+    "bestForZh": "资料散落在几十个文档里需要反复查证时。",
+    "released": "2024-11-01",
+    "datePrecision": "month",
+    "homepage": "https://ima.qq.com/",
+    "desc": "Tencent's knowledge-base-first AI workbench",
+    "descZh": "腾讯以知识库为核心的AI智能工作台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "I"
+  },
+  {
     "id": "claude-desktop",
     "name": "Claude Desktop",
     "nameZh": "Claude Desktop",
@@ -4546,6 +6513,40 @@ export const productHub = {
       "status": "candidate"
     },
     "lastVerifiedAt": "2026-10-04",
+    "glyph": "B"
+  },
+  {
+    "id": "base44",
+    "name": "Base44",
+    "nameZh": "Base44",
+    "vendor": "Wix",
+    "vendorZh": "Wix",
+    "logo": "/assets/logos/wix.png",
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "coding",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Produces a working full-stack app with a database from a description, with no scaffold or setup step.",
+    "solvesZh": "一段描述就能产出带数据库的可运行全栈应用，无需脚手架和配置。",
+    "bestFor": "Reaching for it when you need a working internal tool, not a scalable product.",
+    "bestForZh": "需要一个能用的内部工具而不是可扩展产品时。",
+    "released": "2024-10-01",
+    "datePrecision": "month",
+    "homepage": "https://base44.com",
+    "desc": "Chat-driven builder for full-stack apps with its own database.",
+    "descZh": "对话式全栈应用构建器，自带数据库。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
     "glyph": "B"
   },
   {
@@ -4888,6 +6889,40 @@ export const productHub = {
     "glyph": "P"
   },
   {
+    "id": "nvidia-ai-enterprise",
+    "name": "NVIDIA AI Enterprise",
+    "nameZh": "NVIDIA AI Enterprise",
+    "vendor": "NVIDIA",
+    "vendorZh": "NVIDIA",
+    "logo": "/assets/logos/nvidia.ico",
+    "region": "intl",
+    "category": "enterprise-api",
+    "useCases": [
+      "model-api",
+      "observability"
+    ],
+    "form": "self-hosted",
+    "surface": "standalone",
+    "solves": "NIM and NeMo are components. This is the supported, licensed whole that runs them in your own data center with the compliance to match.",
+    "solvesZh": "NIM 和 NeMo 只是零件。这是在你自己数据中心里跑它们的受支持、带许可的整体，配得上相应的合规。",
+    "bestFor": "You need self-hosted NVIDIA inference with vendor support and licensing.",
+    "bestForZh": "你需要自托管的 NVIDIA 推理，还带厂商支持和许可。",
+    "released": "2024-08-01",
+    "datePrecision": "month",
+    "homepage": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise-suite/",
+    "desc": "Enterprise AI software suite for data-center deployment.",
+    "descZh": "面向数据中心部署的企业级 AI 软件套件",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "N"
+  },
+  {
     "id": "jingxi-agents",
     "name": "言犀智能体平台",
     "nameZh": "言犀智能体平台",
@@ -4963,6 +6998,39 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "C"
+  },
+  {
+    "id": "zhihu",
+    "name": "知乎直答",
+    "nameZh": "知乎直答",
+    "vendor": "知乎",
+    "vendorZh": "知乎",
+    "logo": "/assets/logos/zhihu.png",
+    "region": "cn",
+    "category": "search",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Each claim links to the named Zhihu author who wrote it.",
+    "solvesZh": "每个论断都能溯源到写下它的知乎答主本人。",
+    "bestFor": "Chinese questions where you want a named human source.",
+    "bestForZh": "中文提问、且希望来源是具体真人的场景。",
+    "released": "2024-06-29",
+    "datePrecision": "day",
+    "homepage": "https://zhida.zhihu.com/",
+    "desc": "Zhihu's AI search over its own answer archive",
+    "descZh": "知乎基于社区真实问答数据的AI搜索引擎",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "知"
   },
   {
     "id": "marscode",
@@ -5303,6 +7371,73 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "G"
+  },
+  {
+    "id": "laminar",
+    "name": "Laminar",
+    "nameZh": "Laminar",
+    "vendor": "Laminar",
+    "vendorZh": "Laminar",
+    "logo": "/assets/logos/laminar.ico",
+    "region": "intl",
+    "category": "eval-observability",
+    "useCases": [
+      "observability",
+      "agent-building"
+    ],
+    "form": "self-hosted",
+    "surface": "standalone",
+    "solves": "Shows you what the agent actually saw on screen when a run went wrong, not just the final log line.",
+    "solvesZh": "Agent 出错时能看到它当时在屏幕上看到了什么，而不只是最后一行日志。",
+    "bestFor": "Reaching for it when you are debugging browser or computer-use agents specifically.",
+    "bestForZh": "专门调试浏览器类或 computer-use 类 Agent 时。",
+    "released": "2024-06-01",
+    "datePrecision": "month",
+    "homepage": "https://laminar.sh",
+    "desc": "Open-source observability with browser recordings synced to agent traces.",
+    "descZh": "开源可观测平台，把浏览器录像与 Agent 轨迹对齐。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "L"
+  },
+  {
+    "id": "paradot",
+    "name": "Paradot",
+    "nameZh": "Paradot",
+    "vendor": "Paradot",
+    "vendorZh": "Paradot",
+    "logo": "/assets/logos/paradot.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Gives a persona with a fixed personality rather than a chat that resets each time.",
+    "solvesZh": "给你一个性格固定的 AI 角色，而不是每次重置的聊天。",
+    "bestFor": "Rehearsing a conversation where tone and persona must stay consistent.",
+    "bestForZh": "需要语气和人格前后一致的对话练习。",
+    "released": "2024-06-01",
+    "datePrecision": "month",
+    "homepage": "https://paradot.ai/",
+    "desc": "Chat with a virtual being, an AI persona you configure",
+    "descZh": "和自建设定的 AI 虚拟角色聊天",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "P"
   },
   {
     "id": "yuanqi",
@@ -6373,6 +8508,40 @@ export const productHub = {
     "glyph": "C"
   },
   {
+    "id": "confident-ai",
+    "name": "Confident AI",
+    "nameZh": "Confident AI",
+    "vendor": "Confident AI",
+    "vendorZh": "Confident AI",
+    "logo": "/assets/logos/confident-ai.ico",
+    "region": "intl",
+    "category": "eval-observability",
+    "useCases": [
+      "observability",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Lets you define evaluation metrics in code and run them as part of CI, not as a one-off report.",
+    "solvesZh": "评估指标用代码定义并接入 CI，而不是做成一次性报告。",
+    "bestFor": "Reaching for it when you want evaluation to run on every commit.",
+    "bestForZh": "希望评估在每次提交时自动跑时。",
+    "released": "2024-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.confident-ai.com",
+    "desc": "Evaluation, red-teaming and governance built on the DeepEval framework.",
+    "descZh": "基于 DeepEval 框架的评估、红队测试与治理平台。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "C"
+  },
+  {
     "id": "greptile",
     "name": "Greptile",
     "nameZh": "Greptile",
@@ -6412,6 +8581,39 @@ export const productHub = {
     "glyph": "G"
   },
   {
+    "id": "mureka",
+    "name": "Mureka",
+    "nameZh": "Mureka",
+    "vendor": "昆仑万维",
+    "vendorZh": "昆仑万维",
+    "logo": "/assets/logos/kunlun.ico",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "audio-voice"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "A backing track for a video or podcast usually means licensing something. This generates the track, vocals included.",
+    "solvesZh": "给视频或播客配一段背景音乐，通常意味着去授权一首现成的。这个直接生成，含人声。",
+    "bestFor": "You need original music cleared for use, quickly.",
+    "bestForZh": "你需要一段可以放心使用的原创音乐，而且要快。",
+    "released": "2024-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.mureka.ai/",
+    "desc": "AI music generator for melodies, songs and lyrics.",
+    "descZh": "AI 音乐生成器，创作旋律、歌曲与歌词",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "M"
+  },
+  {
     "id": "samsung-galaxy-ai",
     "name": "Samsung Galaxy AI",
     "nameZh": "三星 Galaxy AI",
@@ -6448,6 +8650,139 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "S"
+  },
+  {
+    "id": "sosiee",
+    "name": "Sosiee",
+    "nameZh": "Sosiee",
+    "vendor": "Sosiee",
+    "vendorZh": "Sosiee",
+    "logo": null,
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Makes a consistent avatar for stories and social posts quickly.",
+    "solvesZh": "快速做出一个风格统一的头像，用于故事和社媒。",
+    "bestFor": "Content that needs the same character across many posts.",
+    "bestForZh": "需要同一个角色贯穿多篇内容时。",
+    "released": "2024-01-01",
+    "datePrecision": "month",
+    "homepage": "https://sosiee.ai/",
+    "desc": "AI face swap and avatar generator",
+    "descZh": "AI 换脸与头像生成工具",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "S"
+  },
+  {
+    "id": "zeta",
+    "name": "zeta",
+    "nameZh": "zeta",
+    "vendor": "Zeta",
+    "vendorZh": "Zeta",
+    "logo": "/assets/logos/zeta.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Turns a prompt into a character you can keep returning to over time.",
+    "solvesZh": "把一个提示词变成可以反复回到其中的角色。",
+    "bestFor": "Storytelling practice where continuity of the character matters.",
+    "bestForZh": "写故事时需要角色前后一致。",
+    "released": "2024-01-01",
+    "datePrecision": "month",
+    "homepage": "https://zeta.ai/",
+    "desc": "AI character and story app",
+    "descZh": "AI 角色与故事创作应用",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "Z"
+  },
+  {
+    "id": "sensetime-2",
+    "name": "如影",
+    "nameZh": "如影",
+    "vendor": "商汤",
+    "vendorZh": "商汤",
+    "logo": "/assets/logos/sensetime.svg",
+    "region": "cn",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Hiring a presenter for every product video does not scale. Text or audio in, a presenter out, live or recorded.",
+    "solvesZh": "每条产品视频都请一个主播是撑不住的。输入文案或音频，输出主播，直播或录制都行。",
+    "bestFor": "You need presenter-led video at volume without a studio.",
+    "bestForZh": "你需要批量出镜视频，又没有摄影棚。",
+    "released": "2024-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.senseavatar.com/",
+    "desc": "Digital human video and livestream platform.",
+    "descZh": "数字人视频与直播生成平台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "如"
+  },
+  {
+    "id": "bytedance-6",
+    "name": "飞书知识问答",
+    "nameZh": "飞书知识问答",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "cn",
+    "category": "search",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "in-product",
+    "solves": "The answer exists in a doc from last quarter or in a message from a colleague who has since left. This reads the Feishu record you already have.",
+    "solvesZh": "答案在去年某个文档里，或者在一条同事早就离职前的消息里。这个读的就是你已经有的飞书记录。",
+    "bestFor": "You need an answer that is already somewhere in your workspace.",
+    "bestForZh": "你要找的答案其实已经在工作区某个地方了。",
+    "released": "2024-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.feishu.cn/product/ai",
+    "desc": "Q&A over your Feishu wiki, docs and chat history.",
+    "descZh": "对飞书知识库、文档与群聊历史的问答",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "飞"
   },
   {
     "id": "suno",
@@ -6561,6 +8896,39 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "M"
+  },
+  {
+    "id": "sensetime",
+    "name": "代码小浣熊",
+    "nameZh": "代码小浣熊 Raccoon",
+    "vendor": "商汤",
+    "vendorZh": "商汤",
+    "logo": "/assets/logos/sensetime.svg",
+    "region": "cn",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "ide",
+    "surface": "standalone",
+    "solves": "Chinese comments and requirements get code that reads like it was written locally.",
+    "solvesZh": "中文注释和需求能生成读起来像本地人写的代码。",
+    "bestFor": "Chinese-language teams working in mainstream IDEs.",
+    "bestForZh": "中文团队在主流 IDE 里写代码。",
+    "released": "2023-12-07",
+    "datePrecision": "day",
+    "homepage": "https://www.sensetime.com/",
+    "desc": "SenseTime's AI coding assistant, public beta 2023",
+    "descZh": "商汤的AI编程助手，2023年底开放公测",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "代"
   },
   {
     "id": "mlx",
@@ -6985,6 +9353,39 @@ export const productHub = {
     "glyph": "B"
   },
   {
+    "id": "360-ai",
+    "name": "360 纳米AI搜索",
+    "nameZh": "360 纳米AI搜索",
+    "vendor": "360",
+    "vendorZh": "360",
+    "logo": "/assets/logos/360.ico",
+    "region": "cn",
+    "category": "search",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "MetaSearch and Perplexity both route across models. 360's version does the same from inside a Chinese browser and search index, which is what makes it answer Chinese queries well.",
+    "solvesZh": "MetaSearch 和 Perplexity 都做多模型路由。360 的版本在中国浏览器和搜索索引里做同样的事，这正是它答得好中文查询的原因。",
+    "bestFor": "You want AI search with Chinese sources and Chinese query quality.",
+    "bestForZh": "你要的是能搜到中文来源、中文查询质量好的 AI 搜索。",
+    "released": "2023-11-01",
+    "datePrecision": "month",
+    "homepage": "https://bot.n.cn/",
+    "desc": "360's AI search engine with multi-model routing.",
+    "descZh": "360 的 AI 搜索引擎，支持多模型路由",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "3"
+  },
+  {
     "id": "bigmodel",
     "name": "BigModel 开放平台",
     "nameZh": "BigModel 开放平台",
@@ -7134,6 +9535,39 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "W"
+  },
+  {
+    "id": "invideo-ai",
+    "name": "invideo AI",
+    "nameZh": "invideo AI",
+    "vendor": "InVideo",
+    "vendorZh": "InVideo",
+    "logo": "/assets/logos/invideo.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Produces a publish-ready video in minutes when you have no editing time.",
+    "solvesZh": "没有剪辑时间时，几分钟产出一条可发布的片子。",
+    "bestFor": "Ad tests where you need many short variants of the same idea.",
+    "bestForZh": "广告 A/B 测试，要为同一个想法出很多短版本时。",
+    "released": "2023-11-01",
+    "datePrecision": "month",
+    "homepage": "https://invideo.io/ai",
+    "desc": "Generates a full video from a prompt, script and stock",
+    "descZh": "从一句脚本直接生成带素材的成片",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "I"
   },
   {
     "id": "bailian",
@@ -7412,6 +9846,40 @@ export const productHub = {
     "glyph": "V"
   },
   {
+    "id": "open-webui",
+    "name": "Open WebUI",
+    "nameZh": "Open WebUI",
+    "vendor": "Open WebUI",
+    "vendorZh": "Open WebUI",
+    "logo": "/assets/logos/open-webui.png",
+    "region": "intl",
+    "category": "local-runner",
+    "useCases": [
+      "local-private",
+      "agent-building"
+    ],
+    "form": "self-hosted",
+    "surface": "standalone",
+    "solves": "Gives you one private chat interface over your own models, so nothing you write leaves your machine.",
+    "solvesZh": "给自己的模型一个统一的私有聊天界面，写的内容不出本机。",
+    "bestFor": "Reaching for it when you run models locally and want a usable chat, RAG and multi-user layer on top.",
+    "bestForZh": "本地跑模型，又需要聊天、检索增强和多用户能力时。",
+    "released": "2023-10-06",
+    "datePrecision": "day",
+    "homepage": "https://openwebui.com",
+    "desc": "Self-hosted ChatGPT-style interface for local and cloud models.",
+    "descZh": "自托管的类 ChatGPT 界面，同时接本地与云端模型。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "O"
+  },
+  {
     "id": "n8n",
     "name": "n8n",
     "nameZh": "n8n",
@@ -7489,6 +9957,74 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "K"
+  },
+  {
+    "id": "monica",
+    "name": "Monica",
+    "nameZh": "Monica",
+    "vendor": "Butterfly Effect",
+    "vendorZh": "Butterfly Effect",
+    "logo": "/assets/logos/butterfly-effect.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Lets you answer one question across several models and compare, without five tabs open.",
+    "solvesZh": "同一个问题可以换几个模型对比，不用开五个标签页。",
+    "bestFor": "You have a subscription to one model but need a second opinion from another.",
+    "bestForZh": "只订了某家模型，还想找另一家给个对照时。",
+    "released": "2023-10-01",
+    "datePrecision": "month",
+    "homepage": "https://monica.im/",
+    "desc": "One-stop assistant bundling many models in a browser",
+    "descZh": "把多家大模型收进一个浏览器助手",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "M"
+  },
+  {
+    "id": "pixverse",
+    "name": "PixVerse",
+    "nameZh": "PixVerse",
+    "vendor": "爱诗科技",
+    "vendorZh": "爱诗科技",
+    "logo": "/assets/logos/aishi-tech.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Turns a still photo or a sentence into a short video clip without any 3D or editing skill.",
+    "solvesZh": "把一张照片或一句话变成短视频，不需要三维或剪辑基础。",
+    "bestFor": "You need a usable generated clip fast and cannot wait on a long queue.",
+    "bestForZh": "要快速拿到能用的生成片段、等不起长队列时。",
+    "released": "2023-10-01",
+    "datePrecision": "month",
+    "homepage": "https://pixverse.ai/",
+    "desc": "AI video generation from text and images.",
+    "descZh": "文生图生视频工具，国内名为拍我AI",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "P"
   },
   {
     "id": "cohere-command",
@@ -7641,6 +10177,73 @@ export const productHub = {
     "glyph": "Z"
   },
   {
+    "id": "appbuilder",
+    "name": "千帆应用开发平台 AppBuilder",
+    "nameZh": "千帆应用开发平台 AppBuilder",
+    "vendor": "百度",
+    "vendorZh": "百度",
+    "logo": "/assets/logos/baidu.ico",
+    "region": "cn",
+    "category": "agent-platform",
+    "useCases": [
+      "agent-building",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Qianfan gives you models. AppBuilder is where you assemble them into an application — prompts, retrieval, workflow — without writing integration code.",
+    "solvesZh": "千帆给你模型。AppBuilder 是把它们组装成应用的地方——提示词、检索、工作流——不用写集成代码。",
+    "bestFor": "You need an enterprise app on ERNIE without building the integration layer.",
+    "bestForZh": "你要在文心上做一个企业应用，但不想自己搭集成层。",
+    "released": "2023-09-01",
+    "datePrecision": "month",
+    "homepage": "https://cloud.baidu.com/product/AppBuilder",
+    "desc": "Baidu's no-code app and agent development platform.",
+    "descZh": "百度的零代码应用与智能体开发平台",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "千"
+  },
+  {
+    "id": "minimax-2",
+    "name": "星野",
+    "nameZh": "星野",
+    "vendor": "MiniMax",
+    "vendorZh": "MiniMax",
+    "logo": "/assets/logos/minimax.png",
+    "region": "cn",
+    "category": "chat-assistant",
+    "useCases": [
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Chat assistants answer questions. This one lets you build a character with a persona, backstory and voice, then talk to it.",
+    "solvesZh": "聊天助手回答问题。这个让你设定角色的人格、背景与声线，然后和它对话。",
+    "bestFor": "You want to roleplay and interact with a character you designed, not a generic assistant.",
+    "bestForZh": "你想和自己设计的角色互动，而不是一个泛用助手。",
+    "released": "2023-09-01",
+    "datePrecision": "month",
+    "homepage": "https://www.xingyeai.com/",
+    "desc": "Character-building AI companion app from MiniMax.",
+    "descZh": "MiniMax 出品的角色创建类 AI 陪伴应用",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "星"
+  },
+  {
     "id": "hunyuan",
     "name": "腾讯混元",
     "nameZh": "腾讯混元",
@@ -7715,6 +10318,39 @@ export const productHub = {
       "status": "none"
     },
     "lastVerifiedAt": null,
+    "glyph": "飞"
+  },
+  {
+    "id": "bytedance-5",
+    "name": "飞书智能纪要",
+    "nameZh": "飞书智能纪要",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "cn",
+    "category": "meetings",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "in-product",
+    "solves": "Somebody has to write the minutes, and it falls on whoever ran the meeting. This generates them in Feishu where the doc already lives.",
+    "solvesZh": "总得有人写纪要，结果落到了开会的人头上。这个直接在飞书里生成，文档本来就在那儿。",
+    "bestFor": "Your meetings are on Feishu and the minutes should end up there too.",
+    "bestForZh": "你的会议在飞书开，纪要也应该落在飞书里。",
+    "released": "2023-09-01",
+    "datePrecision": "month",
+    "homepage": "https://www.feishu.cn/product/minutes",
+    "desc": "Feishu's AI meeting minutes and follow-up capture.",
+    "descZh": "飞书的 AI 会议纪要与待办提取",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
     "glyph": "飞"
   },
   {
@@ -7912,6 +10548,40 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "B"
+  },
+  {
+    "id": "dola",
+    "name": "Dola",
+    "nameZh": "Dola",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Gives you a fast everyday assistant in overseas markets where Doubao is not offered.",
+    "solvesZh": "在豆包不适用的海外市场，提供一个日常够用的助手。",
+    "bestFor": "You are outside China and want the ByteDance assistant experience.",
+    "bestForZh": "在中国境外、想要字节助手那套体验时。",
+    "released": "2023-08-01",
+    "datePrecision": "month",
+    "homepage": "https://www.dola.com/",
+    "desc": "ByteDance's overseas assistant, formerly named Cici",
+    "descZh": "字节跳动的海外助手，原名 Cici",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "D"
   },
   {
     "id": "krea",
@@ -8226,6 +10896,39 @@ export const productHub = {
     "glyph": "火"
   },
   {
+    "id": "alibaba",
+    "name": "通义听悟",
+    "nameZh": "通义听悟",
+    "vendor": "阿里巴巴",
+    "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
+    "region": "cn",
+    "category": "meetings",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "One hour of recording turns into minutes of minutes-ready notes.",
+    "solvesZh": "一小时录音，几分钟变成能直接用的纪要。",
+    "bestFor": "Meetings, lectures and interviews that need minutes.",
+    "bestForZh": "会议、课程和访谈需要出纪要时。",
+    "released": "2023-06-27",
+    "datePrecision": "day",
+    "homepage": "https://tingwu.aliyun.com/",
+    "desc": "Alibaba Cloud's audio and video comprehension assistant",
+    "descZh": "阿里云的音视频理解与记录AI助手",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "通"
+  },
+  {
     "id": "shangliang",
     "name": "商量",
     "nameZh": "商量",
@@ -8418,6 +11121,40 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "B"
+  },
+  {
+    "id": "question-ai",
+    "name": "Question.AI",
+    "nameZh": "Question.AI",
+    "vendor": "Dputable",
+    "vendorZh": "Dputable",
+    "logo": "/assets/logos/dputable.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research",
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Answers a photographed problem across 140+ languages in one tap.",
+    "solvesZh": "拍题即答，支持 140 多种语言。",
+    "bestFor": "Homework photos in a language whose tutor you cannot easily find.",
+    "bestForZh": "作业是找不到 tutor 的小语种时。",
+    "released": "2023-06-01",
+    "datePrecision": "month",
+    "homepage": "https://question.ai/",
+    "desc": "Homework and maths assistant with a general chatbot",
+    "descZh": "作业与数学助手，附带通用聊天",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "Q"
   },
   {
     "id": "talkie",
@@ -8646,6 +11383,39 @@ export const productHub = {
     "glyph": "I"
   },
   {
+    "id": "arena",
+    "name": "Arena",
+    "nameZh": "Arena",
+    "vendor": "LMArena",
+    "vendorZh": "LMArena",
+    "logo": "/assets/logos/lmarena.png",
+    "region": "intl",
+    "category": "eval-observability",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Ranks models by what real users prefer in blind tests, instead of by vendor benchmark claims.",
+    "solvesZh": "按真实用户盲测偏好排名模型，而不是按厂商自报的跑分。",
+    "bestFor": "Reaching for it when you want to pick a model by evidence rather than by marketing.",
+    "bestForZh": "想凭证据而不是宣传来选模型时。",
+    "released": "2023-05-01",
+    "datePrecision": "month",
+    "homepage": "https://arena.ai",
+    "desc": "Blind A/B comparison of AI models with a public leaderboard.",
+    "descZh": "AI 模型盲测 A/B 对比，配套公开排行榜。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "A"
+  },
+  {
     "id": "cohere-rerank",
     "name": "Cohere Rerank",
     "nameZh": "Cohere Rerank",
@@ -8719,6 +11489,39 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "L"
+  },
+  {
+    "id": "polybuzz",
+    "name": "PolyBuzz",
+    "nameZh": "PolyBuzz",
+    "vendor": "Cloud Whale Interactive",
+    "vendorZh": "Cloud Whale Interactive",
+    "logo": "/assets/logos/cloud-whale.ico",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Gives you a conversation partner for practising a language or a social situation.",
+    "solvesZh": "给你一个练习语言或社交场景的对话对象。",
+    "bestFor": "You want to rehearse a conversation in a low-stakes setting before the real one.",
+    "bestForZh": "想在没压力的环境里先把一段对话练熟。",
+    "released": "2023-05-01",
+    "datePrecision": "month",
+    "homepage": "https://www.polybuzz.ai/",
+    "desc": "Chat with custom AI characters and role-play scenarios",
+    "descZh": "和自定义 AI 角色聊天的陪伴应用",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "P"
   },
   {
     "id": "codewave",
@@ -8988,6 +11791,40 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "C"
+  },
+  {
+    "id": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "nameZh": "Adobe Firefly",
+    "vendor": "Adobe",
+    "vendorZh": "Adobe",
+    "logo": "/assets/logos/adobe.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Generates images and video licensed for commercial work, removing the legal doubt around AI-made assets.",
+    "solvesZh": "生成可用于商用的图像与视频，消掉 AI 素材的版权顾虑。",
+    "bestFor": "Reaching for it when a client or legal team requires provably licensed output.",
+    "bestForZh": "客户或法务要求素材来源可追溯时用它。",
+    "released": "2023-03-01",
+    "datePrecision": "month",
+    "homepage": "https://www.adobe.com/products/firefly.html",
+    "desc": "Adobe's commercially-safe generative image and video model family.",
+    "descZh": "Adobe 的商用安全生成式图像与视频模型家族。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "A"
   },
   {
     "id": "cursor",
@@ -9334,6 +12171,107 @@ export const productHub = {
     "glyph": "H"
   },
   {
+    "id": "klap",
+    "name": "Klap",
+    "nameZh": "Klap",
+    "vendor": "Klap",
+    "vendorZh": "Klap",
+    "logo": "/assets/logos/klap.ico",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Produces ready-to-post shorts from a long recording, so you skip the manual highlight hunt.",
+    "solvesZh": "长视频录完直接出可发布的短片，省掉手动找高光的过程。",
+    "bestFor": "Reaching for it when you already record long video and post short.",
+    "bestForZh": "已经有长视频素材、只缺短版分发时。",
+    "released": "2023-01-01",
+    "datePrecision": "month",
+    "homepage": "https://klap.app",
+    "desc": "Cuts long videos into captioned short clips automatically.",
+    "descZh": "把长视频自动切成带字幕的短视频。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "K"
+  },
+  {
+    "id": "maxim-ai",
+    "name": "Maxim AI",
+    "nameZh": "Maxim AI",
+    "vendor": "Maxim AI",
+    "vendorZh": "Maxim AI",
+    "logo": "/assets/logos/maxim-ai.png",
+    "region": "intl",
+    "category": "eval-observability",
+    "useCases": [
+      "observability",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Lets you test an agent against simulated scenarios before real users hit its failure modes.",
+    "solvesZh": "在真实用户踩坑之前，先用模拟场景把 Agent 测一遍。",
+    "bestFor": "Reaching for it when an agent has unpredictable behaviour you cannot reproduce on demand.",
+    "bestForZh": "Agent 行为不可预测、无法按需复现时。",
+    "released": "2023-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.getmaxim.ai",
+    "desc": "Simulation, evaluation and observability for AI agents.",
+    "descZh": "面向 AI Agent 的模拟、评估与可观测平台。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "M"
+  },
+  {
+    "id": "pollo-ai",
+    "name": "Pollo AI",
+    "nameZh": "Pollo AI",
+    "vendor": "Pollo AI",
+    "vendorZh": "Pollo AI",
+    "logo": "/assets/logos/pollo-ai.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Lets you try several generation models side by side instead of committing to one vendor's look.",
+    "solvesZh": "可以横向试多种生成模型，不必锁定某一家画风。",
+    "bestFor": "Reaching for it when no single model reliably gives you the style you need.",
+    "bestForZh": "单一模型总给不出你要的风格时。",
+    "released": "2023-01-01",
+    "datePrecision": "month",
+    "homepage": "https://pollo.ai",
+    "desc": "One interface over many image and video generation models.",
+    "descZh": "把多个图像与视频生成模型收进同一个界面。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "P"
+  },
+  {
     "id": "presentations-ai",
     "name": "Presentations.AI",
     "nameZh": "Presentations.AI",
@@ -9370,6 +12308,107 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "P"
+  },
+  {
+    "id": "promptlayer",
+    "name": "PromptLayer",
+    "nameZh": "PromptLayer",
+    "vendor": "PromptLayer",
+    "vendorZh": "PromptLayer",
+    "logo": "/assets/logos/promptlayer.png",
+    "region": "intl",
+    "category": "eval-observability",
+    "useCases": [
+      "observability",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Keeps prompts under version control with tests attached, so editing one does not silently break a feature.",
+    "solvesZh": "提示词纳入版本管理并附带测试，改一句不会悄悄弄坏功能。",
+    "bestFor": "Reaching for it when prompt edits are getting risky and you need rollback.",
+    "bestForZh": "改提示词风险变大、需要能回滚时。",
+    "released": "2023-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.promptlayer.com",
+    "desc": "Prompt versioning, regression tests and production logging.",
+    "descZh": "提示词版本管理、回归测试与线上日志。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "P"
+  },
+  {
+    "id": "retake-ai",
+    "name": "Retake AI",
+    "nameZh": "Retake AI",
+    "vendor": "ZipoApps",
+    "vendorZh": "ZipoApps",
+    "logo": "/assets/logos/zipoapps.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Gives a plausible new headshot without a photographer or a studio.",
+    "solvesZh": "不用影棚也能得到一张像样的新头像。",
+    "bestFor": "You need a current profile photo and cannot book a shoot.",
+    "bestForZh": "需要一张能用的职业头像、又来不及约拍摄时。",
+    "released": "2023-01-01",
+    "datePrecision": "month",
+    "homepage": "https://apps.apple.com/us/app/retake-ai-face-photo-editor/id6446589017",
+    "desc": "AI portrait editor that reshapes faces and skin",
+    "descZh": "用 AI 重塑脸型和肤质的头像修图工具",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "R"
+  },
+  {
+    "id": "vellum",
+    "name": "Vellum",
+    "nameZh": "Vellum",
+    "vendor": "Vellum AI",
+    "vendorZh": "Vellum AI",
+    "logo": "/assets/logos/vellum-ai.svg",
+    "region": "intl",
+    "category": "eval-observability",
+    "useCases": [
+      "observability",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Keeps prompt versions, test cases and evals in one place, so you can tell a regression from a model change.",
+    "solvesZh": "提示词版本、测试用例与评估放在一处，能分清是回归还是模型变化。",
+    "bestFor": "Reaching for it when your LLM feature has enough users that regressions actually hurt.",
+    "bestForZh": "LLM 功能用户已经多到回归会造成损失时。",
+    "released": "2023-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.vellum.ai",
+    "desc": "Build, test and ship LLM apps with evaluation built in.",
+    "descZh": "构建、测试与上线 LLM 应用，内建评估能力。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "V"
   },
   {
     "id": "leonardo-ai",
@@ -9638,6 +12677,39 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "L"
+  },
+  {
+    "id": "recraft",
+    "name": "Recraft",
+    "nameZh": "Recraft",
+    "vendor": "Recraft",
+    "vendorZh": "Recraft",
+    "logo": "/assets/logos/recraft.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Produces design output you can still edit, so a logo or icon does not have to be redrawn from scratch.",
+    "solvesZh": "产出的设计还能继续编辑，图标不必从头重画。",
+    "bestFor": "Reaching for it when the deliverable is a brand asset that has to scale and recolour cleanly.",
+    "bestForZh": "交付物是需要缩放和换色仍然干净的品牌素材时。",
+    "released": "2022-11-01",
+    "datePrecision": "month",
+    "homepage": "https://www.recraft.ai",
+    "desc": "Generates editable vectors, icons and mockups, not just flat images.",
+    "descZh": "生成可编辑的矢量图、图标与样机，而不只是平面图片。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "R"
   },
   {
     "id": "chroma",
@@ -9979,6 +13051,140 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "T"
+  },
+  {
+    "id": "consensus",
+    "name": "Consensus",
+    "nameZh": "Consensus",
+    "vendor": "Consensus",
+    "vendorZh": "Consensus",
+    "logo": "/assets/logos/consensus.svg",
+    "region": "intl",
+    "category": "search",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Answers research questions from the literature instead of the open web, so you get findings rather than blog posts.",
+    "solvesZh": "答案来自学术文献而非开放网页，给的是研究结论而不是博客观点。",
+    "bestFor": "Reaching for it when you need what the evidence actually says about a question.",
+    "bestForZh": "想知道某个问题上的证据到底怎么说时。",
+    "released": "2022-01-01",
+    "datePrecision": "month",
+    "homepage": "https://consensus.app",
+    "desc": "Searches 220M+ peer-reviewed papers and answers with citations.",
+    "descZh": "检索两亿多篇同行评审论文，回答附带引用。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "C"
+  },
+  {
+    "id": "galileo",
+    "name": "Galileo",
+    "nameZh": "Galileo",
+    "vendor": "Galileo",
+    "vendorZh": "Galileo",
+    "logo": "/assets/logos/galileo.png",
+    "region": "intl",
+    "category": "eval-observability",
+    "useCases": [
+      "observability",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Scores model output against defined metrics so quality is a number you can track, not a vibe.",
+    "solvesZh": "用明确指标给模型输出打分，让质量成为可追踪的数字而不是感觉。",
+    "bestFor": "Reaching for it when 'the output got worse' needs to become an actionable finding.",
+    "bestForZh": "需要把「效果变差了」变成可定位的问题时。",
+    "released": "2022-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.galileo.ai",
+    "desc": "Evaluation intelligence platform for measuring LLM output quality.",
+    "descZh": "面向 LLM 输出质量度量的评估智能平台。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "G"
+  },
+  {
+    "id": "openart",
+    "name": "OpenArt",
+    "nameZh": "OpenArt",
+    "vendor": "OpenArt",
+    "vendorZh": "OpenArt",
+    "logo": "/assets/logos/openart.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Keeps the same character across a whole storyboard instead of resampling a different face each time.",
+    "solvesZh": "整个分镜保持同一个角色，不必每次重新随机换脸。",
+    "bestFor": "Reaching for it when you are producing a series of images that must read as the same world.",
+    "bestForZh": "要产出一组读起来像同一个世界的系列图时。",
+    "released": "2022-01-01",
+    "datePrecision": "month",
+    "homepage": "https://openart.ai",
+    "desc": "Image and video generation platform with character consistency across shots.",
+    "descZh": "图像与视频生成平台，角色在多个镜头间保持一致。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "O"
+  },
+  {
+    "id": "sudowrite",
+    "name": "Sudowrite",
+    "nameZh": "Sudowrite",
+    "vendor": "Sudowrite",
+    "vendorZh": "Sudowrite",
+    "logo": "/assets/logos/sudowrite.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Covers plotting, prose rewriting and long-form structure without flattening your voice into generic assistant prose.",
+    "solvesZh": "从情节到长篇结构都能帮上，又不会把你的文风压成千篇一律的助手腔。",
+    "bestFor": "Reaching for it when you are writing a novel and generic chat assistants stall at the middle.",
+    "bestForZh": "写长篇小说、普通聊天助手写到中段就卡住时。",
+    "released": "2022-01-01",
+    "datePrecision": "month",
+    "homepage": "https://sudowrite.com",
+    "desc": "AI writing partner built specifically for fiction and long manuscripts.",
+    "descZh": "专为小说与长篇写作打造的 AI 写作搭档。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "S"
   },
   {
     "id": "fathom",
@@ -10479,6 +13685,106 @@ export const productHub = {
     "glyph": "O"
   },
   {
+    "id": "capcut",
+    "name": "CapCut",
+    "nameZh": "CapCut",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Lets you cut and finish a short video on a phone without learning a desktop editor.",
+    "solvesZh": "让人在手机上直接剪完一条短视频，不必学桌面剪辑软件。",
+    "bestFor": "You are making vertical video for social and want AI captions and templates built in.",
+    "bestForZh": "做竖屏短视频、需要自带字幕和模板时。",
+    "released": "2020-04-01",
+    "datePrecision": "month",
+    "homepage": "https://www.capcut.com/",
+    "desc": "ByteDance's video editor, including AI generation and editing.",
+    "descZh": "字节跳动出海的 AI 剪辑工具，即剪映国际版",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "C"
+  },
+  {
+    "id": "gauth",
+    "name": "Gauth",
+    "nameZh": "Gauth",
+    "vendor": "字节跳动",
+    "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "research"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Photograph a homework question and get a worked explanation instead of just the answer.",
+    "solvesZh": "拍下作业题，给的是讲解过程而不是只有答案。",
+    "bestFor": "A student who wants to understand the method, not copy the result.",
+    "bestForZh": "想弄懂思路而不是抄答案的学生。",
+    "released": "2020-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.gauthmath.com/",
+    "desc": "AI study companion, formerly the Gauthmath homework solver",
+    "descZh": "AI 学习助手，原名 Gauthmath 作业相机",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "G"
+  },
+  {
+    "id": "notta",
+    "name": "Notta",
+    "nameZh": "Notta",
+    "vendor": "Notta",
+    "vendorZh": "Notta",
+    "logo": "/assets/logos/notta.png",
+    "region": "intl",
+    "category": "meetings",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Produces a searchable transcript and summary of every meeting without assigning a note-taker.",
+    "solvesZh": "每场会议自动留下可搜索的转写与总结，不用再指定专人记录。",
+    "bestFor": "Reaching for it when meetings run in mixed languages or nobody owns the notes.",
+    "bestForZh": "会议语言混杂，或没人负责记纪要时。",
+    "released": "2020-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.notta.ai",
+    "desc": "Records, transcribes and summarises meetings in 58 languages.",
+    "descZh": "录制、转写并总结会议，支持 58 种语言。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "N"
+  },
+  {
     "id": "surge-ai",
     "name": "Surge AI",
     "nameZh": "Surge AI",
@@ -10631,6 +13937,39 @@ export const productHub = {
     "glyph": "F"
   },
   {
+    "id": "fotor",
+    "name": "Fotor",
+    "nameZh": "Fotor",
+    "vendor": "Everimaging",
+    "vendorZh": "Everimaging",
+    "logo": "/assets/logos/everimaging.ico",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Turns a photo into a social post with matching brand text in one flow.",
+    "solvesZh": "一张图直接生成带品牌文案的社媒物料。",
+    "bestFor": "You post often and want the same look without a designer each time.",
+    "bestForZh": "要高频发帖、又不想每次都找设计时。",
+    "released": "2019-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.fotor.com/",
+    "desc": "AI photo editor paired with a brand-marketing kit",
+    "descZh": "把 AI 修图和品牌物料生成放在一起的工具",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "F"
+  },
+  {
     "id": "remini",
     "name": "Remini",
     "nameZh": "Remini",
@@ -10745,6 +14084,73 @@ export const productHub = {
     "glyph": "B"
   },
   {
+    "id": "remove-bg",
+    "name": "remove.bg",
+    "nameZh": "remove.bg",
+    "vendor": "remove.bg",
+    "vendorZh": "remove.bg",
+    "logo": "/assets/logos/remove-bg.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Removes backgrounds from product and portrait photos without opening Photoshop.",
+    "solvesZh": "商品图和人像图抠背景不用再开 Photoshop。",
+    "bestFor": "Reaching for it when you are prepping a batch of product photos for a listing.",
+    "bestForZh": "要批量处理商品图上架时。",
+    "released": "2018-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.remove.bg",
+    "desc": "Cuts image backgrounds out in seconds, one click.",
+    "descZh": "一键几秒抠掉图片背景。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "R"
+  },
+  {
+    "id": "iflytek",
+    "name": "讯飞听见",
+    "nameZh": "讯飞听见",
+    "vendor": "科大讯飞",
+    "vendorZh": "科大讯飞",
+    "logo": "/assets/logos/iflytek.ico",
+    "region": "cn",
+    "category": "meetings",
+    "useCases": [
+      "office",
+      "audio-voice"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Dialect-heavy audio transcribes accurately without switching language modes.",
+    "solvesZh": "方言口音重的录音不用切语言模式也能转准。",
+    "bestFor": "Long recordings, field interviews, dialect-heavy speech.",
+    "bestForZh": "长录音、现场采访、方言较重的讲话。",
+    "released": "2017-12-15",
+    "datePrecision": "day",
+    "homepage": "https://www.iflyrec.com/",
+    "desc": "iFlytek's long-running speech-to-text transcription service",
+    "descZh": "科大讯飞老牌的语音转文字与会议记录服务",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "讯"
+  },
+  {
     "id": "replika",
     "name": "Replika",
     "nameZh": "Replika",
@@ -10820,6 +14226,73 @@ export const productHub = {
     "glyph": "W"
   },
   {
+    "id": "d-id",
+    "name": "D-ID",
+    "nameZh": "D-ID",
+    "vendor": "D-ID",
+    "vendorZh": "D-ID",
+    "logo": "/assets/logos/d-id.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "video",
+      "agent-building"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Produces presenter video without filming a person, cutting production time from days to minutes.",
+    "solvesZh": "不拍真人也能做出出镜视频，制作时间从几天压到几分钟。",
+    "bestFor": "Reaching for it when you need presenter-led video in many languages or at high volume.",
+    "bestForZh": "需要多语种或大批量出镜口播视频时。",
+    "released": "2017-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.d-id.com",
+    "desc": "Turns text, audio or a still photo into a talking digital person.",
+    "descZh": "把文本、音频或一张照片变成会说话的数字人。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "D"
+  },
+  {
+    "id": "deepl",
+    "name": "DeepL",
+    "nameZh": "DeepL",
+    "vendor": "DeepL",
+    "vendorZh": "DeepL",
+    "logo": "/assets/logos/deepl.ico",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Translates text that reads naturally in the target language, and rewrites your own text in place.",
+    "solvesZh": "译文在目标语言里读着自然，也能直接改写你自己的原文。",
+    "bestFor": "Reaching for it when fluency in the target language matters more than raw speed.",
+    "bestForZh": "目标语言的自然度比速度更重要时。",
+    "released": "2017-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.deepl.com",
+    "desc": "Neural translation plus DeepL Write for whole-text rewriting.",
+    "descZh": "神经网络翻译，附带 DeepL Write 全文改写。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "D"
+  },
+  {
     "id": "scale-ai",
     "name": "Scale AI",
     "nameZh": "Scale AI",
@@ -10893,6 +14366,106 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-04",
     "glyph": "O"
+  },
+  {
+    "id": "bandlab",
+    "name": "BandLab",
+    "nameZh": "BandLab",
+    "vendor": "BandLab Technologies",
+    "vendorZh": "BandLab Technologies",
+    "logo": "/assets/logos/bandlab.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "audio-voice"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Lets friends record into one session remotely instead of booking a studio.",
+    "solvesZh": "和朋友远程录同一首歌，不用去录音棚。",
+    "bestFor": "Bands whose members are in different cities.",
+    "bestForZh": "成员分散在各地的乐队。",
+    "released": "2014-08-01",
+    "datePrecision": "month",
+    "homepage": "https://www.bandlab.com/",
+    "desc": "Multiplayer music studio and DAW with AI tools",
+    "descZh": "带 AI 工具的在线多人音乐工作站",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "B"
+  },
+  {
+    "id": "picsart",
+    "name": "Picsart",
+    "nameZh": "Picsart",
+    "vendor": "Picsart",
+    "vendorZh": "Picsart",
+    "logo": "/assets/logos/picsart.png",
+    "region": "intl",
+    "category": "multimodal-creation",
+    "useCases": [
+      "image-design",
+      "video"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Gives non-designers a pro-level editor plus many image models in the same app.",
+    "solvesZh": "把专业级编辑和多个图像模型放进同一个 App。",
+    "bestFor": "Marketing assets for a small brand, where one person does everything.",
+    "bestForZh": "小团队一个人要包办营销图的情况。",
+    "released": "2012-01-01",
+    "datePrecision": "month",
+    "homepage": "https://picsart.com/",
+    "desc": "Photo and video editor with a built-in AI model playground",
+    "descZh": "带内置 AI 模型广场的修图与剪辑工具",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "P"
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "nameZh": "Grammarly",
+    "vendor": "Grammarly",
+    "vendorZh": "Grammarly",
+    "logo": "/assets/logos/grammarly.png",
+    "region": "intl",
+    "category": "chat-assistant",
+    "useCases": [
+      "office"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Catches grammar and tone problems as you write, wherever you write.",
+    "solvesZh": "在哪个应用里写都能实时挑出语法和语气问题。",
+    "bestFor": "Reaching for it when you write a lot and want the basics fixed without leaving your document.",
+    "bestForZh": "写得比较多、又不想为了改基础错误而离开当前文档时。",
+    "released": "2009-01-01",
+    "datePrecision": "month",
+    "homepage": "https://www.grammarly.com",
+    "desc": "AI writing assistant for grammar, clarity and tone across every app.",
+    "descZh": "覆盖全应用的 AI 写作助手，管语法、清晰度与语气。",
+    "tags": [],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "none"
+    },
+    "lastVerifiedAt": "2026-10-05",
+    "glyph": "G"
   }
 ]
 }

@@ -1,0 +1,32 @@
+{
+  "id": "mistral-ai-cloud",
+  "name": "Mistral AI Cloud",
+  "name_zh": "Mistral AI Cloud",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "local-private"
+  ],
+  "form": "api",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://mistral.ai/products/ai-cloud/",
+  "desc": "Frontier-scale infrastructure for Mistral training and inference.",
+  "desc_zh": "面向 Mistral 训练与推理的前沿规模基础设施",
+  "solves": "La Plateforme is the API. AI Cloud is the compute underneath it — sovereign and self-hosted deployments for teams that cannot send data out.",
+  "solves_zh": "La Plateforme 是 API。AI Cloud 是它底下的算力——为不能把数据发出去的主权与自托管部署准备的。",
+  "best_for": "You need Mistral models on infrastructure you control, for sovereignty reasons.",
+  "best_for_zh": "出于主权原因，你需要在自己掌控的基础设施上跑 Mistral 模型。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://mistral.ai/。来源：https://mistral.ai/products/ai-cloud/",
+  "revisions": []
+}

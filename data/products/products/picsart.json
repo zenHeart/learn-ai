@@ -1,0 +1,32 @@
+{
+  "id": "picsart",
+  "name": "Picsart",
+  "name_zh": "Picsart",
+  "vendor_id": "picsart",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2012-01-01",
+  "date_precision": "month",
+  "homepage": "https://picsart.com/",
+  "desc": "Photo and video editor with a built-in AI model playground",
+  "desc_zh": "带内置 AI 模型广场的修图与剪辑工具",
+  "solves": "Gives non-designers a pro-level editor plus many image models in the same app.",
+  "solves_zh": "把专业级编辑和多个图像模型放进同一个 App。",
+  "best_for": "Marketing assets for a small brand, where one person does everything.",
+  "best_for_zh": "小团队一个人要包办营销图的情况。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Apple App Store US Photo & Video Top Free #11。来源：https://apps.apple.com/us/iphone/charts/6008",
+  "revisions": []
+}

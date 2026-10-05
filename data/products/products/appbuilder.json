@@ -1,0 +1,32 @@
+{
+  "id": "appbuilder",
+  "name": "千帆应用开发平台 AppBuilder",
+  "name_zh": "千帆应用开发平台 AppBuilder",
+  "vendor_id": "baidu",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-09-01",
+  "date_precision": "month",
+  "homepage": "https://cloud.baidu.com/product/AppBuilder",
+  "desc": "Baidu's no-code app and agent development platform.",
+  "desc_zh": "百度的零代码应用与智能体开发平台",
+  "solves": "Qianfan gives you models. AppBuilder is where you assemble them into an application — prompts, retrieval, workflow — without writing integration code.",
+  "solves_zh": "千帆给你模型。AppBuilder 是把它们组装成应用的地方——提示词、检索、工作流——不用写集成代码。",
+  "best_for": "You need an enterprise app on ERNIE without building the integration layer.",
+  "best_for_zh": "你要在文心上做一个企业应用，但不想自己搭集成层。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://cloud.baidu.com/product/wenxinworkshop。来源：https://cloud.baidu.com/product/wenxinworkshop",
+  "revisions": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "nvidia-ai-enterprise",
+  "name": "NVIDIA AI Enterprise",
+  "name_zh": "NVIDIA AI Enterprise",
+  "vendor_id": "nvidia",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "observability"
+  ],
+  "form": "self-hosted",
+  "surface": "standalone",
+  "released": "2024-08-01",
+  "date_precision": "month",
+  "homepage": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise-suite/",
+  "desc": "Enterprise AI software suite for data-center deployment.",
+  "desc_zh": "面向数据中心部署的企业级 AI 软件套件",
+  "solves": "NIM and NeMo are components. This is the supported, licensed whole that runs them in your own data center with the compliance to match.",
+  "solves_zh": "NIM 和 NeMo 只是零件。这是在你自己数据中心里跑它们的受支持、带许可的整体，配得上相应的合规。",
+  "best_for": "You need self-hosted NVIDIA inference with vendor support and licensing.",
+  "best_for_zh": "你需要自托管的 NVIDIA 推理，还带厂商支持和许可。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.nvidia.com/en-us/ai/。来源：https://www.nvidia.com/en-us/data-center/products/ai-enterprise-suite/",
+  "revisions": []
+}

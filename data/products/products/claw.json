@@ -1,0 +1,32 @@
+{
+  "id": "claw",
+  "name": "小艺Claw",
+  "name_zh": "小艺Claw",
+  "vendor_id": "huawei",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "local-private"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2026-03-01",
+  "date_precision": "month",
+  "homepage": "https://xiaoyi.huawei.com/",
+  "desc": "HarmonyOS system agent built on the OpenClaw pattern",
+  "desc_zh": "鸿蒙系统级AI智能体，基于OpenClaw模式深度定制",
+  "solves": "You get an OpenClaw-style agent with system permissions, no key management.",
+  "solves_zh": "不用管密钥和部署，就有一个带系统权限的OpenClaw式智能体。",
+  "best_for": "HarmonyOS phone or tablet owners doing office tasks.",
+  "best_for_zh": "用鸿蒙手机或平板、需要处理办公事务的人。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：华为开发者联盟论坛 / 华为消费者官网。来源：https://developer.huawei.com/consumer/cn/forum/topic/0208208589155468236",
+  "revisions": []
+}

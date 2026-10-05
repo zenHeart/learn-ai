@@ -1,0 +1,33 @@
+{
+  "id": "skywork-ai-workspace-agents",
+  "name": "Skywork AI Workspace Agents",
+  "name_zh": "Skywork AI Workspace Agents",
+  "vendor_id": "kunlun",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building",
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://skywork.ai/",
+  "desc": "Workspace agents for slides, docs, sheets, images, video.",
+  "desc_zh": "面向幻灯片、文档、表格、图像、视频的工作区智能体",
+  "solves": "Tiangong is a model and a search engine. This is the deliverable layer — agents that output the actual document, deck or page.",
+  "solves_zh": "天工是模型和搜索。这个是交付层——智能体直接产出文档、幻灯片或网页。",
+  "best_for": "You want finished office artifacts from an agent, on Kunlun's stack.",
+  "best_for_zh": "你希望智能体直接产出办公成品，用昆仑的技术栈。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.kunlun.com/。来源：https://skywork.ai/",
+  "revisions": []
+}

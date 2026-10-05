@@ -1,0 +1,31 @@
+{
+  "id": "slack-today",
+  "name": "Slack Today",
+  "name_zh": "Slack Today",
+  "vendor_id": "slack",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2026-05-06",
+  "date_precision": "day",
+  "homepage": "https://slack.com/features/today",
+  "desc": "Daily briefing in Slack over priorities, calendar, tasks.",
+  "desc_zh": "Slack 里的每日简报，汇总优先级、日历与待办",
+  "solves": "The morning scroll is an unpaid job. Today reads the calendar and the connected apps and states what matters, first.",
+  "solves_zh": "早上那一轮翻消息是没报酬的工作。Today 读完日历和已连接的应用，先把要紧的说出来。",
+  "best_for": "You want one screen before you start, not a scroll to work through.",
+  "best_for_zh": "你希望在开工前看一屏，而不是翻一遍。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://slack.com/features/ai。来源：https://slack.com/blog/news/today-daily-briefing",
+  "revisions": []
+}

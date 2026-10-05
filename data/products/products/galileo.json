@@ -1,0 +1,32 @@
+{
+  "id": "galileo",
+  "name": "Galileo",
+  "name_zh": "Galileo",
+  "vendor_id": "galileo",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2022-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.galileo.ai",
+  "desc": "Evaluation intelligence platform for measuring LLM output quality.",
+  "desc_zh": "面向 LLM 输出质量度量的评估智能平台。",
+  "solves": "Scores model output against defined metrics so quality is a number you can track, not a vibe.",
+  "solves_zh": "用明确指标给模型输出打分，让质量成为可追踪的数字而不是感觉。",
+  "best_for": "Reaching for it when 'the output got worse' needs to become an actionable finding.",
+  "best_for_zh": "需要把「效果变差了」变成可定位的问题时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Braintrust and Langfuse 2026 comparison articles listing the eval-platform field。来源：https://www.braintrust.dev/articles/langfuse-alternatives-2026",
+  "revisions": []
+}

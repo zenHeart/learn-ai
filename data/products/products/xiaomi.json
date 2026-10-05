@@ -1,0 +1,32 @@
+{
+  "id": "xiaomi",
+  "name": "超级小爱",
+  "name_zh": "超级小爱",
+  "vendor_id": "xiaomi",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "local-private"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2026-08-18",
+  "date_precision": "day",
+  "homepage": "https://xiaoai.mi.com/",
+  "desc": "Xiaomi's system agent running on the on-device MiMo model",
+  "desc_zh": "小米基于端侧MiMo大模型的系统级AI智能体",
+  "solves": "It plans and executes across apps on your phone, not just answers.",
+  "solves_zh": "它能在手机里跨应用规划和执行，而不只是回答问题。",
+  "best_for": "If your phone, car and home gear are all Xiaomi.",
+  "best_for_zh": "手机、车和米家设备都是小米的人。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：小米澎湃OS 4 发布会报道 / 科创板日报。来源：https://www.pcpop.com/article/6946660.shtml",
+  "revisions": []
+}

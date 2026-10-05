@@ -1,0 +1,31 @@
+{
+  "id": "remove-bg",
+  "name": "remove.bg",
+  "name_zh": "remove.bg",
+  "vendor_id": "remove-bg",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2018-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.remove.bg",
+  "desc": "Cuts image backgrounds out in seconds, one click.",
+  "desc_zh": "一键几秒抠掉图片背景。",
+  "solves": "Removes backgrounds from product and portrait photos without opening Photoshop.",
+  "solves_zh": "商品图和人像图抠背景不用再开 Photoshop。",
+  "best_for": "Reaching for it when you are prepping a batch of product photos for a listing.",
+  "best_for_zh": "要批量处理商品图上架时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Similarweb global AI traffic list, #19 with ~67.2M monthly visits。来源：https://www.remove.bg/about-us",
+  "revisions": []
+}

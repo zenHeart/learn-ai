@@ -1,0 +1,32 @@
+{
+  "id": "netease-youdao",
+  "name": "有道宝库",
+  "name_zh": "有道宝库",
+  "vendor_id": "netease-youdao",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2026-04-07",
+  "date_precision": "day",
+  "homepage": "https://baoku.youdao.com/",
+  "desc": "Youdao's knowledge base that turns documents into outputs",
+  "desc_zh": "网易有道的AI知识库，把资料直接变成PPT、播客和脑图",
+  "solves": "Drop in 50 sources and get a cited answer plus a finished deck.",
+  "solves_zh": "丢进 50 份资料，得到带引用的回答和成品演示文稿。",
+  "best_for": "Literature review, course prep, or a research brief.",
+  "best_for_zh": "文献综述、备课或需要一份调研简报时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 WAIC 现场报道 / 中国经济网。来源：http://scitech.ce.cn/sy/zx/202607/t20260719_3094900.shtml",
+  "revisions": []
+}

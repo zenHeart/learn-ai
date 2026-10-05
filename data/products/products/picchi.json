@@ -1,0 +1,31 @@
+{
+  "id": "picchi",
+  "name": "Picchi",
+  "name_zh": "Picchi",
+  "vendor_id": "meitu",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2026-06-01",
+  "date_precision": "month",
+  "homepage": "https://www.meitu.com/",
+  "desc": "New Meitu AI product announced at the 2026 imaging festival",
+  "desc_zh": "美图 2026 影像节新发布的 AI 产品",
+  "solves": "A new option from a vendor that has shipped imaging tools for two decades.",
+  "solves_zh": "一家做了二十年影像工具的厂商给出的新选择。",
+  "best_for": "You follow Meitu's product line and want the current release rather than the old editor.",
+  "best_for_zh": "长期跟美图这条线、想要最新版而不是老编辑器时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：China AI product coverage of the 2026 Meitu imaging festival。来源：https://app.xinhuanet.com/news/20260618/meitu-ai.htm",
+  "revisions": []
+}

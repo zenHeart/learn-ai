@@ -1,0 +1,32 @@
+{
+  "id": "google-stitch",
+  "name": "Google Stitch",
+  "name_zh": "Google Stitch",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "coding"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-05-01",
+  "date_precision": "month",
+  "homepage": "https://stitch.withgoogle.com",
+  "desc": "Google Labs design canvas that turns prompts or sketches into app UIs.",
+  "desc_zh": "Google Labs 设计画布，把提示词变成应用界面。",
+  "solves": "Gets you from a rough layout idea to several real UI variants without opening a design tool.",
+  "solves_zh": "不用打开设计软件，就能从模糊的布局想法拿到几版真实界面。",
+  "best_for": "Reaching for it when you need to explore interface directions fast before committing to one.",
+  "best_for_zh": "想定稿前快速比较几版界面方向时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Google I/O 2025 announcements; 2026 AI design tool roundups。来源：https://stitch.withgoogle.com",
+  "revisions": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "polybuzz",
+  "name": "PolyBuzz",
+  "name_zh": "PolyBuzz",
+  "vendor_id": "cloud-whale",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-05-01",
+  "date_precision": "month",
+  "homepage": "https://www.polybuzz.ai/",
+  "desc": "Chat with custom AI characters and role-play scenarios",
+  "desc_zh": "和自定义 AI 角色聊天的陪伴应用",
+  "solves": "Gives you a conversation partner for practising a language or a social situation.",
+  "solves_zh": "给你一个练习语言或社交场景的对话对象。",
+  "best_for": "You want to rehearse a conversation in a low-stakes setting before the real one.",
+  "best_for_zh": "想在没压力的环境里先把一段对话练熟。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 出海增速榜 App #5, 13.99M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "released",
+      "from": "2023-05",
+      "to": "2023-05-01",
+      "why": "来源只精确到月，按约定补成当月 1 日"
+    }
+  ]
+}

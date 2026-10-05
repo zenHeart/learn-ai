@@ -1,0 +1,31 @@
+{
+  "id": "retake-ai",
+  "name": "Retake AI",
+  "name_zh": "Retake AI",
+  "vendor_id": "zipoapps",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-01-01",
+  "date_precision": "month",
+  "homepage": "https://apps.apple.com/us/app/retake-ai-face-photo-editor/id6446589017",
+  "desc": "AI portrait editor that reshapes faces and skin",
+  "desc_zh": "用 AI 重塑脸型和肤质的头像修图工具",
+  "solves": "Gives a plausible new headshot without a photographer or a studio.",
+  "solves_zh": "不用影棚也能得到一张像样的新头像。",
+  "best_for": "You need a current profile photo and cannot book a shoot.",
+  "best_for_zh": "需要一张能用的职业头像、又来不及约拍摄时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Apple App Store US Photo & Video Top Free #21。来源：https://apps.apple.com/us/iphone/charts/6008",
+  "revisions": []
+}

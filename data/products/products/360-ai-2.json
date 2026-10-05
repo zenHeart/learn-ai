@@ -1,0 +1,32 @@
+{
+  "id": "360-ai-2",
+  "name": "360 AI办公",
+  "name_zh": "360 AI办公",
+  "vendor_id": "360",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://bangong.360.cn/",
+  "desc": "360's office AI suite: writing, PPT, spreadsheets.",
+  "desc_zh": "360 的办公 AI 套件：写作、PPT、表格",
+  "solves": "WPS AI and Copilot both cover this ground. 360's is free-tiered and pre-wired to its own model line, so it works without a subscription decision.",
+  "solves_zh": "WPS AI 和 Copilot 都做这块。360 这个有免费档，而且接自家模型线，不用先做订阅决定。",
+  "best_for": "You want office AI features without paying for a tier first.",
+  "best_for_zh": "你想先用上办公 AI 功能，不想先付费定档。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.360.cn/。来源：https://www.360.cn/",
+  "revisions": []
+}

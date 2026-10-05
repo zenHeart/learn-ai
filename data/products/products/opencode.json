@@ -1,0 +1,31 @@
+{
+  "id": "opencode",
+  "name": "OpenCode",
+  "name_zh": "OpenCode",
+  "vendor_id": "sst",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://opencode.ai/",
+  "desc": "Open-source terminal coding agent, provider-agnostic",
+  "desc_zh": "不绑定模型厂商的开源终端编程智能体",
+  "solves": "Lets you point the same agent at whichever model provider you hold a key for.",
+  "solves_zh": "同一个智能体可以接到你手里有 key 的任意模型厂商。",
+  "best_for": "You switch model providers and do not want to relearn the agent each time.",
+  "best_for_zh": "经常换模型厂商、不想每次重学一个智能体时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Coding-agent gap check against the existing catalogue。来源：https://opencode.ai/",
+  "revisions": []
+}

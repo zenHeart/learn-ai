@@ -1,0 +1,31 @@
+{
+  "id": "mureka",
+  "name": "Mureka",
+  "name_zh": "Mureka",
+  "vendor_id": "kunlun",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.mureka.ai/",
+  "desc": "AI music generator for melodies, songs and lyrics.",
+  "desc_zh": "AI 音乐生成器，创作旋律、歌曲与歌词",
+  "solves": "A backing track for a video or podcast usually means licensing something. This generates the track, vocals included.",
+  "solves_zh": "给视频或播客配一段背景音乐，通常意味着去授权一首现成的。这个直接生成，含人声。",
+  "best_for": "You need original music cleared for use, quickly.",
+  "best_for_zh": "你需要一段可以放心使用的原创音乐，而且要快。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.kunlun.com/。来源：https://www.mureka.cn/",
+  "revisions": []
+}

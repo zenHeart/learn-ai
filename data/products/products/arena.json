@@ -1,0 +1,31 @@
+{
+  "id": "arena",
+  "name": "Arena",
+  "name_zh": "Arena",
+  "vendor_id": "lmarena",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-05-01",
+  "date_precision": "month",
+  "homepage": "https://arena.ai",
+  "desc": "Blind A/B comparison of AI models with a public leaderboard.",
+  "desc_zh": "AI 模型盲测 A/B 对比，配套公开排行榜。",
+  "solves": "Ranks models by what real users prefer in blind tests, instead of by vendor benchmark claims.",
+  "solves_zh": "按真实用户盲测偏好排名模型，而不是按厂商自报的跑分。",
+  "best_for": "Reaching for it when you want to pick a model by evidence rather than by marketing.",
+  "best_for_zh": "想凭证据而不是宣传来选模型时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Similarweb global AI traffic list, #31 with ~22.2M monthly visits (LMArena)。来源：https://arena.ai/blog/lmarena-is-now-arena",
+  "revisions": []
+}

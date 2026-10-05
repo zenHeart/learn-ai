@@ -1,0 +1,31 @@
+{
+  "id": "charm-crush",
+  "name": "Charm Crush",
+  "name_zh": "Charm Crush",
+  "vendor_id": "charm",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://charm.land/",
+  "desc": "Open-source terminal coding agent with its own TUI",
+  "desc_zh": "带自研 TUI 的开源终端编程智能体",
+  "solves": "Keeps a fast agent loop entirely in the terminal, with no editor to configure.",
+  "solves_zh": "整个循环都在终端里，不用配编辑器。",
+  "best_for": "You live in the shell and want an agent that stays there.",
+  "best_for_zh": "平时就待在 shell 里、想让智能体也待在终端时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Coding-agent gap check against the existing catalogue。来源：https://charm.land/",
+  "revisions": []
+}

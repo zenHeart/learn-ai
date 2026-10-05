@@ -1,0 +1,31 @@
+{
+  "id": "deepl",
+  "name": "DeepL",
+  "name_zh": "DeepL",
+  "vendor_id": "deepl",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2017-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.deepl.com",
+  "desc": "Neural translation plus DeepL Write for whole-text rewriting.",
+  "desc_zh": "神经网络翻译，附带 DeepL Write 全文改写。",
+  "solves": "Translates text that reads naturally in the target language, and rewrites your own text in place.",
+  "solves_zh": "译文在目标语言里读着自然，也能直接改写你自己的原文。",
+  "best_for": "Reaching for it when fluency in the target language matters more than raw speed.",
+  "best_for_zh": "目标语言的自然度比速度更重要时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Similarweb global AI traffic list, #11 with ~136M monthly visits。来源：https://thenextweb.com/news/inside-deepl-startup-rivalling-machines",
+  "revisions": []
+}

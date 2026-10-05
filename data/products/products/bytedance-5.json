@@ -1,0 +1,31 @@
+{
+  "id": "bytedance-5",
+  "name": "飞书智能纪要",
+  "name_zh": "飞书智能纪要",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2023-09-01",
+  "date_precision": "month",
+  "homepage": "https://www.feishu.cn/product/minutes",
+  "desc": "Feishu's AI meeting minutes and follow-up capture.",
+  "desc_zh": "飞书的 AI 会议纪要与待办提取",
+  "solves": "Somebody has to write the minutes, and it falls on whoever ran the meeting. This generates them in Feishu where the doc already lives.",
+  "solves_zh": "总得有人写纪要，结果落到了开会的人头上。这个直接在飞书里生成，文档本来就在那儿。",
+  "best_for": "Your meetings are on Feishu and the minutes should end up there too.",
+  "best_for_zh": "你的会议在飞书开，纪要也应该落在飞书里。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.feishu.cn/product/ai。来源：https://www.feishu.cn/product/ai",
+  "revisions": []
+}

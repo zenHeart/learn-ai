@@ -1,0 +1,32 @@
+{
+  "id": "jotform-ai-agents",
+  "name": "Jotform AI Agents",
+  "name_zh": "Jotform AI Agents",
+  "vendor_id": "jotform",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-05-27",
+  "date_precision": "day",
+  "homepage": "https://www.jotform.com/ai/agents/",
+  "desc": "Customer-support agents trained on your forms and data, no code.",
+  "desc_zh": "用你的表单和数据训练客服 Agent，无需写代码。",
+  "solves": "Deploys a support agent that already knows your forms and order fields, so it stops asking users to repeat themselves.",
+  "solves_zh": "上线即懂你的表单和订单字段的客服 Agent，不用让用户重复说明。",
+  "best_for": "Reaching for it when support volume is real but engineering help is not available.",
+  "best_for_zh": "客服量真实存在但没有工程资源时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Similarweb global AI traffic list, #25 with ~41.3M monthly visits (Jotform AI Agents)。来源：https://www.jotform.com/blog/announcing-ai-agents-for-shopify/",
+  "revisions": []
+}

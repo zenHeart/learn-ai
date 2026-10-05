@@ -1,0 +1,31 @@
+{
+  "id": "klap",
+  "name": "Klap",
+  "name_zh": "Klap",
+  "vendor_id": "klap",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-01-01",
+  "date_precision": "month",
+  "homepage": "https://klap.app",
+  "desc": "Cuts long videos into captioned short clips automatically.",
+  "desc_zh": "把长视频自动切成带字幕的短视频。",
+  "solves": "Produces ready-to-post shorts from a long recording, so you skip the manual highlight hunt.",
+  "solves_zh": "长视频录完直接出可发布的短片，省掉手动找高光的过程。",
+  "best_for": "Reaching for it when you already record long video and post short.",
+  "best_for_zh": "已经有长视频素材、只缺短版分发时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AIwith.me tool directory for short-form video; Klap's own Google Cloud case study (2M+ users since 2023)。来源：https://klap.app",
+  "revisions": []
+}

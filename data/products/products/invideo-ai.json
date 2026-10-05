@@ -1,0 +1,31 @@
+{
+  "id": "invideo-ai",
+  "name": "invideo AI",
+  "name_zh": "invideo AI",
+  "vendor_id": "invideo",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-11-01",
+  "date_precision": "month",
+  "homepage": "https://invideo.io/ai",
+  "desc": "Generates a full video from a prompt, script and stock",
+  "desc_zh": "从一句脚本直接生成带素材的成片",
+  "solves": "Produces a publish-ready video in minutes when you have no editing time.",
+  "solves_zh": "没有剪辑时间时，几分钟产出一条可发布的片子。",
+  "best_for": "Ad tests where you need many short variants of the same idea.",
+  "best_for_zh": "广告 A/B 测试，要为同一个想法出很多短版本时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 全球降速榜 App #8, 3.44M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

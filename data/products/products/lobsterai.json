@@ -1,0 +1,33 @@
+{
+  "id": "lobsterai",
+  "name": "LobsterAI",
+  "name_zh": "有道龙虾",
+  "vendor_id": "netease-youdao",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "coding",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "surface": "standalone",
+  "released": "2026-02-11",
+  "date_precision": "day",
+  "homepage": "https://lobsterai.youdao.com/",
+  "desc": "NetEase Youdao's open-source desktop assistant agent",
+  "desc_zh": "网易有道的开源桌面级全场景个人助理Agent",
+  "solves": "Open code, local memory, and IM remote control in one desktop agent.",
+  "solves_zh": "开源代码、本地记忆、IM 远程遥控都在一个桌面智能体里。",
+  "best_for": "When you want an auditable agent, not a black box.",
+  "best_for_zh": "想要一个可审计的智能体，而不是黑盒的人。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：LobsterAI 官网 / 网易官方博客。来源：https://lobsterai.youdao.com#/blog",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "kilo-code",
+  "name": "Kilo Code",
+  "name_zh": "Kilo Code",
+  "vendor_id": "kilo-code",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://kilocode.ai/",
+  "desc": "Open-source coding agent for VS Code and its CLI",
+  "desc_zh": "面向 VS Code 及其 CLI 的开源编程智能体",
+  "solves": "Gives you an agent that edits a real repo without locking you into a paid cloud plan.",
+  "solves_zh": "给你一个能改真实仓库的智能体，不绑定付费云套餐。",
+  "best_for": "You want an agent you can run yourself, on your own key and budget.",
+  "best_for_zh": "想用自己的 key 和预算本地跑智能体时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Coding-agent gap check against the existing catalogue。来源：https://kilocode.ai/",
+  "revisions": []
+}

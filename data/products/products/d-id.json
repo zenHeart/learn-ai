@@ -1,0 +1,32 @@
+{
+  "id": "d-id",
+  "name": "D-ID",
+  "name_zh": "D-ID",
+  "vendor_id": "d-id",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2017-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.d-id.com",
+  "desc": "Turns text, audio or a still photo into a talking digital person.",
+  "desc_zh": "把文本、音频或一张照片变成会说话的数字人。",
+  "solves": "Produces presenter video without filming a person, cutting production time from days to minutes.",
+  "solves_zh": "不拍真人也能做出出镜视频，制作时间从几天压到几分钟。",
+  "best_for": "Reaching for it when you need presenter-led video in many languages or at high volume.",
+  "best_for_zh": "需要多语种或大批量出镜口播视频时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 AI digital-human tool roundups listing D-ID alongside HeyGen and Synthesia。来源：https://www.d-id.com/",
+  "revisions": []
+}

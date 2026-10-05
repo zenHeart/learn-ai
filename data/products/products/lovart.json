@@ -1,0 +1,31 @@
+{
+  "id": "lovart",
+  "name": "Lovart",
+  "name_zh": "Lovart",
+  "vendor_id": "liblibai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-07-23",
+  "date_precision": "day",
+  "homepage": "https://www.lovart.ai",
+  "desc": "Conversational design agent that delivers complete brand and design work.",
+  "desc_zh": "对话式设计 Agent，直接产出完整品牌与设计交付物。",
+  "solves": "Removes the gap between a rough idea and a finished design file, so you stop assembling brand assets by hand.",
+  "solves_zh": "把想法直接变成可交付的设计文件，不用再手工拼凑品牌物料。",
+  "best_for": "Reaching for it when you need a full brand or marketing set in minutes, not just one image.",
+  "best_for_zh": "需要在几分钟内拿到整套品牌或营销物料，而不只是单张图的时候。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 AI tool roundups listing Lovart as the leading AI design agent; official Lovart news page。来源：https://www.prnewswire.com/news-releases/lovart-launches-globally-end-to-end-design-agent-exits-beta-802515778.html",
+  "revisions": []
+}

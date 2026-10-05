@@ -1,0 +1,31 @@
+{
+  "id": "bandlab",
+  "name": "BandLab",
+  "name_zh": "BandLab",
+  "vendor_id": "bandlab",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2014-08-01",
+  "date_precision": "month",
+  "homepage": "https://www.bandlab.com/",
+  "desc": "Multiplayer music studio and DAW with AI tools",
+  "desc_zh": "带 AI 工具的在线多人音乐工作站",
+  "solves": "Lets friends record into one session remotely instead of booking a studio.",
+  "solves_zh": "和朋友远程录同一首歌，不用去录音棚。",
+  "best_for": "Bands whose members are in different cities.",
+  "best_for_zh": "成员分散在各地的乐队。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Apple App Store US Music Top Free #8。来源：https://apps.apple.com/us/iphone/charts/6011",
+  "revisions": []
+}

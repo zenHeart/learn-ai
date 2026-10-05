@@ -1,0 +1,31 @@
+{
+  "id": "gauth",
+  "name": "Gauth",
+  "name_zh": "Gauth",
+  "vendor_id": "bytedance",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2020-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.gauthmath.com/",
+  "desc": "AI study companion, formerly the Gauthmath homework solver",
+  "desc_zh": "AI 学习助手，原名 Gauthmath 作业相机",
+  "solves": "Photograph a homework question and get a worked explanation instead of just the answer.",
+  "solves_zh": "拍下作业题，给的是讲解过程而不是只有答案。",
+  "best_for": "A student who wants to understand the method, not copy the result.",
+  "best_for_zh": "想弄懂思路而不是抄答案的学生。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 全球降速榜 App #1, 4.34M MAU。来源：https://www.scmp.com/tech/big-tech/article/3259640/byte dances-ai-homework-helper-gauth-soars-in-us",
+  "revisions": []
+}

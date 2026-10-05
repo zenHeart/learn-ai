@@ -1,0 +1,32 @@
+{
+  "id": "openart",
+  "name": "OpenArt",
+  "name_zh": "OpenArt",
+  "vendor_id": "openart",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2022-01-01",
+  "date_precision": "month",
+  "homepage": "https://openart.ai",
+  "desc": "Image and video generation platform with character consistency across shots.",
+  "desc_zh": "图像与视频生成平台，角色在多个镜头间保持一致。",
+  "solves": "Keeps the same character across a whole storyboard instead of resampling a different face each time.",
+  "solves_zh": "整个分镜保持同一个角色，不必每次重新随机换脸。",
+  "best_for": "Reaching for it when you are producing a series of images that must read as the same world.",
+  "best_for_zh": "要产出一组读起来像同一个世界的系列图时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AIwith.me tool directory recommendations; 2026 AI creative platform roundups。来源：https://pitchbook.com/profiles/company/openart",
+  "revisions": []
+}

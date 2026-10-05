@@ -1,0 +1,32 @@
+{
+  "id": "dola",
+  "name": "Dola",
+  "name_zh": "Dola",
+  "vendor_id": "bytedance",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-08-01",
+  "date_precision": "month",
+  "homepage": "https://www.dola.com/",
+  "desc": "ByteDance's overseas assistant, formerly named Cici",
+  "desc_zh": "字节跳动的海外助手，原名 Cici",
+  "solves": "Gives you a fast everyday assistant in overseas markets where Doubao is not offered.",
+  "solves_zh": "在豆包不适用的海外市场，提供一个日常够用的助手。",
+  "best_for": "You are outside China and want the ByteDance assistant experience.",
+  "best_for_zh": "在中国境外、想要字节助手那套体验时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 全球总榜 App #10, 79.36M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

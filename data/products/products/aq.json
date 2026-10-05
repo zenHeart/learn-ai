@@ -1,0 +1,31 @@
+{
+  "id": "aq",
+  "name": "AQ",
+  "name_zh": "蚂蚁 AQ",
+  "vendor_id": "ant",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-06-26",
+  "date_precision": "day",
+  "homepage": "https://www.antgroup.com/news-media/press-releases/1750919400000",
+  "desc": "Ant's AI health assistant with doctor agents",
+  "desc_zh": "蚂蚁的AI健康管家，接入名医AI分身与5000家医院",
+  "solves": "It asks follow-up questions and reads your reports before you reach a hospital.",
+  "solves_zh": "在去医院之前，它先追问症状、读懂你的报告。",
+  "best_for": "Everyday health questions and reading lab reports.",
+  "best_for_zh": "日常健康疑问、化验单看不懂的时候。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：蚂蚁集团官方新闻稿 / 央广网。来源：https://www.antgroup.com/en/news-media/press-releases/1750919400000",
+  "revisions": []
+}

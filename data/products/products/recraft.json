@@ -1,0 +1,31 @@
+{
+  "id": "recraft",
+  "name": "Recraft",
+  "name_zh": "Recraft",
+  "vendor_id": "recraft",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2022-11-01",
+  "date_precision": "month",
+  "homepage": "https://www.recraft.ai",
+  "desc": "Generates editable vectors, icons and mockups, not just flat images.",
+  "desc_zh": "生成可编辑的矢量图、图标与样机，而不只是平面图片。",
+  "solves": "Produces design output you can still edit, so a logo or icon does not have to be redrawn from scratch.",
+  "solves_zh": "产出的设计还能继续编辑，图标不必从头重画。",
+  "best_for": "Reaching for it when the deliverable is a brand asset that has to scale and recolour cleanly.",
+  "best_for_zh": "交付物是需要缩放和换色仍然干净的品牌素材时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：VentureBeat coverage of the Series A; 2026 AI design tool roundups。来源：https://www.recraft.ai/about",
+  "revisions": []
+}

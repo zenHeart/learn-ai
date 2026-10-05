@@ -1,0 +1,32 @@
+{
+  "id": "zcode",
+  "name": "ZCode",
+  "name_zh": "ZCode",
+  "vendor_id": "zhipu",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "cli",
+  "surface": "standalone",
+  "released": "2026-01-01",
+  "date_precision": "month",
+  "homepage": "https://zcode.z.ai/",
+  "desc": "Ambient multi-agent coding tool built for GLM-5.3.",
+  "desc_zh": "为 GLM-5.3 打造的多智能体氛围编程工具",
+  "solves": "Long jobs die when you close the terminal. ZCode keeps a Goal running, and you can trigger it from WeChat, Feishu or Telegram.",
+  "solves_zh": "长任务一关终端就死。ZCode 让 Goal 持续跑，你还能用微信、飞书或 Telegram 远程触发。",
+  "best_for": "You hand over a multi-step build and want it to keep going while you do something else.",
+  "best_for_zh": "你想把一个多步开发任务交出去，自己去做别的事时它还在跑。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.zhipuai.cn/。来源：https://zcode.z.ai/",
+  "revisions": []
+}

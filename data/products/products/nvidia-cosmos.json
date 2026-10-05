@@ -1,0 +1,31 @@
+{
+  "id": "nvidia-cosmos",
+  "name": "NVIDIA Cosmos",
+  "name_zh": "NVIDIA Cosmos",
+  "vendor_id": "nvidia",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.nvidia.com/en-us/ai/cosmos/",
+  "desc": "World foundation models for physical AI workflows.",
+  "desc_zh": "面向物理 AI 工作流的世界基础模型",
+  "solves": "A robot or vehicle needs to predict the physical world, not just generate text. Cosmos gives you world models to train and evaluate against.",
+  "solves_zh": "机器人或车需要预测的是物理世界，不是生成文本。Cosmos 给你可以拿来训练和评测的世界模型。",
+  "best_for": "You build robots, vehicles or anything that has to reason about physical space.",
+  "best_for_zh": "你做机器人、车辆，或者任何需要推理物理空间的东西。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.nvidia.com/en-us/ai/。来源：https://www.nvidia.com/en-us/ai/cosmos/",
+  "revisions": []
+}

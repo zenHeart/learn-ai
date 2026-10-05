@@ -1,0 +1,40 @@
+{
+  "id": "zhipu-input",
+  "name": "智谱AI输入法",
+  "name_zh": "智谱AI输入法",
+  "vendor_id": "zhipu",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "hardware",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://autoglm.zhipuai.cn/autotyper/",
+  "desc": "Zhipu's AI keyboard for writing on mobile.",
+  "desc_zh": "智谱的 AI 输入法，面向移动端写作",
+  "solves": "Mobile typing is where most writing actually happens, and that is exactly where chat assistants are not. An IME reaches you where you already type.",
+  "solves_zh": "手机上才是真正在写字的地方，而聊天助手恰恰不在那儿。输入法能到你已经在打字的地方。",
+  "best_for": "You draft and edit text mostly on a phone and want AI help at the keyboard.",
+  "best_for_zh": "你主要在手机上起草和修改文字，希望 AI 在键盘边帮上忙。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.zhipuai.cn/。来源：https://autoglm.zhipuai.cn/autotyper/",
+  "revisions": [
+    {
+      "at": "2026-10-05",
+      "by": "merge",
+      "field": "id",
+      "from": "ai-2",
+      "to": "zhipu-input",
+      "why": "slug 退化产物（中文名→ai + 序号），换成可读 id"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "confident-ai",
+  "name": "Confident AI",
+  "name_zh": "Confident AI",
+  "vendor_id": "confident-ai",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2024-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.confident-ai.com",
+  "desc": "Evaluation, red-teaming and governance built on the DeepEval framework.",
+  "desc_zh": "基于 DeepEval 框架的评估、红队测试与治理平台。",
+  "solves": "Lets you define evaluation metrics in code and run them as part of CI, not as a one-off report.",
+  "solves_zh": "评估指标用代码定义并接入 CI，而不是做成一次性报告。",
+  "best_for": "Reaching for it when you want evaluation to run on every commit.",
+  "best_for_zh": "希望评估在每次提交时自动跑时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：2026 Langfuse and LangSmith alternative comparison articles。来源：https://www.confident-ai.com/knowledge-base/compare/top-langfuse-alternatives-and-competitors-compared",
+  "revisions": []
+}

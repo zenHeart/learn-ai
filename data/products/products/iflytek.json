@@ -1,0 +1,32 @@
+{
+  "id": "iflytek",
+  "name": "讯飞听见",
+  "name_zh": "讯飞听见",
+  "vendor_id": "iflytek",
+  "region": "cn",
+  "category": "meetings",
+  "use_cases": [
+    "office",
+    "audio-voice"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2017-12-15",
+  "date_precision": "day",
+  "homepage": "https://www.iflyrec.com/",
+  "desc": "iFlytek's long-running speech-to-text transcription service",
+  "desc_zh": "科大讯飞老牌的语音转文字与会议记录服务",
+  "solves": "Dialect-heavy audio transcribes accurately without switching language modes.",
+  "solves_zh": "方言口音重的录音不用切语言模式也能转准。",
+  "best_for": "Long recordings, field interviews, dialect-heavy speech.",
+  "best_for_zh": "长录音、现场采访、方言较重的讲话。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：36氪项目库 / 科大讯飞官网。来源：https://36kr.com/project/2021383543351041",
+  "revisions": []
+}

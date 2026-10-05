@@ -1,0 +1,31 @@
+{
+  "id": "sensetime",
+  "name": "代码小浣熊",
+  "name_zh": "代码小浣熊 Raccoon",
+  "vendor_id": "sensetime",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "surface": "standalone",
+  "released": "2023-12-07",
+  "date_precision": "day",
+  "homepage": "https://www.sensetime.com/",
+  "desc": "SenseTime's AI coding assistant, public beta 2023",
+  "desc_zh": "商汤的AI编程助手，2023年底开放公测",
+  "solves": "Chinese comments and requirements get code that reads like it was written locally.",
+  "solves_zh": "中文注释和需求能生成读起来像本地人写的代码。",
+  "best_for": "Chinese-language teams working in mainstream IDEs.",
+  "best_for_zh": "中文团队在主流 IDE 里写代码。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：夸克百科 / 百度百科 代码小浣熊词条。来源：https://baike.baidu.com/item/%E4%BB%A3%E7%A0%81%E5%B0%8F%E6%B5%A3%E7%86%8A/67357067",
+  "revisions": []
+}

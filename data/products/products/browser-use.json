@@ -1,0 +1,32 @@
+{
+  "id": "browser-use",
+  "name": "Browser Use",
+  "name_zh": "Browser Use",
+  "vendor_id": "browser-use",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "research"
+  ],
+  "form": "self-hosted",
+  "surface": "standalone",
+  "released": "2024-11-01",
+  "date_precision": "month",
+  "homepage": "https://browser-use.com",
+  "desc": "Open-source library that lets agents drive a real web browser.",
+  "desc_zh": "开源库，让 Agent 直接驱动真实浏览器。",
+  "solves": "Lets your agent operate websites through the DOM, so it can do the clicking and form-filling you would rather not.",
+  "solves_zh": "让 Agent 通过 DOM 操作网站，把点击和填表这类活交给它。",
+  "best_for": "Reaching for it when your agent has to complete tasks on sites with no API.",
+  "best_for_zh": "Agent 要在那些没有 API 的网站上干活时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Show HN and r/LocalLLaMA threads; YC W25 company listing (40k+ GitHub stars)。来源：https://pypi.org/project/browser-use/",
+  "revisions": []
+}

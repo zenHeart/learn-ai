@@ -1,0 +1,32 @@
+{
+  "id": "monica",
+  "name": "Monica",
+  "name_zh": "Monica",
+  "vendor_id": "butterfly-effect",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-10-01",
+  "date_precision": "month",
+  "homepage": "https://monica.im/",
+  "desc": "One-stop assistant bundling many models in a browser",
+  "desc_zh": "把多家大模型收进一个浏览器助手",
+  "solves": "Lets you answer one question across several models and compare, without five tabs open.",
+  "solves_zh": "同一个问题可以换几个模型对比，不用开五个标签页。",
+  "best_for": "You have a subscription to one model but need a second opinion from another.",
+  "best_for_zh": "只订了某家模型，还想找另一家给个对照时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 出海总榜 App, 649.56K MAU。来源：https://monica.im/",
+  "revisions": []
+}

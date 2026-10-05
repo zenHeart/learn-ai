@@ -1,0 +1,31 @@
+{
+  "id": "fotor",
+  "name": "Fotor",
+  "name_zh": "Fotor",
+  "vendor_id": "everimaging",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2019-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.fotor.com/",
+  "desc": "AI photo editor paired with a brand-marketing kit",
+  "desc_zh": "把 AI 修图和品牌物料生成放在一起的工具",
+  "solves": "Turns a photo into a social post with matching brand text in one flow.",
+  "solves_zh": "一张图直接生成带品牌文案的社媒物料。",
+  "best_for": "You post often and want the same look without a designer each time.",
+  "best_for_zh": "要高频发帖、又不想每次都找设计时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 出海总榜 App, 867.25K MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

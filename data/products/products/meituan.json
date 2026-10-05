@@ -1,0 +1,32 @@
+{
+  "id": "meituan",
+  "name": "妙手",
+  "name_zh": "妙手",
+  "vendor_id": "meituan",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "surface": "standalone",
+  "released": "2026-07-01",
+  "date_precision": "month",
+  "homepage": "https://catpaw.meituan.com/",
+  "desc": "Meituan's AI workbench for local-life merchants",
+  "desc_zh": "美团面向本地生活商家的AI经营工作台",
+  "solves": "Chain and small merchants get store operations analysis without a data team.",
+  "solves_zh": "连锁和中小商家不用自建数据团队也能做门店经营分析。",
+  "best_for": "When you run restaurants, hotels or pharmacies on Meituan.",
+  "best_for_zh": "在美团开餐饮、酒店、药店的商家。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：新华网 / 环球网 报道（2026-09-20 妙手开放日）。来源：https://www.news.cn/tech/20260921/978edb579e5d4666be55d8f28f118e4e/c.html",
+  "revisions": []
+}

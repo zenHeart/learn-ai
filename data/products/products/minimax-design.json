@@ -1,0 +1,32 @@
+{
+  "id": "minimax-design",
+  "name": "MiniMax Design",
+  "name_zh": "MiniMax Design",
+  "vendor_id": "minimax",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2026-08-20",
+  "date_precision": "day",
+  "homepage": "https://design.minimax.io/",
+  "desc": "Multimodal video creation agent built on H3",
+  "desc_zh": "基于H3的多模态视频创作Agent工作台",
+  "solves": "It plans shots, generates and edits the cut, so you stay in one tool.",
+  "solves_zh": "分镜、生成、剪辑成片都在一处完成，不用来回切软件。",
+  "best_for": "Commercial video with many revisions and many steps.",
+  "best_for_zh": "环节多、要反复改的商业视频制作。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：澎湃新闻 / AIBase / 百度百科。来源：https://www.thepaper.cn/newsDetail_forward_33831919",
+  "revisions": []
+}

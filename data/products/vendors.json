@@ -95,6 +95,16 @@
       ]
     },
     {
+      "id": "anara",
+      "display_name": "Anara",
+      "display_name_zh": "Anara",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "anara.com"
+      ]
+    },
+    {
       "id": "anthropic",
       "display_name": "Anthropic",
       "display_name_zh": "Anthropic",
@@ -159,6 +169,16 @@
       ]
     },
     {
+      "id": "bandlab",
+      "display_name": "BandLab Technologies",
+      "display_name_zh": "BandLab Technologies",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "bandlab.com"
+      ]
+    },
+    {
       "id": "beautiful-ai",
       "display_name": "Beautiful.ai",
       "display_name_zh": "Beautiful.ai",
@@ -220,6 +240,16 @@
       ]
     },
     {
+      "id": "browser-use",
+      "display_name": "Browser Use",
+      "display_name_zh": "Browser Use",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "browser-use.com"
+      ]
+    },
+    {
       "id": "butterfly-effect",
       "display_name": "Butterfly Effect",
       "display_name_zh": "Butterfly Effect",
@@ -260,6 +290,16 @@
       ]
     },
     {
+      "id": "charm",
+      "display_name": "Charm",
+      "display_name_zh": "Charm",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "charm.land"
+      ]
+    },
+    {
       "id": "chroma",
       "display_name": "Chroma",
       "display_name_zh": "Chroma",
@@ -277,6 +317,16 @@
       "product_count": 1,
       "official_domains": [
         "cline.bot"
+      ]
+    },
+    {
+      "id": "cloud-whale",
+      "display_name": "Cloud Whale Interactive",
+      "display_name_zh": "Cloud Whale Interactive",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "polybuzz.ai"
       ]
     },
     {
@@ -311,6 +361,26 @@
       ]
     },
     {
+      "id": "confident-ai",
+      "display_name": "Confident AI",
+      "display_name_zh": "Confident AI",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "confident-ai.com"
+      ]
+    },
+    {
+      "id": "consensus",
+      "display_name": "Consensus",
+      "display_name_zh": "Consensus",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "consensus.app"
+      ]
+    },
+    {
       "id": "harvey",
       "display_name": "Counsel AI Corporation",
       "display_name_zh": "Counsel AI Corporation",
@@ -328,6 +398,26 @@
       "product_count": 1,
       "official_domains": [
         "crewai.com"
+      ]
+    },
+    {
+      "id": "d-id",
+      "display_name": "D-ID",
+      "display_name_zh": "D-ID",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "d-id.com"
+      ]
+    },
+    {
+      "id": "deepl",
+      "display_name": "DeepL",
+      "display_name_zh": "DeepL",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "deepl.com"
       ]
     },
     {
@@ -352,6 +442,16 @@
       ]
     },
     {
+      "id": "dputable",
+      "display_name": "Dputable",
+      "display_name_zh": "Dputable",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "question.ai"
+      ]
+    },
+    {
       "id": "element-labs",
       "display_name": "Element Labs",
       "display_name_zh": "Element Labs",
@@ -369,6 +469,16 @@
       "product_count": 1,
       "official_domains": [
         "elevenlabs.io"
+      ]
+    },
+    {
+      "id": "everimaging",
+      "display_name": "Everimaging",
+      "display_name_zh": "Everimaging",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "fotor.com"
       ]
     },
     {
@@ -452,6 +562,16 @@
       ]
     },
     {
+      "id": "galileo",
+      "display_name": "Galileo",
+      "display_name_zh": "Galileo",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "galileo.ai"
+      ]
+    },
+    {
       "id": "gamma",
       "display_name": "Gamma",
       "display_name_zh": "Gamma",
@@ -498,6 +618,16 @@
         "labs.google",
         "notebooklm.google.com",
         "workspaceupdates.googleblog.com"
+      ]
+    },
+    {
+      "id": "grammarly",
+      "display_name": "Grammarly",
+      "display_name_zh": "Grammarly",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "grammarly.com"
       ]
     },
     {
@@ -591,6 +721,16 @@
       ]
     },
     {
+      "id": "invideo",
+      "display_name": "InVideo",
+      "display_name_zh": "InVideo",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "invideo.io"
+      ]
+    },
+    {
       "id": "inflection-ai",
       "display_name": "Inflection AI",
       "display_name_zh": "Inflection AI",
@@ -631,6 +771,16 @@
       ]
     },
     {
+      "id": "jotform",
+      "display_name": "Jotform",
+      "display_name_zh": "Jotform",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "jotform.com"
+      ]
+    },
+    {
       "id": "kagi",
       "display_name": "Kagi",
       "display_name_zh": "Kagi",
@@ -638,6 +788,16 @@
       "product_count": 1,
       "official_domains": [
         "kagi.com"
+      ]
+    },
+    {
+      "id": "kilo-code",
+      "display_name": "Kilo Code",
+      "display_name_zh": "Kilo Code",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "kilocode.ai"
       ]
     },
     {
@@ -651,6 +811,16 @@
       ]
     },
     {
+      "id": "klap",
+      "display_name": "Klap",
+      "display_name_zh": "Klap",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "klap.app"
+      ]
+    },
+    {
       "id": "krea",
       "display_name": "Krea",
       "display_name_zh": "Krea",
@@ -661,6 +831,16 @@
       ]
     },
     {
+      "id": "lmarena",
+      "display_name": "LMArena",
+      "display_name_zh": "LMArena",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "arena.ai"
+      ]
+    },
+    {
       "id": "labelbox",
       "display_name": "Labelbox",
       "display_name_zh": "Labelbox",
@@ -668,6 +848,16 @@
       "product_count": 1,
       "official_domains": [
         "labelbox.com"
+      ]
+    },
+    {
+      "id": "laminar",
+      "display_name": "Laminar",
+      "display_name_zh": "Laminar",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "laminar.sh"
       ]
     },
     {
@@ -708,6 +898,16 @@
       "product_count": 1,
       "official_domains": [
         "leonardo.ai"
+      ]
+    },
+    {
+      "id": "liblibai",
+      "display_name": "LiblibAI",
+      "display_name_zh": "LiblibAI",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "lovart.ai"
       ]
     },
     {
@@ -758,6 +958,16 @@
       "product_count": 1,
       "official_domains": [
         "lumalabs.ai"
+      ]
+    },
+    {
+      "id": "maxim-ai",
+      "display_name": "Maxim AI",
+      "display_name_zh": "Maxim AI",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "getmaxim.ai"
       ]
     },
     {
@@ -885,6 +1095,16 @@
       ]
     },
     {
+      "id": "notta",
+      "display_name": "Notta",
+      "display_name_zh": "Notta",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "notta.ai"
+      ]
+    },
+    {
       "id": "ollama",
       "display_name": "Ollama",
       "display_name_zh": "Ollama",
@@ -892,6 +1112,16 @@
       "product_count": 1,
       "official_domains": [
         "ollama.com"
+      ]
+    },
+    {
+      "id": "open-webui",
+      "display_name": "Open WebUI",
+      "display_name_zh": "Open WebUI",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "openwebui.com"
       ]
     },
     {
@@ -910,6 +1140,16 @@
       ]
     },
     {
+      "id": "openart",
+      "display_name": "OpenArt",
+      "display_name_zh": "OpenArt",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "openart.ai"
+      ]
+    },
+    {
       "id": "openclaw",
       "display_name": "OpenClaw",
       "display_name_zh": "OpenClaw",
@@ -917,6 +1157,16 @@
       "product_count": 1,
       "official_domains": [
         "openclaw.ai"
+      ]
+    },
+    {
+      "id": "sst",
+      "display_name": "OpenCode (SST)",
+      "display_name_zh": "OpenCode (SST)",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "opencode.ai"
       ]
     },
     {
@@ -937,6 +1187,16 @@
       "product_count": 1,
       "official_domains": [
         "otter.ai"
+      ]
+    },
+    {
+      "id": "paradot",
+      "display_name": "Paradot",
+      "display_name_zh": "Paradot",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "paradot.ai"
       ]
     },
     {
@@ -971,6 +1231,16 @@
       ]
     },
     {
+      "id": "picsart",
+      "display_name": "Picsart",
+      "display_name_zh": "Picsart",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "picsart.com"
+      ]
+    },
+    {
       "id": "pika-labs",
       "display_name": "Pika Labs",
       "display_name_zh": "Pika Labs",
@@ -988,6 +1258,16 @@
       "product_count": 1,
       "official_domains": [
         "pinecone.io"
+      ]
+    },
+    {
+      "id": "pollo-ai",
+      "display_name": "Pollo AI",
+      "display_name_zh": "Pollo AI",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "pollo.ai"
       ]
     },
     {
@@ -1011,6 +1291,16 @@
       ]
     },
     {
+      "id": "promptlayer",
+      "display_name": "PromptLayer",
+      "display_name_zh": "PromptLayer",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "promptlayer.com"
+      ]
+    },
+    {
       "id": "qdrant",
       "display_name": "Qdrant",
       "display_name_zh": "Qdrant",
@@ -1028,6 +1318,16 @@
       "product_count": 1,
       "official_domains": [
         "rabbit.tech"
+      ]
+    },
+    {
+      "id": "recraft",
+      "display_name": "Recraft",
+      "display_name_zh": "Recraft",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "recraft.ai"
       ]
     },
     {
@@ -1081,6 +1381,16 @@
       ]
     },
     {
+      "id": "rythmix",
+      "display_name": "Rythmix",
+      "display_name_zh": "Rythmix",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "rythmix.ai"
+      ]
+    },
+    {
       "id": "salesforce",
       "display_name": "Salesforce",
       "display_name_zh": "Salesforce",
@@ -1122,6 +1432,26 @@
       ]
     },
     {
+      "id": "slack",
+      "display_name": "Slack",
+      "display_name_zh": "Slack",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "slack.com"
+      ]
+    },
+    {
+      "id": "sosiee",
+      "display_name": "Sosiee",
+      "display_name_zh": "Sosiee",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "sosiee.ai"
+      ]
+    },
+    {
       "id": "sourcegraph",
       "display_name": "Sourcegraph",
       "display_name_zh": "Sourcegraph",
@@ -1139,6 +1469,16 @@
       "product_count": 1,
       "official_domains": [
         "bolt.new"
+      ]
+    },
+    {
+      "id": "sudowrite",
+      "display_name": "Sudowrite",
+      "display_name_zh": "Sudowrite",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "sudowrite.com"
       ]
     },
     {
@@ -1212,6 +1552,16 @@
       ]
     },
     {
+      "id": "typeless",
+      "display_name": "Typeless",
+      "display_name_zh": "Typeless",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "typeless.com"
+      ]
+    },
+    {
       "id": "uncharted-labs",
       "display_name": "Uncharted Labs",
       "display_name_zh": "Uncharted Labs",
@@ -1219,6 +1569,16 @@
       "product_count": 1,
       "official_domains": [
         "udio.com"
+      ]
+    },
+    {
+      "id": "vellum-ai",
+      "display_name": "Vellum AI",
+      "display_name_zh": "Vellum AI",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "vellum.ai"
       ]
     },
     {
@@ -1284,6 +1644,16 @@
       ]
     },
     {
+      "id": "wix",
+      "display_name": "Wix",
+      "display_name_zh": "Wix",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "base44.com"
+      ]
+    },
+    {
       "id": "you-com",
       "display_name": "You.com",
       "display_name_zh": "You.com",
@@ -1314,6 +1684,16 @@
       ]
     },
     {
+      "id": "zeta",
+      "display_name": "Zeta",
+      "display_name_zh": "Zeta",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "zeta.ai"
+      ]
+    },
+    {
       "id": "zilliz",
       "display_name": "Zilliz",
       "display_name_zh": "Zilliz",
@@ -1321,6 +1701,16 @@
       "product_count": 1,
       "official_domains": [
         "milvus.io"
+      ]
+    },
+    {
+      "id": "zipoapps",
+      "display_name": "ZipoApps",
+      "display_name_zh": "ZipoApps",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "apps.apple.com"
       ]
     },
     {
@@ -1345,6 +1735,16 @@
       ]
     },
     {
+      "id": "remove-bg",
+      "display_name": "remove.bg",
+      "display_name_zh": "remove.bg",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "remove.bg"
+      ]
+    },
+    {
       "id": "tl-dv",
       "display_name": "tl;dv",
       "display_name_zh": "tl;dv",
@@ -1352,6 +1752,16 @@
       "product_count": 1,
       "official_domains": [
         "tldv.io"
+      ]
+    },
+    {
+      "id": "vivago",
+      "display_name": "vivago",
+      "display_name_zh": "vivago",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "vivago.ai"
       ]
     },
     {
@@ -1467,6 +1877,16 @@
       ]
     },
     {
+      "id": "aishi-tech",
+      "display_name": "爱诗科技",
+      "display_name_zh": "爱诗科技",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "pixverse.ai"
+      ]
+    },
+    {
       "id": "shengshu-ai",
       "display_name": "生数科技 ShengShu AI",
       "display_name_zh": "生数科技 ShengShu AI",
@@ -1486,6 +1906,16 @@
         "comate.baidu.com",
         "qianfan.cloud.baidu.com",
         "yiyan.baidu.com"
+      ]
+    },
+    {
+      "id": "zhihu",
+      "display_name": "知乎",
+      "display_name_zh": "知乎",
+      "region": "cn",
+      "product_count": 1,
+      "official_domains": [
+        "zhida.zhihu.com"
       ]
     },
     {
@@ -1519,6 +1949,16 @@
       ]
     },
     {
+      "id": "netease-youdao",
+      "display_name": "网易有道",
+      "display_name_zh": "网易有道",
+      "region": "cn",
+      "product_count": 1,
+      "official_domains": [
+        "baoku.youdao.com"
+      ]
+    },
+    {
       "id": "meituan",
       "display_name": "美团",
       "display_name_zh": "美团",
@@ -1526,6 +1966,16 @@
       "product_count": 1,
       "official_domains": [
         "meituan.com"
+      ]
+    },
+    {
+      "id": "meitu",
+      "display_name": "美图",
+      "display_name_zh": "美图",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "meitu.com"
       ]
     },
     {
@@ -1550,6 +2000,16 @@
       "official_domains": [
         "cloud.tencent.com",
         "copilot.tencent.com"
+      ]
+    },
+    {
+      "id": "ant",
+      "display_name": "蚂蚁集团",
+      "display_name_zh": "蚂蚁集团",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "antgroup.com"
       ]
     },
     {

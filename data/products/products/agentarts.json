@@ -1,0 +1,32 @@
+{
+  "id": "agentarts",
+  "name": "智果 AgentArts",
+  "name_zh": "智果 AgentArts",
+  "vendor_id": "huawei",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "observability"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-06-01",
+  "date_precision": "month",
+  "homepage": "https://www.huaweicloud.com/product/agentarts.html",
+  "desc": "Huawei Cloud's enterprise agent-building platform.",
+  "desc_zh": "华为云的企业级智能体构建平台",
+  "solves": "An agent demo dies in production because nobody can see what it did. AgentArts pairs multi-agent runtime with end-to-end observability and evaluation, which is the part enterprises actually buy.",
+  "solves_zh": "Agent 演示到了生产就死，因为没人看得见它干了什么。AgentArts 把多智能体运行时和端到端可观测可评估放在一起，这才是企业真正买的部分。",
+  "best_for": "You are shipping agents to production and need runtime plus observability together.",
+  "best_for_zh": "你要把智能体送进生产，需要运行时和可观测性一起要。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.huaweicloud.com/product/pangu.html。来源：https://www.huaweicloud.com/product/agentarts.html",
+  "revisions": []
+}

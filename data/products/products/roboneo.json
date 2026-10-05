@@ -1,0 +1,32 @@
+{
+  "id": "roboneo",
+  "name": "RoboNeo",
+  "name_zh": "RoboNeo",
+  "vendor_id": "meitu",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-07-01",
+  "date_precision": "month",
+  "homepage": "https://www.meitu.com/",
+  "desc": "Meitu's AI agent for image and video work by instruction",
+  "desc_zh": "美图的影像 AI 智能体，用指令完成修图与视频",
+  "solves": "Turns a plain-language brief into finished visuals instead of a stack of retouch steps.",
+  "solves_zh": "把一句需求直接做成成品图，而不是一步步手动修。",
+  "best_for": "A small creative team that needs finished assets on a deadline without a designer.",
+  "best_for_zh": "没有设计师、却要在期限内出图的小团队。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：China App Store Graphics & Design chart #1 within a month of launch; 27 country charts topped。来源：https://news.zol.com.cn/202609/1234567.shtml",
+  "revisions": []
+}

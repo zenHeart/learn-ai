@@ -1,0 +1,32 @@
+{
+  "id": "open-webui",
+  "name": "Open WebUI",
+  "name_zh": "Open WebUI",
+  "vendor_id": "open-webui",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private",
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "surface": "standalone",
+  "released": "2023-10-06",
+  "date_precision": "day",
+  "homepage": "https://openwebui.com",
+  "desc": "Self-hosted ChatGPT-style interface for local and cloud models.",
+  "desc_zh": "自托管的类 ChatGPT 界面，同时接本地与云端模型。",
+  "solves": "Gives you one private chat interface over your own models, so nothing you write leaves your machine.",
+  "solves_zh": "给自己的模型一个统一的私有聊天界面，写的内容不出本机。",
+  "best_for": "Reaching for it when you run models locally and want a usable chat, RAG and multi-user layer on top.",
+  "best_for_zh": "本地跑模型，又需要聊天、检索增强和多用户能力时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：r/LocalLLaMA and r/selfhosted recommendations; Ollama companion-tool threads。来源：https://openwebui.com/",
+  "revisions": []
+}

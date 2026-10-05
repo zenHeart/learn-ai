@@ -1,0 +1,32 @@
+{
+  "id": "workbuddy",
+  "name": "WorkBuddy",
+  "name_zh": "WorkBuddy",
+  "vendor_id": "tencent",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "surface": "standalone",
+  "released": "2026-03-09",
+  "date_precision": "day",
+  "homepage": "https://www.workbuddy.cn/",
+  "desc": "Tencent's OpenClaw-compatible desktop work agent",
+  "desc_zh": "腾讯的全场景AI办公工作台，兼容OpenClaw技能",
+  "solves": "Install once and run OpenClaw skills without any server setup.",
+  "solves_zh": "装完即用，不用自己搭服务器就能跑OpenClaw技能。",
+  "best_for": "Office workers who want an agent on their own PC.",
+  "best_for_zh": "想在自己电脑上装个能干活的智能体的办公人群。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：中国工业新闻网 AI办公三强竞速盘点。来源：https://www.cnstock.com/commonDetail/647183",
+  "revisions": []
+}

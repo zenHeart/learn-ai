@@ -1,0 +1,32 @@
+{
+  "id": "bytedance-2",
+  "name": "豆包电脑版",
+  "name_zh": "豆包电脑版",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.doubao.com/download/desktop",
+  "desc": "Desktop build of ByteDance's Doubao assistant.",
+  "desc_zh": "字节跳动豆包助手的电脑版",
+  "solves": "A phone-only assistant cannot see the file you have open. The desktop build reads the window in front of you.",
+  "solves_zh": "只在手机上的助手看不见你正打开的文件。电脑版读得到你眼前的窗口。",
+  "best_for": "You want Doubao to work against the files and windows on your computer.",
+  "best_for_zh": "你想让豆包针对你电脑上的文件和窗口干活。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.doubao.com/。来源：https://www.doubao.com/",
+  "revisions": []
+}

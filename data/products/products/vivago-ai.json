@@ -1,0 +1,32 @@
+{
+  "id": "vivago-ai",
+  "name": "vivago.ai",
+  "name_zh": "vivago.ai",
+  "vendor_id": "vivago",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-06-01",
+  "date_precision": "month",
+  "homepage": "https://vivago.ai/",
+  "desc": "AI director that carries a script to finished film",
+  "desc_zh": "从剧本一路做到成片的 AI 导演",
+  "solves": "Keeps a short film's look consistent across shots without manual continuity work.",
+  "solves_zh": "让短片各镜头风格一致，不用手动做连续性。",
+  "best_for": "A short film where visual consistency across shots matters.",
+  "best_for_zh": "重视镜头间视觉一致性的短片。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：AICPB AI产品榜 出海增速榜 App #1, 4.60M MAU。来源：https://www.aicpb.com/zh/ai-rankings/products/apps",
+  "revisions": []
+}

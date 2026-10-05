@@ -1,0 +1,32 @@
+{
+  "id": "figma-make",
+  "name": "Figma Make",
+  "name_zh": "Figma Make",
+  "vendor_id": "figma",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "coding"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-07-01",
+  "date_precision": "month",
+  "homepage": "https://www.figma.com/make/",
+  "desc": "Prompt or design file into a code-backed prototype.",
+  "desc_zh": "从提示词或设计稿生成有代码支撑的原型",
+  "solves": "A Figma file cannot be shipped. Make turns the design — or a sentence — into working code you can run and edit, keeping the design context attached.",
+  "solves_zh": "Figma 文件交付不了。Make 把设计稿——或者一句话——变成能跑能改的真代码，同时保留设计上下文。",
+  "best_for": "You are a designer who needs a working prototype, or a dev who wants to start from a real design file.",
+  "best_for_zh": "你是设计师，需要一个能跑的原型；或者你是开发，想从真实设计稿起步。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.figma.com/ai/。来源：https://www.figma.com/make/",
+  "revisions": []
+}

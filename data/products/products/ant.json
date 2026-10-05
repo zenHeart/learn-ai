@@ -1,0 +1,32 @@
+{
+  "id": "ant",
+  "name": "灵光",
+  "name_zh": "灵光",
+  "vendor_id": "ant",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-11-18",
+  "date_precision": "day",
+  "homepage": "https://www.lingguang.com/",
+  "desc": "Ant's multimodal assistant that builds mini-apps from a sentence",
+  "desc_zh": "蚂蚁的全模态AI助手，一句话生成可交互小应用",
+  "solves": "You get a working calculator or planner in 30 seconds, no coding.",
+  "solves_zh": "三十秒得到一个能用的计算器或计划器，不用写代码。",
+  "best_for": "When you need a one-off tool more than a conversation.",
+  "best_for_zh": "需要一个一次性的小工具，而不是一次聊天。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：蚂蚁集团官方新闻稿。来源：https://www.antgroup.com/en/news-media/press-releases/1763427600000",
+  "revisions": []
+}

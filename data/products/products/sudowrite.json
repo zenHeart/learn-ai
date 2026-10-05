@@ -1,0 +1,31 @@
+{
+  "id": "sudowrite",
+  "name": "Sudowrite",
+  "name_zh": "Sudowrite",
+  "vendor_id": "sudowrite",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2022-01-01",
+  "date_precision": "month",
+  "homepage": "https://sudowrite.com",
+  "desc": "AI writing partner built specifically for fiction and long manuscripts.",
+  "desc_zh": "专为小说与长篇写作打造的 AI 写作搭档。",
+  "solves": "Covers plotting, prose rewriting and long-form structure without flattening your voice into generic assistant prose.",
+  "solves_zh": "从情节到长篇结构都能帮上，又不会把你的文风压成千篇一律的助手腔。",
+  "best_for": "Reaching for it when you are writing a novel and generic chat assistants stall at the middle.",
+  "best_for_zh": "写长篇小说、普通聊天助手写到中段就卡住时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：aimojo.io editor's picks listing Sudowrite among top-rated writing tools。来源：https://every.to/chainletters/an-ai-might-have-written-this",
+  "revisions": []
+}

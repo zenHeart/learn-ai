@@ -1,0 +1,32 @@
+{
+  "id": "vellum",
+  "name": "Vellum",
+  "name_zh": "Vellum",
+  "vendor_id": "vellum-ai",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-01-01",
+  "date_precision": "month",
+  "homepage": "https://www.vellum.ai",
+  "desc": "Build, test and ship LLM apps with evaluation built in.",
+  "desc_zh": "构建、测试与上线 LLM 应用，内建评估能力。",
+  "solves": "Keeps prompt versions, test cases and evals in one place, so you can tell a regression from a model change.",
+  "solves_zh": "提示词版本、测试用例与评估放在一处，能分清是回归还是模型变化。",
+  "best_for": "Reaching for it when your LLM feature has enough users that regressions actually hurt.",
+  "best_for_zh": "LLM 功能用户已经多到回归会造成损失时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：Vellum's own agent-observability tool comparison pages listing the 2026 field。来源：https://www.vellum.ai/blog/best-ai-agent-observability-tools",
+  "revisions": []
+}

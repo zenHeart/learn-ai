@@ -1,0 +1,32 @@
+{
+  "id": "bytedance",
+  "name": "豆包工作",
+  "name_zh": "豆包工作",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "surface": "standalone",
+  "released": "2026-08-25",
+  "date_precision": "day",
+  "homepage": "https://www.doubao.com/work",
+  "desc": "ByteDance's office agent wired into Feishu context",
+  "desc_zh": "字节跳动的办公Agent，打通飞书企业上下文",
+  "solves": "It reads your Feishu chats and minutes, so it knows the real business context.",
+  "solves_zh": "它能读你飞书里的聊天和纪要，知道真实的业务上下文。",
+  "best_for": "Teams already living in Feishu who want an agent.",
+  "best_for_zh": "公司已经在用飞书、需要一个智能体的人。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：澎湃新闻 / 中国证券网 发布会报道。来源：https://www.cnstock.com/commonDetail/770618",
+  "revisions": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "360-ai",
+  "name": "360 纳米AI搜索",
+  "name_zh": "360 纳米AI搜索",
+  "vendor_id": "360",
+  "region": "cn",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2023-11-01",
+  "date_precision": "month",
+  "homepage": "https://bot.n.cn/",
+  "desc": "360's AI search engine with multi-model routing.",
+  "desc_zh": "360 的 AI 搜索引擎，支持多模型路由",
+  "solves": "MetaSearch and Perplexity both route across models. 360's version does the same from inside a Chinese browser and search index, which is what makes it answer Chinese queries well.",
+  "solves_zh": "MetaSearch 和 Perplexity 都做多模型路由。360 的版本在中国浏览器和搜索索引里做同样的事，这正是它答得好中文查询的原因。",
+  "best_for": "You want AI search with Chinese sources and Chinese query quality.",
+  "best_for_zh": "你要的是能搜到中文来源、中文查询质量好的 AI 搜索。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.360.cn/。来源：https://www.360.cn/",
+  "revisions": []
+}

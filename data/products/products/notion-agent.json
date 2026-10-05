@@ -1,0 +1,33 @@
+{
+  "id": "notion-agent",
+  "name": "Notion Agent",
+  "name_zh": "Notion Agent",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building",
+    "research"
+  ],
+  "form": "web",
+  "surface": "in-product",
+  "released": "2025-09-01",
+  "date_precision": "month",
+  "homepage": "https://www.notion.com/product/agents",
+  "desc": "On-demand agent acting across Notion and connected tools.",
+  "desc_zh": "按需响应的智能体，可跨 Notion 与已连接工具行动",
+  "solves": "Notion AI writes inside a page. Notion Agent takes actions across your workspace and the apps you connected, under your own permissions.",
+  "solves_zh": "Notion AI 在页面里写。Notion Agent 则以你自己的权限，跨工作区和已连接的应用采取行动。",
+  "best_for": "You want an agent that does the multi-step work, not one that drafts the paragraph.",
+  "best_for_zh": "你要一个真正做完多步工作的智能体，而不是帮你起草那一段的。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.notion.com/product/ai。来源：https://www.notion.com/help/personal-agent",
+  "revisions": []
+}

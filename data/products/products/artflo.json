@@ -1,0 +1,31 @@
+{
+  "id": "artflo",
+  "name": "Artflo",
+  "name_zh": "Artflo",
+  "vendor_id": "meitu",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2026-06-01",
+  "date_precision": "month",
+  "homepage": "https://www.meitu.com/",
+  "desc": "New Meitu art product from the 2026 imaging festival",
+  "desc_zh": "美图 2026 影像节发布的新绘画产品",
+  "solves": "A current art-generation option from a vendor with real shipping experience.",
+  "solves_zh": "来自有实际交付经验厂商的当下绘画生成选择。",
+  "best_for": "You already use Meitu tools and want the new art line too.",
+  "best_for_zh": "已经在用美图系工具、也想试它的绘画新线时。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：China AI product coverage of the 2026 Meitu imaging festival。来源：https://app.xinhuanet.com/news/20260618/meitu-ai.htm",
+  "revisions": []
+}

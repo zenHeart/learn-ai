@@ -1,0 +1,32 @@
+{
+  "id": "autoglm",
+  "name": "AutoGLM",
+  "name_zh": "AutoGLM 沉思",
+  "vendor_id": "zhipu",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-03-31",
+  "date_precision": "day",
+  "homepage": "https://autoglm.zhipuai.cn/",
+  "desc": "Zhipu's free deep-research and device-operation agent",
+  "desc_zh": "智谱免费的深度研究与操作能力一体Agent",
+  "solves": "It browses dozens of pages and files a cited report for free.",
+  "solves_zh": "它自己翻几十个网页，出一份带引用的报告，而且免费。",
+  "best_for": "Open-ended research where you need the whole answer.",
+  "best_for_zh": "开放式调研，需要一份完整答案而不是一句话。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：央广网 / 快懂百科 AutoGLM 词条。来源：https://www.cnr.cn/tech/techph/20250331/t20250331_527119585.shtml",
+  "revisions": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "sensetime-3",
+  "name": "小浣熊办公",
+  "name_zh": "小浣熊办公",
+  "vendor_id": "sensetime",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "surface": "standalone",
+  "released": "2025-01-01",
+  "date_precision": "month",
+  "homepage": "https://xiaohuanxiong.com/",
+  "desc": "SenseTime's AI office agent for slides, data and infographics.",
+  "desc_zh": "商汤的 AI 办公智能体，做幻灯片、数据与信息图",
+  "solves": "The office agent problem is not writing, it is the deliverable. This one ends at a finished deck and a chart, not a paragraph.",
+  "solves_zh": "办公智能体的难点不在写，在交付。这个直接产出成稿幻灯片和图表，不是一段话。",
+  "best_for": "You need a finished deck or analysis, not a draft to finish by hand.",
+  "best_for_zh": "你需要成稿的幻灯片或分析，而不是还要自己收尾的草稿。",
+  "tags": [],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-10-05",
+  "notes": "外部发现渠道补录：https://www.sensenova.cn/。来源：https://xiaohuanxiong.com/",
+  "revisions": []
+}
