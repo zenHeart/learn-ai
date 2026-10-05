@@ -1,9 +1,18 @@
 #!/usr/bin/env node
 /**
- * coverage-audit.mjs — 把「不要漏掉主流产品」变成可执行的检查。
+ * coverage-audit.mjs — 覆盖率**回归护栏**，不是覆盖率证明。
  *
- * validate-products 管「已入库的数据对不对」；本脚本管「该有的有没有」。
- * 两件事都会漏数据，但漏法不同：前者会报错，后者只会安静地少一格。
+ * validate-products 管「已入库的数据对不对」；本脚本管「已列入清单的厂商有没有掉回去」。
+ *
+ * 重要限制，报告里也会原样打印：
+ *   VENDOR_FLOOR 是人手工写的厂商清单，而账本也是同一份认知的产物。
+ *   所以本脚本**只能发现「清单内的某家变少了」，永远发现不了「清单外的某家没进来」**。
+ *   MiniMax 有 5 个产品、floor 是 3，于是通过——而 MiniMax Design 根本不在账本里。
+ *
+ *   要发现真正的遗漏，去 references/discovery-channels.md 第 1c 节列的外部渠道
+ *   （应用商店榜单、产品发现站、中英文行业媒体、厂商产品目录页）从外面往里看。
+ *
+ * **PASS 的含义是「没有退化」，不是「没有遗漏」。**
  *
  * 用法：
  *   node scripts/products/coverage-audit.mjs          # 人读的报告
@@ -115,5 +124,7 @@ if (gaps.length) {
   for (const g of gaps) console.log(`  - ${g}`)
   if (strict) process.exit(1)
 } else {
-  console.log('\ncoverage-audit PASS：品类、大厂产品线与场景均达到下限')
+  console.log('\ncoverage-audit PASS：已列入清单的品类、大厂产品线与场景均未退化。')
+  console.log('  ⚠ 这不等于「没有遗漏产品」——本脚本发现不了清单之外的产品。')
+  console.log('    补全请走 references/discovery-channels.md 第 1c 节的外部渠道。')
 }
