@@ -1248,6 +1248,7 @@ export const productHub = {
     "nameZh": "Dots 常驻智能体",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -1285,6 +1286,7 @@ export const productHub = {
     "nameZh": "Muse 个人智能体",
     "vendor": "Meta",
     "vendorZh": "Meta",
+    "logo": "/assets/logos/meta.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -1323,6 +1325,7 @@ export const productHub = {
     "nameZh": "万有无界",
     "vendor": "Wanyo (万有)",
     "vendorZh": "万有",
+    "logo": null,
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -1362,6 +1365,7 @@ export const productHub = {
     "nameZh": "商汤小浣熊 Raccoon Work",
     "vendor": "商汤",
     "vendorZh": "商汤",
+    "logo": "/assets/logos/sensetime.svg",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -1401,6 +1405,7 @@ export const productHub = {
     "nameZh": "Muse Code 编程智能体",
     "vendor": "Meta",
     "vendorZh": "Meta",
+    "logo": "/assets/logos/meta.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -1439,6 +1444,7 @@ export const productHub = {
     "nameZh": "纳米Work",
     "vendor": "360",
     "vendorZh": "360",
+    "logo": "/assets/logos/360.ico",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -1478,6 +1484,7 @@ export const productHub = {
     "nameZh": "Meta 模型 API",
     "vendor": "Meta",
     "vendorZh": "Meta",
+    "logo": "/assets/logos/meta.png",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -1515,6 +1522,7 @@ export const productHub = {
     "nameZh": "Copilot Cowork 协作智能体",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -1553,6 +1561,7 @@ export const productHub = {
     "nameZh": "MiMo Code",
     "vendor": "小米",
     "vendorZh": "小米",
+    "logo": "/assets/logos/xiaomi.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -1590,6 +1599,7 @@ export const productHub = {
     "nameZh": "Vibe 智能体",
     "vendor": "Mistral AI",
     "vendorZh": "Mistral AI",
+    "logo": "/assets/logos/mistral-ai.svg",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -1629,6 +1639,7 @@ export const productHub = {
     "nameZh": "Grok Build 编程智能体",
     "vendor": "xAI",
     "vendorZh": "xAI",
+    "logo": "/assets/logos/xai.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -1667,6 +1678,7 @@ export const productHub = {
     "nameZh": "万智",
     "vendor": "零一万物",
     "vendorZh": "零一万物",
+    "logo": "/assets/logos/01ai.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -1704,6 +1716,7 @@ export const productHub = {
     "nameZh": "Gemini 企业智能体平台",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -1743,6 +1756,7 @@ export const productHub = {
     "nameZh": "Mistral Forge 模型定制平台",
     "vendor": "Mistral AI",
     "vendorZh": "Mistral AI",
+    "logo": "/assets/logos/mistral-ai.svg",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -1781,6 +1795,7 @@ export const productHub = {
     "nameZh": "华为云码道",
     "vendor": "华为",
     "vendorZh": "华为",
+    "logo": "/assets/logos/huawei.ico",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -1818,6 +1833,7 @@ export const productHub = {
     "nameZh": "Kimi Claw",
     "vendor": "月之暗面",
     "vendorZh": "月之暗面",
+    "logo": "/assets/logos/moonshot.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -1854,6 +1870,7 @@ export const productHub = {
     "nameZh": "Frontier 企业智能体平台",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -1892,6 +1909,7 @@ export const productHub = {
     "nameZh": "JoyAI",
     "vendor": "京东",
     "vendorZh": "京东",
+    "logo": "/assets/logos/jd.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -1930,6 +1948,7 @@ export const productHub = {
     "nameZh": "Grok Imagine 图像与视频创作",
     "vendor": "xAI",
     "vendorZh": "xAI",
+    "logo": "/assets/logos/xai.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -1967,6 +1986,7 @@ export const productHub = {
     "nameZh": "问小团",
     "vendor": "美团",
     "vendorZh": "美团",
+    "logo": "/assets/logos/meituan.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -2005,6 +2025,7 @@ export const productHub = {
     "nameZh": "OpenClaw",
     "vendor": "OpenClaw",
     "vendorZh": "OpenClaw",
+    "logo": "/assets/logos/openclaw.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -2046,6 +2067,7 @@ export const productHub = {
     "nameZh": "Slackbot",
     "vendor": "Salesforce",
     "vendorZh": "Salesforce",
+    "logo": "/assets/logos/salesforce.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -2082,6 +2104,7 @@ export const productHub = {
     "nameZh": "Claude Cowork",
     "vendor": "Anthropic",
     "vendorZh": "Anthropic",
+    "logo": "/assets/logos/anthropic.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -2124,6 +2147,7 @@ export const productHub = {
     "nameZh": "Google Antigravity",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -2165,6 +2189,7 @@ export const productHub = {
     "nameZh": "千问",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -2206,6 +2231,7 @@ export const productHub = {
     "nameZh": "MiniMax Code",
     "vendor": "MiniMax",
     "vendorZh": "MiniMax",
+    "logo": "/assets/logos/minimax.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -2246,6 +2272,7 @@ export const productHub = {
     "nameZh": "ChatGPT Atlas 浏览器",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -2284,6 +2311,7 @@ export const productHub = {
     "nameZh": "Amazon Quick Suite 智能工作台",
     "vendor": "Amazon",
     "vendorZh": "Amazon",
+    "logo": "/assets/logos/amazon.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -2322,6 +2350,7 @@ export const productHub = {
     "nameZh": "Dia 浏览器",
     "vendor": "The Browser Company",
     "vendorZh": "The Browser Company",
+    "logo": "/assets/logos/the-browser-company.png",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -2360,6 +2389,7 @@ export const productHub = {
     "nameZh": "Mem",
     "vendor": "Mem Labs",
     "vendorZh": "Mem Labs",
+    "logo": "/assets/logos/mem-labs.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -2396,6 +2426,7 @@ export const productHub = {
     "nameZh": "Mistral Studio 开发平台",
     "vendor": "Mistral AI",
     "vendorZh": "Mistral AI",
+    "logo": "/assets/logos/mistral-ai.svg",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -2435,6 +2466,7 @@ export const productHub = {
     "nameZh": "Opera Neon 浏览器",
     "vendor": "Opera",
     "vendorZh": "Opera",
+    "logo": "/assets/logos/opera.ico",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -2473,6 +2505,7 @@ export const productHub = {
     "nameZh": "ChatGPT Pulse 每日简报",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -2508,6 +2541,7 @@ export const productHub = {
     "nameZh": "GitHub Copilot 智能体模式",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -2543,6 +2577,7 @@ export const productHub = {
     "nameZh": "Qoder",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -2583,6 +2618,7 @@ export const productHub = {
     "nameZh": "企业微信智能总结",
     "vendor": "腾讯",
     "vendorZh": "腾讯",
+    "logo": "/assets/logos/tencent.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -2617,6 +2653,7 @@ export const productHub = {
     "nameZh": "ChatGPT 学习模式",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -2652,6 +2689,7 @@ export const productHub = {
     "nameZh": "GLM Coding Plan",
     "vendor": "智谱",
     "vendorZh": "智谱",
+    "logo": "/assets/logos/zhipu.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -2692,6 +2730,7 @@ export const productHub = {
     "nameZh": "CodeBuddy",
     "vendor": "腾讯云",
     "vendorZh": "腾讯云",
+    "logo": "/assets/logos/tencent-cloud.ico",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -2732,6 +2771,7 @@ export const productHub = {
     "nameZh": "ChatGPT 智能体",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -2769,6 +2809,7 @@ export const productHub = {
     "nameZh": "Kiro",
     "vendor": "AWS",
     "vendorZh": "AWS",
+    "logo": "/assets/logos/aws.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -2805,6 +2846,7 @@ export const productHub = {
     "nameZh": "Kimi Code",
     "vendor": "月之暗面",
     "vendorZh": "月之暗面",
+    "logo": "/assets/logos/moonshot.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -2845,6 +2887,7 @@ export const productHub = {
     "nameZh": "Perplexity Comet 浏览器",
     "vendor": "Perplexity",
     "vendorZh": "Perplexity",
+    "logo": "/assets/logos/perplexity.png",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -2883,6 +2926,7 @@ export const productHub = {
     "nameZh": "Gemini CLI",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -2924,6 +2968,7 @@ export const productHub = {
     "nameZh": "文心快码 AI IDE",
     "vendor": "百度",
     "vendorZh": "百度",
+    "logo": "/assets/logos/baidu.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -2962,6 +3007,7 @@ export const productHub = {
     "nameZh": "MiniMax Agent",
     "vendor": "MiniMax",
     "vendorZh": "MiniMax",
+    "logo": "/assets/logos/minimax.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -3002,6 +3048,7 @@ export const productHub = {
     "nameZh": "Pi Agent",
     "vendor": "Pi",
     "vendorZh": "Pi",
+    "logo": "/assets/logos/pi.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3042,6 +3089,7 @@ export const productHub = {
     "nameZh": "通义灵码 AI IDE",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -3082,6 +3130,7 @@ export const productHub = {
     "nameZh": "天工超级智能体",
     "vendor": "昆仑万维",
     "vendorZh": "昆仑万维",
+    "logo": "/assets/logos/kunlun.ico",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -3119,6 +3168,7 @@ export const productHub = {
     "nameZh": "Google Flow 创意工作室",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -3157,6 +3207,7 @@ export const productHub = {
     "nameZh": "Google 搜索 AI 模式",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -3192,6 +3243,7 @@ export const productHub = {
     "nameZh": "Amp",
     "vendor": "Amp Frontier",
     "vendorZh": "Amp Frontier",
+    "logo": "/assets/logos/amp-frontier.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3228,6 +3280,7 @@ export const productHub = {
     "nameZh": "OpenAI Codex",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3269,6 +3322,7 @@ export const productHub = {
     "nameZh": "Llama API",
     "vendor": "Meta",
     "vendorZh": "Meta",
+    "logo": "/assets/logos/meta.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -3306,6 +3360,7 @@ export const productHub = {
     "nameZh": "Meta AI",
     "vendor": "Meta",
     "vendorZh": "Meta",
+    "logo": "/assets/logos/meta.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -3343,6 +3398,7 @@ export const productHub = {
     "nameZh": "扣子空间",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -3383,6 +3439,7 @@ export const productHub = {
     "nameZh": "Codex CLI",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3424,6 +3481,7 @@ export const productHub = {
     "nameZh": "Junie",
     "vendor": "JetBrains",
     "vendorZh": "JetBrains",
+    "logo": "/assets/logos/jetbrains.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3461,6 +3519,7 @@ export const productHub = {
     "nameZh": "ChatGPT 记忆",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -3496,6 +3555,7 @@ export const productHub = {
     "nameZh": "Cursor 后台智能体",
     "vendor": "Anysphere",
     "vendorZh": "Anysphere",
+    "logo": "/assets/logos/anysphere.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3531,6 +3591,7 @@ export const productHub = {
     "nameZh": "NVIDIA NeMo 智能体平台",
     "vendor": "NVIDIA",
     "vendorZh": "NVIDIA",
+    "logo": "/assets/logos/nvidia.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -3570,6 +3631,7 @@ export const productHub = {
     "nameZh": "Manus",
     "vendor": "Butterfly Effect",
     "vendorZh": "Butterfly Effect",
+    "logo": "/assets/logos/butterfly-effect.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -3608,6 +3670,7 @@ export const productHub = {
     "nameZh": "Trae",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -3648,6 +3711,7 @@ export const productHub = {
     "nameZh": "Higgsfield",
     "vendor": "Higgsfield",
     "vendorZh": "Higgsfield",
+    "logo": "/assets/logos/higgsfield.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -3685,6 +3749,7 @@ export const productHub = {
     "nameZh": "夸克AI",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "search",
     "useCases": [
@@ -3723,6 +3788,7 @@ export const productHub = {
     "nameZh": "Claude Code",
     "vendor": "Anthropic",
     "vendorZh": "Anthropic",
+    "logo": "/assets/logos/anthropic.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3764,6 +3830,7 @@ export const productHub = {
     "nameZh": "ChatGPT 深度研究",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -3799,6 +3866,7 @@ export const productHub = {
     "nameZh": "DeepSeek",
     "vendor": "DeepSeek",
     "vendorZh": "DeepSeek",
+    "logo": "/assets/logos/deepseek.ico",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -3836,6 +3904,7 @@ export const productHub = {
     "nameZh": "North 企业智能体平台",
     "vendor": "Cohere",
     "vendorZh": "Cohere",
+    "logo": "/assets/logos/cohere.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -3875,6 +3944,7 @@ export const productHub = {
     "nameZh": "ChatGPT 定时任务",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -3910,6 +3980,7 @@ export const productHub = {
     "nameZh": "Goose",
     "vendor": "Block",
     "vendorZh": "Block",
+    "logo": "/assets/logos/block.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -3949,6 +4020,7 @@ export const productHub = {
     "nameZh": "DeepSeek 开放平台",
     "vendor": "DeepSeek",
     "vendorZh": "DeepSeek",
+    "logo": "/assets/logos/deepseek.ico",
     "region": "cn",
     "category": "enterprise-api",
     "useCases": [
@@ -3986,6 +4058,7 @@ export const productHub = {
     "nameZh": "ChatGPT 项目",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -4022,6 +4095,7 @@ export const productHub = {
     "nameZh": "Jules",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -4063,6 +4137,7 @@ export const productHub = {
     "nameZh": "Tana",
     "vendor": "Tana Inc.",
     "vendorZh": "Tana Inc.",
+    "logo": "/assets/logos/tana-inc.svg",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -4099,6 +4174,7 @@ export const productHub = {
     "nameZh": "纳米AI搜索",
     "vendor": "360",
     "vendorZh": "360",
+    "logo": "/assets/logos/360.ico",
     "region": "cn",
     "category": "search",
     "useCases": [
@@ -4135,6 +4211,7 @@ export const productHub = {
     "nameZh": "Lovable",
     "vendor": "Lovable",
     "vendorZh": "Lovable",
+    "logo": "/assets/logos/lovable.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -4171,6 +4248,7 @@ export const productHub = {
     "nameZh": "Azure AI Foundry",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -4209,6 +4287,7 @@ export const productHub = {
     "nameZh": "xAI API",
     "vendor": "xAI",
     "vendorZh": "xAI",
+    "logo": "/assets/logos/xai.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -4246,6 +4325,7 @@ export const productHub = {
     "nameZh": "Claude Desktop",
     "vendor": "Anthropic",
     "vendorZh": "Anthropic",
+    "logo": "/assets/logos/anthropic.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -4287,6 +4367,7 @@ export const productHub = {
     "nameZh": "Roo Code",
     "vendor": "Roo Code",
     "vendorZh": "Roo Code",
+    "logo": "/assets/logos/roo-code.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -4323,6 +4404,7 @@ export const productHub = {
     "nameZh": "Apple Intelligence 苹果智能",
     "vendor": "Apple",
     "vendorZh": "Apple",
+    "logo": "/assets/logos/apple.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -4360,6 +4442,7 @@ export const productHub = {
     "nameZh": "Premiere Pro 生成式扩展",
     "vendor": "Adobe",
     "vendorZh": "Adobe",
+    "logo": "/assets/logos/adobe.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -4395,6 +4478,7 @@ export const productHub = {
     "nameZh": "Atlassian Rovo",
     "vendor": "Atlassian",
     "vendorZh": "Atlassian",
+    "logo": "/assets/logos/atlassian.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -4432,6 +4516,7 @@ export const productHub = {
     "nameZh": "Bolt.new",
     "vendor": "StackBlitz",
     "vendorZh": "StackBlitz",
+    "logo": "/assets/logos/stackblitz.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -4468,6 +4553,7 @@ export const productHub = {
     "nameZh": "Copilot Vision 屏幕理解",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -4504,6 +4590,7 @@ export const productHub = {
     "nameZh": "Agentforce",
     "vendor": "Salesforce",
     "vendorZh": "Salesforce",
+    "logo": "/assets/logos/salesforce.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -4542,6 +4629,7 @@ export const productHub = {
     "nameZh": "Replit Agent",
     "vendor": "Replit",
     "vendorZh": "Replit",
+    "logo": "/assets/logos/replit.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -4578,6 +4666,7 @@ export const productHub = {
     "nameZh": "Kagi Assistant",
     "vendor": "Kagi",
     "vendorZh": "Kagi",
+    "logo": "/assets/logos/kagi.png",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -4614,6 +4703,7 @@ export const productHub = {
     "nameZh": "文小言",
     "vendor": "百度",
     "vendorZh": "百度",
+    "logo": "/assets/logos/baidu.ico",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -4651,6 +4741,7 @@ export const productHub = {
     "nameZh": "MiniMax 开放平台",
     "vendor": "MiniMax",
     "vendorZh": "MiniMax",
+    "logo": "/assets/logos/minimax.png",
     "region": "cn",
     "category": "enterprise-api",
     "useCases": [
@@ -4687,6 +4778,7 @@ export const productHub = {
     "nameZh": "海螺AI",
     "vendor": "MiniMax",
     "vendorZh": "MiniMax",
+    "logo": "/assets/logos/minimax.png",
     "region": "cn",
     "category": "multimodal-creation",
     "useCases": [
@@ -4724,6 +4816,7 @@ export const productHub = {
     "nameZh": "Tavily",
     "vendor": "Tavily",
     "vendorZh": "Tavily",
+    "logo": "/assets/logos/tavily.ico",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -4760,6 +4853,7 @@ export const productHub = {
     "nameZh": "PhariaAI",
     "vendor": "Aleph Alpha",
     "vendorZh": "Aleph Alpha",
+    "logo": "/assets/logos/aleph-alpha.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -4798,6 +4892,7 @@ export const productHub = {
     "nameZh": "言犀智能体平台",
     "vendor": "京东",
     "vendorZh": "京东",
+    "logo": "/assets/logos/jd.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -4837,6 +4932,7 @@ export const productHub = {
     "nameZh": "Cline",
     "vendor": "Cline",
     "vendorZh": "Cline",
+    "logo": "/assets/logos/cline.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -4873,6 +4969,7 @@ export const productHub = {
     "nameZh": "豆包 MarsCode",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -4910,6 +5007,7 @@ export const productHub = {
     "nameZh": "Google 文档与表格中的 Gemini",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -4945,6 +5043,7 @@ export const productHub = {
     "nameZh": "Hume AI",
     "vendor": "Hume AI",
     "vendorZh": "Hume AI",
+    "logo": "/assets/logos/hume-ai.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -4983,6 +5082,7 @@ export const productHub = {
     "nameZh": "跃问",
     "vendor": "阶跃星辰",
     "vendorZh": "阶跃星辰",
+    "logo": "/assets/logos/stepfun.svg",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -5020,6 +5120,7 @@ export const productHub = {
     "nameZh": "Arize Phoenix",
     "vendor": "Arize AI",
     "vendorZh": "Arize AI",
+    "logo": "/assets/logos/arize-ai.ico",
     "region": "intl",
     "category": "eval-observability",
     "useCases": [
@@ -5056,6 +5157,7 @@ export const productHub = {
     "nameZh": "Luma Dream Machine",
     "vendor": "Luma Labs",
     "vendorZh": "Luma Labs",
+    "logo": "/assets/logos/luma-labs.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -5092,6 +5194,7 @@ export const productHub = {
     "nameZh": "可灵AI",
     "vendor": "快手",
     "vendorZh": "快手",
+    "logo": "/assets/logos/kuaishou.ico",
     "region": "cn",
     "category": "multimodal-creation",
     "useCases": [
@@ -5129,6 +5232,7 @@ export const productHub = {
     "nameZh": "Factory",
     "vendor": "Factory AI",
     "vendorZh": "Factory AI",
+    "logo": "/assets/logos/factory-ai.svg",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -5165,6 +5269,7 @@ export const productHub = {
     "nameZh": "Genspark",
     "vendor": "Genspark",
     "vendorZh": "Genspark",
+    "logo": "/assets/logos/genspark.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -5204,6 +5309,7 @@ export const productHub = {
     "nameZh": "腾讯元器",
     "vendor": "腾讯",
     "vendorZh": "腾讯",
+    "logo": "/assets/logos/tencent.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -5240,6 +5346,7 @@ export const productHub = {
     "nameZh": "腾讯元宝",
     "vendor": "腾讯",
     "vendorZh": "腾讯",
+    "logo": "/assets/logos/tencent.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -5281,6 +5388,7 @@ export const productHub = {
     "nameZh": "Granola",
     "vendor": "Granola",
     "vendorZh": "Granola",
+    "logo": "/assets/logos/granola.png",
     "region": "intl",
     "category": "meetings",
     "useCases": [
@@ -5317,6 +5425,7 @@ export const productHub = {
     "nameZh": "即梦AI",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "multimodal-creation",
     "useCases": [
@@ -5354,6 +5463,7 @@ export const productHub = {
     "nameZh": "硅基流动",
     "vendor": "硅基流动",
     "vendorZh": "硅基流动",
+    "logo": "/assets/logos/siliconflow.ico",
     "region": "cn",
     "category": "model-platform",
     "useCases": [
@@ -5392,6 +5502,7 @@ export const productHub = {
     "nameZh": "Amazon Q",
     "vendor": "Amazon",
     "vendorZh": "Amazon",
+    "logo": "/assets/logos/amazon.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -5429,6 +5540,7 @@ export const productHub = {
     "nameZh": "Vidu",
     "vendor": "生数科技 ShengShu AI",
     "vendorZh": "生数科技 ShengShu AI",
+    "logo": "/assets/logos/shengshu-ai.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -5466,6 +5578,7 @@ export const productHub = {
     "nameZh": "Slack AI",
     "vendor": "Salesforce",
     "vendorZh": "Salesforce",
+    "logo": "/assets/logos/salesforce.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -5501,6 +5614,7 @@ export const productHub = {
     "nameZh": "Reka AI",
     "vendor": "Reka AI",
     "vendorZh": "Reka AI",
+    "logo": "/assets/logos/reka-ai.png",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -5538,6 +5652,7 @@ export const productHub = {
     "nameZh": "Humane AI Pin",
     "vendor": "Humane",
     "vendorZh": "Humane",
+    "logo": null,
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -5574,6 +5689,7 @@ export const productHub = {
     "nameZh": "Udio",
     "vendor": "Uncharted Labs",
     "vendorZh": "Uncharted Labs",
+    "logo": "/assets/logos/uncharted-labs.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -5610,6 +5726,7 @@ export const productHub = {
     "nameZh": "阶跃星辰开放平台",
     "vendor": "阶跃星辰",
     "vendorZh": "阶跃星辰",
+    "logo": "/assets/logos/stepfun.svg",
     "region": "cn",
     "category": "enterprise-api",
     "useCases": [
@@ -5647,6 +5764,7 @@ export const productHub = {
     "nameZh": "NVIDIA NIM",
     "vendor": "NVIDIA",
     "vendorZh": "NVIDIA",
+    "logo": "/assets/logos/nvidia.ico",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -5685,6 +5803,7 @@ export const productHub = {
     "nameZh": "Devin",
     "vendor": "Cognition",
     "vendorZh": "Cognition",
+    "logo": "/assets/logos/cognition.svg",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -5721,6 +5840,7 @@ export const productHub = {
     "nameZh": "OpenHands",
     "vendor": "All Hands AI",
     "vendorZh": "All Hands AI",
+    "logo": "/assets/logos/all-hands-ai.svg",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -5759,6 +5879,7 @@ export const productHub = {
     "nameZh": "Zapier Agents",
     "vendor": "Zapier",
     "vendorZh": "Zapier",
+    "logo": "/assets/logos/zapier.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -5795,6 +5916,7 @@ export const productHub = {
     "nameZh": "秘塔AI搜索",
     "vendor": "秘塔",
     "vendorZh": "秘塔",
+    "logo": "/assets/logos/metaso.png",
     "region": "cn",
     "category": "search",
     "useCases": [
@@ -5831,6 +5953,7 @@ export const productHub = {
     "nameZh": "Le Chat",
     "vendor": "Mistral AI",
     "vendorZh": "Mistral AI",
+    "logo": "/assets/logos/mistral-ai.svg",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -5869,6 +5992,7 @@ export const productHub = {
     "nameZh": "Lindy",
     "vendor": "Lindy",
     "vendorZh": "Lindy",
+    "logo": "/assets/logos/lindy.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -5906,6 +6030,7 @@ export const productHub = {
     "nameZh": "Sora",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -5943,6 +6068,7 @@ export const productHub = {
     "nameZh": "Gemini 应用",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -5985,6 +6111,7 @@ export const productHub = {
     "nameZh": "Gumloop",
     "vendor": "Gumloop",
     "vendorZh": "Gumloop",
+    "logo": "/assets/logos/gumloop.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -6021,6 +6148,7 @@ export const productHub = {
     "nameZh": "Sierra AI",
     "vendor": "Sierra",
     "vendorZh": "Sierra",
+    "logo": "/assets/logos/sierra.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -6059,6 +6187,7 @@ export const productHub = {
     "nameZh": "扣子",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -6099,6 +6228,7 @@ export const productHub = {
     "nameZh": "Jan",
     "vendor": "Jan",
     "vendorZh": "Jan",
+    "logo": "/assets/logos/jan.ico",
     "region": "intl",
     "category": "local-runner",
     "useCases": [
@@ -6135,6 +6265,7 @@ export const productHub = {
     "nameZh": "Rabbit R1",
     "vendor": "Rabbit Inc.",
     "vendorZh": "Rabbit Inc.",
+    "logo": "/assets/logos/rabbit-inc.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -6171,6 +6302,7 @@ export const productHub = {
     "nameZh": "钉钉 AI 助理",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -6206,6 +6338,7 @@ export const productHub = {
     "nameZh": "Cartesia",
     "vendor": "Cartesia AI",
     "vendorZh": "Cartesia AI",
+    "logo": "/assets/logos/cartesia-ai.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -6244,6 +6377,7 @@ export const productHub = {
     "nameZh": "Greptile",
     "vendor": "Greptile",
     "vendorZh": "Greptile",
+    "logo": "/assets/logos/greptile.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -6282,6 +6416,7 @@ export const productHub = {
     "nameZh": "三星 Galaxy AI",
     "vendor": "Samsung",
     "vendorZh": "Samsung",
+    "logo": "/assets/logos/samsung.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -6319,6 +6454,7 @@ export const productHub = {
     "nameZh": "Suno",
     "vendor": "Suno",
     "vendorZh": "Suno",
+    "logo": "/assets/logos/suno.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -6355,6 +6491,7 @@ export const productHub = {
     "nameZh": "Google AI Studio",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -6392,6 +6529,7 @@ export const productHub = {
     "nameZh": "Mistral La Plateforme",
     "vendor": "Mistral AI",
     "vendorZh": "Mistral AI",
+    "logo": "/assets/logos/mistral-ai.svg",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -6429,6 +6567,7 @@ export const productHub = {
     "nameZh": "MLX",
     "vendor": "Apple",
     "vendorZh": "Apple",
+    "logo": "/assets/logos/apple.png",
     "region": "intl",
     "category": "local-runner",
     "useCases": [
@@ -6465,6 +6604,7 @@ export const productHub = {
     "nameZh": "Cody",
     "vendor": "Sourcegraph",
     "vendorZh": "Sourcegraph",
+    "logo": "/assets/logos/sourcegraph.svg",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -6504,6 +6644,7 @@ export const productHub = {
     "nameZh": "Pika",
     "vendor": "Pika Labs",
     "vendorZh": "Pika Labs",
+    "logo": "/assets/logos/pika-labs.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -6540,6 +6681,7 @@ export const productHub = {
     "nameZh": "Amazon Q Developer",
     "vendor": "Amazon",
     "vendorZh": "Amazon",
+    "logo": "/assets/logos/amazon.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -6577,6 +6719,7 @@ export const productHub = {
     "nameZh": "Augment Code",
     "vendor": "Augment",
     "vendorZh": "Augment",
+    "logo": "/assets/logos/augment.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -6613,6 +6756,7 @@ export const productHub = {
     "nameZh": "Microsoft Copilot Studio",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -6650,6 +6794,7 @@ export const productHub = {
     "nameZh": "Windsurf（现 Devin Desktop）",
     "vendor": "Cognition",
     "vendorZh": "Cognition",
+    "logo": "/assets/logos/cognition.svg",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -6686,6 +6831,7 @@ export const productHub = {
     "nameZh": "百度千帆",
     "vendor": "百度",
     "vendorZh": "百度",
+    "logo": "/assets/logos/baidu.ico",
     "region": "cn",
     "category": "model-platform",
     "useCases": [
@@ -6722,6 +6868,7 @@ export const productHub = {
     "nameZh": "Figma AI",
     "vendor": "Figma",
     "vendorZh": "Figma",
+    "logo": "/assets/logos/figma.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -6762,6 +6909,7 @@ export const productHub = {
     "nameZh": "Grok",
     "vendor": "xAI",
     "vendorZh": "xAI",
+    "logo": "/assets/logos/xai.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -6803,6 +6951,7 @@ export const productHub = {
     "nameZh": "Brave Leo 助手",
     "vendor": "Brave",
     "vendorZh": "Brave",
+    "logo": "/assets/logos/brave.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -6840,6 +6989,7 @@ export const productHub = {
     "nameZh": "BigModel 开放平台",
     "vendor": "智谱",
     "vendorZh": "智谱",
+    "logo": "/assets/logos/zhipu.png",
     "region": "cn",
     "category": "model-platform",
     "useCases": [
@@ -6881,6 +7031,7 @@ export const productHub = {
     "nameZh": "CrewAI",
     "vendor": "CrewAI",
     "vendorZh": "CrewAI",
+    "logo": "/assets/logos/crewai.ico",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -6917,6 +7068,7 @@ export const productHub = {
     "nameZh": "Microsoft 365 Copilot",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -6952,6 +7104,7 @@ export const productHub = {
     "nameZh": "WPS AI",
     "vendor": "Kingsoft Office",
     "vendorZh": "Kingsoft Office",
+    "logo": "/assets/logos/kingsoft-office.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -6987,6 +7140,7 @@ export const productHub = {
     "nameZh": "阿里云百炼",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "model-platform",
     "useCases": [
@@ -7028,6 +7182,7 @@ export const productHub = {
     "nameZh": "通义",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -7069,6 +7224,7 @@ export const productHub = {
     "nameZh": "通义灵码",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -7109,6 +7265,7 @@ export const productHub = {
     "nameZh": "Canva 魔法工作室",
     "vendor": "Canva",
     "vendorZh": "Canva",
+    "logo": "/assets/logos/canva.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -7146,6 +7303,7 @@ export const productHub = {
     "nameZh": "文心快码",
     "vendor": "百度",
     "vendorZh": "百度",
+    "logo": "/assets/logos/baidu.ico",
     "region": "cn",
     "category": "coding-agent",
     "useCases": [
@@ -7183,6 +7341,7 @@ export const productHub = {
     "nameZh": "Ray-Ban Meta 智能眼镜",
     "vendor": "Meta / EssilorLuxottica",
     "vendorZh": "Meta / EssilorLuxottica",
+    "logo": "/assets/logos/meta-essilorluxottica.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -7219,6 +7378,7 @@ export const productHub = {
     "nameZh": "v0",
     "vendor": "Vercel",
     "vendorZh": "Vercel",
+    "logo": "/assets/logos/vercel.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -7256,6 +7416,7 @@ export const productHub = {
     "nameZh": "n8n",
     "vendor": "n8n",
     "vendorZh": "n8n",
+    "logo": "/assets/logos/n8n.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -7292,6 +7453,7 @@ export const productHub = {
     "nameZh": "Kimi",
     "vendor": "月之暗面",
     "vendorZh": "月之暗面",
+    "logo": "/assets/logos/moonshot.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -7333,6 +7495,7 @@ export const productHub = {
     "nameZh": "Cohere Command",
     "vendor": "Cohere",
     "vendorZh": "Cohere",
+    "logo": "/assets/logos/cohere.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -7370,6 +7533,7 @@ export const productHub = {
     "nameZh": "Amazon Bedrock",
     "vendor": "Amazon",
     "vendorZh": "Amazon",
+    "logo": "/assets/logos/amazon.png",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -7407,6 +7571,7 @@ export const productHub = {
     "nameZh": "Webflow AI",
     "vendor": "Webflow",
     "vendorZh": "Webflow",
+    "logo": "/assets/logos/webflow.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -7444,6 +7609,7 @@ export const productHub = {
     "nameZh": "Zoom AI 智能助手",
     "vendor": "Zoom",
     "vendorZh": "Zoom",
+    "logo": "/assets/logos/zoom.png",
     "region": "intl",
     "category": "meetings",
     "useCases": [
@@ -7479,6 +7645,7 @@ export const productHub = {
     "nameZh": "腾讯混元",
     "vendor": "腾讯",
     "vendorZh": "腾讯",
+    "logo": "/assets/logos/tencent.png",
     "region": "cn",
     "category": "model-platform",
     "useCases": [
@@ -7519,6 +7686,7 @@ export const productHub = {
     "nameZh": "飞书 Aily",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "agent-platform",
     "useCases": [
@@ -7554,6 +7722,7 @@ export const productHub = {
     "nameZh": "智谱清言",
     "vendor": "智谱",
     "vendorZh": "智谱",
+    "logo": "/assets/logos/zhipu.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -7595,6 +7764,7 @@ export const productHub = {
     "nameZh": "Ideogram",
     "vendor": "Ideogram",
     "vendorZh": "Ideogram",
+    "logo": "/assets/logos/ideogram.svg",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -7631,6 +7801,7 @@ export const productHub = {
     "nameZh": "Langfuse",
     "vendor": "Langfuse",
     "vendorZh": "Langfuse",
+    "logo": "/assets/logos/langfuse.png",
     "region": "intl",
     "category": "eval-observability",
     "useCases": [
@@ -7668,6 +7839,7 @@ export const productHub = {
     "nameZh": "豆包",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -7709,6 +7881,7 @@ export const productHub = {
     "nameZh": "Braintrust",
     "vendor": "Braintrust",
     "vendorZh": "Braintrust",
+    "logo": "/assets/logos/braintrust.png",
     "region": "intl",
     "category": "eval-observability",
     "useCases": [
@@ -7745,6 +7918,7 @@ export const productHub = {
     "nameZh": "Krea",
     "vendor": "Krea",
     "vendorZh": "Krea",
+    "logo": "/assets/logos/krea.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -7782,6 +7956,7 @@ export const productHub = {
     "nameZh": "LiteLLM",
     "vendor": "BerriAI",
     "vendorZh": "BerriAI",
+    "logo": "/assets/logos/berriai.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -7821,6 +7996,7 @@ export const productHub = {
     "nameZh": "面壁 MiniCPM",
     "vendor": "面壁智能",
     "vendorZh": "面壁智能",
+    "logo": "/assets/logos/openbmb.svg",
     "region": "cn",
     "category": "local-runner",
     "useCases": [
@@ -7857,6 +8033,7 @@ export const productHub = {
     "nameZh": "NotebookLM",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -7895,6 +8072,7 @@ export const productHub = {
     "nameZh": "LangSmith",
     "vendor": "LangChain Inc.",
     "vendorZh": "LangChain Inc.",
+    "logo": "/assets/logos/langchain-inc.png",
     "region": "intl",
     "category": "eval-observability",
     "useCases": [
@@ -7931,6 +8109,7 @@ export const productHub = {
     "nameZh": "Ollama",
     "vendor": "Ollama",
     "vendorZh": "Ollama",
+    "logo": "/assets/logos/ollama.png",
     "region": "intl",
     "category": "local-runner",
     "useCases": [
@@ -7971,6 +8150,7 @@ export const productHub = {
     "nameZh": "通义万相",
     "vendor": "阿里巴巴",
     "vendorZh": "阿里巴巴",
+    "logo": "/assets/logos/alibaba.png",
     "region": "cn",
     "category": "multimodal-creation",
     "useCases": [
@@ -8009,6 +8189,7 @@ export const productHub = {
     "nameZh": "火山方舟",
     "vendor": "字节跳动",
     "vendorZh": "字节跳动",
+    "logo": "/assets/logos/bytedance.png",
     "region": "cn",
     "category": "model-platform",
     "useCases": [
@@ -8049,6 +8230,7 @@ export const productHub = {
     "nameZh": "商量",
     "vendor": "商汤",
     "vendorZh": "商汤",
+    "logo": "/assets/logos/sensetime.svg",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -8086,6 +8268,7 @@ export const productHub = {
     "nameZh": "Claude API",
     "vendor": "Anthropic",
     "vendorZh": "Anthropic",
+    "logo": "/assets/logos/anthropic.ico",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -8128,6 +8311,7 @@ export const productHub = {
     "nameZh": "Vercel AI SDK",
     "vendor": "Vercel",
     "vendorZh": "Vercel",
+    "logo": "/assets/logos/vercel.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -8165,6 +8349,7 @@ export const productHub = {
     "nameZh": "Framer AI",
     "vendor": "Framer",
     "vendorZh": "Framer",
+    "logo": "/assets/logos/framer.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -8201,6 +8386,7 @@ export const productHub = {
     "nameZh": "文心快码",
     "vendor": "百度",
     "vendorZh": "百度",
+    "logo": "/assets/logos/baidu.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -8238,6 +8424,7 @@ export const productHub = {
     "nameZh": "Talkie",
     "vendor": "MiniMax",
     "vendorZh": "MiniMax",
+    "logo": "/assets/logos/minimax.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -8275,6 +8462,7 @@ export const productHub = {
     "nameZh": "Photoshop 生成式填充",
     "vendor": "Adobe",
     "vendorZh": "Adobe",
+    "logo": "/assets/logos/adobe.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -8310,6 +8498,7 @@ export const productHub = {
     "nameZh": "Aider",
     "vendor": "Aider AI",
     "vendorZh": "Aider AI",
+    "logo": null,
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -8348,6 +8537,7 @@ export const productHub = {
     "nameZh": "Dify",
     "vendor": "LangGenius",
     "vendorZh": "LangGenius",
+    "logo": "/assets/logos/langgenius.svg",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -8384,6 +8574,7 @@ export const productHub = {
     "nameZh": "讯飞星火",
     "vendor": "科大讯飞",
     "vendorZh": "科大讯飞",
+    "logo": "/assets/logos/iflytek.ico",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -8421,6 +8612,7 @@ export const productHub = {
     "nameZh": "Inflection Pi",
     "vendor": "Inflection AI",
     "vendorZh": "Inflection AI",
+    "logo": "/assets/logos/inflection-ai.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -8458,6 +8650,7 @@ export const productHub = {
     "nameZh": "Cohere Rerank",
     "vendor": "Cohere",
     "vendorZh": "Cohere",
+    "logo": "/assets/logos/cohere.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -8495,6 +8688,7 @@ export const productHub = {
     "nameZh": "LM Studio",
     "vendor": "Element Labs",
     "vendorZh": "Element Labs",
+    "logo": "/assets/logos/element-labs.ico",
     "region": "intl",
     "category": "local-runner",
     "useCases": [
@@ -8531,6 +8725,7 @@ export const productHub = {
     "nameZh": "网易 CodeWave",
     "vendor": "NetEase",
     "vendorZh": "NetEase",
+    "logo": "/assets/logos/netease.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -8569,6 +8764,7 @@ export const productHub = {
     "nameZh": "天工AI",
     "vendor": "昆仑万维",
     "vendorZh": "昆仑万维",
+    "logo": "/assets/logos/kunlun.ico",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -8606,6 +8802,7 @@ export const productHub = {
     "nameZh": "GPT4All",
     "vendor": "Nomic AI",
     "vendorZh": "Nomic AI",
+    "logo": "/assets/logos/nomic-ai.svg",
     "region": "intl",
     "category": "local-runner",
     "useCases": [
@@ -8642,6 +8839,7 @@ export const productHub = {
     "nameZh": "Flowise",
     "vendor": "FlowiseAI",
     "vendorZh": "FlowiseAI",
+    "logo": "/assets/logos/flowiseai.ico",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -8679,6 +8877,7 @@ export const productHub = {
     "nameZh": "Warp",
     "vendor": "Warp Inc.",
     "vendorZh": "Warp Inc.",
+    "logo": "/assets/logos/warp-inc.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -8715,6 +8914,7 @@ export const productHub = {
     "nameZh": "文心一言",
     "vendor": "百度",
     "vendorZh": "百度",
+    "logo": "/assets/logos/baidu.ico",
     "region": "cn",
     "category": "chat-assistant",
     "useCases": [
@@ -8752,6 +8952,7 @@ export const productHub = {
     "nameZh": "Claude.ai",
     "vendor": "Anthropic",
     "vendorZh": "Anthropic",
+    "logo": "/assets/logos/anthropic.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -8793,6 +8994,7 @@ export const productHub = {
     "nameZh": "Cursor",
     "vendor": "Anysphere",
     "vendorZh": "Anysphere",
+    "logo": "/assets/logos/anysphere.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -8833,6 +9035,7 @@ export const productHub = {
     "nameZh": "Intercom Fin",
     "vendor": "Intercom",
     "vendorZh": "Intercom",
+    "logo": "/assets/logos/intercom.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -8868,6 +9071,7 @@ export const productHub = {
     "nameZh": "Portkey",
     "vendor": "Portkey",
     "vendorZh": "Portkey",
+    "logo": "/assets/logos/portkey.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -8906,6 +9110,7 @@ export const productHub = {
     "nameZh": "Zed",
     "vendor": "Zed Industries",
     "vendorZh": "Zed Industries",
+    "logo": "/assets/logos/zed-industries.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -8944,6 +9149,7 @@ export const productHub = {
     "nameZh": "Relevance AI",
     "vendor": "Relevance AI",
     "vendorZh": "Relevance AI",
+    "logo": "/assets/logos/relevance-ai.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -8980,6 +9186,7 @@ export const productHub = {
     "nameZh": "Microsoft Copilot",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -9018,6 +9225,7 @@ export const productHub = {
     "nameZh": "ElevenLabs",
     "vendor": "ElevenLabs",
     "vendorZh": "ElevenLabs",
+    "logo": "/assets/logos/elevenlabs.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -9054,6 +9262,7 @@ export const productHub = {
     "nameZh": "CodeRabbit",
     "vendor": "CodeRabbit",
     "vendorZh": "CodeRabbit",
+    "logo": "/assets/logos/coderabbit.png",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -9092,6 +9301,7 @@ export const productHub = {
     "nameZh": "Helicone",
     "vendor": "Helicone",
     "vendorZh": "Helicone",
+    "logo": "/assets/logos/helicone.ico",
     "region": "intl",
     "category": "eval-observability",
     "useCases": [
@@ -9128,6 +9338,7 @@ export const productHub = {
     "nameZh": "Presentations.AI",
     "vendor": "Presentations.AI",
     "vendorZh": "Presentations.AI",
+    "logo": "/assets/logos/presentations-ai.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -9165,6 +9376,7 @@ export const productHub = {
     "nameZh": "Leonardo AI",
     "vendor": "Leonardo.Ai",
     "vendorZh": "Leonardo.Ai",
+    "logo": "/assets/logos/leonardo-ai.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -9201,6 +9413,7 @@ export const productHub = {
     "nameZh": "Perplexity",
     "vendor": "Perplexity",
     "vendorZh": "Perplexity",
+    "logo": "/assets/logos/perplexity.png",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -9238,6 +9451,7 @@ export const productHub = {
     "nameZh": "ChatGPT",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -9276,6 +9490,7 @@ export const productHub = {
     "nameZh": "Notion AI",
     "vendor": "Notion",
     "vendorZh": "Notion",
+    "logo": "/assets/logos/notion.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -9313,6 +9528,7 @@ export const productHub = {
     "nameZh": "Exa",
     "vendor": "Exa Labs",
     "vendorZh": "Exa Labs",
+    "logo": "/assets/logos/exa-labs.ico",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -9350,6 +9566,7 @@ export const productHub = {
     "nameZh": "Harvey",
     "vendor": "Counsel AI Corporation",
     "vendorZh": "Counsel AI Corporation",
+    "logo": null,
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -9388,6 +9605,7 @@ export const productHub = {
     "nameZh": "LlamaIndex",
     "vendor": "LlamaIndex",
     "vendorZh": "LlamaIndex",
+    "logo": "/assets/logos/llamaindex.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -9426,6 +9644,7 @@ export const productHub = {
     "nameZh": "Chroma",
     "vendor": "Chroma",
     "vendorZh": "Chroma",
+    "logo": "/assets/logos/chroma.ico",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -9463,6 +9682,7 @@ export const productHub = {
     "nameZh": "Fireworks AI",
     "vendor": "Fireworks AI",
     "vendorZh": "Fireworks AI",
+    "logo": "/assets/logos/fireworks-ai.ico",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -9500,6 +9720,7 @@ export const productHub = {
     "nameZh": "LangChain",
     "vendor": "LangChain Inc.",
     "vendorZh": "LangChain Inc.",
+    "logo": "/assets/logos/langchain-inc.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -9536,6 +9757,7 @@ export const productHub = {
     "nameZh": "Character.AI",
     "vendor": "Character.AI",
     "vendorZh": "Character.AI",
+    "logo": "/assets/logos/character-ai.png",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -9573,6 +9795,7 @@ export const productHub = {
     "nameZh": "Gamma",
     "vendor": "Gamma",
     "vendorZh": "Gamma",
+    "logo": "/assets/logos/gamma.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -9611,6 +9834,7 @@ export const productHub = {
     "nameZh": "HeyGen",
     "vendor": "HeyGen",
     "vendorZh": "HeyGen",
+    "logo": "/assets/logos/heygen.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -9647,6 +9871,7 @@ export const productHub = {
     "nameZh": "Midjourney",
     "vendor": "Midjourney, Inc.",
     "vendorZh": "Midjourney, Inc.",
+    "logo": "/assets/logos/midjourney-inc.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -9683,6 +9908,7 @@ export const productHub = {
     "nameZh": "Phind",
     "vendor": "Phind",
     "vendorZh": "Phind",
+    "logo": null,
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -9720,6 +9946,7 @@ export const productHub = {
     "nameZh": "Together AI",
     "vendor": "Together AI",
     "vendorZh": "Together AI",
+    "logo": "/assets/logos/together-ai.png",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -9758,6 +9985,7 @@ export const productHub = {
     "nameZh": "Fathom",
     "vendor": "Fathom",
     "vendorZh": "Fathom",
+    "logo": "/assets/logos/fathom.ico",
     "region": "intl",
     "category": "meetings",
     "useCases": [
@@ -9794,6 +10022,7 @@ export const productHub = {
     "nameZh": "Runway",
     "vendor": "Runway",
     "vendorZh": "Runway",
+    "logo": "/assets/logos/runway.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -9830,6 +10059,7 @@ export const productHub = {
     "nameZh": "You.com",
     "vendor": "You.com",
     "vendorZh": "You.com",
+    "logo": "/assets/logos/you-com.ico",
     "region": "intl",
     "category": "search",
     "useCases": [
@@ -9866,6 +10096,7 @@ export const productHub = {
     "nameZh": "Glean",
     "vendor": "Glean",
     "vendorZh": "Glean",
+    "logo": "/assets/logos/glean.png",
     "region": "intl",
     "category": "agent-platform",
     "useCases": [
@@ -9905,6 +10136,7 @@ export const productHub = {
     "nameZh": "AI21 Studio",
     "vendor": "AI21 Labs",
     "vendorZh": "AI21 Labs",
+    "logo": "/assets/logos/ai21-labs.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -9942,6 +10174,7 @@ export const productHub = {
     "nameZh": "GitHub Copilot",
     "vendor": "Microsoft",
     "vendorZh": "Microsoft",
+    "logo": "/assets/logos/microsoft.ico",
     "region": "intl",
     "category": "coding-agent",
     "useCases": [
@@ -9983,6 +10216,7 @@ export const productHub = {
     "nameZh": "Vertex AI",
     "vendor": "Google",
     "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
     "region": "intl",
     "category": "model-platform",
     "useCases": [
@@ -10020,6 +10254,7 @@ export const productHub = {
     "nameZh": "Pinecone",
     "vendor": "Pinecone Systems",
     "vendorZh": "Pinecone Systems",
+    "logo": "/assets/logos/pinecone.ico",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -10057,6 +10292,7 @@ export const productHub = {
     "nameZh": "Weaviate",
     "vendor": "Weaviate",
     "vendorZh": "Weaviate",
+    "logo": "/assets/logos/weaviate.ico",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -10095,6 +10331,7 @@ export const productHub = {
     "nameZh": "Qdrant",
     "vendor": "Qdrant",
     "vendorZh": "Qdrant",
+    "logo": "/assets/logos/qdrant.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -10133,6 +10370,7 @@ export const productHub = {
     "nameZh": "Synthesia",
     "vendor": "Synthesia",
     "vendorZh": "Synthesia",
+    "logo": "/assets/logos/synthesia.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -10170,6 +10408,7 @@ export const productHub = {
     "nameZh": "Descript",
     "vendor": "Descript",
     "vendorZh": "Descript",
+    "logo": "/assets/logos/descript.png",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -10207,6 +10446,7 @@ export const productHub = {
     "nameZh": "OpenAI API",
     "vendor": "OpenAI",
     "vendorZh": "OpenAI",
+    "logo": "/assets/logos/openai.ico",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -10243,6 +10483,7 @@ export const productHub = {
     "nameZh": "Surge AI",
     "vendor": "Surge AI",
     "vendorZh": "Surge AI",
+    "logo": "/assets/logos/surge-ai.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -10280,6 +10521,7 @@ export const productHub = {
     "nameZh": "tl;dv",
     "vendor": "tl;dv",
     "vendorZh": "tl;dv",
+    "logo": "/assets/logos/tl-dv.ico",
     "region": "intl",
     "category": "meetings",
     "useCases": [
@@ -10316,6 +10558,7 @@ export const productHub = {
     "nameZh": "Milvus",
     "vendor": "Zilliz",
     "vendorZh": "Zilliz",
+    "logo": "/assets/logos/zilliz.png",
     "region": "intl",
     "category": "developer-sdk",
     "useCases": [
@@ -10354,6 +10597,7 @@ export const productHub = {
     "nameZh": "Fireflies.ai",
     "vendor": "Fireflies.ai",
     "vendorZh": "Fireflies.ai",
+    "logo": "/assets/logos/fireflies-ai.png",
     "region": "intl",
     "category": "meetings",
     "useCases": [
@@ -10391,6 +10635,7 @@ export const productHub = {
     "nameZh": "Remini",
     "vendor": "Bending Spoons",
     "vendorZh": "Bending Spoons",
+    "logo": "/assets/logos/bending-spoons.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -10428,6 +10673,7 @@ export const productHub = {
     "nameZh": "Labelbox",
     "vendor": "Labelbox",
     "vendorZh": "Labelbox",
+    "logo": "/assets/logos/labelbox.png",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -10465,6 +10711,7 @@ export const productHub = {
     "nameZh": "Beautiful.ai",
     "vendor": "Beautiful.ai",
     "vendorZh": "Beautiful.ai",
+    "logo": "/assets/logos/beautiful-ai.ico",
     "region": "intl",
     "category": "multimodal-creation",
     "useCases": [
@@ -10502,6 +10749,7 @@ export const productHub = {
     "nameZh": "Replika",
     "vendor": "Luka",
     "vendorZh": "Luka",
+    "logo": "/assets/logos/luka.ico",
     "region": "intl",
     "category": "chat-assistant",
     "useCases": [
@@ -10539,6 +10787,7 @@ export const productHub = {
     "nameZh": "Weights & Biases",
     "vendor": "W&B",
     "vendorZh": "W&B",
+    "logo": "/assets/logos/w-b.png",
     "region": "intl",
     "category": "eval-observability",
     "useCases": [
@@ -10575,6 +10824,7 @@ export const productHub = {
     "nameZh": "Scale AI",
     "vendor": "Scale AI",
     "vendorZh": "Scale AI",
+    "logo": "/assets/logos/scale-ai.svg",
     "region": "intl",
     "category": "enterprise-api",
     "useCases": [
@@ -10612,6 +10862,7 @@ export const productHub = {
     "nameZh": "Otter.ai",
     "vendor": "Otter.ai",
     "vendorZh": "Otter.ai",
+    "logo": "/assets/logos/otter-ai.png",
     "region": "intl",
     "category": "meetings",
     "useCases": [

@@ -1,7 +1,17 @@
 <template>
   <div :class="['entry', `entry--${variant}`, { 'entry--no-doc': !docHref }]">
     <div class="entry-head">
-      <span class="entry-icon" aria-hidden="true">{{ product.glyph || '◆' }}</span>
+      <span class="entry-icon" aria-hidden="true">
+        <img
+          v-if="product.logo"
+          class="entry-logo"
+          :src="product.logo"
+          :alt="''"
+          loading="lazy"
+          decoding="async"
+        />
+        <template v-else>{{ product.glyph || '◆' }}</template>
+      </span>
       <div class="entry-heading">
         <a
           class="entry-name"
@@ -44,10 +54,7 @@
 
     <!-- Lead with the problem, not the spec sheet. -->
     <p v-if="solves" class="entry-solves">{{ solves }}</p>
-    <p v-if="bestFor" class="entry-when">
-      <span class="entry-when-label">{{ isZh ? '什么时候用' : 'Reach for it when' }}</span>
-      {{ bestFor }}
-    </p>
+    <p v-if="bestFor" class="entry-when">{{ bestFor }}</p>
 
     <div class="entry-foot">
       <span :class="['entry-cat', `entry-cat--${product.category}`]">
@@ -109,14 +116,9 @@
   const pick = (zh, en) => (props.isZh ? zh || en : en || zh)
   const label = computed(() => pick(props.product.nameZh, props.product.name))
   const solves = computed(() => pick(props.product.solvesZh, props.product.solves))
-  // The label already says "when", so a stored sentence that opens with
-  // "When ..." would read "Reach for it when When you want ...". Strip the
-  // opener in the rendered copy rather than forcing every record to avoid it.
-  const bestFor = computed(() => {
-    const raw = String(pick(props.product.bestForZh, props.product.bestFor) || '')
-    if (props.isZh) return raw.replace(/^(当|如果在|如果你)/, '')
-    return raw.replace(/^When (it(?:'s| is) time to )?/, '')
-  })
+  const bestFor = computed(() =>
+    String(pick(props.product.bestForZh, props.product.bestFor) || '')
+  )
   const vendorLabel = computed(() => pick(props.product.vendorZh, props.product.vendor))
   const categoryLabel = computed(() => {
     if (props.category) return pick(props.category.nameZh, props.category.name)
@@ -167,17 +169,27 @@
 
   .entry-icon {
     flex-shrink: 0;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--vp-c-brand);
     background: var(--vp-c-bg);
     border: 1px solid var(--vp-c-divider);
     border-radius: 9px;
+    overflow: hidden;
+  }
+
+  /* Real marks sit on their own background: many vendor logos are white-on-
+     transparent and would vanish on a light card. */
+  .entry-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
   }
 
   .entry-heading {
@@ -282,19 +294,11 @@
 
   .entry-when {
     margin: 0;
+    padding-left: 10px;
+    border-left: 2px solid var(--vp-c-divider);
     font-size: 13px;
     line-height: 1.55;
     color: var(--vp-c-text-2);
-  }
-
-  .entry-when-label {
-    display: inline-block;
-    margin-right: 6px;
-    padding: 1px 7px;
-    border-radius: 8px;
-    background: var(--vp-c-default-soft);
-    color: var(--vp-c-text-3);
-    font-size: 11px;
   }
 
   .entry-foot {
@@ -400,9 +404,9 @@
   }
 
   .entry--row .entry-icon {
-    width: 30px;
-    height: 30px;
-    font-size: 15px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
   }
 
   .entry--row .entry-solves {

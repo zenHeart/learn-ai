@@ -40,6 +40,21 @@ const taxonomy = readJson(join(dataDir, 'taxonomy.json'))
 const vendors = readJson(join(dataDir, 'vendors.json'))
 const vendorById = new Map(vendors.vendors.map((v) => [v.id, v]))
 
+// Logos are fetched into docs/public/assets/logos/<vendor_id>.<ext> by
+// .claude/skills/ingest-products/scripts/fetch-logos.mjs. Resolve the extension
+// here, at build time, so a missing logo is a null in the data rather than a
+// broken <img> in the card.
+const LOGO_DIR = join(root, 'docs/public/assets/logos')
+const LOGO_EXTS = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'ico']
+const logoOf = (vendorId) => {
+  for (const ext of LOGO_EXTS) {
+    if (existsSync(join(LOGO_DIR, `${vendorId}.${ext}`))) {
+      return `/assets/logos/${vendorId}.${ext}`
+    }
+  }
+  return null
+}
+
 const products = listJson(join(dataDir, 'products')).map((f) =>
   readJson(join(dataDir, 'products', f))
 )
@@ -71,6 +86,7 @@ const projectProducts = products
       nameZh: p.name_zh,
       vendor: v?.display_name ?? p.vendor_id,
       vendorZh: v?.display_name_zh ?? p.vendor_id,
+      logo: logoOf(p.vendor_id),
       region: p.region,
       category: p.category,
       useCases: p.use_cases ?? [],
