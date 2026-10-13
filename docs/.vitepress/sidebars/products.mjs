@@ -92,6 +92,7 @@ export const zhProductSidebar = [
       { text: '全部产品', link: '/zh/products/' },
       ...zhAiCodingItems,
       zhOpenClaw,
+      { text: 'REA 源码级解读', link: '/zh/products/rea/' },
       { text: 'Ollama', link: '/zh/products/ollama' },
       { text: 'Figma AI', link: '/zh/products/figma-ai' },
       { text: 'Testing AI', link: '/zh/products/testing-ai' }

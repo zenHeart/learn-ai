@@ -2061,6 +2061,16 @@
       "official_domains": [
         "openbmb.cn"
       ]
+    },
+    {
+      "id": "morluto",
+      "display_name": "REA (morluto)",
+      "display_name_zh": "REA（morluto）",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "rea.tools"
+      ]
     }
   ]
 }

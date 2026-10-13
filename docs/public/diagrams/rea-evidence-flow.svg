@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 720" width="100%" height="100%" role="img" aria-labelledby="rea-flow-title rea-flow-desc">
+  <title id="rea-flow-title">一次 REA 调查从提问到闭包的完整数据流</title>
+  <desc id="rea-flow-desc">这张图按编号展示一次 REA 调查的九个步骤，以及每一步产出的数据落在哪里。第一步，你的智能体通过 MCP 或 CLI 向 REA 提出一个关于本地目标的问题。第二步，REA 在应用层为这个目标选定唯一的分析提供方，它按固定排序挑选，一旦选定不回退。第三步，REA 在私有临时根目录下生成一份会话材料，其中包含一个随机令牌与一个私有套接字路径。第四步，REA 把启动脚本写入磁盘并设 0600 权限，然后启动自己拥有的进程组。第五步，外部引擎加载桥接代码，桥接代码绑定套接字并等待，它收到请求时用恒定时间比较校验令牌。第六步，桥接代码调用引擎自身的 API 取得伪代码、汇编、调用关系等结果。第七步，REA 把结果包装成一条证据记录，携带置信度与权威性两个字段。第八步，REA 用证据派生重建义务候选，静态应用图只能产生候选，不能证明运行时行为。第九步，台账求值器逐条判定这些义务：只有当唯一所有者、必需解析器类型、每一种必需用例、通过且权威性达标的校验器都到位，并且没有任何残留诊断时，义务才是已验证；台账级判定再汇总成可闭合、未闭合、已失败或未知。全流程的关键不变量是：分析在本地完成，产物带证据，未知是一等值而不是错误。</desc>
+
+  <defs>
+    <linearGradient id="flowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="flowGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <filter id="flowShadow" x="-12%" y="-12%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="flowArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+    <marker id="flowArrowBack" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399"/>
+    </marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-step { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-code { fill: #7dd3fc; font-size: 10.5px; }
+      .t-num { fill: #0f172a; font-size: 11px; font-weight: 700; }
+      .t-band { fill: #94a3b8; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; }
+    </style>
+  </defs>
+
+  <rect width="880" height="720" fill="url(#flowBg)"/>
+  <rect width="880" height="720" fill="url(#flowGrid)"/>
+
+  <g transform="translate(36, 26)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#34d399"/>
+    <text x="20" y="21" class="t-title">一次调查的完整数据流</text>
+    <text x="20" y="40" class="t-sub">编号即执行顺序。橙色向下是数据前进的方向，绿色向上是结果回到智能体的方向</text>
+  </g>
+
+  <!-- 右侧回程说明：横排，避免竖排中文难读 -->
+  <g transform="translate(768, 96)">
+    <rect x="0" y="0" width="96" height="76" rx="8" fill="#0f172a"/>
+    <rect x="0" y="0" width="96" height="76" rx="8" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="12" y="20" class="t-step" fill="#a7f3d0" font-size="12">回到智能体</text>
+    <text x="12" y="38" class="t-note">带着证据</text>
+    <text x="12" y="52" class="t-note">与未知项</text>
+    <text x="12" y="68" class="t-note">由它来解释</text>
+  </g>
+
+  <!-- 1 提问 -->
+  <g transform="translate(36, 76)">
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#38bdf8"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">1</text>
+    <text x="44" y="22" class="t-step">智能体向本地目标提问</text>
+    <text x="44" y="40" class="t-note">「Notes 的搜索是怎么实现的，把证据给我，并给我的项目写一个类似功能」</text>
+  </g>
+
+  <line x1="120" y1="130" x2="120" y2="150" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="130" y="145" class="t-code">MCP 工具调用 / CLI 命令</text>
+
+  <!-- 2 选定提供方 -->
+  <g transform="translate(36, 152)">
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#10b981"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">2</text>
+    <text x="44" y="22" class="t-step">应用层为这个目标选定唯一提供方</text>
+    <text x="44" y="40" class="t-note">候选按固定排序深筛，选定后不回退；每个目标一个不可变深绑定</text>
+  </g>
+
+  <line x1="120" y1="206" x2="120" y2="226" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="130" y="221" class="t-code">私有根目录 + 随机令牌 + 私有套接字路径</text>
+
+  <!-- 3 启动 -->
+  <g transform="translate(36, 228)">
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#f59e0b"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">3</text>
+    <text x="44" y="22" class="t-step">REA 写启动脚本并启动自己拥有的进程组</text>
+    <text x="44" y="40" class="t-note">脚本权限 0600；spawn 时校验属主 PID，防止冒认；每个引擎有启动期限</text>
+  </g>
+
+  <line x1="120" y1="282" x2="120" y2="302" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+
+  <!-- 4 桥握手 -->
+  <g transform="translate(36, 304)">
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="rgba(136, 19, 55, 0.35)" stroke="#fb7185" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#f43f5e"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">4</text>
+    <text x="44" y="22" class="t-step">外部引擎加载桥接代码并等待请求</text>
+    <text x="44" y="40" class="t-note">请求体必须恰好是 id / token / method / params 四个键；令牌用恒定时间比较，失权只回一句固定文案</text>
+  </g>
+
+  <line x1="120" y1="358" x2="120" y2="378" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="130" y="373" class="t-code">NDJSON over AF_UNIX（Windows 上 Ghidra 走认证回环 TCP）</text>
+
+  <!-- 5 引擎产出 -->
+  <g transform="translate(36, 380)">
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#818cf8"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">5</text>
+    <text x="44" y="22" class="t-step">桥接代码调用引擎自身的 API 取原始结果</text>
+    <text x="44" y="40" class="t-note">伪代码、汇编、符号、调用与引用；引擎保持未修改，REA 不 fork 分析引擎</text>
+  </g>
+
+  <line x1="120" y1="434" x2="120" y2="454" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+
+  <!-- 6 证据 -->
+  <g transform="translate(36, 456)">
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#10b981"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">6</text>
+    <text x="44" y="22" class="t-step">结果被包装成一条证据记录</text>
+    <text x="44" y="40" class="t-note">同时写明 confidence（observed / derived / inferred）与 authority（谁认证的）</text>
+  </g>
+
+  <line x1="120" y1="510" x2="120" y2="530" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="130" y="525" class="t-code">应用图与进程捕获派生候选</text>
+
+  <!-- 7 候选 -->
+  <g transform="translate(36, 532)">
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="52" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#f59e0b"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">7</text>
+    <text x="44" y="22" class="t-step">静态应用图只能产出候选义务</text>
+    <text x="44" y="40" class="t-note">候选不等于结论：它不证明运行时行为，也不证明进程行为</text>
+  </g>
+
+  <line x1="120" y1="586" x2="120" y2="606" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+
+  <!-- 8 闭包求值 -->
+  <g transform="translate(36, 608)">
+    <rect x="0" y="0" width="642" height="66" rx="9" fill="#0f172a"/>
+    <rect x="0" y="0" width="642" height="66" rx="9" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <circle cx="22" cy="26" r="11" fill="#94a3b8"/>
+    <text x="22" y="30" class="t-num" text-anchor="middle">8</text>
+    <text x="44" y="22" class="t-step">闭包求值：唯一所有者 + 必需解析器类型 + 每类必需用例 + 权威性达标的通过校验器</text>
+    <text x="44" y="40" class="t-note">全部齐备且无残留诊断，义务才是「已验证」。任一依赖未验证，依赖者在同一轮不动点迭代里被判阻塞</text>
+    <text x="44" y="56" class="t-code">零 diagnostic 是 verified 的唯一途径 —— 这是整套机制里最硬的一条</text>
+  </g>
+
+  <path d="M 690 641 C 736 641 736 102 690 102" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#flowArrowBack)"/>
+  <text x="712" y="392" class="t-note" text-anchor="middle" transform="rotate(-90 712 392)">结果回到调用方</text>
+
+  <g transform="translate(36, 690)">
+    <rect x="0" y="0" width="642" height="20" rx="5" fill="#1c1917" stroke="#fbbf24" stroke-width="0.8" stroke-opacity="0.7"/>
+    <text x="12" y="14" class="t-note">全程在本地完成 · 每个结论都带证据 · 未知是一等值，不是错误 · 引擎崩溃不等于分析失败</text>
+  </g>
+</svg>

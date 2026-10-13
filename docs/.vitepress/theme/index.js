@@ -9,6 +9,9 @@ import NotFound from './components/NotFound.vue'
 import SymptomRouter from './components/SymptomRouter.vue'
 import LadderStepper from './components/LadderStepper.vue'
 import ThemeEnhance from './components/ThemeEnhance.vue'
+import ReaClosureLedger from './components/rea/ReaClosureLedger.vue'
+import ReaAuthorityLattice from './components/rea/ReaAuthorityLattice.vue'
+import ReaDiagram from './components/rea/ReaDiagram.vue'
 import './styles/index.css'
 
 export default {
@@ -29,6 +32,9 @@ export default {
     app.component('AIToolsGallery', AIToolsGallery)
     app.component('SymptomRouter', SymptomRouter)
     app.component('LadderStepper', LadderStepper)
+    app.component('ReaClosureLedger', ReaClosureLedger)
+    app.component('ReaAuthorityLattice', ReaAuthorityLattice)
+    app.component('ReaDiagram', ReaDiagram)
     // 注册自定义布局
     app.component('ai-tools', AIToolsLayout)
     app.component('product-hub', ProductHubLayout)

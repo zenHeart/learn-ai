@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 660" width="100%" height="100%" role="img" aria-labelledby="rea-arch-title rea-arch-desc">
+  <title id="rea-arch-title">REA 的分层结构与依赖方向</title>
+  <desc id="rea-arch-desc">REA 的源码分成四层核心结构，自上而下依赖，不得反向：最上层是入口层，包含一次性 CLI 适配器 src/cli 与 MCP 标准输入输出服务器适配器 src/main；其下是应用层 src/application，承载 CLI 与 MCP 共用的工作流、二进制会话路由与调查记录；第三层是提供方层，包含 Hopper、Ghidra、IDA、浏览器、.NET、Android、固件、WASM、EVM 等分析适配器，每个都通过 src/process 拥有的进程组、私有临时根目录与期限约束运行；最底层是领域层 src/domain，是纯粹、无副作用的模块，提供证据、比较与应用图。最右侧有一条贯穿的契约层 src/contracts，向调用方暴露分析结果的结构化 schema 与错误目录。跨层的关键事实是：Hopper 与 Ghidra 的实际分析逻辑不在 TypeScript 里，而在 bridge/hopper_bridge.py 与 bridge/ghidra/ReaGhidraBridge.java 两个桥里，TypeScript 侧只负责启动、传输与协议。</desc>
+
+  <defs>
+    <linearGradient id="archBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="archGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <filter id="archShadow" x="-12%" y="-12%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="archArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+    <style>
+      text {
+        font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif;
+      }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-layer { fill: #f8fafc; font-size: 14px; font-weight: 700; }
+      .t-note { fill: #94a3b8; font-size: 11px; }
+      .t-body { fill: #cbd5e1; font-size: 11.5px; }
+      .t-chip { fill: #cbd5e1; font-size: 10.5px; }
+      .t-code { fill: #7dd3fc; font-size: 10.5px; }
+      .t-band { fill: #94a3b8; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; }
+    </style>
+  </defs>
+
+  <rect width="880" height="660" fill="url(#archBg)"/>
+  <rect width="880" height="660" fill="url(#archGrid)"/>
+
+  <!-- 标题 -->
+  <g transform="translate(36, 26)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#38bdf8"/>
+    <text x="20" y="21" class="t-title">REA 的分层结构与依赖方向</text>
+    <text x="20" y="40" class="t-sub">箭头只向下：上层可以调用下层，下层不知道上层存在。这是它能同时挂 CLI 和 MCP 两个前端的原因</text>
+  </g>
+
+  <!-- 方向说明（放在层列右侧的空隙里，避免与贯穿侧栏重叠） -->
+  <g transform="translate(690, 118)">
+    <text x="0" y="0" class="t-band">依赖</text>
+    <text x="0" y="16" class="t-note">只向下</text>
+  </g>
+
+  <!-- 第 1 层：入口 -->
+  <g transform="translate(36, 82)">
+    <rect x="0" y="0" width="646" height="86" rx="10" fill="#0f172a"/>
+    <rect x="0" y="0" width="646" height="86" rx="10" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#archShadow)"/>
+    <text x="18" y="26" class="t-layer">① 入口层 · 两个前端，一套内核</text>
+    <rect x="18" y="38" width="290" height="34" rx="6" fill="#082f49" stroke="#38bdf8" stroke-width="1"/>
+    <text x="30" y="53" class="t-code">src/cli + src/cli/</text>
+    <text x="30" y="67" class="t-body">一次性 CLI：setup、诊断、分析、反编译</text>
+    <rect x="322" y="38" width="306" height="34" rx="6" fill="#082f49" stroke="#38bdf8" stroke-width="1"/>
+    <text x="334" y="53" class="t-code">src/main + src/server/</text>
+    <text x="334" y="67" class="t-body">MCP stdio 服务器：把请求翻译成工具调用</text>
+  </g>
+
+  <line x1="359" y1="172" x2="359" y2="188" stroke="#fb923c" stroke-width="2" marker-end="url(#archArrow)"/>
+
+  <!-- 第 2 层：应用 -->
+  <g transform="translate(36, 190)">
+    <rect x="0" y="0" width="646" height="130" rx="10" fill="#0f172a"/>
+    <rect x="0" y="0" width="646" height="130" rx="10" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" filter="url(#archShadow)"/>
+    <text x="18" y="26" class="t-layer">② 应用层 · CLI 与 MCP 共用的工作流</text>
+    <text x="18" y="44" class="t-note">这一层不知道调用方是人还是模型，所以两条路径的行为天然一致</text>
+    <rect x="18" y="54" width="196" height="58" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="30" y="70" class="t-code">src/application/</text>
+    <text x="30" y="86" class="t-body">增强分析与调查工作流</text>
+    <text x="30" y="102" class="t-note">两个前端调的是同一批函数</text>
+    <rect x="226" y="54" width="196" height="58" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="238" y="70" class="t-code">SessionProviderRouter</text>
+    <text x="238" y="86" class="t-body">每个目标一个不可变深绑定</text>
+    <text x="238" y="102" class="t-note">选完就不再回退</text>
+    <rect x="434" y="54" width="194" height="58" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="446" y="70" class="t-code">investigation/</text>
+    <text x="446" y="86" class="t-body">调查记录与窄端口</text>
+    <text x="446" y="102" class="t-note">Evidence 与 Unknown 各有归属</text>
+  </g>
+
+  <line x1="359" y1="324" x2="359" y2="340" stroke="#fb923c" stroke-width="2" marker-end="url(#archArrow)"/>
+
+  <!-- 第 3 层：提供方 -->
+  <g transform="translate(36, 342)">
+    <rect x="0" y="0" width="646" height="150" rx="10" fill="#0f172a"/>
+    <rect x="0" y="0" width="646" height="150" rx="10" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" filter="url(#archShadow)"/>
+    <text x="18" y="26" class="t-layer">③ 提供方层 · 全部是适配器，不是算法</text>
+    <text x="18" y="44" class="t-note">这一层把外部引擎的协议与解析收进适配器；它们的实现细节不泄漏到上层</text>
+
+    <rect x="18" y="54" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="30" y="71" class="t-chip">Hopper</text>
+    <rect x="148" y="54" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="160" y="71" class="t-chip">Ghidra</text>
+    <rect x="278" y="54" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="290" y="71" class="t-chip">IDA</text>
+    <rect x="408" y="54" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="420" y="71" class="t-chip">浏览器 / CDP</text>
+    <rect x="538" y="54" width="90" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="550" y="71" class="t-chip">.NET</text>
+
+    <rect x="18" y="86" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="30" y="103" class="t-chip">Android / JADX</text>
+    <rect x="148" y="86" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="160" y="103" class="t-chip">固件 / Binwalk</text>
+    <rect x="278" y="86" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="290" y="103" class="t-chip">WASM / WABT</text>
+    <rect x="408" y="86" width="122" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="420" y="103" class="t-chip">EVM</text>
+    <rect x="538" y="86" width="90" height="26" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="550" y="103" class="t-chip">pwntools</text>
+
+    <rect x="18" y="116" width="610" height="28" rx="5" fill="#1c1917" stroke="#fbbf24" stroke-width="0.8" stroke-opacity="0.6"/>
+    <text x="30" y="129" class="t-note">共同底座 src/process：拥有的进程组、私有临时根目录、超时期限、有界文件读取与清理</text>
+    <text x="30" y="140" class="t-note">Windows 另有一条 native/windows 的 Node-API 实现，落到 NTFS 准入与 Job Object</text>
+  </g>
+
+  <line x1="359" y1="496" x2="359" y2="512" stroke="#fb923c" stroke-width="2" marker-end="url(#archArrow)"/>
+
+  <!-- 第 4 层：领域 -->
+  <g transform="translate(36, 514)">
+    <rect x="0" y="0" width="646" height="72" rx="10" fill="#0f172a"/>
+    <rect x="0" y="0" width="646" height="72" rx="10" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5" filter="url(#archShadow)"/>
+    <text x="18" y="26" class="t-layer">④ 领域层 · 纯粹、无副作用</text>
+    <text x="18" y="46" class="t-body">src/domain：证据模型、比较语义、应用图、闭包判定的全部纯函数</text>
+    <text x="18" y="62" class="t-note">这一层不碰文件系统与进程，所以同一份判定在 CLI、MCP 与测试里给出同一个答案</text>
+  </g>
+
+  <!-- 契约层：右侧贯穿 -->
+  <g transform="translate(700, 200)">
+    <rect x="0" y="0" width="144" height="330" rx="10" fill="#0f172a"/>
+    <rect x="0" y="0" width="144" height="330" rx="10" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5" filter="url(#archShadow)"/>
+    <text x="14" y="26" class="t-layer">贯穿侧栏</text>
+    <text x="14" y="46" class="t-code">src/contracts/</text>
+    <text x="14" y="64" class="t-note">向调用方暴露的</text>
+    <text x="14" y="80" class="t-note">结构化 schema</text>
+    <line x1="14" y1="96" x2="130" y2="96" stroke="#64748b" stroke-width="0.8" stroke-opacity="0.6"/>
+    <text x="14" y="118" class="t-code">errorSchemas.ts</text>
+    <text x="14" y="136" class="t-note">错误目录与</text>
+    <text x="14" y="152" class="t-note">CLI 诊断信息</text>
+    <line x1="14" y1="168" x2="130" y2="168" stroke="#64748b" stroke-width="0.8" stroke-opacity="0.6"/>
+    <text x="14" y="190" class="t-code">mcp-contracts.md</text>
+    <text x="14" y="208" class="t-note">工具目录由此</text>
+    <text x="14" y="224" class="t-note">生成并核对</text>
+    <line x1="14" y1="240" x2="130" y2="240" stroke="#64748b" stroke-width="0.8" stroke-opacity="0.6"/>
+    <text x="14" y="262" class="t-note">契约先于实现：</text>
+    <text x="14" y="278" class="t-note">schema 不成立时</text>
+    <text x="14" y="294" class="t-note">构造直接抛错，</text>
+    <text x="14" y="310" class="t-note">不会产出半个结果</text>
+  </g>
+
+  <!-- 桥：跨语言的实际分析逻辑 -->
+  <g transform="translate(36, 596)">
+    <rect x="0" y="0" width="646" height="52" rx="8" fill="#0f172a"/>
+    <rect x="0" y="0" width="646" height="52" rx="8" fill="rgba(136, 19, 55, 0.35)" stroke="#fb7185" stroke-width="1.5"/>
+    <text x="18" y="19" class="t-layer" fill="#fecdd3" font-size="12.5">桥接事实：真正的反编译逻辑不在这套 TypeScript 里</text>
+    <text x="18" y="33" class="t-note">bridge/hopper_bridge.py 跑在 Hopper 内嵌的 CPython 上；bridge/ghidra/ReaGhidraBridge.java 打包成 HeadlessScript</text>
+    <text x="18" y="45" class="t-note">TypeScript 侧负责启动、Unix socket 或 Windows 上的认证回环 TCP，以及请求协议本身</text>
+  </g>
+</svg>

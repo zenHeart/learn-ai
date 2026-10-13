@@ -1,0 +1,42 @@
+{
+  "id": "rea",
+  "name": "REA",
+  "name_zh": "REA",
+  "vendor_id": "morluto",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "coding",
+    "local-private"
+  ],
+  "form": "cli",
+  "released": "2026-07-12",
+  "homepage": "https://rea.tools/",
+  "desc": "MCP server and CLI that reverse-engineers binaries, apps, and websites.",
+  "desc_zh": "用一套 MCP 与 CLI 逆向二进制、应用和网站。",
+  "solves": "An agent can read the source you give it, but shipped binaries, Electron bundles and installed apps are opaque. REA puts Hopper, Ghidra, IDA, JADX and browser inspection behind local MCP tools, and attaches evidence to every finding instead of a confident guess.",
+  "solves_zh": "智能体能读你给它的源码，但已发布的二进制、Electron 包和装好的应用是黑盒。REA 把 Hopper、Ghidra、IDA、JADX 与浏览器检查收进本地 MCP 工具，并且给每个结论附上证据，而不是一个自信的猜测。",
+  "best_for": "You need to understand how a shipped feature actually works before rebuilding it, and you want the conclusion traceable to a pseudocode line or a captured request.",
+  "best_for_zh": "你要在复刻一个已发布功能的实现之前先弄清它到底怎么工作，并且希望每个结论都能追到一行伪代码或一次真实抓包。",
+  "surface": "standalone",
+  "tags": [
+    "reverse-engineering",
+    "mcp",
+    "static-analysis",
+    "evidence",
+    "local-first"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "zh": "/zh/products/rea/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": null,
+  "notes": "源码核对基于 morluto/rea 提交 70611713e140a86201cdef659181012cbdd17f4d（rea-agents 6.4.0）。本页所有机制描述都指向上述提交里的具体文件；提交之后的变化不在本页范围内。深度原生分析需要调用方自备 Hopper、Ghidra 或 IDA，静态 JavaScript 与 .NET 检视不需要任何原生引擎。MIT 许可，第三方引擎各自保留其许可条款。",
+  "revisions": [],
+  "date_precision": "day"
+}

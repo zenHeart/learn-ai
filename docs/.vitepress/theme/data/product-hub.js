@@ -8,7 +8,7 @@
  *   data/products/vendors.json      厂商注册表
  *   data/products/use-cases/*.json  场景选型
  *
- * products 350 条 · categories 11 个 · use-cases 10 个
+ * products 351 条 · categories 11 个 · use-cases 10 个
  *
  * 本文件不含生成时间戳：否则每次运行都会产生差异，--check 闸门将永远报红。
  * 什么时候改的由 git 记录。
@@ -38,7 +38,7 @@ export const productHub = {
     "nameZh": "Agent 平台",
     "color": "#7C3AED",
     "icon": "🧠",
-    "count": 60
+    "count": 61
   },
   {
     "id": "coding-agent",
@@ -609,6 +609,7 @@ export const productHub = {
       "qianwen",
       "quark",
       "question-ai",
+      "rea",
       "shangliang",
       "slackbot",
       "tavily",
@@ -627,7 +628,7 @@ export const productHub = {
       "zeta",
       "zhihu"
     ],
-    "productCount": 79,
+    "productCount": 80,
     "dimensions": [
       {
         "id": "answer-engine",
@@ -780,6 +781,7 @@ export const productHub = {
       "phind",
       "pi-agent",
       "qoder",
+      "rea",
       "replit-agent",
       "roo-code",
       "sensetime",
@@ -796,7 +798,7 @@ export const productHub = {
       "zcode",
       "zed"
     ],
-    "productCount": 69,
+    "productCount": 70,
     "dimensions": [
       {
         "id": "ai-ide",
@@ -849,10 +851,11 @@ export const productHub = {
           "opencode",
           "pi-agent",
           "qoder",
+          "rea",
           "trae",
           "warp"
         ],
-        "productCount": 27
+        "productCount": 28
       },
       {
         "id": "app-builder",
@@ -1242,6 +1245,86 @@ export const productHub = {
     ]
   },
   {
+    "id": "local-private",
+    "title": "Local & private",
+    "titleZh": "本地与私有化",
+    "description": "Running models on your own machine or your own server. The reason is usually privacy, latency, or cost per token.",
+    "descriptionZh": "把模型跑在自己的机器或服务器上。原因通常是隐私、延迟，或者每 token 成本。",
+    "products": [
+      "aider",
+      "claw",
+      "cody",
+      "flowise",
+      "goose",
+      "gpt4all",
+      "jan",
+      "langfuse",
+      "lm-studio",
+      "milvus",
+      "minicpm",
+      "mistral-ai-cloud",
+      "mlx",
+      "north",
+      "nvidia-nim",
+      "ollama",
+      "open-webui",
+      "openclaw",
+      "phariaai",
+      "qdrant",
+      "rea",
+      "weaviate",
+      "xiaomi",
+      "zed"
+    ],
+    "productCount": 24,
+    "dimensions": [
+      {
+        "id": "local-runner",
+        "label": "Run on your machine",
+        "labelZh": "本机运行",
+        "weight": 3,
+        "productIds": [
+          "goose",
+          "gpt4all",
+          "jan",
+          "lm-studio",
+          "minicpm",
+          "ollama",
+          "open-webui",
+          "rea",
+          "xiaomi"
+        ],
+        "productCount": 9
+      },
+      {
+        "id": "self-hosted",
+        "label": "Self-hosted service",
+        "labelZh": "自托管服务",
+        "weight": 3,
+        "productIds": [
+          "nvidia-nim",
+          "open-webui",
+          "openclaw",
+          "phariaai",
+          "weaviate"
+        ],
+        "productCount": 5
+      },
+      {
+        "id": "edge-sdk",
+        "label": "Edge & on-device SDK",
+        "labelZh": "端侧 / 边缘 SDK",
+        "weight": 2,
+        "productIds": [
+          "gpt4all",
+          "minicpm",
+          "mlx"
+        ],
+        "productCount": 3
+      }
+    ]
+  },
+  {
     "id": "observability",
     "title": "Eval & observability",
     "titleZh": "评测与可观测",
@@ -1325,84 +1408,6 @@ export const productHub = {
           "weights-biases"
         ],
         "productCount": 1
-      }
-    ]
-  },
-  {
-    "id": "local-private",
-    "title": "Local & private",
-    "titleZh": "本地与私有化",
-    "description": "Running models on your own machine or your own server. The reason is usually privacy, latency, or cost per token.",
-    "descriptionZh": "把模型跑在自己的机器或服务器上。原因通常是隐私、延迟，或者每 token 成本。",
-    "products": [
-      "aider",
-      "claw",
-      "cody",
-      "flowise",
-      "goose",
-      "gpt4all",
-      "jan",
-      "langfuse",
-      "lm-studio",
-      "milvus",
-      "minicpm",
-      "mistral-ai-cloud",
-      "mlx",
-      "north",
-      "nvidia-nim",
-      "ollama",
-      "open-webui",
-      "openclaw",
-      "phariaai",
-      "qdrant",
-      "weaviate",
-      "xiaomi",
-      "zed"
-    ],
-    "productCount": 23,
-    "dimensions": [
-      {
-        "id": "local-runner",
-        "label": "Run on your machine",
-        "labelZh": "本机运行",
-        "weight": 3,
-        "productIds": [
-          "goose",
-          "gpt4all",
-          "jan",
-          "lm-studio",
-          "minicpm",
-          "ollama",
-          "open-webui",
-          "xiaomi"
-        ],
-        "productCount": 8
-      },
-      {
-        "id": "self-hosted",
-        "label": "Self-hosted service",
-        "labelZh": "自托管服务",
-        "weight": 3,
-        "productIds": [
-          "nvidia-nim",
-          "open-webui",
-          "openclaw",
-          "phariaai",
-          "weaviate"
-        ],
-        "productCount": 5
-      },
-      {
-        "id": "edge-sdk",
-        "label": "Edge & on-device SDK",
-        "labelZh": "端侧 / 边缘 SDK",
-        "weight": 2,
-        "productIds": [
-          "gpt4all",
-          "minicpm",
-          "mlx"
-        ],
-        "productCount": 3
       }
     ]
   },
@@ -1894,6 +1899,50 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "纳"
+  },
+  {
+    "id": "rea",
+    "name": "REA",
+    "nameZh": "REA",
+    "vendor": "REA (morluto)",
+    "vendorZh": "REA（morluto）",
+    "logo": null,
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "research",
+      "coding",
+      "local-private"
+    ],
+    "form": "cli",
+    "surface": "standalone",
+    "solves": "An agent can read the source you give it, but shipped binaries, Electron bundles and installed apps are opaque. REA puts Hopper, Ghidra, IDA, JADX and browser inspection behind local MCP tools, and attaches evidence to every finding instead of a confident guess.",
+    "solvesZh": "智能体能读你给它的源码，但已发布的二进制、Electron 包和装好的应用是黑盒。REA 把 Hopper、Ghidra、IDA、JADX 与浏览器检查收进本地 MCP 工具，并且给每个结论附上证据，而不是一个自信的猜测。",
+    "bestFor": "You need to understand how a shipped feature actually works before rebuilding it, and you want the conclusion traceable to a pseudocode line or a captured request.",
+    "bestForZh": "你要在复刻一个已发布功能的实现之前先弄清它到底怎么工作，并且希望每个结论都能追到一行伪代码或一次真实抓包。",
+    "released": "2026-07-12",
+    "datePrecision": "day",
+    "homepage": "https://rea.tools/",
+    "desc": "MCP server and CLI that reverse-engineers binaries, apps, and websites.",
+    "descZh": "用一套 MCP 与 CLI 逆向二进制、应用和网站。",
+    "tags": [
+      "reverse-engineering",
+      "mcp",
+      "static-analysis",
+      "evidence",
+      "local-first"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/rea/"
+      }
+    },
+    "lastVerifiedAt": null,
+    "glyph": "R"
   },
   {
     "id": "meta-model-api",
