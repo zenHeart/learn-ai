@@ -18,5 +18,15 @@ export const zhPracticeSidebar = [
       { text: 'Vibe Coding 报告', link: '/zh/practice/reporter' },
       { text: '采购与实施方案', link: '/zh/practice/procurement-plan' }
     ]
+  },
+  {
+    text: '企业 Agent 工程实践卡',
+    items: [
+      { text: '概览', link: '/zh/practice/agent-handbook/' },
+      { text: '构建', link: '/zh/practice/agent-handbook/build' },
+      { text: '运行', link: '/zh/practice/agent-handbook/run' },
+      { text: '调优', link: '/zh/practice/agent-handbook/optimization' },
+      { text: '案例：Code Review Agent', link: '/zh/practice/agent-handbook/case-code-review' }
+    ]
   }
 ]
