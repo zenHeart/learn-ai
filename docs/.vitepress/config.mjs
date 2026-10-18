@@ -33,6 +33,10 @@ export default withMermaid(defineConfig({
                __dirname,
                "../../node_modules/.pnpm/@braintree+sanitize-url@7.1.1/node_modules/@braintree/sanitize-url/dist/index.js"
             ),
+            "d3-array": path.resolve(
+               __dirname,
+               "../../node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-array/src/index.js"
+            ),
          },
       },
       optimizeDeps: {

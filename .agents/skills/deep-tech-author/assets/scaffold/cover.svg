@@ -1,0 +1,40 @@
+<!--
+  封面模板：替换下方 {{...}} 占位符。
+  - {{BRAND}}        品牌/作者署名行，如 ZENHEART / PI
+  - {{TITLE_LINE1}}  书名首行（短词，大字号），如 Pi
+  - {{TITLE_LINE2}}  书名次行，如 Agent
+  - {{TITLE_ACCENT}} 书名强调行，如 源码实战指南
+  - {{SUBTITLE}}     副标题，如 从使用到复刻 Coding Agent
+  - {{CHAPTER_COUNT}} 章数，如 40
+  - {{REPO_SLUG}}    源仓库 owner/name，如 OWNER/REPO
+  workflow 校验只检查占位符是否已替换；配色与排版可自由调整。
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">{{TITLE_ACCENT}}</title>
+  <desc id="desc">{{TITLE_ACCENT}} 封面，源码对照版。</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf7f0"/>
+      <stop offset="1" stop-color="#ece3d7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="560" fill="url(#paper)"/>
+
+  <circle cx="382" cy="184" r="132" fill="#0f766e" opacity="0.13"/>
+
+  <g font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="50" y="78" font-size="10" font-weight="800" letter-spacing="2.2" fill="#6a7280">{{BRAND}}</text>
+
+    <text x="50" y="188" font-size="62" font-weight="900" fill="#17191f">{{TITLE_LINE1}}</text>
+    <text x="50" y="256" font-size="62" font-weight="900" fill="#17191f">{{TITLE_LINE2}}</text>
+
+    <text x="52" y="328" font-size="34" font-weight="900" fill="#d65b43">{{TITLE_ACCENT}}</text>
+
+    <text x="52" y="388" font-size="16" font-weight="800" fill="#0f766e">{{SUBTITLE}}</text>
+    <text x="52" y="418" font-size="12" fill="#606873">理解核心原理、源码实现与工程决策</text>
+
+    <text x="52" y="502" font-size="12" font-weight="800" fill="#17191f">{{CHAPTER_COUNT}} 章 · 源码对照版</text>
+    <text x="52" y="524" font-size="10" font-weight="700" fill="#6a7280">基于 {{REPO_SLUG}} fork</text>
+  </g>
+</svg>

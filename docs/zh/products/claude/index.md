@@ -1,277 +1,166 @@
 ---
-title: Claude Code 生态学习导航
-description: Claude Code 生态包含 5 个核心产品，每个面向不同的使用场景：
+title: Claude Code 与 Anthropic 智能体生态学习导航
+description: 覆盖 Claude Code、Claude.ai、Claude Design、Cowork 与 Connectors 的完整生态导航，系统映射 Anthropic 官方 22 门核心课程知识图谱与工程进阶阶梯。
 domain: product
 tags:
   - coding-agent
 role: map
 ---
 
-# Claude Code 生态学习导航
+# Claude Code 与 Anthropic 智能体生态学习导航
 
-> Claude Code 是 Anthropic 推出的 AI 编程与智能代理产品生态，覆盖终端、IDE、桌面端、网页端和浏览器。本文是你进入 Claude Code 生态的导航地图，帮助你以最短路径掌握所有核心能力。
+> Claude Code 与 Anthropic 智能体生态是面向现代软件工程与自主智能体的完整技术栈，涵盖终端 CLI、IDE 插件、桌面端、云端 Web 及企业级连接器。本指南不仅是生态产品的全景地图，更系统融入了 **Anthropic 官方 22 门免费核心课程体系** 与 **Claude Code 官方架构工程实践**，为开发者提供从结构化提示词到工业级多代理协作的最短掌握路径。
 
-## 产品全景图
+---
 
-Claude Code 生态包含 5 个核心产品，每个面向不同的使用场景：
+## 1. 产品生态全景图
 
-```
-Claude Code 生态
-├── Claude Code（编程代理）— 写代码、调试、提 PR
-│   ├── 终端 CLI        — 命令行交互，最灵活
-│   ├── VS Code 扩展     — 编辑器内嵌，内联 diff
-│   ├── JetBrains 扩展    — IntelliJ/PyCharm/WebStorm 集成
-│   ├── 桌面 App         — 可视化 diff，并行会话，PR 监控
-│   └── Web 版           — 浏览器运行，无需安装
-├── Claude.ai 平台（对话智能）— 分析、写作、调研
-│   ├── Projects        — 持久化上下文 + 知识库
-│   ├── Research        — 多轮联网深度调研
-│   ├── Artifacts       — 交互式代码/文档/图表输出
-│   └── Extended Thinking — 深度推理
-├── Claude Design（设计原型）— 代码库驱动的品牌原型
-│   └── 对话生成 → 微调迭代 → 交接给 Claude Code
-├── Cowork（桌面代理）— 处理本地文件、自动化重复工作
-│   └── 读写文件、生成文档、定期任务
-└── Connectors（连接器）— 接入外部服务
-    └── Gmail、Notion、GitHub、Slack 等 50+ 服务
-```
+```mermaid
+flowchart TD
+    subgraph Ecosystem["Claude / Anthropic 智能体产品生态"]
+        direction TB
+        
+        subgraph Core["代码工程核心 (Coding Agent)"]
+            CC["Claude Code 统一引擎\n(CLAUDE.md / Settings / MCP / Permissions)"]
+            CC --> CLI["终端 CLI (claude)\n最高自由度 / 脚本自动化 / CI/CD"]
+            CC --> IDE["IDE 扩展 (VS Code / JetBrains)\n内联差异 / @文件上下文 / 双向光标定位"]
+            CC --> DeskApp["桌面端 Code 视图\n可视化审查 / 并行会话 / 状态监控"]
+            CC --> WebCode["Web 版 (claude.ai/code)\n免安装 / 手机派发 / PR Auto-fix"]
+        end
 
-### 快速决策：我该用哪个？
+        subgraph Brain["认知与对话平台 (Cognitive Platform)"]
+            CAI["Claude.ai Platform"]
+            CAI --> Proj["Projects: 持久知识库 + RAG"]
+            CAI --> Think["Extended Thinking: 动态深度推理"]
+            CAI --> Res["Deep Research: 多轮长链路调研"]
+            CAI --> Art["Artifacts: 独立富交互组件"]
+        end
 
-```
-我要做什么？
-├── 写代码 / 调试 / 重构 / 提 PR
-│   └── → Claude Code
-│       ├── 在终端？→ CLI（claude 命令）
-│       ├── 在 IDE？→ VS Code / JetBrains 扩展
-│       ├── 想要可视化 diff？→ 桌面 App
-│       ├── 没装环境？→ 浏览器用 claude.ai/code
-│       └── 不在电脑旁？→ 远程控制 / Dispatch
-├── 写作 / 分析 / 调研 / 学习
-│   └── → claude.ai（网页或手机）
-│       ├── 需要持久上下文？→ 创建 Project
-│       ├── 需要深度推理？→ 启用 Extended Thinking
-│       ├── 需要联网查资料？→ 启用 Research
-│       └── 需要生成专业文档？→ 文件创建（Excel/Word/PPT）
-├── 设计原型 / 落地页 / 仪表板
-│   └── → Claude Design
-│       ├── 有品牌规范？→ 先配置 Design System
-│       ├── 想复刻现有页面？→ 用 Web Capture
-│       └── 设计完成后 → Handoff 给 Claude Code 实现
-├── 接入外部服务（Gmail / Notion / GitHub / Slack）
-│   └── → Connectors 连接器
-│       ├── 一次性查询？→ claude.ai 开启连接器
-│       ├── 持续使用？→ 绑定到 Project
-│       └── 定期自动化？→ 结合云端定期任务
-└── 处理本地文件 / 自动化重复工作
-    └── → Claude Desktop / Cowork
-        ├── 一次性读写文件 → Cowork 标签页
-        ├── 定期任务（需本地文件）→ 桌面定期任务
-        ├── 定期任务（不需本地文件）→ 云端定期任务
-        └── 操控应用/浏览器 → Computer Use
+        subgraph Extended["外延与自动化 (Expansion & Automation)"]
+            CD["Claude Design: 品牌设计系统与网页原型"]
+            CW["Cowork: 桌面级文件处理与 Computer Use"]
+            CONN["Connectors & MCP: GitHub / Slack / Postgres 统一协议"]
+        end
+    end
 ```
 
-## 核心概念速览
+### 快速选型与决策矩阵
 
-在深入各产品之前，先了解几个贯穿整个生态的核心概念。详见 [术语表 Glossary](./claude-code-glossary)。
+```mermaid
+flowchart TD
+    Start["任务需求"] --> Q1{"是否涉及代码仓库修改？"}
+    
+    Q1 -- "是 (写代码/排查Bug/重构/提PR)" --> Q2{"交互工作环境"}
+    Q2 -- "习惯命令行 / 复杂脚本 / CI" --> OptCLI["终端 CLI: claude"]
+    Q2 -- "深度依赖编辑器与行级diff" --> OptIDE["VS Code / JetBrains 插件"]
+    Q2 -- "需要多任务并行看板与可视化" --> OptDesk["Claude Desktop (Code Tab)"]
+    Q2 -- "移动端紧急派发 / 免环境" --> OptWeb["Web 版 (claude.ai/code)"]
+    
+    Q1 -- "否 (分析/原型/日常办公/系统对接)" --> Q3{"主要工作载体"}
+    Q3 -- "架构调研 / 论文剖析 / 长文档方案" --> OptProj["Claude.ai Projects + Extended Thinking"]
+    Q3 -- "前端视觉还原 / UI 概念交付" --> OptDes["Claude Design → 导出 HTML/Handoff"]
+    Q3 -- "本地文件整理 / 定时报表 / 跨窗口操作" --> OptCowork["Cowork 桌面代理"]
+    Q3 -- "跨企业 SaaS 数据联动" --> OptMCP["Connectors & 自定义 Remote MCP"]
+```
 
-| 概念 | 一句话解释 | 出现位置 |
-|------|-----------|---------|
-| **MCP**（Model Context Protocol） | 连接外部工具的开放协议，Connectors 和插件都基于它 | 全局 |
-| **Skills**（技能） | 可复用的专项工作流，Claude 自动识别场景并加载 | Claude Code / Claude.ai / Cowork |
-| **Hooks**（钩子） | 工具调用前后自动触发的脚本 | Claude Code |
-| **Plugins**（插件） | Skills + Agents + Hooks + MCP 打包的扩展包 | Claude Code / Cowork |
-| **Sub-agents**（子代理） | 独立人格和权限的 AI 助手，可并行处理任务 | Claude Code |
+---
 
-## 学习路径
+## 2. Anthropic 官方 22 门课程知识图谱映射
 
-### 第一阶段：了解 Claude.ai 平台
+Anthropic 官方课程覆盖了从大模型底层感知到复杂企业级 Agent 生产落地的全生命周期。下表系统映射了这 22 门核心课程在 Claude 生态中的落地载体与实操指南：
 
-从每天都会用到的 Web 界面开始，建立生产力基线。
+| 模块阶段 | 课程名称 | 核心工程能力与掌握要点 | 落地工具与推荐阅读 |
+|:---|:---|:---|:---|
+| **Phase 1: 提示工程与结构化表达** | **1. Prompt Engineering 101** | 清晰指令、上下文分离、正向角色约束，告别泛化指令 | [Claude.ai 指南](./claude-ai) |
+| | **2. Advanced Context Structuring** | 严谨运用 XML 标签（`<context>`, `<rules>`, `<diff>`）阻断幻觉 | [CLAUDE.md 最佳实践](./claude-code#项目上下文管理) |
+| | **3. System Prompt Architecture** | 静态系统指令分层：身份、可用工具、边界红线、输出协议 | [Cheatsheet 配置](./claude-code-cheatsheet) |
+| | **4. Few-shot & In-context Learning** | 结构化黄金范例注入，严格对齐复杂业务领域模型 | [Cookbook 开发手册](./claude-code-cookbook) |
+| | **5. Chain of Thought (CoT)** | 显式推理链设计，将复杂计算与状态推演步骤化 | [Extended Thinking 章节](./claude-ai#extended-thinking-深度推理) |
+| | **6. Extended Thinking 深度实操** | Claude 3.7 Sonnet 动态思维预算（Thinking Budget）控制与决策分离 | [模型深度推理](./claude-code#模型参考与思维控制) |
+| **Phase 2: 工具调度与动态上下文** | **7. Tool Use (Function Calling) 基础** | JSON Schema 参数契约、模型调用意图解析、参数强校验 | [Claude Code 工具机制](./claude-code#工具调度机制) |
+| | **8. Advanced Tool Chaining** | 多工具编排链路、错误自愈重试、状态保持与短路降级 | [实战工作流](./claude-code-cookbook#复杂多工具调试) |
+| | **9. Dynamic Context Injection** | 运行时环境感知、按需文件索引提取，避免上下文污染 | [Context 诊断与优化](./claude-code#故障排除) |
+| | **10. Prompt Injection & Tool Safety** | 间接提示词注入防御、只读/写权限安全隔离、用户审批闸门 | [安全与权限模型](./claude-code#权限与安全边界) |
+| **Phase 3: 协议规范与环境接入** | **11. Model Context Protocol (MCP) 核心** | 开放三层架构：Host (Claude Code) ↔ Client ↔ Server | [MCP 协议指南](./claude-code#mcp-集成) |
+| | **12. Building Custom MCP Servers** | 编写标准化 Resources、Tools 与 Prompts 服务端 | [Plugin 与 MCP 扩展](./plugin) |
+| | **13. Enterprise Remote MCP & Auth** | 生产级 OAuth 鉴权、网关反向代理、内网微服务安全直连 | [Connectors 集成](./connectors) |
+| | **14. Connectors 生态实操** | GitHub / Notion / Slack / Google Workspace 现成集成配置 | [Connectors 手册](./connectors) |
+| **Phase 4: 自治智能体与代码协作** | **15. Claude Code Harness 架构原理** | 探索-计划-执行-验证（Loop: Read → Plan → Exec → Verify）闭环 | [Claude Code 深度指南](./claude-code) |
+| | **16. Subagent 编排与上下文隔离** | Orchestrator-Worker 模式：子代理无干扰独立探索与结果汇总结算 | [Subagents 子代理指南](./claude-code#sub-agents-子代理) |
+| | **17. Prompt Caching 性能与成本控制** | 90% 降本长文本缓存断点：前缀匹配、TTL 机制与 CLAUDE.md 布局优化 | [性能优化与缓存](./claude-code#prompt-caching-机制) |
+| | **18. Context Compaction 自动压缩** | 会话超窗时的增量摘要、历史修剪与核心事实持久化提取 | [长会话治理](./claude-code#长会话与压缩管理) |
+| | **19. CI/CD & Headless 自动化** | `--print` 无头流式批处理、代码审查门禁、自动修复 PR | [无头自动化指南](./claude-code#无头模式-headless) |
+| **Phase 5: 多模态、评测与前沿演进** | **20. Computer Use 桌面视感交互** | 屏幕抓图、语义坐标定位、键鼠事件驱动与桌面沙箱限制 | [Cowork 计算机使用](./cowork#计算机使用-computer-use) |
+| | **21. Model-Graded Evals 评测体系** | 基于真实业务数据集建立 LLM-as-a-Judge 评测套件，度量 Agent 成功率 | [Cookbook Evals 章节](./claude-code-cookbook#evals-与自动化验证) |
+| | **22. Multi-Agent Systems & Alignment** | 多 Agent 协作对齐、对抗式验证（Adversarial Verification）与最终交付责任制 | [最佳实践模式](./claude-code#最佳实践) |
 
-**目标**：会用 Projects 管理上下文，会用 Research 深度调研，理解 Artifacts 输出。
+---
 
-| 步骤 | 内容 | 链接 |
-|------|------|------|
-| 1 | Claude.ai 平台功能全景 | [Claude.ai 平台指南](./claude-ai) |
-| 2 | 用 Projects 建立专属工作区 | [→ Projects 章节](./claude-ai#projects-专属工作区) |
-| 3 | 启用 Extended Thinking 解决复杂问题 | [→ Extended Thinking 章节](./claude-ai#extended-thinking-深度推理) |
-| 4 | 用 Research 做多轮联网调研 | [→ Research 章节](./claude-ai#research-深度研究) |
-| 5 | 理解 Artifacts 和文件创建 | [→ Artifacts 章节](./claude-ai#artifacts-独立内容输出) |
+## 3. 五级能力进阶阶梯
 
-### 第二阶段：上手 Claude Code
+```mermaid
+graph LR
+    L1["Level 1\n结构化交互者\n(Prompt & Context)"] --> L2["Level 2\n工具与环境集成者\n(Tools & MCP)"]
+    L2 --> L3["Level 3\n智能体契约工程师\n(CLAUDE.md & Loop)"]
+    L3 --> L4["Level 4\n多智能体架构师\n(Subagents & Teams)"]
+    L4 --> L5["Level 5\n生产运维与评测专家\n(Evals & CI/CD Ops)"]
+```
 
-面向前端工程师的核心武器，让 AI 真正参与你的开发流程。
+### Level 1: 结构化交互者 (Prompt & Context)
+- **目标**：彻底脱离“聊天式”模糊提问，掌握 XML 语义分隔与约束强化。
+- **关键实践**：在任何交互中明确区分背景、任务、输入数据与格式要求；学会使用 Claude 3.7 的 Extended Thinking 解决高复杂度逻辑。
+- **核心文档**：[Claude.ai 核心指南](./claude-ai)
 
-**目标**：能在项目里跑 Claude Code，理解 CLAUDE.md、MCP、Hooks 的作用。
+### Level 2: 工具与环境集成者 (Tools & MCP)
+- **目标**：打通模型与外部世界的通道，能够独立配置和开发 MCP 工具。
+- **关键实践**：使用 `claude mcp add` 挂载数据库（PostgreSQL/SQLite）、代码检索和 API 工具；建立安全的本地权限白名单。
+- **核心文档**：[MCP 集成指南](./claude-code#mcp-集成) · [Connectors 外部连接](./connectors)
 
-| 步骤 | 内容 | 链接 |
-|------|------|------|
-| 1 | Claude Code 是什么，有哪些界面 | [Claude Code 产品概览](./claude-code#产品概览) |
-| 2 | 安装 + 第一次运行 | [→ 快速入门](./claude-code#cli-快速入门) |
-| 3 | 理解快捷键和权限模式 | [→ 交互基础](./claude-code#交互基础) |
-| 4 | 用 CLAUDE.md 管理项目上下文 | [→ 项目上下文管理](./claude-code#项目上下文管理) |
-| 5 | 接入 MCP 连接外部工具 | [→ MCP 集成](./claude-code#mcp-集成) |
-| 6 | 日常开发实战工作流 | [→ 实战工作流 cookbook](./claude-code-cookbook) |
-| 7 | 配置权限、Hooks、插件（随手查） | [→ Cheatsheet 速查表](./claude-code-cheatsheet) |
-| 8 | 概念记不清就查术语表 | [→ Glossary 术语表](./claude-code-glossary) |
+### Level 3: 智能体契约工程师 (CLAUDE.md & Loop)
+- **目标**：理解 Agent 的 Harness 执行环路，建立高确定性的仓库级持久化规则。
+- **关键实践**：编写规范的 `CLAUDE.md`（包含极简构建命令、核心目录边界、代码规范）；熟悉 Claude Code 的审批阻断机制（Bypass/Approval）。
+- **核心文档**：[Claude Code 核心教程](./claude-code) · [CLAUDE.md 最佳范例](./claude-code#项目上下文管理)
 
-### 第三阶段：Connectors 连接外部服务
+### Level 4: 多智能体架构师 (Subagents & Workflows)
+- **目标**：解决单会话上下文爆炸难题，通过分层代理实现复杂项目并行推进。
+- **关键实践**：使用子代理（Subagent）隔离海量文件只读调研，主代理仅吸收提炼后的结论；利用 Git Worktree 实现分支级完全隔离。
+- **核心文档**：[Subagents 指南](./claude-code#sub-agents-子代理) · [实战 Cookbook](./claude-code-cookbook)
 
-将 Claude 接入你实际在用的工具，让它能直接读取真实数据、执行实际操作——紧接在 Claude Code 之后，是因为它复用的正是刚学过的 MCP 概念。
+### Level 5: 生产运维与评测专家 (Evals & CI/CD Ops)
+- **目标**：将 Claude Code 深度植入企业研发流水线，具备量化评测与质量监控能力。
+- **关键实践**：在 GitHub Actions / GitLab CI 中使用 `--print` 模式自动修复 PR；构建 Golden Dataset 与断言门禁，度量自动化任务通过率。
+- **核心文档**：[无头模式与 CI/CD](./claude-code#无头模式-headless) · [实战验证工程](./claude-code-cookbook#evals-与自动化验证)
 
-**目标**：会连接 Google Workspace / Notion / GitHub，能结合定期任务实现跨服务自动化。
+---
 
-| 步骤 | 内容 | 链接 |
-|------|------|------|
-| 1 | 理解 Connectors 与 MCP 的关系 | [Connectors 连接器](./connectors) |
-| 2 | 连接 Google Workspace | [→ Google Workspace](./connectors#google-workspace) |
-| 3 | 连接项目管理工具 | [→ 主要连接器详解](./connectors#主要连接器详解) |
-| 4 | 结合 Projects 长期使用 | [→ 与 Projects 组合](./connectors#连接器与-projects-组合使用) |
-| 5 | 接入定期任务实现自动化 | [→ 连接器 + 定期任务](./connectors#连接器-定期任务) |
+## 4. 核心功能速查与产品索引
 
-### 第四阶段：Claude Design 设计原型
+### 核心开发与代理系统
 
-把 AI 设计界面接入你的代码库，生成符合品牌规范的原型，直接交接给 Claude Code。
+| 模块 | 核心能力 | 关键命令 / 路径 | 深度文档 |
+|:---|:---|:---|:---|
+| **终端 CLI** | 仓库检索、交互式修改、全自动测试 | `claude` / `claude -p` | [Claude Code 深度指南](./claude-code) |
+| **IDE 扩展** | 编辑器内联差异审查、即时会话与光标联动 | VS Code / JetBrains 扩展市场 | [IDE 集成](./claude-code#vs-code-扩展) |
+| **CLAUDE.md** | 仓库事实唯一来源（SSOT）、命令契约与规则约束 | 项目根目录 `CLAUDE.md` | [上下文管理](./claude-code#项目上下文管理) |
+| **MCP 工具** | 外部数据源与本地服务标准化扩展 | `claude mcp list` | [MCP 协议](./claude-code#mcp-集成) |
+| **Subagents** | 上下文隔离的子任务并发调研与执行 | 自动化触发 / 子代理配置 | [子代理机制](./claude-code#sub-agents-子代理) |
+| **Hooks** | 状态流转前后的自动化脚本拦截（Pre/Post） | `.claude/settings.json` | [Hooks 钩子](./claude-code#hooks-钩子) |
+| **无头模式** | CI/CD 流水线无人值守自动化运行 | `claude -p "prompt"` | [Headless CI/CD](./claude-code#无头模式-headless) |
 
-**目标**：能配置 design system、用 web capture 重建现有页面、通过 handoff bundle 无缝衔接 Claude Code。
+### 桌面与扩展能力
 
-| 步骤 | 内容 | 链接 |
-|------|------|------|
-| 1 | 了解 Claude Design 定位与核心概念 | [Claude Design 使用手册](./claude-design) |
-| 2 | 配置 design system（链接代码库） | [→ 快速上手](./claude-design#快速上手-前-30-分钟) |
-| 3 | 掌握四种建站工作流 | [→ 建站工作流](./claude-design#建站工作流-四种端到端模式) |
-| 4 | 学会 handoff bundle 交接 Claude Code | [→ Handoff 集成](./claude-design#claude-code-集成-handoff-bundle) |
-| 5 | 了解导出目标和 Canva 集成 | [→ 导出选项](./claude-design#导出和-canva-选对目标) |
+| 模块 | 核心能力 | 交付形式 | 深度文档 |
+|:---|:---|:---|:---|
+| **Claude.ai Projects** | 持久化知识库文档、工程背景设定、团队共享空间 | Web / 桌面端 | [Claude.ai 平台](./claude-ai) |
+| **Claude Design** | 从仓库或 Figma 提取规范，对话式生成高质量原型 | 独立 HTML / Handoff Bundle | [Claude Design](./claude-design) |
+| **Cowork** | 本地文件批量自动化、定时报表、Computer Use GUI 操控 | 桌面 Agent | [Cowork 手册](./cowork) |
+| **Connectors** | 零配置直连主流企业级 SaaS 平台 | 统一管理后台 | [Connectors 指南](./connectors) |
 
-### 第五阶段：Cowork 自动化工作流
+---
 
-把 Claude 变成你的私人桌面代理，处理文件整理、定期报告等重复工作。
+## 5. 官方资源与参考索引
 
-**目标**：会创建定期任务，会安装插件，理解 Cowork 的安全边界。
-
-| 步骤 | 内容 | 链接 |
-|------|------|------|
-| 1 | 理解 Cowork 是什么 | [Cowork 完整指南](./cowork) |
-| 2 | 授权文件夹并执行第一个任务 | [→ 快速上手](./cowork#快速上手) |
-| 3 | 创建定期自动化任务 | [→ 定期任务](./cowork#定期任务自动化) |
-| 4 | 安装插件扩展能力 | [→ 插件系统](./cowork#插件系统) |
-| 5 | 理解安全边界 | [→ 安全使用](./cowork#安全使用指南) |
-
-### 第六阶段：Plugin 开发
-
-为团队或社区开发可复用的 Claude Code 插件。
-
-**目标**：理解插件结构，能开发并发布一个完整的插件包。
-
-| 步骤 | 内容 | 链接 |
-|------|------|------|
-| 1 | 理解插件核心概念 | [Plugin 开发手册](./plugin#核心概念) |
-| 2 | 掌握目录结构和 plugin.json | [→ 目录结构](./plugin#目录结构与-plugin-json) |
-| 3 | 开发五大核心组件 | [→ 五大组件详解](./plugin#_1-2-五大核心组件详解-the-big-5) |
-| 4 | 本地调试与验证 | [→ 本地调试](./plugin#_1-3-本地调试与验证) |
-| 5 | 发布到 npm / Marketplace | [→ 发布指南](./plugin#_2-·-发布指南-私有-npm-与-marketplace) |
-
-## 功能速查表
-
-### Claude.ai 平台功能
-
-| 功能 | 用途 | 文档链接 |
-|------|------|---------|
-| Projects | 持久化上下文 + RAG 知识库 | [Claude.ai](./claude-ai#projects-专属工作区) |
-| Extended Thinking | 复杂推理、数学、规划 | [Claude.ai](./claude-ai#extended-thinking-深度推理) |
-| Research | 多轮联网深度调研 | [Claude.ai](./claude-ai#research-深度研究) |
-| Artifacts | 代码、文档、图表独立输出 | [Claude.ai](./claude-ai#artifacts-独立内容输出) |
-| 交互式图表 | 可操作的数据可视化 | [Claude.ai](./claude-ai#交互式图表与可视化) |
-| 网络搜索 | 实时信息获取 | [Claude.ai](./claude-ai#网络搜索) |
-| 语音模式 | 免提双向语音对话 | [Claude.ai](./claude-ai#语音模式) |
-| 文件创建 | 直接生成 Excel/Word/PPT/PDF | [Claude.ai](./claude-ai#文件创建和代码执行) |
-| Memory | 跨对话保存偏好 | [Claude.ai](./claude-ai#memory-跨对话记忆) |
-| Skills | 加载专项工作流 | [Claude.ai](./claude-ai#skills-技能系统) |
-| 隐私聊天 | 不用于训练的对话 | [Claude.ai](./claude-ai#隐私与安全) |
-
-### Claude Code 核心功能
-
-| 功能 | 用途 | 文档链接 |
-|------|------|---------|
-| 终端 CLI | 在项目目录直接交互 | [Claude Code](./claude-code#cli-快速入门) |
-| VS Code / JetBrains | 编辑器内嵌集成 | [Claude Code](./claude-code#vs-code-扩展) |
-| 桌面 App | 可视化 diff、并行会话、PR 监控 | [Claude Code](./claude-code#桌面-app) |
-| Web 版 | 浏览器运行，无需安装 | [Claude Code](./claude-code#web-版) |
-| CLAUDE.md / Memory | 项目级持久上下文 + 自动记忆 | [Claude Code](./claude-code#项目上下文管理) |
-| MCP 集成 | 连接数据库、API、工具 | [Claude Code](./claude-code#mcp-集成) |
-| Hooks | 自动化触发（lint、格式化、自定义脚本） | [Claude Code](./claude-code#hooks-钩子) |
-| Skills | 加载专项工作流 | [Claude Code](./claude-code#skills-技能) |
-| Sub-agents | 多代理并行处理 | [Claude Code](./claude-code#sub-agents-子代理) |
-| Dynamic Workflows | 脚本化编排大规模 Agent 工作流 | [Claude Code](./claude-code#dynamic-workflows-动态工作流) |
-| Cross-Session Messaging | 跨会话消息协作 | [Claude Code](./claude-code#cross-session-messaging-跨会话消息) |
-| Agent Teams | 多会话团队协作 | [Claude Code](./claude-code#agent-teams-多-agent-团队-实验性) |
-| Channels | 外部消息源（Telegram/Discord/iMessage） | [Claude Code](./claude-code#cross-session-messaging-跨会话消息) |
-| Worktree | Git 工作树并行隔离 | [Claude Code](./claude-code#worktree-并行隔离) |
-| 计划任务 | 云端/桌面定时任务 | [Claude Code](./claude-code#计划任务) |
-| 远程控制 | 手机/浏览器远程操作本地会话 | [Claude Code](./claude-code#远程控制-remote-control) |
-| Computer Use | 操控桌面 GUI 应用 | [Claude Code](./claude-code#桌面-app) |
-| 无头模式 | CI/CD 脚本自动化 | [Claude Code](./claude-code#无头模式-headless) |
-| 诊断工具 | /doctor、/context、/hooks 等内置诊断命令 | [Claude Code](./claude-code#故障排除) |
-| 验证模式 | Writer→Reviewer、Tests→Iterate→Pass 等自验证模式 | [Claude Code](./claude-code#最佳实践) |
-| 实战工作流 | 9 大日常场景的提示模式与最佳实践 | [实战工作流 cookbook](./claude-code-cookbook) |
-| 配置速查 | Settings Scope 五层优先级、权限/Hook/插件配置 | [Cheatsheet 速查表](./claude-code-cheatsheet) |
-| Plugin 系统 | 扩展命令和技能 | [Plugin](./plugin) |
-| /powerup | 内置交互式功能教程 | [Claude Code](./claude-code#内置命令) |
-
-### Claude Design 核心功能
-
-| 功能 | 用途 | 文档链接 |
-|------|------|---------|
-| Design System 导入 | 从 GitHub 仓库抽取品牌规范 | [Claude Design](./claude-design#快速上手-前-30-分钟) |
-| Web Capture | 抓取任意 URL 实时元素 | [Claude Design](./claude-design#建站工作流-四种端到端模式) |
-| Adjustment Knobs | 动态滑块微调间距/颜色/圆角 | [Claude Design](./claude-design#概览-claude-design-究竟是什么) |
-| Handoff Bundle | 设计文件 + 对话交接 Claude Code | [Claude Design](./claude-design#claude-code-集成-handoff-bundle) |
-| 导出为独立 HTML | 静态托管部署 | [Claude Design](./claude-design#导出和-canva-选对目标) |
-| 发送到 Canva | 完全可编辑的 Canva 设计 | [Claude Design](./claude-design#导出和-canva-选对目标) |
-
-### Connectors 核心功能
-
-| 功能 | 用途 | 文档链接 |
-|------|------|---------|
-| Google Workspace | Gmail / Calendar / Drive | [Connectors](./connectors#google-workspace) |
-| Microsoft 365 | Outlook / Teams / SharePoint（只读） | [Connectors](./connectors#microsoft-365) |
-| GitHub | PR / Issue / 代码搜索 | [Connectors](./connectors#github) |
-| Slack | 消息搜索 / 发送 | [Connectors](./connectors#slack) |
-| Notion / Linear / Asana | 任务和页面管理 | [Connectors](./connectors#linear-asana-jira) |
-| 自定义 Remote MCP | 接入内网或自建工具 | [Connectors](./connectors#自定义连接器-custom-connectors-remote-mcp) |
-
-### Cowork 核心功能
-
-| 功能 | 用途 | 文档链接 |
-|------|------|---------|
-| 本地文件读写 | 直接操作电脑文件 | [Cowork](./cowork#核心能力) |
-| 生成专业文档 | Excel / PPT / Word | [Cowork](./cowork#核心能力) |
-| 定期任务 | 每日报告、自动整理 | [Cowork](./cowork#定期任务自动化) |
-| 插件系统 | 安装/自定义技能和连接器 | [Cowork](./cowork#插件系统) |
-| Computer Use | 操控浏览器和应用 | [Cowork](./cowork#计算机使用-computer-use) |
-| 跨应用协作 | 从任意地方派发任务 | [Cowork](./cowork#跨应用协作) |
-
-## 模型参考
-
-Claude Code 和 Claude.ai 平台支持以下模型（截至 2026 年 8 月）：
-
-| 模型 | 定位 | 适用场景 |
-|------|------|---------|
-| Claude Opus 5 | 最新旗舰 | 最复杂任务、深度推理、企业级代理 |
-| Claude Fable 5 | 最前沿（限量） | 创意写作、复杂推理（Pro/Max/Team/Enterprise） |
-| Claude Opus 4.8 | 高性能 | 编程、代理任务、复杂代码工程 |
-| Claude Sonnet 4.6 | 均衡（默认） | 日常开发、写作、大多数任务 |
-| Claude Haiku 4.5 | 快速轻量 | 简单问答、批量处理、低成本场景 |
-
-> **说明**：Claude Code 支持 `--model` 参数切换模型。Claude Design 使用独立的 Opus 级视觉模型，配额独立于 Claude.ai 对话额度。
-
-## 资源链接
-
-- [Claude Code Cheatsheet · 高质量信息源](./claude-code-cheatsheet#高质量信息源) — 官方文档/Cookbook、核心团队账号与 Blog、GitHub 高质量仓库、Awesome List、三方 Blog 的完整核实清单，也是本教程持续更新的依据
-- [Claude Code 官方文档](https://code.claude.com/docs/zh-CN/overview)
-- [Claude.ai 帮助中心](https://support.claude.com/zh-CN)
-- [Claude 定价方案](https://claude.com/pricing)
-- [MCP 注册表](https://api.anthropic.com/mcp-registry)
-- [Connectors 完整集合](https://support.claude.com/en/collections/15399129-connectors)
-- [Claude Design 产品入口](https://claude.ai/design)
+- [Claude Code 官方文档](https://code.claude.com/docs/zh-CN/overview) — 权威最新特性说明
+- [Claude Code Cheatsheet · 高质量信息源](./claude-code-cheatsheet#高质量信息源) — 持续追踪的核心团队博客与架构仓库
+- [Model Context Protocol (MCP) 官方标准](https://modelcontextprotocol.io/) — 开放协议规范与生态 Servers
+- [Anthropic 官方课程体系](https://github.com/anthropics/courses) — 官方开源 22 门课程实操代码与 Notebook

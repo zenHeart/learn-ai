@@ -29,6 +29,130 @@ Claude Code 有 5 种使用界面，能力一致但各有所长：
 
 ---
 
+
+---
+
+## 引擎架构与交互生命周期（Harness Architecture）
+
+Claude Code 的核心并非简单的“模型包装器”，而是一个具备严密状态机与安全沙箱的 **自主编程智能体测试鞍架（Agent Harness）**。无论通过 CLI、IDE 还是 Desktop，其底层均运行同一套核心驱动引擎。
+
+### 1. 执行引擎组件架构
+
+```mermaid
+flowchart TB
+    subgraph UserSpace["用户交互层 (User Surfaces)"]
+        CLI["Terminal CLI"]
+        IDE["VS Code / JetBrains"]
+        Desktop["Desktop App"]
+    end
+
+    subgraph Harness["Claude Code 智能体鞍架 (Agent Harness)"]
+        direction TB
+        InputProc["意图解析器\n(Intent & Slash Commands)"]
+        
+        subgraph ContextEngine["上下文引擎 (Context Engine)"]
+            PCache["Prompt Caching 优化器\n(System Prompt / Tools / CLAUDE.md)"]
+            AMem["Auto Memory 存储器\n(~/.claude/projects/.../memory)"]
+            Compactor["Context Compactor\n(200k 超窗自动精简)"]
+        end
+
+        subgraph Reasoner["认知与推理核心 (Core Reasoner)"]
+            Model["Claude 3.7 Sonnet / Opus 5"]
+            Thinking["Extended Thinking\n(动态思考预算 1k-32k)"]
+        end
+
+        subgraph Security["安全与审批层 (Security & Approvals)"]
+            Gate["Permission Interceptor\n(Auto / Normal / Plan / Bypass)"]
+            Sandbox["Terminal Restricted Sandbox\n(只读/写权限与命令隔离)"]
+        end
+
+        subgraph Dispatcher["工具调度分发 (Tool Dispatcher)"]
+            Builtins["原生工具集\n(Read, Edit, Bash, Glob, Grep)"]
+            MCPClients["Model Context Protocol\n(Postgres, GitHub, Figma)"]
+            Subagents["Subagent Manager\n(隔离上下文子代理)"]
+        end
+    end
+
+    subgraph Feedback["验证反馈环路 (Verification Loop)"]
+        Linter["Linter / TypeScript / Compiler"]
+        Tests["Test Runner (Vitest / Pytest / Jest)"]
+    end
+
+    UserSpace --> InputProc
+    InputProc --> ContextEngine
+    ContextEngine --> Reasoner
+    Reasoner --> Security
+    Security --> Dispatcher
+    Dispatcher --> Feedback
+    Feedback -- "错误堆栈与测试证据回传" --> Reasoner
+```
+
+### 2. 交互单轮生命周期 (Turn Lifecycle)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 开发者
+    participant Harness as Claude Code 引擎
+    participant Model as Claude 3.7 Sonnet
+    participant Safety as 权限审批闸门
+    participant Tool as 执行环境 (Bash / File / MCP)
+    participant Feedback as 自动化门禁 (Test / Lint)
+
+    User->>Harness: 发起任务指令 (如：修复登录态失效 Bug)
+    Harness->>Harness: 加载 CLAUDE.md + Auto-Memory，命中 Prompt Cache
+    Harness->>Model: 发送组装上下文 (含系统规则与工具 Schema)
+    Model-->>Harness: 产出 Extended Thinking 思考链 + 工具调用规划
+    loop 自治迭代执行 (Agentic Loop)
+        Harness->>Safety: 拦截工具调用 (检查是否需用户授权)
+        alt 属于安全只读操作或已授权模式
+            Safety-->>Harness: 批准执行
+        else 危险/未授权操作 (如修改核心文件/删除资源)
+            Safety->>User: 弹出交互确认 (Yes / No / Always Allow)
+            User-->>Safety: 用户手动批准
+            Safety-->>Harness: 放行
+        end
+        Harness->>Tool: 调度工具执行 (读取代码/修改文件/运行命令)
+        Tool-->>Harness: 捕获真实标准输出、错误流与文件 Diff
+        Harness->>Feedback: 自动触发测试或 Lint 校验
+        Feedback-->>Harness: 反馈通过状态 (Pass / Fail)
+        Harness->>Model: 将执行结果与验证证据回传给模型继续下一轮
+    end
+    Model-->>Harness: 生成最终任务总结与修改解释
+    Harness->>User: 呈现结果，等待下一个任务输入
+```
+
+### 3. Prompt Caching 机制与 4 断点优化
+
+Claude Code 大规模长任务之所以能够兼顾高响应速度与极低 API 开销，关键在于深度融合了 Anthropic 的 **Prompt Caching（提示词长缓存）** 机制。
+
+- **4 个缓存断点 (Cache Breakpoints)**：
+  1. **System Prompt 断点**：引擎内置的基础身份定义与运行指令；
+  2. **Tools Schema 断点**：所有注册的原生工具与 MCP 工具的定义（固定前缀）；
+  3. **CLAUDE.md 规则断点**：项目级持久化契约。只要 CLAUDE.md 未被修改，每次对话均复用缓存；
+  4. **历史对话轮次断点**：最近几轮对齐上下文设置断点，保持高命中率。
+- **核心收益**：
+  - **延迟降低 80%**：缓存命中时，首字返回时间（TTFT）大幅缩短。
+  - **成本节省 90%**：读取缓存仅按原始输入 Token 费用的 1/10 计费。
+- **工程编写军规**：
+  > 缓存友好原则：将高频变更的指令放在提示末尾，将稳定静态规则固化在 `CLAUDE.md` 中；避免在工具定义中动态注入时间戳等频繁变动的元数据，以免破坏断点连续性。
+
+### 4. Context Compaction 自动压缩与上下文治理
+
+当会话进行数十轮、累积 Token 逼近 200k 上下文窗口上限时，Claude Code 会自动触发 **Auto-compact（上下文自动精简）**，避免发生超窗崩溃。
+
+- **压缩保留的硬核事实 (Retained Facts)**：
+  - 当前未完成的核心目标（Active Goals 与 Todo 项）；
+  - 已确认修改的文件路径及修改的核心语义；
+  - 用户提出的硬性业务红线与约束；
+  - 关键架构决策与技术选型结论。
+- **清理修剪的临时噪声 (Pruned Noise)**：
+  - 冗长的海量终端输出日志（仅保留最终成功/失败结论）；
+  - 已探索但未采纳的临时 Diff 方案；
+  - 历史轮次中的重复闲聊与过渡性询问。
+- **手动控制技巧**：开发者可随时在终端运行 `/compact` 主动触发压缩，或者在进入全新独立任务阶段前使用 `/clear` 彻底重置上下文。
+
+
 ## CLI 快速入门
 
 ### 安装

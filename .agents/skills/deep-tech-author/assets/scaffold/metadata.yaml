@@ -1,0 +1,43 @@
+# ============================================================
+# 每仓库旋钮 —— 套用到新仓库时主要改这个文件（外加 cover.svg 与 workflow）
+# 解析方式：validate.js / postprocess.js 用轻量正则读取，无需 YAML 库。
+# 因此请保持字段写法与下方示例一致（字符串带双引号，数组写成单行 [..]）。
+# ============================================================
+
+# --- 书籍元信息 ---
+title: "{{TITLE}}"                 # 例：XX 源码实战指南
+subtitle: "{{SUBTITLE}}"           # 例：从使用到复刻 Coding Agent
+author: "{{AUTHOR}}"
+language: "zh-CN"
+date: "2026-01-01"                 # 写入 epub dcterms:modified，建议填实际日期
+version: "1.0.0"
+publisher: "{{PUBLISHER}}"
+description: "{{DESCRIPTION}}"
+rights: "Copyright © {{YEAR}} {{AUTHOR}}"
+book_id: "{{BOOK_ID}}"             # epub 唯一标识，小写短横线，例：my-book-handbook
+
+# --- 源仓库与源码链接改写 ---
+# 正文里写仓库相对路径（如 src/foo.ts#L10），构建时自动转成：
+#   {repo_url}/blob/{source_ref}/src/foo.ts#L10
+repo_url: "https://github.com/OWNER/REPO"
+source_ref: "main"                 # fork 后用于写书的分支或 tag
+
+# source_dirs：哪些顶层目录算「可链接源码」。决定 validate.js / postprocess.js
+# 识别并改写哪些相对路径。按目标仓真实结构填，支持含点的目录（如 .github）。
+source_dirs: ["src"]
+
+# doc_dirs（可选）：放 .md 设计文档的目录，用于校验正文里的 docs 引用是否存在。
+# 留空数组 [] 则关闭 docs 引用校验。
+doc_dirs: []
+
+# upstream_repo（可选）：fork 的上游 "owner/name"。正文源码链接不得指向它
+# （应指向你自己的 fork）。留空 "" 则关闭该校验。
+upstream_repo: ""
+
+# --- 章节清单 ---
+# 按「理解依赖」排序，而非功能菜单。开篇建议是一章「架构与权衡总览」。
+# items 是 book/chapters/ 下的文件名，文件名形如 chapter-NN-slug.md。
+chapters:
+  - part: "第 0 部分：建立心智"
+    items:
+      - chapter-00-overview.md

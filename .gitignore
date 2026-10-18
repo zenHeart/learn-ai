@@ -21,3 +21,4 @@ docs/.vitepress/dist-test/
 
 # Playwright MCP browser artifacts
 .playwright-mcp/
+.codex/
