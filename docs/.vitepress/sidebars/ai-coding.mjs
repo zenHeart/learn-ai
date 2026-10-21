@@ -66,6 +66,7 @@ export const enAiCodingItems = [
                                           { text: 'Claude.ai Platform', link: '/products/claude/claude-ai' },
                                           { text: 'Claude Code CLI', link: '/products/claude/claude-code' },
                                           { text: 'Claude Code Cookbook', link: '/products/claude/claude-code-cookbook' },
+                                          { text: 'Claude Code Official Practices', link: '/products/claude/claude-code-official-practices' },
                                        ]
                                     },
                                     {
