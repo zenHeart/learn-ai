@@ -219,4 +219,5 @@ Full “what / why” lives in the [glossary](./cursor-glossary).
 - [Cursor SDK](./cursor-sdk)
 - [Cheatsheet](./cursor-cheatsheet)
 - [Glossary](./cursor-glossary)
+- [Cursor & Copilot official practices](./cursor-copilot-official-practices)
 - [AI coding tools overview](../)

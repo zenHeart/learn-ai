@@ -215,6 +215,7 @@ Develop reusable Claude Code plugins for your team or the community.
 | Diagnostic Tools | Built-in diagnostic commands like /doctor, /context, /hooks | [Claude Code](./claude-code#troubleshooting) |
 | Verification Mode | Writer→Reviewer, Tests→Iterate→Pass self-verification modes | [Claude Code](./claude-code#best-practices) |
 | Practical Workflows | Prompt patterns and best practices for 9 daily scenarios | [Practical Workflow cookbook](./claude-code-cookbook) |
+| Official Practices | Context files, subagents, hooks, permissions and review loops from the official docs | [Official Practices](./claude-code-official-practices) |
 | Config Quick Reference | Settings Scope five-layer priority, permissions/Hook/plugin config | [Cheatsheet](./claude-code-cheatsheet) |
 | Plugin System | Extend commands and skills | [Plugin](./plugin) |
 | /powerup | Built-in interactive feature tutorial | [Claude Code](./claude-code#built-in-commands) |
