@@ -154,7 +154,7 @@ export async function streamUI(input: string) {
 
 ### Practical notes
 
-- Write the tool schema carefully: it defines the input shape the model sees, and for structured output it doubles as the validator.
+- Write the tool schema carefully: it defines the input shape the model sees. Structured output takes its own, separate schema through `output`, and the SDK validates the generated object against that schema; the two schemas are independent.
 - Set an explicit `stopWhen` condition for multi-step tool loops so the step count is bounded.
 - Always consume the stream, otherwise the call does not finish.
 
