@@ -1544,6 +1544,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -1583,6 +1584,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1622,6 +1624,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1662,6 +1665,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1702,6 +1706,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1736,6 +1741,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1770,6 +1776,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1804,6 +1811,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1838,6 +1846,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1877,6 +1886,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1917,6 +1927,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -1956,6 +1967,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -2001,6 +2013,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -2042,6 +2055,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2076,6 +2090,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2115,6 +2130,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2153,6 +2169,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2186,6 +2203,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2220,6 +2238,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2253,6 +2272,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2293,6 +2313,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2332,6 +2353,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2370,6 +2392,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2403,6 +2426,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2443,6 +2467,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2477,6 +2502,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2516,6 +2542,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2550,6 +2577,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2588,6 +2616,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -2626,6 +2655,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2663,6 +2693,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2700,6 +2731,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2735,6 +2767,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2774,6 +2807,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2812,6 +2846,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2851,6 +2886,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2889,6 +2925,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -2930,6 +2967,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -2969,6 +3007,7 @@ export const productHub = {
     "status": "merged",
     "supersededBy": "claude-ai",
     "successorName": "Claude.ai",
+    "successorNameZh": "Claude.ai",
     "handbook": {
       "status": "written",
       "route": {
@@ -3007,6 +3046,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3041,6 +3081,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3075,6 +3116,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3109,6 +3151,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3142,6 +3185,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3175,6 +3219,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3213,6 +3258,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -3251,6 +3297,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3289,6 +3336,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -3330,6 +3378,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -3373,6 +3422,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3412,6 +3462,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3449,6 +3500,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3489,6 +3541,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3528,6 +3581,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3564,6 +3618,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3600,6 +3655,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3635,6 +3691,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3672,6 +3729,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -3711,6 +3769,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3745,6 +3804,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3781,6 +3841,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3818,6 +3879,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -3861,6 +3923,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3894,6 +3957,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -3931,6 +3995,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -3973,6 +4038,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -4010,6 +4076,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -4047,6 +4114,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4090,6 +4158,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4124,6 +4193,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4158,6 +4228,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4191,6 +4262,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4229,6 +4301,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4272,6 +4345,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4309,6 +4383,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4352,6 +4427,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4389,6 +4465,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4427,6 +4504,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4461,6 +4539,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4498,6 +4577,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4536,6 +4616,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4574,6 +4655,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4613,6 +4695,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4653,6 +4736,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4690,6 +4774,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -4728,6 +4813,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4766,6 +4852,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4799,6 +4886,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -4837,6 +4925,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -4875,6 +4964,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -4912,6 +5002,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4954,6 +5045,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -4996,6 +5088,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5032,6 +5125,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5068,6 +5162,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5102,6 +5197,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5142,6 +5238,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5176,6 +5273,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5209,6 +5307,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5248,6 +5347,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5287,6 +5387,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -5324,6 +5425,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -5366,6 +5468,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -5404,6 +5507,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -5444,6 +5548,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5482,6 +5587,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5522,6 +5628,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5556,6 +5663,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5589,6 +5697,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5625,6 +5734,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5665,6 +5775,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5698,6 +5809,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5732,6 +5844,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5765,6 +5878,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5798,6 +5912,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5831,6 +5946,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5866,6 +5982,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5900,6 +6017,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5934,6 +6052,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -5968,6 +6087,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6001,6 +6121,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6034,6 +6155,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6068,6 +6190,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6106,6 +6229,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6143,6 +6267,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6181,6 +6306,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -6223,6 +6349,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -6260,6 +6387,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6297,6 +6425,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -6336,6 +6465,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6374,6 +6504,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6408,6 +6539,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6442,6 +6574,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6480,6 +6613,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -6521,6 +6655,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -6559,6 +6694,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6595,6 +6731,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6633,6 +6770,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6670,6 +6808,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -6704,6 +6843,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6741,6 +6881,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6780,6 +6921,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6817,6 +6959,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -6854,6 +6997,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6892,6 +7036,7 @@ export const productHub = {
     "status": "renamed",
     "supersededBy": "wenxin-yiyan",
     "successorName": "文心一言",
+    "successorNameZh": "文心一言",
     "handbook": {
       "status": "candidate"
     },
@@ -6929,6 +7074,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -6967,6 +7113,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -7004,6 +7151,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7043,6 +7191,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7077,6 +7226,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7117,6 +7267,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7154,6 +7305,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -7187,6 +7339,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7225,6 +7378,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7261,6 +7415,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7300,6 +7455,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7338,6 +7494,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7375,6 +7532,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7412,6 +7570,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -7450,6 +7609,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7487,6 +7647,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7527,6 +7688,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7561,6 +7723,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7594,6 +7757,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7631,6 +7795,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7669,6 +7834,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -7710,6 +7876,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -7748,6 +7915,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7787,6 +7955,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7825,6 +7994,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7861,6 +8031,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7899,6 +8070,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7936,6 +8108,7 @@ export const productHub = {
     "status": "discontinued",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -7973,6 +8146,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -8011,6 +8185,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8049,6 +8224,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8088,6 +8264,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8125,6 +8302,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -8164,6 +8342,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8201,6 +8380,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -8238,6 +8418,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -8276,7 +8457,8 @@ export const productHub = {
     ],
     "status": "renamed",
     "supersededBy": "vibe",
-    "successorName": "Vibe 智能体",
+    "successorName": "Vibe",
+    "successorNameZh": "Vibe 智能体",
     "handbook": {
       "status": "none"
     },
@@ -8315,6 +8497,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8353,6 +8536,7 @@ export const productHub = {
     "status": "discontinued",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -8392,6 +8576,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -8433,6 +8618,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -8472,6 +8658,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8509,6 +8696,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -8550,6 +8738,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8587,6 +8776,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8623,6 +8813,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8662,6 +8853,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8696,6 +8888,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8735,6 +8928,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8768,6 +8962,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8806,6 +9001,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8839,6 +9035,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8872,6 +9069,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8905,6 +9103,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8939,6 +9138,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -8976,6 +9176,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -9013,7 +9214,8 @@ export const productHub = {
     ],
     "status": "merged",
     "supersededBy": "gemini-enterprise",
-    "successorName": "Gemini 企业智能体平台",
+    "successorName": "Gemini Enterprise Agent Platform",
+    "successorNameZh": "Gemini 企业智能体平台",
     "handbook": {
       "status": "none"
     },
@@ -9052,6 +9254,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9085,6 +9288,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9122,6 +9326,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9162,6 +9367,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9199,6 +9405,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9237,6 +9444,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -9274,6 +9482,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -9312,6 +9521,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9349,6 +9559,7 @@ export const productHub = {
     "status": "renamed",
     "supersededBy": "devin",
     "successorName": "Devin",
+    "successorNameZh": "Devin",
     "handbook": {
       "status": "none"
     },
@@ -9386,6 +9597,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -9423,6 +9635,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -9465,6 +9678,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -9507,6 +9721,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9540,6 +9755,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9578,6 +9794,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -9619,6 +9836,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -9655,6 +9873,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9691,6 +9910,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9724,6 +9944,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9762,6 +9983,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -9804,6 +10026,7 @@ export const productHub = {
     "status": "merged",
     "supersededBy": "qianwen",
     "successorName": "千问",
+    "successorNameZh": "千问",
     "handbook": {
       "status": "written",
       "route": {
@@ -9845,6 +10068,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -9887,6 +10111,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -9925,6 +10150,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -9962,6 +10188,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10000,6 +10227,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -10034,6 +10262,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10071,6 +10300,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10109,6 +10339,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -10147,6 +10378,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10181,6 +10413,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10219,6 +10452,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10257,6 +10491,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10295,6 +10530,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10331,6 +10567,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10365,6 +10602,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10398,6 +10636,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10435,6 +10674,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -10475,6 +10715,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10508,6 +10749,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10546,6 +10788,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -10587,6 +10830,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10625,6 +10869,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -10663,6 +10908,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -10704,6 +10950,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -10738,6 +10985,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10776,6 +11024,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10816,6 +11065,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10853,6 +11103,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10892,6 +11143,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -10929,6 +11181,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -10966,6 +11219,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -11009,6 +11263,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11046,6 +11301,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -11083,6 +11339,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11121,6 +11378,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11160,6 +11418,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -11202,6 +11461,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11239,6 +11499,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -11277,6 +11538,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11311,6 +11573,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11349,6 +11612,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11385,6 +11649,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11424,6 +11689,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11461,6 +11727,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -11499,6 +11766,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -11537,6 +11805,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11570,6 +11839,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11608,6 +11878,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11645,6 +11916,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -11678,6 +11950,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11717,6 +11990,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11755,6 +12029,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11792,6 +12067,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11830,6 +12106,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -11867,6 +12144,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -11905,6 +12183,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -11943,6 +12222,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -11981,6 +12261,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12018,6 +12299,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -12058,6 +12340,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12097,6 +12380,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12136,6 +12420,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12173,6 +12458,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12212,6 +12498,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12249,6 +12536,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -12288,6 +12576,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12325,6 +12614,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12358,6 +12648,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12392,6 +12683,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12426,6 +12718,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12464,6 +12757,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12498,6 +12792,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12531,6 +12826,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12565,6 +12861,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12602,6 +12899,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12640,6 +12938,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -12679,6 +12978,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -12717,6 +13017,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -12756,6 +13057,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -12798,6 +13100,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12837,6 +13140,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12876,6 +13180,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12909,6 +13214,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12947,6 +13253,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -12985,6 +13292,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13022,6 +13330,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -13060,6 +13369,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -13099,6 +13409,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13136,6 +13447,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -13173,6 +13485,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -13211,6 +13524,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13250,6 +13564,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13283,6 +13598,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13317,6 +13633,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13351,6 +13668,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13384,6 +13702,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13421,6 +13740,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13458,6 +13778,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -13495,6 +13816,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13535,6 +13857,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13573,6 +13896,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13611,6 +13935,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -13652,7 +13977,8 @@ export const productHub = {
     ],
     "status": "merged",
     "supersededBy": "gemini-enterprise",
-    "successorName": "Gemini 企业智能体平台",
+    "successorName": "Gemini Enterprise Agent Platform",
+    "successorNameZh": "Gemini 企业智能体平台",
     "handbook": {
       "status": "none"
     },
@@ -13691,6 +14017,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13730,6 +14057,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13769,6 +14097,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13807,6 +14136,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13845,6 +14175,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -13882,6 +14213,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -13921,6 +14253,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -13959,6 +14292,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -13992,6 +14326,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14025,6 +14360,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14063,6 +14399,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14100,6 +14437,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -14139,6 +14477,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14177,6 +14516,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14210,6 +14550,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14248,6 +14589,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14286,6 +14628,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14324,6 +14667,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14357,6 +14701,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14391,6 +14736,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14428,6 +14774,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -14466,6 +14813,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14500,6 +14848,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14533,6 +14882,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14571,6 +14921,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14608,6 +14959,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "candidate"
     },
@@ -14641,6 +14993,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14680,6 +15033,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "written",
       "route": {
@@ -14718,6 +15072,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },
@@ -14751,6 +15106,7 @@ export const productHub = {
     "status": "active",
     "supersededBy": null,
     "successorName": "",
+    "successorNameZh": "",
     "handbook": {
       "status": "none"
     },

@@ -60,6 +60,21 @@
       <span :class="['entry-cat', `entry-cat--${product.category}`]">
         {{ categoryLabel }}
       </span>
+      <!-- A product can serve up to three scenarios. The hub shows it under
+           one of them, and these links lead to the others. -->
+      <span v-if="alsoIn.length" class="entry-also">
+        <span class="entry-also-label">{{ isZh ? '也适合' : 'Also for' }}</span>
+        <button
+          v-for="uc in alsoIn"
+          :key="uc.id"
+          type="button"
+          class="entry-also-link"
+          :title="isZh ? `切换到「${uc.label}」场景` : `Show the ${uc.label} scenario`"
+          @click="$emit('pick-use-case', uc.id)"
+        >
+          {{ uc.label }}
+        </button>
+      </span>
       <span v-if="product.supersededBy" class="entry-since">
         {{ isZh ? '现为' : 'now' }}
         {{ successorName }}
@@ -110,8 +125,10 @@
     isZh: { type: Boolean, default: false },
     labels: { type: Object, required: true },
     category: { type: Object, default: null },
-    successorName: { type: String, default: '' },
+    // The other scenarios this product serves: [{ id, label }].
+    alsoIn: { type: Array, default: () => [] },
   })
+  const emit = defineEmits(['pick-use-case'])
 
   const pick = (zh, en) => (props.isZh ? zh || en : en || zh)
   const label = computed(() => pick(props.product.nameZh, props.product.name))
@@ -135,16 +152,25 @@
   const regionLabel = computed(
     () => (props.product.region === 'cn' ? props.labels.regionCn : props.labels.regionIntl)
   )
+  // What the product became, read from the record itself, so the timeline and
+  // the grid show it too and not only the scenario view.
+  const successorName = computed(() => pick(props.product.successorNameZh, props.product.successorName))
   // Month precision reads better than a bare day when we only know the month,
   // and year precision must show the year alone so the placeholder month and
-  // day never read as fact.
+  // day never read as fact. The same holds for a month: its placeholder day
+  // ("01") must not be printed.
   const dateLabel = computed(() => String(props.product.released || '').slice(0, 10))
   const coarsePrecision = computed(() => props.product.datePrecision && props.product.datePrecision !== 'day')
-  const dateShown = computed(() =>
-    props.product.datePrecision === 'year'
-      ? (props.isZh ? `${dateLabel.value.slice(0, 4)} 年` : dateLabel.value.slice(0, 4))
-      : dateLabel.value
-  )
+  const dateShown = computed(() => {
+    if (props.product.datePrecision === 'year') {
+      return props.isZh ? `${dateLabel.value.slice(0, 4)} 年` : dateLabel.value.slice(0, 4)
+    }
+    if (props.product.datePrecision === 'month') {
+      const month = Number(dateLabel.value.slice(5, 7))
+      return props.isZh ? `${dateLabel.value.slice(0, 4)} 年 ${month} 月` : dateLabel.value.slice(0, 7)
+    }
+    return dateLabel.value
+  })
   const precisionNote = computed(() =>
     props.product.datePrecision === 'year'
       ? (props.isZh ? '（仅精确到年）' : ' (year only)')
@@ -334,6 +360,33 @@
   .entry-since {
     font-size: 11.5px;
     color: var(--vp-c-text-3);
+  }
+
+  .entry-also {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 11.5px;
+    color: var(--vp-c-text-3);
+  }
+
+  .entry-also-link {
+    padding: 1px 7px;
+    font-size: 11px;
+    line-height: 1.5;
+    font-family: inherit;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--vp-c-text-2);
+    cursor: pointer;
+  }
+
+  .entry-also-link:hover,
+  .entry-also-link:focus-visible {
+    border-color: var(--vp-c-brand);
+    color: var(--vp-c-brand);
   }
 
   .entry-more {
