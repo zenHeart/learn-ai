@@ -67,12 +67,14 @@
   }
 
   // Newest first, so the hub reads as "what just shipped → what came before".
+  // The projection already orders same-date entries by name with a plain
+  // code-unit comparison, so ties are left to the stable sort instead of
+  // being re-sorted with localeCompare, which differs between platforms.
   const groups = computed(() => {
     const sorted = [...props.products].sort((a, b) => {
       const ka = sortKey(a)
       const kb = sortKey(b)
-      if (ka !== kb) return ka < kb ? 1 : -1
-      return (a.name || '').localeCompare(b.name || '')
+      return ka === kb ? 0 : ka < kb ? 1 : -1
     })
     const byYear = new Map()
     for (const product of sorted) {
