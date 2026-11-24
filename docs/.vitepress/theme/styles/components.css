@@ -53,6 +53,118 @@
   overflow-x: auto;
 }
 
+/* Pages marked `pageClass: readable-tables`. On a phone the rule above is not
+   enough: a table with three or more columns shrinks its cells until each
+   line holds four or five characters, instead of scrolling (a three-column
+   glossary grew to 3,800px tall). Give the columns a floor instead, so the
+   table does scroll inside the block above. The first column gets less: in
+   these pages it is almost always a short label. English words are longer
+   than Chinese characters, so the English floors are wider. The first column
+   stays put while the table scrolls, behind a divider, and a caption says so.
+   Two-column tables fit the column and are left alone. `:has()` counts the
+   columns; where it is unsupported nothing changes.
+
+   The caption only shows where the table really runs out of room. The column
+   is the viewport minus 48px, and a table is as wide as its floors add up:
+
+       columns     Chinese    English
+       3            400px      512px
+       4            544px      704px
+       5 or more    688px up   896px up
+
+   so the ranges at the end follow from those sums and the 640px breakpoint. */
+@media (max-width: 639.98px) {
+  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > :not(caption) > tr > * {
+    min-width: 9rem;
+  }
+  .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) > :not(caption) > tr > * {
+    min-width: 12rem;
+  }
+  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > :is(thead, tbody) > tr > *:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 7rem;
+    /* A divider and a soft shadow mark the pinned column, so the header of
+       the column sliding under it does not read as one long label. The line
+       takes the text colour because the border colour disappears against
+       the tinted header. The two variables are 1 only where the table really
+       overflows (see below). */
+    box-shadow:
+      1px 0 0 color-mix(in srgb, var(--vp-c-text-2) calc(55% * var(--table-pinned, 0)), transparent),
+      12px 0 14px -10px rgb(0 0 0 / calc(60% * var(--table-pinned, 0)));
+  }
+  .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) > :is(thead, tbody) > tr > *:first-child {
+    min-width: 8rem;
+  }
+  /* The header tint and the zebra stripe sit on the row, and the tint is
+     translucent; the pinned cell needs an opaque copy of each, or the text
+     sliding under it shows through. */
+  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > thead > tr > *:first-child {
+    background-color: var(--vp-c-bg);
+    background-image: linear-gradient(var(--vp-c-brand-softer), var(--vp-c-brand-softer));
+  }
+  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > tbody > tr:nth-child(odd) > *:first-child {
+    background-color: var(--vp-c-bg);
+  }
+  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > tbody > tr:nth-child(2n) > *:first-child {
+    background-color: var(--vp-c-bg-soft);
+  }
+  /* The caption itself. `--table-hint` carries the text, `--table-hint-shown`
+     decides whether it is drawn at all. */
+  .Layout.readable-tables .vp-doc :not(pre) > table::before {
+    content: var(--table-hint, none);
+    display: var(--table-hint-shown, none);
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    margin-bottom: 4px;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: var(--vp-c-text-3);
+  }
+  .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(3)) {
+    --table-hint: '左右滑动，查看整张表';
+  }
+  .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) {
+    --table-hint: 'Scroll sideways to see the whole table';
+  }
+  /* Chinese: three columns stop fitting below 448px, four below 592px, and
+     five or more never fit above 592px either. */
+  @media (max-width: 447.98px) {
+    .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(3)) {
+      --table-pinned: 1;
+      --table-hint-shown: block;
+    }
+  }
+  @media (min-width: 448px) and (max-width: 591.98px) {
+    .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(4)) {
+      --table-pinned: 1;
+      --table-hint-shown: block;
+    }
+  }
+  @media (min-width: 592px) {
+    .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(5)) {
+      --table-pinned: 1;
+      --table-hint-shown: block;
+    }
+  }
+  /* English: three columns stop fitting below 560px, four never fit above
+     560px either. */
+  @media (max-width: 559.98px) {
+    .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) {
+      --table-pinned: 1;
+      --table-hint-shown: block;
+    }
+  }
+  @media (min-width: 560px) {
+    .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(4)) {
+      --table-pinned: 1;
+      --table-hint-shown: block;
+    }
+  }
+}
+
 /* Mermaid click-to-zoom (class toggled by ThemeEnhance.vue). */
 .vp-doc .mermaid svg { cursor: zoom-in; }
 .vp-doc .mermaid.zoomed {
