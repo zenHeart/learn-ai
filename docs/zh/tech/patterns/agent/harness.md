@@ -14,4 +14,4 @@ head:
     - href: /zh/tech/06-agent-systems/agent-runtime
 ---
 
-本页已迁移到 [/zh/tech/04-action/agent-runtime](/zh/tech/06-agent-systems/agent-runtime).
+本页已迁移到 [/zh/tech/06-agent-systems/agent-runtime](/zh/tech/06-agent-systems/agent-runtime).

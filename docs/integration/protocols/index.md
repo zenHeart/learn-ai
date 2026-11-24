@@ -14,6 +14,7 @@ tags:
 
 - [MCP](./mcp) - Model Context Protocol
 - [Tool Calling](./tool-calling) - Tool/function calling patterns
+- [MCP Security](./mcp-security) - Authorization, transport and attack mitigations
 
 ## Learning Path
 
