@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 1740" width="100%" height="100%" role="img" aria-labelledby="cindy-seq-title cindy-seq-desc" lang="en">
+  <title id="cindy-seq-title">Cindy: one task request end to end, from the UI to the harness and back to the UI</title>
+  <desc id="cindy-seq-desc">This sequence diagram answers one question by number: when you send a message from the UI, which objects does it pass through, in what order, before the harness runs it, and how does the result come back to the UI. There are six vertical lanes, left to right: the UI, that is the Renderer; the preload bridge, that is preload; the main process, whose lane names both the IPC handler and the input coordinator; Maker and Session, both in maker-core; the harness adapter; and the harness subprocess. The local SQLite database is the ninth object, drawn as a callout box inside the main-process lane. The number in each round badge is the order; when one number has several arrows, that step is relayed through several objects. Solid arrows are commands or calls; dashed arrows are events, broadcasts and returns. Step 1: the UI invokes maker:send through the preload bridge, carrying the sessionId and the message, and the call reaches the handler registered with ipcMain.handle in the main process. Step 2: the main process hands the input to the input coordinator, which queues it, saves it to the database and checks whether this task already has a running turn. Step 3: the coordinator gets or resumes the matching Session through Maker. Step 4: Session.send enters dispatchSend, which confirms that no turn is running and reserves an id for this turn. Step 5: Session calls handle.send and enters the harness adapter. Step 6: the adapter translates the message into that harness's own protocol and sends it to the subprocess: turn/start for Codex, SDK query for Claude Code, RPC for Pi. Step 7: the subprocess runs: it calls the model, reads and writes files, and runs commands. Step 8: the raw harness output reaches the adapter, which translates it into unified events such as text, tool_use, tool_result and turn_diff and passes them to Session. Step 9: Session dispatches the events to listeners; the main process writes the message to the local SQLite database and broadcasts the events back to the UI. Step 10: an action that needs confirmation travels as interaction_request through Session and the main process back to the UI, where it waits for the user's decision; the decision then goes through the main process and Session to the adapter, which passes it back to the subprocess; when no matching subscriber is found it is treated as a rejection. Step 11: the subprocess reports that the turn ended, Session receives done, and the UI is enabled for input again. This diagram omits: the server or cloud, because a local task turn does not go through the Cindy service; the phone and Device Link, which are a separate path; any timing numbers; and the specific database functions and table layout.</desc>
+
+  <defs>
+    <linearGradient id="cindy-seq-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="cindy-seq-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <filter id="cindy-seq-shadow" x="-12%" y="-12%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="cindy-seq-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .cs-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .cs-sub { fill: #94a3b8; font-size: 12px; }
+      .cs-lane { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .cs-hname { fill: #e2e8f0; font-size: 11.5px; font-weight: 600; }
+      .cs-hnote { fill: #94a3b8; font-size: 10.5px; }
+      .cs-cap { fill: #fdba74; font-size: 11px; font-weight: 600; }
+      .cs-note { fill: #cbd5e1; font-size: 10.5px; }
+      .cs-num { fill: #0f172a; font-size: 11px; font-weight: 700; }
+      .cs-legend { fill: #cbd5e1; font-size: 12px; }
+      .cs-solid { fill: none; stroke: #fb923c; stroke-width: 2; }
+      .cs-dash { fill: none; stroke: #fb923c; stroke-width: 2; stroke-dasharray: 7 5; }
+    </style>
+  </defs>
+
+  <rect width="1020" height="1740" fill="url(#cindy-seq-bg)"/>
+  <rect width="1020" height="1740" fill="url(#cindy-seq-grid)"/>
+
+  <!-- Title -->
+  <rect x="36" y="24" width="8" height="38" rx="4" fill="#fb923c"/>
+  <text x="56" y="45" class="cs-title">One task request, end to end: UI to harness and back</text>
+  <text x="56" y="64" class="cs-sub">Numbers are the order. One local turn only: a message leaves the UI, the harness runs, the result comes back.</text>
+
+  <!-- Six vertical lanes (no lifelines) -->
+  <g>
+    <rect x="26" y="118" width="148" height="1547" fill="rgba(15, 23, 42, 0.62)" stroke="rgba(148, 163, 184, 0.22)"/>
+    <rect x="190" y="118" width="148" height="1547" fill="rgba(15, 23, 42, 0.62)" stroke="rgba(148, 163, 184, 0.22)"/>
+    <rect x="354" y="118" width="148" height="1547" fill="rgba(15, 23, 42, 0.62)" stroke="rgba(148, 163, 184, 0.22)"/>
+    <rect x="518" y="118" width="148" height="1547" fill="rgba(15, 23, 42, 0.62)" stroke="rgba(148, 163, 184, 0.22)"/>
+    <rect x="682" y="118" width="148" height="1547" fill="rgba(15, 23, 42, 0.62)" stroke="rgba(148, 163, 184, 0.22)"/>
+    <rect x="846" y="118" width="148" height="1547" fill="rgba(15, 23, 42, 0.62)" stroke="rgba(148, 163, 184, 0.22)"/>
+  </g>
+
+  <!-- Lane title cards: two layers -->
+  <g>
+    <rect x="26" y="118" width="148" height="84" rx="9" fill="#0f172a"/>
+    <rect x="26" y="118" width="148" height="84" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5" filter="url(#cindy-seq-shadow)"/>
+    <text x="100" y="141" class="cs-lane" text-anchor="middle">UI (Renderer)</text>
+    <text x="100" y="163" class="cs-hnote" text-anchor="middle">sends the request,</text>
+    <text x="100" y="180" class="cs-hnote" text-anchor="middle">receives events back</text>
+
+    <rect x="190" y="118" width="148" height="84" rx="9" fill="#0f172a"/>
+    <rect x="190" y="118" width="148" height="84" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#38bdf8" stroke-width="1.5" filter="url(#cindy-seq-shadow)"/>
+    <text x="264" y="141" class="cs-lane" text-anchor="middle">Preload bridge</text>
+    <text x="264" y="163" class="cs-hnote" text-anchor="middle">preload</text>
+    <text x="264" y="180" class="cs-hnote" text-anchor="middle">bridges UI and main</text>
+
+    <rect x="354" y="118" width="148" height="84" rx="9" fill="#0f172a"/>
+    <rect x="354" y="118" width="148" height="84" rx="9" fill="rgba(76, 29, 149, 0.45)" stroke="#a78bfa" stroke-width="1.5" filter="url(#cindy-seq-shadow)"/>
+    <text x="428" y="141" class="cs-lane" text-anchor="middle">Main process</text>
+    <text x="428" y="160" class="cs-hname" text-anchor="middle">IPC handler</text>
+    <text x="428" y="177" class="cs-hname" text-anchor="middle">Input coordinator</text>
+    <text x="428" y="192" class="cs-hnote" text-anchor="middle">AgentInputCoordinator</text>
+
+    <rect x="518" y="118" width="148" height="84" rx="9" fill="#0f172a"/>
+    <rect x="518" y="118" width="148" height="84" rx="9" fill="rgba(76, 29, 149, 0.45)" stroke="#818cf8" stroke-width="1.5" filter="url(#cindy-seq-shadow)"/>
+    <text x="592" y="141" class="cs-lane" text-anchor="middle">Maker + Session</text>
+    <text x="592" y="160" class="cs-hnote" text-anchor="middle">both in maker-core</text>
+    <text x="592" y="175" class="cs-hnote" text-anchor="middle">activeSessions</text>
+    <text x="592" y="190" class="cs-hnote" text-anchor="middle">dispatchSend</text>
+
+    <rect x="682" y="118" width="148" height="84" rx="9" fill="#0f172a"/>
+    <rect x="682" y="118" width="148" height="84" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" filter="url(#cindy-seq-shadow)"/>
+    <text x="756" y="141" class="cs-lane" text-anchor="middle">harness adapter</text>
+    <text x="756" y="160" class="cs-hnote" text-anchor="middle">ClaudeCodeAgent</text>
+    <text x="756" y="175" class="cs-hnote" text-anchor="middle">CodexAgent · PiAgent</text>
+    <text x="756" y="190" class="cs-hnote" text-anchor="middle">AgentSessionHandle</text>
+
+    <rect x="846" y="118" width="148" height="84" rx="9" fill="#0f172a"/>
+    <rect x="846" y="118" width="148" height="84" rx="9" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399" stroke-width="1.5" filter="url(#cindy-seq-shadow)"/>
+    <text x="920" y="141" class="cs-lane" text-anchor="middle" letter-spacing="-0.5">harness subprocess</text>
+    <text x="920" y="160" class="cs-hnote" text-anchor="middle">claude</text>
+    <text x="920" y="175" class="cs-hnote" text-anchor="middle">codex app-server</text>
+    <text x="920" y="190" class="cs-hnote" text-anchor="middle">pi (rpc mode)</text>
+  </g>
+
+  <!-- 1 The UI invokes maker:send via preload -->
+  <line x1="100" y1="240" x2="258" y2="240" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="118" cy="228" r="9" fill="#22d3ee"/>
+  <text x="118" y="232" class="cs-num" text-anchor="middle">1</text>
+  <text x="134" y="232" class="cs-cap">invoke maker:send</text>
+  <text x="134" y="255" class="cs-note">sessionId + message</text>
+
+  <line x1="264" y1="288" x2="422" y2="288" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="282" cy="276" r="9" fill="#38bdf8"/>
+  <text x="282" y="280" class="cs-num" text-anchor="middle">1</text>
+  <text x="298" y="280" class="cs-cap">into main process</text>
+  <text x="298" y="303" class="cs-note">via ipcMain.handle</text>
+
+  <!-- 2 Main process hands the input to the input coordinator (self call) -->
+  <text x="360" y="328" class="cs-cap">to Input coordinator</text>
+  <path d="M 378 342 H 480 V 362 H 374" class="cs-solid" stroke-linejoin="round" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="369" cy="342" r="9" fill="#a78bfa"/>
+  <text x="369" y="346" class="cs-num" text-anchor="middle">2</text>
+  <rect x="356" y="370" width="144" height="87" rx="7" fill="#0f172a"/>
+  <rect x="356" y="370" width="144" height="87" rx="7" fill="rgba(76, 29, 149, 0.5)" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="428" y="387" class="cs-note" text-anchor="middle">queue, persist to DB</text>
+  <text x="428" y="402" class="cs-note" text-anchor="middle">check this task for a</text>
+  <text x="428" y="417" class="cs-note" text-anchor="middle">running turn</text>
+  <text x="428" y="432" class="cs-note" text-anchor="middle">via register.ts</text>
+  <text x="428" y="447" class="cs-note" text-anchor="middle">sendToSessionInternal</text>
+
+  <!-- 3 Coordinator gets or resumes the Session via Maker -->
+  <line x1="428" y1="492" x2="586" y2="492" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="446" cy="480" r="9" fill="#a78bfa"/>
+  <text x="446" y="484" class="cs-num" text-anchor="middle">3</text>
+  <text x="462" y="484" class="cs-cap">via Maker</text>
+  <text x="462" y="507" class="cs-note">get or resume this</text>
+  <text x="462" y="522" class="cs-note">task's Session</text>
+
+  <!-- 4 Session.send enters dispatchSend (self call) -->
+  <text x="524" y="549" class="cs-cap">Session.send</text>
+  <path d="M 542 563 H 644 V 583 H 538" class="cs-solid" stroke-linejoin="round" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="533" cy="563" r="9" fill="#818cf8"/>
+  <text x="533" y="567" class="cs-num" text-anchor="middle">4</text>
+  <rect x="520" y="591" width="144" height="57" rx="7" fill="#0f172a"/>
+  <rect x="520" y="591" width="144" height="57" rx="7" fill="rgba(76, 29, 149, 0.5)" stroke="#818cf8" stroke-width="1.2"/>
+  <text x="592" y="608" class="cs-note" text-anchor="middle">enters dispatchSend</text>
+  <text x="592" y="623" class="cs-note" text-anchor="middle">check no turn running</text>
+  <text x="592" y="638" class="cs-note" text-anchor="middle">reserve this turn's id</text>
+
+  <!-- 5 Session calls handle.send and enters the harness adapter -->
+  <line x1="592" y1="683" x2="750" y2="683" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="610" cy="671" r="9" fill="#818cf8"/>
+  <text x="610" y="675" class="cs-num" text-anchor="middle">5</text>
+  <text x="626" y="675" class="cs-cap">call handle.send</text>
+  <text x="626" y="698" class="cs-note">enters the adapter</text>
+  <text x="626" y="713" class="cs-note">AgentSessionHandle</text>
+
+  <!-- 6 Adapter translates into the harness protocol and sends to the subprocess -->
+  <rect x="782" y="759" width="154" height="72" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <line x1="756" y1="752" x2="914" y2="752" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="774" cy="740" r="9" fill="#fbbf24"/>
+  <text x="774" y="744" class="cs-num" text-anchor="middle">6</text>
+  <text x="790" y="744" class="cs-cap">translate + send</text>
+  <text x="790" y="776" class="cs-note">to the subprocess</text>
+  <text x="790" y="791" class="cs-note">Codex: turn/start</text>
+  <text x="790" y="806" class="cs-note">Claude Code: SDK query</text>
+  <text x="790" y="821" class="cs-note">Pi: RPC</text>
+
+  <!-- 7 Subprocess runs (self call) -->
+  <text x="852" y="854" class="cs-cap">subprocess runs</text>
+  <path d="M 870 868 H 972 V 888 H 866" class="cs-solid" stroke-linejoin="round" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="861" cy="868" r="9" fill="#34d399"/>
+  <text x="861" y="872" class="cs-num" text-anchor="middle">7</text>
+  <rect x="848" y="896" width="144" height="42" rx="7" fill="#0f172a"/>
+  <rect x="848" y="896" width="144" height="42" rx="7" fill="rgba(6, 78, 59, 0.5)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="920" y="913" class="cs-note" text-anchor="middle">call model, read/write</text>
+  <text x="920" y="928" class="cs-note" text-anchor="middle">files, run commands</text>
+
+  <!-- 8 Raw output returns to the adapter, which translates it into unified events -->
+  <line x1="920" y1="973" x2="762" y2="973" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="902" cy="961" r="9" fill="#34d399"/>
+  <text x="902" y="965" class="cs-num" text-anchor="middle">8</text>
+  <text x="886" y="965" class="cs-cap" text-anchor="end">raw harness output</text>
+
+  <rect x="576" y="1012" width="158" height="57" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <line x1="756" y1="1005" x2="598" y2="1005" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="738" cy="993" r="9" fill="#fbbf24"/>
+  <text x="738" y="997" class="cs-num" text-anchor="middle">8</text>
+  <text x="722" y="999" class="cs-cap" text-anchor="end">to unified events</text>
+  <text x="584" y="1029" class="cs-note">text, tool_use</text>
+  <text x="584" y="1044" class="cs-note">tool_result, turn_diff</text>
+  <text x="584" y="1059" class="cs-note">and more</text>
+
+  <!-- 9 Session dispatches to listeners; main process writes SQLite and broadcasts to the UI -->
+  <line x1="592" y1="1104" x2="434" y2="1104" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="574" cy="1092" r="9" fill="#818cf8"/>
+  <text x="574" y="1096" class="cs-num" text-anchor="middle">9</text>
+  <text x="558" y="1100" class="cs-cap" text-anchor="end">notify listeners</text>
+
+  <rect x="270" y="1111" width="152" height="28" rx="6" fill="#0f172a"/>
+  <line x1="428" y1="1134" x2="106" y2="1134" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <rect x="425" y="1104" width="6" height="30" rx="2" fill="#a78bfa" opacity="0.85"/>
+  <line x1="428" y1="1134" x2="428" y2="1160" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="428" cy="1134" r="3.5" fill="#fb923c"/>
+  <circle cx="396" cy="1122" r="9" fill="#a78bfa"/>
+  <text x="396" y="1126" class="cs-num" text-anchor="middle">9</text>
+  <text x="380" y="1130" class="cs-cap" text-anchor="end">broadcast to UI</text>
+  <circle cx="446" cy="1147" r="9" fill="#a78bfa"/>
+  <text x="446" y="1151" class="cs-num" text-anchor="middle">9</text>
+  <text x="462" y="1151" class="cs-cap">write</text>
+
+  <!-- Local SQLite database: callout box inside the main-process lane -->
+  <rect x="356" y="1162" width="144" height="46" rx="8" fill="#0f172a"/>
+  <rect x="356" y="1162" width="144" height="46" rx="8" fill="rgba(6, 78, 59, 0.5)" stroke="#10b981" stroke-width="1.5" filter="url(#cindy-seq-shadow)"/>
+  <text x="428" y="1182" class="cs-lane" text-anchor="middle">local SQLite DB</text>
+  <text x="428" y="1198" class="cs-hnote" text-anchor="middle">(messages saved)</text>
+
+  <!-- 10 interaction_request waits in the UI; the adapter passes the decision back -->
+  <line x1="756" y1="1243" x2="598" y2="1243" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="742" cy="1231" r="9" fill="#fbbf24"/>
+  <text x="742" y="1235" class="cs-num" text-anchor="middle">10</text>
+  <text x="728" y="1239" class="cs-cap" text-anchor="end">interaction_request</text>
+  <text x="728" y="1258" class="cs-note" text-anchor="end">to confirm an action</text>
+
+  <line x1="592" y1="1293" x2="434" y2="1293" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="578" cy="1281" r="9" fill="#818cf8"/>
+  <text x="578" y="1285" class="cs-num" text-anchor="middle">10</text>
+  <text x="564" y="1289" class="cs-cap" text-anchor="end">interaction_request</text>
+
+  <rect x="228" y="1304" width="194" height="28" rx="6" fill="#0f172a"/>
+  <line x1="428" y1="1327" x2="106" y2="1327" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="410" cy="1315" r="9" fill="#a78bfa"/>
+  <text x="410" y="1319" class="cs-num" text-anchor="middle">10</text>
+  <text x="394" y="1323" class="cs-cap" text-anchor="end">stops in UI, awaits user</text>
+
+  <rect x="104" y="1338" width="130" height="28" rx="6" fill="#0f172a"/>
+  <line x1="100" y1="1361" x2="422" y2="1361" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="118" cy="1349" r="9" fill="#22d3ee"/>
+  <text x="118" y="1353" class="cs-num" text-anchor="middle">10</text>
+  <text x="134" y="1353" class="cs-cap">user's decision</text>
+
+  <line x1="428" y1="1395" x2="586" y2="1395" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="446" cy="1383" r="9" fill="#a78bfa"/>
+  <text x="446" y="1387" class="cs-num" text-anchor="middle">10</text>
+  <text x="462" y="1387" class="cs-cap">on to Session</text>
+
+  <line x1="592" y1="1429" x2="750" y2="1429" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="610" cy="1417" r="9" fill="#818cf8"/>
+  <text x="610" y="1421" class="cs-num" text-anchor="middle">10</text>
+  <text x="626" y="1421" class="cs-cap">on to the adapter</text>
+
+  <line x1="756" y1="1463" x2="914" y2="1463" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="774" cy="1451" r="9" fill="#fbbf24"/>
+  <text x="774" y="1455" class="cs-num" text-anchor="middle">10</text>
+  <text x="790" y="1455" class="cs-cap">pass decision back</text>
+  <text x="790" y="1478" class="cs-note">no subscriber found</text>
+  <text x="790" y="1493" class="cs-note">treated as rejected</text>
+
+  <!-- 11 Subprocess reports the turn ended, Session gets done, UI is input-ready again -->
+  <line x1="920" y1="1532" x2="762" y2="1532" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="902" cy="1520" r="9" fill="#34d399"/>
+  <text x="902" y="1524" class="cs-num" text-anchor="middle">11</text>
+  <text x="886" y="1524" class="cs-cap" text-anchor="end">turn end reported</text>
+
+  <line x1="756" y1="1566" x2="598" y2="1566" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="738" cy="1554" r="9" fill="#fbbf24"/>
+  <text x="738" y="1558" class="cs-num" text-anchor="middle">11</text>
+  <text x="722" y="1558" class="cs-cap" text-anchor="end">Session gets done</text>
+
+  <line x1="592" y1="1600" x2="434" y2="1600" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="574" cy="1588" r="9" fill="#818cf8"/>
+  <text x="574" y="1592" class="cs-num" text-anchor="middle">11</text>
+  <text x="558" y="1592" class="cs-cap" text-anchor="end">emit done</text>
+
+  <rect x="234" y="1611" width="188" height="28" rx="6" fill="#0f172a"/>
+  <line x1="428" y1="1634" x2="106" y2="1634" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <circle cx="410" cy="1622" r="9" fill="#a78bfa"/>
+  <text x="410" y="1626" class="cs-num" text-anchor="middle">11</text>
+  <text x="394" y="1630" class="cs-cap" text-anchor="end">UI re-enabled for input</text>
+
+  <!-- Legend -->
+  <line x1="36" y1="1687" x2="76" y2="1687" class="cs-solid" marker-end="url(#cindy-seq-arrow)"/>
+  <text x="84" y="1691" class="cs-legend">command or call</text>
+  <line x1="240" y1="1687" x2="280" y2="1687" class="cs-dash" marker-end="url(#cindy-seq-arrow)"/>
+  <text x="288" y="1691" class="cs-legend">event, broadcast, return</text>
+  <rect x="36" y="1706" width="10" height="10" rx="2" fill="#22d3ee"/>
+  <text x="54" y="1715" class="cs-legend">UI and preload bridge</text>
+  <rect x="252" y="1706" width="10" height="10" rx="2" fill="#a78bfa"/>
+  <text x="270" y="1715" class="cs-legend">main process, maker-core</text>
+  <rect x="496" y="1706" width="10" height="10" rx="2" fill="#fbbf24"/>
+  <text x="514" y="1715" class="cs-legend">harness adapter</text>
+  <rect x="676" y="1706" width="10" height="10" rx="2" fill="#34d399"/>
+  <text x="694" y="1715" class="cs-legend">subprocess, local SQLite</text>
+</svg>
