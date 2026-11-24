@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 830" width="100%" height="100%" role="img" aria-labelledby="ts-map-title ts-map-desc">
+  <title id="ts-map-title">Tailscale source map: how one command reaches WireGuard</title>
+  <desc id="ts-map-desc">This layered architecture diagram answers one question: after a tailscale command leaves the terminal, which processes and packages does it pass through before it reaches WireGuard, and where do the control plane and the relay attach? From top to bottom: the tailscale command line, whose source lives in cmd/tailscale/cli; the local socket, a Unix socket or a Windows named pipe implemented by safesocket; the LocalAPI HTTP server, made of ipn/ipnserver and ipn/localapi; LocalBackend, in ipn/ipnlocal; wgengine, which contains router, filter, and netstack; magicsock, in wgengine/magicsock; and finally wireguard-go, a dependency outside the repository that sends and receives over UDP. The arrows show the direction of calls and data. The command line sends HTTP requests to the LocalAPI over the local socket, and requests only go from the command line to the daemon. The LocalAPI first checks the caller's permission, read-only or read-write, and then calls LocalBackend. LocalBackend passes the network map and packet filter rules down to wgengine. wgengine hands endpoints and path selection to magicsock. magicsock encrypts and decrypts with wireguard-go. The LocalAPI listens only on the local socket and is never exposed. On the left is the control plane: control/controlclient makes long-polling requests to the coordination server, the coordination server sends the network map back, and controlclient then calls back into LocalBackend; this line carries only public keys, addresses, and policy, and the coordination server is not on the data path. On the right is the relay: magicsock connects to DERP servers through derp and derp/derphttp in order to negotiate connections and to fall back to relaying; DERP relays only encrypted packets. This diagram leaves out the internals of Peer Relay and Tailnet Lock, and the further modules inside each package.</desc>
+  <defs>
+    <linearGradient id="mBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0b0f19"/><stop offset="55%" stop-color="#0f172a"/><stop offset="100%" stop-color="#020617"/></linearGradient>
+    <pattern id="mGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/></pattern>
+    <marker id="mArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/></marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-code { fill: #7dd3fc; font-size: 10.5px; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+      .t-tag { fill: #fde68a; font-size: 10.5px; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="960" height="830" fill="url(#mBg)"/>
+  <rect width="960" height="830" fill="url(#mGrid)"/>
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#a78bfa"/>
+    <text x="20" y="21" class="t-title">Tailscale source map: how one command reaches WireGuard</text>
+    <text x="20" y="40" class="t-sub">The middle column is the call chain inside the repository; the control plane is on the left, the relay on the right, both outside the repository</text>
+  </g>
+
+  <rect x="300" y="92" width="360" height="54" rx="9" fill="#0f172a"/>
+  <rect x="300" y="92" width="360" height="54" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="480" y="115" class="t-card" text-anchor="middle">tailscale CLI</text>
+  <text x="480" y="134" class="t-code" text-anchor="middle">cmd/tailscale/cli</text>
+  <line x1="480" y1="146" x2="480" y2="192" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="172" class="t-cap">Sends HTTP over the local socket (safesocket)</text>
+
+  <rect x="300" y="196" width="360" height="40" rx="9" fill="#0f172a"/>
+  <rect x="300" y="196" width="360" height="40" rx="9" fill="rgba(30, 41, 59, 0.6)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="480" y="220" class="t-body" text-anchor="middle">Local socket: Unix socket or Windows named pipe</text>
+  <line x1="480" y1="236" x2="480" y2="264" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="254" class="t-cap">Requests only go from the CLI to the daemon</text>
+
+  <rect x="300" y="268" width="360" height="84" rx="9" fill="#0f172a"/>
+  <rect x="300" y="268" width="360" height="84" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="290" class="t-card" text-anchor="middle">LocalAPI</text>
+  <text x="480" y="308" class="t-code" text-anchor="middle">ipn/ipnserver + ipn/localapi</text>
+  <text x="480" y="325" class="t-body" text-anchor="middle">Checks the caller's permission first: read-only or read-write</text>
+  <text x="480" y="342" class="t-tag" text-anchor="middle">Listens only on the local socket; never exposed</text>
+  <line x1="480" y1="352" x2="480" y2="380" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="370" class="t-cap">Calls it only after the check</text>
+
+  <rect x="300" y="384" width="360" height="52" rx="9" fill="#0f172a"/>
+  <rect x="300" y="384" width="360" height="52" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="406" class="t-card" text-anchor="middle">LocalBackend</text>
+  <text x="480" y="424" class="t-code" text-anchor="middle">ipn/ipnlocal</text>
+  <line x1="480" y1="436" x2="480" y2="468" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="456" class="t-cap">Passes down the network map and packet filter rules</text>
+
+  <rect x="300" y="472" width="360" height="84" rx="9" fill="#0f172a"/>
+  <rect x="300" y="472" width="360" height="84" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="496" class="t-card" text-anchor="middle">wgengine</text>
+  <rect x="316" y="510" width="100" height="30" rx="6" fill="#0f172a"/>
+  <rect x="316" y="510" width="100" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="366" y="529" class="t-body" text-anchor="middle">router</text>
+  <rect x="430" y="510" width="100" height="30" rx="6" fill="#0f172a"/>
+  <rect x="430" y="510" width="100" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="480" y="529" class="t-body" text-anchor="middle">filter</text>
+  <rect x="544" y="510" width="100" height="30" rx="6" fill="#0f172a"/>
+  <rect x="544" y="510" width="100" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="594" y="529" class="t-body" text-anchor="middle">netstack</text>
+  <line x1="480" y1="556" x2="480" y2="588" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="576" class="t-cap">Hands endpoints and paths to magicsock</text>
+
+  <rect x="300" y="592" width="360" height="64" rx="9" fill="#0f172a"/>
+  <rect x="300" y="592" width="360" height="64" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="616" class="t-card" text-anchor="middle">magicsock</text>
+  <text x="480" y="634" class="t-code" text-anchor="middle">wgengine/magicsock</text>
+  <line x1="480" y1="656" x2="480" y2="688" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="676" class="t-cap">Encrypts and decrypts with wireguard-go</text>
+
+  <rect x="300" y="692" width="360" height="52" rx="9" fill="#0f172a"/>
+  <rect x="300" y="692" width="360" height="52" rx="9" fill="rgba(30, 41, 59, 0.6)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="480" y="714" class="t-card" text-anchor="middle">wireguard-go</text>
+  <text x="480" y="732" class="t-note" text-anchor="middle">A dependency outside the repository; sends and receives over UDP</text>
+
+  <!-- 左侧：控制面 -->
+  <rect x="36" y="384" width="220" height="172" rx="9" fill="#0f172a"/>
+  <rect x="36" y="384" width="220" height="172" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="146" y="406" class="t-body" text-anchor="middle" font-weight="700">Control plane</text>
+  <rect x="52" y="420" width="188" height="36" rx="6" fill="#0f172a"/>
+  <rect x="52" y="420" width="188" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="146" y="443" class="t-code" text-anchor="middle">control/controlclient</text>
+  <line x1="112" y1="456" x2="112" y2="486" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <line x1="180" y1="486" x2="180" y2="460" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#mArrow)"/>
+  <rect x="52" y="490" width="188" height="36" rx="6" fill="#0f172a"/>
+  <rect x="52" y="490" width="188" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="146" y="513" class="t-body" text-anchor="middle">Coordination server</text>
+  <text x="146" y="544" class="t-tag" text-anchor="middle">Only public keys, addresses, policy</text>
+  <line x1="256" y1="410" x2="294" y2="410" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="275" y="402" class="t-cap" text-anchor="middle">calls</text>
+
+  <!-- 右侧：中继 -->
+  <rect x="744" y="472" width="180" height="184" rx="9" fill="#0f172a"/>
+  <rect x="744" y="472" width="180" height="184" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="834" y="494" class="t-body" text-anchor="middle" font-weight="700">Relay</text>
+  <rect x="760" y="506" width="148" height="36" rx="6" fill="#0f172a"/>
+  <rect x="760" y="506" width="148" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="834" y="529" class="t-code" text-anchor="middle">derp / derp/derphttp</text>
+  <line x1="814" y1="542" x2="814" y2="572" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <line x1="854" y1="572" x2="854" y2="546" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#mArrow)"/>
+  <rect x="760" y="576" width="148" height="36" rx="6" fill="#0f172a"/>
+  <rect x="760" y="576" width="148" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="834" y="599" class="t-body" text-anchor="middle">DERP server</text>
+  <text x="834" y="638" class="t-tag" text-anchor="middle">Relays only encrypted packets</text>
+  <line x1="660" y1="624" x2="738" y2="624" stroke="#fb923c" stroke-width="2" marker-start="url(#mArrow)" marker-end="url(#mArrow)"/>
+  <text x="699" y="614" class="t-cap" text-anchor="middle">Negotiate</text>
+  <text x="699" y="642" class="t-cap" text-anchor="middle">Fallback relay</text>
+
+  <!-- 图例 -->
+  <text x="36" y="782" class="t-note">Legend</text>
+  <line x1="36" y1="790" x2="924" y2="790" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="810" x2="76" y2="810" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="86" y="814" class="t-note">Solid: direction of calls or requests</text>
+  <line x1="266" y1="810" x2="306" y2="810" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#mArrow)"/>
+  <text x="316" y="814" class="t-note">Dashed: return path</text>
+  <rect x="466" y="804" width="16" height="12" rx="3" fill="rgba(76, 29, 149, 0.6)" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="490" y="814" class="t-note">Purple: the daemon in the repository (tailscaled)</text>
+  <rect x="760" y="804" width="16" height="12" rx="3" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="784" y="814" class="t-note">Amber: outside the repo</text>
+</svg>
