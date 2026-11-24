@@ -26,8 +26,8 @@
           <span class="entry-vendor">{{ vendorLabel }}</span>
           <span class="entry-dot" aria-hidden="true">·</span>
           <span class="entry-date">
-            <time :datetime="product.released">{{ dateLabel }}</time>
-            <span v-if="product.datePrecision === 'month'" class="entry-precision">
+            <time :datetime="product.released">{{ dateShown }}</time>
+            <span v-if="coarsePrecision" class="entry-precision">
               ({{ isZh ? '约' : '~' }})
             </span>
           </span>
@@ -75,7 +75,7 @@
         </div>
         <div class="entry-detail-row">
           <dt>{{ isZh ? '首次发布' : 'Released' }}</dt>
-          <dd>{{ dateLabel }}{{ product.datePrecision === 'month' ? (isZh ? '（仅精确到月）' : ' (month only)') : '' }}</dd>
+          <dd>{{ dateShown }}{{ precisionNote }}</dd>
         </div>
         <div v-if="product.tags?.length" class="entry-detail-row">
           <dt>{{ isZh ? '能力标签' : 'Capabilities' }}</dt>
@@ -135,8 +135,23 @@
   const regionLabel = computed(
     () => (props.product.region === 'cn' ? props.labels.regionCn : props.labels.regionIntl)
   )
-  // Month precision reads better than a bare day when we only know the month.
+  // Month precision reads better than a bare day when we only know the month,
+  // and year precision must show the year alone so the placeholder month and
+  // day never read as fact.
   const dateLabel = computed(() => String(props.product.released || '').slice(0, 10))
+  const coarsePrecision = computed(() => props.product.datePrecision && props.product.datePrecision !== 'day')
+  const dateShown = computed(() =>
+    props.product.datePrecision === 'year'
+      ? (props.isZh ? `${dateLabel.value.slice(0, 4)} 年` : dateLabel.value.slice(0, 4))
+      : dateLabel.value
+  )
+  const precisionNote = computed(() =>
+    props.product.datePrecision === 'year'
+      ? (props.isZh ? '（仅精确到年）' : ' (year only)')
+      : props.product.datePrecision === 'month'
+        ? (props.isZh ? '（仅精确到月）' : ' (month only)')
+        : ''
+  )
   const docHref = computed(() => {
     const handbook = props.product.handbook
     if (handbook?.status !== 'written') return null

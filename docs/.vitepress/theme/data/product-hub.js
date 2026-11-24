@@ -8,7 +8,7 @@
  *   data/products/vendors.json      厂商注册表
  *   data/products/use-cases/*.json  场景选型
  *
- * products 353 条 · categories 11 个 · use-cases 10 个
+ * products 356 条 · categories 12 个 · use-cases 10 个
  *
  * 本文件不含生成时间戳：否则每次运行都会产生差异，--check 闸门将永远报红。
  * 什么时候改的由 git 记录。
@@ -103,6 +103,14 @@ export const productHub = {
     "color": "#65A30D",
     "icon": "🦙",
     "count": 7
+  },
+  {
+    "id": "supporting-tools",
+    "name": "Supporting tools",
+    "nameZh": "辅助工具",
+    "color": "#CA8A04",
+    "icon": "🧰",
+    "count": 3
   }
 ],
   useCases: [
@@ -216,6 +224,7 @@ export const productHub = {
       "tongyi",
       "traework",
       "typeless",
+      "uu-remote",
       "vibe",
       "wanyo",
       "wenxiaotuan",
@@ -233,7 +242,7 @@ export const productHub = {
       "zoom-ai-companion",
       "zoommate"
     ],
-    "productCount": 119,
+    "productCount": 120,
     "dimensions": [
       {
         "id": "meetings",
@@ -759,6 +768,7 @@ export const productHub = {
       "github-copilot-agent-mode",
       "glm-coding-plan",
       "google-antigravity",
+      "google-colab",
       "google-stitch",
       "goose",
       "greptile",
@@ -790,8 +800,10 @@ export const productHub = {
       "sensetime",
       "slack-code",
       "t3-code",
+      "tailscale",
       "trae",
       "typeless",
+      "uu-remote",
       "v0",
       "vercel-ai-sdk",
       "vibe",
@@ -802,7 +814,7 @@ export const productHub = {
       "zcode",
       "zed"
     ],
-    "productCount": 72,
+    "productCount": 75,
     "dimensions": [
       {
         "id": "ai-ide",
@@ -1038,6 +1050,7 @@ export const productHub = {
       "fireworks-ai",
       "gemini-enterprise",
       "google-ai-studio",
+      "google-colab",
       "hunyuan",
       "lingyi-wanwu",
       "litellm",
@@ -1064,7 +1077,7 @@ export const productHub = {
       "volcengine-ark",
       "xai-api"
     ],
-    "productCount": 38,
+    "productCount": 39,
     "dimensions": [
       {
         "id": "inference-api",
@@ -1276,11 +1289,12 @@ export const productHub = {
       "phariaai",
       "qdrant",
       "rea",
+      "tailscale",
       "weaviate",
       "xiaomi",
       "zed"
     ],
-    "productCount": 24,
+    "productCount": 25,
     "dimensions": [
       {
         "id": "local-runner",
@@ -1310,9 +1324,10 @@ export const productHub = {
           "open-webui",
           "openclaw",
           "phariaai",
+          "tailscale",
           "weaviate"
         ],
-        "productCount": 5
+        "productCount": 6
       },
       {
         "id": "edge-sdk",
@@ -12705,6 +12720,48 @@ export const productHub = {
     "glyph": "N"
   },
   {
+    "id": "uu-remote",
+    "name": "网易UU远程",
+    "nameZh": "网易UU远程",
+    "vendor": "NetEase",
+    "vendorZh": "NetEase",
+    "logo": "/assets/logos/netease.ico",
+    "region": "cn",
+    "category": "supporting-tools",
+    "useCases": [
+      "office",
+      "coding"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Your work computer is at the office and you are not. UU Remote shows its screen on your phone or tablet and sends your taps and keystrokes back.",
+    "solvesZh": "工作资料都在公司电脑上，人却不在。网易UU远程把它的画面投到手机或平板上，点击和按键再传回去。",
+    "bestFor": "You need to open a file, run a program or help someone on a computer that is somewhere else.",
+    "bestForZh": "你要打开一个文件、跑一个程序，或者帮别人处理另一台电脑上的问题。",
+    "released": "2022-11-03",
+    "datePrecision": "day",
+    "homepage": "https://uuyc.163.com/",
+    "desc": "Free remote control for reaching another computer from phone, tablet or PC.",
+    "descZh": "网易出的免费远程控制软件，用手机、平板或电脑操作另一台电脑。",
+    "tags": [
+      "remote-desktop",
+      "remote-assistance",
+      "file-transfer",
+      "wake-on-lan"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/uu-remote/"
+      }
+    },
+    "lastVerifiedAt": "2026-11-24",
+    "glyph": "网"
+  },
+  {
     "id": "exa",
     "name": "Exa",
     "nameZh": "Exa",
@@ -13827,6 +13884,48 @@ export const productHub = {
     "glyph": "O"
   },
   {
+    "id": "tailscale",
+    "name": "Tailscale",
+    "nameZh": "Tailscale",
+    "vendor": "Tailscale",
+    "vendorZh": "Tailscale",
+    "logo": null,
+    "region": "intl",
+    "category": "supporting-tools",
+    "useCases": [
+      "coding",
+      "local-private"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Reaching your own machine from outside usually means public IPs, port forwarding or a VPN server. Tailscale links the devices of one account, encrypted end to end.",
+    "solvesZh": "在外面连回自己的电脑，通常要公网 IP、端口转发或自建 VPN。Tailscale 把同一账号下的设备连起来，端到端加密。",
+    "bestFor": "You want to SSH, code on, or reach a service on your home or office computer from anywhere.",
+    "bestForZh": "你想在外面 SSH 进家里或公司的电脑、在上面写代码，或访问它上面的服务。",
+    "released": "2020-04-02",
+    "datePrecision": "day",
+    "homepage": "https://tailscale.com/",
+    "desc": "A private network between your own devices, with nothing to set up.",
+    "descZh": "把你自己的设备连成一个私有网络，几乎不用配置。",
+    "tags": [
+      "wireguard",
+      "mesh-vpn",
+      "remote-access",
+      "open-source"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/tailscale/"
+      }
+    },
+    "lastVerifiedAt": "2026-11-24",
+    "glyph": "T"
+  },
+  {
     "id": "capcut",
     "name": "CapCut",
     "nameZh": "CapCut",
@@ -14541,6 +14640,48 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-05",
     "glyph": "B"
+  },
+  {
+    "id": "google-colab",
+    "name": "Google Colab",
+    "nameZh": "Google Colab",
+    "vendor": "Google",
+    "vendorZh": "Google",
+    "logo": "/assets/logos/google.png",
+    "region": "intl",
+    "category": "supporting-tools",
+    "useCases": [
+      "coding",
+      "model-api"
+    ],
+    "form": "web",
+    "surface": "standalone",
+    "solves": "Learning AI needs a GPU and a Python setup that a laptop cannot hold. Colab runs notebooks on a cloud machine with GPUs and TPUs, free to start.",
+    "solvesZh": "学 AI 要 GPU，还要一套笔记本装不下的 Python 环境。Colab 把笔记本放在云端机器上跑，带 GPU 和 TPU，可以免费开始。",
+    "bestFor": "You want to train or test a small model, or call an AI API, without setting up a machine.",
+    "bestForZh": "你想训练或测试一个小模型，或者调用 AI 接口，又不想自己搭机器。",
+    "released": "2014-01-01",
+    "datePrecision": "year",
+    "homepage": "https://colab.research.google.com/",
+    "desc": "Jupyter notebooks in the browser, with GPUs and nothing to install.",
+    "descZh": "浏览器里直接写 Python 的笔记本，自带 GPU，不用装环境。",
+    "tags": [
+      "notebook",
+      "gpu",
+      "jupyter",
+      "hosted-runtime"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/gemini/colab.html"
+      }
+    },
+    "lastVerifiedAt": "2026-11-24",
+    "glyph": "G"
   },
   {
     "id": "picsart",

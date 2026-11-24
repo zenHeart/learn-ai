@@ -1,0 +1,40 @@
+{
+  "id": "uu-remote",
+  "name": "网易UU远程",
+  "name_zh": "网易UU远程",
+  "vendor_id": "netease",
+  "region": "cn",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2022-11-03",
+  "date_precision": "day",
+  "homepage": "https://uuyc.163.com/",
+  "desc": "Free remote control for reaching another computer from phone, tablet or PC.",
+  "desc_zh": "网易出的免费远程控制软件，用手机、平板或电脑操作另一台电脑。",
+  "solves": "Your work computer is at the office and you are not. UU Remote shows its screen on your phone or tablet and sends your taps and keystrokes back.",
+  "solves_zh": "工作资料都在公司电脑上，人却不在。网易UU远程把它的画面投到手机或平板上，点击和按键再传回去。",
+  "best_for": "You need to open a file, run a program or help someone on a computer that is somewhere else.",
+  "best_for_zh": "你要打开一个文件、跑一个程序，或者帮别人处理另一台电脑上的问题。",
+  "surface": "standalone",
+  "tags": [
+    "remote-desktop",
+    "remote-assistance",
+    "file-transfer",
+    "wake-on-lan"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "zh": "/zh/products/uu-remote/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-24",
+  "notes": "首次公开发布取 App Store 上该应用的发布日期（2022-11-03；开发者 Guangzhou NetEase Computer System Co. Ltd，应用 id 1642306791，即官网链接的那个应用）：https://apps.apple.com/cn/app/id1642306791 。其他平台的客户端是否更早上线未核实。命名沿革见官方博客《「GameViewer远程」正式更名为「网易UU远程」》（页面日期 2024-12-10）：https://uuyc.163.com/blog/20241206/41377_1198665.html 。官网首页与会员权益页对免费档画质的说法不一致，教程两处都写了。",
+  "revisions": []
+}

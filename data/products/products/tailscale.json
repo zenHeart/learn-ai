@@ -1,0 +1,40 @@
+{
+  "id": "tailscale",
+  "name": "Tailscale",
+  "name_zh": "Tailscale",
+  "vendor_id": "tailscale",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "coding",
+    "local-private"
+  ],
+  "form": "desktop",
+  "released": "2020-04-02",
+  "date_precision": "day",
+  "homepage": "https://tailscale.com/",
+  "desc": "A private network between your own devices, with nothing to set up.",
+  "desc_zh": "把你自己的设备连成一个私有网络，几乎不用配置。",
+  "solves": "Reaching your own machine from outside usually means public IPs, port forwarding or a VPN server. Tailscale links the devices of one account, encrypted end to end.",
+  "solves_zh": "在外面连回自己的电脑，通常要公网 IP、端口转发或自建 VPN。Tailscale 把同一账号下的设备连起来，端到端加密。",
+  "best_for": "You want to SSH, code on, or reach a service on your home or office computer from anywhere.",
+  "best_for_zh": "你想在外面 SSH 进家里或公司的电脑、在上面写代码，或访问它上面的服务。",
+  "surface": "standalone",
+  "tags": [
+    "wireguard",
+    "mesh-vpn",
+    "remote-access",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "zh": "/zh/products/tailscale/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-24",
+  "notes": "首次公开发布取官方博客的正式发布公告《Tailscale has reached general availability》（2020-04-02）：https://tailscale.com/blog/tailscale-launch ，文内说明此前为受邀内测。GitHub 上最早的 release 对象是 2020-05-05 的 v0.98。源码解读基于提交 da6276d77025ee2bce288c4ccf07b35e14f253a7，BSD-3-Clause 许可。",
+  "revisions": []
+}

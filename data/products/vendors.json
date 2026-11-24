@@ -612,6 +612,7 @@
         "antigravity.google",
         "blog.google",
         "cloud.google.com",
+        "colab.research.google.com",
         "gemini.google.com",
         "geminicli.com",
         "jules.google",
@@ -1071,7 +1072,8 @@
       "region": "intl",
       "product_count": 1,
       "official_domains": [
-        "codewave.163.com"
+        "codewave.163.com",
+        "uuyc.163.com"
       ]
     },
     {
@@ -2091,6 +2093,16 @@
       "official_domains": [
         "cindy.app",
         "cindy.cn"
+      ]
+    },
+    {
+      "id": "tailscale",
+      "display_name": "Tailscale",
+      "display_name_zh": "Tailscale",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "tailscale.com"
       ]
     }
   ]
