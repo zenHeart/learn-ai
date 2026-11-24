@@ -8,7 +8,7 @@ tags:
   - go
   - tailscale
 role: deep-dive
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 source_revision: da6276d77025ee2bce288c4ccf07b35e14f253a7
 ---
 
@@ -62,9 +62,9 @@ source_revision: da6276d77025ee2bce288c4ccf07b35e14f253a7
 
 > **图的依据：** 调用链，以及 LocalAPI「只监听本地 socket」，对照源码 [`localapi.go` L71–L97](https://github.com/tailscale/tailscale/blob/da6276d77025ee2bce288c4ccf07b35e14f253a7/ipn/localapi/localapi.go#L71-L97)、[`ipnserver/server.go` L200–L225](https://github.com/tailscale/tailscale/blob/da6276d77025ee2bce288c4ccf07b35e14f253a7/ipn/ipnserver/server.go#L200-L225)、[`ipnlocal/local.go` L1898–L1910](https://github.com/tailscale/tailscale/blob/da6276d77025ee2bce288c4ccf07b35e14f253a7/ipn/ipnlocal/local.go#L1898-L1910)；控制面回调对照 [`controlclient/direct.go` L1023–L1029](https://github.com/tailscale/tailscale/blob/da6276d77025ee2bce288c4ccf07b35e14f253a7/control/controlclient/direct.go#L1023-L1029)；端点探测对照 [`magicsock/endpoint.go` L626–L652](https://github.com/tailscale/tailscale/blob/da6276d77025ee2bce288c4ccf07b35e14f253a7/wgengine/magicsock/endpoint.go#L626-L652)，都是提交 `da6276d7`（v1.107.0 一线）。图中保留了从命令行到 wireguard-go 的七级调用链，以及控制面与中继各自接入的位置；省略了 Peer Relay 与 Tailnet Lock 的内部结构，以及各包内部更多的模块。协调服务器不在数据路径上，LocalAPI 不经网络对外监听，DERP 只转发已加密的包。
 
-图里的关系可以分成左右两条线。
+图里的关系可以分成三条线：中间一列是本地的调用链，左边是控制面，右边是中继。下面先走中间这条，再走左边那条；右边那条线留在 `magicsock` 里，见后文「关键机制深读」的机制一。
 
-**左边是本地这条线：命令怎么变成设置。** 官方对二进制的划分是：`tailscale`（或 `tailscale.exe`）是命令行，`tailscaled`（注意末尾多一个 `d`）是做所有网络处理的高权限守护进程。CLI 自己不碰网络，它通过 `safesocket` 连到守护进程。这个包的自我描述是「能建 Unix socket 就建 Unix socket，否则建一条 localhost 的 TCP 连接」；在 Windows 上实现是命名管道。
+**中间一列是本地这条线：命令怎么变成设置。** 官方对二进制的划分是：`tailscale`（或 `tailscale.exe`）是命令行，`tailscaled`（注意末尾多一个 `d`）是做所有网络处理的高权限守护进程。CLI 自己不碰网络，它通过 `safesocket` 连到守护进程。这个包的自我描述是「能建 Unix socket 就建 Unix socket，否则建一条 localhost 的 TCP 连接」；在 Windows 上实现是命名管道。
 
 连上之后走的是 HTTP，路径都在 `/localapi/v0/` 前缀下。`localapi.go` 里用一张表登记了全部入口，下面是节选：
 
@@ -81,7 +81,7 @@ source_revision: da6276d77025ee2bce288c4ccf07b35e14f253a7
 ```
 （[永久链接](https://github.com/tailscale/tailscale/blob/da6276d77025ee2bce288c4ccf07b35e14f253a7/ipn/localapi/localapi.go#L71-L97)）
 
-**右边是远端那条线：网络地图怎么下来。** 网络地图（netmap）是协调服务器交给每台设备的「通讯录」：我是谁、我能看到哪些节点、每个节点的公钥和地址是什么、策略是什么。它用一张长连接流式下发：
+**左边是远端那条线：网络地图怎么下来。** 网络地图（netmap）是协调服务器交给每台设备的「通讯录」：我是谁、我能看到哪些节点、每个节点的公钥和地址是什么、策略是什么。它用一张长连接流式下发：
 
 ```go
 // tailcfg.go L2010-L2019
@@ -355,14 +355,14 @@ func (a *actor) Permissions(operatorUID string) (read, write bool) {
 **对使用者意味着什么。** 这解释了日常会遇到的几件事：
 
 - Linux 上普通用户执行 `sudo tailscale ...`，守护进程看到的是 root，所以能改设置。
-- `--operator` 的含义是「允许某个非 root 用户不靠 sudo 操作 `tailscaled`」。但 `actor.go` L244 起的注释强调了一处边界：在 Linux 上只有 root 算本地管理员，「operator 用户不算，哪怕他能运行 `sudo tailscale`：`tailscaled` 没法知道他有没有通过 sudo 认证，只知道存在这么一条规则」。
+- `--operator` 的含义是「允许某个非 root 用户不靠 sudo 操作 `tailscaled`」。但 `ipn/ipnserver/actor.go` L244 起的注释强调了一处边界：在 Linux 上只有 root 算本地管理员，「operator 用户不算，哪怕他能运行 `sudo tailscale`：`tailscaled` 没法知道他有没有通过 sudo 认证，只知道存在这么一条规则」。
 - Windows 用的是另一套模型：能连上就有读写权；能不能连上由 `checkConnIdentityLocked`（L255 起）决定，它要求连接方和当前占用者是同一个用户，但始终放行 Windows 的 SYSTEM 账户。
 
 还有一类确认发生在 CLI 这一侧。`up.go` 的 `updatePrefs` 里有两处风险提示：如果你正通过 Tailscale SSH 连着这台机器，执行 `--force-reauth` 或切换 `--ssh` 时，会弹出一条确认（`--accept-risk` 可以跳过）。其中一条的原文是：「You are connected over Tailscale; this action may result in your SSH session disconnecting.」
 
 ### 机制四：Tailscale SSH 的内置服务端
 
-**它在哪。** 包名是 `tailssh`，目录是 `ssh/tailssh/`。包注释只有一句：「Package tailssh is an SSH server integrated into Tailscale.」文件第一行的构建标签限定了平台：Linux、macOS、FreeBSD、OpenBSD、plan9，排除了 Android 和 iOS。入口在 `LocalBackend`：`ListenSSH`（`local.go` L175）装好监听器，`handleSSHConn`（L8694 起）把每条连接交给 `server.HandleSSHConn`（`tailssh.go` L205）。
+**它在哪。** 包名是 `tailssh`，目录是 `ssh/tailssh/`。包注释只有一句：「Package tailssh is an SSH server integrated into Tailscale.」文件开头第 4 行的构建标签限定了平台：Linux、macOS、FreeBSD、OpenBSD、plan9，排除了 Android 和 iOS。入口在 `LocalBackend`：`ListenSSH`（`local.go` L175）装好监听器，`handleSSHConn`（L8694 起）把每条连接交给 `server.HandleSSHConn`（`tailssh.go` L205）。
 
 **身份校验怎么做。** 核心是 `conn` 上的 `clientAuth`（L447），注释写的是：「If access is denied, it returns an error. This must always be an empty `ssh.PartialSuccessError` to prevent further authentication methods from being tried.」函数体先取连接信息，再做策略评估：
 
@@ -458,7 +458,7 @@ go install tailscale.com/cmd/tailscale{,d}
 - **Tailscale SSH 的连接由用户态网络栈拦截 22 端口后交给 `handleSSHConn`。** 线索：官方文档写的是「netstack port interception」，以及 `handleSSHConn` 的存在。拦截点的代码没读到。
 - **`clientAuth` 里的 `setInfo` 用连接的来源地址查出对端节点和用户。** 线索：官方文档说 `tailscaled` 在网络地图里查来源的 Tailscale IP，从而知道它属于哪个用户或哪些 tag。函数体没读。
 - **单元测试用 Go 标准的 `go test` 跑。** 线索：858 个 `_test.go` 文件，以及 Go 的通行做法。读到的仓库文档里没有写这一条。
-- **配置 Serve 和 Funnel 时，「共享文件需要 root、转发端口不需要」这条例外由 `connIsLocalAdmin` 一类的检查实现。** 线索：`actor.go` L230-L231 的注释提到了 `authorizeServeConfigForGOOSAndUserContext`，L202 起的 `connIsLocalAdmin` 强调「避免提权」。授权函数本体没读。
+- **配置 Serve 和 Funnel 时，「共享文件需要 root、转发端口不需要」这条例外由 `connIsLocalAdmin` 一类的检查实现。** 线索：`ipn/ipnserver/actor.go` L230-L231 的注释提到了 `authorizeServeConfigForGOOSAndUserContext`，L202 起的 `connIsLocalAdmin` 强调「避免提权」。授权函数本体没读。
 - **教程里 `tailscale up` 报错示例的完整文本。** 依据是 `accidentalUpPrefix` 常量加 L1139-L1146 的拼接顺序推出来的，没有实际触发过。
 
 <!-- TODO: 待核实 —— 单元测试的运行方式（仓库文档未写明） -->

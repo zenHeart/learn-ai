@@ -7,7 +7,7 @@ tags:
   - notebook
   - gpu
 role: tutorial
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 ---
 
 # Google Colab
@@ -154,7 +154,7 @@ compute units 是 Colab 付费版的通用计量单位。官方 FAQ：Colab Pro,
 
 > **图的依据：** 「代码运行在一台云端虚拟机里」、单元格与输出、运行时类型切换，来自官方 [FAQ](https://research.google.com/colaboratory/faq.html)与官方概览 notebook [intro.ipynb](https://colab.research.google.com/notebooks/intro.ipynb)、[basic_features_overview.ipynb](https://colab.research.google.com/notebooks/basic_features_overview.ipynb)；挂载 Drive、读写 GitHub、上传文件与使用密钥来自官方 [io.ipynb](https://colab.research.google.com/notebooks/io.ipynb)（截至 2026-11-24）。图中保留了界面的三个部分、运行时里三样「断开后消失」的东西，以及四个外部位置各自的方向；省略了 Google 内部的基础设施、任何免费额度的具体数字，以及具体版本里才有的按钮与菜单名。实线是断开后仍然保留的关系，虚线是断开后会消失的连接与内容。
 
-图分三层。**最上面是浏览器**：单元格、输出、左侧栏都在这里，它只负责编辑和显示。**中间是运行时**：云端的一台虚拟机，里面有执行代码的内核、内存和一块临时磁盘，可以配 CPU，也可以按需换成 GPU 或 TPU。**最外面是存储与服务**：Google Drive、GitHub、你上传的文件、Secrets。
+图分三个区域。**左边是浏览器里的界面**：单元格、输出、左侧栏都在这里，它只负责编辑和显示。**中间是运行时**：云端的一台虚拟机，里面有执行代码的内核、内存和一块临时磁盘，可以配 CPU，也可以按需换成 GPU 或 TPU；它的上方是 Google Drive 和 GitHub，这两个位置在运行时断开后仍然保留。**右边是另外两个外部位置**：Secrets 和你电脑上的文件。
 
 关键在线型。**只有连到 Drive 和 GitHub 的关系会在运行时断开后保留**：官方 FAQ 说虚拟机空闲时会被删除，而 notebook 存在 Drive、可以从 GitHub 加载。内存里的变量、临时磁盘上的文件、装好的包，都随虚拟机一起消失。官方 FAQ 的提醒是 The virtual machine you're using, including any custom files and libraries that you've setup, will not be shared，所以要在 notebook 里留好安装和加载的单元格。
 

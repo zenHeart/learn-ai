@@ -7,6 +7,7 @@ tags:
   - agent-workspace
   - remote-access
 role: map
+pageClass: readable-tables
 ---
 
 # T3 Code 学习地图

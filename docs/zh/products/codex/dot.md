@@ -7,7 +7,7 @@ tags:
   - chatgpt-dot
   - always-on-agent
 role: tutorial
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 ---
 
 # dot：ChatGPT 里的常驻智能体
@@ -47,7 +47,7 @@ pageClass: wide-figures
 三条跨套餐的限制：
 
 - **年龄**：未满 18 岁不能用。
-- **数量**：Business 和 Enterprise 工作区里，每位成员可以创建**一个个人 dot**。发布文说首个 dot 之外，将来才能添加更多。
+- **数量**：Business 和 Enterprise 工作区里，每位成员可以创建**一个个人 dot**。发布文说，除首个 dot 外，将来才能添加更多 dot。
 - **Enterprise 的驻留要求**：数据或推理驻留在阿联酋的工作区不可用。受监管或 Healthcare 工作区先读 [HIPAA eligible products and functionality](https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality)。
 
 > 官方页面之间还有几处说法对不上，比如 Plus 是否已开放、Enterprise 的驻留与 EKM 资格。本页的表照帮助中心写，差异逐条列在「深入阅读」末尾。
@@ -269,7 +269,7 @@ Cindy 一列来自它的 [GitHub 仓库 README](https://github.com/makecindy/cin
 - 告诉它哪类消息送到哪。比如日常进度留在 ChatGPT，要你拍板的事发到 Slack。
 - 想让它盯某个频道，要明说看哪些频道、注意什么、什么时候通知你，并让它确认。**只把它拉进频道，不等于建立了监控。**
 
-两条边界：只有 dot 的主人能指挥它，别人的私信或 @ 不会让它开工。它在频道里发的消息，频道里的人都看得到。官方安全指南建议只在组织内部成员都在的频道里使用 dot。
+两条边界：只有 dot 的主人能指挥它，别人的私信或 @ 不会让它开工。你可以让它回应别人，但那仍然是你下的指令，对方并没有获得指挥权。它在频道里发的消息，频道里的人都看得到。官方安全指南建议只在组织内部成员都在的频道里使用 dot。
 
 企业工作区还有两道关：管理员打开 dots 和「添加到 Slack 与 Microsoft Teams」的权限；Slack 工作区需要审批的，由 Slack 的管理员批准。之后每位成员自己完成连接。
 

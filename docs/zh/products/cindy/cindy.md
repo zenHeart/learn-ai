@@ -8,7 +8,7 @@ tags:
   - device-link
   - open-source
 role: tutorial
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 ---
 
 # Cindy 上手：装好并跑通第一个任务
@@ -91,7 +91,7 @@ Cindy 客户端免费，但模型调用要有人付费。官方给出四类来�
 | **Skill** | 一份写给 agent 看的操作说明，放在带 `SKILL.md` 的文件夹里 | 把「怎么做某类事」固定下来，不用每次复述 |
 | **插件（plugin）** | 打包成 `.cindy` 文件、能加界面和新工具的扩展 | Skill 只教方法，插件能接入外部服务 |
 | **MCP** | 一种给模型接工具的通用协议 | 把你自己的系统接进 agent |
-| **伙伴（companion）** | 有名字、职责、记忆和技能的长期搭档 | 代码审阅、资料研究这类反复出现的工作，交给固定的角色 |
+| **伙伴（companion，英文界面里叫 Buddies）** | 有名字、职责、记忆和技能的长期搭档 | 代码审阅、资料研究这类反复出现的工作，交给固定的角色 |
 | **自动化（automation）** | 按时间或循环自动跑的任务 | 周报、巡检这类重复的事不必每次手动发起 |
 | **聊天渠道（channel）** | Slack、Telegram、飞书这类你本来就在用的聊天工具 | 在聊天里 @ 一句就能交办 |
 | **远程桌面** | 在手机上看到并操作电脑真实画面的功能 | 聊天搞不定、需要亲手点软件的时候用 |
@@ -356,7 +356,18 @@ node <脚本所在目录>/snapshot-diff.mts snap .
 **为什么这样写任务**：范围小、结果可验证、明确禁止多余动作。这是检验任何 agent 是否听话的最省事的办法。
 
 关于权限，源码里的档位有六个内部值：`ask`、`default`、`acceptEdits`、`plan`、`auto`、`bypassPermissions`。其中 `bypassPermissions` 就是 Full access，从别的档位切进去必须显式确认；客户端不认识的值一律按最安全的 `ask` 处理。
-<!-- TODO: 待核实 —— 这六档在界面上各自显示的中文名称。已确认的只有「默认权限」「计划模式」「自动」和 Full access -->
+这六个值在界面上的名称分两套，随执行任务的 agent 而定。下表抄自界面文案里 `newChat.permissionSelector.modes` 下的 `label`（[`zh-CN/common.json` L14447-L14521](https://github.com/makecindy/cindy/blob/6fdec7fb89b955be548c3f5cc9a42d83bf174aa3/apps/desktop/src/renderer/i18n/locales/zh-CN/common.json#L14447-L14521)）：
+
+| 内部值 | 内置的 Claude Code、Codex、Pi | 插件引擎（经 ACP 接入的外部 agent） |
+|---|---|---|
+| `ask` | 默认权限 | 逐项确认 |
+| `default` | 选择器里没有这一项 | 默认 |
+| `acceptEdits` | 允许编辑，只有 Claude Code 有 | 自动接受编辑 |
+| `plan` | 选择器里没有这一项 | 只规划 |
+| `auto` | 自动审批 | 自动 |
+| `bypassPermissions` | 完全访问 | 全部允许 |
+
+右列只在任务由插件引擎执行时出现，选择器此时只提供该引擎声明的档位（[`PermissionSelector.tsx` L74-L78](https://github.com/makecindy/cindy/blob/6fdec7fb89b955be548c3f5cc9a42d83bf174aa3/apps/desktop/src/renderer/components/new-chat/PermissionSelector.tsx#L74-L78)）。ACP 是 Agent Client Protocol，一种让外部 agent 接入客户端的协议。「计划模式」是界面里另一个开关，不在这两套名称里（[`zh-CN/common.json` L20101](https://github.com/makecindy/cindy/blob/6fdec7fb89b955be548c3f5cc9a42d83bf174aa3/apps/desktop/src/renderer/i18n/locales/zh-CN/common.json#L20101)）。
 
 ### 第 4 步：看它改了哪些文件
 
@@ -398,7 +409,7 @@ node <脚本所在目录>/snapshot-diff.mts snap .
 前提是 README 的三句话：「电脑在线、设备登录同一账号，并开启相应权限。模型共享需要允许对应供应商被远程调用，远程桌面也有独立的授权与系统权限。」
 
 1. **做什么**：第二台电脑装 Cindy，登录同一个账号，再在这台电脑的远程连接设置里打开「允许同账号设备控制本机」。
-   **会看到什么**：另一台设备刷新后能看到这台电脑。被控时，被控的电脑上会出现「正在被控」的提示。
+   **会看到什么**：另一台设备刷新后能看到这台电脑。被控时，被控的电脑上会出现「桌面正在被远程控制」的提示。
    <!-- TODO: 待核实 —— 「允许同账号设备控制本机」所在的设置页名称。开关文字取自仓库界面文案 -->
 2. **做什么**：手机装 Cindy，登录同一个账号，在设备列表里切换设备，打开任务，继续对话。
    **为什么**：任务还在原电脑上跑，手机发的是控制指令。电脑一关机，远程任务就停了。官网常见问题写明：手机「不会把离线电脑的工作自动搬到云端执行」。

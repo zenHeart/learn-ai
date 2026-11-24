@@ -7,7 +7,7 @@ tags:
   - agent-workspace
   - remote-access
 role: tutorial
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 ---
 
 # T3 Code 上手：装好它，跑通第一个线程，从手机继续
@@ -157,7 +157,7 @@ T3 Code 也会反过来给 agent 一本「菜谱」：它自带一个 MCP 服务
 
 > **图的依据：** 步骤 2、3、6 的事件与落库对照源码 [`Orchestrator.ts` L8383–L8451](https://github.com/pingdotgg/t3code/blob/d00aaac85fc71195f133a8580c3f0f2e29ac33a2/apps/server/src/orchestration-v2/Orchestrator.ts#L8383-L8451)、[`EventSink.ts` L846–L873](https://github.com/pingdotgg/t3code/blob/d00aaac85fc71195f133a8580c3f0f2e29ac33a2/apps/server/src/orchestration-v2/EventSink.ts#L846-L873)、[`EffectWorker.ts` L239–L249](https://github.com/pingdotgg/t3code/blob/d00aaac85fc71195f133a8580c3f0f2e29ac33a2/apps/server/src/orchestration-v2/EffectWorker.ts#L239-L249)；步骤 7 的权限判断对照 ACP 适配器 [`adapter.ts` L7513–L7611](https://github.com/pingdotgg/t3code/blob/d00aaac85fc71195f133a8580c3f0f2e29ac33a2/packages/provider-acp/src/server/adapter.ts#L7513-L7611)；步骤 8 的请求解决对照 [`RuntimeRequestService.ts` L78–L124](https://github.com/pingdotgg/t3code/blob/d00aaac85fc71195f133a8580c3f0f2e29ac33a2/apps/server/src/orchestration-v2/RuntimeRequestService.ts#L78-L124)。以上都是提交 `d00aaac8` 的行号。图中保留了六个对象、八步的先后与方向，以及实线（命令或调用）和虚线（事件、通知与返回）的区别；省略了具体界面与按钮、模型推理的内部步骤，以及 T3 Connect 中继——它只协助环境链接与凭证签发，不在业务数据的路径上。T3 Code 自己不运行模型，模型在外部 agent 进程那一侧。
 
-图里最值得记住的三条关系。第一，**界面从不直接碰 agent**：桌面、网页、手机都只是客户端，经已认证的 RPC 连到服务器；官方架构文档特别说明，桌面应用虽然自带服务器，它的界面也守同一条边界。第二，**provider 的差异被关在适配器后面**：编排器和界面只读「这个 provider 支持什么能力」，不认 provider 的名字，换一个 agent，上面三层不用改。第三，**审批和消息走同一条通道**：agent 请求权限是一条事件，你批准或拒绝是一条命令，两边都先落库再送达，所以在手机上点批准和在电脑上点批准走的是同一套流程。
+图里最值得记住的三条关系。第一，**界面从不直接碰 agent**：桌面、网页、手机都只是客户端，经已认证的 RPC 连到服务器；官方架构文档特别说明，桌面应用虽然自带服务器，它的界面也守同一条边界。第二，**provider 的差异被关在适配器后面**：编排器和界面只读「这个 provider 支持什么能力」，不认 provider 的名字。所以换一个 agent，变的只有适配器这一列，编排器和界面不用跟着改。第三，**审批和消息走同一条通道**：agent 请求权限是一条事件，你批准或拒绝是一条命令，两边都先落库再送达，所以在手机上点批准和在电脑上点批准走的是同一套流程。
 
 ## 六、安装：把 T3 Code 装上，让它认出你的 agent
 

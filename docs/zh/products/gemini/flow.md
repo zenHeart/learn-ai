@@ -5,7 +5,7 @@ domain: product
 tags:
   - coding-agent
 role: tutorial
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 ---
 
 # Google Flow

@@ -7,6 +7,7 @@ tags:
   - remote-access
   - tailscale
 role: map
+pageClass: readable-tables
 ---
 
 # Tailscale 学习地图

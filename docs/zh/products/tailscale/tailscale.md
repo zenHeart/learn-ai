@@ -8,7 +8,7 @@ tags:
   - wireguard
   - tailscale
 role: tutorial
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 ---
 
 # Tailscale 上手：把两台设备连起来，再 SSH 进去
@@ -96,7 +96,7 @@ pageClass: wide-figures
 
 **tailnet 是第一次登录时自动建出来的。** 官方原文：你在任何一台设备上第一次登录 Tailscale，Tailscale 就创建一个 tailnet；之后每认证一台设备，这台设备就加进来。设备可以用用户账号认证，也可以用 tag 认证。tailnet 是你的私有空间，公网访问不到。（[What is a tailnet?](https://tailscale.com/docs/concepts/tailnet)）
 
-**Tailscale 自己不是身份提供商。** 官方说明：它不支持用邮箱密码注册，没有「Tailscale 密码」，用户认证交给身份提供商。（[Supported SSO identity providers](https://tailscale.com/docs/integrations/identity)）
+**Tailscale 自己不是身份提供商。** 官方说明：它不支持用邮箱地址注册，也没有「Tailscale 密码」，用户认证交给身份提供商。（[Supported SSO identity providers](https://tailscale.com/docs/integrations/identity)）
 
 **协调服务器只发「通讯录」，不碰你的数据。** 它负责设备发现、密钥分发和策略下发。官方在解释「协调服务器宕机会怎样」时写明了原因：「Tailscale 不通过协调服务器路由任何流量，设备密钥存在本地，网络策略缓存在本地」。它只把公钥发给策略允许看到的设备，所以没有授权的两台设备互相「看不见」。（[Control and data planes](https://tailscale.com/docs/concepts/control-data-planes)）
 
@@ -120,9 +120,9 @@ pageClass: wide-figures
 
 图里有三层关系要记住。
 
-**第一层：登录和牵线都走「上面」，数据走「下面」。** 官方把 Tailscale 分成控制面和数据面：控制面就是协调服务器，数据面跑在每台设备上，用 WireGuard 加密解密。协调服务器挂了，已经建立的连接还能继续用，但加不了新设备、换不了密钥、更新不了策略。（[What happens if the coordination server is down?](https://tailscale.com/docs/reference/coordination-server-down)）
+**第一层：前三步管「牵线」，后面的步骤才在两台设备之间「传数据」。** 这对应官方的两分法：控制面就是协调服务器，图里第 2、3 步的上报和下发都只跟它打交道；数据面跑在每台设备上，从第 4 步起建立并使用设备之间的连接，用 WireGuard 加密解密。协调服务器挂了，已经建立的连接还能继续用，但加不了新设备、换不了密钥、更新不了策略。（[What happens if the coordination server is down?](https://tailscale.com/docs/reference/coordination-server-down)）
 
-**第二层：所有连接一开始都走 DERP，再往上升级。** 官方原文：所有连接一开始都经 DERP 中继，Tailscale 再尝试升级成直连；失败就试 Peer Relay；再失败就留在 DERP。DERP 同时充当 STUN 服务器：客户端向各 DERP 服务器发 STUN 请求，对方记下请求来自哪个公网 IP 和端口，Tailscale 用这个信息判断怎么打洞。
+**第二层：所有连接一开始都走 DERP，之后才尝试升级（图里第 4 到 6 步）。** 官方原文：所有连接一开始都经 DERP 中继，Tailscale 再尝试升级成直连；失败就试 Peer Relay；再失败就留在 DERP。DERP 同时充当 STUN 服务器：客户端向各 DERP 服务器发 STUN 请求，对方记下请求来自哪个公网 IP 和端口，Tailscale 用这个信息判断怎么打洞。
 
 **第三层：中继也解不开你的流量。** 官方原文：「DERP 服务器永远不会接触你未加密的数据；它们只处理已经加密的 WireGuard 包」「一个 DERP 服务器只是盲目地转发已加密的流量」。原因是私钥从不离开设备。（[Tailscale encryption](https://tailscale.com/docs/concepts/tailscale-encryption)、[DERP servers](https://tailscale.com/docs/reference/derp-servers)）
 
@@ -411,7 +411,7 @@ sudo tailscale file get .
 
 Windows 上右键文件选 **Send with Tailscale**；macOS 和手机上用系统分享菜单里的 Tailscale。（[Taildrop](https://tailscale.com/docs/features/taildrop)）
 
-**MagicDNS。** 2022 年 10 月 20 日之后创建的 tailnet 默认开启。开启后，设备名就能当主机名用：
+**MagicDNS。** 2022 年 10 月 20 日当天及之后创建的 tailnet 默认开启。开启后，设备名就能当主机名用：
 
 ```bash
 # 这两条等价

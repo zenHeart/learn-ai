@@ -7,7 +7,7 @@ tags:
   - source-code
   - agent-workspace
 role: deep-dive
-pageClass: wide-figures
+pageClass: wide-figures readable-tables
 source_revision: d00aaac85fc71195f133a8580c3f0f2e29ac33a2
 ---
 
@@ -61,7 +61,7 @@ source_revision: d00aaac85fc71195f133a8580c3f0f2e29ac33a2
 | `packages/`（33 个包） | 1,543 | 521 | 369,895 |
 | `infra/`（relay 与 task-cache） | 199 | 48 | 21,806 |
 
-统计口径：全仓库受版本控制的文件共 33,443 个，其中 24,482 个在 `.repos/` 下（`alchemy-effect` 21,119 个，`effect` 3,369 个），所以表里没有它。测试文件按路径含 `.test.`、`.spec.`、`__tests__`、`/test/` 或 `/tests/` 计；行数只算 `.ts` 与 `.tsx`，并额外排除了 `testkit`、`testFixtures`、`testUtils`。
+统计口径：全仓库受版本控制的文件共 33,443 个，其中 24,488 个在 `.repos/` 下（`alchemy-effect` 21,119 个，`effect` 3,369 个），所以表里没有它。测试文件按路径含 `.test.`、`.spec.`、`__tests__`、`/test/` 或 `/tests/` 计；行数只算 `.ts` 与 `.tsx`，并额外排除了 `testkit`、`testFixtures`、`testUtils`。
 
 - **编排器是单个 17,658 行的文件**（`Orchestrator.ts`）。同目录的 `EventSink.ts` 与 `EffectWorker.ts` 分别是 1,338 行与 1,127 行，整个 `orchestration-v2/` 目录有 638 个文件（含测试与回放夹具）。
 - **桌面应用最小**，约 4.9 万行非测试代码。它包着网页应用的界面，再捆一个服务器，界面和服务的逻辑分别留在 `apps/web` 与 `apps/server`。
@@ -252,7 +252,7 @@ return {
 
 ### 机制二：远程访问与 T3 Connect 的信任模型
 
-**要解决的问题**：人在外面，要连回家里那台机器，又不想在路由器上开口子，也不想让自己的代码经过别人的服务器。先用一张表回答三个问题，依据是内部文档、SECURITY.md 和服务器代码。
+**要解决的问题**：人在外面，要连回家里那台机器，又不想在路由器上开口子，也不想让自己的代码经过别人的服务器。先用一张表回答五个问题，依据是内部文档、SECURITY.md 和服务器代码。
 
 | 问题 | 答案 |
 |---|---|
