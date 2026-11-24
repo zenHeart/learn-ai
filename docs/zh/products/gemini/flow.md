@@ -5,6 +5,7 @@ domain: product
 tags:
   - coding-agent
 role: tutorial
+pageClass: wide-figures
 ---
 
 # Google Flow
@@ -76,7 +77,7 @@ role: tutorial
 | 套餐 | 能用的功能 | Flow 积分（截至 2026-11-24） |
 |---|---|---|
 | 无订阅 | 基础的视频生成与编辑。Omni Flash 1.2 可生成 3 到 10 秒；Veo 3.1 Lite 可生成 4、6、8 秒 | 每天 50 |
-| Google AI Plus / Pro / Ultra | 完整功能。Omni Flash 1.2 可生成 3 到 15 秒；Omni Extend；把 360p 放大到 1080p（4K 仅 Ultra）；创建与 remix Tools | 每天 50，另加每月 200 / 1,000 / 10,000 / 25,000 |
+| Google AI Plus / Pro / Ultra（Ultra 分两档） | 完整功能。Omni Flash 1.2 可生成 3 到 15 秒；Omni Extend；把 360p 放大到 1080p（4K 仅 Ultra）；创建与 remix Tools | 每天 50，另加每月 200 / 1,000 / 10,000 / 25,000（依次是 Plus、Pro、Ultra 两档） |
 | 符合条件的 Workspace 套餐 | 官方写「get access at no extra charge to Google Flow with 50 daily credits」 | 每天 50 |
 
 Workspace 这一条，官方列的套餐是 Business Starter / Standard / Plus、Enterprise Starter / Standard / Plus、G Suite Legacy Free Edition、Education Standard / Plus、Google AI Pro for Education。
@@ -422,7 +423,7 @@ Avatar 在欧洲经济区、英国、瑞士不可用。
 
 - **上一镜的结尾当下一镜的开头**。打开镜头 A，暂停在要接的那一帧，悬停后点 **Save frame**。官方说明存下来的帧可用于后续生成，当作 ingredient、start frame 或 end frame。再把它设成镜头 B 的 start frame。
 - **镜头太短**。点片段，底部点 **Extend**，续 3 到 10 秒，可带最多 3 张参考图保持角色与环境一致。
-- **同一个角色换场景**。官方博客对 **Jump To** 的定义见「核心概念」。当前帮助中心没有写它的入口，用之前先在你的界面里确认它还在。
+- **同一个角色换场景**。官方博客对 **Jump to** 的定义见「核心概念」。当前帮助中心没有写它的入口，用之前先在你的界面里确认它还在。
 
 ### 第 5 步：在 Scenebuilder 里排列
 
@@ -699,7 +700,7 @@ Flow Music 那一行有官方依据：「Google Flow Music credits are separate 
 官方博客，按时间排：
 
 - [Meet Flow: AI-powered filmmaking with Veo 3](https://blog.google/innovation-and-ai/products/google-flow-veo-ai-filmmaking-tool/)：2025 年 5 月的发布文。
-- [5 tips for getting started with Flow](https://blog.google/innovation-and-ai/products/flow-video-tips/)：2025-06-25，官方的提示词要素，以及 Jump To 与 Extend 的定义。
+- [5 tips for getting started with Flow](https://blog.google/innovation-and-ai/products/flow-video-tips/)：2025-06-25，官方的提示词要素，以及 Jump to 与 Extend 的定义。
 - [Introducing Veo 3.1 and advanced capabilities in Flow](https://blog.google/innovation-and-ai/products/veo-updates-flow/)：2025-10-15，Ingredients、Frames、Extend 三个能力的官方解释。
 - [New ways to create and refine content in Flow](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates-february-2026/)：2026-02-25，界面改版，图片生成并入 Flow。
 - [New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/)：2026-05-19，Agent、Tools、手机应用的发布公告。
