@@ -7,14 +7,13 @@ tags:
   - remote-desktop
   - netease
 role: map
-pageClass: readable-tables
 ---
 
 # NetEase UU Remote learning map
 
 > **网易UU远程** (NetEase UU Remote) is NetEase's remote control software. It lets you operate your own computer while you are away from it, or fix someone else's computer. It takes the "screen streaming" route: install the client on both ends, then sign in to the same account or pass on a "device ID + verification code", and the desktop of the other device appears in front of you.
 >
-> This page is the **product overview + decision table**. Installation and daily use are both in the [tutorial](./uu-remote). UI text and numbers come from official NetEase pages opened on 2026-11-24.
+> This page is the **product overview + decision table**. Installation and daily use are both in the [tutorial](./uu-remote). UI text and numbers come from official NetEase pages opened on 2026-11-24. Interface labels are the English interface text of the Windows client, version 4.48; the phone apps and the system dialogs of macOS may word things differently.
 
 ## Audience / prerequisites / non-goals
 
@@ -53,6 +52,7 @@ The "official names" in the table below are copied from official pages opened on
 - **UU Remote ≠ UU加速器.** UU加速器 is a game accelerator. It sits under "Friendly links" on the official site and is unrelated to this product. One confusing spot: in the official router documentation, when a router acts as the "power-on helper device" for UU Remote, the plugin it installs is called "网易UU加速器插件 WOL 版本" (NetEase UU Accelerator plugin, WOL edition).
 - **UU Remote ≠ MuMu模拟器, 网易千千壁纸.** They are listed under "Friendly links" too.
 - **"GameViewer远程" is the old name.** The official announcement page (page dated 2024-12-10) states that "GameViewer远程" was officially renamed "网易UU远程". See the [official announcement](https://uuyc.163.com/blog/20241206/41377_1198665.html).
+- **StarDesk is the name of the overseas edition.** The same software is released outside China as StarDesk, with its own [website](https://www.stardesk.net) and [App Store app](https://apps.apple.com/us/app/id6751540294) (the developer listed on the store is GearUP Portal Pte. Ltd.; released on 2025-09-28). The English interface text of the China edition's Windows client mostly uses this name too. The two editions have their own websites, downloads and pricing; this directory covers the China edition only.
 - **VIP ≠ Global VIP.** Global VIP adds one benefit: "global remote control nodes". The official FAQ states that UU Remote prompts you to buy Global VIP when the controlled computer is overseas, or when the controller has a VPN on and is identified as overseas. For prices and benefits, see the "Pricing" section of the tutorial.
 - **The security password is not the connection password.** It locks the client; connections rely on the verification code.
 - **Android screen sharing is not remote control of an Android phone.** The other side can only watch, listen and annotate, not operate.
@@ -65,19 +65,19 @@ The two-level navigation of the official home page is below. Every item has some
 |---|---|---|
 | **远程办公** (remote work) | [features/work](https://uuyc.163.com/features/work/) | Reach back to your own workstation while developing, designing or editing |
 | **远程游戏** (remote gaming) | [games](https://uuyc.163.com/games/) | Play PC games from a phone, tablet or TV |
-| **远程协助** (remote assistance) | [features/support](https://uuyc.163.com/features/support/) | Help someone fix their computer with the device ID and verification code they pass on |
+| **Remote Assistance** | [features/support](https://uuyc.163.com/features/support/) | Help someone fix their computer with the device ID and verification code they pass on |
 | **客厅畅玩** (living room play) | [features/tv](https://uuyc.163.com/features/tv/) | Control a computer from the TV edition |
 | **Mac 电脑被控** (Mac as the controlled computer) | [features/mac](https://uuyc.163.com/features/mac/) | Control a Mac from several kinds of devices |
 
 | Feature (official name) | Official URL | Where in the tutorial |
 |---|---|---|
-| **文件传输** (file transfer) | [features/file](https://uuyc.163.com/features/file/) | Transfer files, sync the clipboard, send audio |
+| **File Transfer** | [features/file](https://uuyc.163.com/features/file/) | Transfer files, sync the clipboard, send audio |
 | **高清画面** (HD picture) | [features/color](https://uuyc.163.com/features/color/) | Adjust picture quality, frame rate and resolution |
 | **隐私防护** (privacy protection) | [features/privacy](https://uuyc.163.com/features/privacy/) | Turn on privacy mode in a meeting room or a public place |
 | **多屏协作** (multi-screen collaboration) | [features/device](https://uuyc.163.com/features/device/) | Watch several screens or several devices at once |
 | **远程开机** (remote wake-up) | [features/wol](https://uuyc.163.com/features/wol/) | Remote wake-up |
 | **按键映射** (key mapping) | [features/keyboard](https://uuyc.163.com/features/keyboard/) | Playing games |
-| **无线副屏** (wireless secondary display) | [features/wireless-screen](https://uuyc.163.com/features/wireless-screen/) | Use a tablet or phone as a wireless secondary display |
+| **Wireless Secondary Screen** | [features/wireless-screen](https://uuyc.163.com/features/wireless-screen/) | Use a tablet or phone as a wireless secondary display |
 
 ## What problem it solves
 
@@ -107,13 +107,13 @@ Only what this page can verify is listed.
 |---|---|
 | Fixing a colleague's or a parent's computer problem once | Remote assistance: the other side passes on a "device ID + temporary verification code" |
 | The other side has no client and does not want one | Send them [UU Remote Lite](https://uuyc.163.com/features/sos/); Windows controlled computers only |
-| Your own computer, and you want to connect at any time | Sign in to the same account on both ends, then click **进入桌面** (Enter desktop) on the controller |
+| Your own computer, and you want to connect at any time | Sign in to the same account on both ends, then click **Enter Desktop** on the controller |
 | Your own computer, even when it is powered off | Set up remote wake-up first: network adapter, motherboard and a helper device on the LAN; you need all three |
 | The controlled computer is a Mac | First turn on **允许本设备被控** (Allow this device to be controlled) and two system permissions on the Mac |
-| Checking a coding agent's progress from your phone while you are out | Same-account remote control: open **设备详情** > **终端** (Device details > Terminal), or use the full-screen desktop with mini window mode |
-| You only want to fetch one file | Same account: use the **文件传输** entry; remote assistance: use drag and drop or copy and paste |
-| Operating in a meeting room or a café | Turn on **被控端防窥模式** (Privacy mode on the controlled computer) and **被控端自动锁屏** (Auto-lock the controlled computer) |
-| Cannot connect on a company or school network | In the client, **设置** > **网络** > **代理设置** (Settings > Network > Proxy settings); this assumes you already have a working proxy |
+| Checking a coding agent's progress from your phone while you are out | Same-account remote control: open **Device Details** > **Terminal**, or use the full-screen desktop with mini window mode |
+| You only want to fetch one file | Same account: use the **File Transfer** entry; remote assistance: use drag and drop or copy and paste |
+| Operating in a meeting room or a café | Turn on **Host Privacy Mode** and **Lock Controlled Device After Remote Session Ends** |
+| Cannot connect on a company or school network | In the client, **Settings** > **Network** > **Proxy Settings**; this assumes you already have a working proxy |
 | You want 4K, 144 fps, True Color, HDR, or several screens controlling several screens | These are VIP benefits; the official announcement says they go live on 2026-12-01 |
 | You want to show an Android phone's screen to someone | Android screen sharing; the viewer can only watch, not control |
 | You would rather set up your own network and install one fewer remote control client | See the [Tailscale](../tailscale/) page |

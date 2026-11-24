@@ -7,7 +7,7 @@ tags:
   - remote-desktop
   - netease
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # NetEase UU Remote tutorial
@@ -35,7 +35,7 @@ pageClass: wide-figures readable-tables
   - No internals. The vendor has not published the connection setup, codecs, protocol or server architecture, and this page does not cover them at all.
   - No UU加速器 (UU game accelerator), MuMu模拟器 (MuMu Emulator) or 网易千千壁纸 (NetEase Qianqian Wallpaper), and no "cloud devices" (game cloud PC, AI cloud PC). They are other products in the official site's navigation.
   - No feature or price comparison with other remote control software. This page did not open their official sites.
-  - UI text follows the version you use. The button names quoted on this page come from the official help pages.
+  - UI text follows the version you use. Interface labels on this page are the English interface text of the Windows client, version 4.48; the phone apps and the system dialogs of macOS may word things differently.
 
 ## Core concepts
 
@@ -76,7 +76,7 @@ So the device ID plus the verification code is the whole key to this computer, n
 
 ### Controller and controlled computer
 
-The **controller** (the device in your hands that you use to operate) starts the connection, displays the picture and sends keyboard and mouse input. The **controlled computer** (the computer being operated remotely) provides the picture and carries out the operations. Both devices must have UU Remote installed. If you cannot tell the two ends apart, you will configure settings on the wrong one: the network adapter and BIOS settings for remote wake-up are all on the controlled computer, and the picture quality settings in **控制中心** (Control center) are on the controller.
+The **controller** (the device in your hands that you use to operate) starts the connection, displays the picture and sends keyboard and mouse input. The **controlled computer** (the computer being operated remotely) provides the picture and carries out the operations. Both devices must have UU Remote installed. If you cannot tell the two ends apart, you will configure settings on the wrong one: the network adapter and BIOS settings for remote wake-up are all on the controlled computer, and the picture quality settings in **Control Center** are on the controller.
 
 Which devices can act as which end (as of 2026-11-24, from the official download page and help pages):
 
@@ -98,40 +98,40 @@ Three notes:
 |---|---|---|
 | How identity is confirmed | The controller enters a device ID and a verification code | Both ends sign in to the same account |
 | Does the controlled computer need to sign in | No | Yes |
-| Entry point on the controller | **远程协助** > **开始协助** (Remote assistance > Start assisting) | Click **进入桌面** (Enter desktop) on the main page |
+| Entry point on the controller | **Remote Assistance** > **Start Assistance** | Click **Enter Desktop** on the main page |
 | Suits | Fixing computers for parents, colleagues and clients; connecting across accounts | Connecting to your own devices |
-| What you cannot use | Cannot create virtual screens or super screens; no separate **文件传输** (File transfer) entry; no "Terminal" | Needs an account, and the device must appear in the list |
+| What you cannot use | Cannot create virtual screens or super screens; no separate **File Transfer** entry; no "Terminal" | Needs an account, and the device must appear in the list |
 
 **Why there are two routes**: when you fix a computer for someone else, you should not sign in to your account on their machine, and they should not have to register an account just to be helped. When you connect to your own devices, passing on a verification code every time is too much trouble.
 
 ### Device ID and verification code
 
-The **device ID** (the string that identifies each device) is in the client, on the **远程协助** > **开始协助** page: the **本设备** (This device) area shows **本设备ID** (This device's ID) and **设备验证码** (Device verification code). Click **复制并分享** (Copy and share) to send both together. The copied content also contains an invitation link, which is valid for 30 minutes by default.
+The **device ID** (the string that identifies each device) is in the client, on the **Remote Assistance** > **Start Assistance** page: the **This Device** area shows **Device ID** and **设备验证码** (Device verification code). Click **Copy & Share** to send both together. The copied content also contains an invitation link, which is valid for 30 minutes by default.
 
 The **verification code** (the passcode presented when connecting) comes in two kinds:
 
-- **Temporary verification code**: changes automatically. The refresh interval can be **每次远控结束** (after each remote session), **每小时** (every hour), **每 12 小时** (every 12 hours) or **每 24 小时** (every 24 hours), set under **自动刷新** (Auto refresh). Choose **关闭** (Off) and it stops changing; when you need a new one, click **立即刷新** (Refresh now) to change it by hand.
-- **Custom verification code**: a fixed code that you set yourself, 8 to 16 characters, and it must contain digits and uppercase letters. Under **设置** > **安全** > **自定义验证码** (Settings > Security > Custom verification code), you can choose **仅使用自定义验证码** (use only the custom verification code) or **同时使用两种验证码** (use both kinds of verification code).
+- **Temporary verification code**: changes automatically. The refresh interval can be **After remote session ends**, **Every Hour**, **Every 12 Hours** or **Every 24 Hours**, set under **自动刷新** (Auto refresh). Choose **Off** and it stops changing; when you need a new one, click **Refresh Now** to change it by hand.
+- **Custom verification code**: a fixed code that you set yourself, 8 to 16 characters, and it must contain digits and uppercase letters. Under **Settings** > **Security** > **Custom Code**, you can choose **Custom Code Only** or **Use Both Codes**.
 
 The controlled computer can also decide "how others are allowed to connect". There are three ways, and the first is the default:
 
 | Verification method | What the controller does | What the controlled computer does |
 |---|---|---|
-| **验证码连接** (connection with a verification code; default) | Enter the device ID and the verification code | Nothing |
-| **双重验证** (two-step verification) | Enter the device ID and the verification code | After the check passes, also click **允许** (Allow) within 60 seconds |
-| **免密连接** (connection without a code) | Enter the device ID only | Click **允许** within 60 seconds |
+| **Connect via Code** (default) | Enter the device ID and the verification code | Nothing |
+| **Two-step verification** | Enter the device ID and the verification code | After the check passes, also click **Allow** within 60 seconds |
+| **Host approval** (connection without a code) | Enter the device ID only | Click **Allow** within 60 seconds |
 
-**双重验证** (a second verification step) and **免密连接** (connection without a code) are offered only when the controlled computer runs Windows, and a timeout counts as a rejection. A macOS controlled computer supports only **验证码连接**. What happens without a verification code? Anyone who knows the device ID can connect. So the vendor warns: once **允许他人远程协助** (Allow others to provide remote assistance) is turned on, anyone who obtains the device ID and a verification code can try to connect. Source: [How to remotely assist another computer](https://uuyc.163.com/help/20241204/40220_1197664.html).
+**Two-step verification** and **Host approval** (connection without a code) are offered only when the controlled computer runs Windows, and a timeout counts as a rejection. A macOS controlled computer supports only **Connect via Code**. What happens without a verification code? Anyone who knows the device ID can connect. So the vendor warns: once **Allow Remote Assistance** is turned on, anyone who obtains the device ID and a verification code can try to connect. Source: [How to remotely assist another computer](https://uuyc.163.com/help/20241204/40220_1197664.html).
 
 ### Unattended access and the security password
 
 The recipe for **unattended access** (the controlled computer can be connected even when nobody is at it) on the official feature page is a "custom long-lived verification code". In practice it comes down to three things:
 
 1. Set a fixed custom verification code on the controlled computer, or have both ends sign in to the same account.
-2. Turn on **开机自动启动** (Start at boot) in **设置** on the controlled computer, so the client is still there after a restart.
+2. Turn on **Start with Windows** in **Settings** on the controlled computer, so the client is still there after a restart.
 3. When needed, set up remote wake-up too, so a computer that is powered off can be woken.
 
-The **security password** (the password that locks the client) is easy to confuse with the connection password. It belongs to the security lock feature: once locked, other people cannot change the client settings on the controlled computer itself, and they cannot quit the client the normal way, but remote connections still work. The security password is 8 to 16 characters, and the entry point is **更多** > **安全锁定** (More > Security lock) at the top right of the client. **What happens without it**: anyone who can touch this computer can turn off **允许他人远程协助**, or change your verification code. When you set up unattended access on a parent's computer, turn it on as well.
+The **security password** (the password that locks the client) is easy to confuse with the connection password. It belongs to the security lock feature: once locked, other people cannot change the client settings on the controlled computer itself, and they cannot quit the client the normal way, but remote connections still work. The security password is 8 to 16 characters, and the entry point is **More** > **Security Lock** at the top right of the client. **What happens without it**: anyone who can touch this computer can turn off **Allow Remote Assistance**, or change your verification code. When you set up unattended access on a parent's computer, turn it on as well.
 
 ### Remote wake-up
 
@@ -144,7 +144,7 @@ The controlled computer must meet four conditions at the same time. If any one i
 | The network adapter supports it and it is turned on | The network adapter supports wake-on-LAN, and the WOL option is turned on in the network adapter driver |
 | The motherboard supports it and it is turned on | The motherboard supports wake-on-LAN, and the WOL option is turned on in the BIOS; the vendor notes that laptops mostly do not support it |
 | A helper device is on the LAN | The **helper device** (a device on the same LAN as the controlled computer that stays online all the time) sends the wake-up packet. It can be a Windows, macOS or Android device signed in to the same account, and some router models can do it too |
-| The client is allowed through | The controlled computer has **开机自动启动** and **允许通过远程开机启动** (Allow starting via remote wake-up) turned on, and no third-party software is blocking them |
+| The client is allowed through | The controlled computer has **Start with Windows** and **Allow Remote Boot** turned on, and no third-party software is blocking them |
 
 **What happens without remote wake-up**: once the computer is shut down, no remote control can connect to it. For the steps, see "Set up remote wake-up" below.
 
@@ -191,18 +191,18 @@ Two notes: the vendor does not support 32-bit Windows, and installation fails wi
 
 1. On the controlled computer, download the matching installer from the [download page](https://uuyc.163.com/download/) and install it. For the options in the setup wizard, go by what the interface shows.
 2. Open the client, then register and sign in. If the controlled computer only accepts remote assistance, it can stay signed out.
-3. On the controlled computer, turn on **开机自动启动** in **设置**. After a restart the client runs by itself, and only then can you connect.
+3. On the controlled computer, turn on **Start with Windows** in **Settings**. After a restart the client runs by itself, and only then can you connect.
 4. Install on the controller device and sign in to your account. To start remote assistance, the controller must be signed in.
 
 ### Make a Mac controllable
 
 A Mac as the controlled computer needs three extra steps. If either of the first two is missing, you cannot connect or you get a black screen:
 
-1. Click **设置** at the top right of the client, switch to the **安全** tab, and select **允许本设备被控** (Allow this device to be controlled).
+1. Click **Settings** at the top right of the client, switch to the **Security** tab, and select **允许本设备被控** (Allow this device to be controlled).
 2. In the pop-up, click **去开启** (Go to enable), and grant UU Remote two permissions in macOS: **录屏与系统录音** (Screen and system audio recording) and **辅助功能** (Accessibility). The first decides whether the screen can be seen; the second decides whether keyboard and mouse input works.
 3. **Close and restart the client**. The vendor stresses that the permissions do not take full effect until you restart.
 
-If you closed the pop-up by mistake, the manual path is **系统设置** > **隐私与安全性** (System Settings > Privacy & Security). To use a wireless secondary display with the Mac as the main screen, you must also turn on **允许同账号控制本设备** (Allow same-account devices to control this device) on the same page. Source: [How to control a Mac with UU Remote](https://uuyc.163.com/help/macos.html).
+If you closed the pop-up by mistake, the manual path is **系统设置** > **隐私与安全性** (System Settings > Privacy & Security). To use a wireless secondary display with the Mac as the main screen, you must also turn on **Allow same-account access to this device** on the same page. Source: [How to control a Mac with UU Remote](https://uuyc.163.com/help/macos.html).
 
 ## First task in 10 minutes: connect once with a device ID and a verification code
 
@@ -210,28 +210,28 @@ Goal: see the controlled computer's desktop on the controller, open and close on
 
 ### On the controlled computer: turn on the switch and copy the connection details
 
-1. Open UU Remote, go to **设置** > **安全**, and turn on **允许他人远程协助**. You will see two settings: **自定义验证码** and **远程协助连接本设备的方式** (How remote assistance connects to this device).
-2. For a first practice run, keep the defaults: **验证码连接** plus a temporary verification code.
-3. Go to **远程协助** > **开始协助**. In the **本设备** area, read **本设备ID** and **设备验证码**, then click **复制并分享** to send them to the controller. When you practice on your own, just send them to yourself.
+1. Open UU Remote, go to **Settings** > **Security**, and turn on **Allow Remote Assistance**. You will see two settings: **Custom Code** and **Verification method**.
+2. For a first practice run, keep the defaults: **Connect via Code** plus a temporary verification code.
+3. Go to **Remote Assistance** > **Start Assistance**. In the **This Device** area, read **Device ID** and **设备验证码**, then click **Copy & Share** to send them to the controller. When you practice on your own, just send them to yourself.
 
-**Why**: when the switch is off, the controller shows the message **设备 ID 错误或不存在** (Device ID is wrong or does not exist). The official feature page says it is on by default, but the first step of the help page still asks you to confirm it, so take a look. **Caution**: the copied content includes the device ID, the verification code, the device's system and its region. Do not post it to a group chat.
+**Why**: when the switch is off, the controller shows the message **Device ID is incorrect or does not exist. Please retry and ensure the host has enabled "Allow Remote Assistance"**. The official feature page says it is on by default, but the first step of the help page still asks you to confirm it, so take a look. **Caution**: the copied content includes the device ID, the verification code, the device's system and its region. Do not post it to a group chat.
 
 ### On the controller: enter the details and connect
 
-- **Computer controller**: go to **远程协助** > **开始协助**, enter the device ID and the verification code under **伙伴的设备ID** (Partner's device ID), and click **连接** (Connect).
-- **Phone or tablet controller**: go to **远程协助**, fill in **伙伴的设备ID** and **伙伴的设备验证码** (Partner's device verification code), and click **开始远控** (Start remote control).
+- **Computer controller**: go to **Remote Assistance** > **Start Assistance**, enter the device ID and the verification code under **Partner's Device ID**, and click **Connect**.
+- **Phone or tablet controller**: go to **Remote Assistance**, fill in **Partner's Device ID** and **伙伴的设备验证码** (Partner's device verification code), and click **开始远控** (Start remote control).
 
-Windows controller 4.41.0 and later supports **智能粘贴** (Smart paste): after you copy the complete assistance info and open **开始协助**, the device ID is filled in automatically, and the verification code is used automatically when it is recognized. Click **关闭自动识别** (Turn off auto recognition) in the prompt to turn it off.
+Windows controller 4.41.0 and later supports **Remote assistance smart clipboard**: after you copy the complete assistance info and open **Start Assistance**, the device ID is filled in automatically, and the verification code is used automatically when it is recognized. Click **Turn off automatic detection** in the prompt to turn it off.
 
-Once connected, the controlled computer's desktop appears in the controller window. The computer controller has **控制中心** at the top right; the phone controller has a side toolbar. The controlled computer shows a **被远程协助** (Being remotely assisted) notification, so you know someone has connected.
+Once connected, the controlled computer's desktop appears in the controller window. The computer controller has **Control Center** at the top right; the phone controller has a side toolbar. The controlled computer shows a **被远程协助** (Being remotely assisted) notification, so you know someone has connected.
 
 ### Perform one action, then disconnect and wrap up
 
 1. Open a window on the controlled computer's desktop (for example the file manager), drag it, then close it. Then check on the controlled computer itself: that window really was opened and closed.
 2. Disconnect the remote session. The controlled computer can also stop authorization at any time.
-3. On the controlled computer, go back to **设置** > **安全** and turn off **允许他人远程协助**. The vendor recommends keeping it off in daily use.
+3. On the controlled computer, go back to **Settings** > **Security** and turn off **Allow Remote Assistance**. The vendor recommends keeping it off in daily use.
 
-Once it works, take a look at **最近连接** (Recent connections) at the bottom of the **开始协助** page. The computer client keeps up to 8 entries, and you can reconnect with one click or click **清空记录** (Clear history).
+Once it works, take a look at **最近连接** (Recent connections) at the bottom of the **Start Assistance** page. The computer client keeps up to 8 entries, and you can reconnect with one click or click **Clear Connection Records**.
 
 ## Daily use
 
@@ -241,18 +241,18 @@ Pick what matches your situation:
 
 | You want | What to do | On which device |
 |---|---|---|
-| To connect to your own devices | Sign in to the same account on both ends, then click **进入桌面** on the controller's main page | Both ends |
-| To stay online after a restart | Turn on **开机自动启动** in **设置** | Controlled computer |
-| To connect across accounts without passing on a code each time | Set **自定义验证码** under **设置** > **安全**, and choose **仅使用自定义验证码** or **同时使用两种验证码** | Controlled computer |
-| To type the verification code less often on the controller | Under **远程协助** > **收藏设备** (Favorite devices), click **添加收藏设备** (Add a favorite device) | Controller |
-| To require someone to click approval on every connection | Change the verification method to **双重验证** | Windows controlled computer |
-| To stop settings being changed locally | **更多** > **安全锁定** at the top right, and set an 8 to 16 character security password | Windows, macOS |
+| To connect to your own devices | Sign in to the same account on both ends, then click **Enter Desktop** on the controller's main page | Both ends |
+| To stay online after a restart | Turn on **Start with Windows** in **Settings** | Controlled computer |
+| To connect across accounts without passing on a code each time | Set **Custom Code** under **Settings** > **Security**, and choose **Custom Code Only** or **Use Both Codes** | Controlled computer |
+| To type the verification code less often on the controller | Under **Remote Assistance** > **Favorite Device**, click **Add Favorite Device** | Controller |
+| To require someone to click approval on every connection | Change the verification method to **Two-step verification** | Windows controlled computer |
+| To stop settings being changed locally | **More** > **Security Lock** at the top right, and set an 8 to 16 character security password | Windows, macOS |
 
 Three notes:
 
 - The favorites list syncs to the cloud per account, but **verification codes are stored only on this device**. When you change controller, you have to enter them again.
-- Security lock requires Windows V4.11.0 and macOS V4.38.0 or later. Under **设置** > **安全** > **客户端锁定** (Client lock), you can turn on **远程协助本设备期间，自动锁定客户端** (Lock the client automatically while this device is being remotely assisted). Source: [How to set up the client security lock](https://uuyc.163.com/help/20251225/40220_1278547.html).
-- The official help pages this page read do not give the name of the switch that "allows same-account connections" on a Windows controlled computer. Go by the **设置** > **安全** page.
+- Security lock requires Windows V4.11.0 and macOS V4.38.0 or later. Under **Settings** > **Security** > **Client Lock**, you can turn on **Auto-lock client during Remote Assistance**. Source: [How to set up the client security lock](https://uuyc.163.com/help/20251225/40220_1278547.html).
+- The official help pages this page read do not give the name of the switch that "allows same-account connections" on a Windows controlled computer. Go by the **Settings** > **Security** page.
 
 <!-- TODO: needs verification — the name and default state of the switch that lets same-account devices connect to a Windows controlled computer. Checked the official help pages “How a computer remotely controls a computer”, “Remotely assist another computer”, “Security lock” and “Wireless secondary display”; only the macOS switches 允许本设备被控 and 允许同账号控制本设备 are spelled out -->
 
@@ -260,9 +260,9 @@ Three notes:
 
 Prerequisite: read the four conditions under "Core concepts" first. The procedure has five steps, and the first three are on the controlled computer.
 
-1. **Let the client through**. Under **设置** > **开机自动启动**, turn on **允许通过远程开机启动**. If you have configured WOL before, click **我确认已完成配置** (I confirm the configuration is done); if not, click **开始配置** (Start configuring).
+1. **Let the client through**. Under **Settings** > **Start with Windows**, turn on **Allow Remote Boot**. If you have configured WOL before, click **我确认已完成配置** (I confirm the configuration is done); if not, click **Configure**.
 2. **Set up the network adapter**. The client detects the network adapter automatically; if it supports WOL but WOL is not turned on, follow the guide to turn it on with one click. Manual path: in the adapter's **属性** (Properties), on the **高级** (Advanced) tab, turn on **关机网络唤醒** (Wake-on-LAN after shutdown), **魔术封包唤醒** (Magic Packet wake-up) or **唤醒魔包** (Wake on Magic Packet), then on the **电源管理** (Power Management) tab, select **允许此设备唤醒计算机** (Allow this device to wake the computer). The option names differ between network adapters.
-3. **Set up the helper device**. Scan the QR code with the phone client to open the guide, and designate a Windows, macOS or Android device on the same LAN as the controlled computer, signed in to the same account. An Android device also needs **远程开机支持 Wake On LAN** (Remote wake-up supports Wake On LAN) turned on under **我的** > **设置** (Me > Settings), and it must stay plugged in to power.
+3. **Set up the helper device**. Scan the QR code with the phone client to open the guide, and designate a Windows, macOS or Android device on the same LAN as the controlled computer, signed in to the same account. An Android device also needs **远程开机支持 Wake On LAN** (Remote wake-up supports Wake On LAN) turned on under **我的** (Me) > **Settings**, and it must stay plugged in to power.
 4. **Set up the motherboard BIOS**. Press Del or F2 at startup to enter it, and find and turn on the WOL option. The option name differs by brand; look for these keywords: 唤醒 (wake), 开机 (power on), wake, WOL, PCIe, ACPI. Lenovo, Dell, ASUS, Gigabyte and HP all have official tutorials.
 5. **Test**. Go back to the guide and click **开机测试** (Wake-up test), then wait for the device to come online.
 
@@ -270,9 +270,9 @@ After it succeeds, a **远程开机** (Remote wake-up) button appears next to th
 
 ### Control a computer from a phone
 
-1. Click **进入桌面** on the phone's main page.
+1. Click **Enter Desktop** on the phone's main page.
 2. Turn the phone to landscape. The official instructions state that you can rotate the screen after entering the remote desktop, which makes operating easier.
-3. Use the side toolbar to adjust features, including **操作** (Operation), **键盘** (Keyboard), **显示桌面** (Show desktop) and **展示所有窗口** (Show all windows).
+3. Use the side toolbar to adjust features, including **操作** (Operation), **Keyboard**, **显示桌面** (Show desktop) and **展示所有窗口** (Show all windows).
 
 There are two mouse modes, switched inside **操作**:
 
@@ -285,8 +285,8 @@ Four commonly used tips:
 
 - **Office shortcuts**: go to **操作** > **启用按键映射** (Enable key mapping) and choose the **办公常用** (Common office keys) scheme.
 - **Connect a physical keyboard and mouse**: connect them to the phone by Bluetooth or cable, and turn off **平板触控模式** (tablet touch mode). The switch is in **屏幕触控** under **操作** on the right. On an iPhone, turn on the system's **辅助触控** (AssistiveTouch); on an iPad, the other way round, turn it off.
-- **Only check progress**: click **小窗模式** (Mini window mode) on the side toolbar. Android needs the **悬浮窗** (Floating window) permission; iOS needs 18 or later, and **自动开启画中画** (Auto-enable Picture in Picture) must be turned on. Only one device can use mini window mode at a time.
-- **Unlock the controlled computer**: turn on **自动解锁被控端** (Auto-unlock the controlled computer) under **安全** in the toolbar.
+- **Only check progress**: click **Mini Window** on the side toolbar. Android needs the **悬浮窗** (Floating window) permission; iOS needs 18 or later, and **自动开启画中画** (Auto-enable Picture in Picture) must be turned on. Only one device can use mini window mode at a time.
+- **Unlock the controlled computer**: turn on **自动解锁被控端** (Auto-unlock the controlled computer) under **Security** in the toolbar.
 
 <!-- TODO: needs verification — the list of touch gestures on the phone (which of left click, right click, scrolling and zooming one finger and two fingers each map to). Checked the official feature pages “How a phone remotely controls a computer” and “Key mapping” and the keyboard-and-mouse peripherals help page; the vendor documents only two-finger zoom, multi-touch and the two modes 屏幕触控 / 鼠标指针, and does not list the gestures one by one -->
 
@@ -294,17 +294,17 @@ Four commonly used tips:
 
 | Method | Where it works | How |
 |---|---|---|
-| **文件传输** entry | Same-account remote control only | Open it from the device details page, choose the files and the destination folder, then send |
+| **File Transfer** entry | Same-account remote control only | Open it from the device details page, choose the files and the destination folder, then send |
 | Drag and drop | Same-account remote control, remote assistance | Drag the file into the remote window and release it over the destination folder |
 | Copy and paste | Same-account remote control, remote assistance | Copy on one end, paste on the other |
 
-**文件传输** on the phone has three buttons: **发送照片&视频** (Send photos & videos; after selecting, click **添加** (Add)), **发送文件** (Send files; after selecting, click **打开** (Open)) and **从电脑下载文件到手机** (Download files from the computer to the phone; after selecting, click **下载** (Download)). Downloaded files are in **已接收** (Received) or in the **UU远程** (UU Remote) folder of the phone's file manager.
+**File Transfer** on the phone has three buttons: **发送照片&视频** (Send photos & videos; after selecting, click **Add**), **发送文件** (Send files; after selecting, click **打开** (Open)) and **从电脑下载文件到手机** (Download files from the computer to the phone; after selecting, click **下载** (Download)). Downloaded files are in **Received** or in the **UU远程** (UU Remote) folder of the phone's file manager.
 
 Three cautions:
 
-- Remote assistance has no separate **文件传输** entry. To drag and drop, both the controller and the controlled computer must turn on **被远程协助时允许文件互传** (Allow file exchange while being remotely assisted) under **设置** > **安全**. To send a file out from the controlled computer, drag the file to the UU floating ball at the bottom right, then click **发送** (Send).
-- **Clipboard**: turn on **同步剪贴板** (Sync clipboard) under **操作** > **安全** in the remote session window. Between a phone and Windows, only plain text syncs, and a long text can be at most 60,000 Chinese characters.
-- **Audio**: after you turn on **被控端静音运行** (Mute the controlled computer), sound comes out only on the controller, and the controlled computer stays silent. The reverse, sending the phone microphone's sound into the controlled computer, is called **麦克风直连** (microphone pass-through). Turn it on under **控制中心** > **外设** > **麦克风** (Control center > Peripherals > Microphone); only a Windows controlled computer supports it.
+- Remote assistance has no separate **File Transfer** entry. To drag and drop, both the controller and the controlled computer must turn on **Allow file transfer during remote assistance** under **Settings** > **Security**. To send a file out from the controlled computer, drag the file to the UU floating ball at the bottom right, then click **Send**.
+- **Clipboard**: turn on **同步剪贴板** (Sync clipboard) under **操作** > **Security** in the remote session window. Between a phone and Windows, only plain text syncs, and a long text can be at most 60,000 Chinese characters.
+- **Audio**: after you turn on **Silence Controlled Device**, sound comes out only on the controller, and the controlled computer stays silent. The reverse, sending the phone microphone's sound into the controlled computer, is called **麦克风直连** (microphone pass-through). Turn it on under **Control Center** > **Peripherals** > **Microphone**; only a Windows controlled computer supports it.
 
 The vendor recommends 4.43.0 or later on both ends. Source: [How to transfer files](https://uuyc.163.com/help/20241210/40220_1199229.html).
 
@@ -314,32 +314,32 @@ The vendor recommends 4.43.0 or later on both ends. Source: [How to transfer fil
 
 - **Switch screens**: when the controlled computer has several monitors attached, several tabs appear at the top of the remote window. Click a tab to switch; press and hold a tab and drag it out to turn it into a separate window.
 - **Add a screen out of thin air**: when the controlled computer has only one screen, click [ + ] in the top bar to create a **virtual screen**. You can create at most 3, and physical screens plus virtual screens total at most 5.
-- **Combine them into one big screen**: click **切换使用超级屏** (Switch to super screen) in **控制中心**, and all the desktops of the controlled computer are shown together on one virtual screen.
+- **Combine them into one big screen**: click **Switch to super screen** in **Control Center**, and all the desktops of the controlled computer are shown together on one virtual screen.
 
 Limits: creating virtual screens and super screens supports same-account remote control only; the controller must be a Windows or macOS computer; the controlled computer requires Windows 10 or macOS 11.0 or later, and 4.35.0 or later is recommended on both ends. For several devices, the official multi-screen collaboration page states that you can control several computers at the same time, but the phone client can control only one at a time. Source: [How to control multiple screens](https://uuyc.163.com/help/multiscreen.html).
 
 ### Turn on privacy mode in a meeting room or a public place
 
-1. After connecting, on a computer controller go to **控制中心** > **安全**; on a phone controller go to **操作** > **安全**.
-2. Under **被控端防窥模式** (Privacy mode on the controlled computer), pick one level:
-   - **隐私屏保** (Privacy screensaver): a screensaver picture covers the controlled computer's screen. The privacy feature page writes this level as **黑屏防护** (Black screen protection).
-   - **关闭显示屏** (Turn off the display): turns off the controlled computer's physical screen directly. Only a Windows controlled computer supports it.
-3. When needed, select **被控端静音运行** and **被控端自动锁屏** (Auto-lock the controlled computer). The second makes the controlled computer lock itself as soon as the remote session ends.
+1. After connecting, on a computer controller go to **Control Center** > **Security**; on a phone controller go to **操作** > **Security**.
+2. Under **Host Privacy Mode**, pick one level:
+   - **Screensaver**: a screensaver picture covers the controlled computer's screen. The privacy feature page writes this level as **黑屏防护** (Black screen protection).
+   - **Display Off**: turns off the controlled computer's physical screen directly. Only a Windows controlled computer supports it.
+3. When needed, select **Silence Controlled Device** and **Lock Controlled Device After Remote Session Ends**. The second makes the controlled computer lock itself as soon as the remote session ends.
 
 When you are next to the controlled computer, you can temporarily lift privacy mode with a shortcut: Ctrl + Alt + P on Windows, control + option + P on macOS. After you lift it, the controlled computer locks itself automatically, and privacy mode works as usual on the next connection. Source: [How to turn privacy mode on or off](https://uuyc.163.com/help/20241203_40221_1197692.html).
 
 ### Adjust picture quality, frame rate and resolution
 
-- **Entry point**: after connecting, click **控制中心** at the top right. The menu has **分辨率** (Resolution), **画质** (Picture quality), **窗口** (Window), **声音** (Sound) and **安全** (Security).
-- **Turn on True Color**: on a computer, choose **真彩** (True Color) under **操作中心** > **显示** (Operation center > Display); on a phone, choose **真彩4:4:4** (True Color 4:4:4) under **操作** > **显示** (Operation > Display).
-- **Turn on HDR**: turn on **HDR** under **控制中心** > **画质**. It works only when Windows controls Windows, and both ends must support HDR.
+- **Entry point**: after connecting, click **Control Center** at the top right. The menu has **Resolution**, **Image Quality**, **Window**, **Sound** and **Security**.
+- **Turn on True Color**: on a computer, choose **True Color** under **Control Center** > **Display**; on a phone, choose **真彩4:4:4** (True Color 4:4:4) under **操作** (Operation) > **Display**.
+- **Turn on HDR**: turn on **HDR** under **Control Center** > **Image Quality**. It works only when Windows controls Windows, and both ends must support HDR.
 
 When you cannot find an option, check four things in order:
 
 1. Membership tier. True Color, HDR and 144 fps are listed as VIP benefits; see the "Pricing" section.
 2. Graphics card. True Color is not supported when the controlled computer has an AMD graphics card.
 3. Controller system. No Android controller supports True Color; all iOS controllers do.
-4. Load. **原画** (Original) and **真彩** (True Color) cannot take effect at the same time; True Color stops working when the GPU load on the controlled computer is too high.
+4. Load. **Original Image** and **True Color** cannot take effect at the same time; True Color stops working when the GPU load on the controlled computer is too high.
 
 When it stutters, the vendor recommends lowering the picture quality and frame rate, then trying again. Source: [Which devices can turn on True Color mode](https://uuyc.163.com/help/20241216_40221_1200122.html) and the [HDR help page](https://uuyc.163.com/help/hdr.html).
 
@@ -351,7 +351,7 @@ Connect a gamepad: the Windows controller supports the whole Xbox line and PS5 c
 
 1. Upgrade both the main screen (a Windows or macOS computer) and the secondary display (an Android or iOS phone or tablet) to 4.46.0 or later, and sign in to the same account.
 2. Keep the client in the foreground on the secondary display, and make sure it is not in a remote session or transferring files.
-3. Click **无线副屏** (Wireless secondary display) at the top of the computer's main screen, and choose the phone or tablet from the list. When the status shows **已连接** (Connected), it has worked.
+3. Click **Wireless Secondary Screen** at the top of the computer's main screen, and choose the phone or tablet from the list. When the status shows **Connected**, it has worked.
 4. Click the connected device on the main screen to adjust resolution, scaling, orientation, picture quality and frame rate.
 
 Limits: it can extend only one secondary display; mirroring is not supported; the secondary display gives out no sound; a computer cannot be the secondary display. Source: [How to use the wireless secondary display](https://uuyc.163.com/help/20260311_40220_1286375.html).
@@ -361,8 +361,8 @@ Limits: it can extend only one secondary display; mirroring is not supported; th
 The procedure is the same as in "First task in 10 minutes". Three extra tips:
 
 - **The other side has no client installed**: send them the .exe of [UU Remote Lite](https://uuyc.163.com/features/sos/). It needs no installation and no sign-in, and runs on a double click. It supports only Windows and can only act as the controlled computer. The verification code refreshes automatically after each remote session.
-- **You often help the same person**: add them under **远程协助** > **收藏设备**, and ask them to set a custom verification code.
-- **You do not want to misclick on their computer**: after connecting, click **启用观看模式** (Turn on view-only mode) under **控制中心** > **工具** (Tools). Keyboard, mouse and touch input are no longer sent to the controlled computer, and you can annotate with **画笔** (Pen) to show where to click. On a computer, press Ctrl + Shift + V to switch back; on a phone, turn off **仅观看** (View only) under **操作**.
+- **You often help the same person**: add them under **Remote Assistance** > **Favorite Device**, and ask them to set a custom verification code.
+- **You do not want to misclick on their computer**: after connecting, click **Enable View Mode** under **Control Center** > **Tools**. Keyboard, mouse and touch input are no longer sent to the controlled computer, and you can annotate with **画笔** (Pen) to show where to click. On a computer, press Ctrl + Shift + V to switch back; on a phone, turn off **仅观看** (View only) under **操作**.
 
 ## Real-world use cases
 
@@ -370,15 +370,15 @@ The procedure is the same as in "First task in 10 minutes". Three extra tips:
 
 A command line agent such as Claude Code or Codex is running on your high-end computer at home, and you have already left the house. Remote control lets you:
 
-1. Sign in to the same account on a tablet or phone and click **进入桌面**, or open **设备详情** > **终端** (Device details > Terminal) to attach straight to that terminal session.
+1. Sign in to the same account on a tablet or phone and click **Enter Desktop**, or open **Device Details** > **Terminal** to attach straight to that terminal session.
 2. The official terminal help page states that tools with a TUI can be operated by clicking directly in the terminal page, for example to switch sessions. So you can see the agent's output and type the next step when it waits for confirmation.
-3. To step away for something else, shrink the picture into **小窗模式**; or simply close it, and reattach to the same session when you come back.
+3. To step away for something else, shrink the picture into **Mini Window**; or simply close it, and reattach to the same session when you come back.
 
 For how to use the agents themselves, see [Claude](../claude/) and [Codex](../codex/). For another way to approve an agent's next step from a phone, see [T3 Code](../t3code/).
 
 ### Use the home computer as a remote workstation
 
-The official remote work page lists three development scenarios: use the terminal to read logs and run commands; use port forwarding to reach intranet services and debugging environments (it maps a remote TCP service to a local port, TCP only); use remote desktop plus the terminal to run AI coding tasks on a remote dev machine and check in at any time. The environment stays on the original dev machine, so you do not have to set up another one while you are out. The entry points for both features are on the **设备详情** page: the terminal is under **终端**, and port forwarding is under **更多** > **端口映射** (Port forwarding). Both support same-account remote control only, and both ends must be Windows or macOS computers. Source: the [remote work feature page](https://uuyc.163.com/features/work/), [How to use the terminal](https://uuyc.163.com/help/20260509_40220_1299599.html) and [How to use port forwarding](https://uuyc.163.com/help/20260423_40220_1297526.html).
+The official remote work page lists three development scenarios: use the terminal to read logs and run commands; use port forwarding to reach intranet services and debugging environments (it maps a remote TCP service to a local port, TCP only); use remote desktop plus the terminal to run AI coding tasks on a remote dev machine and check in at any time. The environment stays on the original dev machine, so you do not have to set up another one while you are out. The entry points for both features are on the **Device Details** page: the terminal is under **Terminal**, and port forwarding is under **More** > **Port Forwarding**. Both support same-account remote control only, and both ends must be Windows or macOS computers. Source: the [remote work feature page](https://uuyc.163.com/features/work/), [How to use the terminal](https://uuyc.163.com/help/20260509_40220_1299599.html) and [How to use port forwarding](https://uuyc.163.com/help/20260423_40220_1297526.html).
 
 ### Official CLI: query online devices from a script
 
@@ -494,7 +494,7 @@ Before you pay, remember four points, all from official pages: membership is a v
 | "End-to-end encryption, security is assured" | [Official home page](https://uuyc.163.com/) | A vendor statement; this page did not verify it independently |
 | Link encryption "DTLS, AES" | [Remote work feature page](https://uuyc.163.com/features/work/) | Same as above |
 | Information security management system certification, privacy information management system certification, passed software security penetration testing, member organization of **卓信大数据** (Zhuoxin Big Data) | Official home page | The image on the home page labels them as ISO 27001 and ISO 27701; the home page gives no certificate numbers or validity dates |
-| Three verification methods, **验证码连接** by default | [Explanation of connection without a code](https://uuyc.163.com/blog/mianmixiezhu.html) | **双重验证** adds one manual confirmation |
+| Three verification methods, **Connect via Code** by default | [Explanation of connection without a code](https://uuyc.163.com/blog/mianmixiezhu.html) | **Two-step verification** adds one manual confirmation |
 | The controlled computer can stop authorization at any time; the software cannot yet limit what the controlling party is allowed to do | Software License and Service Agreement | The controlled computer holds the initiative, but the person who connects in has the whole computer |
 | Up to ¥100,000 reward for a security vulnerability | [Bounty hunter program](https://uuyc.163.com/bounty/) | Vulnerabilities are submitted through the NetEase Security Center |
 
@@ -503,8 +503,8 @@ Before you pay, remember four points, all from official pages: membership is a v
 **Stop others from connecting in:**
 
 1. **Give the device ID and verification code only to people whose identity you have verified.** The official news page says in so many words that you should not accept any request from a stranger asking for your device code or verification code on the grounds of "refund verification", "account unfreezing" or "customer-service troubleshooting".
-2. **Turn it off when you are done.** Turn off **允许他人远程协助** under **设置** > **安全**. The vendor recommends keeping it off in daily use.
-3. **Keep the temporary verification code refreshing automatically, or switch to 双重验证.** This is a precaution from the official help page.
+2. **Turn it off when you are done.** Turn off **Allow Remote Assistance** under **Settings** > **Security**. The vendor recommends keeping it off in daily use.
+3. **Keep the temporary verification code refreshing automatically, or switch to Two-step verification.** This is a precaution from the official help page.
 4. **Set a fixed verification code only on your own devices, and do not reuse other passwords.** The second half is this page's advice, not the official wording. Do not post content that contains a verification code to a group chat.
 
 **Guard against telecom fraud.** Remote assistance software is often exploited by scams that pose as customer service. The official news page reminds you to confirm the helper's identity again by phone or through a chat with someone you know before sending them the device ID and temporary verification code, and to refuse outright when a stranger asks for a verification code. A [report](https://www.xinhuanet.com/20250423/aa8c9bc9a036477881a0adb93349d3b0/c.html) by Xinhuanet on 2025-04-23 quotes a warning from the Tianjin Anti-Fraud Center: when you get a call from a stranger claiming to be customer service who asks you to click an unknown link or scan a QR code to download an app, do not do it; if something feels wrong during the operation, stop at once.
@@ -513,7 +513,7 @@ Before you pay, remember four points, all from official pages: membership is a v
 
 5. **Account passwords and payment verification codes are typed by the computer's owner.** The helper only explains where and how; this is a requirement of the official news page.
 6. **Turn on security lock for devices set up for unattended access.** It stops other people from turning the switch off on the controlled computer itself.
-7. **Turn on 被控端自动锁屏 and 被控端防窥模式.** The controlled computer locks itself as soon as the remote session ends.
+7. **Turn on Lock Controlled Device After Remote Session Ends and Host Privacy Mode.** The controlled computer locks itself as soon as the remote session ends.
 8. **Delete the UU Remote Lite .exe when you are done with it.** It needs no installation, so deleting the file uninstalls it.
 
 **Take care of your account and devices:**
@@ -527,24 +527,24 @@ Before you pay, remember four points, all from official pages: membership is a v
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| The controller shows **设备 ID 错误或不存在** | The device ID is typed wrong, or the controlled computer does not have **允许他人远程协助** turned on | Check the ID; go to **设置** > **安全** on the controlled computer and turn on the switch |
-| A favorite device can no longer be connected to | The other side's verification code was refreshed | Switch to a custom verification code, or update the verification code under **更多** > **编辑** (Edit) |
-| Cannot connect after the other side switched to **免密连接** or **双重验证** | The controller version is too old | Upgrade the controller to the latest version |
+| The controller shows **Device ID is incorrect or does not exist. Please retry and ensure the host has enabled "Allow Remote Assistance"** | The device ID is typed wrong, or the controlled computer does not have **Allow Remote Assistance** turned on | Check the ID; go to **Settings** > **Security** on the controlled computer and turn on the switch |
+| A favorite device can no longer be connected to | The other side's verification code was refreshed | Switch to a custom verification code, or update the verification code under **More** > **Edit** |
+| Cannot connect after the other side switched to **Host approval** or **Two-step verification** | The controller version is too old | Upgrade the controller to the latest version |
 | Privacy mode is on, and the controller's picture is black too | The Windows version on the controlled computer is too old | Update the controlled computer's system, or do not use privacy mode |
 | The controlled computer is muted, and the controller has no sound either | The controlled computer has no usable sound card output device | Plug headphones or speakers into the controlled computer, then change the output device under **系统设置** > **声音** (System Settings > Sound) |
 | The Mac cannot be connected to, shows a black screen, or the keyboard and mouse do not work | The version is old; **允许本设备被控** is not turned on; the **录屏与系统录音** or **辅助功能** permission is not configured | Upgrade both ends; check the switch; restart the client after configuring the permissions |
-| In remote assistance you cannot find virtual screens or super screens, and the separate **文件传输** entry does not work either | These features are open to same-account remote control only | Use same-account remote control; for files, use drag and drop or copy and paste instead |
+| In remote assistance you cannot find virtual screens or super screens, and the separate **File Transfer** entry does not work either | These features are open to same-account remote control only | Use same-account remote control; for files, use drag and drop or copy and paste instead |
 | The keyboard and mouse suddenly cannot control the other computer | View-only mode is on | On a computer, press Ctrl + Shift + V to switch back; on a phone, turn off **仅观看** under **操作** |
-| You thought the security password is the connection password | The security password only locks the client | The credential for connecting is the verification code; the security password is set under **更多** > **安全锁定** |
+| You thought the security password is the connection password | The security password only locks the client | The credential for connecting is the verification code; the security password is set under **More** > **Security Lock** |
 | The free version cannot get 4K or 144 fps | These are listed as VIP benefits | The free version goes up to 1080p and 30 fps; after VIP launches, buy it if you need them |
 
 ## Troubleshooting
 
 ### What to check first when a connection fails
 
-- **Cannot connect at all**: check whether the controlled computer is powered on, online and running the client; whether **允许他人远程协助** is turned on, or whether both ends are signed in to the same account.
-- **Connects but is very laggy**: lower the picture quality and frame rate in **控制中心** on the controller; on a poor network, do not turn on True Color or HDR.
-- **Cannot connect on a company or school network**: the network may restrict access to the public internet. Under **设置** > **网络** > **代理设置** (Settings > Network > Proxy settings), choose **系统代理** (System proxy) or **手动设置** (Manual setup); this assumes you already have a working proxy. Source: [How to set up a network proxy](https://uuyc.163.com/help/proxy.html).
+- **Cannot connect at all**: check whether the controlled computer is powered on, online and running the client; whether **Allow Remote Assistance** is turned on, or whether both ends are signed in to the same account.
+- **Connects but is very laggy**: lower the picture quality and frame rate in **Control Center** on the controller; on a poor network, do not turn on True Color or HDR.
+- **Cannot connect on a company or school network**: the network may restrict access to the public internet. Under **Settings** > **Network** > **Proxy Settings**, choose **System Proxy** or **Manual**; this assumes you already have a working proxy. Source: [How to set up a network proxy](https://uuyc.163.com/help/proxy.html).
 
 ### Remote wake-up does not wake the computer
 
@@ -570,7 +570,7 @@ Before you pay, remember four points, all from official pages: membership is a v
 
 For most install, startup and update problems, the order the vendor gives is: quit security software such as 360 and PC Manager, restart the computer, uninstall and reinstall the latest version, and if it still fails, use a different install path. Source: [Error code solutions](https://uuyc.163.com/help/errorcode.html).
 
-If it is still not solved, contact the vendor: on a computer, click the menu at the top right, then **帮助与反馈** (Help and feedback) under **使用帮助** (Usage help); on a phone, go to **我的** on the home page and click **帮助与反馈** or **在线客服** (Online customer service). When you submit, include the error code, the scenario where the error occurred, the system version, the UU Remote version number and a screenshot.
+If it is still not solved, contact the vendor: on a computer, click the menu at the top right, then **Help & Feedback** under **使用帮助** (Usage help); on a phone, go to **我的** on the home page and click **Help & Feedback** or **Online Support**. When you submit, include the error code, the scenario where the error occurred, the system version, the UU Remote version number and a screenshot.
 
 ## Next steps
 
