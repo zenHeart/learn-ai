@@ -2104,6 +2104,16 @@
       "official_domains": [
         "tailscale.com"
       ]
+    },
+    {
+      "id": "gearup-portal",
+      "display_name": "GearUP Portal",
+      "display_name_zh": "GearUP Portal",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "stardesk.net"
+      ]
     }
   ]
 }

@@ -36,6 +36,6 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": "2026-11-24",
-  "notes": "首次公开发布取 App Store 上该应用的发布日期（2022-11-03；开发者 Guangzhou NetEase Computer System Co. Ltd，应用 id 1642306791，即官网链接的那个应用）：https://apps.apple.com/cn/app/id1642306791 。其他平台的客户端是否更早上线未核实。命名沿革见官方博客《「GameViewer远程」正式更名为「网易UU远程」》（页面日期 2024-12-10）：https://uuyc.163.com/blog/20241206/41377_1198665.html 。官网首页与会员权益页对免费档画质的说法不一致，教程两处都写了。英文名 name 用 NetEase UU Remote，与本站英文页一致；官方没有公布英文名（App Store 美区的 listing 也是中文名，包名是 com.netease.uuremote）。",
+  "notes": "首次公开发布取 App Store 上该应用的发布日期（2022-11-03；开发者 Guangzhou NetEase Computer System Co. Ltd，应用 id 1642306791，即官网链接的那个应用）：https://apps.apple.com/cn/app/id1642306791 。其他平台的客户端是否更早上线未核实。命名沿革见官方博客《「GameViewer远程」正式更名为「网易UU远程」》（页面日期 2024-12-10）：https://uuyc.163.com/blog/20241206/41377_1198665.html 。官网首页与会员权益页对免费档画质的说法不一致，教程两处都写了。英文名 name 写作 NetEase UU Remote：国内版 Windows 客户端 4.48.1.5606 的英文界面文案里有一条 Download NetEase UU Remote，本站英文页沿用这个写法；App Store 美区上架的仍是中文名，包名是 com.netease.uuremote。2026-11-25 更正：此前这里写「官方没有公布英文名」，不成立。同一套软件的海外版以 StarDesk 名称发布（官网 stardesk.net、App Store「StarDesk - Remote Desktop」），国内版客户端的英文界面文案在多数地方也把产品叫作 StarDesk；海外版另有官网、商店条目与定价，单独记在 stardesk 档。",
   "revisions": []
 }

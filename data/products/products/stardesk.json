@@ -1,0 +1,37 @@
+{
+  "id": "stardesk",
+  "name": "StarDesk",
+  "name_zh": "StarDesk",
+  "vendor_id": "gearup-portal",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2025-09-28",
+  "date_precision": "day",
+  "homepage": "https://www.stardesk.net",
+  "desc": "Remote desktop that puts a PC or Mac on your phone.",
+  "desc_zh": "把家里或公司的电脑画面投到手机上的远程桌面。",
+  "solves": "Your games, agent sessions and files sit on one PC. StarDesk opens that machine from a phone, tablet or Mac, with a controller when you need one.",
+  "solves_zh": "游戏、Agent 会话和文件都在那台电脑上。StarDesk 让你从手机、平板或另一台电脑把它接回来。",
+  "best_for": "When you are away and need to check a training run, grab a file, or keep playing from the sofa.",
+  "best_for_zh": "人在外面，想看一眼训练跑到哪了、取一个文件，或者窝在沙发里接着玩。",
+  "surface": "standalone",
+  "tags": [
+    "remote-desktop",
+    "remote-gaming",
+    "file-transfer",
+    "wake-on-lan"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "网易UU远程（uu-remote 档）的海外版。首次公开可用的日期取 App Store 上架日期：苹果官方查询接口 https://itunes.apple.com/lookup?id=6751540294 在美国区与澳大利亚区都返回 releaseDate 2025-09-28、trackName「StarDesk - Remote Desktop」、sellerName「GEARUP PORTAL PTE. LTD.」；中国区商店查询无结果。官网 https://www.stardesk.net（2026-11-25 打开）：页脚署名 GearUP Portal Pte. Ltd.，提供 Windows、macOS、Android、iOS 客户端，15 种界面语言。与国内版是同一套软件的两个品牌：国内版 Windows 客户端 4.48.1.5606 自带的英文界面文案里，产品名写作 StarDesk（如 Welcome to StarDesk、Log in to StarDesk），只有一条写作 Download NetEase UU Remote。两版各有官网、商店条目与账号体系，所以分两条档，不标改名或并入。价格、权益与海外版和国内版账号是否互通，未核对。",
+  "revisions": []
+}

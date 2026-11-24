@@ -8,7 +8,7 @@
  *   data/products/vendors.json      厂商注册表
  *   data/products/use-cases/*.json  场景选型
  *
- * products 356 条 · categories 12 个 · use-cases 10 个
+ * products 357 条 · categories 12 个 · use-cases 10 个
  *
  * 本文件不含生成时间戳：否则每次运行都会产生差异，--check 闸门将永远报红。
  * 什么时候改的由 git 记录。
@@ -110,7 +110,7 @@ export const productHub = {
     "nameZh": "辅助工具",
     "color": "#CA8A04",
     "icon": "🧰",
-    "count": 3
+    "count": 4
   }
 ],
   useCases: [
@@ -214,6 +214,7 @@ export const productHub = {
       "slack-code",
       "slack-today",
       "slackbot",
+      "stardesk",
       "sudowrite",
       "synthesia",
       "talkie",
@@ -242,7 +243,7 @@ export const productHub = {
       "zoom-ai-companion",
       "zoommate"
     ],
-    "productCount": 120,
+    "productCount": 121,
     "dimensions": [
       {
         "id": "meetings",
@@ -799,6 +800,7 @@ export const productHub = {
       "roo-code",
       "sensetime",
       "slack-code",
+      "stardesk",
       "t3-code",
       "tailscale",
       "trae",
@@ -814,7 +816,7 @@ export const productHub = {
       "zcode",
       "zed"
     ],
-    "productCount": 75,
+    "productCount": 76,
     "dimensions": [
       {
         "id": "ai-ide",
@@ -3587,6 +3589,46 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "O"
+  },
+  {
+    "id": "stardesk",
+    "name": "StarDesk",
+    "nameZh": "StarDesk",
+    "vendor": "GearUP Portal",
+    "vendorZh": "GearUP Portal",
+    "logo": null,
+    "region": "intl",
+    "category": "supporting-tools",
+    "useCases": [
+      "office",
+      "coding"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Your games, agent sessions and files sit on one PC. StarDesk opens that machine from a phone, tablet or Mac, with a controller when you need one.",
+    "solvesZh": "游戏、Agent 会话和文件都在那台电脑上。StarDesk 让你从手机、平板或另一台电脑把它接回来。",
+    "bestFor": "When you are away and need to check a training run, grab a file, or keep playing from the sofa.",
+    "bestForZh": "人在外面，想看一眼训练跑到哪了、取一个文件，或者窝在沙发里接着玩。",
+    "released": "2025-09-28",
+    "datePrecision": "day",
+    "homepage": "https://www.stardesk.net",
+    "desc": "Remote desktop that puts a PC or Mac on your phone.",
+    "descZh": "把家里或公司的电脑画面投到手机上的远程桌面。",
+    "tags": [
+      "remote-desktop",
+      "remote-gaming",
+      "file-transfer",
+      "wake-on-lan"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "successorNameZh": "",
+    "handbook": {
+      "status": "candidate"
+    },
+    "lastVerifiedAt": "2026-11-25",
+    "glyph": "S"
   },
   {
     "id": "chatgpt-pulse",
