@@ -8,7 +8,7 @@ tags:
   - harness
   - device-link
 role: deep-dive
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 source_revision: 6fdec7fb89b955be548c3f5cc9a42d83bf174aa3
 ---
 

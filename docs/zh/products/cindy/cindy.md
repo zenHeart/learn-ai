@@ -8,7 +8,7 @@ tags:
   - device-link
   - open-source
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # Cindy 上手：装好并跑通第一个任务

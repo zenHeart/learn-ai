@@ -7,7 +7,6 @@ tags:
   - coding-agent
   - device-link
 role: map
-pageClass: readable-tables
 ---
 
 # Cindy learning map

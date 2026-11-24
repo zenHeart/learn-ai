@@ -7,7 +7,7 @@ tags:
   - agent-workspace
   - remote-access
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # T3 Code getting started: install it, run your first thread, continue from your phone

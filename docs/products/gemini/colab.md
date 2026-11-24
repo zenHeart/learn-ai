@@ -7,7 +7,7 @@ tags:
   - notebook
   - gpu
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # Google Colab
@@ -100,7 +100,7 @@ The **kernel** is the background process inside the runtime that executes your P
 
 So there are two kinds of "start over", with different scopes:
 
-- **Restart the kernel**: choose **重启会话** (restart session) in the Runtime menu. Memory is cleared; the virtual machine and the files on its disk remain.
+- **Restart the kernel**: choose **Restart session** in the Runtime menu. Memory is cleared; the virtual machine and the files on its disk remain.
 - **Delete the runtime**: choose **Runtime > Disconnect and delete runtime**. The official FAQ says this resets the virtual machine assigned to you to its original state.
 
 <!-- TODO: needs verification — the official wording of the definition of kernel, and the claim that "restarting the session clears the variables but keeps the files on disk". Checked the Colab FAQ (it only mentions Jupyter kernels) and the jupyter-client document kernels.html (no defining sentence found); the explanation in the text is general knowledge, and the scope of a restart is community experience, not confirmed officially -->
@@ -245,7 +245,7 @@ The official snippets notebook says: To import a library that's not in Colaborat
 - **What you will see**: a few lines of pip install log. Packages that are already installed are skipped.
 - **Why `%pip` and not `!pip`**: `!pip` hands the line to the shell, and the shell finds `pip`; `%pip` is executed by the kernel. In Google's official source code `colabtools`, the comment on `%pip` is Install a package in the current kernel using pip, and the quickstart in the official Gemini cookbook uses it too. In Colab both forms end up running the same `pip` command, which is why the official snippets accept both; `%pip` has the clearer meaning.
 
-**The "restart" warning after installing a package.** The `colabtools` source has a dedicated note: if the package you installed has already been imported into memory, Colab shows a warning + restart button. When you see it, click the restart button in the warning. It corresponds to **重启会话** (restart session) in the Runtime menu. Then run the cells you need again, from top to bottom. The least troublesome approach is to put the install cell at the very top of the notebook.
+**The "restart" warning after installing a package.** The `colabtools` source has a dedicated note: if the package you installed has already been imported into memory, Colab shows a warning + restart button. When you see it, click the restart button in the warning. It corresponds to **Restart session** in the Runtime menu. Then run the cells you need again, from top to bottom. The least troublesome approach is to put the install cell at the very top of the notebook.
 
 ### 2. Mount Drive and save results into it
 

@@ -7,7 +7,6 @@ tags:
   - remote-desktop
   - netease
 role: map
-pageClass: readable-tables
 ---
 
 # 网易UU远程学习地图

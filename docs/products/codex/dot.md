@@ -7,7 +7,7 @@ tags:
   - chatgpt-dot
   - always-on-agent
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # dot: the always-on agent in ChatGPT

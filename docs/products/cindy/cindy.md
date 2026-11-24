@@ -8,7 +8,7 @@ tags:
   - device-link
   - open-source
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # Cindy getting started: install it and run a first task

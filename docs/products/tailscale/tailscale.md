@@ -8,7 +8,7 @@ tags:
   - wireguard
   - tailscale
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # Get started with Tailscale: connect two devices, then SSH in
@@ -218,6 +218,8 @@ Goal: the two devices can see each other, and you can sign in to device B (Linux
    ```text
    pong from another-device (100.113.160.82) via DERP(nyc) in 130ms
    pong from another-device (100.113.160.82) via DERP(nyc) in 37ms
+   pong from another-device (100.113.160.82) via DERP(nyc) in 50ms
+   pong from another-device (100.113.160.82) via DERP(nyc) in 38ms
    pong from another-device (100.113.160.82) via 140.82.13.138:41641 in 35ms
    ```
 

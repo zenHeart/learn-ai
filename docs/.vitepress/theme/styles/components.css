@@ -53,66 +53,83 @@
   overflow-x: auto;
 }
 
-/* Pages marked `pageClass: readable-tables`. On a phone the rule above is not
-   enough: a table with three or more columns shrinks its cells until each
-   line holds four or five characters, instead of scrolling (a three-column
-   glossary grew to 3,800px tall). Give the columns a floor instead, so the
-   table does scroll inside the block above. The first column gets less: in
-   these pages it is almost always a short label. English words are longer
-   than Chinese characters, so the English floors are wider. The first column
+/* On a phone the rule above is not enough. A table with three or more columns
+   shrinks its cells until each line holds four or five characters instead of
+   scrolling: a three-column glossary grew to 3,800px tall, and two thirds of
+   the tables on the site have three columns or more. Below 640px every such
+   table gets a floor per column, so it does scroll inside the block above.
+   The first column gets less, because it is almost always a short label. It
    stays put while the table scrolls, behind a divider, and a caption says so.
-   Two-column tables fit the column and are left alone. `:has()` counts the
-   columns; where it is unsupported nothing changes.
+   Two-column tables fit the column and are left alone.
+
+   `:has()` counts the columns, and `:not([class])` leaves out the tables a
+   component draws for itself (the REA authority lattice). Where `:has()` is
+   unsupported nothing changes.
 
    The caption only shows where the table really runs out of room. The column
    is the viewport minus 48px, and a table is as wide as its floors add up:
 
-       columns     Chinese    English
-       3            400px      512px
-       4            544px      704px
-       5 or more    688px up   896px up
+       columns      Chinese    English
+       3             400px      512px
+       4             544px      704px
+       5 or more     688px up   896px up
 
-   so the ranges at the end follow from those sums and the 640px breakpoint. */
+   so the ranges at the end follow from those sums and the 640px breakpoint.
+   English words are longer than Chinese characters, so its floors are wider. */
 @media (max-width: 639.98px) {
-  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > :not(caption) > tr > * {
-    min-width: 9rem;
+  .vp-doc :not(pre) > table:not([class]):has(tr > *:nth-child(3)) {
+    --table-col: 9rem;
+    --table-lead: 7rem;
   }
-  .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) > :not(caption) > tr > * {
-    min-width: 12rem;
+  .vp-doc:lang(en) :not(pre) > table:not([class]):has(tr > *:nth-child(3)) {
+    --table-col: 12rem;
+    --table-lead: 8rem;
   }
-  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > :is(thead, tbody) > tr > *:first-child {
+  /* Seven columns or more is a matrix of short values, such as plans by
+     price. The full floors would make it 2,000px wide. */
+  .vp-doc :not(pre) > table:not([class]):has(tr > *:nth-child(7)) {
+    --table-col: 7rem;
+    --table-lead: 6rem;
+  }
+  .vp-doc:lang(en) :not(pre) > table:not([class]):has(tr > *:nth-child(7)) {
+    --table-col: 8.5rem;
+    --table-lead: 6.5rem;
+  }
+
+  .vp-doc :not(pre) > table:not([class]):has(tr > *:nth-child(3)) > :not(caption) > tr > * {
+    min-width: var(--table-col);
+  }
+  .vp-doc :not(pre) > table:not([class]):has(tr > *:nth-child(3)) > :is(thead, tbody) > tr > *:first-child {
     position: sticky;
     left: 0;
     z-index: 1;
-    min-width: 7rem;
+    min-width: var(--table-lead);
     /* A divider and a soft shadow mark the pinned column, so the header of
        the column sliding under it does not read as one long label. The line
        takes the text colour because the border colour disappears against
-       the tinted header. The two variables are 1 only where the table really
-       overflows (see below). */
+       the tinted header. `--table-pinned` is 1 only where the table really
+       overflows (the ranges at the end). */
     box-shadow:
       1px 0 0 color-mix(in srgb, var(--vp-c-text-2) calc(55% * var(--table-pinned, 0)), transparent),
       12px 0 14px -10px rgb(0 0 0 / calc(60% * var(--table-pinned, 0)));
   }
-  .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) > :is(thead, tbody) > tr > *:first-child {
-    min-width: 8rem;
-  }
   /* The header tint and the zebra stripe sit on the row, and the tint is
      translucent; the pinned cell needs an opaque copy of each, or the text
      sliding under it shows through. */
-  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > thead > tr > *:first-child {
+  .vp-doc :not(pre) > table:not([class]):has(tr > *:nth-child(3)) > thead > tr > *:first-child {
     background-color: var(--vp-c-bg);
     background-image: linear-gradient(var(--vp-c-brand-softer), var(--vp-c-brand-softer));
   }
-  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > tbody > tr:nth-child(odd) > *:first-child {
+  .vp-doc :not(pre) > table:not([class]):has(tr > *:nth-child(3)) > tbody > tr:nth-child(odd) > *:first-child {
     background-color: var(--vp-c-bg);
   }
-  .Layout.readable-tables .vp-doc :not(pre) > table:has(tr > *:nth-child(3)) > tbody > tr:nth-child(2n) > *:first-child {
+  .vp-doc :not(pre) > table:not([class]):has(tr > *:nth-child(3)) > tbody > tr:nth-child(2n) > *:first-child {
     background-color: var(--vp-c-bg-soft);
   }
-  /* The caption itself. `--table-hint` carries the text, `--table-hint-shown`
-     decides whether it is drawn at all. */
-  .Layout.readable-tables .vp-doc :not(pre) > table::before {
+
+  /* The caption. `--table-hint` carries the text and `--table-hint-shown`
+     decides whether it is drawn. */
+  .vp-doc :not(pre) > table:not([class])::before {
     content: var(--table-hint, none);
     display: var(--table-hint-shown, none);
     position: sticky;
@@ -123,45 +140,47 @@
     line-height: 1.6;
     color: var(--vp-c-text-3);
   }
-  .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(3)) {
+  .vp-doc:lang(zh) :not(pre) > table:not([class]):has(tr > *:nth-child(3)) {
     --table-hint: '左右滑动，查看整张表';
   }
-  .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) {
+  .vp-doc:lang(en) :not(pre) > table:not([class]):has(tr > *:nth-child(3)) {
     --table-hint: 'Scroll sideways to see the whole table';
   }
-  /* Chinese: three columns stop fitting below 448px, four below 592px, and
-     five or more never fit above 592px either. */
-  @media (max-width: 447.98px) {
-    .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(3)) {
-      --table-pinned: 1;
-      --table-hint-shown: block;
-    }
+}
+
+/* Chinese: three columns stop fitting below 448px, four below 592px, and five
+   or more never fit above 592px either. */
+@media (max-width: 447.98px) {
+  .vp-doc:lang(zh) :not(pre) > table:not([class]):has(tr > *:nth-child(3)) {
+    --table-pinned: 1;
+    --table-hint-shown: block;
   }
-  @media (min-width: 448px) and (max-width: 591.98px) {
-    .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(4)) {
-      --table-pinned: 1;
-      --table-hint-shown: block;
-    }
+}
+@media (min-width: 448px) and (max-width: 591.98px) {
+  .vp-doc:lang(zh) :not(pre) > table:not([class]):has(tr > *:nth-child(4)) {
+    --table-pinned: 1;
+    --table-hint-shown: block;
   }
-  @media (min-width: 592px) {
-    .Layout.readable-tables .vp-doc:lang(zh) :not(pre) > table:has(tr > *:nth-child(5)) {
-      --table-pinned: 1;
-      --table-hint-shown: block;
-    }
+}
+@media (min-width: 592px) and (max-width: 639.98px) {
+  .vp-doc:lang(zh) :not(pre) > table:not([class]):has(tr > *:nth-child(5)) {
+    --table-pinned: 1;
+    --table-hint-shown: block;
   }
-  /* English: three columns stop fitting below 560px, four never fit above
-     560px either. */
-  @media (max-width: 559.98px) {
-    .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(3)) {
-      --table-pinned: 1;
-      --table-hint-shown: block;
-    }
+}
+
+/* English: three columns stop fitting below 560px, and four never fit above
+   560px either. */
+@media (max-width: 559.98px) {
+  .vp-doc:lang(en) :not(pre) > table:not([class]):has(tr > *:nth-child(3)) {
+    --table-pinned: 1;
+    --table-hint-shown: block;
   }
-  @media (min-width: 560px) {
-    .Layout.readable-tables .vp-doc:lang(en) :not(pre) > table:has(tr > *:nth-child(4)) {
-      --table-pinned: 1;
-      --table-hint-shown: block;
-    }
+}
+@media (min-width: 560px) and (max-width: 639.98px) {
+  .vp-doc:lang(en) :not(pre) > table:not([class]):has(tr > *:nth-child(4)) {
+    --table-pinned: 1;
+    --table-hint-shown: block;
   }
 }
 
@@ -187,14 +206,36 @@
 
 /* Pages marked `pageClass: wide-figures` (the product tutorials with wide SVG
    diagrams). The 688px article column scales a 1020px diagram down until its
-   labels are unreadable, so on these pages the column opens up and the
-   right-hand outline is hidden to buy the width. Diagrams and tables use the
-   full column; every other block keeps a 768px measure and stays centred. */
+   labels are unreadable, so on these pages the column opens up: diagrams and
+   tables use the full column, and every other block keeps a 768px measure and
+   stays centred.
+
+   The width comes out of the right-hand outline, which the longest pages need
+   most. They cannot share a row on any screen: the layout stops at 1440px, and
+   next to the sidebar, the outline and the page padding the column is 769px.
+   So the outline moves instead of being dropped. VitePress already has a
+   second place for it, the sticky "on this page" bar it shows below 1280px,
+   and that bar is shown on these pages at every width. */
 .Layout.wide-figures .VPDoc .aside {
   display: none;
 }
 .Layout.wide-figures .VPDoc.has-aside .content-container {
   max-width: none;
+}
+@media (min-width: 1280px) {
+  /* VitePress hides the local nav from 1280px, where its aside takes over. */
+  .Layout.wide-figures .VPLocalNav {
+    display: block;
+  }
+}
+/* From 1440px the layout is centred. VitePress positions the dropdown for the
+   un-centred layout only, because it never shows the bar at this width. */
+@media (min-width: 1440px) {
+  .Layout.wide-figures .VPLocalNav .VPLocalNavOutlineDropdown .items {
+    left: calc(
+      (100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width) + 32px
+    );
+  }
 }
 /* The markdown body sits one plain `div` below `.vp-doc`. */
 .Layout.wide-figures .vp-doc > div > :not(.dd):not(table) {

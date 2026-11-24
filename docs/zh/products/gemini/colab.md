@@ -7,7 +7,7 @@ tags:
   - notebook
   - gpu
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # Google Colab

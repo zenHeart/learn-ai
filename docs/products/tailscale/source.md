@@ -8,7 +8,7 @@ tags:
   - go
   - tailscale
 role: deep-dive
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 source_revision: da6276d77025ee2bce288c4ccf07b35e14f253a7
 ---
 

@@ -7,7 +7,7 @@ tags:
   - remote-desktop
   - netease
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # 网易UU远程上手教程
