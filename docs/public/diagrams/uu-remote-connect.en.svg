@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 650" width="100%" height="100%" role="img" aria-labelledby="uu-connect-title uu-connect-desc">
+  <title id="uu-connect-title">UU Remote: how picture and input travel between the two devices</title>
+  <desc id="uu-connect-desc">This sequence diagram answers one question, in numbered order: after you enter a device ID and verification code on the controller, how do picture and input travel between the two devices? It has three objects: the controller, which is the device in your hands; the controlled computer, which is the computer being operated; and the NetEase service, drawn as a single box. Step 1: the controller sends the device ID and verification code of the controlled computer to the NetEase service. Step 2: the NetEase service verifies and connects. Its internal steps are not published, so the diagram shows only one box: it does not show how verification works or whether data travels directly or through a relay. Once the connection is established, the two ends send and receive data. Step 3: the controlled computer captures the screen and audio, encodes them into a stream, and sends it continuously to the controller. This is the heavy, downstream direction. Step 4: the controller sends keyboard, mouse, and touch events to the controlled computer. This is the light, upstream direction. Step 5: the controlled computer runs the input, the screen changes, and the flow returns to step 3. Steps 3 to 5 repeat for every input. The two data streams of steps 3 and 4 sit inside a dashed frame, which marks that NetEase calls the traffic between the two ends end-to-end encrypted. The cipher, codecs, transport protocol, ports, and latency are not published, and the diagram does not show them. On the controller side, the work is to decode and show the picture, play audio, and capture your keyboard, mouse, and touch input. On the controlled side, the work is to capture the screen and audio and to run the input.</desc>
+
+  <defs>
+    <linearGradient id="uuBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="uuGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <filter id="uuShadow" x="-12%" y="-12%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="uuArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+      .t-num { fill: #0f172a; font-size: 11px; font-weight: 700; }
+      .t-rose { fill: #fda4af; font-size: 10.5px; }
+      .t-amber { fill: #fde68a; font-size: 10.5px; }
+    </style>
+  </defs>
+
+  <rect width="1020" height="650" fill="url(#uuBg)"/>
+  <rect width="1020" height="650" fill="url(#uuGrid)"/>
+
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#fb923c"/>
+    <text x="20" y="21" class="t-title">UU Remote: how picture and input travel between the two devices</text>
+    <text x="20" y="40" class="t-sub">Numbers give the order. After connecting, picture and audio go one way and input events the other; steps 3 to 5 repeat for every input</text>
+  </g>
+
+  <!-- Step 1: the controller sends the device ID and code to the NetEase service -->
+  <path d="M 190 224 V 196 H 500 V 178" fill="none" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <circle cx="212" cy="186" r="9" fill="#38bdf8"/>
+  <text x="212" y="190" class="t-num" text-anchor="middle">1</text>
+  <text x="228" y="190" class="t-cap">Device ID and code of the target computer</text>
+
+  <!-- The NetEase service: one object, not a disclosed server architecture -->
+  <rect x="346" y="92" width="328" height="80" rx="9" fill="#0f172a"/>
+  <rect x="346" y="92" width="328" height="80" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" filter="url(#uuShadow)"/>
+  <text x="510" y="116" class="t-card" text-anchor="middle">NetEase service</text>
+  <circle cx="410" cy="134" r="9" fill="#fbbf24"/>
+  <text x="410" y="138" class="t-num" text-anchor="middle">2</text>
+  <text x="426" y="138" class="t-body">Verifies and connects</text>
+  <text x="426" y="158" class="t-rose">internal steps not published</text>
+
+  <line x1="550" y1="172" x2="550" y2="212" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="560" y="206" class="t-amber">connected</text>
+
+  <!-- Controller -->
+  <rect x="40" y="224" width="300" height="336" rx="9" fill="#0f172a"/>
+  <rect x="40" y="224" width="300" height="336" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#uuShadow)"/>
+  <text x="190" y="254" class="t-card" text-anchor="middle">Controller</text>
+  <text x="190" y="274" class="t-note" text-anchor="middle">the device in your hands</text>
+  <text x="190" y="322" class="t-body" text-anchor="middle">Decodes and shows the picture, plays audio</text>
+  <text x="190" y="396" class="t-body" text-anchor="middle">Captures your keyboard, mouse and touch</text>
+
+  <!-- Controlled computer -->
+  <rect x="680" y="224" width="300" height="336" rx="9" fill="#0f172a"/>
+  <rect x="680" y="224" width="300" height="336" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" filter="url(#uuShadow)"/>
+  <text x="830" y="254" class="t-card" text-anchor="middle">Controlled computer</text>
+  <text x="830" y="274" class="t-note" text-anchor="middle">the computer being operated</text>
+  <text x="830" y="322" class="t-body" text-anchor="middle">Captures the screen and audio</text>
+  <circle cx="706" cy="392" r="9" fill="#34d399"/>
+  <text x="706" y="396" class="t-num" text-anchor="middle">5</text>
+  <text x="722" y="396" class="t-body">Runs the input; the screen changes</text>
+  <path d="M 942 406 V 328" fill="none" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#uuArrow)"/>
+  <text x="930" y="368" class="t-cap" text-anchor="end">back to 3</text>
+
+  <!-- Data streams between the two ends: end-to-end encrypted per NetEase -->
+  <rect x="348" y="282" width="324" height="196" rx="8" fill="none" stroke="#fb7185" stroke-width="1.2" stroke-dasharray="6 5"/>
+  <circle cx="376" cy="300" r="9" fill="#38bdf8"/>
+  <text x="376" y="304" class="t-num" text-anchor="middle">3</text>
+  <text x="392" y="304" class="t-cap">Picture and audio, the heavy stream</text>
+  <line x1="672" y1="318" x2="356" y2="318" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <text x="392" y="336" class="t-cap">encoded and streamed continuously</text>
+  <circle cx="376" cy="374" r="9" fill="#38bdf8"/>
+  <text x="376" y="378" class="t-num" text-anchor="middle">4</text>
+  <text x="392" y="378" class="t-cap">Keyboard, mouse and touch events</text>
+  <line x1="348" y1="392" x2="664" y2="392" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <text x="392" y="410" class="t-cap">a small stream</text>
+  <text x="510" y="450" class="t-rose" text-anchor="middle">NetEase says this traffic is end-to-end encrypted</text>
+  <text x="510" y="466" class="t-rose" text-anchor="middle">cipher and transport details are not published</text>
+
+  <!-- Legend -->
+  <text x="36" y="600" class="t-note">Legend</text>
+  <line x1="36" y1="608" x2="984" y2="608" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="628" x2="76" y2="628" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <text x="86" y="632" class="t-note">Arrow: direction of messages and data</text>
+  <rect x="300" y="622" width="16" height="12" rx="3" fill="rgba(120, 53, 15, 0.4)" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="324" y="632" class="t-note">NetEase service: external dependency</text>
+  <rect x="590" y="621" width="16" height="14" rx="3" fill="none" stroke="#fb7185" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="614" y="632" class="t-note">Dashed frame: encrypted end to end</text>
+  <circle cx="850" cy="627" r="9" fill="#38bdf8"/>
+  <text x="850" y="631" class="t-num" text-anchor="middle">1</text>
+  <text x="868" y="632" class="t-note">Number: order of the steps</text>
+</svg>
