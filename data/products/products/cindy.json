@@ -29,6 +29,7 @@
   "handbook": {
     "status": "written",
     "route": {
+      "en": "/products/cindy/",
       "zh": "/zh/products/cindy/"
     }
   },

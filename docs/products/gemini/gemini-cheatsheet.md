@@ -38,6 +38,7 @@ role: cheatsheet
 | See a clickable prototype right inside the conversation | [Canvas](./canvas) | In-conversation workspace, no local project setup |
 | A video for a landing page, launch film or product demo | [Google Flow](./flow) | Veo 3.1 / Nano Banana / Gemini Omni; Claude Design counterpart, no DOM |
 | Tune model parameters, test a system prompt, call the API | [AI Studio](./ai-studio) | Direct control over model and parameters; the entry point for API integration |
+| Run Python and try AI models in the browser without a GPU | [Google Colab](./colab) | Hosted Jupyter notebook, switchable to a GPU on demand; resources are not guaranteed |
 | Decide which tier to buy and how to cap spend | [Plans and quota](./google-pro) | Quota differences across the 4 tiers plus the Google Cloud credit |
 
 ### Antigravity vs Code Assist vs Jules

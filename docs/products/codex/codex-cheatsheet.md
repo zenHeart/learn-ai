@@ -31,6 +31,7 @@ role: cheatsheet
 | Isolated env, parallel attempts, or dispatch from GitHub / Linear / Slack | [Codex Cloud](./codex-cloud) · `codex cloud exec --env <ID>` | Hosted machines, not the laptop |
 | Task is the file or selection already open | [IDE extension](./codex-ide) | Editor context is already attached |
 | Phone must steer / approve a **local** session | [Remote](./codex-remote) | The connected computer runs the work |
+| Something to keep an eye on for days, pushed forward across several apps | [Dot](./dot) | Always-on agent; it hands the coding part to Codex |
 | Find / confirm / fix vulns in a repo you own | [Codex Security](./codex-security) | Plugin, CLI/SDK, or Cloud |
 | Host a page without a deploy stack | [Sites](./sites) | Save a version before deploy |
 | Act on a **signed-in** Chrome tab | [Chrome extension](./codex-chrome) · `@Chrome` | Not `@Browser`, not the cloud browser |

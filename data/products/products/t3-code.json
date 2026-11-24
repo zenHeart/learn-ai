@@ -28,6 +28,7 @@
   "handbook": {
     "status": "written",
     "route": {
+      "en": "/products/t3code/",
       "zh": "/zh/products/t3code/"
     }
   },

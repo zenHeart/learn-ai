@@ -29,6 +29,7 @@ Gemini family
 │   └── landing-page / launch / product-demo video     → Google Flow
 ├── Models and subscription
 │   ├── tune the model, call the API                   → AI Studio
+│   ├── run Python, use a GPU on demand                → Google Colab
 │   └── which tier, how much quota                     → Google AI plans
 └── Also in Pro, no standalone tutorial
     ├── Gemini Spark (US, personal agent)
@@ -60,6 +61,8 @@ What am I trying to do?
 │       └── songs / music videos → Flow Music (separate credits; no extra tutorial)
 ├── Temperature, pinned system prompt, large context, API
 │   └── → AI Studio
+├── No GPU, but want to run Python and try AI models
+│   └── → Google Colab
 └── Which tier to buy, is the quota enough
     └── → Google AI plans (the table lives only in the cheatsheet)
 ```
@@ -87,6 +90,7 @@ Collapsed by default. Axis A: no prerequisite concepts. Axis B: relevance to fro
 | [Google Flow](./flow) | AI creative studio (Veo 3.1 / Nano Banana / Gemini Omni) | landing-page, launch and product-demo video |
 | [Code Assist](./code-assist) | IDE integration | you do not want to change editor; your team has hard compliance requirements |
 | [AI Studio](./ai-studio) | model and parameter console | tuning temperature, pinning a system prompt, large-context audits, API integration |
+| [Google Colab](./colab) | hosted Jupyter notebook in the browser | running Python, trying out models and doing embedding experiments without a GPU |
 | [Google AI subscriptions](./google-pro) | tiers and quota | deciding which tier to pay for; drawing Pro entitlements onto the family map |
 
 ## Reference
@@ -121,6 +125,7 @@ The order follows **concept dependency (axis A)** plus **audience complexity (ax
 | Want AI to read the whole repository for an audit | [AI Studio](./ai-studio) |
 | Need to show a product manager a prototype within half an hour | [Canvas](./canvas) |
 | Need a video for a landing page, launch film or product demo | [Google Flow](./flow) |
+| Have no GPU but want to run Python and try AI models in the browser | [Google Colab](./colab) |
 | Want to know whether the free quota is enough | [Subscription tiers](./google-pro) |
 
 ## Shared concepts
@@ -150,6 +155,7 @@ Subscriptions come in four tiers, AI Plus / AI Pro / AI Ultra 5x / AI Ultra 20x 
 - [Jules documentation](https://jules.google/docs/)
 - [Code Assist documentation](https://developers.google.com/gemini-code-assist/docs/overview)
 - [Gemini API model list](https://ai.google.dev/gemini-api/docs/models)
+- [Google Colab](https://colab.research.google.com/) ([official FAQ](https://research.google.com/colaboratory/faq.html))
 - [Google Flow](https://labs.google/fx/tools/flow)
 - [Google AI Pro benefits](https://support.google.com/googleone/answer/14534406)
 - [Google AI plan comparison](https://one.google.com/about/google-ai-plans/)

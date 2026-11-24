@@ -1547,6 +1547,7 @@ export const productHub = {
     "handbook": {
       "status": "written",
       "route": {
+        "en": "/products/codex/dot.html",
         "zh": "/zh/products/codex/dot.html"
       }
     },
@@ -1958,6 +1959,7 @@ export const productHub = {
     "handbook": {
       "status": "written",
       "route": {
+        "en": "/products/cindy/",
         "zh": "/zh/products/cindy/"
       }
     },
@@ -2589,6 +2591,7 @@ export const productHub = {
     "handbook": {
       "status": "written",
       "route": {
+        "en": "/products/t3code/",
         "zh": "/zh/products/t3code/"
       }
     },
@@ -4613,6 +4616,7 @@ export const productHub = {
     "handbook": {
       "status": "written",
       "route": {
+        "en": "/products/gemini/flow.html",
         "zh": "/zh/products/gemini/flow.html"
       }
     },
@@ -12721,7 +12725,7 @@ export const productHub = {
   },
   {
     "id": "uu-remote",
-    "name": "网易UU远程",
+    "name": "NetEase UU Remote",
     "nameZh": "网易UU远程",
     "vendor": "NetEase",
     "vendorZh": "NetEase",
@@ -12755,11 +12759,12 @@ export const productHub = {
     "handbook": {
       "status": "written",
       "route": {
+        "en": "/products/uu-remote/",
         "zh": "/zh/products/uu-remote/"
       }
     },
     "lastVerifiedAt": "2026-11-24",
-    "glyph": "网"
+    "glyph": "N"
   },
   {
     "id": "exa",
@@ -13919,6 +13924,7 @@ export const productHub = {
     "handbook": {
       "status": "written",
       "route": {
+        "en": "/products/tailscale/",
         "zh": "/zh/products/tailscale/"
       }
     },
@@ -14677,6 +14683,7 @@ export const productHub = {
     "handbook": {
       "status": "written",
       "route": {
+        "en": "/products/gemini/colab.html",
         "zh": "/zh/products/gemini/colab.html"
       }
     },

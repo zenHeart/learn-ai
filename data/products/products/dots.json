@@ -28,13 +28,14 @@
   "handbook": {
     "status": "written",
     "route": {
+      "en": "/products/codex/dot.html",
       "zh": "/zh/products/codex/dot.html"
     }
   },
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "集成在 ChatGPT 内的能力。来源：https://www.reuters.com/business/openai-takes-meta-with-always-on-dots-agent-enterprise-ai-push-2026-09-29 2026-11-24：本站手册上线，handbook 由 none 改为 written（目前只有中文页）。",
+  "notes": "集成在 ChatGPT 内的能力。来源：https://www.reuters.com/business/openai-takes-meta-with-always-on-dots-agent-enterprise-ai-push-2026-09-29 2026-11-24：本站手册上线，handbook 由 none 改为 written，中英双语。",
   "revisions": [
     {
       "at": "2026-10-05",

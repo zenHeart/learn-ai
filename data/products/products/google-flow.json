@@ -28,13 +28,14 @@
   "handbook": {
     "status": "written",
     "route": {
+      "en": "/products/gemini/flow.html",
       "zh": "/zh/products/gemini/flow.html"
     }
   },
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Unusually tool-builder oriented: creators publish reusable tools inside Flow itself, not just one-off generations. 首次公开发布日期精度：month-only 来源：https://labs.google/fx/tools/flow 2026-11-24：本站手册上线，handbook 由 none 改为 written（目前只有中文页）。",
+  "notes": "Unusually tool-builder oriented: creators publish reusable tools inside Flow itself, not just one-off generations. 首次公开发布日期精度：month-only 来源：https://labs.google/fx/tools/flow 2026-11-24：本站手册上线，handbook 由 none 改为 written，中英双语。",
   "revisions": [],
   "date_precision": "day"
 }

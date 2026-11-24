@@ -29,6 +29,7 @@
   "handbook": {
     "status": "written",
     "route": {
+      "en": "/products/gemini/colab.html",
       "zh": "/zh/products/gemini/colab.html"
     }
   },

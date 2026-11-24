@@ -72,8 +72,8 @@ const zhOpenClaw = {
   ]
 }
 
-// Agent workspaces (T3 Code, Cindy) and remote-access tools (Tailscale, UU Remote)
-// sit next to the coding-agent families but live outside the product ledger.
+// Agent workspaces (T3 Code, Cindy) and remote-access tools (Tailscale, UU Remote).
+// Both language trees carry the same pages for each family.
 const workspaceFamilies = (zh) => {
   const p = zh ? '/zh' : ''
   const t = (cn, en) => (zh ? cn : en)
@@ -120,9 +120,9 @@ export const enProductSidebar = [
     text: 'Products',
     items: [
       ...enAiCodingItems,
+      ...workspaceFamilies(false),
       enOpenClaw,
-      // T3 Code, Cindy, Tailscale and UU Remote are Chinese-only so far; add
-      // workspaceFamilies(false) and remoteFamilies(false) once their pages exist.
+      ...remoteFamilies(false),
       { text: 'Ollama', link: '/products/ollama' },
       { text: 'Figma AI', link: '/products/figma-ai' },
       { text: 'Testing AI', link: '/products/testing-ai' }

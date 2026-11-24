@@ -29,6 +29,7 @@
   "handbook": {
     "status": "written",
     "route": {
+      "en": "/products/tailscale/",
       "zh": "/zh/products/tailscale/"
     }
   },
