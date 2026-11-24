@@ -29,6 +29,7 @@ Gemini 全家族
 │   └── 落地页 / 宣传片 / 产品演示视频   → Google Flow
 ├── 模型与订阅
 │   ├── 调模型、走 API                 → AI Studio
+│   ├── 跑 Python、按需用 GPU          → Google Colab
 │   └── 付费档与额度                   → Google AI 订阅
 └── Pro 订阅还带、不必独立成页
     ├── Gemini Spark（US、个人 agent）
@@ -60,6 +61,8 @@ Dreambeans、Health Premium、Home Premium、TV Create Hub、Earth、Photos Remi
 │       └── 歌曲 / MV → Flow Music（积分分开，不必单独学）
 ├── 调温度、固化系统提示、大规模上下文、接 API
 │   └── → AI Studio
+├── 没有 GPU，却想跑 Python、试 AI 模型
+│   └── → Google Colab
 └── 决定订哪一档、额度够不够
     └── → Google AI 订阅（表只在速查表）
 ```
@@ -87,6 +90,7 @@ Tutorial 默认展开。Cookbook 紧跟核心产品，也默认展开。
 | [Google Flow](./flow) | AI 创意工作室（Veo 3.1 / Nano Banana / Gemini Omni） | 落地页、宣传片、产品演示视频 |
 | [Code Assist](./code-assist) | IDE 集成扩展 | 不想换编辑器；团队有合规硬要求 |
 | [AI Studio](./ai-studio) | 模型与参数控制台 | 调温度、固化系统提示词、大规模上下文审计、接 API |
+| [Google Colab](./colab) | 浏览器里的托管 Jupyter notebook | 没有 GPU 也要跑 Python、试模型、做嵌入实验 |
 | [Google AI 订阅](./google-pro) | 付费层级与额度 | 决定要为哪一档付费；Pro 权益画进家族图 |
 
 ## 速查与参考
@@ -121,6 +125,7 @@ Cheatsheet / Glossary 默认展开。共享表只写一份，其他页只链过�
 | 想让 AI 通读整个仓库做审计 | [AI Studio](./ai-studio) |
 | 半小时内要给产品经理看个原型 | [Canvas](./canvas) |
 | 落地页 / 宣传片 / 产品演示要出视频 | [Google Flow](./flow) |
+| 没有 GPU，又想在浏览器里跑 Python、试 AI 模型 | [Google Colab](./colab) |
 | 想知道免费额度够不够用 | [订阅层级](./google-pro) |
 
 ## 共享的概念
@@ -150,6 +155,7 @@ Cheatsheet / Glossary 默认展开。共享表只写一份，其他页只链过�
 - [Jules 文档](https://jules.google/docs/)
 - [Code Assist 文档](https://developers.google.com/gemini-code-assist/docs/overview)
 - [Gemini API 模型清单](https://ai.google.dev/gemini-api/docs/models)
+- [Google Colab](https://colab.research.google.com/)（[官方 FAQ](https://research.google.com/colaboratory/faq.html)）
 - [Google Flow](https://labs.google/fx/tools/flow)
 - [Google AI Pro 权益](https://support.google.com/googleone/answer/14534406)
 - [Google AI 订阅对比](https://one.google.com/about/google-ai-plans/)

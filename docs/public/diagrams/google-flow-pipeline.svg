@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 560" width="100%" height="100%" role="img" aria-labelledby="flow-pipeline-title flow-pipeline-desc">
+  <title id="flow-pipeline-title">Google Flow：从一句话或一张参考图，到时间线上的一个片段</title>
+  <desc id="flow-pipeline-desc">这张图从左到右分四段，回答一个问题：你输入的一句话、一张参考图，分别被哪个模型接手，最后怎么变成时间线上的一个片段。第一段是输入，有三样：文字提示、参考帧（start frame 与 end frame）、参考素材（角色、场景、物件）。第二段是模型。视频模型有两个，Gemini Omni 的 Omni Flash 与 Veo 3.1 的 Veo 3.1 Lite，负责视频生成、视频编辑与对话式迭代，每次生成都消耗积分，按秒或按次计算。图片模型是 Nano Banana 系列（Pro、2.1、2 Lite），负责图片生成与编辑，不消耗积分，走每日上限。第三段是产出：视频模型产出候选片段，图片模型产出图片。第四段是成片，也就是 Scenebuilder 的时间线。连线有六组。第一，文字提示直接进入视频模型。第二，参考帧和参考素材可以随同一次生成一起进入视频模型。第三，视频模型产出候选片段，图片模型产出图片。第四，从候选片段到 Scenebuilder 的箭头标着 Add to Scene，只有你挑中的候选才进入时间线，没挑中的不进入。第五，底部一条向左的虚线从产出的图片回到输入：生成的图片可以再当作后续视频生成的 start frame、end frame 或 ingredient。第六，模型层与 Scenebuilder 之间顶部的双向虚线是 Extend：从已有片段的末尾回到视频模型，生成续接片段后再回到时间线。Scenebuilder 内部，片段按顺序排列，可以拖动调整顺序，可以修剪首尾。本图省略了每个生成模式各自支持哪些模型的对照，因为同一个生成模式往往有多个模型都支持，所以输入到模型之间没有画成一对一；也省略了具体的积分数字、API 调用路径，以及积分体系分开的 Flow Music。</desc>
+
+  <defs>
+    <linearGradient id="flowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="flowGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <filter id="flowShadow" x="-12%" y="-12%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="flowArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-band { fill: #f8fafc; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-code { fill: #7dd3fc; font-size: 10.5px; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+      .t-num { fill: #0f172a; font-size: 11px; font-weight: 700; }
+      .t-badge-amber { fill: #fde68a; font-size: 10.5px; font-weight: 600; }
+      .t-badge-green { fill: #a7f3d0; font-size: 10.5px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="560" fill="url(#flowBg)"/>
+  <rect width="1080" height="560" fill="url(#flowGrid)"/>
+
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#fb923c"/>
+    <text x="20" y="21" class="t-title">Flow 的一次生成：从输入到时间线</text>
+    <text x="20" y="40" class="t-sub">橙色实线是一次生成的主流程；虚线是回流与 Extend。积分只在视频模型这一层扣</text>
+  </g>
+
+  <!-- 列标题 -->
+  <circle cx="41" cy="100" r="11" fill="#38bdf8"/>
+  <text x="41" y="104.5" class="t-num" text-anchor="middle">1</text>
+  <text x="62" y="104.5" class="t-band">输入</text>
+  <text x="112" y="104.5" class="t-note">你给的东西</text>
+  <circle cx="311" cy="100" r="11" fill="#a78bfa"/>
+  <text x="311" y="104.5" class="t-num" text-anchor="middle">2</text>
+  <text x="332" y="104.5" class="t-band">模型</text>
+  <text x="382" y="104.5" class="t-note">谁来接手</text>
+  <circle cx="621" cy="100" r="11" fill="#34d399"/>
+  <text x="621" y="104.5" class="t-num" text-anchor="middle">3</text>
+  <text x="642" y="104.5" class="t-band">产出</text>
+  <text x="692" y="104.5" class="t-note">这次生成得到什么</text>
+  <circle cx="891" cy="100" r="11" fill="#94a3b8"/>
+  <text x="891" y="104.5" class="t-num" text-anchor="middle">4</text>
+  <text x="912" y="104.5" class="t-band">成片</text>
+  <text x="962" y="104.5" class="t-note">你挑选与编排</text>
+
+  <!-- 顶部通道：Extend 在片段末尾与视频模型之间往返 -->
+  <path d="M 965 152 V 132 H 420 V 146" fill="none" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#flowArrow)" marker-end="url(#flowArrow)"/>
+  <rect x="540" y="123" width="304" height="18" fill="#0f172a"/>
+  <text x="692" y="136" class="t-cap" text-anchor="middle">Extend：从片段末尾回到视频模型，续接后再回来</text>
+
+  <!-- 连线（画在卡片之前，端点落在卡片边缘） -->
+  <line x1="210" y1="182" x2="292" y2="182" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="251" y="174" class="t-cap" text-anchor="middle">直接进入</text>
+  <path d="M 210 267 H 240 V 236 H 292" fill="none" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <path d="M 210 357 H 262 V 254 H 292" fill="none" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="216" y="373" class="t-cap">随同一次生成</text>
+  <line x1="540" y1="196" x2="602" y2="196" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="540" y1="357" x2="602" y2="357" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="790" y1="196" x2="872" y2="196" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="831" y="188" class="t-cap" text-anchor="middle">Add to Scene</text>
+  <text x="831" y="213" class="t-cap" text-anchor="middle">只进你挑中的</text>
+
+  <!-- 底部通道：图片回流，成为下一次生成的原料 -->
+  <path d="M 700 392 V 422 H 120 V 398" fill="none" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#flowArrow)"/>
+  <text x="410" y="416" class="t-cap" text-anchor="middle">生成的图片可再当 start frame、end frame 或 ingredient</text>
+
+  <!-- 1 输入 -->
+  <g transform="translate(30, 0)">
+    <rect x="0" y="152" width="180" height="60" rx="9" fill="#0f172a"/>
+    <rect x="0" y="152" width="180" height="60" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="90" y="178" class="t-card" text-anchor="middle">文字提示</text>
+    <text x="90" y="198" class="t-code" text-anchor="middle">Text prompt</text>
+    <rect x="0" y="232" width="180" height="70" rx="9" fill="#0f172a"/>
+    <rect x="0" y="232" width="180" height="70" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="90" y="256" class="t-card" text-anchor="middle">参考帧</text>
+    <text x="90" y="274" class="t-code" text-anchor="middle">Frames</text>
+    <text x="90" y="290" class="t-note" text-anchor="middle">start frame / end frame</text>
+    <rect x="0" y="322" width="180" height="70" rx="9" fill="#0f172a"/>
+    <rect x="0" y="322" width="180" height="70" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="90" y="346" class="t-card" text-anchor="middle">参考素材</text>
+    <text x="90" y="364" class="t-code" text-anchor="middle">Ingredients</text>
+    <text x="90" y="380" class="t-note" text-anchor="middle">角色、场景、物件</text>
+  </g>
+
+  <!-- 2 模型 -->
+  <g transform="translate(300, 0)">
+    <rect x="0" y="152" width="240" height="120" rx="9" fill="#0f172a"/>
+    <rect x="0" y="152" width="240" height="120" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="120" y="178" class="t-card" text-anchor="middle">视频模型</text>
+    <text x="120" y="200" class="t-body" text-anchor="middle">Gemini Omni · Omni Flash</text>
+    <text x="120" y="218" class="t-body" text-anchor="middle">Veo 3.1 · Veo 3.1 Lite</text>
+    <rect x="12" y="233" width="216" height="26" rx="13" fill="#0f172a"/>
+    <rect x="12" y="233" width="216" height="26" rx="13" fill="rgba(120, 53, 15, 0.45)" stroke="#fbbf24" stroke-width="1.2"/>
+    <text x="120" y="250" class="t-badge-amber" text-anchor="middle">每次生成都消耗积分（按秒或按次）</text>
+    <rect x="0" y="322" width="240" height="70" rx="9" fill="#0f172a"/>
+    <rect x="0" y="322" width="240" height="70" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="120" y="342" class="t-card" text-anchor="middle">图片模型</text>
+    <text x="120" y="359" class="t-body" text-anchor="middle">Nano Banana · Pro / 2.1 / 2 Lite</text>
+    <rect x="45" y="365" width="150" height="22" rx="11" fill="#0f172a"/>
+    <rect x="45" y="365" width="150" height="22" rx="11" fill="rgba(6, 78, 59, 0.6)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="120" y="380" class="t-badge-green" text-anchor="middle">不消耗积分，走每日上限</text>
+  </g>
+
+  <!-- 3 产出 -->
+  <g transform="translate(610, 0)">
+    <rect x="0" y="152" width="180" height="120" rx="9" fill="#0f172a"/>
+    <rect x="0" y="152" width="180" height="120" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="90" y="186" class="t-card" text-anchor="middle">候选片段</text>
+    <text x="90" y="206" class="t-code" text-anchor="middle">generation / output</text>
+    <text x="90" y="228" class="t-note" text-anchor="middle">每次生成出若干候选</text>
+    <text x="90" y="246" class="t-note" text-anchor="middle">没挑中的不进入时间线</text>
+    <rect x="0" y="322" width="180" height="70" rx="9" fill="#0f172a"/>
+    <rect x="0" y="322" width="180" height="70" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="90" y="346" class="t-card" text-anchor="middle">图片</text>
+    <text x="90" y="366" class="t-note" text-anchor="middle">可再当帧或参考素材</text>
+  </g>
+
+  <!-- 4 成片：Scenebuilder 时间线 -->
+  <g transform="translate(880, 0)">
+    <rect x="0" y="152" width="170" height="240" rx="9" fill="#0f172a"/>
+    <rect x="0" y="152" width="170" height="240" rx="9" fill="rgba(30, 41, 59, 0.55)" stroke="#94a3b8" stroke-width="1.5" filter="url(#flowShadow)"/>
+    <text x="85" y="180" class="t-card" text-anchor="middle">Scenebuilder 时间线</text>
+    <rect x="14" y="200" width="40" height="36" rx="5" fill="#0f172a"/>
+    <rect x="14" y="200" width="40" height="36" rx="5" fill="rgba(6, 78, 59, 0.55)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="34" y="223" class="t-body" text-anchor="middle">片段 1</text>
+    <rect x="60" y="200" width="40" height="36" rx="5" fill="#0f172a"/>
+    <rect x="60" y="200" width="40" height="36" rx="5" fill="rgba(6, 78, 59, 0.55)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="80" y="223" class="t-body" text-anchor="middle">片段 2</text>
+    <rect x="106" y="200" width="40" height="36" rx="5" fill="#0f172a"/>
+    <rect x="106" y="200" width="40" height="36" rx="5" fill="rgba(6, 78, 59, 0.55)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="126" y="223" class="t-body" text-anchor="middle">片段 3</text>
+    <text x="85" y="262" class="t-note" text-anchor="middle">片段按顺序排列</text>
+    <text x="85" y="282" class="t-note" text-anchor="middle">可拖动调整顺序</text>
+    <text x="85" y="300" class="t-note" text-anchor="middle">可修剪首尾</text>
+    <line x1="14" y1="316" x2="156" y2="316" stroke="#334155" stroke-width="1"/>
+    <text x="85" y="340" class="t-body" text-anchor="middle">scene：一部成片</text>
+  </g>
+
+  <!-- 图例 -->
+  <text x="36" y="470" class="t-note">图例</text>
+  <line x1="36" y1="478" x2="1044" y2="478" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="498" x2="76" y2="498" stroke="#fb923c" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <text x="86" y="502" class="t-note">实线箭头：一次生成的主流程</text>
+  <line x1="330" y1="498" x2="370" y2="498" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#flowArrow)"/>
+  <text x="380" y="502" class="t-note">虚线箭头：图片回流、重新当原料</text>
+  <line x1="660" y1="498" x2="700" y2="498" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#flowArrow)" marker-end="url(#flowArrow)"/>
+  <text x="710" y="502" class="t-note">双向虚线：Extend 去了再回来</text>
+  <rect x="36" y="521" width="16" height="12" rx="3" fill="rgba(8, 51, 68, 0.6)" stroke="#22d3ee" stroke-width="1.2"/>
+  <text x="60" y="531" class="t-note">输入</text>
+  <rect x="136" y="521" width="16" height="12" rx="3" fill="rgba(76, 29, 149, 0.6)" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="160" y="531" class="t-note">模型</text>
+  <rect x="236" y="521" width="16" height="12" rx="3" fill="rgba(6, 78, 59, 0.6)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="260" y="531" class="t-note">产出</text>
+  <rect x="336" y="521" width="16" height="12" rx="3" fill="rgba(30, 41, 59, 0.7)" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="360" y="531" class="t-note">成片</text>
+  <rect x="436" y="521" width="16" height="12" rx="3" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="460" y="531" class="t-note">消耗积分</text>
+  <rect x="566" y="521" width="16" height="12" rx="3" fill="rgba(6, 78, 59, 0.6)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="590" y="531" class="t-note">不消耗积分，走每日上限</text>
+</svg>

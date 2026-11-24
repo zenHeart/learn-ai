@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 720" width="100%" height="100%" role="img" aria-labelledby="colab-rt-title colab-rt-desc">
+  <title id="colab-rt-title">Colab：你的代码跑在哪里，运行时断开后什么还在、什么没了</title>
+  <desc id="colab-rt-desc">这张图回答两个问题：你的代码到底跑在哪里；运行时断开之后，哪些东西还在，哪些没了。实线表示断开后仍然保留的关系，虚线表示断开后会消失的部分。左边是浏览器里的 notebook 界面，在你的电脑上，里面有单元格、输出和左侧栏，notebook 内容是在这里编辑的。中间上方是两个持久的位置：Google Drive 存放 notebook 文件与数据文件，GitHub 存放 notebook 副本与克隆下来的仓库。界面与 Drive 之间、界面与 GitHub 之间是实线双向箭头，断开后仍然保留。中间下方是云端的运行时虚拟机，代码实际运行在这里。它的算力类型可以是 CPU，也可以按需切换到 GPU 或 TPU，界面可以切换运行时类型。运行时里有三样东西在断开后会消失，用玫红色虚线框标出：内核进程与内存变量，例如变量和已导入的模块；临时磁盘，例如已安装的包和上传到运行时的文件；以及挂载状态。界面到运行时的连接也是虚线：界面把单元格代码发往运行时，运行时把输出送回界面。运行时经授权挂载后与 Drive 双向读写，这是虚线，因为断开后挂载失效。运行时可以从 GitHub 拉取 notebook 或仓库。右边是你电脑上的文件，原件留在你的电脑；上传到运行时的那份副本在临时磁盘上，断开后消失。Secrets 在你授权后把密钥交给运行时里的代码。本图省略了 Google 内部的基础设施、任何免费额度的具体数字，以及具体版本里才有的按钮与菜单名。</desc>
+  <defs>
+    <linearGradient id="cBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0b0f19"/><stop offset="55%" stop-color="#0f172a"/><stop offset="100%" stop-color="#020617"/></linearGradient>
+    <pattern id="cGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/></pattern>
+    <marker id="cArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/></marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-band { fill: #f8fafc; font-size: 12px; font-weight: 700; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-tag { fill: #fda4af; font-size: 10.5px; font-weight: 600; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+      .t-green { fill: #6ee7b7; font-size: 10.5px; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="1020" height="720" fill="url(#cBg)"/>
+  <rect width="1020" height="720" fill="url(#cGrid)"/>
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#a78bfa"/>
+    <text x="20" y="21" class="t-title">Colab：代码跑在哪里，断开后什么还在、什么没了</text>
+    <text x="20" y="40" class="t-sub">实线是运行时断开后仍然保留的关系；虚线是断开后会消失的连接与内容</text>
+  </g>
+
+  <!-- 持久位置：Drive 与 GitHub -->
+  <rect x="402" y="130" width="148" height="74" rx="9" fill="#0f172a"/>
+  <rect x="402" y="130" width="148" height="74" rx="9" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="476" y="156" class="t-card" text-anchor="middle">Google Drive</text>
+  <text x="476" y="176" class="t-body" text-anchor="middle">notebook 文件、数据文件</text>
+  <text x="476" y="193" class="t-green" text-anchor="middle">断开后仍在</text>
+  <rect x="570" y="130" width="148" height="74" rx="9" fill="#0f172a"/>
+  <rect x="570" y="130" width="148" height="74" rx="9" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="644" y="156" class="t-card" text-anchor="middle">GitHub</text>
+  <text x="644" y="176" class="t-body" text-anchor="middle">notebook 副本、克隆的仓库</text>
+  <text x="644" y="193" class="t-green" text-anchor="middle">断开后仍在</text>
+
+  <!-- 界面与 Drive / GitHub：实线，断开后保留 -->
+  <path d="M 156 130 V 92 H 644 V 122" fill="none" stroke="#fb923c" stroke-width="2" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="230" y="87" class="t-cap">保存到 GitHub，或从 GitHub 加载</text>
+  <path d="M 186 130 V 114 H 476 V 122" fill="none" stroke="#fb923c" stroke-width="2" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="230" y="109" class="t-cap">保存或打开 notebook 与数据</text>
+
+  <!-- 浏览器里的界面 -->
+  <rect x="36" y="130" width="280" height="490" rx="9" fill="#0f172a"/>
+  <rect x="36" y="130" width="280" height="490" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="176" y="158" class="t-card" text-anchor="middle">浏览器里的 notebook 界面</text>
+  <text x="176" y="177" class="t-note" text-anchor="middle">在你自己的电脑上</text>
+  <rect x="52" y="196" width="248" height="40" rx="6" fill="#0f172a"/>
+  <rect x="52" y="196" width="248" height="40" rx="6" fill="rgba(8, 51, 68, 0.5)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="176" y="213" class="t-body" text-anchor="middle">单元格：代码与文本</text>
+  <text x="176" y="229" class="t-green" text-anchor="middle">notebook 内容：断开后仍在</text>
+  <rect x="52" y="248" width="248" height="32" rx="6" fill="#0f172a"/>
+  <rect x="52" y="248" width="248" height="32" rx="6" fill="rgba(8, 51, 68, 0.5)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="176" y="268" class="t-body" text-anchor="middle">输出：单元格里显示的结果</text>
+  <rect x="52" y="292" width="248" height="32" rx="6" fill="#0f172a"/>
+  <rect x="52" y="292" width="248" height="32" rx="6" fill="rgba(8, 51, 68, 0.5)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="176" y="312" class="t-body" text-anchor="middle">左侧栏：文件、密钥</text>
+  <text x="176" y="560" class="t-note" text-anchor="middle">界面只是窗口</text>
+  <text x="176" y="578" class="t-note" text-anchor="middle">代码不在这里运行</text>
+
+  <!-- 云端的运行时虚拟机 -->
+  <rect x="396" y="228" width="328" height="392" rx="9" fill="#0f172a"/>
+  <rect x="396" y="228" width="328" height="392" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="560" y="254" class="t-card" text-anchor="middle">云端的运行时虚拟机：代码实际运行在这里</text>
+  <g>
+    <rect x="412" y="266" width="92" height="30" rx="6" fill="#0f172a"/>
+    <rect x="412" y="266" width="92" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1.2"/>
+    <text x="458" y="285" class="t-body" text-anchor="middle">CPU</text>
+    <rect x="514" y="266" width="92" height="30" rx="6" fill="#0f172a"/>
+    <rect x="514" y="266" width="92" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1.2"/>
+    <text x="560" y="285" class="t-body" text-anchor="middle">GPU</text>
+    <rect x="616" y="266" width="92" height="30" rx="6" fill="#0f172a"/>
+    <rect x="616" y="266" width="92" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1.2"/>
+    <text x="662" y="285" class="t-body" text-anchor="middle">TPU</text>
+  </g>
+  <text x="560" y="314" class="t-note" text-anchor="middle">运行时类型：按需切换</text>
+  <rect x="412" y="326" width="296" height="64" rx="7" fill="#0f172a"/>
+  <rect x="412" y="326" width="296" height="64" rx="7" fill="rgba(136, 19, 55, 0.25)" stroke="#fb7185" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="560" y="347" class="t-card" text-anchor="middle">内核进程与内存变量</text>
+  <text x="560" y="365" class="t-body" text-anchor="middle">变量、已导入的模块</text>
+  <text x="560" y="381" class="t-tag" text-anchor="middle">断开后消失</text>
+  <rect x="412" y="402" width="296" height="64" rx="7" fill="#0f172a"/>
+  <rect x="412" y="402" width="296" height="64" rx="7" fill="rgba(136, 19, 55, 0.25)" stroke="#fb7185" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="560" y="423" class="t-card" text-anchor="middle">临时磁盘</text>
+  <text x="560" y="441" class="t-body" text-anchor="middle">已安装的包、上传到运行时的文件</text>
+  <text x="560" y="457" class="t-tag" text-anchor="middle">断开后消失</text>
+  <rect x="412" y="478" width="296" height="64" rx="7" fill="#0f172a"/>
+  <rect x="412" y="478" width="296" height="64" rx="7" fill="rgba(136, 19, 55, 0.25)" stroke="#fb7185" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="560" y="499" class="t-card" text-anchor="middle">挂载状态</text>
+  <text x="560" y="517" class="t-body" text-anchor="middle">Drive 是否已经挂载</text>
+  <text x="560" y="533" class="t-tag" text-anchor="middle">断开后消失</text>
+  <text x="560" y="574" class="t-note" text-anchor="middle">玫红色虚线框里的东西都属于这台临时虚拟机</text>
+  <text x="560" y="592" class="t-note" text-anchor="middle">这三样都只存在于这台虚拟机上</text>
+
+  <!-- 界面到运行时：虚线，断开后消失 -->
+  <line x1="316" y1="281" x2="390" y2="281" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="353" y="274" class="t-cap" text-anchor="middle">切换类型</text>
+  <line x1="316" y1="350" x2="390" y2="350" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="353" y="343" class="t-cap" text-anchor="middle">发送代码</text>
+  <line x1="396" y1="392" x2="322" y2="392" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="359" y="408" class="t-cap" text-anchor="middle">输出送回</text>
+
+  <!-- Drive 挂载、GitHub 拉取：虚线 -->
+  <line x1="476" y1="204" x2="476" y2="220" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="490" y="218" class="t-cap">授权挂载后双向读写</text>
+  <line x1="644" y1="204" x2="644" y2="220" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="658" y="218" class="t-cap">拉取仓库</text>
+
+  <!-- Secrets 与你电脑上的文件 -->
+  <rect x="784" y="262" width="200" height="80" rx="9" fill="#0f172a"/>
+  <rect x="784" y="262" width="200" height="80" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="884" y="288" class="t-card" text-anchor="middle">Secrets（密钥）</text>
+  <text x="884" y="308" class="t-body" text-anchor="middle">授权后把密钥</text>
+  <text x="884" y="325" class="t-body" text-anchor="middle">交给运行时里的代码</text>
+  <line x1="784" y1="302" x2="730" y2="302" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="757" y="295" class="t-cap" text-anchor="middle">授权后交付</text>
+  <rect x="784" y="372" width="200" height="80" rx="9" fill="#0f172a"/>
+  <rect x="784" y="372" width="200" height="80" rx="9" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="884" y="398" class="t-card" text-anchor="middle">你电脑上的文件</text>
+  <text x="884" y="418" class="t-body" text-anchor="middle">原件留在你的电脑</text>
+  <text x="884" y="435" class="t-green" text-anchor="middle">断开后仍在</text>
+  <line x1="784" y1="412" x2="730" y2="412" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="757" y="405" class="t-cap" text-anchor="middle">上传</text>
+
+  <!-- 图例 -->
+  <text x="36" y="652" class="t-note">图例</text>
+  <line x1="36" y1="660" x2="984" y2="660" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="682" x2="86" y2="682" stroke="#fb923c" stroke-width="2" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="96" y="686" class="t-note">实线：运行时断开后仍然保留的关系</text>
+  <line x1="370" y1="682" x2="420" y2="682" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="430" y="686" class="t-note">虚线：断开后会消失的连接与内容</text>
+  <rect x="706" y="676" width="16" height="12" rx="3" fill="rgba(6, 78, 59, 0.6)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="730" y="686" class="t-note">翠绿：断开后仍在</text>
+  <rect x="840" y="675" width="16" height="14" rx="3" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="864" y="686" class="t-note">玫红虚线框：断开后消失</text>
+</svg>
