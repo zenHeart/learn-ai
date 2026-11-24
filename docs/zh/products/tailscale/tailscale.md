@@ -8,6 +8,7 @@ tags:
   - wireguard
   - tailscale
 role: tutorial
+pageClass: wide-figures
 ---
 
 # Tailscale 上手：把两台设备连起来，再 SSH 进去

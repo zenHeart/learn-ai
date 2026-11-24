@@ -7,6 +7,7 @@ tags:
   - agent-workspace
   - remote-access
 role: tutorial
+pageClass: wide-figures
 ---
 
 # T3 Code 上手：装好它，跑通第一个线程，从手机继续

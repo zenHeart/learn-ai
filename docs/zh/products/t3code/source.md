@@ -7,6 +7,7 @@ tags:
   - source-code
   - agent-workspace
 role: deep-dive
+pageClass: wide-figures
 source_revision: d00aaac85fc71195f133a8580c3f0f2e29ac33a2
 ---
 

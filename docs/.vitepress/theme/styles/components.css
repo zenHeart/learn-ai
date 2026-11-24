@@ -72,3 +72,21 @@
   width: 100%;
   height: auto;
 }
+
+/* Pages marked `pageClass: wide-figures` (the product tutorials with wide SVG
+   diagrams). The 688px article column scales a 1020px diagram down until its
+   labels are unreadable, so on these pages the column opens up and the
+   right-hand outline is hidden to buy the width. Diagrams and tables use the
+   full column; every other block keeps a 768px measure and stays centred. */
+.Layout.wide-figures .VPDoc .aside {
+  display: none;
+}
+.Layout.wide-figures .VPDoc.has-aside .content-container {
+  max-width: none;
+}
+/* The markdown body sits one plain `div` below `.vp-doc`. */
+.Layout.wide-figures .vp-doc > div > :not(.dd):not(table) {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}

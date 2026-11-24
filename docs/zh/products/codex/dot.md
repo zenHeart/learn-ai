@@ -7,6 +7,7 @@ tags:
   - chatgpt-dot
   - always-on-agent
 role: tutorial
+pageClass: wide-figures
 ---
 
 # dot：ChatGPT 里的常驻智能体
