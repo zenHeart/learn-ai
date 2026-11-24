@@ -12,6 +12,7 @@ import ThemeEnhance from './components/ThemeEnhance.vue'
 import ReaClosureLedger from './components/rea/ReaClosureLedger.vue'
 import ReaAuthorityLattice from './components/rea/ReaAuthorityLattice.vue'
 import ReaDiagram from './components/rea/ReaDiagram.vue'
+import DocDiagram from './components/DocDiagram.vue'
 import './styles/index.css'
 
 export default {
@@ -35,6 +36,7 @@ export default {
     app.component('ReaClosureLedger', ReaClosureLedger)
     app.component('ReaAuthorityLattice', ReaAuthorityLattice)
     app.component('ReaDiagram', ReaDiagram)
+    app.component('DocDiagram', DocDiagram)
     // 注册自定义布局
     app.component('ai-tools', AIToolsLayout)
     app.component('product-hub', ProductHubLayout)

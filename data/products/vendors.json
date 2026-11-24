@@ -2071,6 +2071,27 @@
       "official_domains": [
         "rea.tools"
       ]
+    },
+    {
+      "id": "t3-tools",
+      "display_name": "T3 Tools",
+      "display_name_zh": "T3 Tools",
+      "region": "intl",
+      "product_count": 1,
+      "official_domains": [
+        "t3.codes"
+      ]
+    },
+    {
+      "id": "xd",
+      "display_name": "XD",
+      "display_name_zh": "心动网络",
+      "region": "cn",
+      "product_count": 1,
+      "official_domains": [
+        "cindy.app",
+        "cindy.cn"
+      ]
     }
   ]
 }

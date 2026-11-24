@@ -8,7 +8,7 @@
  *   data/products/vendors.json      厂商注册表
  *   data/products/use-cases/*.json  场景选型
  *
- * products 351 条 · categories 11 个 · use-cases 10 个
+ * products 353 条 · categories 11 个 · use-cases 10 个
  *
  * 本文件不含生成时间戳：否则每次运行都会产生差异，--check 闸门将永远报红。
  * 什么时候改的由 git 记录。
@@ -25,6 +25,14 @@ export const productHub = {
     "count": 70
   },
   {
+    "id": "agent-platform",
+    "name": "Agent platforms",
+    "nameZh": "Agent 平台",
+    "color": "#7C3AED",
+    "icon": "🧠",
+    "count": 62
+  },
+  {
     "id": "multimodal-creation",
     "name": "Multimodal creation",
     "nameZh": "多模态创作",
@@ -33,20 +41,12 @@ export const productHub = {
     "count": 62
   },
   {
-    "id": "agent-platform",
-    "name": "Agent platforms",
-    "nameZh": "Agent 平台",
-    "color": "#7C3AED",
-    "icon": "🧠",
-    "count": 61
-  },
-  {
     "id": "coding-agent",
     "name": "Coding agents",
     "nameZh": "编程 Agent",
     "color": "#16A34A",
     "icon": "💻",
-    "count": 58
+    "count": 59
   },
   {
     "id": "enterprise-api",
@@ -360,6 +360,7 @@ export const productHub = {
       "chatgpt-agent",
       "chatgpt-projects",
       "chroma",
+      "cindy",
       "claude-api",
       "claude-cowork",
       "claude-desktop",
@@ -443,7 +444,7 @@ export const productHub = {
       "zcode",
       "zoommate"
     ],
-    "productCount": 104,
+    "productCount": 105,
     "dimensions": [
       {
         "id": "no-code",
@@ -507,6 +508,7 @@ export const productHub = {
           "agentforce",
           "browser-use",
           "cartesia",
+          "cindy",
           "claude-api",
           "cohere-compass",
           "confident-ai",
@@ -536,7 +538,7 @@ export const productHub = {
           "zapier-agents",
           "zoommate"
         ],
-        "productCount": 31
+        "productCount": 32
       }
     ]
   },
@@ -735,6 +737,7 @@ export const productHub = {
       "base44",
       "bolt-new",
       "charm-crush",
+      "cindy",
       "claude-ai",
       "claude-code",
       "cline",
@@ -786,6 +789,7 @@ export const productHub = {
       "roo-code",
       "sensetime",
       "slack-code",
+      "t3-code",
       "trae",
       "typeless",
       "v0",
@@ -798,7 +802,7 @@ export const productHub = {
       "zcode",
       "zed"
     ],
-    "productCount": 70,
+    "productCount": 72,
     "dimensions": [
       {
         "id": "ai-ide",
@@ -1526,7 +1530,10 @@ export const productHub = {
     "supersededBy": null,
     "successorName": "",
     "handbook": {
-      "status": "none"
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/codex/dot.html"
+      }
     },
     "lastVerifiedAt": null,
     "glyph": "D"
@@ -1899,6 +1906,48 @@ export const productHub = {
     },
     "lastVerifiedAt": null,
     "glyph": "纳"
+  },
+  {
+    "id": "cindy",
+    "name": "Cindy",
+    "nameZh": "Cindy",
+    "vendor": "XD",
+    "vendorZh": "心动网络",
+    "logo": null,
+    "region": "intl",
+    "category": "agent-platform",
+    "useCases": [
+      "coding",
+      "agent-building"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Switching between Claude Code and Codex means starting over. Cindy puts them in one workspace that carries on across your computer and phone.",
+    "solvesZh": "在 Claude Code 和 Codex 之间切换，每次都要从头交代。Cindy 把它们放进同一个工作区，电脑和手机之间接着干。",
+    "bestFor": "You already pay for Claude Code or Codex and want the same session and memory on every device.",
+    "bestForZh": "你已经在为 Claude Code 或 Codex 付费，想在每台设备上接着用同一个会话。",
+    "released": "2026-07-25",
+    "datePrecision": "day",
+    "homepage": "https://cindy.app",
+    "desc": "An open-source agent app that runs your existing coding agents.",
+    "descZh": "开箱即用的开源智能体应用，能接上你已有的编程 agent。",
+    "tags": [
+      "open-source",
+      "multi-harness",
+      "multi-device",
+      "remote-desktop"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/cindy/"
+      }
+    },
+    "lastVerifiedAt": "2026-11-24",
+    "glyph": "C"
   },
   {
     "id": "rea",
@@ -2489,6 +2538,47 @@ export const productHub = {
     },
     "lastVerifiedAt": "2026-10-05",
     "glyph": "W"
+  },
+  {
+    "id": "t3-code",
+    "name": "T3 Code",
+    "nameZh": "T3 Code",
+    "vendor": "T3 Tools",
+    "vendorZh": "T3 Tools",
+    "logo": null,
+    "region": "intl",
+    "category": "coding-agent",
+    "useCases": [
+      "coding"
+    ],
+    "form": "desktop",
+    "surface": "standalone",
+    "solves": "Each coding agent sits in its own terminal and waits when you leave. T3 Code runs the agents you already have in one workspace, approvable from your phone.",
+    "solvesZh": "每个编程 agent 各占一个终端，人一走开就卡住。T3 Code 把你已装好的 agent 收进一个工作区，手机上也能批准下一步。",
+    "bestFor": "You juggle Claude Code, Codex and other agents and want one place to start, watch and approve their work.",
+    "bestForZh": "你同时在用好几个编程 agent，想在同一个地方开任务、看进度、做批准。",
+    "released": "2026-03-02",
+    "datePrecision": "day",
+    "homepage": "https://t3.codes",
+    "desc": "One app and phone remote for the agents already on your machine.",
+    "descZh": "把电脑上已有的编程 agent 收进一个应用，手机上也能接着批。",
+    "tags": [
+      "agent-workspace",
+      "multi-agent",
+      "remote-control",
+      "open-source"
+    ],
+    "status": "active",
+    "supersededBy": null,
+    "successorName": "",
+    "handbook": {
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/t3code/"
+      }
+    },
+    "lastVerifiedAt": "2026-11-24",
+    "glyph": "T"
   },
   {
     "id": "claw",
@@ -4506,7 +4596,10 @@ export const productHub = {
     "supersededBy": null,
     "successorName": "",
     "handbook": {
-      "status": "none"
+      "status": "written",
+      "route": {
+        "zh": "/zh/products/gemini/flow.html"
+      }
     },
     "lastVerifiedAt": null,
     "glyph": "G"

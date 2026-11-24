@@ -1,0 +1,39 @@
+{
+  "id": "t3-code",
+  "name": "T3 Code",
+  "name_zh": "T3 Code",
+  "vendor_id": "t3-tools",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-03-02",
+  "date_precision": "day",
+  "homepage": "https://t3.codes",
+  "desc": "One app and phone remote for the agents already on your machine.",
+  "desc_zh": "把电脑上已有的编程 agent 收进一个应用，手机上也能接着批。",
+  "solves": "Each coding agent sits in its own terminal and waits when you leave. T3 Code runs the agents you already have in one workspace, approvable from your phone.",
+  "solves_zh": "每个编程 agent 各占一个终端，人一走开就卡住。T3 Code 把你已装好的 agent 收进一个工作区，手机上也能批准下一步。",
+  "best_for": "You juggle Claude Code, Codex and other agents and want one place to start, watch and approve their work.",
+  "best_for_zh": "你同时在用好几个编程 agent，想在同一个地方开任务、看进度、做批准。",
+  "surface": "standalone",
+  "tags": [
+    "agent-workspace",
+    "multi-agent",
+    "remote-control",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "zh": "/zh/products/t3code/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-24",
+  "notes": "首次公开发布取官方仓库最早的 GitHub Release（v0.0.0-alpha.3，2026-03-02）：https://github.com/pingdotgg/t3code/releases/tag/v0.0.0-alpha.3 。仓库创建于 2026-02-08；未找到官方发布公告，更早的桌面端下载时间未核实。源码解读基于提交 d00aaac85fc71195f133a8580c3f0f2e29ac33a2，MIT 许可。",
+  "revisions": []
+}
