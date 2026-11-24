@@ -8,7 +8,7 @@ tags:
   - wireguard
   - tailscale
 role: tutorial
-pageClass: wide-figures readable-tables
+pageClass: wide-figures
 ---
 
 # Tailscale 上手：把两台设备连起来，再 SSH 进去
@@ -218,6 +218,8 @@ tailscale status
    ```text
    pong from another-device (100.113.160.82) via DERP(nyc) in 130ms
    pong from another-device (100.113.160.82) via DERP(nyc) in 37ms
+   pong from another-device (100.113.160.82) via DERP(nyc) in 50ms
+   pong from another-device (100.113.160.82) via DERP(nyc) in 38ms
    pong from another-device (100.113.160.82) via 140.82.13.138:41641 in 35ms
    ```
 

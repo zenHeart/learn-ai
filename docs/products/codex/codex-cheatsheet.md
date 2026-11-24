@@ -534,6 +534,17 @@ Stable releases land roughly weekly (`0.145.0` → `0.146.0` → `0.147.0`), wit
 gh release list --repo openai/codex --exclude-pre-releases --limit 5
 ```
 
+### Quality GitHub repositories
+
+| Repository | Use it for |
+| --- | --- |
+| [openai/codex](https://github.com/openai/codex) | CLI source code, issues and releases |
+| [openai/codex-action](https://github.com/openai/codex-action) | The official GitHub Action |
+
+### To be verified
+
+<!-- TODO: needs verification --> Community accounts, awesome lists and third-party blog posts are not in the main tables. Only the official pages and repositories that were opened and checked in this pass are listed.
+
 ## Related pages
 
 - [Codex Glossary](./codex-glossary) — what the concepts mean and why
