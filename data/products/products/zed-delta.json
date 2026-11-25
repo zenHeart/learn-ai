@@ -1,0 +1,35 @@
+{
+  "id": "zed-delta",
+  "name": "Zed Delta",
+  "name_zh": "Zed Delta",
+  "vendor_id": "zed-industries",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-09-16",
+  "date_precision": "day",
+  "homepage": "https://zed.dev/delta",
+  "desc": "Multiplayer environment for coding with agents and reviewing what they build.",
+  "desc_zh": "与智能体一起写代码、并复查它们成果的多人协作环境。",
+  "solves": "Pull requests freeze the conversation at commit time, after the interesting discussion is over; Delta keeps code and talk in one place.",
+  "solves_zh": "Pull Request 在提交时就把讨论冻住了，而有意思的对话早就过去；Delta 让代码和讨论留在同一处。",
+  "best_for": "Your team reviews agent output all day and the diff is the wrong unit of review.",
+  "best_for_zh": "团队整天在复查智能体的产出，而 diff 并不是合适的复查单位。",
+  "surface": "standalone",
+  "tags": [
+    "code-review",
+    "multiplayer",
+    "agent-workspace"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — zed.dev/blog）。 Private beta announced Aug 12, 2026; public beta Sep 16, 2026 (\"Today, we’re launching the public beta of Delta\"). Built on DeltaDB, announced Jun 11, 2026. Separate product from the Zed editor, which the ledger holds. 入库核对（2026-11-25）：原候选记的 2026-08-12 是私有测试（邀请首批用户），公开测试是 2026-09-16。按规则记首次公开可用的日子，依据 Zed 官方博文。官方名字只是「Delta」，加上产品名。 首次公开日期来源：https://zed.dev/blog/delta-public-beta",
+  "revisions": []
+}

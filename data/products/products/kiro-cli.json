@@ -1,0 +1,35 @@
+{
+  "id": "kiro-cli",
+  "name": "Kiro CLI",
+  "name_zh": "Kiro CLI",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-11-17",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/cli/",
+  "desc": "Kiro's agentic coding agents in the terminal, sharing specs with the IDE.",
+  "desc_zh": "把 Kiro 的智能体编程能力带进终端，规格与 IDE 共用。",
+  "solves": "Production debugging happens over SSH, where the IDE agent is not; Kiro CLI puts the same agents in that shell.",
+  "solves_zh": "线上排障都在 SSH 里进行，IDE 智能体用不上；Kiro CLI 把同一批智能体放进那个终端。",
+  "best_for": "You are SSH'd into a server at 2 a.m. tracing an error and want the agent beside your shell history.",
+  "best_for_zh": "凌晨两点 SSH 上服务器查错误，希望智能体就守在命令历史旁边时。",
+  "surface": "standalone",
+  "tags": [
+    "terminal-agent",
+    "spec-driven",
+    "mcp"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed and product directory）。 Missing from the ledger: the aws vendor has only Kiro. Kiro CLI is a separate surface from Kiro IDE, not a version of it. V3 became the default experience on 2026-10-13. 首次公开日期来源：https://kiro.dev/blog/introducing-kiro-cli/",
+  "revisions": []
+}

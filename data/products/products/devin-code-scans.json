@@ -1,0 +1,35 @@
+{
+  "id": "devin-code-scans",
+  "name": "Devin Code Scans",
+  "name_zh": "Devin Code Scans",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-09-16",
+  "date_precision": "day",
+  "homepage": "https://docs.devin.ai/work-with-devin/code-scans",
+  "desc": "Scheduled sweeps that look for a class of problem across the codebase.",
+  "desc_zh": "按计划在整个代码库里排查某一类问题的智能体扫描。",
+  "solves": "One-off reviews only see the diff in front of them; a scan keeps looking for the same pattern everywhere and files what it finds.",
+  "solves_zh": "一次性审查只看得到眼前的 diff；扫描会持续在整仓找同一类模式，并把发现的问题开成条目。",
+  "best_for": "You want every call site of a deprecated API found before the migration starts.",
+  "best_for_zh": "迁移开始前，想把某个废弃 API 的所有调用点都找出来。",
+  "surface": "standalone",
+  "tags": [
+    "repo-sweep",
+    "pattern-search",
+    "migration"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — devin.ai/blog directory）。 Distinct from the Devin Security threat model announced later; Code Scans is the generic sweep surface with a Findings view. 入库核对（2026-11-25）：官方名字只是「Code Scans」，加上产品名以便辨认。 首次公开日期来源：https://devin.ai/blog/introducing-code-scans",
+  "revisions": []
+}

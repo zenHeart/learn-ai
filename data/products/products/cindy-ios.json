@@ -1,0 +1,36 @@
+{
+  "id": "cindy-ios",
+  "name": "Cindy for iOS",
+  "name_zh": "Cindy for iOS",
+  "vendor_id": "xd",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-08-03",
+  "date_precision": "day",
+  "homepage": "https://apps.apple.com/us/app/cindy-ai-assistant/id6787894640",
+  "desc": "Mobile app that mirrors and drives the Cindy agent on your computers.",
+  "desc_zh": "镜像并操控跑在你电脑上的 Cindy 智能体的手机应用。",
+  "solves": "An agent working on your desktop is invisible when you leave the desk; the phone mirrors the task and keeps it moving.",
+  "solves_zh": "智能体在你台式机上干活，你一离开工位就看不见了；手机镜像任务并让它继续。",
+  "best_for": "You left a Cindy task running and want to answer its question from your phone.",
+  "best_for_zh": "你留下一个 Cindy 任务在跑，想用手机回答它的提问。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "remote-control",
+    "multi-harness"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — Apple App Store listing; D — cindy.app）。 Official App Store record for \"Cindy - AI Assistant\" by XD Entertainment Pte Ltd (trackId 6787894640); the listing describes the mobile app as Cindy’s remote command centre. Same product family as the ledger’s Cindy@2026-07-25 (cindy.app, XD.INC / PROJECT CINDY), so this is the mobile entry point rather than a new vendor. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 厂商没有公布中文名，name_zh 按 name。 首次公开日期来源：https://itunes.apple.com/lookup?id=6787894640&country=us",
+  "revisions": []
+}

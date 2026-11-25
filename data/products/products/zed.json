@@ -10,7 +10,7 @@
     "local-private"
   ],
   "form": "ide",
-  "released": "2023-03-01",
+  "released": "2023-03-15",
   "homepage": "https://zed.dev",
   "desc": "A code editor with an agent panel and edit prediction.",
   "desc_zh": "Rust 写的编辑器，并行跑多个 Agent",
@@ -30,8 +30,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Runs Claude Code, Codex and OpenCode as managed threads inside the editor, so you are not locked into one agent vendor. 首次公开发布日期精度：month-only 来源：http://m.zhiding.cn/article/3185882.htm",
+  "last_verified_at": "2026-11-25",
+  "notes": "Runs Claude Code, Codex and OpenCode as managed threads inside the editor, so you are not locked into one agent vendor. 首次公开发布日期精度：month-only 来源：http://m.zhiding.cn/article/3185882.htm 2026-11-25：released 2023-03-01/day → 2023-03-15/day; source https://zed.dev/blog/beta。原值 2023-03-01 是月份占位。Zed 官方的测试版公告日期是 2023 年 3 月 15 日",
   "revisions": [
     {
       "at": "2026-10-05",
@@ -40,6 +40,14 @@
       "from": "Rust 写的编辑器，并行跑多个 Agent",
       "to": "A code editor with an agent panel and edit prediction.",
       "why": "desc 误填中文；基础键按约定只能是英文"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-03-01/day",
+      "to": "2023-03-15/day",
+      "why": "原值 2023-03-01 是月份占位。Zed 官方的测试版公告日期是 2023 年 3 月 15 日"
     }
   ],
   "date_precision": "day"

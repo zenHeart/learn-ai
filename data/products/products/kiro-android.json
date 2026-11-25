@@ -1,0 +1,35 @@
+{
+  "id": "kiro-android",
+  "name": "Kiro for Android",
+  "name_zh": "Kiro for Android",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-11-12",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/mobile/",
+  "desc": "Kiro's Android app for picking up cloud sessions from your phone.",
+  "desc_zh": "Kiro 的 Android 应用，用来接手云端会话并在手机上推进工作。",
+  "solves": "Ideas arrive while you are out and sessions stall without you; Android keeps the same cloud work moving from anywhere.",
+  "solves_zh": "想法总在外出时出现，会话也会因你不在而停住；Android 让同一份云端工作在任何地方继续。",
+  "best_for": "You are commuting, a session finishes a change, and the next step needs your input before it can continue.",
+  "best_for_zh": "通勤时会话刚改完一段代码，而下一步需要你先给个输入才能继续。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-client",
+    "cloud-sessions",
+    "session-review"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed and product directory）。 form is recorded as web because the taxonomy has no mobile form. Cloud sessions are shared across Kiro CLI, Web, IDE and Android, so this is the same account with a new surface rather than a new product line. 首次公开日期来源：https://kiro.dev/blog/android/",
+  "revisions": []
+}

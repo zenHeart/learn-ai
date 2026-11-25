@@ -1,0 +1,36 @@
+{
+  "id": "warp-factories",
+  "name": "Warp Factories",
+  "name_zh": "Warp Factories",
+  "vendor_id": "warp-inc",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "self-hosted",
+  "released": "2026-08-27",
+  "date_precision": "day",
+  "homepage": "https://www.warp.dev/factories",
+  "desc": "Open infrastructure for running software factories of coding agents.",
+  "desc_zh": "用于运行编程智能体工厂的开放基础设施。",
+  "solves": "Adopting agents one repo at a time never compounds; Factories gives the whole organisation one place to define and run them.",
+  "solves_zh": "一个仓库一个仓库地引入智能体永远无法积累；Factories 给整个组织一个统一的地方定义和运行它们。",
+  "best_for": "Your company wants agents across every repository, not a pilot in one team.",
+  "best_for_zh": "公司想让智能体进入所有仓库，而不是只在一个团队试点。",
+  "surface": "standalone",
+  "tags": [
+    "software-factory",
+    "fleets",
+    "infrastructure"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.warp.dev/changelog/2026; B — Hacker News story 2026-08-18）。 Changelog entry 2026.08.27 (v0.2026.08.26.17.59) under New features, pointing at the launch blog post. A third product alongside the ledger’s Warp terminal and the Warp Agent CLI listed in the site navigation. 首次公开日期来源：https://docs.warp.dev/changelog/2026",
+  "revisions": []
+}

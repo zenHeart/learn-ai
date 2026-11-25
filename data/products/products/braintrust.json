@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：date_precision day → month。没有一手来源支持 2023-08-01；官方 SDK 在 PyPI 的早期版本是 0.0.x（2023-05-24），官方博客最早的带日期文章在 2023 年 11 月。只确认到 2023 年 8 月",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "没有一手来源支持 2023-08-01；官方 SDK 在 PyPI 的早期版本是 0.0.x（2023-05-24），官方博客最早的带日期文章在 2023 年 11 月。只确认到 2023 年 8 月"
+    }
+  ],
+  "date_precision": "month"
 }

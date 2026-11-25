@@ -1,0 +1,36 @@
+{
+  "id": "manus-studio",
+  "name": "Manus Studio",
+  "name_zh": "Manus Studio",
+  "vendor_id": "butterfly-effect",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-09-28",
+  "date_precision": "day",
+  "homepage": "https://manus.im/blog/introducing-manus-2-0",
+  "desc": "Desktop workspace where people and AI agents share one project.",
+  "desc_zh": "让人和 AI 智能体共用同一个项目的桌面工作区",
+  "solves": "Carrying every capability into every task makes the same work slower and more expensive. Studio brings in only the tools the project actually calls for.",
+  "solves_zh": "把全部能力塞进每个任务，只会让同样的活又慢又贵。Studio 只引入项目真正需要的工具。",
+  "best_for": "One project needs a brief, a page and a video, and you want them to stay one connected job.",
+  "best_for_zh": "一个项目同时需要简报、页面和视频，而你希望它们始终是同一件连在一起的活。",
+  "surface": "standalone",
+  "tags": [
+    "shared-workspace",
+    "project-scoped-tools",
+    "desktop-app"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://manus.im/blog , then the Manus product menu）。 Announced 2026-09-28 with Manus 2.0. The same post also introduced the Cascade agent framework, the purchasable Cloud Computer and the Cue app. The post says Cascade used 23.2% fewer tokens, finished tasks 28.2% faster and cost 32% less to run in one tested configuration. No media source was read. 首次公开日期来源：https://manus.im/blog/introducing-manus-2-0",
+  "revisions": []
+}

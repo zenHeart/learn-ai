@@ -1,0 +1,35 @@
+{
+  "id": "heygen-android-app",
+  "name": "HeyGen for Android",
+  "name_zh": "HeyGen for Android",
+  "vendor_id": "heygen",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-05-01",
+  "date_precision": "month",
+  "homepage": "https://play.google.com/store/apps/details?id=com.heygen.app",
+  "desc": "Android app that records, generates and shares HeyGen avatar videos",
+  "desc_zh": "在安卓手机上录制、生成并分享 HeyGen 数字人视频的应用",
+  "solves": "The web app was the only way in, so an idea away from a desk waited for a laptop. Android carries recording, generation and sharing in one place.",
+  "solves_zh": "以前只有网页端，离开桌子想到的点子只能等回到笔记本前。安卓应用把录制、生成和分享都带上，视频当场就能做。",
+  "best_for": "When an idea lands in a car or on an errand and the video has to exist before you sit down again.",
+  "best_for_zh": "想法在车上或跑腿时冒出来，而视频要在再次坐下前就做出来的时候。",
+  "surface": "standalone",
+  "tags": [
+    "android-app",
+    "mobile-capture",
+    "avatar-video"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — HeyGen blog monthly release roundups (heygen.com/blog), \"What's new at HeyGe）。 The roundup says the full app came to Android in May 2026 and links to Google Play. Only the month is documented. The ledger's form enum has no mobile value, so web is used for the client. 首次公开日期来源：https://www.heygen.com/blog/heygen-may-2026-release 首次公开日期仅精确到月。",
+  "revisions": []
+}

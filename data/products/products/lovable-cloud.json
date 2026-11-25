@@ -1,0 +1,36 @@
+{
+  "id": "lovable-cloud",
+  "name": "Lovable Cloud",
+  "name_zh": "Lovable Cloud",
+  "vendor_id": "lovable",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2025-10-06",
+  "date_precision": "day",
+  "homepage": "https://docs.lovable.dev/integrations/cloud",
+  "desc": "Built-in database, login and file storage for apps Lovable builds.",
+  "desc_zh": "为 Lovable 生成的应用提供内置数据库、登录与文件存储。",
+  "solves": "A prompt-built app stops the moment it needs accounts or a place to keep data; the backend is already wired into the project.",
+  "solves_zh": "纯靠提示词搭出来的应用一需要账号和存数据就卡住；现在后端已经接在项目里。",
+  "best_for": "You described an app that needs users to sign in and their data to survive a refresh.",
+  "best_for_zh": "你想做的应用需要用户登录，并且刷新后数据还在。",
+  "surface": "in-product",
+  "tags": [
+    "managed-backend",
+    "auth",
+    "postgres"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.lovable.dev/changelog (702 dated entries read)）。 First-party changelog entry dated Oct 6, 2025. Not in the ledger, so recorded under brief rule (b). It is a capability inside the Lovable product rather than a separate app, but it has its own docs surface and is what users search for when a Lovable app needs a backend. 首次公开日期来源：https://docs.lovable.dev/changelog",
+  "revisions": []
+}

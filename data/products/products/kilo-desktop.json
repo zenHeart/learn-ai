@@ -1,0 +1,35 @@
+{
+  "id": "kilo-desktop",
+  "name": "Kilo Desktop",
+  "name_zh": "Kilo Desktop",
+  "vendor_id": "kilo-code",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-10-06",
+  "date_precision": "day",
+  "homepage": "https://kilo.ai",
+  "desc": "Standalone desktop app holding the whole Kilo workflow in one window.",
+  "desc_zh": "把 Kilo 整套流程收进一个窗口的独立桌面应用。",
+  "solves": "Jumping between the editor, the CLI and the cloud splits the work; one app carries planning, coding and review together.",
+  "solves_zh": "在编辑器、命令行和云端之间来回跳会把活儿拆散；一个应用把规划、写码和审查放在一起。",
+  "best_for": "You switched from the extension and want the agent as the main window instead of a sidebar.",
+  "best_for_zh": "从插件转过来，想让智能体当主窗口而不是侧边栏。",
+  "surface": "standalone",
+  "tags": [
+    "desktop-app",
+    "unified-workflow",
+    "standalone"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — blog.kilo.ai directory）。 GA followed on 2026-11-17. kilo.ai/desktop returns 404, so the vendor site root is used as the entry page. 首次公开日期来源：https://blog.kilo.ai/p/desktop",
+  "revisions": []
+}

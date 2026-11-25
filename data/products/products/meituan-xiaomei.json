@@ -1,0 +1,35 @@
+{
+  "id": "meituan-xiaomei",
+  "name": "小美",
+  "name_zh": "小美",
+  "vendor_id": "meituan",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-09-10",
+  "date_precision": "day",
+  "homepage": "https://apps.apple.com/cn/app/id6748377336",
+  "desc": "Meituan's life assistant app that orders and books by voice",
+  "desc_zh": "美团的生活助手 App，说话就能点外卖、订座",
+  "solves": "Ordering lunch takes six taps across three pages. Say it once and Xiaomei picks, pays and tracks the order.",
+  "solves_zh": "点份午饭要在几个页面里点六七次。说一句话，它自己选店、下单、看配送进度。",
+  "best_for": "Both hands are full on the metro and dinner still has to be ordered.",
+  "best_for_zh": "地铁上双手都占着，晚饭还没点，又不想腾出手翻 App 的时候。",
+  "surface": "standalone",
+  "tags": [
+    "life-assistant",
+    "voice-order",
+    "local-life"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — App Store 中国区 (iTunes Search API, term 小美); C — 科技日报 / 第一财经 / 智东西 2025-09-12）。 The App Store listing dates the app to 2025-09-10; media report the public beta announcement on 2025-09-12, two days later, and no first-party page carrying that announcement day was read. 小美 is Meituan's first AI Agent product: it runs on the LongCat-Flash-Chat model and handles food ordering, restaurant picks, bookings and navigation. Bundle id com.sankuai.beam, seller Shanghai Sankuai Haowu Technology Co., Ltd. The form field is 'desktop' only because the schema has no mobile value. Outside the 2026-05-07 window: proposed as a backfill; neither 问小团 (in-app assistant) nor 妙手 covers it. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://itunes.apple.com/lookup?id=6748377336&country=cn",
+  "revisions": []
+}

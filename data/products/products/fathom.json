@@ -28,8 +28,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：date_precision day → month。找不到发布日期的一手来源。按月份精度记",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -38,7 +38,15 @@
       "from": "agent-platform",
       "to": "meetings",
       "why": "会议转写与纪要工具，原先归入 agent-platform 是因为分类里没有会议类"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "找不到发布日期的一手来源。按月份精度记"
     }
   ],
-  "date_precision": "day"
+  "date_precision": "month"
 }

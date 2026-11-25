@@ -1,0 +1,36 @@
+{
+  "id": "gemini-personal-intelligence",
+  "name": "Gemini Personal Intelligence",
+  "name_zh": "Gemini Personal Intelligence",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-01-20",
+  "date_precision": "day",
+  "homepage": "https://gemini.google.com/",
+  "desc": "Gemini capability that uses your apps and chats to personalize answers",
+  "desc_zh": "结合你的应用和对话来个性化回答的 Gemini 能力",
+  "solves": "Generic answers ignore your calendar and mail; Personal Intelligence draws on your connected apps to tailor them.",
+  "solves_zh": "通用回答不了解你的日程和邮件，Personal Intelligence 会结合你的数据作答。",
+  "best_for": "You ask whether you are free for dinner without opening your calendar.",
+  "best_for_zh": "想问晚上有没有空吃饭，又不想自己去翻日历。",
+  "surface": "in-product",
+  "tags": [
+    "personalization",
+    "connected-apps",
+    "context-aware"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://gemini.google/release-notes (official Gemini Apps release updates)）。 Outside the window. Entry dated 2026.01.20; beta for Google AI Pro and AI Ultra subscribers in the US. It later powers Daily Brief and comes to Search and cars. Second source is not independent media. 入库核对（2026-11-25）：官方名字只是「Personal Intelligence」，加上产品名以便辨认。 首次公开日期来源：https://gemini.google/release-notes",
+  "revisions": []
+}

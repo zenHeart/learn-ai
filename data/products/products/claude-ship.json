@@ -1,0 +1,35 @@
+{
+  "id": "claude-ship",
+  "name": "Claude Ship",
+  "name_zh": "Claude Ship",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-11-23",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/claude-ship",
+  "desc": "Agent that reviews pull requests, fixes them and applies merge policy",
+  "desc_zh": "自动审查 PR、修复问题并按团队规则推进合并的智能体",
+  "solves": "Pull requests pile up faster than reviewers can read them; Claude Ship reviews, fixes and merges by your team's policy.",
+  "solves_zh": "PR 积压得比评审快，Claude Ship 按团队设定的规则审查、修复并推进合并。",
+  "best_for": "Your team merged an agent-written change late Friday and needs a careful review before Monday's release.",
+  "best_for_zh": "周五深夜合入了智能体写的改动，想在周一发版前得到一次细致审查。",
+  "surface": "standalone",
+  "tags": [
+    "code-review",
+    "pull-requests",
+    "merge-policy"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C — https://techcrunch.com/category/artificial-intelligence/ (then D: claude.com）。 Beta on Team and Enterprise plans, GitHub repositories. Distinct from Code Review: the launch article says Code Review 'is rolling out in Claude Code and the desktop app starting today'. 首次公开日期来源：https://claude.com/resources/articles/introducing-claude-ship",
+  "revisions": []
+}

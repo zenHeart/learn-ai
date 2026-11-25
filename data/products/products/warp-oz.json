@@ -1,0 +1,36 @@
+{
+  "id": "warp-oz",
+  "name": "Warp Oz",
+  "name_zh": "Warp Oz",
+  "vendor_id": "warp-inc",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-02-10",
+  "date_precision": "day",
+  "homepage": "https://docs.warp.dev/oz/overview",
+  "desc": "Orchestration layer that runs fleets of cloud agents for engineering work.",
+  "desc_zh": "为工程任务调度大量云端智能体的编排层。",
+  "solves": "Running agents one at a time in a terminal caps your throughput; Oz launches them in parallel and automates the recurring work.",
+  "solves_zh": "在终端里一次跑一个智能体，吞吐就那么大；Oz 并行启动并把重复工作自动化。",
+  "best_for": "You have twenty similar changes to make and one afternoon to make them in.",
+  "best_for_zh": "有二十个相似改动要改，却只有一个下午。",
+  "surface": "standalone",
+  "tags": [
+    "orchestration",
+    "parallel-agents",
+    "automation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.warp.dev/changelog/2026）。 Changelog entry 2026.02.10 (v0.2026.02.10.11.37), listed under New features. Not in the ledger, so rule (b). The changelog for 2026.08.12 records \"Renamed the Oz agent UI to Warp Agent across the app and CLI\", so the agent-facing name inside Warp is now Warp Agent while the platform stays Oz. 入库核对（2026-11-25）：官方名字只是「Oz」，加上厂商名以便辨认。 首次公开日期来源：https://docs.warp.dev/changelog/2026",
+  "revisions": []
+}

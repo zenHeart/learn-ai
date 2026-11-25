@@ -9,7 +9,7 @@
     "coding"
   ],
   "form": "cli",
-  "released": "2025-06-01",
+  "released": "2025-08-01",
   "homepage": "https://github.com/badlogic/pi-mono",
   "desc": "Minimal, extensible agent harness you make your own",
   "desc_zh": "极简、可自己改造的 agent harness 框架",
@@ -32,8 +32,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认；GitHub 仓库已迁移至 earendil-works/pi，badlogic/pi-mono 为旧地址跳转",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认；GitHub 仓库已迁移至 earendil-works/pi，badlogic/pi-mono 为旧地址跳转 2026-11-25：released 2025-06-01/day → 2025-08-01/month; source https://api.github.com/repos/earendil-works/pi。原值 2025-06-01 标成精确到日，却早于项目仓库的创建日 2025-08-09。只确认到 2025 年 8 月",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-06-01/day",
+      "to": "2025-08-01/month",
+      "why": "原值 2025-06-01 标成精确到日，却早于项目仓库的创建日 2025-08-09。只确认到 2025 年 8 月"
+    }
+  ],
+  "date_precision": "month"
 }

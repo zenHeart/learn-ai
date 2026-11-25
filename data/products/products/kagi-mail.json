@@ -1,0 +1,35 @@
+{
+  "id": "kagi-mail",
+  "name": "Kagi Mail",
+  "name_zh": "Kagi Mail",
+  "vendor_id": "kagi",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-11-23",
+  "date_precision": "day",
+  "homepage": "https://kagi.com/products/mail",
+  "desc": "Private email and calendar that sorts out the noise for you.",
+  "desc_zh": "会自动筛掉骚扰信息的私密邮箱和日历",
+  "solves": "Newsletters and cold pitches bury the people actually waiting on a reply. Kagi Mail keeps them out of the way and flags phishing before you open it.",
+  "solves_zh": "订阅邮件和陌生推销把真正等你回复的人埋在了下面。Kagi Mail 会把这些邮件挡开，并在你打开前提示钓鱼风险。",
+  "best_for": "Your inbox is a to-do list you never asked for and the important reply is three scrolls down.",
+  "best_for_zh": "收件箱变成了没人要求的待办清单，而那封重要的回复压在三次滚动之下。",
+  "surface": "standalone",
+  "tags": [
+    "private-email",
+    "inbox-triage",
+    "phishing-warnings"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://kagi.com/changelog and https://blog.kagi.com/ , then the Kagi produc）。 Public beta on 2026-11-23 with a 60-day free trial, then $99/year or included with Kagi Ultimate. It comes with a @kagimail.com address or a custom domain, plus a calendar. Distinct from the ledger's Kagi Assistant: this is a separate product with its own page and price. No media source was read. 首次公开日期来源：https://blog.kagi.com/kagi-mail-public-beta",
+  "revisions": []
+}

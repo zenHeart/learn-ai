@@ -1,0 +1,35 @@
+{
+  "id": "copilot-managed-runtime",
+  "name": "Copilot Managed Runtime",
+  "name_zh": "Copilot Managed Runtime",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/copilot/products/copilot-managed-runtime",
+  "desc": "Managed hosting for apps built in Cowork, Code and Copilot Studio.",
+  "desc_zh": "为 Cowork、Code 和 Copilot Studio 里做出来的应用提供托管。",
+  "solves": "An app nobody owns becomes a security problem. Managed Runtime keeps it inside the Microsoft 365 environment, governed by IT and visible in the admin center.",
+  "solves_zh": "没人认领的应用迟早变成安全问题。Managed Runtime 把它留在 Microsoft 365 环境内，由 IT 管控并在管理后台可见。",
+  "best_for": "Your team has built apps in Copilot and IT has not signed off on where they run.",
+  "best_for_zh": "你的团队已经在 Copilot 里做了应用，而 IT 还没批准它们跑在哪里。",
+  "surface": "standalone",
+  "tags": [
+    "hosting",
+    "governance",
+    "admin-center"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft blog, https://blogs.microsoft.com/blog/2026/09/25/introducing-the-）。 Preview from 2026-09-25; general availability announced 2026-11-17. Also the foundation for Copilot Studio apps and is being opened to third-party and pro-code developers. 入库核对（2026-11-25）：2026-09-25 只是发布预告，随后是限量预览；公众首次可用日是正式发布日。Ignite 2026 文章原话：「Copilot Managed Runtime for securely hosting and managing apps is now generally available」。分类从辅助工具改为智能体平台。 首次公开日期来源：https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
+  "revisions": []
+}

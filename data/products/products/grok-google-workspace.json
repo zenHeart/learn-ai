@@ -1,0 +1,35 @@
+{
+  "id": "grok-google-workspace",
+  "name": "Grok in Google Workspace",
+  "name_zh": "Grok in Google Workspace",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-24",
+  "date_precision": "day",
+  "homepage": "https://workspace.google.com/marketplace/app/grok/660927092109",
+  "desc": "One Google Workspace add-on that puts Grok beside your open file.",
+  "desc_zh": "一个 Google Workspace 加载项，让 Grok 停在 Sheets、Slides 和 Docs 中打开的文件旁。",
+  "solves": "Leaving the document to ask a question breaks the thread; the add-on answers against the file you are already editing.",
+  "solves_zh": "为问个问题而离开文档会打断思路；加载项就着你正在编辑的文件作答。",
+  "best_for": "You are editing a budget in Sheets and want the numbers explained without switching windows.",
+  "best_for_zh": "正在 Sheets 里改预算，想让数字被解释清楚又不想切窗口时。",
+  "surface": "extension",
+  "tags": [
+    "workspace-addon",
+    "in-file-assistant",
+    "spreadsheets"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory; channel A Google Workspace Marketplace listing）。 One add-on covering three applications, unlike the four separate Microsoft Office add-ins. The Google Workspace Marketplace listing URL is linked from the official announcement. 入库核对（2026-11-25）：嵌在办公软件里的助手，与账本对同类功能的分类一致。 首次公开日期来源：https://x.ai/news/introducing-google-workspace-addon",
+  "revisions": []
+}

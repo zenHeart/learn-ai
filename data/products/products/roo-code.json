@@ -26,10 +26,27 @@
   "handbook": {
     "status": "candidate"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "roomote",
   "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
+  "notes": "2026-11-25：status active → renamed; superseded_by null → roomote。Roo Code 的官网 roocode.com 现在跳转到 roomote.dev（标题「Roomote: your own cloud coding agent」），Roo Code 扩展的最后一个版本停在 2026-05-15。与账本里「tongyi.com 跳转到 qianwen.com 即改名」是同一种判断依据",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "Roo Code 的官网 roocode.com 现在跳转到 roomote.dev（标题「Roomote: your own cloud coding agent」），Roo Code 扩展的最后一个版本停在 2026-05-15。与账本里「tongyi.com 跳转到 qianwen.com 即改名」是同一种判断依据"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "roomote",
+      "why": "Roo Code 的官网 roocode.com 现在跳转到 roomote.dev（标题「Roomote: your own cloud coding agent」），Roo Code 扩展的最后一个版本停在 2026-05-15。与账本里「tongyi.com 跳转到 qianwen.com 即改名」是同一种判断依据"
+    }
+  ],
   "date_precision": "day"
 }

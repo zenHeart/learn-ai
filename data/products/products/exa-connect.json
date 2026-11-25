@@ -1,0 +1,36 @@
+{
+  "id": "exa-connect",
+  "name": "Exa Connect",
+  "name_zh": "Exa Connect",
+  "vendor_id": "exa-labs",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-06-24",
+  "date_precision": "day",
+  "homepage": "https://exa.ai/connect",
+  "desc": "Attach paid data providers to an Exa Agent run.",
+  "desc_zh": "把付费数据源挂到 Exa Agent 的一次运行上",
+  "solves": "Public web search cannot see your analytics, market or compliance data. Connect wires named providers into a run so the agent reasons over private and public data together.",
+  "solves_zh": "公开网页检索看不到你的分析、市场或合规数据。Connect 把指定数据源接进一次运行，让智能体把两类数据放在一起推理。",
+  "best_for": "The answer lives in a subscription dataset your team already pays for and nowhere on the open web.",
+  "best_for_zh": "答案在团队已经付费的订阅数据集里，公开网络上根本找不到。",
+  "surface": "standalone",
+  "tags": [
+    "data-sources",
+    "private-data",
+    "agent-runs"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://exa.ai/docs/changelog and https://exa.ai/llms.txt , then https://exa）。 Launched 2026-06-24 with a named set of providers; the changelog says they are attached through dataSources on POST /agent/runs. Missing from the ledger, which holds only the Exa search API for this vendor. No media source was read. 首次公开日期来源：https://exa.ai/docs/changelog",
+  "revisions": []
+}

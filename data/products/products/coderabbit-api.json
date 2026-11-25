@@ -1,0 +1,36 @@
+{
+  "id": "coderabbit-api",
+  "name": "CodeRabbit API",
+  "name_zh": "CodeRabbit API",
+  "vendor_id": "coderabbit",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-11-13",
+  "date_precision": "day",
+  "homepage": "https://docs.coderabbit.ai/api",
+  "desc": "API and hosted MCP server for driving CodeRabbit from scripts and agents.",
+  "desc_zh": "让脚本和智能体调用 CodeRabbit 的 API 与托管 MCP 服务。",
+  "solves": "Reviews could only be triggered by a git event; a CI job or an agent can now request one and wait for the result.",
+  "solves_zh": "过去只有 git 事件能触发审查；现在 CI 任务或智能体可以主动请求并等待结果。",
+  "best_for": "Your pipeline needs a review verdict before it continues, not a comment that appears later.",
+  "best_for_zh": "流水线需要先拿到审查结论再往下走，而不是等一条稍后才出现的评论。",
+  "surface": "standalone",
+  "tags": [
+    "api",
+    "mcp-server",
+    "ci-integration"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.coderabbit.ai/changelog directory）。 Ships together with a hosted MCP server so agents such as Claude Code can read review threads. 首次公开日期来源：https://docs.coderabbit.ai/changelog",
+  "revisions": []
+}

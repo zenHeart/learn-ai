@@ -1,0 +1,36 @@
+{
+  "id": "gamma-5-agent-api",
+  "name": "Gamma 5 agent API",
+  "name_zh": "Gamma 5 agent API",
+  "vendor_id": "gamma",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-10-05",
+  "date_precision": "day",
+  "homepage": "https://developers.gamma.app/agent-gamma-5/create-agent-generation",
+  "desc": "API endpoints that let the Gamma 5 agent build and edit gammas",
+  "desc_zh": "让 Gamma 5 Agent 按一句提示生成并修改 Gamma 的接口",
+  "solves": "The old generate endpoint needed a card-by-card spec, so an integration had to know the whole deck structure. These endpoints take a natural-language instruction and return a gamma.",
+  "solves_zh": "旧的生成接口要逐张卡片写规格，集成方得先知道整套结构。新接口收自然语言指令，直接返回成品。",
+  "best_for": "When your own product has to hand a user prompt to Gamma and get a deck back.",
+  "best_for_zh": "自己的产品要把用户的提示转给 Gamma 并拿回一份成片的时候。",
+  "surface": "standalone",
+  "tags": [
+    "agent-api",
+    "prompt-to-deck",
+    "rest-api"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Gamma developer docs changelog (developers.gamma.app/reference/changelog), l）。 Covers POST /agent/generations, POST /agent/gammas/{gammaId}/edits and GET /agent/edits/{editId}. The Gamma 5 web platform itself launched around the same date but gamma.app returns 403 to automated fetches, so only the API surface is confirmed here. 首次公开日期来源：https://developers.gamma.app/reference/changelog",
+  "revisions": []
+}

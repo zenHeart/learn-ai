@@ -1,0 +1,35 @@
+{
+  "id": "chatgpt-for-teens",
+  "name": "ChatGPT for Teens",
+  "name_zh": "ChatGPT for Teens",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-08-18",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/chatgpt-for-teens",
+  "desc": "The under-18 experience in ChatGPT, with study mode and parent controls.",
+  "desc_zh": "ChatGPT 面向 18 岁以下用户的版本，带学习模式和家长控制。",
+  "solves": "A teen asking for a quick answer gets handed one. This experience pushes back toward the steps, and a parent can see and set the limits.",
+  "solves_zh": "孩子直接要答案时，普通助手会给。这个版本会把话题推回解题步骤，家长也能查看并设定限制。",
+  "best_for": "Someone under 18 is using ChatGPT for schoolwork outside class.",
+  "best_for_zh": "家里有未满 18 岁的孩子，要在课外用 ChatGPT 赶功课和准备考试。",
+  "surface": "in-product",
+  "tags": [
+    "education",
+    "safety",
+    "parental-controls"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/chatgpt-for-teens）。 Applied automatically when age is estimated or stated as 13-17, so it is a configuration of ChatGPT rather than a separate app. Distinct from ChatGPT Study mode, which the ledger already has. 首次公开日期来源：https://openai.com/index/chatgpt-for-teens",
+  "revisions": []
+}

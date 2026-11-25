@@ -1,0 +1,36 @@
+{
+  "id": "notion-skills",
+  "name": "Notion Skills",
+  "name_zh": "Notion 技能",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-03-20",
+  "date_precision": "day",
+  "homepage": "https://www.notion.com/help/create-and-manage-skills",
+  "desc": "Reusable pages of instructions that teach Notion agents your routines.",
+  "desc_zh": "把团队做法写成可复用的技能，教智能体照着做",
+  "solves": "Good prompts live in one person's head. A skill is a page your whole team can reuse inside Notion agents.",
+  "solves_zh": "好提示词只存在某个人的脑子里。技能就是一个页面，全团队都能在 Notion 智能体里反复使用。",
+  "best_for": "Everyone keeps re-explaining how your monthly review should be written.",
+  "best_for_zh": "月度复盘该怎么写，每个人都在一遍遍重新教 AI。",
+  "surface": "in-product",
+  "tags": [
+    "reusable-prompts",
+    "skills-library",
+    "team-sharing"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.notion.com/releases/page/2 and /releases/page/5）。 First shipped on 2026-03-20 as 'Custom skills for Notion AI', available on Business and Enterprise plans; that date is used. Notion 3.7 (2026-09-15) added a shared skills library for the whole workspace, and 3.8 (2026-10-13) added a Skills API that loads skills from Notion into GitHub for ChatGPT and Claude. Notion itself uses several labels ('custom skills', 'Agent skills', 'Skills for Notion Agent'), so the name here is a normalized form; medium confidence on naming, high on the date. No media source was read. 首次公开日期来源：https://www.notion.com/releases/2026-03-20",
+  "revisions": []
+}

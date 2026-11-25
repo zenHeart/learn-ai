@@ -1,0 +1,36 @@
+{
+  "id": "braintrust-loop",
+  "name": "Braintrust Loop",
+  "name_zh": "Braintrust Loop",
+  "vendor_id": "braintrust",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-11-24",
+  "date_precision": "day",
+  "homepage": "https://docs.braintrust.dev/loop",
+  "desc": "Assistant inside Braintrust that explains failures and drafts fixes.",
+  "desc_zh": "Braintrust 内置的助手，解释失败原因并起草修复。",
+  "solves": "A failing eval gives you a trace and no explanation; Loop reads the production data and says what went wrong.",
+  "solves_zh": "一条失败的评测只给一条 trace，不给解释；Loop 会读生产数据，说出问题在哪。",
+  "best_for": "An eval score drops overnight and you need the cause before the standup.",
+  "best_for_zh": "评测分数一夜之间掉了，要在站会前弄清原因。",
+  "surface": "in-product",
+  "tags": [
+    "failure-analysis",
+    "in-product-agent",
+    "evals"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — braintrust.dev/blog）。 Named in-product capability with its own docs section. Predates the window and is absent from the ledger, so recorded under brief rule (b). 入库核对（2026-11-25）：官方名字只是「Loop」，加上产品名以便辨认。 首次公开日期来源：https://www.braintrust.dev/blog/loop",
+  "revisions": []
+}

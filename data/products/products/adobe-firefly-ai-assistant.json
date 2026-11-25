@@ -1,0 +1,36 @@
+{
+  "id": "adobe-firefly-ai-assistant",
+  "name": "Adobe Firefly AI Assistant",
+  "name_zh": "Adobe Firefly AI Assistant",
+  "vendor_id": "adobe",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-04-27",
+  "date_precision": "day",
+  "homepage": "https://www.adobe.com/products/firefly.html",
+  "desc": "Conversational creative agent across Firefly and Creative Cloud apps",
+  "desc_zh": "Firefly 和 Creative Cloud 里的对话式创意助手",
+  "solves": "Finding the right tool for an edit took menu-hunting; describe the change and the assistant plans the steps in Adobe's apps.",
+  "solves_zh": "想做一个效果却不知道该用哪个工具；说出要改什么，助手会在 Adobe 应用里排好步骤。",
+  "best_for": "You know the look you want in Premiere but not which panel to open; ask AI Assistant to get there.",
+  "best_for_zh": "知道 Premiere 里想要的效果，却不知道该开哪个面板；直接问 AI Assistant。",
+  "surface": "in-product",
+  "tags": [
+    "creative-agent",
+    "in-app-assistant",
+    "public-beta"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C+D — TechCrunch Adobe tag feed, then the Adobe Blog index）。 Outside the window. Adobe published a post on 2026-04-27 (\"Firefly AI Assistant now available in public beta\") stating the beta went live that day, so the release date is confirmed by a first-party page dated the same day. Evolved from Project Moonlight (previewed at Adobe MAX 2025, private beta). On 2026-06-18 Adobe brought the assistant to Premiere, Photoshop, Illustrator, Frame.io and InDesign as \"AI Assistant\" (private beta in After Effects). The homepage is the Firefly product page; a dedicated assistant URL was not found. curl gets 403 from Adobe's bot guard on www.adobe.com/products/firefly.html; no other official assistant page was found, so the Firefly product page stands as the entry point. 首次公开日期来源：https://blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta 官网未直接确认（403）。",
+  "revisions": []
+}

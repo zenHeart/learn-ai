@@ -1,0 +1,35 @@
+{
+  "id": "grok-for-excel",
+  "name": "Grok for Excel",
+  "name_zh": "Grok for Excel",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-20",
+  "date_precision": "day",
+  "homepage": "https://marketplace.microsoft.com/en-us/product/office/WA200011056?tab=Overview",
+  "desc": "Excel add-in that answers questions, writes formulas and runs scenarios.",
+  "desc_zh": "Excel 加载项，用自然语言回答问题、写公式并做情景推演。",
+  "solves": "Spreadsheet questions stall on remembering the right function; describe the outcome and the formula appears beside your data.",
+  "solves_zh": "表格问题常常卡在记不起该用哪个函数；描述想要的结果，公式就出现在数据旁边。",
+  "best_for": "You have a cash-receipts sheet and want to know what moved and why without writing a pivot table.",
+  "best_for_zh": "手上有一张收款表，想看清哪儿变了、为什么，又不想做数据透视表时。",
+  "surface": "extension",
+  "tags": [
+    "spreadsheet-addin",
+    "formula-generation",
+    "scenario-analysis"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory; channel A Microsoft Marketplace listing）。 One of four Grok Office add-ins released in June and July 2026 (Word 2026-06-18, PowerPoint 2026-06-16, Excel 2026-07-20, Outlook 2026-07-21). They are separate installable products, matching how the ledger already records Copilot add-ins per Office application. The marketplace URL redirects by dropping the locale segment. 入库核对（2026-11-25）：嵌在办公软件里的助手，与账本对 ChatGPT for Excel、Microsoft 365 Copilot 的分类一致。 首次公开日期来源：https://x.ai/news/introducing-excel-addin 官网未直接确认（redirect->https://marketplace.microsoft.com/en-us/product/WA200011056?tab=Overview）。",
+  "revisions": []
+}

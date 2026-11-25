@@ -9,7 +9,7 @@
     "model-api"
   ],
   "form": "api",
-  "released": "2023-09-01",
+  "released": "2023-09-07",
   "homepage": "https://hunyuan.tencent.com",
   "desc": "Tencent's general-purpose LLM and API platform.",
   "desc_zh": "腾讯的通用大语言模型与 API 平台。",
@@ -32,8 +32,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网可访问，标题「腾讯混元」，但页面为前端渲染，未取到可判读的产品说明正文，故未完全确认。",
+  "last_verified_at": "2026-11-25",
+  "notes": "官网可访问，标题「腾讯混元」，但页面为前端渲染，未取到可判读的产品说明正文，故未完全确认。 2026-11-25：released 2023-09-01/day → 2023-09-07/day; source https://www.tencent.com/tencent-unveils-hunyuan-its-proprietary-large-foundation-model-on-tencent-cloud。腾讯官方新闻稿的日期是 2023 年 9 月 7 日，当天宣布混元通过腾讯云向企业开放",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -42,6 +42,14 @@
       "from": "web",
       "to": "api",
       "why": "与同类模型平台保持一致"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-09-01/day",
+      "to": "2023-09-07/day",
+      "why": "腾讯官方新闻稿的日期是 2023 年 9 月 7 日，当天宣布混元通过腾讯云向企业开放"
     }
   ],
   "date_precision": "day"

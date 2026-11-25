@@ -1,0 +1,36 @@
+{
+  "id": "runway-dev",
+  "name": "Runway Dev",
+  "name_zh": "Runway Dev",
+  "vendor_id": "runway",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "video"
+  ],
+  "form": "api",
+  "released": "2026-07-23",
+  "date_precision": "day",
+  "homepage": "https://dev.runway.com/",
+  "desc": "Developer platform for video, image and audio models via API",
+  "desc_zh": "面向开发者的视频、图片、音频模型 API 平台",
+  "solves": "Picking one video model locks you into its limits; one API now routes requests across Runway and third-party models.",
+  "solves_zh": "只接一家视频模型会被它的上限卡住；一个 API 现在能调用 Runway 和第三方的多个模型。",
+  "best_for": "Your app needs clips from two different models with one billing account; start from the Runway Dev quickstart.",
+  "best_for_zh": "应用要用两家模型的视频、又不想开两套账号时，从 Runway Dev 的快速上手文档开始。",
+  "surface": "standalone",
+  "tags": [
+    "video-api",
+    "model-routing",
+    "workflows-api"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — link found in https://runway.com/news/company-news/introducing-runway-media-）。 Runway Dev is the current name of Runway's developer platform; it grew out of the Runway API (2024) and now hosts Runway's own models plus third-party ones. TechCrunch wrote that Runway Dev was 'released earlier this month' (July 2026). dev.runwayml.com redirects to dev.runway.com. 首次公开日期来源：https://runway.com/news/company-news/introducing-runway-dev",
+  "revisions": []
+}

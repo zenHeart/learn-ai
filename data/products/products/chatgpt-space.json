@@ -1,0 +1,36 @@
+{
+  "id": "chatgpt-space",
+  "name": "ChatGPT Space",
+  "name_zh": "ChatGPT Space",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-09-29",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+  "desc": "A shared space in ChatGPT where a team and its agents build.",
+  "desc_zh": "ChatGPT 里的共享工作区，团队和自己的 Agent 在里面一起做同一件事。",
+  "solves": "Files, chats and drafts for one project end up scattered across drives and threads. Space keeps them together, and teammates and dots can work on the same pages.",
+  "solves_zh": "一个项目的文件、对话和草稿散在各个网盘和线程里。Space 把它们收在一处，同事和你的 dot 可以一起改同一批页面。",
+  "best_for": "Several people, plus an agent, are all contributing to one body of work.",
+  "best_for_zh": "好几个人外加一个 Agent，都在往同一摊工作里添东西。",
+  "surface": "in-product",
+  "tags": [
+    "collaboration",
+    "shared-workspace",
+    "pages"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI DevDay 2026 recap, https://openai.com/index/devday-2026-recap）。 ChatGPT release notes, entry under the \"September 29, 2026\" heading. Space replaces Library for accounts that have it. Distinct from ChatGPT Projects, which stays separate and is already in the ledger. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

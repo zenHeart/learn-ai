@@ -1,0 +1,37 @@
+{
+  "id": "claude-in-chrome",
+  "name": "Claude in Chrome",
+  "name_zh": "Claude in Chrome",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2025-08-25",
+  "date_precision": "day",
+  "homepage": "https://claude.com/claude-in-chrome",
+  "desc": "Chrome extension where Claude browses and acts on pages",
+  "desc_zh": "让 Claude 在浏览器里读网页、点按钮办事的扩展",
+  "solves": "Web tasks mean endless tab switching and copy-paste; Claude in Chrome reads the page and does the clicks for you.",
+  "solves_zh": "网页操作要不停切标签、复制粘贴，Claude in Chrome 读懂页面后替你点。",
+  "best_for": "You must file the same form in a legacy admin portal and would rather not click through it again.",
+  "best_for_zh": "又要在老旧后台里填同一张表单，不想再逐项点一遍。",
+  "surface": "extension",
+  "tags": [
+    "browser-extension",
+    "web-automation",
+    "agentic-browsing"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Outside the window. An invite-only pilot with 1,000 Max plan users (waitlist) ran for about three months before; 2025-08-25 is the first day all Max plan subscribers could use it (beta). The article was later updated to say it is generally available. Second source is not independent media. 首次公开日期来源：https://claude.com/resources/articles/claude-for-chrome",
+  "revisions": []
+}

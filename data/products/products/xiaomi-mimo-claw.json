@@ -1,0 +1,36 @@
+{
+  "id": "xiaomi-mimo-claw",
+  "name": "Xiaomi MiMo Claw",
+  "name_zh": "Xiaomi MiMo Claw",
+  "vendor_id": "xiaomi",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-03-19",
+  "date_precision": "day",
+  "homepage": "https://aistudio.xiaomimimo.com/?forcePage=claw",
+  "desc": "Cloud-hosted personal agent built on the OpenClaw framework",
+  "desc_zh": "小米的云端轻量智能体，一键跑起 OpenClaw",
+  "solves": "Running OpenClaw yourself means server setup and maintenance. MiMo Claw hosts it in the cloud with a workspace you open in a browser.",
+  "solves_zh": "自己部署 OpenClaw 要配服务器、常维护。它把智能体托管在云端，浏览器里直接用。",
+  "best_for": "You want to try an OpenClaw agent today without renting or configuring a server.",
+  "best_for_zh": "想今天就用上 OpenClaw 智能体，却不想租服务器、配环境的时候。",
+  "surface": "standalone",
+  "tags": [
+    "openclaw-hosting",
+    "cloud-workspace",
+    "kingsoft-office-integration"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mimo.mi.com/ (product matrix) and https://mimo.mi.com/llms.txt (News）。 Two launch dates exist and both are official: free global beta V1.0.0 on 2026-03-19, and the paid 'official release' V2.0.0 on 2026-06-16 (changelog heading 'MiMo Claw: Official Monetization Version Released'; the news item 'Xiaomi MiMo Claw Official Release | Flagship Model + Kingsoft Office Ecosystem, New Subscription Service Launched' at https://mimo.mi.com/static/docs/news/latest/mimoclaw.md carries no date in its text). The earlier public beta is used as first public availability. The product is built on the open-source OpenClaw framework and is not related to Huawei 小艺Claw or Moonshot Kimi Claw beyond the shared 'Claw' naming. The entry page title reads 'Xiaomi MiMo Studio' because Claw is a tab of the same web app. SECOND SOURCE NOT YET READ: the OSCHINA URL came from a search summary and the page is a JS-rendered app that returned only its header to scripted fetches; it still needs one read through a rendering client, or replacement by another outlet. 首次公开日期来源：https://mimo.mi.com/static/docs/updates/feature/claw.md",
+  "revisions": []
+}

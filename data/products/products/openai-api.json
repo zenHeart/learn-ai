@@ -9,7 +9,7 @@
     "model-api"
   ],
   "form": "api",
-  "released": "2020-06-17",
+  "released": "2020-06-11",
   "homepage": "https://platform.openai.com/",
   "desc": "Hosted API for GPT, image, audio and video models.",
   "desc_zh": "OpenAI 托管的模型 API，涵盖文本、图像、语音与视频。",
@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2020-06-17/day → 2020-06-11/day; source https://openai.com/index/openai-api。原值 2020-06-17 无出处。OpenAI 官方发布文《OpenAI API》的日期是 2020-06-11",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2020-06-17/day",
+      "to": "2020-06-11/day",
+      "why": "原值 2020-06-17 无出处。OpenAI 官方发布文《OpenAI API》的日期是 2020-06-11"
+    }
+  ],
   "date_precision": "day"
 }

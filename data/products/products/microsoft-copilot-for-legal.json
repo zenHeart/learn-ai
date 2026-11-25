@@ -1,0 +1,36 @@
+{
+  "id": "microsoft-copilot-for-legal",
+  "name": "Microsoft Copilot for legal",
+  "name_zh": "Microsoft Copilot for legal",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-10-15",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/copilot/copilot-for-legal",
+  "desc": "Legal skills and plugins for drafting, reviewing and tracking obligations.",
+  "desc_zh": "用于起草、审阅和义务跟踪的法律技能与插件。",
+  "solves": "Redlining by hand loses the firm’s playbook. These skills compare an agreement against it and land the edit as a real tracked change in Word.",
+  "solves_zh": "手工改合同会丢掉律所自己的 playbook。这些技能把协议和 playbook 对照，并把修改落成 Word 里真正的修订记录。",
+  "best_for": "An agreement needs reviewing against house standards, or obligations need tracking.",
+  "best_for_zh": "要按内部标准审一份协议，或者要持续跟踪合同义务。",
+  "surface": "in-product",
+  "tags": [
+    "legal",
+    "skills",
+    "word"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft Copilot Blog feed, https://techcommunity.microsoft.com/blog/micros）。 DATE CONFLICT: the page itself carries Oct 15, 2026, while the microsoft.com Copilot blog feed lists the same URL with pubDate 2026-10-23. The page date is used. Successor to what Microsoft previously called Legal Agent. 首次公开日期来源：https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/introducing-microsoft-copilot-for-legal/4564246",
+  "revisions": []
+}

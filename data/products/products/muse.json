@@ -11,7 +11,7 @@
   ],
   "form": "web",
   "released": "2026-09-08",
-  "homepage": "https://www.meta.com/ai/",
+  "homepage": "https://muse.ai/",
   "desc": "Meta's consumer agent that acts using your own accounts.",
   "desc_zh": "会调用你的账号、替你办事的个人智能体",
   "solves": "An errand is mostly logging in and clicking. Muse uses your existing accounts to do that part.",
@@ -31,7 +31,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Meta's biggest consumer bet; runs each agent in its own cloud VM so tasks continue after you close the app. 来源：https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent",
-  "revisions": [],
+  "notes": "Meta's biggest consumer bet; runs each agent in its own cloud VM so tasks continue after you close the app. 来源：https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent 2026-11-25：homepage \"https://www.meta.com/ai/\" → \"https://muse.ai/\"。Meta 官方发布文把 muse.ai 作为 Muse 的网页入口（「Muse is rolling out in the US on iOS, Android, and muse.ai」）；原地址是 Meta 的通用 AI 页面",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "homepage",
+      "from": "https://www.meta.com/ai/",
+      "to": "https://muse.ai/",
+      "why": "Meta 官方发布文把 muse.ai 作为 Muse 的网页入口（「Muse is rolling out in the US on iOS, Android, and muse.ai」）；原地址是 Meta 的通用 AI 页面"
+    }
+  ],
   "date_precision": "day"
 }

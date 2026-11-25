@@ -1,0 +1,35 @@
+{
+  "id": "sourcegraph-agentic-batch-changes",
+  "name": "Sourcegraph Agentic Batch Changes",
+  "name_zh": "Sourcegraph Agentic Batch Changes",
+  "vendor_id": "sourcegraph",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-30",
+  "date_precision": "day",
+  "homepage": "https://sourcegraph.com/agentic-batch-changes",
+  "desc": "Agent that runs large-scale code migrations across many repositories at once.",
+  "desc_zh": "一次在多个仓库里执行大规模代码迁移的智能体。",
+  "solves": "A framework upgrade means the same edit in hundreds of repositories and weeks of review; the agent scopes, ships and keeps going until every PR merges.",
+  "solves_zh": "升级框架意味着几百个仓库同样的改动和几周评审；智能体划定范围、提交并一直推进到每个 PR 合并。",
+  "best_for": "A CVE forces the same dependency bump across every service you own.",
+  "best_for_zh": "一个 CVE 逼着你在所有服务里升同一个依赖版本。",
+  "surface": "standalone",
+  "tags": [
+    "code-migration",
+    "multi-repo",
+    "pull-request"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — sourcegraph.com/blog）。 Post dated June 30, 2026 by Graham McBain. The Nov 23, 2026 changelog shows collaboration in Agentic Batch Changes in beta. Sourcegraph announced Cody reaches end of life on January 31, 2027 in a Nov 9, 2026 post, so the ledger’s Cody record needs a status decision. 入库核对（2026-11-25）：官方名字只是「Agentic Batch Changes」，加上产品名以便辨认。 首次公开日期来源：https://sourcegraph.com/blog/agentic-batch-changes-public-beta",
+  "revisions": []
+}

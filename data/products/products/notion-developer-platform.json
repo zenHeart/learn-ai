@@ -1,0 +1,36 @@
+{
+  "id": "notion-developer-platform",
+  "name": "Notion Developer Platform",
+  "name_zh": "Notion 开发者平台",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "api",
+  "released": "2026-05-13",
+  "date_precision": "day",
+  "homepage": "https://developers.notion.com/",
+  "desc": "Platform for code that syncs data and extends Notion agents.",
+  "desc_zh": "用代码同步数据、给 Notion 智能体加工具的开发平台",
+  "solves": "Agents could only use what the built-in connectors offered. Now you write code that syncs any data you name and adds custom agent tools.",
+  "solves_zh": "以前智能体只能用现成连接器给的数据。现在你可以写代码同步任何数据源，再给它加上自定义工具。",
+  "best_for": "Your CRM has no Notion connector and your agents keep answering from stale spreadsheets.",
+  "best_for_zh": "你的 CRM 没有 Notion 连接器，智能体总是拿着过时的表格在回答。",
+  "surface": "standalone",
+  "tags": [
+    "workers",
+    "data-sync",
+    "agent-tools"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.notion.com/releases/page/2）。 Shipped as Notion 3.5. It bundles Workers (code that runs on Notion infrastructure), database sync (beta), custom agent tools (beta), inbound webhooks (beta) and an External Agents API alpha behind a waitlist; External Agents became usable on 2026-07-01 and are a separate candidate. A Developer Portal section appeared in the workspace sidebar on 2026-08-19. Notion Workers are treated as part of this platform, not as their own entry. developers.notion.com redirects to the API quickstart, which is what homepage_check records. No media source was read. 首次公开日期来源：https://www.notion.com/releases/2026-05-13 官网未直接确认（redirect->https://developers.notion.com/guides/notion-api/quick-start）。",
+  "revisions": []
+}

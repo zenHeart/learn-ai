@@ -1,0 +1,35 @@
+{
+  "id": "claude-for-microsoft-365",
+  "name": "Claude for Microsoft 365",
+  "name_zh": "Claude for Microsoft 365",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-05-07",
+  "date_precision": "day",
+  "homepage": "https://claude.com/claude-for-microsoft-365",
+  "desc": "Claude add-ins for Excel, PowerPoint, Word and Outlook",
+  "desc_zh": "可在 Excel、PowerPoint 与 Outlook 里协作的 Claude 插件",
+  "solves": "Analysis lives in a chat window and the workbook stays untouched; Claude now edits the open file with full context.",
+  "solves_zh": "分析留在聊天窗口、表格却没动，现在 Claude 带着完整上下文直接改文件。",
+  "best_for": "A model needs a new scenario column and you want it added in the workbook, not described in chat.",
+  "best_for_zh": "财务模型要加一列情景假设，希望直接写进表格而不是在对话里描述。",
+  "surface": "extension",
+  "tags": [
+    "microsoft-365",
+    "excel-add-in",
+    "office-add-ins"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 2026-05-07 is the GA date for the Excel, PowerPoint and Word add-ins (Outlook public beta), the first day of the window. An earlier preview existed ('Advancing Claude for Excel and PowerPoint', 2026-03-11) but its first-availability post was not located, so the first public date may be earlier. Second source is not independent media. 入库核对（2026-11-25）：嵌在办公软件里的助手，与账本对同类插件的分类一致。 首次公开日期来源：https://claude.com/resources/articles/collaborate-with-claude-across-excel-powerpoint-word-and-outlook",
+  "revisions": []
+}

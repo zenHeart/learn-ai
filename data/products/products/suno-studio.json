@@ -1,0 +1,35 @@
+{
+  "id": "suno-studio",
+  "name": "Suno Studio",
+  "name_zh": "Suno Studio",
+  "vendor_id": "suno",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "desktop",
+  "released": "2025-09-25",
+  "date_precision": "day",
+  "homepage": "https://suno.com/studio",
+  "desc": "Generative audio workstation for editing and extending Suno songs",
+  "desc_zh": "生成式音频工作站，编辑和延展 Suno 歌曲",
+  "solves": "A generated song was a take-it-or-leave-it file; Studio lets you split stems, swap parts and arrange them.",
+  "solves_zh": "以前生成的歌只能整首接受或放弃；Studio 可以拆分轨、换声部、重新编排。",
+  "best_for": "The second verse of your Suno track should be instrumental; open Studio, mute the vocal stem there and extend.",
+  "best_for_zh": "Suno 曲子的第二段主歌想要纯伴奏；打开 Studio，把那段人声分轨静音并延长。",
+  "surface": "standalone",
+  "tags": [
+    "daw",
+    "stem-editing",
+    "desktop-app"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://suno.com/blog (post 'Introducing Suno Studio')）。 Outside the window but absent from the ledger. Studio 2.0 followed on 2026-08-13 ('Studio 2.0 is now available to Suno Premier subscribers.') and is the same product, so the first-release date is kept. Premier-only at launch. Second source is the vendor's own later post. 首次公开日期来源：https://suno.com/blog/suno-studio 官网未直接确认（redirect->https://suno.com/studio-welcome）。",
+  "revisions": []
+}

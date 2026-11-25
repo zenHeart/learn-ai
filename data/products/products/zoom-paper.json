@@ -1,0 +1,35 @@
+{
+  "id": "zoom-paper",
+  "name": "Zoom Paper",
+  "name_zh": "Zoom Paper",
+  "vendor_id": "zoom",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-06-01",
+  "date_precision": "day",
+  "homepage": "https://www.zoom.com/en/products/ai-productivity-suite/paper/",
+  "desc": "AI document editor that drafts, restructures and formats reports.",
+  "desc_zh": "能起草、改结构和排版文档的 AI 文档编辑器",
+  "solves": "A rough draft still costs an evening of formatting. Zoom Paper rewrites and lays out the document, then keeps .docx margins and headers on export.",
+  "solves_zh": "初稿写完还要再花一晚上调格式。Zoom Paper 帮你改写和排版，导出 .docx 时页边距、页眉页脚都保留。",
+  "best_for": "Meeting notes must become a client-ready report before the deadline.",
+  "best_for_zh": "会议记录要赶在截止时间前变成一份能发给客户的报告。",
+  "surface": "standalone",
+  "tags": [
+    "document-editor",
+    "ai-drafting",
+    "docx-export"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.zoom.com/en/products/whats-new/ (product timeline, June 2026), t）。 Launched with the Zoom AI Productivity Suite on 2026-06-01. The product page lives under the AI Productivity Suite path; the URL redirects only to add the trailing slash. The What's New timeline adds that it drafts, restructures, translates and adjusts tone, and keeps .docx formatting on import and export. No media source was read. 首次公开日期来源：https://news.zoom.com/zoom-launches-ai-productivity-suite/ 官网未直接确认（redirect->https://www.zoom.com/en/products/ai-productivity-suite/paper/）。",
+  "revisions": []
+}

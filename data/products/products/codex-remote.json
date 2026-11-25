@@ -1,0 +1,35 @@
+{
+  "id": "codex-remote",
+  "name": "Codex Remote",
+  "name_zh": "Codex Remote",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-05-14",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
+  "desc": "Drive Codex on your own Mac from the ChatGPT mobile app.",
+  "desc_zh": "用 ChatGPT 手机 App 遥控跑在 Mac 上的 Codex。",
+  "solves": "Walking away from the desk means the task stops. Remote keeps the thread alive on the host, so you can answer a question or approve an action from your phone.",
+  "solves_zh": "一离开工位任务就停。Remote 让线程在主机上继续，你可以用手机回答问题或批准动作。",
+  "best_for": "Codex is mid-task on your machine and you have to leave the room.",
+  "best_for_zh": "Codex 正在你的机器上跑任务，而你必须离开一会儿。",
+  "surface": "in-product",
+  "tags": [
+    "remote",
+    "mobile",
+    "host-control"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes, https://help.openai.com/en/articles/6825453-chatgpt-r）。 ChatGPT release notes, entry under the \"May 14, 2026\" heading. Preview 2026-05-14; general availability recorded under June 25, 2026 in the same release notes. macOS host only at launch; Windows host support followed on 2026-05-29. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

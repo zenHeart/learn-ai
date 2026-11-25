@@ -1,0 +1,36 @@
+{
+  "id": "rabbit-teach-mode",
+  "name": "rabbit Teach Mode",
+  "name_zh": "rabbit Teach Mode",
+  "vendor_id": "rabbit-inc",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2024-11-21",
+  "date_precision": "day",
+  "homepage": "https://www.rabbit.tech/",
+  "desc": "Rabbit's agent system where you teach a task by performing it once.",
+  "desc_zh": "rabbit 的智能体系统，你做一遍教会它，之后直接再要一次即可。",
+  "solves": "Automating a website task used to need code; show the agent how you do it and it repeats the job, adapting small variations.",
+  "solves_zh": "自动化一个网站任务原本要写代码；做给智能体看一遍，它就能重复这个活儿，还能适应小变化。",
+  "best_for": "You file the same expense report every week and would rather demonstrate it once than script it.",
+  "best_for_zh": "每周都要报同一张报销单，宁愿演示一遍也不想写脚本时。",
+  "surface": "in-product",
+  "tags": [
+    "task-teaching",
+    "custom-agents",
+    "no-code"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — rabbit.tech blog and newsroom directories）。 Missing from the ledger. Opened in beta to all R1 users on 2024-11-21. Teach Mode builds on LAM, rabbit's large action model; LAM itself is a model and is not recorded as a product. Teach Mode is a capability inside rabbitOS rather than a separate install. 入库核对（2026-11-25）：官方名字只是「Teach Mode」，加上品牌名以便辨认。 首次公开日期来源：https://www.rabbit.tech/newsroom/teach-mode-beta 官网未直接确认（redirect->https://www.rabbit.tech/）。",
+  "revisions": []
+}

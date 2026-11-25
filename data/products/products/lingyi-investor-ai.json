@@ -1,0 +1,36 @@
+{
+  "id": "lingyi-investor-ai",
+  "name": "投资官AI",
+  "name_zh": "投资官AI",
+  "vendor_id": "01ai",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-01",
+  "date_precision": "month",
+  "homepage": "https://www.lingyiwanwu.com/investor-ai.html",
+  "desc": "Investment and strategy agent that reviews materials and challenges conclusions",
+  "desc_zh": "研判材料、复核风险的投资与战略决策助手",
+  "solves": "A memo reads well until someone asks the hard question; this reviews the materials, re-checks the risk and keeps the paper trail behind the call.",
+  "solves_zh": "投资材料看着没问题，直到有人追问才露馅；它先做材料研判和风险复核，让每个结论都留下可查的来路。",
+  "best_for": "Second-reading a deal memo the night before an investment committee.",
+  "best_for_zh": "投委会前一天晚上，把一份项目材料再完整过一遍，找出被漏掉的问题。",
+  "surface": "in-product",
+  "tags": [
+    "decision-support",
+    "investment-research",
+    "risk-review"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — lingyiwanwu.com 首页产品与服务导航与页面底部公司大事记时间线）。 万策平台在 2026 年 7 月延伸出的三个应用之一，面向投资、战略与董事会决策场景，官网称与国内外专业大型投资机构共创研发。有独立产品页但属于万策体系内的场景应用，故 surface 记为 in-product。上线时间与万策相同，官网只给到月份。 首次公开日期来源：https://www.lingyiwanwu.com/ 首次公开日期仅精确到月。",
+  "revisions": []
+}

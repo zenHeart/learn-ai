@@ -1,0 +1,37 @@
+{
+  "id": "chatgpt-for-healthcare",
+  "name": "ChatGPT for Healthcare",
+  "name_zh": "ChatGPT for Healthcare",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-01-08",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001046-chatgpt-for-healthcare",
+  "desc": "OpenAI’s healthcare build: ChatGPT for Healthcare plus a health API.",
+  "desc_zh": "OpenAI 的医疗版本：ChatGPT for Healthcare 加上医疗专用 API。",
+  "solves": "Clinical data cannot go into a general assistant. This build connects EHR and licensed datasets under healthcare controls, and ships models tuned for the domain.",
+  "solves_zh": "临床数据不能进通用助手。这个版本在医疗管控下接入 EHR 和授权数据源，并附带针对该领域调过的模型。",
+  "best_for": "A care team wants to cut admin work without moving patient data into a general tool.",
+  "best_for_zh": "医护团队想减少文书负担，又不想把患者数据搬进通用工具。",
+  "surface": "standalone",
+  "tags": [
+    "healthcare",
+    "ehr",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/openai-for-healthcare）。 Before the discovery window but missing from the ledger partition list, so proposed under rule (b). Announced as \"OpenAI for Healthcare\" with ChatGPT for Healthcare and OpenAI API for Healthcare inside it. EHR connection followed on 2026-09-01. 首次公开日期来源：https://openai.com/index/openai-for-healthcare",
+  "revisions": []
+}

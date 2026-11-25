@@ -1,0 +1,36 @@
+{
+  "id": "kiro-powers",
+  "name": "Kiro powers",
+  "name_zh": "Kiro powers",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "ide",
+  "released": "2025-12-03",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/powers/",
+  "desc": "Installable packages of framework context and MCP servers agents load on demand.",
+  "desc_zh": "可安装的框架上下文与 MCP 服务器包，按需加载到智能体。",
+  "solves": "Agents guess at framework patterns they were never taught; a power ships the expertise so they stop guessing and start shipping.",
+  "solves_zh": "智能体对没学过的框架只能靠猜；power 把专业知识打包给它，让它少猜多交付。",
+  "best_for": "Your agent keeps mishandling connection pooling for a serverless database and you want the vendor's own patterns loaded.",
+  "best_for_zh": "智能体总是搞错 serverless 数据库的连接池，你想把厂商自己的最佳实践直接加载进去时。",
+  "surface": "in-product",
+  "tags": [
+    "context-loading",
+    "mcp-servers",
+    "framework-expertise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed and product directory）。 Missing from the ledger. At launch powers worked in Kiro IDE; the stated direction is to make them work across Kiro CLI, Cline, Cursor and Claude Code. The Model Context Protocol is the transport for the bundled servers. 入库核对（2026-11-25）：powers 是 Kiro IDE 里供智能体按需加载的上下文包，不是 SDK；归入编程智能体，形态与所在产品一致。 首次公开日期来源：https://kiro.dev/blog/introducing-powers/",
+  "revisions": []
+}

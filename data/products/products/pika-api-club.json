@@ -1,0 +1,36 @@
+{
+  "id": "pika-api-club",
+  "name": "Pika API Club",
+  "name_zh": "Pika API Club",
+  "vendor_id": "pika-labs",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "video"
+  ],
+  "form": "api",
+  "released": "2026-08-05",
+  "date_precision": "day",
+  "homepage": "https://pika.art/",
+  "desc": "Membership API bundling a hundred plus media models",
+  "desc_zh": "打包上百个媒体模型的会员制 API",
+  "solves": "Comparing five providers meant five accounts and five invoices; one membership reaches the models through one key.",
+  "solves_zh": "对比五家供应商就要五个账号、五张账单；一个会员资格用同一把 key 调用这些模型。",
+  "best_for": "A prototype needs video, image and audio from three different labs; join the Club and call them from one endpoint.",
+  "best_for_zh": "原型要同时用三家实验室的视频、图片和音频；加入 Club，从一个接口调用。",
+  "surface": "standalone",
+  "tags": [
+    "model-api",
+    "membership",
+    "media-models"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://pika.art/blog (post \"Welcome to the Pika API Club\")）。 An API membership platform, distinct from the Pika app the ledger already has. The blog post itself 404s; the date and the description come from Pika's own blog index, which lists the entry under \"New Release\". No independent press source opened. 首次公开日期来源：https://pika.art/blog",
+  "revisions": []
+}

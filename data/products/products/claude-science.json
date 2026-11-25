@@ -1,0 +1,35 @@
+{
+  "id": "claude-science",
+  "name": "Claude Science",
+  "name_zh": "Claude Science",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-06-30",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/claude-science",
+  "desc": "AI workbench that runs scientific analysis step by step",
+  "desc_zh": "替科学家跑分析、留痕每一步的 AI 工作台",
+  "solves": "Analysis work means stitching notebooks, tools and clusters by hand; Claude Science runs the pipeline and traces each step.",
+  "solves_zh": "做科研分析要自己拼接笔记本、工具和集群，Claude Science 代跑流程并记录每一步。",
+  "best_for": "You have single-cell RNA sequencing data and want a reproducible analysis before a lab meeting.",
+  "best_for_zh": "拿到单细胞测序数据，想在组会前跑出一份可复现的分析。",
+  "surface": "standalone",
+  "tags": [
+    "scientific-research",
+    "data-analysis",
+    "reproducibility"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Beta on Pro, Max, Team and Enterprise. The announcement says the app is available in beta on macOS and Linux. 首次公开日期来源：https://www.anthropic.com/news/claude-science-ai-workbench",
+  "revisions": []
+}

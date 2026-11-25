@@ -9,7 +9,7 @@
     "agent-building"
   ],
   "form": "self-hosted",
-  "released": "2023-11-01",
+  "released": "2023-11-14",
   "homepage": "https://www.crewai.com",
   "desc": "Framework for building crews of agents that hand off work",
   "desc_zh": "用于组建多智能体 crew 并相互交接的框架",
@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认。官网同时在推企业云端版（标题「The Enterprise Agent Build & Runtime」），本档按开源 Python 框架形态建档。",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认。官网同时在推企业云端版（标题「The Enterprise Agent Build & Runtime」），本档按开源 Python 框架形态建档。 2026-11-25：released 2023-11-01/day → 2023-11-14/day; source https://pypi.org/pypi/crewai/json。原值 2023-11-01 是月份占位。crewai 的首个版本 0.1.0 于 2023-11-14 发布并上传到 PyPI",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-11-01/day",
+      "to": "2023-11-14/day",
+      "why": "原值 2023-11-01 是月份占位。crewai 的首个版本 0.1.0 于 2023-11-14 发布并上传到 PyPI"
+    }
+  ],
   "date_precision": "day"
 }

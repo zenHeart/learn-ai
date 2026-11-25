@@ -1,0 +1,35 @@
+{
+  "id": "coderabbit-verify",
+  "name": "CodeRabbit Verify",
+  "name_zh": "CodeRabbit Verify",
+  "vendor_id": "coderabbit",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://www.coderabbit.ai/verify",
+  "desc": "Sandbox that starts your app and clicks through the change.",
+  "desc_zh": "把应用跑起来、像用户一样点一遍改动的沙箱。",
+  "solves": "A green diff still ships a broken feature; the app is started in an isolated sandbox and exercised before the pull request merges.",
+  "solves_zh": "diff 全绿也照样会上线一个坏掉的功能；合并前应用会在隔离沙箱里被真实操作一遍。",
+  "best_for": "Nobody has time to click through every pull request by hand before merging.",
+  "best_for_zh": "没人有时间在合并前逐个 Pull Request 手工点一遍。",
+  "surface": "standalone",
+  "tags": [
+    "runtime-testing",
+    "sandbox",
+    "browser-testing"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.coderabbit.ai/changelog directory）。 Newest of four CodeRabbit surfaces added in the window. 首次公开日期来源：https://docs.coderabbit.ai/changelog",
+  "revisions": []
+}

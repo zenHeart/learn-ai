@@ -1,0 +1,35 @@
+{
+  "id": "claude-design",
+  "name": "Claude Design",
+  "name_zh": "Claude Design",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-04-17",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/design",
+  "desc": "Claude that turns a described visual into an on-brand draft",
+  "desc_zh": "按文字描述生成合乎品牌规范设计初稿的 Claude",
+  "solves": "A deck or poster needs a visual and the design queue is a week out; Claude Design drafts a first version now.",
+  "solves_zh": "演示或海报缺一张图，设计排期要等一周，Claude Design 先出初稿。",
+  "best_for": "You need a campaign visual for tomorrow's stand-up and only have a one-line idea.",
+  "best_for_zh": "明天的站会要一张活动配图，手头只有一句创意描述。",
+  "surface": "in-product",
+  "tags": [
+    "graphic-design",
+    "brand-kit",
+    "visual-drafts"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Outside the window. Launched by Anthropic Labs as a research preview; the 2026-10-08 article says Design is out of beta and on every Claude plan, including Free. Second source is not independent media. 首次公开日期来源：https://www.anthropic.com/news/claude-design-anthropic-labs",
+  "revisions": []
+}

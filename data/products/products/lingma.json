@@ -30,10 +30,27 @@
       "zh": "/zh/products/lingma/"
     }
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "qoder",
   "last_verified_at": "2026-10-04",
-  "notes": "官网已确认",
-  "revisions": [],
+  "notes": "官网已确认 2026-11-25：status active → renamed; superseded_by null → qoder。阿里云产品动态：「自2026-05-20起，智能编码助手通义灵码产品的中文名称由'智能编码助手通义灵码'变更为'Qoder CN'」，官方文档写明两者是同一产品；qoder 是同一平台国际版的档案",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "阿里云产品动态：「自2026-05-20起，智能编码助手通义灵码产品的中文名称由'智能编码助手通义灵码'变更为'Qoder CN'」，官方文档写明两者是同一产品；qoder 是同一平台国际版的档案"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "qoder",
+      "why": "阿里云产品动态：「自2026-05-20起，智能编码助手通义灵码产品的中文名称由'智能编码助手通义灵码'变更为'Qoder CN'」，官方文档写明两者是同一产品；qoder 是同一平台国际版的档案"
+    }
+  ],
   "date_precision": "day"
 }

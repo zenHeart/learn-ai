@@ -27,10 +27,27 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "wenxiaoyan",
   "last_verified_at": "2026-10-04",
-  "notes": "与「文小言」共用同一入口 yiyan.baidu.com——文小言是同一服务的现行消费端品牌名，两条档案疑似需要合并或标注改名关系，待复核",
-  "revisions": [],
+  "notes": "与「文小言」共用同一入口 yiyan.baidu.com——文小言是同一服务的现行消费端品牌名，两条档案疑似需要合并或标注改名关系，待复核 2026-11-25：status active → renamed; superseded_by null → wenxiaoyan。改名方向记反了：文心一言是旧名，同一个 App 在 2024 年 9 月更名为文小言（App Store 同一应用 id 6446882473 的历史名称）",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "改名方向记反了：文心一言是旧名，同一个 App 在 2024 年 9 月更名为文小言（App Store 同一应用 id 6446882473 的历史名称）"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "wenxiaoyan",
+      "why": "改名方向记反了：文心一言是旧名，同一个 App 在 2024 年 9 月更名为文小言（App Store 同一应用 id 6446882473 的历史名称）"
+    }
+  ],
   "date_precision": "day"
 }

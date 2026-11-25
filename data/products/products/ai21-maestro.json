@@ -1,0 +1,36 @@
+{
+  "id": "ai21-maestro",
+  "name": "AI21 Maestro",
+  "name_zh": "AI21 Maestro",
+  "vendor_id": "ai21-labs",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "research"
+  ],
+  "form": "api",
+  "released": "2025-07-08",
+  "date_precision": "day",
+  "homepage": "https://www.ai21.com/maestro",
+  "desc": "Agent system that plans and runs data-heavy enterprise tasks",
+  "desc_zh": "为规划并执行数据密集型企业任务而生的智能体系统",
+  "solves": "Long multi-step work derails when a model guesses; Maestro plans the steps and shows each tool call.",
+  "solves_zh": "多步骤任务常因模型瞎猜而出错，Maestro 先规划步骤，并展示每次工具调用。",
+  "best_for": "A due-diligence review needs facts pulled from hundreds of filings by Monday.",
+  "best_for_zh": "尽职调查要在周一前从数百份文件里提取事实。",
+  "surface": "standalone",
+  "tags": [
+    "planning",
+    "orchestration",
+    "traceable-agents"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — vendor's own site (channel D) (https://www.ai21.com/maestro)）。 Outside the window. The page is dated 2025-07-08 and says Maestro was introduced 'earlier this year'; that earlier announcement was not verified, so the first public date may precede 2025-07-08. An unverified search summary said Maestro was dropped from the lineup in autumn 2026, but the page is live (HTTP 200, modified 2026-03-25). Second source is not independent media. 首次公开日期来源：https://www.ai21.com/maestro",
+  "revisions": []
+}

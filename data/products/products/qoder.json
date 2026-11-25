@@ -1,7 +1,7 @@
 {
   "id": "qoder",
-  "name": "Qoder",
-  "name_zh": "Qoder",
+  "name": "Qoder IDE",
+  "name_zh": "Qoder IDE",
   "vendor_id": "alibaba",
   "region": "cn",
   "category": "coding-agent",
@@ -9,7 +9,7 @@
     "coding"
   ],
   "form": "ide",
-  "released": "2025-08-22",
+  "released": "2025-08-21",
   "homepage": "https://qoder.com",
   "desc": "Autonomous development IDE with coding agents inside",
   "desc_zh": "通义灵码更名的智能编码 IDE",
@@ -32,8 +32,33 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认 2026-11-25：released 2025-08-22/day → 2025-08-21/day; source https://blog.qoder.com/zh/qoder-1-0。官方博客写「自 2025 年 8 月 21 日 Qoder 首个版本发布以来」，比账本早一天 2026-11-25：name \"Qoder\" → \"Qoder IDE\"。官方文档写明「Qoder IDE and the Qoder desktop app are separate products」，IDE 的更新日志也在 changelog.qoder.com/ide；2026-08-27 发布的桌面应用官方名叫 Qoder，两者需要区分 2026-11-25：name_zh \"Qoder\" → \"Qoder IDE\"。与 name 同步，桌面应用保留「Qoder」这个名字",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-08-22/day",
+      "to": "2025-08-21/day",
+      "why": "官方博客写「自 2025 年 8 月 21 日 Qoder 首个版本发布以来」，比账本早一天"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "name",
+      "from": "Qoder",
+      "to": "Qoder IDE",
+      "why": "官方文档写明「Qoder IDE and the Qoder desktop app are separate products」，IDE 的更新日志也在 changelog.qoder.com/ide；2026-08-27 发布的桌面应用官方名叫 Qoder，两者需要区分"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "name_zh",
+      "from": "Qoder",
+      "to": "Qoder IDE",
+      "why": "与 name 同步，桌面应用保留「Qoder」这个名字"
+    }
+  ],
   "date_precision": "day"
 }

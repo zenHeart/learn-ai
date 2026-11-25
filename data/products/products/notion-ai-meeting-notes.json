@@ -1,0 +1,35 @@
+{
+  "id": "notion-ai-meeting-notes",
+  "name": "Notion AI Meeting Notes",
+  "name_zh": "Notion AI 会议笔记",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-05-13",
+  "date_precision": "day",
+  "homepage": "https://www.notion.com/product/ai-meeting-notes",
+  "desc": "Notion block that transcribes and summarizes your meetings.",
+  "desc_zh": "自动转录并总结会议内容的 Notion 区块",
+  "solves": "Nobody wants to be the note-taker. The block captures the conversation and writes the summary while you stay in the discussion.",
+  "solves_zh": "没人愿意当记录员。这个区块把讨论记下来并整理成总结，你可以专心开会。",
+  "best_for": "A call starts in five minutes and the doc for it is still empty.",
+  "best_for_zh": "五分钟后开会，会议文档还是一片空白。",
+  "surface": "in-product",
+  "tags": [
+    "transcription",
+    "meeting-summary",
+    "meeting-notes"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.notion.com/releases/page/9）。 Launched with Notion 2.51; notes could be added automatically to Notion Calendar events. Speaker labels arrived 2026-07-01, consent controls 2026-03-12, and Custom Agents can be triggered after a note finishes (2026-07-31). The help URL was confirmed through search results and returned the expected title when fetched. No media source was read. 评审修正（2026-11-25）：官方名字「AI Meeting Notes」在卡片上认不出属于谁，与账本里「Notion AI」的记法保持一致。 首次公开日期来源：https://www.notion.com/releases/2025-05-13",
+  "revisions": []
+}

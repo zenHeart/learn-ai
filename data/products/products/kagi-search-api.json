@@ -1,0 +1,36 @@
+{
+  "id": "kagi-search-api",
+  "name": "Kagi Search API",
+  "name_zh": "Kagi Search API",
+  "vendor_id": "kagi",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-04-30",
+  "date_precision": "day",
+  "homepage": "https://kagi.com/products/api",
+  "desc": "Paid search API built for agents, with no ads in results.",
+  "desc_zh": "面向智能体的付费搜索接口，结果里不掺广告",
+  "solves": "Free search APIs leak your queries upstream and return thin results. Kagi proxies every query and hands back twelve ranked links an agent can read.",
+  "solves_zh": "免费搜索接口会把查询透传给上游，结果也很单薄。Kagi 代理每一次查询，返回十二条排好序、智能体真正能读的链接。",
+  "best_for": "You are building an agent that needs a citable answer, and the free tier keeps returning the same ten links.",
+  "best_for_zh": "你在做一个需要可引用答案的智能体，而免费接口总是返回同样十条链接。",
+  "surface": "standalone",
+  "tags": [
+    "search-api",
+    "agent-retrieval",
+    "no-ads"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://kagi.com/changelog (April 2026 entries), then https://kagi.com/produ）。 The changelog entry 'Search API preview opens to all users' is dated April 30th, 2026; the earlier entry 'Kagi API preview and ecosystem updates' is April 9th, 2026 and says access would roll out first to API-waitlist people. The recorded date is the day the preview opened to everyone. The product page is written for agents and claims 12 sources per query and fewer tokens per correct answer. Distinct from the ledger's Kagi Assistant. No media source was read. 首次公开日期来源：https://kagi.com/changelog",
+  "revisions": []
+}

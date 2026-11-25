@@ -30,7 +30,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Meta's successor to the Llama API — an OpenAI- and Anthropic-SDK-compatible endpoint at api.meta.ai, not a proprietary wrapper. 首次公开发布日期精度：month-only 来源：https://www.eesel.ai",
+  "notes": "Meta's successor to the Llama API — an OpenAI- and Anthropic-SDK-compatible endpoint at api.meta.ai, not a proprietary wrapper. 首次公开发布日期精度：month-only 来源：https://www.eesel.ai 2026-11-25：更正：首个公开可用日为 2026-07-09，有官方来源（Meta 官方博文 https://ai.meta.com/blog/introducing-muse-spark-meta-model-api ：「now in public preview」）；此前备注里「仅精确到月」的说法作废",
   "revisions": [],
   "date_precision": "day"
 }

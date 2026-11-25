@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网 platform.minimaxi.com 返回 302 跳转 platform.minimax.cn（境内域名，homepage 字段未改），跳转后落在开放平台文档页，确认覆盖语言、视频、语音、图像、音乐五类模型 API。",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网 platform.minimaxi.com 返回 302 跳转 platform.minimax.cn（境内域名，homepage 字段未改），跳转后落在开放平台文档页，确认覆盖语言、视频、语音、图像、音乐五类模型 API。 2026-11-25：date_precision day → month。在 MiniMax 开放平台的站点上找不到发布日期的一手来源。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "在 MiniMax 开放平台的站点上找不到发布日期的一手来源。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

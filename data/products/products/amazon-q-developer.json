@@ -9,7 +9,7 @@
     "coding"
   ],
   "form": "ide",
-  "released": "2023-11-28",
+  "released": "2024-04-30",
   "homepage": "https://aws.amazon.com/q/developer/",
   "desc": "AWS coding assistant that does upgrades and tests itself",
   "desc_zh": "能自己跑测试、改升级的 AWS 编程助手",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2023-11-28/day → 2024-04-30/day; source https://aws.amazon.com/blogs/training-and-certification/build-with-amazon-codewhisperer-through-aws-jam。原日期 2023-11-28 是 re:Invent 2023 上 Amazon Q 预览版发布的日子，不是这个产品的。AWS 官方博客：「April 30, 2024 update: Amazon CodeWhisperer is now Amazon Q Developer.」",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-11-28/day",
+      "to": "2024-04-30/day",
+      "why": "原日期 2023-11-28 是 re:Invent 2023 上 Amazon Q 预览版发布的日子，不是这个产品的。AWS 官方博客：「April 30, 2024 update: Amazon CodeWhisperer is now Amazon Q Developer.」"
+    }
+  ],
   "date_precision": "day"
 }

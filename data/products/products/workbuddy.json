@@ -11,7 +11,7 @@
   ],
   "form": "desktop",
   "surface": "standalone",
-  "released": "2026-03-09",
+  "released": "2026-03-04",
   "date_precision": "day",
   "homepage": "https://www.workbuddy.cn/",
   "desc": "Tencent's OpenClaw-compatible desktop work agent",
@@ -26,7 +26,16 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：中国工业新闻网 AI办公三强竞速盘点。来源：https://www.cnstock.com/commonDetail/647183",
-  "revisions": []
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：中国工业新闻网 AI办公三强竞速盘点。来源：https://www.cnstock.com/commonDetail/647183 2026-11-25：released 2026-03-09/day → 2026-03-04/day; source https://www.workbuddy.cn/docs/workbuddy/Changelog。原日期 2026-03-09 只是一个补丁版本。官方更新日志写「4.5.0（2026-03-04）WorkBuddy 正式发布」",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-03-09/day",
+      "to": "2026-03-04/day",
+      "why": "原日期 2026-03-09 只是一个补丁版本。官方更新日志写「4.5.0（2026-03-04）WorkBuddy 正式发布」"
+    }
+  ]
 }

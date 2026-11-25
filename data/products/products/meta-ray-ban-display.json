@@ -1,0 +1,35 @@
+{
+  "id": "meta-ray-ban-display",
+  "name": "Meta Ray-Ban Display",
+  "name_zh": "Meta Ray-Ban Display",
+  "vendor_id": "meta-essilorluxottica",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "hardware",
+  "released": "2025-09-30",
+  "date_precision": "day",
+  "homepage": "https://www.meta.com/ai-glasses/meta-ray-ban-display/",
+  "desc": "AI glasses with an in-lens display and neural wristband",
+  "desc_zh": "带镜内显示屏和神经腕带的 AI 眼镜",
+  "solves": "Checking a message meant pulling out the phone; a glance at the in-lens display shows it, and the wristband navigates.",
+  "solves_zh": "看条消息都要掏手机，现在瞥一眼镜内显示屏即可，腕带负责翻页操作。",
+  "best_for": "You are cooking with messy hands and want the next recipe step shown in front of you.",
+  "best_for_zh": "做饭时双手沾满食材，想把下一步菜谱直接显示在眼前。",
+  "surface": "standalone",
+  "tags": [
+    "ai-glasses",
+    "in-lens-display",
+    "neural-band"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://about.fb.com/news/ (About Meta newsroom)）。 Outside the window. Announced 2025-09-18; on shelves 2025-09-30 (the year comes from the post's date); starts at $799 including Meta Neural Band. Different device from Ray-Ban Meta (no display) in the ledger. A plain HTTP client gets HTTP 400 from meta.com; the product page loaded through the fetch tool. 首次公开日期来源：https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/",
+  "revisions": []
+}

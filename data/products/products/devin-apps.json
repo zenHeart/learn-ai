@@ -1,0 +1,35 @@
+{
+  "id": "devin-apps",
+  "name": "Devin Apps",
+  "name_zh": "Devin Apps",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-11-13",
+  "date_precision": "day",
+  "homepage": "https://devin.ai/apps",
+  "desc": "Private web applications hosted on the machine Devin works in.",
+  "desc_zh": "托管在 Devin 工作机上的私有网页应用。",
+  "solves": "Internal tools used to need a server and a domain; the agent builds the app and it stays on the same machine as the code.",
+  "solves_zh": "内部小工具过去要配服务器和域名；智能体建好应用，就和代码待在同一台机器上。",
+  "best_for": "You want a dashboard over a service you just built, visible only to your team.",
+  "best_for_zh": "刚做好一个服务，想给它加个只有团队能看的看板。",
+  "surface": "standalone",
+  "tags": [
+    "internal-tools",
+    "hosted-apps",
+    "private-deploy"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — devin.ai/blog directory）。 The blog index shows the same post one day later, 2026-11-16, because it renders in Asia/Shanghai; the post page date is used here. 首次公开日期来源：https://devin.ai/blog/devin-apps",
+  "revisions": []
+}

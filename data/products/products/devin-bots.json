@@ -1,0 +1,36 @@
+{
+  "id": "devin-bots",
+  "name": "Devin Bots",
+  "name_zh": "Devin Bots",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://devin.ai/bots",
+  "desc": "Persistent agents that own an outcome and lead teams of Devins.",
+  "desc_zh": "守住一个目标、并能带领一组 Devin 的常驻智能体。",
+  "solves": "Task-by-task delegation leaves the engineer doing the planning; a bot keeps a goal, decides the next step, and brings back only the decisions.",
+  "solves_zh": "逐个派任务时规划和跟进仍压在工程师身上；机器人守住目标、自己决定下一步，只把需要人拍板的决定带回来。",
+  "best_for": "A repo needs continuous attention, such as keeping two platforms at parity, and no one owns it.",
+  "best_for_zh": "某个仓库需要长期投入，比如保持两个平台功能一致，而又没人负责。",
+  "surface": "standalone",
+  "tags": [
+    "persistent-agent",
+    "goal-ownership",
+    "agent-teams"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — devin.ai/blog directory）。 The blog index renders the same post as 2026-11-18 in Asia/Shanghai; the post page and the docs changelog both say November 17. 首次公开日期来源：https://devin.ai/blog/introducing-devin-bots",
+  "revisions": []
+}

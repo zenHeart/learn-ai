@@ -1,0 +1,36 @@
+{
+  "id": "alexa-for-shopping",
+  "name": "Alexa for Shopping",
+  "name_zh": "Alexa for Shopping",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-05-13",
+  "date_precision": "day",
+  "homepage": "https://www.amazon.com/alexa",
+  "desc": "Amazon's agentic shopping assistant in the Amazon app, from Rufus and Alexa+.",
+  "desc_zh": "亚马逊应用与网站内的购物智能体，由 Rufus 与 Alexa+ 合并而成。",
+  "solves": "Comparing prices and reordering used to mean tab-hopping between search, reviews and your order history; one conversation now carries all of it.",
+  "solves_zh": "过去比价和补货要在搜索、评价和历史订单之间来回切换；现在一次对话就能把这些串起来。",
+  "best_for": "You want to know whether a laptop was cheaper last Black Friday before you buy it today.",
+  "best_for_zh": "想在一台笔记本下单前，先确认它去年黑五是不是更便宜的时候。",
+  "surface": "in-product",
+  "tags": [
+    "shopping-agent",
+    "price-tracking",
+    "personalized-recommendations"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — aboutamazon.com Artificial Intelligence news directory and the Alexa for Sho）。 This is the merged successor of Rufus and Alexa+ for shopping: the announcement says Amazon brings Rufus and Alexa+ together to create Alexa for Shopping. Rufus therefore has no separate ledger entry of its own. First published 2026-05-13, updated 2026-11-13 for international availability in 13 countries. No dedicated product page exists; the surface lives in the Amazon Shopping app and on amazon.com, and the homepage redirects to Amazon's Alexa storefront. 首次公开日期来源：https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant 官网未直接确认（redirect->https://www.amazon.com/b?node=210710065011）。",
+  "revisions": []
+}

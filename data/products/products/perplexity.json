@@ -9,7 +9,7 @@
     "research"
   ],
   "form": "web",
-  "released": "2022-12-07",
+  "released": "2022-12-01",
   "homepage": "https://www.perplexity.ai/",
   "desc": "Answer engine that reads pages and cites the sources",
   "desc_zh": "读完网页并标注出处的答案引擎",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网反爬未确认（403）：抓取 perplexity.ai 被反爬拦截，未能确认官网内容。",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网反爬未确认（403）：抓取 perplexity.ai 被反爬拦截，未能确认官网内容。 2026-11-25：released 2022-12-07/day → 2022-12-01/month; source https://www.perplexity.ai/hub/blog/announcing-our-series-a-funding-round-and-mobile-app-launch。原值 2022-12-07 标成精确到日，但没有一手的日级来源。Perplexity 官方博文只写到：「our journey began with the release of Ask, our answer engine, in December 2022」。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2022-12-07/day",
+      "to": "2022-12-01/month",
+      "why": "原值 2022-12-07 标成精确到日，但没有一手的日级来源。Perplexity 官方博文只写到：「our journey began with the release of Ask, our answer engine, in December 2022」。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

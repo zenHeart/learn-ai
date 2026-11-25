@@ -11,8 +11,8 @@
   ],
   "form": "web",
   "surface": "in-product",
-  "released": "2026-01-01",
-  "date_precision": "month",
+  "released": "2026-08-20",
+  "date_precision": "day",
   "homepage": "https://slack.com/features/code-channels",
   "desc": "Coding agents working in Slack channels, reviewed by the team.",
   "desc_zh": "在 Slack 频道里协作的编程智能体，团队可审阅",
@@ -26,7 +26,16 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://slack.com/features/ai。来源：https://slack.com/features/code-channels",
-  "revisions": []
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：https://slack.com/features/ai。来源：https://slack.com/features/code-channels 2026-11-25：released 2026-01-01/month → 2026-08-20/day; source https://www.slack.com/blog/news/slack-code-channels-for-agents。原值 2026 年 1 月无出处。Slack 官方文章（2026-08-20）：「Slack Code is live today for teams using Claude (Anthropic), Devin (Cognition), GitHub (Copilot), and Vercel integrations」；官方更新日志也把它列在 2026 年 8 月下面",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-01-01/month",
+      "to": "2026-08-20/day",
+      "why": "原值 2026 年 1 月无出处。Slack 官方文章（2026-08-20）：「Slack Code is live today for teams using Claude (Anthropic), Devin (Cognition), GitHub (Copilot), and Vercel integrations」；官方更新日志也把它列在 2026 年 8 月下面"
+    }
+  ]
 }

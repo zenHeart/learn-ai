@@ -1,0 +1,36 @@
+{
+  "id": "mistral-agentic-search",
+  "name": "Mistral Agentic Search",
+  "name_zh": "Mistral Agentic Search",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-08-20",
+  "date_precision": "day",
+  "homepage": "https://docs.mistral.ai/studio/search/agentic-search",
+  "desc": "Retrieval layer that searches, opens and verifies inside documents",
+  "desc_zh": "在文档内搜索、打开并核对信息的检索层",
+  "solves": "Single-pass retrieval misses details in complex documents; Agentic Search loops through search, open, read and grep.",
+  "solves_zh": "一次检索容易漏掉复杂文档里的细节，Agentic Search 会循环搜索、打开、阅读并核对。",
+  "best_for": "Your assistant answers from 200-page contracts and keeps quoting the wrong clause.",
+  "best_for_zh": "助手要基于两百页的合同作答，却总引用错条款。",
+  "surface": "in-product",
+  "tags": [
+    "agentic-retrieval",
+    "document-understanding",
+    "libraries"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mistral.ai/news (official news index)）。 The date is the article's published time; the quote is its description sentence. The page says Agentic Search is 'available through Mistral Search Toolkit, built into Libraries in both Studio and' Mistral Vibe, so this is an in-product surface. Second source is not independent media. 入库核对（2026-11-25）：官方名字在正文里写作「Mistral Agentic Search」，统一用全名。 首次公开日期来源：https://mistral.ai/news/agentic-search/",
+  "revisions": []
+}

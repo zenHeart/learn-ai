@@ -6,7 +6,8 @@
   "region": "cn",
   "category": "coding-agent",
   "use_cases": [
-    "coding"
+    "coding",
+    "agent-building"
   ],
   "form": "ide",
   "released": "2026-02-26",
@@ -29,7 +30,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "鸿蒙 ArkTS 与昇腾算力生态覆盖最全的国产编码智能体，信创场景基本盘 来源：https://www.ithome.com/0/923/944.htm",
+  "notes": "鸿蒙 ArkTS 与昇腾算力生态覆盖最全的国产编码智能体，信创场景基本盘 来源：https://www.ithome.com/0/923/944.htm 2026-11-25：删除重复档案 codearts（华为云码道 CodeArts / 华为云码道 CodeArts，2025-01-01），它与本档是同一个产品：同一个产品记了两条：两个首页是同一个页面（标题「华为云码道代码智能体_懂你的编码专家_企业级智能编码平台_华为云」）。保留有真实公测日期的那条 2026-11-25：use_cases [\"coding\"] → [\"coding\",\"agent-building\"]。并入被删除的重复档案 codearts 的场景",
   "revisions": [
     {
       "at": "2026-10-05",
@@ -46,6 +47,19 @@
       "from": "harmonyos,ascend,spec-driven,on-premise",
       "to": "harmonyos,ascend,spec-driven",
       "why": "官方页面只讲零信任访问与本地存储，未宣称私有化部署；tag 与正文自相矛盾"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "use_cases",
+      "from": [
+        "coding"
+      ],
+      "to": [
+        "coding",
+        "agent-building"
+      ],
+      "why": "并入被删除的重复档案 codearts 的场景"
     }
   ],
   "date_precision": "day"

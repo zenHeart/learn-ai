@@ -1,0 +1,36 @@
+{
+  "id": "exa-agent",
+  "name": "Exa Agent",
+  "name_zh": "Exa Agent",
+  "vendor_id": "exa-labs",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-06-16",
+  "date_precision": "day",
+  "homepage": "https://exa.ai/products/agent",
+  "desc": "One API call that runs multi-step web research for you.",
+  "desc_zh": "一次接口调用就能替你跑完多步网页检索",
+  "solves": "Chaining search calls by hand means writing the loop, the retries and the citations. Exa Agent takes a plain-language goal and returns structured results with the proof attached.",
+  "solves_zh": "自己串检索调用，就得手写循环、重试和引用。Exa Agent 接收一句自然语言目标，返回带出处链接的结构化结果。",
+  "best_for": "You need fifty companies checked against a written criteria and nobody has time to do it by hand.",
+  "best_for_zh": "你要按一段书面条件核查五十家公司，而没人有空手工去做。",
+  "surface": "standalone",
+  "tags": [
+    "research-agent",
+    "structured-output",
+    "web-search"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://exa.ai/blog and https://exa.ai/docs/changelog , then https://exa.ai/）。 Launched 2026-06-16. The docs describe it as running 'multi-step web research, list-building, and enrichment workflows with natural-language answers, structured outputs, and citations'. Distinct from the ledger's Exa search API. No media source was read. 首次公开日期来源：https://exa.ai/blog/exa-agent",
+  "revisions": []
+}

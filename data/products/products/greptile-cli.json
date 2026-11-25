@@ -1,0 +1,35 @@
+{
+  "id": "greptile-cli",
+  "name": "Greptile CLI",
+  "name_zh": "Greptile CLI",
+  "vendor_id": "greptile",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-06-04",
+  "date_precision": "day",
+  "homepage": "https://www.greptile.com/cli",
+  "desc": "Terminal command that runs a full Greptile review on your branch.",
+  "desc_zh": "在终端里对当前分支跑完整 Greptile 审查的命令。",
+  "solves": "Waiting for a pull request to open before the review starts wastes a cycle; the same review runs locally before you push.",
+  "solves_zh": "等 Pull Request 建好才开始审查白跑一轮；同样的审查在推送前就能在本地跑。",
+  "best_for": "You want review comments in the terminal before anyone else sees the branch.",
+  "best_for_zh": "想在别人看到这个分支之前，先在终端里拿到审查意见。",
+  "surface": "standalone",
+  "tags": [
+    "terminal-agent",
+    "code-review",
+    "local-run"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — greptile.com/changelog directory）。 Installed with npm i -g greptile. 首次公开日期来源：https://www.greptile.com/changelog",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "higgsfield-api",
+  "name": "Higgsfield API",
+  "name_zh": "Higgsfield API",
+  "vendor_id": "higgsfield",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "video"
+  ],
+  "form": "api",
+  "released": "2026-09-16",
+  "date_precision": "day",
+  "homepage": "https://open.higgsfield.ai/explore",
+  "desc": "One API key for fifty-plus image, video and audio models",
+  "desc_zh": "一个密钥调用五十多个图片、视频、音频模型的 API",
+  "solves": "Signing up with each model vendor meant many keys and queues; send prompts to one endpoint and get files back.",
+  "solves_zh": "每家模型都要单独注册、各自排队；现在把提示词发到一个接口，拿回文件链接。",
+  "best_for": "Your app needs three video models but you want one bill; route them all through the Higgsfield API.",
+  "best_for_zh": "应用要接三个视频模型，又只想付一份账；全部走 Higgsfield API。",
+  "surface": "standalone",
+  "tags": [
+    "multi-model-api",
+    "image-api",
+    "video-api"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://higgsfield.ai/creator-hub/changelog (entry 'Higgsfield API')）。 The developer platform is branded 'Open Higgsfield AI' at open.higgsfield.ai; higgsfield.ai/api redirects there. 入库核对（2026-11-25）：原地址 higgsfield.ai/api 跳转到开发者平台 open.higgsfield.ai/explore，直接给跳转后的入口。 首次公开日期来源：https://higgsfield.ai/creator-hub/changelog",
+  "revisions": []
+}

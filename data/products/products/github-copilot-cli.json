@@ -1,0 +1,35 @@
+{
+  "id": "github-copilot-cli",
+  "name": "GitHub Copilot CLI",
+  "name_zh": "GitHub Copilot CLI",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-02-25",
+  "date_precision": "day",
+  "homepage": "https://github.com/github/copilot-cli",
+  "desc": "Agentic coding from the terminal, with your choice of model.",
+  "desc_zh": "在终端里做 Agent 编程，模型可以自己选。",
+  "solves": "A coding session that needs the shell keeps dragging you back to the editor. The CLI stays in the terminal and extends through MCP, plugins and skills.",
+  "solves_zh": "需要动 shell 的编码会话会不断把你拽回编辑器。CLI 留在终端里，并通过 MCP、插件和技能扩展。",
+  "best_for": "You live in the terminal and want the agent there too.",
+  "best_for_zh": "你一天都待在终端里，也希望 Agent 就在这个地方干活。",
+  "surface": "standalone",
+  "tags": [
+    "terminal",
+    "mcp",
+    "agentic-coding"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — GitHub Changelog, https://github.blog/changelog/2026-02-25-github-copilot-cl）。 Before the discovery window but missing from the ledger partition list, so proposed under rule (b). Distinct from Codex CLI, which the ledger has under the openai vendor. 首次公开日期来源：https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/",
+  "revisions": []
+}

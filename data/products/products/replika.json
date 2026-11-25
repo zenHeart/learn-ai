@@ -30,7 +30,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "The category founder — 30M+ users and the reference point every AI companion product since is measured against. 首次公开发布日期精度：month-only 来源：https://apps.apple.com/us/app/replika-ai-companion-chat/id1158555867 复核：苹果官方 lookup API（trackId 1158555867）返回 releaseDate 2017-03-13；原 2017-09-01 取自第三方统计站。",
+  "notes": "The category founder — 30M+ users and the reference point every AI companion product since is measured against. 首次公开发布日期精度：month-only 来源：https://apps.apple.com/us/app/replika-ai-companion-chat/id1158555867 复核：苹果官方 lookup API（trackId 1158555867）返回 releaseDate 2017-03-13；原 2017-09-01 取自第三方统计站。 2026-11-25：更正：首个公开可用日为 2017-03-13，有官方来源（苹果官方查询接口 https://itunes.apple.com/lookup?id=1158555867 的 releaseDate）；此前备注里「仅精确到月」的说法作废",
   "revisions": [
     {
       "at": "2026-10-05",

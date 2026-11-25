@@ -1,0 +1,36 @@
+{
+  "id": "kiro-autonomous-agent",
+  "name": "Kiro autonomous agent",
+  "name_zh": "Kiro autonomous agent",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-12-02",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/web/",
+  "desc": "Kiro's frontier agent mode that carries software work forward unsupervised.",
+  "desc_zh": "Kiro 的前沿智能体模式，能在无人盯着的情况下持续推进软件开发。",
+  "solves": "IDE assistants stop when you stop typing; this mode keeps context across hours and finishes the work you delegated.",
+  "solves_zh": "IDE 助手你一停手它就停；这个模式能跨小时保持上下文，把你派出去的活儿干完。",
+  "best_for": "You want to delegate a whole migration before leaving for the day and review the pull requests tomorrow.",
+  "best_for_zh": "想在下班前把一整个迁移任务派出去，明天再 review 那些 PR 时。",
+  "surface": "in-product",
+  "tags": [
+    "autonomous-mode",
+    "frontier-agent",
+    "cloud-sessions"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed and product directory）。 Missing from the ledger. Preview from 2025-12-02 for Kiro Pro, Pro+ and Power; from 2026-05-29 it also runs inside Kiro Web as the autonomous mode, which is why kiro.dev/autonomous-agent now redirects to kiro.dev/web. It is a mode of the Kiro surfaces rather than a separate install. 首次公开日期来源：https://kiro.dev/blog/introducing-kiro-autonomous-agent/ 官网未直接确认（redirect->https://kiro.dev/web/）。",
+  "revisions": []
+}

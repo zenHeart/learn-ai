@@ -1,0 +1,36 @@
+{
+  "id": "notion-enterprise-search",
+  "name": "Notion Enterprise Search",
+  "name_zh": "Notion 企业搜索",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-05-13",
+  "date_precision": "day",
+  "homepage": "https://www.notion.com/product/enterprise-search",
+  "desc": "Search across Notion and connected work tools with AI answers.",
+  "desc_zh": "跨 Notion 和已连接的工作工具搜索并给出答案",
+  "solves": "Answers are split across Slack, Drive and Jira. Enterprise Search reads them together and returns answers, not just links.",
+  "solves_zh": "答案散落在 Slack、Drive 和 Jira 里。企业搜索把它们放在一起查，直接给出答案而不只是链接。",
+  "best_for": "Someone asks how the refund policy changed and it lives in three different tools.",
+  "best_for_zh": "有人问退款政策改了什么，而相关内容分散在三个工具里。",
+  "surface": "in-product",
+  "tags": [
+    "unified-search",
+    "cross-app-connectors",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.notion.com/releases/page/9）。 Launched on the Business Plan with Notion 2.51; the post lists Microsoft (Teams, SharePoint, OneDrive) connectors with Gmail, Linear, Zendesk, Salesforce and Box following. Notion 3.0 (2025-09-18) added further connectors. The same post also introduced 'research mode' and an AI Home tab, which are treated as features of the ledger's Notion AI and left out. No media source was read. 评审修正（2026-11-25）：官方名字「Enterprise Search」在卡片上认不出属于谁。 首次公开日期来源：https://www.notion.com/releases/2025-05-13",
+  "revisions": []
+}

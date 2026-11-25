@@ -12,7 +12,7 @@
   ],
   "form": "web",
   "released": "2026-07-28",
-  "homepage": "https://www.360.cn/",
+  "homepage": "https://work.n.cn/",
   "desc": "360's agent platform for small and mid-sized businesses.",
   "desc_zh": "360 面向中小企业的智能体平台。",
   "solves": "A firm wants AI for its team and has nobody to run it. Agents execute in 360's isolated cloud sandbox; your code and data stay on your side.",
@@ -32,7 +32,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "面向中小企业主的一体化智能体平台，云端隔离沙箱是其安全设计的核心卖点 来源：https://www.chinadaily.com.cn/a/202607/30/WS6a6b0de4a310986e2b4682eb.html",
-  "revisions": [],
+  "notes": "面向中小企业主的一体化智能体平台，云端隔离沙箱是其安全设计的核心卖点 来源：https://www.chinadaily.com.cn/a/202607/30/WS6a6b0de4a310986e2b4682eb.html 2026-11-25：homepage \"https://www.360.cn/\" → \"https://work.n.cn/\"。原地址是 360 的公司首页；纳米Work 有自己的站点（标题「360出品·安全可靠 AI 办公平台」）",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "homepage",
+      "from": "https://www.360.cn/",
+      "to": "https://work.n.cn/",
+      "why": "原地址是 360 的公司首页；纳米Work 有自己的站点（标题「360出品·安全可靠 AI 办公平台」）"
+    }
+  ],
   "date_precision": "day"
 }

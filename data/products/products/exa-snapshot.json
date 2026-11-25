@@ -1,0 +1,36 @@
+{
+  "id": "exa-snapshot",
+  "name": "Exa Snapshot",
+  "name_zh": "Exa Snapshot",
+  "vendor_id": "exa-labs",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "research",
+    "observability"
+  ],
+  "form": "api",
+  "released": "2026-09-17",
+  "date_precision": "day",
+  "homepage": "https://exa.ai/products/snapshot",
+  "desc": "Search the web as it looked on a date you choose.",
+  "desc_zh": "按你指定的日期检索当时的互联网内容",
+  "solves": "Live search leaks the future into a backtest. Snapshot draws on 400 billion stored page versions and returns only what existed on or before the date you set.",
+  "solves_zh": "用实时检索做回测，等于把未来泄了进去。Snapshot 基于四千亿个已存页面版本，只返回你设定日期当天及之前存在的内容。",
+  "best_for": "You are scoring an agent on a task whose answer was not public yet when it ran.",
+  "best_for_zh": "你在给一个智能体的表现打分，而任务的答案在它运行时还未公开。",
+  "surface": "standalone",
+  "tags": [
+    "time-travel-search",
+    "backtesting",
+    "reproducible-evals"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://exa.ai/blog and https://exa.ai/docs/changelog , then https://exa.ai/）。 Launched 2026-09-17 as a research preview. The docs describe it as returning 'results from the web as it was at a datetime you choose, drawn from stored page versions spanning two decades', set through contents.snapshotAsOf on /search and snapshotAsOf on /contents. Missing from the ledger, which holds only the Exa search API for this vendor. No media source was read. 首次公开日期来源：https://exa.ai/blog/exa-snapshot",
+  "revisions": []
+}

@@ -11,12 +11,12 @@
   "form": "web",
   "released": "2023-12-13",
   "homepage": "https://aistudio.google.com/",
-  "desc": "Free web playground for prompting, now inside Gemini Enterprise",
-  "desc_zh": "免费网页 prompt 工作台，已并入 Gemini Enterprise",
+  "desc": "Free web playground for prompting Gemini models",
+  "desc_zh": "在浏览器里调试和对比 Gemini 模型的免费工作台",
   "solves": "You cannot tell a good prompt from a lucky one by reading it. Run two variants against the same input and the difference is right there.",
   "solves_zh": "光读是分不出好 prompt 和走运的。把两个变体喂同一个输入，差别当场就看出来了。",
-  "best_for": "Prompt work before it reaches an app. It has since folded into Gemini Enterprise.",
-  "best_for_zh": "prompt 接进应用之前的调试与对比，现在已经并入 Gemini Enterprise 平台。",
+  "best_for": "Prompt work before it reaches an app: compare two models on the same input and keep the settings.",
+  "best_for_zh": "prompt 接进应用之前的调试与对比：同一组输入换两个模型，设置原样保留。",
   "surface": "standalone",
   "tags": [
     "playground",
@@ -27,10 +27,10 @@
   "handbook": {
     "status": "none"
   },
-  "status": "merged",
-  "superseded_by": "gemini-enterprise",
+  "status": "active",
+  "superseded_by": null,
   "last_verified_at": "2026-10-04",
-  "notes": "",
+  "notes": "2026-11-25：status merged → active; superseded_by gemini-enterprise → null。原记录写「已并入 Gemini Enterprise」没有依据：Google 发布 Gemini Enterprise Agent Platform 的文章通篇没有提到 AI Studio，只把 Vertex AI 列为前身；aistudio.google.com 至今在线，页面标题是「Google AI Studio | Build with the Gemini API」 2026-11-25：desc \"Free web playground for prompting, now inside Gemini Enterprise\" → \"Free web playground for prompting Gemini models\"。去掉「now inside Gemini Enterprise」 2026-11-25：desc_zh \"免费网页 prompt 工作台，已并入 Gemini Enterprise\" → \"在浏览器里调试和对比 Gemini 模型的免费工作台\"。去掉「已并入 Gemini Enterprise」 2026-11-25：best_for \"Prompt work before it reaches an app. It has since folded into Gemini Enterprise.\" → \"Prompt work before it reaches an app: compare two models on the same input and keep the settings.\"。去掉「It has since folded into Gemini Enterprise」 2026-11-25：best_for_zh \"prompt 接进应用之前的调试与对比，现在已经并入 Gemini Enterprise 平台。\" → \"prompt 接进应用之前的调试与对比：同一组输入换两个模型，设置原样保留。\"。去掉「现在已经并入 Gemini Enterprise 平台」",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -39,6 +39,54 @@
       "from": "active",
       "to": "merged",
       "why": "已并入 Gemini Enterprise"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "merged",
+      "to": "active",
+      "why": "原记录写「已并入 Gemini Enterprise」没有依据：Google 发布 Gemini Enterprise Agent Platform 的文章通篇没有提到 AI Studio，只把 Vertex AI 列为前身；aistudio.google.com 至今在线，页面标题是「Google AI Studio | Build with the Gemini API」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": "gemini-enterprise",
+      "to": null,
+      "why": "原记录写「已并入 Gemini Enterprise」没有依据：Google 发布 Gemini Enterprise Agent Platform 的文章通篇没有提到 AI Studio，只把 Vertex AI 列为前身；aistudio.google.com 至今在线，页面标题是「Google AI Studio | Build with the Gemini API」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc",
+      "from": "Free web playground for prompting, now inside Gemini Enterprise",
+      "to": "Free web playground for prompting Gemini models",
+      "why": "去掉「now inside Gemini Enterprise」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc_zh",
+      "from": "免费网页 prompt 工作台，已并入 Gemini Enterprise",
+      "to": "在浏览器里调试和对比 Gemini 模型的免费工作台",
+      "why": "去掉「已并入 Gemini Enterprise」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "best_for",
+      "from": "Prompt work before it reaches an app. It has since folded into Gemini Enterprise.",
+      "to": "Prompt work before it reaches an app: compare two models on the same input and keep the settings.",
+      "why": "去掉「It has since folded into Gemini Enterprise」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "best_for_zh",
+      "from": "prompt 接进应用之前的调试与对比，现在已经并入 Gemini Enterprise 平台。",
+      "to": "prompt 接进应用之前的调试与对比：同一组输入换两个模型，设置原样保留。",
+      "why": "去掉「现在已经并入 Gemini Enterprise 平台」"
     }
   ],
   "date_precision": "day"

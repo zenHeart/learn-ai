@@ -9,7 +9,7 @@
     "office"
   ],
   "form": "web",
-  "released": "2016-05-01",
+  "released": "2018-02-17",
   "homepage": "https://otter.ai",
   "desc": "Meeting notetaker that turns calls into searchable knowledge",
   "desc_zh": "把会议转成可检索知识库的 AI 记录助手",
@@ -28,8 +28,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2016-05-01/day → 2018-02-17/day; source https://itunes.apple.com/lookup?id=1276437113。原值 2016-05-01 是公司 AISense 的成立日期，不是公开发布日。iOS 应用在 App Store 的上架日是 2018-02-17（苹果官方查询接口的 releaseDate）",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -38,6 +38,14 @@
       "from": "agent-platform",
       "to": "meetings",
       "why": "实时会议转写工具"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2016-05-01/day",
+      "to": "2018-02-17/day",
+      "why": "原值 2016-05-01 是公司 AISense 的成立日期，不是公开发布日。iOS 应用在 App Store 的上架日是 2018-02-17（苹果官方查询接口的 releaseDate）"
     }
   ],
   "date_precision": "day"

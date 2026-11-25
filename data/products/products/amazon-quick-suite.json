@@ -28,10 +28,27 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "aws-quick",
   "last_verified_at": null,
-  "notes": "Bundles structured BI data with Microsoft 365, Jira and Salesforce, which is the specific gap Bedrock and Amazon Q leave open. 来源：https://www.computerworld.com/article/3967788/aws-new-ai-agentic-platform-aims-to-automate-business-workflows.html",
-  "revisions": [],
+  "notes": "Bundles structured BI data with Microsoft 365, Jira and Salesforce, which is the specific gap Bedrock and Amazon Q leave open. 来源：https://www.computerworld.com/article/3967788/aws-new-ai-agentic-platform-aims-to-automate-business-workflows.html 2026-11-25：status active → renamed; superseded_by null → aws-quick。产品已两次更名：2026-04-28 以 Amazon Quick 的名字推出桌面应用，2026-11-09 更名为 AWS Quick（AWS 公告页：「Amazon Quick, the AI workspace built only for work, is now AWS Quick」）。按账本的改名规则，本档保留旧名，指向新名字的档案 aws-quick",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "产品已两次更名：2026-04-28 以 Amazon Quick 的名字推出桌面应用，2026-11-09 更名为 AWS Quick（AWS 公告页：「Amazon Quick, the AI workspace built only for work, is now AWS Quick」）。按账本的改名规则，本档保留旧名，指向新名字的档案 aws-quick"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "aws-quick",
+      "why": "产品已两次更名：2026-04-28 以 Amazon Quick 的名字推出桌面应用，2026-11-09 更名为 AWS Quick（AWS 公告页：「Amazon Quick, the AI workspace built only for work, is now AWS Quick」）。按账本的改名规则，本档保留旧名，指向新名字的档案 aws-quick"
+    }
+  ],
   "date_precision": "day"
 }

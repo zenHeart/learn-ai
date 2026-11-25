@@ -1,0 +1,35 @@
+{
+  "id": "replit-cloud-agents",
+  "name": "Replit Cloud Agents",
+  "name_zh": "Replit Cloud Agents",
+  "vendor_id": "replit",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-03-01",
+  "date_precision": "month",
+  "homepage": "https://replit.com/code-repos",
+  "desc": "Agents that turn plain-language requests into tested pull requests on your repositories.",
+  "desc_zh": "把大白话需求变成仓库里经过测试的 Pull Request 的智能体。",
+  "solves": "The people who know what to fix are rarely the ones who can ship it; they describe the change and an agent delivers a tested pull request.",
+  "solves_zh": "最清楚该改什么的人往往改不了；他们描述改动，智能体交出测过并附运行录像的 PR。",
+  "best_for": "A designer spots a spacing bug that has been wrong for months and wants it fixed this week.",
+  "best_for_zh": "设计师发现一个错了好几个月的间距问题，想这周就修掉。",
+  "surface": "in-product",
+  "tags": [
+    "pull-request",
+    "shared-environment",
+    "non-engineers"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — replit.com/blog）。 Only the month is stated in the first-party post (Oct 27, 2026), so date_precision is month and released is the first of that month. That Oct 27 post widened access to all Pro and Enterprise customers; the capability itself rolled out at the start of March 2026. Distinct from the ledger’s Replit Agent, which builds new apps rather than contributing to an existing codebase. 首次公开日期来源：https://replit.com/blog/anyone-can-bring-ideas-to-company-codebase 首次公开日期仅精确到月。",
+  "revisions": []
+}

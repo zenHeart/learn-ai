@@ -30,10 +30,27 @@
       "zh": "/zh/products/lingma/"
     }
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "qoder",
   "last_verified_at": "2026-10-04",
-  "notes": "官网已确认；lingma.aliyun.com/ide 子路径需登录才能访问，根路径可正常打开",
-  "revisions": [],
+  "notes": "官网已确认；lingma.aliyun.com/ide 子路径需登录才能访问，根路径可正常打开 2026-11-25：status active → renamed; superseded_by null → qoder。通义灵码 AI IDE 是 Qoder CN 系列里的 IDE 形态（官方文档：「Qoder CN…包含面向编码场景的 Qoder CN（含 IDE、JetBrains 插件）」），也就是 Qoder 这个 IDE 的旧名",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "通义灵码 AI IDE 是 Qoder CN 系列里的 IDE 形态（官方文档：「Qoder CN…包含面向编码场景的 Qoder CN（含 IDE、JetBrains 插件）」），也就是 Qoder 这个 IDE 的旧名"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "qoder",
+      "why": "通义灵码 AI IDE 是 Qoder CN 系列里的 IDE 形态（官方文档：「Qoder CN…包含面向编码场景的 Qoder CN（含 IDE、JetBrains 插件）」），也就是 Qoder 这个 IDE 的旧名"
+    }
+  ],
   "date_precision": "day"
 }

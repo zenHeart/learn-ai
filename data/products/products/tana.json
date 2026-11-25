@@ -29,8 +29,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "Tana 已从大纲工具转为 agentic 会议平台（agents 写文档、提 issue、更新 context graph）；原大纲能力拆到独立产品 Tana Outliner（outliner.tana.inc），该产品尚未入账。",
+  "last_verified_at": "2026-11-25",
+  "notes": "Tana 已从大纲工具转为 agentic 会议平台（agents 写文档、提 issue、更新 context graph）；原大纲能力拆到独立产品 Tana Outliner（outliner.tana.inc），该产品尚未入账。 2026-11-25：date_precision day → month。找不到发布日期的一手来源；官方的更新日志与博客靠前端渲染，读不到带日期的条目。按月份精度记",
   "revisions": [
     {
       "at": "2026-10-05",
@@ -47,7 +47,15 @@
       "from": "notes,outliner,personal-ai",
       "to": "notes,personal-ai,meetings,agents",
       "why": "outliner 标签随产品拆分失效"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "找不到发布日期的一手来源；官方的更新日志与博客靠前端渲染，读不到带日期的条目。按月份精度记"
     }
   ],
-  "date_precision": "day"
+  "date_precision": "month"
 }

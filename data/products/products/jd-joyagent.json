@@ -1,0 +1,35 @@
+{
+  "id": "jd-joyagent",
+  "name": "JoyAgent 智能体平台",
+  "name_zh": "JoyAgent 智能体平台",
+  "vendor_id": "jd",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-05-16",
+  "date_precision": "day",
+  "homepage": "https://joyagent.jd.com/",
+  "desc": "JD Cloud's platform for building and publishing enterprise agents",
+  "desc_zh": "京东云的企业智能体搭建与发布平台",
+  "solves": "Enterprise workflows need models, knowledge and approvals wired together. JoyAgent assembles them and publishes to IM channels.",
+  "solves_zh": "企业里的流程要把模型、知识库和审批串起来。它把这些拼成智能体，一键发到企业微信、钉钉等渠道。",
+  "best_for": "An HR team wants a policy bot inside the IM app staff already use.",
+  "best_for_zh": "HR 想把制度问答机器人放进员工每天必开的 IM 里的时候。",
+  "surface": "standalone",
+  "tags": [
+    "agent-building",
+    "enterprise",
+    "im-publishing"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.jdcloud.com/ product menu, https://joyagent.jd.com/ and https://）。 JoyAgent 3.0 was announced 2025-09-25/26 and open-sourced parts (JoyAgent-JDGenie, DataAgent, DCP); versions are not separate products. The joyagent.jd.com/pl page also lists JoyClaw 专业版 (京东个人 AI 助手, 2026.3.13 产品), JoyContext 知识库 (2025.12.30) and JoyCode — no first-party dated sentence was read for any of them, so they stay in report 'unconfirmed'. Distinct from the ledger entry 言犀智能体平台 (2024-07-30). Outside the 2026-05-07 window: proposed as a backfill. 首次公开日期来源：https://docs.jdcloud.com/cn/agents/product-introduce",
+  "revisions": []
+}

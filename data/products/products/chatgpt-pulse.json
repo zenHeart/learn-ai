@@ -13,12 +13,12 @@
   "released": "2025-09-25",
   "date_precision": "day",
   "homepage": "https://openai.com/index/introducing-chatgpt-pulse/",
-  "desc": "A daily briefing it researches for you each night.",
-  "desc_zh": "夜里自己去查资料、清早推给你的一份每日简报。",
+  "desc": "A daily briefing ChatGPT researched overnight, sunset in June 2026.",
+  "desc_zh": "ChatGPT 夜里查资料、清早推送的每日简报，2026 年 6 月已下线。",
   "solves": "A chat assistant only speaks when you open it, so what you never thought to ask is never covered. Pulse researches overnight and delivers a morning digest.",
   "solves_zh": "助手只在你打开它时才开口，所以没想到问的就永远不会被提。Pulse 夜里自己去查，早上送来一份简报。",
-  "best_for": "You want a short daily digest, and accept that a preview will sometimes miss.",
-  "best_for_zh": "你想要一份每日短简报，也接受它作为预览版偶尔跑偏。",
+  "best_for": "Nothing to open now — scheduled tasks took over its proactive updates.",
+  "best_for_zh": "现在已经没有产品可用了，主动推送并入了定时任务。",
   "tags": [
     "in-product",
     "chatgpt"
@@ -26,9 +26,50 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
+  "status": "discontinued",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "集成在 ChatGPT 内的能力。来源：https://openai.com/index/introducing-chatgpt-pulse/",
-  "revisions": []
+  "notes": "集成在 ChatGPT 内的能力。来源：https://openai.com/index/introducing-chatgpt-pulse/ 2026-11-25：status active → discontinued。OpenAI 官方更新日志（2026-06-17 一节）：「Pulse is being sunset as proactive updates move into scheduled tasks. Pro users will continue to have access for 14 days from today.」 2026-11-25：desc \"A daily briefing it researches for you each night.\" → \"A daily briefing ChatGPT researched overnight, sunset in June 2026.\"。产品已下线，摘要里不再用现在时 2026-11-25：desc_zh \"夜里自己去查资料、清早推给你的一份每日简报。\" → \"ChatGPT 夜里查资料、清早推送的每日简报，2026 年 6 月已下线。\"。产品已下线，摘要里写明 2026-11-25：best_for \"You want a short daily digest, and accept that a preview will sometimes miss.\" → \"Nothing to open now — scheduled tasks took over its proactive updates.\"。产品已下线 2026-11-25：best_for_zh \"你想要一份每日短简报，也接受它作为预览版偶尔跑偏。\" → \"现在已经没有产品可用了，主动推送并入了定时任务。\"。产品已下线",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "discontinued",
+      "why": "OpenAI 官方更新日志（2026-06-17 一节）：「Pulse is being sunset as proactive updates move into scheduled tasks. Pro users will continue to have access for 14 days from today.」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc",
+      "from": "A daily briefing it researches for you each night.",
+      "to": "A daily briefing ChatGPT researched overnight, sunset in June 2026.",
+      "why": "产品已下线，摘要里不再用现在时"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc_zh",
+      "from": "夜里自己去查资料、清早推给你的一份每日简报。",
+      "to": "ChatGPT 夜里查资料、清早推送的每日简报，2026 年 6 月已下线。",
+      "why": "产品已下线，摘要里写明"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "best_for",
+      "from": "You want a short daily digest, and accept that a preview will sometimes miss.",
+      "to": "Nothing to open now — scheduled tasks took over its proactive updates.",
+      "why": "产品已下线"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "best_for_zh",
+      "from": "你想要一份每日短简报，也接受它作为预览版偶尔跑偏。",
+      "to": "现在已经没有产品可用了，主动推送并入了定时任务。",
+      "why": "产品已下线"
+    }
+  ]
 }

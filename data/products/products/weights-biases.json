@@ -9,7 +9,7 @@
     "observability"
   ],
   "form": "web",
-  "released": "2017-07-01",
+  "released": "2017-03-24",
   "homepage": "https://wandb.ai",
   "desc": "Platform for building, evaluating, and debugging AI apps",
   "desc_zh": "用于构建、评测和排查 AI 应用的平台",
@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2017-07-01/day → 2017-03-24/day; source https://pypi.org/pypi/wandb/json。原值 2017-07-01 是月份占位，且晚于实际的首个公开版本。wandb 包在 PyPI 的首个版本 0.1.0 上传于 2017-03-24",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2017-07-01/day",
+      "to": "2017-03-24/day",
+      "why": "原值 2017-07-01 是月份占位，且晚于实际的首个公开版本。wandb 包在 PyPI 的首个版本 0.1.0 上传于 2017-03-24"
+    }
+  ],
   "date_precision": "day"
 }

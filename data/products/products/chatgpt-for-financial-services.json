@@ -1,0 +1,36 @@
+{
+  "id": "chatgpt-for-financial-services",
+  "name": "ChatGPT for Financial Services",
+  "name_zh": "ChatGPT for Financial Services",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-09-10",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/introducing-chatgpt-financial-services",
+  "desc": "A ChatGPT build for banks, with licensed data and admin controls.",
+  "desc_zh": "面向银行的 ChatGPT 版本，带授权数据源和管理员控制。",
+  "solves": "A general assistant cannot cite a licensed dataset, and IT cannot govern it. This build carries the firm’s own entitlements and sits inside ChatGPT’s enterprise controls.",
+  "solves_zh": "通用助手无法引用授权数据集，IT 也管不住它。这个版本带着机构自己的授权范围，并落在 ChatGPT 的企业管控之内。",
+  "best_for": "An analyst needs an answer that names the dataset it came from.",
+  "best_for_zh": "分析师需要一个能说清数据来自哪里的答案。",
+  "surface": "in-product",
+  "tags": [
+    "financial-services",
+    "licensed-data",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/introducing-chatgpt-financial-services）。 Gated availability: the page states it is available to eligible financial institutions and directs interested parties to contact sales, so there is no self-serve public entry. Access to S&P Capital IQ, LSEG, MSCI, Dow Jones Factiva and Moody’s data is via shared sign-in. 首次公开日期来源：https://openai.com/index/introducing-chatgpt-financial-services",
+  "revisions": []
+}

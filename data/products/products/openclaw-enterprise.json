@@ -1,0 +1,35 @@
+{
+  "id": "openclaw-enterprise",
+  "name": "OpenClaw Enterprise",
+  "name_zh": "OpenClaw Enterprise",
+  "vendor_id": "openclaw",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "released": "2026-09-29",
+  "date_precision": "day",
+  "homepage": "https://openclaw.ai/enterprise",
+  "desc": "Vendor-neutral platform for running persistent agents in sensitive environments.",
+  "desc_zh": "在敏感环境里运行常驻智能体的开源平台。",
+  "solves": "Security teams block agents outright because they cannot see or bound what one does; this gives them a platform they can audit and deploy themselves.",
+  "solves_zh": "安全团队因为看不清也框不住智能体的行为就一律禁用；这个平台让他们能审计并自己部署。",
+  "best_for": "Your security review is the reason the agent pilot never left the sandbox.",
+  "best_for_zh": "安全评审就是你的智能体试点没能走出沙箱的原因。",
+  "surface": "standalone",
+  "tags": [
+    "self-hosted",
+    "governance",
+    "persistent-agents"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — openclaw.ai/blog）。 Post byline: Kevin Lin, Sep 29, 2026. Abbreviated OCE in the post. A separate deployment surface from the OpenClaw runtime the ledger holds; Microsoft Autopilot is built on OpenClaw per the Sep 25, 2026 post. 首次公开日期来源：https://openclaw.ai/blog/openclaw-enterprise",
+  "revisions": []
+}

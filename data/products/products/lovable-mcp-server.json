@@ -1,0 +1,36 @@
+{
+  "id": "lovable-mcp-server",
+  "name": "Lovable MCP Server",
+  "name_zh": "Lovable MCP Server",
+  "vendor_id": "lovable",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-05-18",
+  "date_precision": "day",
+  "homepage": "https://docs.lovable.dev/integrations/lovable-mcp",
+  "desc": "MCP server that lets outside AI clients build and manage Lovable projects.",
+  "desc_zh": "让外部 AI 客户端搭建和管理 Lovable 项目的 MCP 服务。",
+  "solves": "Your agent already knows how to call tools but has no way to reach the app you are building; one server URL gives it the whole project.",
+  "solves_zh": "你的智能体会调工具，却碰不到你正在做的应用；一个服务地址就把整个项目交给它。",
+  "best_for": "You are in Claude Code or Cursor and want the app changed without switching windows.",
+  "best_for_zh": "你正在 Claude Code 或 Cursor 里，想不改窗口就把应用改掉。",
+  "surface": "standalone",
+  "tags": [
+    "mcp-server",
+    "remote-control",
+    "oauth"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.lovable.dev/changelog）。 Research preview dated May 18, 2026; the same changelog shows it opened to all plans including Free on Jun 3, 2026. Recorded as a standalone API surface, distinct from the Lovable product itself. 入库核对（2026-11-25）：厂商没有公布中文名，name_zh 按 name。 首次公开日期来源：https://docs.lovable.dev/changelog",
+  "revisions": []
+}

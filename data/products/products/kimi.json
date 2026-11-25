@@ -33,8 +33,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "",
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：date_precision day → month。在月之暗面自己的站点上找不到发布日期的一手来源。按月份精度记",
   "revisions": [
     {
       "at": "2026-10-05",
@@ -43,7 +43,15 @@
       "from": "长上下文对话助手，带深度研究",
       "to": "Long-context chat assistant with built-in deep research.",
       "why": "desc 误填中文；基础键按约定只能是英文"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "在月之暗面自己的站点上找不到发布日期的一手来源。按月份精度记"
     }
   ],
-  "date_precision": "day"
+  "date_precision": "month"
 }

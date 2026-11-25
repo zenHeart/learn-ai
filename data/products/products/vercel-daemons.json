@@ -1,0 +1,36 @@
+{
+  "id": "vercel-daemons",
+  "name": "Vercel Daemons",
+  "name_zh": "Vercel Daemons",
+  "vendor_id": "vercel",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "api",
+  "released": "2026-10-15",
+  "date_precision": "day",
+  "homepage": "https://vercel.com/docs/daemons",
+  "desc": "Long-running processes on Vercel that pull jobs and keep working.",
+  "desc_zh": "Vercel 上常驻运行、持续拉取任务的长进程。",
+  "solves": "Serverless functions end when the request ends, so queue workers had to live elsewhere; the daemon keeps pulling work inside the same deployment.",
+  "solves_zh": "Serverless 函数请求结束就退出，队列工人只能放到别处；守护进程让它在同一个部署里持续拉活。",
+  "best_for": "Your agent needs a worker that stays alive and drains a queue without another host.",
+  "best_for_zh": "智能体需要一个常驻工人来消费队列，而又不想再养一台机器。",
+  "surface": "standalone",
+  "tags": [
+    "long-running",
+    "queue-workers",
+    "serverless"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — vercel.com/changelog directory）。 Public beta at launch. Whether Daemons existed in a private or limited form before this date is unconfirmed; the changelog entry above is the earliest dated first-party reference found. 入库核对（2026-11-25）：给智能体用的常驻进程，属于智能体平台，不是辅助工具。 首次公开日期来源：https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta",
+  "revisions": []
+}

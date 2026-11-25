@@ -1,0 +1,37 @@
+{
+  "id": "zoom-search-and-ask-apis",
+  "name": "Zoom Search and Ask APIs",
+  "name_zh": "Zoom Search and Ask APIs",
+  "vendor_id": "zoom",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "research",
+    "agent-building",
+    "coding"
+  ],
+  "form": "api",
+  "released": "2026-10-20",
+  "date_precision": "day",
+  "homepage": "https://developers.zoom.us/docs/mcp/",
+  "desc": "Zoom APIs that return cited search results or reasoned answers.",
+  "desc_zh": "返回带引用检索结果或推理答案的 Zoom API",
+  "solves": "Every assistant needed its own connector to Zoom data. The Search API returns ranked, cited results and the Ask API returns reasoned answers, straight from Zoom's context layer.",
+  "solves_zh": "每个助手都要为 Zoom 数据单独写一个连接器。Search API 返回带引用的排序结果，Ask API 返回推理后的答案，数据直接来自 Zoom 的上下文层。",
+  "best_for": "Your own agent needs answers from meetings and chats without you writing a retrieval pipeline.",
+  "best_for_zh": "你的智能体需要用到会议和聊天里的答案，而你不想自己写一套检索链路。",
+  "surface": "standalone",
+  "tags": [
+    "search-api",
+    "unified-context",
+    "cited-results"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.zoom.com/en/products/whats-new/ (product timeline, October 2026)）。 Announced at Zoomtopia on 2026-10-20. The What's New timeline adds that the Search API returns ranked, cited results with no LLM involved and is free for Zoom-native data, while the Ask API returns reasoned natural-language answers and requires ZoomMate plus AI credits; both can read connected Salesforce, ServiceNow, OneDrive, Google Drive and Workday sources. The homepage is the Zoom MCP documentation page, which is the closest stable product entry the announcement links to. No media source was read. 评审修正（2026-11-25）：官方名字「Search and Ask APIs」是通用词，带上厂商名以便辨认。 首次公开日期来源：https://news.zoom.com/zoomtopia-2026-news",
+  "revisions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "together-provisioned-throughput",
+  "name": "Together Provisioned Throughput",
+  "name_zh": "Together Provisioned Throughput",
+  "vendor_id": "together-ai",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2026-07-08",
+  "date_precision": "day",
+  "homepage": "https://www.together.ai/provisioned-throughput",
+  "desc": "Reserved capacity for open models, billed per token with an uptime SLA.",
+  "desc_zh": "为前沿开源模型预留推理容量，按 token 计费并附带可用性承诺。",
+  "solves": "Serverless is cheap but best-effort and dedicated endpoints need tuning; this form factor keeps token pricing while guaranteeing the capacity underneath it.",
+  "solves_zh": "Serverless 便宜但不保可用，专属端点又要自己调；这一档保留按 token 计费，同时把底层容量锁定下来。",
+  "best_for": "You are moving an open-weight model from a pilot into production and need a capacity number you can put in a contract.",
+  "best_for_zh": "要把开源权重模型从试点推上生产，需要一个能写进合同的容量数字时。",
+  "surface": "standalone",
+  "tags": [
+    "reserved-capacity",
+    "uptime-sla",
+    "token-pricing"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.together.ai/blog and https://www.together.ai/products）。 Announced 2026-07-08, inside the window; not in the ledger (the ledger holds only Together AI@2022-06-01). The post says it launched for MiniMax M3 and GLM-5.2 with a one-month minimum term. Second source is the same publisher; no independent media write-up was located. 入库核对（2026-11-25）：官方名字只是「Provisioned Throughput」，加上厂商名以便辨认。 首次公开日期来源：https://www.together.ai/blog/provisioned-throughput",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "scale-hospital-operations",
+  "name": "Scale for Hospital Operations",
+  "name_zh": "Scale for Hospital Operations",
+  "vendor_id": "scale-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-11-16",
+  "date_precision": "day",
+  "homepage": "https://scale.com/enterprise/healthcare",
+  "desc": "Five hospital workflow apps for referrals, records and safety events on-premises.",
+  "desc_zh": "面向转诊、病历和安全事件的五个医院工作流应用，可部署在自有环境里。",
+  "solves": "Referrals, chart summaries and safety reviews pile up faster than staff can clear them, and generic AI is not built for decisions where a mistake lands on a patient.",
+  "solves_zh": "转诊、病历摘要和安全审查堆积的速度超过医护能清完的速度，而通用 AI 并不是为「错一次就落到病人身上」的决策设计的。",
+  "best_for": "A hospital's referral queue and safety-event reviews are weeks behind and you need the data to stay inside the health system.",
+  "best_for_zh": "医院的转诊队列和安全事件审查已经落后几周，而数据又必须留在医疗系统内部时。",
+  "surface": "standalone",
+  "tags": [
+    "healthcare",
+    "clinical-workflows",
+    "on-premises"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://scale.com/blog/sitemap.xml and https://scale.com/enterprise/healthca）。 Announced 2026-11-16, inside the window; not in the ledger (the ledger holds only Scale AI@2016-06-01). The post says the applications run on any model and deploy directly into the customer's environment, with more rolling out over the coming months. No dedicated product page exists; the homepage is the healthcare industry page. Second source is the same publisher. 入库核对（2026-11-25）：它是一组可部署到客户环境里的工作流应用，不是 API 服务；原分类 enterprise-api 不对。 首次公开日期来源：https://scale.com/blog/scaleforhospitaloperations",
+  "revisions": []
+}

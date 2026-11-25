@@ -1,0 +1,37 @@
+{
+  "id": "qoder-desktop-app",
+  "name": "Qoder",
+  "name_zh": "Qoder",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "released": "2026-08-27",
+  "date_precision": "day",
+  "homepage": "https://qoder.com/qoder",
+  "desc": "Task-centered desktop app that delegates work to agents",
+  "desc_zh": "以任务为中心、把活派给智能体的桌面应用",
+  "solves": "IDE, terminal agent and scripts each hold part of the work; one workspace now runs, watches and reviews every task.",
+  "solves_zh": "代码、报告和原型分散在不同工具里，现在一个工作区就能派发、跟踪并验收任务。",
+  "best_for": "You need a report, prototype or code change done end to end and would rather review than build.",
+  "best_for_zh": "手里有一件要从头做到尾的活，比如出报告或做原型，你想只做验收。",
+  "surface": "standalone",
+  "tags": [
+    "task-delegation",
+    "computer-use",
+    "multi-model-routing",
+    "plugins-skills"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://changelog.qoder.com/llms.txt, https://changelog.qoder.com/app.md, ht）。 This is the all-new task-based desktop app, NOT the IDE. The ledger entry Qoder@2025-08-22 is the IDE launch; Qoder IDE keeps its own changelog (changelog.qoder.com/ide, version line now 1.41.x) while this app has its own line (0.1.0 on 2026-08-27, 0.5.18 on 2026-11-24). The app absorbs QoderWork (public beta 2026-02-12, service ends 2027-09-05, see qoderwork.json). A CN edition exists at qoder.cn. Other second source read: https://finance.sina.com.cn/tech/digi/2026-08-27/doc-inipttax5846771.shtml (新浪科技, same headline). 入库核对（2026-11-25）：地区与账本里的 Qoder（IDE）保持一致。 两者同名，入库时把 IDE 那条按官方文档改名为 Qoder IDE。 首次公开日期来源：https://blog.qoder.com/qoder-desktop",
+  "revisions": []
+}

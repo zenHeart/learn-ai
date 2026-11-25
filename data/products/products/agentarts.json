@@ -11,7 +11,7 @@
   ],
   "form": "web",
   "surface": "standalone",
-  "released": "2025-06-01",
+  "released": "2025-09-01",
   "date_precision": "month",
   "homepage": "https://www.huaweicloud.com/product/agentarts.html",
   "desc": "Huawei Cloud's enterprise agent-building platform.",
@@ -26,7 +26,16 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://www.huaweicloud.com/product/pangu.html。来源：https://www.huaweicloud.com/product/agentarts.html",
-  "revisions": []
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：https://www.huaweicloud.com/product/pangu.html。来源：https://www.huaweicloud.com/product/agentarts.html 2026-11-25：released 2025-06-01/month → 2025-09-01/month; source https://support.huaweicloud.com/wtsnew-agentarts/index.html。原日期 2025-06 无出处。华为云官方更新日志把「智能体平台全新上线（公测）」记在 2025 年 9 月",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-06-01/month",
+      "to": "2025-09-01/month",
+      "why": "原日期 2025-06 无出处。华为云官方更新日志把「智能体平台全新上线（公测）」记在 2025 年 9 月"
+    }
+  ]
 }

@@ -1,0 +1,36 @@
+{
+  "id": "air-teams",
+  "name": "JetBrains Air Teams",
+  "name_zh": "JetBrains Air Teams",
+  "vendor_id": "jetbrains",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-09-28",
+  "date_precision": "day",
+  "homepage": "https://www.jetbrains.com/air/",
+  "desc": "Team layer of JetBrains Air for sharing agent workflows and automating repeatable work.",
+  "desc_zh": "JetBrains Air 的团队层，用于共享智能体工作流和自动化重复工作。",
+  "solves": "Each engineer builds their own agent setup and nobody else can reuse it; workflows, intents and verification results are shared across the team.",
+  "solves_zh": "每个工程师各自搭一套智能体环境，别人无法复用；工作流、意图和验证结果在团队内共享。",
+  "best_for": "The same review-and-release routine is rebuilt by hand by every person on the team.",
+  "best_for_zh": "同一套审查发布流程，团队里每个人都要各自手工搭一遍。",
+  "surface": "standalone",
+  "tags": [
+    "team-workflows",
+    "shared-automations",
+    "governance"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — blog.jetbrains.com/air RSS feed）。 Launched six days after the wider JetBrains Air product system. The vendor says Air arrives through rolling releases, so the 2026-09-28 date is the first dated first-party post found for this surface; an earlier system-level announcement on 2026-09-22 is reported by media but no first-party page for it was retrieved. 入库核对（2026-11-25）：官方叫 Air Teams；卡片上带上厂商名以便辨认。 首次公开日期来源：https://blog.jetbrains.com/air/feed/",
+  "revisions": []
+}

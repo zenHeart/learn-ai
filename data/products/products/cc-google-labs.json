@@ -1,0 +1,36 @@
+{
+  "id": "cc-google-labs",
+  "name": "CC",
+  "name_zh": "CC",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-12-16",
+  "date_precision": "day",
+  "homepage": "https://labs.google/cc",
+  "desc": "Labs agent that coordinates a family's calendars and tasks",
+  "desc_zh": "帮家庭统筹日历和待办的 Google Labs 智能体",
+  "solves": "Household logistics live in six different chats; CC keeps one shared calendar and briefs every member.",
+  "solves_zh": "家庭事务散在六七个群聊里，CC 维护一份共享日历并向每位成员简报。",
+  "best_for": "Three kids have practice, a form deadline and a dentist visit in the same week.",
+  "best_for_zh": "三个孩子同一周有训练、表格截止和牙医预约。",
+  "surface": "standalone",
+  "tags": [
+    "family-agent",
+    "shared-calendar",
+    "google-labs"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://labs.google/ (current experiments)）。 First date is outside the window. Launched 2025-12-16 as a personal agent in early access (waitlist, US and Canada). On 2026-09-17, inside the window, Google relaunched it as a group agent for up to six family members (US, waitlist for new users). Second source is not independent media. 首次公开日期来源：https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-ai-agent/ 官网未直接确认（redirect->https://labs.google.com/cc/）。",
+  "revisions": []
+}

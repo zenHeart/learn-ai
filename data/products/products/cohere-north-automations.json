@@ -1,0 +1,36 @@
+{
+  "id": "cohere-north-automations",
+  "name": "Cohere North Automations",
+  "name_zh": "Cohere North Automations",
+  "vendor_id": "cohere",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-27",
+  "date_precision": "day",
+  "homepage": "https://cohere.com/north/automations",
+  "desc": "Workflow orchestration built into Cohere's North",
+  "desc_zh": "内置于 Cohere North 的智能体工作流编排",
+  "solves": "Multi-step agentic work was hand-wired; Automations gives North customers one place to run and watch it.",
+  "solves_zh": "多步骤的智能体流程过去要手工串接，Automations 让 North 客户在一处运行和查看。",
+  "best_for": "A weekly compliance check touches five systems and nobody wants to babysit it.",
+  "best_for_zh": "每周的合规检查要跑五个系统，没人愿意盯着它。",
+  "surface": "in-product",
+  "tags": [
+    "orchestration",
+    "agentic-workflows",
+    "north"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — official news index of the vendor (https://cohere.com/blog)）。 In-product surface of Cohere North (in the ledger at 2025-01-10). The article title is 'Orchestrate Agentic Workflows with North Automations'. Second source is not independent media. 入库核对（2026-11-25）：官方名字只是「North Automations」，文章标题即「Orchestrate Agentic Workflows with North Automations」；带上厂商名以便辨认。 首次公开日期来源：https://cohere.com/blog/introducing-north-automations-ai-workflows",
+  "revisions": []
+}

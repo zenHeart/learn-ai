@@ -1,0 +1,37 @@
+{
+  "id": "qoder-mobile",
+  "name": "Qoder Mobile",
+  "name_zh": "Qoder Mobile",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "supporting-tools",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-05-13",
+  "date_precision": "day",
+  "homepage": "https://qoder.com/mobile",
+  "desc": "Phone app for controlling Qoder agents remotely",
+  "desc_zh": "在手机上远程查看和操控 Qoder 智能体的应用",
+  "solves": "A long agent task used to chain you to the desk; check progress, approve actions and reply from your phone.",
+  "solves_zh": "长任务原来必须守在电脑前，现在在手机上就能看进度、批操作、回提问。",
+  "best_for": "You stepped away while a migration ran and a permission prompt is waiting for you.",
+  "best_for_zh": "你离开工位时任务还在跑，手机上正好弹出一个等待审批的操作。",
+  "surface": "standalone",
+  "tags": [
+    "remote-control",
+    "ios-android-harmonyos",
+    "task-approval",
+    "cloud-tasks"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://docs.qoder.com/llms.txt (Mobile & Web), https://qoder.com/mobile; A ）。 Native iOS / Android / HarmonyOS app plus a web client (qoder.com/agents, titled 'Qoder Web') for Remote Control and cloud tasks. The form enum has no mobile value, so 'desktop' (native client) was used. Timeline: announced 2026-04-30 with the mobile apps 'Listing' in stores; the international iOS app first appeared in the App Store on 2026-05-13 (same date in sg/jp/hk storefronts; not listed in us/gb); the CN iOS app 'Qoder CN' (bundle com.qoder.app.cn, seller Hangzhou Yundian Technology) first appeared 2026-05-22. Android: https://play.google.com/store/apps/details?id=com.qoder.mobile; Harmony: appgallery id com.qoder.hmos.global. Its changelog only starts at 2026-11-10. Official family card: 'Mobile & Web — Remotely follow supported Qoder and CLI tasks, or use the documented cloud-task workflow.' 入库核对（2026-11-25）：形态枚举没有手机应用；账本里 Gemini app、Le Chat 这类手机应用记为 web，不记为 desktop。地区与账本里的 Qoder（IDE）保持一致。 首次公开日期来源：https://itunes.apple.com/lookup?id=6764005182&country=sg",
+  "revisions": []
+}

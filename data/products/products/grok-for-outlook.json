@@ -1,0 +1,35 @@
+{
+  "id": "grok-for-outlook",
+  "name": "Grok for Outlook",
+  "name_zh": "Grok for Outlook",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-21",
+  "date_precision": "day",
+  "homepage": "https://marketplace.microsoft.com/en-us/product/office/WA200011330?tab=Overview",
+  "desc": "Outlook add-in that summarizes threads, drafts replies and tidies the inbox.",
+  "desc_zh": "Outlook 加载项，总结长邮件串、用你的语气起草回复并整理收件箱。",
+  "solves": "Catching up on a thread means reading forty messages; the add-in reads them and hands you a reply that sounds like you.",
+  "solves_zh": "追一个邮件串要读四十封；加载项替你读完，再给你一封语气像你写的回复。",
+  "best_for": "You return from leave to hundreds of unread messages and need to answer the ones that matter.",
+  "best_for_zh": "休假回来堆着几百封未读，只需要回那些真正重要的时候。",
+  "surface": "extension",
+  "tags": [
+    "email-addin",
+    "thread-summary",
+    "reply-drafting"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory; channel A Microsoft Marketplace listing）。 Last of the four Grok Office add-ins. The marketplace URL redirects by dropping the locale segment. 入库核对（2026-11-25）：嵌在办公软件里的助手，与账本对同类功能的分类一致。 首次公开日期来源：https://x.ai/news/introducing-outlook-addin 官网未直接确认（redirect->https://marketplace.microsoft.com/en-us/product/WA200011330?tab=Overview）。",
+  "revisions": []
+}

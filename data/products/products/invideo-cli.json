@@ -1,0 +1,36 @@
+{
+  "id": "invideo-cli",
+  "name": "invideo CLI",
+  "name_zh": "invideo CLI",
+  "vendor_id": "invideo",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-10-23",
+  "date_precision": "day",
+  "homepage": "https://invideo.io/cli/",
+  "desc": "Terminal video editor that coding agents drive with shell commands.",
+  "desc_zh": "让编程 Agent 用命令行操作的专业视频编辑器。",
+  "solves": "An agent can write a script but cannot cut a video; this gives it real timeline commands and writes the exports straight to disk.",
+  "solves_zh": "Agent 能写脚本却剪不了片子；给它真正的 timeline 命令，导出文件直接落到磁盘上。",
+  "best_for": "You already work in Claude Code or Codex and want the finished video on your own filesystem.",
+  "best_for_zh": "你本来就在 Claude Code 或 Codex 里干活，想让成片直接落到自己磁盘上。",
+  "surface": "standalone",
+  "tags": [
+    "terminal-tool",
+    "agent-driven-editing",
+    "video-export"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — invideo product directory reached from the homepage nav (https://invideo.io/）。 First public release is tag v0.1.0, published 2026-10-23T15:42:24Z by the official invideoio/cli repository; v0.1.1–v0.1.3 followed on 2026-10-26, 2026-11-02 and 2026-11-03. The human-readable GitHub release page renders the date as '23 Oct 15:42' with the year only in the page's machine-readable timestamp, which is why the API URL is quoted as a second evidence entry. The CLI is a distinct entry point from the ledger record invideo-ai (the prompt-to-video web flow at invideo.io/ai): it is one native binary driven from a shell, and the vendor's own comparison page describes the CLI and the MCP server as two different ways into the same editor. Requires an invideo account sign-in; there are no API keys by design. 首次公开日期来源：https://github.com/invideoio/cli/releases/tag/v0.1.0",
+  "revisions": []
+}

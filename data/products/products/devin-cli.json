@@ -1,0 +1,35 @@
+{
+  "id": "devin-cli",
+  "name": "Devin CLI",
+  "name_zh": "Devin CLI",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-04-27",
+  "date_precision": "day",
+  "homepage": "https://docs.devin.ai/cli",
+  "desc": "Terminal coding agent that hands a session to the cloud.",
+  "desc_zh": "在终端里运行的编程智能体，任务变大时可移交给云端。",
+  "solves": "Local agents stall when a job needs its own machine; the same session continues on a cloud computer and comes back as a pull request.",
+  "solves_zh": "本地智能体一遇到需要独立环境的任务就卡住；同一个会话能转到云端继续跑，回来就是 Pull Request。",
+  "best_for": "You start a fix in the terminal and want it to keep running after you close the laptop.",
+  "best_for_zh": "在终端里开了个修复任务，合上电脑也想让它继续跑完。",
+  "surface": "standalone",
+  "tags": [
+    "terminal-agent",
+    "cloud-handoff",
+    "sandboxed-runs"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cognition.com/blog directory）。 cli.devin.ai redirects to the docs page. Separate surface from the Devin web app already in the ledger; the announcement is two days ahead of the docs changelog entry. 首次公开日期来源：https://cognition.com/blog/devin-for-terminal",
+  "revisions": []
+}

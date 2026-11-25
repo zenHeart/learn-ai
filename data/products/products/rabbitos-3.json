@@ -1,0 +1,36 @@
+{
+  "id": "rabbitos-3",
+  "name": "rabbitOS 3",
+  "name_zh": "rabbitOS 3",
+  "vendor_id": "rabbit-inc",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-09-22",
+  "date_precision": "day",
+  "homepage": "https://www.rabbit.tech/try-os3",
+  "desc": "Rabbit's agentic operating system, cloud-resident, driving your devices through one agent.",
+  "desc_zh": "rabbit 的智能体操作系统，跑在云端，通过一个智能体驱动你的设备。",
+  "solves": "Tasks split across five devices and ten accounts need you as the router; state an outcome and OS3 decides where the work runs.",
+  "solves_zh": "任务散在五台设备和十个账号里，得你当路由器；说出想要的结果，OS3 决定活儿在哪儿跑。",
+  "best_for": "You want the same request to pull a file from your laptop and a photo from your phone without wiring them together.",
+  "best_for_zh": "想让同一个请求同时从笔记本取文件、从手机拿照片，又不想自己把它们接起来时。",
+  "surface": "standalone",
+  "tags": [
+    "agentic-os",
+    "multi-device",
+    "universal-skills"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — rabbit.tech blog and newsroom directories）。 Missing from the ledger; the rabbit-inc vendor has only Rabbit R1. OS3 is cloud-resident with a local rabbit agent installed by a single command, one account for up to five devices, a single chat interface as the primary entry point, and universal skills compatibility. rabbit.tech/os3 redirects to the site root, so the homepage is the product site. Entry page is /try-os3, which forwards to the OS3 sign-up on os3.rabbit.tech. 入库核对（2026-11-25）：OS3 跑在云端，用户只是在本机装一个代理程序连上去，不是自己部署的系统。 首次公开日期来源：https://www.rabbit.tech/newsroom/rabbitos-3-launch 官网未直接确认（redirect->https://os3.rabbit.tech/sign-up?returnTo=%2F）。",
+  "revisions": []
+}

@@ -10,7 +10,7 @@
     "agent-building"
   ],
   "form": "api",
-  "released": "2024-12-26",
+  "released": "2024-05-17",
   "homepage": "https://platform.deepseek.com",
   "desc": "DeepSeek's API platform, billed by the token",
   "desc_zh": "DeepSeek 开放平台的模型 API，按 token 计费",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认 2026-11-25：released 2024-12-26/day → 2024-05-17/day; source https://api-docs.deepseek.com/zh-cn/updates。原日期 2024-12-26 是 deepseek-chat 升级到 DeepSeek-V3 的日子，是模型发布。官方更新日志最早一条是 2024-05-17，平台在那之前就在提供服务；真实上线日可能更早，但没有找到更早的官方记录",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2024-12-26/day",
+      "to": "2024-05-17/day",
+      "why": "原日期 2024-12-26 是 deepseek-chat 升级到 DeepSeek-V3 的日子，是模型发布。官方更新日志最早一条是 2024-05-17，平台在那之前就在提供服务；真实上线日可能更早，但没有找到更早的官方记录"
+    }
+  ],
   "date_precision": "day"
 }

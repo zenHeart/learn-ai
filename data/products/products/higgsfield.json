@@ -10,7 +10,7 @@
     "image-design"
   ],
   "form": "web",
-  "released": "2025-03-01",
+  "released": "2025-01-01",
   "homepage": "https://higgsfield.ai",
   "desc": "Creative suite wrapping 30+ image and video models",
   "desc_zh": "把 30 多个图像与视频模型收在一处的创作套件",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2025-03-01/day → 2025-01-01/year; source https://higgsfield.ai/about。原值 2025-03-01 按精确到日记，但官方介绍页只写「Launched in 2025」。按年份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-03-01/day",
+      "to": "2025-01-01/year",
+      "why": "原值 2025-03-01 按精确到日记，但官方介绍页只写「Launched in 2025」。按年份精度记"
+    }
+  ],
+  "date_precision": "year"
 }

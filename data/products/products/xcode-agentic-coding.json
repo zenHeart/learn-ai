@@ -1,0 +1,35 @@
+{
+  "id": "xcode-agentic-coding",
+  "name": "Xcode agentic coding",
+  "name_zh": "Xcode 智能体编程",
+  "vendor_id": "apple",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2026-02-03",
+  "date_precision": "day",
+  "homepage": "https://developer.apple.com/xcode/",
+  "desc": "Coding agents such as Claude Agent and Codex working inside Xcode.",
+  "desc_zh": "Claude Agent、Codex 等编码智能体直接在苹果 Xcode 内工作。",
+  "solves": "Switching to another editor to use an agent breaks your flow; Xcode now hosts the agent beside your project.",
+  "solves_zh": "为了用智能体而换编辑器会打断节奏；现在 Xcode 让智能体就守在项目旁边。",
+  "best_for": "You are deep in an Xcode project and want an agent to take a complex task without leaving the IDE.",
+  "best_for_zh": "正埋头在 Xcode 工程里，想让智能体接手一个复杂任务又不想离开 IDE 时。",
+  "surface": "in-product",
+  "tags": [
+    "agent-mode",
+    "ide-integration",
+    "third-party-agents"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Apple Newsroom archive）。 Missing from the ledger. First shipped in Xcode 26.3 on 2026-02-03 with Claude Agent and Codex; Xcode 27 extended it on 2026-06-08 with new APIs for integrating AI models and more agentic coding. Recorded as an in-product surface of Xcode rather than a new Apple product. 首次公开日期来源：https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/",
+  "revisions": []
+}

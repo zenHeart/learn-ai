@@ -31,7 +31,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Distinct from La Plateforme: Forge is the customization layer for organisations that want their own model, not rented API calls. 首次公开发布日期精度：month-only 来源：https://mistral.ai",
+  "notes": "Distinct from La Plateforme: Forge is the customization layer for organisations that want their own model, not rented API calls. 首次公开发布日期精度：month-only 来源：https://mistral.ai 2026-11-25：更正：首个公开可用日为 2026-03-17，有官方来源（Mistral 官方发布文 https://mistral.ai/news/forge/ ：「Today, we’re introducing Forge」）；此前备注里「仅精确到月」的说法作废",
   "revisions": [],
   "date_precision": "day"
 }

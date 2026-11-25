@@ -10,8 +10,8 @@
   ],
   "form": "web",
   "surface": "in-product",
-  "released": "2025-09-01",
-  "date_precision": "month",
+  "released": "2025-02-06",
+  "date_precision": "day",
   "homepage": "https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/",
   "desc": "Copilot mode that carries a change across files and commands",
   "desc_zh": "跨文件跨命令完成一次改动的 Copilot 模式",
@@ -28,8 +28,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "集成在 GitHub Copilot 内的能力。来源：https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/",
+  "last_verified_at": "2026-11-25",
+  "notes": "集成在 GitHub Copilot 内的能力。来源：https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/ 2026-11-25：released 2025-09-01/month → 2025-02-06/day; source https://github.blog/changelog/2025-02-06-next-edit-suggestions-agent-mode-and-prompts-files-for-github-copilot-in-vs-code-january-release-v0-24/。原值 2025 年 9 月与两个事件都对不上。GitHub 官方更新日志（2025-02-06）把 agent mode 列为公开预览（VS Code Insiders 版），2025-04-04 推向所有 VS Code 用户。按首次公开可用记",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -38,6 +38,14 @@
       "from": "2025-09-25",
       "to": "2025-09-01",
       "why": "只有月份级把握，却带了具体日；按 schema 约定截断到当月 1 日"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-09-01/month",
+      "to": "2025-02-06/day",
+      "why": "原值 2025 年 9 月与两个事件都对不上。GitHub 官方更新日志（2025-02-06）把 agent mode 列为公开预览（VS Code Insiders 版），2025-04-04 推向所有 VS Code 用户。按首次公开可用记"
     }
   ]
 }

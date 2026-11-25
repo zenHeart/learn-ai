@@ -1,0 +1,35 @@
+{
+  "id": "greptile-security-agent",
+  "name": "Greptile Security Agent",
+  "name_zh": "Greptile Security Agent",
+  "vendor_id": "greptile",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-07-28",
+  "date_precision": "day",
+  "homepage": "https://www.greptile.com/security",
+  "desc": "AI security agent paired with static scanning on every pull request.",
+  "desc_zh": "与静态扫描搭配、在每个 Pull Request 上工作的 AI 安全智能体。",
+  "solves": "Scanners report rules that a human still has to judge; the agent reads the surrounding code and says which findings are real.",
+  "solves_zh": "扫描器按规则报问题，真假仍要人判断；智能体会读周边代码，指出哪些发现是真的。",
+  "best_for": "Your scanner output is mostly noise and the team has stopped reading it.",
+  "best_for_zh": "扫描结果大多是噪音，团队已经不再看了。",
+  "surface": "in-product",
+  "tags": [
+    "security-review",
+    "static-scanning",
+    "vulnerability-triage"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — greptile.com/changelog directory）。 Distinct from the security review beta of 2026-04-13. 入库核对（2026-11-25）：官方名字只是「Security Agent」，加上产品名以便辨认。 首次公开日期来源：https://www.greptile.com/changelog",
+  "revisions": []
+}

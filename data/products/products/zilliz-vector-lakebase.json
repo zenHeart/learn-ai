@@ -1,0 +1,36 @@
+{
+  "id": "zilliz-vector-lakebase",
+  "name": "Zilliz Vector Lakebase",
+  "name_zh": "Zilliz Vector Lakebase",
+  "vendor_id": "zilliz",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-05-11",
+  "date_precision": "day",
+  "homepage": "https://zilliz.com/vector-lakebase",
+  "desc": "Lake-native data platform that unifies storage and compute for AI workloads.",
+  "desc_zh": "为 AI 负载统一存储与计算的湖原生数据平台。",
+  "solves": "A vector database alone leaves embeddings, documents and metadata in separate systems; one lake platform holds them together.",
+  "solves_zh": "只有向量数据库， Embedding、文档和元数据还散在各处；一个湖平台把它们放在一起。",
+  "best_for": "Your retrieval stack has outgrown a single vector index and now spans several data types.",
+  "best_for_zh": "检索栈已经超出单一向量索引，开始覆盖多种数据类型。",
+  "surface": "standalone",
+  "tags": [
+    "data-platform",
+    "lakehouse",
+    "vector-search"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — zilliz.com/blog）。 Blog post carries JSON-LD datePublished 2026-05-11T04:00:00.000Z. The next step beyond Zilliz Cloud; Milvus remains the open-source database the ledger holds. 首次公开日期来源：https://zilliz.com/blog/from-vector-database-to-vector-lakebase",
+  "revisions": []
+}

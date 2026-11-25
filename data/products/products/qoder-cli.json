@@ -1,0 +1,36 @@
+{
+  "id": "qoder-cli",
+  "name": "Qoder CLI",
+  "name_zh": "Qoder CLI",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-10-15",
+  "date_precision": "day",
+  "homepage": "https://qoder.com/cli",
+  "desc": "Coding agent that runs in the terminal",
+  "desc_zh": "在终端里运行的智能体编程工具",
+  "solves": "Opening an IDE is heavy for a quick fix; the same agent now works from any shell, script or pipeline.",
+  "solves_zh": "小改动还要开编辑器，现在在任意终端、脚本或流水线里就能直接派活。",
+  "best_for": "You are already in a shell on a server or container and want an agent to fix, test and commit.",
+  "best_for_zh": "你正停在服务器或容器的命令行里，想让智能体直接改完、测完再提交。",
+  "surface": "standalone",
+  "tags": [
+    "terminal-agent",
+    "quest-mode",
+    "custom-commands",
+    "remote-control"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://changelog.qoder.com/llms.txt, https://blog.qoder.com/llms.txt）。 Backfill: released before the 2026-05-07 window and absent from the ledger (the ledger only has Qoder@2025-08-22, the IDE). Separate product in the official family list (docs.qoder.com/product-series/what-is-qoder). CN edition 'Qoder CN CLI' shares the date 2025-10-15 (Aliyun help log). Changelog URL https://qoder.com/changelog redirects to https://changelog.qoder.com/app. 入库核对（2026-11-25）：账本里的 Qoder（IDE）记为国内，同一系列保持一致；它有国内版 Qoder CN CLI。 首次公开日期来源：https://blog.qoder.com/qoder-cli",
+  "revisions": []
+}

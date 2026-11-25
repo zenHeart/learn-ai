@@ -9,7 +9,7 @@
     "agent-building"
   ],
   "form": "self-hosted",
-  "released": "2022-10-01",
+  "released": "2022-10-22",
   "homepage": "https://www.trychroma.com/",
   "desc": "Open-source search infrastructure: vector, full-text, regex, metadata",
   "desc_zh": "开源检索基础设施，兼容向量、全文、正则与元数据",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Lets a prototype run real retrieval without standing up any database server. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/vector_database",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "Lets a prototype run real retrieval without standing up any database server. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/vector_database 2026-11-25：released 2022-10-01/day → 2022-10-22/day; source https://api.github.com/repos/chroma-core/chroma/releases。原值 2022-10-01 是月份占位。官方仓库创建于 2022-10-05，最早的发布版本是 0.0.2（2022-10-22）",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2022-10-01/day",
+      "to": "2022-10-22/day",
+      "why": "原值 2022-10-01 是月份占位。官方仓库创建于 2022-10-05，最早的发布版本是 0.0.2（2022-10-22）"
+    }
+  ],
   "date_precision": "day"
 }

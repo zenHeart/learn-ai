@@ -11,7 +11,7 @@
     "model-api"
   ],
   "form": "self-hosted",
-  "released": "2025-04-01",
+  "released": "2025-03-01",
   "homepage": "https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
   "desc": "NVIDIA's open-source toolkit for building and monitoring agents.",
   "desc_zh": "构建、监控与优化 Agent 的开源组件套件",
@@ -31,8 +31,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "The agent ops and guardrail layer enterprises bolt onto any model, including open-weight ones; date is approximate because the brand has been re-versioned repeatedly. 首次公开发布日期精度：month-only 来源：https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "The agent ops and guardrail layer enterprises bolt onto any model, including open-weight ones; date is approximate because the brand has been re-versioned repeatedly. 首次公开发布日期精度：month-only 来源：https://www.nvidia.com/en-us/ai-data-science/products/nemo/ 2026-11-25：released 2025-04-01/day → 2025-03-01/month; source https://api.github.com/repos/NVIDIA/NeMo-Agent-Toolkit。原值 2025-04-01 按精确到日记，但备注本来就写着「仅精确到月」，而且晚于官方仓库的创建日 2025-03-06。按 2025 年 3 月、月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-04-01/day",
+      "to": "2025-03-01/month",
+      "why": "原值 2025-04-01 按精确到日记，但备注本来就写着「仅精确到月」，而且晚于官方仓库的创建日 2025-03-06。按 2025 年 3 月、月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

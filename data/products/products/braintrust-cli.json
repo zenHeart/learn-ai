@@ -1,0 +1,35 @@
+{
+  "id": "braintrust-cli",
+  "name": "Braintrust CLI",
+  "name_zh": "Braintrust CLI",
+  "vendor_id": "braintrust",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability"
+  ],
+  "form": "cli",
+  "released": "2026-04-03",
+  "date_precision": "day",
+  "homepage": "https://docs.braintrust.dev/reference/cli/quickstart",
+  "desc": "Terminal tool for running evals and querying logs as SQL.",
+  "desc_zh": "在终端里跑评测、用 SQL 查日志的工具。",
+  "solves": "Checking a eval result meant opening the web app; the same runs and queries now happen in the terminal where the work already is.",
+  "solves_zh": "过去看一次评测结果要打开网页应用；同样的运行和查询现在在终端里就能完成。",
+  "best_for": "You want an eval to run as part of a script instead of a click in a dashboard.",
+  "best_for_zh": "想让评测作为脚本的一步跑起来，而不是去面板上点一下。",
+  "surface": "standalone",
+  "tags": [
+    "terminal",
+    "evals",
+    "sql-queries"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — braintrust.dev/blog）。 Installed as `npx bt`. Released before the window and absent from the ledger, so recorded under brief rule (b). 首次公开日期来源：https://www.braintrust.dev/blog/cli-and-mcp",
+  "revisions": []
+}

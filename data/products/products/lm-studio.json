@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：date_precision day → month。原值 2023-05-01 标成精确到日，但没有带日期的一手来源。审计会话曾依据 lmstudio.ai 上一篇戏谑博文（「暗色复古主题……Comic Sans」）主张改为 2024 年 5 月，评审不采纳",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "原值 2023-05-01 标成精确到日，但没有带日期的一手来源。审计会话曾依据 lmstudio.ai 上一篇戏谑博文（「暗色复古主题……Comic Sans」）主张改为 2024 年 5 月，评审不采纳"
+    }
+  ],
+  "date_precision": "month"
 }

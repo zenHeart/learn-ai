@@ -1,0 +1,36 @@
+{
+  "id": "adp-cli",
+  "name": "ADP CLI",
+  "name_zh": "ADP CLI",
+  "vendor_id": "tencent-cloud",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-10-01",
+  "date_precision": "month",
+  "homepage": "https://cloud.tencent.com/document/product/1759/140535",
+  "desc": "Command line for Tencent Cloud ADP agent projects",
+  "desc_zh": "腾讯云智能体开发平台的命令行工具",
+  "solves": "Publishing an ADP agent by hand means clicking through the console; one command now builds, deploys and releases it.",
+  "solves_zh": "在控制台一步步点才能发布智能体，现在一条命令就能部署并发布。",
+  "best_for": "You keep agent config in a repository and want deploys to run inside an existing pipeline.",
+  "best_for_zh": "智能体配置放在仓库里，想让发布动作跑进已有的研发流水线。",
+  "surface": "standalone",
+  "tags": [
+    "cli-deploy",
+    "agent-lifecycle",
+    "automation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://cloud.tencent.com/document/product/1759/104191 (产品动态)）。 Date is month precision only — the official product-dynamics entry stamps it 2026-10 and no day is published. The CLI is the command-line face of 腾讯云智能体开发平台 (see tencent-adp.json): install, authenticate, then build and publish agent applications from a terminal. Docs page last updated 2026-11-04. 首次公开日期来源：https://cloud.tencent.com/document/product/1759/104191 首次公开日期仅精确到月。",
+  "revisions": []
+}

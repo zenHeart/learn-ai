@@ -1,0 +1,36 @@
+{
+  "id": "openhands-agent-canvas",
+  "name": "OpenHands Agent Canvas",
+  "name_zh": "OpenHands Agent Canvas",
+  "vendor_id": "all-hands-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-16",
+  "date_precision": "day",
+  "homepage": "https://www.openhands.dev",
+  "desc": "Workspace for wiring agent workflows to Slack, GitHub and Jira without code.",
+  "desc_zh": "把智能体工作流接到 Slack、GitHub、Jira 的可视化工作区。",
+  "solves": "Automating a workflow meant writing glue code for each integration; the canvas connects triggers, agents and steps in one place.",
+  "solves_zh": "过去自动化一条工作流要给每个集成写胶水代码；画布把触发器、智能体和步骤连在一处。",
+  "best_for": "You want new Jira incidents triaged automatically and nobody owns that integration.",
+  "best_for_zh": "想让新的 Jira 事故自动分派，而又没人负责那个集成。",
+  "surface": "standalone",
+  "tags": [
+    "workflow-builder",
+    "integrations",
+    "automation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — openhands.dev/blog directory）。 No standalone product page exists on the vendor site; the entry point is the Product menu on openhands.dev. 入库核对（2026-11-25）：官方名字只是「Agent Canvas」，加上产品名以便辨认。 首次公开日期来源：https://www.openhands.dev/blog/introducing-agent-canvas",
+  "revisions": []
+}

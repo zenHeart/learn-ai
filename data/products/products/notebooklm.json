@@ -10,10 +10,10 @@
     "office"
   ],
   "form": "web",
-  "released": "2023-07-26",
+  "released": "2023-07-12",
   "homepage": "https://notebooklm.google.com/",
-  "desc": "Research assistant grounded in sources you upload",
-  "desc_zh": "只依据你上传的资料作答、并给出处的研究助手",
+  "desc": "Google's research notebook, renamed Gemini Notebook in 2026",
+  "desc_zh": "Google 的资料研究笔记本，2026 年更名为 Gemini Notebook",
   "solves": "A model will invent a citation and you will not find out until someone checks. NotebookLM answers from the sources you uploaded, with every line pointing back.",
   "solves_zh": "模型编出一个引用，往往要等别人查才发现。NotebookLM 只依据你上传的资料作答，每一句都能点回原文。",
   "best_for": "A fixed pile of papers or documents you are trying to actually get through.",
@@ -28,10 +28,51 @@
   "handbook": {
     "status": "candidate"
   },
-  "status": "active",
-  "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
+  "status": "renamed",
+  "superseded_by": "gemini-notebook",
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2023-07-26/day → 2023-07-12/day; source https://blog.google/technology/ai/notebooklm-google-ai/。原日期 2023-07-26 没有出处。Google 官方公告（2023-07-12）：「Today we’re beginning to roll out Project Tailwind with its new name: NotebookLM, an experimental offering from Google Labs.」 2026-11-25：status active → renamed; superseded_by null → gemini-notebook。Google 官方博客（2026-07-16）：「We’re renaming NotebookLM to Gemini Notebook. It's the same standalone product」。按改名规则，旧名档案指向新名字的档案 2026-11-25：desc \"Research assistant grounded in sources you upload\" → \"Google's research notebook, renamed Gemini Notebook in 2026\"。产品已改名，摘要里写明去向 2026-11-25：desc_zh \"只依据你上传的资料作答、并给出处的研究助手\" → \"Google 的资料研究笔记本，2026 年更名为 Gemini Notebook\"。产品已改名，摘要里写明去向",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-07-26/day",
+      "to": "2023-07-12/day",
+      "why": "原日期 2023-07-26 没有出处。Google 官方公告（2023-07-12）：「Today we’re beginning to roll out Project Tailwind with its new name: NotebookLM, an experimental offering from Google Labs.」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "Google 官方博客（2026-07-16）：「We’re renaming NotebookLM to Gemini Notebook. It's the same standalone product」。按改名规则，旧名档案指向新名字的档案"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "gemini-notebook",
+      "why": "Google 官方博客（2026-07-16）：「We’re renaming NotebookLM to Gemini Notebook. It's the same standalone product」。按改名规则，旧名档案指向新名字的档案"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc",
+      "from": "Research assistant grounded in sources you upload",
+      "to": "Google's research notebook, renamed Gemini Notebook in 2026",
+      "why": "产品已改名，摘要里写明去向"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc_zh",
+      "from": "只依据你上传的资料作答、并给出处的研究助手",
+      "to": "Google 的资料研究笔记本，2026 年更名为 Gemini Notebook",
+      "why": "产品已改名，摘要里写明去向"
+    }
+  ],
   "date_precision": "day"
 }

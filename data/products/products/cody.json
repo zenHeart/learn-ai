@@ -32,7 +32,7 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Answers cross-service dependency questions that only work when the index spans every repo you own, not one checkout. 首次公开发布日期精度：month-only 来源：https://sourcegraph.com/blog/cody-is-generally-available 复核：2023-12-14 为 Cody 1.0 GA 公告日，账本存的是 2023-12-01 月份占位，date_precision 应为 month。",
+  "notes": "Answers cross-service dependency questions that only work when the index spans every repo you own, not one checkout. 首次公开发布日期精度：month-only 来源：https://sourcegraph.com/blog/cody-is-generally-available 复核：2023-12-14 为 Cody 1.0 GA 公告日，账本存的是 2023-12-01 月份占位，date_precision 应为 month。 2026-11-25：待办：Sourcegraph 官方博客（2026-11-09）宣布「Sourcegraph Cody reaches end of life on January 31, 2027」（https://sourcegraph.com/blog ）。到那天之后本档应改为 discontinued；目前仍在服务，所以状态不变",
   "revisions": [
     {
       "at": "2026-10-05",

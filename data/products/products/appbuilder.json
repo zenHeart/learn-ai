@@ -11,8 +11,8 @@
   ],
   "form": "web",
   "surface": "standalone",
-  "released": "2023-09-01",
-  "date_precision": "month",
+  "released": "2023-12-25",
+  "date_precision": "day",
   "homepage": "https://cloud.baidu.com/product/AppBuilder",
   "desc": "Baidu's no-code app and agent development platform.",
   "desc_zh": "百度的零代码应用与智能体开发平台",
@@ -26,7 +26,16 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://cloud.baidu.com/product/wenxinworkshop。来源：https://cloud.baidu.com/product/wenxinworkshop",
-  "revisions": []
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：https://cloud.baidu.com/product/wenxinworkshop。来源：https://cloud.baidu.com/product/wenxinworkshop 2026-11-25：released 2023-09-01/month → 2023-12-25/day; source https://qianfan.cloud.baidu.com/qianfandev/topic/268206。原日期 2023-09 无出处。千帆社区官方帖（2023.12.25）写「百度智能云千帆AppBuilder正式开放服务」",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-09-01/month",
+      "to": "2023-12-25/day",
+      "why": "原日期 2023-09 无出处。千帆社区官方帖（2023.12.25）写「百度智能云千帆AppBuilder正式开放服务」"
+    }
+  ]
 }

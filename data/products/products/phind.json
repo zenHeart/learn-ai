@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "官网反爬未确认（403）",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网反爬未确认（403） 2026-11-25：date_precision day → month。官网对自动抓取返回验证页，读不到带日期的来源。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "官网对自动抓取返回验证页，读不到带日期的来源。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

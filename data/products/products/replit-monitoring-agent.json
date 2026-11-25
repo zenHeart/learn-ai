@@ -1,0 +1,36 @@
+{
+  "id": "replit-monitoring-agent",
+  "name": "Replit Monitoring Agent",
+  "name_zh": "Replit Monitoring Agent",
+  "vendor_id": "replit",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "observability"
+  ],
+  "form": "web",
+  "released": "2026-10-22",
+  "date_precision": "day",
+  "homepage": "https://replit.com/monitoring-agent",
+  "desc": "On-call agent that investigates production alerts and ships a validated fix.",
+  "desc_zh": "排查线上告警并发布已验证修复的值班智能体。",
+  "solves": "A small team has nobody to page at 2 a.m.; the agent reads the alert, finds the cause, tests a fix and publishes it.",
+  "solves_zh": "小团队凌晨两点没人可叫；智能体读告警、找原因、验证修复并直接发布。",
+  "best_for": "Your app is live and the error report arrives while you are asleep.",
+  "best_for_zh": "应用已经上线，错误报告在你睡觉时到达。",
+  "surface": "in-product",
+  "tags": [
+    "on-call",
+    "production",
+    "auto-remediation"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — replit.com/blog）。 Post published Oct 22, 2026 (page byline: Published: Oct 22, 2026). An in-product surface of Replit, separate from Replit Agent and from Cloud Agents. 首次公开日期来源：https://replit.com/blog/replit-monitoring-agent",
+  "revisions": []
+}

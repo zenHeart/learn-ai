@@ -1,0 +1,36 @@
+{
+  "id": "nvidia-rtx-spark",
+  "name": "NVIDIA RTX Spark",
+  "name_zh": "NVIDIA RTX Spark",
+  "vendor_id": "nvidia",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private",
+    "coding"
+  ],
+  "form": "hardware",
+  "released": "2026-10-16",
+  "date_precision": "day",
+  "homepage": "https://www.nvidia.com/en-us/products/rtx-spark/",
+  "desc": "A Windows PC for local AI agents, image models and fine-tuning jobs.",
+  "desc_zh": "一台为本地跑 AI agent、图像视频模型和微调任务而做的 Windows 电脑。",
+  "solves": "A laptop sleeps, throttles or travels, so a scheduled agent stops with it; a dedicated box with 128GB of unified memory keeps the work running.",
+  "solves_zh": "笔记本会休眠、降频或者被带走，定时 agent 也跟着停；一台带 128GB 统一内存的专用机器能让它一直跑下去。",
+  "best_for": "You want an agent doing scheduled local work overnight and your only machine today is the laptop you close at six.",
+  "best_for_zh": "想让 agent 在夜里跑本地的定时任务，而你现在唯一的机器是六点就合上的笔记本。",
+  "surface": "standalone",
+  "tags": [
+    "local-ai",
+    "unified-memory",
+    "windows-pc"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://blogs.nvidia.com/blog/ and https://nvidianews.nvidia.com/news）。 Rule-(b) candidate: not in the ledger, and the retail launch falls inside the window. The 2026-10-15 post says the launch 'starts tomorrow', so 2026-10-16 is inferred from that first-party sentence; the compact-desktop form factor shipped 2026-11-18 per the second quote. Publishers announced RTX Spark game support at COMPUTEX in May 2026, so the product name existed earlier than the retail date. The NVIDIA Newsroom second-source URL is the news index, not a story about this product. 首次公开日期来源：https://blogs.nvidia.com/blog/local-ai-rtx-spark-launch-event-invite/",
+  "revisions": []
+}

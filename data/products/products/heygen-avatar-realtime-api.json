@@ -1,0 +1,36 @@
+{
+  "id": "heygen-avatar-realtime-api",
+  "name": "HeyGen Avatar Realtime API",
+  "name_zh": "HeyGen Avatar Realtime API",
+  "vendor_id": "heygen",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "video",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-06-01",
+  "date_precision": "month",
+  "homepage": "https://developers.heygen.com/",
+  "desc": "Broadcast API that turns a HeyGen avatar into a live streaming agent",
+  "desc_zh": "把 HeyGen 数字人变成实时直播 Agent 的广播接口",
+  "solves": "Pre-rendered avatars force you to write, render and publish before anyone can watch. It answers live, so the avatar takes input while the stream runs.",
+  "solves_zh": "预渲染的数字人要先写脚本、渲染、发布，观众才能看到。它当场接住实时输入，直播中就能作答。",
+  "best_for": "When a product demo needs an avatar that answers questions from the audience as they arrive.",
+  "best_for_zh": "产品演示需要数字人当场回答观众提问的时候。",
+  "surface": "standalone",
+  "tags": [
+    "streaming-avatar",
+    "realtime-api",
+    "broadcast"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — HeyGen blog monthly release roundups (heygen.com/blog), \"What's new at HeyGe）。 Listed in the June roundup under the heading \"Avatar Realtime API (Broadcast)\". Only the month is documented; the roundup is the first-party page. Reaches developers through the HeyGen developer portal at developers.heygen.com (docs.heygen.com redirects there). 入库核对（2026-11-25）：官方名字只是「Avatar Realtime API」，加上厂商名以便辨认。 首次公开日期来源：https://www.heygen.com/blog/heygen-june-2026-release 首次公开日期仅精确到月。",
+  "revisions": []
+}

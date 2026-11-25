@@ -28,10 +28,35 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Managed alternative to building the same control plane yourself. 首次公开发布日期精度：month-only 来源：https://www.portkey.ai/portkey-ai-info-page",
-  "revisions": [],
-  "date_precision": "day"
+  "status": "renamed",
+  "superseded_by": "prisma-airs-ai-gateway",
+  "last_verified_at": "2026-11-25",
+  "notes": "Managed alternative to building the same control plane yourself. 首次公开发布日期精度：month-only 来源：https://www.portkey.ai/portkey-ai-info-page 2026-11-25：date_precision day → month。官方信息页写的是「Launch March 2023」。按月份精度记 2026-11-25：status active → renamed; superseded_by null → prisma-airs-ai-gateway。Portkey 被 Palo Alto Networks 收购后并入 Prisma AIRS；Portkey 官网横幅写「Portkey is now PRISMA AIRS AI Gateway, generally available for all enterprises」。按改名规则，旧名档案指向新名字的档案",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "官方信息页写的是「Launch March 2023」。按月份精度记"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "Portkey 被 Palo Alto Networks 收购后并入 Prisma AIRS；Portkey 官网横幅写「Portkey is now PRISMA AIRS AI Gateway, generally available for all enterprises」。按改名规则，旧名档案指向新名字的档案"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "prisma-airs-ai-gateway",
+      "why": "Portkey 被 Palo Alto Networks 收购后并入 Prisma AIRS；Portkey 官网横幅写「Portkey is now PRISMA AIRS AI Gateway, generally available for all enterprises」。按改名规则，旧名档案指向新名字的档案"
+    }
+  ],
+  "date_precision": "month"
 }

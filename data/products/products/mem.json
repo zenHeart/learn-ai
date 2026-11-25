@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：date_precision day → month。2025-10-01 是 Mem 2.0 的发布日，不是这个产品首次上线的日子（官方博文说团队为此已经做了两年）；更早的一手日期没有找到。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "2025-10-01 是 Mem 2.0 的发布日，不是这个产品首次上线的日子（官方博文说团队为此已经做了两年）；更早的一手日期没有找到。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

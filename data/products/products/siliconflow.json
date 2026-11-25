@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "The reference option when a Chinese deployment must run on Ascend-class hardware. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20260616A081NQ00",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "The reference option when a Chinese deployment must run on Ascend-class hardware. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20260616A081NQ00 2026-11-25：date_precision day → month。在硅基流动自己的站点上找不到发布日期的一手来源；原记录引用的来源不是一手来源。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "在硅基流动自己的站点上找不到发布日期的一手来源；原记录引用的来源不是一手来源。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

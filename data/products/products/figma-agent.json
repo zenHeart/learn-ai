@@ -1,0 +1,35 @@
+{
+  "id": "figma-agent",
+  "name": "Figma agent",
+  "name_zh": "Figma agent",
+  "vendor_id": "figma",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-05-20",
+  "date_precision": "day",
+  "homepage": "https://www.figma.com/agent/",
+  "desc": "AI agent that creates and edits designs on the Figma canvas.",
+  "desc_zh": "在 Figma 画布上直接生成和修改设计的智能体",
+  "solves": "Generic AI tools redraw your screens from scratch. This agent works inside the real file, using your components, tokens and design system.",
+  "solves_zh": "通用 AI 工具总在重画你的界面。它直接在真实文件里干活，用的是你的组件、变量和设计系统。",
+  "best_for": "You have a frame open and need three layout directions, or dozens of files restyled to a new component.",
+  "best_for_zh": "画板已经打开，想一次看三个布局方向；或者要把几十个文件改成新组件。",
+  "surface": "in-product",
+  "tags": [
+    "design-agent",
+    "canvas-editing",
+    "design-system-context"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.figma.com/release-notes/feed/feed.json and https://www.figma.com）。 Launched in beta on 2026-05-20 (blog date line); generally available on 2026-10-06 per the release-notes feed entry 'The Figma agent is generally available'. The 2026-03-24 post 'Agents, meet the Figma canvas' is a different thing: third-party agents writing to Figma files through the MCP server. The same agent later reached FigJam and Slides (2026-11-23) and dev mode (2026-11-19); these are the same product, not separate entries. Later in 2026 it is extended with agent skills (2026-08-13). Distinct from ledger entries Figma AI (2023) and Figma Make. The Verge also covered it on 2026-05-20: https://www.theverge.com/ai-artificial-intelligence/934533/figma-has-a-product-design-ai-agent 首次公开日期来源：https://www.figma.com/blog/the-figma-agent-is-here/",
+  "revisions": []
+}

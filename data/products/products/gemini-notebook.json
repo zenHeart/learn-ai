@@ -1,0 +1,35 @@
+{
+  "id": "gemini-notebook",
+  "name": "Gemini Notebook",
+  "name_zh": "Gemini Notebook",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-07-16",
+  "date_precision": "day",
+  "homepage": "https://notebook.google/",
+  "desc": "Research notebook grounded in your own sources",
+  "desc_zh": "基于自有资料作答的研究笔记本",
+  "solves": "Research scattered across PDFs and notes; Gemini Notebook answers from your sources and now runs code inside them.",
+  "solves_zh": "资料散落在 PDF 和笔记里，Gemini Notebook 依据你的来源作答，还能运行代码。",
+  "best_for": "You have thirty papers for a review and need the methods compared by Friday.",
+  "best_for_zh": "手头有三十篇综述用的论文，想在周五前比完各自的方法。",
+  "surface": "standalone",
+  "tags": [
+    "notebook",
+    "source-grounding",
+    "research"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://labs.google/ (graduated products) and blog.google July 2026 AI round）。 RENAME: NotebookLM was renamed Gemini Notebook on 2026-07-16. The ledger already has NotebookLM at 2023-07-26; link this record as the rename instead of adding twice. SURPRISE: the original Google announcement (2023-07-12) says the rollout began that day, earlier than the ledger date; `released` here follows the primary source. notebooklm.google now redirects to notebook.google. 入库核对（2026-11-25）：这是产品的新名字档案，按账本的改名规则记新名字首次启用的日子：Google 官方博客「We’re renaming NotebookLM to Gemini Notebook」（2026-07-16）。旧名档案 NotebookLM 账本里已有，将标为改名并指向本档；它自己的日期另按 2023 年的官方公告更正。描述里去掉「formerly NotebookLM」，那是旧名档案的事。 首次公开日期来源：https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+  "revisions": []
+}

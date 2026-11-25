@@ -9,7 +9,7 @@
     "agent-building"
   ],
   "form": "api",
-  "released": "2016-06-01",
+  "released": "2016-01-01",
   "homepage": "https://scale.com/",
   "desc": "Human data and evaluations for frontier labs",
   "desc_zh": "为前沿实验室提供人工数据与评测",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Made post-training data a purchasable commodity rather than an internal chore. 首次公开发布日期精度：month-only 来源：https://handwiki.org/wiki/Company:Scale_AI",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "Made post-training data a purchasable commodity rather than an internal chore. 首次公开发布日期精度：month-only 来源：https://handwiki.org/wiki/Company:Scale_AI 2026-11-25：released 2016-06-01/day → 2016-01-01/year; source https://scale.com/about。原值 2016-06-01 按精确到日记，但官方材料只给出成立年份（「Founded 2016」）。按年份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2016-06-01/day",
+      "to": "2016-01-01/year",
+      "why": "原值 2016-06-01 按精确到日记，但官方材料只给出成立年份（「Founded 2016」）。按年份精度记"
+    }
+  ],
+  "date_precision": "year"
 }

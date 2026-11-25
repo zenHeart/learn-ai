@@ -1,0 +1,36 @@
+{
+  "id": "hume-audio-decision-api",
+  "name": "Hume Audio Decision API",
+  "name_zh": "Hume Audio Decision API",
+  "vendor_id": "hume-ai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "audio-voice",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-11-02",
+  "date_precision": "day",
+  "homepage": "https://hume.ai/products/decision-model-api",
+  "desc": "One API that answers any question you ask about an audio clip",
+  "desc_zh": "对一段音频提问就能得到答案的 API",
+  "solves": "Call scoring needs a pipeline per rubric. You send the questions and the clip, and get probabilities back.",
+  "solves_zh": "每套评分标准都要搭一条流水线。把问题和音频一起发过去，拿回来的是概率。",
+  "best_for": "You must score two hundred support calls against one checklist tonight.",
+  "best_for_zh": "今晚要按同一张检查表给两百通客服录音打分。",
+  "surface": "standalone",
+  "tags": [
+    "audio-classification",
+    "call-scoring",
+    "speech-understanding"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://hume.ai/blog (Hume's blog, 'Introducing Hume's Audio Decision API' e）。 Distinct from the ledger's 'Hume AI' empathic-voice entry (2024-06-19): this is an audio-native decision model that answers questions about a clip instead of synthesising speech. The space before the comma in the quote is on the page (it follows an inline link) and is reproduced verbatim. 首次公开日期来源：https://hume.ai/blog/introducing-hume-audio-decision-api",
+  "revisions": []
+}

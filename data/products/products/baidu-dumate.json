@@ -1,0 +1,36 @@
+{
+  "id": "baidu-dumate",
+  "name": "DuMate",
+  "name_zh": "百度搭子",
+  "vendor_id": "baidu",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-03-01",
+  "date_precision": "month",
+  "homepage": "https://www.dumate.cn/",
+  "desc": "Baidu's desktop agent that works across apps and files",
+  "desc_zh": "百度出的桌面智能体，跨应用跨文件替你干活",
+  "solves": "A report needs files from four folders and steps in three apps. Describe the outcome once; DuMate reads, converts and assembles it.",
+  "solves_zh": "一份报告要翻四个文件夹，还得在三个软件间倒手。说清结果，它自己读文件、转格式、拼稿。",
+  "best_for": "Friday afternoon, a folder of contracts needs sorting before the weekly sync.",
+  "best_for_zh": "周五下午，一堆合同要在周会前分好类提好要点，开它跑一遍。",
+  "surface": "standalone",
+  "tags": [
+    "desktop-agent",
+    "computer-use",
+    "file-automation",
+    "scheduled-tasks"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.baidu.com/more/ (Baidu 全部产品目录: “百度搭子 超级AI助手”), https://www.dumat）。 English name on the official site: DuMate. Desktop clients for macOS, Windows and Linux plus a companion DuMate App (App Store releaseDate 2026-06-16; the official changelog adds '支持移动端远程遥控PC下发任务' in v1.0.52, 2026/07/02). The official changelog starts at v1.0.8 (2026/03/23), so v1.0.0–v1.0.7 predate it; media (腾讯新闻/DoNews 2026-11-10) date the launch to 2026-03-22 at Baidu Create 2026 — no official page with that day was read, so the earliest official dated entry is used. Related surfaces recorded in notes, not as records: 内嵌浏览器 (v1.0.86, 2026/10/18 per changelog order), 搭子时刻, Skill 广场, 定时任务, 连接应用 (飞书/企业微信 v1.0.38 2026-05-22, 钉钉 v1.0.39 2026-05-26). Media report that 百度内部办公智能体 dodo and 文心快码 were merged into 百度搭子 in Aug/Sep 2026. Before the 2026-05-07 window and absent from the ledger: proposed as a backfill. 入库核对（2026-11-25）：官网上的英文名是 DuMate，按账本对中英双名产品的记法分开放。日期：官方更新日志最早一条是 v1.0.8（2026/03/23），它之前已有 v1.0.0 到 v1.0.7，所以 3 月 23 日不是首发日；首发在 2026 年 3 月内，按月份精度记。 首次公开日期来源：https://cloud.baidu.com/doc/Dumate/s/cmmu7shvw 首次公开日期仅精确到月。",
+  "revisions": []
+}

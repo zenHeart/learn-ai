@@ -1,0 +1,36 @@
+{
+  "id": "zoom-sheets",
+  "name": "Zoom Sheets",
+  "name_zh": "Zoom Sheets",
+  "vendor_id": "zoom",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-06-01",
+  "date_precision": "day",
+  "homepage": "https://www.zoom.com/en/products/ai-sheets/",
+  "desc": "Builds spreadsheets from meeting data and plain-language prompts.",
+  "desc_zh": "用大白话或会议数据直接生成表格和分析",
+  "solves": "Building a tracker by hand means rows, formulas and a fresh import each week. Zoom Sheets writes the formulas and pulls data in from PDFs and transcripts.",
+  "solves_zh": "手工搭表格要对齐行列、写公式，每周还要重新导一次数据。Zoom Sheets 自动写公式，并支持从 PDF 和转写稿导入数据。",
+  "best_for": "A meeting produced numbers you now need as a formatted spreadsheet.",
+  "best_for_zh": "会上冒出一堆数字，你需要立刻变成一份像样的表格。",
+  "surface": "standalone",
+  "tags": [
+    "spreadsheet-generation",
+    "natural-language-formulas",
+    "xlsx-export"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.zoom.com/en/products/whats-new/ (product timeline, June 2026), t）。 Launched with the Zoom AI Productivity Suite on 2026-06-01. The What's New timeline adds that it can import data from PDFs, meeting transcripts and Zoom Canvas. No media source was read. 首次公开日期来源：https://news.zoom.com/zoom-launches-ai-productivity-suite/",
+  "revisions": []
+}

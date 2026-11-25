@@ -1,0 +1,36 @@
+{
+  "id": "lingyi-topsales-ai",
+  "name": "销冠AI",
+  "name_zh": "销冠AI",
+  "vendor_id": "01ai",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-07-01",
+  "date_precision": "month",
+  "homepage": "https://www.lingyiwanwu.com/topsales-ai.html",
+  "desc": "Sales operations agent that judges opportunity quality and matches solutions",
+  "desc_zh": "判断商机质量并匹配解决方案的销售运营助手",
+  "solves": "Sales time goes to deals that were never going to close; this scores each opportunity and matches the right solution before effort is spent.",
+  "solves_zh": "销售精力常花在根本成不了的单上，它先给商机打分、匹配方案，把售前资源投到值得投的单子。",
+  "best_for": "Triaging a crowded pipeline the week before the quarter closes.",
+  "best_for_zh": "季度收官前一周，把排队的商机过一遍，决定先攻哪几个。",
+  "surface": "in-product",
+  "tags": [
+    "decision-support",
+    "sales-agent",
+    "opportunity-scoring"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — lingyiwanwu.com 首页产品与服务导航与页面底部公司大事记时间线）。 万策平台在 2026 年 7 月延伸出的三个应用之一，面向 ToB 与 ToG 销售管理运营，有独立产品页但属于万策体系内的场景应用，故 surface 记为 in-product。上线时间与万策相同，官网只给到月份。 首次公开日期来源：https://www.lingyiwanwu.com/ 首次公开日期仅精确到月。",
+  "revisions": []
+}

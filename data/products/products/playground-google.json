@@ -1,0 +1,35 @@
+{
+  "id": "playground-google",
+  "name": "Google Playground",
+  "name_zh": "Google Playground",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-10-07",
+  "date_precision": "day",
+  "homepage": "https://playground.google/",
+  "desc": "Labs experiment that turns text prompts into playable games",
+  "desc_zh": "把文字提示变成可玩游戏的 Google Labs 实验平台",
+  "solves": "Making a game meant learning an engine; Playground builds a playable version from a description you can remix.",
+  "solves_zh": "做游戏原本要学引擎，Playground 按一段描述生成能玩的版本，还能继续改。",
+  "best_for": "A party is coming up and you want a custom quiz game for your friends by tonight.",
+  "best_for_zh": "周末有聚会，想今晚就给朋友们做一款定制的问答游戏。",
+  "surface": "standalone",
+  "tags": [
+    "game-creation",
+    "no-code",
+    "google-labs"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://labs.google/ (current experiments)）。 Early experiment from Google Labs; the second quote is a verbatim prefix (the sentence continues with tiered creation access). Product Hunt featured 'Gemini Robotics 2.5' near this date, not this product. Second source is not independent media. 入库核对（2026-11-25）：「Playground」单写认不出属于谁，也与 Google AI Studio 的 playground 一词撞名。 首次公开日期来源：https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+  "revisions": []
+}

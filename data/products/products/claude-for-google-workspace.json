@@ -1,0 +1,35 @@
+{
+  "id": "claude-for-google-workspace",
+  "name": "Claude for Google Workspace",
+  "name_zh": "Claude for Google Workspace",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-10-06",
+  "date_precision": "day",
+  "homepage": "https://claude.com/claude-for-google-workspace",
+  "desc": "Claude add-on inside Google Docs, Sheets and Slides",
+  "desc_zh": "嵌入 Google 文档、表格和演示的 Claude 插件",
+  "solves": "Writing in Docs means hopping out to a chatbot and pasting back; Claude now works inside the open file.",
+  "solves_zh": "在 Google 文档里写作要切到聊天机器人再贴回来，现在可直接在文件内用 Claude。",
+  "best_for": "A slide deck is half-written and you need the remaining bullets in the file itself.",
+  "best_for_zh": "演示文稿只写了一半，想直接在文件里补齐剩余要点。",
+  "surface": "extension",
+  "tags": [
+    "google-workspace",
+    "add-on",
+    "in-document-ai"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Public beta on all paid Claude plans; ships with new Docs, Sheets and Slides connectors (beta). Second source is not independent media. 入库核对（2026-11-25）：嵌在办公软件里的助手，与账本对 Grok for Word、ChatGPT for Excel 的分类一致。 首次公开日期来源：https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "amp-puck",
+  "name": "Amp Puck",
+  "name_zh": "Amp Puck",
+  "vendor_id": "amp-frontier",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-07-20",
+  "date_precision": "day",
+  "homepage": "https://ampcode.com/docs/puck",
+  "desc": "Assistant inside Amp that starts and steers work on your behalf.",
+  "desc_zh": "Amp 里替你发起并推进工作的助手。",
+  "solves": "Every task still starts with you writing the prompt; Puck takes the intent, opens sessions and keeps several moving at once.",
+  "solves_zh": "每个任务仍要你自己写提示词；Puck 接过意图，开会话并让多个任务同时推进。",
+  "best_for": "You have a rough goal and would rather delegate the framing as well as the work.",
+  "best_for_zh": "只有一个粗略目标，想把任务的拆解也一起交出去。",
+  "surface": "in-product",
+  "tags": [
+    "meta-agent",
+    "task-delegation",
+    "assistant"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ampcode.com/chronicle news feed）。 Named in-product surface. Puck later became reachable over MCP (2026-10-13) and on mobile (2026-11-21). 入库核对（2026-11-25）：官方名字只是「Puck」，加上产品名以便辨认。 首次公开日期来源：https://ampcode.com/news/meet-puck",
+  "revisions": []
+}

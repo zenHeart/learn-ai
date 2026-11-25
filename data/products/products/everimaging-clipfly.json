@@ -1,0 +1,36 @@
+{
+  "id": "everimaging-clipfly",
+  "name": "Clipfly",
+  "name_zh": "Clipfly",
+  "vendor_id": "everimaging",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2024-12-19",
+  "date_precision": "day",
+  "homepage": "https://www.clipfly.ai/",
+  "desc": "AI video platform for generating, animating and polishing short clips",
+  "desc_zh": "生成、动画化和修整短视频的一体化 AI 视频平台",
+  "solves": "One idea needs a dozen different tools to become a clip; Clipfly keeps generation, enhancement and trimming in a single workspace.",
+  "solves_zh": "一个想法要串起一堆工具才能变成片段；Clipfly 把生成、增强和剪辑放进同一个工作区。",
+  "best_for": "You have a product photo and need a ten-second social clip before the campaign goes live.",
+  "best_for_zh": "只有一张产品图，却要在campaign上线前做出十秒社媒短片时。",
+  "surface": "standalone",
+  "tags": [
+    "text-to-video",
+    "image-to-video",
+    "video-enhancement"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — Apple App Store developer catalogue for Chengdu Everimaging Science and Tech）。 Missing from the ledger although the vendor has shipped it since 2024. The web platform at clipfly.ai and the iOS app are the same product; the App Store metadata is the only place the vendor publishes a first-public-availability date, so the machine-readable official listing (iTunes lookup API, Apple's own endpoint) is used as the primary source and the quotes are copied verbatim from that JSON. The apps.apple.com HTML page could not be fetched from this network: it 302-redirects to apps.apple.com/cn, which then returns 404. The App Store name has varied by storefront ('AI Dance Generator' in the US, 'AI Video Dance Maker' in the UK). 首次公开日期来源：https://itunes.apple.com/lookup?id=6738775064&country=us",
+  "revisions": []
+}

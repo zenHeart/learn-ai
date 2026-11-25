@@ -1,0 +1,36 @@
+{
+  "id": "qoderwork",
+  "name": "QoderWork",
+  "name_zh": "QoderWork",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-02-12",
+  "date_precision": "day",
+  "homepage": "https://qoder.com/download",
+  "desc": "Desktop assistant that works on local files directly",
+  "desc_zh": "直接在本机文件上干活的桌面智能助手",
+  "solves": "Chat assistants only hand you text; this one reads your folders, runs the steps and writes the finished document.",
+  "solves_zh": "聊天助手只会给你一段文字，它能读本地文件夹、跑完流程并写出成品文件。",
+  "best_for": "You have a folder of spreadsheets and need them turned into a formatted report without re-uploading.",
+  "best_for_zh": "你手里有一文件夹表格，想直接生成排版好的报告，不想再来回复制上传。",
+  "surface": "standalone",
+  "tags": [
+    "local-files",
+    "document-generation",
+    "skills",
+    "computer-use"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://blog.qoder.com/llms.txt）。 Backfill. Date question: the official blog opens the public beta on 2026-02-12 (macOS only), while 新浪财经 reported an earlier launch on 2026-01-30 with an invitation test ('目前QoderWork已开启邀测，并将于近日全面开放'); no official page for the 2026-01-30 date was found, so 2026-02-12 is used. The product page https://qoder.com/qoderwork now redirects to https://qoder.com/qoder (the all-new Qoder), which is why the download page is given as homepage. Status: being retired. Chinese media report that in July 2026 Alibaba merged QoderWork with two internal agents (悟空, MuleRun) into 千问办公 (already in the ledger at 2026-08-03) — NOT verified against an official source. Separately, the Qoder download notice says service ends 2027-09-05 and that the new Qoder imports QoderWork task history, skills and memories. Related later posts: QoderWork Plugins (2026-04-25), QoderWork Custom Desk (2026-05-20). 入库核对（2026-11-25）：地区与账本里的 Qoder（IDE）保持一致。 首次公开日期来源：https://blog.qoder.com/qoder-work",
+  "revisions": []
+}

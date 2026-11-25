@@ -1,0 +1,35 @@
+{
+  "id": "cursor-bugbot",
+  "name": "Bugbot",
+  "name_zh": "Bugbot",
+  "vendor_id": "anysphere",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2025-06-04",
+  "date_precision": "day",
+  "homepage": "https://cursor.com/bugbot",
+  "desc": "Automated reviewer that comments on likely bugs in a pull request.",
+  "desc_zh": "自动审查 Pull Request 并对可疑缺陷留言的工具。",
+  "solves": "Reviewers spend the first pass hunting for mistakes before they can discuss design; the obvious bugs are already flagged when the review opens.",
+  "solves_zh": "审查者第一遍总要先找错才能谈设计；现在一打开评论，明显的缺陷已经标好了。",
+  "best_for": "Your team merges agent-written code and nobody has time to read every diff closely.",
+  "best_for_zh": "团队在合智能体写的代码，没人有空逐行细读每个 diff。",
+  "surface": "in-product",
+  "tags": [
+    "code-review",
+    "pull-request",
+    "bug-detection"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cursor.com/changelog directory）。 In-product surface of Cursor, shipped in the Cursor 1.0 release. Predates the window but is absent from the ledger, so it is recorded under rule (b). 首次公开日期来源：https://cursor.com/changelog/1-0",
+  "revisions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "lovable-desktop-app",
+  "name": "Lovable Desktop",
+  "name_zh": "Lovable Desktop",
+  "vendor_id": "lovable",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-04-24",
+  "date_precision": "day",
+  "homepage": "https://docs.lovable.dev/integrations/desktop-app",
+  "desc": "Native macOS app that runs the Lovable editor outside the browser.",
+  "desc_zh": "在浏览器之外运行 Lovable 编辑器的 macOS 原生应用。",
+  "solves": "Building in a tab means fighting the browser for focus and losing local tools; the desktop app keeps the project one keystroke away.",
+  "solves_zh": "在浏览器标签里做应用总要和浏览器抢焦点，还用不上本地工具；桌面版让项目一键可达。",
+  "best_for": "You keep Lovable open all day next to your editor and want local MCP servers wired in.",
+  "best_for_zh": "你整天把 Lovable 和编辑器并排开着，还想接上本地 MCP 服务。",
+  "surface": "standalone",
+  "tags": [
+    "desktop-app",
+    "local-mcp",
+    "project-tabs"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.lovable.dev/changelog）。 Dated Apr 24, 2026, three days before the window opens; not in the ledger, so rule (b). Windows support arrived Jul 6, 2026 in the same changelog. The App Store listing for Lovable carries releaseDate 2026-04-27, consistent with a late-April launch. 入库核对（2026-11-25）：厂商没有公布中文名，name_zh 按 name。 首次公开日期来源：https://docs.lovable.dev/changelog",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "sierra-horizon",
+  "name": "Sierra Horizon",
+  "name_zh": "Sierra Horizon",
+  "vendor_id": "sierra",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-16",
+  "date_precision": "day",
+  "homepage": "https://sierra.ai/product",
+  "desc": "Sierra platform for agents that chase goals over days or weeks.",
+  "desc_zh": "让智能体用几天到几周时间追一个目标的 Sierra 平台",
+  "solves": "Conversational agents finish one call and stop. Horizon agents keep working a goal across days or weeks, deciding each next step and learning from every outcome.",
+  "solves_zh": "对话式智能体结束一通电话就停了。Horizon 智能体为一个目标连续工作数天到数周，自己决定下一步，并从每次结果里学习。",
+  "best_for": "The outcome needs dozens of texts and calls spread over weeks, not one conversation.",
+  "best_for_zh": "这个结果要靠几周内几十条短信和电话才能换来，而不是一通对话。",
+  "surface": "standalone",
+  "tags": [
+    "long-horizon-goals",
+    "proactive-engagement",
+    "outcome-based"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://sierra.ai/blog (the vendor's own news directory), then the announcem）。 Sierra calls Horizon its most significant expansion since the 2024 launch and describes an outcomes-based pricing model ('you pay for results, not tokens'). Distinct from the ledger's Sierra AI (2024-02-01), which is the conversational platform; Sierra positions Agent OS as the conversational base and Horizon as the long-horizon layer. No dedicated product page was found, so the homepage is Sierra's product page. 评审修正（2026-11-25）：官方名字「Horizon」是通用词，带上厂商名以便辨认。 首次公开日期来源：https://sierra.ai/blog/horizon",
+  "revisions": []
+}

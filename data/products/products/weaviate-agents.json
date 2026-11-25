@@ -1,0 +1,36 @@
+{
+  "id": "weaviate-agents",
+  "name": "Weaviate Agents",
+  "name_zh": "Weaviate Agents",
+  "vendor_id": "weaviate",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2025-03-04",
+  "date_precision": "day",
+  "homepage": "https://weaviate.io/agents",
+  "desc": "Suite of agents that query, transform and improve data in Weaviate.",
+  "desc_zh": "在 Weaviate 中查询、转换和改进数据的智能体套件。",
+  "solves": "Writing retrieval code for every new question does not scale; an agent takes the question and works the collection directly.",
+  "solves_zh": "每个新问题都写一遍检索代码无法扩展；智能体接问题，直接操作集合。",
+  "best_for": "You want to ask a database questions in plain language instead of writing queries.",
+  "best_for_zh": "想用大白话向数据库提问，而不是写查询。",
+  "surface": "standalone",
+  "tags": [
+    "query-agent",
+    "data-platform",
+    "agent-suite"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — weaviate.io/blog and product navigation）。 Post dated March 4, 2025 by Alvin Richards (VP of Product); the page states it was announced as a three-agent suite and that only the Query Agent reached general availability. Not in the ledger, so rule (b). 首次公开日期来源：https://weaviate.io/blog/weaviate-agents",
+  "revisions": []
+}

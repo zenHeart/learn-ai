@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认：页面标题「海螺视频」，主推文生视频与图像生成。",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认：页面标题「海螺视频」，主推文生视频与图像生成。 2026-11-25：date_precision day → month。在海螺自己的站点上找不到发布日期的一手来源。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "在海螺自己的站点上找不到发布日期的一手来源。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

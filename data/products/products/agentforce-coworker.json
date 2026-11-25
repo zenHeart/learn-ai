@@ -1,0 +1,36 @@
+{
+  "id": "agentforce-coworker",
+  "name": "Agentforce Coworker",
+  "name_zh": "Agentforce Coworker",
+  "vendor_id": "salesforce",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-09-28",
+  "date_precision": "day",
+  "homepage": "https://www.salesforce.com/agentforce/coworker/",
+  "desc": "Autonomous AI teammate built into Salesforce that runs other agents.",
+  "desc_zh": "内置于 Salesforce 的自主 AI 队友，能调动其他智能体",
+  "solves": "Users had to know which agent to open. Ask in plain language and Coworker answers from your CRM and connected apps, or orchestrates the agents to finish it.",
+  "solves_zh": "过去得先搞清楚该打开哪个智能体。现在用自然语言提问，Coworker 从 CRM 和已连接应用里找答案，或者调度智能体把事做完。",
+  "best_for": "You need a renewal risk explained and the follow-up drafted, without naming a single agent.",
+  "best_for_zh": "你想知道某个续约为什么有风险，还要它顺手写好跟进邮件，而不用指定任何智能体。",
+  "surface": "standalone",
+  "tags": [
+    "autonomous-teammate",
+    "agent-orchestration",
+    "mcp-surfaces"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.salesforce.com/blog/dreamforce-2026-announcements/ (the vendor's）。 GA at Dreamforce 2026 on 2026-09-28. The product page adds that it is available in Salesforce, Microsoft Teams and on mobile, and in Claude and ChatGPT through MCP. Distinct from the ledger's Agentforce (2024-09-12), which is the platform; Coworker is the single interface that drives the platform's agents. The same Dreamforce post names Slackforce (GA October 2026) and Claudeforce (beta) as sibling surfaces; both lack their own product page and a day-precision date, so they are listed as unconfirmed in the report. 首次公开日期来源：https://www.salesforce.com/blog/dreamforce-2026-announcements/",
+  "revisions": []
+}

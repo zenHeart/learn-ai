@@ -1,0 +1,36 @@
+{
+  "id": "intercom-operator",
+  "name": "Operator",
+  "name_zh": "Operator",
+  "vendor_id": "intercom",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-05-15",
+  "date_precision": "day",
+  "homepage": "https://www.intercom.com/blog/introducing-operator",
+  "desc": "Agent that maintains Fin's content, rules and procedures for you.",
+  "desc_zh": "替你维护 Fin 内容、规则和流程的智能体",
+  "solves": "An agent is only as good as the help content behind it, and nobody owns that upkeep. Operator reads a failed conversation, finds the content gap, proposes a fix and runs simulation tests.",
+  "solves_zh": "智能体的上限取决于背后的帮助内容，而这份维护一直没人负责。Operator 会读一段失败的对话，找出内容缺口，提出修复并跑仿真测试。",
+  "best_for": "Fin keeps giving the same wrong answer and you know the article is out of date.",
+  "best_for_zh": "Fin 一直在给出同一个错误答案，而你知道那篇文章已经过时了。",
+  "surface": "standalone",
+  "tags": [
+    "agent-maintenance",
+    "simulation-tests",
+    "support-operations"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.intercom.com/blog , then the Intercom product updates page）。 Announced 2026-05-15 in early access. The post says Operator 'manages help content, builds automation, does the ongoing work that determines how well Fin performs'. Distinct from the ledger's Intercom Fin, which is the customer-facing agent. A later post (2026-08-13) describes Operator running 'Eval-driven delivery'. No media source was read. 首次公开日期来源：https://www.intercom.com/blog/introducing-operator",
+  "revisions": []
+}

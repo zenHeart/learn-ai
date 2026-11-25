@@ -27,10 +27,27 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
+  "status": "renamed",
+  "superseded_by": "trae-plugin",
   "last_verified_at": null,
-  "notes": "字节免费开放的云端 AI IDE，个人开发者零成本搭环境的典型选择 来源：https://www.ithome.com/0/777/970.htm",
-  "revisions": [],
+  "notes": "字节免费开放的云端 AI IDE，个人开发者零成本搭环境的典型选择 来源：https://www.ithome.com/0/777/970.htm 2026-11-25：status active → renamed; superseded_by null → trae-plugin。同一个 JetBrains 插件（插件编号 24326）最初以 MarsCode 插件的名字上架（最早的版本包名是 MarsCode-1.0.3.0.zip），官方更新日志在 2025-04-15 写「品牌升级为 Trae AI」。独立 IDE 的后继档案是 trae",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "同一个 JetBrains 插件（插件编号 24326）最初以 MarsCode 插件的名字上架（最早的版本包名是 MarsCode-1.0.3.0.zip），官方更新日志在 2025-04-15 写「品牌升级为 Trae AI」。独立 IDE 的后继档案是 trae"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "trae-plugin",
+      "why": "同一个 JetBrains 插件（插件编号 24326）最初以 MarsCode 插件的名字上架（最早的版本包名是 MarsCode-1.0.3.0.zip），官方更新日志在 2025-04-15 写「品牌升级为 Trae AI」。独立 IDE 的后继档案是 trae"
+    }
+  ],
   "date_precision": "day"
 }

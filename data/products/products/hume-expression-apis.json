@@ -1,0 +1,36 @@
+{
+  "id": "hume-expression-apis",
+  "name": "Hume Expression APIs",
+  "name_zh": "Hume Expression APIs",
+  "vendor_id": "hume-ai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "audio-voice",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-10-06",
+  "date_precision": "day",
+  "homepage": "https://hume.ai/products/expression-apis",
+  "desc": "Scores vocal and facial expression from voice or video",
+  "desc_zh": "从语音或视频里测出表情与情绪得分的 API",
+  "solves": "A transcript loses the sigh and the hesitation. These APIs return structured expression scores alongside the words.",
+  "solves_zh": "转写稿会把叹气、犹豫这些信息全丢掉。这组 API 在文字之外给出结构化的表情分数。",
+  "best_for": "You need to know which callers sound frustrated, not just what they said.",
+  "best_for_zh": "不光要知道客户说了什么，还想知道哪几通听起来在生气。",
+  "surface": "standalone",
+  "tags": [
+    "emotion-detection",
+    "voice-analysis",
+    "face-analysis"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://hume.ai/blog (Hume's blog, 'Introducing Expression APIs' entry)）。 A measurement API, not the ledger's 'Hume AI' voice product (2024-06-19). Hume's own product navigation lists it as one of five products (Audio Decision API, Expression APIs, Human Feedback API, User Testing API, Speech Data); the other three have no date-carrying first-party page I could fetch, so they are not filed. 首次公开日期来源：https://hume.ai/blog/introducing-expression-apis-give-your-ai-more-of-what-people-mean",
+  "revisions": []
+}

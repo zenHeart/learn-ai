@@ -1,0 +1,36 @@
+{
+  "id": "manus-cue",
+  "name": "Manus Cue",
+  "name_zh": "Manus Cue",
+  "vendor_id": "butterfly-effect",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-09-28",
+  "date_precision": "day",
+  "homepage": "https://manus.im",
+  "desc": "Standalone app for personal agents, on phone and desktop.",
+  "desc_zh": "在手机和桌面上运行个人智能体的独立应用",
+  "solves": "Agents have no address, phone or wallet, so they cannot act for you. Cue gives each agent its own identity and computer, and keeps you in control.",
+  "solves_zh": "智能体没有邮箱、电话和钱包，没法真正替你办事。Cue 给每个智能体独立的身份和电脑，同时让你始终掌控它的行为。",
+  "best_for": "You want an agent to keep working while you are away and report back with what it did.",
+  "best_for_zh": "你想让一个智能体在你离开时继续干活，然后回来汇报它做了什么。",
+  "surface": "standalone",
+  "tags": [
+    "personal-agents",
+    "agent-identity",
+    "phone-and-desktop"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://manus.im/blog , then the Manus product menu）。 Announced 2026-09-28 with Manus 2.0. The post says every Cue agent gets its own email, phone number, wallet and computer, so it can send messages and pay within the budget you set, and that it works in a visible workspace using only the files, browser and apps you approved. Missing from the ledger, which holds Manus (2025-03-06) and Monica (2023-10-01) for this vendor. No media source was read. 评审修正（2026-11-25）：官方名字「Cue」是通用词，带上产品名以便辨认。 评审修正（2026-11-25）：同上：公告页不是产品入口页。Cue 目前没有独立产品站。 首次公开日期来源：https://manus.im/blog/introducing-manus-2-0",
+  "revisions": []
+}

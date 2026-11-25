@@ -1,0 +1,37 @@
+{
+  "id": "gemini-in-chrome",
+  "name": "Gemini in Chrome",
+  "name_zh": "Gemini in Chrome",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-01-29",
+  "date_precision": "day",
+  "homepage": "https://gemini.google.com/",
+  "desc": "Gemini built into the Chrome browser to answer and act on pages",
+  "desc_zh": "内置在 Chrome 里、可读网页并代为操作的 Gemini",
+  "solves": "Looking things up means leaving the page for a chatbot; Gemini answers and navigates inside the browser.",
+  "solves_zh": "查资料要离开网页去问聊天机器人，Gemini 直接在浏览器里回答和导航。",
+  "best_for": "You are comparing two tabs of specs and want the differences pointed out on the page.",
+  "best_for_zh": "正对着两个标签页比较参数，想让差异直接在页面上标出来。",
+  "surface": "in-product",
+  "tags": [
+    "browser-assistant",
+    "chrome",
+    "web-navigation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://gemini.google/release-notes (official Gemini Apps release updates)）。 Outside the window. The entry is dated 2026.01.28 and says the rollout starts 'tomorrow', so 2026-01-29 is inferred from the official text. Google AI Pro or Ultra subscribers in the US with English Chrome. No dedicated product page found (gemini.google/chrome returns 404), so the homepage is the Gemini app. Second source is not independent media. 首次公开日期来源：https://gemini.google/release-notes",
+  "revisions": []
+}

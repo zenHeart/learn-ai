@@ -1,0 +1,36 @@
+{
+  "id": "pinecone-pg-pinecone",
+  "name": "pg_pinecone",
+  "name_zh": "pg_pinecone",
+  "vendor_id": "pinecone",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "research",
+    "coding"
+  ],
+  "form": "self-hosted",
+  "released": "2026-10-27",
+  "date_precision": "day",
+  "homepage": "https://github.com/pinecone-io/pg_pinecone",
+  "desc": "Self-hosted extension that adds vector search to a Postgres database.",
+  "desc_zh": "给 Postgres 数据库加上向量搜索能力的开源扩展。",
+  "solves": "Vector data living in a separate service means joins and backups get hard; the index sits inside the database you already run.",
+  "solves_zh": "向量数据放在另一个服务里，关联查询和备份都变难；索引就放在你已经在跑的数据库里。",
+  "best_for": "Your data is already in Postgres and you want similarity search without a second system.",
+  "best_for_zh": "数据本来就在 Postgres 里，想要相似度搜索又不想再上一套系统。",
+  "surface": "standalone",
+  "tags": [
+    "postgres-extension",
+    "vector-search",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — pinecone.io/blog）。 Blog post byline Harshita Daddala, Anthony Mahanna, Oct 27, 2026. An open-source product distinct from the managed Pinecone service the ledger holds; the blog index also shows a Nov 18, 2026 post about one-click Railway deployment. 首次公开日期来源：https://www.pinecone.io/blog/introducing-pg-pinecone/",
+  "revisions": []
+}

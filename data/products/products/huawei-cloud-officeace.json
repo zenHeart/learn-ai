@@ -1,0 +1,36 @@
+{
+  "id": "huawei-cloud-officeace",
+  "name": "果办 OfficeAce",
+  "name_zh": "果办 OfficeAce",
+  "vendor_id": "huawei",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-04-16",
+  "date_precision": "day",
+  "homepage": "https://www.huaweicloud.com/product/officeace.html",
+  "desc": "Huawei Cloud's desktop office agent for documents and research",
+  "desc_zh": "华为云的办公智能体，电脑上写材料、做研究",
+  "solves": "Reports and slides need research, drafting and fact-checking by hand. OfficeAce runs a panel of expert agents that cross-check each other.",
+  "solves_zh": "写材料要查资料、搭框架、核对事实。它让多位专家智能体一起讨论、交叉验证，交出可用的文稿。",
+  "best_for": "A 20-page briefing is due tomorrow and all you have is a messy folder of PDFs.",
+  "best_for_zh": "明天要交一份长篇汇报，手头只有一文件夹零散 PDF，需要先理清观点的时候。",
+  "surface": "standalone",
+  "tags": [
+    "expert-panel",
+    "ppt-generation",
+    "local-deployment"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Huawei Cloud newsroom list (https://www.huaweicloud.com/news.html, filtered ）。 The news page prints its own date '2026-04-16' above the quoted sentence. 2026-04-16 is the start of an INVITE TEST (邀测), which is the first day anyone outside Huawei could apply. The product page now offers a free personal tier and paid plans, and lists PC (HarmonyOS, Windows, macOS), mobile and WeChat mini-program builds; the day general availability started was not established. Naming: the news release calls it '华为云果办OfficeAce办公智能体', the product page headline is '果办 OfficeAce 你身边的AI办公工作台', and the page keywords still include 'OfficeClaw' (an earlier working name seen only in the keyword meta tag, not in any dated announcement). The official release says it grew out of the open-source Cat Café and Jiuwenclaw community projects. Related ledger entries: none of 小艺Claw, 华为云码道, 智果 AgentArts cover this product. SECOND SOURCE STILL TO BE READ. 首次公开日期来源：https://www.huaweicloud.com/news/2026/20260416163440660.html",
+  "revisions": []
+}

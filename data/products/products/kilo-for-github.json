@@ -1,0 +1,35 @@
+{
+  "id": "kilo-for-github",
+  "name": "Kilo for GitHub",
+  "name_zh": "Kilo for GitHub",
+  "vendor_id": "kilo-code",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-18",
+  "date_precision": "day",
+  "homepage": "https://kilo.ai/github",
+  "desc": "Kilo agent that works on issues and pull requests inside GitHub.",
+  "desc_zh": "在 GitHub 里处理 Issue 和 Pull Request 的 Kilo 智能体。",
+  "solves": "Assigning work to an agent meant leaving GitHub and pasting context; the agent is mentioned in the thread and works there.",
+  "solves_zh": "给智能体派活要先离开 GitHub 再贴上下文；现在在话题里@它，它就在原地干活。",
+  "best_for": "A backlog of labelled issues should become pull requests without anyone opening an editor.",
+  "best_for_zh": "一堆带标签的 Issue 应该直接变成 Pull Request，没人需要开编辑器。",
+  "surface": "standalone",
+  "tags": [
+    "github-integration",
+    "issue-to-pr",
+    "mention"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — blog.kilo.ai directory）。 kilo.ai/github redirects to the Kilo Code GitHub organisation page. 首次公开日期来源：https://blog.kilo.ai/p/introducing-kilo-for-github 官网未直接确认（redirect->https://github.com/Kilo-Org/kilocode）。",
+  "revisions": []
+}

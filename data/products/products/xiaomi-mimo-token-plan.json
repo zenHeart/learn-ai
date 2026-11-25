@@ -1,0 +1,35 @@
+{
+  "id": "xiaomi-mimo-token-plan",
+  "name": "Xiaomi MiMo Token Plan",
+  "name_zh": "Xiaomi MiMo Token Plan",
+  "vendor_id": "xiaomi",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "api",
+  "released": "2026-04-03",
+  "date_precision": "day",
+  "homepage": "https://platform.xiaomimimo.com/token-plan",
+  "desc": "Monthly credit subscription for calling MiMo models in coding tools",
+  "desc_zh": "小米 MiMo 的包月额度套餐，供编程工具调用模型",
+  "solves": "Pay-as-you-go tokens make heavy agent sessions unpredictable. Token Plan trades a fixed monthly fee for a pool of credits.",
+  "solves_zh": "按量付费时，跑一晚上智能体任务花多少心里没底。换成包月固定价，用一池额度抵扣。",
+  "best_for": "You run Claude Code or OpenClaw on MiMo every day and want a predictable bill.",
+  "best_for_zh": "每天都在 Claude Code 或 OpenClaw 里用 MiMo，想把每月开销固定下来的时候。",
+  "surface": "in-product",
+  "tags": [
+    "subscription-plan",
+    "coding-tools",
+    "api-credits"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mimo.mi.com/ (product matrix) and https://mimo.mi.com/llms.txt (News）。 REVIEWER DECISION: this is a paid plan sold inside Xiaomi MiMo API Open Platform, not a separate app. It is proposed as its own record because the official changelog, pricing pages and third-party tool docs all treat 'Token Plan' as the thing users configure (keys starting with 'tp-'), in the same way the ledger lists GLM Coding Plan for Zhipu. If the ledger does not want pricing plans, drop this record and keep xiaomi-mimo-api-open-platform. Auto-renewal arrived 2026-04-23, a Team edition and Batch API on 2026-09-22 (changelog). The announcement page text says 'we officially launch' without a date; the dated source is the changelog heading. Four tiers at launch: Lite ¥39/month, Standard ¥99, Pro ¥329, Max ¥659 (overseas $6/$16/$50/$100). 入库核对（2026-11-25）：账本里同类的 GLM Coding Plan 记为编程智能体、场景 coding，保持一致。 首次公开日期来源：https://mimo.mi.com/static/docs/updates/feature/platform.md",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "higgsfield-cli",
+  "name": "Higgsfield CLI",
+  "name_zh": "Higgsfield CLI",
+  "vendor_id": "higgsfield",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "coding",
+    "image-design"
+  ],
+  "form": "cli",
+  "released": "2026-05-04",
+  "date_precision": "day",
+  "homepage": "https://higgsfield.ai/cli",
+  "desc": "Generates images and video from the terminal or coding agents",
+  "desc_zh": "在终端或编程智能体里生成图片和视频的命令行工具",
+  "solves": "Adding a generated asset to a build meant a browser detour; call Higgsfield from a script or agent instead.",
+  "solves_zh": "给项目加一张生成素材要专门开浏览器；现在脚本或编程智能体直接调用。",
+  "best_for": "A docs site needs forty consistent illustrations before the release; script them through the CLI overnight.",
+  "best_for_zh": "文档站在发版前要四十张风格一致的插图；写个脚本，用 CLI 一晚上批量生成。",
+  "surface": "standalone",
+  "tags": [
+    "command-line",
+    "coding-agent",
+    "batch-generation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://higgsfield.ai/creator-hub/changelog (entry 'Higgsfield CLI')）。 Released three days before the window opens; included because it is absent from the ledger. 首次公开日期来源：https://higgsfield.ai/creator-hub/changelog",
+  "revisions": []
+}

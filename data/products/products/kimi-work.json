@@ -1,0 +1,36 @@
+{
+  "id": "kimi-work",
+  "name": "Kimi Work",
+  "name_zh": "Kimi Work",
+  "vendor_id": "moonshot",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-06-03",
+  "date_precision": "day",
+  "homepage": "https://www.kimi.com/products/kimi-work",
+  "desc": "Desktop AI agent that works on your local files.",
+  "desc_zh": "在本地文件上干活的桌面 AI 智能体",
+  "solves": "Tasks spread across folders and browser tabs never get finished. Kimi Work holds one goal for hours and brings back the result.",
+  "solves_zh": "散在文件夹和浏览器标签里的活总是做不完。Kimi Work 能让一个目标连转几个小时，再把结果交回来。",
+  "best_for": "Summarizing a folder of local reports the night before a morning meeting.",
+  "best_for_zh": "早上开会前，把一整个文件夹的本地报告整理成摘要。",
+  "surface": "standalone",
+  "tags": [
+    "desktop-agent",
+    "local-files",
+    "scheduled-tasks"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kimi.com 新闻列表与产品中心（https://www.kimi.com/news, https://www.kimi.com/products/）。 官方新闻写「6 月 3 日上线」，且当时标注 Beta 版；产品页现在称「Kimi 官方桌面客户端」。与账本已有的 Kimi（对话助手）、Kimi Code（CLI）是不同产品。Kimi 浏览器扩展与 Kimi Office 是其配套插件，本次未找到首发日期，见 report.md unconfirmed。 首次公开日期来源：https://www.kimi.com/news/kimi-work-update",
+  "revisions": []
+}

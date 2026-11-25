@@ -1,0 +1,36 @@
+{
+  "id": "github-copilot-evals",
+  "name": "GitHub Copilot Evals",
+  "name_zh": "GitHub Copilot Evals",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "eval-observability",
+  "use_cases": [
+    "observability",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/",
+  "desc": "Run evals on your own prompts, skills, agents and MCP tools.",
+  "desc_zh": "对你自己的提示、技能、Agent 和 MCP 工具跑评测。",
+  "solves": "You change a prompt or swap a model and have no idea whether it got worse. Evals reruns the same setup so the comparison is a measurement, not a feeling.",
+  "solves_zh": "改了提示或换了模型，你并不知道是不是变差了。Evals 用同一套配置重跑，让比较变成测量而不是感觉。",
+  "best_for": "A prompt, skill or tool changed and you need to know what it cost you.",
+  "best_for_zh": "提示、技能或工具刚改过，你需要知道代价是什么。",
+  "surface": "standalone",
+  "tags": [
+    "evals",
+    "regression",
+    "prompt-testing"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — GitHub Changelog, https://github.blog/changelog/2026-11-17-github-copilot-ev）。 Public preview only. Scoped to the skills, agents and MCP tools in your own setup, not to Copilot itself. 首次公开日期来源：https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/",
+  "revisions": []
+}

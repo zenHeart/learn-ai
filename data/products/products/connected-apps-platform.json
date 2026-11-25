@@ -1,0 +1,35 @@
+{
+  "id": "connected-apps-platform",
+  "name": "Connected Apps Platform",
+  "name_zh": "Connected Apps Platform",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-10-28",
+  "date_precision": "day",
+  "homepage": "https://developers.google.com/connected-apps",
+  "desc": "One place to build apps for Google Search and Gemini",
+  "desc_zh": "统一为 Google 搜索和 Gemini 开发应用的平台",
+  "solves": "App actions were built separately for Search and Gemini; one platform now manages both and their app listings.",
+  "solves_zh": "过去要分别为搜索和 Gemini 开发应用动作，现在一个平台统一管理和上架。",
+  "best_for": "Your booking site already supports App Links and you want bookings to work inside Gemini.",
+  "best_for_zh": "预订网站已支持应用深链，想让用户直接在 Gemini 里完成预订。",
+  "surface": "standalone",
+  "tags": [
+    "app-integration",
+    "search-actions",
+    "developer-console"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C — https://techcrunch.com/tag/google/ (then D: blog.google October 2026 AI roun）。 Launched in preview (a TechCrunch summary says beta for US developers). 首次公开日期来源：https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/",
+  "revisions": []
+}

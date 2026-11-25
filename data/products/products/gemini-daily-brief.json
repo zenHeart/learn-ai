@@ -1,0 +1,35 @@
+{
+  "id": "gemini-daily-brief",
+  "name": "Gemini Daily Brief",
+  "name_zh": "Gemini Daily Brief",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-05-19",
+  "date_precision": "day",
+  "homepage": "https://gemini.google.com/",
+  "desc": "Personalized daily overview inside the Gemini app",
+  "desc_zh": "Gemini 应用里汇总当天要事的每日简报",
+  "solves": "Mornings start with checking a dozen apps; Daily Brief pulls priorities from connected apps and chats into one view.",
+  "solves_zh": "早上要逐个查看十几个应用，Daily Brief 把关联应用和对话里的要事汇成一份。",
+  "best_for": "You open your laptop at nine and want the day's must-dos in one screen first.",
+  "best_for_zh": "九点打开电脑，想先在一屏里看完今天必须处理的事。",
+  "surface": "in-product",
+  "tags": [
+    "daily-digest",
+    "personal-intelligence",
+    "connected-apps"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://gemini.google/release-notes (official Gemini Apps release updates)）。 Entry dated 2026.05.19; Google AI subscribers (18+) in the US. Powered by Personal Intelligence. No independent media write-up located, so the second source is not independent. 入库核对（2026-11-25）：官方名字只是「Daily Brief」，加上产品名以便辨认。 首次公开日期来源：https://gemini.google/release-notes",
+  "revisions": []
+}

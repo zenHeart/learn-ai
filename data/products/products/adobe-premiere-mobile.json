@@ -1,0 +1,35 @@
+{
+  "id": "adobe-premiere-mobile",
+  "name": "Adobe Premiere (mobile)",
+  "name_zh": "Adobe Premiere (mobile)",
+  "vendor_id": "adobe",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2025-09-30",
+  "date_precision": "day",
+  "homepage": "https://www.adobe.com/products/premiere/app.html",
+  "desc": "Free mobile video editor with generative AI credits built in",
+  "desc_zh": "内置生成式 AI 额度的免费手机视频编辑器",
+  "solves": "Desktop Premiere was too heavy for phone-shot clips; cut, add captions and generate on the phone you shot with.",
+  "solves_zh": "手机拍的短片用桌面版 Premiere 太重；直接在手机上剪辑、加字幕、生成画面。",
+  "best_for": "Three travel clips are on your iPhone and Reels goes up tonight; rough the cut in Premiere mobile on the train.",
+  "best_for_zh": "iPhone 里有三段旅行素材，今晚要发短视频；在路上用 Premiere 手机版先粗剪。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-video-editor",
+    "auto-captions",
+    "generative-credits"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A+D — App Store Photo & Video chart, then the Adobe Blog index）。 Outside the window but absent from the ledger; distinct from Premiere Pro on desktop (whose Generative Extend is already in the ledger). iOS launch 2025-09-30, Android 2026-09-22 (Android 13 and up per the post). Native mobile app; 'desktop' is used as the closest client form. Licensed music from UMG and WMG added 2026-11-10. Homepage moved from the desktop Premiere page to Adobe's mobile product page (/products/premiere/app.html, 'Free Video Editing App | Adobe Premiere'), which states the app is free and standalone; curl gets 403 from Adobe's bot guard, so the page was read through a page reader. 入库核对（2026-11-25）：这是手机应用；形态枚举没有手机应用，账本里手机应用记为 web。厂商没有公布中文名，name_zh 按 name。 首次公开日期来源：https://blog.adobe.com/en/publish/2025/09/30/now-available-adobe-premiere-iphone-brings-pro-quality-video-editing-creators",
+  "revisions": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "xiaomi-mimo-desktop",
+  "name": "Xiaomi MiMo Desktop",
+  "name_zh": "Xiaomi MiMo 桌面客户端",
+  "vendor_id": "xiaomi",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "coding",
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-09-08",
+  "date_precision": "day",
+  "homepage": "https://mimo.xiaomimimo.com/desktop/",
+  "desc": "Desktop AI agent that turns work files into finished deliverables",
+  "desc_zh": "小米的桌面 AI 应用，把素材做成可编辑的成果",
+  "solves": "Scattered spreadsheets, PDFs and recordings take hours to turn into slides or reports. MiMo Desktop reads them, plans tasks and delivers editable files.",
+  "solves_zh": "素材散、格式乱，整理成文档和 PPT 很费时。它读完自己拆任务、调工具，交出可继续改的文件。",
+  "best_for": "A folder of charts, photos and notes has to become a client deck by tomorrow morning.",
+  "best_for_zh": "明天要交一份客户汇报，手里只有一堆图表、照片和零散笔记的时候。",
+  "surface": "standalone",
+  "tags": [
+    "desktop-agent",
+    "task-orchestration",
+    "deliverable-editing"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mimo.mi.com/ (featured card 'Xiaomi MiMo 桌面客户端正式发布') and https://mim）。 DATE NEEDS REVIEWER ATTENTION. The official announcement sentence says 'Today' and carries no date string. 2026-09-08 comes from two consistent signals: (1) the site's own JS bundle (https://mimo.mi.com/static/main.50e9927eea68bf7d.chunk.js) stores this document's modifiedTime as 1788848078 / 1788848309, i.e. 2026-09-08 06:14-06:18 UTC; (2) OSCHINA published its report at 2026-09-08 15:13 saying '今天正式开放邀测'. The official changelog dates the first build V0.1.0 to 2026-09-01. If the ledger only accepts a date printed verbatim in an official sentence, use 2026-09-01 (changelog) instead, or mark this date unconfirmed. The home page now says the client is '正式发布' (generally available) with a paid membership; that later GA date was not established. Overseas build includes computer control; domestic build does not. 首次公开日期来源：https://mimo.mi.com/static/docs/news/latest/mimo-desktop.md",
+  "revisions": []
+}

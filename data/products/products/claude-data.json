@@ -1,0 +1,35 @@
+{
+  "id": "claude-data",
+  "name": "Claude Data",
+  "name_zh": "Claude Data",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-10-08",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/overview",
+  "desc": "Claude that answers questions on company data and builds dashboards",
+  "desc_zh": "在企业数据上回答问题、搭建仪表盘的 Claude 功能",
+  "solves": "Quick data questions wait in the analytics queue; Claude Data queries the warehouse and shares a live result.",
+  "solves_zh": "临时取数总要排队等数据团队，Claude Data 直接查数仓并共享实时结果。",
+  "best_for": "A VP asks for last week's pipeline by region ten minutes before the forecast call.",
+  "best_for_zh": "销售预测会前十分钟，副总裁要按地区看上周的线索情况。",
+  "surface": "in-product",
+  "tags": [
+    "dashboards",
+    "data-warehouse",
+    "business-intelligence"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 RENAME: launched in beta as Claude Dashboards on 2026-10-08 and renamed Claude Data on 2026-11-10 (generally available). First public date taken from the Dashboards article. Second source is not independent media. 首次公开日期来源：https://claude.com/resources/articles/dashboards-and-motion",
+  "revisions": []
+}

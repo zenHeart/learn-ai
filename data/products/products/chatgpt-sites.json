@@ -1,0 +1,36 @@
+{
+  "id": "chatgpt-sites",
+  "name": "ChatGPT Sites",
+  "name_zh": "ChatGPT Sites",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-07-09",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites",
+  "desc": "Build and publish a small interactive website from inside ChatGPT.",
+  "desc_zh": "在 ChatGPT 里边聊边搭出一个小型交互网站，做完直接发布。",
+  "solves": "A dashboard or tracker used to mean a repo, a host and a deploy step. You describe it in Work, preview it, and publish to a URL when it looks right.",
+  "solves_zh": "想做一块看板或跟踪表，过去等于要仓库、要主机、还要部署。现在在 Work 里描述需求、预览效果，满意了就发布成一个网址。",
+  "best_for": "You need a live link a team can open, not a screenshot of an idea.",
+  "best_for_zh": "你需要一个团队能打开的活链接，而不是一张想法截图。",
+  "surface": "in-product",
+  "tags": [
+    "publishing",
+    "web-app",
+    "no-code"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes, https://help.openai.com/en/articles/6825453-chatgpt-r）。 ChatGPT release notes, entry under the \"July 9, 2026\" heading, which is when the public beta opened. Business and Enterprise workspaces had it earlier; no first-party date for that earlier access was found. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

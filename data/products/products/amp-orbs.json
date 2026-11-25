@@ -1,0 +1,35 @@
+{
+  "id": "amp-orbs",
+  "name": "Amp Orbs",
+  "name_zh": "Amp Orbs",
+  "vendor_id": "amp-frontier",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-30",
+  "date_precision": "day",
+  "homepage": "https://ampcode.com/docs/orbs",
+  "desc": "Remote machines where Amp agents keep running without supervision.",
+  "desc_zh": "让 Amp 智能体无人值守持续运行的远程机器。",
+  "solves": "An agent stops when the laptop closes; an orb keeps the session alive and reports back when the work is done.",
+  "solves_zh": "笔记本一合上智能体就停；orb 让会话继续活着，干完了再回来汇报。",
+  "best_for": "You start a long refactor and want it finished by morning without leaving a machine on.",
+  "best_for_zh": "开了一个大重构，想让它天亮前跑完，又不想让哪台机器一直开着。",
+  "surface": "standalone",
+  "tags": [
+    "remote-agents",
+    "always-on",
+    "self-hosted"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ampcode.com/chronicle news feed）。 Self-hosted orbs followed on 2026-10-22. Separate surface from the Amp CLI already in the ledger. 入库核对（2026-11-25）：官方名字只是「Orbs」，加上产品名以便辨认。发布时是 Amp 提供的远程机器（自托管版本三个月后才到），不是自己部署的软件。 首次公开日期来源：https://ampcode.com/news/agents-in-orbs",
+  "revisions": []
+}

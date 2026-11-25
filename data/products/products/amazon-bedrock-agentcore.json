@@ -1,0 +1,36 @@
+{
+  "id": "amazon-bedrock-agentcore",
+  "name": "Amazon Bedrock AgentCore",
+  "name_zh": "Amazon Bedrock AgentCore",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "observability"
+  ],
+  "form": "api",
+  "released": "2025-07-16",
+  "date_precision": "day",
+  "homepage": "https://aws.amazon.com/bedrock/agentcore/",
+  "desc": "AWS runtime and tooling for running AI agents in production at scale.",
+  "desc_zh": "用于规模化部署和运维 AI 智能体的 AWS 运行时与工具集。",
+  "solves": "Agent demos die between prototype and production; AgentCore supplies the runtime, memory, gateway and observability to keep them alive.",
+  "solves_zh": "智能体演示常常卡在原型到生产之间；AgentCore 提供运行时、记忆、网关与可观测能力让它活下来。",
+  "best_for": "You are about to hand a working agent to real users and need identity, tracing and scaling you can audit.",
+  "best_for_zh": "要把一个能跑的智能体交给真实用户，又需要可审计的身份、追踪与扩容能力时。",
+  "surface": "standalone",
+  "tags": [
+    "agent-runtime",
+    "gateway",
+    "observability"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — AWS What's New feed and the AWS Machine Learning blog launch list）。 Missing from the ledger; the ledger has Amazon Bedrock but not AgentCore. Preview was announced 2025-07-16, general availability 2025-10-13, both before the discovery window, so it qualifies only as a missing entry. Distinct from Amazon Bedrock: Bedrock is the model platform, AgentCore is the agent deployment layer on top of it. 入库核对（2026-11-25）：原候选记的是正式发布日 2025-10-13，但公开预览在 2025-07-16 就已开始（AWS 正式发布文章的引用列表写明预览公告的日期）。按规则预览也算首次公开可用，改记 2025-07-16。 首次公开日期来源：https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-is-now-generally-available/",
+  "revisions": []
+}

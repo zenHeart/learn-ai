@@ -1,0 +1,36 @@
+{
+  "id": "wance",
+  "name": "万策",
+  "name_zh": "万策",
+  "vendor_id": "01ai",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-07-01",
+  "date_precision": "month",
+  "homepage": "https://www.lingyiwanwu.com/TrueNorth.html",
+  "desc": "Enterprise decision hub that turns scattered data into judgments",
+  "desc_zh": "把企业分散的数据和经验转成决策判断的中枢平台",
+  "solves": "Reports pile up but judgment stays slow; this organises facts, signals and actions so a decision reaches the business.",
+  "solves_zh": "汇报很多、判断很慢，它把事实、信号和行动组织到一起，让经营判断更快落到业务链路里。",
+  "best_for": "Preparing a quarterly review when the numbers exist but nobody agrees on the call.",
+  "best_for_zh": "开季度经营会前，数据都有但对结论没有把握，先用它把材料和数字理成一条线。",
+  "surface": "standalone",
+  "tags": [
+    "decision-support",
+    "enterprise-agent",
+    "business-analysis"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — lingyiwanwu.com 首页产品与服务导航与页面底部公司大事记时间线）。 官网时间线只给到月份（2026.07），因此 date_precision 为 month，released 取当月首日。老板 AI、销冠 AI、投资官 AI 与万策同批上线且各有独立产品页，账本中分别记录（见 lingyi-boss-ai、lingyi-topsales-ai、lingyi-investor-ai）。万智企业大模型平台已在账本中（2025-03-01），本次不重复提交。 首次公开日期来源：https://www.lingyiwanwu.com/ 首次公开日期仅精确到月。",
+  "revisions": []
+}

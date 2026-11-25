@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Openest large-scale option, and the base Zilliz Cloud is sold on. 首次公开发布日期精度：month-only 来源：https://zilliz.com/learn/introduction-to-milvus-vector-database",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "Openest large-scale option, and the base Zilliz Cloud is sold on. 首次公开发布日期精度：month-only 来源：https://zilliz.com/learn/introduction-to-milvus-vector-database 2026-11-25：date_precision day → month。Zilliz 官方的介绍页只写到「2019 年 11 月开源」。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "Zilliz 官方的介绍页只写到「2019 年 11 月开源」。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

@@ -1,0 +1,36 @@
+{
+  "id": "together-post-training",
+  "name": "Together Post-Training",
+  "name_zh": "Together Post-Training",
+  "vendor_id": "together-ai",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-10-19",
+  "date_precision": "day",
+  "homepage": "https://www.together.ai/post-training",
+  "desc": "Write RL and SFT loops on Together; it tunes the systems underneath.",
+  "desc_zh": "在 Together 上跑自己的 RL 和 SFT 循环，底层系统由平台协同优化。",
+  "solves": "Training a specialist model means owning the whole RL stack, where one wrong setting silently wastes a run; here you write the loop and the platform handles the infrastructure.",
+  "solves_zh": "训练专用模型要自己扛下整条 RL 栈，一个参数设错就悄悄毁掉一轮；这里你只写循环，基础设施交给平台。",
+  "best_for": "You have environment rewards or supervision data for a narrow task and want a model tuned for it without renting a cluster.",
+  "best_for_zh": "手上有一个窄任务的环境奖励或监督数据，想据此调出一个模型，又不想为此租一整批机器。",
+  "surface": "standalone",
+  "tags": [
+    "reinforcement-learning",
+    "supervised-fine-tuning",
+    "custom-models"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.together.ai/blog (Model Shaping category) and https://www.togeth）。 Announced 2026-10-19, inside the window; not in the ledger. The docs carry SFT, DPO and GRPO quickstarts. Distinct from the older Together fine-tuning product: the announcement frames Post-Training as owning the training loop rather than launching managed jobs. Second source is the same publisher. 首次公开日期来源：https://www.together.ai/blog/together-post-training",
+  "revisions": []
+}

@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Proved a Chinese model lab could win a consumer app category overseas — 11M MAU in a year, now MiniMax's revenue pillar. 首次公开发布日期精度：month-only 来源：https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1231/2025123100025.pdf",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "Proved a Chinese model lab could win a consumer app category overseas — 11M MAU in a year, now MiniMax's revenue pillar. 首次公开发布日期精度：month-only 来源：https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1231/2025123100025.pdf 2026-11-25：date_precision day → month。在官方站点上找不到发布日期的一手来源。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "在官方站点上找不到发布日期的一手来源。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

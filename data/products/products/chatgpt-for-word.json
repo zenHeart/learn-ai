@@ -1,0 +1,35 @@
+{
+  "id": "chatgpt-for-word",
+  "name": "ChatGPT for Word",
+  "name_zh": "ChatGPT for Word",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-09-17",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/astra-for-law",
+  "desc": "The same ChatGPT add-in, now drafting and revising inside Word.",
+  "desc_zh": "同一个 ChatGPT 加载项，现在能在 Word 里起草和修改文档。",
+  "solves": "Drafting in a chat tab and pasting into Word loses formatting and tracked changes. The sidebar writes into the document you already have open.",
+  "solves_zh": "在聊天窗口里写完再粘进 Word，格式和修订记录都会丢。侧边栏直接写进你已经打开的那份文档。",
+  "best_for": "Notes need turning into a document, or a draft needs tightening in place.",
+  "best_for_zh": "要把笔记变成一份文档，或者就地改紧一份草稿。",
+  "surface": "in-product",
+  "tags": [
+    "writing",
+    "add-in",
+    "office"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes and OpenAI news）。 Ships through the same Microsoft add-in as ChatGPT for Excel and ChatGPT for PowerPoint; the release notes describe the rollout under September 17, 2026. OpenAI publishes no Word-specific help article, so the announcement page that carries the GA date is used as the entry page. 入库核对（2026-11-25）：嵌在文字处理软件里的 ChatGPT，与账本对 Microsoft 365 Copilot 的分类一致。 首次公开日期来源：https://openai.com/index/astra-for-law",
+  "revisions": []
+}

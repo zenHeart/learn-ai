@@ -1,0 +1,36 @@
+{
+  "id": "claude-for-manufacturing",
+  "name": "Claude for Manufacturing",
+  "name_zh": "Claude for Manufacturing",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-11-12",
+  "date_precision": "day",
+  "homepage": "https://claude.com/solutions/manufacturing",
+  "desc": "Plugin of skills and connectors for plant teams",
+  "desc_zh": "面向工厂团队的技能与连接器插件",
+  "solves": "Estimators dig through old jobs and ERP screens for one quote; the plugin reads requests and drafts it from records.",
+  "solves_zh": "报价员要在旧工单和 ERP 里翻资料，插件读取需求后据记录起草报价。",
+  "best_for": "A quote request lands and you need a costed estimate from similar jobs before the customer calls again.",
+  "best_for_zh": "客户发来询价，想在对方催之前参照相似工单给出成本估算。",
+  "surface": "plugin",
+  "tags": [
+    "manufacturing",
+    "plugin",
+    "connectors"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 A Claude plugin with connectors to Autodesk Fusion, Infor, Microsoft 365 and Oracle NetSuite. The quote omits the screen-reader text '(opens in new tab)' that sits inside the links. Homepage is the industry solution page; no dedicated product page. 首次公开日期来源：https://claude.com/resources/articles/claude-for-manufacturing",
+  "revisions": []
+}

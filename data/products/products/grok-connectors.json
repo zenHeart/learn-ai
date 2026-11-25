@@ -1,0 +1,36 @@
+{
+  "id": "grok-connectors",
+  "name": "Grok Connectors",
+  "name_zh": "Grok Connectors",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-05-06",
+  "date_precision": "day",
+  "homepage": "https://grok.com/connectors",
+  "desc": "Deep links from Grok into the apps you already use every day.",
+  "desc_zh": "把 Grok 深度接入你已在用的邮件、日历、云盘与表格应用。",
+  "solves": "Answers stop at the boundary of the chat window; connectors let Grok read and update the actual tools your work lives in.",
+  "solves_zh": "回答总停在聊天窗口边界；连接器让 Grok 能读写你真正干活的那批工具。",
+  "best_for": "You want Grok to summarize this morning's email and update a slide deck without copying anything across.",
+  "best_for_zh": "想让 Grok 总结今早邮件并更新一份幻灯片，又不想来回复制内容时。",
+  "surface": "in-product",
+  "tags": [
+    "app-integration",
+    "data-access",
+    "workflow"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory）。 Missing from the ledger. Released 2026-05-06, one day before the discovery window opens, so it qualifies as a missing entry rather than a window hit. The homepage grok.com/connectors returns 403 to curl (bot guard); the URL is linked from the official announcement. Category is supporting-tools because connectors are plumbing, not a user-facing assistant. 入库核对（2026-11-25）：官方名字只是「Connectors」，在卡片上认不出属于谁，按账本对产品内功能面的记法（如 ChatGPT Projects）加上产品名。 首次公开日期来源：https://x.ai/news/grok-connectors 官网未直接确认（403）。",
+  "revisions": []
+}

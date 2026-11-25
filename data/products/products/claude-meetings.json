@@ -1,0 +1,35 @@
+{
+  "id": "claude-meetings",
+  "name": "Claude Meetings",
+  "name_zh": "Claude Meetings",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-11-12",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/overview",
+  "desc": "Claude joins video calls as a participant and starts on work",
+  "desc_zh": "以参会者身份加入视频会议并当场开工的 Claude",
+  "solves": "Meetings end with notes nobody acts on; Claude attends the call, then drafts the plans and tasks while you talk.",
+  "solves_zh": "会议开完没人跟进纪要，Claude 直接参会，边听边起草计划和任务。",
+  "best_for": "A stand-up runs long and you want the follow-up tasks written before you are back at your desk.",
+  "best_for_zh": "站会开得太久，想回到工位前就拿到整理好的后续任务。",
+  "surface": "in-product",
+  "tags": [
+    "video-calls",
+    "meeting-notes",
+    "task-drafting"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 In-product surface inside paid Claude plans; Google Meet supported first. No dedicated product page, so the homepage is the general Claude product page. 首次公开日期来源：https://claude.com/resources/articles/claude-meetings",
+  "revisions": []
+}

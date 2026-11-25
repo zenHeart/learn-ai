@@ -1,0 +1,36 @@
+{
+  "id": "deepl-voice",
+  "name": "DeepL Voice",
+  "name_zh": "DeepL Voice",
+  "vendor_id": "deepl",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-04-16",
+  "date_precision": "day",
+  "homepage": "https://www.deepl.com/en/products/voice",
+  "desc": "Real-time spoken translation for meetings and conversations.",
+  "desc_zh": "面向会议和对话的实时语音翻译产品套件",
+  "solves": "Interpreters are expensive and captions arrive late. DeepL Voice translates speech as it is spoken, so everyone stays in their own language during a live call.",
+  "solves_zh": "口译很贵，字幕又总是慢半拍。DeepL Voice 在说话的同时完成翻译，让实时通话里的每个人都留在自己的语言里。",
+  "best_for": "Half the people on the call are nodding along to a language they only half follow.",
+  "best_for_zh": "通话里有一半人，其实只听懂了一门他们并不熟练的语言。",
+  "surface": "standalone",
+  "tags": [
+    "speech-translation",
+    "real-time",
+    "meetings"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.deepl.com/en/press-release and https://www.deepl.com/en/blog , t）。 Launched 2026-04-16, before the discovery window, but the ledger holds only DeepL Translator (2017) for this vendor so it is missing by definition. The suite ships Voice for Meetings (early access programme in June 2026, registration opened at launch), Voice for Conversations (mobile and web, generally available at launch) and Group Conversations, plus the Aure voice model. Two dated follow-ups were read and are the same product: voice-to-voice reached general availability on 2026-04-24 (https://www.deepl.com/en/blog/voice-to-voice-translation-is-here), and on 2026-09-15 DeepL shipped voice-preserving models plus 'a unified desktop app for Zoom, Teams and Meet' (https://www.deepl.com/en/blog/deepl-voice-preserves-your-voice-across-languages). No media source was read. 首次公开日期来源：https://www.deepl.com/en/press-release/deepl-unveils-real-time-spoken-translation-breaking-the-next-language-barrier-with-voice-to-voice",
+  "revisions": []
+}

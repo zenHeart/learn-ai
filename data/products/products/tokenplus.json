@@ -1,0 +1,36 @@
+{
+  "id": "tokenplus",
+  "name": "TokenPlus 词元优选",
+  "name_zh": "TokenPlus 词元优选",
+  "vendor_id": "siliconflow",
+  "region": "cn",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "observability"
+  ],
+  "form": "api",
+  "released": "2026-08-17",
+  "date_precision": "day",
+  "homepage": "https://www.tokenplus.cn/",
+  "desc": "One API gateway that routes model calls across providers",
+  "desc_zh": "一套API接入多家模型并智能路由的调度平台",
+  "solves": "Each provider means its own key, docs and bill; this unifies them behind one API with routing and per-team budgets.",
+  "solves_zh": "每家模型都要单独注册、对接、对账，这里用一套API统一接入，按团队分预算并自动走更便宜的路线。",
+  "best_for": "Consolidating five model vendors into one key before the monthly bill review.",
+  "best_for_zh": "月底对账前，把分散在几家模型厂商的调用统一到一个平台核算成本。",
+  "surface": "standalone",
+  "tags": [
+    "api-gateway",
+    "model-routing",
+    "cost-control"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — siliconflow.cn 首页产品上新横幅指向 www.tokenplus.cn，并在 www.tokenplus.cn/docs/changelo）。 2026-08-17 是官方更新公告中的邀测开启日（beta 计为公开可用）。硅基流动官网首页随后以'正式上线'宣传，媒体报道的正式推出时间在 2026 年 10 月，但官网新闻列表中没有对应的独立发布文章，故不采用。产品线另含预留实例、私有化大模型服务平台与网关，本次未逐一定位其上线日期。 入库核对（2026-11-25）：入库决定：接受。2026-08-17 是官方更新公告里的邀测开启日，与账本里按邀请制预览日记的 QoderWake 是同一种情况；正式发布的日期没有找到一手来源。 首次公开日期来源：https://www.tokenplus.cn/docs/changelog",
+  "revisions": []
+}

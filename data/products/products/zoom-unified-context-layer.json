@@ -1,0 +1,37 @@
+{
+  "id": "zoom-unified-context-layer",
+  "name": "Zoom Unified Context Layer",
+  "name_zh": "Zoom Unified Context Layer",
+  "vendor_id": "zoom",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "agent-building",
+    "office"
+  ],
+  "form": "api",
+  "released": "2026-10-20",
+  "date_precision": "day",
+  "homepage": "https://www.zoom.com/en/products/ai-assistant/",
+  "desc": "Zoom layer linking meeting history to documents and business data.",
+  "desc_zh": "把会议记录与文档、业务数据连起来的 Zoom 上下文层",
+  "solves": "Context sits in meetings, chat and five SaaS tools, so agents lose the thread. This layer links conversation history with the related documents and data in near real time.",
+  "solves_zh": "上下文散落在会议、聊天和五六个 SaaS 工具里，智能体常常接不上线索。这一层把对话历史和相关的文档、数据近实时地连起来。",
+  "best_for": "An agent must answer a question that spans last week's call and the CRM record.",
+  "best_for_zh": "智能体要回答的问题横跨上周那通电话和 CRM 里的记录。",
+  "surface": "standalone",
+  "tags": [
+    "context-layer",
+    "cross-app-linking",
+    "agent-context"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.zoom.com/en/products/whats-new/ (product timeline, October 2026)）。 Announced at Zoomtopia on 2026-10-20. Zoom describes it as bringing together conversations with near real-time activity across Zoom and connected third-party applications, with configurable access controls and coordination among AI agents. It is the substrate the Search and Ask APIs and the expanded MCP servers read from, which is why those are recorded as separate cards. Zoom's newsroom headline for the same event calls it 'a new Unified Context Layer that helps turn meeting conversations into completed work'. No media source was read. 评审修正（2026-11-25）：官方名字「Unified Context Layer」是通用词，带上厂商名以便辨认。 首次公开日期来源：https://news.zoom.com/zoomtopia-2026-news",
+  "revisions": []
+}

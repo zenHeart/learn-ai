@@ -1,0 +1,35 @@
+{
+  "id": "deep-agents-code",
+  "name": "Deep Agents Code",
+  "name_zh": "Deep Agents Code",
+  "vendor_id": "langchain-inc",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-04-30",
+  "date_precision": "day",
+  "homepage": "https://www.langchain.com/dcode",
+  "desc": "Open-source terminal coding agent built on the Deep Agents SDK.",
+  "desc_zh": "基于 Deep Agents SDK 的开源终端编程智能体。",
+  "solves": "Most terminal agents lock you into their harness; this one lets you swap the model and change how code execution is approved.",
+  "solves_zh": "多数终端智能体把你锁在它的框架里；这个可以换模型，也能改代码执行的审批方式。",
+  "best_for": "You want a coding agent you can read, fork and re-approve on your own terms.",
+  "best_for_zh": "想要一个能读、能改、能按自己规矩设置审批的编程智能体。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "terminal-agent",
+    "byo-model"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — langchain.com product pages and the PyPI release record）。 Shipped as the `dcode` command. Released 2026-04-30, one week before the discovery window opens, and absent from the ledger, so it is recorded under brief rule (b). 首次公开日期来源：https://pypi.org/pypi/deepagents-code/json",
+  "revisions": []
+}

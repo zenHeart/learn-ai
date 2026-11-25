@@ -1,0 +1,52 @@
+{
+  "id": "mistral-code",
+  "name": "Mistral Code",
+  "name_zh": "Mistral Code",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-06-04",
+  "date_precision": "day",
+  "homepage": "https://mistral.ai/products/mistral-code",
+  "desc": "Enterprise AI coding assistant for JetBrains and VS Code",
+  "desc_zh": "面向企业的 JetBrains 和 VS Code 编码助手",
+  "solves": "Enterprise teams need coding AI with audit logs and access control; Mistral Code bundles them with self-hosting.",
+  "solves_zh": "企业团队需要带审计和权限管控的编码 AI，Mistral Code 还支持私有化部署。",
+  "best_for": "A regulated bank wants an in-IDE assistant that can run inside its own network.",
+  "best_for_zh": "受监管的银行想要一个能在自家内网运行的 IDE 编码助手。",
+  "surface": "extension",
+  "tags": [
+    "enterprise-coding",
+    "self-hosted",
+    "jetbrains-vscode"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "merged",
+  "superseded_by": "vibe",
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — official news index of the vendor (https://mistral.ai/news)）。 Outside the window. First availability was a private beta on 2025-06-04. SURPRISE: the product URL now redirects to https://mistral.ai/products/vibe/, titled 'Mistral Vibe (formerly Le Chat) - AI chat and coding agent', so Mistral Code appears to have been folded into Mistral Vibe; confirm before adding. Built on the open-source Continue project. 入库核对（2026-11-25）：入库核对：产品页 mistral.ai/products/mistral-code 现在跳转到 Mistral Vibe 的产品页（标题「Mistral Vibe (formerly Le Chat) - AI chat and coding agent」）。入库后本档将标为已并入 vibe。 首次公开日期来源：https://mistral.ai/news/mistral-code/ 官网未直接确认（redirect->https://mistral.ai/products/vibe/）。 2026-11-25：status active → merged; superseded_by null → vibe。Mistral Code 的产品页现在跳转到 Mistral Vibe 的产品页（标题「Mistral Vibe (formerly Le Chat) - AI chat and coding agent」）：编程助手并入了面向办公与编程的 Vibe",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "Mistral Code 的产品页现在跳转到 Mistral Vibe 的产品页（标题「Mistral Vibe (formerly Le Chat) - AI chat and coding agent」）：编程助手并入了面向办公与编程的 Vibe"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "vibe",
+      "why": "Mistral Code 的产品页现在跳转到 Mistral Vibe 的产品页（标题「Mistral Vibe (formerly Le Chat) - AI chat and coding agent」）：编程助手并入了面向办公与编程的 Vibe"
+    }
+  ]
+}

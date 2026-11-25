@@ -1,0 +1,37 @@
+{
+  "id": "edgeone-makers",
+  "name": "EdgeOne Makers",
+  "name_zh": "EdgeOne Makers",
+  "vendor_id": "tencent-cloud",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-09",
+  "date_precision": "day",
+  "homepage": "https://pages.edgeone.ai/zh",
+  "desc": "Tencent Cloud edge platform for web apps and AI agents",
+  "desc_zh": "腾讯云的边缘 Web 与智能体开发部署平台",
+  "solves": "Running an agent needs servers, sandboxes and tracing you would otherwise build yourself; push code and it runs at the edge.",
+  "solves_zh": "跑智能体要自己搭服务器、沙箱和链路追踪，现在推送代码就能在边缘节点跑起来。",
+  "best_for": "You have an agent prototype on a laptop and need a public URL with sandbox, memory and logs today.",
+  "best_for_zh": "你手上有个跑在笔记本上的智能体原型，今天就要一个带沙箱、记忆和日志的公网地址。",
+  "surface": "standalone",
+  "tags": [
+    "edge-deploy",
+    "agent-runtime",
+    "sandbox",
+    "serverless"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：B — https://www.producthunt.com/products/tencent-edgeone-2 (ranked #1 of the wee）。 In-window rename plus the arrival of the AI-agent capability: on 2026-06-09 EdgeOne Pages became EdgeOne Makers and gained native Agent support (runtime, sandbox, session storage, tracing). Predecessor history from the same official news page: EdgeOne Pages Beta about a year before 2026-02-06, GA on 2026-02-06. Neither EdgeOne Pages nor EdgeOne Makers is in the ledger. Paid plans (Pro/Business) went live 2026-11-09 per https://cloud.tencent.com/announce/detail/2541. Product Hunt listed the launch on 2026-06-23/24, which is the media/launch-event date, not the official product date. 入库核对（2026-11-25）：pages.edgeone.ai 是腾讯云国际站的产品，地区筛选里应归入国际，与 ima、WorkBuddy 的记法一致。 首次公开日期来源：https://pages.edgeone.ai/resources/announcement-makers-rename",
+  "revisions": []
+}

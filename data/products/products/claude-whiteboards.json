@@ -1,0 +1,35 @@
+{
+  "id": "claude-whiteboards",
+  "name": "Claude Whiteboards",
+  "name_zh": "Claude Whiteboards",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-11-10",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/overview",
+  "desc": "Shared board where a team brainstorms with Claude",
+  "desc_zh": "团队和 Claude 一起头脑风暴的共享白板",
+  "solves": "Brainstorm notes scatter across chat and docs; a Whiteboard keeps the team's ideas and Claude's suggestions in one place.",
+  "solves_zh": "头脑风暴的记录散落在聊天和文档里，白板把大家的想法和 Claude 的建议放在同一处。",
+  "best_for": "A kickoff call needs a plan by the end of the hour and the room is still arguing about scope.",
+  "best_for_zh": "启动会还有一小时就要出方案，屋里还在为范围争论。",
+  "surface": "in-product",
+  "tags": [
+    "brainstorming",
+    "collaboration",
+    "visual-board"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Beta on all paid plans; off by default on Enterprise. Launched in the same article as Claude Sheets and the Claude Data rename. Second source is not independent media: a media write-up was not located. 首次公开日期来源：https://claude.com/resources/articles/sheets-whiteboards-data",
+  "revisions": []
+}

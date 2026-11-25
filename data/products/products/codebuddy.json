@@ -9,7 +9,7 @@
     "coding"
   ],
   "form": "ide",
-  "released": "2025-07-22",
+  "released": "2025-08-22",
   "homepage": "https://copilot.tencent.com",
   "desc": "Tencent Cloud coding assistant for IDE and terminal",
   "desc_zh": "腾讯云的编码助手，IDE 与命令行都有",
@@ -32,8 +32,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2025-07-22/day → 2025-08-22/day; source https://www.codebuddy.cn/docs/ide/release-notes/release-notes。原日期 2025-07-22 按媒体说法是申请制内测，申请制不算公开。官方更新日志最早的两个版本 0.1.23 与 0.1.24 都记在 2025-08-22",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-07-22/day",
+      "to": "2025-08-22/day",
+      "why": "原日期 2025-07-22 按媒体说法是申请制内测，申请制不算公开。官方更新日志最早的两个版本 0.1.23 与 0.1.24 都记在 2025-08-22"
+    }
+  ],
   "date_precision": "day"
 }

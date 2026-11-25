@@ -6,13 +6,14 @@
   "region": "intl",
   "category": "multimodal-creation",
   "use_cases": [
-    "image-design"
+    "image-design",
+    "coding"
   ],
   "form": "web",
   "surface": "standalone",
-  "released": "2025-05-01",
-  "date_precision": "month",
-  "homepage": "https://stitch.withgoogle.com/",
+  "released": "2025-05-20",
+  "date_precision": "day",
+  "homepage": "https://stitch.google.com/",
   "desc": "Google's natural language to UI design tool.",
   "desc_zh": "Google 的自然语言转 UI 设计工具",
   "solves": "Getting a first-pass interface means describing it to a designer. Stitch turns the sentence into editable UI you can refine.",
@@ -25,7 +26,37 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://ai.google/。来源：https://stitch.withgoogle.com/",
-  "revisions": []
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：https://ai.google/。来源：https://stitch.withgoogle.com/ 2026-11-25：删除重复档案 google-stitch（Google Stitch / Google Stitch，2025-05-01），它与本档是同一个产品：同一个产品、同一个名字记了两条；Google 自己的产品名是 Stitch 2026-11-25：released 2025-05-01/month → 2025-05-20/day; source https://developers.googleblog.com/stitch-a-new-way-to-design-uis。原值 2025-05-01 只是月份占位。Google 开发者博客的发布文日期是 2025-05-20（Google I/O 2025） 2026-11-25：homepage \"https://stitch.withgoogle.com/\" → \"https://stitch.google.com/\"。旧地址 stitch.withgoogle.com 现在跳转到 stitch.google.com 2026-11-25：use_cases [\"image-design\"] → [\"image-design\",\"coding\"]。并入被删除的重复档案 google-stitch 的场景：Stitch 产出的是可编辑的前端界面",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-05-01/month",
+      "to": "2025-05-20/day",
+      "why": "原值 2025-05-01 只是月份占位。Google 开发者博客的发布文日期是 2025-05-20（Google I/O 2025）"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "homepage",
+      "from": "https://stitch.withgoogle.com/",
+      "to": "https://stitch.google.com/",
+      "why": "旧地址 stitch.withgoogle.com 现在跳转到 stitch.google.com"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "use_cases",
+      "from": [
+        "image-design"
+      ],
+      "to": [
+        "image-design",
+        "coding"
+      ],
+      "why": "并入被删除的重复档案 google-stitch 的场景：Stitch 产出的是可编辑的前端界面"
+    }
+  ]
 }

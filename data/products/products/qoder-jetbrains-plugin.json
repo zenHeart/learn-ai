@@ -1,0 +1,36 @@
+{
+  "id": "qoder-jetbrains-plugin",
+  "name": "Qoder JetBrains Plugin",
+  "name_zh": "Qoder JetBrains 插件",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-11-12",
+  "date_precision": "day",
+  "homepage": "https://qoder.com/jetbrains",
+  "desc": "Qoder coding agent inside JetBrains IDEs",
+  "desc_zh": "装进 JetBrains 系列 IDE 的智能体编程插件",
+  "solves": "Switching editors to use an AI assistant breaks focus; completion, Ask and Agent now run in the same IDE.",
+  "solves_zh": "为了用智能体编程要换编辑器，现在补全、问答和 Agent 都在原来的 IDE 里。",
+  "best_for": "You work in IntelliJ IDEA or PyCharm and want an agent to plan and edit the open project.",
+  "best_for_zh": "你日常用 IntelliJ IDEA 或 PyCharm，想让智能体直接在当前项目里规划和改代码。",
+  "surface": "plugin",
+  "tags": [
+    "code-completion",
+    "agent-mode",
+    "mcp",
+    "project-rules"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://changelog.qoder.com/llms.txt, https://changelog.qoder.com/plugin.md）。 Backfill: released before the window and absent from the ledger. Date taken from the vendor changelog label (November 12, 2025); JetBrains Marketplace timestamps the first build 0.5.0 at 2025-11-11 16:31:41 UTC, which is 2025-11-12 00:31 Beijing time, so the two sources agree. Marketplace is also the only independent cross-check found; no media article was located for this member. Page title: 'Qoder JetBrains 插件 - IDEA/PyCharm AI 编程插件'. 入库核对（2026-11-25）：地区与账本里的 Qoder（IDE）保持一致。 首次公开日期来源：https://changelog.qoder.com/plugin",
+  "revisions": []
+}

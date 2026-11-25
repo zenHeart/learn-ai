@@ -1,0 +1,36 @@
+{
+  "id": "xiaomi-mimo-studio",
+  "name": "Xiaomi MiMo Studio",
+  "name_zh": "Xiaomi MiMo Studio",
+  "vendor_id": "xiaomi",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2025-12-17",
+  "date_precision": "day",
+  "homepage": "https://aistudio.xiaomimimo.com/",
+  "desc": "Web chat for trying Xiaomi's MiMo models and voices",
+  "desc_zh": "小米的网页对话产品，直接体验 MiMo 模型和语音能力",
+  "solves": "New MiMo models arrive every few weeks. MiMo Studio lets you try each one in a browser chat, no API key needed.",
+  "solves_zh": "MiMo 模型更新很快，想试不用再写代码接 API，网页里就能对话、传文件、试语音。",
+  "best_for": "A new MiMo release is announced and you want a quick feel before wiring it into your app.",
+  "best_for_zh": "看到 MiMo 发了新模型，想先聊几句、传份文件看看效果，再决定要不要接入。",
+  "surface": "standalone",
+  "tags": [
+    "model-playground",
+    "file-upload",
+    "voice-modules"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mimo.mi.com/ (product matrix) and https://mimo.mi.com/llms.txt (Upda）。 The changelog is the only official surface that names this product 'MiMo Studio' from V1.0.0. The mimo.mi.com home page labels the same chat entry 'MiMo Chat' and its image alt text reads 'Xiaomi MiMo Studio'; later changelog entries call the chat module 'MiMo Chat'. So 'MiMo Chat' looks like the tab label, not an older product name. No rename announcement was found. The official changelog has year typos in its middle entries (V1.2.0–V1.3.0 are printed as 2025-01-xx although they sit between 2025-12-26 and 2026-02-05, and V3.4.3 is printed 2026-11-29 which is after V3.4.4 of 2026-11-05); the V1.0.0 date is consistent with the API platform release of 2025-12-16 and was used as printed. MiMo Studio and MiMo Claw are two tabs of the same web app (aistudio.xiaomimimo.com); they are listed as two products because they are named and announced separately. 首次公开日期来源：https://mimo.mi.com/static/docs/updates/feature/studio.md",
+  "revisions": []
+}

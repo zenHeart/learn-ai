@@ -1,0 +1,35 @@
+{
+  "id": "meeting-ai-hosting",
+  "name": "腾讯会议 AI 托管",
+  "name_zh": "腾讯会议 AI 托管",
+  "vendor_id": "tencent",
+  "region": "cn",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-09-11",
+  "date_precision": "day",
+  "homepage": "https://meeting.tencent.com/ai",
+  "desc": "Tencent Meeting mode where Yuanbao attends in your place",
+  "desc_zh": "腾讯会议里让元宝替你入会的功能",
+  "solves": "Missing the start of a meeting leaves you asking colleagues what happened; Yuanbao joins instead and writes the notes.",
+  "solves_zh": "错过会议开头只能回头问同事，现在让元宝代替你入会，纪要它来写。",
+  "best_for": "Two meetings overlap, or you are stuck in transit, and one of them still has to be heard.",
+  "best_for_zh": "两个会撞期，或者你还在路上，但其中一个必须有人听完整场。",
+  "surface": "in-product",
+  "tags": [
+    "meeting-notes",
+    "agent-attendance",
+    "yuanbao"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://meeting.tencent.com/support/version, https://meeting.tencent.com/new）。 Backfill: in-product surface of 腾讯会议, absent from the ledger. The official news post is dated 2025-09-11 and states the feature went live that day; the V3.38.0 changelog entry (2025-10-25) restates it with the release tagline, so the news post is used for the date. Entry point is the AI 托管 tab under 会议AI at https://meeting.tencent.com/ai. 入库核对（2026-11-25）：官方新闻稿的叫法是「腾讯会议联合元宝全新推出的 AI 托管功能」；只写「AI 托管」在卡片上指代不明。 首次公开日期来源：https://meeting.tencent.com/news/aitg20250904.html",
+  "revisions": []
+}

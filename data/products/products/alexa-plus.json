@@ -1,0 +1,36 @@
+{
+  "id": "alexa-plus",
+  "name": "Alexa+",
+  "name_zh": "Alexa+",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2025-02-26",
+  "date_precision": "day",
+  "homepage": "https://www.amazon.com/b?ie=UTF8&node=206207565011",
+  "desc": "Amazon's next-generation generative AI assistant for Echo and the Alexa app.",
+  "desc_zh": "亚马逊新一代生成式 AI 助手，通过 Echo 设备与 Alexa 应用使用。",
+  "solves": "Old Alexa answered single questions and often misheard; Alexa+ holds a real conversation and carries multi-step tasks across apps and devices.",
+  "solves_zh": "旧版 Alexa 只能回答单个问题还常听错；Alexa+ 能真正对话，并跨应用、跨设备完成多步任务。",
+  "best_for": "You are cooking and want to set a timer, reorder supplies, and check your calendar without touching a screen.",
+  "best_for_zh": "做饭时想设计时器、补货并查看日程，却不想碰屏幕的时刻。",
+  "surface": "in-product",
+  "tags": [
+    "voice-assistant",
+    "smart-home",
+    "task-automation"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — aboutamazon.com news and Artificial Intelligence news directories; channel A）。 Missing from the ledger. First public availability was early access in the US and Canada on 2025-02-26; general availability there followed on 2026-02-04 (CNBC). Japan launch 2026-10-28. Alexa+ is the assistant layer that also powers Alexa for Shopping, so the two entries must not be merged. Homepage is Amazon's Alexa+ storefront page; the product itself lives inside the Alexa app and on Echo hardware. 首次公开日期来源：https://www.aboutamazon.com/news/devices/new-alexa-generative-artificial-intelligence",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "muse-spaces",
+  "name": "Muse spaces",
+  "name_zh": "Muse 空间",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-11-06",
+  "date_precision": "day",
+  "homepage": "https://muse.ai",
+  "desc": "Custom experiences you design inside the Muse app",
+  "desc_zh": "在 Muse 应用里自行设计的专属体验空间",
+  "solves": "One generic assistant rarely fits every part of life; a space tailors Muse to a single job or interest.",
+  "solves_zh": "一个通用助手很难兼顾生活的方方面面，space 让 Muse 专注一件事。",
+  "best_for": "You want a Muse that only knows your side project and ignores work email.",
+  "best_for_zh": "想要一个只了解副业项目、不碰工作邮件的 Muse。",
+  "surface": "in-product",
+  "tags": [
+    "personalization",
+    "spaces",
+    "personal-agent"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://about.fb.com/news/ (About Meta newsroom)）。 In-product surface of Muse (in the ledger at 2026-09-08). Official wording is lowercase 'spaces'. The Chinese name is not an official vendor name. No independent second source located. 首次公开日期来源：https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/",
+  "revisions": []
+}

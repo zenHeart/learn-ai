@@ -1,0 +1,36 @@
+{
+  "id": "grok-build-mode",
+  "name": "Grok Build Mode",
+  "name_zh": "Grok Build Mode",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "agent-building",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-07-28",
+  "date_precision": "day",
+  "homepage": "https://grok.com/build",
+  "desc": "Describe an idea and Grok builds a working site, app or dashboard.",
+  "desc_zh": "在对话里描述一个想法，Grok 就做出可发布的网站、应用、游戏或看板。",
+  "solves": "Turning an idea into something clickable used to need a project setup; the preview appears in the conversation and publishes to a link.",
+  "solves_zh": "把想法变成能点的东西原本要搭工程；现在预览直接长在对话里，还能发布成链接。",
+  "best_for": "You want a small internal dashboard live this afternoon without opening a code editor.",
+  "best_for_zh": "想在今天下午就把一个小内部看板跑起来，又不想开代码编辑器时。",
+  "surface": "in-product",
+  "tags": [
+    "app-builder",
+    "live-preview",
+    "publishing"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory）。 Early Beta for SuperGrok Heavy subscribers on web, iOS and Android. This is a distinct capability inside Grok and is not the same product as Grok Build, the CLI coding agent already in the ledger. The homepage grok.com/build returns 403 to curl (bot guard) but its canonical URL is confirmed through the page reader. 入库核对（2026-11-25）：官方名字只是「Build Mode」，加上产品名以便辨认。 首次公开日期来源：https://x.ai/news/grok-build-mode 官网未直接确认（403）。",
+  "revisions": []
+}

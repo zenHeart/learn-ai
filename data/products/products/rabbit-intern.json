@@ -1,0 +1,37 @@
+{
+  "id": "rabbit-intern",
+  "name": "rabbit intern",
+  "name_zh": "rabbit intern",
+  "vendor_id": "rabbit-inc",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "office",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2025-06-13",
+  "date_precision": "day",
+  "homepage": "https://www.rabbit.tech/",
+  "desc": "Rabbit's all-purpose software agent that delivers finished websites, reports and decks.",
+  "desc_zh": "rabbit 的通用软件智能体，直接交付成品网站、报告和幻灯片。",
+  "solves": "Outsourcing a website or a research deck means briefing a human team; intern takes the brief and comes back with the finished artifact.",
+  "solves_zh": "外包一个网站或研究报告要给人类团队反复对接；intern 接过需求，直接带回成品。",
+  "best_for": "You are out to lunch and want a market-research presentation waiting when you get back.",
+  "best_for_zh": "外出吃个午饭，回来就想看到一份市场调研演示已经做好时。",
+  "surface": "standalone",
+  "tags": [
+    "general-agent",
+    "deliverables",
+    "no-code"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — rabbit.tech blog and newsroom directories）。 Missing from the ledger. rabbit's first software product alongside the R1 hardware, launched 2025-06-13. The launch page itself carries no date; the date is on the newsroom index beside the headline, and the launch page confirms the product. rabbit.tech/intern returns 404, so the homepage is the product site. 首次公开日期来源：https://www.rabbit.tech/newsroom 官网未直接确认（redirect->https://www.rabbit.tech/）。",
+  "revisions": []
+}

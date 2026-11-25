@@ -1,0 +1,36 @@
+{
+  "id": "decisions-api",
+  "name": "Decisions API",
+  "name_zh": "Decisions API",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-09-29",
+  "date_precision": "day",
+  "homepage": "https://developers.openai.com/api/docs/guides/decisions",
+  "desc": "A low-latency endpoint for picking one answer from a fixed set.",
+  "desc_zh": "一个低延迟接口，用来从固定选项里挑出一个答案。",
+  "solves": "A full model call is slow and expensive when the answer is one of five labels. Decisions API keeps the cost down for classification, routing and next-step choices.",
+  "solves_zh": "答案只是五个标签之一时，调一次完整模型又慢又贵。Decisions API 把分类、路由和下一步选择这类调用的成本压下来。",
+  "best_for": "Your app needs to classify, route or branch on every request.",
+  "best_for_zh": "你的应用要在每个请求上做分类、路由或分支判断。",
+  "surface": "standalone",
+  "tags": [
+    "classification",
+    "low-latency",
+    "api"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI DevDay 2026 recap, https://openai.com/index/devday-2026-recap）。 Limited preview on 2026-09-29; general availability with GPT-6 Luna announced 2026-10-22. platform.openai.com/docs/guides/decisions redirects to developers.openai.com. 首次公开日期来源：https://openai.com/index/decisions-api 官网未直接确认（redirect->https://developers.openai.com/api/docs/guides/decisions）。",
+  "revisions": []
+}

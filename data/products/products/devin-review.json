@@ -1,0 +1,35 @@
+{
+  "id": "devin-review",
+  "name": "Devin Review",
+  "name_zh": "Devin Review",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-01-21",
+  "date_precision": "day",
+  "homepage": "https://app.devin.ai/review",
+  "desc": "Review surface where Devin walks through a pull request with you.",
+  "desc_zh": "和 Devin 一起逐个过 Pull Request 的审查界面。",
+  "solves": "Reviewing agent-written diffs by scrolling leaves you guessing at intent; the agent explains each change and you answer it inline.",
+  "solves_zh": "滚动浏览智能体写的 diff 只能靠猜意图；现在智能体会逐段解释改动，你当场追问。",
+  "best_for": "A large agent pull request lands and you need to understand it before approving.",
+  "best_for_zh": "一个很大的智能体 Pull Request 进来，批准前想先弄懂它。",
+  "surface": "standalone",
+  "tags": [
+    "code-review",
+    "diff-walkthrough",
+    "pull-request"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cognition.com/blog directory）。 Distinct review surface inside the Devin product; a Review 2.0 followed on 2026-11-05 and it reached Windsurf on 2026-05-06. 首次公开日期来源：https://cognition.com/blog/devin-review",
+  "revisions": []
+}

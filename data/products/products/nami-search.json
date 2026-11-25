@@ -9,8 +9,8 @@
     "research"
   ],
   "form": "web",
-  "released": "2024-11-27",
-  "homepage": "https://www.n.cn",
+  "released": "2024-11-01",
+  "homepage": "https://bot.n.cn/",
   "desc": "360's AI search, aimed at ordinary readers.",
   "desc_zh": "360 做的 AI 搜索，结果直接给中文答案。",
   "solves": "Search hands back URLs, and reading ten of them is still the work. Nami turns the results into a Chinese write-up you read once.",
@@ -28,8 +28,25 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网可访问但为前端渲染，仅取到「纳米AI」字样，未取到可判读的页面标题，故未完全确认。",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网可访问但为前端渲染，仅取到「纳米AI」字样，未取到可判读的页面标题，故未完全确认。 2026-11-25：删除重复档案 360-ai（360 纳米AI搜索 / 360 纳米AI搜索，2023-11-01），它与本档是同一个产品：同一个产品记了两条。360 官方新闻写「自2024年11月推出后」，2023-11-01 不可能是纳米AI搜索的上线日；保留名字和日期都对的那条 2026-11-25：released 2024-11-27/day → 2024-11-01/month; source https://www.360.cn/n/12656.html。原值 2024-11-27 标成精确到日，但找不到官方的日级来源。360 官方新闻只写到「自2024年11月推出后」，所以按月份精度记 2026-11-25：homepage \"https://www.n.cn\" → \"https://bot.n.cn/\"。原地址 www.n.cn 现在跳转到 work.n.cn（另一个产品 纳米Work）；bot.n.cn 返回的是纳米AI 页面",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2024-11-27/day",
+      "to": "2024-11-01/month",
+      "why": "原值 2024-11-27 标成精确到日，但找不到官方的日级来源。360 官方新闻只写到「自2024年11月推出后」，所以按月份精度记"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "homepage",
+      "from": "https://www.n.cn",
+      "to": "https://bot.n.cn/",
+      "why": "原地址 www.n.cn 现在跳转到 work.n.cn（另一个产品 纳米Work）；bot.n.cn 返回的是纳米AI 页面"
+    }
+  ],
+  "date_precision": "month"
 }
