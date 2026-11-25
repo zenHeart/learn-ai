@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 650" width="100%" height="100%" role="img" aria-labelledby="uu-connect-title uu-connect-desc">
+  <title id="uu-connect-title">UU 远程一次连接里，画面和操作怎样在两端之间来回</title>
+  <desc id="uu-connect-desc">这张时序图按编号回答一个问题：你在主控端输入设备 ID 和验证码之后，画面和操作是怎样在两台设备之间来回的。图里有三个对象：主控端，就是你手里操作的设备；被控端，就是被远程操作的那台电脑；网易的服务，只画成一个框。第一步，主控端把被控端的设备 ID 与验证码发给网易的服务。第二步，网易的服务校验身份并建连；这一步的内部流程官方未公开，图里只有一个框，没有画怎么校验，也没有画数据走直连还是中转。建连完成后，两端开始收发数据。第三步，被控端把采集到的画面与声音编码成数据流，持续传送给主控端，这是数据量大的下行。第四步，主控端把键盘、鼠标、触控等操作事件发给被控端，这是数据量小的上行。第五步，被控端执行这些操作，屏幕内容变化，然后回到第三步继续同步。第三步到第五步每次操作都会重复。第三步和第四步的两条数据流画在一个虚线框里，表示官方称两端之间是端到端加密；具体的加密算法、编解码器、传输协议、端口和时延，官方都没有公开，图里也没有画。主控端这一侧做的事是解码并显示画面、播放声音，以及采集你的键鼠与触控输入；被控端这一侧做的事是采集屏幕画面与声音，以及执行操作。</desc>
+
+  <defs>
+    <linearGradient id="uuBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="uuGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <filter id="uuShadow" x="-12%" y="-12%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="uuArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+      .t-num { fill: #0f172a; font-size: 11px; font-weight: 700; }
+      .t-rose { fill: #fda4af; font-size: 10.5px; }
+      .t-amber { fill: #fde68a; font-size: 10.5px; }
+    </style>
+  </defs>
+
+  <rect width="1020" height="650" fill="url(#uuBg)"/>
+  <rect width="1020" height="650" fill="url(#uuGrid)"/>
+
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#fb923c"/>
+    <text x="20" y="21" class="t-title">UU 远程一次连接里，画面和操作怎样在两端之间来回</text>
+    <text x="20" y="40" class="t-sub">编号即顺序。建连之后，画面与声音走下行，键鼠与触控事件走上行；③④⑤ 每次操作都重复一遍</text>
+  </g>
+
+  <!-- 第 1 步：主控端把设备 ID 与验证码发给网易的服务 -->
+  <path d="M 190 224 V 196 H 500 V 178" fill="none" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <circle cx="212" cy="186" r="9" fill="#38bdf8"/>
+  <text x="212" y="190" class="t-num" text-anchor="middle">1</text>
+  <text x="228" y="190" class="t-cap">被控端的设备 ID 与验证码</text>
+
+  <!-- 网易的服务：只画成一个对象 -->
+  <rect x="346" y="92" width="328" height="80" rx="9" fill="#0f172a"/>
+  <rect x="346" y="92" width="328" height="80" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" filter="url(#uuShadow)"/>
+  <text x="510" y="116" class="t-card" text-anchor="middle">网易的服务</text>
+  <circle cx="410" cy="134" r="9" fill="#fbbf24"/>
+  <text x="410" y="138" class="t-num" text-anchor="middle">2</text>
+  <text x="426" y="138" class="t-body">校验身份并建连</text>
+  <text x="426" y="158" class="t-rose">内部流程官方未公开</text>
+
+  <line x1="550" y1="172" x2="550" y2="212" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="560" y="206" class="t-amber">连接建好</text>
+
+  <!-- 主控端 -->
+  <rect x="40" y="224" width="300" height="336" rx="9" fill="#0f172a"/>
+  <rect x="40" y="224" width="300" height="336" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5" filter="url(#uuShadow)"/>
+  <text x="190" y="254" class="t-card" text-anchor="middle">主控端</text>
+  <text x="190" y="274" class="t-note" text-anchor="middle">你手里操作的设备</text>
+  <text x="190" y="322" class="t-body" text-anchor="middle">解码并显示画面、播放声音</text>
+  <text x="190" y="396" class="t-body" text-anchor="middle">采集你的键鼠与触控输入</text>
+
+  <!-- 被控端 -->
+  <rect x="680" y="224" width="300" height="336" rx="9" fill="#0f172a"/>
+  <rect x="680" y="224" width="300" height="336" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5" filter="url(#uuShadow)"/>
+  <text x="830" y="254" class="t-card" text-anchor="middle">被控端</text>
+  <text x="830" y="274" class="t-note" text-anchor="middle">被远程操作的那台电脑</text>
+  <text x="830" y="322" class="t-body" text-anchor="middle">采集屏幕画面与声音</text>
+  <circle cx="706" cy="392" r="9" fill="#34d399"/>
+  <text x="706" y="396" class="t-num" text-anchor="middle">5</text>
+  <text x="722" y="396" class="t-body">执行操作，屏幕内容变化</text>
+  <path d="M 942 406 V 328" fill="none" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#uuArrow)"/>
+  <text x="930" y="368" class="t-cap" text-anchor="end">回到 ③</text>
+
+  <!-- 两端之间的数据流：官方称端到端加密 -->
+  <rect x="348" y="282" width="324" height="196" rx="8" fill="none" stroke="#fb7185" stroke-width="1.2" stroke-dasharray="6 5"/>
+  <circle cx="376" cy="300" r="9" fill="#38bdf8"/>
+  <text x="376" y="304" class="t-num" text-anchor="middle">3</text>
+  <text x="392" y="304" class="t-cap">画面与声音，数据量大</text>
+  <line x1="672" y1="318" x2="356" y2="318" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <text x="392" y="336" class="t-cap">编码成数据流，持续传送</text>
+  <circle cx="376" cy="374" r="9" fill="#38bdf8"/>
+  <text x="376" y="378" class="t-num" text-anchor="middle">4</text>
+  <text x="392" y="378" class="t-cap">键盘、鼠标、触控等操作事件</text>
+  <line x1="348" y1="392" x2="664" y2="392" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <text x="392" y="410" class="t-cap">数据量小</text>
+  <text x="510" y="450" class="t-rose" text-anchor="middle">官方称两端之间的数据是端到端加密</text>
+  <text x="510" y="466" class="t-rose" text-anchor="middle">加密算法与传输细节官方未公开</text>
+
+  <!-- 图例 -->
+  <text x="36" y="600" class="t-note">图例</text>
+  <line x1="36" y1="608" x2="984" y2="608" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="628" x2="76" y2="628" stroke="#fb923c" stroke-width="2" marker-end="url(#uuArrow)"/>
+  <text x="86" y="632" class="t-note">箭头：消息与数据流的方向</text>
+  <rect x="300" y="622" width="16" height="12" rx="3" fill="rgba(120, 53, 15, 0.4)" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="324" y="632" class="t-note">网易的服务：外部依赖</text>
+  <rect x="590" y="621" width="16" height="14" rx="3" fill="none" stroke="#fb7185" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="614" y="632" class="t-note">虚线框：官方称端到端加密的区间</text>
+  <circle cx="850" cy="627" r="9" fill="#38bdf8"/>
+  <text x="850" y="631" class="t-num" text-anchor="middle">1</text>
+  <text x="868" y="632" class="t-note">编号：步骤的先后顺序</text>
+</svg>

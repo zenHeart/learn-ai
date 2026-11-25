@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 806" width="100%" height="100%" role="img" aria-labelledby="t3-arch-title t3-arch-desc">
+  <title id="t3-arch-title">T3 Code in four layers: clients, server, adapters, agent processes</title>
+  <desc id="t3-arch-desc">This layered architecture diagram answers one question: how do the desktop, web, and mobile interfaces drive separate external agent processes through the same server and the same adapter layer? It has four layers from top to bottom, and every arrow points one way. Layer 1 is the application layer: three clients, the desktop app, the web app, and the mobile app. They depend on only two shared packages: client-runtime, the connection and state layer shared by all three clients, and contracts, the typed wire contracts. All three reach the server over authenticated HTTP and WebSocket RPC. Layer 2 is the server, apps/server. It holds the Orchestrator, the EventSink that writes to the database, the EffectWorker that runs effects after commit, plus the terminal, Git, and checkpoints. The desktop app bundles a server, but its UI obeys the same boundary. The server reads only the capabilities an adapter declares and never the provider name. Layer 3 is the Provider adapters. The arrow goes from the server to the adapters and then from the adapters to layer 4, the external agent processes such as Claude Code, Codex, Cursor, and OpenCode. The adapters translate T3 Code operations into each agent's native protocol, and agent events are translated back along the same line; the external agent processes never depend back on the T3 Code interface. In its own column on the right is infra/relay, the T3 Connect relay. It has only a control relationship with the clients and the server, drawn as a dashed line: it helps with environment linking and credential issuing. Business traffic between the clients and the server never passes through it. This diagram leaves out the model itself, further modules inside the server, and optional external network paths such as Tailscale; T3 Code runs no model of its own.</desc>
+  <defs>
+    <linearGradient id="aBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0b0f19"/><stop offset="55%" stop-color="#0f172a"/><stop offset="100%" stop-color="#020617"/></linearGradient>
+    <pattern id="aGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/></pattern>
+    <marker id="aArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/></marker>
+    <marker id="aArrowGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-band { fill: #f8fafc; font-size: 12px; font-weight: 700; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-code { fill: #7dd3fc; font-size: 10.5px; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="960" height="806" fill="url(#aBg)"/>
+  <rect width="960" height="806" fill="url(#aGrid)"/>
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#a78bfa"/>
+    <text x="20" y="21" class="t-title">T3 Code in four layers: clients, server, adapters, agent processes</text>
+    <text x="20" y="40" class="t-sub">Arrows point one way: client → server → adapter → agent. The T3 Connect relay sits aside; business traffic never passes through it</text>
+  </g>
+
+  <!-- 第 1 层：应用层 -->
+  <text x="36" y="102" class="t-band">1 Clients: three interfaces</text>
+  <g>
+    <rect x="36" y="114" width="204" height="68" rx="9" fill="#0f172a"/>
+    <rect x="36" y="114" width="204" height="68" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="138" y="143" class="t-card" text-anchor="middle">Desktop app</text>
+    <text x="138" y="164" class="t-code" text-anchor="middle">apps/desktop</text>
+    <rect x="252" y="114" width="204" height="68" rx="9" fill="#0f172a"/>
+    <rect x="252" y="114" width="204" height="68" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="354" y="143" class="t-card" text-anchor="middle">Web app</text>
+    <text x="354" y="164" class="t-code" text-anchor="middle">apps/web</text>
+    <rect x="468" y="114" width="204" height="68" rx="9" fill="#0f172a"/>
+    <rect x="468" y="114" width="204" height="68" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="570" y="143" class="t-card" text-anchor="middle">Mobile app</text>
+    <text x="570" y="164" class="t-code" text-anchor="middle">apps/mobile</text>
+    <rect x="36" y="194" width="636" height="42" rx="9" fill="#0f172a"/>
+    <rect x="36" y="194" width="636" height="42" rx="9" fill="rgba(8, 51, 68, 0.25)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="354" y="211" class="t-body" text-anchor="middle">client-runtime: the connection and state layer shared by all three clients</text>
+    <text x="354" y="228" class="t-note" text-anchor="middle">contracts: the typed wire contracts (the only two packages the clients depend on)</text>
+  </g>
+  <line x1="354" y1="236" x2="354" y2="288" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="366" y="266" class="t-cap">Authenticated HTTP / WebSocket RPC</text>
+
+  <!-- 第 2 层：服务器 -->
+  <text x="36" y="308" class="t-band">2 Server</text>
+  <rect x="36" y="318" width="636" height="122" rx="9" fill="#0f172a"/>
+  <rect x="36" y="318" width="636" height="122" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="354" y="340" class="t-card" text-anchor="middle">apps/server</text>
+  <g>
+    <rect x="50" y="352" width="146" height="46" rx="6" fill="#0f172a"/>
+    <rect x="50" y="352" width="146" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="123" y="371" class="t-body" text-anchor="middle">Orchestrator</text>
+    <text x="123" y="388" class="t-note" text-anchor="middle">decides events</text>
+    <rect x="206" y="352" width="146" height="46" rx="6" fill="#0f172a"/>
+    <rect x="206" y="352" width="146" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="279" y="371" class="t-body" text-anchor="middle">EventSink</text>
+    <text x="279" y="388" class="t-note" text-anchor="middle">writes to the database</text>
+    <rect x="362" y="352" width="146" height="46" rx="6" fill="#0f172a"/>
+    <rect x="362" y="352" width="146" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="435" y="371" class="t-body" text-anchor="middle">EffectWorker</text>
+    <text x="435" y="388" class="t-note" text-anchor="middle">runs effects after commit</text>
+    <rect x="518" y="352" width="140" height="46" rx="6" fill="#0f172a"/>
+    <rect x="518" y="352" width="140" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="588" y="371" class="t-body" text-anchor="middle">Terminal · Git</text>
+    <text x="588" y="388" class="t-note" text-anchor="middle">checkpoints</text>
+  </g>
+  <text x="354" y="424" class="t-note" text-anchor="middle">The desktop app bundles a server; its UI obeys the same boundary</text>
+  <line x1="354" y1="440" x2="354" y2="478" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="366" y="463" class="t-cap">Reads only the capabilities an adapter declares, never the provider name</text>
+
+  <!-- 第 3 层：Provider 适配器 -->
+  <text x="36" y="498" class="t-band">3 Provider adapters</text>
+  <rect x="36" y="508" width="636" height="76" rx="9" fill="#0f172a"/>
+  <rect x="36" y="508" width="636" height="76" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="354" y="530" class="t-card" text-anchor="middle">packages/provider-* and the adapters inside the server</text>
+  <text x="354" y="554" class="t-code" text-anchor="middle">provider-acp · provider-cursor · provider-opencode · provider-pi · provider-grok · …</text>
+  <line x1="300" y1="584" x2="300" y2="620" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="288" y="606" class="t-cap" text-anchor="end">Operations → native protocol</text>
+  <line x1="420" y1="620" x2="420" y2="588" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#aArrow)"/>
+  <text x="432" y="606" class="t-cap">Agent events come back along this line</text>
+
+  <!-- 第 4 层：外部 agent 进程 -->
+  <text x="36" y="640" class="t-band">4 External agent processes</text>
+  <rect x="36" y="650" width="636" height="86" rx="9" fill="#0f172a"/>
+  <rect x="36" y="650" width="636" height="86" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="354" y="674" class="t-card" text-anchor="middle">Separate processes; T3 Code runs no model</text>
+  <text x="354" y="697" class="t-body" text-anchor="middle">Claude Code · Codex · Cursor · OpenCode · …</text>
+  <text x="354" y="718" class="t-note" text-anchor="middle">They never depend back on the T3 Code UI</text>
+
+  <!-- 旁边单列：T3 Connect 中继 -->
+  <rect x="706" y="92" width="218" height="348" rx="9" fill="#0f172a"/>
+  <rect x="706" y="92" width="218" height="348" rx="9" fill="rgba(30, 41, 59, 0.55)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="815" y="120" class="t-card" text-anchor="middle">infra/relay</text>
+  <text x="815" y="140" class="t-note" text-anchor="middle">T3 Connect relay</text>
+  <line x1="720" y1="154" x2="910" y2="154" stroke="#334155" stroke-width="1"/>
+  <text x="815" y="180" class="t-body" text-anchor="middle">Only a control relationship</text>
+  <text x="815" y="198" class="t-body" text-anchor="middle">with clients and server:</text>
+  <text x="815" y="220" class="t-body" text-anchor="middle">helps with environment linking</text>
+  <text x="815" y="238" class="t-body" text-anchor="middle">and credential issuing</text>
+  <line x1="720" y1="258" x2="910" y2="258" stroke="#334155" stroke-width="1"/>
+  <text x="815" y="284" class="t-body" text-anchor="middle">Business traffic between clients</text>
+  <text x="815" y="302" class="t-body" text-anchor="middle">and server never passes through it</text>
+  <line x1="706" y1="150" x2="678" y2="150" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aArrowGrey)"/>
+  <line x1="706" y1="372" x2="678" y2="372" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aArrowGrey)"/>
+
+  <!-- 图例 -->
+  <text x="36" y="762" class="t-note">Legend</text>
+  <line x1="36" y1="770" x2="924" y2="770" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="786" x2="76" y2="786" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="86" y="790" class="t-note">Solid: dependency and call direction (events return on the dashed line)</text>
+  <line x1="610" y1="786" x2="650" y2="786" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aArrowGrey)"/>
+  <text x="660" y="790" class="t-note">Grey dashed: control relationship, not business data</text>
+</svg>

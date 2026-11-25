@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 830" width="100%" height="100%" role="img" aria-labelledby="ts-map-title ts-map-desc">
+  <title id="ts-map-title">Tailscale 源码地图：一条命令怎样从终端落到 WireGuard</title>
+  <desc id="ts-map-desc">这张分层架构图回答一个问题：一条 tailscale 命令从终端发出后，经过哪些进程和包才落到 WireGuard，控制面和中继各自接在哪一层。从上到下依次是：tailscale 命令行，源码在 cmd/tailscale/cli；本地 socket，是 Unix socket 或 Windows 命名管道，由 safesocket 实现；LocalAPI 的 HTTP 服务端，由 ipn/ipnserver 和 ipn/localapi 组成；LocalBackend，在 ipn/ipnlocal；wgengine，里面包含 router、filter 和 netstack；magicsock，在 wgengine/magicsock；最后是 wireguard-go，它是仓库外的依赖，经 UDP 收发。箭头表示调用与数据的方向：命令行经本地 socket 向 LocalAPI 发 HTTP 请求，请求方向只从命令行到守护进程；LocalAPI 先判定连接方的权限，只读或可写，再调用 LocalBackend；LocalBackend 把网络地图和包过滤规则下发给 wgengine；wgengine 把端点与路径选择交给 magicsock；magicsock 用 wireguard-go 加解密。LocalAPI 只监听本地 socket，不对外暴露。左侧是控制面：control/controlclient 向协调服务器发起长轮询，协调服务器把网络地图下发回来，controlclient 再回调 LocalBackend；这条线只传公钥、地址和策略，协调服务器不在数据路径上。右侧是中继：magicsock 经 derp 与 derp/derphttp 连接 DERP 服务器，用于协商连接和回落中继；DERP 只转发已加密的包。本图省略了 Peer Relay 与 Tailnet Lock 的内部结构，以及各包内部更多的模块。</desc>
+  <defs>
+    <linearGradient id="mBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0b0f19"/><stop offset="55%" stop-color="#0f172a"/><stop offset="100%" stop-color="#020617"/></linearGradient>
+    <pattern id="mGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/></pattern>
+    <marker id="mArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/></marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-code { fill: #7dd3fc; font-size: 10.5px; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+      .t-tag { fill: #fde68a; font-size: 10.5px; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="960" height="830" fill="url(#mBg)"/>
+  <rect width="960" height="830" fill="url(#mGrid)"/>
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#a78bfa"/>
+    <text x="20" y="21" class="t-title">Tailscale 源码地图：一条命令怎样从终端落到 WireGuard</text>
+    <text x="20" y="40" class="t-sub">中间一列是仓库里的调用链；左边是控制面，右边是中继，两端在仓库之外</text>
+  </g>
+
+  <rect x="300" y="92" width="360" height="54" rx="9" fill="#0f172a"/>
+  <rect x="300" y="92" width="360" height="54" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="480" y="115" class="t-card" text-anchor="middle">tailscale 命令行</text>
+  <text x="480" y="134" class="t-code" text-anchor="middle">cmd/tailscale/cli</text>
+  <line x1="480" y1="146" x2="480" y2="192" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="172" class="t-cap">经本地 socket（safesocket）发 HTTP 请求</text>
+
+  <rect x="300" y="196" width="360" height="40" rx="9" fill="#0f172a"/>
+  <rect x="300" y="196" width="360" height="40" rx="9" fill="rgba(30, 41, 59, 0.6)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="480" y="220" class="t-body" text-anchor="middle">本地 socket：Unix socket 或 Windows 命名管道</text>
+  <line x1="480" y1="236" x2="480" y2="264" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="254" class="t-cap">请求方向只从命令行到守护进程</text>
+
+  <rect x="300" y="268" width="360" height="84" rx="9" fill="#0f172a"/>
+  <rect x="300" y="268" width="360" height="84" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="290" class="t-card" text-anchor="middle">LocalAPI</text>
+  <text x="480" y="308" class="t-code" text-anchor="middle">ipn/ipnserver + ipn/localapi</text>
+  <text x="480" y="325" class="t-body" text-anchor="middle">先判定连接方的权限：只读，或可写</text>
+  <text x="480" y="342" class="t-tag" text-anchor="middle">只监听本地 socket，不对外暴露</text>
+  <line x1="480" y1="352" x2="480" y2="380" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="370" class="t-cap">鉴权之后才调用</text>
+
+  <rect x="300" y="384" width="360" height="52" rx="9" fill="#0f172a"/>
+  <rect x="300" y="384" width="360" height="52" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="406" class="t-card" text-anchor="middle">LocalBackend</text>
+  <text x="480" y="424" class="t-code" text-anchor="middle">ipn/ipnlocal</text>
+  <line x1="480" y1="436" x2="480" y2="468" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="456" class="t-cap">下发网络地图与包过滤规则</text>
+
+  <rect x="300" y="472" width="360" height="84" rx="9" fill="#0f172a"/>
+  <rect x="300" y="472" width="360" height="84" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="496" class="t-card" text-anchor="middle">wgengine</text>
+  <rect x="316" y="510" width="100" height="30" rx="6" fill="#0f172a"/>
+  <rect x="316" y="510" width="100" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="366" y="529" class="t-body" text-anchor="middle">router</text>
+  <rect x="430" y="510" width="100" height="30" rx="6" fill="#0f172a"/>
+  <rect x="430" y="510" width="100" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="480" y="529" class="t-body" text-anchor="middle">filter</text>
+  <rect x="544" y="510" width="100" height="30" rx="6" fill="#0f172a"/>
+  <rect x="544" y="510" width="100" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="594" y="529" class="t-body" text-anchor="middle">netstack</text>
+  <line x1="480" y1="556" x2="480" y2="588" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="576" class="t-cap">端点与路径选择交给 magicsock</text>
+
+  <rect x="300" y="592" width="360" height="64" rx="9" fill="#0f172a"/>
+  <rect x="300" y="592" width="360" height="64" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="480" y="616" class="t-card" text-anchor="middle">magicsock</text>
+  <text x="480" y="634" class="t-code" text-anchor="middle">wgengine/magicsock</text>
+  <line x1="480" y1="656" x2="480" y2="688" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="494" y="676" class="t-cap">用 wireguard-go 加解密</text>
+
+  <rect x="300" y="692" width="360" height="52" rx="9" fill="#0f172a"/>
+  <rect x="300" y="692" width="360" height="52" rx="9" fill="rgba(30, 41, 59, 0.6)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="480" y="714" class="t-card" text-anchor="middle">wireguard-go</text>
+  <text x="480" y="732" class="t-note" text-anchor="middle">仓库外的依赖，经 UDP 收发</text>
+
+  <!-- 左侧：控制面 -->
+  <rect x="36" y="384" width="220" height="172" rx="9" fill="#0f172a"/>
+  <rect x="36" y="384" width="220" height="172" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="146" y="406" class="t-body" text-anchor="middle" font-weight="700">控制面</text>
+  <rect x="52" y="420" width="188" height="36" rx="6" fill="#0f172a"/>
+  <rect x="52" y="420" width="188" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="146" y="443" class="t-code" text-anchor="middle">control/controlclient</text>
+  <line x1="112" y1="456" x2="112" y2="486" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <line x1="180" y1="486" x2="180" y2="460" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#mArrow)"/>
+  <rect x="52" y="490" width="188" height="36" rx="6" fill="#0f172a"/>
+  <rect x="52" y="490" width="188" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="146" y="513" class="t-body" text-anchor="middle">协调服务器</text>
+  <text x="146" y="544" class="t-tag" text-anchor="middle">只传公钥、地址和策略</text>
+  <line x1="256" y1="410" x2="294" y2="410" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="275" y="402" class="t-cap" text-anchor="middle">回调</text>
+
+  <!-- 右侧：中继 -->
+  <rect x="744" y="472" width="180" height="184" rx="9" fill="#0f172a"/>
+  <rect x="744" y="472" width="180" height="184" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="834" y="494" class="t-body" text-anchor="middle" font-weight="700">中继</text>
+  <rect x="760" y="506" width="148" height="36" rx="6" fill="#0f172a"/>
+  <rect x="760" y="506" width="148" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="834" y="529" class="t-code" text-anchor="middle">derp / derp/derphttp</text>
+  <line x1="814" y1="542" x2="814" y2="572" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <line x1="854" y1="572" x2="854" y2="546" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#mArrow)"/>
+  <rect x="760" y="576" width="148" height="36" rx="6" fill="#0f172a"/>
+  <rect x="760" y="576" width="148" height="36" rx="6" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="834" y="599" class="t-body" text-anchor="middle">DERP 服务器</text>
+  <text x="834" y="638" class="t-tag" text-anchor="middle">只转发已加密的包</text>
+  <line x1="660" y1="624" x2="738" y2="624" stroke="#fb923c" stroke-width="2" marker-start="url(#mArrow)" marker-end="url(#mArrow)"/>
+  <text x="699" y="614" class="t-cap" text-anchor="middle">协商连接</text>
+  <text x="699" y="642" class="t-cap" text-anchor="middle">回落中继</text>
+
+  <!-- 图例 -->
+  <text x="36" y="782" class="t-note">图例</text>
+  <line x1="36" y1="790" x2="924" y2="790" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="810" x2="76" y2="810" stroke="#fb923c" stroke-width="2" marker-end="url(#mArrow)"/>
+  <text x="86" y="814" class="t-note">实线：调用或请求的方向</text>
+  <line x1="266" y1="810" x2="306" y2="810" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#mArrow)"/>
+  <text x="316" y="814" class="t-note">虚线：对方的返回</text>
+  <rect x="466" y="804" width="16" height="12" rx="3" fill="rgba(76, 29, 149, 0.6)" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="490" y="814" class="t-note">紫色：仓库里的守护进程（tailscaled）</text>
+  <rect x="760" y="804" width="16" height="12" rx="3" fill="rgba(120, 53, 15, 0.5)" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="784" y="814" class="t-note">琥珀：仓库外的一端</text>
+</svg>

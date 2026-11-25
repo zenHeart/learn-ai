@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 684" width="100%" height="100%" role="img" aria-labelledby="dot-model-title dot-model-desc">
+  <title id="dot-model-title">The three layers of dot: channels, dot itself, what it can use, and which paths are on by default</title>
+  <desc id="dot-model-desc">This diagram has three layers. It answers where a message goes after you send it from a channel, who handles it, and which paths are on by default versus which need your approval or setup first. Layer 1 is the channels, five from left to right: the ChatGPT desktop app, desktop web, mobile app, Slack, and Teams. Layer 2 is dot itself, drawn in purple, and it holds four things: goals, memory, custom rules, and scheduled tasks. Layer 3 is what dot can use, four items from left to right: dot's own cloud computer and browser, connected apps and plugins, your own computer (optional), and the Codex cloud environment. Between the channels and layer 2, every channel has a pair of orange arrows. The downward arrow means your message flows from that channel to dot. The upward arrow means dot's progress, questions, and decisions for you flow back to that channel. Between layer 2 and layer 3 there are four orange arrows, each pointing from dot to one item in layer 3, meaning dot goes to use it. A solid line means available by default: the arrows to the ChatGPT desktop app, desktop web, and mobile app, and the arrow from dot to its own cloud computer and browser are all solid, their cards have solid borders, and their status text says on by default or there from the start. A dashed line means you must explicitly authorize it or set it up first: the arrows to Slack and Teams, and the arrows from dot to connected apps and plugins, your own computer, and the Codex cloud environment are all dashed, and their cards have dashed borders. You connect apps and plugins yourself. Your own computer is off by default and turns on only after you click Allow access. The Codex cloud environment must be created in Codex first. No line runs directly between a channel and layer 3: connecting Slack does not automatically connect your email or computer. The legend at the bottom shows that solid lines are on by default, dashed lines need your approval or setup first, and orange arrows show the direction of messages and instructions; cyan marks your channels, purple marks dot itself, green marks the cloud computer and browser dot has by default, and amber marks things that need your approval or setup first. This diagram leaves out model training details, dot's internal architecture, specific connected-app products (no product icons are drawn), and the setup steps for Teams.</desc>
+
+  <defs>
+    <linearGradient id="dotModelBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="dotModelGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <marker id="dotArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/>
+    </marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-band { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-cap { fill: #cbd5e1; font-size: 10.5px; }
+      .t-leg { fill: #cbd5e1; font-size: 10.5px; }
+      .t-num { fill: #0f172a; font-size: 11px; font-weight: 700; }
+      .t-status { font-size: 10.5px; font-weight: 700; }
+      .s-cyan { fill: #22d3ee; }
+      .s-green { fill: #34d399; }
+      .s-amber { fill: #fbbf24; }
+    </style>
+  </defs>
+
+  <rect width="920" height="684" fill="url(#dotModelBg)"/>
+  <rect width="920" height="684" fill="url(#dotModelGrid)"/>
+
+  <g transform="translate(36, 26)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#a78bfa"/>
+    <text x="20" y="21" class="t-title">The three layers of dot: channels, dot itself, and what it can use</text>
+    <text x="20" y="40" class="t-sub">Solid lines are on by default; dashed lines need your approval or setup first. No line runs straight from a channel to layer 3.</text>
+  </g>
+
+  <!-- 第一层：渠道 -->
+  <g>
+    <circle cx="47" cy="100.5" r="11" fill="#38bdf8"/>
+    <text x="47" y="104.5" class="t-num" text-anchor="middle">1</text>
+    <text x="70" y="104.5" class="t-band">Channels</text>
+    <text x="156" y="104.5" class="t-note">Where you reach dot; they are only entry points</text>
+    <rect x="36" y="116" width="160" height="68" rx="9" fill="#0f172a"/>
+    <rect x="36" y="116" width="160" height="68" rx="9" fill="rgba(34, 211, 238, 0.1)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="116" y="137.9" class="t-card" text-anchor="middle">ChatGPT</text>
+    <text x="116" y="156.9" class="t-card" text-anchor="middle">desktop app</text>
+    <text x="116" y="172.8" class="t-status s-cyan" text-anchor="middle">On by default</text>
+    <rect x="208" y="116" width="160" height="68" rx="9" fill="#0f172a"/>
+    <rect x="208" y="116" width="160" height="68" rx="9" fill="rgba(34, 211, 238, 0.1)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="288" y="147.4" class="t-card" text-anchor="middle">Desktop web</text>
+    <text x="288" y="163.3" class="t-status s-cyan" text-anchor="middle">On by default</text>
+    <rect x="380" y="116" width="160" height="68" rx="9" fill="#0f172a"/>
+    <rect x="380" y="116" width="160" height="68" rx="9" fill="rgba(34, 211, 238, 0.1)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="460" y="147.4" class="t-card" text-anchor="middle">Mobile app</text>
+    <text x="460" y="163.3" class="t-status s-cyan" text-anchor="middle">On by default</text>
+    <rect x="552" y="116" width="160" height="68" rx="9" fill="#0f172a"/>
+    <rect x="552" y="116" width="160" height="68" rx="9" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="7 5"/>
+    <text x="632" y="139.9" class="t-card" text-anchor="middle">Slack</text>
+    <text x="632" y="155.8" class="t-status s-amber" text-anchor="middle">Needs your explicit</text>
+    <text x="632" y="170.8" class="t-status s-amber" text-anchor="middle">authorization</text>
+    <rect x="724" y="116" width="160" height="68" rx="9" fill="#0f172a"/>
+    <rect x="724" y="116" width="160" height="68" rx="9" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="7 5"/>
+    <text x="804" y="139.9" class="t-card" text-anchor="middle">Teams</text>
+    <text x="804" y="155.8" class="t-status s-amber" text-anchor="middle">Needs your explicit</text>
+    <text x="804" y="170.8" class="t-status s-amber" text-anchor="middle">authorization</text>
+  </g>
+
+  <!-- 渠道与 dot 之间：每个渠道一对箭头。左：消息流向 dot；右：dot 流回渠道 -->
+  <line x1="108" y1="189" x2="108" y2="283" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <line x1="124" y1="283" x2="124" y2="189" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <line x1="280" y1="189" x2="280" y2="283" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <line x1="296" y1="283" x2="296" y2="189" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <line x1="452" y1="189" x2="452" y2="283" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <line x1="468" y1="283" x2="468" y2="189" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <line x1="624" y1="189" x2="624" y2="283" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dotArrow)"/>
+  <line x1="640" y1="283" x2="640" y2="189" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dotArrow)"/>
+  <line x1="796" y1="189" x2="796" y2="283" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dotArrow)"/>
+  <line x1="812" y1="283" x2="812" y2="189" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dotArrow)"/>
+  <line x1="306" y1="221.5" x2="306" y2="233.5" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <text x="320" y="232.3" class="t-cap">Messages flow from</text>
+  <text x="320" y="247.3" class="t-cap">each channel to dot</text>
+  <line x1="478" y1="226" x2="478" y2="214" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <text x="492" y="224.8" class="t-cap">dot reports back:</text>
+  <text x="492" y="239.8" class="t-cap">progress, questions</text>
+  <text x="492" y="254.8" class="t-cap">decisions for you</text>
+
+  <!-- 第二层：dot 本身 -->
+  <g>
+    <rect x="36" y="288" width="848" height="98" rx="11" fill="#0f172a"/>
+    <rect x="36" y="288" width="848" height="98" rx="11" fill="rgba(167, 139, 250, 0.1)" stroke="#a78bfa" stroke-width="1.5"/>
+    <circle cx="47" cy="309.5" r="11" fill="#a78bfa"/>
+    <text x="47" y="313.5" class="t-num" text-anchor="middle">2</text>
+    <text x="70" y="313.5" class="t-band">dot itself</text>
+    <text x="172" y="313.5" class="t-note">Switching channels does not give you a new dot</text>
+    <rect x="52" y="326" width="195" height="44" rx="7" fill="#0f172a"/>
+    <rect x="52" y="326" width="195" height="44" rx="7" fill="rgba(167, 139, 250, 0.1)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="149.5" y="352.9" class="t-card" text-anchor="middle">Goals</text>
+    <rect x="259" y="326" width="195" height="44" rx="7" fill="#0f172a"/>
+    <rect x="259" y="326" width="195" height="44" rx="7" fill="rgba(167, 139, 250, 0.1)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="356.5" y="352.9" class="t-card" text-anchor="middle">Memory</text>
+    <rect x="466" y="326" width="195" height="44" rx="7" fill="#0f172a"/>
+    <rect x="466" y="326" width="195" height="44" rx="7" fill="rgba(167, 139, 250, 0.1)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="563.5" y="352.9" class="t-card" text-anchor="middle">Custom rules</text>
+    <rect x="673" y="326" width="195" height="44" rx="7" fill="#0f172a"/>
+    <rect x="673" y="326" width="195" height="44" rx="7" fill="rgba(167, 139, 250, 0.1)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="770.5" y="352.9" class="t-card" text-anchor="middle">Scheduled tasks</text>
+  </g>
+
+  <!-- dot 指向第三层的每一项 -->
+  <line x1="136.5" y1="393" x2="136.5" y2="483" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <line x1="352" y1="393" x2="352" y2="483" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dotArrow)"/>
+  <line x1="567.5" y1="393" x2="567.5" y2="483" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dotArrow)"/>
+  <line x1="783" y1="393" x2="783" y2="483" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#dotArrow)"/>
+  <line x1="371" y1="431" x2="371" y2="443" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <text x="385" y="441.8" class="t-cap">dot can use each of these</text>
+
+  <!-- 第三层：它能动用的东西 -->
+  <g>
+    <!-- Label sits in the gap between arrows 1 and 2 so no vertical line crosses it -->
+    <circle cx="152" cy="474.5" r="11" fill="#94a3b8"/>
+    <text x="152" y="478.5" class="t-num" text-anchor="middle">3</text>
+    <text x="175" y="478.5" class="t-band">What dot can use</text>
+    <text x="375" y="478.5" class="t-note">Not all on by default</text>
+    <rect x="36" y="490" width="201" height="92" rx="9" fill="#0f172a"/>
+    <rect x="36" y="490" width="201" height="92" rx="9" fill="rgba(52, 211, 153, 0.1)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="136.5" y="523.9" class="t-card" text-anchor="middle">dot's own cloud</text>
+    <text x="136.5" y="542.9" class="t-card" text-anchor="middle">computer &amp; browser</text>
+    <text x="136.5" y="558.8" class="t-status s-green" text-anchor="middle">There from the start</text>
+    <rect x="251.5" y="490" width="201" height="92" rx="9" fill="#0f172a"/>
+    <rect x="251.5" y="490" width="201" height="92" rx="9" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="7 5"/>
+    <text x="352" y="523.9" class="t-card" text-anchor="middle">Connected apps</text>
+    <text x="352" y="542.9" class="t-card" text-anchor="middle">&amp; plugins</text>
+    <text x="352" y="558.8" class="t-status s-amber" text-anchor="middle">You connect them yourself</text>
+    <rect x="467" y="490" width="201" height="92" rx="9" fill="#0f172a"/>
+    <rect x="467" y="490" width="201" height="92" rx="9" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="7 5"/>
+    <text x="567.5" y="516.4" class="t-card" text-anchor="middle">Your own computer</text>
+    <text x="567.5" y="535.4" class="t-card" text-anchor="middle">(optional)</text>
+    <text x="567.5" y="551.3" class="t-status s-amber" text-anchor="middle">Off by default</text>
+    <text x="567.5" y="566.3" class="t-status s-amber" text-anchor="middle">On only after Allow access</text>
+    <rect x="682.5" y="490" width="201" height="92" rx="9" fill="#0f172a"/>
+    <rect x="682.5" y="490" width="201" height="92" rx="9" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="7 5"/>
+    <text x="783" y="523.9" class="t-card" text-anchor="middle">Codex cloud</text>
+    <text x="783" y="542.9" class="t-card" text-anchor="middle">environment</text>
+    <text x="783" y="558.8" class="t-status s-amber" text-anchor="middle">Create it in Codex first</text>
+  </g>
+
+  <!-- 图例 -->
+  <g>
+  <text x="36" y="609.5" class="t-note">Legend</text>
+  <line x1="80" y1="606" x2="884" y2="606" stroke="#64748b" stroke-width="1" opacity="0.6"/>
+  <line x1="36" y1="626.5" x2="74" y2="626.5" stroke="#fb923c" stroke-width="2"/>
+  <line x1="232" y1="626.5" x2="270" y2="626.5" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5"/>
+  <line x1="600" y1="626.5" x2="638" y2="626.5" stroke="#fb923c" stroke-width="2" marker-end="url(#dotArrow)"/>
+  <text x="82" y="630" class="t-leg">Solid: on by default</text>
+  <text x="290" y="630" class="t-leg">Dashed: needs your approval or setup first</text>
+  <text x="646" y="630" class="t-leg">Arrows: messages and instructions</text>
+  <rect x="36" y="648.5" width="16" height="12" rx="3" fill="#0f172a"/>
+  <rect x="36" y="648.5" width="16" height="12" rx="3" fill="rgba(34, 211, 238, 0.1)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="60" y="658.5" class="t-leg">Your channels</text>
+  <rect x="248" y="648.5" width="16" height="12" rx="3" fill="#0f172a"/>
+  <rect x="248" y="648.5" width="16" height="12" rx="3" fill="rgba(167, 139, 250, 0.1)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="272" y="658.5" class="t-leg">dot itself</text>
+  <rect x="460" y="648.5" width="16" height="12" rx="3" fill="#0f172a"/>
+  <rect x="460" y="648.5" width="16" height="12" rx="3" fill="rgba(52, 211, 153, 0.1)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="484" y="658.5" class="t-leg">dot has by default</text>
+  <rect x="672" y="648.5" width="16" height="12" rx="3" fill="#0f172a"/>
+  <rect x="672" y="648.5" width="16" height="12" rx="3" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="696" y="658.5" class="t-leg">Needs approval or setup</text>
+  </g>
+
+</svg>

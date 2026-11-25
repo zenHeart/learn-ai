@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 806" width="100%" height="100%" role="img" aria-labelledby="t3-arch-title t3-arch-desc">
+  <title id="t3-arch-title">T3 Code 的四层：三种界面、一台服务器、一层适配器、外部 agent 进程</title>
+  <desc id="t3-arch-desc">这张分层架构图回答一个问题：桌面、网页、手机三种界面，是怎么经过同一台服务器、同一套适配层，去驱动各自独立的外部 agent 进程的。图里从上到下四层，箭头只朝一个方向。第一层是应用层，三个客户端：桌面应用、网页应用、移动应用。它们只依赖两个共享包：client-runtime 是三种界面共用的连接与状态层，contracts 是类型化的线上契约。三种界面经已认证的 HTTP 与 WebSocket RPC 连到服务器。第二层是服务器 apps/server，里面有编排器 Orchestrator、负责落库的 EventSink、在提交后执行副作用的 EffectWorker，以及终端、Git 和检查点。桌面应用自带一个服务器，但它的界面守同一条边界。服务器只读适配器声明的能力，不认 provider 的名字。第三层是 Provider 适配器。箭头由服务器指向适配器，再由适配器指向第四层的外部 agent 进程，例如 Claude Code、Codex、Cursor、OpenCode。适配器把 T3 Code 的操作翻译成各家 agent 的原生协议，agent 的事件沿同一条线翻译回来；外部 agent 进程不反向依赖 T3 Code 的界面。右侧单列的是 infra/relay，也就是 T3 Connect 中继。它与客户端、服务器之间只有一条控制关系，用虚线表示：协助环境链接与凭证签发。客户端与服务器的业务流量不经过它。本图省略了模型本身、服务器内部更多的模块，以及 Tailscale 等可选的外部网络通道；T3 Code 自己不运行模型。</desc>
+  <defs>
+    <linearGradient id="aBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0b0f19"/><stop offset="55%" stop-color="#0f172a"/><stop offset="100%" stop-color="#020617"/></linearGradient>
+    <pattern id="aGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/></pattern>
+    <marker id="aArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/></marker>
+    <marker id="aArrowGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-band { fill: #f8fafc; font-size: 12px; font-weight: 700; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-code { fill: #7dd3fc; font-size: 10.5px; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="960" height="806" fill="url(#aBg)"/>
+  <rect width="960" height="806" fill="url(#aGrid)"/>
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#a78bfa"/>
+    <text x="20" y="21" class="t-title">T3 Code 的四层：三种界面、一台服务器、一层适配器、外部 agent 进程</text>
+    <text x="20" y="40" class="t-sub">箭头只朝一个方向：界面 → 服务器 → 适配器 → agent。T3 Connect 中继在旁边，业务流量不经过它</text>
+  </g>
+
+  <!-- 第 1 层：应用层 -->
+  <text x="36" y="102" class="t-band">1 应用层：三种界面</text>
+  <g>
+    <rect x="36" y="114" width="204" height="68" rx="9" fill="#0f172a"/>
+    <rect x="36" y="114" width="204" height="68" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="138" y="143" class="t-card" text-anchor="middle">桌面应用</text>
+    <text x="138" y="164" class="t-code" text-anchor="middle">apps/desktop</text>
+    <rect x="252" y="114" width="204" height="68" rx="9" fill="#0f172a"/>
+    <rect x="252" y="114" width="204" height="68" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="354" y="143" class="t-card" text-anchor="middle">网页应用</text>
+    <text x="354" y="164" class="t-code" text-anchor="middle">apps/web</text>
+    <rect x="468" y="114" width="204" height="68" rx="9" fill="#0f172a"/>
+    <rect x="468" y="114" width="204" height="68" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="570" y="143" class="t-card" text-anchor="middle">移动应用</text>
+    <text x="570" y="164" class="t-code" text-anchor="middle">apps/mobile</text>
+    <rect x="36" y="194" width="636" height="42" rx="9" fill="#0f172a"/>
+    <rect x="36" y="194" width="636" height="42" rx="9" fill="rgba(8, 51, 68, 0.25)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="354" y="211" class="t-body" text-anchor="middle">client-runtime：三种界面共用的连接与状态层</text>
+    <text x="354" y="228" class="t-note" text-anchor="middle">contracts：类型化的线上契约（三种界面只依赖这两个包）</text>
+  </g>
+  <line x1="354" y1="236" x2="354" y2="288" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="366" y="266" class="t-cap">已认证的 HTTP / WebSocket RPC</text>
+
+  <!-- 第 2 层：服务器 -->
+  <text x="36" y="308" class="t-band">2 服务器</text>
+  <rect x="36" y="318" width="636" height="122" rx="9" fill="#0f172a"/>
+  <rect x="36" y="318" width="636" height="122" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="354" y="340" class="t-card" text-anchor="middle">apps/server</text>
+  <g>
+    <rect x="50" y="352" width="146" height="46" rx="6" fill="#0f172a"/>
+    <rect x="50" y="352" width="146" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="123" y="371" class="t-body" text-anchor="middle">Orchestrator</text>
+    <text x="123" y="388" class="t-note" text-anchor="middle">编排器</text>
+    <rect x="206" y="352" width="146" height="46" rx="6" fill="#0f172a"/>
+    <rect x="206" y="352" width="146" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="279" y="371" class="t-body" text-anchor="middle">EventSink</text>
+    <text x="279" y="388" class="t-note" text-anchor="middle">落库</text>
+    <rect x="362" y="352" width="146" height="46" rx="6" fill="#0f172a"/>
+    <rect x="362" y="352" width="146" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="435" y="371" class="t-body" text-anchor="middle">EffectWorker</text>
+    <text x="435" y="388" class="t-note" text-anchor="middle">提交后执行副作用</text>
+    <rect x="518" y="352" width="140" height="46" rx="6" fill="#0f172a"/>
+    <rect x="518" y="352" width="140" height="46" rx="6" fill="rgba(76, 29, 149, 0.55)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="588" y="371" class="t-body" text-anchor="middle">终端 · Git</text>
+    <text x="588" y="388" class="t-note" text-anchor="middle">检查点</text>
+  </g>
+  <text x="354" y="424" class="t-note" text-anchor="middle">桌面应用自带一个服务器，但它的界面守同一条边界</text>
+  <line x1="354" y1="440" x2="354" y2="478" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="366" y="463" class="t-cap">只读适配器声明的能力，不认 provider 的名字</text>
+
+  <!-- 第 3 层：Provider 适配器 -->
+  <text x="36" y="498" class="t-band">3 Provider 适配器</text>
+  <rect x="36" y="508" width="636" height="76" rx="9" fill="#0f172a"/>
+  <rect x="36" y="508" width="636" height="76" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="354" y="530" class="t-card" text-anchor="middle">packages/provider-* 与服务器内的适配器</text>
+  <text x="354" y="554" class="t-code" text-anchor="middle">provider-acp · provider-cursor · provider-opencode · provider-pi · provider-grok · …</text>
+  <line x1="300" y1="584" x2="300" y2="620" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="288" y="606" class="t-cap" text-anchor="end">翻译成各家 agent 的原生协议</text>
+  <line x1="420" y1="620" x2="420" y2="588" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#aArrow)"/>
+  <text x="432" y="606" class="t-cap">agent 事件沿这条线翻译回来</text>
+
+  <!-- 第 4 层：外部 agent 进程 -->
+  <text x="36" y="640" class="t-band">4 外部 agent 进程</text>
+  <rect x="36" y="650" width="636" height="86" rx="9" fill="#0f172a"/>
+  <rect x="36" y="650" width="636" height="86" rx="9" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="354" y="674" class="t-card" text-anchor="middle">各自独立运行的进程，T3 Code 不运行模型</text>
+  <text x="354" y="697" class="t-body" text-anchor="middle">Claude Code · Codex · Cursor · OpenCode · …</text>
+  <text x="354" y="718" class="t-note" text-anchor="middle">它们不反向依赖 T3 Code 的界面</text>
+
+  <!-- 旁边单列：T3 Connect 中继 -->
+  <rect x="706" y="92" width="218" height="348" rx="9" fill="#0f172a"/>
+  <rect x="706" y="92" width="218" height="348" rx="9" fill="rgba(30, 41, 59, 0.55)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="815" y="120" class="t-card" text-anchor="middle">infra/relay</text>
+  <text x="815" y="140" class="t-note" text-anchor="middle">T3 Connect 中继</text>
+  <line x1="720" y1="154" x2="910" y2="154" stroke="#334155" stroke-width="1"/>
+  <text x="815" y="180" class="t-body" text-anchor="middle">与客户端、服务器之间</text>
+  <text x="815" y="198" class="t-body" text-anchor="middle">只有一条控制关系：</text>
+  <text x="815" y="220" class="t-body" text-anchor="middle">协助环境链接</text>
+  <text x="815" y="238" class="t-body" text-anchor="middle">与凭证签发</text>
+  <line x1="720" y1="258" x2="910" y2="258" stroke="#334155" stroke-width="1"/>
+  <text x="815" y="284" class="t-body" text-anchor="middle">客户端与服务器的</text>
+  <text x="815" y="302" class="t-body" text-anchor="middle">业务流量不经过它</text>
+  <line x1="706" y1="150" x2="678" y2="150" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aArrowGrey)"/>
+  <line x1="706" y1="372" x2="678" y2="372" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aArrowGrey)"/>
+
+  <!-- 图例 -->
+  <text x="36" y="762" class="t-note">图例</text>
+  <line x1="36" y1="770" x2="924" y2="770" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="786" x2="76" y2="786" stroke="#fb923c" stroke-width="2" marker-end="url(#aArrow)"/>
+  <text x="86" y="790" class="t-note">实线：依赖与调用的方向（事件沿虚线返回）</text>
+  <line x1="610" y1="786" x2="650" y2="786" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#aArrowGrey)"/>
+  <text x="660" y="790" class="t-note">灰色虚线：控制关系，不是业务数据</text>
+</svg>
