@@ -1,7 +1,7 @@
 {
   "id": "baidu-comate",
   "name": "Baidu Comate",
-  "name_zh": "文心快码",
+  "name_zh": "百度 Comate 智能代码助手",
   "vendor_id": "baidu",
   "region": "intl",
   "category": "coding-agent",
@@ -9,7 +9,7 @@
     "coding"
   ],
   "form": "ide",
-  "released": "2023-06-06",
+  "released": "2023-10-24",
   "homepage": "https://comate.baidu.com/zh",
   "desc": "Baidu coding assistant that plans before it edits",
   "desc_zh": "先出方案再动手的百度编程助手",
@@ -27,10 +27,43 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Forces a Doc-to-Tasks-to-Changes flow instead of blind generation, and supports fully private deployment for regulated teams. 来源：https://www.infoq.cn/article/ONi9RGciXT9EKSAHNcRz",
-  "revisions": [],
+  "status": "renamed",
+  "superseded_by": "wenxin-fastcode",
+  "last_verified_at": "2026-11-25",
+  "notes": "Forces a Doc-to-Tasks-to-Changes flow instead of blind generation, and supports fully private deployment for regulated teams. 来源：https://www.infoq.cn/article/ONi9RGciXT9EKSAHNcRz 2026-11-25：status active → renamed; superseded_by null → wenxin-fastcode。同一个产品的两个名字：2024-06-28 的 WAVE SUMMIT 上百度宣布 Comate 品牌升级为中文名「文心快码」。改名关系应从旧名指向新名 2026-11-25：name_zh \"文心快码\" → \"百度 Comate 智能代码助手\"。旧名档案不应带着新名字；百度云新闻稿对当时的叫法是「百度Comate智能代码助手」 2026-11-25：released 2023-06-06/day → 2023-10-24/day; source https://cloud.baidu.com/news/news_ff716dc2-311e-47af-9de4-799260d5a2bf。原日期 2023-06-06 是邀测日。百度云新闻稿写「今天，百度Comate智能代码助手SaaS版本正式上线…即日起企业和开发者可前往百度Comate官网体验」，页面时间 2023-10-24；同一页写明「自2023年6月6日正式开放邀测起」。申请制邀测不算公开",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "renamed",
+      "why": "同一个产品的两个名字：2024-06-28 的 WAVE SUMMIT 上百度宣布 Comate 品牌升级为中文名「文心快码」。改名关系应从旧名指向新名"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "wenxin-fastcode",
+      "why": "同一个产品的两个名字：2024-06-28 的 WAVE SUMMIT 上百度宣布 Comate 品牌升级为中文名「文心快码」。改名关系应从旧名指向新名"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "name_zh",
+      "from": "文心快码",
+      "to": "百度 Comate 智能代码助手",
+      "why": "旧名档案不应带着新名字；百度云新闻稿对当时的叫法是「百度Comate智能代码助手」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-06-06/day",
+      "to": "2023-10-24/day",
+      "why": "原日期 2023-06-06 是邀测日。百度云新闻稿写「今天，百度Comate智能代码助手SaaS版本正式上线…即日起企业和开发者可前往百度Comate官网体验」，页面时间 2023-10-24；同一页写明「自2023年6月6日正式开放邀测起」。申请制邀测不算公开"
+    }
+  ],
   "date_precision": "day"
 }

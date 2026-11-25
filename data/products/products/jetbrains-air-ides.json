@@ -1,0 +1,36 @@
+{
+  "id": "jetbrains-air-ides",
+  "name": "JetBrains Air",
+  "name_zh": "JetBrains Air",
+  "vendor_id": "jetbrains",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "ide",
+  "released": "2026-10-01",
+  "date_precision": "day",
+  "homepage": "https://www.jetbrains.com/air/",
+  "desc": "Agent workspace inside IntelliJ IDEs that runs any ACP-compatible coding agent.",
+  "desc_zh": "IntelliJ IDE 内的智能体工作区，可运行任何兼容 ACP 的编程智能体。",
+  "solves": "Agents ran in their own window and the IDE could not see their work; here sessions, diffs and feedback sit inside the editor you already use.",
+  "solves_zh": "智能体过去跑在自己的窗口里，IDE 看不到它在做什么；现在会话、diff 和反馈都在你已经在用的编辑器里。",
+  "best_for": "You work in IntelliJ IDEA and want Claude Code or Codex working beside your own inspections and run configurations.",
+  "best_for_zh": "平时用 IntelliJ IDEA，想让 Claude Code 或 Codex 在自己的检查和运行配置旁边干活。",
+  "surface": "in-product",
+  "tags": [
+    "acp-protocol",
+    "ide-integration",
+    "multi-agent"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — blog.jetbrains.com/air RSS feed and jetbrains.com/air）。 Early access opened 2026-10-01; general availability with the IDE 2026.3 release on 2026-11-11. Shipped as a plugin inside existing JetBrains IDEs and replaces AI Assistant there. Distinct from Junie, which is one of the agents Air can host. JetBrains presents Air as a wider product system that also covers Air Teams and Air Governance; only the in-IDE surface has a first-party dated launch page found here. 入库核对（2026-11-25）：产品名是 JetBrains Air；「in IDEs」只是它的形态，记录在 form/surface 里。 首次公开日期来源：https://blog.jetbrains.com/air/feed/",
+  "revisions": []
+}

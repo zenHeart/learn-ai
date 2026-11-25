@@ -1,0 +1,35 @@
+{
+  "id": "chatgpt-ads",
+  "name": "ChatGPT Ads",
+  "name_zh": "ChatGPT Ads",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-02-09",
+  "date_precision": "day",
+  "homepage": "https://openai.com/ads/",
+  "desc": "Sponsored placements inside ChatGPT answers, bought through Ads Manager.",
+  "desc_zh": "出现在 ChatGPT 回答里的赞助内容，通过 Ads Manager 投放。",
+  "solves": "Free access to a frontier model needs a revenue line that does not touch the answers. Ads sit clearly labelled below the response and never change what ChatGPT says.",
+  "solves_zh": "免费使用前沿模型需要一条不碰答案的收入线。广告清楚标注在回答下方，并且绝不改变 ChatGPT 给出的内容。",
+  "best_for": "You want to reach people while they are comparing options in a conversation.",
+  "best_for_zh": "你想在用户对话里比较选项时触达他们。",
+  "surface": "in-product",
+  "tags": [
+    "advertising",
+    "self-serve",
+    "ads-manager"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes and OpenAI news）。 First public availability 2026-02-09 (US test), which is before the discovery window, but it is absent from the ledger partition list so it is proposed under rule (b). openai.com/ads/ returns 403 to automated fetches and redirects to ads.openai.com. 89 countries as of 2026-10-21. 首次公开日期来源：https://openai.com/index/testing-ads-in-chatgpt 官网未直接确认（403）。",
+  "revisions": []
+}

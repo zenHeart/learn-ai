@@ -1,0 +1,36 @@
+{
+  "id": "runway-ads",
+  "name": "Runway Ads",
+  "name_zh": "Runway Ads",
+  "vendor_id": "runway",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-09-30",
+  "date_precision": "day",
+  "homepage": "https://runway.com/product/ads",
+  "desc": "Agent that generates, publishes and optimizes paid ad creative",
+  "desc_zh": "自动生成、投放并优化广告素材的智能体",
+  "solves": "Feeding Meta, Google and TikTok with enough variants is manual grunt work; connect ad accounts and let it loop.",
+  "solves_zh": "给广告平台供应足量素材变体全靠人工；接好广告账户，它会自己循环迭代。",
+  "best_for": "Performance is flat on last month's hooks; point Runway Ads at the ad account and approve a new round.",
+  "best_for_zh": "上个月的广告钩子跑不动了；把 Runway Ads 连到广告账户，审核新一轮素材即可。",
+  "surface": "standalone",
+  "tags": [
+    "ad-creative",
+    "meta-ads",
+    "performance-loop"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://runway.com/changelog (entry 'Runway Ads', Oct 27, 2026), then the ne）。 The announcement is dated 2026-09-30; Adweek wrote the same day that 'Runway Ads launches today inside the company’s web app.' The changelog entry of Oct 27, 2026 says it is 'Included with every paid plan', so broad plan availability is later than the announcement date used here. 首次公开日期来源：https://runway.com/news/company-news/introducing-runway-ads",
+  "revisions": []
+}

@@ -9,7 +9,7 @@
     "agent-building"
   ],
   "form": "web",
-  "released": "2018-07-01",
+  "released": "2018-01-01",
   "homepage": "https://labelbox.com/",
   "desc": "AI data platform you operate yourself, for training and evals",
   "desc_zh": "由企业自建的 AI 数据与评测平台",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "The buy-not-outsource option when data must stay inside the company. 首次公开发布日期精度：month-only 来源：https://www.cbinsights.com/compare/labelbox-vs-surge-ai",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "The buy-not-outsource option when data must stay inside the company. 首次公开发布日期精度：month-only 来源：https://www.cbinsights.com/compare/labelbox-vs-surge-ai 2026-11-25：released 2018-07-01/day → 2018-01-01/year; source https://labelbox.com/company/about/。原值 2018-07-01 按精确到日记，但官方的介绍页只给出成立年份 2018。按年份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2018-07-01/day",
+      "to": "2018-01-01/year",
+      "why": "原值 2018-07-01 按精确到日记，但官方的介绍页只给出成立年份 2018。按年份精度记"
+    }
+  ],
+  "date_precision": "year"
 }

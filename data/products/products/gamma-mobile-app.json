@@ -1,0 +1,36 @@
+{
+  "id": "gamma-mobile-app",
+  "name": "Gamma: AI Slides & Design",
+  "name_zh": "Gamma: AI Slides & Design",
+  "vendor_id": "gamma",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-06-12",
+  "date_precision": "day",
+  "homepage": "https://apps.apple.com/us/app/gamma-ai-slides-design/id6768404578",
+  "desc": "iOS app for making presentations, docs, websites and social posts",
+  "desc_zh": "在 iPhone 上做演示稿、文档、网页和社交帖的应用",
+  "solves": "A deck waits until you are back at a computer, and the idea is cold by then. Type or speak a prompt and the app drafts it.",
+  "solves_zh": "演示稿往往要等回到电脑前才能动手，想法早就凉了。手机应用收下打字或语音的提示，随地给出第一稿。",
+  "best_for": "When an idea arrives on the move and the first draft has to exist before the next meeting.",
+  "best_for_zh": "想法在路上出现，而第一稿要赶在下一场会议前存在的时候。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "voice-input",
+    "prompt-to-deck"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — Apple App Store listing for Gamma Tech, Inc.; found via the iTunes software ）。 Evidence comes from Apple's App Store lookup API because the rendered apps.apple.com page geo-redirects to the China storefront, where the app is not listed. gamma.app itself returns 403 to automated fetches, so the vendor help centre is the second source. The seller is Gamma's own company (Gamma Tech, Inc.), so the listing is first-party. This is a DISTINCT entry from the ledger's Gamma (gamma.app, web): it is the native iOS client of the same platform, not a re-release of the web product, so it is shipped separately rather than folded into the existing record. The ledger's form enum has no mobile value, so web is used for the client. 首次公开日期来源：https://itunes.apple.com/lookup?id=6768404578&country=us 官网未直接确认（redirect->https://apps.apple.com/cn/iphone/today）。",
+  "revisions": []
+}

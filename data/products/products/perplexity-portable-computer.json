@@ -1,0 +1,37 @@
+{
+  "id": "perplexity-portable-computer",
+  "name": "Perplexity Portable Computer",
+  "name_zh": "Perplexity Portable Computer",
+  "vendor_id": "perplexity",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private",
+    "research",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "released": "2026-08-25",
+  "date_precision": "day",
+  "homepage": "https://www.perplexity.ai/computer",
+  "desc": "A local-first Perplexity Computer running entirely on an NVIDIA DGX Spark.",
+  "desc_zh": "Perplexity Computer 的本地优先版本，完全跑在 NVIDIA DGX Spark 上。",
+  "solves": "Private code and confidential documents should not leave the machine; this keeps the whole agent loop on device and only escalates when you allow it.",
+  "solves_zh": "私有代码和机密文件不该离开本机；它把整个智能体闭环留在设备上，只有你允许时才升级到云端。",
+  "best_for": "You want an agent to triage a private repository overnight without any of it touching a cloud service.",
+  "best_for_zh": "想让智能体连夜分派一个私有仓库的问题，而整个过程完全不碰云服务时。",
+  "surface": "standalone",
+  "tags": [
+    "local-first",
+    "on-device-agent",
+    "private-data"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — perplexity.ai blog and changelog directories）。 Launched 2026-08-25 with NVIDIA for the DGX Spark, running Qwen 3.8 27B or PPLX 27B locally, with Nemotron 3.5 ASR for dictation and escalation to cloud models only with permission. The blog post carries its date in page metadata (2026-08-25) rather than in the body text. Linux first, Windows support planned. perplexity.ai returns 403 to curl, so pages were read through the page reader. 入库核对（2026-11-25）：官方名字只是「Portable Computer」，加上产品线名以便辨认，也与账本里「Perplexity Comet」的记法一致。 首次公开日期来源：https://www.perplexity.ai/hub/blog/introducing-portable-computer-for-local-first-ai 官网未直接确认（403）。",
+  "revisions": []
+}

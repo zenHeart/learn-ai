@@ -1,0 +1,36 @@
+{
+  "id": "cursor-projects",
+  "name": "Cursor Projects",
+  "name_zh": "Cursor Projects",
+  "vendor_id": "anysphere",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-09-10",
+  "date_precision": "day",
+  "homepage": "https://cursor.com/projects",
+  "desc": "A container for a large body of work, with context across months.",
+  "desc_zh": "装下一大块工作、能在几个月里保持上下文的容器。",
+  "solves": "An agent session forgets everything when it closes; a project holds the context and delegates pieces to many subagents.",
+  "solves_zh": "智能体会话一关就忘光；项目把上下文留住，再把片段分给许多子智能体。",
+  "best_for": "You are migrating a monolith and the work will span weeks of agent sessions.",
+  "best_for_zh": "在拆一个单体应用，活儿要横跨好几周的智能体会话。",
+  "surface": "in-product",
+  "tags": [
+    "long-running",
+    "context",
+    "subagents"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cursor.com/changelog directory）。 入库核对（2026-11-25）：官方名字只是「Projects」，加上产品名以便辨认。 首次公开日期来源：https://cursor.com/changelog/projects",
+  "revisions": []
+}

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 720" width="100%" height="100%" role="img" aria-labelledby="colab-rt-title colab-rt-desc">
+  <title id="colab-rt-title">Colab: where your code runs, and what survives a disconnected runtime</title>
+  <desc id="colab-rt-desc">This diagram answers two questions: where does your code actually run, and after the runtime disconnects, what is still there and what is gone? Solid lines are relationships that survive a disconnect; dashed lines are the connections and contents that disappear. On the left is the notebook interface in the browser, on your own computer. It holds the cells, the outputs, and the sidebar, and the notebook content is edited here. At the top of the middle are two persistent places: Google Drive, which holds notebook files and data files, and GitHub, which holds notebook copies and cloned repositories. The lines between the interface and Drive, and between the interface and GitHub, are solid double-headed arrows, so they survive a disconnect. Below them is the runtime virtual machine in the cloud, where the code actually runs. Its compute type can be CPU, or switch on demand to GPU or TPU, and the interface can switch the runtime type. Three things inside the runtime disappear when it disconnects, marked with dashed rose boxes: the kernel process and in-memory variables, such as variables and imported modules; the temporary disk, such as installed packages and files uploaded to the runtime; and the mount state. The connection from the interface to the runtime is dashed as well: the interface sends cell code to the runtime, and the runtime sends output back to the interface. After you authorize a mount, the runtime reads from and writes to Drive; this line is dashed because the mount is lost on a disconnect. The runtime can pull a notebook or a repository from GitHub. On the right are the files on your computer: the originals stay on your computer, while the copy uploaded to the runtime sits on the temporary disk and disappears on a disconnect. Secrets hands a key to the code in the runtime after you authorize it. This diagram leaves out Google's internal infrastructure, any specific free-tier numbers, and button or menu names that exist only in particular versions.</desc>
+  <defs>
+    <linearGradient id="cBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0b0f19"/><stop offset="55%" stop-color="#0f172a"/><stop offset="100%" stop-color="#020617"/></linearGradient>
+    <pattern id="cGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/></pattern>
+    <marker id="cArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/></marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-band { fill: #f8fafc; font-size: 12px; font-weight: 700; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; }
+      .t-card { fill: #f8fafc; font-size: 13.5px; font-weight: 700; }
+      .t-body { fill: #cbd5e1; font-size: 11px; }
+      .t-tag { fill: #fda4af; font-size: 10.5px; font-weight: 600; }
+      .t-cap { fill: #fdba74; font-size: 10.5px; font-weight: 600; }
+      .t-green { fill: #6ee7b7; font-size: 10.5px; font-weight: 600; }
+    </style>
+  </defs>
+  <rect width="1020" height="720" fill="url(#cBg)"/>
+  <rect width="1020" height="720" fill="url(#cGrid)"/>
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#a78bfa"/>
+    <text x="20" y="21" class="t-title">Colab: where your code runs, and what survives a disconnect</text>
+    <text x="20" y="40" class="t-sub">Solid lines survive a disconnected runtime; dashed lines are the connections and contents that disappear</text>
+  </g>
+
+  <!-- 持久位置：Drive 与 GitHub -->
+  <rect x="402" y="130" width="148" height="74" rx="9" fill="#0f172a"/>
+  <rect x="402" y="130" width="148" height="74" rx="9" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="476" y="156" class="t-card" text-anchor="middle">Google Drive</text>
+  <text x="476" y="176" class="t-body" text-anchor="middle">notebooks, data files</text>
+  <text x="476" y="193" class="t-green" text-anchor="middle">still there afterwards</text>
+  <rect x="570" y="130" width="148" height="74" rx="9" fill="#0f172a"/>
+  <rect x="570" y="130" width="148" height="74" rx="9" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="644" y="156" class="t-card" text-anchor="middle">GitHub</text>
+  <text x="644" y="176" class="t-body" text-anchor="middle">copies, cloned repos</text>
+  <text x="644" y="193" class="t-green" text-anchor="middle">still there afterwards</text>
+
+  <!-- 界面与 Drive / GitHub：实线，断开后保留 -->
+  <path d="M 156 130 V 92 H 644 V 122" fill="none" stroke="#fb923c" stroke-width="2" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="230" y="87" class="t-cap">Save to GitHub, or load from GitHub</text>
+  <path d="M 186 130 V 114 H 476 V 122" fill="none" stroke="#fb923c" stroke-width="2" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="230" y="109" class="t-cap">Save or open notebooks and data</text>
+
+  <!-- 浏览器里的界面 -->
+  <rect x="36" y="130" width="280" height="490" rx="9" fill="#0f172a"/>
+  <rect x="36" y="130" width="280" height="490" rx="9" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="176" y="158" class="t-card" text-anchor="middle">Notebook interface in the browser</text>
+  <text x="176" y="177" class="t-note" text-anchor="middle">on your own computer</text>
+  <rect x="52" y="196" width="248" height="40" rx="6" fill="#0f172a"/>
+  <rect x="52" y="196" width="248" height="40" rx="6" fill="rgba(8, 51, 68, 0.5)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="176" y="213" class="t-body" text-anchor="middle">Cells: code and text</text>
+  <text x="176" y="229" class="t-green" text-anchor="middle">Notebook content: still there afterwards</text>
+  <rect x="52" y="248" width="248" height="32" rx="6" fill="#0f172a"/>
+  <rect x="52" y="248" width="248" height="32" rx="6" fill="rgba(8, 51, 68, 0.5)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="176" y="268" class="t-body" text-anchor="middle">Output: results shown under the cells</text>
+  <rect x="52" y="292" width="248" height="32" rx="6" fill="#0f172a"/>
+  <rect x="52" y="292" width="248" height="32" rx="6" fill="rgba(8, 51, 68, 0.5)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="176" y="312" class="t-body" text-anchor="middle">Sidebar: files, secrets</text>
+  <text x="176" y="560" class="t-note" text-anchor="middle">The interface is only a window</text>
+  <text x="176" y="578" class="t-note" text-anchor="middle">Your code does not run here</text>
+
+  <!-- 云端的运行时虚拟机 -->
+  <rect x="396" y="228" width="328" height="392" rx="9" fill="#0f172a"/>
+  <rect x="396" y="228" width="328" height="392" rx="9" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="560" y="254" class="t-card" text-anchor="middle">Cloud runtime VM: your code runs here</text>
+  <g>
+    <rect x="412" y="266" width="92" height="30" rx="6" fill="#0f172a"/>
+    <rect x="412" y="266" width="92" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1.2"/>
+    <text x="458" y="285" class="t-body" text-anchor="middle">CPU</text>
+    <rect x="514" y="266" width="92" height="30" rx="6" fill="#0f172a"/>
+    <rect x="514" y="266" width="92" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1.2"/>
+    <text x="560" y="285" class="t-body" text-anchor="middle">GPU</text>
+    <rect x="616" y="266" width="92" height="30" rx="6" fill="#0f172a"/>
+    <rect x="616" y="266" width="92" height="30" rx="6" fill="rgba(76, 29, 149, 0.6)" stroke="#c4b5fd" stroke-width="1.2"/>
+    <text x="662" y="285" class="t-body" text-anchor="middle">TPU</text>
+  </g>
+  <text x="560" y="314" class="t-note" text-anchor="middle">Runtime type: switch on demand</text>
+  <rect x="412" y="326" width="296" height="64" rx="7" fill="#0f172a"/>
+  <rect x="412" y="326" width="296" height="64" rx="7" fill="rgba(136, 19, 55, 0.25)" stroke="#fb7185" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="560" y="347" class="t-card" text-anchor="middle">Kernel process and memory variables</text>
+  <text x="560" y="365" class="t-body" text-anchor="middle">variables, imported modules</text>
+  <text x="560" y="381" class="t-tag" text-anchor="middle">gone after a disconnect</text>
+  <rect x="412" y="402" width="296" height="64" rx="7" fill="#0f172a"/>
+  <rect x="412" y="402" width="296" height="64" rx="7" fill="rgba(136, 19, 55, 0.25)" stroke="#fb7185" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="560" y="423" class="t-card" text-anchor="middle">Temporary disk</text>
+  <text x="560" y="441" class="t-body" text-anchor="middle">installed packages, files uploaded to the runtime</text>
+  <text x="560" y="457" class="t-tag" text-anchor="middle">gone after a disconnect</text>
+  <rect x="412" y="478" width="296" height="64" rx="7" fill="#0f172a"/>
+  <rect x="412" y="478" width="296" height="64" rx="7" fill="rgba(136, 19, 55, 0.25)" stroke="#fb7185" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="560" y="499" class="t-card" text-anchor="middle">Mount state</text>
+  <text x="560" y="517" class="t-body" text-anchor="middle">whether Drive is mounted</text>
+  <text x="560" y="533" class="t-tag" text-anchor="middle">gone after a disconnect</text>
+  <text x="560" y="574" class="t-note" text-anchor="middle">Dashed rose boxes live only on this temporary VM</text>
+  <text x="560" y="592" class="t-note" text-anchor="middle">These three exist only on this virtual machine</text>
+
+  <!-- 界面到运行时：虚线，断开后消失 -->
+  <line x1="316" y1="281" x2="390" y2="281" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="353" y="274" class="t-cap" text-anchor="middle">Switch type</text>
+  <line x1="316" y1="350" x2="390" y2="350" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="353" y="343" class="t-cap" text-anchor="middle">Send code</text>
+  <line x1="396" y1="392" x2="322" y2="392" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="359" y="408" class="t-cap" text-anchor="middle">Output back</text>
+
+  <!-- Drive 挂载、GitHub 拉取：虚线 -->
+  <line x1="476" y1="204" x2="476" y2="220" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="490" y="218" class="t-cap">Read/write once authorized</text>
+  <line x1="644" y1="204" x2="644" y2="220" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="658" y="218" class="t-cap">Pull repository</text>
+
+  <!-- Secrets 与你电脑上的文件 -->
+  <rect x="784" y="262" width="200" height="80" rx="9" fill="#0f172a"/>
+  <rect x="784" y="262" width="200" height="80" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="884" y="288" class="t-card" text-anchor="middle">Secrets (keys)</text>
+  <text x="884" y="308" class="t-body" text-anchor="middle">After you authorize, hands</text>
+  <text x="884" y="325" class="t-body" text-anchor="middle">the key to code in the runtime</text>
+  <line x1="784" y1="302" x2="730" y2="302" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="757" y="295" class="t-cap" text-anchor="middle">Authorized</text>
+  <rect x="784" y="372" width="200" height="80" rx="9" fill="#0f172a"/>
+  <rect x="784" y="372" width="200" height="80" rx="9" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="884" y="398" class="t-card" text-anchor="middle">Files on your computer</text>
+  <text x="884" y="418" class="t-body" text-anchor="middle">Originals stay on your computer</text>
+  <text x="884" y="435" class="t-green" text-anchor="middle">still there afterwards</text>
+  <line x1="784" y1="412" x2="730" y2="412" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="757" y="405" class="t-cap" text-anchor="middle">Upload</text>
+
+  <!-- 图例 -->
+  <text x="36" y="652" class="t-note">Legend</text>
+  <line x1="36" y1="660" x2="984" y2="660" stroke="#334155" stroke-width="1"/>
+  <line x1="36" y1="682" x2="86" y2="682" stroke="#fb923c" stroke-width="2" marker-start="url(#cArrow)" marker-end="url(#cArrow)"/>
+  <text x="96" y="686" class="t-note">Solid: survives a disconnected runtime</text>
+  <line x1="370" y1="682" x2="420" y2="682" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#cArrow)"/>
+  <text x="430" y="686" class="t-note">Dashed: connections and contents that disappear</text>
+  <rect x="706" y="676" width="16" height="12" rx="3" fill="rgba(6, 78, 59, 0.6)" stroke="#34d399" stroke-width="1.2"/>
+  <text x="730" y="686" class="t-note">Green: still there</text>
+  <rect x="840" y="675" width="16" height="14" rx="3" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="864" y="686" class="t-note">Rose dashed box: gone</text>
+</svg>

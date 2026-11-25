@@ -1,0 +1,36 @@
+{
+  "id": "berd",
+  "name": "Berd",
+  "name_zh": "Berd",
+  "vendor_id": "block",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-08-14",
+  "date_precision": "day",
+  "homepage": "https://github.com/block/berd",
+  "desc": "Open-source desktop app for getting work done with AI agents.",
+  "desc_zh": "用 AI 智能体干活的开源桌面应用。",
+  "solves": "Agent work used to mean one more browser tab; Berd gives it a desktop window that takes whichever model you point it at.",
+  "solves_zh": "过去用智能体只是多开一个浏览器标签；Berd 给它一个桌面窗口，接哪家模型都行。",
+  "best_for": "You run several agents at once and want one window instead of a tab per tool.",
+  "best_for_zh": "同时跑好几个智能体，想用一个窗口而不是每个工具开一个标签。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "desktop-app",
+    "multi-model"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — opensource.block.xyz showcase and github.com/block/berd/releases）。 GitHub renders the release date relatively (\"released this 14 Aug\"); read on 2026-11-25 that means 2026-08-14. 首次公开日期来源：https://github.com/block/berd/releases/tag/v0.6.0",
+  "revisions": []
+}

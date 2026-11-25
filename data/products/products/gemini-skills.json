@@ -1,0 +1,36 @@
+{
+  "id": "gemini-skills",
+  "name": "Gemini Skills",
+  "name_zh": "Gemini Skills",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-09-30",
+  "date_precision": "day",
+  "homepage": "https://gemini.google.com/",
+  "desc": "Reusable instruction sets Gemini loads for specific tasks",
+  "desc_zh": "让 Gemini 按需加载的可复用指令集",
+  "solves": "The same instructions get retyped in every chat; a skill saves them once and Gemini applies it on matching prompts.",
+  "solves_zh": "同样的指令每次对话都要重敲，技能保存一次后遇到匹配提问就自动套用。",
+  "best_for": "Every deck must follow the house style, and you want Gemini to start from that format.",
+  "best_for_zh": "每份演示都要符合公司风格，希望 Gemini 一开始就按这个格式来。",
+  "surface": "in-product",
+  "tags": [
+    "skills",
+    "prompt-shortcuts",
+    "custom-instructions"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://gemini.google/release-notes (official Gemini Apps release updates)）。 Entry dated 2026.09.30; the quote stops before footnote marker 1. Rolling out globally in chat (18+). The entry says skills will replace Gems, with automatic migration. Same vocabulary as Anthropic's Agent Skills. Second source is not independent media. 入库核对（2026-11-25）：官方名字只是「skills」，加上产品名以便辨认。 首次公开日期来源：https://gemini.google/release-notes",
+  "revisions": []
+}

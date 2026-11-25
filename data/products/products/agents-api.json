@@ -1,0 +1,37 @@
+{
+  "id": "agents-api",
+  "name": "Agents API",
+  "name_zh": "Agents API",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "coding",
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2026-09-10",
+  "date_precision": "day",
+  "homepage": "https://developers.openai.com/api/docs/guides/agents",
+  "desc": "Run cloud agents on the Codex harness, managed by OpenAI.",
+  "desc_zh": "在 Codex harness 上运行云端 Agent，由 OpenAI 托管。",
+  "solves": "Building an agent means owning the loop, the tools and the sandbox. The Agents API hands you that harness, and you pay only for the tokens and tools you use.",
+  "solves_zh": "自己搭 Agent 就要自己维护循环、工具和沙箱。Agents API 直接给你这套 harness，你只为自己用掉的 token 和工具付费。",
+  "best_for": "You want an agent in your product and do not want to run the infrastructure.",
+  "best_for_zh": "你想在自己的产品里放一个 Agent，又不想自己运维底层设施。",
+  "surface": "standalone",
+  "tags": [
+    "agents",
+    "cloud-harness",
+    "api"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/introducing-the-agents-api）。 Public beta for all developers on 2026-09-10. Computer use, tool search and context compaction were added at DevDay on 2026-09-29. platform.openai.com/docs/guides/agents redirects to developers.openai.com. 首次公开日期来源：https://openai.com/index/introducing-the-agents-api 官网未直接确认（redirect->https://developers.openai.com/api/docs/guides/agents）。",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lingyi-boss-ai",
+  "name": "老板AI",
+  "name_zh": "老板AI",
+  "vendor_id": "01ai",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-07-01",
+  "date_precision": "month",
+  "homepage": "https://www.lingyiwanwu.com/boss-ai.html",
+  "desc": "Decision agent for a company's top seat, trained on global operating practice",
+  "desc_zh": "面向企业一号位的AI经营决策助手",
+  "solves": "Layered reporting hides the real problem; this reads the operating data, flags the risk and closes the loop with an action.",
+  "solves_zh": "层层汇报把真实问题盖住了，它直接读经营数据、标出关键风险，并给出能跟踪的行动闭环。",
+  "best_for": "Sensing a margin problem weeks before the monthly report would surface it.",
+  "best_for_zh": "在月报出来之前几周，就想知道哪个业务线正在拖累毛利。",
+  "surface": "in-product",
+  "tags": [
+    "decision-support",
+    "executive-agent",
+    "risk-alert"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — lingyiwanwu.com 首页产品与服务导航与页面底部公司大事记时间线）。 万策平台在 2026 年 7 月延伸出的三个应用之一，有独立产品页但属于万策体系内的场景应用，故 surface 记为 in-product。上线时间与万策相同，官网只给到月份。需预约咨询，无公开自助入口。 首次公开日期来源：https://www.lingyiwanwu.com/ 首次公开日期仅精确到月。",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "baidu-miaoda",
+  "name": "秒哒",
+  "name_zh": "秒哒",
+  "vendor_id": "baidu",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2025-03-24",
+  "date_precision": "day",
+  "homepage": "https://www.miaoda.cn/",
+  "desc": "Baidu's no-code platform that turns a sentence into an app",
+  "desc_zh": "百度的一句话无代码应用搭建平台",
+  "solves": "A small internal tool waits weeks for a developer. Describe it in plain words and Miaoda returns a working app.",
+  "solves_zh": "想做个内部小工具，排期要等几周。用大白话说清需求，它直接生成能跑的网页、小程序和后台。",
+  "best_for": "Monday needs a leave-request form and every developer on the team is already booked.",
+  "best_for_zh": "周一就要一个请假审批表单，组里开发的排期却已经排满了。",
+  "surface": "standalone",
+  "tags": [
+    "no-code",
+    "app-generation",
+    "multi-agent"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.baidu.com/more/ (Baidu 全部产品目录: “秒哒 一句话做应用”) and the 百度智能云 newsro）。 First announced 2024-11-12 at 百度世界2024 (李彦宏, One More Thing) and fully opened 2025-03-24 at 百度 AI Day; the 2025-03-24 全量上线 day is used as first public availability. Official site spells it miaoda.cn (also www.miaoda.cn); the docs call the product 秒哒公有云 MIAODA. Generates websites, H5, mini-programs, small games and back ends from natural language; the docs also list a 秒哒 APP for Android and iOS, and separate 团队版 / 企业版 editions plus a 商单平台. Outside the 2026-05-07 window: proposed as a backfill, absent from the ledger. Do not confuse with 妙搭 (ByteDance, ledger bytedance-4): same pinyin, different vendor. 首次公开日期来源：https://cloud.baidu.com/news/news_6598ad33-7d5b-40c2-8a89-8325d066f87a",
+  "revisions": []
+}

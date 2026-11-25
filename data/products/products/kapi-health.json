@@ -1,0 +1,35 @@
+{
+  "id": "kapi-health",
+  "name": "咔皮健康",
+  "name_zh": "咔皮健康",
+  "vendor_id": "sensetime",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-04-05",
+  "date_precision": "day",
+  "homepage": "https://apps.apple.com/cn/app/id6760928653",
+  "desc": "AI health assistant that turns watch data into plain-language advice",
+  "desc_zh": "解读手表健康数据的AI健康助手",
+  "solves": "Wearables dump heart rate, sleep and stress numbers nobody can read; this explains them in plain language and suggests what to do today.",
+  "solves_zh": "手表上的心率、睡眠、压力数据没人看得懂，它把这些数字讲成能听懂的提醒，并告诉你今天该怎么动、怎么睡。",
+  "best_for": "Opening it after a bad night's sleep to ask whether today is a good day to run.",
+  "best_for_zh": "昨晚没睡好，早上打开它问一句今天能不能跑步，它结合你的睡眠和压力数据给答案。",
+  "surface": "standalone",
+  "tags": [
+    "health-data",
+    "wearable",
+    "personal-agent"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — sensetime.com/cn 首页产品矩阵（咔皮家族）与新闻中心文章 /cn/news/4000）。 咔皮家族（咔皮记账、Kapi相机、咔皮健康）是商汤的个人智能应用矩阵，账本中均无记录。上线日取商汤官方文章的发布日 2026-07-22，文中称咔皮健康为本次亮相的'重磅新成员'。需复核：该 App Store 列表的版本历史最早可见 0.0.4（4月22日，即 2026 年），说明此前已可下载，'首次公开可用日'可能早于官方亮相日；App Store 未公布初始发布日期。产品自述'观察而非诊断'，不提供医学诊断。 入库核对（2026-11-25）：苹果官方查询接口显示这个应用 2026-04-05 就已上架，早于商汤文章的发布日 2026-07-22。按规则记首次公开可用的日子。 首次公开日期来源：https://itunes.apple.com/lookup?id=6760928653&country=cn",
+  "revisions": []
+}

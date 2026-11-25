@@ -11,8 +11,8 @@
   ],
   "form": "web",
   "surface": "standalone",
-  "released": "2025-01-01",
-  "date_precision": "month",
+  "released": "2024-02-07",
+  "date_precision": "day",
   "homepage": "https://xiaohuanxiong.com/",
   "desc": "SenseTime's AI office agent for slides, data and infographics.",
   "desc_zh": "商汤的 AI 办公智能体，做幻灯片、数据与信息图",
@@ -24,9 +24,34 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://www.sensenova.cn/。来源：https://xiaohuanxiong.com/",
-  "revisions": []
+  "status": "merged",
+  "superseded_by": "xiaohuanxiong",
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：https://www.sensenova.cn/。来源：https://xiaohuanxiong.com/ 2026-11-25：status active → merged; superseded_by null → xiaohuanxiong。办公小浣熊与代码小浣熊一起并入了商汤小浣熊 Raccoon Work 2026-11-25：released 2025-01-01/month → 2024-02-07/day; source https://www.sensetime.com/cn/news/51168378。原值 2025 年 1 月只是月份占位。商汤官网新闻（2024/02/07）：「数据分析工具——“办公小浣熊”正式上线！继代码小浣熊之后，“小浣熊”家族，再添新成员」",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "办公小浣熊与代码小浣熊一起并入了商汤小浣熊 Raccoon Work"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "xiaohuanxiong",
+      "why": "办公小浣熊与代码小浣熊一起并入了商汤小浣熊 Raccoon Work"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-01-01/month",
+      "to": "2024-02-07/day",
+      "why": "原值 2025 年 1 月只是月份占位。商汤官网新闻（2024/02/07）：「数据分析工具——“办公小浣熊”正式上线！继代码小浣熊之后，“小浣熊”家族，再添新成员」"
+    }
+  ]
 }

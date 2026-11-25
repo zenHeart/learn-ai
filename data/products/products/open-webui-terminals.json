@@ -1,0 +1,36 @@
+{
+  "id": "open-webui-terminals",
+  "name": "Open WebUI Terminals",
+  "name_zh": "Open WebUI Terminals",
+  "vendor_id": "open-webui",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "self-hosted",
+  "released": "2026-11-18",
+  "date_precision": "day",
+  "homepage": "https://openwebui.com/open-terminal",
+  "desc": "Sandboxed computers that give each Open WebUI chat its own machine.",
+  "desc_zh": "给每个 Open WebUI 对话各配一台沙箱电脑。",
+  "solves": "A model that can only talk cannot finish real work; each chat gets a shell, files and a network to act in.",
+  "solves_zh": "只能说话的模型干不完真实的活；每个对话都有自己的 shell、文件和网络去执行。",
+  "best_for": "You want the assistant to run a command and show you the result beside the chat.",
+  "best_for_zh": "你想让助手跑一条命令，并把结果显示在对话旁边。",
+  "surface": "in-product",
+  "tags": [
+    "sandbox",
+    "self-hosted",
+    "agent-computer"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — openwebui.com/blog）。 Blog post dated November 18, 2026 (JSON-LD datePublished 2026-11-18T03:55:39.000Z). Shipped inside Open WebUI v0.13.x but marketed under its own name and product page, so surface is in-product. 首次公开日期来源：https://openwebui.com/blog/introducing-terminals",
+  "revisions": []
+}

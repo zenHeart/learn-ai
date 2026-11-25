@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Its custom kernels are why latency-sensitive products run open models there instead. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/Fireworks_AI",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "Its custom kernels are why latency-sensitive products run open models there instead. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/Fireworks_AI 2026-11-25：date_precision day → month。官方的 Python SDK 首个包只是占位版本 0.0.0（2022-10-02），没有带日期的发布说明；只确认到 2022 年 10 月",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "官方的 Python SDK 首个包只是占位版本 0.0.0（2022-10-02），没有带日期的发布说明；只确认到 2022 年 10 月"
+    }
+  ],
+  "date_precision": "month"
 }

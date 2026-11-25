@@ -1,0 +1,35 @@
+{
+  "id": "cursor-ios",
+  "name": "Cursor for iOS",
+  "name_zh": "Cursor for iOS",
+  "vendor_id": "anysphere",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-29",
+  "date_precision": "day",
+  "homepage": "https://cursor.com/mobile",
+  "desc": "Mobile app for launching and watching Cursor cloud agents.",
+  "desc_zh": "在手机上发起和查看 Cursor 云端智能体的应用。",
+  "solves": "Agents only moved while you sat at the desk; you pick a repo, describe the change by voice, and check the run from anywhere.",
+  "solves_zh": "过去只有坐在电脑前智能体才动；现在选好仓库、语音描述改动，走到哪都能看进度。",
+  "best_for": "You are away from the desk and want to hand an agent a task before you forget it.",
+  "best_for_zh": "人不在电脑前，想趁还记得赶紧给智能体派个活。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "cloud-agents",
+    "voice-input"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cursor.com/changelog directory）。 Public beta on all paid plans; an iPad build followed on 2026-07-29. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://cursor.com/changelog/ios-mobile-app",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "grok-bot",
+  "name": "Grok Bot",
+  "name_zh": "Grok Bot",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-08-11",
+  "date_precision": "day",
+  "homepage": "https://x.ai/bot",
+  "desc": "AI teammates with their own computer that finish jobs around the clock.",
+  "desc_zh": "拥有自己电脑的 AI 队友，能登录你的工具并全天候把活儿干完。",
+  "solves": "Delegating real work means handing over logins and babysitting; a Bot works inside the same apps you do and comes back only for approvals.",
+  "solves_zh": "把真活儿派出去就要交账号还得盯着；Bot 在你在用的同一批应用里工作，只在需要批准时才回来。",
+  "best_for": "You want sales outbound and bug triage handled overnight without giving a stranger your inbox.",
+  "best_for_zh": "想让外呼和 bug 分派在夜里完成，又不想把邮箱交给陌生人时。",
+  "surface": "standalone",
+  "tags": [
+    "ai-teammates",
+    "computer-use",
+    "approval-gates"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory）。 Beta at launch on 2026-08-11 for SuperGrok, SuperGrok Plus and SuperGrok Heavy and for Cursor Pro, Pro+, Ultra and Teams; enterprise access was waitlisted until 2026-09-03. Grok Bot 1.0 (2026-11-11) and Team Bots (2026-09-28) are updates to this product, not separate entries. Bot usage is billed separately from Grok and Cursor plans. 首次公开日期来源：https://x.ai/news/introducing-grok-bot",
+  "revisions": []
+}

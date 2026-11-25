@@ -1,0 +1,36 @@
+{
+  "id": "grok-business",
+  "name": "Grok Business",
+  "name_zh": "Grok Business",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2025-12-30",
+  "date_precision": "day",
+  "homepage": "https://x.ai/grok/business",
+  "desc": "Grok for teams, with enterprise security, shared projects and higher rate limits.",
+  "desc_zh": "面向团队的 Grok，带企业安全、共享项目与更高速率上限。",
+  "solves": "Personal assistants leak company data and cap out on usage; this keeps work data private and raises the limits.",
+  "solves_zh": "个人助手会漏公司数据还会撞上限；这个把工作数据保住并抬高限额。",
+  "best_for": "You want your whole team on Grok without wondering whether yesterday's documents trained someone's model.",
+  "best_for_zh": "想让全队用上 Grok，又不想担心昨天的文档喂了别人模型时。",
+  "surface": "standalone",
+  "tags": [
+    "team-workspace",
+    "sso",
+    "data-privacy"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory）。 Missing from the ledger. Launched 2025-12-30 together with Grok Enterprise, which is the same platform plus Custom SSO and Directory Sync (SCIM); only Grok Business is recorded here so the two tiers are not double counted. Self-serve for small and medium teams, sales-led for larger organizations. 首次公开日期来源：https://x.ai/news/grok-business",
+  "revisions": []
+}

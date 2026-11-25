@@ -1,0 +1,37 @@
+{
+  "id": "trae-mobile",
+  "name": "TRAE 移动端",
+  "name_zh": "TRAE 移动端",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-04-28",
+  "date_precision": "day",
+  "homepage": "https://apps.apple.com/cn/app/id6761400733",
+  "desc": "TRAE's phone app for sending coding tasks to cloud or PC",
+  "desc_zh": "TRAE 的手机端，远程给电脑或云端派任务",
+  "solves": "You are away from the desk and a build or doc task is waiting. Start it from the phone and watch progress there.",
+  "solves_zh": "人不在电脑前，手里的活却等着跑。用手机把任务下发给云端或已配对的电脑，进度随时看。",
+  "best_for": "Out for the day when a fix is urgent: dispatch it by voice from your phone.",
+  "best_for_zh": "出门在外突然要改个紧急 bug，按住说话把任务发给自己的电脑就行。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-client",
+    "remote-dispatch",
+    "task-sync",
+    "voice-input"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — App Store 中国区 (iTunes Search API, term TRAE) + D — https://docs.trae.cn/llms）。 Separately installed app (App Store title TRAE - 专业AI开发平台), a companion client of TraeWork / TRAE rather than a new agent: it sends tasks to a cloud sandbox or to paired PCs and shows progress. It shipped as 'TRAE SOLO 移动版' alongside TraeWork and is now documented as 'TRAE 移动端' for the merged TRAE. Two official dates disagree: the App Store listing says 2026-04-28, the official changelog announces the mobile version on 2026-05-05; the earlier listing date is used. The form field is 'desktop' only because the schema has no mobile value. Before 2026-04-28 and outside the 2026-05-07 window: proposed as a backfill. Enterprise release notes: '2026 年 07 月 17 日 … TRAE 移动端企业版上线'. Not on the US App Store (lookup returns 0 results). 入库核对（2026-11-25）：形态枚举没有手机应用；账本里 Gemini app、Le Chat 这类手机应用记为 web。 首次公开日期来源：https://itunes.apple.com/lookup?id=6761400733&country=cn",
+  "revisions": []
+}

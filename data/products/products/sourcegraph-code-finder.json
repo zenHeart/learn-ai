@@ -1,0 +1,36 @@
+{
+  "id": "sourcegraph-code-finder",
+  "name": "Sourcegraph Code Finder",
+  "name_zh": "Sourcegraph Code Finder",
+  "vendor_id": "sourcegraph",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-07-23",
+  "date_precision": "day",
+  "homepage": "https://sourcegraph.com/docs/code-finder",
+  "desc": "Search tool that hands a coding agent the exact files it needs.",
+  "desc_zh": "把编程智能体真正需要的文件直接递给它的智能体搜索工具。",
+  "solves": "An agent searching a codebase itself burns context and still returns the wrong files; Code Finder runs its own loop and returns precise ranges.",
+  "solves_zh": "智能体自己搜代码库既烧上下文又常找错文件；Code Finder 自己跑检索循环，返回精确范围。",
+  "best_for": "Your agent keeps opening the wrong files before it can make the change you asked for.",
+  "best_for_zh": "你的智能体在做你要的改动前总打开错文件。",
+  "surface": "in-product",
+  "tags": [
+    "code-search",
+    "mcp-server",
+    "context"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — sourcegraph.com/blog）。 Post dated July 23, 2026 by Stephanie Jarmak and Jan Hartman. The post states Code Finder is an agentic search tool inside the Sourcegraph MCP server, so surface is in-product rather than standalone. 入库核对（2026-11-25）：官方名字只是「Code Finder」，加上产品名以便辨认。 首次公开日期来源：https://sourcegraph.com/blog/code-finder-fast-code-search-for-agents",
+  "revisions": []
+}

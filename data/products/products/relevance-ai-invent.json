@@ -1,0 +1,35 @@
+{
+  "id": "relevance-ai-invent",
+  "name": "Relevance AI Invent",
+  "name_zh": "Relevance AI Invent",
+  "vendor_id": "relevance-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-05-07",
+  "date_precision": "day",
+  "homepage": "https://www.relevanceai.com/invent",
+  "desc": "Platform that builds and manages factories of specialist agents for go-to-market.",
+  "desc_zh": "为市场推广搭建和管理专家智能体工厂的平台。",
+  "solves": "One agent built by hand does not run a business process; Invent designs the process and builds the agents that operate it.",
+  "solves_zh": "手工搭的一个智能体跑不了业务流程；Invent 设计流程并建造运营它的智能体。",
+  "best_for": "You need a repeatable process run by agents and measured on the outcome, not a demo.",
+  "best_for_zh": "你需要一条由智能体执行、按结果计量的可重复流程，而不是演示。",
+  "surface": "standalone",
+  "tags": [
+    "agent-factory",
+    "go-to-market",
+    "no-code"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — relevanceai.com/blog）。 The first Invent post carries JSON-LD datePublished 2025-05-07 and the visible date May 7, 2025; a second post, \"Launching Invent\" (Sep 25, 2026), presents the fuller product. The visible date is used for the first public availability. Not in the ledger, so rule (b). The site navigation now leads with Invent and \"Factories\"; the earlier Workforce canvas post (May 8, 2025) is a related surface. 入库核对（2026-11-25）：官方名字只是「Invent」，加上厂商名以便辨认。 首次公开日期来源：https://www.relevanceai.com/blog/introducing-invent-from-idea-to-ai-agent-in-minutes",
+  "revisions": []
+}

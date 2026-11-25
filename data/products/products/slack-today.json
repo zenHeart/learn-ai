@@ -12,7 +12,7 @@
   "surface": "in-product",
   "released": "2026-05-06",
   "date_precision": "day",
-  "homepage": "https://slack.com/features/today",
+  "homepage": "https://slack.com/blog/news/today-daily-briefing",
   "desc": "Daily briefing in Slack over priorities, calendar, tasks.",
   "desc_zh": "Slack 里的每日简报，汇总优先级、日历与待办",
   "solves": "The morning scroll is an unpaid job. Today reads the calendar and the connected apps and states what matters, first.",
@@ -26,6 +26,15 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://slack.com/features/ai。来源：https://slack.com/blog/news/today-daily-briefing",
-  "revisions": []
+  "notes": "外部发现渠道补录：https://slack.com/features/ai。来源：https://slack.com/blog/news/today-daily-briefing 2026-11-25：homepage \"https://slack.com/features/today\" → \"https://slack.com/blog/news/today-daily-briefing\"。原地址 /features/today 已返回 404；Slack 自己的产品介绍页只剩这篇新闻稿（标题「Today by Slack | Your Personal AI-Powered Daily Briefing」）",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "homepage",
+      "from": "https://slack.com/features/today",
+      "to": "https://slack.com/blog/news/today-daily-briefing",
+      "why": "原地址 /features/today 已返回 404；Slack 自己的产品介绍页只剩这篇新闻稿（标题「Today by Slack | Your Personal AI-Powered Daily Briefing」）"
+    }
+  ]
 }

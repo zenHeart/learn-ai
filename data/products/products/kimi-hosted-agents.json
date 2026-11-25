@@ -1,0 +1,35 @@
+{
+  "id": "kimi-hosted-agents",
+  "name": "Kimi Hosted Agents",
+  "name_zh": "Kimi 托管智能体",
+  "vendor_id": "moonshot",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-09-01",
+  "date_precision": "month",
+  "homepage": "https://platform.kimi.com/hosted-agents",
+  "desc": "Cloud service that runs your agents around the clock.",
+  "desc_zh": "全天候替你运行 Agent 的云服务",
+  "solves": "Running an agent in production means building sandboxes, sessions and retries first. Here the harness is already hosted, and you only define the task.",
+  "solves_zh": "要让 Agent 上线，先得自建沙箱、会话和重试。这里的 Harness 已经托管好，你只负责定义任务。",
+  "best_for": "A task that must keep running for hours after you close the laptop.",
+  "best_for_zh": "有个任务要连跑几个小时，合上笔记本也不能停。",
+  "surface": "standalone",
+  "tags": [
+    "hosted-agents",
+    "cloud-sandbox",
+    "kha-cli"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — platform.kimi.com 更新日志与 docs llms.txt；kimi.com 新闻）。 时间线：2026-09 Beta 上线（平台更新日志），2026-11-05 正式发布（官方新闻）。用法为控制台 + API + kha CLI 三种。与账本已有的 Kimi Claw（2026-02-15，云端 OpenClaw）名字和框架都不同：Hosted Agents 是 Kimi Durable Harness，带沙箱、技能、记忆库与 kha CLI；是否会被视为同一产品的演进，请协调方判断。Kimi API 开放平台本身不在账本内，见 report.md unconfirmed。 入库核对（2026-11-25）：官方平台更新日志写「2026年9月 Kimi 托管智能体（Hosted Agents）Beta 上线」，2026-11-05 是正式发布日。按规则记首次公开可用的时间：2026 年 9 月，月份精度。 首次公开日期来源：https://platform.kimi.com/docs/changelog/index.md 首次公开日期仅精确到月。",
+  "revisions": []
+}

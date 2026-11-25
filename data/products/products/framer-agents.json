@@ -1,0 +1,35 @@
+{
+  "id": "framer-agents",
+  "name": "Framer Agents",
+  "name_zh": "Framer Agents",
+  "vendor_id": "framer",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-06-16",
+  "date_precision": "day",
+  "homepage": "https://www.framer.com/agents/",
+  "desc": "AI agents that design, write and edit sites on the canvas",
+  "desc_zh": "在画布上设计、写文案、改网站的 AI 智能体",
+  "solves": "Small teams wait on a designer for every copy and layout change. Agents make the edit in the same canvas and keep it editable.",
+  "solves_zh": "小团队每改一句文案、一个版式都要等设计师。Agent 就在同一张画布上改，改完还是可编辑的图层。",
+  "best_for": "A landing page needs new copy tonight and no designer is free to touch it.",
+  "best_for_zh": "落地页今晚就要换新文案，而设计师今晚排不出时间来动手。",
+  "surface": "in-product",
+  "tags": [
+    "design-agent",
+    "canvas-editing",
+    "web-design"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.framer.com/updates and https://www.framer.com/blog/ (Framer's re）。 Launched as part of Framer 3.0 on 2026-06-16. Distinct from the ledger's 'Framer AI' prompt-to-site entry (2023-06-14): Agents edit the same canvas, components, CMS and styles a team already uses, and were later extended by Skills (2026-09-22). Independent coverage exists (Product Hunt launch 2026-06-17, 482 upvotes) but was not needed for the date. 首次公开日期来源：https://www.framer.com/blog/ai-credits-simpler-plans-and-lower-prices/",
+  "revisions": []
+}

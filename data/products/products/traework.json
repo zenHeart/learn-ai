@@ -11,8 +11,8 @@
   ],
   "form": "web",
   "surface": "standalone",
-  "released": "2026-01-01",
-  "date_precision": "month",
+  "released": "2026-06-09",
+  "date_precision": "day",
   "homepage": "https://work.trae.ai/",
   "desc": "ByteDance's professional AI work assistant.",
   "desc_zh": "字节跳动的专业级 AI 工作助手",
@@ -24,9 +24,34 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
-  "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://www.trae.ai/。来源：https://www.trae.ai/",
-  "revisions": []
+  "status": "merged",
+  "superseded_by": "trae",
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：https://www.trae.ai/。来源：https://www.trae.ai/ 2026-11-25：released 2026-01-01/month → 2026-06-09/day; source https://www.trae.ai/blog/trae_work_0609。原日期 2026 年 1 月无出处。TRAE 官方发布文（2026-06-09）：「Today, TRAE SOLO officially evolves into TRAE Work」。TRAE SOLO 于 2025-07-17 首次推出、2025-11-04 结束测试；账本没有 SOLO 的档，所以这一条记新名字首发的日子 2026-11-25：status active → merged; superseded_by null → trae。TRAE 官方文档的重要通知：「TraeWork 与 TraeCode 已融合升级为全新的 TRAE，成为覆盖开发全流程的一体化平台」。融合后的 Agent 窗口随 TRAE v3.4.0 于 2026-10-08 发布",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-01-01/month",
+      "to": "2026-06-09/day",
+      "why": "原日期 2026 年 1 月无出处。TRAE 官方发布文（2026-06-09）：「Today, TRAE SOLO officially evolves into TRAE Work」。TRAE SOLO 于 2025-07-17 首次推出、2025-11-04 结束测试；账本没有 SOLO 的档，所以这一条记新名字首发的日子"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "TRAE 官方文档的重要通知：「TraeWork 与 TraeCode 已融合升级为全新的 TRAE，成为覆盖开发全流程的一体化平台」。融合后的 Agent 窗口随 TRAE v3.4.0 于 2026-10-08 发布"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "trae",
+      "why": "TRAE 官方文档的重要通知：「TraeWork 与 TraeCode 已融合升级为全新的 TRAE，成为覆盖开发全流程的一体化平台」。融合后的 Agent 窗口随 TRAE v3.4.0 于 2026-10-08 发布"
+    }
+  ]
 }

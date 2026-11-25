@@ -1,0 +1,36 @@
+{
+  "id": "gemini-decisions-api",
+  "name": "Gemini Decisions API",
+  "name_zh": "Gemini Decisions API",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-11-11",
+  "date_precision": "day",
+  "homepage": "https://ai.google.dev/gemini-api/docs/decisions",
+  "desc": "API that returns fast yes/no, choice and rubric-score decisions",
+  "desc_zh": "快速返回是非、选择和评分决策的 Gemini API",
+  "solves": "Routing and checks used full text generation; this API scores up to 1,000 questions in one pass.",
+  "solves_zh": "路由和审核过去靠整段文本生成，这个 API 一次调用可评判上千个问题。",
+  "best_for": "You triage support tickets by category and need a cheap first pass before an LLM call.",
+  "best_for_zh": "客服工单要先分类，想在调用大模型前做一层低成本的初筛。",
+  "surface": "in-product",
+  "tags": [
+    "classification",
+    "calibrated-confidence",
+    "routing"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：B — https://www.producthunt.com/products/google (maker page), then D: blog.googl）。 Powered by the Gemini Decision 1 model; reached through an API key in Google AI Studio. Product Hunt lists a launch on November 10, 2026; the official post is 2026-11-11. 首次公开日期来源：https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api 官网未直接确认（redirect->https://aistudio.google.com/docs/decisions?auto_signin=false）。",
+  "revisions": []
+}

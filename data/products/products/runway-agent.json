@@ -1,0 +1,35 @@
+{
+  "id": "runway-agent",
+  "name": "Runway Agent",
+  "name_zh": "Runway Agent",
+  "vendor_id": "runway",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-05-13",
+  "date_precision": "day",
+  "homepage": "https://runway.com/agent",
+  "desc": "Conversational agent that plans and produces a finished video",
+  "desc_zh": "对话式智能体，从创意到成片视频一步步生成",
+  "solves": "Writing a brief, picking models and stitching shots by hand takes hours; describe the video instead and refine it in one conversation.",
+  "solves_zh": "以前写脚本、选模型、拼镜头要花几个小时；现在描述想要的视频，在对话里逐步修改即可。",
+  "best_for": "A product launch film is due Friday and the brief only exists as a paragraph; open Agent and start talking.",
+  "best_for_zh": "周五要交产品发布短片，手头只有一段文字简介时，打开 Agent 直接开聊。",
+  "surface": "in-product",
+  "tags": [
+    "conversational-video",
+    "multi-shot",
+    "brand-kits"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://runway.com/news and https://runway.com/changelog (entry 'May 13, 202）。 Agent 2.0 followed on 2026-06-25 (https://runway.com/news/introducing-agent-2: 'Today, we’re introducing Agent 2.0, an upgraded Runway Agent experience'). Agent Skills (changelog 2026-07-02), Agent Workflows (2026-07-23) and Timeline in Agent (2026-07-09) are later additions to the same surface, not separate entries. Changelog plan tag at launch: All Plans. Second source is a third-party review, not mainstream press; TechCrunch's 2026-05-15 Runway profile does not name Agent. 首次公开日期来源：https://runway.com/news/introducing-runway-agent",
+  "revisions": []
+}

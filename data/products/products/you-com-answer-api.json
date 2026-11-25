@@ -1,0 +1,36 @@
+{
+  "id": "you-com-answer-api",
+  "name": "You.com Answer API",
+  "name_zh": "You.com Answer API",
+  "vendor_id": "you-com",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-08-05",
+  "date_precision": "day",
+  "homepage": "https://about.you.com/product/answer-api",
+  "desc": "One call that returns a cited answer with verbatim excerpts.",
+  "desc_zh": "一次调用返回带引用和原文摘录的答案",
+  "solves": "A grounded answer normally means retrieval, page reads, prompts and a model choice. This API runs one search pass and hands back a Markdown answer with inline citations.",
+  "solves_zh": "要得到一个可追溯的答案，通常要自己串检索、读页面、写提示词还要选模型。这个 API 只跑一轮搜索，直接返回带内联引用的 Markdown 答案。",
+  "best_for": "Your product needs a fast, checkable answer and you do not want to build the pipeline.",
+  "best_for_zh": "你的产品要一个又快又有出处的答案，而你不打算自己搭这套链路。",
+  "surface": "standalone",
+  "tags": [
+    "cited-answers",
+    "single-call",
+    "grounded-search"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://you.com/docs/changelog (the vendor's own changelog directory)）。 The ledger holds only the You.com search engine (2021-12-01). You.com's API platform now also ships the Web Search API, Extract API, Research API, Finance Research API and Inference Router; the changelog only reaches back to 2026-07-15, so those earlier launches have no first-party date and are listed as unconfirmed in the report. 评审修正（2026-11-25）：官方名字「Answer API」是通用词，带上厂商名以便辨认。 首次公开日期来源：https://you.com/docs/changelog/2026/8/5",
+  "revisions": []
+}

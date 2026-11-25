@@ -1,0 +1,36 @@
+{
+  "id": "openhands-enterprise",
+  "name": "OpenHands Enterprise",
+  "name_zh": "OpenHands Enterprise",
+  "vendor_id": "all-hands-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "released": "2026-05-06",
+  "date_precision": "day",
+  "homepage": "https://www.openhands.dev/enterprise",
+  "desc": "Control plane for who may run agents and what they touch.",
+  "desc_zh": "决定谁能跑智能体、能碰什么的控制平面。",
+  "solves": "Agent use spreads without anyone knowing what is running; this gives platform and security teams one place to set limits and watch spend.",
+  "solves_zh": "智能体用得越来越广，却没人说得清在跑什么；这里让平台和安全团队在一处设定边界并看清花费。",
+  "best_for": "Your company wants agents everywhere but the security team has not approved anything yet.",
+  "best_for_zh": "公司想到处用智能体，而安全团队还没批准任何一项。",
+  "surface": "standalone",
+  "tags": [
+    "governance",
+    "access-control",
+    "observability"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — openhands.dev/blog directory）。 Announced as the Agent Control Plane; runs in your own environment. 首次公开日期来源：https://www.openhands.dev/blog/openhands-enterprise-agent-control-plane",
+  "revisions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "maxhermes",
+  "name": "MaxHermes",
+  "name_zh": "MaxHermes",
+  "vendor_id": "minimax",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-04-16",
+  "date_precision": "day",
+  "homepage": "https://agent.minimax.cn/",
+  "desc": "Cloud assistant inside MiniMax Code that improves as you use it.",
+  "desc_zh": "MiniMax Code 里的云端助手，越用越懂你",
+  "solves": "A cloud agent usually forgets everything between sessions. MaxHermes keeps the feedback and turns repeated tasks into reusable skills.",
+  "solves_zh": "云端助手常常换个会话就全忘了。MaxHermes 会把反馈留下，把重复任务沉淀成可复用的技能。",
+  "best_for": "You want one assistant to remember how you like your work done.",
+  "best_for_zh": "想要一个助手记住你习惯的工作方式，不用每次重讲一遍。",
+  "surface": "in-product",
+  "tags": [
+    "cloud-agent",
+    "self-evolving",
+    "long-term-memory"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — code.minimax.io/docs/changelog（MiniMax Code 官方更新日志））。 无独立官网：入口在 MiniMax Code 网页端（agent.minimax.cn，原 MiniMax Agent 域名 agent.minimaxi.com，现标题为「MiniMax Code」）导航的「更多 / MaxHermes」，故 surface 记为 in-product，homepage 用该网页端。官方更新日志同页还提到 MaxClaw 设置面板（2026-04-11），MaxClaw 的首次上线日期只有媒体口径（2026-02-26），见 report.md unconfirmed。账本已有 MiniMax Agent（2025-06-19）与 MiniMax Code（2025-10-27），域名现已统一到 MiniMax Code，疑似同一产品线改名，请协调方核对。 首次公开日期来源：https://code.minimax.io/docs/changelog",
+  "revisions": []
+}

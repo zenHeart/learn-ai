@@ -10,12 +10,12 @@
     "office"
   ],
   "form": "desktop",
-  "released": "2025-10-22",
+  "released": "2025-10-21",
   "homepage": "https://openai.com/index/introducing-chatgpt-atlas/",
-  "desc": "OpenAI's ChatGPT-native browser, discontinued April 2026.",
-  "desc_zh": "OpenAI 基于 ChatGPT 的浏览器，2026 年 4 月已停服。",
-  "solves": "Twenty tabs open and the answer somewhere in all of them. It read those pages for you, until OpenAI shut it down on 2026-04-26.",
-  "solves_zh": "开二十个标签页，答案散在每一个里。它替你读完，但 2026 年 4 月整个产品被关停。",
+  "desc": "OpenAI's ChatGPT-native browser, retired in August 2026.",
+  "desc_zh": "OpenAI 基于 ChatGPT 的浏览器，2026 年 8 月已停服。",
+  "solves": "Twenty tabs open and the answer somewhere in all of them. It read those pages for you, until OpenAI retired it on 2026-08-09.",
+  "solves_zh": "开二十个标签页，答案散在每一个里。它替你读完，但 2026 年 8 月整个产品被关停。",
   "best_for": "Nothing to open now — worth reading as a data point on the AI browser bet.",
   "best_for_zh": "现在已经没有产品可用了，可以当作 AI 浏览器这一赌注的案例读。",
   "surface": "standalone",
@@ -28,10 +28,59 @@
   "handbook": {
     "status": "none"
   },
-  "status": "active",
+  "status": "discontinued",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Launched to a market-leading hype and was shut down in under 10 months — a useful data point on the AI browser bet. 来源：https://www.newrank.cn/article/detail/34672 复核：产品页 chatgpt.com/atlas 反爬 403 无法机器确认，homepage 暂用 OpenAI 官方公告页（schema 期望产品入口页，此处为已知偏差）。",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "Launched to a market-leading hype and was shut down in under 10 months — a useful data point on the AI browser bet. 来源：https://www.newrank.cn/article/detail/34672 复核：产品页 chatgpt.com/atlas 反爬 403 无法机器确认，homepage 暂用 OpenAI 官方公告页（schema 期望产品入口页，此处为已知偏差）。 2026-11-25：status active → discontinued。OpenAI 官方更新日志：「We’re deprecating Atlas as we bring browser-based agentic capabilities into ChatGPT and Codex. Atlas is scheduled to stop working on August 9, 2026.」 2026-11-25：desc \"OpenAI's ChatGPT-native browser, discontinued April 2026.\" → \"OpenAI's ChatGPT-native browser, retired in August 2026.\"。原文写「discontinued April 2026」，月份有误 2026-11-25：desc_zh \"OpenAI 基于 ChatGPT 的浏览器，2026 年 4 月已停服。\" → \"OpenAI 基于 ChatGPT 的浏览器，2026 年 8 月已停服。\"。原文写「2026 年 4 月已停服」，月份有误 2026-11-25：solves \"Twenty tabs open and the answer somewhere in all of them. It read those pages for you, until OpenAI shut it down on 2026-04-26.\" → \"Twenty tabs open and the answer somewhere in all of them. It read those pages for you, until OpenAI retired it on 2026-08-09.\"。原文的停运日期 2026-04-26 取自二手报道，与 OpenAI 官方更新日志不符 2026-11-25：solves_zh \"开二十个标签页，答案散在每一个里。它替你读完，但 2026 年 4 月整个产品被关停。\" → \"开二十个标签页，答案散在每一个里。它替你读完，但 2026 年 8 月整个产品被关停。\"。原文写「2026 年 4 月整个产品被关停」，月份有误 2026-11-25：更正：停运日期是 2026-08-09，依据 OpenAI 官方更新日志的「Retiring Atlas」一节（https://help.openai.com/en/articles/6825453-chatgpt-release-notes）；此前依据二手报道写成的 2026-04-26 有误（那天停运的是 Sora） 2026-11-25：released 2025-10-22/day → 2025-10-21/day; source https://openai.com/index/introducing-chatgpt-atlas/。OpenAI 官方发布文《Introducing ChatGPT Atlas》的日期是 2025-10-21，原值晚了一天",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "discontinued",
+      "why": "OpenAI 官方更新日志：「We’re deprecating Atlas as we bring browser-based agentic capabilities into ChatGPT and Codex. Atlas is scheduled to stop working on August 9, 2026.」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc",
+      "from": "OpenAI's ChatGPT-native browser, discontinued April 2026.",
+      "to": "OpenAI's ChatGPT-native browser, retired in August 2026.",
+      "why": "原文写「discontinued April 2026」，月份有误"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc_zh",
+      "from": "OpenAI 基于 ChatGPT 的浏览器，2026 年 4 月已停服。",
+      "to": "OpenAI 基于 ChatGPT 的浏览器，2026 年 8 月已停服。",
+      "why": "原文写「2026 年 4 月已停服」，月份有误"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "solves",
+      "from": "Twenty tabs open and the answer somewhere in all of them. It read those pages for you, until OpenAI shut it down on 2026-04-26.",
+      "to": "Twenty tabs open and the answer somewhere in all of them. It read those pages for you, until OpenAI retired it on 2026-08-09.",
+      "why": "原文的停运日期 2026-04-26 取自二手报道，与 OpenAI 官方更新日志不符"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "solves_zh",
+      "from": "开二十个标签页，答案散在每一个里。它替你读完，但 2026 年 4 月整个产品被关停。",
+      "to": "开二十个标签页，答案散在每一个里。它替你读完，但 2026 年 8 月整个产品被关停。",
+      "why": "原文写「2026 年 4 月整个产品被关停」，月份有误"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-10-22/day",
+      "to": "2025-10-21/day",
+      "why": "OpenAI 官方发布文《Introducing ChatGPT Atlas》的日期是 2025-10-21，原值晚了一天"
+    }
+  ],
   "date_precision": "day"
 }

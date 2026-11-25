@@ -1,0 +1,37 @@
+{
+  "id": "chatgpt-work",
+  "name": "ChatGPT Work",
+  "name_zh": "ChatGPT Work",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "research",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-07-09",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+  "desc": "An agent inside ChatGPT that takes on longer, multi-step work.",
+  "desc_zh": "ChatGPT 里负责长任务、多步骤推进的 Agent，会自己查资料、翻文件，最后交出成品。",
+  "solves": "One answer is not enough when work spans research, files, and a finished document. Work keeps going, asks at decision points, and hands back something sendable.",
+  "solves_zh": "一件事要查资料、翻文件、再交出成品时，一次问答不够用。Work 会自己往下推进，到关键处停下来问你，最后给出能直接发出去的成果。",
+  "best_for": "You hand off a whole deliverable — a report, a deck, a close package — and check back later.",
+  "best_for_zh": "你把一整套成品交出去——报告、演示稿、月度结账包——然后过一会儿再回来看进度。",
+  "surface": "in-product",
+  "tags": [
+    "agent",
+    "long-task",
+    "deliverables"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes, https://help.openai.com/en/articles/6825453-chatgpt-r）。 In-product surface of ChatGPT, separate from Chat and Codex. Reached from the Chat/Work switcher in the ChatGPT desktop app, web and mobile. Not in the ledger partition list, so it is a new entry. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

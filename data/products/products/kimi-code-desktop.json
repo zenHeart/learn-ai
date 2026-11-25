@@ -1,0 +1,35 @@
+{
+  "id": "kimi-code-desktop",
+  "name": "Kimi Code Desktop",
+  "name_zh": "Kimi Code Desktop",
+  "vendor_id": "moonshot",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-09-21",
+  "date_precision": "day",
+  "homepage": "https://www.kimi.com/code",
+  "desc": "Desktop client for Kimi Code, showing plans and pull requests.",
+  "desc_zh": "Kimi Code 的桌面客户端，能看计划和 PR",
+  "solves": "A terminal hides what a coding agent is doing across a large repository. The desktop client puts the plan, the diff and the pull request in one window.",
+  "solves_zh": "终端里看不出编程 Agent 在大仓库里到底做了什么。桌面端把执行计划、改动和 PR 放进同一个窗口。",
+  "best_for": "Checking what a coding agent changed in the repository before you merge the branch.",
+  "best_for_zh": "合并分支之前，先看清编程 Agent 到底改动了哪些文件。",
+  "surface": "standalone",
+  "tags": [
+    "desktop-app",
+    "plan-review",
+    "pr-tracking"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kimi.com 新闻列表（https://www.kimi.com/news））。 与账本已有的 Kimi Code（CLI，2025-07-11）是同一产品线的另一种形态：官方称「从 CLI 到 Desktop，你熟悉的 Kimi Code 更加清晰可控」，本地 CLI 会话会出现在桌面端。是否要在账本里合并为一条，请协调方决定。官方新闻还提到 Kimi Coding Plan 套餐，本次未单列。 首次公开日期来源：https://www.kimi.com/news/kimi-code-desktop",
+  "revisions": []
+}

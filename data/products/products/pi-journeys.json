@@ -1,0 +1,35 @@
+{
+  "id": "pi-journeys",
+  "name": "Pi Journeys",
+  "name_zh": "Pi Journeys",
+  "vendor_id": "inflection-ai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-07-21",
+  "date_precision": "day",
+  "homepage": "https://pi.ai/",
+  "desc": "Guided Pi experience for working through a life transition",
+  "desc_zh": "陪你梳理人生阶段转变的 Pi 体验",
+  "solves": "Big personal decisions swirl without structure; a Journey walks you through one life phase with the Pi assistant.",
+  "solves_zh": "重大的人生决定常一团乱麻，Journey 带你在 Pi 的陪伴下把一个阶段想清楚。",
+  "best_for": "You are weighing a career change and want a guided conversation, not a search box.",
+  "best_for_zh": "正在纠结要不要转行，想要一场有引导的对话而不是搜索框。",
+  "surface": "in-product",
+  "tags": [
+    "personal-growth",
+    "guided-experience",
+    "companion"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C — WebSearch pointing to VentureBeat and the press release, then D: inflection.）。 Inflection's press release dated July 21, 2026. The original on globenewswire.com returns HTTP 403, so the quote was read on Yahoo Finance's copy of the same release; the canonical URL is https://www.globenewswire.com/news-release/2026/07/21/3330546/0/en/inflection-ai-is-shaping-the-future-of-personal-intelligence.html. pi.ai returns HTTP 403 (Cloudflare) to automated fetches. An in-product experience of Pi (in the ledger at 2023-05-02); availability by platform was not captured. 首次公开日期来源：https://finance.yahoo.com/technology/ai/articles/inflection-ai-shaping-future-personal-130000573.html 官网未直接确认（403）。",
+  "revisions": []
+}

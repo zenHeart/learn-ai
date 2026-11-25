@@ -113,6 +113,7 @@ export const enAiCodingItems = [
                                           { text: 'Codex Cloud', link: '/products/codex/codex-cloud' },
                                           { text: 'Codex IDE', link: '/products/codex/codex-ide' },
                                           { text: 'Codex Remote', link: '/products/codex/codex-remote' },
+                                          { text: 'Dot (always-on agent)', link: '/products/codex/dot' },
                                           { text: 'Codex Security', link: '/products/codex/codex-security' },
                                           { text: 'Sites', link: '/products/codex/sites' },
                                           { text: 'Chrome Extension', link: '/products/codex/codex-chrome' },
@@ -149,6 +150,7 @@ export const enAiCodingItems = [
                                           { text: 'Google Flow', link: '/products/gemini/flow' },
                                           { text: 'Code Assist', link: '/products/gemini/code-assist' },
                                           { text: 'AI Studio', link: '/products/gemini/ai-studio' },
+                                          { text: 'Colab', link: '/products/gemini/colab' },
                                           { text: 'Subscriptions & Quota', link: '/products/gemini/google-pro' },
                                        ]
                                     },
@@ -310,6 +312,7 @@ export const zhAiCodingItems = [
                                           { text: 'Codex Cloud', link: '/zh/products/codex/codex-cloud' },
                                           { text: 'Codex IDE', link: '/zh/products/codex/codex-ide' },
                                           { text: 'Codex Remote', link: '/zh/products/codex/codex-remote' },
+                                          { text: 'Dot 常驻智能体', link: '/zh/products/codex/dot' },
                                           { text: 'Codex Security', link: '/zh/products/codex/codex-security' },
                                           { text: 'Sites', link: '/zh/products/codex/sites' },
                                           { text: 'Chrome 扩展', link: '/zh/products/codex/codex-chrome' },
@@ -342,6 +345,7 @@ export const zhAiCodingItems = [
                                           { text: 'Google Flow', link: '/zh/products/gemini/flow' },
                                           { text: 'Code Assist', link: '/zh/products/gemini/code-assist' },
                                           { text: 'AI Studio', link: '/zh/products/gemini/ai-studio' },
+                                          { text: 'Colab', link: '/zh/products/gemini/colab' },
                                           { text: 'Google AI 订阅与额度', link: '/zh/products/gemini/google-pro' },
                                        ]
                                     },

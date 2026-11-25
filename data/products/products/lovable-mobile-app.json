@@ -1,0 +1,35 @@
+{
+  "id": "lovable-mobile-app",
+  "name": "Lovable Mobile",
+  "name_zh": "Lovable Mobile",
+  "vendor_id": "lovable",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-05-18",
+  "date_precision": "day",
+  "homepage": "https://docs.lovable.dev/integrations/lovable-mobile-app",
+  "desc": "iOS and Android app for building Lovable projects from a phone.",
+  "desc_zh": "在手机上搭建、查看 Lovable 项目的 iOS 与 Android 应用。",
+  "solves": "Waiting at a desktop to answer one question about your app wastes the afternoon; the project travels with you.",
+  "solves_zh": "为了回答关于应用的一个问题而守在电脑前，一下午就没了；项目跟着你走。",
+  "best_for": "You are away from your desk and a teammate needs a change shipped before the demo.",
+  "best_for_zh": "你不在电脑前，但队友需要在上演示前改一版。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "on-the-go",
+    "project-review"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.lovable.dev/changelog; A — Apple App Store listing）。 Changelog entry dated May 18, 2026 announces global availability. The Apple App Store listing for Lovable carries releaseDate 2026-04-27, so a limited regional release likely preceded the global announcement; the changelog date is used as the first-party availability date. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。厂商没有公布中文名，name_zh 按 name。 首次公开日期来源：https://docs.lovable.dev/changelog",
+  "revisions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ant-alipay-ahbao",
+  "name": "阿宝",
+  "name_zh": "阿宝",
+  "vendor_id": "ant",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-06-16",
+  "date_precision": "day",
+  "homepage": "https://www.alipay.com/",
+  "desc": "Alipay's AI front door, a dialog entry to every service",
+  "desc_zh": "支付宝的 AI 版入口，一个对话框直达上万种服务",
+  "solves": "Finding one rare service in Alipay means hunting through mini-programs. Ah Bao takes the sentence and opens the right page.",
+  "solves_zh": "一年用一次的服务，每次都要在小程序里翻半天。说一句话，它直接把办事入口送到你面前。",
+  "best_for": "You need to pay a utility bill and cannot remember which mini-program does it.",
+  "best_for_zh": "要交一笔水电费，却忘了该进哪个小程序的时候。",
+  "surface": "in-product",
+  "tags": [
+    "in-app-agent",
+    "service-entry",
+    "voice-dialog"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.antgroup.com/news-media/press-releases (newsroom index) and http）。 The AI edition of Alipay, named 阿宝 (Ah Bao), reached users through an invitation test on 2026-06-16 and the original Alipay UI stays available side by side. It is an in-product surface of 支付宝, not a separate download: the newsroom page is the only first-party surface found and its body is JavaScript-rendered, so the quote was read through a rendering page reader rather than plain curl. The release also promises a future Agent 开放平台 for developers, merchants and service providers; no dated first-party page for that platform was read. Relation to the ledger: 灵光 (2025-11-18) is Ant's standalone multimodal assistant, AQ (2025-06-26) its health app; 阿宝 is neither. 首次公开日期来源：https://www.antgroup.com/news-media/press-releases/1781596800000",
+  "revisions": []
+}

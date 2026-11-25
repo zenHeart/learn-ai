@@ -1,0 +1,36 @@
+{
+  "id": "deepseek-harness",
+  "name": "DeepSeek Harness",
+  "name_zh": "DeepSeek Harness",
+  "vendor_id": "deepseek",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-08-17",
+  "date_precision": "day",
+  "homepage": "https://www.deepseek.com/harness",
+  "desc": "Open-source agent harness that runs as a desktop app.",
+  "desc_zh": "开源的 Agent 框架，也能当桌面应用用",
+  "solves": "Building an agent loop from scratch costs weeks of plumbing. Here the plugins are already there, and the desktop app starts it in one click.",
+  "solves_zh": "从零搭一套 Agent 循环要耗掉好几周。这里的插件已经备好，桌面应用点一下就起来。",
+  "best_for": "You want a local agent you can extend with your own plugins.",
+  "best_for_zh": "想要一个能在本地跑、还能自己写插件扩展的智能体。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "plugin-system",
+    "desktop-app"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — deepseek.com 产品页与 GitHub 官方仓库 releases（另见 A：App Store 检索））。 GitHub releases 页按时间倒序，最后一页（page=5）最早一条即 dsh-v0.1.0-rc.7，页面上的 <relative-time datetime=\"2026-08-17T12:01:58Z\"> 是唯一带日期的页面文本（GitHub 用 JS 渲染可见日期），仓库 created_at 为 2026-08-13。桌面预览版媒体口径在 2026-09-24。官方文档自我描述为「用于构建 Agent Harness 的插件化 SDK」，同时提供桌面应用、Web UI 与 CLI（npx @deepseek-ai/dsh web）。按 SDK-only 不计的规则，它有独立用户入口，故计入。 首次公开日期来源：https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.1.0-rc.7",
+  "revisions": []
+}

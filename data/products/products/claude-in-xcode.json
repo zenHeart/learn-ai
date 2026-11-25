@@ -1,0 +1,35 @@
+{
+  "id": "claude-in-xcode",
+  "name": "Claude in Xcode",
+  "name_zh": "Claude in Xcode",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-09-15",
+  "date_precision": "day",
+  "homepage": "https://platform.claude.com/docs/en/claude-code/xcode",
+  "desc": "Claude coding agent running inside Apple's Xcode",
+  "desc_zh": "在 Apple Xcode 里运行的 Claude 编码智能体",
+  "solves": "Apple developers had to leave Xcode to use Claude; the agent now edits and builds inside the IDE.",
+  "solves_zh": "Apple 开发者过去得离开 Xcode 才能用 Claude，现在智能体可直接在 IDE 里改代码。",
+  "best_for": "You are fixing a SwiftUI layout and want the agent's edit applied in Xcode immediately.",
+  "best_for_zh": "正在调 SwiftUI 布局，希望智能体的修改直接在 Xcode 里生效。",
+  "surface": "extension",
+  "tags": [
+    "xcode",
+    "ios-development",
+    "in-ide-agent"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Outside the window. Generally available on 2025-09-15 with Xcode 26, powered by Claude Sonnet 4 at launch. Homepage is the official docs page. Second source is not independent media. 首次公开日期来源：https://www.anthropic.com/news/claude-in-xcode",
+  "revisions": []
+}

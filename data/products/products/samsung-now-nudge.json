@@ -1,0 +1,35 @@
+{
+  "id": "samsung-now-nudge",
+  "name": "Now Nudge",
+  "name_zh": "Now Nudge",
+  "vendor_id": "samsung",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-02-26",
+  "date_precision": "day",
+  "homepage": "https://www.samsung.com/us/support/answer/ANS10010424",
+  "desc": "Galaxy AI surface that reads context and surfaces the next useful suggestion.",
+  "desc_zh": "Galaxy AI 的一个界面，读懂对话上下文并给出下一步有用建议。",
+  "solves": "Useful suggestions arrive as separate notifications you learn to ignore; these read the conversation and appear where you already are.",
+  "solves_zh": "有用的建议总以独立通知出现，久而久之就被忽略了；这些建议读懂对话，并出现在你已经在的地方。",
+  "best_for": "Someone texts you an address and you want the navigation card to appear without leaving the chat.",
+  "best_for_zh": "别人发来一个地址，你想不离开聊天就直接看到导航卡片时。",
+  "surface": "in-product",
+  "tags": [
+    "proactive-suggestions",
+    "context-awareness",
+    "galaxy-ai"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Samsung Global Newsroom feed and Galaxy AI topic page）。 New with the Galaxy S26 series, announced 2026-02-26, and carried into the July 2026 foldables where it opens Multi Window when multitasking is predicted. It is a named capability inside Galaxy AI rather than a separate install. 首次公开日期来源：https://news.samsung.com/global/galaxy-unpacked-2026-highlights-from-galaxy-unpacked-the-beginning-of-truly-agentic-ai",
+  "revisions": []
+}

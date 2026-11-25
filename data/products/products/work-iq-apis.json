@@ -1,0 +1,36 @@
+{
+  "id": "work-iq-apis",
+  "name": "Work IQ APIs",
+  "name_zh": "Work IQ APIs",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-06-02",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/copilot/work-iq",
+  "desc": "The API set for reading and acting on Microsoft 365 work data.",
+  "desc_zh": "一套用来读取和操作 Microsoft 365 工作数据的 API。",
+  "solves": "A plain Graph call returns everything and means nothing. Work IQ returns what matters for the task, so an agent gets context and permissions in one place.",
+  "solves_zh": "一次普通 Graph 调用把东西全给你，却不告诉你哪条要紧。Work IQ 只返回与任务相关的那部分，让 Agent 一次拿到上下文和权限。",
+  "best_for": "You are building an enterprise agent that has to respect existing permissions.",
+  "best_for_zh": "你在做一个必须遵守现有权限边界的企业 Agent。",
+  "surface": "standalone",
+  "tags": [
+    "microsoft-365",
+    "context-layer",
+    "api"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft Copilot Blog, https://www.microsoft.com/en-us/copilot/blog/2026/06）。 Public preview on GitHub from 2026-06-02; general availability 2026-06-16. The same intelligence layer also powers Copilot, Autopilot and Agent 365. 首次公开日期来源：https://www.microsoft.com/en-us/copilot/blog/2026/06/02/announcing-the-new-work-iq-apis/",
+  "revisions": []
+}

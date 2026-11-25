@@ -1,0 +1,37 @@
+{
+  "id": "aws-quick",
+  "name": "AWS Quick",
+  "name_zh": "AWS Quick",
+  "vendor_id": "amazon",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office",
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-11-09",
+  "date_precision": "day",
+  "homepage": "https://aws.amazon.com/quick/",
+  "desc": "Amazon's AI workspace for work, with agents that act across your apps.",
+  "desc_zh": "亚马逊面向工作的 AI 工作区，智能体可跨应用研究、分析并执行。",
+  "solves": "Work questions get answered from one tool that never sees the others; Quick connects your apps and data and finishes the follow-through itself.",
+  "solves_zh": "单个工具只能看到自己那份数据；Quick 连接你的应用与数据，并替你把后续动作做完。",
+  "best_for": "You need last quarter's numbers from Snowflake turned into a dashboard before a meeting starts in ten minutes.",
+  "best_for_zh": "会议前十分钟要把 Snowflake 里的上季度数字做成看板的时候。",
+  "surface": "standalone",
+  "tags": [
+    "agentic-workspace",
+    "business-intelligence",
+    "enterprise-security"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — AWS What's New feed and the AWS Artificial Intelligence product directory）。 Renamed: launched as Amazon Quick on 2026-04-28 and renamed to AWS Quick on 2026-11-09, when Amazon Quick Sight also became AWS Quick Sight. The release date is the first public availability under the original name. Recorded under vendor amazon because the product lives on aws.amazon.com, which is the amazon vendor's registered domain; it is not the same thing as the ledger's Amazon Q or Amazon Quick Suite. curl is redirected to the Chinese locale for aws.amazon.com pages; the English text was read with an en-US Accept-Language header. 入库核对（2026-11-25）：这是产品的新名字档案，按账本的改名规则记新名字首次启用的日子。AWS 的公告页写「Amazon Quick… is now AWS Quick」，发布于 2026 年 11 月 9 日。原候选记的 2026-04-28 是它还叫 Amazon Quick 时桌面应用上线的日子；更早的旧名档案 Amazon Quick Suite（2025-10-09）账本里已有，将标为改名并指向本档。 首次公开日期来源：https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-quick-aws-quick",
+  "revisions": []
+}

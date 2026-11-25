@@ -25,28 +25,32 @@
       </button>
     </div>
 
-    <!-- No scenario chosen yet: show every scenario with its products, so the
-         first paint is a problem-organised list rather than an empty picker. -->
+    <!-- No scenario chosen yet: show every scenario with a few of its
+         products, so the first paint is a problem-organised list rather than
+         an empty picker. A product belongs to up to three scenarios, but it is
+         listed under one of them only; its other scenarios are linked on the
+         card. -->
     <div v-if="!current" class="sel-board">
-      <section v-for="uc in useCases" :key="uc.id" class="sel-board-group">
+      <section v-for="section in board" :key="section.id" class="sel-board-group">
         <header class="sel-board-head">
           <h2 class="sel-board-title">
-            <button class="sel-board-link" @click="pickUseCase(uc.id)">
-              {{ isZh ? uc.titleZh : uc.title }}
+            <button class="sel-board-link" @click="pickUseCase(section.id)">
+              {{ isZh ? section.titleZh : section.title }}
             </button>
-            <span class="sel-board-count">{{ uc.productCount }}</span>
+            <span class="sel-board-count">{{ section.productCount }}</span>
           </h2>
-          <p class="sel-board-desc">{{ isZh ? uc.descriptionZh : uc.description }}</p>
+          <p class="sel-board-desc">{{ isZh ? section.descriptionZh : section.description }}</p>
         </header>
         <div class="sel-grid">
           <ProductEntry
-            v-for="product in membersOf(uc)"
-            :key="product.id"
-            :product="product"
+            v-for="item in section.items"
+            :key="item.product.id"
+            :product="item.product"
             :is-zh="isZh"
             :labels="labels"
-            :category="categoryOf(product.category)"
-            :successor-name="successorNameOf(product)"
+            :category="categoryOf(item.product.category)"
+            :also-in="item.alsoIn"
+            @pick-use-case="pickUseCase($event)"
           />
         </div>
       </section>
@@ -94,7 +98,6 @@
           :is-zh="isZh"
           :labels="labels"
           :category="categoryOf(product.category)"
-          :successor-name="product.successorName || ''"
         />
       </div>
 
@@ -142,11 +145,42 @@
   // A scenario with 70 products would swamp the page before anyone clicks, so
   // the unselected state previews the most recent ones and links to the rest.
   const PREVIEW = 6
-  const membersOf = (uc) => {
-    const ids = new Set(uc.products)
-    return props.products.filter((p) => ids.has(p.id)).slice(0, PREVIEW)
-  }
-  const successorNameOf = (product) => product.successorName || ''
+  // A product can belong to three scenarios, and each section used to preview
+  // its own most recent members. The top three sections then showed the same
+  // six cards three times (60 cards, 42 products). So a product is listed once:
+  // under the scenario it names first when it has one, otherwise under the
+  // first section that still has room. `props.products` is newest first.
+  const board = computed(() => {
+    const sections = props.useCases.map((uc) => {
+      const members = props.products.filter((p) => uc.products.includes(p.id))
+      return { id: uc.id, title: uc.title, titleZh: uc.titleZh, description: uc.description, descriptionZh: uc.descriptionZh, productCount: uc.productCount, members, items: [] }
+    })
+    const shown = new Set()
+    // Pass one: the products that name this scenario first.
+    for (const section of sections) {
+      section.items = section.members.filter((p) => p.useCases?.[0] === section.id && !shown.has(p.id)).slice(0, PREVIEW)
+      for (const p of section.items) shown.add(p.id)
+    }
+    // Pass two: fill the sections that are still short.
+    for (const section of sections) {
+      if (section.items.length >= PREVIEW) continue
+      const fill = section.members.filter((p) => !shown.has(p.id)).slice(0, PREVIEW - section.items.length)
+      for (const p of fill) shown.add(p.id)
+      section.items = section.items.concat(fill)
+    }
+    for (const section of sections) {
+      section.items = section.items
+        .slice()
+        .sort((a, b) => props.products.indexOf(a) - props.products.indexOf(b))
+        .map((product) => ({
+          product,
+          alsoIn: sections
+            .filter((other) => other.id !== section.id && other.members.includes(product))
+            .map((other) => ({ id: other.id, label: props.isZh ? other.titleZh : other.title })),
+        }))
+    }
+    return sections
+  })
 
   const categoryIndex = computed(() => {
     const m = new Map()

@@ -77,6 +77,13 @@ const categories = taxonomy.categories
 
 const byId = new Map(products.map((p) => [p.id, p]))
 
+const sortKey = (p) => {
+  const raw = String(p.released ?? '')
+  if (p.date_precision === 'year') return `${raw.slice(0, 4)}-00-00`
+  if (p.date_precision === 'month') return `${raw.slice(0, 7)}-00`
+  return raw
+}
+
 const projectProducts = products
   .map((p) => {
     const v = vendorById.get(p.vendor_id)
@@ -104,9 +111,11 @@ const projectProducts = products
       tags: p.tags ?? [],
       status: p.status ?? 'active',
       supersededBy: p.superseded_by ?? null,
-      successorName:
-        (p.superseded_by && byId.get(p.superseded_by)?.name_zh) ||
-        (p.superseded_by && byId.get(p.superseded_by)?.name) ||
+      // The successor is named in both languages: the hub must not show a
+      // Chinese name on the English page or the other way round.
+      successorName: (p.superseded_by && byId.get(p.superseded_by)?.name) || '',
+      successorNameZh:
+        (p.superseded_by && (byId.get(p.superseded_by)?.name_zh || byId.get(p.superseded_by)?.name)) ||
         '',
       handbook: p.handbook ?? { status: 'none' },
       lastVerifiedAt: p.last_verified_at ?? null,
@@ -120,13 +129,17 @@ const projectProducts = products
   // differs between platforms, so localeCompare sorts CJK names differently on
   // Windows and Linux — which would make this projection non-reproducible and
   // fail the --check gate on CI while passing locally.
-  .sort((a, b) =>
-    a.released === b.released
-      ? cmp(a.name, b.name)
-      : a.released < b.released
-        ? 1
-        : -1
-  )
+  //
+  // A date with month or year precision is stored on the first of that month
+  // or year as a placeholder, and only says "some time in June". It has no
+  // place among the dated entries, so it is sorted below every precise date
+  // of its month or year ("00" is below any real day); the site marks it "≈".
+  .sort((a, b) => {
+    const ka = sortKey(a)
+    const kb = sortKey(b)
+    if (ka !== kb) return ka < kb ? 1 : -1
+    return cmp(a.name, b.name)
+  })
 
 // Use-case membership is derived from the product ledger, never duplicated in
 // the use-case file. Products are the side agents own during parallel

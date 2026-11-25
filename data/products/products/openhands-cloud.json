@@ -1,0 +1,35 @@
+{
+  "id": "openhands-cloud",
+  "name": "OpenHands Cloud",
+  "name_zh": "OpenHands Cloud",
+  "vendor_id": "all-hands-ai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2025-03-31",
+  "date_precision": "day",
+  "homepage": "https://app.all-hands.dev",
+  "desc": "Hosted OpenHands you run in the browser instead of installing.",
+  "desc_zh": "在浏览器里直接使用、无需安装的托管版 OpenHands。",
+  "solves": "The self-hosted agent needs Docker and a machine you maintain; the hosted version starts a session from a link.",
+  "solves_zh": "自建智能体要 Docker 和一台自己维护的机器；托管版点开链接就能开会话。",
+  "best_for": "You want to try the agent on a repository without setting anything up locally.",
+  "best_for_zh": "想先在某个仓库上试试这个智能体，又不想在本地装任何东西。",
+  "surface": "standalone",
+  "tags": [
+    "hosted",
+    "browser",
+    "no-setup"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — openhands.dev/blog directory）。 Full release of the hosted platform. Predates the window but is absent from the ledger, so it is recorded under rule (b). A self-hosted Cloud option followed on 2025-06-18. 首次公开日期来源：https://www.openhands.dev/blog/introducing-the-openhands-cloud",
+  "revisions": []
+}

@@ -12,8 +12,8 @@
   "form": "web",
   "released": "2023-10-31",
   "homepage": "https://www.tongyi.com",
-  "desc": "Alibaba's assistant, now folded into Qwen",
-  "desc_zh": "阿里的助手应用，已并入千问",
+  "desc": "Alibaba's assistant app, renamed Qwen in 2025",
+  "desc_zh": "阿里的助手应用，2025 年更名为千问",
   "tags": [
     "chat-assistant",
     "qwen",
@@ -31,10 +31,10 @@
       "zh": "/zh/products/qwen/"
     }
   },
-  "status": "merged",
+  "status": "renamed",
   "superseded_by": "qianwen",
   "last_verified_at": "2026-10-04",
-  "notes": "官网 tongyi.com 已 301 跳转至 qianwen.com，通义并入千问；status/superseded_by 待合并时处理",
+  "notes": "官网 tongyi.com 已 301 跳转至 qianwen.com，通义并入千问；status/superseded_by 待合并时处理 2026-11-25：status merged → renamed。继任者没错，状态不对：通义是更名为千问，不是并入。App Store 同一个应用 id（6466733523）自 2023-10-31 上架至今，当前名称为「千问 - 阿里AI助手」 2026-11-25：desc \"Alibaba's assistant, now folded into Qwen\" → \"Alibaba's assistant app, renamed Qwen in 2025\"。「folded into」说的是并入，实际是改名 2026-11-25：desc_zh \"阿里的助手应用，已并入千问\" → \"阿里的助手应用，2025 年更名为千问\"。「已并入千问」与事实不符",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -43,6 +43,30 @@
       "from": "active",
       "to": "merged",
       "why": "tongyi.com 已 301 跳转至 qianwen.com，通义并入千问"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "merged",
+      "to": "renamed",
+      "why": "继任者没错，状态不对：通义是更名为千问，不是并入。App Store 同一个应用 id（6466733523）自 2023-10-31 上架至今，当前名称为「千问 - 阿里AI助手」"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc",
+      "from": "Alibaba's assistant, now folded into Qwen",
+      "to": "Alibaba's assistant app, renamed Qwen in 2025",
+      "why": "「folded into」说的是并入，实际是改名"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc_zh",
+      "from": "阿里的助手应用，已并入千问",
+      "to": "阿里的助手应用，2025 年更名为千问",
+      "why": "「已并入千问」与事实不符"
     }
   ],
   "date_precision": "day"

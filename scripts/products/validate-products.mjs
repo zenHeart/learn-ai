@@ -184,8 +184,10 @@ for (const file of productFiles) {
   // date_precision is authoritative. An earlier version inferred it from the
   // date ending in "-01-01", which only ever matched January — "2023-11-01"
   // was indistinguishable from a real 1 November launch.
-  if (r.date_precision !== undefined && !['day', 'month'].includes(r.date_precision)) {
-    fail(`${where}: date_precision 非法 ${JSON.stringify(r.date_precision)}（应为 "day" 或 "month"）`)
+  // "year" exists for products whose only first-hand source names a year
+  // (Colab's FAQ); the placeholder month and day must not read as fact.
+  if (r.date_precision !== undefined && !['day', 'month', 'year'].includes(r.date_precision)) {
+    fail(`${where}: date_precision 非法 ${JSON.stringify(r.date_precision)}（应为 "day"、"month" 或 "year"）`)
   }
   else if (r.released > today) {
     fail(`${where}: released ${r.released} 晚于今天（${today}），疑似拿抓取日冒充发布日期`)

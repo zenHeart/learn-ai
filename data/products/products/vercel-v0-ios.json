@@ -1,0 +1,36 @@
+{
+  "id": "vercel-v0-ios",
+  "name": "v0 iOS App",
+  "name_zh": "v0 iOS App",
+  "vendor_id": "vercel",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "coding",
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-10-23",
+  "date_precision": "day",
+  "homepage": "https://v0.app",
+  "desc": "iPhone app for building and editing v0 projects away from the desk.",
+  "desc_zh": "在 iPhone 上创建和修改 v0 项目的应用。",
+  "solves": "The builder only existed in a browser tab on a computer; the same projects open on the phone with a skills picker and attachments.",
+  "solves_zh": "构建器过去只在电脑的浏览器标签里；同样的项目能在手机上打开，带技能选择器和附件。",
+  "best_for": "You want to tweak a generated app while commuting and share the link from your phone.",
+  "best_for_zh": "想在通勤路上改一版生成好的应用，并用手机直接发链接。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "app-builder",
+    "on-the-go"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — v0.app/changelog directory; A — Apple App Store developer-tools listing）。 Separate surface from v0 on the web, which the ledger already holds. Sign in with Apple arrived 2025-11-18. Apple's iTunes metadata service (itunes.apple.com/search?term=v0%20vercel&entity=software&limit=5&country=us) also returns releaseDate 2025-10-23T07:00:00Z for trackId 6745097949 by Vercel, Inc, but its field order changes between calls, so it is cited as the second source rather than as a verbatim quote. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://v0.app/changelog",
+  "revisions": []
+}

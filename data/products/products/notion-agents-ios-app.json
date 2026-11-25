@@ -1,0 +1,35 @@
+{
+  "id": "notion-agents-ios-app",
+  "name": "Notion Agents",
+  "name_zh": "Notion Agents",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-07",
+  "date_precision": "day",
+  "homepage": "https://apps.apple.com/us/app/notion-agents/id6759811964",
+  "desc": "iPhone app for chatting with Notion Agents on the go.",
+  "desc_zh": "在 iPhone 上随时和 Notion 智能体对话的应用",
+  "solves": "Your Notion agents only answered at your desk. The app takes voice, text and photo input and lets agents act from your phone.",
+  "solves_zh": "以前只有坐在电脑前才能找 Notion 智能体。这个应用支持语音、文字和拍照输入，在路上也能让它干活。",
+  "best_for": "An idea hits on a walk and you want the agent to draft the page before you are back.",
+  "best_for_zh": "散步时想到一个点子，想赶回工位前就让智能体把页面写好。",
+  "surface": "standalone",
+  "tags": [
+    "ios-app",
+    "voice-input",
+    "mobile-agents"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.notion.com/releases/page/2, confirmed on channel A (Apple App St）。 The App Store record (seller 'Notion Labs, Incorporated', version 1.0.20 on 2026-11-25, requires iOS 26) gives the first release as 2026-07-07T07:00:00Z; Notion's announcement post is dated 2026-07-08. The date used is the App Store one. From this network Apple redirects the US store page to the Chinese storefront's Today page, which is a geo redirect, not a missing listing; the listing was verified through Apple's lookup API instead. 'form' is recorded as desktop because the schema has no mobile value. It is the same Notion Agent on a phone, entered separately because it is an independently installed app. Not available on the Chinese storefront as far as the redirect shows. 评审修正（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://itunes.apple.com/lookup?id=6759811964&country=us 官网未直接确认（redirect->https://apps.apple.com/cn/iphone/today）。",
+  "revisions": []
+}

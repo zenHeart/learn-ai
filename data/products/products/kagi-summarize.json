@@ -1,0 +1,36 @@
+{
+  "id": "kagi-summarize",
+  "name": "Kagi Summarize",
+  "name_zh": "Kagi Summarize",
+  "vendor_id": "kagi",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2023-03-23",
+  "date_precision": "day",
+  "homepage": "https://help.kagi.com/kagi/summarizer/index.html",
+  "desc": "Summarizer for pages, videos and podcasts from a single link.",
+  "desc_zh": "一个链接就能总结网页、视频和播客的工具",
+  "solves": "Long documents and hour-long talks eat the morning. Paste a link and get a summary you can steer by length and style.",
+  "solves_zh": "长文档和一小时的讲话会吃掉整个上午。粘贴一个链接，就能得到可以按长度和风格调整的摘要。",
+  "best_for": "You have eleven tabs open for a decision due this afternoon and no time to read any of them.",
+  "best_for_zh": "为了今天下午要做的一个决定，你开了十一个标签页，却一个都没时间读。",
+  "surface": "standalone",
+  "tags": [
+    "summarization",
+    "url-input",
+    "mobile-app"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://kagi.com/changelog and https://blog.kagi.com/ , then the Kagi produc）。 Launched as Universal Summarizer; the dedicated post is dated 2023-03-23 and is the recorded date. An earlier Kagi post of 2023-03-16 (https://blog.kagi.com/kagi-ai-search) launched three search features and said of Universal Summarizer: 'we plan to officially launch it next week on Wednesday, March 22nd, as a standalone web app for all Kagi users and as an API', so the true first public day may be 2026-03-22 rather than the 23rd. Now branded Kagi Summarize; the docs page confirms 'Kagi Summarize (also known as Universal Summarizer)'. Before the discovery window but missing from the ledger, which holds only Kagi Assistant for this vendor. Native iOS and Android apps arrived 2025-08-19 (changelog 'Kagi Summarize goes mobile'); same product. No media source was read. 首次公开日期来源：https://blog.kagi.com/universal-summarizer",
+  "revisions": []
+}

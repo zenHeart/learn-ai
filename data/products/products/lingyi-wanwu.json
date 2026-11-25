@@ -10,7 +10,7 @@
     "agent-building"
   ],
   "form": "web",
-  "released": "2026-05-21",
+  "released": "2025-03-01",
   "homepage": "https://www.lingyiwanwu.com",
   "desc": "01.AI's enterprise platform for multi-agent model deployments.",
   "desc_zh": "零一万物企业级多智能体平台",
@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网 lingyiwanwu.com 确认为零一万物公司站（「大模型赋能千行百业」），但它是公司主页而非产品页；产品独立站为 wanzhi.com（未改 homepage 字段）。公司站对该产品的正式称谓是「万智企业大模型平台」，与本档 desc 写的「企业级多智能体平台」不一致；released 2026-05-21 未找到一级来源佐证。",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网 lingyiwanwu.com 确认为零一万物公司站（「大模型赋能千行百业」），但它是公司主页而非产品页；产品独立站为 wanzhi.com（未改 homepage 字段）。公司站对该产品的正式称谓是「万智企业大模型平台」，与本档 desc 写的「企业级多智能体平台」不一致；released 2026-05-21 未找到一级来源佐证。 2026-11-25：released 2026-05-21/day → 2025-03-01/month; source https://www.lingyiwanwu.com。原日期 2026-05-21 晚了一年多。零一万物官网时间线写「2025.03 万智平台发布」，只精确到月",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-05-21/day",
+      "to": "2025-03-01/month",
+      "why": "原日期 2026-05-21 晚了一年多。零一万物官网时间线写「2025.03 万智平台发布」，只精确到月"
+    }
+  ],
+  "date_precision": "month"
 }

@@ -10,7 +10,7 @@
     "agent-building"
   ],
   "form": "web",
-  "released": "2024-02-01",
+  "released": "2024-02-13",
   "homepage": "https://sierra.ai/",
   "desc": "Customer-service agent OS billed per resolved outcome.",
   "desc_zh": "面向客服的智能体平台，按解决结果计费。",
@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "First widely adopted pure-play where agents complete transactions, not just answer. 首次公开发布日期精度：month-only 来源：https://sierra.ai/author/bret-taylor",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "First widely adopted pure-play where agents complete transactions, not just answer. 首次公开发布日期精度：month-only 来源：https://sierra.ai/author/bret-taylor 2026-11-25：released 2024-02-01/day → 2024-02-13/day; source https://sierra.ai/blog/introducing-sierra。原值 2024-02-01 是月份占位。Sierra 官方的发布文（Bret Taylor 与 Clay Bavor 署名）日期是 2024 年 2 月 13 日",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2024-02-01/day",
+      "to": "2024-02-13/day",
+      "why": "原值 2024-02-01 是月份占位。Sierra 官方的发布文（Bret Taylor 与 Clay Bavor 署名）日期是 2024 年 2 月 13 日"
+    }
+  ],
   "date_precision": "day"
 }

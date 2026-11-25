@@ -1,0 +1,37 @@
+{
+  "id": "perplexity-api-platform",
+  "name": "Perplexity API Platform",
+  "name_zh": "Perplexity API Platform",
+  "vendor_id": "perplexity",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "agent-building",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-03-12",
+  "date_precision": "day",
+  "homepage": "https://www.perplexity.ai/hub/api",
+  "desc": "One API key for agents, web-grounded search, embeddings and sandboxed code.",
+  "desc_zh": "一把 API 密钥打通智能体编排、联网检索、向量与沙箱代码执行。",
+  "solves": "Assembling an agent means wiring a model provider, a search layer and an embeddings store separately; this replaces all three.",
+  "solves_zh": "拼一个智能体原本要分别接模型商、检索层和向量库；这一个把三样都替掉。",
+  "best_for": "You are building a research agent this afternoon and do not want to choose a model vendor first.",
+  "best_for_zh": "想在今天下午搭一个研究智能体，又不想先选定模型厂商时。",
+  "surface": "standalone",
+  "tags": [
+    "agent-api",
+    "search-api",
+    "embeddings"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — perplexity.ai changelog directory）。 Missing from the ledger; perplexity has Perplexity and Comet only. The changelog entry is dated 03/12/26 in the page body and 2026-03-12 in its metadata, so the release date is 2026-03-12. Sandbox API was still coming soon at that date. perplexity.ai returns 403 to curl, so the page was read through the page reader. 首次公开日期来源：https://www.perplexity.ai/changelog/what-we-shipped---march-13-2026 官网未直接确认（403）。",
+  "revisions": []
+}

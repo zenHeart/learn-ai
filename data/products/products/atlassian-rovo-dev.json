@@ -1,0 +1,35 @@
+{
+  "id": "atlassian-rovo-dev",
+  "name": "Rovo Dev",
+  "name_zh": "Rovo Dev",
+  "vendor_id": "atlassian",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-04-09",
+  "date_precision": "day",
+  "homepage": "https://support.atlassian.com/rovo/docs/use-rovo-dev-cli",
+  "desc": "Atlassian's coding agent for CLI, IDE and Jira.",
+  "desc_zh": "Atlassian 的编码智能体，可在终端、IDE 和 Jira 里用",
+  "solves": "Coding agents lack the ticket and spec behind a task. Rovo Dev pulls Jira work items, Confluence context and Bitbucket changes into the job.",
+  "solves_zh": "编码智能体看不到任务背后的工单和文档。Rovo Dev 把 Jira 工作项、Confluence 背景和 Bitbucket 改动带进任务里。",
+  "best_for": "You pick up a Jira ticket and want an agent that already knows the spec and the repo.",
+  "best_for_zh": "你接手一张 Jira 工单，想要一个已经读过文档和代码库的智能体。",
+  "surface": "standalone",
+  "tags": [
+    "jira-context",
+    "cli-and-ide",
+    "bitbucket"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.atlassian.com/blog/company-news archive, then https://www.atlass）。 The date is the Team '25 announcement (2025-04-09), where the post calls them 'Rovo Dev Agents' in beta; the quote is cut before the following words because the page inserts spacing around a link. I did not find a separate dated post for the Rovo Dev CLI as such, so the first day the CLI itself was usable is not confirmed (medium confidence). Later surfaces of the same product: VS Code GA 2026-02-12, inside Jira 2026-04-02 (https://www.atlassian.com/blog/company-news/rovo-dev-in-jira). A third-party article claims Rovo Dev is being folded into Jira subscriptions; that was not confirmed on an Atlassian page. Distinct from the ledger's Atlassian Rovo (2024-10-09). No media source was read. 首次公开日期来源：https://www.atlassian.com/blog/rovo/team25-rovo-for-all",
+  "revisions": []
+}

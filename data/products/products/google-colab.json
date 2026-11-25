@@ -1,0 +1,41 @@
+{
+  "id": "google-colab",
+  "name": "Google Colab",
+  "name_zh": "Google Colab",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "coding",
+    "model-api"
+  ],
+  "form": "web",
+  "released": "2014-01-01",
+  "date_precision": "year",
+  "homepage": "https://colab.research.google.com/",
+  "desc": "Jupyter notebooks in the browser, with GPUs and nothing to install.",
+  "desc_zh": "浏览器里直接写 Python 的笔记本，自带 GPU，不用装环境。",
+  "solves": "Learning AI needs a GPU and a Python setup that a laptop cannot hold. Colab runs notebooks on a cloud machine with GPUs and TPUs, free to start.",
+  "solves_zh": "学 AI 要 GPU，还要一套笔记本装不下的 Python 环境。Colab 把笔记本放在云端机器上跑，带 GPU 和 TPU，可以免费开始。",
+  "best_for": "You want to train or test a small model, or call an AI API, without setting up a machine.",
+  "best_for_zh": "你想训练或测试一个小模型，或者调用 AI 接口，又不想自己搭机器。",
+  "surface": "standalone",
+  "tags": [
+    "notebook",
+    "gpu",
+    "jupyter",
+    "hosted-runtime"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/gemini/colab.html",
+      "zh": "/zh/products/gemini/colab.html"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-24",
+  "notes": "首次公开发布只有年份精度的官方依据：FAQ 原文 “In 2014 we worked with the Jupyter development team to release an early version of the tool.”，见 https://research.google.com/colaboratory/faq.html ，因此 released 取 2014-01-01、date_precision 为 year。常见的「2017 年 10 月公开上线」说法没有找到一手来源，未采用。",
+  "revisions": []
+}

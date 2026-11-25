@@ -31,6 +31,7 @@ role: cheatsheet
 | 隔离环境、并行多试、或从 GitHub / Linear / Slack 派活 | [Codex Cloud](./codex-cloud) · `codex cloud exec --env <ID>` | 托管机器，不是本机 |
 | 任务就是已经打开的文件或选区 | [IDE 扩展](./codex-ide) | 编辑器上下文已经带上 |
 | 手机要带 / 批**本机**会话 | [Remote](./codex-remote) | 干活的是已连接电脑 |
+| 有件事要连着盯几天、跨几个应用推进 | [Dot](./dot) | 常驻智能体；写代码的部分由它转交 Codex |
 | 在有权评估的仓库里找 / 确认 / 修漏洞 | [Codex Security](./codex-security) | 插件、CLI/SDK 或 Cloud |
 | 不想自建部署栈，要托管一页 | [Sites](./sites) | 先 save version 再 deploy |
 | 要动**已登录**的 Chrome 标签 | [Chrome 扩展](./codex-chrome) · `@Chrome` | 不是 `@Browser`，也不是云端浏览器 |

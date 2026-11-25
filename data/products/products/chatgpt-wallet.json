@@ -1,0 +1,36 @@
+{
+  "id": "chatgpt-wallet",
+  "name": "ChatGPT Wallet",
+  "name_zh": "ChatGPT Wallet",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-11-13",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001654-making-purchases-with-chatgpt-wallet",
+  "desc": "A stored card your agent can pay with, approved each time.",
+  "desc_zh": "一张由你存放的卡，Agent 代付时每一笔都要你当面批准。",
+  "solves": "An agent that cannot pay stops at the checkout page. Wallet hands over a substitute credential instead of your real card, and you approve the merchant, items and total first.",
+  "solves_zh": "不会付款的 Agent 到结账页就卡住。Wallet 交出的是替代凭据而不是真实卡号，而且商家、商品和金额都要你先过目再批准。",
+  "best_for": "You asked your dot to book or buy something and expect to confirm it on your phone.",
+  "best_for_zh": "你让 dot 去订或去买东西，并准备在手机上确认这一笔。",
+  "surface": "in-product",
+  "tags": [
+    "payments",
+    "agentic-commerce",
+    "security"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/introducing-chatgpt-wallet/）。 Reached through dots, not as a standalone app. At launch limited to ChatGPT Pro subscribers aged 18+ in the US with an eligible US-issued card. 首次公开日期来源：https://openai.com/index/introducing-chatgpt-wallet/",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "higgsfield-supercomputer",
+  "name": "Higgsfield Supercomputer",
+  "name_zh": "Higgsfield Supercomputer",
+  "vendor_id": "higgsfield",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-05-13",
+  "date_precision": "day",
+  "homepage": "https://higgsfield.ai/supercomputer",
+  "desc": "Agent that plans, generates and publishes creative work from one prompt",
+  "desc_zh": "一句话起步，自动查资料、生成、规划并发布的智能体",
+  "solves": "Finding references, generating, scheduling and publishing sat in four different tools; describe the task once and the agent runs the chain.",
+  "solves_zh": "查资料、生成、排期、发布分散在四个工具里；把任务描述一次，智能体把整条流程跑完。",
+  "best_for": "You need a ten-post product campaign live by Monday; brief Supercomputer on Friday and review what it drafts.",
+  "best_for_zh": "周一要上线一组十条的产品宣传内容；周五把需求交给 Supercomputer，周一早上审稿。",
+  "surface": "standalone",
+  "tags": [
+    "creative-agent",
+    "end-to-end",
+    "publishing"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：B+D — a16z Top 100 7th edition names Higgsfield; entry read in https://higgsfiel）。 The date and the sentence are adjacent text nodes of one changelog entry titled 'Higgsfield Supercomputer'; availability line says 'paid plans'. Later additions to the same product (Higgsfield Games 2026-06-10, Higgsfield Apps 2026-07-07, App Builder 2026-06-26, Projects 2026-08-23, AI Employees 2.0 2026-06-19) are not separate entries. 首次公开日期来源：https://higgsfield.ai/creator-hub/changelog",
+  "revisions": []
+}

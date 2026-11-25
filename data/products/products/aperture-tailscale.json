@@ -1,0 +1,37 @@
+{
+  "id": "aperture-tailscale",
+  "name": "Aperture by Tailscale",
+  "name_zh": "Aperture by Tailscale",
+  "vendor_id": "tailscale",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building",
+    "observability"
+  ],
+  "form": "self-hosted",
+  "released": "2026-03-23",
+  "date_precision": "day",
+  "homepage": "https://tailscale.com/use-cases/securing-ai",
+  "desc": "Self-hosted AI gateway that puts every model call behind one identity-aware door.",
+  "desc_zh": "自托管的 AI 网关，把全组的模型调用收进一道按身份鉴权的门后。",
+  "solves": "API keys get copied into every agent and CLI, so nobody sees who spent what or can revoke a leaked one; Aperture holds keys and logs each call.",
+  "solves_zh": "密钥被复制进每个 agent 和 CLI，没人知道谁花了多少、泄露了也收不回；Aperture 统一保管密钥并记录每次调用。",
+  "best_for": "You are about to hand a coding agent a provider API key and want the team to share one gateway instead.",
+  "best_for_zh": "准备把模型 API 密钥直接交给编程 agent 时，改用全组共用的一个网关入口。",
+  "surface": "standalone",
+  "tags": [
+    "ai-gateway",
+    "identity-aware",
+    "cost-controls"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://tailscale.com/blog and https://tailscale.com/changelog (then C: Appi）。 Not in the ledger, so this is a rule-(b) candidate even though the first public date is before the window. Timeline from first-party pages: private alpha post 2026-01-27, public beta 2026-04-23, alpha via self-serve 2026-03-23 (this date), GA recorded in the changelog under 2026-08-25 with a GA blog post dated 2026-08-26. tailscale.com/aperture redirects to the homepage used here. 首次公开日期来源：https://tailscale.com/blog/aperture-self-serve",
+  "revisions": []
+}

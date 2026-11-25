@@ -1,0 +1,35 @@
+{
+  "id": "zhipu-managed-agents",
+  "name": "Z Managed Agents",
+  "name_zh": "Z Managed Agents",
+  "vendor_id": "zhipu",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-05-01",
+  "date_precision": "month",
+  "homepage": "https://docs.bigmodel.cn/cn/managed-agents/overview",
+  "desc": "BigModel's hosted agent runtime with a console and API.",
+  "desc_zh": "BigModel 的托管智能体运行环境，带控制台和 API",
+  "solves": "Self-hosting an agent runtime means sandboxes, session state and retry logic. Z Managed Agents runs the agent in a cloud sandbox and streams events back.",
+  "solves_zh": "自建 Agent 运行环境要管沙箱、会话状态和重试。Z Managed Agents 让 Agent 在云沙箱里跑，事件流式回传。",
+  "best_for": "A job that needs hours of tool calls, not one reply.",
+  "best_for_zh": "有个活儿要连续调用工具几个小时，不是一轮问答。",
+  "surface": "standalone",
+  "tags": [
+    "hosted-agents",
+    "cloud-sandbox",
+    "bigmodel"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.bigmodel.cn/llms.txt → managed-agents 文档组）。 日期是推断而非公告：官方协议版本页写明 2026-05-26 是「已支持的组合」中最早的一组 Beta 值，且 2026-09-22 是更新的 Beta 协议，故 Beta 不晚于 2026-05-26；文档另称「API 与控制台均已全量开放」，说明随后转正。智谱新闻动态最后一条是 2026-03-31，未检索到 Managed Agents 的上线公告，请协调方确认首发日。原「智能体开发平台」已下线并引导迁移到本产品。docs.bigmodel.cn 导航中该产品名为「Managed Agents (Beta)」，产品正文自称「Z Managed Agents」。 入库核对（2026-11-25）：日期是从官方协议版本号推断出来的（2026-05-26 是最早的已支持组合），不是带日的发布公告，所以只按月份精度记。 首次公开日期来源：https://docs.bigmodel.cn/cn/managed-agents/protocol-versions.md 首次公开日期仅精确到月。",
+  "revisions": []
+}

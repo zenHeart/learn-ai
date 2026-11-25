@@ -1,0 +1,36 @@
+{
+  "id": "chatgpt-finances",
+  "name": "ChatGPT Finances",
+  "name_zh": "ChatGPT Finances",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-05-15",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001222-finances-in-chatgpt",
+  "desc": "Link your accounts and ask questions grounded in your own money.",
+  "desc_zh": "连接你的账户，然后就自己的收支直接提问。",
+  "solves": "A spending question needs every statement open at once. Finances holds the connected picture, so you ask about a charge and get an answer with your numbers in it.",
+  "solves_zh": "问一句花钱的情况，过去要把所有账单同时打开。Finances 保存连接后的全貌，你问某笔扣款，答案里就带着你自己的数字。",
+  "best_for": "A charge shows up that you do not recognise, or a budget needs redoing.",
+  "best_for_zh": "出现一笔你不认识的扣款，或者预算得重做一遍。",
+  "surface": "in-product",
+  "tags": [
+    "personal-finance",
+    "connected-accounts",
+    "insights"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes, https://help.openai.com/en/articles/6825453-chatgpt-r）。 ChatGPT release notes, entry under the \"May 15, 2026\" heading. Announced as \"Personal finances in ChatGPT\", surfaced as the Finances page. Read-only: ChatGPT cannot move money or place trades. US only at launch, expanded to Free and Go on 2026-10-02. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

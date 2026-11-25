@@ -1,0 +1,36 @@
+{
+  "id": "fireworks-training-api",
+  "name": "Fireworks Training API",
+  "name_zh": "Fireworks Training API",
+  "vendor_id": "fireworks-ai",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-08-31",
+  "date_precision": "day",
+  "homepage": "https://fireworks.ai/product/training",
+  "desc": "API for writing your own RL or fine-tuning loops",
+  "desc_zh": "让你自己写强化学习或微调训练循环的 API",
+  "solves": "Custom training needs a GPU cluster and a DevOps team; the Training API runs the loop while you write Python.",
+  "solves_zh": "定制训练要有 GPU 集群和运维团队，Training API 替你跑循环，你只写 Python。",
+  "best_for": "You want a model tuned on your own verifier before next month's launch.",
+  "best_for_zh": "想在下个月上线前，用自家验证器调出一个专属模型。",
+  "surface": "in-product",
+  "tags": [
+    "fine-tuning",
+    "reinforcement-learning",
+    "custom-models"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — vendor's own site (channel D) (https://fireworks.ai/blog)）。 Generally available on 2026-08-31; the article says access before that was limited to a select group of organizations. The quote is the page's official description text. Part of the Fireworks AI platform (in the ledger at 2022-10-01). Second source is not independent media. 首次公开日期来源：https://fireworks.ai/blog/training-api-general-availability",
+  "revisions": []
+}

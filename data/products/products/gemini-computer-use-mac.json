@@ -1,0 +1,35 @@
+{
+  "id": "gemini-computer-use-mac",
+  "name": "Gemini Computer Use",
+  "name_zh": "Gemini 计算机操作（Mac 版）",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-11-19",
+  "date_precision": "day",
+  "homepage": "https://gemini.google.com/",
+  "desc": "Gemini on Mac that clicks, types and fills forms for you",
+  "desc_zh": "在 Mac 上替你点击、输入、填表的 Gemini 功能",
+  "solves": "Cross-app chores mean hours of clicking through forms; Gemini runs the steps on your Mac while you watch a live preview.",
+  "solves_zh": "跨应用办事要花几小时点表单，Gemini 在 Mac 上替你执行，你还能实时预览。",
+  "best_for": "Forty PDFs need the same fields copied into a legacy desktop app before lunch.",
+  "best_for_zh": "四十份 PDF 的同一批字段要在午饭前录进老旧的桌面软件。",
+  "surface": "in-product",
+  "tags": [
+    "computer-use",
+    "macos",
+    "workflow-automation"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C — https://techcrunch.com/tag/google/ (then D: gemini.google/release-notes)）。 Release updates entry dated 2026.11.19. Rolling out in English for Google AI Plus, Pro and Ultra subscribers (18+, personal accounts) in the U.S. per the release notes; pauses for logins and payments. In-product surface of the Gemini app, not a separate app. 入库核对（2026-11-25）：官方的说法是一整句「computer use in the Gemini app for Mac」，不适合当卡片标题；缩成产品名加形态。 首次公开日期来源：https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
+  "revisions": []
+}

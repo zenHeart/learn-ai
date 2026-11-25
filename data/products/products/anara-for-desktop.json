@@ -1,0 +1,36 @@
+{
+  "id": "anara-for-desktop",
+  "name": "Anara for Desktop",
+  "name_zh": "Anara for Desktop",
+  "vendor_id": "anara",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-07-30",
+  "date_precision": "day",
+  "homepage": "https://anara.com/download",
+  "desc": "Mac app for the Anara research workspace, outside the browser.",
+  "desc_zh": "Anara 研究工作区的 Mac 客户端，不用打开浏览器",
+  "solves": "Research dies in a graveyard of browser tabs. The desktop app sits in the Dock and keeps your library one click from the paper you are writing.",
+  "solves_zh": "研究工作容易被埋在一堆浏览器标签页里。桌面应用就在程序坞里，写论文时点一下就能回到自己的文献库。",
+  "best_for": "You are deep in a draft and keep losing the tab that holds your library and citations.",
+  "best_for_zh": "你正在专心写稿，却总是找不到放着文献库和引文的那一个标签页。",
+  "surface": "standalone",
+  "tags": [
+    "research-workspace",
+    "mac-app",
+    "citations"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://anara.com/updates and https://anara.com/blog , then the Anara produc）。 Released 2026-07-30 as a Mac app, in the discovery window, and missing from the ledger which holds only the web Anara (2025-03-23). The same update shipped Views. Anara's remote MCP server is documented at https://support.anara.com/en/articles/15334434-connect-ai-tools-to-anara-with-mcp but that article carries only an 'Updated' date of October 1, 2026, so its first public day is unconfirmed. Anara was formerly Unriddle. No media source was read. 首次公开日期来源：https://anara.com/updates/new-look",
+  "revisions": []
+}

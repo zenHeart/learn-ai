@@ -33,8 +33,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认 2026-11-25：date_precision day → month。智谱官方的发布记录页从 2025-04-14 开始，没有 2023 年的条目。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "智谱官方的发布记录页从 2025-04-14 开始，没有 2023 年的条目。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

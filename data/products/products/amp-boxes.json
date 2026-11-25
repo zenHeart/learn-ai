@@ -1,0 +1,35 @@
+{
+  "id": "amp-boxes",
+  "name": "Amp Boxes",
+  "name_zh": "Amp Boxes",
+  "vendor_id": "amp-frontier",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-11-10",
+  "date_precision": "day",
+  "homepage": "https://ampcode.com/docs/boxes",
+  "desc": "Always-on computers you deploy the things you build with Amp onto.",
+  "desc_zh": "用来部署你用 Amp 做出来的东西的常驻计算机。",
+  "solves": "An agent can build the app but nobody wants to own the machine it runs on; a box is that machine, kept running for you.",
+  "solves_zh": "智能体能做出应用，但没人想养那台运行它的机器；box 就是这台机器，由它替你保持运行。",
+  "best_for": "The thing the agent built needs to stay online after the session ends.",
+  "best_for_zh": "智能体做好的东西需要在会话结束后还保持在线。",
+  "surface": "standalone",
+  "tags": [
+    "always-on",
+    "deployment",
+    "hosting"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ampcode.com/chronicle news feed）。 Amp for Windows shipped the following week, 2026-11-17. 入库核对（2026-11-25）：官方名字只是「Boxes」，加上产品名以便辨认。 首次公开日期来源：https://ampcode.com/news/boxes",
+  "revisions": []
+}

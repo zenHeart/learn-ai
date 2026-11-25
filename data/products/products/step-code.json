@@ -1,0 +1,35 @@
+{
+  "id": "step-code",
+  "name": "Step Code",
+  "name_zh": "Step Code",
+  "vendor_id": "stepfun",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-09-22",
+  "date_precision": "day",
+  "homepage": "https://platform.stepfun.com/step-code",
+  "desc": "StepFun's terminal coding agent, installed with one script.",
+  "desc_zh": "阶跃星辰的终端编程智能体，一条命令装好",
+  "solves": "Switching between the editor and the browser breaks your flow. From the terminal, Step Code reads the project, edits files and runs the tests.",
+  "solves_zh": "在编辑器和浏览器之间来回切，思路一直断。在终端里让 Step Code 读项目、改文件、跑测试。",
+  "best_for": "You live in the terminal and want the coding agent right beside you.",
+  "best_for_zh": "常年在终端里干活，想让编程 Agent 就在旁边一起改代码。",
+  "surface": "standalone",
+  "tags": [
+    "cli",
+    "terminal-agent",
+    "steppage"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — platform.stepfun.com 文档 llms.txt 与 /step-code 产品页；安装脚本指向的官方发布 manifest）。 0.1.0 是发布 manifest 里最早的一版（0.0.1、0.0.9、0.1.0-rc.1 均不存在），文档版本记录从 v0.1.1（2026-09-24）起。官方文档自述「Step Code 是阶跃星辰推出的终端编程智能体（CLI）」。同页还宣传 Step Plan 订阅与 AI Studio（studio.stepfun.com），二者本次未单列，见 report.md。 首次公开日期来源：https://static-openapi.stepfun.com/stepcode/0.1.0/manifest.json",
+  "revisions": []
+}

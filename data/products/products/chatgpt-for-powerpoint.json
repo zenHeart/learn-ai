@@ -1,0 +1,35 @@
+{
+  "id": "chatgpt-for-powerpoint",
+  "name": "ChatGPT for PowerPoint",
+  "name_zh": "ChatGPT for PowerPoint",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-06",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001242-chatgpt-for-powerpoint",
+  "desc": "A PowerPoint sidebar that drafts, revises and explains your deck.",
+  "desc_zh": "PowerPoint 侧边栏里的助手，负责起草、修改和讲解你的演示稿。",
+  "solves": "Rebuilding a deck in another tool loses the template. The add-in works on the real file, and slides stay editable in PowerPoint afterwards.",
+  "solves_zh": "换一个工具重做演示稿，模板就丢了。这个加载项直接改原文件，做完之后幻灯片在 PowerPoint 里依然可编辑。",
+  "best_for": "A deck exists and needs a rewrite, or notes need turning into slides.",
+  "best_for_zh": "手上有一份要重写的演示稿，或者要把素材变成幻灯片。",
+  "surface": "in-product",
+  "tags": [
+    "slides",
+    "add-in",
+    "office"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes, https://help.openai.com/en/articles/6825453-chatgpt-r）。 Date corrected to 2026-07-06: the entry sits under the \"July 6, 2026\" heading of the ChatGPT release notes, not June. No earlier first-party beta announcement was found in the release notes or the OpenAI news feed, so the GA date is used. 入库核对（2026-11-25）：嵌在演示文稿软件里的 ChatGPT，与账本对 Microsoft 365 Copilot 的分类一致。 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

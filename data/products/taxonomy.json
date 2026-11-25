@@ -79,6 +79,14 @@
       "color": "#0D9488",
       "icon": "🎙️",
       "description": "会议转写、纪要与会后跟进。独立成类是因为会议助手既不是聊天助手也不是 Agent 平台。"
+    },
+    {
+      "id": "supporting-tools",
+      "name": "Supporting tools",
+      "name_zh": "辅助工具",
+      "color": "#CA8A04",
+      "icon": "🧰",
+      "description": "本身不是 AI，但常和 AI 工作流一起用的工具：远程接入、远程控制、托管 notebook 等。单独成类，免得挤进编程 Agent 或模型平台。"
     }
   ]
 }

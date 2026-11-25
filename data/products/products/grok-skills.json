@@ -1,0 +1,36 @@
+{
+  "id": "grok-skills",
+  "name": "Grok Skills",
+  "name_zh": "Grok Skills",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-05-18",
+  "date_precision": "day",
+  "homepage": "https://grok.com/skills",
+  "desc": "Instructions you teach Grok once, applied in every later conversation.",
+  "desc_zh": "教给 Grok 一次的可复用指令，之后每次对话都会自动生效。",
+  "solves": "You retype the same formatting rules and workflow steps every session; a skill stores them and your own version overrides the built-in one.",
+  "solves_zh": "每段会话都要重打同样的格式规范和工作步骤；skill 把它们存下来，你的版本还会覆盖内置版本。",
+  "best_for": "You keep telling Grok how you want reports structured and want it to just remember this time.",
+  "best_for_zh": "反复交代报告该怎么组织，想让 Grok 这次真的记住时。",
+  "surface": "in-product",
+  "tags": [
+    "reusable-instructions",
+    "document-generation",
+    "sharing"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory）。 Missing from the ledger. Shipped on web, iOS and Android with built-in skills from xAI that a user can override. The homepage grok.com/skills returns 403 to curl (bot guard). 入库核对（2026-11-25）：官方名字只是「Skills」，加上产品名以便辨认。 首次公开日期来源：https://x.ai/news/grok-skills 官网未直接确认（403）。",
+  "revisions": []
+}

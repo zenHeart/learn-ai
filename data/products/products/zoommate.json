@@ -11,8 +11,8 @@
   ],
   "form": "web",
   "surface": "in-product",
-  "released": "2026-01-01",
-  "date_precision": "month",
+  "released": "2026-06-01",
+  "date_precision": "day",
   "homepage": "https://zoom.com/en/ai-assistant/",
   "desc": "Zoom's AI teammate for agents, workflows and search.",
   "desc_zh": "Zoom 的 AI 同事，涵盖智能体、工作流与搜索",
@@ -26,7 +26,16 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：https://zoom.com/en/ai-assistant/。来源：https://zoom.com/en/ai-assistant/",
-  "revisions": []
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：https://zoom.com/en/ai-assistant/。来源：https://zoom.com/en/ai-assistant/ 2026-11-25：released 2026-01-01/month → 2026-06-01/day; source https://news.zoom.com/zoom-launches-zoommate。原值 2026 年 1 月无出处。Zoom 官方新闻（2026-06-01）：「Zoom launches ZoomMate: the first AI teammate built to turn conversations into completed work」，当天正式发布",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-01-01/month",
+      "to": "2026-06-01/day",
+      "why": "原值 2026 年 1 月无出处。Zoom 官方新闻（2026-06-01）：「Zoom launches ZoomMate: the first AI teammate built to turn conversations into completed work」，当天正式发布"
+    }
+  ]
 }

@@ -1,0 +1,36 @@
+{
+  "id": "nod-agent",
+  "name": "n8n Nod",
+  "name_zh": "n8n Nod",
+  "vendor_id": "n8n",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "released": "2026-11-10",
+  "date_precision": "day",
+  "homepage": "https://n8n.io/nod",
+  "desc": "Standalone personal agent from n8n Labs that runs on your computer.",
+  "desc_zh": "n8n Labs 出品、运行在你电脑上的独立个人智能体。",
+  "solves": "Work that spans several apps and sites never fits one workflow; an agent that drives the apps directly finishes the task.",
+  "solves_zh": "跨多个应用和网站的活很难塞进一条工作流；能直接操作应用的智能体才能把事做完。",
+  "best_for": "You want one assistant that works inside your apps and asks before it acts.",
+  "best_for_zh": "你想要一个能在你的应用里干活、并且行动前先问你的助手。",
+  "surface": "standalone",
+  "tags": [
+    "personal-agent",
+    "research-preview",
+    "local"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — n8n.io/blog）。 Blog post by Ophir Prusak, November 10, 2026, described as a research preview from n8n Labs. A standalone desktop product separate from the n8n workflow platform the ledger holds. 入库核对（2026-11-25）：官方名字只是「Nod」，卡片上认不出属于谁，带上厂商名。 首次公开日期来源：https://n8n.io/blog/meet-nod/",
+  "revisions": []
+}

@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "LangChain's main counterpart, but owns the data layer rather than orchestration. 首次公开发布日期精度：month-only 来源：https://www.llamaindex.ai/blog/llamaindex-turns-1-f69dcdd45fe3",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "LangChain's main counterpart, but owns the data layer rather than orchestration. 首次公开发布日期精度：month-only 来源：https://www.llamaindex.ai/blog/llamaindex-turns-1-f69dcdd45fe3 2026-11-25：date_precision day → month。官方的回顾文章只写到「2022 年 11 月」。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "官方的回顾文章只写到「2022 年 11 月」。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

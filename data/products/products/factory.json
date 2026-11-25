@@ -28,8 +28,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网 factory.ai 返回 307 跳转 factory.com（域名变更，未改 homepage 字段）。新站确认产品为 Droid 系列，主入口是 Droid CLI，同时提供桌面端与 Web 端，故 form 记为 cli。",
+  "last_verified_at": "2026-11-25",
+  "notes": "官网 factory.ai 返回 307 跳转 factory.com（域名变更，未改 homepage 字段）。新站确认产品为 Droid 系列，主入口是 Droid CLI，同时提供桌面端与 Web 端，故 form 记为 cli。 2026-11-25：date_precision day → month。找不到 2024 年 6 月上线的一手来源；官方新闻页只列出近期的条目。按月份精度记",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -38,7 +38,15 @@
       "from": "https://factory.ai",
       "to": "https://factory.com/",
       "why": "factory.ai 307 跳转"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "找不到 2024 年 6 月上线的一手来源；官方新闻页只列出近期的条目。按月份精度记"
     }
   ],
-  "date_precision": "day"
+  "date_precision": "month"
 }

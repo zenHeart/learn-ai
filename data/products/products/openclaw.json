@@ -10,7 +10,7 @@
     "local-private"
   ],
   "form": "self-hosted",
-  "released": "2026-01-15",
+  "released": "2025-11-25",
   "homepage": "https://openclaw.ai/",
   "desc": "Open-source assistant running on your machine, driven from chat.",
   "desc_zh": "跑在自己机器上、从聊天软件里指挥的开源助手。",
@@ -33,8 +33,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2026-01-15/day → 2025-11-25/day; source https://github.com/openclaw/openclaw/releases/tag/v0.1.1。原日期 2026-01-15 没有出处。这个项目最早以 Warelay 的名字公开发布：官方仓库最早的三个版本都叫「warelay 0.1.x」，发布于 2025-11-25，npm 包 warelay 也是当天首发；改用 OpenClaw 这个名字的 npm 包首次发布于 2026-01-29 2026-11-25：名字沿革：首发时叫 Warelay（2025-11-25），之后才改称 OpenClaw；本档记项目的首次公开发布日",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-01-15/day",
+      "to": "2025-11-25/day",
+      "why": "原日期 2026-01-15 没有出处。这个项目最早以 Warelay 的名字公开发布：官方仓库最早的三个版本都叫「warelay 0.1.x」，发布于 2025-11-25，npm 包 warelay 也是当天首发；改用 OpenClaw 这个名字的 npm 包首次发布于 2026-01-29"
+    }
+  ],
   "date_precision": "day"
 }

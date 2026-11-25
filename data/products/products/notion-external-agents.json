@@ -1,0 +1,37 @@
+{
+  "id": "notion-external-agents",
+  "name": "Notion External Agents",
+  "name_zh": "Notion 外部智能体",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-01",
+  "date_precision": "day",
+  "homepage": "https://www.notion.com/product/agents",
+  "desc": "Run Claude, Cursor and other outside agents from Notion.",
+  "desc_zh": "在 Notion 里给 Claude、Cursor 等外部智能体派活",
+  "solves": "Agents in CLIs and IDEs work where teammates cannot see them. External Agents take tasks from a shared Notion board and report back.",
+  "solves_zh": "命令行和 IDE 里的智能体干活，同事看不见也接不上。外部智能体从共享的 Notion 看板接任务，结果大家都能看到。",
+  "best_for": "A support ticket needs a code fix and you want to hand it to Cursor without leaving the team's board.",
+  "best_for_zh": "一个工单需要改代码，你想直接把它派给 Cursor，而不用离开团队看板。",
+  "surface": "in-product",
+  "tags": [
+    "agent-orchestration",
+    "claude-cursor",
+    "shared-board"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.notion.com/releases/page/2）。 First announced on 2026-05-13 as an alpha behind a waitlist (inside the Developer Platform announcement, which says 'Join the External Agents waitlist'); the usable launch with Notion 3.6 is 2026-07-01, which is the date used. The quote ending 'in Notion' is truncated before its final period because the period follows a link on the page. No media source was read. 评审修正（2026-11-25）：官方名字「External Agents」在卡片上认不出属于谁。 首次公开日期来源：https://www.notion.com/releases/2026-07-01",
+  "revisions": []
+}

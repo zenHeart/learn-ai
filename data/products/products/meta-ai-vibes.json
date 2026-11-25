@@ -1,0 +1,35 @@
+{
+  "id": "meta-ai-vibes",
+  "name": "Meta AI Vibes",
+  "name_zh": "Meta AI Vibes",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2025-09-25",
+  "date_precision": "day",
+  "homepage": "https://www.meta.ai/",
+  "desc": "Feed for creating and sharing short AI-generated videos",
+  "desc_zh": "创建并分享 AI 短视频的信息流",
+  "solves": "AI video clips were scattered across social feeds; Vibes puts an endless stream of them inside the Meta AI app.",
+  "solves_zh": "AI 视频散落在各个社交信息流里，Vibes 把它们集中到 Meta AI 应用的一个信息流中。",
+  "best_for": "You have ten minutes to kill and want to remix a trending AI clip.",
+  "best_for_zh": "有十分钟空闲，想随手改编一条正在流行的 AI 视频。",
+  "surface": "in-product",
+  "tags": [
+    "ai-video",
+    "feed",
+    "remix"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C — https://techcrunch.com/tag/meta-ai/ (then D: about.fb.com post sitemap)）。 Outside the window. Early preview in the Meta AI app and on meta.ai; an in-product surface of Meta AI (in the ledger at 2025-04-29), not a separate app. Brought to Europe in November 2025. meta.ai returns HTTP 403 to a plain HTTP client but loaded through the fetch tool. 入库核对（2026-11-25）：官方名字只是「Vibes」，加上产品名以便辨认。 首次公开日期来源：https://about.fb.com/news/2025/09/introducing-vibes-ai-videos/",
+  "revisions": []
+}

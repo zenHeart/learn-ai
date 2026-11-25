@@ -31,8 +31,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Mistral's counterpart to Google AI Studio and Anthropic's console workbench; the ledger had only the API tier recorded. 首次公开发布日期精度：month-only 来源：https://mistral.ai",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "Mistral's counterpart to Google AI Studio and Anthropic's console workbench; the ledger had only the API tier recorded. 首次公开发布日期精度：month-only 来源：https://mistral.ai 2026-11-25：date_precision day → month。原值 2025-10-01 标成精确到日。Mistral 官方在 2025-10-24 发布的是私有测试版的招募，不算公开可用；正式开放的日期没有找到。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "原值 2025-10-01 标成精确到日。Mistral 官方在 2025-10-24 发布的是私有测试版的招募，不算公开可用；正式开放的日期没有找到。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

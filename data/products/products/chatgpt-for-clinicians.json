@@ -1,0 +1,35 @@
+{
+  "id": "chatgpt-for-clinicians",
+  "name": "ChatGPT for Clinicians",
+  "name_zh": "ChatGPT for Clinicians",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-04-22",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians",
+  "desc": "A free ChatGPT workspace for individual clinicians in the US.",
+  "desc_zh": "面向美国已验证个人临床医生的免费 ChatGPT 工作区。",
+  "solves": "Clinicians either use a general assistant or nothing at all. This one checks who you are, cites medical literature, and keeps chart data out of public searches.",
+  "solves_zh": "临床医生过去只能在通用助手和不用之间选。这个版本先确认身份，再给出文献出处，病历不会进入公开检索。",
+  "best_for": "You are a clinician checking a drug interaction or a guideline between patients.",
+  "best_for_zh": "你是临床医生，要在两个病人之间查一条药物相互作用或指南。",
+  "surface": "standalone",
+  "tags": [
+    "clinical",
+    "verified-access",
+    "medical-search"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/making-chatgpt-better-for-clinicians）。 Before the discovery window but missing from the ledger partition list, so proposed under rule (b). Individual-clinician product; the organisation-facing one is ChatGPT for Healthcare. 首次公开日期来源：https://openai.com/index/making-chatgpt-better-for-clinicians",
+  "revisions": []
+}

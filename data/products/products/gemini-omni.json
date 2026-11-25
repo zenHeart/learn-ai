@@ -1,0 +1,35 @@
+{
+  "id": "gemini-omni",
+  "name": "Gemini Omni",
+  "name_zh": "Gemini Omni",
+  "vendor_id": "google",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-05-19",
+  "date_precision": "day",
+  "homepage": "https://gemini.google.com/",
+  "desc": "Conversational video creation and editing in the Gemini app",
+  "desc_zh": "Gemini 应用里用对话创建和剪辑视频的功能",
+  "solves": "Video edits usually mean a timeline and a tutorial; Omni changes clips by conversation, from text, photos and video.",
+  "solves_zh": "剪视频往往要学时间线操作，Omni 靠对话修改片段，输入文字、照片或视频都行。",
+  "best_for": "You have phone clips from a demo and need a polished promo without opening an editor.",
+  "best_for_zh": "手里有产品演示的手机素材，想不开剪辑软件就出一条宣传片。",
+  "surface": "in-product",
+  "tags": [
+    "video-generation",
+    "conversational-editing",
+    "ai-avatar"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://gemini.google/release-notes (official Gemini Apps release updates)）。 Entry dated 2026.05.19; all Google AI subscribers globally (18+), availability varies by region. Includes a custom AI avatar. Also added to Google Vids in July 2026. Second source is not independent media. 首次公开日期来源：https://gemini.google/release-notes",
+  "revisions": []
+}

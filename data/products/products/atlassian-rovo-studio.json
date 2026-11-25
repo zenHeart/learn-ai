@@ -1,0 +1,36 @@
+{
+  "id": "atlassian-rovo-studio",
+  "name": "Rovo Studio",
+  "name_zh": "Rovo Studio",
+  "vendor_id": "atlassian",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-04-09",
+  "date_precision": "day",
+  "homepage": "https://www.atlassian.com/software/rovo/studio",
+  "desc": "No-code workspace for building Rovo agents, automations and apps.",
+  "desc_zh": "搭建 Rovo 智能体、自动化和应用的无代码工作区",
+  "solves": "Custom automation used to mean Forge code and an IT ticket. Studio builds agents, automations and simple apps from a written description.",
+  "solves_zh": "以前做定制自动化要写 Forge 代码、提 IT 工单。Studio 根据一段文字描述就能搭出智能体、自动化和简单应用。",
+  "best_for": "Onboarding a new hire takes twenty manual steps across four tools and nobody owns the fix.",
+  "best_for_zh": "入职一个新人要在四个工具里手动走二十步，而且没人负责把它理顺。",
+  "surface": "in-product",
+  "tags": [
+    "no-code-builder",
+    "agents-and-automations",
+    "natural-language"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.atlassian.com/software/rovo (links to the Team '26 Studio post) ）。 Introduced as a new app at Team '25 (2025-04-09); the post does not say in the sentence quoted whether it was open to all users that day, so the date is the announcement date (medium confidence). At Team '26 (2026-05-06) Atlassian relaunched it as a unified builder that recommends agents, automations or Forge apps from one prompt. Automation in Studio was announced on Atlassian Community on 2026-04-29 (seen in search results, not opened). No media source was read. 首次公开日期来源：https://www.atlassian.com/blog/rovo/team25-rovo-for-all",
+  "revisions": []
+}

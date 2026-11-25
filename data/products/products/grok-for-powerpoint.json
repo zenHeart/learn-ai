@@ -1,0 +1,36 @@
+{
+  "id": "grok-for-powerpoint",
+  "name": "Grok for PowerPoint",
+  "name_zh": "Grok for PowerPoint",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-06-16",
+  "date_precision": "day",
+  "homepage": "https://marketplace.microsoft.com/en-us/product/office/WA200011057?tab=Overview",
+  "desc": "PowerPoint add-in that turns an outline into a researched, finished deck.",
+  "desc_zh": "PowerPoint 加载项，把大纲变成带资料的成品幻灯片并收紧叙事。",
+  "solves": "Building a deck means juggling research, layout and story at once; share an outline and the slides, diagrams and images come back.",
+  "solves_zh": "做幻灯片要同时顾资料、版面和故事；交出大纲，幻灯片、图示和图片就一起回来。",
+  "best_for": "You have an outline for tomorrow's review and no time to hunt for charts and images.",
+  "best_for_zh": "明天要汇报却只有一份大纲，没时间找图表和配图时。",
+  "surface": "extension",
+  "tags": [
+    "presentation-addin",
+    "deck-generation",
+    "research-import"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory; channel A Microsoft Marketplace listing）。 Earliest of the four Grok Office add-ins. Single slides, styles and section restructuring are also supported, and Grok asks clarifying questions. The marketplace URL redirects by dropping the locale segment. 入库核对（2026-11-25）：嵌在办公软件里的助手，与账本对同类功能的分类一致。 首次公开日期来源：https://x.ai/news/introducing-powerpoint-addin 官网未直接确认（redirect->https://marketplace.microsoft.com/en-us/product/WA200011057?tab=Overview）。",
+  "revisions": []
+}

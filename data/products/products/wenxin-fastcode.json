@@ -9,7 +9,7 @@
     "coding"
   ],
   "form": "ide",
-  "released": "2023-10-24",
+  "released": "2024-06-28",
   "homepage": "https://comate.baidu.com/",
   "desc": "China-first code completion that also reads Figma files",
   "desc_zh": "国内可直连的代码补全助手",
@@ -29,8 +29,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "服务超千万开发者的国产编程助手代表，Figma 转代码是少数工具具备的能力 来源：https://comate.baidu.com/zh/page/x9rcbn4gmz2",
+  "last_verified_at": "2026-11-25",
+  "notes": "服务超千万开发者的国产编程助手代表，Figma 转代码是少数工具具备的能力 来源：https://comate.baidu.com/zh/page/x9rcbn4gmz2 2026-11-25：released 2023-10-24/day → 2024-06-28/day; source https://blog.csdn.net/Baidu_Secrity/article/details/140104775。新名字首次启用的日子。原日期 2023-10-24 是旧名 Comate 的公开上线日，应留在旧名档案上。百度官方账号的稿件写「6月28日…WAVE SUMMIT…发布了中文名“文心快码”」",
   "revisions": [
     {
       "at": "2026-10-05",
@@ -39,6 +39,14 @@
       "from": "p7887",
       "to": "wenxin-fastcode",
       "why": "slug 退化产物：非拉丁名被哈希成了 p<数字>，换成可读 id"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-10-24/day",
+      "to": "2024-06-28/day",
+      "why": "新名字首次启用的日子。原日期 2023-10-24 是旧名 Comate 的公开上线日，应留在旧名档案上。百度官方账号的稿件写「6月28日…WAVE SUMMIT…发布了中文名“文心快码”」"
     }
   ],
   "date_precision": "day"

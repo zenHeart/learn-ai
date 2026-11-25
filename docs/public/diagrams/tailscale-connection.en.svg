@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 1008" width="100%" height="100%" role="img" aria-labelledby="ts-conn-title ts-conn-desc">
+  <title id="ts-conn-title">Tailscale connection sequence: log in and exchange info first, meet through DERP, go direct when possible, relay only as a fallback</title>
+  <desc id="ts-conn-desc">This sequence diagram has five vertical lanes. From left to right: device A, device B, the identity provider, the coordination server (the control plane), and the DERP relay server, which also acts as a STUN server. Numbers give the order. Step 1: device A and device B each log in to the identity provider; Tailscale itself does no user authentication. Step 2: each device sends the coordination server a MapRequest containing its own node public key, addresses and candidate endpoints. Step 3: the coordination server sends the network map, or netmap, to device A and device B. It tells each device whether the other exists, the other node's public key, its Tailscale address, its candidate endpoints and its home DERP region, and it includes only the nodes the policy allows that device to see. Step 4: device A connects to the DERP server that device B uses, DERP passes the connection request to device B, and then the two sides exchange the endpoint information needed for a direct connection through DERP; paths through DERP are drawn as amber dashed lines. Step 5: both sides first use STUN to discover their own public address, then try each candidate endpoint to traverse NAT. If that succeeds they establish a direct WireGuard UDP tunnel, drawn as a thick green line, and after that the data passes through no third party. Step 6: if the direct path fails, Tailscale first tries a Peer Relay inside the tailnet, drawn as a cyan dashed line; a Peer Relay requires explicit setup and is not there by default. Only when no Peer Relay is available does it keep using the DERP relay to forward already-encrypted WireGuard packets, drawn as an amber dashed line. Step 7: Tailscale on the devices retries periodically to see whether the connection can upgrade to direct or to a Peer Relay. Step 8 is two protection notes: the coordination server only distributes public keys and policy, is not on the data path and never sees plaintext; DERP only forwards already-encrypted WireGuard packets and cannot decrypt them. The difference between direct and fallback: with a direct connection the data travels only between the two devices and no third party is involved; with a fallback the data is relayed, and when it is relayed through DERP what DERP forwards is still encrypted WireGuard packets. Orange solid lines are control and negotiation messages. This diagram omits: a separate lane for the Peer Relay; the internal steps of the WireGuard handshake and key negotiation; NAT types and the details of hole punching; the interval between periodic retries; the number and location of DERP regions; the contents of the policy the coordination server distributes.</desc>
+
+  <defs>
+    <linearGradient id="tsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <pattern id="tsGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.55"/>
+    </pattern>
+    <filter id="tsShadow" x="-12%" y="-12%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="mO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fb923c"/></marker>
+    <marker id="mG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399"/></marker>
+    <marker id="mC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#22d3ee"/></marker>
+    <marker id="mA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"/></marker>
+    <style>
+      text { font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'SF Pro SC', system-ui, sans-serif; }
+      .t-title { fill: #f8fafc; font-size: 19px; font-weight: 700; }
+      .t-sub { fill: #94a3b8; font-size: 12px; }
+      .t-lane { font-size: 13.5px; font-weight: 700; text-anchor: middle; }
+      .t-note { fill: #94a3b8; font-size: 10.5px; text-anchor: middle; }
+      .t-band { fill: #cbd5e1; font-size: 10.5px; font-weight: 600; letter-spacing: .04em; }
+      .t-body { fill: #e2e8f0; font-size: 11px; }
+      .t-sm { fill: #94a3b8; font-size: 10.5px; }
+      .t-h { fill: #fecdd3; font-size: 12px; font-weight: 700; }
+      .t-tag { fill: #fb7185; font-size: 10.5px; font-weight: 700; }
+      .t-num { fill: #0f172a; font-size: 11px; font-weight: 700; text-anchor: middle; }
+      .t-leg { fill: #cbd5e1; font-size: 10.5px; }
+      .ln { fill: rgba(15, 23, 42, 0.62); stroke: rgba(148, 163, 184, 0.22); }
+      .bk { fill: #0f172a; }
+      .dv { stroke: rgba(148, 163, 184, 0.35); stroke-width: 1; }
+      .aO { fill: none; stroke: #fb923c; stroke-width: 1.8; }
+      .aG { fill: none; stroke: #34d399; stroke-width: 5.5; }
+      .aC { fill: none; stroke: #22d3ee; stroke-width: 1.8; stroke-dasharray: 6 4; }
+      .aA { fill: none; stroke: #fbbf24; stroke-width: 1.8; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+
+  <rect width="1020" height="1008" fill="url(#tsBg)"/>
+  <rect width="1020" height="1008" fill="url(#tsGrid)"/>
+
+  <g transform="translate(36, 24)">
+    <rect x="0" y="0" width="8" height="38" rx="4" fill="#22d3ee"/>
+    <text x="20" y="21" class="t-title">Tailscale connection sequence: meet via DERP, go direct, relay as fallback</text>
+    <text x="20" y="40" class="t-sub">Numbers 1–7 give the message order; 8 marks two protection notes. Each message's text sits above its arrow</text>
+  </g>
+
+  <!-- Five lanes. The left three stop after step 7; the right two extend down to hold the step 8 notes -->
+  <g class="ln">
+    <rect x="37" y="92" width="170" height="802"/>
+    <rect x="231" y="92" width="170" height="802"/>
+    <rect x="425" y="92" width="170" height="802"/>
+    <rect x="619" y="92" width="170" height="896"/>
+    <rect x="813" y="92" width="170" height="896"/>
+  </g>
+
+  <!-- Lane title cards (double layer) -->
+  <g>
+    <rect x="37" y="92" width="170" height="54" rx="9" fill="#0f172a"/>
+    <rect x="37" y="92" width="170" height="54" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee" stroke-width="1.5" filter="url(#tsShadow)"/>
+    <text x="122" y="115" class="t-lane" fill="#a5f3fc">Device A</text>
+    <text x="122" y="134" class="t-note">the side that initiates</text>
+
+    <rect x="231" y="92" width="170" height="54" rx="9" fill="#0f172a"/>
+    <rect x="231" y="92" width="170" height="54" rx="9" fill="rgba(8, 51, 68, 0.45)" stroke="#38bdf8" stroke-width="1.5" filter="url(#tsShadow)"/>
+    <text x="316" y="115" class="t-lane" fill="#bae6fd">Device B</text>
+    <text x="316" y="134" class="t-note">the side being connected</text>
+
+    <rect x="425" y="92" width="170" height="54" rx="9" fill="#0f172a"/>
+    <rect x="425" y="92" width="170" height="54" rx="9" fill="rgba(51, 65, 85, 0.45)" stroke="#94a3b8" stroke-width="1.5" filter="url(#tsShadow)"/>
+    <text x="510" y="115" class="t-lane" fill="#cbd5e1">Identity provider</text>
+    <text x="510" y="134" class="t-note">IdP, not Tailscale itself</text>
+
+    <rect x="619" y="92" width="170" height="54" rx="9" fill="#0f172a"/>
+    <rect x="619" y="92" width="170" height="54" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5" filter="url(#tsShadow)"/>
+    <text x="704" y="115" class="t-lane" fill="#fde68a">Coordination server</text>
+    <text x="704" y="134" class="t-note">the control plane</text>
+
+    <rect x="813" y="92" width="170" height="54" rx="9" fill="#0f172a"/>
+    <rect x="813" y="92" width="170" height="54" rx="9" fill="rgba(120, 53, 15, 0.3)" stroke="#f59e0b" stroke-width="1.5" filter="url(#tsShadow)"/>
+    <text x="898" y="115" class="t-lane" fill="#fcd34d">DERP relay server</text>
+    <text x="898" y="134" class="t-note">also acts as STUN server</text>
+  </g>
+
+  <text x="37" y="180" class="t-band">Steps 1–3: log in, report, receive the network map</text>
+  <line x1="37" y1="186" x2="983" y2="186" class="dv"/>
+
+  <!-- 1 Device A and device B each log in to the identity provider -->
+  <line x1="122" y1="212" x2="510" y2="212" class="aO" marker-end="url(#mO)"/>
+  <rect x="200" y="193" width="254" height="14" class="bk"/><text x="208" y="204" class="t-body">Log in; Tailscale itself does no user auth</text>
+  <circle cx="186" cy="200" r="9" fill="#fb923c"/><text x="186" y="204" class="t-num">1</text>
+  <line x1="316" y1="246" x2="510" y2="246" class="aO" marker-end="url(#mO)"/>
+  <rect x="344" y="227" width="160" height="14" class="bk"/><text x="352" y="238" class="t-body">Log in (same as device A)</text>
+  <circle cx="330" cy="240" r="9" fill="#fb923c"/><text x="330" y="244" class="t-num">1</text>
+
+  <!-- 2 MapRequest -->
+  <line x1="122" y1="282" x2="704" y2="282" class="aO" marker-end="url(#mO)"/>
+  <rect x="244" y="263" width="360" height="14" class="bk"/><text x="252" y="274" class="t-body">MapRequest: node public key, addresses, candidate endpoints</text>
+  <circle cx="230" cy="270" r="9" fill="#fb923c"/><text x="230" y="274" class="t-num">2</text>
+  <line x1="316" y1="316" x2="704" y2="316" class="aO" marker-end="url(#mO)"/>
+  <rect x="429" y="297" width="184" height="14" class="bk"/><text x="437" y="308" class="t-body">MapRequest (same as device A)</text>
+  <circle cx="415" cy="304" r="9" fill="#fb923c"/><text x="415" y="308" class="t-num">2</text>
+
+  <!-- 3 Network map (netmap) -->
+  <line x1="704" y1="352" x2="316" y2="352" class="aO" marker-end="url(#mO)"/>
+  <rect x="426" y="333" width="190" height="14" class="bk"/><text x="434" y="344" class="t-body">Sends the network map (netmap)</text>
+  <circle cx="412" cy="340" r="9" fill="#fb923c"/><text x="412" y="344" class="t-num">3</text>
+  <line x1="704" y1="411" x2="122" y2="411" class="aO" marker-end="url(#mO)"/>
+  <rect x="243" y="366" width="366" height="40" class="bk"/>
+  <text x="249" y="377" class="t-body">Contains: whether the peer exists, its node public key,</text>
+  <text x="249" y="390" class="t-body">Tailscale address, candidate endpoints, its home DERP region</text>
+  <text x="249" y="403" class="t-sm">Only nodes the policy allows you to see</text>
+  <circle cx="227" cy="373" r="9" fill="#fb923c"/><text x="227" y="377" class="t-num">3</text>
+
+  <text x="37" y="440" class="t-band">Step 4: first contact through the DERP relay</text>
+  <line x1="37" y1="446" x2="983" y2="446" class="dv"/>
+
+  <!-- 4 Through DERP: connect, pass the connection request, then exchange endpoint info -->
+  <line x1="122" y1="472" x2="898" y2="472" class="aO" marker-end="url(#mO)"/>
+  <rect x="400" y="453" width="242" height="14" class="bk"/><text x="408" y="464" class="t-body">Connects to device B's home DERP server</text>
+  <circle cx="386" cy="460" r="9" fill="#fb923c"/><text x="386" y="464" class="t-num">4</text>
+  <line x1="898" y1="506" x2="316" y2="506" class="aO" marker-end="url(#mO)"/>
+  <rect x="470" y="487" width="296" height="14" class="bk"/><text x="478" y="498" class="t-body">DERP forwards the connection request to device B</text>
+  <circle cx="456" cy="494" r="9" fill="#fb923c"/><text x="456" y="498" class="t-num">4</text>
+  <line x1="123" y1="546" x2="897" y2="546" class="aA" marker-start="url(#mA)" marker-end="url(#mA)"/>
+  <line x1="898" y1="546" x2="898" y2="560" class="aA"/>
+  <line x1="897" y1="560" x2="317" y2="560" class="aA" marker-start="url(#mA)" marker-end="url(#mA)"/>
+  <rect x="338" y="527" width="366" height="14" class="bk"/><text x="346" y="538" class="t-body">Both sides exchange endpoint info for a direct path via DERP</text>
+  <circle cx="324" cy="534" r="9" fill="#fbbf24"/><text x="324" y="538" class="t-num">4</text>
+
+  <text x="37" y="590" class="t-band">Steps 5–7: try direct, fall back if it fails, retry periodically</text>
+  <line x1="37" y1="596" x2="983" y2="596" class="dv"/>
+
+  <!-- 5 NAT traversal: STUN, try each candidate endpoint, then the direct tunnel -->
+  <line x1="122" y1="622" x2="898" y2="622" class="aO" marker-end="url(#mO)"/>
+  <rect x="409" y="603" width="224" height="14" class="bk"/><text x="417" y="614" class="t-body">STUN: discover my own public address</text>
+  <circle cx="395" cy="610" r="9" fill="#fb923c"/><text x="395" y="614" class="t-num">5</text>
+  <line x1="316" y1="656" x2="898" y2="656" class="aO" marker-end="url(#mO)"/>
+  <rect x="506" y="637" width="224" height="14" class="bk"/><text x="514" y="648" class="t-body">STUN: discover my own public address</text>
+  <circle cx="492" cy="644" r="9" fill="#fb923c"/><text x="492" y="648" class="t-num">5</text>
+  <line x1="122" y1="692" x2="316" y2="692" class="aO" marker-start="url(#mO)" marker-end="url(#mO)"/>
+  <rect x="97" y="673" width="266" height="14" class="bk"/><text x="105" y="684" class="t-body">Try each candidate endpoint (NAT traversal)</text>
+  <circle cx="91" cy="680" r="9" fill="#fb923c"/><text x="91" y="684" class="t-num">5</text>
+  <line x1="122" y1="734" x2="316" y2="734" class="aG" marker-start="url(#mG)" marker-end="url(#mG)"/>
+  <rect x="103" y="702" width="253" height="27" class="bk"/>
+  <text x="111" y="713" class="t-body">Success: a direct WireGuard UDP tunnel</text>
+  <text x="111" y="726" class="t-sm">Data no longer goes through any third party</text>
+  <circle cx="89" cy="709" r="9" fill="#34d399"/><text x="89" y="713" class="t-num">5</text>
+
+  <!-- 6 Direct fails: Peer Relay first (explicit setup), DERP relay only if none is available -->
+  <line x1="122" y1="778" x2="316" y2="778" class="aC" marker-start="url(#mC)" marker-end="url(#mC)"/>
+  <rect x="75" y="746" width="309" height="27" class="bk"/>
+  <text x="83" y="757" class="t-body">Direct fails: try a Peer Relay in the tailnet</text>
+  <text x="83" y="770" class="t-sm">Peer Relay requires explicit setup; not on by default</text>
+  <circle cx="61" cy="753" r="9" fill="#22d3ee"/><text x="61" y="757" class="t-num">6</text>
+  <line x1="123" y1="814" x2="897" y2="814" class="aA" marker-start="url(#mA)" marker-end="url(#mA)"/>
+  <line x1="898" y1="814" x2="898" y2="826" class="aA"/>
+  <line x1="897" y1="826" x2="317" y2="826" class="aA" marker-start="url(#mA)" marker-end="url(#mA)"/>
+  <rect x="375" y="774" width="292" height="27" class="bk"/>  <text x="383" y="785" class="t-body">No Peer Relay available: keep relaying via DERP</text>
+  <text x="383" y="798" class="t-tag">Only forwards already-encrypted WireGuard packets</text>
+  <circle cx="361" cy="781" r="9" fill="#fbbf24"/><text x="361" y="785" class="t-num">6</text>
+
+  <!-- 7 Periodic retry (self messages on both devices) -->
+  <path d="M 122 870 H 182 V 886 H 134" class="aO" marker-end="url(#mO)"/>
+  <path d="M 316 870 H 376 V 886 H 328" class="aO" marker-end="url(#mO)"/>
+  <rect x="119" y="838" width="281" height="27" class="bk"/>
+  <text x="127" y="849" class="t-body">Tailscale retries periodically</text>
+  <text x="127" y="862" class="t-sm">to see if it can upgrade to direct or Peer Relay</text>
+  <circle cx="105" cy="845" r="9" fill="#fb923c"/><text x="105" y="849" class="t-num">7</text>
+
+  <!-- 8 Two protection notes (rose) -->
+  <g>
+    <rect x="623" y="906" width="162" height="74" rx="9" fill="#0f172a"/>
+    <rect x="623" y="906" width="162" height="74" rx="9" fill="rgba(190, 24, 93, 0.2)" stroke="#fb7185" stroke-width="1.5"/>
+    <circle cx="638" cy="921" r="9" fill="#fb7185"/><text x="638" y="925" class="t-num">8</text>
+    <text x="652" y="925" class="t-band" fill="#fcd34d">Coordination server</text>
+    <text x="632" y="943" class="t-h">Not on the data path</text>
+    <text x="632" y="958" class="t-sm" fill="#e2e8f0">Only public keys and</text>
+    <text x="632" y="971" class="t-tag">policy, never plaintext</text>
+
+    <rect x="817" y="906" width="162" height="74" rx="9" fill="#0f172a"/>
+    <rect x="817" y="906" width="162" height="74" rx="9" fill="rgba(190, 24, 93, 0.2)" stroke="#fb7185" stroke-width="1.5"/>
+    <circle cx="832" cy="921" r="9" fill="#fb7185"/><text x="832" y="925" class="t-num">8</text>
+    <text x="846" y="925" class="t-band" fill="#fcd34d">DERP relay</text>
+    <text x="826" y="943" class="t-h">Cannot decrypt</text>
+    <text x="826" y="958" class="t-sm" fill="#e2e8f0">Forwards only encrypted</text>
+    <text x="826" y="971" class="t-tag">WireGuard packets</text>
+  </g>
+
+  <!-- Legend -->
+  <text x="37" y="917" class="t-band">Legend</text>
+  <line x1="37" y1="932" x2="73" y2="932" class="aO" marker-end="url(#mO)"/><text x="85" y="936" class="t-leg">Control &amp; negotiation messages</text>
+  <line x1="318" y1="932" x2="354" y2="932" class="aG" marker-start="url(#mG)" marker-end="url(#mG)"/><text x="364" y="936" class="t-leg">Direct WireGuard tunnel</text>
+  <line x1="38" y1="952" x2="72" y2="952" class="aC" marker-start="url(#mC)" marker-end="url(#mC)"/><text x="85" y="956" class="t-leg">Fallback: Peer Relay (opt-in)</text>
+  <line x1="318" y1="952" x2="354" y2="952" class="aA" marker-start="url(#mA)" marker-end="url(#mA)"/><text x="364" y="956" class="t-leg">Fallback: via DERP relay</text>
+  <rect x="37" y="966" width="40" height="13" rx="6.5" fill="rgba(190, 24, 93, 0.25)" stroke="#fb7185" stroke-width="1.2"/><text x="85" y="976" class="t-leg">Protection note: no plaintext here</text>
+</svg>

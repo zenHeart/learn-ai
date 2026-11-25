@@ -1,0 +1,36 @@
+{
+  "id": "github-agentic-workflows",
+  "name": "GitHub Agentic Workflows",
+  "name_zh": "GitHub Agentic Workflows",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-10-28",
+  "date_precision": "day",
+  "homepage": "https://githubnext.com/projects/agentic-workflows/",
+  "desc": "Write automations in Markdown; they compile to GitHub Actions YAML.",
+  "desc_zh": "用 Markdown 写自动化，它会编译成 GitHub Actions YAML。",
+  "solves": "An Actions workflow cannot reason, so triage stays manual. These compile natural language into Actions, reusing the runner groups and policies you already have.",
+  "solves_zh": "Actions 工作流不会推理，分诊就只能靠人。它把自然语言编译成 Actions，复用你现成的 runner 组和策略。",
+  "best_for": "Issue triage, CI failure analysis or doc updates keep landing on a person.",
+  "best_for_zh": "Issue 分诊、CI 失败分析或文档更新总是落到某个人头上。",
+  "surface": "in-product",
+  "tags": [
+    "github-actions",
+    "automation",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — GitHub Changelog, https://github.blog/changelog/2026-10-28-github-agentic-wo）。 Open-source project from GitHub Next. You can use GitHub Copilot or bring your own coding agent to power each workflow. 入库核对（2026-11-25）：首页不应是更新日志文章，改用 GitHub Next 的项目页；它随 GitHub Actions 正式发布，形态是 GitHub 内的功能面，不是自托管软件。 首次公开日期来源：https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/",
+  "revisions": []
+}

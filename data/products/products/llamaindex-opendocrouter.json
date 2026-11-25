@@ -1,0 +1,36 @@
+{
+  "id": "llamaindex-opendocrouter",
+  "name": "OpenDocRouter",
+  "name_zh": "OpenDocRouter",
+  "vendor_id": "llamaindex",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "research",
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2026-10-07",
+  "date_precision": "day",
+  "homepage": "https://www.opendocrouter.ai/",
+  "desc": "One API that routes document parsing across open and frontier models.",
+  "desc_zh": "用一个 API 在开源与前沿模型之间路由文档解析。",
+  "solves": "Every document task needs a different parser and a different prompt recipe; one endpoint picks the model and recipe for you.",
+  "solves_zh": "每种文档任务都要不同的解析器和提示词配方；一个端点替你选好模型和配方。",
+  "best_for": "You are parsing invoices, forms or PDFs and keep re-tuning the extractor per document type.",
+  "best_for_zh": "你在解析发票、表单或 PDF，并按文档类型反复调抽取器。",
+  "surface": "standalone",
+  "tags": [
+    "document-parsing",
+    "unified-api",
+    "model-routing"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — llamaindex.ai/blog）。 Blog post carries JSON-LD datePublished 2026-10-07; the page itself renders no visible date, so the structured-data date is used. A separate API product from the LlamaParse platform and the LlamaIndex SDK the ledger holds. 首次公开日期来源：https://www.llamaindex.ai/blog/introducing-opendocrouter",
+  "revisions": []
+}

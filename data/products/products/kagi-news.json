@@ -1,0 +1,35 @@
+{
+  "id": "kagi-news",
+  "name": "Kagi News",
+  "name_zh": "Kagi News",
+  "vendor_id": "kagi",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research"
+  ],
+  "form": "web",
+  "released": "2025-09-30",
+  "date_precision": "day",
+  "homepage": "https://news.kagi.com/",
+  "desc": "Daily press review assembled from community-curated outlets.",
+  "desc_zh": "由社区共同维护的媒体清单汇总成的每日新闻摘要",
+  "solves": "The same headline follows you across ten apps all day. Kagi News gathers one review a day, with several angles per story and no tracking.",
+  "solves_zh": "同一个标题整天在十个应用里追着你跑。Kagi News 每天汇总一次，每条新闻给多个角度，而且不做追踪。",
+  "best_for": "You want the day's news once, from outlets you picked, instead of a feed that never ends.",
+  "best_for_zh": "你想每天只看一次新闻，媒体还是自己挑的，而不是面对一个没有尽头的信息流。",
+  "surface": "standalone",
+  "tags": [
+    "daily-digest",
+    "curated-sources",
+    "no-tracking"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://kagi.com/changelog and https://blog.kagi.com/ , then the Kagi produc）。 Launched 2025-09-30, before the discovery window, but the ledger holds only Kagi Assistant for this vendor so it is missing by definition. The changelog entry is headed 'Sept 30th, 2025 - Kagi News' and the blog post carries the same date. Google Play featured it in an editorial spotlight. No media source was read. 首次公开日期来源：https://kagi.com/changelog",
+  "revisions": []
+}

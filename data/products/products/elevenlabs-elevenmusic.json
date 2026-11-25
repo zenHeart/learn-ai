@@ -1,0 +1,35 @@
+{
+  "id": "elevenlabs-elevenmusic",
+  "name": "ElevenMusic",
+  "name_zh": "ElevenMusic",
+  "vendor_id": "elevenlabs",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2026-04-29",
+  "date_precision": "day",
+  "homepage": "https://elevenlabs.io/music",
+  "desc": "Platform for discovering, remixing and creating music with artists",
+  "desc_zh": "用来发现、改编和创作音乐，并与音乐人分成的平台",
+  "solves": "Stock music sounds like stock music, and creators who remix a track earn nothing. ElevenMusic puts listening, remixing and original creation in one place and pays artists when their work is used.",
+  "solves_zh": "素材音乐听起来都一个样，改编的人也拿不到分成。ElevenMusic 把听、改编和原创放进同一处，作品被使用时音乐人有收入。",
+  "best_for": "When a video needs a soundtrack that is not the same library track everyone else licensed.",
+  "best_for_zh": "视频需要一首配乐，而不是所有人都授权过的那首素材曲的时候。",
+  "surface": "standalone",
+  "tags": [
+    "ai-music",
+    "remix",
+    "artist-royalties"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ElevenLabs blog index (elevenlabs.io/blog), post \"Introducing ElevenMusic\"）。 First availability predates the research window (2026-05-07) but the product is absent from the ledger, which lists only the ElevenLabs platform itself. Built with artists, labels and publishers; there is a separate Eleven Music API page. 首次公开日期来源：https://elevenlabs.io/blog/introducing-elevenmusic",
+  "revisions": []
+}

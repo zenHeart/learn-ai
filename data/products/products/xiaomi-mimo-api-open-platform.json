@@ -1,0 +1,36 @@
+{
+  "id": "xiaomi-mimo-api-open-platform",
+  "name": "Xiaomi MiMo API Open Platform",
+  "name_zh": "Xiaomi MiMo 开放平台",
+  "vendor_id": "xiaomi",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "coding"
+  ],
+  "form": "api",
+  "released": "2025-12-16",
+  "date_precision": "day",
+  "homepage": "https://platform.xiaomimimo.com/",
+  "desc": "API platform serving Xiaomi's MiMo models",
+  "desc_zh": "小米 MiMo 模型的 API 平台，兼容 OpenAI 接口格式",
+  "solves": "MiMo models were hard to call without deploying the weights yourself. The platform offers OpenAI- and Anthropic-compatible endpoints and a console.",
+  "solves_zh": "不用自己部署开源权重，拿 API Key 就能调用 MiMo 模型，接口兼容 OpenAI 格式。",
+  "best_for": "Your app already calls an OpenAI-compatible endpoint and you want to point it at MiMo-V2.6-Flash.",
+  "best_for_zh": "项目已经在用 OpenAI 兼容接口，想换成 MiMo 模型、少改代码的时候。",
+  "surface": "standalone",
+  "tags": [
+    "openai-compatible",
+    "anthropic-compatible",
+    "usage-console"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mimo.mi.com/ (product matrix) and https://mimo.mi.com/llms.txt (News）。 The vendor uses three spellings for one product: the changelog heading says 'Xiaomi MiMo API Open Platform Released', the changelog page title is 'Xiaomi MiMo API Platform', and the console tab reads 'Xiaomi MiMo 开放平台'. It is the parent surface of MiMo Token Plan (see xiaomi-mimo-token-plan) and is where API keys for MiMo Code / MiMo Claw are issued. Model checkpoints (MiMo-V2-Flash, V2.5, V2.6 series) are NOT listed as products. Open-sourced 2025-12-16 together with the MiMo-V2-Flash weights (GitHub XiaomiMiMo/MiMo-V2-Flash). 首次公开日期来源：https://mimo.mi.com/static/docs/updates/feature/platform.md",
+  "revisions": []
+}

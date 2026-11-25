@@ -1,0 +1,35 @@
+{
+  "id": "github-copilot-fusion",
+  "name": "GitHub Copilot Fusion",
+  "name_zh": "GitHub Copilot Fusion",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-10-28",
+  "date_precision": "day",
+  "homepage": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+  "desc": "A model picker entry that routes one task across several models.",
+  "desc_zh": "模型选择器里的一个选项，把一个任务分派给多个模型协作。",
+  "solves": "Picking one model means paying for the strongest on every step. Fusion chooses single, cascade or critique based on the task, and escalates only when the quality gate fails.",
+  "solves_zh": "只选一个模型，等于每一步都按最强的付费。Fusion 按任务选择单模型、级联或评议三种流程，只在质量关口没过时才升级。",
+  "best_for": "You want good output without hand-picking a model for each step.",
+  "best_for_zh": "你想拿到好结果，又不想一步步手挑模型。",
+  "surface": "in-product",
+  "tags": [
+    "model-routing",
+    "orchestration",
+    "cost"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — GitHub Changelog, https://github.blog/changelog/2026-10-28-route-and-orchest）。 Appears in the model picker rather than being a model itself. Expanded availability and benchmarks followed on 2026-11-17. 入库核对（2026-11-25）：2026-09-30 的研究预览 HydraFusion（VS Code 与 Copilot 应用里的多模型编排）与这项能力是同一件事的早期名字，未单独入库。 首次公开日期来源：https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+  "revisions": []
+}

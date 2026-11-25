@@ -1,0 +1,35 @@
+{
+  "id": "microsoft-copilot-for-finance",
+  "name": "Microsoft Copilot for finance",
+  "name_zh": "Microsoft Copilot for finance",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-10-29",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/copilot/copilot-for-finance",
+  "desc": "Finance skills and plugins that run inside Copilot in Excel and Cowork.",
+  "desc_zh": "在 Copilot 的 Excel 和 Cowork 里运行的财务技能与插件。",
+  "solves": "Month-end close means pulling numbers out of several systems by hand. The finance skills work on the real workbook and the ERP data behind it.",
+  "solves_zh": "月末结账要把几个系统里的数字手工汇总一遍。财务技能直接处理真实工作簿和背后的 ERP 数据。",
+  "best_for": "A close, a variance review, or an investment memo is due and the data is spread out.",
+  "best_for_zh": "结账、差异复盘或投资备忘录要交，而数据散在各处。",
+  "surface": "in-product",
+  "tags": [
+    "finance",
+    "skills",
+    "cowork"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft Copilot Blog, https://www.microsoft.com/en-us/copilot/blog/2026/10）。 A named set of skills and plugins inside Copilot rather than a separate app. Accounting capabilities were still Frontier-only on 2026-10-29; Fabric IQ was generally available in Cowork the same day. 首次公开日期来源：https://www.microsoft.com/en-us/copilot/blog/2026/10/29/microsoft-copilot-for-finance-purpose-built-for-the-way-finance-teams-work/",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "prisma-airs-ai-gateway",
+  "name": "Prisma AIRS AI Gateway",
+  "name_zh": "Prisma AIRS AI Gateway",
+  "vendor_id": "portkey",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "observability"
+  ],
+  "form": "api",
+  "released": "2026-07-16",
+  "date_precision": "day",
+  "homepage": "https://www.paloaltonetworks.com/prisma/ai-runtime-security",
+  "desc": "Enterprise control plane for AI traffic, formerly Portkey, now inside Prisma AIRS.",
+  "desc_zh": "企业 AI 流量的控制平面，原 Portkey，现并入 Prisma AIRS。",
+  "solves": "Model, MCP and agent traffic spread across teams with no single enforcement point; one gateway governs all of it.",
+  "solves_zh": "模型、MCP 和智能体流量分散在各团队，没有统一的执行点；一个网关管住全部。",
+  "best_for": "Security wants every AI call in the company to pass one gate they control.",
+  "best_for_zh": "安全团队要求公司里每一次 AI 调用都经过他们掌控的那一道关口。",
+  "surface": "standalone",
+  "tags": [
+    "ai-gateway",
+    "acquisition",
+    "governance"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — portkey.ai homepage banner）。 Rename after acquisition: Palo Alto Networks bought Portkey and folded it into Prisma AIRS. The Portkey homepage banner reads \"Portkey is now PRISMA AIRS AI Gateway, generally available for all enterprises.\" and links to this post; the post itself says the Portkey innovations arrived \"just six weeks after closing\", which dates the acquisition close to early June 2026. Portkey’s docs navigation also lists MCP Gateway, Agent Gateway and Coding Agents as separate surfaces whose own launch dates were not found. 入库核对（2026-11-25）：入库核对：这是 Portkey 被收购后的新名字。 账本里的 portkey 档将标为已改名并指向本档。 首次公开日期来源：https://www.paloaltonetworks.com/blog/2026/07/announcing-general-availability-of-prisma-airs-ai-gateway/",
+  "revisions": []
+}

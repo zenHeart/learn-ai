@@ -38,6 +38,7 @@ role: cheatsheet
 | 在对话里直接看到能点的原型 | [Canvas](./canvas) | 对话内工作区，无需搭建本地工程 |
 | 落地页 / 宣传片 / 产品演示要出视频 | [Google Flow](./flow) | Veo 3.1 / Nano Banana / Gemini Omni；对位 Claude Design，不做 DOM |
 | 调模型参数、测系统提示词、走 API | [AI Studio](./ai-studio) | 直接控制模型与参数，是 API 集成的起点 |
+| 没有 GPU，想在浏览器里跑 Python、试 AI 模型 | [Google Colab](./colab) | 托管的 Jupyter notebook，可按需切 GPU；资源不保证 |
 | 决定订哪一档、怎么控预算 | [订阅与配额](./google-pro) | 4 档订阅的额度差异与 Google Cloud 额度 |
 
 ### Antigravity vs Code Assist vs Jules

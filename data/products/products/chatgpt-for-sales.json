@@ -1,0 +1,37 @@
+{
+  "id": "chatgpt-for-sales",
+  "name": "ChatGPT for Sales",
+  "name_zh": "ChatGPT for Sales",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office",
+    "research",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/introducing-chatgpt-for-sales",
+  "desc": "A Sales plugin that works your CRM from inside ChatGPT.",
+  "desc_zh": "在 ChatGPT 里直接操作 CRM 的 Sales 插件。",
+  "solves": "Pipeline work means switching between the CRM, the inbox and a doc. The plugin pulls account and deal context into the conversation and drafts the follow-up for review.",
+  "solves_zh": "做管道推进就得在 CRM、邮箱和文档之间来回切换。这个插件把客户和商机上下文带进对话，并草拟好跟进内容等你过目。",
+  "best_for": "You are prepping for a call and need the account history without opening the CRM.",
+  "best_for_zh": "你在准备一通电话，需要客户历史又不想打开 CRM。",
+  "surface": "in-product",
+  "tags": [
+    "sales",
+    "crm",
+    "plugin"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/introducing-chatgpt-for-sales）。 Reached as a plugin from the plugin directory; workspace admins enable it. Over 30 partner plugins ship with it. 首次公开日期来源：https://openai.com/index/introducing-chatgpt-for-sales",
+  "revisions": []
+}

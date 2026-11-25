@@ -1,0 +1,37 @@
+{
+  "id": "trae-agent-window",
+  "name": "TRAE Agent 窗口",
+  "name_zh": "TRAE Agent 窗口",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-10-08",
+  "date_precision": "day",
+  "homepage": "https://docs.trae.cn/ide_get-started-with-the-agent-window",
+  "desc": "TRAE's agent-first workspace for dispatching coding and office agents",
+  "desc_zh": "TRAE 里以智能体为中心的全局工作台",
+  "solves": "IDE chats are tied to one open project. The Agent window runs several agents across projects and cloud machines, and keeps every artifact in one place.",
+  "solves_zh": "IDE 对话只能围着当前项目转。Agent 窗口可跨项目并行调度多个智能体，产物统一归档。",
+  "best_for": "Open it when a task spans repos, or a long job should keep running in the cloud.",
+  "best_for_zh": "手头的活跨了几个仓库，或者有个耗时任务想丢到云端接着跑，就开它。",
+  "surface": "in-product",
+  "tags": [
+    "agent-orchestration",
+    "cloud-tasks",
+    "multi-project",
+    "artifacts"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://docs.trae.cn/llms.txt (official docs index), then https://docs.trae.）。 Not a new download: this is the new agent-centred window inside the existing TRAE desktop client (ledger record `trae`, trae.cn). It is the surface into which TraeWork was merged. Timeline from official docs: 2026-08 ~ 2026-10 the IDE was labelled TraeCode in the official changelog (docs.trae.ai headings 2026-08-20 and 2026-09-20); 2026-10-08 TRAE v3.4.0 shipped the Agent window (CN); the official notice TraeWork 与 TraeCode 已融合为全新的 TRAE was created 2026-10-09; 2026-10-15 TRAE v3.4.1~3.4.4 added one-click migration of TraeWork chat data with optional uninstall of TraeWork. Reviewer actions on existing records: (1) `traework` (ledger date 2026-01-01) should become status merged -> `trae`; its first public day was 2026-03-31 (see traework notes in report.md). (2) TraeCode was only a temporary name of the IDE and should be mentioned in `trae` notes, not filed as its own record. The international changelog (docs.trae.ai) dates the same Agent window to 2026-10-08 (TRAE v3.6.0). 首次公开日期来源：https://docs.trae.cn/ide_changelog",
+  "revisions": []
+}

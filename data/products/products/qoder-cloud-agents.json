@@ -1,0 +1,37 @@
+{
+  "id": "qoder-cloud-agents",
+  "name": "Qoder Cloud Agents",
+  "name_zh": "Qoder Cloud Agents",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "model-api"
+  ],
+  "form": "api",
+  "released": "2026-05-28",
+  "date_precision": "day",
+  "homepage": "https://qoder.com/cloud-agents",
+  "desc": "Managed runtime for long-running agents, called by API",
+  "desc_zh": "用 API 调用的全托管智能体运行平台",
+  "solves": "Building sandboxes, sessions and resume logic for agents takes months; configure an agent and environment, then open a session.",
+  "solves_zh": "自己搭沙箱、会话和断点续跑很费时间，现在配好智能体和环境就能开会话。",
+  "best_for": "You need an agent that keeps working for hours in the cloud without your laptop open.",
+  "best_for_zh": "你需要一个在云端连续跑几小时、不用开着电脑盯着的智能体任务。",
+  "surface": "standalone",
+  "tags": [
+    "managed-sandbox",
+    "long-running-sessions",
+    "mcp",
+    "sse-event-stream"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://changelog.qoder.com/llms.txt, https://changelog.qoder.com/cloudagent）。 Listed as a member of the Qoder family in docs.qoder.com/product-series/what-is-qoder ('Run managed agents through APIs by configuring Agents and Environments, starting Sessions, and streaming results'). The oldest changelog entry is numbered V0.0.2, so a V0.0.1 build may have existed earlier, but the 'now in public beta' sentence is dated May 28, 2026 and is the earliest official statement found. Page title: 'Cloud Agents - 全托管 AI Agent 运行平台 | Qoder'. Sohu headline read: '阿里Qoder上线Cloud Agents，给软件装上可生长、自进化的大脑'. 入库核对（2026-11-25）：官方更新日志与页面标题用的全名是 Qoder Cloud Agents；地区与账本里的 Qoder（IDE）保持一致。 首次公开日期来源：https://changelog.qoder.com/cloudagents",
+  "revisions": []
+}

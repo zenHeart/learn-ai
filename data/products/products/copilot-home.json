@@ -1,0 +1,36 @@
+{
+  "id": "copilot-home",
+  "name": "Copilot Home",
+  "name_zh": "Copilot Home",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/copilot/copilot-home",
+  "desc": "The starting screen in Copilot, where Chat and Cowork meet.",
+  "desc_zh": "Copilot 的起始界面，Chat 和 Cowork 在这里汇合。",
+  "solves": "You never know which mode to open, so you start in the wrong one. Home has one composer that routes the request to Chat, Cowork or Code.",
+  "solves_zh": "不知道该开哪个模式，于是每次都从错的开始。Home 只有一个输入框，会把请求分派给 Chat、Cowork 或 Code。",
+  "best_for": "You open Copilot and are not sure whether this is a question or a task.",
+  "best_for_zh": "你打开 Copilot，说不清这到底是提问还是派活。",
+  "surface": "in-product",
+  "tags": [
+    "entry-point",
+    "routing",
+    "copilot-app"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft Copilot Blog (Ignite 2026), https://www.microsoft.com/en-us/copilo）。 Announced 2026-09-25 with a Frontier rollout over the following weeks; general availability 2026-11-17. Today, the proactive command centre inside Home, is in private preview. Home is the new entry point of the Copilot app rather than a separate product. 首次公开日期来源：https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
+  "revisions": []
+}

@@ -10,7 +10,7 @@
     "research"
   ],
   "form": "web",
-  "released": "2023-04-18",
+  "released": "2023-04-17",
   "homepage": "https://www.tiangong.cn",
   "desc": "Kunlun Wanwei's assistant, built on Tiangong models",
   "desc_zh": "昆仑万维天工模型的官方助手",
@@ -29,8 +29,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "",
+  "last_verified_at": "2026-11-25",
+  "notes": "2026-11-25：released 2023-04-18/day → 2023-04-17/day; source http://www.kunlun.com/news/10.html。昆仑万维官网新闻的日期是 2023.04.17：「正式发布千亿级大语言模型「天工」 今日启动邀请测试」",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -39,6 +39,14 @@
       "from": "ai",
       "to": "tiangong",
       "why": "slug 退化产物，非拉丁名需人工给可读 id"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-04-18/day",
+      "to": "2023-04-17/day",
+      "why": "昆仑万维官网新闻的日期是 2023.04.17：「正式发布千亿级大语言模型「天工」 今日启动邀请测试」"
     }
   ],
   "date_precision": "day"

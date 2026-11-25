@@ -1,0 +1,36 @@
+{
+  "id": "cartesia-managed-agents",
+  "name": "Cartesia Managed Agents",
+  "name_zh": "Cartesia Managed Agents",
+  "vendor_id": "cartesia-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "audio-voice"
+  ],
+  "form": "api",
+  "released": "2026-08-01",
+  "date_precision": "month",
+  "homepage": "https://cartesia.ai/agents",
+  "desc": "Hosted voice agent platform: no backend to run yourself",
+  "desc_zh": "托管式语音 Agent 平台，不用自己搭后端",
+  "solves": "Running a voice agent means owning telephony, turn-taking and tool calls. Cartesia hosts the call and you write the instructions.",
+  "solves_zh": "自己跑语音 Agent 就得管电话、轮次判定和工具调用。Cartesia 托管通话，你只写指令。",
+  "best_for": "You are shipping a phone support agent and have no telephony backend yet.",
+  "best_for_zh": "要上线一个电话客服 Agent，但手上还没有电话和语音的后端。",
+  "surface": "standalone",
+  "tags": [
+    "voice-agent",
+    "hosted-runtime",
+    "telephony"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://cartesia.ai/blog (Cartesia's blog, 'Introducing Managed Agents') and）。 Distinct from the ledger's 'Cartesia' speech API entry (2024-01-01): that one is the TTS/STT API you integrate yourself, this one is a hosted voice-agent runtime with telephony, knowledge bases and tools. I used the explicit day-precise launch post. 入库核对（2026-11-25）：官方文档的更新日志把「Introducing Cartesia Managed Agents」记在 2026 年 8 月，2026-10-29 的博客是更晚的正式发布公告。 按规则预览也算首次公开可用，所以记 2026 年 8 月、月份精度。 首次公开日期来源：https://docs.cartesia.ai/changelog/2026 首次公开日期仅精确到月。",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "acrobat-studio",
+  "name": "Adobe Acrobat Studio",
+  "name_zh": "Adobe Acrobat Studio",
+  "vendor_id": "adobe",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2025-08-19",
+  "date_precision": "day",
+  "homepage": "https://www.adobe.com/acrobat/acrobat-studio.html",
+  "desc": "One web workspace for PDF tools, AI assistants and design",
+  "desc_zh": "把 PDF 工具、AI 助手和设计能力放进一个网页工作台",
+  "solves": "Reports, contracts and decks live in separate files; drop them into one space and ask questions across all of them.",
+  "solves_zh": "资料散在一个个文件里，翻起来慢；放进同一个空间，直接向 AI 助手提问，答案带上出处。",
+  "best_for": "A fifty-page contract needs a summary before the meeting in an hour; upload it and ask for the risk clauses.",
+  "best_for_zh": "一小时后要开会，手上是五十页合同；传上去，让助手先把风险条款挑出来。",
+  "surface": "standalone",
+  "tags": [
+    "pdf-workspace",
+    "ai-assistant",
+    "document-insights"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C+D — Adobe Blog index (https://blog.adobe.com/query-index.json), then IT之家 cove）。 Outside the window but absent from the ledger. Launched globally in English as a standalone subscription that replaces the Acrobat Standard and Pro plans (Adobe's own post plus press coverage). PDF Spaces is a capability inside Acrobat Studio, not a separate product: the post of 2026-05-06 adds new sharing capabilities to PDF Spaces, which is a feature update rather than a new product. curl is blocked by Adobe's bot guard (403); the homepage was read through a page reader. 首次公开日期来源：https://blog.adobe.com/en/publish/2025/08/19/acrobat-studio-from-office-to-home-school-work-smarter-with-ai",
+  "revisions": []
+}

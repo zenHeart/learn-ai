@@ -1,0 +1,36 @@
+{
+  "id": "fathom-public-api",
+  "name": "Fathom Public API",
+  "name_zh": "Fathom 公开 API",
+  "vendor_id": "fathom",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "office",
+    "coding"
+  ],
+  "form": "api",
+  "released": "2025-10-01",
+  "date_precision": "month",
+  "homepage": "https://developers.fathom.ai",
+  "desc": "REST API and webhooks for your Fathom meeting recordings.",
+  "desc_zh": "读取 Fathom 会议录音的 REST 接口和 Webhook",
+  "solves": "Meeting data trapped in a notetaker cannot reach your CRM or your own dashboards. The API returns recordings, transcripts, summaries and action items, and webhooks fire when a call ends.",
+  "solves_zh": "困在记录工具里的会议数据，进不了 CRM 和你自己的看板。这个接口返回录音、文字稿、摘要和行动项，会议结束时还会触发 Webhook。",
+  "best_for": "You want every call's action items in your own tracker without anyone copying and pasting.",
+  "best_for_zh": "你想让每通电话的行动项自动进入团队自己的跟踪系统，不用任何人复制粘贴。",
+  "surface": "standalone",
+  "tags": [
+    "rest-api",
+    "webhooks",
+    "meeting-data"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://help.fathom.video/en/articles/6220097 (release notes) and https://ww）。 The release-notes entry sits under the October 2025 heading, so only the month is confirmed. Before the discovery window, but the ledger holds only the Fathom web notetaker for this vendor so it is missing by definition. Later additions ride on the same API: Highlights, Meeting types, Meeting URL and Shared With fields (June 2026), recording downloads (July 2026). The Fathom homepage also advertises an MCP server for Claude and ChatGPT, but no dated first-party page for it was read. No media source was read. 首次公开日期来源：https://help.fathom.video/en/articles/6220097 首次公开日期仅精确到月。",
+  "revisions": []
+}

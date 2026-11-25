@@ -29,8 +29,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认，标题「Krea: AI Creative Suite for Images, Video & 3D」。",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认，标题「Krea: AI Creative Suite for Images, Video & 3D」。 2026-11-25：date_precision day → month。找不到发布日期的一手来源；官方博客只列出近期的文章。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "找不到发布日期的一手来源；官方博客只列出近期的文章。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

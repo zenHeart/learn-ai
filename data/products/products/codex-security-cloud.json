@@ -1,0 +1,36 @@
+{
+  "id": "codex-security-cloud",
+  "name": "Codex Security Cloud",
+  "name_zh": "Codex Security Cloud",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "observability"
+  ],
+  "form": "web",
+  "released": "2026-09-29",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
+  "desc": "Scan your repositories on a schedule and get proposed fixes.",
+  "desc_zh": "定时扫描你的代码仓库，并拿到修好的建议补丁。",
+  "solves": "A security scan is a one-off report nobody re-runs. Codex Security Cloud re-checks new commits, deduplicates findings, and prepares a fix for review while you are away.",
+  "solves_zh": "安全扫描往往是一次性报告，没人会再跑第二遍。Codex Security Cloud 会复查新提交、去掉重复项，并趁你不在时备好修复方案等你审。",
+  "best_for": "You own a repository and want new commits checked without running the scan yourself.",
+  "best_for_zh": "你负责一个仓库，想让新提交自动被检查而不用自己动手。",
+  "surface": "in-product",
+  "tags": [
+    "security",
+    "code-scanning",
+    "cloud"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI DevDay 2026 recap, https://openai.com/index/devday-2026-recap）。 ChatGPT release notes, entry under the \"September 29, 2026\" heading. Access to Daybreak Blue models inside Codex Security Cloud is included; a separate Daybreak application is not required. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

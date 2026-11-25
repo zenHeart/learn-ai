@@ -1,0 +1,36 @@
+{
+  "id": "higgsfield-canvas",
+  "name": "Higgsfield Canvas",
+  "name_zh": "Higgsfield Canvas",
+  "vendor_id": "higgsfield",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design",
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-04-30",
+  "date_precision": "day",
+  "homepage": "https://higgsfield.ai/canvas",
+  "desc": "Infinite node board that links steps into one workflow",
+  "desc_zh": "把各步骤连成一条工作流的无限节点画板",
+  "solves": "Ideas, references and outputs were scattered across generations; connect them as nodes on one board.",
+  "solves_zh": "创意、参考和成品散落在一次次生成里；在一个画板上用节点把它们连起来。",
+  "best_for": "A pitch needs moodboard, stills and a clip that all match; lay them out on Canvas so each feeds the next.",
+  "best_for_zh": "提案里的情绪板、静帧和短片要风格统一；摆在 Canvas 上，让上一步喂给下一步。",
+  "surface": "standalone",
+  "tags": [
+    "node-canvas",
+    "workflow",
+    "moodboard"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://higgsfield.ai/creator-hub/changelog (entry 'Higgsfield Canvas')）。 Outside the window but absent from the ledger. 首次公开日期来源：https://higgsfield.ai/creator-hub/changelog",
+  "revisions": []
+}

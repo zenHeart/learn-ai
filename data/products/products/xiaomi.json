@@ -11,8 +11,8 @@
   ],
   "form": "web",
   "surface": "standalone",
-  "released": "2026-08-18",
-  "date_precision": "day",
+  "released": "2024-12-01",
+  "date_precision": "month",
   "homepage": "https://xiaoai.mi.com/",
   "desc": "Xiaomi's system agent running on the on-device MiMo model",
   "desc_zh": "小米基于端侧MiMo大模型的系统级AI智能体",
@@ -26,7 +26,16 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-05",
-  "notes": "外部发现渠道补录：小米澎湃OS 4 发布会报道 / 科创板日报。来源：https://www.pcpop.com/article/6946660.shtml",
-  "revisions": []
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现渠道补录：小米澎湃OS 4 发布会报道 / 科创板日报。来源：https://www.pcpop.com/article/6946660.shtml 2026-11-25：released 2026-08-18/day → 2024-12-01/month; source https://xiaoai.mi.com/。原日期 2026-08-18 是澎湃OS 4 发布会的日期。小米小爱官网写「超级小爱于 2024 年 12 月起陆续发布」",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-08-18/day",
+      "to": "2024-12-01/month",
+      "why": "原日期 2026-08-18 是澎湃OS 4 发布会的日期。小米小爱官网写「超级小爱于 2024 年 12 月起陆续发布」"
+    }
+  ]
 }

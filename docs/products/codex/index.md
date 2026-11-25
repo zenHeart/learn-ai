@@ -39,6 +39,7 @@ OpenAI coding & agent family
 │   ├── Cloud                — isolated envs; GitHub / Linear / Slack
 │   ├── Remote               — phone continues a connected computer
 │   └── Security             — plugin + CLI/SDK + cloud scans
+├── Dot (always-on agent)    — keeps going between conversations; hands coding tasks to Codex
 ├── Chrome extension         — signed-in Chrome tabs for Work / Codex
 └── Retired: Atlas standalone browser
     └── Officially stopped 2026-08-09; browser-agent work moved into ChatGPT / Codex
@@ -79,6 +80,8 @@ What do I want to do?
 │   └── → two layers
 │       ├── Everyday SaaS (Drive / Slack / Notion-class) → Work / Chat plugins
 │       └── Repo, CI, custom tools → Codex MCP (see Project Integration)
+├── Keep an eye on one thing for days and push it forward across several apps
+│   └── → [Dot](./dot) (always-on agent); it hands the coding part to Codex
 └── Still looking for the Atlas browser?
     └── → Standalone Atlas has stopped. Use the in-app browser, the Chrome
         extension, or Work’s cloud browser.
@@ -101,6 +104,7 @@ Full definitions live in the [Glossary](./codex-glossary).
 | **Remote** | Phone steers a connected computer | [Remote](./codex-remote) |
 | **Codex Security** | Find / confirm / fix vulns (plugin + CLI + cloud) | [Security](./codex-security) |
 | **Chrome extension** | Drive your signed-in Chrome tabs | [Chrome](./codex-chrome) |
+| **Dot** | Always-on agent in ChatGPT: carries on between conversations, hands coding tasks to Codex | [Dot](./dot) |
 | **Atlas** | Retired standalone browser; capabilities moved into ChatGPT / Codex | Historical |
 
 ## Learning path
@@ -241,6 +245,7 @@ As of August 2026 the recommended 5.6 family is **Sol / Terra / Luna**. The defa
 | --- | --- |
 | A terminal / cloud agent on an OpenAI plan | **Codex** |
 | The knowledge-work agent on the same plan | [ChatGPT Work](./chatgpt-work) |
+| The always-on agent on the same plan: watches one thing over the long term, hands coding tasks to Codex | [Dot](./dot) |
 | The Anthropic-family counterpart | [Claude Code](../claude/) |
 | An editor built around AI | [Cursor](../cursor) |
 | Inline completion in an existing editor | [GitHub Copilot](../copilot) |

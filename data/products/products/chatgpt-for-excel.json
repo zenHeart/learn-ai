@@ -1,0 +1,35 @@
+{
+  "id": "chatgpt-for-excel",
+  "name": "ChatGPT for Excel and Google Sheets",
+  "name_zh": "ChatGPT for Excel and Google Sheets",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-03-05",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001063-chatgpt-for-excel-and-google-sheets",
+  "desc": "A ChatGPT sidebar inside Excel and Google Sheets for spreadsheet work.",
+  "desc_zh": "Excel 和 Google Sheets 侧边栏里的 ChatGPT，专管表格里的活。",
+  "solves": "Formulas and cleanup get pasted back and forth until the file breaks. The add-in works on the workbook where it already is, and the result stays editable.",
+  "solves_zh": "公式和清理结果来回粘贴，文件很容易被改坏。这个加载项就在原来的工作簿里干活，产出仍然可以编辑。",
+  "best_for": "A tracker or budget model needs building, updating, or explaining.",
+  "best_for_zh": "要新建、更新或者看懂一张跟踪表或预算模型。",
+  "surface": "in-product",
+  "tags": [
+    "spreadsheet",
+    "add-in",
+    "office"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes and OpenAI news）。 Beta announced 2026-03-05; global availability recorded in the release notes under the \"May 5, 2026\" heading. Missing from the ledger partition list, so it is a new entry. 入库核对（2026-11-25）：嵌在表格软件侧边栏里的 ChatGPT，与账本对 Microsoft 365 Copilot 的分类一致。 首次公开日期来源：https://openai.com/index/chatgpt-for-excel",
+  "revisions": []
+}

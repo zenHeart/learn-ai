@@ -1,0 +1,35 @@
+{
+  "id": "openclaw-multiplayer",
+  "name": "OpenClaw Multiplayer",
+  "name_zh": "OpenClaw Multiplayer",
+  "vendor_id": "openclaw",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-11-05",
+  "date_precision": "day",
+  "homepage": "https://openclaw.ai/multiplayer",
+  "desc": "Shared OpenClaw sessions where several people steer one agent together.",
+  "desc_zh": "多人共同操控同一个 OpenClaw 会话的共享模式。",
+  "solves": "Every department ends up with its own agent and its own answers; one shared session lets the team work in the same place.",
+  "solves_zh": "每个部门最后都有自己的智能体和自己的答案；一个共享会话让团队在同一处协作。",
+  "best_for": "Three people need to drive the same agent at the same time without passing it around.",
+  "best_for_zh": "三个人需要同时操控同一个智能体，而不是轮流交接。",
+  "surface": "in-product",
+  "tags": [
+    "multiplayer",
+    "shared-session",
+    "team"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — openclaw.ai/blog）。 Post byline: Joe Pishgar, Nov 5, 2026. An in-product capability of OpenClaw, named and marketed as its own launch. The Nov 24, 2026 post \"A year of the Claw\" describes multiplayer as the direction of the past year. 首次公开日期来源：https://openclaw.ai/blog/shattering-silos-with-openclaw-multiplayer",
+  "revisions": []
+}

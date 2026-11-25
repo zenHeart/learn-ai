@@ -1,0 +1,35 @@
+{
+  "id": "mistral-workflows",
+  "name": "Mistral Workflows",
+  "name_zh": "Mistral Workflows",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-04-27",
+  "date_precision": "day",
+  "homepage": "https://docs.mistral.ai/studio/workflows",
+  "desc": "Orchestration layer that runs enterprise AI processes reliably",
+  "desc_zh": "让企业 AI 流程稳定运行的工作流编排层",
+  "solves": "AI proofs of concept break in production; Workflows adds durability, observability and fault tolerance.",
+  "solves_zh": "AI 原型到了生产环境就容易出错，Workflows 补上持久化、可观测和容错。",
+  "best_for": "A document pipeline works in a demo but stalls the first time an API call fails.",
+  "best_for_zh": "文档流程在演示里没问题，可接口一调用失败就卡住。",
+  "surface": "in-product",
+  "tags": [
+    "orchestration",
+    "fault-tolerance",
+    "durable-execution"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mistral.ai/news (official news index)）。 Outside the window. Public preview; described as 'the orchestration layer for enterprise AI'. Lives in Mistral Studio (in the ledger at 2025-10-01), so this is an in-product surface. Second source is not independent media. 首次公开日期来源：https://mistral.ai/news/workflows/",
+  "revisions": []
+}

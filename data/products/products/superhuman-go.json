@@ -1,0 +1,36 @@
+{
+  "id": "superhuman-go",
+  "name": "Superhuman Go",
+  "name_zh": "Superhuman Go",
+  "vendor_id": "grammarly",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2025-10-29",
+  "date_precision": "day",
+  "homepage": "https://superhuman.com/go",
+  "desc": "AI assistant that works across every tab and tool you use.",
+  "desc_zh": "跨所有标签页和工具工作的 AI 助手",
+  "solves": "Assistants sit in one app and wait for a prompt. Go watches the tab you are in, pulls context from your connected apps and offers the next step before you ask.",
+  "solves_zh": "多数助手困在一个应用里，等你输入提示才动。Go 会看着你当前的标签页，从已连接的应用取上下文，在你开口前就给出下一步。",
+  "best_for": "You are answering a customer email and need the account, the ticket history and the right tone in one place.",
+  "best_for_zh": "你正在回复一封客户邮件，需要账户信息、工单记录和合适的语气一次到位。",
+  "surface": "standalone",
+  "tags": [
+    "proactive-assistant",
+    "cross-app-context",
+    "agent-orchestration"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.grammarly.com/blog/company/ , then https://superhuman.com/produc）。 VENDOR RENAME, IMPORTANT FOR THE LEDGER: the company behind the ledger's Grammarly record renamed itself to Superhuman on 2025-10-29, uniting Grammarly, Coda and Superhuman Mail under one brand. The official post carries datePublished 2025-10-29 and dateModified 2025-11-05; the page shows only the updated date, so the recorded release date comes from the page's own datePublished metadata. Superhuman Go launched the same day for Chrome and Edge. Grammarly the writing assistant now ships as an agent inside Superhuman Go (https://superhuman.com/agents/grammarly). The vendor_id stays 'grammarly' because that is the id in the partition file. 评审修正（2026-11-25）：厂商沿革：Grammarly 公司于 2025-10-29 更名为 Superhuman，Grammarly、Coda 与 Superhuman Mail 归入同一品牌（官方公告 grammarly.com/blog/company/announcing-company-rebrand-to-superhuman）。 账本里的 grammarly 档已加备注。 首次公开日期来源：https://www.grammarly.com/blog/company/announcing-company-rebrand-to-superhuman",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "meituan-longcat-app",
+  "name": "LongCat",
+  "name_zh": "LongCat（龙猫）",
+  "vendor_id": "meituan",
+  "region": "cn",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2025-10-27",
+  "date_precision": "day",
+  "homepage": "https://longcat.chat/",
+  "desc": "Meituan's LongCat chat assistant on phone and web",
+  "desc_zh": "美团 LongCat 的对话助手，手机和网页都能用",
+  "solves": "Local-life questions need current prices, menus and opening hours. LongCat answers from live data and can place the order.",
+  "solves_zh": "找餐厅、比价格、问营业时间，通用助手给的答案常常过期。它接本地生活实时数据，还能直接帮你下单。",
+  "best_for": "Standing outside an unfamiliar block at noon, hungry and undecided about where to eat.",
+  "best_for_zh": "中午站在一条不熟的街边，又饿又不知道该进哪家店的时候。",
+  "surface": "standalone",
+  "tags": [
+    "local-life-data",
+    "voice-call",
+    "web-search"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — App Store 中国区 (iTunes Search API, term LongCat); D — https://longcat.chat/ a）。 The iOS app first appeared on the App Store on 2025-10-27; media report the public beta announcement on 2025-11-03 alongside the open-sourced LongCat-Flash-Omni model, when web search, voice calls and file/image upload were added. Both dates are recorded because the first-party page for the 11-03 announcement was not found (the meituan.com newsroom index does not carry it); the App Store listing is the only first-party page read. Separate from the LongCat model family (checkpoints are not products) and from 问小团 (the in-Meituan-app assistant) and 妙手 (the merchant workbench, English name CatPaw). The form field is 'desktop' only because the schema has no mobile value. Outside the 2026-05-07 window: proposed as a backfill. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://itunes.apple.com/lookup?id=6752684637&country=cn",
+  "revisions": []
+}

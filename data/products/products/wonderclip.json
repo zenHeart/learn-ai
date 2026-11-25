@@ -1,0 +1,37 @@
+{
+  "id": "wonderclip",
+  "name": "WonderClip",
+  "name_zh": "万镜一刻",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-05-19",
+  "date_precision": "day",
+  "homepage": "https://www.aliyun.com/product/wonderclip",
+  "desc": "Alibaba Cloud platform for AI short drama and marketing video",
+  "desc_zh": "阿里云做短漫剧和营销视频的 AI 平台",
+  "solves": "A short video needs a script, storyboard, shots and edit; upload a script and the platform runs the whole chain.",
+  "solves_zh": "做一条短视频要剧本、分镜、拍摄和剪辑，上传剧本这条链路它一口气跑完。",
+  "best_for": "You have a script for a short drama or an ad and need consistent characters across every shot.",
+  "best_for_zh": "手上有一个短剧或广告剧本，需要每个镜头里的人物都长得一样。",
+  "surface": "standalone",
+  "tags": [
+    "storyboard",
+    "short-drama",
+    "video-generation",
+    "agent-mode"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.aliyun.com/product/monthly/2026-may (阿里云产品五月刊), https://www.aliy）。 In-window: the official product-dynamics record stamps the new product at 2026.05.19 (正式商业化). Media put the public launch one day later — 新浪财经 published on 2026-05-21 that “昨日，阿里云正式发布全链路AI视频创作平台‘万镜一刻’（WonderClip），并即日起面向全行业开放”, i.e. 2026-05-20; the Alibaba Cloud May digest simply says 正式发布. The first-party 2026-05-19 stamp is used and the one-day gap is recorded here. English name WonderClip appears in Alibaba Cloud's own 新浪财经 post but not on the aliyun.com product page, so `name` keeps the Chinese spelling. Absent from the ledger. Runs on Alibaba's own models (Happy Horse, Wan, Qwen-image, Z-image) and offers storyboard, infinite-canvas and agent creation modes plus API delivery. 入库核对（2026-11-25）：阿里云官方账号发布的稿件写作「万镜一刻（WonderClip）」，产品页地址也是 wonderclip；按账本对中英双名产品的记法，英文名放 name，中文名放 name_zh。 首次公开日期来源：https://www.aliyun.com/product/news/29096",
+  "revisions": []
+}

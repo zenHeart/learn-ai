@@ -1,0 +1,37 @@
+{
+  "id": "claude-tag",
+  "name": "Claude Tag",
+  "name_zh": "Claude Tag",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-06-23",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/tag",
+  "desc": "Claude agent that teams tag in Slack threads to take on work",
+  "desc_zh": "在 Slack 里 @Claude 让它接手团队工作的智能体",
+  "solves": "Team requests get buried in Slack threads; tag @Claude and it reads the context, does the work, and posts back.",
+  "solves_zh": "团队需求常埋在 Slack 消息里，@Claude 即可读懂上下文、动手完成并回到群里回复。",
+  "best_for": "A stakeholder asks for a metric mid-thread; tag Claude instead of opening a dashboard or writing SQL.",
+  "best_for_zh": "有人在群里临时要一个数据，直接 @Claude，不用自己开仪表盘或写查询。",
+  "surface": "in-product",
+  "tags": [
+    "slack-agent",
+    "team-collaboration",
+    "context-aware"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Beta for Claude Enterprise and Team customers, inside Slack. 入库核对（2026-11-25）：它住在 Slack 里，不是独立入口也不是可安装的插件；surface 只能取四个枚举值之一。 首次公开日期来源：https://www.anthropic.com/news/introducing-claude-tag",
+  "revisions": []
+}

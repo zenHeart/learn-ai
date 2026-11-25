@@ -11,7 +11,7 @@
     "agent-building"
   ],
   "form": "web",
-  "released": "2024-06-01",
+  "released": "2024-06-18",
   "homepage": "https://www.genspark.ai/",
   "desc": "AI workspace covering slides, docs, images, video, code.",
   "desc_zh": "幻灯片、文档、图像、视频、代码都在里面的 AI 工作空间。",
@@ -31,8 +31,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Pivoted from AI search to a general agent platform in 2025 and hit unicorn valuation on revenue growth, not demos. 首次公开发布日期精度：month-only 来源：https://techcrunch.com/2024/06/18/genspark-is-the-latest-attempt-at-an-ai-powered-search-engine/",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "Pivoted from AI search to a general agent platform in 2025 and hit unicorn valuation on revenue growth, not demos. 首次公开发布日期精度：month-only 来源：https://techcrunch.com/2024/06/18/genspark-is-the-latest-attempt-at-an-ai-powered-search-engine/ 2026-11-25：released 2024-06-01/day → 2024-06-18/day; source https://www.genspark.ai/blog。原值 2024-06-01 是月份占位。Genspark 官方博客最早的一篇、也是产品介绍文，日期是 2024 年 6 月 18 日",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2024-06-01/day",
+      "to": "2024-06-18/day",
+      "why": "原值 2024-06-01 是月份占位。Genspark 官方博客最早的一篇、也是产品介绍文，日期是 2024 年 6 月 18 日"
+    }
+  ],
   "date_precision": "day"
 }

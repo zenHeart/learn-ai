@@ -1,0 +1,36 @@
+{
+  "id": "github-intelligence",
+  "name": "GitHub intelligence",
+  "name_zh": "GitHub intelligence",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-10-28",
+  "date_precision": "day",
+  "homepage": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/",
+  "desc": "Repository memory, dreaming and code search that agents can draw on.",
+  "desc_zh": "Agent 可以调用的仓库记忆、 dreaming 和代码搜索。",
+  "solves": "Every session starts from zero and rediscovers your conventions. Memory carries preferences between sessions, dreaming keeps them current, and code search reaches past your checkout.",
+  "solves_zh": "每个会话都从零开始，把你们的约定重新发现一遍。Memory 在会话之间携带偏好，dreaming 让它们保持最新，代码搜索则能超出你本地检出范围。",
+  "best_for": "The agent keeps asking why an edge case matters, and you keep explaining it.",
+  "best_for_zh": "Agent 反复问某个边界情况为什么重要，而你也反复解释。",
+  "surface": "in-product",
+  "tags": [
+    "memory",
+    "code-search",
+    "context"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — GitHub Changelog, https://github.blog/changelog/2026-10-28-github-intelligen）。 An umbrella for three capabilities: GitHub Copilot Memory (generally available on paid plans), Dreaming, and code search beyond the local checkout. Availability and settings vary per capability. 入库核对（2026-11-25）：给编程智能体提供记忆与代码上下文的能力，归入编程智能体，而不是辅助工具。 首次公开日期来源：https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/",
+  "revisions": []
+}

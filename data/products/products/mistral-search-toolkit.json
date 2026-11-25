@@ -1,0 +1,36 @@
+{
+  "id": "mistral-search-toolkit",
+  "name": "Mistral Search Toolkit",
+  "name_zh": "Mistral Search Toolkit",
+  "vendor_id": "mistral-ai",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "agent-building",
+    "research"
+  ],
+  "form": "self-hosted",
+  "released": "2026-05-28",
+  "date_precision": "day",
+  "homepage": "https://docs.mistral.ai/studio/search/search-toolkit",
+  "desc": "Open-source framework for building production search pipelines",
+  "desc_zh": "用于搭建生产级搜索管道的开源框架",
+  "solves": "Search pipelines are glued together from many parts; Search Toolkit gives composable building blocks that run anywhere.",
+  "solves_zh": "搜索管道常由许多零件拼起来，Search Toolkit 提供可组合、随处可跑的构件。",
+  "best_for": "Your agent keeps missing facts in long PDFs and you need retrieval you can run yourself.",
+  "best_for_zh": "智能体总在长 PDF 里漏掉关键事实，需要一套能自己部署的检索。",
+  "surface": "standalone",
+  "tags": [
+    "search",
+    "retrieval",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://mistral.ai/news (official news index)）。 Public preview, open source. Later became the delivery vehicle for Agentic Search inside Mistral Studio and Mistral Vibe. 入库核对（2026-11-25）：官方名字只是「Search Toolkit」，加上厂商名以便辨认。 首次公开日期来源：https://mistral.ai/news/search-toolkit/",
+  "revisions": []
+}

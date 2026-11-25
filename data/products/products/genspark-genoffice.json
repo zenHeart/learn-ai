@@ -1,0 +1,35 @@
+{
+  "id": "genspark-genoffice",
+  "name": "GenOffice",
+  "name_zh": "GenOffice",
+  "vendor_id": "genspark",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-08-03",
+  "date_precision": "day",
+  "homepage": "https://www.genspark.ai/blog/genoffice-open-source-ai-office",
+  "desc": "AI office suite for PC and Mac, free, ad-free and openly licensed.",
+  "desc_zh": "面向 PC 和 Mac 的 AI 办公套件，免费、无广告且开源",
+  "solves": "An office suite that talks to you costs a subscription and reads your documents. GenOffice publishes its code, runs on the desktop and keeps the files on the machine.",
+  "solves_zh": "会对话的办公套件通常要订阅，还会读你的文档。GenOffice 开源、跑在桌面端，文件留在本机。",
+  "best_for": "You want documents, sheets and slides with AI built in without another account.",
+  "best_for_zh": "你想要内置 AI 的文档、表格和幻灯片，又不想再多一个账号。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "desktop-office",
+    "no-subscription"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.genspark.ai/blog , then the Genspark product menu）。 Announced 2026-08-03 as an open-source release; the post says the alpha was built by one engineer in a week for $10,000 in tokens and invites people to download and contribute. Missing from the ledger, which holds only the Genspark agent platform (2024-06-01) for this vendor. No media source was read. 首次公开日期来源：https://www.genspark.ai/blog/genoffice-open-source-ai-office",
+  "revisions": []
+}

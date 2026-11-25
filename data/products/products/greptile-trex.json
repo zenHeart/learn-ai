@@ -1,0 +1,35 @@
+{
+  "id": "greptile-trex",
+  "name": "Greptile TREX",
+  "name_zh": "Greptile TREX",
+  "vendor_id": "greptile",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-15",
+  "date_precision": "day",
+  "homepage": "https://www.greptile.com/trex",
+  "desc": "Review mode that writes and runs tests in a sandbox.",
+  "desc_zh": "在沙箱里为你的改动写测试并跑起来的审查模式。",
+  "solves": "A reviewer can read a diff but cannot see whether the feature still works; TREX starts the app and exercises it like a user.",
+  "solves_zh": "审查者能读 diff，却看不出功能是否还能用；TREX 会把应用跑起来，像用户一样操作一遍。",
+  "best_for": "A pull request changes behaviour that no existing test covers.",
+  "best_for_zh": "某个 Pull Request 改了行为，而现有测试完全没覆盖到。",
+  "surface": "in-product",
+  "tags": [
+    "runtime-validation",
+    "test-generation",
+    "sandbox"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — greptile.com/changelog directory）。 Public beta at launch; became generally available on 2026-10-16. 入库核对（2026-11-25）：官方名字只是「TREX」，加上产品名以便辨认。 首次公开日期来源：https://www.greptile.com/changelog",
+  "revisions": []
+}

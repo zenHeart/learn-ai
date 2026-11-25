@@ -1,0 +1,41 @@
+{
+  "id": "cindy",
+  "name": "Cindy",
+  "name_zh": "Cindy",
+  "vendor_id": "xd",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "released": "2026-07-25",
+  "date_precision": "day",
+  "homepage": "https://cindy.app",
+  "desc": "An open-source agent app that runs your existing coding agents.",
+  "desc_zh": "开箱即用的开源智能体应用，能接上你已有的编程 agent。",
+  "solves": "Switching between Claude Code and Codex means starting over. Cindy puts them in one workspace that carries on across your computer and phone.",
+  "solves_zh": "在 Claude Code 和 Codex 之间切换，每次都要从头交代。Cindy 把它们放进同一个工作区，电脑和手机之间接着干。",
+  "best_for": "You already pay for Claude Code or Codex and want the same session and memory on every device.",
+  "best_for_zh": "你已经在为 Claude Code 或 Codex 付费，想在每台设备上接着用同一个会话。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "multi-harness",
+    "multi-device",
+    "remote-desktop"
+  ],
+  "handbook": {
+    "status": "written",
+    "route": {
+      "en": "/products/cindy/",
+      "zh": "/zh/products/cindy/"
+    }
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-24",
+  "notes": "首次公开发布取官方仓库首个 GitHub Release（v1.0.0，2026-07-25，不含安装包）：https://github.com/makecindy/cindy/releases/tag/v1.0.0 。仓库创建于 2026-07-22；未找到官方发布博文。客户端 Apache-2.0，后端服务不在开源仓库内；中国大陆版官网为 cindy.cn。源码解读基于提交 6fdec7fb89b955be548c3f5cc9a42d83bf174aa3。",
+  "revisions": []
+}

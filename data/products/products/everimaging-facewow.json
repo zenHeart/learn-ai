@@ -1,0 +1,35 @@
+{
+  "id": "everimaging-facewow",
+  "name": "Facewow",
+  "name_zh": "Facewow",
+  "vendor_id": "everimaging",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2024-04-07",
+  "date_precision": "day",
+  "homepage": "https://facewow.ai/",
+  "desc": "AI portrait studio for headshots, avatars and photo restoration",
+  "desc_zh": "做证件照、头像和照片修复的 AI 人像工作室",
+  "solves": "A studio headshot costs money and a slot in the calendar; Facewow produces one from a phone photo in a few minutes.",
+  "solves_zh": "影棚证件照既要花钱又要排期；Facewow 用手机照片几分钟就能出一张。",
+  "best_for": "Your LinkedIn photo is five years old and a recruiter page opens in an hour.",
+  "best_for_zh": "LinkedIn 头像还是五年前的，而一小时后就要打开招聘页面时。",
+  "surface": "standalone",
+  "tags": [
+    "headshot-generation",
+    "portrait-editing",
+    "photo-restoration"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — Apple App Store developer catalogue for Chengdu Everimaging Science and Tech）。 Missing from the ledger. The vendor also ships a second app, 'Facewow: AI Avatar Generator' (App Store id 6478918807, released 2024-05-14), which is the same product family and is not filed separately. The App Store metadata is the only place the vendor publishes a first-public-availability date, so the machine-readable official listing (iTunes lookup API, Apple's own endpoint) is used as the primary source and the quotes are copied verbatim from that JSON. The apps.apple.com HTML page could not be fetched from this network: it 302-redirects to apps.apple.com/cn, which then returns 404. 首次公开日期来源：https://itunes.apple.com/lookup?id=6478919055&country=us",
+  "revisions": []
+}

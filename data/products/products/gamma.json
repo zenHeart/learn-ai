@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "The most-used AI presentation tool by a wide margin, and its card-based editor changed how people think about slides. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20250915A0244F00",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "The most-used AI presentation tool by a wide margin, and its card-based editor changed how people think about slides. 首次公开发布日期精度：month-only 来源：https://new.qq.com/rain/a/20250915A0244F00 2026-11-25：date_precision day → month。官网对自动抓取返回验证页，读不到带日期的来源。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "官网对自动抓取返回验证页，读不到带日期的来源。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

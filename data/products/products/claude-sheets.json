@@ -1,0 +1,35 @@
+{
+  "id": "claude-sheets",
+  "name": "Claude Sheets",
+  "name_zh": "Claude Sheets",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-11-10",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/overview",
+  "desc": "Spreadsheet that Claude builds and edits with you",
+  "desc_zh": "由 Claude 和你一起搭建、修改的电子表格",
+  "solves": "Building a model sheet from raw exports takes hours; Claude Sheets drafts the spreadsheet while you check the numbers.",
+  "solves_zh": "从原始导出数据搭一张模型表要几个小时，Claude Sheets 先起草，你只管核对数字。",
+  "best_for": "Finance sends a raw CSV and you need a working budget model before the afternoon review.",
+  "best_for_zh": "财务刚发来一份原始 CSV，下午评审前要有一版能用的预算模型。",
+  "surface": "in-product",
+  "tags": [
+    "spreadsheets",
+    "data-analysis",
+    "collaboration"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Beta on all paid plans; off by default on Enterprise. Same launch article as Claude Whiteboards. Second source is not independent media. 首次公开日期来源：https://claude.com/resources/articles/sheets-whiteboards-data",
+  "revisions": []
+}

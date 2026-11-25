@@ -9,8 +9,13 @@
 
       <div class="tl-items">
         <div v-for="product in group.items" :key="product.id" class="tl-item">
-          <time class="tl-date" :datetime="product.released">
-            {{ monthLabel(product.released) }}
+          <time
+            class="tl-date"
+            :class="{ 'tl-date--coarse': isCoarse(product) }"
+            :datetime="product.released"
+            :title="dateTitle(product)"
+          >
+            {{ monthLabel(product) }}
           </time>
           <div class="tl-marker" aria-hidden="true">
             <span class="tl-dot"></span>
@@ -48,11 +53,28 @@
   })
   const categoryOf = (id) => categoryIndex.value.get(id) ?? null
 
+  const isCoarse = (product) => !!product.datePrecision && product.datePrecision !== 'day'
+  // A date stored as "2026-06-01" with month precision only says "some day in
+  // June". The list is newest first, so sorted as June 1st it would come
+  // after every precise June date yet still read as the earliest June launch.
+  // A coarse date goes to the end of its month instead ("00" is below any
+  // real day), where it claims no place among the dated ones.
+  const sortKey = (product) => {
+    const raw = String(product.released || '')
+    if (product.datePrecision === 'year') return `${raw.slice(0, 4)}-00-00`
+    if (product.datePrecision === 'month') return `${raw.slice(0, 7)}-00`
+    return raw
+  }
+
   // Newest first, so the hub reads as "what just shipped → what came before".
+  // The projection already orders same-date entries by name with a plain
+  // code-unit comparison, so ties are left to the stable sort instead of
+  // being re-sorted with localeCompare, which differs between platforms.
   const groups = computed(() => {
     const sorted = [...props.products].sort((a, b) => {
-      if (a.released !== b.released) return a.released < b.released ? 1 : -1
-      return (a.name || '').localeCompare(b.name || '')
+      const ka = sortKey(a)
+      const kb = sortKey(b)
+      return ka === kb ? 0 : ka < kb ? 1 : -1
     })
     const byYear = new Map()
     for (const product of sorted) {
@@ -65,7 +87,27 @@
       .map(([year, items]) => ({ year, items }))
   })
 
-  const monthLabel = (raw) => (raw || '').slice(5, 10) || '—'
+  // The year is the section heading, so a day-precise date shows month and
+  // day. A coarse date is stored on the first of the month or year as a
+  // placeholder, and printing that placeholder read as "June 1st" for a
+  // product only known to have shipped in June. So the label stops at the
+  // precision we have, and "≈" says so.
+  const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const monthLabel = (product) => {
+    const raw = String(product.released || '')
+    if (product.datePrecision === 'year') return `≈ ${raw.slice(0, 4)}`
+    if (product.datePrecision === 'month') {
+      const m = Number(raw.slice(5, 7))
+      return props.isZh ? `≈ ${m} 月` : `≈ ${MONTHS_EN[m - 1] ?? raw.slice(5, 7)}`
+    }
+    return raw.slice(5, 10) || '—'
+  }
+  const dateTitle = (product) => {
+    const raw = String(product.released || '')
+    if (product.datePrecision === 'year') return props.isZh ? `${raw.slice(0, 4)} 年，仅精确到年` : `${raw.slice(0, 4)}, year only`
+    if (product.datePrecision === 'month') return props.isZh ? `${raw.slice(0, 4)} 年，仅精确到月` : `${raw.slice(0, 7)}, month only`
+    return raw
+  }
 </script>
 
 <style scoped>
@@ -136,6 +178,12 @@
     font-size: 12.5px;
     color: var(--vp-c-text-3);
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  /* "≈ 2014" is wider than "06-01"; a hair smaller keeps it in the column. */
+  .tl-date--coarse {
+    font-size: 12px;
   }
 
   .tl-marker {

@@ -1,0 +1,36 @@
+{
+  "id": "nvidia-nemoclaw",
+  "name": "NVIDIA NemoClaw",
+  "name_zh": "NVIDIA NemoClaw",
+  "vendor_id": "nvidia",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "agent-building",
+    "local-private"
+  ],
+  "form": "self-hosted",
+  "released": "2026-03-17",
+  "date_precision": "day",
+  "homepage": "https://build.nvidia.com/nemo/nemoclaw",
+  "desc": "One-command stack that runs OpenClaw assistants with guardrails on your machine.",
+  "desc_zh": "一条命令装好的开源栈，在自有机器上带着护栏运行 OpenClaw 助手。",
+  "solves": "Standing up an always-on agent means assembling a model, a sandbox and a policy engine by hand; NemoClaw installs all three together in one command.",
+  "solves_zh": "自己搭一个常驻 agent，要手动拼齐模型、沙箱和策略引擎；NemoClaw 用一条命令把三样一起装好。",
+  "best_for": "You want a personal agent that keeps running on a desktop or DGX box you control, not in someone else's cloud.",
+  "best_for_zh": "想要一个常驻在自己桌面或 DGX 机器上的个人 agent，而不是跑在别人云里。",
+  "surface": "standalone",
+  "tags": [
+    "openclaw",
+    "secure-runtime",
+    "local-agents"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://blogs.nvidia.com/blog/ and https://build.nvidia.com/）。 Rule-(b) candidate: announced at GTC on 2026-03-17, before the window, and not in the ledger. The NVIDIA press release itself is dated March 16, 2026 Pacific time per the EETrend translation; the blog page I fetched is headed March 17, 2026, so the date here follows the page I quoted. build.nvidia.com says NemoClaw and the NVIDIA OpenShell runtime it installs are in early preview. 首次公开日期来源：https://blogs.nvidia.com/blog/rtx-ai-garage-gtc-2026-nemoclaw/",
+  "revisions": []
+}

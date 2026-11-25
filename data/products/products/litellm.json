@@ -11,7 +11,7 @@
     "observability"
   ],
   "form": "self-hosted",
-  "released": "2023-08-01",
+  "released": "2023-07-27",
   "homepage": "https://www.litellm.ai/",
   "desc": "Open-source gateway putting one OpenAI-shaped API in front",
   "desc_zh": "在多家模型前面放一个 OpenAI 形状接口的开源网关",
@@ -31,8 +31,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "The routing and spend-control layer most self-hosted model stacks end up adding. 首次公开发布日期精度：month-only 来源：https://faun.dev/company/berri-ai/",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "The routing and spend-control layer most self-hosted model stacks end up adding. 首次公开发布日期精度：month-only 来源：https://faun.dev/company/berri-ai/ 2026-11-25：released 2023-08-01/day → 2023-07-27/day; source https://pypi.org/pypi/litellm/json。原值 2023-08-01 是月份占位。官方仓库创建于 2023-07-27，litellm 0.1.0 同日上传到 PyPI",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2023-08-01/day",
+      "to": "2023-07-27/day",
+      "why": "原值 2023-08-01 是月份占位。官方仓库创建于 2023-07-27，litellm 0.1.0 同日上传到 PyPI"
+    }
+  ],
   "date_precision": "day"
 }

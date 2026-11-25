@@ -1,0 +1,35 @@
+{
+  "id": "atlassian-teamwork-graph-cli",
+  "name": "Teamwork Graph CLI",
+  "name_zh": "Teamwork Graph CLI",
+  "vendor_id": "atlassian",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-05-06",
+  "date_precision": "day",
+  "homepage": "https://developer.atlassian.com/cloud/twg-cli",
+  "desc": "CLI that pipes Atlassian work context into any AI agent.",
+  "desc_zh": "把 Atlassian 工作上下文送进任意 AI 智能体的命令行工具",
+  "solves": "Coding agents stitch Jira, Confluence and Bitbucket APIs together one call at a time. This CLI hands them the joined-up graph in one query, with fewer tokens.",
+  "solves_zh": "编码智能体得一次次调用 Jira、Confluence、Bitbucket 的接口才能拼出上下文。这个命令行工具一次查询就把打通的工作图谱交给它，token 也用得更省。",
+  "best_for": "You point Claude Code or Cursor at a ticket and want it to already know the linked spec, branch and reviewer.",
+  "best_for_zh": "你让 Claude Code 或 Cursor 去处理一张工单，希望它已经知道关联的文档、分支和评审人。",
+  "surface": "standalone",
+  "tags": [
+    "work-graph",
+    "agent-context",
+    "terminal"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.atlassian.com/blog/company-news archive (Team '26 and post-Team ）。 Announced in open beta at Team '26 on 2026-05-06 and generally available on 2026-07-07; the same post has since been updated with a GA banner, so the 2026-05-06 body text is the open-beta wording. The CLI's own repo is https://github.com/atlassian/twg-cli. No media source was read. 首次公开日期来源：https://www.atlassian.com/blog/company-news/teamwork-graph-team-26",
+  "revisions": []
+}

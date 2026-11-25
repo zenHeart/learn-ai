@@ -1,0 +1,36 @@
+{
+  "id": "kiro-crew",
+  "name": "Kiro Crew",
+  "name_zh": "Kiro Crew",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2026-08-04",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/crew/",
+  "desc": "Kiro's multi-agent crew that runs work spanning repos, tools and days.",
+  "desc_zh": "Kiro 的多智能体编队，用来跑跨仓库、跨工具、跨多天的工作。",
+  "solves": "Real engineering work spans sessions and the human ends up as the integration layer; Crew holds the context and the handoffs.",
+  "solves_zh": "真实的工程工作跨越多段会话，人最后成了集成层；Crew 负责守住上下文与交接。",
+  "best_for": "An incident needs investigation across several repositories at once while you are signing off for the evening.",
+  "best_for_zh": "下班前突然要同时排查多个仓库里的故障时。",
+  "surface": "standalone",
+  "tags": [
+    "multi-agent",
+    "orchestration",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed and product directory）。 Built in the open under a public MAINTAINERS.md governance model. Crew adds Apps (sharable purpose-built interfaces) and later conductor mode (2026-11-20) and bots (2026-11-06), which are capabilities of Crew rather than separate products. 首次公开日期来源：https://kiro.dev/blog/introducing-kiro-crew/",
+  "revisions": []
+}

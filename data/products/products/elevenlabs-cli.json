@@ -1,0 +1,36 @@
+{
+  "id": "elevenlabs-cli",
+  "name": "ElevenLabs CLI",
+  "name_zh": "ElevenLabs CLI",
+  "vendor_id": "elevenlabs",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "audio-voice",
+    "agent-building"
+  ],
+  "form": "cli",
+  "released": "2026-08-24",
+  "date_precision": "day",
+  "homepage": "https://github.com/elevenlabs/cli",
+  "desc": "Terminal client that exposes the whole ElevenLabs voice API",
+  "desc_zh": "把整套 ElevenLabs 语音 API 搬进终端的命令行工具",
+  "solves": "Scripting voice work meant writing SDK boilerplate and pasting API keys into throwaway files. The CLI turns every endpoint into one command and previews each call before it runs.",
+  "solves_zh": "写语音脚本要先搭 SDK 样板，还得把密钥粘进临时文件。这个命令行把每个接口变成一条命令，执行前先预览效果。",
+  "best_for": "When you want a batch of narration files rendered overnight without opening a browser or a code editor.",
+  "best_for_zh": "想在一夜之间批量产出配音文件，又不想打开浏览器或编辑器的时候。",
+  "surface": "standalone",
+  "tags": [
+    "cli",
+    "voice-api",
+    "agents-as-code"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ElevenLabs blog index (elevenlabs.io/blog), post \"Introducing the ElevenLabs）。 Announced as v1 on the ElevenLabs blog. The installer and releases live in the vendor's own GitHub repository (github.com/elevenlabs/cli), which is the product entry for a CLI, so that repo is used as homepage. No independent press coverage found; second source is the vendor's own documentation root. 首次公开日期来源：https://elevenlabs.io/blog/elevenlabs-cli-v1",
+  "revisions": []
+}

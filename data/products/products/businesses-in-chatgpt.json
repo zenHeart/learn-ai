@@ -1,0 +1,36 @@
+{
+  "id": "businesses-in-chatgpt",
+  "name": "Businesses in ChatGPT",
+  "name_zh": "Businesses in ChatGPT",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-11-10",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt",
+  "desc": "Claim your business in ChatGPT and run a Business Agent for it.",
+  "desc_zh": "在 ChatGPT 里认领你的企业，并为它运行一个 Business Agent。",
+  "solves": "A business has no way to correct what ChatGPT says about it. Business Hub lets you claim the listing, publish a product feed, and see the mentions and clicks you get.",
+  "solves_zh": "企业无法纠正 ChatGPT 对自己的说法。Business Hub 让你认领条目、发布商品数据，并看到获得的提及和点击。",
+  "best_for": "People are asking ChatGPT about your products and getting the wrong answer.",
+  "best_for_zh": "潜在客户都在问 ChatGPT 你的产品，而它一次又一次答得不对。",
+  "surface": "in-product",
+  "tags": [
+    "business-listing",
+    "agent",
+    "insights"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes and OpenAI news）。 Two surfaces: Business Hub (claim, product feed, insights) and Business Agents (customer-facing chat). The ChatGPT release notes carry the same launch under the heading \"Business Hub in ChatGPT\", dated November 10, 2026. 首次公开日期来源：https://openai.com/index/introducing-businesses-chatgpt",
+  "revisions": []
+}

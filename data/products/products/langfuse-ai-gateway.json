@@ -1,0 +1,36 @@
+{
+  "id": "langfuse-ai-gateway",
+  "name": "Langfuse AI Gateway",
+  "name_zh": "Langfuse AI Gateway",
+  "vendor_id": "langfuse",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "observability"
+  ],
+  "form": "self-hosted",
+  "released": "2026-11-09",
+  "date_precision": "day",
+  "homepage": "https://langfuse.com/ai-gateway",
+  "desc": "Self-hosted gateway that routes model calls and traces them in Langfuse.",
+  "desc_zh": "转发模型调用并把调用链路写进 Langfuse 的开源网关。",
+  "solves": "Teams end up with provider keys scattered across services and no single view of spend; one entry point routes every call and records it.",
+  "solves_zh": "各家密钥散落在不同服务里，花费也没有统一视图；一个入口转发所有调用并记录下来。",
+  "best_for": "You are adding a second model provider and do not want to touch every call site.",
+  "best_for_zh": "你要接第二家模型供应商，却不想改每一处调用。",
+  "surface": "standalone",
+  "tags": [
+    "llm-gateway",
+    "open-source",
+    "cost-tracking"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — langfuse.com/changelog and /blog; B — Show HN 2026-11-13）。 Blog post dated November 9, 2026. A separate product surface from the Langfuse tracing platform the ledger holds; the site navigation lists it as its own product. Show HN on Hacker News (Nov 13, 2026) describes it as an open source Rust gateway. 首次公开日期来源：https://langfuse.com/blog/introducing-gateway",
+  "revisions": []
+}

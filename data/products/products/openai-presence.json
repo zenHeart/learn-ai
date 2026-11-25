@@ -1,0 +1,36 @@
+{
+  "id": "openai-presence",
+  "name": "OpenAI Presence",
+  "name_zh": "OpenAI Presence",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "audio-voice"
+  ],
+  "form": "api",
+  "released": "2026-07-22",
+  "date_precision": "day",
+  "homepage": "https://openai.com/index/introducing-openai-presence",
+  "desc": "OpenAI’s product for putting voice and chat agents into customer workflows.",
+  "desc_zh": "OpenAI 把语音和对话 Agent 放进客服与内部流程的产品。",
+  "solves": "Rolling out a support agent means assembling the stack yourself. Presence packages the voice and chat agent, with the controls a launch needs.",
+  "solves_zh": "上线一个客服 Agent 过去得自己拼整套技术栈。Presence 把语音和对话 Agent 连同上线所需的控制项一起打包。",
+  "best_for": "You are putting an agent in front of customers and need it to hold up in production.",
+  "best_for_zh": "你要把 Agent 放到客户面前，并需要它在生产环境里站得住。",
+  "surface": "standalone",
+  "tags": [
+    "voice-agents",
+    "customer-service",
+    "enterprise"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI news, https://openai.com/index/introducing-openai-presence）。 Enterprise-facing. The announcement page states availability for voice and chat agents on the day of publication. 首次公开日期来源：https://openai.com/index/introducing-openai-presence",
+  "revisions": []
+}

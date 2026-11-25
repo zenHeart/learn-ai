@@ -1,0 +1,36 @@
+{
+  "id": "lmstudio-bionic",
+  "name": "LM Studio Bionic",
+  "name_zh": "LM Studio Bionic",
+  "vendor_id": "element-labs",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private",
+    "agent-building"
+  ],
+  "form": "desktop",
+  "released": "2026-07-16",
+  "date_precision": "day",
+  "homepage": "https://www.lmstudio.ai/blog/introducing-lm-studio-bionic",
+  "desc": "Standalone desktop agent that runs open models on your own machine.",
+  "desc_zh": "在自己机器上跑开源模型的独立桌面智能体。",
+  "solves": "The desktop app was built around loading models, not around delegating work; Bionic is the agent surface that drives them.",
+  "solves_zh": "原来的桌面应用围着加载模型转，不是围着派活转；Bionic 是驱动它们的智能体界面。",
+  "best_for": "You want an agent that works on local weights because the data cannot leave the machine.",
+  "best_for_zh": "想让智能体用本地权重干活，因为数据不能离开这台机器。",
+  "surface": "standalone",
+  "tags": [
+    "local-models",
+    "agent-client",
+    "open-weights"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — lmstudio.ai/changelog and lmstudio.ai/blog）。 First-party date comes from the vendor changelog, which is the most precise source. No dedicated product page exists, so the launch post is used as the entry point. Distinct from LM Studio itself, which the ledger already holds. 首次公开日期来源：https://www.lmstudio.ai/changelog/bionic-v1.0.0",
+  "revisions": []
+}

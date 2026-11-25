@@ -1,0 +1,35 @@
+{
+  "id": "muse-voice-avatars",
+  "name": "Muse voice and expressive avatars",
+  "name_zh": "Muse voice and expressive avatars",
+  "vendor_id": "meta",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2026-11-05",
+  "date_precision": "day",
+  "homepage": "https://muse.ai",
+  "desc": "Voice conversations and animated avatars for your Muse",
+  "desc_zh": "为 Muse 带来语音对话和表情化虚拟形象",
+  "solves": "Typing every request slows you down; now you talk to Muse and it answers with an expressive avatar.",
+  "solves_zh": "每件事都要打字太慢，现在可以直接和 Muse 对话，它用表情形象回应你。",
+  "best_for": "You are cooking and want to ask Muse about the day without touching your phone.",
+  "best_for_zh": "正在做饭，想不碰手机就问问 Muse 今天的安排。",
+  "surface": "in-product",
+  "tags": [
+    "voice-interface",
+    "avatars",
+    "personal-agent"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://about.fb.com/news/ (About Meta newsroom)）。 In-product surface of Muse (in the ledger at 2026-09-08). Rolling out in the US first; voice on AI Glasses and Muse Charm was announced as coming soon. No independent second source located. 入库核对（2026-11-25）：原名_zh 是评审范围外的自拟译名，不是厂商公布的中文名；按规则没有官方中文名时与 name 相同。 首次公开日期来源：https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+  "revisions": []
+}

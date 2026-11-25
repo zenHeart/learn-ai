@@ -1,0 +1,36 @@
+{
+  "id": "qdrant-edge",
+  "name": "Qdrant Edge",
+  "name_zh": "Qdrant Edge",
+  "vendor_id": "qdrant",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "local-private",
+    "coding"
+  ],
+  "form": "self-hosted",
+  "released": "2025-07-29",
+  "date_precision": "day",
+  "homepage": "https://qdrant.tech/edge/",
+  "desc": "Vector search engine built to run on embedded and edge devices.",
+  "desc_zh": "面向嵌入式与边缘设备运行的向量搜索引擎。",
+  "solves": "A device that must answer without a network cannot call a hosted vector service; the index runs on the device itself.",
+  "solves_zh": "必须在无网环境下应答的设备没法调用托管向量服务；索引就在设备本地运行。",
+  "best_for": "Your robot or kiosk needs similarity search with no internet connection.",
+  "best_for_zh": "你的机器人或自助终端需要在没有网络时做相似度搜索。",
+  "surface": "standalone",
+  "tags": [
+    "edge-computing",
+    "embedded",
+    "vector-search"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — qdrant.tech/blog and product navigation）。 Blog post dated July 29, 2025. Not in the ledger, so rule (b). Listed as Qdrant Edge (Beta) in the site’s Deploy navigation alongside Qdrant Managed Cloud, Hybrid Cloud, Private Cloud and Serverless (Waitlist). 首次公开日期来源：https://qdrant.tech/blog/qdrant-edge/",
+  "revisions": []
+}

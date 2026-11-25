@@ -1,0 +1,35 @@
+{
+  "id": "agent-merge",
+  "name": "Agent Merge",
+  "name_zh": "Agent Merge",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-10-28",
+  "date_precision": "day",
+  "homepage": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud/",
+  "desc": "Copilot watches a pull request and clears the blockers to merging.",
+  "desc_zh": "Copilot 盯着一个 PR，把挡住合并的问题清掉。",
+  "solves": "A pull request sits for a day on a failing check or a conflict. Agent Merge fixes them in a cloud environment and can pair with auto-merge to finish the job.",
+  "solves_zh": "一个 PR 会因为检查失败或冲突白等一天。Agent Merge 在云环境里把它们修掉，并可以和自动合并配合把整件事做完。",
+  "best_for": "Your pull request is green except for CI, and you are done for the day.",
+  "best_for_zh": "你的 PR 只差 CI 一道检查没过，而你已经准备收工回家。",
+  "surface": "in-product",
+  "tags": [
+    "pull-requests",
+    "ci",
+    "auto-fix"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — GitHub Changelog, https://github.blog/changelog/2026-10-28-agent-merge-watch）。 Already present in the GitHub Copilot app and VS Code; the 2026-10-28 change brought it into pull requests on GitHub. Paid Copilot plans. 首次公开日期来源：https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud/",
+  "revisions": []
+}

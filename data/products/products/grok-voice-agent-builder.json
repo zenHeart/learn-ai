@@ -1,0 +1,36 @@
+{
+  "id": "grok-voice-agent-builder",
+  "name": "Grok Voice Agent Builder",
+  "name_zh": "Grok Voice Agent Builder",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2026-07-01",
+  "date_precision": "day",
+  "homepage": "https://x.ai/voice",
+  "desc": "No-code console for configuring production voice agents that run on Grok Voice.",
+  "desc_zh": "无需写代码即可配置运行在 Grok Voice 上的生产级语音智能体控制台。",
+  "solves": "Voice stacks usually bolt together speech-to-text, a model and text-to-speech from three vendors; this is one interface on a speech-to-speech path.",
+  "solves_zh": "语音方案通常要把三家厂商的识别、模型和合成拼起来；这里是一个界面走完语音到语音的整条路。",
+  "best_for": "You need a phone agent that answers real calls tonight and already own the phone number over SIP.",
+  "best_for_zh": "今晚就要一个能接真实电话的语音智能体，而号码已经在 SIP 上时。",
+  "surface": "standalone",
+  "tags": [
+    "voice-agents",
+    "no-code",
+    "telephony"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory）。 Beta. Telephony, knowledge retrieval, tools, guardrails, MCPs and observability ship together; existing phone numbers can be brought over SIP and clients connected over WebSocket. The homepage x.ai/voice returns 403 to curl (bot guard). 入库核对（2026-11-25）：官方名字只是「Voice Agent Builder」，加上产品名以便辨认。 首次公开日期来源：https://x.ai/news/grok-voice-agent-builder 官网未直接确认（403）。",
+  "revisions": []
+}

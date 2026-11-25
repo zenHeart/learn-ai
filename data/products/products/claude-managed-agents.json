@@ -1,0 +1,35 @@
+{
+  "id": "claude-managed-agents",
+  "name": "Claude Managed Agents",
+  "name_zh": "Claude Managed Agents",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-04-08",
+  "date_precision": "day",
+  "homepage": "https://claude.com/platform/claude-managed-agents",
+  "desc": "Managed agent harness and hosting on the Claude Platform",
+  "desc_zh": "Claude 平台上托管智能体运行环境与基础设施的服务",
+  "solves": "Teams hand-build agent loops and sandboxes; Managed Agents supplies the harness, tools and cloud runtime to deploy.",
+  "solves_zh": "团队常要自己搭智能体循环和沙箱，Managed Agents 提供运行框架和云端托管。",
+  "best_for": "A support agent works in a demo but has no evals, sandbox or deployment path yet.",
+  "best_for_zh": "客服智能体在演示里能跑，但还没有评测、沙箱和上线方案。",
+  "surface": "standalone",
+  "tags": [
+    "agent-hosting",
+    "self-hosted",
+    "agent-harness"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：B — Hacker News item 47693047 (then D: claude.com article index)）。 Outside the window. Public beta; multi-agent coordination and self-evaluation were research preview at launch. A self-hosted option exists per the docs. 首次公开日期来源：https://claude.com/resources/articles/claude-managed-agents",
+  "revisions": []
+}

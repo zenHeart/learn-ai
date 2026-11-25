@@ -1,0 +1,36 @@
+{
+  "id": "reka-nexus",
+  "name": "Reka Nexus",
+  "name_zh": "Reka Nexus",
+  "vendor_id": "reka-ai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-03-10",
+  "date_precision": "day",
+  "homepage": "https://www.reka.ai/",
+  "desc": "Platform for creating and managing AI workers for enterprises",
+  "desc_zh": "帮助企业创建和管理 AI 数字员工的平台",
+  "solves": "Routine workflows wait for scarce staff; Nexus lets a business spin up AI workers that run them.",
+  "solves_zh": "重复流程常因人手不足而搁置，Nexus 让企业派出 AI 员工去执行。",
+  "best_for": "A support queue doubles overnight and hiring will take a quarter to fix.",
+  "best_for_zh": "客服工单一夜之间翻倍，而招到人至少还要等上一个季度。",
+  "surface": "standalone",
+  "tags": [
+    "ai-workers",
+    "workflow-automation",
+    "enterprise-agents"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — official news index of the vendor (https://www.reka.ai/news)）。 Outside the window. Vendor press release on Reka's own news page carries the date in the dateline. reka.ai/nexus returns 404, so the homepage is the company site; no dedicated product page found. Second source is not independent media. 首次公开日期来源：https://www.reka.ai/news/reka-launches-nexus",
+  "revisions": []
+}

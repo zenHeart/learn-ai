@@ -1,0 +1,35 @@
+{
+  "id": "fathom-ios-app",
+  "name": "Fathom iOS app",
+  "name_zh": "Fathom iOS 应用",
+  "vendor_id": "fathom",
+  "region": "intl",
+  "category": "meetings",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-11-01",
+  "date_precision": "month",
+  "homepage": "https://www.fathom.ai/",
+  "desc": "iPhone app that records in-person conversations, not just calls.",
+  "desc_zh": "能录线下对话而不只是线上会议的 iPhone 应用",
+  "solves": "Fathom only worked when a meeting ran on your computer. The iOS app captures conversations in the room and keeps the summaries on your phone.",
+  "solves_zh": "以前只有会议在电脑上进行时才能用上 Fathom。iOS 应用能录下现场对话，并把摘要留在手机上。",
+  "best_for": "The conversation that matters is a hallway one and nobody is going to transcribe it later.",
+  "best_for_zh": "真正重要的谈话发生在走廊上，而事后没人会去整理它的文字稿。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-recording",
+    "in-person",
+    "meeting-notes"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://help.fathom.video/en/articles/6220097 (release notes) and https://ww）。 The release-notes entry sits under the November 2026 heading, so only the month is confirmed (date_precision month). Missing from the ledger, which holds only the Fathom web notetaker (2021-12-01) for this vendor. Fathom was reported in October 2026 as having joined Superhuman; that came from search results, not an official page, so it is not asserted here. No media source was read. 评审修正（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://help.fathom.video/en/articles/6220097 首次公开日期仅精确到月。",
+  "revisions": []
+}

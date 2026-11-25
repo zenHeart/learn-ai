@@ -1,0 +1,35 @@
+{
+  "id": "cursor-security-review",
+  "name": "Cursor Security Review",
+  "name_zh": "Cursor Security Review",
+  "vendor_id": "anysphere",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-04-30",
+  "date_precision": "day",
+  "homepage": "https://cursor.com/security",
+  "desc": "Always-on agents that check every change for security problems.",
+  "desc_zh": "常驻检查每次改动安全问题的智能体。",
+  "solves": "Security review happens late, if at all, on agent-heavy repositories; two agent types watch each change for vulnerabilities and regressions.",
+  "solves_zh": "智能体重度参与的仓库里，安全审查要么很晚要么没有；两类智能体会盯着每次改动找漏洞和回归。",
+  "best_for": "Your repository takes outside contributions and nobody on the team is a security reviewer.",
+  "best_for_zh": "仓库接受外部贡献，而团队里没有人专职做安全审查。",
+  "surface": "in-product",
+  "tags": [
+    "security-review",
+    "vulnerability-scanning",
+    "always-on"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cursor.com/changelog directory）。 Beta on Teams and Enterprise at launch. 首次公开日期来源：https://cursor.com/changelog/04-30-26",
+  "revisions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "devin-outposts",
+  "name": "Devin Outposts",
+  "name_zh": "Devin Outposts",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "self-hosted",
+  "released": "2026-07-21",
+  "date_precision": "day",
+  "homepage": "https://devin.ai/outposts",
+  "desc": "Devin sessions running on machines inside your own network.",
+  "desc_zh": "跑在你自己网络内机器上的 Devin 会话。",
+  "solves": "Some code cannot leave the building, so those repositories never got an agent; the session runs on your hardware with the same Devin workflow.",
+  "solves_zh": "有些代码不能离开内网，这些仓库一直用不上智能体；会话在你的机器上跑，流程和 Devin 一样。",
+  "best_for": "Compliance says the repo stays on-prem but the team still wants agent pull requests.",
+  "best_for_zh": "合规要求仓库不出内网，但团队依然想要智能体提的 Pull Request。",
+  "surface": "standalone",
+  "tags": [
+    "self-hosted",
+    "private-network",
+    "air-gapped"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — devin.ai/blog directory）。 Deployment option for Devin rather than a separate product; recorded because users reach it as its own entry point with its own docs. 首次公开日期来源：https://devin.ai/blog/introducing-devin-outposts",
+  "revisions": []
+}

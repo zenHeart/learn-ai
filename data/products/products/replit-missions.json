@@ -1,0 +1,36 @@
+{
+  "id": "replit-missions",
+  "name": "Replit Missions",
+  "name_zh": "Replit Missions",
+  "vendor_id": "replit",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://replit.com/missions",
+  "desc": "Agent swarms that plan, build and test toward one outcome you define.",
+  "desc_zh": "一群智能体朝你定义的一个结果共同规划、构建和测试。",
+  "solves": "A goal like winning more enterprise customers is too big for one agent run; you state the outcome and budget and the swarm works toward it.",
+  "solves_zh": "像多签下企业客户这种目标单次智能体跑不完；你定结果和预算，集群自己去推进。",
+  "best_for": "You have an outcome to hit and a budget, but no time to break it into tasks.",
+  "best_for_zh": "你有一个要达成的目标和一笔预算，却没空拆成任务。",
+  "surface": "in-product",
+  "tags": [
+    "agent-swarms",
+    "budgeted-runs",
+    "outcome-driven"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — replit.com/blog; B — Hacker News front page (story 2026-11-18)）。 Page byline: Published: Nov 17, 2026 (Updated: Nov 19, 2026). The post shows an internal run that built a platform called DataCat inside a $3,000 budget over two days. 首次公开日期来源：https://replit.com/blog/introducing-replit-missions",
+  "revisions": []
+}

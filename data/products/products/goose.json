@@ -12,7 +12,7 @@
   ],
   "form": "desktop",
   "released": "2025-01-01",
-  "homepage": "https://block.github.io/goose/",
+  "homepage": "https://github.com/aaif-goose/goose",
   "desc": "Block's open-source agent, not just for code",
   "desc_zh": "Block 开源的通用 Agent，不止写代码",
   "solves": "Most coding agents stop at suggesting. Goose installs, executes, edits and tests — and says so itself: not just for code, but research, writing, automation and analysis.",
@@ -32,7 +32,16 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "Not just a coding tool — it runs recipes and MCP extensions locally, donated to the Linux Foundation's Agentic AI Foundation for neutral governance. 首次公开发布日期精度：month-only 来源：https://www.chenxutan.com/d/5754.html",
-  "revisions": [],
+  "notes": "Not just a coding tool — it runs recipes and MCP extensions locally, donated to the Linux Foundation's Agentic AI Foundation for neutral governance. 首次公开发布日期精度：month-only 来源：https://www.chenxutan.com/d/5754.html 2026-11-25：homepage \"https://block.github.io/goose/\" → \"https://github.com/aaif-goose/goose\"。原首页 block.github.io/goose/ 现在只剩一个「goose has moved」的提示页；原仓库地址 github.com/block/goose 跳转到新组织 aaif-goose 下的仓库，与备注里「已捐给 Linux 基金会的 Agentic AI Foundation」相符",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "homepage",
+      "from": "https://block.github.io/goose/",
+      "to": "https://github.com/aaif-goose/goose",
+      "why": "原首页 block.github.io/goose/ 现在只剩一个「goose has moved」的提示页；原仓库地址 github.com/block/goose 跳转到新组织 aaif-goose 下的仓库，与备注里「已捐给 Linux 基金会的 Agentic AI Foundation」相符"
+    }
+  ],
   "date_precision": "month"
 }

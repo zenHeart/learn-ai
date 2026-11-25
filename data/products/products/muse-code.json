@@ -10,7 +10,7 @@
     "agent-building"
   ],
   "form": "cli",
-  "released": "2026-08-01",
+  "released": "2026-08-05",
   "homepage": "https://ai.meta.com/",
   "desc": "Meta's terminal coding agent, built on Muse Spark.",
   "desc_zh": "Meta 基于 Muse Spark 的终端编程智能体",
@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Marginal still — it shipped in beta; worth watching as a fourth entrant alongside Codex, Claude Code and Grok Build. 首次公开发布日期精度：month-only 来源：https://www.meta.com/ai/",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "Marginal still — it shipped in beta; worth watching as a fourth entrant alongside Codex, Claude Code and Grok Build. 首次公开发布日期精度：month-only 来源：https://www.meta.com/ai/ 2026-11-25：released 2026-08-01/day → 2026-08-05/day; source https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2。原值 2026-08-01 是月份占位。Meta 官方发布测试版的博文日期是 2026 年 8 月 5 日",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2026-08-01/day",
+      "to": "2026-08-05/day",
+      "why": "原值 2026-08-01 是月份占位。Meta 官方发布测试版的博文日期是 2026 年 8 月 5 日"
+    }
+  ],
   "date_precision": "day"
 }

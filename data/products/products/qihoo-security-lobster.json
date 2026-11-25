@@ -1,0 +1,53 @@
+{
+  "id": "qihoo-security-lobster",
+  "name": "360安全龙虾",
+  "name_zh": "360安全龙虾",
+  "vendor_id": "360",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-04-11",
+  "date_precision": "day",
+  "homepage": "https://claw.360.cn/",
+  "desc": "360's desktop OpenClaw agent with a cloud computer built in.",
+  "desc_zh": "360 的桌面端 OpenClaw 智能体，自带云电脑",
+  "solves": "An agent that touches real work needs a safe place to run. This one gives it a sandbox plus a cloud browser, terminal and disk, then hands back finished files.",
+  "solves_zh": "要动真活的 Agent 得有个安全的运行环境。360安全龙虾 给了沙箱，还有云浏览器、云终端和云盘，最后把成品交回来。",
+  "best_for": "Handing over a repetitive office job that you cannot watch all day.",
+  "best_for_zh": "把一份重复的办公活儿交出去，不用一整天盯着它。",
+  "surface": "standalone",
+  "tags": [
+    "openclaw",
+    "cloud-computer",
+    "sandbox"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "merged",
+  "superseded_by": "work",
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — Apple App Store 中国区检索与榜单；D — claw.360.cn 与 360.cn 导航）。 released 2026-04-11 是 App Store 上 360安全龙虾 iOS 应用（bundleId com.qihoo.claw360）的一方首发日。多家媒体（量子位、中证网、重庆新闻网、新华网）报道 2026-03-14 发布桌面客户端与「360安全龙虾Box」硬件，该日期没有一方来源。重要变化：官方下载域 claw.360.cn 现在 301 跳转到 work.n.cn（纳米Work，账本已有，2026-07-28），桌面客户端可能已并入纳米Work；iOS 应用仍在架且 2026-06-20 更新到 1.11.0。请协调方判断这是改名合并还是两条产品线。360龙虾卫士（OpenClaw 安全防护组件）未单列，见 report.md。 首次公开日期来源：https://itunes.apple.com/cn/lookup?id=6760701834 官网未直接确认（redirect->https://work.n.cn/）。 2026-11-25：status active → merged; superseded_by null → work。产品自己的官网 claw.360.cn 现在跳转到纳米 Work 的站点 work.n.cn（账本里的 work 档），与账本里「tongyi.com 跳转到 qianwen.com 即并入」是同一种判断依据；iOS 应用仍在架",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "merged",
+      "why": "产品自己的官网 claw.360.cn 现在跳转到纳米 Work 的站点 work.n.cn（账本里的 work 档），与账本里「tongyi.com 跳转到 qianwen.com 即并入」是同一种判断依据；iOS 应用仍在架"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": null,
+      "to": "work",
+      "why": "产品自己的官网 claw.360.cn 现在跳转到纳米 Work 的站点 work.n.cn（账本里的 work 档），与账本里「tongyi.com 跳转到 qianwen.com 即并入」是同一种判断依据；iOS 应用仍在架"
+    }
+  ]
+}

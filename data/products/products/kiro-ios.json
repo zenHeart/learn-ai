@@ -1,0 +1,35 @@
+{
+  "id": "kiro-ios",
+  "name": "Kiro for iOS",
+  "name_zh": "Kiro for iOS",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-17",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/mobile/",
+  "desc": "Kiro's iPhone app for starting, watching and approving agent sessions remotely.",
+  "desc_zh": "Kiro 的 iPhone 应用，用来在离开笔记本时启动、查看并批准智能体会话。",
+  "solves": "A cloud session stalls waiting on your approval and your laptop is shut; the phone becomes the place you unblock it.",
+  "solves_zh": "云端会话卡在等你批准，而笔记本已经合上；手机就成了你解锁它的地方。",
+  "best_for": "A session finishes a change on your commute and you want to read the diff before you get home.",
+  "best_for_zh": "通勤路上会话改完代码，你想在到家前先看一遍 diff 时。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-client",
+    "session-review",
+    "cloud-sessions"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed; channel A App Store listing for Kiro Enterprise）。 form is recorded as web because the taxonomy has no mobile form; the product is a native iOS client. Three modes: chat, spec and autonomy. A separate App Store app, Kiro Enterprise, appeared 2026-11-19 and is an organizational build of the same client, not a new product. 首次公开日期来源：https://kiro.dev/blog/introducing-kiro-for-ios/",
+  "revisions": []
+}

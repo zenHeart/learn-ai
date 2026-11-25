@@ -1,0 +1,35 @@
+{
+  "id": "kilo-app",
+  "name": "Kilo App",
+  "name_zh": "Kilo App",
+  "vendor_id": "kilo-code",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-07-01",
+  "date_precision": "day",
+  "homepage": "https://kilo.ai/mobile",
+  "desc": "iOS and Android companion for following up on Kilo sessions.",
+  "desc_zh": "在 iOS 和 Android 上跟进 Kilo 会话的配套应用。",
+  "solves": "Sessions only progress while you watch the editor; the phone shows what the agent is doing and lets you answer it.",
+  "solves_zh": "只有盯着编辑器会话才会推进；手机上能看清智能体在做什么，并直接回复它。",
+  "best_for": "You are away from the desk and an agent is waiting on a decision from you.",
+  "best_for_zh": "人不在电脑前，而智能体正等着你拍一个板。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "session-monitoring",
+    "companion"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — blog.kilo.ai directory）。 Official name in the post body is Kilo App, described as a Kilo Code companion. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://blog.kilo.ai/p/kilo-app-for-ios-and-android-is-live",
+  "revisions": []
+}

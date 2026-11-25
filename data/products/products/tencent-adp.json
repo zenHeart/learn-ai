@@ -1,0 +1,37 @@
+{
+  "id": "tencent-adp",
+  "name": "Tencent Cloud ADP",
+  "name_zh": "腾讯云智能体开发平台",
+  "vendor_id": "tencent-cloud",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "model-api"
+  ],
+  "form": "web",
+  "released": "2024-04-01",
+  "date_precision": "day",
+  "homepage": "https://cloud.tencent.com/product/adp",
+  "desc": "Tencent Cloud console for building enterprise AI agents",
+  "desc_zh": "腾讯云上的企业智能体开发平台",
+  "solves": "Wiring an agent stack by hand takes weeks; pick a mode, connect company data, then publish to a channel.",
+  "solves_zh": "自己拼装智能体开发环境要花几周，现在选一种模式、连上企业数据就能发布到渠道。",
+  "best_for": "A company wants one place to build, test and ship agents that answer from its own knowledge base.",
+  "best_for_zh": "公司想把智能体的搭建、测试和上线放在一处，并让它用自己的知识库回答问题。",
+  "surface": "standalone",
+  "tags": [
+    "agentops",
+    "rag-knowledge-base",
+    "workflow",
+    "multi-agent"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://cloud.tencent.com/document/product/1759/104191 (产品动态), https://cloud）。 Backfill: the platform is absent from the ledger. Release chain taken verbatim from the official product-dynamics page: it first shipped on 2024-04-01 as 大模型知识引擎 (LLM Knowledge Engine, LKE), was renamed to 腾讯云智能体开发平台 (TCADP) in 2025-05, and to Tencent Cloud ADP in 2025-06, so 2024-04-01 is used as the first public availability. ADP 3.0 shipped 2025-09-17 and ADP 4.0 on 2026-06-05 (IT之家). The consumer-side agent platform 腾讯元器 is a separate ledger entry; ADP is the enterprise cloud one. ADP 出海 edition at adp.tencentcloud.com. Not to be confused with 腾讯云知识引擎原子能力, a separate API listing. 首次公开日期来源：https://cloud.tencent.com/document/product/1759/104191",
+  "revisions": []
+}

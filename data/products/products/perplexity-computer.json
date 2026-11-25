@@ -1,0 +1,37 @@
+{
+  "id": "perplexity-computer",
+  "name": "Perplexity Computer",
+  "name_zh": "Perplexity Computer",
+  "vendor_id": "perplexity",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-02-25",
+  "date_precision": "day",
+  "homepage": "https://www.perplexity.ai/computer",
+  "desc": "A general-purpose digital worker that delegates tasks to sub-agents.",
+  "desc_zh": "通用数字员工，会规划工作并把任务分给跨多个模型的子智能体。",
+  "solves": "Chat gives answers but stops there; describe an outcome and Computer breaks it into tasks that run for hours without you.",
+  "solves_zh": "聊天只给答案就停了；描述想要的结果，Computer 会拆成任务并连跑几小时不用你管。",
+  "best_for": "You need a competitor matrix built from earnings transcripts and want to close the tab while it works.",
+  "best_for_zh": "要根据财报电话会议记录做竞品对比表，还想在它干活时直接关掉标签页时。",
+  "surface": "standalone",
+  "tags": [
+    "multi-model-orchestration",
+    "sub-agents",
+    "async-workflows"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — perplexity.ai changelog and blog directories）。 Announced 2026-02-25 for Max subscribers and rolled out to all Pro subscribers on 2026-03-12; Enterprise Max and Computer in Slack came the same week. The blog post carries its date in page metadata (2026-02-25) rather than in the body text, so the date-carrying first-party quote is the 2026-03-12 changelog entry. perplexity.ai returns 403 to curl, so pages were read through the page reader; the changelog entry of 2026-03-12 is the date-carrying evidence. 首次公开日期来源：https://www.perplexity.ai/hub/blog/introducing-perplexity-computer 官网未直接确认（403）。",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "you-com-extract-api",
+  "name": "You.com Extract API",
+  "name_zh": "You.com Extract API",
+  "vendor_id": "you-com",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "coding",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-11-16",
+  "date_precision": "day",
+  "homepage": "https://you.com/docs/guides/extract",
+  "desc": "Turns any webpage or PDF into clean Markdown or HTML.",
+  "desc_zh": "把任意网页或 PDF 转成干净的 Markdown 或 HTML",
+  "solves": "Scraping a PDF usually destroys its tables. This API keeps rows and columns intact and lets you pick how hard the parser works on charts and images.",
+  "solves_zh": "自己抓 PDF 常常把表格结构弄丢。这个 API 保留行和列，还能让你选择对图表和图片下多深的解析功夫。",
+  "best_for": "Your pipeline already knows the URL and just needs the page as text.",
+  "best_for_zh": "你的流程已经知道网址，只差把页面变成文本这一步。",
+  "surface": "standalone",
+  "tags": [
+    "page-extraction",
+    "pdf-parsing",
+    "markdown-output"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://you.com/docs/changelog (the vendor's own changelog directory)）。 Replaces the Contents API: the changelog says POST /v1/contents still works and existing integrations keep running but will not receive new features. The docs page also carries an announcement banner reading 'NEW Extract API: fetch and parse any URL. 80% higher accuracy on PDFs.' A you-extract MCP tool followed on 2026-11-17 and the Python SDK gained you.extract() the same day. 评审修正（2026-11-25）：官方名字「Extract API」是通用词，带上厂商名以便辨认。 首次公开日期来源：https://you.com/docs/changelog/2026/11/16",
+  "revisions": []
+}

@@ -1,6 +1,10 @@
 ---
 title: 企业 Agent 工程实践卡（阿里云 AI Agent Handbook）
 description: 从阿里云《AI Agent Handbook》提炼的可执行实践卡：构建、运行、调优与研发效能案例，标注可复现做法与厂商主张，并给出一人/小团队的降级做法。
+domain: practice
+tags:
+  - agent
+  - engineering
 ---
 
 # 企业 Agent 工程实践卡

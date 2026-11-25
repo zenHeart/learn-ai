@@ -1,0 +1,36 @@
+{
+  "id": "manus-cloud-computer",
+  "name": "Manus Cloud Computer",
+  "name_zh": "Manus Cloud Computer",
+  "vendor_id": "butterfly-effect",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "self-hosted",
+  "released": "2026-09-28",
+  "date_precision": "day",
+  "homepage": "https://manus.im",
+  "desc": "Purchasable always-on environment for projects that outgrow a laptop.",
+  "desc_zh": "为超出单机能力的项目购买的常驻运行环境",
+  "solves": "A multiplayer game needs a server that stays up when the laptop closes, and an automation needs somewhere to run around the clock. Cloud Computer is that dedicated environment.",
+  "solves_zh": "多人游戏需要一台在笔记本合上后仍在运行的服务器，自动化也需要一个全天候的落脚处。Cloud Computer 就是这个专用环境。",
+  "best_for": "Your project has to keep running overnight and nobody wants to leave a machine on.",
+  "best_for_zh": "你的项目必须通宵运行，而没人想为此让一台机器一直开着。",
+  "surface": "standalone",
+  "tags": [
+    "always-on",
+    "dedicated-environment",
+    "purchasable"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://manus.im/blog , then the Manus product menu）。 Announced 2026-09-28 with Manus 2.0 and sold as a purchase rather than a plan feature. Missing from the ledger, which holds Manus (2025-03-06) and Monica (2023-10-01) for this vendor. The same post also introduced Manus Studio, the Cascade agent framework and the Cue app. No media source was read. 评审修正（2026-11-25）：原地址是博客文章，不是稳定的产品入口页；Manus 官网即是入口。 首次公开日期来源：https://manus.im/blog/introducing-manus-2-0",
+  "revisions": []
+}

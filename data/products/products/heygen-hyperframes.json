@@ -1,0 +1,35 @@
+{
+  "id": "heygen-hyperframes",
+  "name": "HeyGen HyperFrames",
+  "name_zh": "HeyGen HyperFrames",
+  "vendor_id": "heygen",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-05-01",
+  "date_precision": "month",
+  "homepage": "https://hyperframes.heygen.com/",
+  "desc": "Agent-driven video studio that renders plain HTML into finished video",
+  "desc_zh": "把普通 HTML 渲染成成片的 Agent 视频工作台",
+  "solves": "Localizing a campaign into a dozen languages needs its tool, headcount and budget. HyperFrames treats the webpage markup as the video input, so one composition renders every variant.",
+  "solves_zh": "一次投放要译成十几种语言，通常得单独的工具和人手。HyperFrames 把网页标记当作视频输入，一个构图渲染所有变体。",
+  "best_for": "When a localized campaign needs a hundred video cuts shipped before the standup meeting.",
+  "best_for_zh": "本地化投放要在一早的例会前交出一百条视频剪辑的时候。",
+  "surface": "standalone",
+  "tags": [
+    "html-to-video",
+    "cloud-render",
+    "open-source"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — HeyGen blog monthly release roundups (heygen.com/blog), \"What's new at HeyGe）。 The May 2026 roundup says the idea grew into a full studio during May, so only the month is certain. Shipped as a desktop app for Mac, Windows and Linux plus a web studio, and released Apache-2.0 on GitHub as heygen-com/hyperframes. 入库核对（2026-11-25）：官方名字只是「HyperFrames」，卡片上带上厂商名以便辨认。 首次公开日期来源：https://www.heygen.com/blog/heygen-may-2026-release 首次公开日期仅精确到月。",
+  "revisions": []
+}

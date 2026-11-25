@@ -1,0 +1,36 @@
+{
+  "id": "meituan-tabbit",
+  "name": "Tabbit",
+  "name_zh": "Tabbit 浏览器",
+  "vendor_id": "meituan",
+  "region": "cn",
+  "category": "search",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-03-02",
+  "date_precision": "day",
+  "homepage": "https://www.tabbit.com/",
+  "desc": "Meituan's AI-native browser that runs tasks across pages and apps",
+  "desc_zh": "美团出的 AI 原生浏览器，能跨网页和软件跑任务",
+  "solves": "A weekly report means copying data between tabs and desktop apps. Tabbit does the clicking and filling in one instruction.",
+  "solves_zh": "每周做报表要在十几个标签页和几个软件之间来回倒数据。说一句话，它自己点、自己填，最后交出结果。",
+  "best_for": "Every Monday the same eleven browser steps produce the same operations report.",
+  "best_for_zh": "每周一都要在浏览器里重复同样的十一步，导出同一份运营报表。",
+  "surface": "standalone",
+  "tags": [
+    "ai-browser",
+    "agent-tasks",
+    "cross-app"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C — 澎湃/东方财富 reporting on the 2026-03-02 public beta; D — https://www.meituan.com）。 Built by 美团旗下 GN06 (光年之外) team. First public day is the free public beta of 2026-03-02; version 1.0 went live 2026-06-09. The official newsroom page reprints a 经济参考网 report but is published on meituan.com with its own date, and it is the only first-party page found that carries the 3月2日 beta date. macOS and Windows clients, no invite code during the beta; the release says the agent task success rate rose from 53.1% in March to 91.8%. Not in the 2026-05-07 window for 1.0 but the product itself first shipped inside it, and neither 妙手 (CatPaw) nor 问小团 covers a browser. 入库核对（2026-11-25）：AI 浏览器在账本里的分类是 search（ChatGPT Atlas 的记法），保持一致。 首次公开日期来源：https://www.meituan.com/news/NN260612179003187",
+  "revisions": []
+}

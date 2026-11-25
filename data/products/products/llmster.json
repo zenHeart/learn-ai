@@ -1,0 +1,36 @@
+{
+  "id": "llmster",
+  "name": "llmster",
+  "name_zh": "llmster",
+  "vendor_id": "element-labs",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private",
+    "model-api"
+  ],
+  "form": "self-hosted",
+  "released": "2026-01-28",
+  "date_precision": "day",
+  "homepage": "https://www.lmstudio.ai/docs/developer/core/headless_llmster",
+  "desc": "Headless daemon that serves models from a machine with no screen.",
+  "desc_zh": "在没有屏幕的机器上提供模型服务的无界面守护进程。",
+  "solves": "The desktop app assumed someone was sitting at the machine; llmster runs the same core on a server and is reached over the network.",
+  "solves_zh": "桌面应用默认有人坐在机器前；llmster 把同一个核心放到服务器上跑，通过网络访问。",
+  "best_for": "You want one GPU box in a cupboard serving models to the whole team.",
+  "best_for_zh": "想拿一台塞在柜子里的 GPU 机器给全团队提供模型服务。",
+  "surface": "standalone",
+  "tags": [
+    "headless",
+    "server",
+    "self-hosted"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — lmstudio.ai/blog）。 Ships inside the LM Studio 0.4.0 release but has its own installer, versioning and docs. Headless daemon for machines with no screen. 首次公开日期来源：https://www.lmstudio.ai/blog/0.4.0",
+  "revisions": []
+}

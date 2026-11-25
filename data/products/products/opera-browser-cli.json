@@ -1,0 +1,36 @@
+{
+  "id": "opera-browser-cli",
+  "name": "Opera Browser CLI",
+  "name_zh": "Opera Browser CLI",
+  "vendor_id": "opera",
+  "region": "intl",
+  "category": "developer-sdk",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "cli",
+  "released": "2026-05-12",
+  "date_precision": "day",
+  "homepage": "https://github.com/operasoftware/opera-browser-cli",
+  "desc": "Command line that lets a local AI agent drive Opera Neon.",
+  "desc_zh": "让本地智能体用命令行驱动 Opera Neon 浏览器的工具",
+  "solves": "An agent could not use a browser without a full GUI automation stack. This CLI wraps Opera Devtools so a terminal or an agent opens pages and reads them by command.",
+  "solves_zh": "智能体要用浏览器，过去得搭一整套界面自动化。这个 CLI 封装了 Opera Devtools，让终端或智能体用命令打开页面、读取内容。",
+  "best_for": "Your agent needs to open a page and read it, and you would rather not drive a GUI.",
+  "best_for_zh": "你的智能体要打开一个页面并读取内容，而你不想去驱动图形界面。",
+  "surface": "standalone",
+  "tags": [
+    "browser-automation",
+    "agent-tools",
+    "npm-package"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://blogs.opera.com/news/category/ai/ (Opera's own news directory), then）。 Installed with npm install -g opera-browser-cli. Opera describes it as a command-line wrapper around opera-devtools that lets a local AI agent drive any Opera browser; the setup scripts include Skills for Claude Code by default. The announcement post's own headline reads 'Introducing `opera-browser-cli`: a Command Line Interface to run Opera Neon'. The npm registry page for the package returned 403 to automated fetches, so the GitHub repository is used as the homepage. 评审修正（2026-11-25）：原名字是仓库的包名 opera-browser-cli；按产品名写。 首次公开日期来源：https://blogs.opera.com/news/2026/05/opera-browser-cli/",
+  "revisions": []
+}

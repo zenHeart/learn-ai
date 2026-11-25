@@ -39,6 +39,7 @@ OpenAI 编程与智能代理生态
 │   ├── Cloud               — 隔离环境，可并行、可从 GitHub / Linear / Slack 派活
 │   ├── Remote              — 手机接着一台已连接电脑
 │   └── Security            — 插件 + CLI/SDK + 云端扫描
+├── Dot（常驻智能体）   — 对话之间接着推进；编码任务转交 Codex
 ├── Chrome 扩展             — Work / Codex 驱动已登录的 Chrome 标签
 └── 已下线：Atlas 独立浏览器
     └── 官方于 2026-08-09 停止；浏览代理能力并入 ChatGPT / Codex
@@ -79,6 +80,8 @@ OpenAI 编程与智能代理生态
 │   └── → 分清两层
 │       ├── 日常 SaaS（Drive / Slack / Notion 类）→ Work / Chat 的 Plugins
 │       └── 仓库、CI、自建工具 → Codex MCP（见项目集成）
+├── 有件事要连着盯几天、跨几个应用推进
+│   └── → [Dot](./dot)（常驻智能体）；写代码的部分由它转交 Codex
 └── 还在找 Atlas 浏览器？
     └── → 独立 Atlas 已停。用桌面内置浏览器、Chrome 扩展或 Work 的 Cloud Browser
 ```
@@ -100,6 +103,7 @@ OpenAI 编程与智能代理生态
 | **Remote** | 手机带一台已连接电脑 | [Remote](./codex-remote) |
 | **Codex Security** | 找 / 确认 / 修漏洞（插件 + CLI + Cloud） | [Security](./codex-security) |
 | **Chrome 扩展** | 驱动已登录的 Chrome 标签 | [Chrome](./codex-chrome) |
+| **Dot** | ChatGPT 里的常驻智能体：在对话之间接着推进，编码任务转交 Codex | [Dot](./dot) |
 | **Atlas** | 已下线的独立浏览器，能力并入 ChatGPT / Codex | 历史 |
 
 ## 学习路径
@@ -240,6 +244,7 @@ OpenAI 编程与智能代理生态
 | --- | --- |
 | OpenAI 套餐上的终端 / 云端 Agent | **Codex** |
 | 同一套餐上的知识工作代理 | [ChatGPT Work](./chatgpt-work) |
+| 同一套餐上的常驻智能体：长期盯一件事，编码任务转交 Codex | [Dot](./dot) |
 | Anthropic 套餐上的对应全家桶 | [Claude Code 生态](../claude/) |
 | 围绕 AI 做的编辑器 | [Cursor](../cursor) |
 | 现有编辑器里的行内补全 | [GitHub Copilot](../copilot) |

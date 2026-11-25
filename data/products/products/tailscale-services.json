@@ -1,0 +1,35 @@
+{
+  "id": "tailscale-services",
+  "name": "Tailscale Services",
+  "name_zh": "Tailscale Services",
+  "vendor_id": "tailscale",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2025-10-01",
+  "date_precision": "month",
+  "homepage": "https://tailscale.com/docs/features/tailscale-services/",
+  "desc": "Application-aware connectivity that gives a backend service its own tailnet identity.",
+  "desc_zh": "应用感知的连接方式，让后端服务在 tailnet 里拥有自己的身份。",
+  "solves": "Reaching an internal service means pinning it to one machine's IP, which breaks the moment that machine moves; Services gives the workload a stable name of its own.",
+  "solves_zh": "访问内部服务只能绑到某台机器的 IP，机器一迁移就断；Services 让这个工作负载拥有自己稳定的名字。",
+  "best_for": "You are wiring two internal services together and do not want to hard-code the host they happen to run on today.",
+  "best_for_zh": "要把两个内部服务接起来，又不想把今天恰好跑在哪台主机上写死的时候。",
+  "surface": "standalone",
+  "tags": [
+    "service-identity",
+    "tailnet",
+    "connectivity"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://tailscale.com/blog/sitemap.xml）。 Rule-(b) candidate: GA on 2026-02-19, before the window, and not in the ledger (the ledger holds only Tailscale@2020-04-02). Beta ran from October 2025. No marketing product page exists; the homepage is the official docs feature page. Second source is the same publisher. 入库核对（2026-11-25）：官方公告写「Since launching the beta in October」（2025 年 10 月），所以首次公开可用是 2025 年 10 月，2026-02-19 是正式发布日。按月份精度记。 首次公开日期来源：https://tailscale.com/blog/services-ga 首次公开日期仅精确到月。",
+  "revisions": []
+}

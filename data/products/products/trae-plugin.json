@@ -1,0 +1,36 @@
+{
+  "id": "trae-plugin",
+  "name": "TRAE Plugin",
+  "name_zh": "TRAE Plugin",
+  "vendor_id": "bytedance",
+  "region": "cn",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2025-04-15",
+  "date_precision": "day",
+  "homepage": "https://www.trae.cn/plugin",
+  "desc": "Trae's coding assistant plugin for VS Code and JetBrains",
+  "desc_zh": "装进 VS Code 和 JetBrains 的 TRAE 编程助手插件",
+  "solves": "Your team will not switch editors for AI help. Install the plugin, keep keybindings and settings, and get completion, chat and fixes in place.",
+  "solves_zh": "团队不愿为了 AI 换编辑器。装上插件，快捷键和配置都不动，补全、问答和修复就在手边。",
+  "best_for": "When GoLand or PyCharm is already the daily editor and a code review is due.",
+  "best_for_zh": "平时就在 GoLand 或 PyCharm 里写代码，今天要过一遍评审，直接在原编辑器里问它。",
+  "surface": "plugin",
+  "tags": [
+    "ide-extension",
+    "code-completion",
+    "jetbrains",
+    "vs-code"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://docs.trae.cn/llms.txt (section 'TRAE Plugin'), https://www.trae.cn/p）。 Same installable plugin under three names: it entered the JetBrains Marketplace as the MarsCode plugin (earliest listed version 1.0.3.0, file MarsCode-1.0.3.0.zip, 2024-05-06), the official changelog records the brand upgrade to 'Trae AI' on 2025-04-15, and the current docs call it 'TraeCode Plugin' while trae.cn/plugin calls it 'TRAE Plugin'. Supports VS Code, JetBrains IDEs and Android Studio. Not in the 2026-05-07 window: proposed as a backfill. The version-history endpoint returns only the 20 most recent builds by default; the full 93-entry history (and the 2024-05-06 earliest build) needs the size=200 query string used in the evidence URL. The JetBrains marketplace vendor is the verified organisation 'marscode' (vendor id 11050, url https://www.marscode.com/). 入库核对（2026-11-25）：这个插件在 2024-05-06 以 MarsCode 插件的名字上架 JetBrains 市场，2025-04-15 官方更新日志写「品牌升级为 Trae AI」。 按账本的改名规则，新名字的档案记新名字首次启用的日子；旧名的档案是账本里的 marscode。 首次公开日期来源：https://docs.trae.cn/plugin_changelog",
+  "revisions": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "huawei-cloud-zhiguoyuan",
+  "name": "智果园",
+  "name_zh": "智果园",
+  "vendor_id": "huawei",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "model-api",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-06-05",
+  "date_precision": "day",
+  "homepage": "https://agentorchard.huaweicloud.com/index.html",
+  "desc": "Agentic entry to Huawei Cloud with skills and AI shell",
+  "desc_zh": "华为云面向智能体的统一入口，带 Skills 库和 AI Shell",
+  "solves": "Using Huawei Cloud meant clicking through many consoles. It hands agents skills, models and an AI Shell instead.",
+  "solves_zh": "用华为云得在多个控制台间切换。它把服务做成 Skills 和 AI Shell，让智能体直接操作。",
+  "best_for": "You want an agent to set up a cloud service without opening six different console pages.",
+  "best_for_zh": "想让智能体自己开通、配置华为云资源，而不是逐个控制台去点的时候。",
+  "surface": "standalone",
+  "tags": [
+    "skills-library",
+    "ai-shell",
+    "cloud-console"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Huawei Cloud newsroom list (https://www.huaweicloud.com/news.html) and https）。 The dated bracket is the dateline of the release; the second quote is the sentence that announces the product. It is a portal rather than a tool: the page aggregates 智果 AgentArts, openJiuwen, 华为云码道 CodeArts, 果办 OfficeAce and the model square, and offers a Skills library (skills.huaweicloud.com, installed with 'npx skills add huaweicloud/huaweicloud-skills') plus an AI Shell. REVIEWER DECISION: keep as its own record (it is named and launched separately) or fold it into the 智果 AgentArts record as an entry surface. The GitHub second source was inferred from the install command printed on the product page and has NOT been opened. 入库核对（2026-11-25）：入库决定：作为独立档案保留。它有单独的发布（华为云 2026-06-05 新闻稿）、独立的入口站和名字，尽管它是聚合入口而不是工具。 首次公开日期来源：https://www.huaweicloud.com/news/2026/20260605100619686.html",
+  "revisions": []
+}

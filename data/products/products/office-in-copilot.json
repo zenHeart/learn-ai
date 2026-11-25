@@ -1,0 +1,35 @@
+{
+  "id": "office-in-copilot",
+  "name": "Office in Copilot",
+  "name_zh": "Office in Copilot",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-11-17",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/copilot/office-in-copilot",
+  "desc": "Create and co-author real Word, Excel and PowerPoint files inside Copilot.",
+  "desc_zh": "在 Copilot 里直接创建和共同编辑真正的 Word、Excel 和 PowerPoint 文件。",
+  "solves": "AI drafts live in one tool and the real document in another, and the two drift. Files made in Copilot inherit Microsoft 365 permissions and sensitivity labels from the start.",
+  "solves_zh": "AI 草稿在一个工具里，正式文档在另一个里，两边越走越远。在 Copilot 里生成的文件从一开始就继承 Microsoft 365 的权限和敏感度标签。",
+  "best_for": "You need a finished document or workbook, not text to paste into one.",
+  "best_for_zh": "你要的是一份能直接用的文档或工作簿，而不是待粘贴的文本。",
+  "surface": "in-product",
+  "tags": [
+    "documents",
+    "co-authoring",
+    "permissions"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft Copilot Blog (Ignite 2026), https://www.microsoft.com/en-us/copilo）。 Announced 2026-09-25 as part of the new Copilot; general availability 2026-11-17. Distinct from Copilot inside the Office apps, which the ledger already covers as Microsoft 365 Copilot. 入库核对（2026-11-25）：在 Copilot 里生成并托管真实 Office 文件，属于智能体产出面，与 Copilot Cowork 的分类一致。 首次公开日期来源：https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
+  "revisions": []
+}

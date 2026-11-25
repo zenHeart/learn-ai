@@ -1,0 +1,36 @@
+{
+  "id": "runway-characters",
+  "name": "Runway Characters",
+  "name_zh": "Runway Characters",
+  "vendor_id": "runway",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "video"
+  ],
+  "form": "api",
+  "released": "2026-03-09",
+  "date_precision": "day",
+  "homepage": "https://runway.com/product/characters",
+  "desc": "Real-time conversational avatars built from a single image",
+  "desc_zh": "用一张图片生成的实时对话数字人",
+  "solves": "A talking avatar used to need fine-tuning and a video crew; send one photo and get a character that answers live.",
+  "solves_zh": "以前做一个会对话的数字人要微调、要拍摄；现在发一张照片，就能得到实时应答的角色。",
+  "best_for": "A support page needs a face that can talk through pricing at 2 a.m.; create a Character and wire it to your agent.",
+  "best_for_zh": "支持页面需要一个凌晨两点也能讲解定价的脸；创建一个 Character，接到你的智能体上。",
+  "surface": "standalone",
+  "tags": [
+    "interactive-avatar",
+    "real-time-video",
+    "single-image"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://runway.com/news (post 'Introducing Runway Characters')）。 Outside the window but absent from the ledger. API first, with preset avatars in the Runway web app ('For consumers, we're launching preset avatars in the Runway web app'). https://runway.com/characters redirects to the product URL. Powered by Runway's GWM-1 model. Second source is the vendor's own docs. 首次公开日期来源：https://runway.com/news/introducing-runway-characters",
+  "revisions": []
+}

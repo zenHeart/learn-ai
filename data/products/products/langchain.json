@@ -9,7 +9,7 @@
     "agent-building"
   ],
   "form": "self-hosted",
-  "released": "2022-10-01",
+  "released": "2022-10-25",
   "homepage": "https://www.langchain.com",
   "desc": "Open-source framework for building agents",
   "desc_zh": "构建智能体的开源框架",
@@ -28,8 +28,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": "官网已确认，标题「LangChain: the open agent platform to own your intelligence」，站点重心已转向 Agent 工程平台。form 记为 self-hosted：本档指的是 pip 安装、在自己进程内运行的开源框架，不是任何托管服务。",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "官网已确认，标题「LangChain: the open agent platform to own your intelligence」，站点重心已转向 Agent 工程平台。form 记为 self-hosted：本档指的是 pip 安装、在自己进程内运行的开源框架，不是任何托管服务。 2026-11-25：released 2022-10-01/day → 2022-10-25/day; source https://pypi.org/pypi/langchain/json。原值 2022-10-01 是月份占位。langchain 包在 PyPI 的首个版本 0.0.1 上传于 2022-10-25",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2022-10-01/day",
+      "to": "2022-10-25/day",
+      "why": "原值 2022-10-01 是月份占位。langchain 包在 PyPI 的首个版本 0.0.1 上传于 2022-10-25"
+    }
+  ],
   "date_precision": "day"
 }

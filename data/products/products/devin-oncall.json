@@ -1,0 +1,35 @@
+{
+  "id": "devin-oncall",
+  "name": "Devin Oncall",
+  "name_zh": "Devin Oncall",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-10-15",
+  "date_precision": "day",
+  "homepage": "https://devin.ai/oncall",
+  "desc": "Agent that picks up incidents and pages when something breaks.",
+  "desc_zh": "出事时接手告警和电话值守的智能体。",
+  "solves": "On-call rotation means being woken for triage before anyone knows the cause; the agent gathers logs and recent changes and proposes the fix.",
+  "solves_zh": "值班意味着还没弄清原因就被叫起来做排查；智能体会先汇总日志和近期改动，再给出修复建议。",
+  "best_for": "You are on call and want the first ten minutes of an incident done before you open the laptop.",
+  "best_for_zh": "轮到你值班，想在打开电脑前先有人做完事故前十分钟的排查。",
+  "surface": "standalone",
+  "tags": [
+    "incident-response",
+    "on-call",
+    "alerting"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — devin.ai/blog directory）。 Announced as a launch in the opening line of the post. 首次公开日期来源：https://devin.ai/blog/introducing-devin-oncall",
+  "revisions": []
+}

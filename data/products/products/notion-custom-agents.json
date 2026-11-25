@@ -1,0 +1,36 @@
+{
+  "id": "notion-custom-agents",
+  "name": "Notion Custom Agents",
+  "name_zh": "Notion 自定义智能体",
+  "vendor_id": "notion",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-02-24",
+  "date_precision": "day",
+  "homepage": "https://www.notion.com/help/custom-agents",
+  "desc": "Autonomous agents in Notion that run on triggers or schedules.",
+  "desc_zh": "在 Notion 里按触发条件或排程自动干活的智能体",
+  "solves": "Recurring questions and triage eat the same hours every week. A Custom Agent answers, routes and reports on its own schedule.",
+  "solves_zh": "重复的提问和任务分流每周吃掉同样的时间。自定义智能体按排程自己回答、分流和写汇报。",
+  "best_for": "Your IT channel gets the same onboarding questions every Monday and nobody wants to answer them again.",
+  "best_for_zh": "IT 群每周一都收到同样的入职问题，没人想再回答一遍。",
+  "surface": "in-product",
+  "tags": [
+    "triggers",
+    "schedules",
+    "team-permissions"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.notion.com/releases/page/5）。 Different from the ledger's Notion Agent (2025-09), which is the on-demand personal agent: Custom Agents are shared, scheduled agents with their own permissions. A Custom Agent directory and admin controls followed on 2026-05-05 and 2026-05-06. The help article is used as the homepage because the release post links to help pages and templates, not a dedicated product page. No media source was read. 评审修正（2026-11-25）：官方名字「Custom Agents」在卡片上认不出属于谁。 首次公开日期来源：https://www.notion.com/releases/2026-02-24",
+  "revisions": []
+}

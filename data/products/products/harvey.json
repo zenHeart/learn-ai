@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "The clearest case of a vertical AI product winning an entire regulated profession. 首次公开发布日期精度：month-only 来源：https://en.wikipedia.org/wiki/Harvey_(software)",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "The clearest case of a vertical AI product winning an entire regulated profession. 首次公开发布日期精度：month-only 来源：https://en.wikipedia.org/wiki/Harvey_(software) 2026-11-25：date_precision day → month。找不到发布日期的一手来源；官网与公司介绍页没有日期。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "找不到发布日期的一手来源；官网与公司介绍页没有日期。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

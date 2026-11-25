@@ -1,0 +1,36 @@
+{
+  "id": "fabric-iq",
+  "name": "Fabric IQ",
+  "name_zh": "Fabric IQ",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "research",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-09-25",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/copilot/fabric-iq",
+  "desc": "Power BI semantic models served as context for Copilot and agents.",
+  "desc_zh": "把 Power BI 语义模型当作上下文提供给 Copilot 和 Agent。",
+  "solves": "A model asked about revenue guesses at the numbers. Fabric IQ hands it the semantic model, so the answer follows the definitions the business already agreed on.",
+  "solves_zh": "模型被问到营收时只能猜数字。Fabric IQ 把语义模型交给它，答案于是沿袭业务方已经商定好的口径。",
+  "best_for": "You ask Copilot about a metric and need the company definition, not a new one.",
+  "best_for_zh": "你问 Copilot 某个指标，需要的是公司既定口径而不是新算一套。",
+  "surface": "standalone",
+  "tags": [
+    "semantic-layer",
+    "power-bi",
+    "context"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft blog, https://blogs.microsoft.com/blog/2026/09/25/introducing-the-）。 Generally available in Chat and Cowork on 2026-09-25; also confirmed generally available in Cowork by the 2026-10-29 finance post. Part of the Microsoft IQ family of context layers. 首次公开日期来源：https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+  "revisions": []
+}

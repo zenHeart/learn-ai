@@ -1,0 +1,35 @@
+{
+  "id": "t3-code-ios",
+  "name": "T3 Code for iOS",
+  "name_zh": "T3 Code for iOS",
+  "vendor_id": "t3-tools",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-07-29",
+  "date_precision": "day",
+  "homepage": "https://apps.apple.com/us/app/t3-code-remote-claude-more/id6787819824",
+  "desc": "iPhone app that drives coding agents running on your machines.",
+  "desc_zh": "在 iPhone 上操控跑在你机器上的编程智能体的应用。",
+  "solves": "An agent run you have to babysit at a desk is not really remote; the phone becomes the remote control for the session.",
+  "solves_zh": "要守在电脑前盯着的智能体运行算不上远程；手机成了会话的遥控器。",
+  "best_for": "You started a long agent run and want to check on it from the couch.",
+  "best_for_zh": "你启动了一个很长的智能体任务，想在沙发上查看进度。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "remote-control",
+    "agent-orchestration"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：A — Apple App Store listing; D — t3.codes）。 Official App Store record for \"T3 Code - Remote Claude & more\" by T3 Tools, Inc. (trackId 6787819824, version 2.3.0 at access time, current version released 2026-11-10). The t3.codes homepage links to iOS and Android builds. The ledger holds the desktop T3 Code@2026-03-02. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。厂商没有公布中文名，name_zh 按 name。档案 id 由 ios-t3-code 改为 t3-code-ios，与 cindy-ios 的写法一致。 首次公开日期来源：https://itunes.apple.com/lookup?id=6787819824&country=us",
+  "revisions": []
+}

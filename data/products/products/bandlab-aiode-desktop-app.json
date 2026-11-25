@@ -1,0 +1,35 @@
+{
+  "id": "bandlab-aiode-desktop-app",
+  "name": "Aiode Desktop App",
+  "name_zh": "Aiode Desktop App",
+  "vendor_id": "bandlab",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "desktop",
+  "released": "2025-09-29",
+  "date_precision": "day",
+  "homepage": "https://aiode.com/download-aiode-desktop-app",
+  "desc": "Desktop AI music studio that generates stems into your DAW.",
+  "desc_zh": "在桌面端运行、把生成的音轨直接拖进 DAW 的 AI 音乐工作站。",
+  "solves": "Browser-based AI music tools give you one mixed file; this runs locally and hands you separate stems you can drop straight onto DAW tracks.",
+  "solves_zh": "浏览器里的 AI 音乐工具只给一轨混音；它在本地运行，直接产出可以拖到 DAW 轨上的分轨素材。",
+  "best_for": "You already produce in a DAW and want AI layers on their own tracks, not baked into a mix.",
+  "best_for_zh": "你本来就在 DAW 里制作，想让 AI 生成的声部分开成轨，而不是混在一轨里。",
+  "surface": "standalone",
+  "tags": [
+    "stem-generation",
+    "licensed-training-audio",
+    "daw-integration"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — BandLab Technologies newsroom and brand pages (https://bandlabtechnologies.c）。 Not in the ledger. BandLab Technologies announced the acquisition of Aiode on 15 July 2026 (first-party release at https://bandlabtechnologies.com/news/bandlab-technologies-announces-acquisition-ai-powered-digital-music-studio-aiode/), so the vendor id is bandlab even though Aiode was independent when it launched. Aiode's web studio ran a closed, invite-only beta announced 10 January 2025 (https://aiode.com/aiode-beta-product-announcement), so the desktop app release of 29 September 2025 is treated as the first public availability. As of 2026-11-25 the download page carries a 'Relaunching Soon' caption under the Windows and macOS buttons, so the download state may have changed after launch. Distinct from the ledger record bandlab (the cloud DAW and social network): Aiode is a separate studio whose models are trained only on licensed, traceable audio. 首次公开日期来源：https://aiode.com/aiode-launches-desktop-app",
+  "revisions": []
+}

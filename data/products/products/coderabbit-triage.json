@@ -1,0 +1,35 @@
+{
+  "id": "coderabbit-triage",
+  "name": "CodeRabbit Triage",
+  "name_zh": "CodeRabbit Triage",
+  "vendor_id": "coderabbit",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-08-13",
+  "date_precision": "day",
+  "homepage": "https://www.coderabbit.ai/triage",
+  "desc": "Queue that ranks open pull requests by value and risk across repositories.",
+  "desc_zh": "跨仓库按价值和风险给待审 Pull Request 排序的队列。",
+  "solves": "With agent-generated pull requests arriving faster than reviewers, the order you pick them in decides what ships; the queue re-sorts itself.",
+  "solves_zh": "智能体生成的 Pull Request 比审查者来得快，先审哪个决定了能合什么；这个队列会自己重新排序。",
+  "best_for": "Forty pull requests are open and you have one afternoon of review time.",
+  "best_for_zh": "开着四十个 Pull Request，而你只有一个下午的审查时间。",
+  "surface": "standalone",
+  "tags": [
+    "review-queue",
+    "prioritization",
+    "cross-repo"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — docs.coderabbit.ai/changelog directory）。 Free for open-source organisations across GitLab, GitHub Enterprise Server, Azure DevOps and Bitbucket from 2026-11-13. 首次公开日期来源：https://docs.coderabbit.ai/changelog",
+  "revisions": []
+}

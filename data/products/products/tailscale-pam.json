@@ -1,0 +1,36 @@
+{
+  "id": "tailscale-pam",
+  "name": "Tailscale PAM",
+  "name_zh": "Tailscale PAM",
+  "vendor_id": "tailscale",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "observability",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-08-27",
+  "date_precision": "day",
+  "homepage": "https://tailscale.com/use-cases/pam",
+  "desc": "Just-in-time privileged access to servers, databases and clusters, with every session recorded.",
+  "desc_zh": "按需开通服务器、数据库和集群的特权访问，并全程录制每次会话。",
+  "solves": "Shared admin passwords and standing SSH keys never get rotated, so an audit asks who had access last quarter; PAM grants time-boxed access and keeps the recording.",
+  "solves_zh": "共用的管理员密码和长期 SSH 密钥没人轮换，审计时说不清上季度谁能进；PAM 按时间窗口放行并留下录像。",
+  "best_for": "An on-call engineer needs fifteen minutes on a production database and you want it logged and expired afterwards.",
+  "best_for_zh": "值班工程师需要十五分钟登进生产数据库，事后你要这笔访问自动过期并留档。",
+  "surface": "standalone",
+  "tags": [
+    "privileged-access",
+    "just-in-time",
+    "session-recording"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://tailscale.com/blog/sitemap.xml and https://tailscale.com/changelog）。 Public beta on 2026-08-27, inside the window. Not in the ledger. Built on the Border0 acquisition; the announcement says it turns that integration into a dedicated product. Access at launch runs through a self-serve waitlist, so the beta may be gated: tailscale.com/pam-selfserve-waitlist. The second source is a Chinese-language write-up of the same keynote, not independent English media. 首次公开日期来源：https://tailscale.com/blog/tailscale-pam-beta",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "grok-automations",
+  "name": "Grok Automations",
+  "name_zh": "Grok Automations",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-16",
+  "date_precision": "day",
+  "homepage": "https://grok.com/automations",
+  "desc": "Jobs you describe once, run by Grok on schedule or email.",
+  "desc_zh": "描述一次的任务，Grok 会按计划或在邮件到达时自动执行。",
+  "solves": "Recurring research and inbox triage still eat your morning; Grok runs the job on its own and reports back.",
+  "solves_zh": "例行调研和收件箱清理仍在吃掉你的早晨；Grok 自己跑任务然后回来汇报。",
+  "best_for": "You want the overnight reading summarized before you wake up, without setting up a script.",
+  "best_for_zh": "想在你醒之前就把夜间的阅读总结好，又不想写脚本时。",
+  "surface": "in-product",
+  "tags": [
+    "scheduled-tasks",
+    "email-triggers",
+    "background-runs"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory）。 Available on grok.com and in the Grok app on iOS and Android. Triggers are schedules or incoming email. The homepage grok.com/automations returns 403 to curl (bot guard). 入库核对（2026-11-25）：官方名字只是「Automations」，加上产品名以便辨认。 首次公开日期来源：https://x.ai/news/grok-automations 官网未直接确认（403）。",
+  "revisions": []
+}

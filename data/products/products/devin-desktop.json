@@ -1,0 +1,35 @@
+{
+  "id": "devin-desktop",
+  "name": "Devin Desktop",
+  "name_zh": "Devin Desktop",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-06-02",
+  "date_precision": "day",
+  "homepage": "https://devin.ai/desktop",
+  "desc": "Desktop app for running and watching Devin sessions side by side.",
+  "desc_zh": "并排运行和观察多个 Devin 会话的桌面应用。",
+  "solves": "Watching an agent in a browser tab means losing it among other tabs; sessions get their own window with a language server for local code.",
+  "solves_zh": "在浏览器标签里看智能体，容易被其他标签挤掉；会话有了自己的窗口，还带本地代码的语言服务。",
+  "best_for": "You keep three agents going at once and want to see all three without switching tabs.",
+  "best_for_zh": "同时开三个智能体任务，想不切标签就看清三边的进展。",
+  "surface": "standalone",
+  "tags": [
+    "desktop-app",
+    "session-manager",
+    "multi-agent"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cognition.com/blog directory）。 This is the renamed Windsurf editor: the ledger carries Windsurf@2023-11-14 with status renamed. 首次公开日期来源：https://cognition.com/blog/introducing-devin-desktop",
+  "revisions": []
+}

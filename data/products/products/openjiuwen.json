@@ -1,0 +1,35 @@
+{
+  "id": "openjiuwen",
+  "name": "openJiuwen",
+  "name_zh": "openJiuwen 开源智能体平台",
+  "vendor_id": "huawei",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "self-hosted",
+  "released": "2026-06-05",
+  "date_precision": "day",
+  "homepage": "https://openjiuwen.com/",
+  "desc": "Openly published agent platform, core of Huawei's AgentArts",
+  "desc_zh": "华为云开源的智能体平台，与智果 AgentArts 同源",
+  "solves": "Building production agents from scratch means rebuilding runtime, memory and tooling. openJiuwen ships those parts as openly published code.",
+  "solves_zh": "从零搭生产级智能体，要自己写运行时、记忆和工具链。它把这些做成开源组件，拿走就能改。",
+  "best_for": "A team wants an agent platform it can run on its own servers and modify freely.",
+  "best_for_zh": "团队要一个能部署在自己服务器上、代码可以随便改的智能体平台的时候。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "self-hosted",
+    "agent-runtime"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Huawei Cloud newsroom list (https://www.huaweicloud.com/news.html) and https）。 DATE NEEDS REVIEW: the dated official sentence says it 'has come online' on 2026-06-05, but the GitHub organisation openJiuwen-ai holds repositories (agent-core, agent-studio, agent-protocol, deepsearch, docs) created on 2026-02-26, so the code may have been public earlier. No official sentence carrying an earlier date was found. It is the open-source sibling of the ledger entry 智果 AgentArts@2025-06-01 (the release says the kernel is over 90% the same). The same release announces the PUBLIC BETA of 智果 AgentArts on 2026-06-05 ('华为云 智果（AgentArts）企业级智能体平台 全面践行Harness工程' under the heading '公测智果AgentArts企业级智能体平台，并同步贡献开源'), which is later than the 2025-06-01 date in the ledger — flagged in report.md. openjiuwen.com is a JS-rendered single-page app: HTTP 200 with title 'openJiuwen' and no readable body text without a browser. 入库核对（2026-11-25）：入库核对：GitHub 组织 openJiuwen-ai 的公开仓库创建于 2026-02-26，但最早的发布版本（agent-core v0.1.14）是 2026-06-05，与官方发布日一致，说明仓库在发布前并未公开；日期维持 2026-06-05。 首次公开日期来源：https://www.huaweicloud.com/news/2026/20260605100619686.html",
+  "revisions": []
+}

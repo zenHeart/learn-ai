@@ -1,0 +1,35 @@
+{
+  "id": "vercel-eve",
+  "name": "Vercel eve",
+  "name_zh": "Vercel eve",
+  "vendor_id": "vercel",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-06-17",
+  "date_precision": "day",
+  "homepage": "https://vercel.com/docs/eve",
+  "desc": "Framework for building, running and scaling background coding agents.",
+  "desc_zh": "用于构建、运行和扩展后台编程智能体的开源框架。",
+  "solves": "A coding agent that works on one laptop falls over at scale; the framework handles running many of them and scaling out.",
+  "solves_zh": "在一台笔记本上能跑的编程智能体一上量就撑不住；这个框架负责把许多个跑起来并横向扩展。",
+  "best_for": "You have one working agent and need to run hundreds of them on demand.",
+  "best_for_zh": "手上有一个能用的智能体，需要按需同时跑几百个。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "background-agents",
+    "scaling"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — vercel.com/changelog directory）。 Public preview at launch. No dedicated product site was found, so the announcement page is used as the entry point. 入库核对（2026-11-25）：官方名字只是「eve」，加上厂商名以便辨认。首页从更新日志文章换成官方文档页（vercel.com/docs/frameworks/agents/eve，标题「eve on Vercel」）。 首次公开日期来源：https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework",
+  "revisions": []
+}

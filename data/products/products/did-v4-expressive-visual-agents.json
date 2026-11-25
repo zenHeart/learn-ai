@@ -1,0 +1,36 @@
+{
+  "id": "did-v4-expressive-visual-agents",
+  "name": "D-ID V4 Expressive Visual Agents",
+  "name_zh": "D-ID V4 Expressive Visual Agents",
+  "vendor_id": "d-id",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "agent-building",
+    "video"
+  ],
+  "form": "api",
+  "released": "2026-03-16",
+  "date_precision": "day",
+  "homepage": "https://www.d-id.com/ai-agents/",
+  "desc": "Real-time conversational avatars with expression driven by emotion",
+  "desc_zh": "表情跟着情绪走的实时对话数字人",
+  "solves": "Scripted avatar video plays back flat. These agents hold a live conversation and perform the emotion the text carries.",
+  "solves_zh": "按脚本拍的数字人视频表情是平的。这类 Agent 能实时对话，并按文字里的情绪去演。",
+  "best_for": "You need a support avatar that answers live instead of replaying a clip.",
+  "best_for_zh": "要一个能实时回答的客服数字人，而不是循环播放一段录像。",
+  "surface": "standalone",
+  "tags": [
+    "realtime-avatar",
+    "emotional-expression",
+    "voice-agent"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.d-id.com/blog/ (D-ID's blog, 'Introducing V4 Expressive Visual A）。 Outside the 2026-05-07 → 2026-11-24 window but absent from the ledger, which holds only the 2017 'D-ID' photo-to-video entry. Delivered as real-time sessions over the D-ID Client SDK (WebRTC), hence form 'api'. V4 Expressive Avatars (the offline avatar model, announced 2026-02-03) is a different, model-level release and is not filed. Presentation Mode (2026-10-15) runs on these agents. 首次公开日期来源：https://www.d-id.com/blog/v4-expressive-visual-agents/",
+  "revisions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "cursor-origin",
+  "name": "Cursor Origin",
+  "name_zh": "Cursor Origin",
+  "vendor_id": "anysphere",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-08-17",
+  "date_precision": "day",
+  "homepage": "https://cursor.com/origin",
+  "desc": "Code hosting inside Cursor with repositories and pull requests built for agents.",
+  "desc_zh": "Cursor 内置的代码托管，仓库和 Pull Request 都按智能体规模设计。",
+  "solves": "Hosting designed for human review slows agent work; repositories, pull requests and code browsing live next to the agents that write them.",
+  "solves_zh": "为人工审查设计的托管会拖慢智能体的节奏；仓库、Pull Request 和代码浏览就放在写代码的智能体旁边。",
+  "best_for": "Your agents open dozens of pull requests a day and GitHub review queues are the bottleneck.",
+  "best_for_zh": "智能体每天开几十个 Pull Request，瓶颈在 GitHub 的审查队列。",
+  "surface": "standalone",
+  "tags": [
+    "code-hosting",
+    "pull-requests",
+    "agent-scale"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cursor.com/changelog directory）。 Early beta on all paid plans. An Origin App Marketplace followed on 2026-10-16. 入库核对（2026-11-25）：官方名字只是「Origin」，加上产品名以便辨认。 首次公开日期来源：https://cursor.com/changelog/origin-code-hosting",
+  "revisions": []
+}

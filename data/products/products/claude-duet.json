@@ -1,0 +1,35 @@
+{
+  "id": "claude-duet",
+  "name": "Claude Duet",
+  "name_zh": "Claude Duet",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-10-21",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/claude-duet",
+  "desc": "Proactive agent that messages you about inbox and calendar",
+  "desc_zh": "主动盯收件箱和日历、有事先找你的智能体",
+  "solves": "Checking inbox and calendar all day breaks focus; Claude Duet watches them, drafts next steps and pings you when needed.",
+  "solves_zh": "整天盯着收件箱和日历打断专注，Claude Duet 替你盯着，有需要再找你。",
+  "best_for": "You wake up to 60 unread threads and want the two that need a reply today.",
+  "best_for_zh": "早上打开邮箱有六十封未读，只想先看今天必须回的两封。",
+  "surface": "standalone",
+  "tags": [
+    "proactive-agent",
+    "inbox-triage",
+    "calendar"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：C — https://techcrunch.com/tag/claude/ (then D: claude.com product index)）。 Research preview opened by public waitlist on 2026-10-21 for US Pro, Max and Ultra subscribers. The product page meta still says 'Research preview: join the waitlist' while its body says it is available in Pro, Max and Ultra plans in the US, so a wider rollout date was not confirmed. Standalone app on iOS and Android plus claude.ai. 首次公开日期来源：https://claude.com/resources/articles/claude-duet",
+  "revisions": []
+}

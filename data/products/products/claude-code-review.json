@@ -1,0 +1,35 @@
+{
+  "id": "claude-code-review",
+  "name": "Claude Code Review",
+  "name_zh": "Claude Code Review",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-03-09",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/code-review",
+  "desc": "Multi-agent review that verifies bugs in every pull request",
+  "desc_zh": "逐个审查 PR、验证缺陷的多智能体代码评审",
+  "solves": "Agents write PRs faster than people review them; Code Review dispatches agents that read each change closely.",
+  "solves_zh": "智能体写 PR 比人审得快，Code Review 派出多个智能体逐行细读每处改动。",
+  "best_for": "A pull request touches a race condition and the only senior reviewer is on leave.",
+  "best_for_zh": "一个 PR 改到了竞态问题，而唯一资深评审正在休假。",
+  "surface": "in-product",
+  "tags": [
+    "code-review",
+    "bug-detection",
+    "pull-requests"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Outside the window. Research preview in beta for Team and Enterprise on 2026-03-09; later generally available. Product page title is 'Code Review by Claude'. Second source is not independent media. 入库核对（2026-11-25）：产品页标题是「Code Review by Claude」；卡片上带上产品名，并与 Claude Ship、Claude Security 的记法一致。 首次公开日期来源：https://claude.com/resources/articles/code-review",
+  "revisions": []
+}

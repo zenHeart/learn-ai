@@ -1,0 +1,36 @@
+{
+  "id": "kiro-web",
+  "name": "Kiro Web",
+  "name_zh": "Kiro Web",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-05-18",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/web/",
+  "desc": "Kiro's browser workspace for delegating code work that runs in cloud sessions.",
+  "desc_zh": "Kiro 的浏览器工作区，用来派发在云端会话中运行的编码任务。",
+  "solves": "Some work starts away from your laptop; Kiro Web opens a session from any browser and the agent writes code and opens pull requests.",
+  "solves_zh": "有些活儿不在笔记本旁就开始；Kiro Web 让你在任意浏览器开会话，智能体写代码并提 PR。",
+  "best_for": "A teammate flags a bug in Slack while you are between meetings and you want it fixed before you sit back down.",
+  "best_for_zh": "会议间隙同事在 Slack 里报了一个 bug，你想在坐下之前就把它派出去时。",
+  "surface": "standalone",
+  "tags": [
+    "cloud-sessions",
+    "browser-ide",
+    "pull-requests"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed and product directory）。 Launched in preview 2026-05-18 for Pro, Pro+ and Power. Kiro IDE and Kiro CLI added autonomous workflows in the following weeks, so the surfaces share one account and one credit pool. 首次公开日期来源：https://kiro.dev/blog/introducing-kiro-web/",
+  "revisions": []
+}

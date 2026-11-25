@@ -30,8 +30,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "The default escape hatch when a closed frontier API gets too expensive. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/together_ai",
-  "revisions": [],
-  "date_precision": "day"
+  "last_verified_at": "2026-11-25",
+  "notes": "The default escape hatch when a closed frontier API gets too expensive. 首次公开发布日期精度：month-only 来源：https://aiwiki.ai/wiki/together_ai 2026-11-25：date_precision day → month。没有一手来源说明推理平台首次公开可用的日期；2022-06-01 与公司成立的月份相同，而成立不算发布。按月份精度记",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "没有一手来源说明推理平台首次公开可用的日期；2022-06-01 与公司成立的月份相同，而成立不算发布。按月份精度记"
+    }
+  ],
+  "date_precision": "month"
 }

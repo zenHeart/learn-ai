@@ -1,0 +1,35 @@
+{
+  "id": "openhands-cli",
+  "name": "OpenHands CLI",
+  "name_zh": "OpenHands CLI",
+  "vendor_id": "all-hands-ai",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "cli",
+  "released": "2025-06-17",
+  "date_precision": "day",
+  "homepage": "https://docs.openhands.dev/openhands/usage/cli/installation",
+  "desc": "OpenHands agents driven from your own terminal.",
+  "desc_zh": "在你自己终端里驱动 OpenHands 智能体的命令行工具。",
+  "solves": "The web workspace is another window to switch to; the same agent runs beside your shell where the work already happens.",
+  "solves_zh": "网页工作区是另一个要切过去的窗口；同一个智能体就在你已经干活的终端旁边跑。",
+  "best_for": "You live in the terminal and want the agent started with one command in the repo.",
+  "best_for_zh": "平时就住在终端里，想在仓库里一条命令把智能体拉起来。",
+  "surface": "standalone",
+  "tags": [
+    "terminal-agent",
+    "local",
+    "command-line"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — openhands.dev/blog directory）。 Predates the window but is absent from the ledger, so it is recorded under rule (b). 首次公开日期来源：https://www.openhands.dev/blog/the-openhands-cli-ai-powered-development-in-your-terminal",
+  "revisions": []
+}

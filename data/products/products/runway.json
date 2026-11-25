@@ -28,8 +28,8 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": "2026-10-04",
-  "notes": " 复核：原日期 2018-12-01 是 Runway 公司成立日，不是 AI 视频产品上线日。",
+  "last_verified_at": "2026-11-25",
+  "notes": " 复核：原日期 2018-12-01 是 Runway 公司成立日，不是 AI 视频产品上线日。 2026-11-25：date_precision day → month。没有一手来源说明 2021-12-01 是某个 AI 视频产品首次公开可用的日子。按月份精度记",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -38,7 +38,15 @@
       "from": "2018-12-01",
       "to": "2021-12-01",
       "why": "原值为公司成立日；改为 AI 视频产品公开发布时间（仅精确到月）"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "date_precision",
+      "from": "day",
+      "to": "month",
+      "why": "没有一手来源说明 2021-12-01 是某个 AI 视频产品首次公开可用的日子。按月份精度记"
     }
   ],
-  "date_precision": "day"
+  "date_precision": "month"
 }

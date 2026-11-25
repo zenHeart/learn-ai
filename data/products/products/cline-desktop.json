@@ -1,0 +1,36 @@
+{
+  "id": "cline-desktop",
+  "name": "Cline Desktop",
+  "name_zh": "Cline Desktop",
+  "vendor_id": "cline",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "local-private"
+  ],
+  "form": "desktop",
+  "released": "2026-09-14",
+  "date_precision": "day",
+  "homepage": "https://cline.bot/desktop",
+  "desc": "Desktop app for running Cline against open-weight models.",
+  "desc_zh": "用开源权重模型跑 Cline 的开源桌面应用。",
+  "solves": "The extension assumes a hosted model provider; this app runs the agent on models you already have locally.",
+  "solves_zh": "插件默认你走托管模型服务；这个应用让你用本地已有的模型跑同一个智能体。",
+  "best_for": "You want the agent on your own hardware because the code cannot leave the machine.",
+  "best_for_zh": "代码不能离开本机，想让智能体也在自己的硬件上跑。",
+  "surface": "standalone",
+  "tags": [
+    "open-source",
+    "open-weights",
+    "desktop-app"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cline.bot/blog directory）。 Early version at launch. Separate surface from the Cline VS Code extension already in the ledger; a Cline CLI and Cline Cloud also exist but no launch announcement with a date was found. 首次公开日期来源：https://cline.bot/blog/cline-desktop-an-open-source-app-for-open-weight-models",
+  "revisions": []
+}

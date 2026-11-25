@@ -1,0 +1,36 @@
+{
+  "id": "chatgpt-health",
+  "name": "ChatGPT Health",
+  "name_zh": "ChatGPT Health",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "research",
+    "office"
+  ],
+  "form": "web",
+  "released": "2026-07-23",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001036-health-in-chatgpt",
+  "desc": "Connect your health records and Apple Health, then ask about them.",
+  "desc_zh": "接入病历和 Apple Health 数据，然后直接向 ChatGPT 提问。",
+  "solves": "Lab results and sleep data sit in five different apps. Health puts them in one dashboard so a question about a new result can be answered against your own history.",
+  "solves_zh": "化验单和睡眠数据散在五六个 App 里。Health 把它们放进同一块面板，问到新结果时能对着你自己的历史记录回答。",
+  "best_for": "An appointment is coming up and you want your own numbers in front of you.",
+  "best_for_zh": "快复诊了，你想把自己的各项数据先摆在一起看。",
+  "surface": "in-product",
+  "tags": [
+    "health",
+    "personal-data",
+    "dashboard"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ChatGPT release notes, https://help.openai.com/en/articles/6825453-chatgpt-r）。 ChatGPT release notes, entry under the \"July 23, 2026\" heading. Consumer health surface. Distinct from ChatGPT for Healthcare and ChatGPT for Clinicians, which are the organisation-facing products. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

@@ -13,7 +13,7 @@
   "surface": "in-product",
   "released": "2026-01-13",
   "date_precision": "day",
-  "homepage": "https://slack.com/features/ai",
+  "homepage": "https://slack.com/features/slackbot",
   "desc": "A personal agent that lives inside Slack.",
   "desc_zh": "住在 Slack 里的个人智能体",
   "solves": "A workspace bot starts from zero every time you ask. Slackbot keeps the tone and the context, so the second ask is not a re-brief.",
@@ -30,6 +30,15 @@
   "status": "active",
   "superseded_by": null,
   "last_verified_at": null,
-  "notes": "集成在 Slack 内的能力。来源：https://slack.com/features/ai",
-  "revisions": []
+  "notes": "集成在 Slack 内的能力。来源：https://slack.com/features/ai 2026-11-25：homepage \"https://slack.com/features/ai\" → \"https://slack.com/features/slackbot\"。原地址与 slack-ai 共用同一个页面；Slackbot 有自己的产品页（标题「Slackbot, Personal AI Agent for Work」）",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "homepage",
+      "from": "https://slack.com/features/ai",
+      "to": "https://slack.com/features/slackbot",
+      "why": "原地址与 slack-ai 共用同一个页面；Slackbot 有自己的产品页（标题「Slackbot, Personal AI Agent for Work」）"
+    }
+  ]
 }

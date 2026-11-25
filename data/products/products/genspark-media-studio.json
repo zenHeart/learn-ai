@@ -1,0 +1,35 @@
+{
+  "id": "genspark-media-studio",
+  "name": "Genspark Media Studio",
+  "name_zh": "Genspark Media Studio",
+  "vendor_id": "genspark",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "video"
+  ],
+  "form": "web",
+  "released": "2026-10-27",
+  "date_precision": "day",
+  "homepage": "https://www.genspark.ai/blog/genspark-media-studio",
+  "desc": "One AI studio that turns a request into a finished video.",
+  "desc_zh": "把一句请求变成成片的一体化 AI 视频工作室",
+  "solves": "A video needs a script, a cast, a storyboard, a voice, a score and an editor. Media Studio holds all of it in one place so the idea survives to the cut.",
+  "solves_zh": "做一条视频需要脚本、演员、分镜、配音、配乐和剪辑。Media Studio 把这些都放进一个地方，让创意能撑到成片。",
+  "best_for": "You have the idea and the deadline but no crew and no editing suite.",
+  "best_for_zh": "你有想法也有截止日期，但没有团队，也没有剪辑软件。",
+  "surface": "standalone",
+  "tags": [
+    "video-generation",
+    "all-in-one",
+    "no-editing-skills"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.genspark.ai/blog , then the Genspark product menu）。 Announced 2026-10-27, inside the window. Missing from the ledger, which holds only the Genspark agent platform (2024-06-01) for this vendor. The blog index entry reads 'Genspark Media Studio: One AI Studio for Any Video'. No media source was read. 首次公开日期来源：https://www.genspark.ai/blog/genspark-media-studio",
+  "revisions": []
+}

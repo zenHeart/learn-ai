@@ -1,0 +1,36 @@
+{
+  "id": "elevenlabs-realtime",
+  "name": "Eleven Realtime",
+  "name_zh": "Eleven Realtime",
+  "vendor_id": "elevenlabs",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "audio-voice",
+    "agent-building"
+  ],
+  "form": "api",
+  "released": "2026-10-20",
+  "date_precision": "day",
+  "homepage": "https://elevenlabs.io/realtime",
+  "desc": "Speech-to-speech models for building natural voice agents",
+  "desc_zh": "用来搭建自然语音 Agent 的语音到语音模型",
+  "solves": "A voice agent assembled from separate components needs endless tuning to stop sounding robotic. Each Realtime model is one complete agent, so swapping the endpoint is the whole migration.",
+  "solves_zh": "用多个零件拼起来的语音 Agent 要反复调参才不机械。每个 Realtime 模型本身就是完整 Agent，换掉接口地址就算迁移完成。",
+  "best_for": "When support calls need a talking agent that answers mid-sentence and still follows a script.",
+  "best_for_zh": "客服电话需要一个能接话、又能按脚本走的语音 Agent 的时候。",
+  "surface": "standalone",
+  "tags": [
+    "speech-to-speech",
+    "realtime-api",
+    "voice-agent"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — ElevenLabs blog index (elevenlabs.io/blog), post \"Introducing Eleven Realtim）。 Launched with two models, Eleven Realtime v1 Mini and v1 Max. The docs changelog lists \"Eleven Realtime\" under October 19, 2026, one day before the blog post; the blog publish date is used as the first public availability date. 首次公开日期来源：https://elevenlabs.io/blog/realtime",
+  "revisions": []
+}

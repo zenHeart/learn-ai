@@ -1,0 +1,37 @@
+{
+  "id": "you-com-inference-router",
+  "name": "You.com Inference Router",
+  "name_zh": "You.com Inference Router",
+  "vendor_id": "you-com",
+  "region": "intl",
+  "category": "model-platform",
+  "use_cases": [
+    "model-api",
+    "agent-building",
+    "coding"
+  ],
+  "form": "api",
+  "released": "2026-10-26",
+  "date_precision": "day",
+  "homepage": "https://you.com/docs/guides/inference-router",
+  "desc": "Open-weight models behind OpenAI- and Anthropic-compatible endpoints.",
+  "desc_zh": "一套兼容 OpenAI 与 Anthropic 接口的开源模型入口",
+  "solves": "Switching providers meant rewriting the client and losing web grounding. One base URL and one key serve both endpoint styles, and the model can call You.com search mid-answer.",
+  "solves_zh": "换供应商往往要改客户端，还会丢掉联网能力。一个地址加一把密钥兼容两种接口，模型还能中途联网搜索。",
+  "best_for": "You already run an OpenAI or Anthropic SDK and want a grounded alternative without a rewrite.",
+  "best_for_zh": "你已经在用 OpenAI 或 Anthropic 的 SDK，想换成能联网的模型又不想重写代码。",
+  "surface": "standalone",
+  "tags": [
+    "openai-compatible",
+    "anthropic-compatible",
+    "web-grounded"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://you.com/docs/changelog (the vendor's own changelog directory)）。 The docs describe it as leading open-weight models through one API, grounded in real-time web search that runs server-side, priced per model with no platform fee. Declaring a web_search or web_extract tool makes the router run You.com searches and page fetches for the model and return every source it used. 评审修正（2026-11-25）：官方名字「Inference Router」是通用词，带上厂商名以便辨认。 首次公开日期来源：https://you.com/docs/changelog/2026/10/26",
+  "revisions": []
+}

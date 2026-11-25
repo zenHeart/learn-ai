@@ -1,0 +1,37 @@
+{
+  "id": "qoderwake",
+  "name": "QoderWake",
+  "name_zh": "QoderWake",
+  "vendor_id": "alibaba",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "office"
+  ],
+  "form": "desktop",
+  "released": "2026-04-30",
+  "date_precision": "day",
+  "homepage": "https://qoder.com/qoderwake",
+  "desc": "Always-on digital employees that own recurring work",
+  "desc_zh": "常驻在线、长期负责一项工作的数字员工",
+  "solves": "Recurring duties stall whenever the owner is offline; a Waker keeps identity, memory and skills and resumes on its own.",
+  "solves_zh": "固定职责只要负责人不在线就停摆，数字员工带着记忆和技能自己接着干。",
+  "best_for": "A job needs a standing role for alerts, follow-ups or reports rather than a one-off chat.",
+  "best_for_zh": "告警、跟进或周报这类事需要有人一直盯着，而不是临时聊一次。",
+  "surface": "standalone",
+  "tags": [
+    "digital-employee",
+    "persistent-memory",
+    "local-runtime",
+    "cloud-sandbox"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://changelog.qoder.com/llms.txt, https://blog.qoder.com/llms.txt）。 Backfill: released before the window and absent from the ledger. First availability was an invitational preview with onboarding in batches (users joined via a list at qoder.com/qoderwake); the product page now shows a Download button, so access is broader today. Official docs describe it as: 'Create digital employees called Wakers for ongoing responsibilities, conversations, automations, and multi-stage flows.' Its changelog starts at QoderWake 0.0.10 (May 26, 2026). Page title: 'QoderWake - 全天在线的数字员工 | AI 自主开发伙伴'. Another second source read: https://www.ithome.com/0/945/416.htm (IT之家). 入库核对（2026-11-25）：地区与账本里的 Qoder（IDE）保持一致。 首次公开日期来源：https://blog.qoder.com/qoderwake",
+  "revisions": []
+}

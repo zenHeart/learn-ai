@@ -1,0 +1,36 @@
+{
+  "id": "comet-enterprise",
+  "name": "Perplexity Comet Enterprise",
+  "name_zh": "Perplexity Comet Enterprise",
+  "vendor_id": "perplexity",
+  "region": "intl",
+  "category": "supporting-tools",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "desktop",
+  "released": "2026-03-12",
+  "date_precision": "day",
+  "homepage": "https://www.perplexity.ai/comet/enterprise",
+  "desc": "The Comet AI browser for organizations, deployable over MDM with agent controls.",
+  "desc_zh": "面向组织的 Comet AI 浏览器，可经 MDM 静默部署并按动作管控智能体。",
+  "solves": "A personal AI browser on a work machine is an unmanaged risk; this gives administrators deployment, policies and audit over the same browser.",
+  "solves_zh": "办公电脑上装个人 AI 浏览器是不可控风险；它让管理员对同一个浏览器拥有部署、策略与审计能力。",
+  "best_for": "You are rolling an AI browser to two thousand laptops and need to decide which actions the agent may take.",
+  "best_for_zh": "要把 AI 浏览器铺到两千台笔记本，还得决定智能体可以做哪些动作时。",
+  "surface": "standalone",
+  "tags": [
+    "ai-browser",
+    "mdm-deployment",
+    "admin-controls"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — perplexity.ai changelog directory; channel C CIO Dive coverage）。 Missing from the ledger; the ledger has Perplexity Comet (2025-07-09) but not the enterprise edition. Comet Enterprise is a separate deployment of the same browser rather than a version of it, with MDM deployment, browser policies and per-action agent controls, and security controls developed with CrowdStrike. The changelog entry is dated 03/12/26 in the page body. perplexity.ai returns 403 to curl, so the page was read through the page reader. 入库核对（2026-11-25）：账本里现有的记录叫「Perplexity Comet」，企业版的名字与它保持一致。 首次公开日期来源：https://www.perplexity.ai/changelog/what-we-shipped---march-13-2026 官网未直接确认（403）。",
+  "revisions": []
+}

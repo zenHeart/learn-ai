@@ -12,8 +12,8 @@
   "form": "web",
   "released": "2024-09-03",
   "homepage": "https://yiyan.baidu.com",
-  "desc": "Baidu's consumer chat app, now under its own name",
-  "desc_zh": "百度消费端助手，文心一言的现行品牌名",
+  "desc": "Baidu's consumer chat app under its 2024 name",
+  "desc_zh": "百度消费端助手，文心一言 2024 年改名后的名字",
   "solves": "Asking, writing and file handling each live in a different tool. Wenxiaoyan keeps them in one thread, and a dropped file stays available for follow-up questions.",
   "solves_zh": "提问、写作、读文件各在一个工具里。文小言把它们留在同一条对话中，丢进去的文件还能接着问。",
   "best_for": "When the work is a draft, and switching tools costs more than it saves.",
@@ -27,10 +27,10 @@
   "handbook": {
     "status": "candidate"
   },
-  "status": "renamed",
-  "superseded_by": "wenxin-yiyan",
+  "status": "active",
+  "superseded_by": null,
   "last_verified_at": "2026-10-04",
-  "notes": " 复核：文小言与文心一言同一服务（yiyan.baidu.com），系品牌更名，按更名关系表达，不重复建档。",
+  "notes": " 复核：文小言与文心一言同一服务（yiyan.baidu.com），系品牌更名，按更名关系表达，不重复建档。 2026-11-25：status renamed → active; superseded_by wenxin-yiyan → null。文小言是文心一言改名后的名字，不应反过来指向旧名档案，否则两条档案互相指向。这个 App 此后又更名为「文心」（苹果官方查询接口当前返回的名称），现行名字的档案待找到带日期的官方来源后补建，届时再把本档标为改名并指向它 2026-11-25：待补：这个 App 此后又更名为「文心」——苹果官方查询接口当前返回的名称是「文心 - 百度旗下全能AI助手」，原官网 wenxiaoyan.com 的页面标题已是「文心官网」。更名日期只见于媒体报道（IT之家 2025-11-01：「5.0 版本再次更名为“文心”」），没有找到带日期的官方公告，所以现行名字的档案暂未建立 2026-11-25：desc \"Baidu's consumer chat app, now under its own name\" → \"Baidu's consumer chat app under its 2024 name\"。原文「now under its own name」把它说成现行名字，与事实不符 2026-11-25：desc_zh \"百度消费端助手，文心一言的现行品牌名\" → \"百度消费端助手，文心一言 2024 年改名后的名字\"。原文「文心一言的现行品牌名」与事实不符",
   "revisions": [
     {
       "at": "2026-10-04",
@@ -39,6 +39,38 @@
       "from": "active",
       "to": "renamed",
       "why": "与文心一言为同一服务的更名，合并为一条时间轴记录"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "renamed",
+      "to": "active",
+      "why": "文小言是文心一言改名后的名字，不应反过来指向旧名档案，否则两条档案互相指向。这个 App 此后又更名为「文心」（苹果官方查询接口当前返回的名称），现行名字的档案待找到带日期的官方来源后补建，届时再把本档标为改名并指向它"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "superseded_by",
+      "from": "wenxin-yiyan",
+      "to": null,
+      "why": "文小言是文心一言改名后的名字，不应反过来指向旧名档案，否则两条档案互相指向。这个 App 此后又更名为「文心」（苹果官方查询接口当前返回的名称），现行名字的档案待找到带日期的官方来源后补建，届时再把本档标为改名并指向它"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc",
+      "from": "Baidu's consumer chat app, now under its own name",
+      "to": "Baidu's consumer chat app under its 2024 name",
+      "why": "原文「now under its own name」把它说成现行名字，与事实不符"
+    },
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "desc_zh",
+      "from": "百度消费端助手，文心一言的现行品牌名",
+      "to": "百度消费端助手，文心一言 2024 年改名后的名字",
+      "why": "原文「文心一言的现行品牌名」与事实不符"
     }
   ],
   "date_precision": "day"

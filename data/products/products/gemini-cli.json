@@ -31,10 +31,19 @@
       "zh": "/zh/products/gemini/"
     }
   },
-  "status": "active",
+  "status": "discontinued",
   "superseded_by": null,
   "last_verified_at": "2026-10-04",
-  "notes": "",
-  "revisions": [],
+  "notes": "2026-11-25：status active → discontinued。Google 官方开发者博客：「On June 18, 2026, Gemini CLI and Gemini Code Assist IDE extensions will stop serving requests」，由 Antigravity CLI 接替 2026-11-25：2026-06-18 起停止服务，由 Antigravity CLI 接替（账本里 Google Antigravity 平台的档案是 google-antigravity）。本站已有的手册保留作历史参考",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "status",
+      "from": "active",
+      "to": "discontinued",
+      "why": "Google 官方开发者博客：「On June 18, 2026, Gemini CLI and Gemini Code Assist IDE extensions will stop serving requests」，由 Antigravity CLI 接替"
+    }
+  ],
   "date_precision": "day"
 }

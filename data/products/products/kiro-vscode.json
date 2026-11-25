@@ -1,0 +1,35 @@
+{
+  "id": "kiro-vscode",
+  "name": "Kiro for VS Code",
+  "name_zh": "Kiro for VS Code",
+  "vendor_id": "aws",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "ide",
+  "released": "2026-11-20",
+  "date_precision": "day",
+  "homepage": "https://kiro.dev/downloads/",
+  "desc": "The Kiro agent as a native VS Code extension, specs included.",
+  "desc_zh": "以原生 VS Code 扩展形式提供的 Kiro 智能体，内置规格与 steering。",
+  "solves": "Switching editors to try an agent is not an option for a team; this brings Kiro into the editor they already use.",
+  "solves_zh": "团队不可能为了试个智能体就换编辑器；这个扩展把 Kiro 带进他们已经在用的编辑器。",
+  "best_for": "Your team lives in VS Code with shared keybindings and extensions, and you want the agent without changing that.",
+  "best_for_zh": "团队固定在 VS Code，键位和扩展都是共用的，你又想用上智能体而不动这些设置时。",
+  "surface": "extension",
+  "tags": [
+    "vscode-extension",
+    "spec-driven",
+    "mcp"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — kiro.dev blog feed and product directory）。 Generally available on macOS, Windows and Linux, from the VS Code Marketplace or Open VSX, and works with every Kiro plan. Kiro already reached other editors through the Agent Client Protocol; this is a native extension with approve-for-me, specs, steering, MCP, workflows and memory. Shares kiro.dev/downloads as its entry page with the other Kiro surfaces. 首次公开日期来源：https://kiro.dev/blog/kiro-for-vs-code/",
+  "revisions": []
+}

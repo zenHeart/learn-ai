@@ -1,0 +1,36 @@
+{
+  "id": "autoclaw",
+  "name": "AutoClaw",
+  "name_zh": "AutoClaw（澳龙）",
+  "vendor_id": "zhipu",
+  "region": "cn",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-05-18",
+  "date_precision": "day",
+  "homepage": "https://autoclaw.zhipuai.cn/",
+  "desc": "Zhipu's one-click local OpenClaw client for the desktop.",
+  "desc_zh": "智谱的一键安装本地 OpenClaw 客户端",
+  "solves": "Installing OpenClaw by hand means terminals, dependencies and a long afternoon. AutoClaw packages it as a normal download with fifty skills built in.",
+  "solves_zh": "手动装 OpenClaw 要碰终端、配依赖，一整个下午就没了。AutoClaw 把它打成普通下载，内置五十个技能。",
+  "best_for": "You want an OpenClaw agent running on your own machine today.",
+  "best_for_zh": "想今天就在自己电脑上用上 OpenClaw 智能体，不想折腾命令行。",
+  "surface": "standalone",
+  "tags": [
+    "openclaw",
+    "local-agent",
+    "one-click-install"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — zhipuai.cn 产品导航 → autoclaw.zhipuai.cn；A — Apple App Store 检索）。 released 2026-05-18 是我能拿到的最早一方日期，来源是 App Store 的 AutoClaw iOS 应用（bundleId com.zai.autoclaw）。IT之家 2026-03-10 报道 macOS / Windows 客户端「今日正式上线」，财联社、BAAI 同口径；该日期没有一方来源，因此真实首次可用时间可能更早，请协调方决定是否改用媒体日期。桌面客户端是主形态，官网同时提供麒麟系统版与移动端。AutoClaw 国际站为 autoclaw.z.ai。 入库核对（2026-11-25）：入库核对：没有找到桌面客户端首发日的一手来源；媒体所说的 2026-03-10 未采用，保留应用商店上架日 2026-05-18 作为最早的一手日期。真实首次可用日可能更早。 首次公开日期来源：https://itunes.apple.com/cn/lookup?id=6761991573",
+  "revisions": []
+}

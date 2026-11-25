@@ -1,0 +1,35 @@
+{
+  "id": "suno-bridge",
+  "name": "Suno Bridge",
+  "name_zh": "Suno Bridge",
+  "vendor_id": "suno",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "audio-voice"
+  ],
+  "form": "desktop",
+  "released": "2026-11-13",
+  "date_precision": "day",
+  "homepage": "https://suno.com/bridge",
+  "desc": "Standalone app that brings Suno stems into your DAW",
+  "desc_zh": "把 Suno 生成的分轨带进音乐制作软件的独立应用",
+  "solves": "Moving from a Suno song into Ableton meant file juggling; Bridge sends generated stems straight into the project.",
+  "solves_zh": "以前把 Suno 歌曲搬进 Ableton 要来回倒文件；Bridge 能把生成的分轨直接送进工程。",
+  "best_for": "You have a Suno sketch but the vocal needs your own mix; open Bridge inside Ableton Live and pull the stems.",
+  "best_for_zh": "Suno 的小样想自己混人声；在 Ableton Live 里打开 Bridge，把分轨拉进时间线。",
+  "surface": "standalone",
+  "tags": [
+    "ableton-live",
+    "stems",
+    "daw-plugin"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://suno.com/blog (post 'Suno Bridge: Your DAW, Suno-powered.')）。 Beta at launch, limited to Ableton Live 12 on Mac. No independent press source opened; the second source is Suno's own product page. 首次公开日期来源：https://suno.com/blog/introducing-bridge",
+  "revisions": []
+}

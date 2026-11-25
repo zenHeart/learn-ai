@@ -1,0 +1,36 @@
+{
+  "id": "siri-ai",
+  "name": "Siri AI",
+  "name_zh": "Siri AI",
+  "vendor_id": "apple",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2026-09-14",
+  "date_precision": "day",
+  "homepage": "https://www.apple.com/apple-intelligence/",
+  "desc": "Apple's rebuilt assistant with personal context and onscreen awareness.",
+  "desc_zh": "苹果重构的助手，由 Apple Intelligence 驱动，能理解个人上下文与屏幕内容。",
+  "solves": "Siri used to need exact phrasing and forgot everything; Siri AI follows ordinary language and uses what it knows about you and your screen.",
+  "solves_zh": "旧 Siri 要说标准口令还记不住事；Siri AI 能听懂日常说法，并利用它对你的了解与屏幕内容。",
+  "best_for": "You are reading an article and want the assistant to act on what is on screen without retyping anything.",
+  "best_for_zh": "正在读一篇文章，想让助手直接对屏幕上的内容做事，不想再打一遍时。",
+  "surface": "in-product",
+  "tags": [
+    "voice-assistant",
+    "on-device-ai",
+    "personal-context"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Apple Newsroom archive; channel C Apple newsroom coverage of the WWDC26 keyn）。 Missing from the ledger: apple has Apple Intelligence and MLX but no Siri entry. Announced 2026-06-08 at WWDC26, released 2026-09-14 with the 2027 software releases, and expanded to French, Japanese, Korean, Portuguese and Spanish on 2026-10-26. Delayed in the EU for iOS 27 and iPadOS 27 because of the DMA. Siri AI sits on top of Apple Intelligence rather than replacing it. 首次公开日期来源：https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+  "revisions": []
+}

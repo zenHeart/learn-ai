@@ -1,0 +1,35 @@
+{
+  "id": "kagi-translate",
+  "name": "Kagi Translate",
+  "name_zh": "Kagi Translate",
+  "vendor_id": "kagi",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office"
+  ],
+  "form": "web",
+  "released": "2024-11-07",
+  "date_precision": "day",
+  "homepage": "https://translate.kagi.com/",
+  "desc": "Private translator for text, voice and images in 248 languages.",
+  "desc_zh": "支持 248 种语言的私密文本、语音和图片翻译器",
+  "solves": "Machine translators flatten tone and keep your text forever. Kagi Translate lets you set formality and voice, then forgets the request.",
+  "solves_zh": "机器翻译会把语气磨平，还会永久留下你的原文。Kagi Translate 可以设定正式程度和语气，翻译完也不留记录。",
+  "best_for": "A customer replied in a language you read slowly and the tone matters more than the words.",
+  "best_for_zh": "客户用一门你读得慢的语言回复，而语气比字面意思更要紧。",
+  "surface": "standalone",
+  "tags": [
+    "translation",
+    "tone-control",
+    "private"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://kagi.com/changelog and https://blog.kagi.com/ , then the Kagi produc）。 Launched 2024-11-07, before the discovery window, but the ledger holds only Kagi Assistant for this vendor so it is missing by definition. Native Android and iOS apps followed on 2026-01-29 (changelog 'Kagi Translate on Android & iOS: translate anything, anywhere'); same product, not a separate entry. It moved to a freemium model with a standalone $8/month plan on 2026-09-10 (https://blog.kagi.com/translate-is-back). No media source was read. 首次公开日期来源：https://blog.kagi.com/kagi-translate",
+  "revisions": []
+}

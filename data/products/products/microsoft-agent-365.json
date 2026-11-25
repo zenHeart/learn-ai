@@ -1,0 +1,36 @@
+{
+  "id": "microsoft-agent-365",
+  "name": "Microsoft Agent 365",
+  "name_zh": "Microsoft Agent 365",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "observability"
+  ],
+  "form": "web",
+  "released": "2026-05-01",
+  "date_precision": "day",
+  "homepage": "https://www.microsoft.com/en-us/microsoft-365/copilot/agent-365",
+  "desc": "A control plane that governs every agent running in a tenant.",
+  "desc_zh": "一个管控平面，统管租户里运行的所有 Agent。",
+  "solves": "Agents arrive from several vendors and nobody can see what they did. Agent 365 gives them one identity, one audit trail and one place to block them.",
+  "solves_zh": "Agent 来自多家厂商，没人看得清它们做过什么。Agent 365 给它们统一身份、统一审计轨迹，也给了统一的叫停入口。",
+  "best_for": "An IT lead is asked which agents exist and what they touched last week.",
+  "best_for_zh": "IT 负责人被问到现在有哪些 Agent、上周各自动了什么。",
+  "surface": "standalone",
+  "tags": [
+    "governance",
+    "agent-identity",
+    "audit"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — Microsoft Security Blog, https://www.microsoft.com/en-us/security/blog/2026/）。 Announced 2025-11-18 as the control plane for AI agents; general availability for commercial customers on 2026-05-01, which is just before the discovery window. Absent from the ledger partition list, so proposed under rule (b). Licensed per managing user, also inside Microsoft 365 E7. 首次公开日期来源：https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lm-link",
+  "name": "LM Link",
+  "name_zh": "LM Link",
+  "vendor_id": "element-labs",
+  "region": "intl",
+  "category": "local-runner",
+  "use_cases": [
+    "local-private",
+    "model-api"
+  ],
+  "form": "web",
+  "released": "2026-06-04",
+  "date_precision": "day",
+  "homepage": "https://www.lmstudio.ai/link",
+  "desc": "iPhone app that reaches the models running on your own computer.",
+  "desc_zh": "在 iPhone 上访问跑在你自己电脑上的模型的应用。",
+  "solves": "The biggest local model stays tied to the desk; LM Link puts it in your pocket without uploading anything.",
+  "solves_zh": "最大的本地模型一直被绑在桌子上；LM Link 把它装进口袋，又不上传任何数据。",
+  "best_for": "You want to prompt a 70B local model from the sofa or on a train.",
+  "best_for_zh": "想在沙发或火车上用一个 70B 的本地模型。",
+  "surface": "standalone",
+  "tags": [
+    "mobile-app",
+    "remote-access",
+    "local-models"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — lmstudio.ai/blog）。 iPhone first; the post frames it as the first version of the app. 入库核对（2026-11-25）：形态枚举没有手机应用；账本里手机应用记为 web。 首次公开日期来源：https://www.lmstudio.ai/blog/locally-lm-link",
+  "revisions": []
+}

@@ -11,7 +11,7 @@
     "local-private"
   ],
   "form": "self-hosted",
-  "released": "2025-01-10",
+  "released": "2025-01-09",
   "homepage": "https://cohere.com/north",
   "desc": "Cohere's platform you can run in your own VPC",
   "desc_zh": "可跑在自有 VPC 里的 Cohere 智能体平台",
@@ -31,8 +31,17 @@
   },
   "status": "active",
   "superseded_by": null,
-  "last_verified_at": null,
-  "notes": "Built for regulated buyers that must run agents on their own infrastructure — a segment the US-first vendors do not serve well. 首次公开发布日期精度：month-only 来源：https://winbuzzer.com/2025/01/10/cohere-unveils-north-ai-platform-challenges-microsoft/",
-  "revisions": [],
+  "last_verified_at": "2026-11-25",
+  "notes": "Built for regulated buyers that must run agents on their own infrastructure — a segment the US-first vendors do not serve well. 首次公开发布日期精度：month-only 来源：https://winbuzzer.com/2025/01/10/cohere-unveils-north-ai-platform-challenges-microsoft/ 2026-11-25：released 2025-01-10/day → 2025-01-09/day; source https://cohere.com/blog/north-eap。原值 2025-01-10 取自二手报道，差了一天。Cohere 官方发布文的 datePublished 是 2025-01-09",
+  "revisions": [
+    {
+      "at": "2026-11-25",
+      "by": "audit",
+      "field": "released",
+      "from": "2025-01-10/day",
+      "to": "2025-01-09/day",
+      "why": "原值 2025-01-10 取自二手报道，差了一天。Cohere 官方发布文的 datePublished 是 2025-01-09"
+    }
+  ],
   "date_precision": "day"
 }

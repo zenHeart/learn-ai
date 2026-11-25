@@ -1,0 +1,36 @@
+{
+  "id": "agent-skills",
+  "name": "Agent Skills",
+  "name_zh": "Agent Skills",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2025-10-16",
+  "date_precision": "day",
+  "homepage": "https://claude.com/skills",
+  "desc": "Folders of instructions and scripts that teach Claude a task",
+  "desc_zh": "用说明和脚本教会 Claude 一类任务的技能包",
+  "solves": "Every chat repeats the same house style and steps; a Skill saves them once and Claude loads it when needed.",
+  "solves_zh": "每次对话都要重复同样的风格和步骤，技能保存一次后按需自动加载。",
+  "best_for": "Your team writes the same release-note format every sprint and wants Claude to follow it automatically.",
+  "best_for_zh": "团队每个迭代都写同一种发布说明格式，希望 Claude 自动照做。",
+  "surface": "in-product",
+  "tags": [
+    "skills",
+    "custom-instructions",
+    "reusable-workflows"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Outside the window. The date is the article's published time (2025-10-16); the quoted sentence is the availability statement on the page, which has been edited since launch (it lists an Ultra plan). Donated to the Agentic AI Foundation on 2026-10-22. Google uses the same 'skills' vocabulary inside Gemini. Second source is not independent media. 首次公开日期来源：https://www.anthropic.com/news/skills",
+  "revisions": []
+}

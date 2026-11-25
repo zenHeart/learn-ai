@@ -1,0 +1,36 @@
+{
+  "id": "langgraph-studio",
+  "name": "LangGraph Studio",
+  "name_zh": "LangGraph Studio",
+  "vendor_id": "langchain-inc",
+  "region": "intl",
+  "category": "agent-platform",
+  "use_cases": [
+    "agent-building",
+    "observability"
+  ],
+  "form": "ide",
+  "released": "2024-08-01",
+  "date_precision": "day",
+  "homepage": "https://docs.langchain.com/langsmith/studio",
+  "desc": "Agent IDE for drawing, running and stepping through LangGraph agents.",
+  "desc_zh": "用来画图、运行和单步调试 LangGraph 智能体的 IDE。",
+  "solves": "Debugging an agent from print statements tells you nothing about which node went where; the graph, the state and every step are visible.",
+  "solves_zh": "靠打印调试智能体，看不出是哪个节点把它带偏了；图、状态和每一步都摆在眼前。",
+  "best_for": "An agent takes the wrong branch and you need to see the state at that exact node.",
+  "best_for_zh": "智能体走错了分支，需要看清那个节点上状态到底是什么。",
+  "surface": "standalone",
+  "tags": [
+    "graph-debugging",
+    "agent-ide",
+    "state-inspection"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — langchain.com/blog）。 Now documented under LangSmith Studio. Predates the window and is absent from the ledger, so it is recorded under brief rule (b). LangChain Inc. also ships LangSmith Agent Server (formerly LangGraph Platform) and LangSmith Fleet (formerly Agent Builder); neither has a dated first-party launch page that survived the vendor's renames, so they are listed as unconfirmed in report.md. 首次公开日期来源：https://www.langchain.com/blog/langgraph-studio-the-first-agent-ide",
+  "revisions": []
+}

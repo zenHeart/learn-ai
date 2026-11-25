@@ -1,0 +1,35 @@
+{
+  "id": "roomote",
+  "name": "Roomote",
+  "name_zh": "Roomote",
+  "vendor_id": "roo-code",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "self-hosted",
+  "released": "2026-07-11",
+  "date_precision": "day",
+  "homepage": "https://roomote.dev",
+  "desc": "Cloud coding agent that runs on infrastructure you control.",
+  "desc_zh": "跑在你自己控制的基础设施上的云端编程智能体。",
+  "solves": "Hosted agents want your repository and your secrets on someone else’s machine; Roomote keeps the environment yours.",
+  "solves_zh": "托管智能体要把你的仓库和密钥放到别人机器上；Roomote 让环境留在你这里。",
+  "best_for": "Policy forbids your code leaving the network but you still want parallel cloud agents.",
+  "best_for_zh": "制度不允许源码离开内网，但你依然想要并行的云端智能体。",
+  "surface": "standalone",
+  "tags": [
+    "self-hosted",
+    "cloud-agents",
+    "pull-request"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — github.com/RooCodeInc/Roomote/releases; B — Hacker News story 2026-04-21）。 The official repository’s first release, v0.0.3, was published 2026-07-11 (GitHub releases index, 127 releases as of 2026-11-25; latest v1.25.0 on 2026-11-24). A Hacker News story dated 2026-04-21 reports the Roo Code team moving to Roomote. 入库核对（2026-11-25）：入库核对：roocode.com 现在跳转到 roomote.dev（标题「Roomote: your own cloud coding agent」）。 账本里的 roo-code 档将标为已改名并指向本档。 首次公开日期来源：https://github.com/RooCodeInc/Roomote/releases/tag/v0.0.3",
+  "revisions": []
+}

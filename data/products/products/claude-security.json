@@ -1,0 +1,35 @@
+{
+  "id": "claude-security",
+  "name": "Claude Security",
+  "name_zh": "Claude Security",
+  "vendor_id": "anthropic",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "web",
+  "released": "2026-04-30",
+  "date_precision": "day",
+  "homepage": "https://claude.com/product/claude-security",
+  "desc": "Claude that scans codebases for vulnerabilities and proposes fixes",
+  "desc_zh": "扫描代码库漏洞并给出修复建议的 Claude 安全产品",
+  "solves": "Pattern-matching scanners drown teams in alerts; Claude Security traces data flows and verifies each finding first.",
+  "solves_zh": "规则扫描器带来大量误报，Claude Security 先追踪数据流并逐条验证漏洞。",
+  "best_for": "A monorepo has never had a security review and the pen test is booked for next month.",
+  "best_for_zh": "代码库从没做过安全评审，而渗透测试下个月就要开始。",
+  "surface": "standalone",
+  "tags": [
+    "vulnerability-scanning",
+    "code-security",
+    "patch-suggestions"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.anthropic.com/news/product and https://claude.com/resources/arti）。 Outside the window. Public beta for Claude Enterprise customers. 首次公开日期来源：https://claude.com/resources/articles/claude-security-public-beta",
+  "revisions": []
+}

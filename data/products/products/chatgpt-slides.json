@@ -1,0 +1,36 @@
+{
+  "id": "chatgpt-slides",
+  "name": "ChatGPT Slides",
+  "name_zh": "ChatGPT Slides",
+  "vendor_id": "openai",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office",
+    "image-design"
+  ],
+  "form": "web",
+  "released": "2026-09-29",
+  "date_precision": "day",
+  "homepage": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+  "desc": "Make and co-edit a slide deck inside ChatGPT, then export it.",
+  "desc_zh": "在 ChatGPT 里边聊边做幻灯片，多人同时改，做完导出。",
+  "solves": "A deck dies in the copy-paste between the chat and the slide app. Slides stays editable, exports to PowerPoint or Google Slides, and lets teammates comment in place.",
+  "solves_zh": "演示稿往往死在聊天窗口和幻灯片软件之间的反复拷贝。Slides 全程可编辑，能导出到 PowerPoint 或 Google Slides，同事可以直接在页面上留言。",
+  "best_for": "You have notes and an outline, and a deck due before the meeting.",
+  "best_for_zh": "你手里有笔记和大纲，而演示稿开会前就要。",
+  "surface": "in-product",
+  "tags": [
+    "slides",
+    "presentation",
+    "collaboration"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — OpenAI DevDay 2026 recap, https://openai.com/index/devday-2026-recap）。 DevDay on 2026-09-29 already listed \"Collaborative slides\" as available to all Pro, Business and Enterprise plans, so first availability is taken as 2026-09-29; the release notes describe the wider rollout under 2026-10-16. Requires Space access. 首次公开日期来源：https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "revisions": []
+}

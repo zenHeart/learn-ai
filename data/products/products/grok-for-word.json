@@ -1,0 +1,36 @@
+{
+  "id": "grok-for-word",
+  "name": "Grok for Word",
+  "name_zh": "Grok for Word",
+  "vendor_id": "xai",
+  "region": "intl",
+  "category": "chat-assistant",
+  "use_cases": [
+    "office",
+    "research"
+  ],
+  "form": "web",
+  "released": "2026-06-18",
+  "date_precision": "day",
+  "homepage": "https://marketplace.microsoft.com/en-us/product/office/WA200011055?tab=Overview",
+  "desc": "Word add-in that turns notes into styled documents with web research.",
+  "desc_zh": "Word 加载项，把笔记变成文档、做好排版并带入网页资料。",
+  "solves": "Drafts start from a blank page and the research sits in another tab; the add-in writes paragraphs and pulls the material in.",
+  "solves_zh": "初稿总从空白页开始，查好的资料又在另一个标签页里；加载项直接写段落，并把内容带进文档。",
+  "best_for": "You have messy meeting notes and a document due that still needs outside references.",
+  "best_for_zh": "手里只有一堆乱会议记录，而文档还等着要交、又需要外部引用时。",
+  "surface": "extension",
+  "tags": [
+    "document-addin",
+    "drafting",
+    "research-import"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — x.ai/news directory; channel A Microsoft Marketplace listing）。 First of the four Grok Office add-ins. The marketplace URL redirects by dropping the locale segment. 入库核对（2026-11-25）：嵌在办公软件里的助手，与账本对同类功能的分类一致。 首次公开日期来源：https://x.ai/news/introducing-word-addin 官网未直接确认（redirect->https://marketplace.microsoft.com/en-us/product/WA200011055?tab=Overview）。",
+  "revisions": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "deepwiki",
+  "name": "DeepWiki",
+  "name_zh": "DeepWiki",
+  "vendor_id": "cognition",
+  "region": "intl",
+  "category": "search",
+  "use_cases": [
+    "research",
+    "coding"
+  ],
+  "form": "web",
+  "released": "2025-05-05",
+  "date_precision": "day",
+  "homepage": "https://deepwiki.com",
+  "desc": "Free generated wiki and question answering for any public GitHub repository.",
+  "desc_zh": "为任意公开仓库免费生成百科和问答的网站。",
+  "solves": "Getting up to speed on an unfamiliar codebase used to mean hours of reading; here the architecture is mapped and you ask it questions instead.",
+  "solves_zh": "熟悉陌生代码库过去要读上几小时；现在架构被画成图，直接向它提问就行。",
+  "best_for": "You inherit a large repository and need to know what calls what before changing anything.",
+  "best_for_zh": "刚接手一个大仓库，想先弄清模块之间谁调用谁再动手。",
+  "surface": "standalone",
+  "tags": [
+    "code-docs",
+    "repo-qa",
+    "architecture-map"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cognition.com/blog directory）。 Free public release of Devin Wiki and Devin Search, announced in the same post. Predates the discovery window but is absent from the ledger, so it is recorded under rule (b) of the brief. 首次公开日期来源：https://cognition.com/blog/deepwiki",
+  "revisions": []
+}

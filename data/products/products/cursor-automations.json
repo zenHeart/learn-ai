@@ -1,0 +1,36 @@
+{
+  "id": "cursor-automations",
+  "name": "Cursor Automations",
+  "name_zh": "Cursor Automations",
+  "vendor_id": "anysphere",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding",
+    "agent-building"
+  ],
+  "form": "web",
+  "released": "2026-03-05",
+  "date_precision": "day",
+  "homepage": "https://docs.cursor.com/agent/automations",
+  "desc": "Always-on Cursor agents that wake on a schedule or an event.",
+  "desc_zh": "按时间表或事件触发、常驻运行的 Cursor 智能体。",
+  "solves": "Recurring chores wait until someone remembers them; the trigger fires the agent and it works in its own cloud sandbox.",
+  "solves_zh": "重复性杂务总要等有人想起来才做；触发器一响，智能体就在自己的云端沙箱里开工。",
+  "best_for": "You want dependency bumps merged every Monday morning without opening the editor.",
+  "best_for_zh": "想让依赖升级每周一早上自动合掉，不用自己开编辑器。",
+  "surface": "in-product",
+  "tags": [
+    "scheduled-agents",
+    "event-triggers",
+    "cloud-sandbox"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — cursor.com/changelog directory）。 Named in-product capability with its own docs section, distinct from Cursor background agents already in the ledger. 入库核对（2026-11-25）：官方名字只是「Automations」，加上产品名以便辨认。 首次公开日期来源：https://cursor.com/changelog/03-05-26",
+  "revisions": []
+}

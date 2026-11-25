@@ -1,0 +1,35 @@
+{
+  "id": "github-copilot-app",
+  "name": "GitHub Copilot app",
+  "name_zh": "GitHub Copilot app",
+  "vendor_id": "microsoft",
+  "region": "intl",
+  "category": "coding-agent",
+  "use_cases": [
+    "coding"
+  ],
+  "form": "desktop",
+  "released": "2026-05-14",
+  "date_precision": "day",
+  "homepage": "https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/",
+  "desc": "A desktop app that runs agent-driven development sessions.",
+  "desc_zh": "一个用来跑 Agent 开发会话的桌面应用。",
+  "solves": "Agent work happens in a terminal you cannot see into. The app gives you canvases for the plan, the terminal and the browser, so progress stays visible and steerable.",
+  "solves_zh": "Agent 干活发生在一个你看不见的终端里。这个应用把计划、终端和浏览器并成可双向操作的画布，进度看得见也拉得回来。",
+  "best_for": "You want several agent sessions running in parallel, each on its own branch.",
+  "best_for_zh": "你想让多个 Agent 会话并行跑，各自待在自己的分支上。",
+  "surface": "standalone",
+  "tags": [
+    "desktop",
+    "agent-sessions",
+    "parallel"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — GitHub Changelog, https://github.blog/changelog/2026-05-14-github-copilot-ap）。 Technical preview 2026-05-14; generally available for macOS, Windows and Linux on 2026-06-17. Built natively on GitHub and distinct from GitHub Copilot in VS Code and from the Codex app. 首次公开日期来源：https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/",
+  "revisions": []
+}

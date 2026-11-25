@@ -1,0 +1,36 @@
+{
+  "id": "synthesia-sessions",
+  "name": "Synthesia Sessions",
+  "name_zh": "Synthesia Sessions",
+  "vendor_id": "synthesia",
+  "region": "intl",
+  "category": "multimodal-creation",
+  "use_cases": [
+    "office",
+    "audio-voice"
+  ],
+  "form": "web",
+  "released": "2026-10-01",
+  "date_precision": "day",
+  "homepage": "https://www.synthesia.io/sessions",
+  "desc": "Platform for two-way conversations with interactive avatars",
+  "desc_zh": "与交互式数字人双向对话的平台",
+  "solves": "An avatar could only play back a script; Sessions answers back, so practice and interviews scale past one recording.",
+  "solves_zh": "数字人以前只能按脚本播放；Sessions 会回应，练习和访谈因此能超出一次录制的规模。",
+  "best_for": "Two hundred new hires need a difficult-conversation rehearsal this week; put them in a Session instead of booking rooms.",
+  "best_for_zh": "两百名新员工这周要练一次困难对话；让他们进 Session，不用去订会议室。",
+  "surface": "standalone",
+  "tags": [
+    "interactive-avatar",
+    "conversation",
+    "training"
+  ],
+  "handbook": {
+    "status": "candidate"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://www.synthesia.io/blog (post \"Sessions is a New Platform Where Intera）。 Announced as the umbrella for interactive-avatar formats; Roleplay Sessions (2026-07-22) is the first release under it and is recorded separately. The Synthesia video platform the ledger already has is a different surface. No independent press source opened. 首次公开日期来源：https://www.synthesia.io/post/sessions-interactive-avatar-platform",
+  "revisions": []
+}

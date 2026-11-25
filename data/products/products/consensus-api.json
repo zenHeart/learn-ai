@@ -1,0 +1,36 @@
+{
+  "id": "consensus-api",
+  "name": "Consensus API",
+  "name_zh": "Consensus API",
+  "vendor_id": "consensus",
+  "region": "intl",
+  "category": "enterprise-api",
+  "use_cases": [
+    "model-api",
+    "research"
+  ],
+  "form": "api",
+  "released": "2026-08-26",
+  "date_precision": "day",
+  "homepage": "https://docs.consensus.app/api-get-started",
+  "desc": "REST API for searching 400 million scholarly articles.",
+  "desc_zh": "检索四亿篇学术论文的 REST 接口",
+  "solves": "Building literature search into your own tool means scraping or buying an index. One endpoint returns ranked papers, study metadata and full-text excerpts with citations.",
+  "solves_zh": "想让自己的工具能查文献，通常只能爬数据或买索引。一个接口就能返回排好序的论文、研究元数据和带引用的全文摘录。",
+  "best_for": "You are wiring a research feature into your product and need peer-reviewed papers, not web pages.",
+  "best_for_zh": "你在给自己的产品接文献检索，需要的是同行评审论文，而不是网页。",
+  "surface": "standalone",
+  "tags": [
+    "scholarly-search",
+    "rest-api",
+    "full-text-excerpts"
+  ],
+  "handbook": {
+    "status": "none"
+  },
+  "status": "active",
+  "superseded_by": null,
+  "last_verified_at": "2026-11-25",
+  "notes": "外部发现补录（发现渠道：D — https://help.consensus.app/en/articles/11954907-consensus-product-changelog ）。 The changelog records application-based API access from 2026-05-13 ('you can apply for access to the API (general access coming soon!)' on the Launch Week page) and self-serve access for everyone on 2026-08-26; the recorded date is the self-serve launch because the earlier route was an application queue. Endpoints added since: full-text excerpts (2026-09-18), Threads (2026-10-21), full papers (2026-11-10), Get Citations and Get References in beta (2026-11-11). The docs list a deprecated /v1/quick_search endpoint to be removed 2027-02-07. Distinct from the ledger's Consensus web app. No media source was read. 首次公开日期来源：https://help.consensus.app/en/articles/11954907-consensus-product-changelog",
+  "revisions": []
+}
