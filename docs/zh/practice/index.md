@@ -29,6 +29,10 @@ navOrder: 1
 
 [采购与实施方案](/zh/practice/procurement-plan) — 中小团队怎么估预算、怎么搭配国内/海外模型、怎么过合规。
 
+### 3. 再落地研发规范（SDD 与质量工程）
+
+[SDD（规格驱动开发）与 AI 代码开发最佳实践](/zh/practice/sdd-engineering/) — 深度对比 `obra/superpowers`、`Fission-AI/OpenSpec`、`github/spec-kit` 与 `mattpocock/skills`，拆解 SDD 质量门禁、防上下文压缩丢失、TDD 边界与企业落地蓝图。
+
 英文站还有招聘、落地讨论、团队提效：[Practice](/practice/)。
 
 ## 不是本主题

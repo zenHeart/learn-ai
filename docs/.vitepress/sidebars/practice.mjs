@@ -20,6 +20,15 @@ export const zhPracticeSidebar = [
     ]
   },
   {
+    text: 'SDD 与研发最佳实践',
+    items: [
+      { text: '概览', link: '/zh/practice/sdd-engineering/' },
+      { text: '工具深度对比', link: '/zh/practice/sdd-engineering/tools-comparison' },
+      { text: 'SDD 质量保证机制', link: '/zh/practice/sdd-engineering/sdd-quality-assurance' },
+      { text: '企业落地蓝图', link: '/zh/practice/sdd-engineering/enterprise-best-practices' }
+    ]
+  },
+  {
     text: '企业 Agent 工程实践卡',
     items: [
       { text: '概览', link: '/zh/practice/agent-handbook/' },
