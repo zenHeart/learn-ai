@@ -140,6 +140,34 @@ export async function streamUI(input: string) {
     handleSubmit(e, { body: { userId: '123' } })
     ```
 
+## AI SDK Core Quick Reference
+
+> Verified against the official AI SDK documentation on 2026-11-01 (pages labelled "v7 Latest"). The snippets above use older names (`toDataStreamResponse`, `ai/react`); check the current docs before copying them.
+
+| Topic | What the official docs say |
+| --- | --- |
+| Text generation | AI SDK Core has two entry points: `generateText` (one-shot) and `streamText` (streaming). |
+| Streaming | A stream must be consumed to run to completion. The result can be handed to a separate helper that connects it to AI SDK UI, so Core and UI stay decoupled. |
+| Tool definition | A tool has three parts: `description` (optional, helps the model decide when to use it), `inputSchema`-style schema (required, Zod or JSON Schema), and `execute` (optional async function that receives the input and returns a result). |
+| Multi-step calls | One step is one model generation plus the local tool executions it requested. The number of steps is controlled by the `stopWhen` stop condition. |
+| Structured output | You must pass a schema explicitly. The SDK validates the result against the same schema. The current page uses the `output` property with `Output.object`. |
+
+### Practical notes
+
+- Write the tool schema carefully: it defines the input shape the model sees. Structured output takes its own, separate schema through `output`, and the SDK validates the generated object against that schema; the two schemas are independent.
+- Set an explicit `stopWhen` condition for multi-step tool loops so the step count is bounded.
+- Always consume the stream, otherwise the call does not finish.
+
+### Not confirmed by this review
+
+- `maxSteps` and `generateObject` did not appear on the three pages that were read; multi-step control is documented as `stopWhen` and structured output as `output`.
+- The Core/UI split is described only through the stream helper; the overview pages were not read.
+
+Sources (fetched 2026-11-01):
+- [Generating Text](https://ai-sdk.dev/docs/ai-sdk-core/generating-text)
+- [Tool Calling](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling)
+- [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data)
+
 ## Next Steps
 
 - Build a **[Chatbot](../../projects/beginner/ai-chatbot.md)**.
